@@ -1,0 +1,22 @@
+---
+---
+
+{% include header.html %}
+
+<div class="container container-left">
+    <div class="row">
+        <div class="col-md-3 hidden-xs">
+            {% include features.html %}
+        </div>
+        <div class="col-md-9">
+            {% if page.status == "devel" %}
+            <a class="devel" href="/devel/">This feature in still under development </a>
+            {% endif %}
+
+            {{ content }}
+
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

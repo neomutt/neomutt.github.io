@@ -1,0 +1,84 @@
+---
+layout: features
+title: TLS-SNI
+description: Negotiate with a Server for a Certificate
+status: stable
+branch: feature/tls-sni
+base: mutt/1.5.24
+---
+{% raw %}
+<div class="sect1">
+<div class="titlepage">
+<div>
+<div><h2 class="title" style="clear: both"><a class="offset" id="tls-sni"></a> TLS-SNI Patch</h2></div>
+<div><h3 class="subtitle">Negotiate with a server for a TSL/SSL certificate</h3></div>
+</div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="tls-sni-patch"></a>1. Patch</h3></div>
+</div>
+</div>
+<p>
+			To check if Mutt supports <span class="quote">“<span class="quote">TLS-SNI</span>”</span>, look for
+			<span class="quote">“<span class="quote">patch-tls-sni</span>”</span> in the mutt version.
+			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
+		</p>
+<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.5.24</p></li><li class="listitem"><p>OpenSSL</p></li></ul></div>
+<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="tls-sni-intro"></a>2. Introduction</h3></div>
+</div>
+</div>
+<p>
+		The <span class="quote">“<span class="quote">TLS-SNI</span>”</span> patch adds support for TLS virtual hosting.
+		If your mail server doesn't support this everything will still work
+		normally.
+		</p><p>
+		TLS supports sending the expected server hostname during the
+		handshake, via the SNI extension.  This can be used to select a
+		server certificate to issue to the client, permitting
+		virtual-hosting without requiring multiple IP addresses.
+		</p><p>
+		This has been tested against Exim 4.80, which optionally logs SNI
+		and can perform vhosting.
+		</p><p>
+		To verify TLS SNI support by a server, you can use:
+        </p><pre class="screen">
+openssl s_client -host &lt;imap server&gt; -port &lt;port&gt; -tls1 -servername &lt;imap server&gt;
+</pre></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="tls-sni-muttrc"></a>3. Muttrc</h3></div>
+</div>
+</div>
+<p>None</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="tls-sni-see-also"></a>4. See Also</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li></ul></div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="tls-sni-known-bugs"></a>5. Known Bugs</h3></div>
+</div>
+</div>
+<p>None</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="tls-sni-credits"></a>6. Credits</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Jeremy Katz <code class="email">&lt;<a class="email" href="mailto:katzj@linuxpower.org">katzj@linuxpower.org</a>&gt;</code></p></li><li class="listitem"><p>Phil Pennock <code class="email">&lt;<a class="email" href="mailto:mutt-dev@spodhuis.demon.nl">mutt-dev@spodhuis.demon.nl</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
+</div>
+</div>
+{% endraw %}

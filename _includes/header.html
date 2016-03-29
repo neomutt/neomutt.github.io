@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - {{ site.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/theme.css" rel="stylesheet" type="text/css">
+    <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div class="visible-md-block visible-lg-block">
+<a href="https://github.com/neomutt/neomutt"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999; position: fixed;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <a class="logo" href="/"><img alt="dog" src="/images/mutt-64x64.png" style="float: left;"></a>
+            <a class="navbar-brand" href="/">{{ site.name }}</a>
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="/news.html">News</a></li>
+                  <li class="active"><a href="/features.html">Features</a></li>
+                  <li class="active"><a href="/devel/">Devel</a></li>
+                  <li class="active"><a href="/help.html">Help</a></li>
+
+                  <li class="active visible-xs-block"><a href="/links.html">Links</a></li>
+
+                  <li class="active"><a href="/manual/">Manual</a></li>
+                  <li class="active"><a href="/credits.html">Credits</a></li>
+                  <li class="active"><a href="/about.html">About</a></li>
+                  <li class="active2"><a title="RSS Feed" href="/feed.xml"><img alt="RSS" src="/images/rss.png"></a></li>
+                  {% if site.github != '' %}
+                  <li class="active2 hidden-md hidden-lg"><a title="GitHub" href="https://github.com/{{ site.github }}"><img alt="github" src="/images/github.png"></a></li>
+                  {% endif %}
+              </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+

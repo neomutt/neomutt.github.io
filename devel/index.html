@@ -1,0 +1,62 @@
+---
+layout: devel
+title: Development
+---
+
+<h1>Development</h1>
+<h2 class="subtitle">What's Going On?</h2>
+
+<h2>Current Development</h2>
+
+<p>
+  The development is done in <a href="https://github.com/neomutt/flatcap">FlatCap's repo</a>
+  To understand the layout, this <a href="https://flatcap.org/mutt/flatcap.png">Repository Diagram</a>
+  may help.  Key: Red = Mutt, Green = Sidebar, Light Blue = NotMuch, Yellow =
+  Releases.  The collection of icons shows which <a href="/features.html">Features</a>
+  were merged and in which order.
+</p>
+
+<p>
+  <b>Note:</b> This repository is under <b>heavy</b> development and anything you see
+  today, may be gone _later_ today.
+</p>
+
+<p>
+  There are more development pages:
+</p>
+
+<ul>
+  <li><a href="status.html">Status</a> - The status of each of the features, with links to the source and diffs
+  <li><a href="github.html">GitHub</a> - Descriptions of all the NeoMutt repositories and how the branches fit together
+  <li><a href="coding.html">Coding Style</a> - The preferred style for code committed to NeoMutt
+  <li><a href="tasks.html">Tasks</a> - A list of tasks to be done
+  <li><a href="obsolescence.html">Obsolescence</a> - A list of old projects that can be forgotten
+</ul>
+
+<p>
+  Finally, some automatic checking is done on commits and pull-requests for
+  NeoMutt.  It benefits from two free services (free for Open Source).  They are
+  triggered on every commit to GitHub.
+</p>
+
+<p>
+  <a href="https://travis-ci.com/">Travis CI</a> automatically build projects on every commit (Continuous Integration).
+  <a href="https://scan.coverity.com/">Coverity</a> performs static analysis on the code looking for potential problems.
+</p>
+
+<p>
+  <a href="https://travis-ci.org/neomutt/neomutt"><img alt="travis status" src="https://api.travis-ci.org/neomutt/neomutt.svg?branch=neomutt" /></a>
+  <a href="https://scan.coverity.com/projects/flatcap-mutt"><img alt="coverity status" src="https://scan.coverity.com/projects/8302/badge.svg" /></a>
+</p>
+
+<h2>Blue Sky</h2>
+
+<p>
+  NeoMutt also has a couple of speculative ideas:
+  <ul>
+    <li>Redesigning Mutt's [architecture](https://github.com/neomutt/arch#arch)</li>
+    <li>Redesigning Mutt's [gui](https://github.com/neomutt/panel-manager#panel-manager)</li>
+  </ul>
+  <b>Note:</b> These are just toys (for now).
+</p>
+

@@ -1,0 +1,57 @@
+# Where things are
+source:       .
+destination:  ./_site
+plugins_dir:  ./_plugins
+layouts_dir:  ./_layouts
+data_dir:     ./_data
+includes_dir: ./_includes
+
+title: NeoMutt
+name: NeoMutt
+email: rich@flatcap.org
+description: Bringing together all the Mutt Code
+
+url: http://www.neomutt.org
+
+baseurl: ''
+github_username:  neomutt
+github: 'neomutt/neomutt'
+
+highlighter: rouge
+markdown: kramdown
+
+timezone: UTC
+
+# Google Analytics
+gaaccount: 'UA-377438-9'
+
+permalink: /:year/:month/:day/:title
+paginate: 3
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+
+exclude:
+  - README.md
+  - LICENSE.md
+  - CNAME
+
+collections:
+  features:
+    output: true
+    permalink: /feature/:path/
+  bugs:
+    output: false
+  tasks:
+    output: false
+
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-sitemap
+

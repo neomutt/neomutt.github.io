@@ -1,0 +1,42 @@
+{% include header.html %}
+
+<div class="container container-left">
+    <div class="row">
+        <div class="col-md-3 hidden-xs">
+            {% include sidebar.html %}
+        </div>
+        <div class="col-md-9">
+          <div class="article">
+            <div class="well">
+                <h1><a href="{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }} - {{ page.title }}</a></h1>
+            <div class="post-content">
+            {{ content }}
+            {% if page.downloads == true %}
+            <hr>
+            {% assign short_date = page.date | date: '%Y%m%d' %}
+            <img alt="download" src="{{ site.url }}/images/download.png"> <b>Patches:</b>
+            <a href="https://github.com/neomutt/neomutt/releases/download/neomutt-{{ short_date }}/neomutt-patches-{{ short_date }}.tar.gz">neomutt-patches-{{ short_date }}.tar.gz</a>
+            <br>
+            <img alt="download" src="{{ site.url }}/images/download.png"> <b>Source:</b>
+            <a href="https://github.com/neomutt/neomutt/archive/neomutt-{{ short_date }}.tar.gz">neomutt-{{ short_date }}.tar.gz</a>
+            <br>
+            <img alt="github" src="{{ site.url }}/images/github2.png"> <b>Release:</b>
+            <a href="https://github.com/neomutt/neomutt/tree/neomutt-{{ short_date }}">neomutt-{{ short_date }}</a>
+            {% endif %}
+            </div>
+            </div>
+          </div>
+          <div class="pagination">
+              {% if page.next %}
+                <a class="btn btn-default" href="{{ page.next.url }}" class="next">Newer</a>
+              {% endif %}
+              {% if page.previous %}
+                <a class="btn btn-default" href="{{ page.previous.url }}" class="previous">Older</a>
+              {% endif %}
+          </div>
+
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

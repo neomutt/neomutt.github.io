@@ -1,0 +1,124 @@
+---
+layout: features
+title: Ifdef
+description: Conditional config options
+status: stable
+branch: feature/ifdef
+base: mutt/1.5.24
+---
+{% raw %}
+<div class="sect1">
+<div class="titlepage">
+<div>
+<div><h2 class="title" style="clear: both"><a class="offset" id="ifdef"></a> Ifdef Patch</h2></div>
+<div><h3 class="subtitle">Conditional config options</h3></div>
+</div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-patch"></a>1. Patch</h3></div>
+</div>
+</div>
+<p>
+			To check if Mutt supports <span class="quote">“<span class="quote">ifdef</span>”</span>, look for
+			<span class="quote">“<span class="quote">patch-ifdef</span>”</span> in the mutt version.
+			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
+		</p>
+<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.5.24</p></li></ul></div>
+<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-intro"></a>2. Introduction</h3></div>
+</div>
+</div>
+<p>
+			The <span class="quote">“<span class="quote">ifdef</span>”</span> patch introduces three new commands to
+			Mutt and allow you to share one config file between versions of Mutt
+			that may have different features compiled in.
+		</p><pre class="screen">
+ifdef  symbol config-command [args...]  <span class="comment"># If a symbol is defined</span>
+ifndef symbol config-command [args...]  <span class="comment"># If a symbol is not defined</span>
+finish                                  <span class="comment"># Finish reading the current file</span>
+</pre><p>
+			Here a symbol can be a <a class="link" href="/manual/reference.html#variables" title="3. Configuration Variables">$variable</a>,
+			<a class="link" href="/manual/reference.html#functions" title="4. Functions">&lt;function&gt;</a>,
+			<a class="link" href="/manual/reference.html#commands" title="2. Configuration Commands">command</a> or compile-time symbol, such
+			as <span class="quote">“<span class="quote">USE_IMAP</span>”</span>.
+		</p><p>
+            <code class="literal">finish</code> is particularly useful when combined with
+            <code class="literal">ifndef</code>. e.g.
+        </p><pre class="screen">
+<span class="comment"># Sidebar config file</span>
+ifndef USE_SIDEBAR finish
+</pre></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-commands"></a>3. Commands</h3></div>
+</div>
+</div>
+<div class="cmdsynopsis"><p><code class="command">ifdef</code>   
+				<em class="replaceable"><code>symbol</code></em>
+				<em class="replaceable"><code>"config-command [args]"</code></em>
+			 <br /><code class="command">ifndef</code>   
+				<em class="replaceable"><code>symbol</code></em>
+				<em class="replaceable"><code>"config-command [args]"</code></em>
+			 <br /><code class="command">finish</code> </p></div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-muttrc"></a>4. Muttrc</h3></div>
+</div>
+</div>
+<pre class="screen">
+<span class="comment"># Example Mutt config file for the 'ifdef' feature.
+# This feature introduces three useful commands which allow you to share
+# one config file between versions of Mutt that may have different
+# features compiled in.
+#	ifdef  symbol config-command [args...]
+#	ifndef symbol config-command [args...]
+#	finish                                
+# The 'ifdef' command tests whether Mutt understands the name of
+# a variable, function, command or compile-time symbol.
+# If it does, then it executes a config command.
+# The 'ifndef' command tests whether a symbol does NOT exist.
+# The 'finish' command tells Mutt to stop reading current config file.
+# If the 'trash' variable exists, set it.</span>
+ifdef trash 'set trash=~/Mail/trash'
+<span class="comment"># If the 'tag-pattern' function exists, bind a key to it.</span>
+ifdef tag-pattern 'bind index &lt;F6&gt; tag-pattern'
+<span class="comment"># If the 'imap-fetch-mail' command exists, read my IMAP config.</span>
+ifdef imap-fetch-mail 'source ~/.mutt/imap.rc'
+<span class="comment"># If the compile-time symbol 'USE_SIDEBAR' does not exist, then
+# stop reading the current config file.</span>
+ifndef USE_SIDEBAR finish
+<span class="comment"># vim: syntax=muttrc</span>
+</pre></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-see-also"></a>5. See Also</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li></ul></div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-known-bugs"></a>6. Known Bugs</h3></div>
+</div>
+</div>
+<p>None</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="ifdef-credits"></a>7. Credits</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Cedric Duval <code class="email">&lt;<a class="email" href="mailto:cedricduval@free.fr">cedricduval@free.fr</a>&gt;</code></p></li><li class="listitem"><p>Matteo F. Vescovi <code class="email">&lt;<a class="email" href="mailto:mfvescovi@gmail.com">mfvescovi@gmail.com</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
+</div>
+</div>
+{% endraw %}

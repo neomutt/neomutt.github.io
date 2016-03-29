@@ -1,0 +1,223 @@
+body {
+  padding-top: 76px;
+  padding-bottom: 8px;
+  background: #060;
+  color: #000;
+}
+
+.copyright {
+  color: #ffffff;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer a {
+  color: #ee4444;
+}
+
+.sidebar h1 {
+  color: #ee4444;
+  font-size: 1.3em;
+}
+
+.sidebar a {
+  color: #428bca;
+}
+
+.sidebar li {
+  margin-top: .7em;
+  line-height: 1em;
+}
+
+.sidebar a:hover {
+  color: #3071a9;
+}
+
+.container-left {
+  margin: 0;
+}
+
+.well h1 {
+  color: #ee4444;
+  font-size: 1.3em;
+  margin: 0.5em;
+}
+
+.author {
+  color: #ee4444;
+}
+
+.author a {
+  color: #ee4444;
+}
+
+div.well {
+  padding: 0;
+  margin-top: 1em;
+}
+
+div.col-md-9 {
+	background: #fff;
+	color: #000;
+  padding-bottom: 1em;
+}
+
+div.note {
+	background: #ff8;
+	color: #000;
+	padding: 0.5em;
+	margin: 0.5em;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.note h3 {
+  margin: 0;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+pre.screen {
+	background: #000;
+	color: #fff;
+}
+
+span.indicator { background: #000060; color: #ffffff; }
+span.highlight { background: #404040; color: #ffffff; }
+.comment { color:#00c000; }
+
+ul.nav {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+a.navbar-brand {
+  color: #fff !important;
+  font-size: 170%;
+  font-weight: bold;
+  margin-left: 64px;
+}
+
+.navbar {
+  background: #000;
+}
+
+a.logo {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+li.active2 a {
+  padding: 9px;
+  background: black;
+}
+
+li.active a:hover, li.active2 a:hover, a.navbar-brand:hover {
+  background: #060 !important;
+  border-radius: 10px;
+}
+
+a.offset {
+  display: block;
+  position: relative;
+  top: -76px;
+  visibility: hidden;
+}
+
+li.current {
+  font-weight: bold;
+}
+
+a.devel {
+  padding: 0;
+  margin: 1em 0 1em 0;
+  border-radius: 10px;
+  display: block;
+  font-weight: bold;
+  font-size: 120%;
+  background: red;
+  color: white;
+  text-align: center;
+}
+
+span.good {
+  font-weight: bold;
+  font-size: 130%;
+  color: green;
+}
+
+span.devel {
+  font-weight: bold;
+  font-size: 130%;
+  color: red;
+}
+
+h1 {
+  font-size: 200%;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 140%;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.subtitle {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-style: italic;
+  font-size: 120%;
+  color: #444;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+a.rm {
+  font-style: italic;
+}
+
+dt {
+  font-size: 120%;
+  font-weight: normal;
+}
+
+dd {
+  margin-left: 2em;
+}
+
+table {
+  /* border: 2px solid #f4f4f4; */
+  border: 2px solid #666;
+}
+
+td, th {
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  /* border: none; */
+  border: 1px solid #666;
+}
+
+li p {
+  margin: 0;
+}
+
+tr:nth-child(odd) {
+}
+
+tr:nth-child(even), th {
+  background: #f4f4f4;
+} 
+

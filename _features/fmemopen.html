@@ -1,0 +1,81 @@
+---
+layout: features
+title: Fmemopen
+description: Use fmemopen(3) for speedier temporary files
+status: stable
+branch: feature/fmemopen
+base: mutt/1.5.24
+---
+{% raw %}
+<div class="sect1">
+<div class="titlepage">
+<div>
+<div><h2 class="title" style="clear: both"><a class="offset" id="fmemopen"></a> Fmemopen Patch</h2></div>
+<div><h3 class="subtitle">Replace some temporary files with memory buffers</h3></div>
+</div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="fmemopen-patch"></a>1. Patch</h3></div>
+</div>
+</div>
+<p>
+			To check if Mutt supports <span class="quote">“<span class="quote">fmemopen</span>”</span>, look for
+			<span class="quote">“<span class="quote">patch-fmemopen</span>”</span> in the mutt version.
+			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
+		</p>
+<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.5.24</p></li><li class="listitem"><p><code class="literal">open_memstream()</code>, <code class="literal">fmemopen()</code> from glibc</p></li></ul></div>
+<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="fmemopen-intro"></a>2. Introduction</h3></div>
+</div>
+</div>
+<p>
+		The <span class="quote">“<span class="quote">fmemopen</span>”</span> patch speeds up some searches.
+        </p><p>
+		This patch changes a few places where Mutt creates temporary files.
+		It replaces them with in-memory buffers.  This should improve the
+		performance when searching the header or body using the
+		<a class="link" href="/manual/reference.html#thorough-search" title="3.343. thorough_search">$thorough_search</a> option.
+        </p><p>
+		There are no user-configurable parts.
+        </p><p>
+		This patch depends on <code class="literal">open_memstream()</code> and
+		<code class="literal">fmemopen()</code>.  They are provided by glibc.  Without
+		them, Mutt will simply create temporary files.
+        </p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="fmemopen-muttrc"></a>3. Muttrc</h3></div>
+</div>
+</div>
+<p>None</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="fmemopen-see-also"></a>4. See Also</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1. Enabling/Disabling Features">Compile-Time Features</a></p></li><li class="listitem"><p><code class="literal">fmemopen(3)</code></p></li></ul></div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="fmemopen-known-bugs"></a>5. Known Bugs</h3></div>
+</div>
+</div>
+<p>None</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="fmemopen-credits"></a>6. Credits</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Julius Plenz <code class="email">&lt;<a class="email" href="mailto:plenz@cis.fu-berlin.de">plenz@cis.fu-berlin.de</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
+</div>
+</div>
+{% endraw %}

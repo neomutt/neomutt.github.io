@@ -1,0 +1,144 @@
+---
+layout: features
+title: Status Color
+description: Theming of the Status Bar
+status: stable
+branch: feature/status-color
+base: mutt/1.5.24
+---
+{% raw %}
+<div class="sect1">
+<div class="titlepage">
+<div>
+<div><h2 class="title" style="clear: both"><a class="offset" id="status-color"></a> Status Color Patch</h2></div>
+<div><h3 class="subtitle">Custom rules for theming the status bar</h3></div>
+</div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-patch"></a>1. Patch</h3></div>
+</div>
+</div>
+<p>
+			To check if Mutt supports <span class="quote">“<span class="quote">Status Color</span>”</span>, look for
+			<span class="quote">“<span class="quote">patch-status-color</span>”</span> in the mutt version.
+			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
+		</p>
+<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.5.24</p></li></ul></div>
+<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-intro"></a>2. Introduction</h3></div>
+</div>
+</div>
+<p>
+		The <span class="quote">“<span class="quote">status-color</span>”</span> patch allows you to theme different
+		parts of the status bar (also when it's used by the index).
+        </p><p>
+		Unlike normal color commands, <code class="literal">color status</code> can now
+		take up to 2 extra parameters (regex, num).
+        </p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-commands"></a>3. Commands</h3></div>
+</div>
+</div>
+<div class="cmdsynopsis"><p><code class="command">color</code>   
+				<code class="option">status</code>
+				<em class="replaceable"><code>foreground</code></em>
+				<em class="replaceable"><code>background</code></em>
+			  [ 
+					<em class="replaceable"><code>regex</code></em>
+				  [ 
+						<em class="replaceable"><code>num</code></em>
+					 ]]</p></div>
+<p>
+			With zero parameters, Mutt will set the default color for the entire
+			status bar.
+		</p><p>
+			With one parameter, Mutt will only color the parts matching the
+			regex.
+		</p><p>
+			With two parameters, Mutt will only color the num'th sub-match of
+			the regex.
+		</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-colors"></a>4. Colors</h3></div>
+</div>
+</div>
+<div class="table"><a class="offset" id="table-status-color-colors"></a><p class="title"><strong>Table 6.24. Status Colors</strong></p>
+<div class="table-contents"><table summary="Status Colors" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Name</th><th>Default Color</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><code class="literal">reverse</code></td><td>Status bar</td></tr></tbody></table></div>
+</div>
+<br class="table-break" /></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-muttrc"></a>5. Muttrc</h3></div>
+</div>
+</div>
+<pre class="screen">
+<span class="comment"># Example Mutt config file for the 'status-color' patch.
+# The 'status-color' patch allows you to theme different parts of
+# the status bar (also when it's used by the index).
+# For the examples below, set some defaults</span>
+set status_format='-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
+set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
+set sort=threads
+set sort_aux=last-date-received
+<span class="comment"># 'status color' can take up to 2 extra parameters
+# color status foreground background [ regex [ num ]]
+# 0 extra parameters
+# Set the default color for the entire status line</span>
+color status blue white
+<span class="comment"># 1 extra parameter
+# Set the color for a matching pattern
+# color status foreground background regexp
+# Highlight New, Deleted, or Flagged emails</span>
+color status brightred white '(New|Del|Flag):[0-9]+'
+<span class="comment"># Highlight mailbox ordering if it's different from the default
+# First, highlight anything (*/*)</span>
+color status brightred default '\([^)]+/[^)]+\)'
+<span class="comment"># Then override the color for one specfic case</span>
+color status default   default '\(threads/last-date-received\)'
+<span class="comment"># 2 extra parameters
+# Set the color for the nth submatch of a pattern
+# color status foreground background regexp num
+# Highlight the contents of the []s but not the [] themselves</span>
+color status red default '\[([^]]+)\]' 1
+<span class="comment"># The '1' refers to the first regex submatch, which is the inner
+# part in ()s
+# Highlight the mailbox</span>
+color status brightwhite default 'Mutt: ([^ ]+)' 1
+<span class="comment"># Search for 'Mutt: ' but only highlight what comes after it
+# vim: syntax=muttrc</span>
+</pre></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-see-also"></a>6. See Also</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1. Enabling/Disabling Features">Compile-Time Features</a></p></li><li class="listitem"><p><a class="link" href="/manual/advancedusage.html#regexp" title="2. Regular Expressions">Regular Expressions</a></p></li><li class="listitem"><p><a class="link" href="/manual/advancedusage.html#patterns" title="3. Patterns: Searching, Limiting and Tagging">Patterns</a></p></li><li class="listitem"><p><a class="link" href="/feature/index-color/" title="14. Index Color Patch">index-color patch</a></p></li><li class="listitem"><p><a class="link" href="/manual/configuration.html#color" title="9. Using Color and Mono Video Attributes">Color command</a></p></li></ul></div>
+</div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-known-bugs"></a>7. Known Bugs</h3></div>
+</div>
+</div>
+<p>None</p></div>
+<div class="sect2">
+<div class="titlepage">
+<div>
+<div><h3 class="title"><a class="offset" id="status-color-credits"></a>8. Credits</h3></div>
+</div>
+</div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>David Sterba <code class="email">&lt;<a class="email" href="mailto:dsterba@suse.cz">dsterba@suse.cz</a>&gt;</code></p></li><li class="listitem"><p>Thomas Glanzmann <code class="email">&lt;<a class="email" href="mailto:thomas@glanzmann.de">thomas@glanzmann.de</a>&gt;</code></p></li><li class="listitem"><p>Kirill A. Shutemov <code class="email">&lt;<a class="email" href="mailto:kirill@shutemov.name">kirill@shutemov.name</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
+</div>
+</div>
+{% endraw %}

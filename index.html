@@ -1,0 +1,36 @@
+---
+layout: home
+title: Home
+---
+
+<h1>The NeoMutt Project</h1>
+
+<h2 class="subtitle">“Bringing together all the Mutt Code”</h2>
+
+<dl>
+  <dt>What is it?</dt>
+  <dd>The NeoMutt Project is hoping to kick-start development on the Mutt project.
+    <a class="rm" href="about.html">Read more...</a></dd>
+
+  <dt>What have you achieved, so far?</dt>
+  <dd>Lots of old Mutt patches have been brought up-to-date, tidied and documented.
+    <a class="rm" href="features.html">Read more...</a></dd>
+
+  <dt>How can I try it out?</dt>
+  <dd>For now, NeoMutt is only available in source form.
+    <a class="rm" href="devel/github.html">Read more...</a></dd>
+
+</dl>
+
+<hr>
+
+<h2>Latest News</h2>
+
+<ul>
+    {% for p in site.posts limit:5 %}
+    <li>
+      <b>{{ p.date | date: '%Y-%m-%d' }}</b> - 
+      <a href="{{ p.url }}">{{ p.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

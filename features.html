@@ -1,0 +1,58 @@
+---
+layout: features
+title: Features
+---
+
+<h2>Features</h2>
+
+<p>
+  NeoMutt has brought together lots of Mutt patches, many of which were useful,
+  but had been abandoned.
+</p>
+
+<p>Before each patch is marked stable:
+<ul>
+  <li>The code is brought up-to-date with Mutt-1.5.24</li>
+  <li>The code is tidied up, comments added, checks done</li>
+  <li>Documentation is written</li>
+  <li>A sample muttrc is created</li>
+  <li>The feature is tested</li>
+</ul>
+
+<p>
+  To find out more, see the <a href="/devel/">Development Page</a>.
+</p>
+
+<h2>Status</h2>
+
+<table summary="list of features">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in site.features %}
+      <tr>
+        <td><a href="{{ f.url }}">{{ f.title }}</a></td>
+        <td>{{ f.description }}</td>
+        <td>
+          {% case f.status %}
+          {% when 'stable' %}
+          {% assign span = true %}
+            <span class="good">✔
+          {% when 'devel' %}
+            <span class="devel">⚠
+          {% endcase %}
+            {{ f.status }}
+          {% if span == true %}
+            </span>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+

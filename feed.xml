@@ -1,0 +1,37 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}/</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    {% for post in site.posts limit:10 %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <description>
+          {{ post.content | xml_escape }}
+          {% if post.downloads == true %}
+          {% assign short_date = post.date | date: '%Y%m%d' %}
+          &lt;hr&gt;
+          &lt;img alt=&quot;download&quot; src=&quot;{{ site.url }}/images/download.png&quot;&gt; &lt;b&gt;Patches:&lt;/b&gt;
+          &lt;a href=&quot;https://github.com/neomutt/neomutt/releases/download/neomutt-{{ short_date }}/neomutt-patches-{{ short_date }}.tar.gz&quot;&gt;neomutt-patches-{{ short_date }}.tar.gz&lt;/a&gt;
+          &lt;br&gt;
+          &lt;img alt=&quot;download&quot; src=&quot;{{ site.url }}/images/download.png&quot;&gt; &lt;b&gt;Source:&lt;/b&gt;
+          &lt;a href=&quot;https://github.com/neomutt/neomutt/archive/neomutt-{{ short_date }}.tar.gz&quot;&gt;neomutt-{{ short_date }}.tar.gz&lt;/a&gt;
+          &lt;br&gt;
+          &lt;img alt=&quot;github&quot; src=&quot;{{ site.url }}/images/github2.png&quot;&gt; &lt;b&gt;Release:&lt;/b&gt;
+          &lt;a href=&quot;https://github.com/neomutt/neomutt/tree/neomutt-{{ short_date }}&quot;&gt;neomutt-{{ short_date }}&lt;/a&gt;
+          {% endif %}
+        </description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
