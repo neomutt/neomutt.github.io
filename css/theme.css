@@ -54,7 +54,7 @@ body {
 }
 
 div.well {
-  padding: 0;
+  padding: 0.5em;
   margin-top: 1em;
 }
 
@@ -79,9 +79,11 @@ div.note {
   font-weight: bold;
 }
 
-pre.screen {
+pre.screen, pre.highlight {
 	background: #000;
 	color: #fff;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 
 span.indicator { background: #000060; color: #ffffff; }
