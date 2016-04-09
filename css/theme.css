@@ -100,8 +100,9 @@ a.navbar-brand {
   font-size: 160%;
   font-weight: bold;
   padding: 10px;
-  margin-left: 44px;
+  margin-left: 48px;
   height: 42px;
+  border: 2px solid #000;
 }
 
 .navbar {
@@ -120,6 +121,7 @@ a.logo {
 li.active a, li.active2 a {
   padding: 5px;
   margin: 5px 10px 5px 0;
+  border: 2px solid #000;
 }
 
 li.active2 a {
@@ -128,7 +130,8 @@ li.active2 a {
 }
 
 li.active a:hover, li.active2 a:hover, a.navbar-brand:hover {
-  background: #060 !important;
+  /* background: #060 !important; */
+  border: 2px solid #090;
   border-radius: 10px;
 }
 
@@ -231,3 +234,6 @@ tr:nth-child(even), th {
   background: #f4f4f4;
 } 
 
+a:link, a:visited {
+  color: #00a;
+}
