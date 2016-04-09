@@ -97,13 +97,16 @@ ul.nav {
 
 a.navbar-brand {
   color: #fff !important;
-  font-size: 170%;
+  font-size: 160%;
   font-weight: bold;
-  margin-left: 64px;
+  padding: 10px;
+  margin-left: 44px;
+  height: 42px;
 }
 
 .navbar {
   background: #000;
+  min-height: 28px;
 }
 
 a.logo {
@@ -112,6 +115,11 @@ a.logo {
   top: 0;
   left: 0;
   position: fixed;
+}
+
+li.active a, li.active2 a {
+  padding: 5px;
+  margin: 5px 10px 5px 0;
 }
 
 li.active2 a {
