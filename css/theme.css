@@ -146,18 +146,6 @@ li.current {
   font-weight: bold;
 }
 
-a.devel {
-  padding: 0;
-  margin: 1em 0 1em 0;
-  border-radius: 10px;
-  display: block;
-  font-weight: bold;
-  font-size: 120%;
-  background: red;
-  color: white;
-  text-align: center;
-}
-
 span.good {
   font-weight: bold;
   font-size: 130%;
@@ -237,3 +225,16 @@ tr:nth-child(even), th {
 a:link, a:visited {
   color: #00a;
 }
+
+a.devel {
+  padding: 0;
+  margin: 1em 0 1em 0;
+  border-radius: 10px;
+  display: block;
+  font-weight: bold;
+  font-size: 120%;
+  background: red;
+  color: white;
+  text-align: center;
+}
+
