@@ -4,7 +4,7 @@ title: Bug Fixes
 description: Bug fixes to Mutt
 status: stable
 branch: feature/bug-fixes
-base: mutt/1.5.24
+base: mutt/1.6.1
 ---
 
 ## Bug Fixes
