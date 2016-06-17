@@ -12,6 +12,9 @@
           {% if f.status == "devel" %}
             <span class="devel">⚠</span>
           {% else %}
+          {% if f.title == "Sidebar" %}
+            <a href="/sidebar-intro.html">(Intro)</a>
+          {% endif %}
           {% endif %}
         </li>
         {% endfor %}
