@@ -103,6 +103,6 @@ Sorry, I don't have any instructions for this package.
 **Currently unsupported**.
 
 Do you know how to create ".deb" packages?
-Do you know to set up a <abbr title="Personal Package Archive">PPA</abbr>?
+Do you know how to set up a <abbr title="Personal Package Archive">PPA</abbr>?
 If you do, please help.  Contact: [Richard&nbsp;Russon](mailto:rich@flatcap.org).
 
