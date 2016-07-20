@@ -4,7 +4,7 @@ title: Compressed Folders
 description: Read from/write to compressed mailboxes
 status: stable
 branch: feature/compress
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
       </ul>
     </div>
@@ -123,7 +123,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.1.&#160;Not all Hooks are Required</strong>
       </p>
       <div class="table-contents">
-        <table summary="Not all Hooks are Required" border="1">
+        <table class="table" summary="Not all Hooks are Required" border="1">
           <colgroup>
             <col />
             <col />
@@ -175,17 +175,19 @@ base: mutt/1.6.1
     </div>
     <br class="table-break" />
     <div class="note">
-    <h3 class="title">Note</h3>The command:
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>should return a non-zero exit status on failure</p>
-        </li>
-        <li class="listitem">
-          <p>should not delete any files</p>
-        </li>
-      </ul>
-    </div></div>
+      <h3 class="title">Note</h3>
+      <p>The command:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p>should return a non-zero exit status on failure</p>
+          </li>
+          <li class="listitem">
+            <p>should not delete any files</p>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="sect3">
       <div class="titlepage">
         <div>
@@ -251,10 +253,12 @@ close-hook regexp shell-command
 </pre>
       <p>When Mutt has finished with a compressed mail folder, it will look for a matching
       <code class="literal">close-hook</code>to recompress the file. This hook is
-      <a class="link" href="#table-compress-optional" title="Table&#160;6.1.&#160;Not all Hooks are Required">optional</a>.</p>
+      <a class="link" href="/manual/optionalfeatures.html#table-compress-optional" title="Table&#160;6.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <div class="note">
-      <h3 class="title">Note</h3>If the folder has not been modifed, the
-      <code class="literal">close-hook</code>will not be called.</div>
+        <h3 class="title">Note</h3>
+        <p>If the folder has not been modifed, the
+        <code class="literal">close-hook</code>will not be called.</p>
+      </div>
       <div class="sect4">
         <div class="titlepage">
           <div>
@@ -305,7 +309,7 @@ append-hook regexp shell-command
 </pre>
       <p>When Mutt wants to append an email to a compressed mail folder, it will look for a matching
       <code class="literal">append-hook</code>. This hook is
-      <a class="link" href="table-compress-optional" title="Table&#160;6.1.&#160;Not all Hooks are Required">optional</a>.</p>
+      <a class="link" href="/manual/optionalfeatures.html#table-compress-optional" title="Table&#160;6.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <p>Using the
       <code class="literal">append-hook</code>will save time, but Mutt won't be able to determine the type of the mail folder inside the compressed file.</p>
       <p>Mutt will
@@ -363,7 +367,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Mutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/manual/reference.html#save-empty" title="3.259.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/manual/reference.html#save-empty" title="3.268.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect3">
       <div class="titlepage">
@@ -375,7 +379,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/manual/reference.html#tmpdir" title="3.348.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/manual/reference.html#tmpdir" title="3.360.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect2">
@@ -389,33 +393,42 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
     </div>
     <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'compressed folders' feature.
+ 
 # This feature adds three hooks to Mutt which allow it to
 # work with compressed, or encrypted, mailboxes.
+ 
 # The hooks are of the form:
 #       open-hook   regexp "shell-command"
 #       close-hook  regexp "shell-command"
 #       append-hook regexp "shell-command"
+ 
 # The 'append-hook' is optional.
+ 
 # Hander for gzip compressed mailboxes</span>
 open-hook   '\.gz$'  "gzip -cd  '%f' &gt;  '%t'"
 close-hook  '\.gz$'  "gzip -c   '%t' &gt;  '%f'"
 append-hook '\.gz$'  "gzip -c   '%t' &gt;&gt; '%f'"
+ 
 <span class="comment"># Hander for bzip2 compressed mailboxes</span>
 open-hook   '\.bz2$' "bzip2 -cd '%f' &gt;  '%t'"
 close-hook  '\.bz2$' "bzip2 -c  '%t' &gt;  '%f'"
 append-hook '\.bz2$' "bzip2 -c  '%t' &gt;&gt; '%f'"
+ 
 <span class="comment"># Hander for xz compressed mailboxes</span>
 open-hook   '\.xz$'  "xz    -cd '%f' &gt;  '%t'"
 close-hook  '\.xz$'  "xz    -c  '%t' &gt;  '%f'"
 append-hook '\.xz$'  "xz    -c  '%t' &gt;&gt; '%f'"
+ 
 <span class="comment"># Hander for pgp encrypted mailboxes
 # PGP does not support appending to an encrypted file</span>
 open-hook   '\.pgp$' "pgp -f &lt; '%f' &gt; '%t'"
 close-hook  '\.pgp$' "pgp -fe YourPgpUserIdOrKeyId &lt; '%t' &gt; '%f'"
+ 
 <span class="comment"># Hander for gpg encrypted mailboxes
 # gpg does not support appending to an encrypted file</span>
 open-hook   '\.gpg$' "gpg --decrypt &lt; '%f' &gt; '%t'"
 close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &gt; '%f'"
+ 
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -432,7 +445,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://github.com/neomutt/neomutt/wiki" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
@@ -447,17 +460,17 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#tmpdir" title="3.348.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/manual/reference.html#tmpdir" title="3.360.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#mbox-type" title="3.139.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/manual/reference.html#mbox-type" title="3.144.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#save-empty" title="3.259.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/manual/reference.html#save-empty" title="3.268.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">

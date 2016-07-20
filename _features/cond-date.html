@@ -1,10 +1,10 @@
 ---
 layout: features
 title: Conditional Dates
-description: Conditional Date Formatting
+description: Use rules to choose date format
 status: stable
 branch: feature/cond-date
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,11 +40,11 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/nested-if/" title="18.&#160;Nested If Patch">nested-if patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#nested-if" title="19.&#160;Nested If Patch">nested-if patch</a>
           </p>
         </li>
       </ul>
@@ -64,7 +64,7 @@ base: mutt/1.6.1
     <p>The
     <span class="quote">“
     <span class="quote">cond-date</span>”</span>patch allows you to construct
-    <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
+    <a class="link" href="/manual/reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
     <p>Mutt's default
     <code class="literal">$index_format</code>displays email dates in the form: abbreviated-month day-of-month —
     <span class="quote">“
@@ -76,7 +76,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.2.&#160;Potential Formatting Scheme</strong>
       </p>
       <div class="table-contents">
-        <table summary="Potential Formatting Scheme" border="1">
+        <table class="table" summary="Potential Formatting Scheme" border="1">
           <colgroup>
             <col />
             <col />
@@ -159,7 +159,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.3.&#160;Date Formatting Codes</strong>
       </p>
       <div class="table-contents">
-        <table summary="Date Formatting Codes" border="1">
+        <table class="table" summary="Date Formatting Codes" border="1">
           <colgroup>
             <col />
             <col />
@@ -206,7 +206,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.4.&#160;Example Date Tests</strong>
       </p>
       <div class="table-contents">
-        <table summary="Example Date Tests" border="1">
+        <table class="table" summary="Example Date Tests" border="1">
           <colgroup>
             <col />
             <col />
@@ -275,7 +275,7 @@ base: mutt/1.6.1
           <strong>Table&#160;6.5.&#160;Example 1</strong>
         </p>
         <div class="table-contents">
-          <table summary="Example 1" border="1">
+          <table class="table" summary="Example 1" border="1">
             <colgroup>
               <col />
               <col />
@@ -340,7 +340,7 @@ base: mutt/1.6.1
           <strong>Table&#160;6.6.&#160;Example 2</strong>
         </p>
         <div class="table-contents">
-          <table summary="Example 2" border="1">
+          <table class="table" summary="Example 2" border="1">
             <colgroup>
               <col />
               <col />
@@ -420,7 +420,7 @@ base: mutt/1.6.1
         <br />BBB&#160;=&#160;%[%a&#160;%d]
         <br />CCC&#160;=&#160;%[%b&#160;%d]
         <br />DDD&#160;=&#160;%[%m/%y&#160;]
-        <br /></p>
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;</p>
       </div>
     </div>
   </div>
@@ -454,12 +454,14 @@ base: mutt/1.6.1
 #
 # We replace the date field '%{%b %d}', giving:</span>
 set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;%[%b %d]&gt;&amp;%[%m/%y ]&gt; %-15.15L (%?l?%4l&amp;%4c?) %s'
+ 
 <span class="comment"># Test  Date Range  Format String  Example
 # --------------------------------------------
 # %[d   Today       %[%H:%M ]      12:34
 # %[m   This month  %[%a %d]       Thu 12
 # %[y   This year   %[%b %d]       Dec 10
 # -     Older       %[%m/%y ]      06/15
+ 
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -481,12 +483,12 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+            <a class="link" href="/manual/reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/nested-if/" title="18.&#160;Nested If Patch">nested-if patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#nested-if" title="19.&#160;Nested If Patch">nested-if patch</a>
           </p>
         </li>
         <li class="listitem">

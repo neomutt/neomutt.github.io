@@ -1,0 +1,224 @@
+---
+layout: features
+title: New Mail Command
+description: Execute a command upon the receipt of new mail.
+status: stable
+branch: feature/new-mail-hook
+base: mutt/1.6.2
+---
+{% raw %}
+<div class="sect1">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="new-mail-hook"></a>&#160;new-mail Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Execute a command upon the receipt of new mail.</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">new-mail</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-new-mail</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.2</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>This patch enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
+    <p>The command string can contain expandos, such as
+    <code class="literal">%f</code>for the folder name. For a complete list, see:
+    <a class="link" href="/manual/reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>.</p>
+    <p>For example in Linux you can use (most distributions already provide notify-send):</p>
+    <pre class="screen">
+set new_mail_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
+</pre>
+    <p>And in OS X you will need to install a command line interface for Notification Center, for example
+    <a class="ulink" href="https://github.com/julienXX/terminal-notifier" target="_top">terminal-notifier</a>:</p>
+    <pre class="screen">
+set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-variables"></a>3.&#160;Variables</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-new-mail-variables"></a>
+      <p class="title">
+        <strong>Table&#160;6.12.&#160;New Mail Command Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table class="table" summary="New Mail Command Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">new_mail_command</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example Mutt config file for the 'new-mail-command' patch.
+ 
+# --------------------------------------------------------------------------
+# VARIABLES - shown with their default values
+# --------------------------------------------------------------------------
+ 
+# Set the command you want mutt to execute upon the receipt of a new email</span>
+set new_mail_command = ""
+ 
+<span class="comment"># Linux example:
+# set new_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
+ 
+# OS X example:
+# set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
+
+# --------------------------------------------------------------------------
+
+# vim: syntax=muttrc</span>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-known-bugs"></a>6.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Notifies about spurious
+          <span class="bold">
+            <strong>new email</strong>
+          </span>when an email is saved, see
+          <a class="ulink" href="https://github.com/neomutt/neomutt/issues/20" target="_top">Issue #20</a></p>
+        </li>
+        <li class="listitem">
+          <p>Will not notify about new e-mail if the pager is open, see
+          <a class="ulink" href="https://github.com/neomutt/neomutt/issues/19" target="_top">Issue #19</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="new-mail-credits"></a>7.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Yoshiki Vazquez-Baeza
+          <code class="email">&lt;
+          <a class="email" href="mailto:yoshiki@ucsd.edu">yoshiki@ucsd.edu</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Santiago Torres-Arias
+          <code class="email">&lt;
+          <a class="email" href="mailto:santiago@nyu.edu">santiago@nyu.edu</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endraw %}

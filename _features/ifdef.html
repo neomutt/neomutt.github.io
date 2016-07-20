@@ -4,7 +4,7 @@ title: Ifdef
 description: Conditional config options
 status: stable
 branch: feature/ifdef
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
       </ul>
     </div>
@@ -123,26 +123,36 @@ ifndef USE_SIDEBAR finish
     </div>
     <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'ifdef' feature.
+ 
 # This feature introduces three useful commands which allow you to share
 # one config file between versions of Mutt that may have different
 # features compiled in.
-#       ifdef  symbol config-command [args...]
-#       ifndef symbol config-command [args...]
-#       finish                               
+ 
+#     ifdef  symbol config-command [args...]
+#     ifndef symbol config-command [args...]
+#     finish
+ 
 # The 'ifdef' command tests whether Mutt understands the name of
 # a variable, function, command or compile-time symbol.
 # If it does, then it executes a config command.
+ 
 # The 'ifndef' command tests whether a symbol does NOT exist.
+ 
 # The 'finish' command tells Mutt to stop reading current config file.
+ 
 # If the 'trash' variable exists, set it.</span>
 ifdef trash 'set trash=~/Mail/trash'
+ 
 <span class="comment"># If the 'tag-pattern' function exists, bind a key to it.</span>
 ifdef tag-pattern 'bind index &lt;F6&gt; tag-pattern'
+ 
 <span class="comment"># If the 'imap-fetch-mail' command exists, read my IMAP config.</span>
 ifdef imap-fetch-mail 'source ~/.mutt/imap.rc'
+ 
 <span class="comment"># If the compile-time symbol 'USE_SIDEBAR' does not exist, then
 # stop reading the current config file.</span>
 ifndef USE_SIDEBAR finish
+ 
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>

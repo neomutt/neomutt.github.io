@@ -1,10 +1,10 @@
 ---
 layout: features
 title: Status Color
-description: Theming of the Status Bar
+description: Custom rules for theming the status bar
 status: stable
 branch: feature/status-color
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
       </ul>
     </div>
@@ -104,10 +104,10 @@ base: mutt/1.6.1
     <div class="table">
       <a class="offset" id="table-status-color-colors"></a>
       <p class="title">
-        <strong>Table&#160;6.24.&#160;Status Colors</strong>
+        <strong>Table&#160;6.26.&#160;Status Colors</strong>
       </p>
       <div class="table-contents">
-        <table summary="Status Colors" border="1">
+        <table class="table" summary="Status Colors" border="1">
           <colgroup>
             <col />
             <col />
@@ -145,38 +145,53 @@ base: mutt/1.6.1
     </div>
     <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'status-color' patch.
+ 
 # The 'status-color' patch allows you to theme different parts of
 # the status bar (also when it's used by the index).
+ 
 # For the examples below, set some defaults</span>
 set status_format='-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 set sort=threads
 set sort_aux=last-date-received
+ 
 <span class="comment"># 'status color' can take up to 2 extra parameters
+ 
 # color status foreground background [ regex [ num ]]
+ 
 # 0 extra parameters
 # Set the default color for the entire status line</span>
 color status blue white
+ 
 <span class="comment"># 1 extra parameter
 # Set the color for a matching pattern
 # color status foreground background regexp
+ 
 # Highlight New, Deleted, or Flagged emails</span>
 color status brightred white '(New|Del|Flag):[0-9]+'
+ 
 <span class="comment"># Highlight mailbox ordering if it's different from the default
 # First, highlight anything (*/*)</span>
 color status brightred default '\([^)]+/[^)]+\)'
+ 
 <span class="comment"># Then override the color for one specfic case</span>
 color status default   default '\(threads/last-date-received\)'
+ 
 <span class="comment"># 2 extra parameters
 # Set the color for the nth submatch of a pattern
 # color status foreground background regexp num
+ 
 # Highlight the contents of the []s but not the [] themselves</span>
 color status red default '\[([^]]+)\]' 1
+ 
 <span class="comment"># The '1' refers to the first regex submatch, which is the inner
 # part in ()s
+ 
 # Highlight the mailbox</span>
 color status brightwhite default 'Mutt: ([^ ]+)' 1
+ 
 <span class="comment"># Search for 'Mutt: ' but only highlight what comes after it
+ 
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -213,7 +228,7 @@ color status brightwhite default 'Mutt: ([^ ]+)' 1
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/index-color/" title="14.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="14.&#160;Index Color Patch">index-color patch</a>
           </p>
         </li>
         <li class="listitem">

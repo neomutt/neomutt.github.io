@@ -1,10 +1,10 @@
 ---
 layout: features
 title: Trash Folder
-description: Move 'deleted' emails to a trash folder
+description: Automatically move emails to a trash bin
 status: stable
 branch: feature/trash
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -15,40 +15,44 @@ base: mutt/1.6.1
         <a class="offset" id="trash-folder"></a>&#160;Trash Folder Patch</h2>
       </div>
       <div>
-        <h3 class="subtitle">Automatically move "deleted" emails to a trash bin</h3>
+        <h3 class="subtitle">Automatically move
+        <span class="quote">“
+        <span class="quote">deleted</span>”</span>emails to a trash bin</h3>
       </div>
     </div>
   </div>
   <div class="sect2">
-  <div class="titlepage">
-    <div>
+    <div class="titlepage">
       <div>
-        <h3 class="title">
-        <a class="offset" id="trash-folder-patch"></a>1.&#160;Patch</h3>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="trash-folder-patch"></a>1.&#160;Patch</h3>
+        </div>
       </div>
     </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Trash Folder</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-trash</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <p>If IMAP is enabled, this patch will use it</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.2</p>
+        </li>
+        <li class="listitem">
+          <p>IMAP support</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <p>To check if Mutt supports
-  <span class="quote">“
-  <span class="quote">Trash Folder</span>”</span>, look for
-  <span class="quote">“
-  <span class="quote">patch-trash</span>”</span>in the mutt version. See:
-  <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>If IMAP is enabled, this patch will use it
-  <div class="itemizedlist">
-    <p class="title">
-      <strong>Dependencies:</strong>
-    </p>
-    <ul class="itemizedlist" style="list-style-type: disc;">
-      <li class="listitem">
-        <p>mutt-1.6.1</p>
-      </li>
-      <li class="listitem">
-        <p>IMAP support</p>
-      </li>
-    </ul>
-  </div>
-  <p>This patch is part of the
-  <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
   <div class="sect2">
     <div class="titlepage">
       <div>
@@ -65,13 +69,15 @@ base: mutt/1.6.1
     <p>After
     <code class="literal">&lt;sync-mailbox&gt;</code>has been called the email is gone forever.</p>
     <p>The
-    <a class="link" href="/feature/trash/" title="3.353.&#160;trash">$trash</a>variable defines a folder in which to keep old emails. As before, first you mark emails for deletion. When &lt;sync-mailbox&gt; is called the emails are moved to the trash folder.</p>
+    <a class="link" href="/manual/reference.html#trash" title="3.365.&#160;trash">$trash</a>variable defines a folder in which to keep old emails. As before, first you mark emails for deletion. When &lt;sync-mailbox&gt; is called the emails are moved to the trash folder.</p>
     <p>The
     <code class="literal">$trash</code>path can be either a full directory, or be relative to the
-    <a class="link" href="/manual/reference.html#folder" title="3.71.&#160;folder">$folder</a>variable, like the
+    <a class="link" href="/manual/reference.html#folder" title="3.72.&#160;folder">$folder</a>variable, like the
     <code class="literal">mailboxes</code>command.</p>
     <div class="note">
-    <h3 class="title">Note</h3>Emails deleted from the trash folder are gone forever.</div>
+      <h3 class="title">Note</h3>
+      <p>Emails deleted from the trash folder are gone forever.</p>
+    </div>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -85,10 +91,10 @@ base: mutt/1.6.1
     <div class="table">
       <a class="offset" id="table-trash-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.25.&#160;Trash Variables</strong>
+        <strong>Table&#160;6.27.&#160;Trash Variables</strong>
       </p>
       <div class="table-contents">
-        <table summary="Trash Variables" border="1">
+        <table class="table" summary="Trash Variables" border="1">
           <colgroup>
             <col />
             <col />
@@ -103,9 +109,7 @@ base: mutt/1.6.1
           </thead>
           <tbody>
             <tr>
-              <td>
-                <code class="literal">trash</code>
-              </td>
+              <td>trash</td>
               <td>string</td>
               <td>(none)</td>
             </tr>
@@ -127,10 +131,10 @@ base: mutt/1.6.1
     <div class="table">
       <a class="offset" id="table-trash-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.26.&#160;Trash Functions</strong>
+        <strong>Table&#160;6.28.&#160;Trash Functions</strong>
       </p>
       <div class="table-contents">
-        <table summary="Trash Functions" border="1">
+        <table class="table" summary="Trash Functions" border="1">
           <colgroup>
             <col />
             <col />
@@ -171,15 +175,20 @@ base: mutt/1.6.1
     </div>
     <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'trash' feature.
+ 
 # This feature defines a new 'trash' folder.
 # When mail is deleted it will be moved to this folder.
+ 
 # Folder in which to put deleted emails</span>
 set trash='+Trash'
 set trash='/home/flatcap/Mail/Trash'
+ 
 <span class="comment"># The default delete key 'd' will move an email to the 'trash' folder
 # Bind 'D' to REALLY delete an email</span>
 bind index D purge-message
+ 
 <span class="comment"># Note: Deleting emails from the 'trash' folder will REALLY delete them.
+ 
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -226,6 +235,30 @@ bind index D purge-message
           <a class="offset" id="trash-folder-credits"></a>8.&#160;Credits</h3>
         </div>
       </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Cedric Duval
+          <code class="email">&lt;
+          <a class="email" href="mailto:cedricduval@free.fr">cedricduval@free.fr</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Benjamin Kuperman
+          <code class="email">&lt;
+          <a class="email" href="mailto:kuperman@acm.org">kuperman@acm.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Paul Miller
+          <code class="email">&lt;
+          <a class="email" href="mailto:paul@voltar.org">paul@voltar.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

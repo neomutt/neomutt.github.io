@@ -1,10 +1,10 @@
 ---
 layout: features
 title: Sidebar
-description: Panel containing list of Mailboxes
+description: Overview of mailboxes
 status: stable
 branch: feature/sidebar
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
       </ul>
     </div>
@@ -58,20 +58,8 @@ base: mutt/1.6.1
     </div>
     <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
     <p>This part of the manual is a reference guide. If you want a simple introduction with examples see the
-    <a class="link" href="/sidebar-intro.html" title="2.6.&#160;Sidebar">Sidebar Howto</a>. If you just want to get started, you could use the sample
-    <a class="link" href="/feature/sidebar/" title="24.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
-    <p>This version of Sidebar is based on Terry Chan's
-    <a class="ulink" href="http://www.lunar-linux.org/mutt-sidebar/" target="_top">2015-11-11 release</a>. It contains many
-    <span class="bold">
-      <strong>
-        <a class="link" href="/sidebar-intro.html#features" title="2.6.2.&#160;Features">new features</a>
-      </strong>
-    </span>, lots of
-    <span class="bold">
-      <strong>
-        <a class="link" href="/sidebar-intro.html#bugfixes" title="2.6.5.&#160;Bug-fixes">bugfixes</a>
-      </strong>
-    </span>.</p>
+    <a class="link" href="/manual/gettingstarted.html#intro-sidebar" title="2.4.&#160;Sidebar">Sidebar Howto</a>. If you just want to get started, you could use the sample
+    <a class="link" href="/manual/optionalfeatures.html#sidebar-muttrc" title="26.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -85,10 +73,10 @@ base: mutt/1.6.1
     <div class="table">
       <a class="offset" id="table-sidebar-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.19.&#160;Sidebar Variables</strong>
+        <strong>Table&#160;6.20.&#160;Sidebar Variables</strong>
       </p>
       <div class="table-contents">
-        <table summary="Sidebar Variables" border="1">
+        <table class="table" summary="Sidebar Variables" border="1">
           <colgroup>
             <col />
             <col />
@@ -135,7 +123,7 @@ base: mutt/1.6.1
               </td>
               <td>string</td>
               <td>
-                <code class="literal">%B%?F? [%F]?%* %?N?%N/?%S</code>
+                <code class="literal">%B%* %n</code>
               </td>
             </tr>
             <tr>
@@ -166,15 +154,6 @@ base: mutt/1.6.1
             </tr>
             <tr>
               <td>
-                <code class="literal">sidebar_refresh_time</code>
-              </td>
-              <td>number</td>
-              <td>
-                <code class="literal">60</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
                 <code class="literal">sidebar_short_path</code>
               </td>
               <td>boolean</td>
@@ -188,7 +167,7 @@ base: mutt/1.6.1
               </td>
               <td>enum</td>
               <td>
-                <code class="literal">SORT_ORDER</code>
+                <code class="literal">unsorted</code>
               </td>
             </tr>
             <tr>
@@ -221,6 +200,9 @@ base: mutt/1.6.1
       </div>
     </div>
     <br class="table-break" />
+    <p>For more details, and examples, about the
+    <code class="literal">$sidebar_format</code>, see the
+    <a class="link" href="/manual/gettingstarted.html#intro-sidebar-format" title="2.4.3.2.&#160;Sidebar Format String">Sidebar Intro</a>.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -235,10 +217,10 @@ base: mutt/1.6.1
     <div class="table">
       <a class="offset" id="table-sidebar-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.20.&#160;Sidebar Functions</strong>
+        <strong>Table&#160;6.21.&#160;Sidebar Functions</strong>
       </p>
       <div class="table-contents">
-        <table summary="Sidebar Functions" border="1">
+        <table class="table" summary="Sidebar Functions" border="1">
           <colgroup>
             <col />
             <col />
@@ -325,7 +307,8 @@ base: mutt/1.6.1
     </div>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">sidebar_whitelist</code>
+      <code class="command">sidebar_whitelist
+      <a class="offset" id="sidebar-whitelist"></a></code>
       <em class="replaceable">
         <code>mailbox</code>
       </em>[
@@ -335,83 +318,85 @@ base: mutt/1.6.1
     </div>
   </div>
   <div class="sect2">
-  <div class="titlepage">
-    <div>
+    <div class="titlepage">
       <div>
-        <h3 class="title">
-        <a class="offset" id="sidebar-colors"></a>6.&#160;Colors</h3>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="sidebar-colors"></a>6.&#160;Colors</h3>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="table">
-    <a class="offset" id="table-sidebar-colors"></a>
-    <p class="title">
-      <strong>Table&#160;6.21.&#160;Sidebar Colors</strong>
-    </p>
-    <div class="table-contents">
-      <table summary="Sidebar Colors" border="1">
-        <colgroup>
-          <col />
-          <col />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Default Color</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <code class="literal">sidebar_divider</code>
-            </td>
-            <td>default</td>
-            <td>The dividing line between the Sidebar and the Index/Pager panels</td>
-          </tr>
-          <tr>
-            <td>
-              <code class="literal">sidebar_flagged</code>
-            </td>
-            <td>default</td>
-            <td>Mailboxes containing flagged mail</td>
-          </tr>
-          <tr>
-            <td>
-              <code class="literal">sidebar_highlight</code>
-            </td>
-            <td>underline</td>
-            <td>Cursor to select a mailbox</td>
-          </tr>
-          <tr>
-            <td>
-              <code class="literal">sidebar_indicator</code>
-            </td>
-            <td>mutt
-            <code class="literal">indicator</code></td>
-            <td>The mailbox open in the Index panel</td>
-          </tr>
-          <tr>
-            <td>
-              <code class="literal">sidebar_new</code>
-            </td>
-            <td>default</td>
-            <td>Mailboxes containing new mail</td>
-          </tr>
-          <tr>
-            <td>
-              <code class="literal">sidebar_spoolfile</code>
-            </td>
-            <td>default</td>
-            <td>Mailbox that receives incoming mail</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="table">
+      <a class="offset" id="table-sidebar-colors"></a>
+      <p class="title">
+        <strong>Table&#160;6.22.&#160;Sidebar Colors</strong>
+      </p>
+      <div class="table-contents">
+        <table class="table" summary="Sidebar Colors" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Default Color</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">sidebar_divider</code>
+              </td>
+              <td>default</td>
+              <td>The dividing line between the Sidebar and the Index/Pager panels</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">sidebar_flagged</code>
+              </td>
+              <td>default</td>
+              <td>Mailboxes containing flagged mail</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">sidebar_highlight</code>
+              </td>
+              <td>underline</td>
+              <td>Cursor to select a mailbox</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">sidebar_indicator</code>
+              </td>
+              <td>mutt
+              <code class="literal">indicator</code></td>
+              <td>The mailbox open in the Index panel</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">sidebar_new</code>
+              </td>
+              <td>default</td>
+              <td>Mailboxes containing new mail</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">sidebar_spoolfile</code>
+              </td>
+              <td>default</td>
+              <td>Mailbox that receives incoming mail</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <br class="table-break" />
+    <p>If the
+    <code class="literal">sidebar_indicator</code>color isn't set, then the default Mutt indicator color will be used (the color used in the index panel).</p>
   </div>
-  <br class="table-break" />If the
-  <code class="literal">sidebar_indicator</code>color isn't set, then the default Mutt indicator color will be used (the color used in the index panel).</div>
   <div class="sect2">
     <div class="titlepage">
       <div>
@@ -424,10 +409,10 @@ base: mutt/1.6.1
     <div class="table">
       <a class="offset" id="table-sidebar-sort"></a>
       <p class="title">
-        <strong>Table&#160;6.22.&#160;Sidebar Sort</strong>
+        <strong>Table&#160;6.23.&#160;Sidebar Sort</strong>
       </p>
       <div class="table-contents">
-        <table summary="Sidebar Sort" border="1">
+        <table class="table" summary="Sidebar Sort" border="1">
           <colgroup>
             <col />
             <col />
@@ -479,7 +464,8 @@ base: mutt/1.6.1
               <td>
                 <code class="literal">unsorted</code>
               </td>
-              <td>Do not resort the paths</td>
+              <td>Order of the
+              <code class="literal">mailboxes</code>command</td>
             </tr>
           </tbody>
         </table>
@@ -498,89 +484,120 @@ base: mutt/1.6.1
     </div>
     <pre class="screen">
 <span class="comment"># This is a complete list of sidebar-related configuration.
+ 
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
+ 
 # Should the Sidebar be shown?</span>
 set sidebar_visible = no
+ 
 <span class="comment"># How wide should the Sidebar be in screen columns?
 # Note: Some characters, e.g. Chinese, take up two columns each.</span>
 set sidebar_width = 20
+ 
 <span class="comment"># Should the mailbox paths be abbreviated?</span>
 set sidebar_short_path = no
+ 
 <span class="comment"># When abbreviating mailbox path names, use any of these characters as path
 # separators.  Only the part after the last separators will be shown.
 # For file folders '/' is good.  For IMAP folders, often '.' is useful.</span>
 set sidebar_delim_chars = '/.'
+ 
 <span class="comment"># If the mailbox path is abbreviated, should it be indented?</span>
 set sidebar_folder_indent = no
+ 
 <span class="comment"># Indent mailbox paths with this string.</span>
 set sidebar_indent_string = '  '
+ 
 <span class="comment"># Make the Sidebar only display mailboxes that contain new, or flagged,
 # mail.</span>
 set sidebar_new_mail_only = no
+ 
 <span class="comment"># Any mailboxes that are whitelisted will always be visible, even if the
 # sidebar_new_mail_only option is enabled.</span>
 sidebar_whitelist '/home/user/mailbox1'
 sidebar_whitelist '/home/user/mailbox2'
+ 
 <span class="comment"># When searching for mailboxes containing new mail, should the search wrap
 # around when it reaches the end of the list?</span>
 set sidebar_next_new_wrap = no
+ 
 <span class="comment"># The character to use as the divider between the Sidebar and the other Mutt
 # panels.
 # Note: Only the first character of this string is used.</span>
 set sidebar_divider_char = '|'
+ 
 <span class="comment"># Display the Sidebar mailboxes using this format string.</span>
+set sidebar_format = '%B%*  %n'
+ 
+<span class="comment"># If you want to display more information, this is a useful format:</span>
+set mail_check_stats
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
-<span class="comment"># Sidebar will not refresh its list of mailboxes any more frequently than
-# this number of seconds.  This will help reduce disk/network traffic.</span>
-set sidebar_refresh_time = 60
+ 
 <span class="comment"># Sort the mailboxes in the Sidebar using this method:
 #       count    - total number of messages
 #       flagged  - number of flagged messages
 #       new      - number of new messages
 #       path     - mailbox path
-#       unsorted - do not sort the mailboxes</span>
+#       unsorted - order of the mailboxes command</span>
 set sidebar_sort_method = 'unsorted'
+ 
 <span class="comment"># --------------------------------------------------------------------------
 # FUNCTIONS - shown with an example mapping
 # --------------------------------------------------------------------------
+ 
 # Move the highlight to the previous mailbox</span>
 bind index,pager \Cp sidebar-prev
+ 
 <span class="comment"># Move the highlight to the next mailbox</span>
 bind index,pager \Cn sidebar-next
+ 
 <span class="comment"># Open the highlighted mailbox</span>
 bind index,pager \Co sidebar-open
+ 
 <span class="comment"># Move the highlight to the previous page
 # This is useful if you have a LOT of mailboxes.</span>
 bind index,pager &lt;F3&gt; sidebar-page-up
+ 
 <span class="comment"># Move the highlight to the next page
 # This is useful if you have a LOT of mailboxes.</span>
 bind index,pager &lt;F4&gt; sidebar-page-down
+ 
 <span class="comment"># Move the highlight to the previous mailbox containing new, or flagged,
 # mail.</span>
 bind index,pager &lt;F5&gt; sidebar-prev-new
+ 
 <span class="comment"># Move the highlight to the next mailbox containing new, or flagged, mail.</span>
 bind index,pager &lt;F6&gt; sidebar-next-new
+ 
 <span class="comment"># Toggle the visibility of the Sidebar.</span>
 bind index,pager B sidebar-toggle-visible
+ 
 <span class="comment"># --------------------------------------------------------------------------
 # COLORS - some unpleasant examples are given
 # --------------------------------------------------------------------------
 # Note: All color operations are of the form:
 #       color OBJECT FOREGROUND BACKGROUND
+ 
 # Color of the current, open, mailbox
 # Note: This is a general Mutt option which colors all selected items.</span>
 color indicator cyan black
+ 
 <span class="comment"># Color of the highlighted, but not open, mailbox.</span>
 color sidebar_highlight black color8
+ 
 <span class="comment"># Color of the divider separating the Sidebar from Mutt panels</span>
 color sidebar_divider color8 black
+ 
 <span class="comment"># Color to give mailboxes containing flagged mail</span>
 color sidebar_flagged red black
+ 
 <span class="comment"># Color to give mailboxes containing new mail</span>
 color sidebar_new green black
+ 
 <span class="comment"># --------------------------------------------------------------------------
+ 
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -612,21 +629,23 @@ color sidebar_new green black
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/notmuch/" title="20.&#160;Notmuch Patch">notmuch patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#notmuch" title="22.&#160;Notmuch Patch">notmuch patch</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
   <div class="sect2">
-  <div class="titlepage">
-    <div>
+    <div class="titlepage">
       <div>
-        <h3 class="title">
-        <a class="offset" id="sidebar-known-bugs"></a>10.&#160;Known Bugs</h3>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="sidebar-known-bugs"></a>10.&#160;Known Bugs</h3>
+        </div>
       </div>
     </div>
-  </div>Unsorted isn't</div>
+    <p>None</p>
+  </div>
   <div class="sect2">
     <div class="titlepage">
       <div>

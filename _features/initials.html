@@ -1,10 +1,10 @@
 ---
 layout: features
-title: Initials Expando
-description: Expando for Author's Initials
+title: Initials
+description: Expando for author's initials
 status: stable
 branch: feature/initials
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
       </ul>
     </div>
@@ -60,7 +60,7 @@ base: mutt/1.6.1
     <span class="quote">“
     <span class="quote">initials</span>”</span>patch adds an expando (%I) for an author's initials.</p>
     <p>The index panel displays a list of emails. Its layout is controlled by the
-    <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
+    <a class="link" href="/manual/reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -72,7 +72,7 @@ base: mutt/1.6.1
       </div>
     </div>
     <p>This patch has no config of its own. It adds an expando which can be used in the
-    <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>variable.</p>
+    <a class="link" href="/manual/reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>variable.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -85,24 +85,31 @@ base: mutt/1.6.1
     </div>
     <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'initials' patch.
+ 
 # The 'initials' patch has no config of its own.
 # It adds an expando for an author's initials,
 # which can be used in the 'index_format' variable.
+ 
 # The default 'index_format' is:</span>
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
+ 
 <span class="comment"># Where %L represents the author/recipient
+ 
 # This might look like:
 #       1   + Nov 17 David Bowie   Changesbowie    ( 689)
 #       2   ! Nov 17 Stevie Nicks  Rumours         ( 555)
 #       3   + Nov 16 Jimi Hendrix  Voodoo Child    ( 263)
 #       4   + Nov 16 Debbie Harry  Parallel Lines  ( 540)
+ 
 # Using the %I expando:</span>
 set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
+ 
 <span class="comment"># This might look like:
 #       1   + Nov 17 DB Changesbowie    ( 689)
 #       2   ! Nov 17 SN Rumours         ( 555)
 #       3   + Nov 16 JH Voodoo Child    ( 263)
 #       4   + Nov 16 DH Parallel Lines  ( 540)
+ 
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -124,12 +131,12 @@ set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+            <a class="link" href="/manual/reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/index-color/" title="14.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="14.&#160;Index Color Patch">index-color patch</a>
           </p>
         </li>
         <li class="listitem">

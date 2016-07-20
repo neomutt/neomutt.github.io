@@ -1,0 +1,124 @@
+---
+layout: features
+title: LMDB
+description: LMDB backend for the header cache
+status: stable
+branch: feature/lmdb
+base: mutt/1.6.2
+---
+{% raw %}
+<div class="sect1">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="lmdb"></a>&#160;LMDB Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">LMDB backend for the header cache</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="lmdb-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">lmdb</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-lmdb</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.2</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="lmdb-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>This patch adds support for using LMDB as a storage backend for Mutt's header cache (hcache). It is enabled at configure time with the
+    <span class="emphasis">
+      <em>--with-lmdb=&lt;path&gt;</em>
+    </span>switch.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="lmdb-see-also"></a>3.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/optionalfeatures.html#caching" title="7.&#160;Local Caching">Local Caching</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="lmdb-known-bugs"></a>4.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="lmdb-credits"></a>5.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Pietro Cerutti
+          <code class="email">&lt;
+          <a class="email" href="mailto:gahr@gahr.ch">gahr@gahr.ch</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Jan-Piet Mens
+          <code class="email">&lt;
+          <a class="email" href="mailto:jp@mens.de">jp@mens.de</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endraw %}

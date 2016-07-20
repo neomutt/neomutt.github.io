@@ -4,7 +4,7 @@ title: Keywords
 description: Labels/Tagging for emails
 status: stable
 branch: feature/keywords
-base: mutt/1.6.1
+base: mutt/1.6.2
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.1
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.1</p>
+          <p>mutt-1.6.2</p>
         </li>
       </ul>
     </div>
@@ -86,7 +86,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.8.&#160;Keywords Variables</strong>
       </p>
       <div class="table-contents">
-        <table summary="Keywords Variables" border="1">
+        <table class="table" summary="Keywords Variables" border="1">
           <colgroup>
             <col />
             <col />
@@ -146,7 +146,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.9.&#160;Keyword Functions</strong>
       </p>
       <div class="table-contents">
-        <table summary="Keyword Functions" border="1">
+        <table class="table" summary="Keyword Functions" border="1">
           <colgroup>
             <col />
             <col />
@@ -191,7 +191,7 @@ base: mutt/1.6.1
         <strong>Table&#160;6.10.&#160;Keywords Sort</strong>
       </p>
       <div class="table-contents">
-        <table summary="Keywords Sort" border="1">
+        <table class="table" summary="Keywords Sort" border="1">
           <colgroup>
             <col />
             <col />
@@ -224,6 +224,33 @@ base: mutt/1.6.1
         </div>
       </div>
     </div>
+    <pre class="screen">
+<span class="comment"># This is a complete list of keywords-related configuration.
+ 
+# --------------------------------------------------------------------------
+# VARIABLES - shown with their default values
+# --------------------------------------------------------------------------
+ 
+# Should Mutt save the keywords to whatever keyword it came from?</span>
+set keywords_legacy = yes
+ 
+<span class="comment"># Should Mutt use the "Keywords:" header?</span>
+set keywords_standard = no
+ 
+<span class="comment"># How should the keywords be separated?</span>
+set xlabel_delimiter = ""
+ 
+<span class="comment"># --------------------------------------------------------------------------
+# FUNCTIONS - shown with an example mapping
+# --------------------------------------------------------------------------
+ 
+# Bind 'y' to edit labels/keywords</span>
+bind index,pager y edit-label
+ 
+<span class="comment"># --------------------------------------------------------------------------
+ 
+# vim: syntax=muttrc</span>
+</pre>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -238,17 +265,17 @@ base: mutt/1.6.1
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://github.com/neomutt/neomutt/wiki" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+            <a class="link" href="/manual/reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/index-color/" title="14.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="14.&#160;Index Color Patch">index-color patch</a>
           </p>
         </li>
         <li class="listitem">
@@ -268,6 +295,7 @@ base: mutt/1.6.1
         </div>
       </div>
     </div>
+    <p>None</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
