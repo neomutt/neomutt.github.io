@@ -25,7 +25,7 @@ timezone: UTC
 # Google Analytics
 gaaccount: 'UA-377438-9'
 
-permalink: /:year/:month/:day/:titl
+permalink: /:year/:month/:day/:title
 paginate: 3
 
 kramdown:
