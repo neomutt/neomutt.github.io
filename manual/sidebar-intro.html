@@ -1,0 +1,868 @@
+---
+layout: home
+title: Sidebar Intro
+---
+<div class="sect2">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h3 class="title">
+        <a class="offset" id="intro-sidebar"></a>Sidebar</h3>
+      </div>
+    </div>
+  </div>
+  <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
+  <p>This part of the manual is suitable for beginners. If you already know Mutt you could skip ahead to the main
+  <a class="link" href="optionalfeatures.html#sidebar" title="26.&#160;Sidebar Patch">Sidebar guide</a>. If you just want to get started, you could use the sample
+  <a class="link" href="optionalfeatures.html#sidebar-muttrc" title="26.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+  <p>To check if Mutt supports
+  <span class="quote">“
+  <span class="quote">Sidebar</span>”</span>, look for the string
+  <code class="literal">+USE_SIDEBAR</code>in the mutt version.</p>
+  <pre class="screen">
+mutt -v
+</pre>
+  <p>
+    <span class="bold">
+      <strong>Let's turn on the Sidebar:</strong>
+    </span>
+  </p>
+  <pre class="screen">
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+</pre>
+  <p>You will see something like this. A list of mailboxes on the left. A list of emails, from the selected mailbox, on the right.</p>
+  <pre class="screen">
+<span class="indicator">Fruit [1]     3/8</span>|  1    + Jan 24  Rhys Lee         (192)  Yew
+Animals [1]   2/6|  2    + Feb 11  Grace Hall       (167)  Ilama
+Cars            4|  3      Feb 23  Aimee Scott      (450)  Nectarine
+Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
+                 |  5      Mar 07  Callum Harrison  (464)  Raspberry
+                 |<span class="indicator">  6 N  + Mar 24  Samuel Harris    (353)  Tangerine          </span>
+                 |  7 N  + Sep 05  Sofia Graham     (335)  Cherry
+                 |  8 N    Sep 16  Ewan Brown       (105)  Ugli
+                 |
+                 |
+</pre>
+  <p>This user has four mailboxes:
+  <span class="quote">“
+  <span class="quote">Fruit</span>”</span>,
+  <span class="quote">“
+  <span class="quote">Cars</span>”</span>,
+  <span class="quote">“
+  <span class="quote">Animals</span>”</span>and
+  <span class="quote">“
+  <span class="quote">Seas</span>”</span>.</p>
+  <p>The current, open, mailbox is
+  <span class="quote">“
+  <span class="quote">Fruit</span>”</span>. We can also see information about the other mailboxes. For example: The
+  <span class="quote">“
+  <span class="quote">Animals</span>”</span>mailbox contains, 1 flagged email, 2 new emails out of a total of 6 emails.</p>
+  <div class="sect3">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h4 class="title">
+          <a class="offset" id="intro-sidebar-navigation"></a>1.&#160;Navigation</h4>
+        </div>
+      </div>
+    </div>
+    <p>The Sidebar adds some new
+    <a class="link" href="optionalfeatures.html#sidebar-functions" title="26.4.&#160;Functions">functions</a>to Mutt.</p>
+    <p>The user pressed the
+    <span class="quote">“
+    <span class="quote">c</span>”</span>key to
+    <code class="literal">&lt;change-folder&gt;</code>to the
+    <span class="quote">“
+    <span class="quote">Animals</span>”</span>mailbox. The Sidebar automatically updated the indicator to match.</p>
+    <pre class="screen">
+Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
+<span class="indicator">Animals [1]   2/6</span>|  2    + Jan 22  Rhys Lee         ( 48)  Dolphin
+Cars            4|  3    ! Aug 16  Ewan Brown       (333)  Hummingbird
+Seas          1/7|  4      Sep 25  Grace Hall       ( 27)  Capybara
+                 |<span class="indicator">  5 N  + Nov 12  Evelyn Rogers    (453)  Tapir              </span>
+                 |  6 N  + Nov 16  Callum Harrison  (498)  Hedgehog
+                 |
+                 |
+                 |
+                 |
+</pre>
+    <p>Let's map some functions:</p>
+    <pre class="screen">
+bind index,pager \CP sidebar-prev      
+<span class="comment"># Ctrl-Shift-P - Previous Mailbox</span>
+bind index,pager \CN sidebar-next      
+<span class="comment"># Ctrl-Shift-N - Next Mailbox</span>
+bind index,pager \CO sidebar-open      
+<span class="comment"># Ctrl-Shift-O - Open Highlighted Mailbox</span>
+</pre>
+    <p>Press
+    <span class="quote">“
+    <span class="quote">Ctrl-Shift-N</span>”</span>(Next mailbox) twice will move the Sidebar
+    <span class="bold">
+      <strong>highlight</strong>
+    </span>to down to the
+    <span class="quote">“
+    <span class="quote">Seas</span>”</span>mailbox.</p>
+    <pre class="screen">
+Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
+<span class="indicator">Animals [1]   2/6</span>|  2    + Jan 22  Rhys Lee         ( 48)  Dolphin
+Cars            4|  3    ! Aug 16  Ewan Brown       (333)  Hummingbird
+<span class="highlight">Seas          1/7</span>|  4      Sep 25  Grace Hall       ( 27)  Capybara
+                 |<span class="indicator">  5 N  + Nov 12  Evelyn Rogers    (453)  Tapir              </span>
+                 |  6 N  + Nov 16  Callum Harrison  (498)  Hedgehog
+                 |
+                 |
+                 |
+                 |
+</pre>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Functions
+      <code class="literal">&lt;sidebar-next&gt;</code>and
+      <code class="literal">&lt;sidebar-prev&gt;</code>move the Sidebar
+      <span class="bold">
+        <strong>highlight</strong>
+      </span>. They
+      <span class="bold">
+        <strong>do not</strong>
+      </span>change the open mailbox.</p>
+    </div>
+    <p>Press
+    <span class="quote">“
+    <span class="quote">Ctrl-Shift-O</span>”</span>(
+    <code class="literal">&lt;sidebar-open&gt;</code>) to open the highlighted mailbox.</p>
+    <pre class="screen">
+Fruit [1]     3/8|  1    ! Mar 07  Finley Jones     (139)  Molucca Sea
+Animals [1]   2/6|  2    + Mar 24  Summer Jackson   ( 25)  Arafura Sea
+Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
+<span class="indicator">Seas          1/7</span>|<span class="indicator">  4 N  + Feb 23  Isla Hussain     (348)  Balearic Sea       </span>
+                 |
+                 |
+                 |
+                 |
+                 |
+                 |
+</pre>
+  </div>
+  <div class="sect3">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h4 class="title">
+          <a class="offset" id="intro-sidebar-features"></a>2.&#160;Features</h4>
+        </div>
+      </div>
+    </div>
+    <p>The Sidebar shows a list of mailboxes in a panel.</p>
+    <p>Everything about the Sidebar can be configured.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>
+          <a class="link" href="gettingstarted.html#intro-sidebar-basics" title="2.4.3.1.&#160;Sidebar Basics">State of the Sidebar</a>
+        </strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Visibility</p>
+        </li>
+        <li class="listitem">
+          <p>Width</p>
+        </li>
+      </ul>
+    </div>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>
+          <a class="link" href="gettingstarted.html#intro-sidebar-limit" title="2.4.3.4.&#160;Limiting the Number of Mailboxes">Which mailboxes are displayed</a>
+        </strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Display all</p>
+        </li>
+        <li class="listitem">
+          <p>Limit to mailboxes with new mail</p>
+        </li>
+        <li class="listitem">
+          <p>Whitelist mailboxes to display always</p>
+        </li>
+      </ul>
+    </div>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>
+          <a class="link" href="optionalfeatures.html#sidebar-sort" title="26.7.&#160;Sort">The order in which mailboxes are displayed</a>
+        </strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Unsorted (order of mailboxes commands)</p>
+        </li>
+        <li class="listitem">
+          <p>Sorted alphabetically</p>
+        </li>
+        <li class="listitem">
+          <p>Sorted by number of new mails</p>
+        </li>
+      </ul>
+    </div>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>
+          <a class="link" href="gettingstarted.html#intro-sidebar-colors" title="2.4.4.&#160;Colors">Color</a>
+        </strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Sidebar indicators and divider</p>
+        </li>
+        <li class="listitem">
+          <p>Mailboxes depending on their type</p>
+        </li>
+        <li class="listitem">
+          <p>Mailboxes depending on their contents</p>
+        </li>
+      </ul>
+    </div>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>
+          <a class="link" href="optionalfeatures.html#sidebar-functions" title="26.4.&#160;Functions">Key bindings</a>
+        </strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Hide/Unhide the Sidebar</p>
+        </li>
+        <li class="listitem">
+          <p>Select previous/next mailbox</p>
+        </li>
+        <li class="listitem">
+          <p>Select previous/next mailbox with new mail</p>
+        </li>
+        <li class="listitem">
+          <p>Page up/down through a list of mailboxes</p>
+        </li>
+      </ul>
+    </div>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Misc</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="link" href="gettingstarted.html#intro-sidebar-format" title="2.4.3.2.&#160;Sidebar Format String">Formatting string for mailbox</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.289.&#160;sidebar_next_new_wrap">Wraparound searching</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="gettingstarted.html#intro-sidebar-abbrev" title="2.4.3.3.&#160;Abbreviating Mailbox Names">Flexible mailbox abbreviations</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>Support for Unicode mailbox names (utf-8)</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect3">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h4 class="title">
+          <a class="offset" id="intro-sidebar-display"></a>3.&#160;Display</h4>
+        </div>
+      </div>
+    </div>
+    <p>Everything about the Sidebar can be configured.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>For a quick reference:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="link" href="optionalfeatures.html#sidebar-variables" title="26.3.&#160;Variables">Sidebar variables to set</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="optionalfeatures.html#sidebar-colors" title="26.6.&#160;Colors">Sidebar colors to apply</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="optionalfeatures.html#sidebar-sort" title="26.7.&#160;Sort">Sidebar sort methods</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="sect4">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h5 class="title">
+            <a class="offset" id="intro-sidebar-basics"></a>3.1.&#160;Sidebar Basics</h5>
+          </div>
+        </div>
+      </div>
+      <p>The most important variable is
+      <code class="literal">$sidebar_visible</code>. You can set this in your
+      <span class="quote">“
+      <span class="quote">muttrc</span>”</span>, or bind a key to the function
+      <code class="literal">&lt;sidebar-toggle-visible&gt;</code>.</p>
+      <pre class="screen">
+set sidebar_visible                        
+<span class="comment"># Make the Sidebar visible by default</span>
+bind index,pager B sidebar-toggle-visible  
+<span class="comment"># Use 'B' to switch the Sidebar on and off</span>
+</pre>
+      <p>Next, decide how wide you want the Sidebar to be. 25 characters might be enough for the mailbox name and some numbers. Remember, you can hide/show the Sidebar at the press of button.</p>
+      <p>Finally, you might want to change the divider character. By default, Sidebar draws an ASCII line between it and the Index panel If your terminal supports it, you can use a Unicode line-drawing character.</p>
+      <pre class="screen">
+set sidebar_width = 25                 
+<span class="comment"># Plenty of space</span>
+set sidebar_divider_char = '│'         
+<span class="comment"># Pretty line-drawing character</span>
+</pre>
+    </div>
+    <div class="sect4">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h5 class="title">
+            <a class="offset" id="intro-sidebar-format"></a>3.2.&#160;Sidebar Format String</h5>
+          </div>
+        </div>
+      </div>
+      <p>
+      <code class="literal">$sidebar_format</code>allows you to customize the Sidebar display. For an introduction, read
+      <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">format strings</a>including the section about
+      <a class="link" href="configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">conditionals</a>.</p>
+      <p>The default value is
+      <code class="literal">%B%* %n</code>The default value is
+      <code class="literal">%B%?F? [%F]?%* %?N?%N/?%S</code></p>
+      <div class="itemizedlist">
+        <p class="title">
+          <strong>Which breaks down as:</strong>
+        </p>
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p>
+            <code class="literal">%B</code>- Mailbox name</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">%?F? [%F]?</code>- If flagged emails
+            <code class="literal">[%F]</code>, otherwise nothing</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">%*</code>- Pad with spaces</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">%?N?%N/?</code>- If new emails
+            <code class="literal">%N/</code>, otherwise nothing</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">%S</code>- Total number of emails</p>
+          </li>
+        </ul>
+      </div>
+      <div class="table">
+        <a class="offset" id="idm139691215407488"></a>
+        <p class="title">
+          <strong>Table&#160;2.1.&#160;sidebar_format</strong>
+        </p>
+        <div class="table-contents">
+          <table class="table" summary="sidebar_format" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Notes</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>%B</td>
+                <td>&#160;</td>
+                <td>Name of the mailbox</td>
+              </tr>
+              <tr>
+                <td>%S</td>
+                <td>* †</td>
+                <td>Size of mailbox (total number of messages)</td>
+              </tr>
+              <tr>
+                <td>%F</td>
+                <td>* †</td>
+                <td>Number of Flagged messages in the mailbox</td>
+              </tr>
+              <tr>
+                <td>%N</td>
+                <td>* †</td>
+                <td>Number of New messages in the mailbox</td>
+              </tr>
+              <tr>
+                <td>%n</td>
+                <td>*</td>
+                <td>If there's new mail, display
+                <span class="quote">“
+                <span class="quote">N</span>”</span>, otherwise nothing</td>
+              </tr>
+              <tr>
+                <td>%!</td>
+                <td>&#160;</td>
+                <td>
+                <span class="quote">“
+                <span class="quote">!</span>”</span>: one flagged message;
+                <span class="quote">“
+                <span class="quote">!!</span>”</span>: two flagged messages;
+                <span class="quote">“
+                <span class="quote">n!</span>”</span>: n flagged messages (for n &gt; 2). Otherwise prints nothing.</td>
+              </tr>
+              <tr>
+                <td>%d</td>
+                <td>* ‡</td>
+                <td>Number of deleted messages</td>
+              </tr>
+              <tr>
+                <td>%L</td>
+                <td>* ‡</td>
+                <td>Number of messages after limiting</td>
+              </tr>
+              <tr>
+                <td>%t</td>
+                <td>* ‡</td>
+                <td>Number of tagged messages</td>
+              </tr>
+              <tr>
+                <td>%&gt;X</td>
+                <td>&#160;</td>
+                <td>Right justify the rest of the string and pad with
+                <span class="quote">“
+                <span class="quote">X</span>”</span></td>
+              </tr>
+              <tr>
+                <td>%|X</td>
+                <td>&#160;</td>
+                <td>Pad to the end of the line with
+                <span class="quote">“
+                <span class="quote">X</span>”</span></td>
+              </tr>
+              <tr>
+                <td>%*X</td>
+                <td>&#160;</td>
+                <td>Soft-fill with character
+                <span class="quote">“
+                <span class="quote">X</span>”</span>as pad</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <p>* = Can be optionally printed if nonzero</p>
+      <p>† = To use this expandos, you must first:</p>
+      <pre class="screen">
+set mail_check_stats
+</pre>
+      <p></p>
+      <p>‡ = Only applicable to the current folder</p>
+      <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
+      <div class="table">
+        <a class="offset" id="idm139691215380448"></a>
+        <p class="title">
+          <strong>Table&#160;2.2.&#160;sidebar_format</strong>
+        </p>
+        <div class="table-contents">
+          <table class="table" summary="sidebar_format" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="literal">%B%?F? [%F]?%* %?N?%N/?%S</code>
+                </td>
+                <td>
+                  <pre class="screen">
+mailbox [F]            N/S
+</pre>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">%B%* %F:%N:%S</code>
+                </td>
+                <td>
+                  <pre class="screen">
+mailbox              F:N:S
+</pre>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">%B %?N?(%N)?%* %S</code>
+                </td>
+                <td>
+                  <pre class="screen">
+mailbox (N)              S
+</pre>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">%B%* ?F?%F/?%N</code>
+                </td>
+                <td>
+                  <pre class="screen">
+mailbox                F/S
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+    </div>
+    <div class="sect4">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h5 class="title">
+            <a class="offset" id="intro-sidebar-abbrev"></a>3.3.&#160;Abbreviating Mailbox Names</h5>
+          </div>
+        </div>
+      </div>
+      <p>
+      <code class="literal">$sidebar_delim_chars</code>tells Sidebar how to split up mailbox paths. For local directories use
+      <span class="quote">“
+      <span class="quote">/</span>”</span>; for IMAP folders use
+      <span class="quote">“
+      <span class="quote">.</span>”</span></p>
+      <div class="sect5">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h6 class="title">
+              <a class="offset" id="intro-sidebar-abbrev-ex1"></a>3.3.1.&#160;Example 1</h6>
+            </div>
+          </div>
+        </div>
+        <p>This example works well if your mailboxes have unique names after the last separator.</p>
+        <p>Add some mailboxes of diffent depths.</p>
+        <pre class="screen">
+set folder="~/mail"
+mailboxes =fruit/apple          =fruit/banana          =fruit/cherry
+mailboxes =water/sea/sicily     =water/sea/archipelago =water/sea/sibuyan
+mailboxes =water/ocean/atlantic =water/ocean/pacific   =water/ocean/arctic
+</pre>
+        <p>Shorten the names:</p>
+        <pre class="screen">
+set sidebar_short_path                 
+<span class="comment"># Shorten mailbox names</span>
+set sidebar_delim_chars="/"            
+<span class="comment"># Delete everything up to the last / character</span>
+</pre>
+        <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
+        <pre class="screen">
+|fruit/apple                            |apple
+|fruit/banana                           |banana
+|fruit/cherry                           |cherry
+|water/sea/sicily                       |sicily
+|water/sea/archipelago                  |archipelago
+|water/sea/sibuyan                      |sibuyan
+|water/ocean/atlantic                   |atlantic
+|water/ocean/pacific                    |pacific
+|water/ocean/arctic                     |arctic
+</pre>
+      </div>
+      <div class="sect5">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h6 class="title">
+              <a class="offset" id="intro-sidebar-abbrev-ex2"></a>3.3.2.&#160;Example 2</h6>
+            </div>
+          </div>
+        </div>
+        <p>This example works well if you have lots of mailboxes which are arranged in a tree.</p>
+        <p>Add some mailboxes of diffent depths.</p>
+        <pre class="screen">
+set folder="~/mail"
+mailboxes =fruit
+mailboxes =fruit/apple =fruit/banana =fruit/cherry
+mailboxes =water
+mailboxes =water/sea
+mailboxes =water/sea/sicily =water/sea/archipelago =water/sea/sibuyan
+mailboxes =water/ocean
+mailboxes =water/ocean/atlantic =water/ocean/pacific =water/ocean/arctic
+</pre>
+        <p>Shorten the names:</p>
+        <pre class="screen">
+set sidebar_short_path                 
+<span class="comment"># Shorten mailbox names</span>
+set sidebar_delim_chars="/"            
+<span class="comment"># Delete everything up to the last / character</span>
+set sidebar_folder_indent              
+<span class="comment"># Indent folders whose names we've shortened</span>
+set sidebar_indent_string="  "         
+<span class="comment"># Indent with two spaces</span>
+</pre>
+        <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
+        <pre class="screen">
+|fruit                                  |fruit
+|fruit/apple                            |  apple
+|fruit/banana                           |  banana
+|fruit/cherry                           |  cherry
+|water                                  |water
+|water/sea                              |  sea
+|water/sea/sicily                       |    sicily
+|water/sea/archipelago                  |    archipelago
+|water/sea/sibuyan                      |    sibuyan
+|water/ocean                            |  ocean
+|water/ocean/atlantic                   |    atlantic
+|water/ocean/pacific                    |    pacific
+|water/ocean/arctic                     |    arctic
+</pre>
+        <p>Sometimes, it will be necessary to add mailboxes, that you don't use, to fill in part of the tree. This will trade vertical space for horizonal space (but it looks good).</p>
+      </div>
+    </div>
+    <div class="sect4">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h5 class="title">
+            <a class="offset" id="intro-sidebar-limit"></a>3.4.&#160;Limiting the Number of Mailboxes</h5>
+          </div>
+        </div>
+      </div>
+      <p>If you have a lot of mailboxes, sometimes it can be useful to hide the ones you aren't using.
+      <code class="literal">$sidebar_new_mail_only</code>tells Sidebar to only show mailboxes that contain new, or flagged, email.</p>
+      <p>If you want some mailboxes to be always visible, then use the
+      <code class="literal">sidebar_whitelist</code>command. It takes a list of mailboxes as parameters.</p>
+      <pre class="screen">
+set sidebar_new_mail_only              
+<span class="comment"># Only mailboxes with new/flagged email</span>
+sidebar_whitelist fruit fruit/apple    
+<span class="comment"># Always display these two mailboxes</span>
+</pre>
+    </div>
+  </div>
+  <div class="sect3">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h4 class="title">
+          <a class="offset" id="intro-sidebar-colors"></a>4.&#160;Colors</h4>
+        </div>
+      </div>
+    </div>
+    <p>Here is a sample color scheme:</p>
+    <pre class="screen">
+color sidebar_indicator default color17        
+<span class="comment"># Dark blue background</span>
+color sidebar_highlight white   color238       
+<span class="comment"># Grey background</span>
+color sidebar_spoolfile yellow  default        
+<span class="comment"># Yellow</span>
+color sidebar_new       green   default        
+<span class="comment"># Green</span>
+color sidebar_flagged   red     default        
+<span class="comment"># Red</span>
+color sidebar_divider   color8  default        
+<span class="comment"># Dark grey</span>
+</pre>
+    <p>There is a priority order when coloring Sidebar mailboxes. e.g. If a mailbox has new mail it will have the
+    <code class="literal">sidebar_new</code>color, even if it also contains flagged mails.</p>
+    <div class="table">
+      <a class="offset" id="table-intro-sidebar-colors"></a>
+      <p class="title">
+        <strong>Table&#160;2.3.&#160;Sidebar Color Priority</strong>
+      </p>
+      <div class="table-contents">
+        <table class="table" summary="Sidebar Color Priority" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Color</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Highest</td>
+              <td>
+                <code class="literal">sidebar_indicator</code>
+              </td>
+              <td>Mailbox is open</td>
+            </tr>
+            <tr>
+              <td>&#160;</td>
+              <td>
+                <code class="literal">sidebar_highlight</code>
+              </td>
+              <td>Mailbox is highlighed</td>
+            </tr>
+            <tr>
+              <td>&#160;</td>
+              <td>
+                <code class="literal">sidebar_spoolfile</code>
+              </td>
+              <td>Mailbox is the spoolfile (receives incoming mail)</td>
+            </tr>
+            <tr>
+              <td>&#160;</td>
+              <td>
+                <code class="literal">sidebar_new</code>
+              </td>
+              <td>Mailbox contains new mail</td>
+            </tr>
+            <tr>
+              <td>&#160;</td>
+              <td>
+                <code class="literal">sidebar_flagged</code>
+              </td>
+              <td>Mailbox contains flagged mail</td>
+            </tr>
+            <tr>
+              <td>Lowest</td>
+              <td>(None)</td>
+              <td>Mailbox does not match above</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect3">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h4 class="title">
+          <a class="offset" id="intro-sidebar-config-changes"></a>5.&#160;Config Changes</h4>
+        </div>
+      </div>
+    </div>
+    <p>If you haven't used Sidebar before, you can ignore this section.</p>
+    <p>Some of the Sidebar config has been changed to make its meaning clearer. These changes have been made since the previous Sidebar release: 2015-11-11.</p>
+    <div class="table">
+      <a class="offset" id="table-intro-sidebar-config-changes"></a>
+      <p class="title">
+        <strong>Table&#160;2.4.&#160;Config Changes</strong>
+      </p>
+      <div class="table-contents">
+        <table class="table" summary="Config Changes" border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Old Name</th>
+              <th>New Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">$sidebar_delim</code>
+              </td>
+              <td>
+                <code class="literal">$sidebar_divider_char</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">$sidebar_folderindent</code>
+              </td>
+              <td>
+                <code class="literal">$sidebar_folder_indent</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">$sidebar_indentstr</code>
+              </td>
+              <td>
+                <code class="literal">$sidebar_indent_string</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">$sidebar_newmail_only</code>
+              </td>
+              <td>
+                <code class="literal">$sidebar_new_mail_only</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">$sidebar_shortpath</code>
+              </td>
+              <td>
+                <code class="literal">$sidebar_short_path</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">$sidebar_sort</code>
+              </td>
+              <td>
+                <code class="literal">$sidebar_sort_method</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">&lt;sidebar-scroll-down&gt;</code>
+              </td>
+              <td>
+                <code class="literal">&lt;sidebar-page-down&gt;</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">&lt;sidebar-scroll-up&gt;</code>
+              </td>
+              <td>
+                <code class="literal">&lt;sidebar-page-up&gt;</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+</div>
