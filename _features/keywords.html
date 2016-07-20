@@ -8,135 +8,290 @@ base: mutt/1.6.1
 ---
 {% raw %}
 <div class="sect1">
-<div class="titlepage">
-<div>
-<div><h2 class="title" style="clear: both"><a class="offset" id="keywords"></a> Keywords Patch</h2></div>
-<div><h3 class="subtitle">Labels/Tagging for emails</h3></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-patch"></a>1. Patch</h3></div>
-</div>
-</div>
-<p>
-			To check if Mutt supports <span class="quote">“<span class="quote">Keywords</span>”</span>, look for
-			<span class="quote">“<span class="quote">patch-keywords</span>”</span> in the mutt version.
-			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
-		</p>
-<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.6.1</p></li></ul></div>
-<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-intro"></a>2. Introduction</h3></div>
-</div>
-</div>
-<p>
-		Unify label/keyword handling.
-		</p><p>
-		Since x-labels were added to mutt in 2000, a number of other approaches
-		to what we now call <span class="quote">“<span class="quote">tagging</span>”</span> have also emerged.
-		One of them was even made standard in RFC 2822.
-		This update unifies the handling of all these strategies.
-		</p><p>
-		We start by changing mutt's internal keyword storage from a single
-		string which may contain whitespace to a list of discrete keywords.
-		This has advantages for keyword completion as well as for portabilty
-		among varying "standards" for keyword storage.  This may represent
-		a significant change for existing mutt users who have set x-labels
-		containing spaces, and should be regarded with suspicion.  The
-		advantages are significant, though.
-		</p><p>
-		Next we allow mutt to parse keywords into this internal list from
-		any of the following headers: X-Label (freeform), X-Keywords
-		(space-delimited), X-Mozilla-Keys (space-delimited), and Keywords (RFC
-		2822, comma-space-delimited).  Mutt remembers which headers it sourced
-		keywords from, and can rewrite those headers when saving messages for
-		compatibility with the mailer of origin.
-		</p><p>
-		(X-Label was specified as freeform text by mutt, its only known
-		implementation.  X-Labels have been used both as a
-		<span class="quote">“<span class="quote">tagging</span>”</span> device, probably with space delimiting, and as a
-		<span class="quote">“<span class="quote">memo</span>”</span> field, where space-delimited parsing would ruin the
-		semantics of the memo.  By default mutt will not split X-Labels at all.
-		Set $xlabel_delimiter if your needs vary.)
-		</p><p>
-		Finally we add two booleans: $keywords_legacy=true and
-		$keywords_standard=FALSE.  When $keywords_legacy is true, mutt will
-		always save keyword to whatever original header it came from.  When
-		$keywords_standard=true, mutt will save to the Keywords: header.  If
-		both are true mutt saves to both; if neither is true, mutt saves only
-		to legacy headers to avoid complete loss of keywords.
-		</p><p>
-		Overall this represents convergence path for all competing
-		labelling/tagging/keywording systems toward one that is specified by
-		RFC.
-		</p><p>
-		You can change or delete the X-Label: field within
-		Mutt using the edit-label command, bound to the
-		y key by default.  This works for tagged messages, too.
-		</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-variables"></a>3. Variables</h3></div>
-</div>
-</div>
-<div class="table"><a class="offset" id="table-keywords-variables"></a><p class="title"><strong>Table 6.8. Keywords Variables</strong></p>
-<div class="table-contents"><table summary="Keywords Variables" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Name</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td><code class="literal">keywords_legacy</code></td><td>boolean</td><td><code class="literal">yes</code></td></tr><tr><td><code class="literal">keywords_standard</code></td><td>boolean</td><td><code class="literal">no</code></td></tr><tr><td><code class="literal">xlabel_delimiter</code></td><td>string</td><td>(empty)</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-functions"></a>4. Functions</h3></div>
-</div>
-</div>
-<div class="table"><a class="offset" id="table-keywords-funcions"></a><p class="title"><strong>Table 6.9. Keyword Functions</strong></p>
-<div class="table-contents"><table summary="Keyword Functions" border="1"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Menus</th><th>Default Key</th><th>Function</th><th>Description</th></tr></thead><tbody><tr><td>index,pager</td><td>y</td><td><code class="literal">&lt;edit-label&gt;</code></td><td>add, change, or delete a message's label</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-sort"></a>5. Sort</h3></div>
-</div>
-</div>
-<div class="table"><a class="offset" id="table-keywords-sort"></a><p class="title"><strong>Table 6.10. Keywords Sort</strong></p>
-<div class="table-contents"><table summary="Keywords Sort" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Sort</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">label</code></td><td>Sort by label</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-muttrc"></a>6. Muttrc</h3></div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-see-also"></a>7. See Also</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/manual/reference.html#index-format" title="3.121. index_format">$index_format</a></p></li><li class="listitem"><p><a class="link" href="/feature/index-color/" title="14. Index Color Patch">index-color patch</a></p></li><li class="listitem"><p><a class="link" href="/manual/configuration.html#folder-hook" title="7. Setting Variables Based Upon Mailbox">folder-hook</a></p></li></ul></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-known-bugs"></a>8. Known Bugs</h3></div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="keywords-credits"></a>9. Credits</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>David Champion <code class="email">&lt;<a class="email" href="mailto:dgc@uchicago.edu">dgc@uchicago.edu</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
-</div>
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="keywords"></a>&#160;Keywords Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Labels/Tagging for emails</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Keywords</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-keywords</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.1</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>Unify label/keyword handling.</p>
+    <p>Since x-labels were added to mutt in 2000, a number of other approaches to what we now call
+    <span class="quote">“
+    <span class="quote">tagging</span>”</span>have also emerged. One of them was even made standard in RFC 2822. This update unifies the handling of all these strategies.</p>
+    <p>We start by changing mutt's internal keyword storage from a single string which may contain whitespace to a list of discrete keywords. This has advantages for keyword completion as well as for portabilty among varying "standards" for keyword storage. This may represent a significant change for existing mutt users who have set x-labels containing spaces, and should be regarded with suspicion. The advantages are significant, though.</p>
+    <p>Next we allow mutt to parse keywords into this internal list from any of the following headers: X-Label (freeform), X-Keywords (space-delimited), X-Mozilla-Keys (space-delimited), and Keywords (RFC 2822, comma-space-delimited). Mutt remembers which headers it sourced keywords from, and can rewrite those headers when saving messages for compatibility with the mailer of origin.</p>
+    <p>(X-Label was specified as freeform text by mutt, its only known implementation. X-Labels have been used both as a
+    <span class="quote">“
+    <span class="quote">tagging</span>”</span>device, probably with space delimiting, and as a
+    <span class="quote">“
+    <span class="quote">memo</span>”</span>field, where space-delimited parsing would ruin the semantics of the memo. By default mutt will not split X-Labels at all. Set $xlabel_delimiter if your needs vary.)</p>
+    <p>Finally we add two booleans: $keywords_legacy=true and $keywords_standard=FALSE. When $keywords_legacy is true, mutt will always save keyword to whatever original header it came from. When $keywords_standard=true, mutt will save to the Keywords: header. If both are true mutt saves to both; if neither is true, mutt saves only to legacy headers to avoid complete loss of keywords.</p>
+    <p>Overall this represents convergence path for all competing labelling/tagging/keywording systems toward one that is specified by RFC.</p>
+    <p>You can change or delete the X-Label: field within Mutt using the edit-label command, bound to the y key by default. This works for tagged messages, too.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-variables"></a>3.&#160;Variables</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-keywords-variables"></a>
+      <p class="title">
+        <strong>Table&#160;6.8.&#160;Keywords Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Keywords Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">keywords_legacy</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">yes</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">keywords_standard</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">no</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">xlabel_delimiter</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-functions"></a>4.&#160;Functions</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-keywords-funcions"></a>
+      <p class="title">
+        <strong>Table&#160;6.9.&#160;Keyword Functions</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Keyword Functions" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Menus</th>
+              <th>Default Key</th>
+              <th>Function</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>index,pager</td>
+              <td>y</td>
+              <td>
+                <code class="literal">&lt;edit-label&gt;</code>
+              </td>
+              <td>add, change, or delete a message's label</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-sort"></a>5.&#160;Sort</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-keywords-sort"></a>
+      <p class="title">
+        <strong>Table&#160;6.10.&#160;Keywords Sort</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Keywords Sort" border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Sort</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">label</code>
+              </td>
+              <td>Sort by label</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-muttrc"></a>6.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-see-also"></a>7.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/index-color/" title="14.&#160;Index Color Patch">index-color patch</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-known-bugs"></a>8.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="keywords-credits"></a>9.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>David Champion
+          <code class="email">&lt;
+          <a class="email" href="mailto:dgc@uchicago.edu">dgc@uchicago.edu</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endraw %}

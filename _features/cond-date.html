@@ -8,143 +8,445 @@ base: mutt/1.6.1
 ---
 {% raw %}
 <div class="sect1">
-<div class="titlepage">
-<div>
-<div><h2 class="title" style="clear: both"><a class="offset" id="cond-date"></a> Conditional Dates Patch</h2></div>
-<div><h3 class="subtitle">Use rules to choose date format</h3></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-patch"></a>1. Patch</h3></div>
-</div>
-</div>
-<p>
-			To check if Mutt supports <span class="quote">“<span class="quote">Conditional Dates</span>”</span>, look for
-			<span class="quote">“<span class="quote">patch-cond-date</span>”</span> in the mutt version.
-			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
-		</p>
-<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.6.1</p></li><li class="listitem"><p><a class="link" href="/feature/nested-if/" title="18. Nested If Patch">nested-if patch</a></p></li></ul></div>
-<p>
-			This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.
-		</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-intro"></a>2. Introduction</h3></div>
-</div>
-</div>
-<p>
-		The <span class="quote">“<span class="quote">cond-date</span>”</span> patch allows you to construct
-		<a class="link" href="/manual/reference.html#index-format" title="3.121. index_format">$index_format</a> expressions based on the age of the email.
-		</p><p>
-		Mutt's default <code class="literal">$index_format</code> displays email dates in the
-		form: abbreviated-month day-of-month — <span class="quote">“<span class="quote">Jan 14</span>”</span>.
-		</p><p>
-		The format is configurable but only per-mailbox.  This patch allows you
-		to configure the display depending on the age of the email.
-		</p>
-<div class="table"><a class="offset" id="table-cond-date-scheme"></a><p class="title"><strong>Table 6.2. Potential Formatting Scheme</strong></p>
-<div class="table-contents"><table summary="Potential Formatting Scheme" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Email Sent</th><th>Format</th><th>Example</th></tr></thead><tbody><tr><td>Today</td><td><code class="literal">%H:%M</code></td><td>13:23</td></tr><tr><td>This Month</td><td><code class="literal">%a %d</code></td><td>Thu 17</td></tr><tr><td>This Year</td><td><code class="literal">%b %d</code></td><td>Dec 10</td></tr><tr><td>Older than 1 Year</td><td><code class="literal">%m/%y</code></td><td>06/14</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /><p>
-        For an explanation of the date formatting strings, see
-        <code class="literal">strftime(3).</code>
-		</p><p>
-        By carefully picking your formats, the dates can remain
-        unambiguous and compact.
-		</p><p>
-		Mutt's conditional format strings have the form:
-		(whitespace introduced for clarity)
-		</p><pre class="screen">%? TEST ? TRUE &amp; FALSE ?</pre><p>
-		The examples below use the test <span class="quote">“<span class="quote">%[</span>”</span> — the date
-		of the message in the local timezone.  They will also work with
-		<span class="quote">“<span class="quote">%(</span>”</span> — the local time that the message arrived.
-		</p><p>
-		The date tests are of the form:
-		</p><pre class="screen">%[nX? TRUE &amp; FALSE ?</pre>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="quote">“<span class="quote">n</span>”</span> is an optional count (defaults to 1 if missing)</p></li><li class="listitem"><p><span class="quote">“<span class="quote">X</span>”</span> is the time period</p></li></ul></div>
-<div class="table"><a class="offset" id="table-cond-date-format-codes"></a><p class="title"><strong>Table 6.3. Date Formatting Codes</strong></p>
-<div class="table-contents"><table summary="Date Formatting Codes" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Letter</th><th>Time Period</th></tr></thead><tbody><tr><td>y</td><td>Years</td></tr><tr><td>m</td><td>Months</td></tr><tr><td>w</td><td>Weeks</td></tr><tr><td>d</td><td>Days</td></tr><tr><td>H</td><td>Hours</td></tr><tr><td>M</td><td>Minutes</td></tr></tbody></table></div>
-</div>
-<br class="table-break" />
-<div class="table"><a class="offset" id="table-cond-date-example-tests"></a><p class="title"><strong>Table 6.4. Example Date Tests</strong></p>
-<div class="table-contents"><table summary="Example Date Tests" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Test</th><th>Meaning</th></tr></thead><tbody><tr><td><code class="literal">%[y</code></td><td>This year</td></tr><tr><td><code class="literal">%[1y</code></td><td>This year</td></tr><tr><td><code class="literal">%[6m</code></td><td>In the last 6 months</td></tr><tr><td><code class="literal">%[w</code></td><td>This week</td></tr><tr><td><code class="literal">%[d</code></td><td>Today</td></tr><tr><td><code class="literal">%[4H</code></td><td>In the last 4 hours</td></tr></tbody></table></div>
-</div>
-<br class="table-break" />
-<div class="sect3">
-<div class="titlepage">
-<div>
-<div><h4 class="title"><a class="offset" id="cond-date-example1"></a>2.1. Example 1</h4></div>
-</div>
-</div>
-<p>We start with a one-condition test.</p>
-<div class="table"><a class="offset" id="table-cond-date-example1"></a><p class="title"><strong>Table 6.5. Example 1</strong></p>
-<div class="table-contents"><table summary="Example 1" border="1"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Test</th><th>Date Range</th><th>Format String</th><th>Example</th></tr></thead><tbody><tr><td><code class="literal">%[1m</code></td><td>This month</td><td><code class="literal">%[%b %d]</code></td><td>Dec 10</td></tr><tr><td> </td><td>Older</td><td><code class="literal">%[%Y-%m-%d]</code></td><td>2015-04-23</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /><p>The $index_format string would contain:</p><pre class="screen">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="cond-date"></a>&#160;Conditional Dates Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Use rules to choose date format</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Conditional Dates</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-cond-date</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.1</p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/nested-if/" title="18.&#160;Nested If Patch">nested-if patch</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“
+    <span class="quote">cond-date</span>”</span>patch allows you to construct
+    <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
+    <p>Mutt's default
+    <code class="literal">$index_format</code>displays email dates in the form: abbreviated-month day-of-month —
+    <span class="quote">“
+    <span class="quote">Jan 14</span>”</span>.</p>
+    <p>The format is configurable but only per-mailbox. This patch allows you to configure the display depending on the age of the email.</p>
+    <div class="table">
+      <a class="offset" id="table-cond-date-scheme"></a>
+      <p class="title">
+        <strong>Table&#160;6.2.&#160;Potential Formatting Scheme</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Potential Formatting Scheme" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Email Sent</th>
+              <th>Format</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Today</td>
+              <td>
+                <code class="literal">%H:%M</code>
+              </td>
+              <td>13:23</td>
+            </tr>
+            <tr>
+              <td>This Month</td>
+              <td>
+                <code class="literal">%a %d</code>
+              </td>
+              <td>Thu 17</td>
+            </tr>
+            <tr>
+              <td>This Year</td>
+              <td>
+                <code class="literal">%b %d</code>
+              </td>
+              <td>Dec 10</td>
+            </tr>
+            <tr>
+              <td>Older than 1 Year</td>
+              <td>
+                <code class="literal">%m/%y</code>
+              </td>
+              <td>06/14</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+    <p>For an explanation of the date formatting strings, see
+    <code class="literal">strftime(3).</code></p>
+    <p>By carefully picking your formats, the dates can remain unambiguous and compact.</p>
+    <p>Mutt's conditional format strings have the form: (whitespace introduced for clarity)</p>
+    <pre class="screen">
+%? TEST ? TRUE &amp; FALSE ?
+</pre>
+    <p>The examples below use the test
+    <span class="quote">“
+    <span class="quote">%[</span>”</span>— the date of the message in the local timezone. They will also work with
+    <span class="quote">“
+    <span class="quote">%(</span>”</span>— the local time that the message arrived.</p>
+    <p>The date tests are of the form:</p>
+    <pre class="screen">
+%[nX? TRUE &amp; FALSE ?
+</pre>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+          <span class="quote">“
+          <span class="quote">n</span>”</span>is an optional count (defaults to 1 if missing)</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="quote">“
+          <span class="quote">X</span>”</span>is the time period</p>
+        </li>
+      </ul>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-cond-date-format-codes"></a>
+      <p class="title">
+        <strong>Table&#160;6.3.&#160;Date Formatting Codes</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Date Formatting Codes" border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Letter</th>
+              <th>Time Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>y</td>
+              <td>Years</td>
+            </tr>
+            <tr>
+              <td>m</td>
+              <td>Months</td>
+            </tr>
+            <tr>
+              <td>w</td>
+              <td>Weeks</td>
+            </tr>
+            <tr>
+              <td>d</td>
+              <td>Days</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>Hours</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>Minutes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+    <div class="table">
+      <a class="offset" id="table-cond-date-example-tests"></a>
+      <p class="title">
+        <strong>Table&#160;6.4.&#160;Example Date Tests</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Example Date Tests" border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Test</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">%[y</code>
+              </td>
+              <td>This year</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%[1y</code>
+              </td>
+              <td>This year</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%[6m</code>
+              </td>
+              <td>In the last 6 months</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%[w</code>
+              </td>
+              <td>This week</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%[d</code>
+              </td>
+              <td>Today</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%[4H</code>
+              </td>
+              <td>In the last 4 hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+    <div class="sect3">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="cond-date-example1"></a>2.1.&#160;Example 1</h4>
+          </div>
+        </div>
+      </div>
+      <p>We start with a one-condition test.</p>
+      <div class="table">
+        <a class="offset" id="table-cond-date-example1"></a>
+        <p class="title">
+          <strong>Table&#160;6.5.&#160;Example 1</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Example 1" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>Date Range</th>
+                <th>Format String</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="literal">%[1m</code>
+                </td>
+                <td>This month</td>
+                <td>
+                  <code class="literal">%[%b %d]</code>
+                </td>
+                <td>Dec 10</td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+                <td>Older</td>
+                <td>
+                  <code class="literal">%[%Y-%m-%d]</code>
+                </td>
+                <td>2015-04-23</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <p>The $index_format string would contain:</p>
+      <pre class="screen">
 %?[1m?%[%b %d]&amp;%[%Y-%m-%d]?
-</pre><p>
-				Reparsed a little, for clarity, you can see the
-				test condition and the two format strings.
-			</p><pre class="screen">
+</pre>
+      <p>Reparsed a little, for clarity, you can see the test condition and the two format strings.</p>
+      <pre class="screen">
 %?[1m?        &amp;           ?
       %[%b %d] %[%Y-%m-%d]
-</pre></div>
-<div class="sect3">
-<div class="titlepage">
-<div>
-<div><h4 class="title"><a class="offset" id="cond-date-example2"></a>2.2. Example 2</h4></div>
-</div>
-</div>
-<p>
-			This example contains three test conditions and four date formats.
-			</p>
-<div class="table"><a class="offset" id="table-cond-date-example2"></a><p class="title"><strong>Table 6.6. Example 2</strong></p>
-<div class="table-contents"><table summary="Example 2" border="1"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Test</th><th>Date Range</th><th>Format String</th><th>Example</th></tr></thead><tbody><tr><td><code class="literal">%[d</code></td><td>Today</td><td><code class="literal">%[%H:%M ] </code></td><td>12:34</td></tr><tr><td><code class="literal">%[m</code></td><td>This month</td><td><code class="literal">%[%a %d]</code></td><td>Thu 12</td></tr><tr><td><code class="literal">%[y</code></td><td>This year</td><td><code class="literal">%[%b %d]</code></td><td>Dec 10</td></tr><tr><td> </td><td>Older</td><td><code class="literal">%[%m/%y ]</code></td><td>06/15</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /><p>The $index_format string would contain:</p><pre class="screen">
+</pre>
+    </div>
+    <div class="sect3">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="cond-date-example2"></a>2.2.&#160;Example 2</h4>
+          </div>
+        </div>
+      </div>
+      <p>This example contains three test conditions and four date formats.</p>
+      <div class="table">
+        <a class="offset" id="table-cond-date-example2"></a>
+        <p class="title">
+          <strong>Table&#160;6.6.&#160;Example 2</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Example 2" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>Date Range</th>
+                <th>Format String</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="literal">%[d</code>
+                </td>
+                <td>Today</td>
+                <td>
+                  <code class="literal">%[%H:%M ]</code>
+                </td>
+                <td>12:34</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">%[m</code>
+                </td>
+                <td>This month</td>
+                <td>
+                  <code class="literal">%[%a %d]</code>
+                </td>
+                <td>Thu 12</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">%[y</code>
+                </td>
+                <td>This year</td>
+                <td>
+                  <code class="literal">%[%b %d]</code>
+                </td>
+                <td>Dec 10</td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+                <td>Older</td>
+                <td>
+                  <code class="literal">%[%m/%y ]</code>
+                </td>
+                <td>06/15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <p>The $index_format string would contain:</p>
+      <pre class="screen">
 %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;%[%b %d]&gt;&amp;%[%m/%y ]&gt;
-</pre><p>
-				Reparsed a little, for clarity, you can see the
-				test conditions and the four format strings.
-			</p><pre class="screen">
+</pre>
+      <p>Reparsed a little, for clarity, you can see the test conditions and the four format strings.</p>
+      <pre class="screen">
 %&lt;[y?                                       &amp;%[%m/%y ]&gt;  Older
      %&lt;[m?                        &amp;%[%b %d]&gt;             This year
           %&lt;[d?         &amp;%[%a %d]&gt;                       This month
                %[%H:%M ]                                 Today
-</pre><p>
-			This a another view of the same example, with some whitespace
-			for clarity.
-			</p><pre class="screen">
+</pre>
+      <p>This a another view of the same example, with some whitespace for clarity.</p>
+      <pre class="screen">
 %&lt;[y? %&lt;[m? %&lt;[d? AAA &amp; BBB &gt; &amp; CCC &gt; &amp; DDD &gt;
 </pre>
-<div class="literallayout"><p><br />
-AAA = %[%H:%M ]<br />
-BBB = %[%a %d]<br />
-CCC = %[%b %d]<br />
-DDD = %[%m/%y ]<br />
-			</p></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-variables"></a>3. Variables</h3></div>
-</div>
-</div>
-<p>
-		The <span class="quote">“<span class="quote">cond-date</span>”</span> patch doesn't have any config of its own.
-		It modifies the behavior of the format strings.
-        </p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-muttrc"></a>4. Muttrc</h3></div>
-</div>
-</div>
-<pre class="screen">
+      <div class="literallayout">
+        <p>
+        <br />AAA&#160;=&#160;%[%H:%M&#160;]
+        <br />BBB&#160;=&#160;%[%a&#160;%d]
+        <br />CCC&#160;=&#160;%[%b&#160;%d]
+        <br />DDD&#160;=&#160;%[%m/%y&#160;]
+        <br /></p>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-variables"></a>3.&#160;Variables</h3>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“
+    <span class="quote">cond-date</span>”</span>patch doesn't have any config of its own. It modifies the behavior of the format strings.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'index-color' feature.
 #
 # The default index_format is:
@@ -159,35 +461,91 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
 # %[y   This year   %[%b %d]       Dec 10
 # -     Older       %[%m/%y ]      06/15
 # vim: syntax=muttrc</span>
-</pre></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-see-also"></a>5. See Also</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/manual/reference.html#index-format" title="3.121. index_format">$index_format</a></p></li><li class="listitem"><p><a class="link" href="/feature/nested-if/" title="18. Nested If Patch">nested-if patch</a></p></li><li class="listitem"><p><code class="literal">strftime(3)</code></p></li></ul></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-known-bugs"></a>6. Known Bugs</h3></div>
-</div>
-</div>
-<p>
-			Date parsing doesn't quite do what you expect.
-			<span class="quote">“<span class="quote">1w</span>”</span> doesn't mean the <span class="quote">“<span class="quote">in the last 7 days</span>”</span>, but
-			<span class="quote">“<span class="quote"><span class="emphasis"><em>this</em></span> week</span>”</span>.  This doesn't match
-			the normal Mutt behaviour: for example <code class="literal">~d&gt;1w</code>
-			means emails dated in the last 7 days.
-		</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="cond-date-credits"></a>7. Credits</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Aaron Schrab <code class="email">&lt;<a class="email" href="mailto:aaron@schrab.com">aaron@schrab.com</a>&gt;</code></p></li><li class="listitem"><p>Eric Davis <code class="email">&lt;<a class="email" href="mailto:edavis@insanum.com">edavis@insanum.com</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
-</div>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/nested-if/" title="18.&#160;Nested If Patch">nested-if patch</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <code class="literal">strftime(3)</code>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-known-bugs"></a>6.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>Date parsing doesn't quite do what you expect.
+    <span class="quote">“
+    <span class="quote">1w</span>”</span>doesn't mean the
+    <span class="quote">“
+    <span class="quote">in the last 7 days</span>”</span>, but
+    <span class="quote">“
+    <span class="quote">
+    <span class="emphasis">
+      <em>this</em>
+    </span>week</span>”</span>. This doesn't match the normal Mutt behaviour: for example
+    <code class="literal">~d&gt;1w</code>means emails dated in the last 7 days.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="cond-date-credits"></a>7.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Aaron Schrab
+          <code class="email">&lt;
+          <a class="email" href="mailto:aaron@schrab.com">aaron@schrab.com</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Eric Davis
+          <code class="email">&lt;
+          <a class="email" href="mailto:edavis@insanum.com">edavis@insanum.com</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endraw %}

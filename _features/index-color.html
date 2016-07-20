@@ -8,71 +8,187 @@ base: mutt/1.6.1
 ---
 {% raw %}
 <div class="sect1">
-<div class="titlepage">
-<div>
-<div><h2 class="title" style="clear: both"><a class="offset" id="index-color"></a> Index Color Patch</h2></div>
-<div><h3 class="subtitle">Custom rules for theming the email index</h3></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-patch"></a>1. Patch</h3></div>
-</div>
-</div>
-<p>
-			To check if Mutt supports <span class="quote">“<span class="quote">Index Color</span>”</span>, look for
-			<span class="quote">“<span class="quote">patch-index-color</span>”</span> in the mutt version.
-			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
-		</p>
-<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.6.1</p></li><li class="listitem"><p><a class="link" href="/feature/status-color/" title="26. Status Color Patch">status-color patch</a></p></li></ul></div>
-<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-intro"></a>2. Introduction</h3></div>
-</div>
-</div>
-<p>
-		The <span class="quote">“<span class="quote">index-color</span>”</span> patch allows you to specify colors for
-		individual parts of the email index. e.g. Subject, Author, Flags.
-        </p><p>
-		First choose which part of the index you'd like to color.
-		Then, if needed, pick a pattern to match.
-        </p><p>
-		Note: The pattern does not have to refer to the object you wish to
-		color.  e.g.
-		</p><pre class="screen">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="index-color"></a>&#160;Index Color Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Custom rules for theming the email index</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Index Color</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-index-color</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.1</p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/status-color/" title="26.&#160;Status Color Patch">status-color patch</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“
+    <span class="quote">index-color</span>”</span>patch allows you to specify colors for individual parts of the email index. e.g. Subject, Author, Flags.</p>
+    <p>First choose which part of the index you'd like to color. Then, if needed, pick a pattern to match.</p>
+    <p>Note: The pattern does not have to refer to the object you wish to color. e.g.</p>
+    <pre class="screen">
 color index_author red default "~smutt"
-</pre><p>
-		The author appears red when the subject (~s) contains <span class="quote">“<span class="quote">mutt</span>”</span>.
-        </p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-colors"></a>3. Colors</h3></div>
-</div>
-</div>
-<p>
-		All the colors default to <code class="literal">default</code>, i.e. unset.
-        </p><p>
-		The index objects can be themed using the <code class="literal">color</code> command.
-		Some objects require a pattern.
-        </p><pre class="screen">
+</pre>
+    <p>The author appears red when the subject (~s) contains
+    <span class="quote">“
+    <span class="quote">mutt</span>”</span>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-colors"></a>3.&#160;Colors</h3>
+        </div>
+      </div>
+    </div>
+    <p>All the colors default to
+    <code class="literal">default</code>, i.e. unset.</p>
+    <p>The index objects can be themed using the
+    <code class="literal">color</code>command. Some objects require a pattern.</p>
+    <pre class="screen">
 color index-object foreground background
 color index-object foreground background pattern
 </pre>
-<div class="table"><a class="offset" id="table-index-color-colors"></a><p class="title"><strong>Table 6.7. Index Colors</strong></p>
-<div class="table-contents"><table summary="Index Colors" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Object</th><th>Pattern</th><th>Highlights</th></tr></thead><tbody><tr><td><code class="literal">index</code></td><td>yes</td><td>Entire index line</td></tr><tr><td><code class="literal">index_author</code></td><td>yes</td><td>Author name, %A %a %F %L %n</td></tr><tr><td><code class="literal">index_collapsed</code></td><td>no</td><td>Number of messages in a collapsed thread, %M</td></tr><tr><td><code class="literal">index_date</code></td><td>no</td><td>Date field</td></tr><tr><td><code class="literal">index_flags</code></td><td>yes</td><td>Message flags, %S %Z</td></tr><tr><td><code class="literal">index_label</code></td><td>no</td><td>Message label, %y %Y</td></tr><tr><td><code class="literal">index_number</code></td><td>no</td><td>Message number, %C</td></tr><tr><td><code class="literal">index_size</code></td><td>no</td><td>Message size, %c %l</td></tr><tr><td><code class="literal">index_subject</code></td><td>yes</td><td>Subject, %s</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-muttrc"></a>4. Muttrc</h3></div>
-</div>
-</div>
-<pre class="screen">
+    <div class="table">
+      <a class="offset" id="table-index-color-colors"></a>
+      <p class="title">
+        <strong>Table&#160;6.7.&#160;Index Colors</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Index Colors" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Object</th>
+              <th>Pattern</th>
+              <th>Highlights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">index</code>
+              </td>
+              <td>yes</td>
+              <td>Entire index line</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_author</code>
+              </td>
+              <td>yes</td>
+              <td>Author name, %A %a %F %L %n</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_collapsed</code>
+              </td>
+              <td>no</td>
+              <td>Number of messages in a collapsed thread, %M</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_date</code>
+              </td>
+              <td>no</td>
+              <td>Date field</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_flags</code>
+              </td>
+              <td>yes</td>
+              <td>Message flags, %S %Z</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_label</code>
+              </td>
+              <td>no</td>
+              <td>Message label, %y %Y</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_number</code>
+              </td>
+              <td>no</td>
+              <td>Message number, %C</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_size</code>
+              </td>
+              <td>no</td>
+              <td>Message size, %c %l</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_subject</code>
+              </td>
+              <td>yes</td>
+              <td>Subject, %s</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'index-color' feature.
 # Entire index line</span>
 color index white black '.*'
@@ -98,29 +214,113 @@ color index_number red default
 <span class="comment"># Message size, %c %l</span>
 color index_size cyan default
 <span class="comment"># vim: syntax=muttrc</span>
-</pre></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-see-also"></a>5. See Also</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/manual/advancedusage.html#regexp" title="2. Regular Expressions">Regular Expressions</a></p></li><li class="listitem"><p><a class="link" href="/manual/advancedusage.html#patterns" title="3. Patterns: Searching, Limiting and Tagging">Patterns</a></p></li><li class="listitem"><p><a class="link" href="/manual/reference.html#index-format" title="3.121. index_format">$index_format</a></p></li><li class="listitem"><p><a class="link" href="/manual/configuration.html#color" title="9. Using Color and Mono Video Attributes">Color command</a></p></li><li class="listitem"><p><a class="link" href="/feature/status-color/" title="26. Status Color Patch">Status-Color patch</a></p></li><li class="listitem"><p><a class="link" href="/feature/keywords/" title="16. Keywords Patch">Keywords patch</a></p></li></ul></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-known-bugs"></a>6. Known Bugs</h3></div>
-</div>
-</div>
-<p>None</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="index-color-credits"></a>7. Credits</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Christian Aichinger <code class="email">&lt;<a class="email" href="mailto:Greek0@gmx.net">Greek0@gmx.net</a>&gt;</code></p></li><li class="listitem"><p>Christoph <span class="quote">“<span class="quote">Myon</span>”</span> Berg <code class="email">&lt;<a class="email" href="mailto:myon@debian.org">myon@debian.org</a>&gt;</code></p></li><li class="listitem"><p>Elimar Riesebieter <code class="email">&lt;<a class="email" href="mailto:riesebie@lxtec.de">riesebie@lxtec.de</a>&gt;</code></p></li><li class="listitem"><p>Eric Davis <code class="email">&lt;<a class="email" href="mailto:edavis@insanum.com">edavis@insanum.com</a>&gt;</code></p></li><li class="listitem"><p>Vladimir Marek <code class="email">&lt;<a class="email" href="mailto:Vladimir.Marek@oracle.com">Vladimir.Marek@oracle.com</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
-</div>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Patterns</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/status-color/" title="26.&#160;Status Color Patch">Status-Color patch</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/keywords/" title="16.&#160;Keywords Patch">Keywords patch</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-known-bugs"></a>6.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="index-color-credits"></a>7.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Christian Aichinger
+          <code class="email">&lt;
+          <a class="email" href="mailto:Greek0@gmx.net">Greek0@gmx.net</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Christoph
+          <span class="quote">“
+          <span class="quote">Myon</span>”</span>Berg
+          <code class="email">&lt;
+          <a class="email" href="mailto:myon@debian.org">myon@debian.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Elimar Riesebieter
+          <code class="email">&lt;
+          <a class="email" href="mailto:riesebie@lxtec.de">riesebie@lxtec.de</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Eric Davis
+          <code class="email">&lt;
+          <a class="email" href="mailto:edavis@insanum.com">edavis@insanum.com</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Vladimir Marek
+          <code class="email">&lt;
+          <a class="email" href="mailto:Vladimir.Marek@oracle.com">Vladimir.Marek@oracle.com</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endraw %}

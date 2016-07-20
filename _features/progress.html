@@ -8,52 +8,110 @@ base: mutt/1.6.1
 ---
 {% raw %}
 <div class="sect1">
-<div class="titlepage">
-<div>
-<div><h2 class="title" style="clear: both"><a class="offset" id="progress"></a> Progress Bar Patch</h2></div>
-<div><h3 class="subtitle">Show a visual progress bar on slow operations</h3></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-patch"></a>1. Patch</h3></div>
-</div>
-</div>
-<p>
-			To check if Mutt supports <span class="quote">“<span class="quote">Progress Bar</span>”</span>, look for
-			<span class="quote">“<span class="quote">patch-progress</span>”</span> in the mutt version.
-			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
-		</p>
-<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.6.1</p></li></ul></div>
-<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-intro"></a>2. Introduction</h3></div>
-</div>
-</div>
-<p>
-		The <span class="quote">“<span class="quote">progress</span>”</span> patch shows a visual progress bar on slow
-		tasks, such as indexing a large folder over the net.
-        </p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-colors"></a>3. Colors</h3></div>
-</div>
-</div>
-<div class="table"><a class="offset" id="table-progress-colors"></a><p class="title"><strong>Table 6.17. Progress Colors</strong></p>
-<div class="table-contents"><table summary="Progress Colors" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Name</th><th>Default Color</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">progress</code></td><td>default</td><td>Visual progress bar</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-muttrc"></a>4. Muttrc</h3></div>
-</div>
-</div>
-<pre class="screen">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="progress"></a>&#160;Progress Bar Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Show a visual progress bar on slow operations</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Progress Bar</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-progress</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.1</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“
+    <span class="quote">progress</span>”</span>patch shows a visual progress bar on slow tasks, such as indexing a large folder over the net.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-colors"></a>3.&#160;Colors</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-progress-colors"></a>
+      <p class="title">
+        <strong>Table&#160;6.17.&#160;Progress Colors</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Progress Colors" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Default Color</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">progress</code>
+              </td>
+              <td>default</td>
+              <td>Visual progress bar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'progress' patch.
 # The 'progress' patch provides clear visual feedback for
 # slow tasks, such as indexing a large folder over the net.
@@ -61,29 +119,81 @@ base: mutt/1.6.1
 # White text on a red background</span>
 color progress white red
 <span class="comment"># vim: syntax=muttrc</span>
-</pre></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-see-also"></a>5. See Also</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/manual/configuration.html#color" title="9. Using Color and Mono Video Attributes">Color command</a></p></li></ul></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-known-bugs"></a>6. Known Bugs</h3></div>
-</div>
-</div>
-<p>None</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="progress-credits"></a>7. Credits</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Rocco Rutte <code class="email">&lt;<a class="email" href="mailto:pdmef@gmx.net">pdmef@gmx.net</a>&gt;</code></p></li><li class="listitem"><p>Vincent Lefevre <code class="email">&lt;<a class="email" href="mailto:vincent@vinc17.org">vincent@vinc17.org</a>&gt;</code></p></li><li class="listitem"><p>Stefan Kuhn <code class="email">&lt;<a class="email" href="mailto:wuodan@hispeed.ch">wuodan@hispeed.ch</a>&gt;</code></p></li><li class="listitem"><p>Karel Zak <code class="email">&lt;<a class="email" href="mailto:kzak@redhat.com">kzak@redhat.com</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
-</div>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-known-bugs"></a>6.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="progress-credits"></a>7.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Rocco Rutte
+          <code class="email">&lt;
+          <a class="email" href="mailto:pdmef@gmx.net">pdmef@gmx.net</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Vincent Lefevre
+          <code class="email">&lt;
+          <a class="email" href="mailto:vincent@vinc17.org">vincent@vinc17.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Stefan Kuhn
+          <code class="email">&lt;
+          <a class="email" href="mailto:wuodan@hispeed.ch">wuodan@hispeed.ch</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Karel Zak
+          <code class="email">&lt;
+          <a class="email" href="mailto:kzak@redhat.com">kzak@redhat.com</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endraw %}

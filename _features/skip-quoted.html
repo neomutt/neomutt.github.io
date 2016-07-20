@@ -8,57 +8,112 @@ base: mutt/1.6.1
 ---
 {% raw %}
 <div class="sect1">
-<div class="titlepage">
-<div>
-<div><h2 class="title" style="clear: both"><a class="offset" id="skip-quoted-patch"></a> Skip-Quoted Patch</h2></div>
-<div><h3 class="subtitle">Leave some context visible</h3></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-patch2"></a>1. Patch</h3></div>
-</div>
-</div>
-<p>
-			To check if Mutt supports <span class="quote">“<span class="quote">skip-quoted</span>”</span>, look for
-			<span class="quote">“<span class="quote">patch-skip-quoted</span>”</span> in the mutt version.
-			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
-		</p>
-<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.6.1</p></li></ul></div>
-<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-intro"></a>2. Introduction</h3></div>
-</div>
-</div>
-<p>
-			When viewing an email, the
-			<code class="literal">&lt;skip-to-quoted&gt;</code> function (by default the
-			<code class="literal">S</code> key) will scroll past any quoted text.
-			Sometimes, a little context is useful.
-		</p><p>
-			By setting the <code class="literal">$skip_quoted_offset</code> variable, you
-			can select how much of the quoted text is left visible.
-		</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-variables"></a>3. Variables</h3></div>
-</div>
-</div>
-<div class="table"><a class="offset" id="table-skip-quoted-variables"></a><p class="title"><strong>Table 6.23. Skip-Quoted Variables</strong></p>
-<div class="table-contents"><table summary="Skip-Quoted Variables" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Name</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td><code class="literal">skip_quoted_offset</code></td><td>number</td><td>0</td></tr></tbody></table></div>
-</div>
-<br class="table-break" /></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-muttrc"></a>4. Muttrc</h3></div>
-</div>
-</div>
-<pre class="screen">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="skip-quoted-patch"></a>&#160;Skip-Quoted Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Leave some context visible</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-patch2"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">skip-quoted</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-skip-quoted</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.1</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>When viewing an email, the
+    <code class="literal">&lt;skip-to-quoted&gt;</code>function (by default the
+    <code class="literal">S</code>key) will scroll past any quoted text. Sometimes, a little context is useful.</p>
+    <p>By setting the
+    <code class="literal">$skip_quoted_offset</code>variable, you can select how much of the quoted text is left visible.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-variables"></a>3.&#160;Variables</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-skip-quoted-variables"></a>
+      <p class="title">
+        <strong>Table&#160;6.23.&#160;Skip-Quoted Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Skip-Quoted Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">skip_quoted_offset</code>
+              </td>
+              <td>number</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'skip-quoted' patch.
 # The 'S' (skip-quoted) command scrolls the pager past the quoted text (usually
 # indented with '&gt; '.  Setting 'skip_quoted_offset' leaves some lines of quoted
@@ -66,29 +121,61 @@ base: mutt/1.6.1
 # Show three quoted lines before the reply</span>
 set skip_quoted_offset = 3
 <span class="comment"># vim: syntax=muttrc</span>
-</pre></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-see-also"></a>5. See Also</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li></ul></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-known-bugs"></a>6. Known Bugs</h3></div>
-</div>
-</div>
-<p>None</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="skip-quoted-credits"></a>7. Credits</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>David Sterba <code class="email">&lt;<a class="email" href="mailto:dsterba@suse.cz">dsterba@suse.cz</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
-</div>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-known-bugs"></a>6.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="skip-quoted-credits"></a>7.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>David Sterba
+          <code class="email">&lt;
+          <a class="email" href="mailto:dsterba@suse.cz">dsterba@suse.cz</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endraw %}

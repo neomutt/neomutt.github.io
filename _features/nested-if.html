@@ -8,130 +8,166 @@ base: mutt/1.6.1
 ---
 {% raw %}
 <div class="sect1">
-<div class="titlepage">
-<div>
-<div><h2 class="title" style="clear: both"><a class="offset" id="nested-if"></a> Nested If Patch</h2></div>
-<div><h3 class="subtitle">Allow complex nested conditions in format strings</h3></div>
-</div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-patch"></a>1. Patch</h3></div>
-</div>
-</div>
-<p>
-			To check if Mutt supports <span class="quote">“<span class="quote">Nested If</span>”</span>, look for
-			<span class="quote">“<span class="quote">patch-nested-if</span>”</span> in the mutt version.
-			See: <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2. Mutt Patches">Section 1.2, “Mutt Patches”</a>.
-		</p>
-<div class="itemizedlist"><p class="title"><strong>Dependencies:</strong></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>mutt-1.6.1</p></li></ul></div>
-<p>This patch is part of the <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-intro"></a>2. Introduction</h3></div>
-</div>
-</div>
-<p>
-			Mutt's format strings can contain embedded if-then-else conditions.
-			They are of the form:
-		</p><pre class="screen">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="nested-if"></a>&#160;Nested If Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Allow complex nested conditions in format strings</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="nested-if-patch"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Nested If</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-nested-if</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.6.1</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="nested-if-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>Mutt's format strings can contain embedded if-then-else conditions. They are of the form:</p>
+    <pre class="screen">
 %?VAR?TRUE&amp;FALSE?
-</pre><p>
-			If the variable <span class="quote">“<span class="quote">VAR</span>”</span> has a value greater than zero,
-			print the <span class="quote">“<span class="quote">TRUE</span>”</span> string, otherwise print the
-			<span class="quote">“<span class="quote">FALSE</span>”</span> string.
-		</p><p>
-			e.g.  <code class="literal">%?S?Size: %S&amp;Empty?</code>
-		</p><p>Which can be read as:</p>
-<div class="literallayout"><p><br />
-		    if (%S &gt; 0) {<br />
-		        print "Size: %S"<br />
-		    } else {<br />
-		        print "Empty"<br />
-		    }<br />
-		</p></div>
-<p>
-			These conditions are useful, but in Mutt they cannot be nested
-			within one another.  This patch uses the notation
-			<code class="literal">%&lt;VAR?TRUE&amp;FALSE&gt;</code> and allows them to be nested.
-		</p><p>
-			The <code class="literal">%&lt;...&gt;</code> notation was used to format the
-			current local time.  but that's not really very useful since mutt
-			has no means of refreshing the screen periodically.
-		</p><p>
-			A simple nested condition might be:
-			(Some whitespace has been introduced for clarity)
-		</p>
-<div class="literallayout"><p><br />
-		    %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions<br />
-		         %&lt;y? XY &amp; X &gt;                      x&gt;0<br />
-		              XY                            x&gt;0,y&gt;0<br />
-		                   X                        x&gt;0,y=0<br />
-		</p></div>
-<div class="literallayout"><p><br />
-		    %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions<br />
-		                         %&lt;y? Y &amp; NONE &gt;    x=0<br />
-		                              Y             x=0,y&gt;0<br />
-		                                  NONE      x=0,y=0<br />
-		</p></div>
-<p>Equivalent to:</p>
-<div class="literallayout"><p><br />
-		    if (x &gt; 0) {<br />
-		        if (y &gt; 0) {<br />
-		            print 'XY'<br />
-		        } else {<br />
-		            print 'X'<br />
-		        }<br />
-		    } else {<br />
-		        if (y &gt; 0) {<br />
-		            print 'Y'<br />
-		        } else {<br />
-		            print 'NONE'<br />
-		        }<br />
-		    }<br />
-		</p></div>
-<p>Examples:</p><pre class="screen">
+</pre>
+    <p>If the variable
+    <span class="quote">“
+    <span class="quote">VAR</span>”</span>has a value greater than zero, print the
+    <span class="quote">“
+    <span class="quote">TRUE</span>”</span>string, otherwise print the
+    <span class="quote">“
+    <span class="quote">FALSE</span>”</span>string.</p>
+    <p>e.g.
+    <code class="literal">%?S?Size: %S&amp;Empty?</code></p>
+    <p>Which can be read as:</p>
+    <div class="literallayout">
+      <p>
+      <br />&#160;&#160;&#160;&#160;if&#160;(%S&#160;&gt;&#160;0)&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;"Size:&#160;%S"
+      <br />&#160;&#160;&#160;&#160;}&#160;else&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;"Empty"
+      <br />&#160;&#160;&#160;&#160;}
+      <br /></p>
+    </div>
+    <p>These conditions are useful, but in Mutt they cannot be nested within one another. This patch uses the notation
+    <code class="literal">%&lt;VAR?TRUE&amp;FALSE&gt;</code>and allows them to be nested.</p>
+    <p>The
+    <code class="literal">%&lt;...&gt;</code>notation was used to format the current local time. but that's not really very useful since mutt has no means of refreshing the screen periodically.</p>
+    <p>A simple nested condition might be: (Some whitespace has been introduced for clarity)</p>
+    <div class="literallayout">
+      <p>
+      <br />&#160;&#160;&#160;&#160;%&lt;x?&#160;%&lt;y?&#160;XY&#160;&amp;&#160;X&#160;&gt;&#160;&amp;&#160;%&lt;y?&#160;Y&#160;&amp;&#160;NONE&#160;&gt;&#160;&gt;&#160;&#160;Conditions
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%&lt;y?&#160;XY&#160;&amp;&#160;X&#160;&gt;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;x&gt;0
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;x&gt;0,y&gt;0
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;x&gt;0,y=0
+      <br /></p>
+    </div>
+    <div class="literallayout">
+      <p>
+      <br />&#160;&#160;&#160;&#160;%&lt;x?&#160;%&lt;y?&#160;XY&#160;&amp;&#160;X&#160;&gt;&#160;&amp;&#160;%&lt;y?&#160;Y&#160;&amp;&#160;NONE&#160;&gt;&#160;&gt;&#160;&#160;Conditions
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%&lt;y?&#160;Y&#160;&amp;&#160;NONE&#160;&gt;&#160;&#160;&#160;&#160;x=0
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Y&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;x=0,y&gt;0
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NONE&#160;&#160;&#160;&#160;&#160;&#160;x=0,y=0
+      <br /></p>
+    </div>
+    <p>Equivalent to:</p>
+    <div class="literallayout">
+      <p>
+      <br />&#160;&#160;&#160;&#160;if&#160;(x&#160;&gt;&#160;0)&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if&#160;(y&#160;&gt;&#160;0)&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'XY'
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}&#160;else&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'X'
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}
+      <br />&#160;&#160;&#160;&#160;}&#160;else&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if&#160;(y&#160;&gt;&#160;0)&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'Y'
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}&#160;else&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'NONE'
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}
+      <br />&#160;&#160;&#160;&#160;}
+      <br /></p>
+    </div>
+    <p>Examples:</p>
+    <pre class="screen">
 set index_format='%4C %Z %{%b %d} %-25.25n %s%&gt; %&lt;M?%M Msgs &amp;%&lt;l?%l Lines&amp;%c Bytes&gt;&gt;'
 </pre>
-<div class="literallayout"><p><br />
-		    if a thread is folded<br />
-		        display the number of messages (%M)<br />
-		    else if we know how many lines in the message<br />
-		        display lines in message (%l)<br />
-		    else<br />
-		        display the size of the message in bytes (%c)<br />
-		</p></div>
-<pre class="screen">
+    <div class="literallayout">
+      <p>
+      <br />&#160;&#160;&#160;&#160;if&#160;a&#160;thread&#160;is&#160;folded
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;the&#160;number&#160;of&#160;messages&#160;(%M)
+      <br />&#160;&#160;&#160;&#160;else&#160;if&#160;we&#160;know&#160;how&#160;many&#160;lines&#160;in&#160;the&#160;message
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;lines&#160;in&#160;message&#160;(%l)
+      <br />&#160;&#160;&#160;&#160;else
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;the&#160;size&#160;of&#160;the&#160;message&#160;in&#160;bytes&#160;(%c)
+      <br /></p>
+    </div>
+    <pre class="screen">
 set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp;%c&gt;&gt;'
 </pre>
-<div class="literallayout"><p><br />
-		    if a thread is folded<br />
-		        display the number of messages (%M)<br />
-		        display the subject (%s)<br />
-		    else if we know how many lines in the message<br />
-		        display lines in message (%l)<br />
-		    else<br />
-		        display the size of the message in bytes (%c)<br />
-		</p></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-variables"></a>3. Variables</h3></div>
-</div>
-</div>
-		The <span class="quote">“<span class="quote">nested-if</span>”</span> patch doesn't have any config of its own.
-		It modifies the behavior of the format strings.
-	</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-muttrc"></a>4. Muttrc</h3></div>
-</div>
-</div>
-<pre class="screen">
+    <div class="literallayout">
+      <p>
+      <br />&#160;&#160;&#160;&#160;if&#160;a&#160;thread&#160;is&#160;folded
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;the&#160;number&#160;of&#160;messages&#160;(%M)
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;the&#160;subject&#160;(%s)
+      <br />&#160;&#160;&#160;&#160;else&#160;if&#160;we&#160;know&#160;how&#160;many&#160;lines&#160;in&#160;the&#160;message
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;lines&#160;in&#160;message&#160;(%l)
+      <br />&#160;&#160;&#160;&#160;else
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display&#160;the&#160;size&#160;of&#160;the&#160;message&#160;in&#160;bytes&#160;(%c)
+      <br /></p>
+    </div>
+  </div>
+  <div class="sect2">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h3 class="title">
+        <a class="offset" id="nested-if-variables"></a>3.&#160;Variables</h3>
+      </div>
+    </div>
+  </div>The
+  <span class="quote">“
+  <span class="quote">nested-if</span>”</span>patch doesn't have any config of its own. It modifies the behavior of the format strings.</div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="nested-if-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
 <span class="comment"># Example Mutt config file for the 'nested-if' feature.
 # This patch uses the format: '%&lt;VAR?TRUE&amp;FALSE&gt;' for conditional
 # format strings that can be nested.
@@ -152,29 +188,75 @@ set index_format='%4C %Z %{%b %d} %-25.25n %s%&gt; %&lt;M?%M Msgs &amp;%&lt;l?%l
 #       display the size of the message in bytes (%c)</span>
 set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp;%c&gt;&gt;'
 <span class="comment"># vim: syntax=muttrc</span>
-</pre></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-see-also"></a>5. See Also</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a></p></li><li class="listitem"><p><a class="link" href="/feature/cond-date/" title="11. Conditional Dates Patch">cond-date patch</a></p></li><li class="listitem"><p><a class="link" href="/manual/reference.html#index-format" title="3.121. index_format">$index_format</a></p></li><li class="listitem"><p><a class="link" href="/manual/reference.html#status-format" title="3.338. status_format">$status_format</a></p></li></ul></div>
-</div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-known-bugs"></a>6. Known Bugs</h3></div>
-</div>
-</div>
-		Patch overwrites $&lt;fmt&gt; handler in <code class="literal">$index_format</code></div>
-<div class="sect2">
-<div class="titlepage">
-<div>
-<div><h3 class="title"><a class="offset" id="nested-if-credits"></a>7. Credits</h3></div>
-</div>
-</div>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>David Champion <code class="email">&lt;<a class="email" href="mailto:dgc@uchicago.edu">dgc@uchicago.edu</a>&gt;</code></p></li><li class="listitem"><p>Richard Russon <code class="email">&lt;<a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p></li></ul></div>
-</div>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="nested-if-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/cond-date/" title="11.&#160;Conditional Dates Patch">cond-date patch</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/reference.html#index-format" title="3.121.&#160;index_format">$index_format</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/reference.html#status-format" title="3.338.&#160;status_format">$status_format</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h3 class="title">
+        <a class="offset" id="nested-if-known-bugs"></a>6.&#160;Known Bugs</h3>
+      </div>
+    </div>
+  </div>Patch overwrites $&lt;fmt&gt; handler in
+  <code class="literal">$index_format</code></div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="nested-if-credits"></a>7.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>David Champion
+          <code class="email">&lt;
+          <a class="email" href="mailto:dgc@uchicago.edu">dgc@uchicago.edu</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endraw %}
