@@ -9,7 +9,7 @@ includes_dir: ./_includes
 title: NeoMutt
 name: NeoMutt
 email: rich@flatcap.org
-description: Bringing together all the Mutt Code
+description: Teaching an Old Dog New Tricks
 
 url: http://www.neomutt.org
 
@@ -25,7 +25,7 @@ timezone: UTC
 # Google Analytics
 gaaccount: 'UA-377438-9'
 
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:titl
 paginate: 3
 
 kramdown:

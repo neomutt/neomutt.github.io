@@ -1,7 +1,9 @@
 ---
-layout: home
+layout: features
 title: Sidebar Intro
+status: ignore
 ---
+{% raw %}
 <div class="sect2">
   <div class="titlepage">
     <div>
@@ -90,12 +92,9 @@ Seas          1/7|  4      Sep 25  Grace Hall       ( 27)  Capybara
 </pre>
     <p>Let's map some functions:</p>
     <pre class="screen">
-bind index,pager \CP sidebar-prev      
-<span class="comment"># Ctrl-Shift-P - Previous Mailbox</span>
-bind index,pager \CN sidebar-next      
-<span class="comment"># Ctrl-Shift-N - Next Mailbox</span>
-bind index,pager \CO sidebar-open      
-<span class="comment"># Ctrl-Shift-O - Open Highlighted Mailbox</span>
+bind index,pager \CP sidebar-prev       <span class="comment"># Ctrl-Shift-P - Previous Mailbox</span>
+bind index,pager \CN sidebar-next       <span class="comment"># Ctrl-Shift-N - Next Mailbox</span>
+bind index,pager \CO sidebar-open       <span class="comment"># Ctrl-Shift-O - Open Highlighted Mailbox</span>
 </pre>
     <p>Press
     <span class="quote">“
@@ -866,3 +865,4 @@ color sidebar_divider   color8  default
     <br class="table-break" />
   </div>
 </div>
+{% endraw %}

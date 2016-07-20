@@ -3,6 +3,9 @@
 
     <ul>
         {% for f in site.features %}
+	  {% if f.status == 'ignore' %}
+	    {% continue %}
+	  {% endif %}
           {% if f.url == page.url %}
             <li class="current">
           {% else %}
@@ -13,7 +16,7 @@
             <span class="devel">⚠</span>
           {% else %}
           {% if f.title == "Sidebar" %}
-            <a href="/manual/sidebar-intro.html">(Intro)</a>
+            <a href="/feature/sidebar-intro">(Intro)</a>
           {% endif %}
           {% endif %}
         </li>
