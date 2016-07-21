@@ -27,6 +27,9 @@ title: Status
   </thead>
   <tbody>
     {% for f in site.features %}
+      {% if f.status == 'ignore' %}
+	{% continue %}
+      {% endif %}
       <tr>
         <td><a href="{{ f.url }}">{{ f.title }}</a></td>
         <td><a href="https://github.com/neomutt/neomutt/tree/{{ f.base }}">{{ f.base }}</a></td>

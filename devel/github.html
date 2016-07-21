@@ -6,8 +6,9 @@ title: GitHub
 <h1>GitHub Repositories</h1>
 
 <p>
-For now, NeoMutt is only available in source form and all the important code is
-in the <a href="https://github.com/neomutt/neomutt">neomutt repo</a>.
+  All the source code for NeoMutt, and its patches, is available on GitHub.
+  The majority is in the
+  <a href="https://github.com/neomutt/neomutt">neomutt repo</a>.
 </p>
 
 <p>
@@ -22,9 +23,18 @@ in the <a href="https://github.com/neomutt/neomutt">neomutt repo</a>.
 </p>
 
 <p>
-  This diagram shows how the branches fit togethers.  For historic reasons, the
-  features are split into the “minors” and “extras” that are merged before and
-  after the NotMuch branch, respectively.
+  This diagram shows how the branches fit together.  The features are separate
+  streams starting from Mutt-1.6.2.  Changes are merged into the NeoMutt branch.
+</p>
+
+<p>
+  Some distros have a rolling release which picks up these "Hot Fixes"
+  (H<sub>1</sub>, H<sub>2</sub> on the diagram).
+</p>
+
+<p>
+  Periodically, about every month, a new release of NeoMutt is made
+  (R<sub>1</sub>, R<sub>2</sub> on the diagram).
 </p>
 
 <p>
@@ -42,36 +52,72 @@ in the <a href="https://github.com/neomutt/neomutt">neomutt repo</a>.
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/neomutt/arch">arch</a></td>
+      <td> <a href="https://github.com/neomutt/arch">arch</a> </td>
       <td>Ideas for a new mutt architecture</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/community">community</a></td>
+      <td> <a href="https://github.com/neomutt/aur-build">aur-build</a> </td>
+      <td>Arch Linux User Repository for NeoMutt</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/community">community</a> </td>
       <td>Birds-eye view of the Mutt Community</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/mutt-kz">mutt-kz</a></td>
-      <td>Transfer area for patches for <a href="https://github.com/karelzak/mutt-kz">NotMuch</a></td>
+      <td> <a href="https://github.com/neomutt/copr-neomutt">copr-neomutt</a> </td>
+      <td>Automated rpm builds for Fedora/RHEL</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/neomutt">neomutt</a></td>
-      <td>All the source code for the NeoMutt features</td>
+      <td> <a href="https://github.com/neomutt/homebrew-neomutt">homebrew-neomutt</a> </td>
+      <td>Automated builds for OS X</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/neomutt.github.io">neomutt.github.io</a></td>
+      <td> <a href="https://github.com/neomutt/integration">integration</a> </td>
+      <td>Patch sets for downstream distros</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/management">management</a> </td>
+      <td>Automation scripts and notes</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/mutt-kz">mutt-kz</a> </td>
+      <td>Transfer area for patches for NotMuch</td>
+    </tr>
+    <tr>
+      <td> <b><a href="https://github.com/neomutt/neomutt">neomutt</a></b> </td>
+      <td><b>Teaching an Old Dog New Tricks</b></td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/neomutt-old">neomutt-old</a> </td>
+      <td>Retired branches of NeoMutt</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/neomutt-unstable">neomutt-unstable</a> </td>
+      <td>Don't use this repo.</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/neomutt.github.io">neomutt.github.io</a> </td>
       <td>NeoMutt web pages</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/panel-manager">panel-manager</a></td>
+      <td> <a href="https://github.com/neomutt/panel-manager">panel-manager</a> </td>
       <td>Mock-up of a panel manager for mutt</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/sidebar-history">sidebar-history</a></td>
+      <td> <a href="https://github.com/neomutt/release">release</a> </td>
+      <td>How to make a NeoMutt Release</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/scripts">scripts</a> </td>
+      <td>assorted scripts</td>
+    </tr>
+    <tr>
+      <td> <a href="https://github.com/neomutt/sidebar-history">sidebar-history</a> </td>
       <td>Old versions of mutt-sidebar</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/neomutt/wiki-old">wiki-old</a></td>
-      <td>Backup of the old NeoMutt wiki </td>
+      <td> <a href="https://github.com/neomutt/travis-build">travis-build</a> </td>
+      <td>Try to control the Travis builds more transparently</td>
     </tr>
   </tbody>
 </table>
