@@ -1,9 +1,9 @@
 ---
 layout: features
-title: Fmemopen
-description: Replace some temporary files with memory buffers
+title: multiple-fcc
+description: Save multiple copies of outgoing mail
 status: stable
-branch: feature/fmemopen
+branch: feature/multiple-fcc
 base: mutt/1.6.2
 ---
 {% raw %}
@@ -12,10 +12,10 @@ base: mutt/1.6.2
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="fmemopen"></a>&#160;Fmemopen Patch</h2>
+        <a class="offset" id="multiple-fcc"></a>&#160;multiple-fcc Patch</h2>
       </div>
       <div>
-        <h3 class="subtitle">Replace some temporary files with memory buffers</h3>
+        <h3 class="subtitle">Save multiple copies of outgoing mail</h3>
       </div>
     </div>
   </div>
@@ -24,15 +24,15 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="multiple-fcc-patch"></a>1.&#160;Patch</h3>
         </div>
       </div>
     </div>
     <p>To check if Mutt supports
     <span class="quote">“
-    <span class="quote">fmemopen</span>”</span>, look for
+    <span class="quote">multiple-fcc</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-fmemopen</span>”</span>in the mutt version. See:
+    <span class="quote">patch-multiple-fcc</span>”</span>in the mutt version. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,16 +42,8 @@ base: mutt/1.6.2
         <li class="listitem">
           <p>mutt-1.6.2</p>
         </li>
-        <li class="listitem">
-          <p>
-          <code class="literal">open_memstream()</code>,
-          <code class="literal">fmemopen()</code>from glibc</p>
-        </li>
       </ul>
     </div>
-    <p>This patch can be disabled by running
-    <code class="literal">configure</code>with the option
-    <code class="literal">--disable-fmemopen</code></p>
     <p>This patch is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
@@ -60,37 +52,39 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-intro"></a>2.&#160;Introduction</h3>
+          <a class="offset" id="multiple-fcc-intro"></a>2.&#160;Introduction</h3>
         </div>
       </div>
     </div>
+    <p>This patch allows the user to save outgoing emails in multiple folders.</p>
+    <p>Folders should be listed separated by commas,
+    <span class="bold">
+      <strong>but no spaces</strong>
+    </span>.</p>
     <p>The
     <span class="quote">“
-    <span class="quote">fmemopen</span>”</span>patch speeds up some searches.</p>
-    <p>This patch changes a few places where Mutt creates temporary files. It replaces them with in-memory buffers. This should improve the performance when searching the header or body using the
-    <a class="link" href="/manual/reference.html#thorough-search" title="3.354.&#160;thorough_search">$thorough_search</a>option.</p>
-    <p>There are no user-configurable parts.</p>
-    <p>This patch depends on
-    <code class="literal">open_memstream()</code>and
-    <code class="literal">fmemopen()</code>. They are provided by glibc. Without them, Mutt will simply create temporary files.</p>
-  </div>
-  <div class="sect2">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-muttrc"></a>3.&#160;Muttrc</h3>
-        </div>
-      </div>
+    <span class="quote">fcc</span>”</span>field of an email can be set in two ways:</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>The &lt;edit-fcc&gt; command in the compose menu (default key:
+          <span class="quote">“
+          <span class="quote">f</span>”</span>)</p>
+        </li>
+        <li class="listitem">
+          <p>Creating a
+          <code class="literal">fcc-hook</code>in your
+          <code class="literal">.muttrc</code></p>
+        </li>
+      </ul>
     </div>
-    <p>None</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-see-also"></a>4.&#160;See Also</h3>
+          <a class="offset" id="multiple-fcc-see-also"></a>3.&#160;See Also</h3>
         </div>
       </div>
     </div>
@@ -103,12 +97,12 @@ base: mutt/1.6.2
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
+            <a class="link" href="/manual/reference.html#record" title="3.253.&#160;record">$record</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <code class="literal">fmemopen(3)</code>
+            <a class="link" href="/manual/configuration.html#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">fcc-hook</a>
           </p>
         </li>
       </ul>
@@ -119,7 +113,7 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-known-bugs"></a>5.&#160;Known Bugs</h3>
+          <a class="offset" id="multiple-fcc-known-bugs"></a>4.&#160;Known Bugs</h3>
         </div>
       </div>
     </div>
@@ -130,16 +124,16 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-credits"></a>6.&#160;Credits</h3>
+          <a class="offset" id="multiple-fcc-credits"></a>5.&#160;Credits</h3>
         </div>
       </div>
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>Julius Plenz
+          <p>Omen Wild
           <code class="email">&lt;
-          <a class="email" href="mailto:plenz@cis.fu-berlin.de">plenz@cis.fu-berlin.de</a>&gt;</code></p>
+          <a class="email" href="mailto:omen@mandarb.com">omen@mandarb.com</a>&gt;</code></p>
         </li>
         <li class="listitem">
           <p>Richard Russon

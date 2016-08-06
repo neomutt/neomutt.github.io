@@ -1,9 +1,9 @@
 ---
 layout: features
-title: Quasi-Delete
-description: Mark emails that should be hidden, but not deleted
+title: Timeout
+description: Run a command periodically
 status: stable
-branch: feature/quasi-delete
+branch: feature/timeout-hook
 base: mutt/1.6.2
 ---
 {% raw %}
@@ -12,10 +12,10 @@ base: mutt/1.6.2
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="quasi-delete"></a>&#160;Quasi-Delete Patch</h2>
+        <a class="offset" id="timeout-hook"></a>&#160;Timeout Patch</h2>
       </div>
       <div>
-        <h3 class="subtitle">Mark emails that should be hidden, but not deleted</h3>
+        <h3 class="subtitle">Run a command periodically</h3>
       </div>
     </div>
   </div>
@@ -24,15 +24,15 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="timeout-patch"></a>1.&#160;Patch</h3>
         </div>
       </div>
     </div>
     <p>To check if Mutt supports
     <span class="quote">“
-    <span class="quote">Quasi-Delete</span>”</span>, look for
+    <span class="quote">timeout</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-quasi-delete</span>”</span>in the mutt version. See:
+    <span class="quote">patch-timeout</span>”</span>in the mutt version. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -52,76 +52,53 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-intro"></a>2.&#160;Introduction</h3>
+          <a class="offset" id="timeout-intro"></a>2.&#160;Introduction</h3>
         </div>
       </div>
     </div>
-    <p>The
-    <span class="quote">“
-    <span class="quote">quasi-delete</span>”</span>function marks an email that should be hidden from the index, but NOT deleted.</p>
-    <p>On its own, this patch isn't very useful. It forms a useful part of the notmuch plugin.</p>
+    <p>This patch implements a new hook that is called periodically when Mutt checks for new mail. This hook is called every
+    <code class="literal">$timeout</code>seconds.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-functions"></a>3.&#160;Functions</h3>
+          <a class="offset" id="timeout-commands"></a>3.&#160;Commands</h3>
         </div>
       </div>
     </div>
-    <div class="table">
-      <a class="offset" id="table-quasi-delete-functions"></a>
-      <p class="title">
-        <strong>Table&#160;6.19.&#160;Quasi-Delete Functions</strong>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">timeout-hook</code>
+        <em class="replaceable">
+          <code>.</code>
+        </em>
+        <em class="replaceable">
+          <code>MUTT-COMMAND</code>
+        </em>
       </p>
-      <div class="table-contents">
-        <table summary="Quasi-Delete Functions" border="1">
-          <colgroup>
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Menus</th>
-              <th>Default Key</th>
-              <th>Function</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>index,pager</td>
-              <td>(none)</td>
-              <td>
-                <code class="literal">&lt;quasi-delete&gt;</code>
-              </td>
-              <td>delete from mutt, don't touch on disk</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
-    <br class="table-break" />
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-muttrc"></a>4.&#160;Muttrc</h3>
+          <a class="offset" id="timeout-muttrc"></a>4.&#160;Muttrc</h3>
         </div>
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'quasi-delete' feature.
- 
-# The 'quasi-delete' function marks an email that should be hidden
-# from the index, but NOT deleted.</span>
-bind index,pager Q quasi-delete
- 
+<span class="comment"># This is a complete list of timeout configuration.
+
+# --------------------------------------------------------------------------
+# COMMANDS - shown with an example arguments
+# --------------------------------------------------------------------------
+
+# After $timeout seconds of inactivity, run this mutt command</span>
+timeout-hook . 'exec sync-mailbox'
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -130,7 +107,7 @@ bind index,pager Q quasi-delete
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-see-also"></a>5.&#160;See Also</h3>
+          <a class="offset" id="timeout-see-also"></a>5.&#160;See Also</h3>
         </div>
       </div>
     </div>
@@ -143,7 +120,7 @@ bind index,pager Q quasi-delete
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#notmuch" title="23.&#160;Notmuch Patch">notmuch patch</a>
+            <a class="link" href="/manual/reference.html#timeout" title="3.358.&#160;timeout">$timeout</a>
           </p>
         </li>
       </ul>
@@ -154,7 +131,7 @@ bind index,pager Q quasi-delete
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <a class="offset" id="timeout-known-bugs"></a>6.&#160;Known Bugs</h3>
         </div>
       </div>
     </div>
@@ -165,16 +142,16 @@ bind index,pager Q quasi-delete
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-credits"></a>7.&#160;Credits</h3>
+          <a class="offset" id="timeout-credits"></a>7.&#160;Credits</h3>
         </div>
       </div>
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>Karel Zak
+          <p>Armin Wolfermann
           <code class="email">&lt;
-          <a class="email" href="mailto:kzak@redhat.com">kzak@redhat.com</a>&gt;</code></p>
+          <a class="email" href="mailto:armin@wolfermann.org">armin@wolfermann.org</a>&gt;</code></p>
         </li>
         <li class="listitem">
           <p>Richard Russon
