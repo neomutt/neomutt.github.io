@@ -45,6 +45,9 @@ collections:
   features:
     output: true
     permalink: /feature/:path/
+  contrib:
+    output: true
+    permalink: /contrib/:path/
   bugs:
     output: false
   tasks:

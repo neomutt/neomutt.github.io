@@ -1,0 +1,47 @@
+---
+layout: contrib
+title: Contrib
+---
+
+<h2>Contrib</h2>
+
+<p>
+  DESC
+</p>
+
+<h2>Status</h2>
+
+<table summary="list of contrib">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in site.contrib %}
+      {% if c.status == 'ignore' %}
+        {% continue %}
+      {% endif %}
+      <tr>
+        <td><a href="{{ c.url }}">{{ c.title }}</a></td>
+        <td>{{ c.description }}</td>
+        <td>
+          {% case c.status %}
+          {% when 'stable' %}
+          {% assign span = true %}
+            <span class="good">✔
+          {% when 'devel' %}
+            <span class="devel">⚠
+          {% endcase %}
+            {{ c.status }}
+          {% if span == true %}
+            </span>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
