@@ -25,32 +25,4 @@ Then just throw these into your .muttrc
 
 Done!
 
-## How to use KeybaseMutt
-
-Write an email. In the screen right before you send your email (called the pager mode), press "K".
-
-![](/images/pagerMode.png)
-(Press 'K' when you're here)
-
-You can now use four Keybase commands in this "shell". (I thought it best to limit the user to four commands for security reasons. Running unusual commands would overwrite the email, forcing the user to rewrite the email again.)
-
-The commands are:
-- `keybase encrypt [user]`
-- `keybase pgp encrypt [user]`
-- `keybase sign`
-- `keybase pgp sign`
-
-
-## Decrypting and verifying messages
-
-Unfortunately, there isn't an easy way to decrypt or verify messages through a macro. Instead, you'll need to use the pipe feature of mutt.
-
-Opening the email, you'll need to navigate to the actual attachment. (Press "V" when you're reading the email.)
-
-![](/images/attachmentView.png)
-
-Then pipe ("|") it through the one of the scripts.
-
-Please note, using an attachment is very important when decrypting emails that include html. The scripts are unable to seperate html and text.
-
-Make sure that the attachment is "text/plain" rather than "text/html".
+Check out the [Github page](https://github.com/neomutt/neomutt/tree/contrib/keybase) for the full documentation.
