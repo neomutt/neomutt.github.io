@@ -6,8 +6,21 @@ title: Contrib
 <h2>Contrib</h2>
 
 <p>
-  DESC
+  NeoMutt is a fantastic program.  It's versatile, configurable, scriptable...<br>
+  This is your chance to help other NeoMutt users...
 </p>
+
+<ul>
+  <li>Have <b>you</b> got a config file that <b>everybody</b> should be using?</li>
+  <li>Have <b>you</b> written a script that makes life easier?</li>
+</ul>
+
+<p>
+  If you are a GitHub user, you can raise a
+  <a href="https://github.com/neomutt/neomutt/issues">NeoMutt issue</a> to tell us about your idea.</br>
+  Or, you can contact the lead developer, Richard&nbsp;Russon&nbsp;<a href="mailto:rich@flatcap.org">&lt;rich@flatcap.org&gt;</a>
+</p>
+
 
 <h2>Status</h2>
 
@@ -16,6 +29,8 @@ title: Contrib
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Author</th>
+      <th>Source</th>
       <th>Status</th>
     </tr>
   </thead>
@@ -27,6 +42,12 @@ title: Contrib
       <tr>
         <td><a href="{{ c.url }}">{{ c.title }}</a></td>
         <td>{{ c.description }}</td>
+        <td>
+          <a href="https://github.com/{{ c.username }}">{{ c.author }}</a>
+        </td>
+        <td>
+          <a href="https://github.com/neomutt/neomutt/tree/{{ c.branch }}">{{ c.branch }}</a>
+        </td>
         <td>
           {% case c.status %}
           {% when 'stable' %}
@@ -44,4 +65,6 @@ title: Contrib
     {% endfor %}
   </tbody>
 </table>
+
+
 
