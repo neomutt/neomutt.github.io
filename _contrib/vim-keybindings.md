@@ -11,7 +11,7 @@ base: neomutt
 
 ## Vi-keys for Mutt
 
-Now's the time to let your finger **Rest In Peace** without those weird combination. And of course, don't just let your time to learn vi or such be wasted.
+Now's the time to let your finger **Rest In Peace** without those weird combination. And of course, don't just let your time to learn vi be wasted.
 
 ## Quick Start
 
@@ -24,10 +24,10 @@ Add the file and your `~/.mutt` and add `source vim-keybindings.rc` to your `~/.
 
 ## TODO
 
-[ ] - Maybe remove `dd` since it's hard to press?
-[ ] - How about a command mode (for real power!)**, isn't there `:`?**
-[ ] - **What is** :g/spam/d
-[ ] - :q (I type this way too often) **(me too)**
+- [ ] Maybe remove `dd` since it's hard to press?
+- [ ] How about a command mode (for real power!)**, isn't there `:`?**
+- [ ] **What is** :g/spam/d
+- [ ] :q (I type this way too often) **(me too)**
 
 ## Support
 
@@ -35,7 +35,7 @@ Add the file and your `~/.mutt` and add `source vim-keybindings.rc` to your `~/.
 
 ## Why?
 
-  Roses are red,
-  Violets are blue,
-  Sugar is sweet
-  And so are you.
+> Roses are red,  
+> Violets are blue,  
+> Sugar is sweet  
+> And so are you.
