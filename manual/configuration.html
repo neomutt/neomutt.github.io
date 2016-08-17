@@ -277,6 +277,9 @@ title: Configuration
           </thead>
           <tbody>
             <tr>
+              <td>$XDG_CONFIG_DIRS/neomutt/config</td>
+            </tr>
+            <tr>
               <td>/etc/NeoMuttrc</td>
             </tr>
             <tr>
@@ -295,6 +298,11 @@ title: Configuration
         </table>
       </div>
     </div>
+
+    <p>
+      <strong>($XDG_CONFIG_DIRS defaults to "/etc/xdg".)</strong>
+    </p>
+
     <br class="table-break" />
     <p>Mutt will search for a user config file in several places in your home directory. The filenames may depend on the version number of Mutt. Mutt will read just one file, the first file it finds, from the list below.</p>
     <p>You may specify your own location for the user config file using the 
@@ -318,6 +326,9 @@ title: Configuration
           </thead>
           <tbody>
             <tr>
+              <td>$XDG_CONFIG_HOME/neomutt/config</td>
+            </tr>
+            <tr>
               <td>~/.neomuttrc</td>
             </tr>
             <tr>
@@ -339,6 +350,11 @@ title: Configuration
         </table>
       </div>
     </div>
+
+    <p>
+      <strong>($XDG_CONFIG_HOME defaults to "$HOME/.config".)</strong>
+    </p>
+
     <br class="table-break" />
   </div>
   <div class="sect1">
