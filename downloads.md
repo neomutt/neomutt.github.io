@@ -100,9 +100,9 @@ Sorry, I don't have any instructions for this package.
 
 ## Debian, Ubuntu
 
-**Currently unsupported**.
+**Currently in Testing**.
 
-Do you know how to create ".deb" packages?
-Do you know how to set up a <abbr title="Personal Package Archive">PPA</abbr>?
-If you do, please help.  Contact: [Richard&nbsp;Russon](mailto:rich@flatcap.org).
+Packager: [Faidon Liambotis (paravoid)](https://github.com/paravoid)
+
+Home: [NeoMutt for Debian](https://packages.debian.org/testing/mail/mutt)
 
