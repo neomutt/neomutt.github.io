@@ -106,3 +106,12 @@ Packager: [Faidon Liambotis (paravoid)](https://github.com/paravoid)
 
 Home: [NeoMutt for Debian](https://packages.debian.org/testing/mail/mutt)
 
+<img align="left" src="/images/netbsd.png">
+<img align="left" src="/images/pkgsrc.png">
+
+## NetBSD (pkgsrc)
+
+Packager: [Thomas Klausner (0-wiz-0)](https://github.com/0-wiz-0)
+
+Home: [NeoMutt for NetBSD](http://pkgsrc.se/mail/neomutt)
+
