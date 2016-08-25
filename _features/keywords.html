@@ -4,7 +4,7 @@ title: Keywords
 description: Labels/Tagging for emails
 status: stable
 branch: feature/keywords
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -69,7 +69,7 @@ base: mutt/1.6.2
     <span class="quote">memo</span>”</span>field, where space-delimited parsing would ruin the semantics of the memo. By default mutt will not split X-Labels at all. Set $xlabel_delimiter if your needs vary.)</p>
     <p>Finally we add two booleans: $keywords_legacy=true and $keywords_standard=FALSE. When $keywords_legacy is true, mutt will always save keyword to whatever original header it came from. When $keywords_standard=true, mutt will save to the Keywords: header. If both are true mutt saves to both; if neither is true, mutt saves only to legacy headers to avoid complete loss of keywords.</p>
     <p>Overall this represents convergence path for all competing labelling/tagging/keywording systems toward one that is specified by RFC.</p>
-    <p>You can change or delete the X-Label: field within Mutt using the edit-label command, bound to the y key by default. This works for tagged messages, too.</p>
+    <p>You can change or delete the X-Label: field within Mutt using the edit-label command. This works for tagged messages, too.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -140,6 +140,7 @@ base: mutt/1.6.2
         </div>
       </div>
     </div>
+    <p>Keywords adds the following function to Mutt. By default, it is not bound to a key.</p>
     <div class="table">
       <a class="offset" id="table-keywords-funcions"></a>
       <p class="title">
@@ -151,12 +152,10 @@ base: mutt/1.6.2
             <col />
             <col />
             <col />
-            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Menus</th>
-              <th>Default Key</th>
               <th>Function</th>
               <th>Description</th>
             </tr>
@@ -164,7 +163,6 @@ base: mutt/1.6.2
           <tbody>
             <tr>
               <td>index,pager</td>
-              <td>y</td>
               <td>
                 <code class="literal">&lt;edit-label&gt;</code>
               </td>

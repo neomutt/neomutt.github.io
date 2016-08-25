@@ -4,7 +4,7 @@ title: Sidebar
 description: Overview of mailboxes
 status: stable
 branch: feature/sidebar
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -59,7 +59,7 @@ base: mutt/1.6.2
     <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
     <p>This part of the manual is a reference guide. If you want a simple introduction with examples see the
     <a class="link" href="/feature/sidebar-intro#intro-sidebar" title="2.4.&#160;Sidebar">Sidebar Howto</a>. If you just want to get started, you could use the sample
-    <a class="link" href="/feature/sidebar#sidebar-muttrc" title="26.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+    <a class="link" href="/feature/sidebar#sidebar-muttrc" title="27.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -146,6 +146,15 @@ base: mutt/1.6.2
             <tr>
               <td>
                 <code class="literal">sidebar_next_new_wrap</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">no</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">sidebar_on_right</code>
               </td>
               <td>boolean</td>
               <td>
@@ -522,6 +531,9 @@ sidebar_whitelist '/home/user/mailbox2'
 <span class="comment"># When searching for mailboxes containing new mail, should the search wrap
 # around when it reaches the end of the list?</span>
 set sidebar_next_new_wrap = no
+ 
+<span class="comment"># Show the Sidebar on the right-hand side of the screen</span>
+set sidebar_on_right = no
  
 <span class="comment"># The character to use as the divider between the Sidebar and the other Mutt
 # panels.

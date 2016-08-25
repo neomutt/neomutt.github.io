@@ -4,7 +4,7 @@ title: Limit-Current-Thread
 description: Focus on one Email Thread
 status: stable
 branch: feature/limit-current-thread
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -72,6 +72,7 @@ base: mutt/1.6.2
         </div>
       </div>
     </div>
+    <p>Limit-current-thread adds the following function to Mutt. By default, it is not bound to a key.</p>
     <div class="table">
       <a class="offset" id="table-limit-current-thread-functions"></a>
       <p class="title">
@@ -83,12 +84,10 @@ base: mutt/1.6.2
             <col />
             <col />
             <col />
-            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Menus</th>
-              <th>Default Key</th>
               <th>Function</th>
               <th>Description</th>
             </tr>
@@ -96,9 +95,6 @@ base: mutt/1.6.2
           <tbody>
             <tr>
               <td>index</td>
-              <td>
-                <code class="literal">&lt;Esc&gt;L</code>
-              </td>
               <td>
                 <code class="literal">&lt;limit-current-thread&gt;</code>
               </td>

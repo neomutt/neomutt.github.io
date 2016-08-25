@@ -206,37 +206,37 @@ title: Optional Features
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/sidebar">26. Sidebar Patch</a>
+          <a href="/feature/sidebar">27. Sidebar Patch</a>
         </span>
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/skip-quoted">27. Skip-Quoted Patch</a>
+          <a href="/feature/skip-quoted">28. Skip-Quoted Patch</a>
         </span>
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/smime-encrypt-self">28. smime-encrypt-self Patch</a>
+          <a href="/feature/smime-encrypt-self">29. smime-encrypt-self Patch</a>
         </span>
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/status-color">29. Status Color Patch</a>
+          <a href="/feature/status-color">30. Status Color Patch</a>
         </span>
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/timeout">30. Timeout Patch</a>
+          <a href="/feature/timeout">31. Timeout Patch</a>
         </span>
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/tls-sni">31. TLS-SNI Patch</a>
+          <a href="/feature/tls-sni">32. TLS-SNI Patch</a>
         </span>
       </dt>
       <dt>
         <span class="sect1">
-          <a href="/feature/trash">32. Trash Folder Patch</a>
+          <a href="/feature/trash">33. Trash Folder Patch</a>
         </span>
       </dt>
     </dl>
@@ -293,7 +293,7 @@ title: Optional Features
       <span class="quote">patched</span>”</span>to support smaller features. These patches should add a free-form string to the end Mutt's version string. Running 
       <code class="literal">mutt -v</code>might show:</p>
       <pre class="screen">
-patch-1.6.2.sidebar.20160709
+patch-1.7.0.sidebar.20160709
 </pre>
       <p></p>
     </div>
@@ -409,7 +409,7 @@ smtp://user@host:587/
     <p>Another way to access your POP3 mail is the 
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to 
     <a class="link" href="reference.html#pop-host" title="3.228.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local 
-    <a class="link" href="reference.html#spoolfile" title="3.333.&#160;spoolfile">$spoolfile</a>. After this point, Mutt runs exactly as if the mail had always been local.</p>
+    <a class="link" href="reference.html#spoolfile" title="3.334.&#160;spoolfile">$spoolfile</a>. After this point, Mutt runs exactly as if the mail had always been local.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as 
@@ -448,7 +448,7 @@ smtp://user@host:587/
     <a class="link" href="reference.html#imap-list-subscribed" title="3.112.&#160;imap_list_subscribed">$imap_list_subscribed</a>variable.</p>
     <p>Polling for new mail on an IMAP server can cause noticeable delays. So, you'll want to carefully tune the 
     <a class="link" href="reference.html#mail-check" title="3.131.&#160;mail_check">$mail_check</a>and 
-    <a class="link" href="reference.html#timeout" title="3.358.&#160;timeout">$timeout</a>variables. Reasonable values are:</p>
+    <a class="link" href="reference.html#timeout" title="3.359.&#160;timeout">$timeout</a>variables. Reasonable values are:</p>
     <pre class="screen">
 set mail_check=90
 set timeout=15
@@ -548,13 +548,13 @@ set timeout=15
     <p>Besides supporting traditional mail delivery through a sendmail-compatible program, Mutt supports delivery through SMTP if it was configured and built with 
     <code class="literal">--enable-smtp</code>.</p>
     <p>If the configuration variable 
-    <a class="link" href="reference.html#smtp-url" title="3.326.&#160;smtp_url">$smtp_url</a>is set, Mutt will contact the given SMTP server to deliver messages; if it is unset, Mutt will use the program specified by 
+    <a class="link" href="reference.html#smtp-url" title="3.327.&#160;smtp_url">$smtp_url</a>is set, Mutt will contact the given SMTP server to deliver messages; if it is unset, Mutt will use the program specified by 
     <a class="link" href="reference.html#sendmail" title="3.277.&#160;sendmail">$sendmail</a>.</p>
     <p>For details on the URL syntax, please see 
     <a class="xref" href="optionalfeatures.html#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>.</p>
     <p>The built-in SMTP support supports encryption (the 
     <code class="literal">smtps</code>protocol using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms for SASL are specified in 
-    <a class="link" href="reference.html#smtp-authenticators" title="3.324.&#160;smtp_authenticators">$smtp_authenticators</a>defaulting to an empty list which makes Mutt try all available methods from most-secure to least-secure.</p>
+    <a class="link" href="reference.html#smtp-authenticators" title="3.325.&#160;smtp_authenticators">$smtp_authenticators</a>defaulting to an empty list which makes Mutt try all available methods from most-secure to least-secure.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -659,7 +659,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     </span>value of 
     <a class="link" href="reference.html#folder" title="3.72.&#160;folder">$folder</a>and therefore has to be set separately per account. Setting other values like 
     <a class="link" href="reference.html#from" title="3.82.&#160;from">$from</a>or 
-    <a class="link" href="reference.html#signature" title="3.296.&#160;signature">$signature</a>is analogous to setting 
+    <a class="link" href="reference.html#signature" title="3.297.&#160;signature">$signature</a>is analogous to setting 
     <a class="link" href="reference.html#record" title="3.253.&#160;record">$record</a>.</p>
   </div>
   <div class="sect1">

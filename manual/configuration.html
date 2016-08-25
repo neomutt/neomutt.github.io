@@ -283,13 +283,13 @@ title: Configuration
               <td>/etc/NeoMuttrc</td>
             </tr>
             <tr>
-              <td>/etc/Muttrc-1.6.2-neo</td>
+              <td>/etc/Muttrc-1.7.0-neo</td>
             </tr>
             <tr>
               <td>/etc/Muttrc</td>
             </tr>
             <tr>
-              <td>/share/mutt/Muttrc-1.6.2-neo</td>
+              <td>/share/mutt/Muttrc-1.7.0-neo</td>
             </tr>
             <tr>
               <td>/share/mutt/Muttrc</td>
@@ -298,12 +298,12 @@ title: Configuration
         </table>
       </div>
     </div>
-
-    <p>
-      <strong>($XDG_CONFIG_DIRS defaults to "/etc/xdg".)</strong>
-    </p>
-
     <br class="table-break" />
+    <p>
+      <span class="emphasis">
+        <em>($XDG_CONFIG_DIRS defaults to "/etc/xdg".)</em>
+      </span>
+    </p>
     <p>Mutt will search for a user config file in several places in your home directory. The filenames may depend on the version number of Mutt. Mutt will read just one file, the first file it finds, from the list below.</p>
     <p>You may specify your own location for the user config file using the 
     <span class="quote">“
@@ -335,13 +335,13 @@ title: Configuration
               <td>~/.mutt/neomuttrc</td>
             </tr>
             <tr>
-              <td>~/.muttrc-1.6.2-neo</td>
+              <td>~/.muttrc-1.7.0-neo</td>
             </tr>
             <tr>
               <td>~/.muttrc</td>
             </tr>
             <tr>
-              <td>~/.mutt/muttrc-1.6.2-neo</td>
+              <td>~/.mutt/muttrc-1.7.0-neo</td>
             </tr>
             <tr>
               <td>~/.mutt/muttrc</td>
@@ -350,12 +350,12 @@ title: Configuration
         </table>
       </div>
     </div>
-
-    <p>
-      <strong>($XDG_CONFIG_HOME defaults to "$HOME/.config".)</strong>
-    </p>
-
     <br class="table-break" />
+    <p>
+      <span class="emphasis">
+        <em>($XDG_CONFIG_HOME defaults to "$HOME/.config".)</em>
+      </span>
+    </p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -1138,7 +1138,7 @@ set alias_file=~/.mail_aliases
       <p>If you use the 
       <span class="quote">“
       <span class="quote">!</span>”</span>shortcut for 
-      <a class="link" href="reference.html#spoolfile" title="3.333.&#160;spoolfile">$spoolfile</a>at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical 
+      <a class="link" href="reference.html#spoolfile" title="3.334.&#160;spoolfile">$spoolfile</a>at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical 
       <span class="emphasis">
         <em>not</em>
       </span>operator for the expression.</p>
@@ -1172,7 +1172,7 @@ folder-hook mutt "set sort=threads"
       <a class="link" href="configuration.html#exec" title="23.&#160;Executing Functions">exec</a>commands will end up being processed in reverse order.</p>
     </div>
     <p>The following example will set the 
-    <a class="link" href="reference.html#sort" title="3.327.&#160;sort">sort</a>variable to 
+    <a class="link" href="reference.html#sort" title="3.328.&#160;sort">sort</a>variable to 
     <code class="literal">date-sent</code>for all folders but to 
     <code class="literal">threads</code>for all folders containing 
     <span class="quote">“
@@ -1720,7 +1720,7 @@ export COLORFGBG
         </div>
       </div>
       <p>When displaying a message in the pager, Mutt folds long header lines at 
-      <a class="link" href="reference.html#wrap" title="3.378.&#160;wrap">$wrap</a>columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.379.&#160;wrap">$wrap</a>columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2153,7 +2153,7 @@ subscribe [0-9]+.*@bugs.debian.org
       <span class="quote">“
       <span class="quote">!</span>”</span>), any variable definition that affects these characters (like 
       <a class="link" href="reference.html#folder" title="3.72.&#160;folder">$folder</a>and 
-      <a class="link" href="reference.html#spoolfile" title="3.333.&#160;spoolfile">$spoolfile</a>) should be set before the 
+      <a class="link" href="reference.html#spoolfile" title="3.334.&#160;spoolfile">$spoolfile</a>) should be set before the 
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise Mutt tries to find it relative to the directory from where Mutt was started which may not always be desired.</p>
@@ -2510,7 +2510,7 @@ fcc-hook [@.]aol\\.com$ +spammers
     </span>mime_forward signature=''"</code></p>
     <p>Another typical use for this command is to change the values of the 
     <a class="link" href="reference.html#attribution" title="3.18.&#160;attribution">$attribution</a>, 
-    <a class="link" href="reference.html#signature" title="3.296.&#160;signature">$signature</a>and 
+    <a class="link" href="reference.html#signature" title="3.297.&#160;signature">$signature</a>and 
     <a class="link" href="reference.html#locale" title="3.130.&#160;locale">$locale</a>variables in order to change the language of the attributions and signatures based upon the recipients.</p>
     <div class="note">
       <h3 class="title">Note</h3>
@@ -2843,11 +2843,11 @@ folder-hook . 'push \eV'
     <span class="command">
       <strong>spam</strong>
     </span>patterns for each filter you use. If a message matches two or more of these patterns, and the 
-    <a class="link" href="reference.html#spam-separator" title="3.332.&#160;spam_separator">$spam_separator</a>variable is set to a string, then the message's spam tag will consist of all the 
+    <a class="link" href="reference.html#spam-separator" title="3.333.&#160;spam_separator">$spam_separator</a>variable is set to a string, then the message's spam tag will consist of all the 
     <span class="emphasis">
       <em>format</em>
     </span>strings joined together, with the value of 
-    <a class="link" href="reference.html#spam-separator" title="3.332.&#160;spam_separator">$spam_separator</a>separating them.</p>
+    <a class="link" href="reference.html#spam-separator" title="3.333.&#160;spam_separator">$spam_separator</a>separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in 
     <a class="xref" href="configuration.html#ex-spam" title="Example&#160;3.14.&#160;Configuring spam detection">Example&#160;3.14, “Configuring spam detection”</a>.</p>
     <div class="example">
@@ -2876,7 +2876,7 @@ set spam_separator=", "
     <span class="quote">“
     <span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the 
-    <a class="link" href="reference.html#spam-separator" title="3.332.&#160;spam_separator">$spam_separator</a>variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined 
+    <a class="link" href="reference.html#spam-separator" title="3.333.&#160;spam_separator">$spam_separator</a>variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined 
     <span class="emphasis">
       <em>format</em>
     </span>strings, you'll get only the last one to match.</p>
@@ -3501,7 +3501,7 @@ mailboxes $my_mx +mailbox3
       <p>Format strings are a general concept you'll find in several locations through the Mutt configuration, especially in the 
       <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>, 
       <a class="link" href="reference.html#pager-format" title="3.188.&#160;pager_format">$pager_format</a>, 
-      <a class="link" href="reference.html#status-format" title="3.349.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example, 
       <code class="literal">%s</code>represents a message's Subject: header in the 
       <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>variable. The 
@@ -3556,7 +3556,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in 
-      <a class="link" href="reference.html#status-format" title="3.349.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %?n?%n new messages.?
 </pre>
@@ -3614,7 +3614,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the 
       <code class="literal">mutt_xtitle</code>script installed in the 
       <code class="literal">samples</code>subdirectory of the Mutt documentation: it can be used as filter for 
-      <a class="link" href="reference.html#status-format" title="3.349.&#160;status_format">$status_format</a>to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

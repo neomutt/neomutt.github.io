@@ -4,7 +4,7 @@ title: Notmuch
 description: Email search engine
 status: stable
 branch: feature/notmuch
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,11 +40,11 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#sidebar" title="26.&#160;Sidebar Patch">sidebar patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#sidebar" title="27.&#160;Sidebar Patch">sidebar patch</a>
           </p>
         </li>
         <li class="listitem">
@@ -70,7 +70,119 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-variables"></a>2.&#160;Variables</h3>
+          <a class="offset" id="notmuch-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>Notmuch is an email fulltext indexing and tagging engine.</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>For more information, see:
+          <a class="ulink" href="http://notmuchmail.org/" target="_top">http://notmuchmail.org/</a></p>
+        </li>
+        <li class="listitem">
+          <p>Home page (wiki) and git:
+          <a class="ulink" href="https://github.com/karelzak/mutt-kz" target="_top">https://github.com/karelzak/mutt-kz</a></p>
+        </li>
+        <li class="listitem">
+          <p>Mailing list:
+          <a class="ulink" href="https://admin.fedoraproject.org/mailman/listinfo/mutt-kz" target="_top">https://admin.fedoraproject.org/mailman/listinfo/mutt-kz</a></p>
+        </li>
+        <li class="listitem">
+          <p>More examples:
+          <a class="ulink" href="http://notmuchmail.org/mutttips/" target="_top">http://notmuchmail.org/mutttips/</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="notmuch-using"></a>3.&#160;Using NotMuch</h3>
+        </div>
+      </div>
+    </div>
+    <div class="sect3">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="notmuch-folder-uri"></a>3.1.&#160;Folders URI</h4>
+          </div>
+        </div>
+      </div>
+      <p>
+        <span class="bold">
+          <strong>notmuch://[&lt;path&gt;][?&lt;item&gt;=&lt;name&gt;[&amp; ...]]</strong>
+        </span>
+      </p>
+      <p>The &lt;path&gt; is an absolute path to the directory where the notmuch database is found as returned by
+      <span class="quote">“
+      <span class="quote">notmuch config get database.path</span>”</span>command. Note that the &lt;path&gt; should NOT include
+      <code class="literal">.notmuch</code>directory name.</p>
+      <p>If the "&lt;path&gt;" is not defined then
+      <code class="literal">$nm_default_uri</code>or
+      <code class="literal">$folder</code>is used, for example:</p>
+      <pre class="screen">
+set nm_default_uri = "notmuch:///home/foo/maildir"
+virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
+</pre>
+    </div>
+    <div class="sect3">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="notmuch-items"></a>3.2.&#160;Items</h4>
+          </div>
+        </div>
+      </div>
+      <p>
+        <span class="bold">
+          <strong>query=&lt;string&gt;</strong>
+        </span>
+      </p>
+      <p>See SEARCH SYNTAX in notmuch man page. Don't forget to use
+      <span class="quote">“
+      <span class="quote">and</span>”</span>and
+      <span class="quote">“
+      <span class="quote">or</span>”</span>operators in your queries.</p>
+      <p>Note that proper URI should not contain blank space and all
+      <span class="quote">“
+      <span class="quote">bad</span>”</span>chars should be encoded, for example</p>
+      <p>
+      <code class="literal">tag:AAA and tag:BBB</code>--encoding-&gt;
+      <code class="literal">tag:AAA%20and%20tag:BBB</code></p>
+      <p>but mutt config file parser is smart enough to accept space in quoted strings. It means that you can use</p>
+      <p>
+        <code class="literal">notmuch:///foo?query=tag:AAA and tag:BBB</code>
+      </p>
+      <p>in your config files to keep things readable.</p>
+      <p>For more details about Xapian queries, see:
+      <a class="ulink" href="http://xapian.org/docs/queryparser.html" target="_top">http://xapian.org/docs/queryparser.html</a></p>
+      <p>
+        <span class="bold">
+          <strong>limit=&lt;number&gt;</strong>
+        </span>
+      </p>
+      <p>Restricts number of messages/threads in the result. The default limit is nm_db_limit.</p>
+      <p>
+        <span class="bold">
+          <strong>type=&lt;threads|messages&gt;</strong>
+        </span>
+      </p>
+      <p>Reads all matching messages or whole-threads. The default is 'messages' or nm_query_type.</p>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="notmuch-variables"></a>4.&#160;Variables</h3>
         </div>
       </div>
     </div>
@@ -198,10 +310,11 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-functions"></a>3.&#160;Functions</h3>
+          <a class="offset" id="notmuch-functions"></a>5.&#160;Functions</h3>
         </div>
       </div>
     </div>
+    <p>Notmuch adds the following functions to Mutt. By default, none of them are bound to keys.</p>
     <div class="table">
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
@@ -213,12 +326,10 @@ base: mutt/1.6.2
             <col />
             <col />
             <col />
-            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Menus</th>
-              <th>Default Key</th>
               <th>Function</th>
               <th>Description</th>
             </tr>
@@ -226,7 +337,6 @@ base: mutt/1.6.2
           <tbody>
             <tr>
               <td>index,pager</td>
-              <td>X</td>
               <td>
                 <code class="literal">&lt;change-vfolder&gt;</code>
               </td>
@@ -234,7 +344,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>+</td>
               <td>
                 <code class="literal">&lt;entire-thread&gt;</code>
               </td>
@@ -242,7 +351,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>`</td>
               <td>
                 <code class="literal">&lt;modify-labels&gt;</code>
               </td>
@@ -250,7 +358,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>(none)</td>
               <td>
                 <code class="literal">&lt;modify-labels-then-hide&gt;</code>
               </td>
@@ -258,7 +365,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>(none)</td>
               <td>
                 <code class="literal">&lt;sidebar-toggle-virtual&gt;</code>
               </td>
@@ -266,7 +372,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>Alt-X</td>
               <td>
                 <code class="literal">&lt;vfolder-from-query&gt;</code>
               </td>
@@ -283,7 +388,7 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-commands"></a>4.&#160;Commands</h3>
+          <a class="offset" id="notmuch-commands"></a>6.&#160;Commands</h3>
         </div>
       </div>
     </div>
@@ -337,7 +442,7 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-colors"></a>5.&#160;Colors</h3>
+          <a class="offset" id="notmuch-colors"></a>7.&#160;Colors</h3>
         </div>
       </div>
     </div>
@@ -387,7 +492,7 @@ base: mutt/1.6.2
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-muttrc"></a>6.&#160;Muttrc</h3>
+          <a class="offset" id="notmuch-muttrc"></a>8.&#160;Muttrc</h3>
         </div>
       </div>
     </div>
@@ -449,7 +554,7 @@ bind index,pager X change-vfolder
 bind index,pager + entire-thread
  
 <span class="comment"># modify (notmuch) tags</span>
-bind index,pager ` modify-labels
+bind index,pager \` modify-labels
  
 <span class="comment"># generate virtual folder from query</span>
 bind index,pager \eX vfolder-from-query
@@ -513,7 +618,7 @@ color index_tags green default
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-see-also"></a>7.&#160;See Also</h3>
+          <a class="offset" id="notmuch-see-also"></a>9.&#160;See Also</h3>
         </div>
       </div>
     </div>
@@ -537,7 +642,7 @@ color index_tags green default
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-known-bugs"></a>8.&#160;Known Bugs</h3>
+          <a class="offset" id="notmuch-known-bugs"></a>10.&#160;Known Bugs</h3>
         </div>
       </div>
     </div>
@@ -548,7 +653,7 @@ color index_tags green default
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="notmuch-credits"></a>9.&#160;Credits</h3>
+          <a class="offset" id="notmuch-credits"></a>11.&#160;Credits</h3>
         </div>
       </div>
     </div>

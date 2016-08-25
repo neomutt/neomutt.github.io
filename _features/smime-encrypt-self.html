@@ -4,7 +4,7 @@ title: S/MIME Encrypt to Self
 description: Save an self-encrypted copy of emails
 status: stable
 branch: feature/smime-encrypt-self
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -59,8 +59,8 @@ base: mutt/1.6.2
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
     <a class="link" href="/manual/reference.html#fcc-clear" title="3.71.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.309.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
-    <a class="link" href="/manual/reference.html#smime-default-key" title="3.307.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
+    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.310.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
+    <a class="link" href="/manual/reference.html#smime-default-key" title="3.308.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_encrypt_self = yes
 set smime_default_key  = bb345e23.0

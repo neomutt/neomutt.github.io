@@ -1116,7 +1116,7 @@ title: Advanced Usage
       <a class="xref" href="advancedusage.html#tab-simplesearch-keywords" title="Table&#160;4.5.&#160;Simple search keywords">Table&#160;4.5, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching 
       <span class="quote">“
       <span class="quote">flag</span>”</span>(using 
-      <a class="link" href="reference.html#simple-search" title="3.297.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for 
+      <a class="link" href="reference.html#simple-search" title="3.298.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for 
       <span class="quote">“
       <span class="quote">
         <code class="literal">[f]lag</code>
@@ -1189,7 +1189,7 @@ title: Advanced Usage
       </div>
       <br class="table-break" />
       <p>The second type of simple search is to build a complex search pattern using 
-      <a class="link" href="reference.html#simple-search" title="3.297.&#160;simple_search">$simple_search</a>as a template. Mutt will insert your query properly quoted and search for the composed complex query.</p>
+      <a class="link" href="reference.html#simple-search" title="3.298.&#160;simple_search">$simple_search</a>as a template. Mutt will insert your query properly quoted and search for the composed complex query.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1893,7 +1893,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
                 <code class="literal">!</code>
               </td>
               <td>your 
-              <a class="link" href="reference.html#spoolfile" title="3.333.&#160;spoolfile">$spoolfile</a>(incoming) mailbox</td>
+              <a class="link" href="reference.html#spoolfile" title="3.334.&#160;spoolfile">$spoolfile</a>(incoming) mailbox</td>
             </tr>
             <tr>
               <td>
@@ -2046,7 +2046,7 @@ folder-hook . 'set record=^'
     <span class="quote">“
     <span class="quote">Reply-To</span>”</span>field will be used when present.</p>
     <p>Lastly, Mutt has the ability to 
-    <a class="link" href="reference.html#sort" title="3.327.&#160;sort">sort</a>the mailbox into 
+    <a class="link" href="reference.html#sort" title="3.328.&#160;sort">sort</a>the mailbox into 
     <a class="link" href="gettingstarted.html#threads" title="5.3.&#160;Threaded Mode">threads</a>. A thread is a group of messages which all relate to the same subject. This is usually organized into a tree-like structure where a message and all of its replies are represented graphically. If you've ever used a threaded news client, this is the same concept. It makes dealing with large volume mailing lists easier because you can easily delete uninteresting threads and quickly find topics of value.</p>
   </div>
   <div class="sect1">
@@ -2095,7 +2095,7 @@ folder-hook . 'set record=^'
         </dt>
         <dd>
           <p>Mutt-specific design; freeform text (but see 
-          <a class="link" href="reference.html#xlabel-delimiter" title="3.384.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
+          <a class="link" href="reference.html#xlabel-delimiter" title="3.385.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
         </dd>
       </dl>
     </div>
@@ -2108,7 +2108,7 @@ folder-hook . 'set record=^'
     <code class="literal">X-Label:</code>. Keywords will be saved to whichever header was in use by the message the keyword was read from. If 
     <a class="link" href="reference.html#keywords-standard" title="3.129.&#160;keywords_standard">$keywords_standard</a>is set, keywords will be saved without exception to the standard 
     <code class="literal">Keywords:</code>header. (If both are set, both will be used; if both are unset, legacy headers are used.) Additionally, 
-    <a class="link" href="reference.html#xlabel-delimiter" title="3.384.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
+    <a class="link" href="reference.html#xlabel-delimiter" title="3.385.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
     <p>To migrate completely to the new standard, unset 
     <code class="literal">$keywords_legacy</code>and set 
     <code class="literal">$keywords_standard</code>, and set 
@@ -2171,7 +2171,7 @@ folder-hook . 'set record=^'
         </div>
       </div>
       <p>When in the index menu and being idle (also see 
-      <a class="link" href="reference.html#timeout" title="3.358.&#160;timeout">$timeout</a>), Mutt periodically checks for new mail in all folders which have been configured via the 
+      <a class="link" href="reference.html#timeout" title="3.359.&#160;timeout">$timeout</a>), Mutt periodically checks for new mail in all folders which have been configured via the 
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. The interval depends on the folder type: for local/IMAP folders it consults 
@@ -2188,7 +2188,7 @@ folder-hook . 'set record=^'
       <span class="quote">“
       <span class="quote">.</span>”</span>by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default Mutt displays the number of mailboxes with new mail in the status bar, please refer to the 
-      <a class="link" href="reference.html#status-format" title="3.349.&#160;status_format">$status_format</a>variable for details.</p>
+      <a class="link" href="reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>variable for details.</p>
       <p>When changing folders, Mutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing 
       <code class="literal">&lt;Space&gt;</code>will cycle through folders with new mail. The (by default unbound) function 
       <code class="literal">&lt;next-unread-mailbox&gt;</code>in the index can be used to immediately open the next folder with unread mail (if any).</p>
@@ -2278,7 +2278,7 @@ folder-hook . 'set record=^'
     <p>When using 
     <a class="link" href="reference.html#sendmail" title="3.277.&#160;sendmail">$sendmail</a>for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
     <p>For SMTP delivery using 
-    <a class="link" href="reference.html#smtp-url" title="3.326.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether Mutt will attempt to request DSN or not.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.327.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether Mutt will attempt to request DSN or not.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -2328,7 +2328,7 @@ macro pager \cb |urlview\n
           <p>The folder Mutt opens at startup is determined as follows: the folder specified in the 
           <code class="literal">$MAIL</code>environment variable if present. Otherwise, the value of 
           <code class="literal">$MAILDIR</code>is taken into account. If that isn't present either, Mutt takes the user's mailbox in the mailspool as determined at compile-time (which may also reside in the home directory). The 
-          <a class="link" href="reference.html#spoolfile" title="3.333.&#160;spoolfile">$spoolfile</a>setting overrides this selection. Highest priority has the mailbox given with the 
+          <a class="link" href="reference.html#spoolfile" title="3.334.&#160;spoolfile">$spoolfile</a>setting overrides this selection. Highest priority has the mailbox given with the 
           <code class="literal">-f</code>command line option.</p>
         </dd>
       </dl>

@@ -14,7 +14,7 @@ If you have a problem with NeoMutt, please let us know.
 
 If you are a GitHub user, you can **[raise an issue](https://github.com/neomutt/neomutt/issues)**.
 
-Alternatively, you can [**email the development team**](neomutt-devel@neomutt.org).
+Alternatively, you can [**email the development team**](mailto:neomutt-devel@neomutt.org).
 
 ## Source Code
 

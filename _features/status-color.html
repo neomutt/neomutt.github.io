@@ -4,7 +4,7 @@ title: Status Color
 description: Custom rules for theming the status bar
 status: stable
 branch: feature/status-color
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -174,7 +174,7 @@ color status brightred white '(New|Del|Flag):[0-9]+'
 # First, highlight anything (*/*)</span>
 color status brightred default '\([^)]+/[^)]+\)'
  
-<span class="comment"># Then override the color for one specfic case</span>
+<span class="comment"># Then override the color for one specific case</span>
 color status default   default '\(threads/last-date-received\)'
  
 <span class="comment"># 2 extra parameters

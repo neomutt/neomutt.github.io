@@ -15,8 +15,8 @@ status: ignore
   </div>
   <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
   <p>This part of the manual is suitable for beginners. If you already know Mutt you could skip ahead to the main
-  <a class="link" href="/feature/sidebar" title="26.&#160;Sidebar Patch">Sidebar guide</a>. If you just want to get started, you could use the sample
-  <a class="link" href="/feature/sidebar#sidebar-muttrc" title="26.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+  <a class="link" href="/feature/sidebar" title="27.&#160;Sidebar Patch">Sidebar guide</a>. If you just want to get started, you could use the sample
+  <a class="link" href="/feature/sidebar#sidebar-muttrc" title="27.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
   <p>To check if Mutt supports
   <span class="quote">“
   <span class="quote">Sidebar</span>”</span>, look for the string
@@ -71,7 +71,7 @@ Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
       </div>
     </div>
     <p>The Sidebar adds some new
-    <a class="link" href="/feature/sidebar#sidebar-functions" title="26.4.&#160;Functions">functions</a>to Mutt.</p>
+    <a class="link" href="/feature/sidebar#sidebar-functions" title="27.4.&#160;Functions">functions</a>to Mutt.</p>
     <p>The user pressed the
     <span class="quote">“
     <span class="quote">c</span>”</span>key to
@@ -192,7 +192,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
     <div class="itemizedlist">
       <p class="title">
         <strong>
-          <a class="link" href="/feature/sidebar#sidebar-sort" title="26.7.&#160;Sort">The order in which mailboxes are displayed</a>
+          <a class="link" href="/feature/sidebar#sidebar-sort" title="27.7.&#160;Sort">The order in which mailboxes are displayed</a>
         </strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
@@ -228,7 +228,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
     <div class="itemizedlist">
       <p class="title">
         <strong>
-          <a class="link" href="/feature/sidebar#sidebar-functions" title="26.4.&#160;Functions">Key bindings</a>
+          <a class="link" href="/feature/sidebar#sidebar-functions" title="27.4.&#160;Functions">Key bindings</a>
         </strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
@@ -289,17 +289,17 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/sidebar#sidebar-variables" title="26.3.&#160;Variables">Sidebar variables to set</a>
+            <a class="link" href="/feature/sidebar#sidebar-variables" title="27.3.&#160;Variables">Sidebar variables to set</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/sidebar#sidebar-colors" title="26.6.&#160;Colors">Sidebar colors to apply</a>
+            <a class="link" href="/feature/sidebar#sidebar-colors" title="27.6.&#160;Colors">Sidebar colors to apply</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/sidebar#sidebar-sort" title="26.7.&#160;Sort">Sidebar sort methods</a>
+            <a class="link" href="/feature/sidebar#sidebar-sort" title="27.7.&#160;Sort">Sidebar sort methods</a>
           </p>
         </li>
       </ul>
@@ -319,17 +319,17 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
       <span class="quote">muttrc</span>”</span>, or bind a key to the function
       <code class="literal">&lt;sidebar-toggle-visible&gt;</code>.</p>
       <pre class="screen">
-set sidebar_visible                        
+set sidebar_visible
 <span class="comment"># Make the Sidebar visible by default</span>
-bind index,pager B sidebar-toggle-visible  
+bind index,pager B sidebar-toggle-visible
 <span class="comment"># Use 'B' to switch the Sidebar on and off</span>
 </pre>
       <p>Next, decide how wide you want the Sidebar to be. 25 characters might be enough for the mailbox name and some numbers. Remember, you can hide/show the Sidebar at the press of button.</p>
       <p>Finally, you might want to change the divider character. By default, Sidebar draws an ASCII line between it and the Index panel If your terminal supports it, you can use a Unicode line-drawing character.</p>
       <pre class="screen">
-set sidebar_width = 25                 
+set sidebar_width = 25
 <span class="comment"># Plenty of space</span>
-set sidebar_divider_char = '│'         
+set sidebar_divider_char = '│'
 <span class="comment"># Pretty line-drawing character</span>
 </pre>
     </div>
@@ -583,9 +583,9 @@ mailboxes =water/ocean/atlantic =water/ocean/pacific   =water/ocean/arctic
 </pre>
         <p>Shorten the names:</p>
         <pre class="screen">
-set sidebar_short_path                 
+set sidebar_short_path
 <span class="comment"># Shorten mailbox names</span>
-set sidebar_delim_chars="/"            
+set sidebar_delim_chars="/"
 <span class="comment"># Delete everything up to the last / character</span>
 </pre>
         <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
@@ -624,13 +624,13 @@ mailboxes =water/ocean/atlantic =water/ocean/pacific =water/ocean/arctic
 </pre>
         <p>Shorten the names:</p>
         <pre class="screen">
-set sidebar_short_path                 
+set sidebar_short_path
 <span class="comment"># Shorten mailbox names</span>
-set sidebar_delim_chars="/"            
+set sidebar_delim_chars="/"
 <span class="comment"># Delete everything up to the last / character</span>
-set sidebar_folder_indent              
+set sidebar_folder_indent
 <span class="comment"># Indent folders whose names we've shortened</span>
-set sidebar_indent_string="  "         
+set sidebar_indent_string="  "
 <span class="comment"># Indent with two spaces</span>
 </pre>
         <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
@@ -666,9 +666,9 @@ set sidebar_indent_string="  "
       <p>If you want some mailboxes to be always visible, then use the
       <code class="literal">sidebar_whitelist</code>command. It takes a list of mailboxes as parameters.</p>
       <pre class="screen">
-set sidebar_new_mail_only              
+set sidebar_new_mail_only
 <span class="comment"># Only mailboxes with new/flagged email</span>
-sidebar_whitelist fruit fruit/apple    
+sidebar_whitelist fruit fruit/apple
 <span class="comment"># Always display these two mailboxes</span>
 </pre>
     </div>
@@ -684,17 +684,17 @@ sidebar_whitelist fruit fruit/apple
     </div>
     <p>Here is a sample color scheme:</p>
     <pre class="screen">
-color sidebar_indicator default color17        
+color sidebar_indicator default color17
 <span class="comment"># Dark blue background</span>
-color sidebar_highlight white   color238       
+color sidebar_highlight white   color238
 <span class="comment"># Grey background</span>
-color sidebar_spoolfile yellow  default        
+color sidebar_spoolfile yellow  default
 <span class="comment"># Yellow</span>
-color sidebar_new       green   default        
+color sidebar_new       green   default
 <span class="comment"># Green</span>
-color sidebar_flagged   red     default        
+color sidebar_flagged   red     default
 <span class="comment"># Red</span>
-color sidebar_divider   color8  default        
+color sidebar_divider   color8  default
 <span class="comment"># Dark grey</span>
 </pre>
     <p>There is a priority order when coloring Sidebar mailboxes. e.g. If a mailbox has new mail it will have the

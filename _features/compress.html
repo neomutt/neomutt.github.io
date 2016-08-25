@@ -4,7 +4,7 @@ title: Compressed Folders
 description: Read from/write to compressed mailboxes
 status: stable
 branch: feature/compress
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -320,6 +320,13 @@ append-hook regexp shell-command
       <p>Mutt will only use the
       <code class="literal">append-hook</code>for existing files. The
       <code class="literal">close-hook</code>will be used for empty, or missing files.</p>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>If your command writes to stdout, it is vital that you use
+        <code class="literal">&gt;&gt;</code>in the
+        <span class="quote">“
+        <span class="quote">append-hook</span>”</span>. If not, data will be lost.</p>
+      </div>
       <div class="sect4">
         <div class="titlepage">
           <div>
@@ -379,7 +386,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/manual/reference.html#tmpdir" title="3.359.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/manual/reference.html#tmpdir" title="3.360.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect2">
@@ -460,7 +467,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#tmpdir" title="3.359.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/manual/reference.html#tmpdir" title="3.360.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">

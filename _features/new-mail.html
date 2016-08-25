@@ -4,7 +4,7 @@ title: new-mail
 description: Execute a command upon the receipt of new mail.
 status: stable
 branch: feature/new-mail
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -59,7 +59,7 @@ base: mutt/1.6.2
     <p>This patch enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%f</code>for the folder name. For a complete list, see:
-    <a class="link" href="/manual/reference.html#status-format" title="3.349.&#160;status_format">$status_format</a>.</p>
+    <a class="link" href="/manual/reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>.</p>
     <p>For example in Linux you can use (most distributions already provide notify-send):</p>
     <pre class="screen">
 set new_mail_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"

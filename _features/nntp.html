@@ -4,7 +4,7 @@ title: NNTP
 description: Talk to a Usenet news server
 status: stable
 branch: feature/nntp
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -308,6 +308,7 @@ base: mutt/1.6.2
         </div>
       </div>
     </div>
+    <p>NNTP adds the following functions to Mutt. By default, none of them are bound to keys.</p>
     <div class="table">
       <a class="offset" id="table-nntp-functions"></a>
       <p class="title">
@@ -319,12 +320,10 @@ base: mutt/1.6.2
             <col />
             <col />
             <col />
-            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Menus</th>
-              <th>Default Key</th>
               <th>Function</th>
               <th>Description</th>
             </tr>
@@ -332,7 +331,6 @@ base: mutt/1.6.2
           <tbody>
             <tr>
               <td>browser,index</td>
-              <td>y</td>
               <td>
                 <code class="literal">&lt;catchup&gt;</code>
               </td>
@@ -340,23 +338,13 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>i</td>
               <td>
                 <code class="literal">&lt;change-newsgroup&gt;</code>
               </td>
               <td>open a different newsgroup</td>
             </tr>
             <tr>
-              <td>pager</td>
-              <td>X</td>
-              <td>
-                <code class="literal">&lt;change-vfolder&gt;</code>
-              </td>
-              <td>open a different virtual folder</td>
-            </tr>
-            <tr>
               <td>compose</td>
-              <td>o</td>
               <td>
                 <code class="literal">&lt;edit-followup-to&gt;</code>
               </td>
@@ -364,7 +352,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>compose</td>
-              <td>N</td>
               <td>
                 <code class="literal">&lt;edit-newsgroups&gt;</code>
               </td>
@@ -372,39 +359,20 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>compose</td>
-              <td>x</td>
               <td>
                 <code class="literal">&lt;edit-x-comment-to&gt;</code>
               </td>
               <td>edit the X-Comment-To field</td>
             </tr>
             <tr>
-              <td>pager</td>
-              <td>+</td>
-              <td>
-                <code class="literal">&lt;entire-thread&gt;</code>
-              </td>
-              <td>read entire thread of the current message</td>
-            </tr>
-            <tr>
               <td>attachment,index,pager</td>
-              <td>F</td>
               <td>
                 <code class="literal">&lt;followup-message&gt;</code>
               </td>
               <td>followup to newsgroup</td>
             </tr>
             <tr>
-              <td>pager</td>
-              <td>`</td>
-              <td>
-                <code class="literal">&lt;modify-labels&gt;</code>
-              </td>
-              <td>modify (notmuch) tags</td>
-            </tr>
-            <tr>
               <td>index,pager</td>
-              <td>P</td>
               <td>
                 <code class="literal">&lt;post-message&gt;</code>
               </td>
@@ -412,7 +380,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>browser</td>
-              <td>g</td>
               <td>
                 <code class="literal">&lt;reload-active&gt;</code>
               </td>
@@ -420,7 +387,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>browser</td>
-              <td>s</td>
               <td>
                 <code class="literal">&lt;subscribe&gt;</code>
               </td>
@@ -428,7 +394,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>browser</td>
-              <td>S</td>
               <td>
                 <code class="literal">&lt;subscribe-pattern&gt;</code>
               </td>
@@ -436,7 +401,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>browser</td>
-              <td>Y</td>
               <td>
                 <code class="literal">&lt;uncatchup&gt;</code>
               </td>
@@ -444,7 +408,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>browser</td>
-              <td>u</td>
               <td>
                 <code class="literal">&lt;unsubscribe&gt;</code>
               </td>
@@ -452,7 +415,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>browser</td>
-              <td>U</td>
               <td>
                 <code class="literal">&lt;unsubscribe-pattern&gt;</code>
               </td>
@@ -460,7 +422,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index,pager</td>
-              <td>Alt-i</td>
               <td>
                 <code class="literal">&lt;change-newsgroup-readonly&gt;</code>
               </td>
@@ -468,7 +429,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>attachment,index,pager</td>
-              <td>Alt-F</td>
               <td>
                 <code class="literal">&lt;forward-to-group&gt;</code>
               </td>
@@ -476,7 +436,6 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index</td>
-              <td>(none)</td>
               <td>
                 <code class="literal">&lt;get-children&gt;</code>
               </td>
@@ -484,55 +443,20 @@ base: mutt/1.6.2
             </tr>
             <tr>
               <td>index</td>
-              <td>Alt-G</td>
               <td>
                 <code class="literal">&lt;get-parent&gt;</code>
               </td>
               <td>get parent of the current message</td>
             </tr>
             <tr>
-              <td>index,pager</td>
-              <td>(none)</td>
-              <td>
-                <code class="literal">&lt;imap-fetch-mail&gt;</code>
-              </td>
-              <td>force retrieval of mail from IMAP server</td>
-            </tr>
-            <tr>
-              <td>index,pager</td>
-              <td>(none)</td>
-              <td>
-                <code class="literal">&lt;imap-logout-all&gt;</code>
-              </td>
-              <td>logout from all IMAP servers</td>
-            </tr>
-            <tr>
-              <td>pager</td>
-              <td>(none)</td>
-              <td>
-                <code class="literal">&lt;modify-labels-then-hide&gt;</code>
-              </td>
-              <td>modify labeld and then hide message</td>
-            </tr>
-            <tr>
               <td>index</td>
-              <td>(none)</td>
               <td>
                 <code class="literal">&lt;reconstruct-thread&gt;</code>
               </td>
               <td>reconstruct thread containing current message</td>
             </tr>
             <tr>
-              <td>pager</td>
-              <td>Alt-X</td>
-              <td>
-                <code class="literal">&lt;vfolder-from-query&gt;</code>
-              </td>
-              <td>generate virtual folder from query</td>
-            </tr>
-            <tr>
               <td>index</td>
-              <td>Ctrl-G</td>
               <td>
                 <code class="literal">&lt;get-message&gt;</code>
               </td>
@@ -594,9 +518,6 @@ bind browser,index y catchup
 <span class="comment"># open a different newsgroup</span>
 bind index,pager i change-newsgroup
 
-<span class="comment"># open a different virtual folder</span>
-bind pager X change-vfolder
-
 <span class="comment"># edit the Followup-To field</span>
 bind compose o edit-followup-to
 
@@ -606,14 +527,8 @@ bind compose N edit-newsgroups
 <span class="comment"># edit the X-Comment-To field</span>
 bind compose x edit-x-comment-to
 
-<span class="comment"># read entire thread of the current message</span>
-bind pager + entire-thread
-
 <span class="comment"># followup to newsgroup</span>
 bind attachment,index,pager F followup-message
-
-<span class="comment"># modify (notmuch) tags</span>
-bind pager ` modify-labels
 
 <span class="comment"># post message to newsgroup</span>
 bind index,pager P post-message
@@ -648,20 +563,8 @@ bind attachment,index,pager \eF forward-to-group
 <span class="comment"># get parent of the current message</span>
 bind index \eG get-parent
 
-<span class="comment"># force retrieval of mail from IMAP server
-# bind index,pager ??? imap-fetch-mail
-
-# logout from all IMAP servers
-# bind index,pager ??? imap-logout-all
-
-# modify labeld and then hide message
-# bind pager ??? modify-labels-then-hide
-
 # reconstruct thread containing current message
 # bind index ??? reconstruct-thread
-
-# generate virtual folder from query</span>
-bind pager \eX vfolder-from-query
 
 <span class="comment"># get message with Message-Id</span>
 bind index \CG get-message

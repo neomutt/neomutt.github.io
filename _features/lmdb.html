@@ -4,7 +4,7 @@ title: LMDB
 description: LMDB backend for the header cache
 status: stable
 branch: feature/lmdb
-base: mutt/1.6.2
+base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -40,7 +40,7 @@ base: mutt/1.6.2
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.6.2</p>
+          <p>mutt-1.7.0</p>
         </li>
       </ul>
     </div>
@@ -60,6 +60,10 @@ base: mutt/1.6.2
     <span class="emphasis">
       <em>--with-lmdb=&lt;path&gt;</em>
     </span>switch.</p>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>It is not recommended to store the lmdb database on a shared drive.</p>
+    </div>
   </div>
   <div class="sect2">
     <div class="titlepage">
