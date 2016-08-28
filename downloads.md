@@ -115,3 +115,15 @@ Packager: [Thomas Klausner (0-wiz-0)](https://github.com/0-wiz-0)
 
 Home: [NeoMutt for NetBSD](http://pkgsrc.se/mail/neomutt)
 
+<img align="left" src="/images/void.png">
+
+## Void (xbps)
+
+Packager: [Toyam Cox (Vaelatern)](https://github.com/Vaelatern)
+
+Installing NeoMutt is as simple as:
+
+```
+xbps-install neomutt
+```
+
