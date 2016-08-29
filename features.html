@@ -52,6 +52,8 @@ title: Features
             <span class="good">✔
           {% when 'devel' %}
             <span class="devel">⚠
+          {% when 'disabled' %}
+            <span class="devel">⚠
           {% endcase %}
             {{ f.status }}
           {% if span == true %}

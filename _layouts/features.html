@@ -12,6 +12,9 @@
             {% if page.status == "devel" %}
             <a class="devel" href="/devel/">This feature is still under development</a>
             {% endif %}
+            {% if page.status == "disabled" %}
+            <span class="warning">{{ page.warning }}</span>
+            {% endif %}
 
             {{ content }}
 

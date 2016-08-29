@@ -12,7 +12,7 @@
             <li>
           {% endif %}
           <a href="{{ f.url }}">{{ f.title }}</a>
-          {% if f.status == "devel" %}
+          {% if (f.status == "devel") or (f.status == "disabled") %}
             <span class="devel">⚠</span>
           {% else %}
           {% if f.title == "Sidebar" %}
