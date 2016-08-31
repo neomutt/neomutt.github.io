@@ -319,18 +319,14 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
       <span class="quote">muttrc</span>”</span>, or bind a key to the function
       <code class="literal">&lt;sidebar-toggle-visible&gt;</code>.</p>
       <pre class="screen">
-set sidebar_visible
-<span class="comment"># Make the Sidebar visible by default</span>
-bind index,pager B sidebar-toggle-visible
-<span class="comment"># Use 'B' to switch the Sidebar on and off</span>
+set sidebar_visible                         <span class="comment"># Make the Sidebar visible by default</span>
+bind index,pager B sidebar-toggle-visible   <span class="comment"># Use 'B' to switch the Sidebar on and off</span>
 </pre>
       <p>Next, decide how wide you want the Sidebar to be. 25 characters might be enough for the mailbox name and some numbers. Remember, you can hide/show the Sidebar at the press of button.</p>
       <p>Finally, you might want to change the divider character. By default, Sidebar draws an ASCII line between it and the Index panel If your terminal supports it, you can use a Unicode line-drawing character.</p>
       <pre class="screen">
-set sidebar_width = 25
-<span class="comment"># Plenty of space</span>
-set sidebar_divider_char = '│'
-<span class="comment"># Pretty line-drawing character</span>
+set sidebar_width = 25                      <span class="comment"># Plenty of space</span>
+set sidebar_divider_char = '│'              <span class="comment"># Pretty line-drawing character</span>
 </pre>
     </div>
     <div class="sect4">
@@ -583,10 +579,8 @@ mailboxes =water/ocean/atlantic =water/ocean/pacific   =water/ocean/arctic
 </pre>
         <p>Shorten the names:</p>
         <pre class="screen">
-set sidebar_short_path
-<span class="comment"># Shorten mailbox names</span>
-set sidebar_delim_chars="/"
-<span class="comment"># Delete everything up to the last / character</span>
+set sidebar_short_path                  <span class="comment"># Shorten mailbox names</span>
+set sidebar_delim_chars="/"             <span class="comment"># Delete everything up to the last / character</span>
 </pre>
         <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
         <pre class="screen">
@@ -624,14 +618,10 @@ mailboxes =water/ocean/atlantic =water/ocean/pacific =water/ocean/arctic
 </pre>
         <p>Shorten the names:</p>
         <pre class="screen">
-set sidebar_short_path
-<span class="comment"># Shorten mailbox names</span>
-set sidebar_delim_chars="/"
-<span class="comment"># Delete everything up to the last / character</span>
-set sidebar_folder_indent
-<span class="comment"># Indent folders whose names we've shortened</span>
-set sidebar_indent_string="  "
-<span class="comment"># Indent with two spaces</span>
+set sidebar_short_path                  <span class="comment"># Shorten mailbox names</span>
+set sidebar_delim_chars="/"             <span class="comment"># Delete everything up to the last / character</span>
+set sidebar_folder_indent               <span class="comment"># Indent folders whose names we've shortened</span>
+set sidebar_indent_string="  "          <span class="comment"># Indent with two spaces</span>
 </pre>
         <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
         <pre class="screen">
@@ -666,10 +656,8 @@ set sidebar_indent_string="  "
       <p>If you want some mailboxes to be always visible, then use the
       <code class="literal">sidebar_whitelist</code>command. It takes a list of mailboxes as parameters.</p>
       <pre class="screen">
-set sidebar_new_mail_only
-<span class="comment"># Only mailboxes with new/flagged email</span>
-sidebar_whitelist fruit fruit/apple
-<span class="comment"># Always display these two mailboxes</span>
+set sidebar_new_mail_only               <span class="comment"># Only mailboxes with new/flagged email</span>
+sidebar_whitelist fruit fruit/apple     <span class="comment"># Always display these two mailboxes</span>
 </pre>
     </div>
   </div>
@@ -684,18 +672,12 @@ sidebar_whitelist fruit fruit/apple
     </div>
     <p>Here is a sample color scheme:</p>
     <pre class="screen">
-color sidebar_indicator default color17
-<span class="comment"># Dark blue background</span>
-color sidebar_highlight white   color238
-<span class="comment"># Grey background</span>
-color sidebar_spoolfile yellow  default
-<span class="comment"># Yellow</span>
-color sidebar_new       green   default
-<span class="comment"># Green</span>
-color sidebar_flagged   red     default
-<span class="comment"># Red</span>
-color sidebar_divider   color8  default
-<span class="comment"># Dark grey</span>
+color sidebar_indicator default color17       <span class="comment"># Dark blue background</span>
+color sidebar_highlight white   color238      <span class="comment"># Grey background</span>
+color sidebar_spoolfile yellow  default       <span class="comment"># Yellow</span>
+color sidebar_new       green   default       <span class="comment"># Green</span>
+color sidebar_flagged   red     default       <span class="comment"># Red</span>
+color sidebar_divider   color8  default       <span class="comment"># Dark grey</span>
 </pre>
     <p>There is a priority order when coloring Sidebar mailboxes. e.g. If a mailbox has new mail it will have the
     <code class="literal">sidebar_new</code>color, even if it also contains flagged mails.</p>
