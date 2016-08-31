@@ -677,6 +677,7 @@ color sidebar_highlight white   color238      <span class="comment"># Grey backg
 color sidebar_spoolfile yellow  default       <span class="comment"># Yellow</span>
 color sidebar_new       green   default       <span class="comment"># Green</span>
 color sidebar_flagged   red     default       <span class="comment"># Red</span>
+color sidebar_ordinary  default default       <span class="comment"># Default colors</span>
 color sidebar_divider   color8  default       <span class="comment"># Dark grey</span>
 </pre>
     <p>There is a priority order when coloring Sidebar mailboxes. e.g. If a mailbox has new mail it will have the
@@ -738,7 +739,9 @@ color sidebar_divider   color8  default       <span class="comment"># Dark grey<
             </tr>
             <tr>
               <td>Lowest</td>
-              <td>(None)</td>
+              <td>
+                <code class="literal">sidebar_ordinary</code>
+              </td>
               <td>Mailbox does not match above</td>
             </tr>
           </tbody>
