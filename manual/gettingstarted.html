@@ -267,8 +267,8 @@ title: Getting Started
       </div>
       <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
       <p>This part of the manual is suitable for beginners. If you already know Mutt you could skip ahead to the main 
-      <a class="link" href="optionalfeatures.html#sidebar" title="27.&#160;Sidebar Patch">Sidebar guide</a>. If you just want to get started, you could use the sample 
-      <a class="link" href="optionalfeatures.html#sidebar-muttrc" title="27.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+      <a class="link" href="optionalfeatures.html#sidebar" title="29.&#160;Sidebar Patch">Sidebar guide</a>. If you just want to get started, you could use the sample 
+      <a class="link" href="optionalfeatures.html#sidebar-muttrc" title="29.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
       <p>To check if Mutt supports 
       <span class="quote">“
       <span class="quote">Sidebar</span>”</span>, look for the string 
@@ -324,7 +324,7 @@ Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
           </div>
         </div>
         <p>The Sidebar adds some new 
-        <a class="link" href="optionalfeatures.html#sidebar-functions" title="27.4.&#160;Functions">functions</a>to Mutt.</p>
+        <a class="link" href="optionalfeatures.html#sidebar-functions" title="29.4.&#160;Functions">functions</a>to Mutt.</p>
         <p>The user pressed the 
         <span class="quote">“
         <span class="quote">c</span>”</span>key to 
@@ -451,7 +451,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
         <div class="itemizedlist">
           <p class="title">
             <strong>
-              <a class="link" href="optionalfeatures.html#sidebar-sort" title="27.7.&#160;Sort">The order in which mailboxes are displayed</a>
+              <a class="link" href="optionalfeatures.html#sidebar-sort" title="29.7.&#160;Sort">The order in which mailboxes are displayed</a>
             </strong>
           </p>
           <ul class="itemizedlist" style="list-style-type: disc;">
@@ -487,7 +487,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
         <div class="itemizedlist">
           <p class="title">
             <strong>
-              <a class="link" href="optionalfeatures.html#sidebar-functions" title="27.4.&#160;Functions">Key bindings</a>
+              <a class="link" href="optionalfeatures.html#sidebar-functions" title="29.4.&#160;Functions">Key bindings</a>
             </strong>
           </p>
           <ul class="itemizedlist" style="list-style-type: disc;">
@@ -517,7 +517,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
             </li>
             <li class="listitem">
               <p>
-                <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.289.&#160;sidebar_next_new_wrap">Wraparound searching</a>
+                <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.291.&#160;sidebar_next_new_wrap">Wraparound searching</a>
               </p>
             </li>
             <li class="listitem">
@@ -548,17 +548,17 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>
-                <a class="link" href="optionalfeatures.html#sidebar-variables" title="27.3.&#160;Variables">Sidebar variables to set</a>
+                <a class="link" href="optionalfeatures.html#sidebar-variables" title="29.3.&#160;Variables">Sidebar variables to set</a>
               </p>
             </li>
             <li class="listitem">
               <p>
-                <a class="link" href="optionalfeatures.html#sidebar-colors" title="27.6.&#160;Colors">Sidebar colors to apply</a>
+                <a class="link" href="optionalfeatures.html#sidebar-colors" title="29.6.&#160;Colors">Sidebar colors to apply</a>
               </p>
             </li>
             <li class="listitem">
               <p>
-                <a class="link" href="optionalfeatures.html#sidebar-sort" title="27.7.&#160;Sort">Sidebar sort methods</a>
+                <a class="link" href="optionalfeatures.html#sidebar-sort" title="29.7.&#160;Sort">Sidebar sort methods</a>
               </p>
             </li>
           </ul>
@@ -603,7 +603,7 @@ set sidebar_divider_char = '│'
           </div>
           <p>
           <code class="literal">$sidebar_format</code>allows you to customize the Sidebar display. For an introduction, read 
-          <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">format strings</a>including the section about 
+          <a class="link" href="reference.html#index-format" title="3.125.&#160;index_format">format strings</a>including the section about 
           <a class="link" href="configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">conditionals</a>.</p>
           <p>The default value is 
           <code class="literal">%B%* %n</code>The default value is 
@@ -638,7 +638,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div class="table">
-            <a class="offset" id="idm139926143111040"></a>
+            <a class="offset" id="idm139936641963984"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -745,7 +745,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div class="table">
-            <a class="offset" id="idm139926143084000"></a>
+            <a class="offset" id="idm139936640302368"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format</strong>
             </p>
@@ -951,6 +951,8 @@ color sidebar_spoolfile yellow  default
 <span class="comment"># Yellow</span>
 color sidebar_new       green   default         
 <span class="comment"># Green</span>
+color sidebar_ordinary  default default         
+<span class="comment"># Default colors</span>
 color sidebar_flagged   red     default         
 <span class="comment"># Red</span>
 color sidebar_divider   color8  default         
@@ -1015,7 +1017,9 @@ color sidebar_divider   color8  default
                 </tr>
                 <tr>
                   <td>Lowest</td>
-                  <td>(None)</td>
+                  <td>
+                    <code class="literal">sidebar_ordinary</code>
+                  </td>
                   <td>Mailbox does not match above</td>
                 </tr>
               </tbody>
@@ -1548,8 +1552,8 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>Mutt maintains a history for the built-in editor. The number of items is controlled by the 
-      <a class="link" href="reference.html#history" title="3.97.&#160;history">$history</a>variable and can be made persistent using an external file specified using 
-      <a class="link" href="reference.html#history-file" title="3.98.&#160;history_file">$history_file</a>. You may cycle through them at an editor prompt by using the 
+      <a class="link" href="reference.html#history" title="3.98.&#160;history">$history</a>variable and can be made persistent using an external file specified using 
+      <a class="link" href="reference.html#history-file" title="3.99.&#160;history_file">$history_file</a>. You may cycle through them at an editor prompt by using the 
       <code class="literal">&lt;history-up&gt;</code>and/or 
       <code class="literal">&lt;history-down&gt;</code>commands. Mutt will remember the currently entered text as you cycle through history, and will wrap around to the initial entry line.</p>
       <p>Mutt maintains several distinct history lists, one for each of the following categories:</p>
@@ -1605,7 +1609,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>Common keys used to navigate through and manage messages in the index are shown in 
       <a class="xref" href="gettingstarted.html#tab-key-index" title="Table&#160;2.8.&#160;Most common message index keys">Table&#160;2.8, “Most common message index keys”</a>. How messages are presented in the index menu can be customized using the 
-      <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>variable.</p>
+      <a class="link" href="reference.html#index-format" title="3.125.&#160;index_format">$index_format</a>variable.</p>
       <div class="table">
         <a class="offset" id="tab-key-index"></a>
         <p class="title">
@@ -1757,7 +1761,7 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">W</span>”</span>respectively.</p>
       <p>Furthermore, the flags in 
       <a class="xref" href="gettingstarted.html#tab-msg-recip-flags" title="Table&#160;2.10.&#160;Message recipient flags">Table&#160;2.10, “Message recipient flags”</a>reflect who the message is addressed to. They can be customized with the 
-      <a class="link" href="reference.html#to-chars" title="3.361.&#160;to_chars">$to_chars</a>variable.</p>
+      <a class="link" href="reference.html#to-chars" title="3.363.&#160;to_chars">$to_chars</a>variable.</p>
       <div class="table">
         <a class="offset" id="tab-msg-status-flags"></a>
         <p class="title">
@@ -1888,7 +1892,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>By default, Mutt uses its built-in pager to display the contents of messages (an external pager such as 
       <code class="literal">less(1)</code>can be configured, see 
-      <a class="link" href="reference.html#pager" title="3.186.&#160;pager">$pager</a>variable). The pager is very similar to the Unix program 
+      <a class="link" href="reference.html#pager" title="3.187.&#160;pager">$pager</a>variable). The pager is very similar to the Unix program 
       <code class="literal">less(1)</code>though not nearly as featureful.</p>
       <div class="table">
         <a class="offset" id="tab-key-pager"></a>
@@ -2136,7 +2140,7 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“
       <span class="quote">threads</span>”</span>provide a hierarchy of messages where replies are linked to their parent message(s). This organizational form is extremely useful in mailing lists where different parts of the discussion diverge. Mutt displays threads as a tree structure.</p>
       <p>In Mutt, when a mailbox is 
-      <a class="link" href="reference.html#sort" title="3.328.&#160;sort">sorted</a>by 
+      <a class="link" href="reference.html#sort" title="3.330.&#160;sort">sorted</a>by 
       <span class="emphasis">
         <em>threads</em>
       </span>, there are a few additional functions available in the 
@@ -2271,14 +2275,14 @@ bind editor &lt;delete&gt; backspace
       </div>
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in 
-      <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>. For example, you could use 
+      <a class="link" href="reference.html#index-format" title="3.125.&#160;index_format">$index_format</a>. For example, you could use 
       <span class="quote">“
       <span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span>in 
-      <a class="link" href="reference.html#index-format" title="3.124.&#160;index_format">$index_format</a>to optionally display the number of hidden messages if the thread is collapsed. The 
+      <a class="link" href="reference.html#index-format" title="3.125.&#160;index_format">$index_format</a>to optionally display the number of hidden messages if the thread is collapsed. The 
       <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in 
       <a class="link" href="configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">format string conditionals</a>.</p>
       <p>Technically, every reply should contain a list of its parent messages in the thread tree, but not all do. In these cases, Mutt groups them by subject which can be controlled using the 
-      <a class="link" href="reference.html#strict-threads" title="3.352.&#160;strict_threads">$strict_threads</a>variable.</p>
+      <a class="link" href="reference.html#strict-threads" title="3.354.&#160;strict_threads">$strict_threads</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2396,7 +2400,7 @@ bind editor &lt;delete&gt; backspace
               <strong>subscribe</strong>
             </span></a>commands, but also honor any 
             <code class="literal">Mail-Followup-To</code>header(s) if the 
-            <a class="link" href="reference.html#honor-followup-to" title="3.100.&#160;honor_followup_to">$honor_followup_to</a>configuration variable is set. In addition, the 
+            <a class="link" href="reference.html#honor-followup-to" title="3.101.&#160;honor_followup_to">$honor_followup_to</a>configuration variable is set. In addition, the 
             <code class="literal">List-Post</code>header field is examined for 
             <code class="literal">mailto:</code>URLs specifying a mailing list address. Using this when replying to messages posted to mailing lists helps avoid duplicate copies being sent to the author of the message you are replying to.</p>
           </dd>
@@ -2407,10 +2411,10 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and pipes the current or tagged message(s) to it. The variables 
-            <a class="link" href="reference.html#pipe-decode" title="3.221.&#160;pipe_decode">$pipe_decode</a>, 
-            <a class="link" href="reference.html#pipe-split" title="3.223.&#160;pipe_split">$pipe_split</a>, 
-            <a class="link" href="reference.html#pipe-sep" title="3.222.&#160;pipe_sep">$pipe_sep</a>and 
-            <a class="link" href="reference.html#wait-key" title="3.377.&#160;wait_key">$wait_key</a>control the exact behavior of this function.</p>
+            <a class="link" href="reference.html#pipe-decode" title="3.222.&#160;pipe_decode">$pipe_decode</a>, 
+            <a class="link" href="reference.html#pipe-split" title="3.224.&#160;pipe_split">$pipe_split</a>, 
+            <a class="link" href="reference.html#pipe-sep" title="3.223.&#160;pipe_sep">$pipe_sep</a>and 
+            <a class="link" href="reference.html#wait-key" title="3.379.&#160;wait_key">$wait_key</a>control the exact behavior of this function.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2419,7 +2423,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Mutt takes the current message as a template for a new message. This function is best described as "recall from arbitrary folders". It can conveniently be used to forward MIME messages while preserving the original mail structure. Note that the amount of headers included here depends on the value of the 
-            <a class="link" href="reference.html#weed" title="3.378.&#160;weed">$weed</a>variable.</p>
+            <a class="link" href="reference.html#weed" title="3.380.&#160;weed">$weed</a>variable.</p>
             <p>This function is also available from the attachment menu. You can use this to easily resend a message which was included with a bounce message as a 
             <code class="literal">message/rfc822</code>body part.</p>
           </dd>
@@ -2430,7 +2434,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and executes it. The 
-            <a class="link" href="reference.html#wait-key" title="3.377.&#160;wait_key">$wait_key</a>can be used to control whether Mutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
+            <a class="link" href="reference.html#wait-key" title="3.379.&#160;wait_key">$wait_key</a>can be used to control whether Mutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2439,7 +2443,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>The pager uses the 
-            <a class="link" href="reference.html#quote-regexp" title="3.248.&#160;quote_regexp">$quote_regexp</a>variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
+            <a class="link" href="reference.html#quote-regexp" title="3.249.&#160;quote_regexp">$quote_regexp</a>variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2576,8 +2580,8 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="reference.html#askbcc" title="3.9.&#160;askbcc">$askbcc</a>, 
       <a class="link" href="reference.html#autoedit" title="3.20.&#160;autoedit">$autoedit</a>, 
       <a class="link" href="reference.html#bounce" title="3.24.&#160;bounce">$bounce</a>, 
-      <a class="link" href="reference.html#fast-reply" title="3.69.&#160;fast_reply">$fast_reply</a>, and 
-      <a class="link" href="reference.html#include" title="3.121.&#160;include">$include</a>for changing how and if Mutt asks these questions.</p>
+      <a class="link" href="reference.html#fast-reply" title="3.70.&#160;fast_reply">$fast_reply</a>, and 
+      <a class="link" href="reference.html#include" title="3.122.&#160;include">$include</a>for changing how and if Mutt asks these questions.</p>
       <p>When replying, Mutt fills these fields with proper values depending on the reply type. The types of replying supported are:</p>
       <div class="variablelist">
         <dl class="variablelist">
@@ -2608,13 +2612,13 @@ bind editor &lt;delete&gt; backspace
         </dl>
       </div>
       <p>After getting recipients for new messages, forwards or replies, Mutt will then automatically start your 
-      <a class="link" href="reference.html#editor" title="3.64.&#160;editor">$editor</a>on the message body. If the 
-      <a class="link" href="reference.html#edit-headers" title="3.63.&#160;edit_headers">$edit_headers</a>variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate 
+      <a class="link" href="reference.html#editor" title="3.65.&#160;editor">$editor</a>on the message body. If the 
+      <a class="link" href="reference.html#edit-headers" title="3.64.&#160;edit_headers">$edit_headers</a>variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate 
       <a class="link" href="reference.html#attribution" title="3.18.&#160;attribution">$attribution</a>, 
-      <a class="link" href="reference.html#indent-string" title="3.123.&#160;indent_string">$indent_string</a>and 
-      <a class="link" href="reference.html#post-indent-string" title="3.233.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the 
-      <a class="link" href="reference.html#mime-forward" title="3.157.&#160;mime_forward">$mime_forward</a>variable is unset, a copy of the forwarded message will be included. If you have specified a 
-      <a class="link" href="reference.html#signature" title="3.297.&#160;signature">$signature</a>, it will be appended to the message.</p>
+      <a class="link" href="reference.html#indent-string" title="3.124.&#160;indent_string">$indent_string</a>and 
+      <a class="link" href="reference.html#post-indent-string" title="3.234.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the 
+      <a class="link" href="reference.html#mime-forward" title="3.158.&#160;mime_forward">$mime_forward</a>variable is unset, a copy of the forwarded message will be included. If you have specified a 
+      <a class="link" href="reference.html#signature" title="3.299.&#160;signature">$signature</a>, it will be appended to the message.</p>
       <p>Once you have finished editing the body of your mail message, you are returned to the 
       <span class="emphasis">
         <em>compose</em>
@@ -2792,7 +2796,7 @@ bind editor &lt;delete&gt; backspace
       <div class="note">
         <h3 class="title">Note</h3>
         <p>Note that certain operations like composing a new mail, replying, forwarding, etc. are not permitted when you are in that folder. The %r in 
-        <a class="link" href="reference.html#status-format" title="3.350.&#160;status_format">$status_format</a>will change to a 
+        <a class="link" href="reference.html#status-format" title="3.352.&#160;status_format">$status_format</a>will change to a 
         <span class="quote">“
         <span class="quote">A</span>”</span>to indicate that you are in attach-message mode.</p>
       </div>
@@ -2807,7 +2811,7 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>When editing the header because of 
-      <a class="link" href="reference.html#edit-headers" title="3.63.&#160;edit_headers">$edit_headers</a>being set, there are a several pseudo headers available which will not be included in sent messages but trigger special Mutt behavior.</p>
+      <a class="link" href="reference.html#edit-headers" title="3.64.&#160;edit_headers">$edit_headers</a>being set, there are a several pseudo headers available which will not be included in sent messages but trigger special Mutt behavior.</p>
       <div class="sect3">
         <div class="titlepage">
           <div>
@@ -2886,7 +2890,7 @@ bind editor &lt;delete&gt; backspace
         <span class="quote">S</span>”</span>selects signing and 
         <span class="quote">“
         <span class="quote">S&lt;id&gt;</span>”</span>selects signing with the given key, setting 
-        <a class="link" href="reference.html#pgp-sign-as" title="3.213.&#160;pgp_sign_as">$pgp_sign_as</a>permanently. The selection can later be changed in the compose menu.</p>
+        <a class="link" href="reference.html#pgp-sign-as" title="3.214.&#160;pgp_sign_as">$pgp_sign_as</a>permanently. The selection can later be changed in the compose menu.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -2926,7 +2930,7 @@ bind editor &lt;delete&gt; backspace
       <code class="literal">^G</code>. When you do so, Mutt will return to the compose screen.</p>
       <p>Once you have successfully finished the key selection, the message will be encrypted using the selected public keys when sent out.</p>
       <p>Most fields of the entries in the key selection menu (see also 
-      <a class="link" href="reference.html#pgp-entry-format" title="3.200.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
+      <a class="link" href="reference.html#pgp-entry-format" title="3.201.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
       <p>The flags sequence (
       <span class="quote">“
       <span class="quote">%f</span>”</span>) will expand to one of the flags in 
@@ -3035,7 +3039,7 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>Mutt only supports setting the required 
         <code class="literal">format=flowed</code>MIME parameter on outgoing messages if the 
-        <a class="link" href="reference.html#text-flowed" title="3.354.&#160;text_flowed">$text_flowed</a>variable is set, specifically it does not add the trailing spaces.</p>
+        <a class="link" href="reference.html#text-flowed" title="3.356.&#160;text_flowed">$text_flowed</a>variable is set, specifically it does not add the trailing spaces.</p>
         <p>After editing the initial message text and before entering the compose menu, Mutt properly space-stuffs the message. 
         <span class="emphasis">
           <em>Space-stuffing</em>
@@ -3105,22 +3109,22 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>Mutt has some support for reformatting when viewing and replying to 
         <code class="literal">format=flowed</code>messages. In order to take advantage of these, 
-        <a class="link" href="reference.html#reflow-text" title="3.255.&#160;reflow_text">$reflow_text</a>must be set.</p>
+        <a class="link" href="reference.html#reflow-text" title="3.256.&#160;reflow_text">$reflow_text</a>must be set.</p>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>Paragraphs are automatically reflowed and wrapped at a width specified by 
-              <a class="link" href="reference.html#reflow-wrap" title="3.256.&#160;reflow_wrap">$reflow_wrap</a>.</p>
+              <a class="link" href="reference.html#reflow-wrap" title="3.257.&#160;reflow_wrap">$reflow_wrap</a>.</p>
             </li>
             <li class="listitem">
               <p>In its original format, the quoting style of 
               <code class="literal">format=flowed</code>messages can be difficult to read, and doesn't intermix well with non-flowed replies. Setting 
-              <a class="link" href="reference.html#reflow-space-quotes" title="3.254.&#160;reflow_space_quotes">$reflow_space_quotes</a>adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with 
-              <a class="link" href="reference.html#text-flowed" title="3.354.&#160;text_flowed">$text_flowed</a>unset).</p>
+              <a class="link" href="reference.html#reflow-space-quotes" title="3.255.&#160;reflow_space_quotes">$reflow_space_quotes</a>adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with 
+              <a class="link" href="reference.html#text-flowed" title="3.356.&#160;text_flowed">$text_flowed</a>unset).</p>
             </li>
             <li class="listitem">
               <p>If 
-              <a class="link" href="reference.html#reflow-space-quotes" title="3.254.&#160;reflow_space_quotes">$reflow_space_quotes</a>is unset, mutt will still add one trailing space after all the quotes in the pager (but not when replying).</p>
+              <a class="link" href="reference.html#reflow-space-quotes" title="3.255.&#160;reflow_space_quotes">$reflow_space_quotes</a>is unset, mutt will still add one trailing space after all the quotes in the pager (but not when replying).</p>
             </li>
           </ul>
         </div>
@@ -3144,15 +3148,15 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“
     <span class="quote">f</span>”</span>respectively.</p>
     <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines) or including it as a MIME attachment, depending on the value of the 
-    <a class="link" href="reference.html#mime-forward" title="3.157.&#160;mime_forward">$mime_forward</a>variable. Decoding of attachments, like in the pager, can be controlled by the 
-    <a class="link" href="reference.html#forward-decode" title="3.77.&#160;forward_decode">$forward_decode</a>and 
-    <a class="link" href="reference.html#mime-forward-decode" title="3.158.&#160;mime_forward_decode">$mime_forward_decode</a>variables, respectively. The desired forwarding format may depend on the content, therefore 
-    <a class="link" href="reference.html#mime-forward" title="3.157.&#160;mime_forward">$mime_forward</a>is a quadoption which, for example, can be set to 
+    <a class="link" href="reference.html#mime-forward" title="3.158.&#160;mime_forward">$mime_forward</a>variable. Decoding of attachments, like in the pager, can be controlled by the 
+    <a class="link" href="reference.html#forward-decode" title="3.78.&#160;forward_decode">$forward_decode</a>and 
+    <a class="link" href="reference.html#mime-forward-decode" title="3.159.&#160;mime_forward_decode">$mime_forward_decode</a>variables, respectively. The desired forwarding format may depend on the content, therefore 
+    <a class="link" href="reference.html#mime-forward" title="3.158.&#160;mime_forward">$mime_forward</a>is a quadoption which, for example, can be set to 
     <span class="quote">“
     <span class="quote">ask-no</span>”</span>.</p>
     <p>The inclusion of headers is controlled by the current setting of the 
-    <a class="link" href="reference.html#weed" title="3.378.&#160;weed">$weed</a>variable, unless 
-    <a class="link" href="reference.html#mime-forward" title="3.157.&#160;mime_forward">$mime_forward</a>is set.</p>
+    <a class="link" href="reference.html#weed" title="3.380.&#160;weed">$weed</a>variable, unless 
+    <a class="link" href="reference.html#mime-forward" title="3.158.&#160;mime_forward">$mime_forward</a>is set.</p>
     <p>Editing the message to forward follows the same procedure as sending or replying to a message does.</p>
   </div>
   <div class="sect1">
@@ -3169,7 +3173,7 @@ bind editor &lt;delete&gt; backspace
     <span class="emphasis">
       <em>compose</em>
     </span>menu, the body of your message and attachments are stored in the mailbox specified by the 
-    <a class="link" href="reference.html#postponed" title="3.236.&#160;postponed">$postponed</a>variable. This means that you can recall the message even if you exit Mutt and then restart it at a later time.</p>
+    <a class="link" href="reference.html#postponed" title="3.237.&#160;postponed">$postponed</a>variable. This means that you can recall the message even if you exit Mutt and then restart it at a later time.</p>
     <p>Once a message is postponed, there are several ways to resume it. From the command line you can use the 
     <span class="quote">“
     <span class="quote">-p</span>”</span>option, or if you compose a new message from the 
@@ -3187,7 +3191,7 @@ bind editor &lt;delete&gt; backspace
       <p>If you postpone a reply to a message, the reply setting of the message is only updated when you actually finish the message and send it. Also, you must be in the same folder with the message you replied to for the status of the message to be updated.</p>
     </div>
     <p>See also the 
-    <a class="link" href="reference.html#postpone" title="3.235.&#160;postpone">$postpone</a>quad-option.</p>
+    <a class="link" href="reference.html#postpone" title="3.236.&#160;postpone">$postpone</a>quad-option.</p>
   </div>
 </div>
 {% endraw %}
