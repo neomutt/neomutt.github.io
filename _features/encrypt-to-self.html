@@ -1,9 +1,9 @@
 ---
 layout: features
-title: S/MIME Encrypt to Self
+title: Encrypt-to-Self
 description: Save an self-encrypted copy of emails
 status: stable
-branch: feature/smime-encrypt-self
+branch: feature/encrypt-to-self
 base: mutt/1.7.0
 ---
 {% raw %}
@@ -12,7 +12,7 @@ base: mutt/1.7.0
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="smime-encrypt-self-patch"></a>&#160;smime-encrypt-self Patch</h2>
+        <a class="offset" id="encrypt-to-self"></a>&#160;Encrypt-to-Self Patch</h2>
       </div>
       <div>
         <h3 class="subtitle">Save an self-encrypted copy of emails</h3>
@@ -24,15 +24,15 @@ base: mutt/1.7.0
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-patch2"></a>1.&#160;Patch</h3>
+          <a class="offset" id="encrypt-to-self-patch"></a>1.&#160;Patch</h3>
         </div>
       </div>
     </div>
     <p>To check if Mutt supports
     <span class="quote">“
-    <span class="quote">smime-encrypt-self</span>”</span>, look for
+    <span class="quote">encrypt-self</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-smime-encrypt-self</span>”</span>in the mutt version. See:
+    <span class="quote">patch-encrypt-self</span>”</span>in the mutt version. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -52,18 +52,25 @@ base: mutt/1.7.0
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-intro"></a>2.&#160;Introduction</h3>
+          <a class="offset" id="encrypt-to-self-intro"></a>2.&#160;Introduction</h3>
         </div>
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/manual/reference.html#fcc-clear" title="3.71.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="/manual/reference.html#fcc-clear" title="3.72.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.310.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
-    <a class="link" href="/manual/reference.html#smime-default-key" title="3.308.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
+    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.312.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
+    <a class="link" href="/manual/reference.html#smime-default-key" title="3.310.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_encrypt_self = yes
 set smime_default_key  = bb345e23.0
+</pre>
+    <p>Or, if you use PGP,
+    <a class="link" href="/manual/reference.html#pgp-encrypt-self" title="3.49.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
+    <a class="link" href="/manual/reference.html#pgp-sign-as" title="3.214.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
+    <pre class="screen">
+set pgp_encrypt_self = yes
+set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 </pre>
   </div>
   <div class="sect2">
@@ -71,17 +78,17 @@ set smime_default_key  = bb345e23.0
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-variables"></a>3.&#160;Variables</h3>
+          <a class="offset" id="encrypt-to-self-variables"></a>3.&#160;Variables</h3>
         </div>
       </div>
     </div>
     <div class="table">
-      <a class="offset" id="table-smime-encrypt-self-variables"></a>
+      <a class="offset" id="table-encrypt-self-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.25.&#160;smime-encrypt-self Variables</strong>
+        <strong>Table&#160;6.7.&#160;encrypt-self Variables</strong>
       </p>
       <div class="table-contents">
-        <table summary="smime-encrypt-self Variables" border="1">
+        <table summary="encrypt-self Variables" border="1">
           <colgroup>
             <col />
             <col />
@@ -102,6 +109,13 @@ set smime_default_key  = bb345e23.0
               <td>quad</td>
               <td>No</td>
             </tr>
+            <tr>
+              <td>
+                <code class="literal">pgp_encrypt_self</code>
+              </td>
+              <td>quad</td>
+              <td>No</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -113,19 +127,22 @@ set smime_default_key  = bb345e23.0
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-muttrc"></a>4.&#160;Muttrc</h3>
+          <a class="offset" id="encrypt-to-self-muttrc"></a>4.&#160;Muttrc</h3>
         </div>
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of smime-encrypt-self-related configuration.
+<span class="comment"># This is a complete list of encrypt-self-related configuration.
  
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
  
-# Save a copy of outgoing email, encrypted to yourself</span>
+# Save a copy of outgoing email, encrypted to yourself using SMIME</span>
 set smime_encrypt_self = "no"
+ 
+<span class="comment"># Save a copy of outgoing email, encrypted to yourself using PGP</span>
+set pgp_encrypt_self = "no"
  
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
@@ -135,7 +152,7 @@ set smime_encrypt_self = "no"
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-see-also"></a>5.&#160;See Also</h3>
+          <a class="offset" id="encrypt-to-self-see-also"></a>5.&#160;See Also</h3>
         </div>
       </div>
     </div>
@@ -154,7 +171,7 @@ set smime_encrypt_self = "no"
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <a class="offset" id="encrypt-to-self-known-bugs"></a>6.&#160;Known Bugs</h3>
         </div>
       </div>
     </div>
@@ -165,7 +182,7 @@ set smime_encrypt_self = "no"
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="smime-encrypt-self-credits"></a>7.&#160;Credits</h3>
+          <a class="offset" id="encrypt-to-self-credits"></a>7.&#160;Credits</h3>
         </div>
       </div>
     </div>
@@ -180,6 +197,11 @@ set smime_encrypt_self = "no"
           <p>Richard Russon
           <code class="email">&lt;
           <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Guillaume Brogi
+          <code class="email">&lt;
+          <a class="email" href="mailto:gui-gui@netcourrier.com">gui-gui@netcourrier.com</a>&gt;</code></p>
         </li>
       </ul>
     </div>

@@ -63,8 +63,8 @@ base: mutt/1.7.0
     </span>option, Mutt can read news from news server via NNTP. You can open a newsgroup with function ``change-newsgroup'' (default: ``i''). Default news server can be obtained from
     <code class="literal">$NNTPSERVER</code>environment variable or from
     <code class="literal">/etc/nntpserver</code>file. Like other news readers, info about subscribed newsgroups is saved in file by
-    <a class="link" href="/manual/reference.html#newsrc" title="3.169.&#160;newsrc">$newsrc</a>variable. The variable
-    <a class="link" href="/manual/reference.html#news-cache-dir" title="3.166.&#160;news_cache_dir">$news_cache_dir</a>can be used to point to a directory. Mutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. Also the hierarchy is used to store header cache if Mutt was compiled with
+    <a class="link" href="/manual/reference.html#newsrc" title="3.170.&#160;newsrc">$newsrc</a>variable. The variable
+    <a class="link" href="/manual/reference.html#news-cache-dir" title="3.167.&#160;news_cache_dir">$news_cache_dir</a>can be used to point to a directory. Mutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. Also the hierarchy is used to store header cache if Mutt was compiled with
     <a class="link" href="/manual/optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">header cache</a>support.</p>
   </div>
   <div class="sect2">
@@ -79,7 +79,7 @@ base: mutt/1.7.0
     <div class="table">
       <a class="offset" id="table-nntp-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.13.&#160;NNTP Variables</strong>
+        <strong>Table&#160;6.14.&#160;NNTP Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="NNTP Variables" border="1">
@@ -312,7 +312,7 @@ base: mutt/1.7.0
     <div class="table">
       <a class="offset" id="table-nntp-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.14.&#160;NNTP Functions</strong>
+        <strong>Table&#160;6.15.&#160;NNTP Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="NNTP Functions" border="1">
@@ -365,7 +365,7 @@ base: mutt/1.7.0
               <td>edit the X-Comment-To field</td>
             </tr>
             <tr>
-              <td>attachment,index,pager</td>
+              <td>attach,index,pager</td>
               <td>
                 <code class="literal">&lt;followup-message&gt;</code>
               </td>
@@ -428,7 +428,7 @@ base: mutt/1.7.0
               <td>open a different newsgroup in read only mode</td>
             </tr>
             <tr>
-              <td>attachment,index,pager</td>
+              <td>attach,index,pager</td>
               <td>
                 <code class="literal">&lt;forward-to-group&gt;</code>
               </td>
@@ -528,7 +528,7 @@ bind compose N edit-newsgroups
 bind compose x edit-x-comment-to
 
 <span class="comment"># followup to newsgroup</span>
-bind attachment,index,pager F followup-message
+bind attach,index,pager F followup-message
 
 <span class="comment"># post message to newsgroup</span>
 bind index,pager P post-message
@@ -555,7 +555,7 @@ bind browser U unsubscribe-pattern
 bind index,pager \ei change-newsgroup-readonly
 
 <span class="comment"># forward to newsgroup</span>
-bind attachment,index,pager \eF forward-to-group
+bind attach,index,pager \eF forward-to-group
 
 <span class="comment"># get all children of the current message</span>
 # bind index ??? get-children
