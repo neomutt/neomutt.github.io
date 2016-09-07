@@ -2,7 +2,7 @@
 layout: features
 title: Sensible-Browser
 description: Make the file browser behave
-status: devel
+status: stable
 branch: devel/sensible-browser
 base: mutt/1.7.0
 ---
@@ -56,28 +56,65 @@ base: mutt/1.7.0
         </div>
       </div>
     </div>
-    <p>When using the file/folder browser, the selection isn't always where you would expect. When you navigate to '..' (parent folder), the selection should show the folder you
-    <span class="emphasis">
-      <em>used</em>
-    </span>to be in.</p>
-  </div>
-  <div class="sect2">
-    <div class="titlepage">
-      <div>
+    <p>The
+    <span class="quote">“
+    <span class="quote">sensible browser</span>”</span>is a set of small changes to NeoMutt's mailbox browser which make the browser behave in a more predictable way.</p>
+    <p>The behaviour is divided into two use cases: Fixed Order; Variable Order.</p>
+    <div class="sect3">
+      <div class="titlepage">
         <div>
-          <h3 class="title">
-          <a class="offset" id="sensible-browser-muttrc"></a>3.&#160;Muttrc</h3>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="sensible-browser-sort-fixed"></a>2.1.&#160;A Fixed Order of Mailboxes</h4>
+          </div>
         </div>
       </div>
+      <p>This is for users who like their mailboxes in a fixed order, e.g. alphabetical, or unsorted (in the order of the config file).</p>
+      <pre class="screen">
+<span class="comment"># Fixed order</span>
+set sort_browser="alpha"
+set sort_browser="unsorted"
+</pre>
+      <p>When you first start the browser, e.g.
+      <code class="literal">c?</code>your current mailbox will be highlighted.</p>
+      <p>When you navigate to a parent mailbox (
+      <span class="quote">“
+      <span class="quote">..</span>”</span>) your old mailbox will be highlighted.</p>
+      <p>
+      <span class="quote">“
+      <span class="quote">..</span>”</span>will always be listed at the top, however the rest of the list is sorted.</p>
     </div>
-    <p>None</p>
+    <div class="sect3">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="sensible-browser-sort-variable"></a>2.2.&#160;A Variable Order of Mailboxes</h4>
+          </div>
+        </div>
+      </div>
+      <p>This is for users who like their mailboxes sorted by a characteristic that changes, e.g. count of new mail, or the size of mailbox.</p>
+      <pre class="screen">
+<span class="comment"># Variable order</span>
+set sort_browser="reverse-count"
+set sort_browser="reverse-size"
+</pre>
+      <p>When you first start the browser, e.g.
+      <code class="literal">c?</code>the highlight will be on the first mailbox, e.g. the one with the most new mail.</p>
+      <p>When you navigate to a parent mailbox (
+      <span class="quote">“
+      <span class="quote">..</span>”</span>) your old mailbox will be highlighted.</p>
+      <p>
+      <span class="quote">“
+      <span class="quote">..</span>”</span>will always be listed at the top, however the rest of the list is sorted.</p>
+    </div>
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="sensible-browser-see-also"></a>4.&#160;See Also</h3>
+          <a class="offset" id="sensible-browser-see-also"></a>3.&#160;See Also</h3>
         </div>
       </div>
     </div>
@@ -88,28 +125,10 @@ base: mutt/1.7.0
             <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
-      </ul>
-    </div>
-  </div>
-  <div class="sect2">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h3 class="title">
-          <a class="offset" id="sensible-browser-known-bugs"></a>5.&#160;Known Bugs</h3>
-        </div>
-      </div>
-    </div>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>Limited to IMAP folders</p>
-        </li>
-        <li class="listitem">
-          <p>Always on</p>
-        </li>
-        <li class="listitem">
-          <p>Should only select folder when folder is sorted alphabetically</p>
+          <p>
+            <a class="link" href="/manual/reference.html#folder-format" title="3.74.&#160;folder_format">$folder_format</a>
+          </p>
         </li>
       </ul>
     </div>
@@ -119,12 +138,28 @@ base: mutt/1.7.0
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="sensible-browser-credits"></a>6.&#160;Credits</h3>
+          <a class="offset" id="sensible-browser-known-bugs"></a>4.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="sensible-browser-credits"></a>5.&#160;Credits</h3>
         </div>
       </div>
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Pierre-Elliott Bécue
+          <code class="email">&lt;
+          <a class="email" href="mailto:becue@crans.org">becue@crans.org</a>&gt;</code></p>
+        </li>
         <li class="listitem">
           <p>Haakon Riiser
           <code class="email">&lt;
