@@ -3,8 +3,6 @@ layout: features
 title: Bug Fixes
 description: Bug fixes to Mutt
 status: stable
-branch: feature/bug-fixes
-base: mutt/1.7.0
 ---
 
 ## Bug Fixes

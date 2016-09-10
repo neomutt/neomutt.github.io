@@ -1,10 +1,8 @@
 ---
 layout: features
-title: Attached
-description: Prevent missing attachments
-status: devel
-branch: devel/attached
-base: neomutt
+title: Forgotten Attachments
+description: Alert user when (s)he forgets to attach a file to an outgoing email.
+status: stable
 ---
 {% raw %}
 <div class="sect1">
@@ -12,10 +10,10 @@ base: neomutt
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="attached"></a>&#160;Attached Patch</h2>
+        <a class="offset" id="forgotten-attachments"></a>&#160;forgotten-attachments Patch</h2>
       </div>
       <div>
-        <h3 class="subtitle">Prevent missing attachments</h3>
+        <h3 class="subtitle">Alert user when (s)he forgets to attach a file to an outgoing email.</h3>
       </div>
     </div>
   </div>
@@ -24,15 +22,15 @@ base: neomutt
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="attached-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="forgotten-attachments-patch"></a>1.&#160;Patch</h3>
         </div>
       </div>
     </div>
     <p>To check if Mutt supports
     <span class="quote">“
-    <span class="quote">attached</span>”</span>, look for
+    <span class="quote">forgotten-attachments</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-attached</span>”</span>in the mutt version. See:
+    <span class="quote">patch-forgotten-attachments</span>”</span>in the mutt version. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -45,29 +43,149 @@ base: neomutt
       </ul>
     </div>
     <p>This patch is part of the
-    <a class="ulink" href="https://github.com/neomutt/neomutt/wiki" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="attached-intro"></a>2.&#160;Introduction</h3>
+          <a class="offset" id="forgotten-attachments-intro"></a>2.&#160;Introduction</h3>
         </div>
       </div>
     </div>
-    <p>
-      If you use the word <quote>attachment</quote> in your mail, but don't
-      actually attach anything, this patch will ask you if you're sure you want
-      to send the mail.
-    </p>
+    <p>The 'forgotten attachments' patch provides a new setting for Mutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="attached-credits"></a>3.&#160;Credits</h3>
+          <a class="offset" id="forgotten-attachments-variables"></a>3.&#160;Variables</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-forgotten-attachments-variables"></a>
+      <p class="title">
+        <strong>Table&#160;6.8.&#160;forgotten-attachments Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="forgotten-attachments Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">attach-keyword</code>
+              </td>
+              <td>string</td>
+              <td>
+                <code class="literal">attached</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">abort_noattach</code>
+              </td>
+              <td>quadoption</td>
+              <td>
+                <code class="literal">ask-yes</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="forgotten-attachment-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># This is a complete list of forgotten-attachments-related configuration.
+ 
+# --------------------------------------------------------------------------
+# VARIABLES - shown with their default values
+# --------------------------------------------------------------------------
+ 
+# The 'forgotten attachments' patch provides a new setting for Mutt that
+# alerts the user if the message body contains a certain keyword but there are
+# no attachments added. This is meant to ensure that the user does not forget
+# to attach a file after promising to do so in the mail.
+ 
+# Search for the following keyword in the body of the email</span>
+set attach_keyword = "attached"
+ 
+<span class="comment"># Ask if the user wishes to abort sending if $attach_keyword is found in the
+# body, but no attachments have been added</span>
+set abort_noattach = ask-yes
+ 
+<span class="comment"># vim: syntax=muttrc</span>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="forgotten-attachments-see-also"></a>5.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/mimesupport.html#attach-menu" title="1.3.&#160;The Attachment Menu">The Attachment Menu</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/reference.html#attachment-map" title="4.6.&#160;Attachment Menu">The Attachment Menu key mappings</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="forgotten-attachments-known-bugs"></a>6.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="forgotten-attachments-credits"></a>7.&#160;Credits</h3>
         </div>
       </div>
     </div>
@@ -75,7 +193,13 @@ base: neomutt
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>Darshit Shah
-          <code class="email">&lt;<a class="email" href="mailto:darnir@gmail.com">darnir@gmail.com</a>&gt;</code></p>
+          <code class="email">&lt;
+          <a class="email" href="mailto:darnir@gmail.com">darnir@gmail.com</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
         </li>
       </ul>
     </div>
