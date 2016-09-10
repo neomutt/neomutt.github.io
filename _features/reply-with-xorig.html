@@ -1,0 +1,146 @@
+---
+layout: features
+title: Reply With X-Original-To
+description: Allow direct reply to a mail using X-Original-To header as a From
+status: stable
+---
+{% raw %}
+<div class="sect1">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="reply-with-xorig-patch"></a>&#160;Reply With X-Original-To Patch</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Adds a configuration variable to allow direct reply to a mail using X-Original-To header as a From: in the answer.</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="reply-with-xorig-patch2"></a>1.&#160;Patch</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports
+    <span class="quote">“
+    <span class="quote">Reply With X-Original-To</span>”</span>, look for
+    <span class="quote">“
+    <span class="quote">patch-reply-with-xorig</span>”</span>in the mutt version. See:
+    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.7.0</p>
+        </li>
+      </ul>
+    </div>
+    <p>This patch is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="reply-with-xorig-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>Adds a reply_with_xorig for mutt configuration files. If enabled, allows to reply to an email using the email address in the first X-Original-To: header of a mail as the From: header of the answer.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="reply-with-xorig-variables"></a>3.&#160;Variables</h3>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <a class="offset" id="table-reply-with-xorig-variables"></a>
+      <p class="title">
+        <strong>Table&#160;6.22.&#160;Reply With X-Original-To Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Reply With X-Original-To Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">reply_with_xorig</code>
+              </td>
+              <td>Boolean</td>
+              <td>
+                <code class="literal">no</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="reply-with-xorig-muttrc"></a>4.&#160;Muttrc</h3>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># This is a complete list of reply-with-xorig-related configuration.
+ 
+# --------------------------------------------------------------------------
+# VARIABLES - shown with their default values
+# --------------------------------------------------------------------------
+ 
+# Use X-Original-To header to reply when reverse is disabled or no alternate
+# is found.</span>
+set reply_with_xorig = "yes"
+ 
+<span class="comment"># vim: syntax=muttrc</span>
+</pre>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="reply-with-xorig-credits"></a>5.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Pierre-Elliott Bécue
+          <code class="email">&lt;
+          <a class="email" href="mailto:becue@crans.org">becue@crans.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endraw %}

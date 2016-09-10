@@ -5,8 +5,7 @@ description: Easy and clean Vi-keys for Mutt
 author: Ivan Tham
 username: pickfire
 status: devel
-branch: contrib/vim-keybindings
-base: neomutt
+dir: vim-keybindings
 ---
 
 ## Vi-keys for Mutt
