@@ -3,8 +3,6 @@ layout: features
 title: Encrypt-to-Self
 description: Save a self-encrypted copy of emails
 status: stable
-branch: feature/encrypt-to-self
-base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -57,17 +55,17 @@ base: mutt/1.7.0
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/manual/reference.html#fcc-clear" title="3.72.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="/manual/reference.html#fcc-clear" title="3.74.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.312.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
-    <a class="link" href="/manual/reference.html#smime-default-key" title="3.310.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
+    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.314.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
+    <a class="link" href="/manual/reference.html#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_encrypt_self = yes
 set smime_default_key  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
-    <a class="link" href="/manual/reference.html#pgp-encrypt-self" title="3.49.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
-    <a class="link" href="/manual/reference.html#pgp-sign-as" title="3.214.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
+    <a class="link" href="/manual/reference.html#pgp-encrypt-self" title="3.51.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
+    <a class="link" href="/manual/reference.html#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
     <pre class="screen">
 set pgp_encrypt_self = yes
 set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E

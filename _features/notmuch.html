@@ -3,8 +3,6 @@ layout: features
 title: Notmuch
 description: Email search engine
 status: stable
-branch: feature/notmuch
-base: mutt/1.7.0
 ---
 {% raw %}
 <div class="sect1">
@@ -44,17 +42,12 @@ base: mutt/1.7.0
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#sidebar" title="29.&#160;Sidebar Patch">sidebar patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#quasi-delete" title="28.&#160;Quasi-Delete Patch">quasi-delete patch</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#quasi-delete" title="26.&#160;Quasi-Delete Patch">quasi-delete patch</a>
-          </p>
-        </li>
-        <li class="listitem">
-          <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="15.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Patch">index-color patch</a>
           </p>
         </li>
         <li class="listitem">
@@ -176,6 +169,79 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </p>
       <p>Reads all matching messages or whole-threads. The default is 'messages' or nm_query_type.</p>
     </div>
+    <div class="sect3">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h4 class="title">
+            <a class="offset" id="notmuch-vfolder-format"></a>3.3.&#160;Format String for the NotMuch Browser</h4>
+          </div>
+        </div>
+      </div>
+      <p>Default:</p>
+      <div class="literallayout">
+        <p>
+          <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;&#160;&#160;&#160;&#160;?%4m&#160;%f</code>
+        </p>
+      </div>
+      <p />
+      <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
+      <a class="link" href="/manual/reference.html#index-format" title="3.127.&#160;index_format">$index_format</a>, but has its own set of
+      <code class="literal">printf(3)</code>-like sequences:</p>
+      <div class="informaltable">
+        <table border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>%C</td>
+              <td>current file number</td>
+            </tr>
+            <tr>
+              <td>%f</td>
+              <td>folder name (description)</td>
+            </tr>
+            <tr>
+              <td>%m</td>
+              <td>number of messages in the mailbox *</td>
+            </tr>
+            <tr>
+              <td>%n</td>
+              <td>number of unread messages in the mailbox *</td>
+            </tr>
+            <tr>
+              <td>%N</td>
+              <td>N if mailbox has new mail, blank otherwise</td>
+            </tr>
+            <tr>
+              <td>%&gt;X</td>
+              <td>right justify the rest of the string and pad with character
+              <span class="quote">“
+              <span class="quote">X</span>”</span></td>
+            </tr>
+            <tr>
+              <td>%|X</td>
+              <td>pad to the end of the line with character
+              <span class="quote">“
+              <span class="quote">X</span>”</span></td>
+            </tr>
+            <tr>
+              <td>%*X</td>
+              <td>soft-fill with character
+              <span class="quote">“
+              <span class="quote">X</span>”</span>as pad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>For an explanation of
+      <span class="quote">“
+      <span class="quote">soft-fill</span>”</span>, see the
+      <a class="link" href="/manual/reference.html#index-format" title="3.127.&#160;index_format">$index_format</a>documentation.</p>
+      <p>* = can be optionally printed if nonzero</p>
+    </div>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -189,7 +255,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.16.&#160;Notmuch Variables</strong>
+        <strong>Table&#160;6.17.&#160;Notmuch Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Variables" border="1">
@@ -318,7 +384,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.17.&#160;Notmuch Functions</strong>
+        <strong>Table&#160;6.18.&#160;Notmuch Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Functions" border="1">
@@ -450,7 +516,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-colors"></a>
       <p class="title">
-        <strong>Table&#160;6.18.&#160;Index Colors</strong>
+        <strong>Table&#160;6.19.&#160;Index Colors</strong>
       </p>
       <div class="table-contents">
         <table summary="Index Colors" border="1">
@@ -521,8 +587,8 @@ set nm_hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encr
 <span class="comment"># This option specifies timeout for Notmuch database. Default is 5 seconds.</span>
 set nm_open_timeout = 5
  
-<span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and</span>
-# 'messages'.
+<span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and
+# 'messages'.</span>
 set nm_query_type = messages
  
 <span class="comment"># Add messages stored to the mutt record (see $record in the mutt docs)
@@ -537,7 +603,7 @@ set nm_unread_tag = unread
  
 <span class="comment"># This variable allows you to customize the file browser display for virtual
 # folders to your personal taste.</span>
-set vfolder_format = "%6n(%6N) %f"
+set vfolder_format = "%2C %?n?%4n/&amp;     ?%4m %N %f"
  
 <span class="comment"># When set, mutt will use the first virtual mailbox (see virtual-mailboxes)
 # as a spoolfile.</span>
