@@ -1466,12 +1466,12 @@ title: Reference
           </dt>
           <dt>
             <span class="sect2">
-              <a href="reference.html#sidebar-divider-char">3.287. sidebar_divider_char</a>
+              <a href="reference.html#sidebar-delim-chars">3.287. sidebar_delim_chars</a>
             </span>
           </dt>
           <dt>
             <span class="sect2">
-              <a href="reference.html#sidebar-delim-chars">3.288. sidebar_delim_chars</a>
+              <a href="reference.html#sidebar-divider-char">3.288. sidebar_divider_char</a>
             </span>
           </dt>
           <dt>
@@ -3151,16 +3151,25 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
         <li class="listitem">
           <div class="cmdsynopsis">
             <p>
-              <code class="command">
-                <a class="link" href="optionalfeatures.html#sidebar-whitelist">sidebar_whitelist</a>
-              </code>
-              <em class="replaceable">
-                <code>item</code>
-              </em>
-              <em class="replaceable">
-                <code>command</code>
-              </em>
-            </p>
+            <code class="command">
+              <a class="link" href="optionalfeatures.html#sidebar-whitelist">sidebar_whitelist</a>
+            </code>
+            <em class="replaceable">
+              <code>mailbox</code>
+            </em>[ 
+            <em class="replaceable">
+              <code>mailbox</code>
+            </em>...]
+            <br />
+            <code class="command">
+              <a class="link" href="optionalfeatures.html#unsidebar-whitelist">unsidebar_whitelist</a>
+            </code>{ 
+            <em class="replaceable">
+              <code>*</code>
+            </em>| 
+            <em class="replaceable">
+              <code>mailbox</code>
+            </em>... }</p>
           </div>
         </li>
         <li class="listitem">
@@ -10251,26 +10260,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="sidebar-divider-char"></a>3.287.&#160;sidebar_divider_char</h3>
-          </div>
-        </div>
-      </div>
-      <div class="literallayout">
-        <p>Type:&#160;string
-        <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
-          <code class="literal">|</code>
-        </span>”</span></p>
-      </div>
-      <p>This specifies the characters to be drawn between the sidebar (when visible) and the other Mutt panels. ASCII and Unicode line-drawing characters are supported.</p>
-    </div>
-    <div class="sect2">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title">
-            <a class="offset" id="sidebar-delim-chars"></a>3.288.&#160;sidebar_delim_chars</h3>
+            <a class="offset" id="sidebar-delim-chars"></a>3.287.&#160;sidebar_delim_chars</h3>
           </div>
         </div>
       </div>
@@ -10304,6 +10294,25 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
+            <a class="offset" id="sidebar-divider-char"></a>3.288.&#160;sidebar_divider_char</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;string
+        <br />Default:&#160;
+        <span class="quote">“
+        <span class="quote">
+          <code class="literal">|</code>
+        </span>”</span></p>
+      </div>
+      <p>This specifies the characters to be drawn between the sidebar (when visible) and the other Mutt panels. ASCII and Unicode line-drawing characters are supported.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
             <a class="offset" id="sidebar-folder-indent"></a>3.289.&#160;sidebar_folder_indent</h3>
           </div>
         </div>
@@ -10319,7 +10328,7 @@ set sidebar_delim_chars='.'
       </span>
       <a class="link" href="reference.html#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>, 
       <a class="link" href="reference.html#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>, 
-      <a class="link" href="reference.html#sidebar-delim-chars" title="3.288.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
+      <a class="link" href="reference.html#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10442,7 +10451,7 @@ set sidebar_delim_chars='.'
       </span>
       <a class="link" href="reference.html#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>, 
       <a class="link" href="reference.html#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>, 
-      <a class="link" href="reference.html#sidebar-delim-chars" title="3.288.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
+      <a class="link" href="reference.html#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10587,7 +10596,7 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="reference.html#sidebar-delim-chars" title="3.288.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>, 
+      <a class="link" href="reference.html#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>, 
       <a class="link" href="reference.html#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>, 
       <a class="link" href="reference.html#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
     </div>
