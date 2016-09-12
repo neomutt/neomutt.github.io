@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="forgotten-attachment"></a>&#160;forgotten-attachment Patch</h2>
+        <a class="offset" id="forgotten-attachment"></a>&#160;forgotten-attachment Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Alert user when (s)he forgets to attach a file to an outgoing email.</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="forgotten-attachment-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="forgotten-attachment-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">forgotten-attachment</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-forgotten-attachment</span>”</span>in the mutt version. See:
+    <span class="quote">patch-forgotten-attachment</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -119,24 +119,20 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of forgotten-attachment-related configuration.
- 
-# --------------------------------------------------------------------------
-# VARIABLES - shown with their default values
-# --------------------------------------------------------------------------
- 
-# The 'forgotten-attachment' patch provides a new setting for Mutt that
+<span class="comment"># Example NeoMutt config file for the forgotten-attachment feature.
+
+# The 'forgotten-attachment' feature provides a new setting for Mutt that
 # alerts the user if the message body contains a certain keyword but there are
 # no attachments added. This is meant to ensure that the user does not forget
 # to attach a file after promising to do so in the mail.
- 
+
 # Search for the following keyword in the body of the email</span>
 set attach_keyword = "attached"
- 
+
 <span class="comment"># Ask if the user wishes to abort sending if $attach_keyword is found in the
 # body, but no attachments have been added</span>
 set abort_noattach = ask-yes
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>

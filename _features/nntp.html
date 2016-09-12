@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="nntp"></a>&#160;NNTP Patch</h2>
+        <a class="offset" id="nntp"></a>&#160;NNTP Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Talk to a Usenet news server</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="nntp-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="nntp-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">NNTP</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">+USE_NNTP</span>”</span>in the mutt version. See:
+    <span class="quote">+USE_NNTP</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -476,7 +476,7 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of nntp configuration.
+<span class="comment"># Example NeoMutt config file for the nntp feature.
 
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
@@ -555,16 +555,16 @@ bind index,pager \ei change-newsgroup-readonly
 <span class="comment"># forward to newsgroup</span>
 bind attach,index,pager \eF forward-to-group
 
-<span class="comment"># get all children of the current message</span>
+<span class="comment"># get all children of the current message
 # bind index ??? get-children
 
-<span class="comment"># get parent of the current message</span>
+# get parent of the current message</span>
 bind index \eG get-parent
 
-# reconstruct thread containing current message
+<span class="comment"># reconstruct thread containing current message
 # bind index ??? reconstruct-thread
 
-<span class="comment"># get message with Message-Id</span>
+# get message with Message-Id</span>
 bind index \CG get-message
 
 <span class="comment"># --------------------------------------------------------------------------

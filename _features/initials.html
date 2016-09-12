@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="initials"></a>&#160;Initials Expando Patch</h2>
+        <a class="offset" id="initials"></a>&#160;Initials Expando Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Expando for author's initials</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="initials-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="initials-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Initials</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-initials</span>”</span>in the mutt version. See:
+    <span class="quote">patch-initials</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -69,7 +69,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>This patch has no config of its own. It adds an expando which can be used in the
+    <p>This feature has no config of its own. It adds an expando which can be used in the
     <a class="link" href="/manual/reference.html#index-format" title="3.127.&#160;index_format">$index_format</a>variable.</p>
   </div>
   <div class="sect2">
@@ -82,32 +82,32 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'initials' patch.
- 
-# The 'initials' patch has no config of its own.
+<span class="comment"># Example NeoMutt config file for the initials feature.
+
+# The 'initials' feature has no config of its own.
 # It adds an expando for an author's initials,
 # which can be used in the 'index_format' variable.
- 
+
 # The default 'index_format' is:</span>
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
- 
+
 <span class="comment"># Where %L represents the author/recipient
- 
+
 # This might look like:
 #       1   + Nov 17 David Bowie   Changesbowie    ( 689)
 #       2   ! Nov 17 Stevie Nicks  Rumours         ( 555)
 #       3   + Nov 16 Jimi Hendrix  Voodoo Child    ( 263)
 #       4   + Nov 16 Debbie Harry  Parallel Lines  ( 540)
- 
+
 # Using the %I expando:</span>
 set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
- 
+
 <span class="comment"># This might look like:
 #       1   + Nov 17 DB Changesbowie    ( 689)
 #       2   ! Nov 17 SN Rumours         ( 555)
 #       3   + Nov 16 JH Voodoo Child    ( 263)
 #       4   + Nov 16 DH Parallel Lines  ( 540)
- 
+
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -134,7 +134,7 @@ set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Feature">index-color patch</a>
           </p>
         </li>
         <li class="listitem">

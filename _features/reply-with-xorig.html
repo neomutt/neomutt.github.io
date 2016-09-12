@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="reply-with-xorig-patch"></a>&#160;Reply With X-Original-To Patch</h2>
+        <a class="offset" id="reply-with-xorig-patch"></a>&#160;Reply With X-Original-To Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Adds a configuration variable to allow direct reply to a mail using X-Original-To header as a From: in the answer.</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="reply-with-xorig-patch2"></a>1.&#160;Patch</h3>
+          <a class="offset" id="reply-with-xorig-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Reply With X-Original-To</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-reply-with-xorig</span>”</span>in the mutt version. See:
+    <span class="quote">patch-reply-with-xorig</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -110,16 +110,16 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of reply-with-xorig-related configuration.
- 
+<span class="comment"># Example NeoMutt config file for the reply-with-xorig feature.
+
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
- 
+
 # Use X-Original-To header to reply when reverse is disabled or no alternate
 # is found.</span>
 set reply_with_xorig = "yes"
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>

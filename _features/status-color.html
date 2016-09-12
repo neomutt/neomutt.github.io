@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="status-color"></a>&#160;Status Color Patch</h2>
+        <a class="offset" id="status-color"></a>&#160;Status Color Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Custom rules for theming the status bar</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="status-color-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="status-color-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Status Color</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-status-color</span>”</span>in the mutt version. See:
+    <span class="quote">patch-status-color</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -142,54 +142,54 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'status-color' patch.
- 
-# The 'status-color' patch allows you to theme different parts of
+<span class="comment"># Example NeoMutt config file for the status-color feature.
+
+# The 'status-color' feature allows you to theme different parts of
 # the status bar (also when it's used by the index).
- 
+
 # For the examples below, set some defaults</span>
 set status_format='-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 set sort=threads
 set sort_aux=last-date-received
- 
+
 <span class="comment"># 'status color' can take up to 2 extra parameters
- 
+
 # color status foreground background [ regex [ num ]]
- 
+
 # 0 extra parameters
 # Set the default color for the entire status line</span>
 color status blue white
- 
+
 <span class="comment"># 1 extra parameter
 # Set the color for a matching pattern
 # color status foreground background regexp
- 
+
 # Highlight New, Deleted, or Flagged emails</span>
 color status brightred white '(New|Del|Flag):[0-9]+'
- 
+
 <span class="comment"># Highlight mailbox ordering if it's different from the default
 # First, highlight anything (*/*)</span>
 color status brightred default '\([^)]+/[^)]+\)'
- 
+
 <span class="comment"># Then override the color for one specific case</span>
 color status default   default '\(threads/last-date-received\)'
- 
+
 <span class="comment"># 2 extra parameters
 # Set the color for the nth submatch of a pattern
 # color status foreground background regexp num
- 
+
 # Highlight the contents of the []s but not the [] themselves</span>
 color status red default '\[([^]]+)\]' 1
- 
+
 <span class="comment"># The '1' refers to the first regex submatch, which is the inner
 # part in ()s
- 
+
 # Highlight the mailbox</span>
 color status brightwhite default 'Mutt: ([^ ]+)' 1
- 
+
 <span class="comment"># Search for 'Mutt: ' but only highlight what comes after it
- 
+
 # vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -226,7 +226,7 @@ color status brightwhite default 'Mutt: ([^ ]+)' 1
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Feature">index-color patch</a>
           </p>
         </li>
         <li class="listitem">

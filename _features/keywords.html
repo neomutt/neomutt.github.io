@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="keywords"></a>&#160;Keywords Patch</h2>
+        <a class="offset" id="keywords"></a>&#160;Keywords Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Labels/Tagging for emails</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="keywords-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="keywords-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Keywords</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-keywords</span>”</span>in the mutt version. See:
+    <span class="quote">patch-keywords</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -58,7 +58,7 @@ status: stable
     <p>Since x-labels were added to mutt in 2000, a number of other approaches to what we now call
     <span class="quote">“
     <span class="quote">tagging</span>”</span>have also emerged. One of them was even made standard in RFC 2822. This update unifies the handling of all these strategies.</p>
-    <p>We start by changing mutt's internal keyword storage from a single string which may contain whitespace to a list of discrete keywords. This has advantages for keyword completion as well as for portabilty among varying "standards" for keyword storage. This may represent a significant change for existing mutt users who have set x-labels containing spaces, and should be regarded with suspicion. The advantages are significant, though.</p>
+    <p>We start by changing mutt's internal keyword storage from a single string which may contain whitespace to a list of discrete keywords. This has advantages for keyword completion as well as for portability among varying "standards" for keyword storage. This may represent a significant change for existing mutt users who have set x-labels containing spaces, and should be regarded with suspicion. The advantages are significant, though.</p>
     <p>Next we allow mutt to parse keywords into this internal list from any of the following headers: X-Label (freeform), X-Keywords (space-delimited), X-Mozilla-Keys (space-delimited), and Keywords (RFC 2822, comma-space-delimited). Mutt remembers which headers it sourced keywords from, and can rewrite those headers when saving messages for compatibility with the mailer of origin.</p>
     <p>(X-Label was specified as freeform text by mutt, its only known implementation. X-Labels have been used both as a
     <span class="quote">“
@@ -221,31 +221,29 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of keywords-related configuration.
- 
+<span class="comment"># Example NeoMutt config file for the keywords feature.
+
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
- 
+
 # Should Mutt save the keywords to whatever keyword it came from?</span>
 set keywords_legacy = yes
- 
+
 <span class="comment"># Should Mutt use the "Keywords:" header?</span>
 set keywords_standard = no
- 
+
 <span class="comment"># How should the keywords be separated?</span>
 set xlabel_delimiter = ""
- 
+
 <span class="comment"># --------------------------------------------------------------------------
 # FUNCTIONS - shown with an example mapping
 # --------------------------------------------------------------------------
- 
+
 # Bind 'y' to edit labels/keywords</span>
 bind index,pager y edit-label
- 
-<span class="comment"># --------------------------------------------------------------------------
- 
-# vim: syntax=muttrc</span>
+
+<span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
   <div class="sect2">
@@ -271,7 +269,7 @@ bind index,pager y edit-label
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Patch">index-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#index-color" title="17.&#160;Index Color Feature">index-color patch</a>
           </p>
         </li>
         <li class="listitem">

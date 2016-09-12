@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="timeout-hook"></a>&#160;Timeout Patch</h2>
+        <a class="offset" id="timeout-hook"></a>&#160;Timeout Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Run a command periodically</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="timeout-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="timeout-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">timeout</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-timeout</span>”</span>in the mutt version. See:
+    <span class="quote">patch-timeout</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -54,7 +54,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>This patch implements a new hook that is called periodically when Mutt checks for new mail. This hook is called every
+    <p>This feature implements a new hook that is called periodically when Mutt checks for new mail. This hook is called every
     <code class="literal">$timeout</code>seconds.</p>
   </div>
   <div class="sect2">
@@ -88,7 +88,7 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of timeout configuration.
+<span class="comment"># Example NeoMutt config file for the timeout feature.
 
 # --------------------------------------------------------------------------
 # COMMANDS - shown with an example arguments

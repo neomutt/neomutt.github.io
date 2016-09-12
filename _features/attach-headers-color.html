@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="attach-headers-color"></a>&#160;attach-headers-color Patch</h2>
+        <a class="offset" id="attach-headers-color"></a>&#160;attach-headers-color Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Color attachment headers using regexp, just like mail bodies</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="attach-headers-color-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="attach-headers-color-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">attach-headers-color</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-attach-headers-color</span>”</span>in the mutt version. See:
+    <span class="quote">patch-attach-headers-color</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -54,7 +54,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>This patch allows specifying regexps to color attachment headers just like the mail body would. The headers are the parts colored by the
+    <p>This feature allows specifying regexps to color attachment headers just like the mail body would. The headers are the parts colored by the
     <code class="literal">attachment</code>color. Coloring them is useful to highlight the results of GPGME's signature checks or simply the mimetype or size of the attachment. Only the part matched by the regexp is colored.</p>
   </div>
   <div class="sect2">
@@ -83,17 +83,19 @@ color attach_headers foreground background pattern
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Color if the attachment is autoviewed</span>
+<span class="comment"># Example NeoMutt config file for the attach-headers-color feature.
+
+# Color if the attachment is autoviewed</span>
 color   attach_headers     brightgreen     default        "Autoview"
- 
+
 <span class="comment"># Color only the brackets around the headers</span>
 color   attach_headers     brightyellow    default        "^\\[--"
 color   attach_headers     brightyellow    default        "--]$"
- 
-<span class="comment"># Highlight the mime type and size</span>
-color   attach_headers     green           default        "Type: [a-z]+/[a-z]"
+
+<span class="comment"># Color the mime type and the size</span>
+color   attach_headers     green           default        "Type: [a-z]+/[a-z0-9\-]+"
 color   attach_headers     green           default        "Size: [0-9\.]+[KM]"
- 
+
 <span class="comment"># Color GPGME signature checks</span>
 color   attach_headers     brightgreen     default        "Good signature from.*"
 color   attach_headers     brightred       default        "Bad signature from.*"
@@ -105,6 +107,8 @@ color   attach_headers     brightmagenta   default        "         There is no 
 color   attach_headers     brightmagenta   default        "can't handle these multiple signatures"
 color   attach_headers     brightmagenta   default        "signature verification suppressed"
 color   attach_headers     brightmagenta   default        "invalid node with packet of type"
+
+<span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
   <div class="sect2">

@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="new-mail-hook"></a>&#160;new-mail Patch</h2>
+        <a class="offset" id="new-mail-hook"></a>&#160;new-mail Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Execute a command upon the receipt of new mail.</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="new-mail-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="new-mail-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">new-mail</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-new-mail</span>”</span>in the mutt version. See:
+    <span class="quote">patch-new-mail</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -54,7 +54,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>This patch enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
+    <p>This feature enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%f</code>for the folder name. For a complete list, see:
     <a class="link" href="/manual/reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>.</p>
@@ -120,18 +120,18 @@ set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'new-mail-command' patch.
- 
+<span class="comment"># Example NeoMutt config file for the new-mail feature.
+
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
- 
+
 # Set the command you want mutt to execute upon the receipt of a new email</span>
 set new_mail_command = ""
- 
+
 <span class="comment"># Linux example:
 # set new_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
- 
+
 # OS X example:
 # set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
 

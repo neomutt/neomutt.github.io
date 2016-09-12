@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="compress"></a>&#160;Compressed Folders Patch</h2>
+        <a class="offset" id="compress"></a>&#160;Compressed Folders Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Read from/write to compressed mailboxes</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compress-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="compress-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Compress Folders</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">+USE_COMPRESSED</span>”</span>in the mutt version. See:
+    <span class="quote">+USE_COMPRESSED</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -254,7 +254,7 @@ close-hook regexp shell-command
       <a class="link" href="/manual/optionalfeatures.html#table-compress-optional" title="Table&#160;6.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <div class="note">
         <h3 class="title">Note</h3>
-        <p>If the folder has not been modifed, the
+        <p>If the folder has not been modified, the
         <code class="literal">close-hook</code>will not be called.</p>
       </div>
       <div class="sect4">
@@ -397,43 +397,43 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'compressed folders' feature.
- 
+<span class="comment"># Example NeoMutt config file for the compress feature.
+
 # This feature adds three hooks to Mutt which allow it to
 # work with compressed, or encrypted, mailboxes.
- 
+
 # The hooks are of the form:
 #       open-hook   regexp "shell-command"
 #       close-hook  regexp "shell-command"
 #       append-hook regexp "shell-command"
- 
+
 # The 'append-hook' is optional.
- 
-# Hander for gzip compressed mailboxes</span>
+
+# Handler for gzip compressed mailboxes</span>
 open-hook   '\.gz$'  "gzip -cd  '%f' &gt;  '%t'"
 close-hook  '\.gz$'  "gzip -c   '%t' &gt;  '%f'"
 append-hook '\.gz$'  "gzip -c   '%t' &gt;&gt; '%f'"
- 
-<span class="comment"># Hander for bzip2 compressed mailboxes</span>
+
+<span class="comment"># Handler for bzip2 compressed mailboxes</span>
 open-hook   '\.bz2$' "bzip2 -cd '%f' &gt;  '%t'"
 close-hook  '\.bz2$' "bzip2 -c  '%t' &gt;  '%f'"
 append-hook '\.bz2$' "bzip2 -c  '%t' &gt;&gt; '%f'"
- 
-<span class="comment"># Hander for xz compressed mailboxes</span>
+
+<span class="comment"># Handler for xz compressed mailboxes</span>
 open-hook   '\.xz$'  "xz    -cd '%f' &gt;  '%t'"
 close-hook  '\.xz$'  "xz    -c  '%t' &gt;  '%f'"
 append-hook '\.xz$'  "xz    -c  '%t' &gt;&gt; '%f'"
- 
-<span class="comment"># Hander for pgp encrypted mailboxes
+
+<span class="comment"># Handler for pgp encrypted mailboxes
 # PGP does not support appending to an encrypted file</span>
 open-hook   '\.pgp$' "pgp -f &lt; '%f' &gt; '%t'"
 close-hook  '\.pgp$' "pgp -fe YourPgpUserIdOrKeyId &lt; '%t' &gt; '%f'"
- 
-<span class="comment"># Hander for gpg encrypted mailboxes
+
+<span class="comment"># Handler for gpg encrypted mailboxes
 # gpg does not support appending to an encrypted file</span>
 open-hook   '\.gpg$' "gpg --decrypt &lt; '%f' &gt; '%t'"
 close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &gt; '%f'"
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>

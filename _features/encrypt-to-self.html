@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="encrypt-to-self"></a>&#160;Encrypt-to-Self Patch</h2>
+        <a class="offset" id="encrypt-to-self"></a>&#160;Encrypt-to-Self Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Save a self-encrypted copy of emails</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="encrypt-to-self-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="encrypt-to-self-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">encrypt-to-self</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-encrypt-to-self</span>”</span>in the mutt version. See:
+    <span class="quote">patch-encrypt-to-self</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -130,18 +130,18 @@ set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># This is a complete list of encrypt-self-related configuration.
- 
+<span class="comment"># Example NeoMutt config file for the encrypt-to-self feature.
+
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
- 
-# Save a copy of outgoing email, encrypted to yourself using SMIME</span>
+
+# Save a copy of outgoing email, encrypted to yourself</span>
 set smime_encrypt_self = "no"
- 
-<span class="comment"># Save a copy of outgoing email, encrypted to yourself using PGP</span>
+
+<span class="comment"># Save a copy of outgoing email, encrypted to yourself</span>
 set pgp_encrypt_self = "no"
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>

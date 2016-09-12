@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="index-color"></a>&#160;Index Color Patch</h2>
+        <a class="offset" id="index-color"></a>&#160;Index Color Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Custom rules for theming the email index</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="index-color-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="index-color-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Index Color</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-index-color</span>”</span>in the mutt version. See:
+    <span class="quote">patch-index-color</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,12 +42,12 @@ status: stable
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#status-color" title="33.&#160;Status Color Patch">status-color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#status-color" title="33.&#160;Status Color Feature">status-color patch</a>
           </p>
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -187,42 +187,42 @@ color index-object foreground background pattern
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'index-color' feature.
- 
+<span class="comment"># Example NeoMutt config file for the index-color feature.
+
 # Entire index line</span>
 color index white black '.*'
- 
+
 <span class="comment"># Author name, %A %a %F %L %n
- 
+
 # Give the author column a dark grey background</span>
 color index_author default color234 '.*'
- 
+
 <span class="comment"># Highlight a particular from (~f)</span>
 color index_author brightyellow color234 '~fRay Charles'
- 
+
 <span class="comment"># Message flags, %S %Z
 # Highlight the flags for flagged (~F) emails</span>
 color index_flags default red '~F'
- 
+
 <span class="comment"># Subject, %s
 # Look for a particular subject (~s)</span>
 color index_subject brightcyan default '~s\(closes #[0-9]+\)'
- 
+
 <span class="comment"># Number of messages in a collapsed thread, %M</span>
 color index_collapsed default brightblue
- 
+
 <span class="comment"># Date field</span>
 color index_date green default
- 
+
 <span class="comment"># Message label, %y %Y</span>
 color index_label default brightgreen
- 
+
 <span class="comment"># Message number, %C</span>
 color index_number red default
- 
+
 <span class="comment"># Message size, %c %l</span>
 color index_size cyan default
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -264,12 +264,12 @@ color index_size cyan default
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#status-color" title="33.&#160;Status Color Patch">Status-Color patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#status-color" title="33.&#160;Status Color Feature">Status-Color patch</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#keywords" title="19.&#160;Keywords Patch">Keywords patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#keywords" title="19.&#160;Keywords Feature">Keywords patch</a>
           </p>
         </li>
       </ul>

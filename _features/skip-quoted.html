@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="skip-quoted-patch"></a>&#160;Skip-Quoted Patch</h2>
+        <a class="offset" id="skip-quoted-patch"></a>&#160;Skip-Quoted Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Leave some context visible</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="skip-quoted-patch2"></a>1.&#160;Patch</h3>
+          <a class="offset" id="skip-quoted-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">skip-quoted</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-skip-quoted</span>”</span>in the mutt version. See:
+    <span class="quote">patch-skip-quoted</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -112,15 +112,15 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'skip-quoted' patch.
- 
+<span class="comment"># Example NeoMutt config file for the skip-quoted feature.
+
 # The 'S' (skip-quoted) command scrolls the pager past the quoted text (usually
 # indented with '&gt; '.  Setting 'skip_quoted_offset' leaves some lines of quoted
 # text on screen for context.
- 
+
 # Show three quoted lines before the reply</span>
 set skip_quoted_offset = 3
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>

@@ -11,7 +11,7 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="fmemopen"></a>&#160;Fmemopen Patch</h2>
+        <a class="offset" id="fmemopen"></a>&#160;Fmemopen Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Replace some temporary files with memory buffers</h3>
@@ -23,15 +23,15 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="fmemopen-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">fmemopen</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-fmemopen</span>”</span>in the mutt version. See:
+    <span class="quote">patch-fmemopen</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -48,10 +48,10 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
         </li>
       </ul>
     </div>
-    <p>This patch can be disabled by running
+    <p>This feature can be disabled by running
     <code class="literal">configure</code>with the option
     <code class="literal">--disable-fmemopen</code></p>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -66,10 +66,10 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     <p>The
     <span class="quote">“
     <span class="quote">fmemopen</span>”</span>patch speeds up some searches.</p>
-    <p>This patch changes a few places where Mutt creates temporary files. It replaces them with in-memory buffers. This should improve the performance when searching the header or body using the
+    <p>This feature changes a few places where Mutt creates temporary files. It replaces them with in-memory buffers. This should improve the performance when searching the header or body using the
     <a class="link" href="/manual/reference.html#thorough-search" title="3.359.&#160;thorough_search">$thorough_search</a>option.</p>
     <p>There are no user-configurable parts.</p>
-    <p>This patch depends on
+    <p>This feature depends on
     <code class="literal">open_memstream()</code>and
     <code class="literal">fmemopen()</code>. They are provided by glibc. Without them, Mutt will simply create temporary files.</p>
   </div>
@@ -78,18 +78,7 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-muttrc"></a>3.&#160;Muttrc</h3>
-        </div>
-      </div>
-    </div>
-    <p>None</p>
-  </div>
-  <div class="sect2">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-see-also"></a>4.&#160;See Also</h3>
+          <a class="offset" id="fmemopen-see-also"></a>3.&#160;See Also</h3>
         </div>
       </div>
     </div>
@@ -118,7 +107,7 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-known-bugs"></a>5.&#160;Known Bugs</h3>
+          <a class="offset" id="fmemopen-known-bugs"></a>4.&#160;Known Bugs</h3>
         </div>
       </div>
     </div>
@@ -129,7 +118,7 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="fmemopen-credits"></a>6.&#160;Credits</h3>
+          <a class="offset" id="fmemopen-credits"></a>5.&#160;Credits</h3>
         </div>
       </div>
     </div>

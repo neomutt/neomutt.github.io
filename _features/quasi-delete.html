@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="quasi-delete"></a>&#160;Quasi-Delete Patch</h2>
+        <a class="offset" id="quasi-delete"></a>&#160;Quasi-Delete Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Mark emails that should be hidden, but not deleted</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="quasi-delete-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="quasi-delete-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">Quasi-Delete</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-quasi-delete</span>”</span>in the mutt version. See:
+    <span class="quote">patch-quasi-delete</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -57,7 +57,7 @@ status: stable
     <p>The
     <span class="quote">“
     <span class="quote">quasi-delete</span>”</span>function marks an email that should be hidden from the index, but NOT deleted.</p>
-    <p>On its own, this patch isn't very useful. It forms a useful part of the notmuch plugin.</p>
+    <p>On its own, this feature isn't very useful. It forms a useful part of the notmuch plugin.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
@@ -114,12 +114,12 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'quasi-delete' feature.
- 
+<span class="comment"># Example NeoMutt config file for the quasi-delete feature.
+
 # The 'quasi-delete' function marks an email that should be hidden
 # from the index, but NOT deleted.</span>
 bind index,pager Q quasi-delete
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
@@ -141,7 +141,7 @@ bind index,pager Q quasi-delete
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#notmuch" title="26.&#160;Notmuch Patch">notmuch patch</a>
+            <a class="link" href="/manual/optionalfeatures.html#notmuch" title="26.&#160;Notmuch Feature">notmuch patch</a>
           </p>
         </li>
       </ul>

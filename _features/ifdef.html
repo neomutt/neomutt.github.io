@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="ifdef"></a>&#160;Ifdef Patch</h2>
+        <a class="offset" id="ifdef"></a>&#160;Ifdef Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Conditional config options</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="ifdef-patch"></a>1.&#160;Patch</h3>
+          <a class="offset" id="ifdef-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
+    <p>To check if NeoMutt supports
     <span class="quote">“
     <span class="quote">ifdef</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-ifdef</span>”</span>in the mutt version. See:
+    <span class="quote">patch-ifdef</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -42,7 +42,7 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This patch is part of the
+    <p>This feature is part of the
     <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect2">
@@ -120,37 +120,37 @@ ifndef USE_SIDEBAR finish
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example Mutt config file for the 'ifdef' feature.
- 
+<span class="comment"># Example NeoMutt config file for the ifdef feature.
+
 # This feature introduces three useful commands which allow you to share
 # one config file between versions of Mutt that may have different
 # features compiled in.
- 
-#     ifdef  symbol config-command [args...]
-#     ifndef symbol config-command [args...]
-#     finish
- 
+
+#   ifdef  symbol config-command [args...]
+#   ifndef symbol config-command [args...]
+#   finish
+
 # The 'ifdef' command tests whether Mutt understands the name of
 # a variable, function, command or compile-time symbol.
 # If it does, then it executes a config command.
- 
+
 # The 'ifndef' command tests whether a symbol does NOT exist.
- 
+
 # The 'finish' command tells Mutt to stop reading current config file.
- 
+
 # If the 'trash' variable exists, set it.</span>
 ifdef trash 'set trash=~/Mail/trash'
- 
+
 <span class="comment"># If the 'tag-pattern' function exists, bind a key to it.</span>
 ifdef tag-pattern 'bind index &lt;F6&gt; tag-pattern'
- 
+
 <span class="comment"># If the 'imap-fetch-mail' command exists, read my IMAP config.</span>
 ifdef imap-fetch-mail 'source ~/.mutt/imap.rc'
- 
+
 <span class="comment"># If the compile-time symbol 'USE_SIDEBAR' does not exist, then
 # stop reading the current config file.</span>
 ifndef USE_SIDEBAR finish
- 
+
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
