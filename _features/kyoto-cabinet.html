@@ -1,0 +1,143 @@
+---
+layout: features
+title: Kyoto Cabinet
+description: Kyoto Cabinet backend for the header cache
+status: devel
+---
+{% raw %}
+<div class="sect1">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both">
+        <a class="offset" id="kyoto-cabinet"></a>&#160;Kyoto Cabinet Feature</h2>
+      </div>
+      <div>
+        <h3 class="subtitle">Kyoto Cabinet backend for the header cache</h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="kyoto-cabinet-support"></a>1.&#160;Support</h3>
+        </div>
+      </div>
+    </div>
+    <p>To check if Mutt supports Kyoto Cabinet, look for</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+          <span class="quote">“
+          <span class="quote">patch-kyoto</span>”</span>in the mutt version. See:
+          <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="quote">“
+          <span class="quote">+USE_HCACHE</span>”</span>in the compile options</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="quote">“
+          <span class="quote">hcache backend: kyotocabinet</span>”</span>in the mutt version</p>
+        </li>
+      </ul>
+    </div>
+    <p />
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Dependencies:</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>mutt-1.7.0</p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://fallabs.com/kyotocabinet/" target="_top">Kyoto Cabinet libraries</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p>This feature is part of the
+    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="kyoto-cabinet-intro"></a>2.&#160;Introduction</h3>
+        </div>
+      </div>
+    </div>
+    <p>This feature adds support for using Kyoto Cabinet, the successor to Tokyo Cabinet, as a storage backend for Mutt's header cache (hcache). It is enabled at configure time with the
+    <span class="emphasis">
+      <em>--with-kyotocabinet=&lt;path&gt;</em>
+    </span>switch.</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="kyoto-cabinet-see-also"></a>3.&#160;See Also</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/optionalfeatures.html#caching" title="7.&#160;Local Caching">Local Caching</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="ulink" href="http://fallabs.com/kyotocabinet/" target="_top">Kyoto Cabinet</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="kyoto-cabinet-known-bugs"></a>4.&#160;Known Bugs</h3>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect2">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h3 class="title">
+          <a class="offset" id="kyoto-cabinet-credits"></a>5.&#160;Credits</h3>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Clemens Lang
+          <code class="email">&lt;
+          <a class="email" href="mailto:neverpanic@gmail.com">neverpanic@gmail.com</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endraw %}

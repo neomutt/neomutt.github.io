@@ -15,8 +15,8 @@ status: ignore
   </div>
   <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
   <p>This part of the manual is suitable for beginners. If you already know Mutt you could skip ahead to the main
-  <a class="link" href="/feature/sidebar" title="31.&#160;Sidebar Patch">Sidebar guide</a>. If you just want to get started, you could use the sample
-  <a class="link" href="/feature/sidebar#sidebar-muttrc" title="31.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+  <a class="link" href="/feature/sidebar" title="32.&#160;Sidebar Feature">Sidebar guide</a>. If you just want to get started, you could use the sample
+  <a class="link" href="/feature/sidebar#sidebar-muttrc" title="32.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
   <p>To check if Mutt supports
   <span class="quote">“
   <span class="quote">Sidebar</span>”</span>, look for the string
@@ -71,7 +71,7 @@ Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
       </div>
     </div>
     <p>The Sidebar adds some new
-    <a class="link" href="/feature/sidebar#sidebar-functions" title="31.4.&#160;Functions">functions</a>to Mutt.</p>
+    <a class="link" href="/feature/sidebar#sidebar-functions" title="32.4.&#160;Functions">functions</a>to Mutt.</p>
     <p>The user pressed the
     <span class="quote">“
     <span class="quote">c</span>”</span>key to
@@ -192,7 +192,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
     <div class="itemizedlist">
       <p class="title">
         <strong>
-          <a class="link" href="/feature/sidebar#sidebar-sort" title="31.7.&#160;Sort">The order in which mailboxes are displayed</a>
+          <a class="link" href="/feature/sidebar#sidebar-sort" title="32.7.&#160;Sort">The order in which mailboxes are displayed</a>
         </strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
@@ -228,7 +228,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
     <div class="itemizedlist">
       <p class="title">
         <strong>
-          <a class="link" href="/feature/sidebar#sidebar-functions" title="31.4.&#160;Functions">Key bindings</a>
+          <a class="link" href="/feature/sidebar#sidebar-functions" title="32.4.&#160;Functions">Key bindings</a>
         </strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
@@ -289,17 +289,17 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/sidebar#sidebar-variables" title="31.3.&#160;Variables">Sidebar variables to set</a>
+            <a class="link" href="/feature/sidebar#sidebar-variables" title="32.3.&#160;Variables">Sidebar variables to set</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/sidebar#sidebar-colors" title="31.6.&#160;Colors">Sidebar colors to apply</a>
+            <a class="link" href="/feature/sidebar#sidebar-colors" title="32.6.&#160;Colors">Sidebar colors to apply</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/sidebar#sidebar-sort" title="31.7.&#160;Sort">Sidebar sort methods</a>
+            <a class="link" href="/feature/sidebar#sidebar-sort" title="32.7.&#160;Sort">Sidebar sort methods</a>
           </p>
         </li>
       </ul>
@@ -309,7 +309,72 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
         <div>
           <div>
             <h5 class="title">
-            <a class="offset" id="intro-sidebar-basics"></a>3.1.&#160;Sidebar Basics</h5>
+    <pre class="screen">
+Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
+<span class="indicator">Animals [1]   2/6</span>|  2    + Jan 22  Rhys Lee         ( 48)  Dolphin
+Cars            4|  3    ! Aug 16  Ewan Brown       (333)  Hummingbird
+Seas          1/7|  4      Sep 25  Grace Hall       ( 27)  Capybara
+                 |<span class="indicator">  5 N  + Nov 12  Evelyn Rogers    (453)  Tapir              </span>
+                 |  6 N  + Nov 16  Callum Harrison  (498)  Hedgehog
+                 |
+                 |
+                 |
+                 |
+</pre>
+    <p>Let's map some functions:</p>
+    <pre class="screen">
+bind index,pager \CP sidebar-prev       <span class="comment"># Ctrl-Shift-P - Previous Mailbox</span>
+bind index,pager \CN sidebar-next       <span class="comment"># Ctrl-Shift-N - Next Mailbox</span>
+bind index,pager \CO sidebar-open       <span class="comment"># Ctrl-Shift-O - Open Highlighted Mailbox</span>
+</pre>
+    <p>Press
+    <span class="quote">“
+    <span class="quote">Ctrl-Shift-N</span>”</span>(Next mailbox) twice will move the Sidebar
+    <span class="bold">
+      <strong>highlight</strong>
+    </span>to down to the
+    <span class="quote">“
+    <span class="quote">Seas</span>”</span>mailbox.</p>
+    <pre class="screen">
+Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
+<span class="indicator">Animals [1]   2/6</span>|  2    + Jan 22  Rhys Lee         ( 48)  Dolphin
+Cars            4|  3    ! Aug 16  Ewan Brown       (333)  Hummingbird
+<span class="highlight">Seas          1/7</span>|  4      Sep 25  Grace Hall       ( 27)  Capybara
+                 |<span class="indicator">  5 N  + Nov 12  Evelyn Rogers    (453)  Tapir              </span>
+                 |  6 N  + Nov 16  Callum Harrison  (498)  Hedgehog
+                 |
+                 |
+                 |
+                 |
+</pre>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Functions
+      <code class="literal">&lt;sidebar-next&gt;</code>and
+      <code class="literal">&lt;sidebar-prev&gt;</code>move the Sidebar
+      <span class="bold">
+        <strong>highlight</strong>
+      </span>. They
+      <span class="bold">
+        <strong>do not</strong>
+      </span>change the open mailbox.</p>
+    </div>
+    <p>Press
+    <span class="quote">“
+    <span class="quote">Ctrl-Shift-O</span>”</span>(
+    <code class="literal">&lt;sidebar-open&gt;</code>) to open the highlighted mailbox.</p>
+    <pre class="screen">
+Fruit [1]     3/8|  1    ! Mar 07  Finley Jones     (139)  Molucca Sea
+Animals [1]   2/6|  2    + Mar 24  Summer Jackson   ( 25)  Arafura Sea
+Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
+<span class="indicator">Seas          1/7</span>|<span class="indicator">  4 N  + Feb 23  Isla Hussain     (348)  Balearic Sea       </span>
+                 |
+                 |
+                 |
+                 |
+                 |
+                 |
+</pre>
           </div>
         </div>
       </div>
@@ -340,7 +405,7 @@ set sidebar_divider_char = '│'          <span class="comment"># Pretty line-dr
       </div>
       <p>
       <code class="literal">$sidebar_format</code>allows you to customize the Sidebar display. For an introduction, read
-      <a class="link" href="/manual/reference.html#index-format" title="3.127.&#160;index_format">format strings</a>including the section about
+      <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">format strings</a>including the section about
       <a class="link" href="/manual/configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">conditionals</a>.</p>
       <p>The default value is
       <code class="literal">%B%* %n</code>The default value is
