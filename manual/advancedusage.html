@@ -1006,7 +1006,7 @@ title: Advanced Usage
               <tr>
                 <td>~=</td>
                 <td>duplicated messages (see 
-                <a class="link" href="reference.html#duplicate-threads" title="3.65.&#160;duplicate_threads">$duplicate_threads</a>)</td>
+                <a class="link" href="reference.html#duplicate-threads" title="3.66.&#160;duplicate_threads">$duplicate_threads</a>)</td>
               </tr>
               <tr>
                 <td>~$</td>
@@ -1427,7 +1427,7 @@ Limit to messages matching: ~d &lt;1m
           <span class="emphasis">
             <em>local</em>
           </span>time zone, so unless you change the setting of your 
-          <a class="link" href="reference.html#index-format" title="3.127.&#160;index_format">$index_format</a>to include a 
+          <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>to include a 
           <code class="literal">%[...]</code>format, these are 
           <span class="emphasis">
             <em>not</em>
@@ -1463,7 +1463,7 @@ Limit to messages matching: ~d &lt;1m
     <span class="emphasis">
       <em>next</em>
     </span>operation will be applied to all tagged messages if that operation can be used in that manner. If the 
-    <a class="link" href="reference.html#auto-tag" title="3.21.&#160;auto_tag">$auto_tag</a>variable is set, the next operation applies to the tagged messages automatically, without requiring the 
+    <a class="link" href="reference.html#auto-tag" title="3.22.&#160;auto_tag">$auto_tag</a>variable is set, the next operation applies to the tagged messages automatically, without requiring the 
     <span class="quote">“
     <span class="quote">tag-prefix</span>”</span>.</p>
     <p>In 
@@ -1678,7 +1678,7 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
     <a class="xref" href="advancedusage.html#ex-default-hook" title="Example&#160;4.3.&#160;Specifying a “default” hook">Example&#160;4.3, “Specifying a 
     <span class="quote">“
     <span class="quote">default</span>”</span>hook”</a>, by default the value of 
-    <a class="link" href="reference.html#from" title="3.85.&#160;from">$from</a>and 
+    <a class="link" href="reference.html#from" title="3.86.&#160;from">$from</a>and 
     <a class="link" href="reference.html#realname" title="3.254.&#160;realname">$realname</a>is not overridden. When sending messages either To: or Cc: to 
     <code class="literal">&lt;b@b.b&gt;</code>, the From: header is changed to 
     <code class="literal">&lt;c@c.c&gt;</code>.</p>
@@ -1731,8 +1731,8 @@ send-hook '~t ^me@cs\.hmc\.edu$' 'my_hdr From: Mutt User &lt;user@host&gt;'
       <span class="emphasis">
         <em>regular expression</em>
       </span>like the other hooks, in which case Mutt will translate your pattern into the full language, using the translation specified by the 
-      <a class="link" href="reference.html#default-hook" title="3.57.&#160;default_hook">$default_hook</a>variable. The pattern is translated at the time the hook is declared, so the value of 
-      <a class="link" href="reference.html#default-hook" title="3.57.&#160;default_hook">$default_hook</a>that is in effect at that time will be used.</p>
+      <a class="link" href="reference.html#default-hook" title="3.58.&#160;default_hook">$default_hook</a>variable. The pattern is translated at the time the hook is declared, so the value of 
+      <a class="link" href="reference.html#default-hook" title="3.58.&#160;default_hook">$default_hook</a>that is in effect at that time will be used.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1932,7 +1932,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
               <code class="literal">=</code>or 
               <code class="literal">+</code></td>
               <td>your 
-              <a class="link" href="reference.html#folder" title="3.75.&#160;folder">$folder</a>directory</td>
+              <a class="link" href="reference.html#folder" title="3.76.&#160;folder">$folder</a>directory</td>
             </tr>
             <tr>
               <td>
@@ -1981,7 +1981,7 @@ folder-hook . 'set record=^'
     <span class="emphasis">
       <em>index</em>
     </span>menu display. This is useful to distinguish between personal and list mail in the same mailbox. In the 
-    <a class="link" href="reference.html#index-format" title="3.127.&#160;index_format">$index_format</a>variable, the expando 
+    <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable, the expando 
     <span class="quote">“
     <span class="quote">%L</span>”</span>will print the string 
     <span class="quote">“
@@ -2011,12 +2011,12 @@ folder-hook . 'set record=^'
     <code class="literal">Mail-Followup-To</code>, see below).</p>
     <p>Mutt also supports the 
     <code class="literal">Mail-Followup-To</code>header. When you send a message to a list of recipients which includes one or several subscribed mailing lists, and if the 
-    <a class="link" href="reference.html#followup-to" title="3.77.&#160;followup_to">$followup_to</a>option is set, Mutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as 
+    <a class="link" href="reference.html#followup-to" title="3.78.&#160;followup_to">$followup_to</a>option is set, Mutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as 
     <span class="quote">“
     <span class="quote">followups</span>”</span>) to this message should only be sent to the original recipients of the message, and not separately to you - you'll receive your copy through one of the mailing lists you are subscribed to.</p>
     <p>Conversely, when group-replying or list-replying to a message which has a 
     <code class="literal">Mail-Followup-To</code>header, Mutt will respect this header if the 
-    <a class="link" href="reference.html#honor-followup-to" title="3.103.&#160;honor_followup_to">$honor_followup_to</a>configuration variable is set. Using 
+    <a class="link" href="reference.html#honor-followup-to" title="3.104.&#160;honor_followup_to">$honor_followup_to</a>configuration variable is set. Using 
     <a class="link" href="gettingstarted.html#list-reply">list-reply</a>will in this case also make sure that the reply goes to the mailing list, even if it's not specified in the list of recipients in the 
     <code class="literal">Mail-Followup-To</code>.</p>
     <div class="note">
@@ -2101,12 +2101,12 @@ folder-hook . 'set record=^'
     </div>
     <p>With X-Label, mutt's only notion of a message keyword was the literal string value of the X-Label header. Under the new, integrated support, each message may have a list of distinct message keywords. When reading keywords from one of the headers in the list above, the header value is split on the indicated delimiter (space or comma-space) for X-Keywords:, X-Mozilla-Keys:, and Keywords:. By default, X-Label: is parsed as a single keyword. By setting $xlabel_delimiter, you can force splitting of X-Label: as well.</p>
     <p>Two boolean variables control how keywords are saved when writing messages to a mailbox. The default settings preserve backward compatibility within mutt completely, but by changing these values you can transition to more standard keyword storage. 
-    <a class="link" href="reference.html#keywords-legacy" title="3.131.&#160;keywords_legacy">$keywords_legacy</a>, if set, will tell mutt to use only "legacy" headers -- i.e., 
+    <a class="link" href="reference.html#keywords-legacy" title="3.132.&#160;keywords_legacy">$keywords_legacy</a>, if set, will tell mutt to use only "legacy" headers -- i.e., 
     <code class="literal">X-Keywords:</code>, 
     <code class="literal">X-Mozilla-Keys</code>, 
     <code class="literal">Keywords</code>, or 
     <code class="literal">X-Label:</code>. Keywords will be saved to whichever header was in use by the message the keyword was read from. If 
-    <a class="link" href="reference.html#keywords-standard" title="3.132.&#160;keywords_standard">$keywords_standard</a>is set, keywords will be saved without exception to the standard 
+    <a class="link" href="reference.html#keywords-standard" title="3.133.&#160;keywords_standard">$keywords_standard</a>is set, keywords will be saved without exception to the standard 
     <code class="literal">Keywords:</code>header. (If both are set, both will be used; if both are unset, legacy headers are used.) Additionally, 
     <a class="link" href="reference.html#xlabel-delimiter" title="3.389.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
     <p>To migrate completely to the new standard, unset 
@@ -2147,17 +2147,17 @@ folder-hook . 'set record=^'
         <p>Contrary to older Mutt releases, it now maintains the new mail status of a folder by properly resetting the access time if the folder contains at least one message which is neither read, nor deleted, nor marked as old.</p>
       </div>
       <p>In cases where new mail detection for Mbox or Mmdf folders appears to be unreliable, the 
-      <a class="link" href="reference.html#check-mbox-size" title="3.32.&#160;check_mbox_size">$check_mbox_size</a>option can be used to make Mutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
+      <a class="link" href="reference.html#check-mbox-size" title="3.33.&#160;check_mbox_size">$check_mbox_size</a>option can be used to make Mutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
       <p>New mail for Maildir is assumed if there is one message in the 
       <code class="literal">new/</code>subdirectory which is not marked deleted (see 
       <a class="link" href="reference.html#maildir-trash" title="3.141.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the 
       <span class="quote">“
       <span class="quote">unseen</span>”</span>sequence as specified by 
       <a class="link" href="reference.html#mh-seq-unseen" title="3.159.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally, 
-      <a class="link" href="reference.html#new-mail-command" title="3.24.&#160;new_mail_command">$new_mail_command</a>can be configured to execute an external program every time new mail is detected in the current inbox.</p>
+      <a class="link" href="reference.html#new-mail-command" title="3.25.&#160;new_mail_command">$new_mail_command</a>can be configured to execute an external program every time new mail is detected in the current inbox.</p>
       <p>Mutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
       <p>For IMAP, by default Mutt uses recent message counts provided by the server to detect new mail. If the 
-      <a class="link" href="reference.html#imap-idle" title="3.113.&#160;imap_idle">$imap_idle</a>option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
+      <a class="link" href="reference.html#imap-idle" title="3.114.&#160;imap_idle">$imap_idle</a>option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
       <p>The 
       <a class="link" href="reference.html#mail-check-recent" title="3.135.&#160;mail_check_recent">$mail_check_recent</a>option changes whether Mutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, Mutt will notify you of any new mail in the mailbox.</p>
     </div>
@@ -2243,7 +2243,7 @@ folder-hook . 'set record=^'
       <code class="literal">&lt;tag-prefix&gt;</code>command (
       <span class="quote">“
       <span class="quote">;</span>”</span>) or the 
-      <a class="link" href="reference.html#auto-tag" title="3.21.&#160;auto_tag">$auto_tag</a>option.</p>
+      <a class="link" href="reference.html#auto-tag" title="3.22.&#160;auto_tag">$auto_tag</a>option.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2273,8 +2273,8 @@ folder-hook . 'set record=^'
     <span class="quote">“
     <span class="quote">return receipts.</span>”</span></p>
     <p>To support DSN, there are two variables. 
-    <a class="link" href="reference.html#dsn-notify" title="3.63.&#160;dsn_notify">$dsn_notify</a>is used to request receipts for different results (such as failed message, message delivered, etc.). 
-    <a class="link" href="reference.html#dsn-return" title="3.64.&#160;dsn_return">$dsn_return</a>requests how much of your message should be returned with the receipt (headers or full message).</p>
+    <a class="link" href="reference.html#dsn-notify" title="3.64.&#160;dsn_notify">$dsn_notify</a>is used to request receipts for different results (such as failed message, message delivered, etc.). 
+    <a class="link" href="reference.html#dsn-return" title="3.65.&#160;dsn_return">$dsn_return</a>requests how much of your message should be returned with the receipt (headers or full message).</p>
     <p>When using 
     <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
     <p>For SMTP delivery using 
