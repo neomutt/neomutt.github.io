@@ -34,9 +34,9 @@ has links to the **source** and the individual **patches**.
 
 <img align="left" src="/images/osx.png">
 
-## Homebrew for OSX
+## Homebrew for macOS
 
-Packager: [Alex Pearce](https://github.com/alexpearce)
+Packager: [Alex Pearce (alexpearce)](https://github.com/alexpearce)
 
 If you have [Homebrew](http://brew.sh/) installed, then getting NeoMutt is as
 simple as:
@@ -47,6 +47,21 @@ brew install neomutt/homebrew-neomutt/neomutt
 
 For more information, see the
 [readme](https://github.com/neomutt/homebrew-neomutt#homebrew-neomutt-).
+
+<img align="left" src="/images/macports.png">
+
+## MacPorts for macOS
+
+Packager: [Leonardo Brondani Schenkel (lbschenkel)](https://github.com/lbschenkel)
+
+If you have [MacPorts](https://www.macports.org/) installed, then getting
+NeoMutt is as simple as:
+
+```
+port install neomutt
+```
+
+Home: [NeoMutt for MacPorts](https://www.macports.org/ports.php?by=name&substr=neomutt)
 
 <img align="left" src="/images/fedora.png">
 <img align="left" src="/images/redhat.png">
@@ -144,12 +159,3 @@ Installing NeoMutt is as simple as:
 ```
 xbps-install neomutt
 ```
-
-<img align="left" src="/images/macports.png">
-
-## MacPorts
-
-Packager: [Leonardo Schenkel (lbschenkel)](https://github.com/lbschenkel)
-
-Home: [NeoMutt for MacPorts](https://www.macports.org/ports.php?by=name&substr=neomutt)
-
