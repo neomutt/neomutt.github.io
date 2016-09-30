@@ -16,6 +16,8 @@ If you are a GitHub user, you can **[raise an issue](https://github.com/neomutt/
 
 Alternatively, you can [**email the development team**](mailto:neomutt-devel@neomutt.org).
 
+<img align="left" src="/images/source.png">
+
 ## Source Code
 
 If you're a developer, or you want to be certain what you're running, then the
@@ -115,6 +117,22 @@ Packager: [Thomas Klausner (0-wiz-0)](https://github.com/0-wiz-0)
 
 Home: [NeoMutt for NetBSD](http://pkgsrc.se/mail/neomutt)
 
+<img align="left" src="/images/freebsd.png">
+
+## FreeBSD
+
+Packager: [Baptiste Daroussin (bapt)](https://github.com/bapt)
+
+Home: [NeoMutt for FreeBSD](https://www.freebsd.org/cgi/ports.cgi?query=neomutt)
+
+<img align="left" src="/images/openbsd.png">
+
+## OpenBSD
+
+Packager: [Stuart Henderson (sthen)](https://github.com/sthen)
+
+Home: Coming Soon
+
 <img align="left" src="/images/void.png">
 
 ## Void (xbps)
@@ -126,4 +144,12 @@ Installing NeoMutt is as simple as:
 ```
 xbps-install neomutt
 ```
+
+<img align="left" src="/images/macports.png">
+
+## MacPorts
+
+Packager: [Leonardo Schenkel (lbschenkel)](https://github.com/lbschenkel)
+
+Home: [NeoMutt for MacPorts](https://www.macports.org/ports.php?by=name&substr=neomutt)
 
