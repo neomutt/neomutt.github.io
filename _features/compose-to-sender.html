@@ -10,7 +10,7 @@ status: stable
     <div>
       <div>
         <h2 class="title" style="clear: both">
-        <a class="offset" id="compose-sender"></a>&#160;compose-sender Feature</h2>
+        <a class="offset" id="compose-to-sender"></a>&#160;compose-to-sender Feature</h2>
       </div>
       <div>
         <h3 class="subtitle">Send new mail to the sender of the current mail</h3>
@@ -22,15 +22,15 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compose-sender-support"></a>1.&#160;Support</h3>
+          <a class="offset" id="compose-to-sender-support"></a>1.&#160;Support</h3>
         </div>
       </div>
     </div>
     <p>To check if Mutt supports
     <span class="quote">“
-    <span class="quote">compose-sender</span>”</span>, look for
+    <span class="quote">compose-to-sender</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-compose-sender</span>”</span>in the mutt version. See:
+    <span class="quote">patch-compose-to-sender</span>”</span>in the mutt version. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -50,29 +50,30 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compose-sender-intro"></a>2.&#160;Introduction</h3>
+          <a class="offset" id="compose-to-sender-intro"></a>2.&#160;Introduction</h3>
         </div>
       </div>
     </div>
-    <p>The compose-sender patch adds a new command to start composing an email the sender of the current message. It works on tagged messages too, sending one email to all of the senders of the tagged messages.</p>
+    <p>The compose-to-sender patch adds a new command to start composing a new email to the sender of the current message. This is not a reply, but a new, separate, message.</p>
+    <p>It works on tagged messages too, sending one email to all of the senders of the tagged messages.</p>
   </div>
   <div class="sect2">
     <div class="titlepage">
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compose-sender-functions"></a>3.&#160;Functions</h3>
+          <a class="offset" id="compose-to-sender-functions"></a>3.&#160;Functions</h3>
         </div>
       </div>
     </div>
-    <p>compose-sender adds the following functions to Mutt. By default, none of them are bound to keys.</p>
+    <p>compose-to-sender adds the following function to Mutt. By default, it is not bound to a key.</p>
     <div class="table">
-      <a class="offset" id="table-compose-sender-functions"></a>
+      <a class="offset" id="table-compose-to-sender-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.1.&#160;compose-sender Functions</strong>
+        <strong>Table&#160;6.1.&#160;compose-to-sender Functions</strong>
       </p>
       <div class="table-contents">
-        <table summary="compose-sender Functions" border="1">
+        <table summary="compose-to-sender Functions" border="1">
           <colgroup>
             <col />
             <col />
@@ -89,7 +90,7 @@ status: stable
             <tr>
               <td>index,pager</td>
               <td>
-                <code class="literal">&lt;compose-sender&gt;</code>
+                <code class="literal">&lt;compose-to-sender&gt;</code>
               </td>
               <td>compose a new email to the sender of the current email</td>
             </tr>
@@ -104,24 +105,21 @@ status: stable
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compose-sender-muttrc"></a>4.&#160;Muttrc</h3>
+          <a class="offset" id="compose-to-sender-muttrc"></a>4.&#160;Muttrc</h3>
         </div>
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the compose-sender feature.
+<span class="comment"># Example NeoMutt config file for the compose-to-sender feature.
 
 # --------------------------------------------------------------------------
 # FUNCTIONS - shown with an example mapping
 # --------------------------------------------------------------------------
 
-# Send new mail to the sender of the current mail</span>
+# Compose a new email (not a reply) to the sender</span>
+bind index,pager @ compose-to-sender
 
-bind index,pager @ compose-sender
-
-<span class="comment"># --------------------------------------------------------------------------
-
-# vim: syntax=muttrc</span>
+<span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
   <div class="sect2">
@@ -129,7 +127,7 @@ bind index,pager @ compose-sender
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compose-sender-known-bugs"></a>5.&#160;Known Bugs</h3>
+          <a class="offset" id="compose-to-sender-known-bugs"></a>5.&#160;Known Bugs</h3>
         </div>
       </div>
     </div>
@@ -140,7 +138,7 @@ bind index,pager @ compose-sender
       <div>
         <div>
           <h3 class="title">
-          <a class="offset" id="compose-sender-credits"></a>6.&#160;Credits</h3>
+          <a class="offset" id="compose-to-sender-credits"></a>6.&#160;Credits</h3>
         </div>
       </div>
     </div>

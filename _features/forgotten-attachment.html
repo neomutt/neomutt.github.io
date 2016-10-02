@@ -68,7 +68,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-forgotten-attachment-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.8.&#160;forgotten-attachment Variables</strong>
+        <strong>Table&#160;6.9.&#160;forgotten-attachment Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="forgotten-attachment Variables" border="1">
@@ -87,11 +87,11 @@ status: stable
           <tbody>
             <tr>
               <td>
-                <code class="literal">attach-keyword</code>
+                <code class="literal">attach_keyword</code>
               </td>
-              <td>string</td>
+              <td>regular expression</td>
               <td>
-                <code class="literal">attached</code>
+                <code class="literal">\\&lt;attach(|ed|ments?)\\&gt;</code>
               </td>
             </tr>
             <tr>
@@ -100,7 +100,7 @@ status: stable
               </td>
               <td>quadoption</td>
               <td>
-                <code class="literal">ask-yes</code>
+                <code class="literal">no</code>
               </td>
             </tr>
           </tbody>
@@ -122,18 +122,33 @@ status: stable
 <span class="comment"># Example NeoMutt config file for the forgotten-attachment feature.
 
 # The 'forgotten-attachment' feature provides a new setting for Mutt that
-# alerts the user if the message body contains a certain keyword but there are
+# alerts the user if the message body contains a certain regular expression but there are
 # no attachments added. This is meant to ensure that the user does not forget
 # to attach a file after promising to do so in the mail.
 
-# Search for the following keyword in the body of the email</span>
-set attach_keyword = "attached"
+# Ask if the user wishes to abort sending if $attach_keyword is found in the
+# body, but no attachments have been added
+# It can be set to:
+#    "yes"     : always abort
+#    "ask-yes" : ask whether to abort
+#    "no"      : send the mail</span>
+set abort_noattach = no
 
-<span class="comment"># Ask if the user wishes to abort sending if $attach_keyword is found in the
-# body, but no attachments have been added</span>
-set abort_noattach = ask-yes
+<span class="comment"># Search for the following regular expression in the body of the email
 
-<span class="comment"># vim: syntax=muttrc</span>
+# English: attach, attached, attachment, attachments</span>
+set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
+
+<span class="comment"># Nederlands:
+# set attach_keyword = "\\&lt;(bijvoegen|bijgevoegd|bijlage|bijlagen)\\&gt;"
+
+# Deutsch:
+# set attach_keyword = "\\&lt;(anhängen|angehängt|anhang|anhänge|hängt an)\\&gt;"
+
+# Français:
+# set attach_keyword = "\\&lt;(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\&gt;"
+
+# vim: syntax=muttrc</span>
 </pre>
   </div>
   <div class="sect2">
@@ -196,6 +211,11 @@ set abort_noattach = ask-yes
           <p>Richard Russon
           <code class="email">&lt;
           <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Johannes Weißl
+          <code class="email">&lt;
+          <a class="email" href="mailto:jargon@molb.org">jargon@molb.org</a>&gt;</code></p>
         </li>
       </ul>
     </div>
