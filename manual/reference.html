@@ -2435,7 +2435,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
               <code class="command">
-                <a class="link" href="optionalfeatures.html#append-hook" title="11.3.3.&#160;Append to a compressed mailbox">append-hook</a>
+                <a class="link" href="optionalfeatures.html#append-hook" title="12.3.3.&#160;Append to a compressed mailbox">append-hook</a>
               </code>
               <em class="replaceable">
                 <code>pattern</code>
@@ -2522,7 +2522,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
               <code class="command">
-                <a class="link" href="optionalfeatures.html#close-hook" title="11.3.2.&#160;Write to a compressed mailbox">close-hook</a>
+                <a class="link" href="optionalfeatures.html#close-hook" title="12.3.2.&#160;Write to a compressed mailbox">close-hook</a>
               </code>
               <em class="replaceable">
                 <code>pattern</code>
@@ -2596,7 +2596,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
               <code class="command">
-                <a class="link" href="optionalfeatures.html#open-hook" title="11.3.1.&#160;Read from compressed mailbox">open-hook</a>
+                <a class="link" href="optionalfeatures.html#open-hook" title="12.3.1.&#160;Read from compressed mailbox">open-hook</a>
               </code>
               <em class="replaceable">
                 <code>pattern</code>
@@ -3282,8 +3282,8 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
       <p>If set to 
       <span class="emphasis">
         <em>yes</em>
-      </span>, when composing messages containing the word specified by 
-      <a class="link" href="reference.html#attach-keyword" title="3.17.&#160;attach_keyword">attach_keyword</a>(default is "attach") and no attachments are given, composition will be aborted. If set to 
+      </span>, when composing messages containing the regular expression specified by 
+      <a class="link" href="reference.html#attach-keyword" title="3.17.&#160;attach_keyword">attach_keyword</a>(default is "\\&lt;attach(|ed|ments?)\\&gt;") and no attachments are given, composition will be aborted. If set to 
       <span class="emphasis">
         <em>no</em>
       </span>, composing messages as such will never be aborted.</p>
@@ -3762,15 +3762,15 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
         <span class="quote">“
         <span class="quote">
-          <code class="literal">attach</code>
+          <code class="literal">\&lt;attach(|ed|ments?)\&gt;</code>
         </span>”</span></p>
       </div>
       <p>If 
-      <a class="link" href="reference.html#abort-noattach" title="3.1.&#160;abort_noattach">abort_noattach</a>is not set to no, then the body of the message will be scanned for this keyword, and if found, you will be prompted if there are no attachments. This is case insensitive.</p>
+      <a class="link" href="reference.html#abort-noattach" title="3.1.&#160;abort_noattach">abort_noattach</a>is not set to no, then the body of the message will be scanned for this regular expression, and if found, you will be prompted if there are no attachments.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -13660,6 +13660,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
               </tr>
               <tr>
                 <td>
+                  <code class="literal">&lt;compose-to-sender&gt;</code>
+                </td>
+                <td>&#160;</td>
+                <td>compose a new message to the sender</td>
+              </tr>
+              <tr>
+                <td>
                   <code class="literal">&lt;save-message&gt;</code>
                 </td>
                 <td>s</td>
@@ -14406,6 +14413,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                 </td>
                 <td>Esc e</td>
                 <td>use the current message as a template for a new one</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;compose-to-sender&gt;</code>
+                </td>
+                <td>&#160;</td>
+                <td>compose a new message to the sender</td>
               </tr>
               <tr>
                 <td>
@@ -15694,6 +15708,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                 </td>
                 <td>T</td>
                 <td>toggle view all/subscribed mailboxes (IMAP only)</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;goto-folder&gt;</code>
+                </td>
+                <td>=</td>
+                <td>swap the current folder position with $folder if it exists</td>
               </tr>
             </tbody>
           </table>
