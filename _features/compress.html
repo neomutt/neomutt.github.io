@@ -33,7 +33,7 @@ status: stable
     <span class="quote">Compress Folders</span>”</span>, look for
     <span class="quote">“
     <span class="quote">+USE_COMPRESSED</span>”</span>in the version info. See:
-    <a class="xref" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
+    <a class="xref" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
@@ -253,7 +253,7 @@ close-hook regexp shell-command
 </pre>
       <p>When Mutt has finished with a compressed mail folder, it will look for a matching
       <code class="literal">close-hook</code>to recompress the file. This hook is
-      <a class="link" href="compress.html#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
+      <a class="link" href="#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>If the folder has not been modified, the
@@ -309,7 +309,7 @@ append-hook regexp shell-command
 </pre>
       <p>When Mutt wants to append an email to a compressed mail folder, it will look for a matching
       <code class="literal">append-hook</code>. This hook is
-      <a class="link" href="compress.html#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
+      <a class="link" href="#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <p>Using the
       <code class="literal">append-hook</code>will save time, but Mutt won't be able to determine the type of the mail folder inside the compressed file.</p>
       <p>Mutt will
@@ -374,7 +374,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Mutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="../manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -386,7 +386,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="../manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -457,32 +457,32 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
+            <a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="/manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../manual/reference.html#mbox-type" title="3.147.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/manual/reference.html#mbox-type" title="3.147.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>
