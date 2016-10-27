@@ -5,24 +5,26 @@ description: Overview of mailboxes
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="sidebar"></a>&#160;Sidebar Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/sidebar"></a>Sidebar Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Overview of mailboxes</h3>
+        <h3 class="subtitle">
+          <em>Overview of mailboxes</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,47 +33,47 @@ status: stable
     <span class="quote">Sidebar</span>”</span>, look for
     <span class="quote">“
     <span class="quote">+USE_SIDEBAR</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="/feature/sidebar-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
     <p>This part of the manual is a reference guide. If you want a simple introduction with examples see the
-    <a class="link" href="/feature/sidebar-intro#intro-sidebar" title="2.4.&#160;Sidebar">Sidebar Howto</a>. If you just want to get started, you could use the sample
-    <a class="link" href="/feature/sidebar#sidebar-muttrc" title="33.8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+    <a class="link" href="../manual/gettingstarted.html#intro-sidebar" title="2.4.&#160;Sidebar">Sidebar Howto</a>. If you just want to get started, you could use the sample
+    <a class="link" href="sidebar.html#sidebar-muttrc" title="8.&#160;Muttrc">Sidebar muttrc</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-sidebar-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.24.&#160;Sidebar Variables</strong>
+        <strong>Table&#160;30.1.&#160;Sidebar Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Sidebar Variables" border="1">
@@ -202,14 +204,14 @@ status: stable
     <br class="table-break" />
     <p>For more details, and examples, about the
     <code class="literal">$sidebar_format</code>, see the
-    <a class="link" href="/manual/gettingstarted.html#intro-sidebar-format" title="2.4.3.2.&#160;Sidebar Format String">Sidebar Intro</a>.</p>
+    <a class="link" href="../manual/gettingstarted.html#intro-sidebar-format" title="2.4.3.2.&#160;Sidebar Format String">Sidebar Intro</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-functions"></a>4.&#160;Functions</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="functions"></a>4.&#160;Functions</h2>
         </div>
       </div>
     </div>
@@ -217,7 +219,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-sidebar-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.25.&#160;Sidebar Functions</strong>
+        <strong>Table&#160;30.2.&#160;Sidebar Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="Sidebar Functions" border="1">
@@ -296,19 +298,19 @@ status: stable
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-commands"></a>5.&#160;Commands</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>5.&#160;Commands</h2>
         </div>
       </div>
     </div>
     <div class="cmdsynopsis">
       <p>
       <code class="command">sidebar_whitelist
-      <a class="offset" id="sidebar-whitelist"></a></code>
+      <a class="offset" id="whitelist"></a></code>
       <em class="replaceable">
         <code>mailbox</code>
       </em>[
@@ -326,26 +328,26 @@ status: stable
       </em>...</p>
     </div>
     <p>This command specifies mailboxes that will always be displayed in the sidebar, even if
-    <a class="link" href="/manual/reference.html#sidebar-new-mail-only" title="3.292.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a>is set and the mailbox does not contain new mail.</p>
+    <a class="link" href="../manual/reference.html#sidebar-new-mail-only" title="3.292.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a>is set and the mailbox does not contain new mail.</p>
     <p>The
     <span class="quote">“
     <span class="quote">unsidebar_whitelist</span>”</span>command is used to remove a mailbox from the list of whitelisted mailboxes. Use
     <span class="quote">“
     <span class="quote">unsidebar_whitelist *</span>”</span>to remove all mailboxes.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-colors"></a>6.&#160;Colors</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="colors"></a>6.&#160;Colors</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-sidebar-colors"></a>
       <p class="title">
-        <strong>Table&#160;6.26.&#160;Sidebar Colors</strong>
+        <strong>Table&#160;30.3.&#160;Sidebar Colors</strong>
       </p>
       <div class="table-contents">
         <table summary="Sidebar Colors" border="1">
@@ -420,19 +422,19 @@ status: stable
     <p>If the
     <code class="literal">sidebar_indicator</code>color isn't set, then the default Mutt indicator color will be used (the color used in the index panel).</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-sort"></a>7.&#160;Sort</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="sort"></a>7.&#160;Sort</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-sidebar-sort"></a>
       <p class="title">
-        <strong>Table&#160;6.27.&#160;Sidebar Sort</strong>
+        <strong>Table&#160;30.4.&#160;Sidebar Sort</strong>
       </p>
       <div class="table-contents">
         <table summary="Sidebar Sort" border="1">
@@ -496,12 +498,12 @@ status: stable
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-muttrc"></a>8.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>8.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -630,12 +632,12 @@ color sidebar_ordinary color245 default
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-see-also"></a>9.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>9.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -643,44 +645,44 @@ color sidebar_ordinary color245 default
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="../manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Patterns</a>
+            <a class="link" href="../manual/advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Patterns</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
+            <a class="link" href="../manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/notmuch" title="28.&#160;Notmuch Feature">notmuch patch</a>
+            <a class="link" href="notmuch.html" title="Notmuch Feature">notmuch patch</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-known-bugs"></a>10.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>10.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="sidebar-credits"></a>11.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>11.&#160;Credits</h2>
         </div>
       </div>
     </div>

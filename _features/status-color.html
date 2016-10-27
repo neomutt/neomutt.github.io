@@ -5,24 +5,26 @@ description: Custom rules for theming the status bar
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="status-color"></a>&#160;Status Color Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/status-color"></a>Status Color Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Custom rules for theming the status bar</h3>
+        <h3 class="subtitle">
+          <em>Custom rules for theming the status bar</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,26 +33,26 @@ status: stable
     <span class="quote">Status Color</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-status-color</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -60,12 +62,12 @@ status: stable
     <p>Unlike normal color commands,
     <code class="literal">color status</code>can now take up to 2 extra parameters (regex, num).</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-commands"></a>3.&#160;Commands</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>3.&#160;Commands</h2>
         </div>
       </div>
     </div>
@@ -90,19 +92,19 @@ status: stable
     <p>With one parameter, Mutt will only color the parts matching the regex.</p>
     <p>With two parameters, Mutt will only color the num'th sub-match of the regex.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-colors"></a>4.&#160;Colors</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="colors"></a>4.&#160;Colors</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-status-color-colors"></a>
       <p class="title">
-        <strong>Table&#160;6.29.&#160;Status Colors</strong>
+        <strong>Table&#160;32.1.&#160;Status Colors</strong>
       </p>
       <div class="table-contents">
         <table summary="Status Colors" border="1">
@@ -132,12 +134,12 @@ status: stable
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-muttrc"></a>5.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>5.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -193,12 +195,12 @@ color status brightwhite default 'Mutt: ([^ ]+)' 1
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-see-also"></a>6.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>6.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -206,54 +208,54 @@ color status brightwhite default 'Mutt: ([^ ]+)' 1
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
+            <a class="link" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="../manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Patterns</a>
+            <a class="link" href="../manual/advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Patterns</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="18.&#160;Index Color Feature">index-color patch</a>
+            <a class="link" href="index-color.html" title="Index Color Feature">index-color patch</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
+            <a class="link" href="../manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-known-bugs"></a>7.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>7.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="status-color-credits"></a>8.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>8.&#160;Credits</h2>
         </div>
       </div>
     </div>

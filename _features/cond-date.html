@@ -5,24 +5,26 @@ description: Use rules to choose date format
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="cond-date"></a>&#160;Conditional Dates Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/cond-date"></a>Conditional Dates Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Use rules to choose date format</h3>
+        <h3 class="subtitle">
+          <em>Use rules to choose date format</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,38 +33,38 @@ status: stable
     <span class="quote">Conditional Dates</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-cond-date</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#nested-if" title="25.&#160;Nested If Feature">nested-if patch</a>
+            <a class="link" href="nested-if.html" title="Nested If Feature">nested-if patch</a>
           </p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>The
     <span class="quote">“
     <span class="quote">cond-date</span>”</span>patch allows you to construct
-    <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
+    <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
     <p>Mutt's default
     <code class="literal">$index_format</code>displays email dates in the form: abbreviated-month day-of-month —
     <span class="quote">“
@@ -71,7 +73,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-cond-date-scheme"></a>
       <p class="title">
-        <strong>Table&#160;6.3.&#160;Potential Formatting Scheme</strong>
+        <strong>Table&#160;10.1.&#160;Potential Formatting Scheme</strong>
       </p>
       <div class="table-contents">
         <table summary="Potential Formatting Scheme" border="1">
@@ -154,7 +156,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-cond-date-format-codes"></a>
       <p class="title">
-        <strong>Table&#160;6.4.&#160;Date Formatting Codes</strong>
+        <strong>Table&#160;10.2.&#160;Date Formatting Codes</strong>
       </p>
       <div class="table-contents">
         <table summary="Date Formatting Codes" border="1">
@@ -201,7 +203,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-cond-date-example-tests"></a>
       <p class="title">
-        <strong>Table&#160;6.5.&#160;Example Date Tests</strong>
+        <strong>Table&#160;10.3.&#160;Example Date Tests</strong>
       </p>
       <div class="table-contents">
         <table summary="Example Date Tests" border="1">
@@ -257,12 +259,12 @@ status: stable
       </div>
     </div>
     <br class="table-break" />
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="cond-date-example1"></a>2.1.&#160;Example 1</h4>
+            <h3 class="title">
+            <a class="offset" id="example1"></a>2.1.&#160;Example 1</h3>
           </div>
         </div>
       </div>
@@ -270,7 +272,7 @@ status: stable
       <div class="table">
         <a class="offset" id="table-cond-date-example1"></a>
         <p class="title">
-          <strong>Table&#160;6.6.&#160;Example 1</strong>
+          <strong>Table&#160;10.4.&#160;Example 1</strong>
         </p>
         <div class="table-contents">
           <table summary="Example 1" border="1">
@@ -322,12 +324,12 @@ status: stable
       %[%b %d] %[%Y-%m-%d]
 </pre>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="cond-date-example2"></a>2.2.&#160;Example 2</h4>
+            <h3 class="title">
+            <a class="offset" id="example2"></a>2.2.&#160;Example 2</h3>
           </div>
         </div>
       </div>
@@ -335,7 +337,7 @@ status: stable
       <div class="table">
         <a class="offset" id="table-cond-date-example2"></a>
         <p class="title">
-          <strong>Table&#160;6.7.&#160;Example 2</strong>
+          <strong>Table&#160;10.5.&#160;Example 2</strong>
         </p>
         <div class="table-contents">
           <table summary="Example 2" border="1">
@@ -422,12 +424,12 @@ status: stable
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
@@ -435,12 +437,12 @@ status: stable
     <span class="quote">“
     <span class="quote">cond-date</span>”</span>patch doesn't have any config of its own. It modifies the behavior of the format strings.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -463,12 +465,12 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -476,17 +478,17 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>
+            <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#nested-if" title="25.&#160;Nested If Feature">nested-if patch</a>
+            <a class="link" href="nested-if.html" title="Nested If Feature">nested-if patch</a>
           </p>
         </li>
         <li class="listitem">
@@ -497,12 +499,12 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -518,12 +520,12 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
     </span>week</span>”</span>. This doesn't match the normal Mutt behavior: for example
     <code class="literal">~d&gt;1w</code>means emails dated in the last 7 days.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="cond-date-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

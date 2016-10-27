@@ -8,162 +8,9 @@ title: Advanced Usage
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="advancedusage"></a>Chapter&#160;4.&#160;Advanced Usage</h1>
+        <a class="offset" id="manual/advancedusage"></a>Advanced Usage</h1>
       </div>
     </div>
-  </div>
-  <div class="toc">
-    <p>
-      <strong>Table of Contents</strong>
-    </p>
-    <dl class="toc">
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#charset-handling">1. Character Set Handling</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#regexp">2. Regular Expressions</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#patterns">3. Patterns: Searching, Limiting and Tagging</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#patterns-modifier">3.1. Pattern Modifier</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#simple-searches">3.2. Simple Searches</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#complex-patterns">3.3. Nesting and Boolean Operators</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#date-patterns">3.4. Searching by Date</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#tags">4. Using Tags</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#hooks">5. Using Hooks</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#pattern-hook">5.1. Message Matching in Hooks</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#mailbox-hook">5.2. Mailbox Matching in Hooks</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#query">6. External Address Queries</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#mailbox-formats">7. Mailbox Formats</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#shortcuts">8. Mailbox Shortcuts</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#using-lists">9. Handling Mailing Lists</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#using-keywords">10. Keyword Management</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#new-mail">11. New Mail Detection</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#new-mail-formats">11.1. How New Mail Detection Works</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#new-mail-polling">11.2. Polling For New Mail</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#calc-mailbox-counts">11.3. Calculating Mailbox Message Counts</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#editing-threads">12. Editing Threads</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#link-threads">12.1. Linking Threads</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="advancedusage.html#break-threads">12.2. Breaking Threads</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#dsn">13. Delivery Status Notification (DSN) Support</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#urlview">14. Start a WWW Browser on URLs</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="advancedusage.html#misc-topics">15. Miscellany</a>
-        </span>
-      </dt>
-    </dl>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -1514,7 +1361,7 @@ Limit to messages matching: ~d &lt;1m
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="optionalfeatures.html#append-hook" title="12.3.3.&#160;Append to a compressed mailbox">
+            <a class="link" href="../feature/compress.html#append-hook" title="3.3.&#160;Append to a compressed mailbox">
               <span class="command">
                 <strong>append-hook</strong>
               </span>
@@ -1532,7 +1379,7 @@ Limit to messages matching: ~d &lt;1m
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="optionalfeatures.html#close-hook" title="12.3.2.&#160;Write to a compressed mailbox">
+            <a class="link" href="../feature/compress.html#close-hook" title="3.2.&#160;Write to a compressed mailbox">
               <span class="command">
                 <strong>close-hook</strong>
               </span>
@@ -1604,7 +1451,7 @@ Limit to messages matching: ~d &lt;1m
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="optionalfeatures.html#open-hook" title="12.3.1.&#160;Read from compressed mailbox">
+            <a class="link" href="../feature/compress.html#open-hook" title="3.1.&#160;Read from compressed mailbox">
               <span class="command">
                 <strong>open-hook</strong>
               </span>

@@ -5,24 +5,26 @@ description: Conditional config options
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="ifdef"></a>&#160;Ifdef Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/ifdef"></a>Ifdef Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Conditional config options</h3>
+        <h3 class="subtitle">
+          <em>Conditional config options</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,26 +33,26 @@ status: stable
     <span class="quote">ifdef</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-ifdef</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -58,17 +60,17 @@ status: stable
     <span class="quote">“
     <span class="quote">ifdef</span>”</span>patch introduces three new commands to Mutt and allow you to share one config file between versions of Mutt that may have different features compiled in.</p>
     <pre class="screen">
-ifdef  symbol config-command [args...] 
+ifdef  symbol config-command [args...]
 <span class="comment"># If a symbol is defined</span>
-ifndef symbol config-command [args...] 
+ifndef symbol config-command [args...]
 <span class="comment"># If a symbol is not defined</span>
-finish                                 
+finish
 <span class="comment"># Finish reading the current file</span>
 </pre>
     <p>Here a symbol can be a
-    <a class="link" href="/manual/reference.html#variables" title="3.&#160;Configuration Variables">$variable</a>,
-    <a class="link" href="/manual/reference.html#functions" title="4.&#160;Functions">&lt;function&gt;</a>,
-    <a class="link" href="/manual/reference.html#commands" title="2.&#160;Configuration Commands">command</a>or compile-time symbol, such as
+    <a class="link" href="../manual/reference.html#variables" title="3.&#160;Configuration Variables">$variable</a>,
+    <a class="link" href="../manual/reference.html#functions" title="4.&#160;Functions">&lt;function&gt;</a>,
+    <a class="link" href="../manual/reference.html#commands" title="2.&#160;Configuration Commands">command</a>or compile-time symbol, such as
     <span class="quote">“
     <span class="quote">USE_IMAP</span>”</span>.</p>
     <p>
@@ -79,12 +81,12 @@ finish
 ifndef USE_SIDEBAR finish
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-commands"></a>3.&#160;Commands</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>3.&#160;Commands</h2>
         </div>
       </div>
     </div>
@@ -110,12 +112,12 @@ ifndef USE_SIDEBAR finish
       </p>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -154,12 +156,12 @@ ifndef USE_SIDEBAR finish
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -167,29 +169,29 @@ ifndef USE_SIDEBAR finish
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="ifdef-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

@@ -1,28 +1,30 @@
 ---
 layout: features
-title: new-mail
+title: New Mail
 description: Execute a command upon the receipt of new mail.
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="new-mail-hook"></a>&#160;new-mail Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/new-mail"></a>New Mail Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Execute a command upon the receipt of new mail.</h3>
+        <h3 class="subtitle">
+          <em>Execute a command upon the receipt of new mail.</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,33 +33,33 @@ status: stable
     <span class="quote">new-mail</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-new-mail</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>This feature enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%f</code>for the folder name. For a complete list, see:
-    <a class="link" href="/manual/reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>.</p>
+    <a class="link" href="../manual/reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>.</p>
     <p>For example in Linux you can use (most distributions already provide notify-send):</p>
     <pre class="screen">
 set new_mail_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
@@ -68,19 +70,19 @@ set new_mail_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New
 set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-new-mail-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.15.&#160;New Mail Command Variables</strong>
+        <strong>Table&#160;23.1.&#160;New Mail Command Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="New Mail Command Variables" border="1">
@@ -110,12 +112,12 @@ set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -140,12 +142,12 @@ set new_mail_command = ""
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -153,23 +155,23 @@ set new_mail_command = ""
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            <a class="link" href="../manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -185,12 +187,12 @@ set new_mail_command = ""
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="new-mail-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

@@ -1,28 +1,30 @@
 ---
 layout: features
 title: Attach Headers Color
-description: Color attachment headers using regexp
+description: Color attachment headers using regexp, just like mail bodies
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="attach-headers-color"></a>&#160;attach-headers-color Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/attach-headers-color"></a>Attach Headers Color Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Color attachment headers using regexp, just like mail bodies</h3>
+        <h3 class="subtitle">
+          <em>Color attachment headers using regexp, just like mail bodies</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,38 +33,38 @@ status: stable
     <span class="quote">attach-headers-color</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-attach-headers-color</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>This feature allows specifying regexps to color attachment headers just like the mail body would. The headers are the parts colored by the
     <code class="literal">attachment</code>color. Coloring them is useful to highlight the results of GPGME's signature checks or simply the mimetype or size of the attachment. Only the part matched by the regexp is colored.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-usage"></a>3.&#160;Usage</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="usage"></a>3.&#160;Usage</h2>
         </div>
       </div>
     </div>
@@ -73,12 +75,12 @@ status: stable
 color attach_headers foreground background pattern
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -111,12 +113,12 @@ color   attach_headers     brightmagenta   default        "invalid node with pac
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -124,39 +126,39 @@ color   attach_headers     brightmagenta   default        "invalid node with pac
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
+            <a class="link" href="../manual/configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">Color command</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="../manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="attach-headers-color-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

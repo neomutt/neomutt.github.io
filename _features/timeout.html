@@ -5,24 +5,26 @@ description: Run a command periodically
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="timeout-hook"></a>&#160;Timeout Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/timeout"></a>Timeout Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Run a command periodically</h3>
+        <h3 class="subtitle">
+          <em>Run a command periodically</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,38 +33,38 @@ status: stable
     <span class="quote">timeout</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-timeout</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>This feature implements a new hook that is called periodically when Mutt checks for new mail. This hook is called every
     <code class="literal">$timeout</code>seconds.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-commands"></a>3.&#160;Commands</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>3.&#160;Commands</h2>
         </div>
       </div>
     </div>
@@ -78,12 +80,12 @@ status: stable
       </p>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -100,12 +102,12 @@ timeout-hook . 'exec sync-mailbox'
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -113,34 +115,34 @@ timeout-hook . 'exec sync-mailbox'
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#timeout" title="3.363.&#160;timeout">$timeout</a>
+            <a class="link" href="../manual/reference.html#timeout" title="3.363.&#160;timeout">$timeout</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="timeout-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

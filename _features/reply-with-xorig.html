@@ -1,28 +1,30 @@
 ---
 layout: features
 title: Reply With X-Original-To
-description: Allow direct reply to a mail using X-Original-To header as a From
+description: Direct reply to email using X-Original-To header
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="reply-with-xorig-patch"></a>&#160;Reply With X-Original-To Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/reply-with-xorig"></a>Reply With X-Original-To Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Adds a configuration variable to allow direct reply to a mail using X-Original-To header as a From: in the answer.</h3>
+        <h3 class="subtitle">
+          <em>Direct reply to email using X-Original-To header</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="reply-with-xorig-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,44 +33,44 @@ status: stable
     <span class="quote">Reply With X-Original-To</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-reply-with-xorig</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="reply-with-xorig-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>Adds a reply_with_xorig for mutt configuration files. If enabled, allows to reply to an email using the email address in the first X-Original-To: header of a mail as the From: header of the answer.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="reply-with-xorig-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-reply-with-xorig-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.23.&#160;Reply With X-Original-To Variables</strong>
+        <strong>Table&#160;28.1.&#160;Reply With X-Original-To Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Reply With X-Original-To Variables" border="1">
@@ -100,12 +102,12 @@ status: stable
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="reply-with-xorig-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -123,12 +125,12 @@ set reply_with_xorig = "yes"
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="reply-with-xorig-credits"></a>5.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>5.&#160;Credits</h2>
         </div>
       </div>
     </div>

@@ -5,24 +5,26 @@ description: Email search engine
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="notmuch"></a>&#160;Notmuch Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/notmuch"></a>Notmuch Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Email search engine</h3>
+        <h3 class="subtitle">
+          <em>Email search engine</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,23 +33,23 @@ status: stable
     <span class="quote">Notmuch</span>”</span>, look for
     <span class="quote">“
     <span class="quote">+USE_NOTMUCH</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#quasi-delete" title="30.&#160;Quasi-Delete Feature">quasi-delete patch</a>
+            <a class="link" href="quasi-delete.html" title="Quasi-Delete Feature">quasi-delete patch</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="18.&#160;Index Color Feature">index-color patch</a>
+            <a class="link" href="index-color.html" title="Index Color Feature">index-color patch</a>
           </p>
         </li>
         <li class="listitem">
@@ -56,14 +58,14 @@ status: stable
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -75,35 +77,27 @@ status: stable
           <a class="ulink" href="http://notmuchmail.org/" target="_top">http://notmuchmail.org/</a></p>
         </li>
         <li class="listitem">
-          <p>Home page (wiki) and git:
-          <a class="ulink" href="https://github.com/karelzak/mutt-kz" target="_top">https://github.com/karelzak/mutt-kz</a></p>
-        </li>
-        <li class="listitem">
-          <p>Mailing list:
-          <a class="ulink" href="https://admin.fedoraproject.org/mailman/listinfo/mutt-kz" target="_top">https://admin.fedoraproject.org/mailman/listinfo/mutt-kz</a></p>
-        </li>
-        <li class="listitem">
           <p>More examples:
           <a class="ulink" href="http://notmuchmail.org/mutttips/" target="_top">http://notmuchmail.org/mutttips/</a></p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-using"></a>3.&#160;Using NotMuch</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="using"></a>3.&#160;Using NotMuch</h2>
         </div>
       </div>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="notmuch-folder-uri"></a>3.1.&#160;Folders URI</h4>
+            <h3 class="title">
+            <a class="offset" id="folder-uri"></a>3.1.&#160;Folders URI</h3>
           </div>
         </div>
       </div>
@@ -124,12 +118,12 @@ set nm_default_uri = "notmuch:///home/foo/maildir"
 virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
 </pre>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="notmuch-items"></a>3.2.&#160;Items</h4>
+            <h3 class="title">
+            <a class="offset" id="items"></a>3.2.&#160;Items</h3>
           </div>
         </div>
       </div>
@@ -169,12 +163,12 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </p>
       <p>Reads all matching messages or whole-threads. The default is 'messages' or nm_query_type.</p>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="notmuch-vfolder-format"></a>3.3.&#160;Format String for the NotMuch Browser</h4>
+            <h3 class="title">
+            <a class="offset" id="vfolder-format"></a>3.3.&#160;Format String for the NotMuch Browser</h3>
           </div>
         </div>
       </div>
@@ -184,9 +178,9 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
           <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;&#160;&#160;&#160;&#160;?%4m&#160;%f</code>
         </p>
       </div>
-      <p />
+      <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -239,23 +233,23 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-variables"></a>4.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>4.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-notmuch-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.18.&#160;Notmuch Variables</strong>
+        <strong>Table&#160;25.1.&#160;Notmuch Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Variables" border="1">
@@ -371,12 +365,12 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-functions"></a>5.&#160;Functions</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="functions"></a>5.&#160;Functions</h2>
         </div>
       </div>
     </div>
@@ -384,7 +378,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
-        <strong>Table&#160;6.19.&#160;Notmuch Functions</strong>
+        <strong>Table&#160;25.2.&#160;Notmuch Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Functions" border="1">
@@ -449,12 +443,12 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-commands"></a>6.&#160;Commands</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>6.&#160;Commands</h2>
         </div>
       </div>
     </div>
@@ -503,12 +497,12 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </em>...}</p>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-colors"></a>7.&#160;Colors</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="colors"></a>7.&#160;Colors</h2>
         </div>
       </div>
     </div>
@@ -516,7 +510,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-colors"></a>
       <p class="title">
-        <strong>Table&#160;6.20.&#160;Index Colors</strong>
+        <strong>Table&#160;25.3.&#160;Index Colors</strong>
       </p>
       <div class="table-contents">
         <table summary="Index Colors" border="1">
@@ -553,12 +547,12 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-muttrc"></a>8.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>8.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -679,12 +673,12 @@ color index_tags green default
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-see-also"></a>9.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>9.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -692,34 +686,34 @@ color index_tags green default
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
+            <a class="link" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-known-bugs"></a>10.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>10.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="notmuch-credits"></a>11.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>11.&#160;Credits</h2>
         </div>
       </div>
     </div>

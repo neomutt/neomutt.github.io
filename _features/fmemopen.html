@@ -6,24 +6,26 @@ status: disabled
 warning: fmemopen has been disabled until an awkward bug has been fixed
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="fmemopen"></a>&#160;Fmemopen Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/fmemopen"></a>Fmemopen Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Replace some temporary files with memory buffers</h3>
+        <h3 class="subtitle">
+          <em>Replace some temporary files with memory buffers</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -32,14 +34,14 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     <span class="quote">fmemopen</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-fmemopen</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
         <li class="listitem">
           <p>
@@ -52,14 +54,14 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     <code class="literal">configure</code>with the option
     <code class="literal">--disable-fmemopen</code></p>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -67,18 +69,18 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     <span class="quote">“
     <span class="quote">fmemopen</span>”</span>patch speeds up some searches.</p>
     <p>This feature changes a few places where Mutt creates temporary files. It replaces them with in-memory buffers. This should improve the performance when searching the header or body using the
-    <a class="link" href="/manual/reference.html#thorough-search" title="3.359.&#160;thorough_search">$thorough_search</a>option.</p>
+    <a class="link" href="../manual/reference.html#thorough-search" title="3.359.&#160;thorough_search">$thorough_search</a>option.</p>
     <p>There are no user-configurable parts.</p>
     <p>This feature depends on
     <code class="literal">open_memstream()</code>and
     <code class="literal">fmemopen()</code>. They are provided by glibc. Without them, Mutt will simply create temporary files.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-see-also"></a>3.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>3.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -86,12 +88,12 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
+            <a class="link" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
           </p>
         </li>
         <li class="listitem">
@@ -102,23 +104,23 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-known-bugs"></a>4.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>4.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="fmemopen-credits"></a>5.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>5.&#160;Credits</h2>
         </div>
       </div>
     </div>

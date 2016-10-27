@@ -5,24 +5,26 @@ description: Expando for author's initials
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="initials"></a>&#160;Initials Expando Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/initials"></a>Initials Expando Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Expando for author's initials</h3>
+        <h3 class="subtitle">
+          <em>Expando for author's initials</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,26 +33,26 @@ status: stable
     <span class="quote">Initials</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-initials</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -58,26 +60,26 @@ status: stable
     <span class="quote">“
     <span class="quote">initials</span>”</span>patch adds an expando (%I) for an author's initials.</p>
     <p>The index panel displays a list of emails. Its layout is controlled by the
-    <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
+    <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <p>This feature has no config of its own. It adds an expando which can be used in the
-    <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable.</p>
+    <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -111,12 +113,12 @@ set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -124,44 +126,44 @@ set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>
+            <a class="link" href="../manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#index-color" title="18.&#160;Index Color Feature">index-color patch</a>
+            <a class="link" href="index-color.html" title="Index Color Feature">index-color patch</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            <a class="link" href="../manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="initials-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

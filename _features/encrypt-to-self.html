@@ -5,24 +5,26 @@ description: Save a self-encrypted copy of emails
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="encrypt-to-self"></a>&#160;Encrypt-to-Self Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/encrypt-to-self"></a>Encrypt-to-Self Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Save a self-encrypted copy of emails</h3>
+        <h3 class="subtitle">
+          <em>Save a self-encrypted copy of emails</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,59 +33,59 @@ status: stable
     <span class="quote">encrypt-to-self</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-encrypt-to-self</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/manual/reference.html#fcc-clear" title="3.75.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="../manual/reference.html#fcc-clear" title="3.75.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/manual/reference.html#smime-encrypt-self" title="3.314.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
-    <a class="link" href="/manual/reference.html#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
+    <a class="link" href="../manual/reference.html#smime-encrypt-self" title="3.314.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
+    <a class="link" href="../manual/reference.html#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_encrypt_self = yes
 set smime_default_key  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
-    <a class="link" href="/manual/reference.html#pgp-encrypt-self" title="3.52.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
-    <a class="link" href="/manual/reference.html#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
+    <a class="link" href="../manual/reference.html#pgp-encrypt-self" title="3.52.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
+    <a class="link" href="../manual/reference.html#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
     <pre class="screen">
 set pgp_encrypt_self = yes
 set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-encrypt-self-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.8.&#160;encrypt-self Variables</strong>
+        <strong>Table&#160;11.1.&#160;encrypt-self Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="encrypt-self Variables" border="1">
@@ -120,12 +122,12 @@ set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -145,12 +147,12 @@ set pgp_encrypt_self = "no"
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -158,29 +160,29 @@ set pgp_encrypt_self = "no"
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="encrypt-to-self-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

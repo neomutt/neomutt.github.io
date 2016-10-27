@@ -8,245 +8,16 @@ title: Configuration
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="configuration"></a>Chapter&#160;3.&#160;Configuration</h1>
+        <a class="offset" id="manual/configuration"></a>Configuration</h1>
       </div>
     </div>
-  </div>
-  <div class="toc">
-    <p>
-      <strong>Table of Contents</strong>
-    </p>
-    <dl class="toc">
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#configuration-files">1. Location of Initialization Files</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#muttrc-syntax">2. Syntax of Initialization Files</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#addrgroup">3. Address Groups</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#alias">4. Defining/Using Aliases</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#bind">5. Changing the Default Key Bindings</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#charset-hook">6. Defining Aliases for Character Sets</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#folder-hook">7. Setting Variables Based Upon Mailbox</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#macro">8. Keyboard Macros</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#color">9. Using Color and Mono Video Attributes</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#msg-hdr-display">10. Message Header Display</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#hdr-folding">10.1. Header Display</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#ignore">10.2. Selecting Headers</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#hdr-order">10.3. Ordering Displayed Headers</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#alternates">11. Alternative Addresses</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#lists">12. Mailing Lists</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#mbox-hook">13. Using Multiple Spool Mailboxes</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#mailboxes">14. Monitoring Incoming Mail</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#my-hdr">15. User-Defined Headers</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#save-hook">16. Specify Default Save Mailbox</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#fcc-hook">17. Specify Default Fcc: Mailbox When Composing</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#fcc-save-hook">18. Specify Default Save Filename and Default Fcc: Mailbox at Once</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#send-hook">19. Change Settings Based Upon Message Recipients</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#message-hook">20. Change Settings Before Formatting a Message</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#crypt-hook">21. Choosing the Cryptographic Key of the Recipient</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#push">22. Adding Key Sequences to the Keyboard Buffer</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#exec">23. Executing Functions</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#score-command">24. Message Scoring</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#spam">25. Spam Detection</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#set">26. Setting and Querying Variables</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#var-types">26.1. Variable Types</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#set-commands">26.2. Commands</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#set-myvar">26.3. User-Defined Variables</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#set-conversions">26.4. Type Conversions</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#source">27. Reading Initialization Commands From Another File</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#unhook">28. Removing Hooks</a>
-        </span>
-      </dt>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#formatstrings">29. Format Strings</a>
-        </span>
-      </dt>
-      <dd>
-        <dl>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#formatstrings-basics">29.1. Basic usage</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#formatstrings-conditionals">29.2. Conditionals</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#formatstrings-filters">29.3. Filters</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#formatstrings-padding">29.4. Padding</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect2">
-              <a href="configuration.html#formatstrings-conditional-dates">29.5. Conditional Dates</a>
-            </span>
-          </dt>
-        </dl>
-      </dd>
-      <dt>
-        <span class="sect1">
-          <a href="configuration.html#mailto-allow">30. Control allowed header fields in a mailto: URL</a>
-        </span>
-      </dt>
-    </dl>
   </div>
   <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="configuration-files"></a>1.&#160;Location of Initialization Files</h2>
+          <a class="offset" id="files"></a>1.&#160;Location of Initialization Files</h2>
         </div>
       </div>
     </div>
@@ -283,13 +54,13 @@ title: Configuration
               <td>/etc/NeoMuttrc</td>
             </tr>
             <tr>
-              <td>/etc/Muttrc-1.7.0-neo</td>
+              <td>/etc/Muttrc-1.7.1-neo</td>
             </tr>
             <tr>
               <td>/etc/Muttrc</td>
             </tr>
             <tr>
-              <td>/share/mutt/Muttrc-1.7.0-neo</td>
+              <td>/share/mutt/Muttrc-1.7.1-neo</td>
             </tr>
             <tr>
               <td>/share/mutt/Muttrc</td>
@@ -335,13 +106,13 @@ title: Configuration
               <td>~/.mutt/neomuttrc</td>
             </tr>
             <tr>
-              <td>~/.muttrc-1.7.0-neo</td>
+              <td>~/.muttrc-1.7.1-neo</td>
             </tr>
             <tr>
               <td>~/.muttrc</td>
             </tr>
             <tr>
-              <td>~/.mutt/muttrc-1.7.0-neo</td>
+              <td>~/.mutt/muttrc-1.7.1-neo</td>
             </tr>
             <tr>
               <td>~/.mutt/muttrc</td>
@@ -1416,7 +1187,7 @@ folder-hook mutt "set sort=threads"
         </li>
         <li class="listitem">
           <p>
-          <a class="link" href="optionalfeatures.html#progress" title="29.&#160;Progress Bar Feature">progress</a>(visual progress bar)</p>
+          <a class="link" href="../feature/progress.html" title="Progress Bar Feature">progress</a>(visual progress bar)</p>
         </li>
         <li class="listitem">
           <p>prompt</p>
@@ -3581,7 +3352,8 @@ mailboxes $my_mx +mailbox3
 %&lt;x?%&lt;y?%&lt;z?xyz&amp;xy&gt;&amp;x&gt;&amp;none&gt;
 </pre>
       <p>For more examples, see 
-      <a class="xref" href="optionalfeatures.html#nested-if" title="25.&#160;Nested If Feature">Section&#160;25, “Nested If Feature”</a></p>
+      <a class="xref" href="../feature/nested-if.html" title="Nested If Feature">Chapter&#160;22, 
+      <em>Nested If Feature</em></a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">

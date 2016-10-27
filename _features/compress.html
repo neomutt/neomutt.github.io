@@ -5,24 +5,26 @@ description: Read from/write to compressed mailboxes
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="compress"></a>&#160;Compressed Folders Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/compress"></a>Compressed Folders Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Read from/write to compressed mailboxes</h3>
+        <h3 class="subtitle">
+          <em>Read from/write to compressed mailboxes</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,26 +33,26 @@ status: stable
     <span class="quote">Compress Folders</span>”</span>, look for
     <span class="quote">“
     <span class="quote">+USE_COMPRESSED</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -61,12 +63,12 @@ status: stable
     <code class="literal">append-hook</code>. They define commands to: uncompress a file; compress a file; append messages to an already compressed file.</p>
     <p>There are some examples of both compressed and encrypted files, later. For now, the documentation will just concentrate on compressed files.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-commands"></a>3.&#160;Commands</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>3.&#160;Commands</h2>
         </div>
       </div>
     </div>
@@ -118,7 +120,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-compress-optional"></a>
       <p class="title">
-        <strong>Table&#160;6.2.&#160;Not all Hooks are Required</strong>
+        <strong>Table&#160;9.1.&#160;Not all Hooks are Required</strong>
       </p>
       <div class="table-contents">
         <table summary="Not all Hooks are Required" border="1">
@@ -186,12 +188,12 @@ status: stable
         </ul>
       </div>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="open-hook"></a>3.1.&#160;Read from compressed mailbox</h4>
+            <h3 class="title">
+            <a class="offset" id="open-hook"></a>3.1.&#160;Read from compressed mailbox</h3>
           </div>
         </div>
       </div>
@@ -202,12 +204,12 @@ open-hook regexp shell-command
       <code class="literal">open-hook</code>that matches the filename.</p>
       <p>If your compression program doesn't have a well-defined extension, then you can use
       <code class="literal">.</code>as the regexp.</p>
-      <div class="sect4">
+      <div class="sect3">
         <div class="titlepage">
           <div>
             <div>
-              <h5 class="title">
-              <a class="offset" id="compress-open-hook-example"></a>3.1.1.&#160;Example of open-hook</h5>
+              <h4 class="title">
+              <a class="offset" id="open-hook-example"></a>3.1.1.&#160;Example of open-hook</h4>
             </div>
           </div>
         </div>
@@ -237,12 +239,12 @@ open-hook '\.gz$' "gzip -cd '%f' &gt; '%t'"
         </div>
       </div>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="close-hook"></a>3.2.&#160;Write to a compressed mailbox</h4>
+            <h3 class="title">
+            <a class="offset" id="close-hook"></a>3.2.&#160;Write to a compressed mailbox</h3>
           </div>
         </div>
       </div>
@@ -251,18 +253,18 @@ close-hook regexp shell-command
 </pre>
       <p>When Mutt has finished with a compressed mail folder, it will look for a matching
       <code class="literal">close-hook</code>to recompress the file. This hook is
-      <a class="link" href="/manual/optionalfeatures.html#table-compress-optional" title="Table&#160;6.2.&#160;Not all Hooks are Required">optional</a>.</p>
+      <a class="link" href="compress.html#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>If the folder has not been modified, the
         <code class="literal">close-hook</code>will not be called.</p>
       </div>
-      <div class="sect4">
+      <div class="sect3">
         <div class="titlepage">
           <div>
             <div>
-              <h5 class="title">
-              <a class="offset" id="compress-close-hook-example"></a>3.2.1.&#160;Example of close-hook</h5>
+              <h4 class="title">
+              <a class="offset" id="close-hook-example"></a>3.2.1.&#160;Example of close-hook</h4>
             </div>
           </div>
         </div>
@@ -293,12 +295,12 @@ close-hook '\.gz$' "gzip -c '%t' &gt; '%f'"
         </div>
       </div>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="append-hook"></a>3.3.&#160;Append to a compressed mailbox</h4>
+            <h3 class="title">
+            <a class="offset" id="append-hook"></a>3.3.&#160;Append to a compressed mailbox</h3>
           </div>
         </div>
       </div>
@@ -307,7 +309,7 @@ append-hook regexp shell-command
 </pre>
       <p>When Mutt wants to append an email to a compressed mail folder, it will look for a matching
       <code class="literal">append-hook</code>. This hook is
-      <a class="link" href="/manual/optionalfeatures.html#table-compress-optional" title="Table&#160;6.2.&#160;Not all Hooks are Required">optional</a>.</p>
+      <a class="link" href="compress.html#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <p>Using the
       <code class="literal">append-hook</code>will save time, but Mutt won't be able to determine the type of the mail folder inside the compressed file.</p>
       <p>Mutt will
@@ -325,12 +327,12 @@ append-hook regexp shell-command
         <span class="quote">“
         <span class="quote">append-hook</span>”</span>. If not, data will be lost.</p>
       </div>
-      <div class="sect4">
+      <div class="sect3">
         <div class="titlepage">
           <div>
             <div>
-              <h5 class="title">
-              <a class="offset" id="compress-append-hook-example"></a>3.3.1.&#160;Example of append-hook</h5>
+              <h4 class="title">
+              <a class="offset" id="append-hook-example"></a>3.3.1.&#160;Example of append-hook</h4>
             </div>
           </div>
         </div>
@@ -362,37 +364,37 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="compress-empty"></a>3.4.&#160;Empty Files</h4>
+            <h3 class="title">
+            <a class="offset" id="empty"></a>3.4.&#160;Empty Files</h3>
           </div>
         </div>
       </div>
       <p>Mutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="../manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
-    <div class="sect3">
+    <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
-            <h4 class="title">
-            <a class="offset" id="compress-security"></a>3.5.&#160;Security</h4>
+            <h3 class="title">
+            <a class="offset" id="security"></a>3.5.&#160;Security</h3>
           </div>
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="../manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -437,12 +439,12 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -450,48 +452,48 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
+            <a class="link" href="../manual/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="../manual/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="../manual/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#mbox-type" title="3.147.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="../manual/reference.html#mbox-type" title="3.147.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>
+            <a class="link" href="../manual/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            <a class="link" href="../manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -503,12 +505,12 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="compress-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

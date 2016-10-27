@@ -5,24 +5,26 @@ description: Alert user when (s)he forgets to attach a file to an outgoing email
 status: stable
 ---
 {% raw %}
-<div class="sect1">
+<div class="chapter">
   <div class="titlepage">
     <div>
       <div>
-        <h2 class="title" style="clear: both">
-        <a class="offset" id="forgotten-attachment"></a>&#160;forgotten-attachment Feature</h2>
+        <h1 class="title">
+        <a class="offset" id="feature/forgotten-attachment"></a>Forgotten Attachment Feature</h1>
       </div>
       <div>
-        <h3 class="subtitle">Alert user when (s)he forgets to attach a file to an outgoing email.</h3>
+        <h3 class="subtitle">
+          <em>Alert user when (s)he forgets to attach a file to an outgoing email.</em>
+        </h3>
       </div>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-support"></a>1.&#160;Support</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -31,44 +33,45 @@ status: stable
     <span class="quote">forgotten-attachment</span>”</span>, look for
     <span class="quote">“
     <span class="quote">patch-forgotten-attachment</span>”</span>in the version info. See:
-    <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
+    <a class="xref" href="../manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Dependencies:</strong>
       </p>
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>mutt-1.7.0</p>
+          <p>mutt-1.7.1</p>
         </li>
       </ul>
     </div>
     <p>This feature is part of the
-    <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-intro"></a>2.&#160;Introduction</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
-    <p>The 'forgotten-attachment' patch provides a new setting for Mutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail.</p>
+    <p>The 'forgotten-attachment' patch provides a new setting for Mutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail. The attachment keyword will not be scanned in text matched by
+    <a class="link" href="../manual/reference.html#quote-regexp" title="3.251.&#160;quote_regexp">$quote_regexp</a>.</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-variables"></a>3.&#160;Variables</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div class="table">
       <a class="offset" id="table-forgotten-attachment-variables"></a>
       <p class="title">
-        <strong>Table&#160;6.9.&#160;forgotten-attachment Variables</strong>
+        <strong>Table&#160;13.1.&#160;forgotten-attachment Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="forgotten-attachment Variables" border="1">
@@ -91,7 +94,7 @@ status: stable
               </td>
               <td>regular expression</td>
               <td>
-                <code class="literal">\\&lt;attach(|ed|ments?)\\&gt;</code>
+                <code class="literal">\\&lt;(attach|attached|attachments?)\\&gt;</code>
               </td>
             </tr>
             <tr>
@@ -109,12 +112,12 @@ status: stable
     </div>
     <br class="table-break" />
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-muttrc"></a>4.&#160;Muttrc</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -151,12 +154,12 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
 # vim: syntax=muttrc</span>
 </pre>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-see-also"></a>5.&#160;See Also</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -164,39 +167,39 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="http://www.neomutt.org/" target="_top">NeoMutt Project</a>
+            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/mimesupport.html#attach-menu" title="1.3.&#160;The Attachment Menu">The Attachment Menu</a>
+            <a class="link" href="../manual/mimesupport.html#attach-menu" title="1.3.&#160;The Attachment Menu">The Attachment Menu</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/manual/reference.html#attachment-map" title="4.6.&#160;Attachment Menu">The Attachment Menu key mappings</a>
+            <a class="link" href="../manual/reference.html#attachment-map" title="4.6.&#160;Attachment Menu">The Attachment Menu key mappings</a>
           </p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-known-bugs"></a>6.&#160;Known Bugs</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
     <p>None</p>
   </div>
-  <div class="sect2">
+  <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
-          <h3 class="title">
-          <a class="offset" id="forgotten-attachment-credits"></a>7.&#160;Credits</h3>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>
@@ -216,6 +219,11 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
           <p>Johannes Weißl
           <code class="email">&lt;
           <a class="email" href="mailto:jargon@molb.org">jargon@molb.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Steven! Ragnarök
+          <code class="email">&lt;
+          <a class="email" href="mailto:steven@nuclearsandwich.com">steven@nuclearsandwich.com</a>&gt;</code></p>
         </li>
       </ul>
     </div>
