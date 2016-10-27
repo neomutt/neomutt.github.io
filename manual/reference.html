@@ -987,7 +987,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
             <code class="command">
-              <a class="link" href="reference.html#score" title="3.275.&#160;score">score</a>
+              <a class="link" href="#score" title="3.275.&#160;score">score</a>
             </code>
             <em class="replaceable">
               <code>pattern</code>
@@ -997,7 +997,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>
             <br />
             <code class="command">
-              <a class="link" href="reference.html#score" title="3.275.&#160;score">unscore</a>
+              <a class="link" href="#score" title="3.275.&#160;score">unscore</a>
             </code>{
             <em class="replaceable">
               <code>*</code>
@@ -1233,7 +1233,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
       <span class="emphasis">
         <em>yes</em>
       </span>, when composing messages containing the regular expression specified by
-      <a class="link" href="reference.html#attach-keyword" title="3.17.&#160;attach_keyword">attach_keyword</a>(default is "\\&lt;attach(|ed|ments?)\\&gt;") and no attachments are given, composition will be aborted. If set to
+      <a class="link" href="#attach-keyword" title="3.17.&#160;attach_keyword">attach_keyword</a>(default is "\\&lt;attach(|ed|ments?)\\&gt;") and no attachments are given, composition will be aborted. If set to
       <span class="emphasis">
         <em>no</em>
       </span>, composing messages as such will never be aborted.</p>
@@ -1304,7 +1304,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
       <code class="literal">
         <a class="link" href="gettingstarted.html#create-alias">&lt;create-alias&gt;</a>
       </code>function. Entries added to this file are encoded in the character set specified by
-      <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a>if it is
+      <a class="link" href="#config-charset" title="3.37.&#160;config_charset">$config_charset</a>if it is
       <span class="emphasis">
         <em>set</em>
       </span>or the current character set otherwise.</p>
@@ -1412,7 +1412,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
 [-- PGP output follows ...
 </pre>
       <p>and give it the same color as your attachment color (see also
-      <a class="link" href="reference.html#crypt-timestamp" title="3.53.&#160;crypt_timestamp">$crypt_timestamp</a>).</p>
+      <a class="link" href="#crypt-timestamp" title="3.53.&#160;crypt_timestamp">$crypt_timestamp</a>).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1557,12 +1557,12 @@ set assumed_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This variable is a colon-separated list of character encoding schemes for text file attachments. Mutt uses this setting to guess which encoding files being attached are encoded in to convert them to a proper character set given in
-      <a class="link" href="reference.html#send-charset" title="3.280.&#160;send_charset">$send_charset</a>.</p>
+      <a class="link" href="#send-charset" title="3.280.&#160;send_charset">$send_charset</a>.</p>
       <p>If
       <span class="emphasis">
         <em>unset</em>
       </span>, the value of
-      <a class="link" href="reference.html#charset" title="3.32.&#160;charset">$charset</a>will be used instead. For example, the following configuration would work for Japanese text handling:</p>
+      <a class="link" href="#charset" title="3.32.&#160;charset">$charset</a>will be used instead. For example, the following configuration would work for Japanese text handling:</p>
       <pre class="screen">
 set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
 </pre>
@@ -1700,7 +1700,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1720,7 +1720,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </span>”</span></p>
       </div>
       <p>If
-      <a class="link" href="reference.html#abort-noattach" title="3.1.&#160;abort_noattach">abort_noattach</a>is not set to no, then the body of the message will be scanned for this regular expression, and if found, you will be prompted if there are no attachments.</p>
+      <a class="link" href="#abort-noattach" title="3.1.&#160;abort_noattach">abort_noattach</a>is not set to no, then the body of the message will be scanned for this regular expression, and if found, you will be prompted if there are no attachments.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1758,7 +1758,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>unset</em>
       </span>, when operating (saving, printing, piping, etc) on a list of tagged attachments, Mutt will concatenate the attachments and will operate on them as a single attachment. The
-      <a class="link" href="reference.html#attach-sep" title="3.18.&#160;attach_sep">$attach_sep</a>separator is added after each attachment. When
+      <a class="link" href="#attach-sep" title="3.18.&#160;attach_sep">$attach_sep</a>separator is added after each attachment. When
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will operate on the attachments one by one.</p>
@@ -1782,7 +1782,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       </div>
       <p>This is the string that will precede a message which has been included in a reply. For a full listing of defined
       <code class="literal">printf(3)</code>-like sequences see the section on
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1799,7 +1799,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       </div>
       <p>The locale used by
       <code class="literal">strftime(3)</code>to format dates in the
-      <a class="link" href="reference.html#attribution" title="3.20.&#160;attribution">attribution</a>string. Legal values are the strings your system accepts for the locale environment variable
+      <a class="link" href="#attribution" title="3.20.&#160;attribution">attribution</a>string. Legal values are the strings your system accepts for the locale environment variable
       <code class="literal">$LC_TIME</code>.</p>
       <p>This variable is to allow the attribution date format to be customized by recipient or folder using hooks. By default, Mutt will use your locale environment, so there is no need to set this except to override that default.</p>
     </div>
@@ -1844,7 +1844,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>set</em>
       </span>along with
-      <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>, Mutt will skip the initial send-menu (prompting for subject and recipients) and allow you to immediately begin editing the body of your message. The send-menu may still be accessed once you have finished editing the body of your message.</p>
+      <a class="link" href="#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>, Mutt will skip the initial send-menu (prompting for subject and recipients) and allow you to immediately begin editing the body of your message. The send-menu may still be accessed once you have finished editing the body of your message.</p>
       <p>
       <span class="bold">
         <strong>Note:</strong>
@@ -1853,7 +1853,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <em>set</em>
       </span>, you cannot use send-hooks that depend on the recipients when composing a new (non-reply) message, as the initial list of recipients is empty.</p>
       <p>Also see
-      <a class="link" href="reference.html#fast-reply" title="3.73.&#160;fast_reply">$fast_reply</a>.</p>
+      <a class="link" href="#fast-reply" title="3.73.&#160;fast_reply">$fast_reply</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1872,7 +1872,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will call this command after a new message is received. See the
-      <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>documentation for the values that can be formatted into this command.</p>
+      <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>documentation for the values that can be formatted into this command.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1913,7 +1913,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will beep whenever it prints a message notifying you of new mail. This is independent of the setting of the
-      <a class="link" href="reference.html#beep" title="3.24.&#160;beep">$beep</a>variable.</p>
+      <a class="link" href="#beep" title="3.24.&#160;beep">$beep</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1974,7 +1974,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will place the cursor at the beginning of the current line in menus, even when the
-      <a class="link" href="reference.html#arrow-cursor" title="3.8.&#160;arrow_cursor">$arrow_cursor</a>variable is
+      <a class="link" href="#arrow-cursor" title="3.8.&#160;arrow_cursor">$arrow_cursor</a>variable is
       <span class="emphasis">
         <em>unset</em>
       </span>, making it easier for blind persons using Braille displays to follow these menus. The option is
@@ -2038,7 +2038,7 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Character set your terminal uses to display and enter textual data. It is also the fallback for
-      <a class="link" href="reference.html#send-charset" title="3.280.&#160;send_charset">$send_charset</a>.</p>
+      <a class="link" href="#send-charset" title="3.280.&#160;send_charset">$send_charset</a>.</p>
       <p>Upon startup Mutt tries to derive this value from environment variables such as
       <code class="literal">$LC_CTYPE</code>or
       <code class="literal">$LANG</code>.</p>
@@ -2143,7 +2143,7 @@ set certificate_file=~/.mutt/certificates
       <p>Controls the format of the status line displayed in the
       <span class="quote">“
       <span class="quote">compose</span>”</span>menu. This string is similar to
-      <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>, but has its own set of
+      <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -2172,8 +2172,8 @@ set certificate_file=~/.mutt/certificates
         </table>
       </div>
       <p>See the text describing the
-      <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>option for more information on how to set
-      <a class="link" href="reference.html#compose-format" title="3.36.&#160;compose_format">$compose_format</a>.</p>
+      <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>option for more information on how to set
+      <a class="link" href="#compose-format" title="3.36.&#160;compose_format">$compose_format</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2189,11 +2189,11 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;(empty)</p>
       </div>
       <p>When defined, Mutt will recode commands in rc files from this encoding to the current character set as specified by
-      <a class="link" href="reference.html#charset" title="3.32.&#160;charset">$charset</a>and aliases written to
-      <a class="link" href="reference.html#alias-file" title="3.4.&#160;alias_file">$alias_file</a>from the current character set.</p>
+      <a class="link" href="#charset" title="3.32.&#160;charset">$charset</a>and aliases written to
+      <a class="link" href="#alias-file" title="3.4.&#160;alias_file">$alias_file</a>from the current character set.</p>
       <p>Please note that if setting
-      <a class="link" href="reference.html#charset" title="3.32.&#160;charset">$charset</a>it must be done before setting
-      <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a>.</p>
+      <a class="link" href="#charset" title="3.32.&#160;charset">$charset</a>it must be done before setting
+      <a class="link" href="#config-charset" title="3.37.&#160;config_charset">$config_charset</a>.</p>
       <p>Recoding should be avoided as it may render unconvertable characters as question marks which can lead to undesired side effects (for example in regular expressions).</p>
     </div>
     <div class="sect2">
@@ -2280,9 +2280,9 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable controls whether or not copies of your outgoing messages will be saved for later references. Also see
-      <a class="link" href="reference.html#record" title="3.256.&#160;record">$record</a>,
-      <a class="link" href="reference.html#save-name" title="3.274.&#160;save_name">$save_name</a>,
-      <a class="link" href="reference.html#force-name" title="3.80.&#160;force_name">$force_name</a>and
+      <a class="link" href="#record" title="3.256.&#160;record">$record</a>,
+      <a class="link" href="#save-name" title="3.274.&#160;save_name">$save_name</a>,
+      <a class="link" href="#force-name" title="3.80.&#160;force_name">$force_name</a>and
       <span class="quote">“
       <span class="quote">
         <a class="link" href="configuration.html#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">fcc-hook</a>
@@ -2306,7 +2306,7 @@ set certificate_file=~/.mutt/certificates
       <span class="quote">
         <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span>command. It can be overridden by use of the pgp menu, when encryption is not required or signing is requested as well. If
-      <a class="link" href="reference.html#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>is
+      <a class="link" href="#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, then OpenSSL is used instead to create S/MIME messages and settings can be overridden by use of the smime menu instead. (Crypto only)</p>
@@ -2325,11 +2325,11 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable controls whether or not mutt may automatically enable PGP encryption/signing for messages. See also
-      <a class="link" href="reference.html#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
-      <a class="link" href="reference.html#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
-      <a class="link" href="reference.html#crypt-autosign" title="3.45.&#160;crypt_autosign">$crypt_autosign</a>,
-      <a class="link" href="reference.html#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>and
-      <a class="link" href="reference.html#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>.</p>
+      <a class="link" href="#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
+      <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
+      <a class="link" href="#crypt-autosign" title="3.45.&#160;crypt_autosign">$crypt_autosign</a>,
+      <a class="link" href="#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>and
+      <a class="link" href="#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2345,7 +2345,7 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;no</p>
       </div>
       <p>Setting this variable will cause Mutt to always attempt to cryptographically sign outgoing messages. This can be overridden by use of the pgp menu, when signing is not required or encryption is requested as well. If
-      <a class="link" href="reference.html#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>is
+      <a class="link" href="#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, then OpenSSL is used instead to create S/MIME messages and settings can be overridden by use of the smime menu instead of the pgp menu. (Crypto only)</p>
@@ -2364,11 +2364,11 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable controls whether or not mutt may automatically enable S/MIME encryption/signing for messages. See also
-      <a class="link" href="reference.html#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
-      <a class="link" href="reference.html#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
-      <a class="link" href="reference.html#crypt-autosign" title="3.45.&#160;crypt_autosign">$crypt_autosign</a>,
-      <a class="link" href="reference.html#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>and
-      <a class="link" href="reference.html#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>.</p>
+      <a class="link" href="#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
+      <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
+      <a class="link" href="#crypt-autosign" title="3.45.&#160;crypt_autosign">$crypt_autosign</a>,
+      <a class="link" href="#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>and
+      <a class="link" href="#smime-is-default" title="3.320.&#160;smime_is_default">$smime_is_default</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2403,11 +2403,11 @@ set certificate_file=~/.mutt/certificates
       </div>
       <p>Setting this variable will cause Mutt to automatically enable and disable encryption, based on whether all message recipient keys can be located by Mutt.</p>
       <p>When this option is enabled, Mutt will enable/disable encryption each time the TO, CC, and BCC lists are edited. If
-      <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>is set, Mutt will also do so each time the message is edited.</p>
+      <a class="link" href="#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>is set, Mutt will also do so each time the message is edited.</p>
       <p>While this is set, encryption can't be manually enabled/disabled. The pgp or smime menus provide a selection to temporarily disable this option for the current message.</p>
       <p>If
-      <a class="link" href="reference.html#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>or
-      <a class="link" href="reference.html#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>enable encryption for a message, this option will be disabled for that message. It can be manually re-enabled in the pgp or smime menus. (Crypto only)</p>
+      <a class="link" href="#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>or
+      <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>enable encryption for a message, this option will be disabled for that message. It can be manually re-enabled in the pgp or smime menus. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2469,8 +2469,8 @@ set certificate_file=~/.mutt/certificates
       <span class="emphasis">
         <em>set</em>
       </span>, automatically PGP or OpenSSL sign replies to messages which are encrypted. This makes sense in combination with
-      <a class="link" href="reference.html#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>, because it allows you to sign all messages which are automatically encrypted. This works around the problem noted in
-      <a class="link" href="reference.html#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>, that mutt is not able to find out whether an encrypted message is also signed. (Crypto only)</p>
+      <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>, because it allows you to sign all messages which are automatically encrypted. This works around the problem noted in
+      <a class="link" href="#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>, that mutt is not able to find out whether an encrypted message is also signed. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2486,7 +2486,7 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;no</p>
       </div>
       <p>Encrypt the message to
-      <a class="link" href="reference.html#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>too. (PGP only)</p>
+      <a class="link" href="#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>too. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2527,7 +2527,7 @@ set certificate_file=~/.mutt/certificates
         <em>set</em>
       </span>and Mutt was built with gpgme support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .muttrc; it won't have any effect when used interactively.</p>
       <p>Note that the GPGME backend does not support creating old-style inline (traditional) PGP encrypted or signed messages (see
-      <a class="link" href="reference.html#pgp-autoinline" title="3.195.&#160;pgp_autoinline">$pgp_autoinline</a>).</p>
+      <a class="link" href="#pgp-autoinline" title="3.195.&#160;pgp_autoinline">$pgp_autoinline</a>).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2597,7 +2597,7 @@ set certificate_file=~/.mutt/certificates
       <p>This variable controls the format of the date printed by the
       <span class="quote">“
       <span class="quote">%d</span>”</span>sequence in
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>. This is passed to the
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>. This is passed to the
       <code class="literal">strftime(3)</code>function to process the date, see the man page for the proper syntax.</p>
       <p>Unless the first character in the string is a bang (
       <span class="quote">“
@@ -2727,7 +2727,7 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;(empty)</p>
       </div>
       <p>When set, specifies a command used to filter messages. When a message is viewed it is passed as standard input to
-      <a class="link" href="reference.html#display-filter" title="3.62.&#160;display_filter">$display_filter</a>, and the filtered message is read from the standard output.</p>
+      <a class="link" href="#display-filter" title="3.62.&#160;display_filter">$display_filter</a>, and the filtered message is read from the standard output.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2783,7 +2783,7 @@ set dsn_notify="failure,delay"
       <span class="bold">
         <strong>Note:</strong>
       </span>when using
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
       <code class="literal">sendmail(1)</code>-compatible interface supporting the
       <code class="literal">-N</code>option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
@@ -2815,7 +2815,7 @@ set dsn_return=hdrs
       <span class="bold">
         <strong>Note:</strong>
       </span>when using
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
       <code class="literal">sendmail(1)</code>-compatible interface supporting the
       <code class="literal">-R</code>option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
@@ -2833,7 +2833,7 @@ set dsn_return=hdrs
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable controls whether mutt, when
-      <a class="link" href="reference.html#sort" title="3.332.&#160;sort">$sort</a>is set to
+      <a class="link" href="#sort" title="3.332.&#160;sort">$sort</a>is set to
       <span class="emphasis">
         <em>threads</em>
       </span>, threads messages with the same Message-Id together. If it is
@@ -2880,7 +2880,7 @@ set dsn_return=hdrs
       <span class="quote">vi</span>”</span>if neither of those are set.</p>
       <p>The
       <code class="literal">
-        <a class="link" href="reference.html#editor" title="3.68.&#160;editor">$editor</a>
+        <a class="link" href="#editor" title="3.68.&#160;editor">$editor</a>
       </code>string may contain a
       <span class="emphasis">
         <em>%s</em>
@@ -2889,7 +2889,7 @@ set dsn_return=hdrs
         <em>%s</em>
       </span>escape does not appear in
       <code class="literal">
-        <a class="link" href="reference.html#editor" title="3.68.&#160;editor">$editor</a>
+        <a class="link" href="#editor" title="3.68.&#160;editor">$editor</a>
       </code>, a space and the name to be edited are appended.</p>
       <p>The resulting string is then executed by running</p>
       <pre class="screen">
@@ -2900,7 +2900,7 @@ sh -c 'string'
         <em>string</em>
       </span>is the expansion of
       <code class="literal">
-        <a class="link" href="reference.html#editor" title="3.68.&#160;editor">$editor</a>
+        <a class="link" href="#editor" title="3.68.&#160;editor">$editor</a>
       </code>described above.</p>
     </div>
     <div class="sect2">
@@ -2955,7 +2955,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>envelope</em>
       </span>sender for outgoing messages. This value is ignored if
-      <a class="link" href="reference.html#use-envelope-from" title="3.374.&#160;use_envelope_from">$use_envelope_from</a>is
+      <a class="link" href="#use-envelope-from" title="3.374.&#160;use_envelope_from">$use_envelope_from</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -3000,7 +3000,7 @@ sh -c 'string'
       <span class="bold">
         <strong>Note:</strong>
       </span>this variable has no effect when the
-      <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>variable is
+      <a class="link" href="#autoedit" title="3.23.&#160;autoedit">$autoedit</a>variable is
       <span class="emphasis">
         <em>set</em>
       </span>.</p>
@@ -3090,7 +3090,7 @@ sh -c 'string'
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the file browser display to your personal taste. This string is similar to
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -3110,7 +3110,7 @@ sh -c 'string'
             <tr>
               <td>%D</td>
               <td>date/time folder was last modified using
-              <a class="link" href="reference.html#date-format" title="3.57.&#160;date_format">$date_format</a>.</td>
+              <a class="link" href="#date-format" title="3.57.&#160;date_format">$date_format</a>.</td>
             </tr>
             <tr>
               <td>%f</td>
@@ -3184,11 +3184,11 @@ sh -c 'string'
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
       <p>%m, %n, and %N only work for monitored mailboxes. %m requires
-      <a class="link" href="reference.html#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>to be set. %n requires
-      <a class="link" href="reference.html#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>to be set (except for IMAP mailboxes).</p>
+      <a class="link" href="#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>to be set. %n requires
+      <a class="link" href="#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>to be set (except for IMAP mailboxes).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3255,9 +3255,9 @@ sh -c 'string'
         <br />Default:&#160;no</p>
       </div>
       <p>This variable is similar to
-      <a class="link" href="reference.html#save-name" title="3.274.&#160;save_name">$save_name</a>, except that Mutt will store a copy of your outgoing message by the username of the address you are sending to even if that mailbox does not exist.</p>
+      <a class="link" href="#save-name" title="3.274.&#160;save_name">$save_name</a>, except that Mutt will store a copy of your outgoing message by the username of the address you are sending to even if that mailbox does not exist.</p>
       <p>Also see the
-      <a class="link" href="reference.html#record" title="3.256.&#160;record">$record</a>variable.</p>
+      <a class="link" href="#record" title="3.256.&#160;record">$record</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3274,11 +3274,11 @@ sh -c 'string'
       </div>
       <p>Controls the decoding of complex MIME messages into
       <code class="literal">text/plain</code>when forwarding a message. The message header is also RFC2047 decoded. This variable is only used, if
-      <a class="link" href="reference.html#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
+      <a class="link" href="#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>, otherwise
-      <a class="link" href="reference.html#mime-forward-decode" title="3.161.&#160;mime_forward_decode">$mime_forward_decode</a>is used instead.</p>
+      <a class="link" href="#mime-forward-decode" title="3.161.&#160;mime_forward_decode">$mime_forward_decode</a>is used instead.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3297,11 +3297,11 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, the outer layer of encryption is stripped off. This variable is only used if
-      <a class="link" href="reference.html#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
+      <a class="link" href="#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
       <span class="emphasis">
         <em>set</em>
       </span>and
-      <a class="link" href="reference.html#mime-forward-decode" title="3.161.&#160;mime_forward_decode">$mime_forward_decode</a>is
+      <a class="link" href="#mime-forward-decode" title="3.161.&#160;mime_forward_decode">$mime_forward_decode</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>. (PGP only)</p>
@@ -3341,7 +3341,7 @@ sh -c 'string'
         </span>”</span></p>
       </div>
       <p>This variable controls the default subject when forwarding a message. It uses the same format sequences as the
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3360,11 +3360,11 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, forwarded messages included in the main body of the message (when
-      <a class="link" href="reference.html#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
+      <a class="link" href="#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>) will be quoted using
-      <a class="link" href="reference.html#indent-string" title="3.127.&#160;indent_string">$indent_string</a>.</p>
+      <a class="link" href="#indent-string" title="3.127.&#160;indent_string">$indent_string</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3391,8 +3391,8 @@ sh -c 'string'
       <span class="quote">
         <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span>) and
-      <a class="link" href="reference.html#reverse-name" title="3.268.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
-      <a class="link" href="reference.html#use-from" title="3.375.&#160;use_from">$use_from</a>is
+      <a class="link" href="#reverse-name" title="3.268.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
+      <a class="link" href="#use-from" title="3.375.&#160;use_from">$use_from</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -3434,7 +3434,7 @@ sh -c 'string'
       <span class="quote">stevef</span>”</span>to
       <span class="quote">“
       <span class="quote">"Franklin" stevef@foo.bar</span>”</span>then you should set the
-      <a class="link" href="reference.html#gecos-mask" title="3.87.&#160;gecos_mask">$gecos_mask</a>to a regular expression that will match the whole name so mutt will expand
+      <a class="link" href="#gecos-mask" title="3.87.&#160;gecos_mask">$gecos_mask</a>to a regular expression that will match the whole name so mutt will expand
       <span class="quote">“
       <span class="quote">Franklin</span>”</span>to
       <span class="quote">“
@@ -3460,7 +3460,7 @@ sh -c 'string'
       <p>This variable allows you to customize the newsgroup browser display to your personal taste. This string is similar to
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">index_format</a>
+        <a class="link" href="#index-format" title="3.128.&#160;index_format">index_format</a>
       </span>”</span>, but has its own set of printf()-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -3554,7 +3554,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, this variable causes Mutt to include the header of the message you are replying to into the edit buffer. The
-      <a class="link" href="reference.html#weed" title="3.382.&#160;weed">$weed</a>setting applies.</p>
+      <a class="link" href="#weed" title="3.382.&#160;weed">$weed</a>setting applies.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3652,7 +3652,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will skip the host name part of
-      <a class="link" href="reference.html#hostname" title="3.105.&#160;hostname">$hostname</a>variable when adding the domain part to addresses. This variable does not affect the generation of Message-IDs, and it will not lead to the cut-off of first-level domains.</p>
+      <a class="link" href="#hostname" title="3.105.&#160;hostname">$hostname</a>variable when adding the domain part to addresses. This variable does not affect the generation of Message-IDs, and it will not lead to the cut-off of first-level domains.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3725,7 +3725,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will not show the presence of messages that are hidden by limiting, at the top of threads in the thread tree. Note that when
-      <a class="link" href="reference.html#hide-limited" title="3.96.&#160;hide_limited">$hide_limited</a>is
+      <a class="link" href="#hide-limited" title="3.96.&#160;hide_limited">$hide_limited</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, this option will have no effect.</p>
@@ -3747,7 +3747,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will not show the presence of missing messages at the top of threads in the thread tree. Note that when
-      <a class="link" href="reference.html#hide-missing" title="3.97.&#160;hide_missing">$hide_missing</a>is
+      <a class="link" href="#hide-missing" title="3.97.&#160;hide_missing">$hide_missing</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, this option will have no effect.</p>
@@ -3846,8 +3846,8 @@ sh -c 'string'
       <code class="literal">gethostname(2)</code>and
       <code class="literal">getaddrinfo(3)</code>functions. If those calls are unable to determine the domain, the full value returned by uname is used. Optionally, Mutt can be compiled with a fixed domain name in which case a detected one is not used.</p>
       <p>Also see
-      <a class="link" href="reference.html#use-domain" title="3.373.&#160;use_domain">$use_domain</a>and
-      <a class="link" href="reference.html#hidden-host" title="3.95.&#160;hidden_host">$hidden_host</a>.</p>
+      <a class="link" href="#use-domain" title="3.373.&#160;use_domain">$use_domain</a>and
+      <a class="link" href="#hidden-host" title="3.95.&#160;hidden_host">$hidden_host</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4144,7 +4144,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>Your login name on the IMAP server.</p>
       <p>This variable defaults to the value of
-      <a class="link" href="reference.html#imap-user" title="3.123.&#160;imap_user">$imap_user</a>.</p>
+      <a class="link" href="#imap-user" title="3.123.&#160;imap_user">$imap_user</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4331,9 +4331,9 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>Specifies the string to prepend to each line of text quoted in a message to which you are replying. You are strongly encouraged not to change this value, as it tends to agitate the more fanatical netizens.</p>
       <p>The value of this option is ignored if
-      <a class="link" href="reference.html#text-flowed" title="3.358.&#160;text_flowed">$text_flowed</a>is set, too because the quoting mechanism is strictly defined for format=flowed.</p>
+      <a class="link" href="#text-flowed" title="3.358.&#160;text_flowed">$text_flowed</a>is set, too because the quoting mechanism is strictly defined for format=flowed.</p>
       <p>This option is a format string, please see the description of
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>for supported
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>for supported
       <code class="literal">printf(3)</code>-style sequences.</p>
     </div>
     <div class="sect2">
@@ -4392,12 +4392,12 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%d</td>
               <td>date and time of the message in the format specified by
-              <a class="link" href="reference.html#date-format" title="3.57.&#160;date_format">$date_format</a>converted to sender's time zone</td>
+              <a class="link" href="#date-format" title="3.57.&#160;date_format">$date_format</a>converted to sender's time zone</td>
             </tr>
             <tr>
               <td>%D</td>
               <td>date and time of the message in the format specified by
-              <a class="link" href="reference.html#date-format" title="3.57.&#160;date_format">$date_format</a>converted to the local time zone</td>
+              <a class="link" href="#date-format" title="3.57.&#160;date_format">$date_format</a>converted to the local time zone</td>
             </tr>
             <tr>
               <td>%e</td>
@@ -4510,7 +4510,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%T</td>
               <td>the appropriate character from the
-              <a class="link" href="reference.html#to-chars" title="3.365.&#160;to_chars">$to_chars</a>string</td>
+              <a class="link" href="#to-chars" title="3.365.&#160;to_chars">$to_chars</a>string</td>
             </tr>
             <tr>
               <td>%u</td>
@@ -4725,7 +4725,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <span class="emphasis">
         <em>set</em>
       </span>, read messages marked as flagged will not be moved from your spool mailbox to your
-      <a class="link" href="reference.html#mbox" title="3.146.&#160;mbox">$mbox</a>mailbox, or as a result of a
+      <a class="link" href="#mbox" title="3.146.&#160;mbox">$mbox</a>mailbox, or as a result of a
       <span class="quote">“
       <span class="quote">
         <a class="link" href="configuration.html#mbox-hook" title="13.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>
@@ -4751,11 +4751,11 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>If both
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#keywords-legacy" title="3.132.&#160;keywords_legacy">$keywords_legacy</a>
+        <a class="link" href="#keywords-legacy" title="3.132.&#160;keywords_legacy">$keywords_legacy</a>
       </span>”</span>and
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#keywords-standard" title="3.133.&#160;keywords_standard">$keywords_standard</a>
+        <a class="link" href="#keywords-standard" title="3.133.&#160;keywords_standard">$keywords_standard</a>
       </span>”</span>are
       <code class="literal">false</code>, mutt will save keywords to legacy headers to ensure that it does not lose your labels.</p>
     </div>
@@ -4779,11 +4779,11 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>If both
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#keywords-legacy" title="3.132.&#160;keywords_legacy">$keywords_legacy</a>
+        <a class="link" href="#keywords-legacy" title="3.132.&#160;keywords_legacy">$keywords_legacy</a>
       </span>”</span>and
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#keywords-standard" title="3.133.&#160;keywords_standard">$keywords_standard</a>
+        <a class="link" href="#keywords-standard" title="3.133.&#160;keywords_standard">$keywords_standard</a>
       </span>”</span>are
       <code class="literal">false</code>, mutt will save keywords to legacy headers to ensure that it does not lose your labels.</p>
     </div>
@@ -4801,7 +4801,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;5</p>
       </div>
       <p>This variable configures how often (in seconds) mutt should look for new mail. Also see the
-      <a class="link" href="reference.html#timeout" title="3.363.&#160;timeout">$timeout</a>variable.</p>
+      <a class="link" href="#timeout" title="3.363.&#160;timeout">$timeout</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4826,7 +4826,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>
-          <a class="link" href="reference.html#mark-old" title="3.143.&#160;mark_old">$mark_old</a>
+          <a class="link" href="#mark-old" title="3.143.&#160;mark_old">$mark_old</a>
         </em>
       </span>is set, Mutt does not consider the mailbox to contain new mail if only old messages exist.</p>
     </div>
@@ -4850,7 +4850,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <span class="emphasis">
         <em>unset</em>
       </span>, and has a separate option,
-      <a class="link" href="reference.html#mail-check-stats-interval" title="3.137.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>, to control how often to update these counts.</p>
+      <a class="link" href="#mail-check-stats-interval" title="3.137.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>, to control how often to update these counts.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4866,7 +4866,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;60</p>
       </div>
       <p>When
-      <a class="link" href="reference.html#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>is
+      <a class="link" href="#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, this variable configures how often (in seconds) mutt will update message counts.</p>
@@ -5010,7 +5010,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <span class="quote">“
       <span class="quote">+</span>”</span>marker is displayed at the beginning of wrapped lines.</p>
       <p>Also see the
-      <a class="link" href="reference.html#smart-wrap" title="3.305.&#160;smart_wrap">$smart_wrap</a>variable.</p>
+      <a class="link" href="#smart-wrap" title="3.305.&#160;smart_wrap">$smart_wrap</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5054,9 +5054,9 @@ set imap_authenticators="gssapi:cram-md5:login"
         </span>”</span></p>
       </div>
       <p>This specifies the folder into which read mail in your
-      <a class="link" href="reference.html#spoolfile" title="3.338.&#160;spoolfile">$spoolfile</a>folder will be appended.</p>
+      <a class="link" href="#spoolfile" title="3.338.&#160;spoolfile">$spoolfile</a>folder will be appended.</p>
       <p>Also see the
-      <a class="link" href="reference.html#move" title="3.166.&#160;move">$move</a>variable.</p>
+      <a class="link" href="#move" title="3.166.&#160;move">$move</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5096,7 +5096,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;0</p>
       </div>
       <p>This variable controls the number of lines of context that are given when scrolling through menus. (Similar to
-      <a class="link" href="reference.html#pager-context" title="3.190.&#160;pager_context">$pager_context</a>.)</p>
+      <a class="link" href="#pager-context" title="3.190.&#160;pager_context">$pager_context</a>.)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5174,7 +5174,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>Set this to a directory and mutt will cache copies of messages from your IMAP and POP servers here. You are free to remove entries at any time.</p>
       <p>When setting this variable to a directory, mutt needs to fetch every remote message only once and can perform regular expression searches as fast as for local folders.</p>
       <p>Also see the
-      <a class="link" href="reference.html#message-cache-clean" title="3.151.&#160;message_cache_clean">$message_cache_clean</a>variable.</p>
+      <a class="link" href="#message-cache-clean" title="3.151.&#160;message_cache_clean">$message_cache_clean</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5198,7 +5198,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <span class="quote">attachment</span>”</span>menu for attachments of type
       <code class="literal">message/rfc822</code>. For a full listing of defined
       <code class="literal">printf(3)</code>-like sequences see the section on
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5271,7 +5271,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <em>set</em>
       </span>, the message files will simply be deleted.</p>
       <p>This option is similar to
-      <a class="link" href="reference.html#maildir-trash" title="3.141.&#160;maildir_trash">$maildir_trash</a>for Maildir folders.</p>
+      <a class="link" href="#maildir-trash" title="3.141.&#160;maildir_trash">$maildir_trash</a>for Maildir folders.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5353,8 +5353,8 @@ set imap_authenticators="gssapi:cram-md5:login"
       <span class="quote">“
       <span class="quote">ask-yes</span>”</span>.</p>
       <p>Also see
-      <a class="link" href="reference.html#forward-decode" title="3.81.&#160;forward_decode">$forward_decode</a>and
-      <a class="link" href="reference.html#mime-forward-decode" title="3.161.&#160;mime_forward_decode">$mime_forward_decode</a>.</p>
+      <a class="link" href="#forward-decode" title="3.81.&#160;forward_decode">$forward_decode</a>and
+      <a class="link" href="#mime-forward-decode" title="3.161.&#160;mime_forward_decode">$mime_forward_decode</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5371,11 +5371,11 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>Controls the decoding of complex MIME messages into
       <code class="literal">text/plain</code>when forwarding a message while
-      <a class="link" href="reference.html#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
+      <a class="link" href="#mime-forward" title="3.160.&#160;mime_forward">$mime_forward</a>is
       <span class="emphasis">
         <em>set</em>
       </span>. Otherwise
-      <a class="link" href="reference.html#forward-decode" title="3.81.&#160;forward_decode">$forward_decode</a>is used instead.</p>
+      <a class="link" href="#forward-decode" title="3.81.&#160;forward_decode">$forward_decode</a>is used instead.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5494,7 +5494,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;no</p>
       </div>
       <p>Controls whether or not Mutt will move read messages from your spool mailbox to your
-      <a class="link" href="reference.html#mbox" title="3.146.&#160;mbox">$mbox</a>mailbox, or as a result of a
+      <a class="link" href="#mbox" title="3.146.&#160;mbox">$mbox</a>mailbox, or as a result of a
       <span class="quote">“
       <span class="quote">
         <a class="link" href="configuration.html#mbox-hook" title="13.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>
@@ -5532,11 +5532,11 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;10</p>
       </div>
       <p>Operations that expect to transfer a large amount of data over the network will update their progress every
-      <a class="link" href="reference.html#net-inc" title="3.168.&#160;net_inc">$net_inc</a>kilobytes. If set to 0, no progress messages will be displayed.</p>
+      <a class="link" href="#net-inc" title="3.168.&#160;net_inc">$net_inc</a>kilobytes. If set to 0, no progress messages will be displayed.</p>
       <p>See also
-      <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="reference.html#write-inc" title="3.388.&#160;write_inc">$write_inc</a>and
-      <a class="link" href="reference.html#net-inc" title="3.168.&#160;net_inc">$net_inc</a>.</p>
+      <a class="link" href="#read-inc" title="3.252.&#160;read_inc">$read_inc</a>,
+      <a class="link" href="#write-inc" title="3.388.&#160;write_inc">$write_inc</a>and
+      <a class="link" href="#net-inc" title="3.168.&#160;net_inc">$net_inc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5980,7 +5980,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This variable controls the format of the one-line message
       <span class="quote">“
       <span class="quote">status</span>”</span>displayed before each message in either the internal or an external pager. The valid sequences are listed in the
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>section.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>section.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5996,7 +5996,7 @@ set nntp_authenticators="digest-md5:user"
         <br />Default:&#160;0</p>
       </div>
       <p>Determines the number of lines of a mini-index which is shown when in the pager. The current message, unless near the top or bottom of the folder, will be roughly one third of the way down this mini-index, giving the reader the context of a few messages before and after the message. This is useful, for example, to determine how many messages remain to be read in the current thread. One of the lines is reserved for the status bar from the index, so a setting of 6 will only show 5 lines of the actual index. A value of 0 results in no index being shown. If the number of messages in the current folder is less than
-      <a class="link" href="reference.html#pager-index-lines" title="3.192.&#160;pager_index_lines">$pager_index_lines</a>, then the index will only use as many lines as it needs.</p>
+      <a class="link" href="#pager-index-lines" title="3.192.&#160;pager_index_lines">$pager_index_lines</a>, then the index will only use as many lines as it needs.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6057,7 +6057,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This option controls whether Mutt generates old-style inline (traditional) PGP encrypted or signed messages under certain circumstances. This can be overridden by use of the pgp menu, when inline is not required. The GPGME backend does not support this option.</p>
       <p>Note that Mutt might automatically use PGP/MIME for messages which consist of more than a single MIME part. Mutt can be configured to ask before sending PGP/MIME messages when inline (traditional) would not work.</p>
       <p>Also see the
-      <a class="link" href="reference.html#pgp-mime-auto" title="3.212.&#160;pgp_mime_auto">$pgp_mime_auto</a>variable.</p>
+      <a class="link" href="#pgp-mime-auto" title="3.212.&#160;pgp_mime_auto">$pgp_mime_auto</a>variable.</p>
       <p>Also note that using the old-style PGP message format is
       <span class="bold">
         <strong>strongly</strong>
@@ -6107,7 +6107,7 @@ set nntp_authenticators="digest-md5:user"
         <strong>deprecated</strong>
       </span>.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6149,7 +6149,7 @@ set nntp_authenticators="digest-md5:user"
             <tr>
               <td>%a</td>
               <td>The value of
-              <a class="link" href="reference.html#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>.</td>
+              <a class="link" href="#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>.</td>
             </tr>
             <tr>
               <td>%r</td>
@@ -6176,7 +6176,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is used to decrypt a PGP encrypted message.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6193,7 +6193,7 @@ set nntp_authenticators="digest-md5:user"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>If you assign text to this variable, then an encrypted PGP message is only considered successfully decrypted if the output from
-      <a class="link" href="reference.html#pgp-decrypt-command" title="3.199.&#160;pgp_decrypt_command">$pgp_decrypt_command</a>contains the text. This is used to protect against a spoofed encrypted message, with multipart/encrypted headers but containing a block that is not actually encrypted. (e.g. simply signed and ascii armored text). (PGP only)</p>
+      <a class="link" href="#pgp-decrypt-command" title="3.199.&#160;pgp_decrypt_command">$pgp_decrypt_command</a>contains the text. This is used to protect against a spoofed encrypted message, with multipart/encrypted headers but containing a block that is not actually encrypted. (e.g. simply signed and ascii armored text). (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6210,7 +6210,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is used to encrypt a body part without signing it.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6228,7 +6228,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is used to both sign and encrypt a body part.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6249,7 +6249,7 @@ set nntp_authenticators="digest-md5:user"
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the PGP key selection menu to your personal taste. This string is similar to
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -6315,7 +6315,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is used to export a public key from the user's key ring.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6332,7 +6332,7 @@ set nntp_authenticators="digest-md5:user"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is invoked whenever Mutt needs to fetch the public key associated with an email address. Of the sequences supported by
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
       <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why Mutt is invoking this command). (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6349,7 +6349,7 @@ set nntp_authenticators="digest-md5:user"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>If you assign a text to this variable, then a PGP signature is only considered verified if the output from
-      <a class="link" href="reference.html#pgp-verify-command" title="3.222.&#160;pgp_verify_command">$pgp_verify_command</a>contains the text. Use this variable if the exit code from the command is 0 even for bad signatures. (PGP only)</p>
+      <a class="link" href="#pgp-verify-command" title="3.222.&#160;pgp_verify_command">$pgp_verify_command</a>contains the text. Use this variable if the exit code from the command is 0 even for bad signatures. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6384,7 +6384,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is used to import a key from a message into the user's public key ring.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6409,7 +6409,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>Note: gpg's
       <code class="literal">fixed-list-mode</code>option should not be used. It produces a different date format which may result in mutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6434,7 +6434,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>Note: gpg's
       <code class="literal">fixed-list-mode</code>option should not be used. It produces a different date format which may result in mutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6496,7 +6496,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>Setting this variable will cause Mutt to always attempt to create an inline (traditional) message when replying to a message which is PGP encrypted/signed inline. This can be overridden by use of the pgp menu, when inline is not required. This option does not automatically detect if the (replied-to) message is inline; instead it relies on Mutt internals for previously checked/flagged messages.</p>
       <p>Note that Mutt might automatically use PGP/MIME for messages which consist of more than a single MIME part. Mutt can be configured to ask before sending PGP/MIME messages when inline (traditional) would not work.</p>
       <p>Also see the
-      <a class="link" href="reference.html#pgp-mime-auto" title="3.212.&#160;pgp_mime_auto">$pgp_mime_auto</a>variable.</p>
+      <a class="link" href="#pgp-mime-auto" title="3.212.&#160;pgp_mime_auto">$pgp_mime_auto</a>variable.</p>
       <p>Also note that using the old-style PGP message format is
       <span class="bold">
         <strong>strongly</strong>
@@ -6580,7 +6580,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>This command is used to create the detached PGP signature for a
       <code class="literal">multipart/signed</code>PGP/MIME body part.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6694,7 +6694,7 @@ gpg --list-keys --with-colons --with-fingerprint
       </div>
       <p>This command is used to verify PGP signatures.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6712,7 +6712,7 @@ gpg --list-keys --with-colons --with-fingerprint
       </div>
       <p>This command is used to verify key information from the key selection menu.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
+      <a class="link" href="#pgp-decode-command" title="3.198.&#160;pgp_decode_command">$pgp_decode_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -6778,7 +6778,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will pipe the messages one by one. In both cases the messages are piped in the current sorted order, and the
-      <a class="link" href="reference.html#pipe-sep" title="3.225.&#160;pipe_sep">$pipe_sep</a>separator is added after each message.</p>
+      <a class="link" href="#pipe-sep" title="3.225.&#160;pipe_sep">$pipe_sep</a>separator is added after each message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6988,7 +6988,7 @@ set pop_authenticators="digest-md5:apop:user"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Similar to the
-      <a class="link" href="reference.html#attribution" title="3.20.&#160;attribution">$attribution</a>variable, Mutt will append this string after the inclusion of a message which is being replied to.</p>
+      <a class="link" href="#attribution" title="3.20.&#160;attribution">$attribution</a>variable, Mutt will append this string after the inclusion of a message which is being replied to.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7025,9 +7025,9 @@ set pop_authenticators="digest-md5:apop:user"
         <br />Default:&#160;ask-yes</p>
       </div>
       <p>Controls whether or not messages are saved in the
-      <a class="link" href="reference.html#postponed" title="3.239.&#160;postponed">$postponed</a>mailbox when you elect not to send immediately.</p>
+      <a class="link" href="#postponed" title="3.239.&#160;postponed">$postponed</a>mailbox when you elect not to send immediately.</p>
       <p>Also see the
-      <a class="link" href="reference.html#recall" title="3.255.&#160;recall">$recall</a>variable.</p>
+      <a class="link" href="#recall" title="3.255.&#160;recall">$recall</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7049,9 +7049,9 @@ set pop_authenticators="digest-md5:apop:user"
       <p>Mutt allows you to indefinitely
       <span class="quote">“
       <span class="quote">
-      <a class="link" href="reference.html#postpone" title="3.238.&#160;postpone">postpone</a>sending a message</span>”</span>which you are editing. When you choose to postpone a message, Mutt saves it in the mailbox specified by this variable.</p>
+      <a class="link" href="#postpone" title="3.238.&#160;postpone">postpone</a>sending a message</span>”</span>which you are editing. When you choose to postpone a message, Mutt saves it in the mailbox specified by this variable.</p>
       <p>Also see the
-      <a class="link" href="reference.html#postpone" title="3.238.&#160;postpone">$postpone</a>variable.</p>
+      <a class="link" href="#postpone" title="3.238.&#160;postpone">$postpone</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7070,7 +7070,7 @@ set pop_authenticators="digest-md5:apop:user"
       <span class="emphasis">
         <em>set</em>
       </span>, postponed messages that are marked for encryption will be encrypted using the key in
-      <a class="link" href="reference.html#postpone-encrypt-as" title="3.241.&#160;postpone_encrypt_as">$postpone_encrypt_as</a>before saving. (Crypto only)</p>
+      <a class="link" href="#postpone-encrypt-as" title="3.241.&#160;postpone_encrypt_as">$postpone_encrypt_as</a>before saving. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7174,7 +7174,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>set</em>
       </span>, the message is decoded before it is passed to the external command specified by
-      <a class="link" href="reference.html#print-command" title="3.244.&#160;print_command">$print_command</a>. If this option is
+      <a class="link" href="#print-command" title="3.244.&#160;print_command">$print_command</a>. If this option is
       <span class="emphasis">
         <em>unset</em>
       </span>, no processing will be applied to the message when printing it. The latter setting may be useful if you are using some advanced printer filter which is able to properly format e-mail messages for printing.</p>
@@ -7197,11 +7197,11 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>set</em>
       </span>, the command specified by
-      <a class="link" href="reference.html#print-command" title="3.244.&#160;print_command">$print_command</a>is executed once for each message which is to be printed. If this option is
+      <a class="link" href="#print-command" title="3.244.&#160;print_command">$print_command</a>is executed once for each message which is to be printed. If this option is
       <span class="emphasis">
         <em>unset</em>
       </span>, the command specified by
-      <a class="link" href="reference.html#print-command" title="3.244.&#160;print_command">$print_command</a>is executed only once, and all the messages are concatenated, with a form feed as the message separator.</p>
+      <a class="link" href="#print-command" title="3.244.&#160;print_command">$print_command</a>is executed only once, and all the messages are concatenated, with a form feed as the message separator.</p>
       <p>Those who use the
       <code class="literal">enscript</code>(1) program's mail-printing mode will most likely want to
       <span class="emphasis">
@@ -7225,7 +7225,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>external</em>
       </span>
-      <a class="link" href="reference.html#pager" title="3.189.&#160;pager">$pager</a>, setting this variable will cause Mutt to prompt you for a command when the pager exits rather than returning to the index menu. If
+      <a class="link" href="#pager" title="3.189.&#160;pager">$pager</a>, setting this variable will cause Mutt to prompt you for a command when the pager exits rather than returning to the index menu. If
       <span class="emphasis">
         <em>unset</em>
       </span>, Mutt will return to the index menu when the external pager exits.</p>
@@ -7329,9 +7329,9 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero, see the
-      <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>documentation.</p>
+      <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>documentation.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7391,7 +7391,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="quote">“
       <span class="quote">color quoted2</span>”</span>, etc.). The quoting level is determined by removing the last character from the matched text and recursively reapplying the regular expression until it fails to produce a match.</p>
       <p>Match detection may be overridden by the
-      <a class="link" href="reference.html#smileys" title="3.306.&#160;smileys">$smileys</a>regular expression.</p>
+      <a class="link" href="#smileys" title="3.306.&#160;smileys">$smileys</a>regular expression.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7408,9 +7408,9 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </div>
       <p>If set to a value greater than 0, Mutt will display which message it is currently on when reading a mailbox or when performing search actions such as search and limit. The message is printed after this many messages have been read or searched (e.g., if set to 25, Mutt will print a message when it is at message 25, and then again when it gets to message 50). This variable is meant to indicate progress when reading or searching large mailboxes which may take some time. When set to 0, only a single message will appear before the reading the mailbox.</p>
       <p>Also see the
-      <a class="link" href="reference.html#write-inc" title="3.388.&#160;write_inc">$write_inc</a>,
-      <a class="link" href="reference.html#net-inc" title="3.168.&#160;net_inc">$net_inc</a>and
-      <a class="link" href="reference.html#time-inc" title="3.362.&#160;time_inc">$time_inc</a>variables and the
+      <a class="link" href="#write-inc" title="3.388.&#160;write_inc">$write_inc</a>,
+      <a class="link" href="#net-inc" title="3.168.&#160;net_inc">$net_inc</a>and
+      <a class="link" href="#time-inc" title="3.362.&#160;time_inc">$time_inc</a>variables and the
       <span class="quote">“
       <span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
@@ -7457,7 +7457,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>not</em>
       </span>be used when the user has set a real name in the
-      <a class="link" href="reference.html#from" title="3.86.&#160;from">$from</a>variable.</p>
+      <a class="link" href="#from" title="3.86.&#160;from">$from</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7479,7 +7479,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </span>is not generally useful, and thus not recommended. Note that the
       <code class="literal">&lt;recall-message&gt;</code>function can be used to manually recall postponed messages.</p>
       <p>Also see
-      <a class="link" href="reference.html#postponed" title="3.239.&#160;postponed">$postponed</a>variable.</p>
+      <a class="link" href="#postponed" title="3.239.&#160;postponed">$postponed</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7508,11 +7508,11 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>The value of
       <span class="emphasis">
         <em>
-          <a class="link" href="reference.html#record" title="3.256.&#160;record">$record</a>
+          <a class="link" href="#record" title="3.256.&#160;record">$record</a>
         </em>
       </span>is overridden by the
-      <a class="link" href="reference.html#force-name" title="3.80.&#160;force_name">$force_name</a>and
-      <a class="link" href="reference.html#save-name" title="3.274.&#160;save_name">$save_name</a>variables, and the
+      <a class="link" href="#force-name" title="3.80.&#160;force_name">$force_name</a>and
+      <a class="link" href="#save-name" title="3.274.&#160;save_name">$save_name</a>variables, and the
       <span class="quote">“
       <span class="quote">
         <a class="link" href="configuration.html#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">fcc-hook</a>
@@ -7532,7 +7532,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;yes</p>
       </div>
       <p>This option controls how quotes from format=flowed messages are displayed in the pager and when replying (with
-      <a class="link" href="reference.html#text-flowed" title="3.358.&#160;text_flowed">$text_flowed</a>
+      <a class="link" href="#text-flowed" title="3.358.&#160;text_flowed">$text_flowed</a>
       <span class="emphasis">
         <em>unset</em>
       </span>). When set, this option adds spaces after each level of quote marks, turning "&gt;&gt;&gt;foo" into "&gt; &gt; &gt; foo".</p>
@@ -7540,11 +7540,11 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="bold">
         <strong>Note:</strong>
       </span>If
-      <a class="link" href="reference.html#reflow-text" title="3.258.&#160;reflow_text">$reflow_text</a>is
+      <a class="link" href="#reflow-text" title="3.258.&#160;reflow_text">$reflow_text</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>, this option has no effect. Also, this option does not affect replies when
-      <a class="link" href="reference.html#text-flowed" title="3.358.&#160;text_flowed">$text_flowed</a>is
+      <a class="link" href="#text-flowed" title="3.358.&#160;text_flowed">$text_flowed</a>is
       <span class="emphasis">
         <em>set</em>
       </span>.</p>
@@ -7573,8 +7573,8 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <em>format=flowed</em>
       </span>format.</p>
       <p>Also see
-      <a class="link" href="reference.html#reflow-wrap" title="3.259.&#160;reflow_wrap">$reflow_wrap</a>, and
-      <a class="link" href="reference.html#wrap" title="3.383.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#reflow-wrap" title="3.259.&#160;reflow_wrap">$reflow_wrap</a>, and
+      <a class="link" href="#wrap" title="3.383.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7590,12 +7590,12 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;78</p>
       </div>
       <p>This variable controls the maximum paragraph width when reformatting text/plain parts when
-      <a class="link" href="reference.html#reflow-text" title="3.258.&#160;reflow_text">$reflow_text</a>is
+      <a class="link" href="#reflow-text" title="3.258.&#160;reflow_text">$reflow_text</a>is
       <span class="emphasis">
         <em>set</em>
       </span>. When the value is 0, paragraphs will be wrapped at the terminal's right margin. A positive value sets the paragraph width relative to the left margin. A negative value set the paragraph width relative to the right margin.</p>
       <p>Also see
-      <a class="link" href="reference.html#wrap" title="3.383.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#wrap" title="3.383.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7676,7 +7676,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>This variable provides a toggle. When active, the From: header will be extracted from the current mail's `X-Original-To:' header. This setting does not have precedence over
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#reverse-realname" title="3.269.&#160;reverse_realname">reverse_realname</a>
+        <a class="link" href="#reverse-realname" title="3.269.&#160;reverse_realname">reverse_realname</a>
       </span>”</span>.</p>
       <p>Assuming `fast_reply' is disabled, this option will prompt the user with a prefilled From: header.</p>
     </div>
@@ -7735,9 +7735,9 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <em>set</em>
       </span>, draft files previously edited (via
       <code class="literal">-E -H</code>on the command line) will have
-      <a class="link" href="reference.html#resume-draft-files" title="3.265.&#160;resume_draft_files">$resume_draft_files</a>automatically set when they are used as a draft file again.</p>
+      <a class="link" href="#resume-draft-files" title="3.265.&#160;resume_draft_files">$resume_draft_files</a>automatically set when they are used as a draft file again.</p>
       <p>The first time a draft file is saved, mutt will add a header, X-Mutt-Resume-Draft to the saved file. The next time the draft file is read in, if mutt sees the header, it will set
-      <a class="link" href="reference.html#resume-draft-files" title="3.265.&#160;resume_draft_files">$resume_draft_files</a>.</p>
+      <a class="link" href="#resume-draft-files" title="3.265.&#160;resume_draft_files">$resume_draft_files</a>.</p>
       <p>This option is designed to prevent multiple signatures, user-defined headers, and other processing effects from being made multiple times to the draft file.</p>
     </div>
     <div class="sect2">
@@ -7826,14 +7826,14 @@ From: abd30425@somewhere.net
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable fine-tunes the behavior of the
-      <a class="link" href="reference.html#reverse-name" title="3.268.&#160;reverse_name">$reverse_name</a>feature. When it is
+      <a class="link" href="#reverse-name" title="3.268.&#160;reverse_name">$reverse_name</a>feature. When it is
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will use the address from incoming messages as-is, possibly including eventual real names. When it is
       <span class="emphasis">
         <em>unset</em>
       </span>, mutt will override any such real names with the setting of the
-      <a class="link" href="reference.html#realname" title="3.254.&#160;realname">$realname</a>variable.</p>
+      <a class="link" href="#realname" title="3.254.&#160;realname">$realname</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7885,8 +7885,8 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will take the sender's full address when choosing a default folder for saving a mail. If
-      <a class="link" href="reference.html#save-name" title="3.274.&#160;save_name">$save_name</a>or
-      <a class="link" href="reference.html#force-name" title="3.80.&#160;force_name">$force_name</a>is
+      <a class="link" href="#save-name" title="3.274.&#160;save_name">$save_name</a>or
+      <a class="link" href="#force-name" title="3.80.&#160;force_name">$force_name</a>is
       <span class="emphasis">
         <em>set</em>
       </span>too, the selection of the Fcc folder will be changed as well.</p>
@@ -7908,7 +7908,7 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>unset</em>
       </span>, mailboxes which contain no saved messages will be removed when closed (the exception is
-      <a class="link" href="reference.html#spoolfile" title="3.338.&#160;spoolfile">$spoolfile</a>which is never removed). If
+      <a class="link" href="#spoolfile" title="3.338.&#160;spoolfile">$spoolfile</a>which is never removed). If
       <span class="emphasis">
         <em>set</em>
       </span>, mailboxes are never removed.</p>
@@ -7931,7 +7931,7 @@ From: abd30425@somewhere.net
         <br />Default:&#160;0</p>
       </div>
       <p>This variable controls the size of the history (per category) saved in the
-      <a class="link" href="reference.html#history-file" title="3.102.&#160;history_file">$history_file</a>file.</p>
+      <a class="link" href="#history-file" title="3.102.&#160;history_file">$history_file</a>file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7950,13 +7950,13 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>set</em>
       </span>, a check is made to see if a mailbox specified by the recipient address exists (this is done by searching for a mailbox in the
-      <a class="link" href="reference.html#folder" title="3.76.&#160;folder">$folder</a>directory with the
+      <a class="link" href="#folder" title="3.76.&#160;folder">$folder</a>directory with the
       <span class="emphasis">
         <em>username</em>
       </span>part of the recipient address). If the mailbox exists, the outgoing message will be saved to that mailbox, otherwise the message is saved to the
-      <a class="link" href="reference.html#record" title="3.256.&#160;record">$record</a>mailbox.</p>
+      <a class="link" href="#record" title="3.256.&#160;record">$record</a>mailbox.</p>
       <p>Also see the
-      <a class="link" href="reference.html#force-name" title="3.80.&#160;force_name">$force_name</a>variable.</p>
+      <a class="link" href="#force-name" title="3.80.&#160;force_name">$force_name</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7975,7 +7975,7 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>unset</em>
       </span>, scoring is turned off. This can be useful to selectively disable scoring for certain folders when the
-      <a class="link" href="reference.html#score-threshold-delete" title="3.276.&#160;score_threshold_delete">$score_threshold_delete</a>variable and related are used.</p>
+      <a class="link" href="#score-threshold-delete" title="3.276.&#160;score_threshold_delete">$score_threshold_delete</a>variable and related are used.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8055,7 +8055,7 @@ From: abd30425@somewhere.net
         </span>”</span></p>
       </div>
       <p>A colon-delimited list of character sets for outgoing messages. Mutt will use the first character set into which the text can be converted exactly. If your
-      <a class="link" href="reference.html#charset" title="3.32.&#160;charset">$charset</a>is not
+      <a class="link" href="#charset" title="3.32.&#160;charset">$charset</a>is not
       <span class="quote">“
       <span class="quote">iso-8859-1</span>”</span>and recipients may not understand
       <span class="quote">“
@@ -8069,7 +8069,7 @@ From: abd30425@somewhere.net
       <span class="quote">“
       <span class="quote">iso-8859-1</span>”</span>.</p>
       <p>In case the text cannot be converted into one of these exactly, mutt uses
-      <a class="link" href="reference.html#charset" title="3.32.&#160;charset">$charset</a>as a fallback.</p>
+      <a class="link" href="#charset" title="3.32.&#160;charset">$charset</a>as a fallback.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8104,7 +8104,7 @@ From: abd30425@somewhere.net
         <br />Default:&#160;0</p>
       </div>
       <p>Specifies the number of seconds to wait for the
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>process to finish before giving up and putting delivery in the background.</p>
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>process to finish before giving up and putting delivery in the background.</p>
       <p>Mutt interprets the value of this variable as follows:</p>
       <div class="informaltable">
         <table border="1">
@@ -8232,9 +8232,9 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="reference.html#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>,
-      <a class="link" href="reference.html#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
-      <a class="link" href="reference.html#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
+      <a class="link" href="#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>,
+      <a class="link" href="#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
+      <a class="link" href="#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8273,9 +8273,9 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="reference.html#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>,
-      <a class="link" href="reference.html#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>,
-      <a class="link" href="reference.html#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
+      <a class="link" href="#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>,
+      <a class="link" href="#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>,
+      <a class="link" href="#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8295,7 +8295,7 @@ set sidebar_delim_chars='.'
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the sidebar display. This string is similar to
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -8369,7 +8369,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>* = Can be optionally printed if nonzero @ = Only applicable to the current folder</p>
       <p>In order to use %S, %N, %F, and %!,
-      <a class="link" href="reference.html#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>must be
+      <a class="link" href="#mail-check-stats" title="3.136.&#160;mail_check_stats">$mail_check_stats</a>must be
       <span class="emphasis">
         <em>set</em>
       </span>. When thus set, a suggested value for this option is "%B%?F? [%F]?%* %?N?%N/?%S".</p>
@@ -8396,9 +8396,9 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="reference.html#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>,
-      <a class="link" href="reference.html#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
-      <a class="link" href="reference.html#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
+      <a class="link" href="#sidebar-short-path" title="3.295.&#160;sidebar_short_path">$sidebar_short_path</a>,
+      <a class="link" href="#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
+      <a class="link" href="#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8466,7 +8466,7 @@ set sidebar_delim_chars='.'
         <br />Default:&#160;no</p>
       </div>
       <p>By default the sidebar will show the mailbox's path, relative to the
-      <a class="link" href="reference.html#folder" title="3.76.&#160;folder">$folder</a>variable. Setting
+      <a class="link" href="#folder" title="3.76.&#160;folder">$folder</a>variable. Setting
       <code class="literal">sidebar_shortpath=yes</code>will shorten the names relative to the previous name. Here's an example:</p>
       <div class="informaltable">
         <table border="1">
@@ -8543,9 +8543,9 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="reference.html#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>,
-      <a class="link" href="reference.html#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
-      <a class="link" href="reference.html#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
+      <a class="link" href="#sidebar-delim-chars" title="3.287.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>,
+      <a class="link" href="#sidebar-folder-indent" title="3.289.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
+      <a class="link" href="#sidebar-indent-string" title="3.291.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8606,8 +8606,8 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="reference.html#sidebar-format" title="3.290.&#160;sidebar_format">$sidebar_format</a>,
-      <a class="link" href="reference.html#sidebar-width" title="3.298.&#160;sidebar_width">$sidebar_width</a></p>
+      <a class="link" href="#sidebar-format" title="3.290.&#160;sidebar_format">$sidebar_format</a>,
+      <a class="link" href="#sidebar-width" title="3.298.&#160;sidebar_width">$sidebar_width</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8643,7 +8643,7 @@ set sidebar_delim_chars='.'
       </span>, a line containing
       <span class="quote">“
       <span class="quote">--</span>”</span>(note the trailing space) will be inserted before your
-      <a class="link" href="reference.html#signature" title="3.301.&#160;signature">$signature</a>. It is
+      <a class="link" href="#signature" title="3.301.&#160;signature">$signature</a>. It is
       <span class="bold">
         <strong>strongly</strong>
       </span>recommended that you not
@@ -8779,7 +8779,7 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>unset</em>
       </span>, lines are simply wrapped at the screen edge. Also see the
-      <a class="link" href="reference.html#markers" title="3.144.&#160;markers">$markers</a>variable.</p>
+      <a class="link" href="#markers" title="3.144.&#160;markers">$markers</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8802,8 +8802,8 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>pager</em>
       </span>uses this variable to catch some common false positives of
-      <a class="link" href="reference.html#quote-regexp" title="3.251.&#160;quote_regexp">$quote_regexp</a>, most notably smileys and not consider a line quoted text if it also matches
-      <a class="link" href="reference.html#smileys" title="3.306.&#160;smileys">$smileys</a>. This mostly happens at the beginning of a line.</p>
+      <a class="link" href="#quote-regexp" title="3.251.&#160;quote_regexp">$quote_regexp</a>, most notably smileys and not consider a line quoted text if it also matches
+      <a class="link" href="#smileys" title="3.306.&#160;smileys">$smileys</a>. This mostly happens at the beginning of a line.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8889,7 +8889,7 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%k</td>
               <td>The key-pair specified with
-              <a class="link" href="reference.html#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a></td>
+              <a class="link" href="#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a></td>
             </tr>
             <tr>
               <td>%c</td>
@@ -8902,18 +8902,18 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%d</td>
               <td>The message digest algorithm specified with
-              <a class="link" href="reference.html#smime-sign-digest-alg" title="3.324.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
+              <a class="link" href="#smime-sign-digest-alg" title="3.324.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
             </tr>
             <tr>
               <td>%C</td>
               <td>CA location: Depending on whether
-              <a class="link" href="reference.html#smime-ca-location" title="3.308.&#160;smime_ca_location">$smime_ca_location</a>points to a directory or file, this expands to
+              <a class="link" href="#smime-ca-location" title="3.308.&#160;smime_ca_location">$smime_ca_location</a>points to a directory or file, this expands to
               <span class="quote">“
               <span class="quote">-CApath
-              <a class="link" href="reference.html#smime-ca-location" title="3.308.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>or
+              <a class="link" href="#smime-ca-location" title="3.308.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>or
               <span class="quote">“
               <span class="quote">-CAfile
-              <a class="link" href="reference.html#smime-ca-location" title="3.308.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>.</td>
+              <a class="link" href="#smime-ca-location" title="3.308.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>.</td>
             </tr>
           </tbody>
         </table>
@@ -8970,7 +8970,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to create encrypted S/MIME messages.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -8987,7 +8987,7 @@ set sidebar_delim_chars='.'
         <br />Default:&#160;no</p>
       </div>
       <p>Encrypt the message to
-      <a class="link" href="reference.html#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a>too. (S/MIME only)</p>
+      <a class="link" href="#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a>too. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9039,7 +9039,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to extract X509 certificates from a PKCS7 structure.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9057,7 +9057,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to extract the mail address(es) used for storing X509 certificates, and for verification purposes (to check whether the certificate was issued for the sender's mailbox).</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9077,7 +9077,7 @@ set sidebar_delim_chars='.'
       <span class="quote">“
       <span class="quote">From:</span>”</span>field.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9095,7 +9095,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to import a certificate via smime_keys.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9115,7 +9115,7 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>set</em>
       </span>. However, this has no effect while replying, since mutt will automatically select the same application that was used to sign/encrypt the original message. (Note that this variable can be overridden by unsetting
-      <a class="link" href="reference.html#crypt-autosmime" title="3.46.&#160;crypt_autosmime">$crypt_autosmime</a>.) (S/MIME only)</p>
+      <a class="link" href="#crypt-autosmime" title="3.46.&#160;crypt_autosmime">$crypt_autosmime</a>.) (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9147,7 +9147,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to extract PKCS7 structures of S/MIME signatures, in order to extract the public X509 certificate(s).</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9166,7 +9166,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to created S/MIME signatures of type
       <code class="literal">multipart/signed</code>, which can be read by all mail clients.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9216,7 +9216,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to created S/MIME signatures of type
       <code class="literal">application/x-pkcs7-signature</code>, which can only be handled by mail clients supporting the S/MIME extension.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9250,7 +9250,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to verify S/MIME signatures of type
       <code class="literal">multipart/signed</code>.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9269,7 +9269,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to verify S/MIME signatures of type
       <code class="literal">application/x-pkcs7-mime</code>.</p>
       <p>This is a format string, see the
-      <a class="link" href="reference.html#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.310.&#160;smime_decrypt_command">$smime_decrypt_command</a>command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9316,7 +9316,7 @@ set smtp_authenticators="digest-md5:cram-md5"
       <span class="emphasis">
         <em>unset</em>
       </span>, Mutt will prompt you for your password when you first send mail via SMTP. See
-      <a class="link" href="reference.html#smtp-url" title="3.331.&#160;smtp_url">$smtp_url</a>to configure mutt to send mail via SMTP.</p>
+      <a class="link" href="#smtp-url" title="3.331.&#160;smtp_url">$smtp_url</a>to configure mutt to send mail via SMTP.</p>
       <p>
       <span class="bold">
         <strong>Warning</strong>
@@ -9342,7 +9342,7 @@ smtp[s]://[user[:pass]@]host[:port]
       <p>where
       <span class="quote">“
       <span class="quote">[...]</span>”</span>denotes an optional part. Setting this variable overrides the value of the
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>variable.</p>
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9446,7 +9446,7 @@ smtp[s]://[user[:pass]@]host[:port]
         <br />Default:&#160;date</p>
       </div>
       <p>When sorting by threads, this variable controls how threads are sorted in relation to other threads, and how the branches of the thread trees are sorted. This can be set to any value that
-      <a class="link" href="reference.html#sort" title="3.332.&#160;sort">$sort</a>can, except
+      <a class="link" href="#sort" title="3.332.&#160;sort">$sort</a>can, except
       <span class="quote">“
       <span class="quote">threads</span>”</span>(in that case, mutt will just use
       <span class="quote">“
@@ -9461,7 +9461,7 @@ smtp[s]://[user[:pass]@]host[:port]
       <span class="quote">reverse-</span>”</span>. The
       <span class="quote">“
       <span class="quote">last-</span>”</span>prefix causes messages to be sorted against its siblings by which has the last descendant, using the rest of
-      <a class="link" href="reference.html#sort-aux" title="3.334.&#160;sort_aux">$sort_aux</a>as an ordering. For instance,</p>
+      <a class="link" href="#sort-aux" title="3.334.&#160;sort_aux">$sort_aux</a>as an ordering. For instance,</p>
       <pre class="screen">
 set sort_aux=last-date-received
 </pre>
@@ -9471,8 +9471,8 @@ set sort_aux=last-date-received
         <code class="literal">set sort=reverse-threads</code>
       </span>”</span>.)</p>
       <p>Note: For reversed
-      <a class="link" href="reference.html#sort" title="3.332.&#160;sort">$sort</a>order
-      <a class="link" href="reference.html#sort-aux" title="3.334.&#160;sort_aux">$sort_aux</a>is reversed again (which is not the right thing to do, but kept to not break any existing configuration setting).</p>
+      <a class="link" href="#sort" title="3.332.&#160;sort">$sort</a>order
+      <a class="link" href="#sort-aux" title="3.334.&#160;sort_aux">$sort_aux</a>is reversed again (which is not the right thing to do, but kept to not break any existing configuration setting).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9648,7 +9648,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will require that all connections to remote servers be encrypted. Furthermore it will attempt to negotiate TLS even if the server does not advertise the capability, since it would otherwise have to abort the connection anyway. This option supersedes
-      <a class="link" href="reference.html#ssl-starttls" title="3.343.&#160;ssl_starttls">$ssl_starttls</a>.</p>
+      <a class="link" href="#ssl-starttls" title="3.343.&#160;ssl_starttls">$ssl_starttls</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9859,7 +9859,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the characters used by the
       <span class="quote">“
       <span class="quote">%r</span>”</span>indicator in
-      <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>. The first character is used when the mailbox is unchanged. The second is used when the mailbox has been changed, and it needs to be resynchronized. The third is used if the mailbox is in read-only mode, or if the mailbox will not be written when exiting that mailbox (You can toggle whether to write changes to a mailbox with the
+      <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>. The first character is used when the mailbox is unchanged. The second is used when the mailbox has been changed, and it needs to be resynchronized. The third is used if the mailbox is in read-only mode, or if the mailbox will not be written when exiting that mailbox (You can toggle whether to write changes to a mailbox with the
       <code class="literal">&lt;toggle-write&gt;</code>operation, bound by default to
       <span class="quote">“
       <span class="quote">%</span>”</span>). The fourth is used to indicate that the current folder has been opened in attach- message mode (Certain operations like composing a new mail, replying, forwarding, etc. are not permitted in this mode).</p>
@@ -9884,7 +9884,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the format of the status line displayed in the
       <span class="quote">“
       <span class="quote">index</span>”</span>menu. This string is similar to
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table border="1">
@@ -9948,17 +9948,17 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
             <tr>
               <td>%r</td>
               <td>modified/read-only/won't-write/attach-message indicator, according to
-              <a class="link" href="reference.html#status-chars" title="3.353.&#160;status_chars">$status_chars</a></td>
+              <a class="link" href="#status-chars" title="3.353.&#160;status_chars">$status_chars</a></td>
             </tr>
             <tr>
               <td>%s</td>
               <td>current sorting mode (
-              <a class="link" href="reference.html#sort" title="3.332.&#160;sort">$sort</a>)</td>
+              <a class="link" href="#sort" title="3.332.&#160;sort">$sort</a>)</td>
             </tr>
             <tr>
               <td>%S</td>
               <td>current aux sorting method (
-              <a class="link" href="reference.html#sort-aux" title="3.334.&#160;sort_aux">$sort_aux</a>)</td>
+              <a class="link" href="#sort-aux" title="3.334.&#160;sort_aux">$sort_aux</a>)</td>
             </tr>
             <tr>
               <td>%t</td>
@@ -10000,7 +10000,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
       <p>Some of the above sequences can be used to optionally print a string if their value is nonzero. For example, you may only want to see the number of flagged messages if such messages exist, since zero is not particularly meaningful. To optionally print a string based upon one of the above sequences, the following construct is used:</p>
       <p>
@@ -10071,7 +10071,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Setting this variable causes the
       <span class="quote">“
       <span class="quote">status bar</span>”</span>to be displayed on the first line of the screen rather than near the bottom. If
-      <a class="link" href="reference.html#help" title="3.94.&#160;help">$help</a>is
+      <a class="link" href="#help" title="3.94.&#160;help">$help</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, too it'll be placed at the bottom.</p>
@@ -10097,12 +10097,12 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="quote">In-Reply-To</span>”</span>and
       <span class="quote">“
       <span class="quote">References:</span>”</span>fields when you
-      <a class="link" href="reference.html#sort" title="3.332.&#160;sort">$sort</a>by message threads. By default, messages with the same subject are grouped together in
+      <a class="link" href="#sort" title="3.332.&#160;sort">$sort</a>by message threads. By default, messages with the same subject are grouped together in
       <span class="quote">“
       <span class="quote">pseudo threads.</span>”</span>. This may not always be desirable, such as in a personal mailbox where you might have several unrelated messages with the subjects like
       <span class="quote">“
       <span class="quote">hi</span>”</span>which will get grouped together. See also
-      <a class="link" href="reference.html#sort-re" title="3.336.&#160;sort_re">$sort_re</a>for a less drastic way of controlling this behavior.</p>
+      <a class="link" href="#sort-re" title="3.336.&#160;sort_re">$sort_re</a>for a less drastic way of controlling this behavior.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10155,7 +10155,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <code class="literal">text/plain; format=flowed</code>
       </span>”</span>. This format is easier to handle for some mailing software, and generally just looks like ordinary text. To actually make use of this format's features, you'll need support in your editor.</p>
       <p>Note that
-      <a class="link" href="reference.html#indent-string" title="3.127.&#160;indent_string">$indent_string</a>is ignored when this option is
+      <a class="link" href="#indent-string" title="3.127.&#160;indent_string">$indent_string</a>is ignored when this option is
       <span class="emphasis">
         <em>set</em>
       </span>.</p>
@@ -10243,10 +10243,10 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <br />Default:&#160;0</p>
       </div>
       <p>Along with
-      <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="reference.html#write-inc" title="3.388.&#160;write_inc">$write_inc</a>, and
-      <a class="link" href="reference.html#net-inc" title="3.168.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
-      <a class="link" href="reference.html#time-inc" title="3.362.&#160;time_inc">$time_inc</a>milliseconds apart. This can improve throughput on systems with slow terminals, or when running mutt on a remote system.</p>
+      <a class="link" href="#read-inc" title="3.252.&#160;read_inc">$read_inc</a>,
+      <a class="link" href="#write-inc" title="3.388.&#160;write_inc">$write_inc</a>, and
+      <a class="link" href="#net-inc" title="3.168.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
+      <a class="link" href="#time-inc" title="3.362.&#160;time_inc">$time_inc</a>milliseconds apart. This can improve throughput on systems with slow terminals, or when running mutt on a remote system.</p>
       <p>Also see the
       <span class="quote">“
       <span class="quote">
@@ -10356,11 +10356,11 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the format of the icon title, as long as
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#ts-enabled" title="3.368.&#160;ts_enabled">$ts_enabled</a>
+        <a class="link" href="#ts-enabled" title="3.368.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span>is set. This string is identical in formatting to the one used by
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>
+        <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -10398,11 +10398,11 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the format of the terminal status line (or window title), provided that
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#ts-enabled" title="3.368.&#160;ts_enabled">$ts_enabled</a>
+        <a class="link" href="#ts-enabled" title="3.368.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span>has been set. This string is identical in formatting to the one used by
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="reference.html#status-format" title="3.354.&#160;status_format">$status_format</a>
+        <a class="link" href="#status-format" title="3.354.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -10472,7 +10472,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will invoke
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>with the
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>with the
       <code class="literal">-B8BITMIME</code>flag when sending 8-bit messages to enable ESMTP negotiation.</p>
     </div>
     <div class="sect2">
@@ -10494,7 +10494,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       </span>, Mutt will qualify all local addresses (ones without the
       <span class="quote">“
       <span class="quote">@host</span>”</span>portion) with the value of
-      <a class="link" href="reference.html#hostname" title="3.105.&#160;hostname">$hostname</a>. If
+      <a class="link" href="#hostname" title="3.105.&#160;hostname">$hostname</a>. If
       <span class="emphasis">
         <em>unset</em>
       </span>, no addresses will be qualified.</p>
@@ -10519,7 +10519,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>envelope</em>
       </span>sender of the message. If
-      <a class="link" href="reference.html#envelope-from-address" title="3.71.&#160;envelope_from_address">$envelope_from_address</a>is
+      <a class="link" href="#envelope-from-address" title="3.71.&#160;envelope_from_address">$envelope_from_address</a>is
       <span class="emphasis">
         <em>set</em>
       </span>, it will be used as the sender address. If
@@ -10530,9 +10530,9 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="quote">From:</span>”</span>header.</p>
       <p>Note that this information is passed to sendmail command using the
       <code class="literal">-f</code>command line switch. Therefore setting this option is not useful if the
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>variable already contains
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>variable already contains
       <code class="literal">-f</code>or if the executable pointed to by
-      <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>doesn't support the
+      <a class="link" href="#sendmail" title="3.281.&#160;sendmail">$sendmail</a>doesn't support the
       <code class="literal">-f</code>switch.</p>
     </div>
     <div class="sect2">
@@ -10642,7 +10642,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the file browser display for virtual folders to your personal taste. This string uses many of the same expandos as
-      <a class="link" href="reference.html#folder-format" title="3.77.&#160;folder_format">$folder_format</a>.</p>
+      <a class="link" href="#folder-format" title="3.77.&#160;folder_format">$folder_format</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10726,10 +10726,10 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;0</p>
       </div>
       <p>When set to a positive value, mutt will wrap text at
-      <a class="link" href="reference.html#wrap" title="3.383.&#160;wrap">$wrap</a>characters. When set to a negative value, mutt will wrap text so that there are
-      <a class="link" href="reference.html#wrap" title="3.383.&#160;wrap">$wrap</a>characters of empty space on the right side of the terminal. Setting it to zero makes mutt wrap at the terminal width.</p>
+      <a class="link" href="#wrap" title="3.383.&#160;wrap">$wrap</a>characters. When set to a negative value, mutt will wrap text so that there are
+      <a class="link" href="#wrap" title="3.383.&#160;wrap">$wrap</a>characters of empty space on the right side of the terminal. Setting it to zero makes mutt wrap at the terminal width.</p>
       <p>Also see
-      <a class="link" href="reference.html#reflow-wrap" title="3.259.&#160;reflow_wrap">$reflow_wrap</a>.</p>
+      <a class="link" href="#reflow-wrap" title="3.259.&#160;reflow_wrap">$reflow_wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10789,7 +10789,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;0</p>
       </div>
       <p>(DEPRECATED) Equivalent to setting
-      <a class="link" href="reference.html#wrap" title="3.383.&#160;wrap">$wrap</a>with a negative value.</p>
+      <a class="link" href="#wrap" title="3.383.&#160;wrap">$wrap</a>with a negative value.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10807,7 +10807,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>Controls whether mutt writes out the
       <span class="quote">“
       <span class="quote">Bcc:</span>”</span>header when preparing messages to be sent. Exim users may wish to unset this. If mutt is set to deliver directly via SMTP (see
-      <a class="link" href="reference.html#smtp-url" title="3.331.&#160;smtp_url">$smtp_url</a>), this option does nothing: mutt will never write out the
+      <a class="link" href="#smtp-url" title="3.331.&#160;smtp_url">$smtp_url</a>), this option does nothing: mutt will never write out the
       <span class="quote">“
       <span class="quote">Bcc:</span>”</span>header in this case.</p>
     </div>
@@ -10825,11 +10825,11 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;10</p>
       </div>
       <p>When writing a mailbox, a message will be printed every
-      <a class="link" href="reference.html#write-inc" title="3.388.&#160;write_inc">$write_inc</a>messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
+      <a class="link" href="#write-inc" title="3.388.&#160;write_inc">$write_inc</a>messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
       <p>Also see the
-      <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="reference.html#net-inc" title="3.168.&#160;net_inc">$net_inc</a>and
-      <a class="link" href="reference.html#time-inc" title="3.362.&#160;time_inc">$time_inc</a>variables and the
+      <a class="link" href="#read-inc" title="3.252.&#160;read_inc">$read_inc</a>,
+      <a class="link" href="#net-inc" title="3.168.&#160;net_inc">$net_inc</a>and
+      <a class="link" href="#time-inc" title="3.362.&#160;time_inc">$time_inc</a>variables and the
       <span class="quote">“
       <span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>

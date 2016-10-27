@@ -170,12 +170,12 @@ smtp://user@host:587/
     <p>Remote POP3 servers can be accessed using URLs with the
     <code class="literal">pop</code>protocol for unencrypted and
     <code class="literal">pops</code>for encrypted communication, see
-    <a class="xref" href="optionalfeatures.html#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>for details.</p>
+    <a class="xref" href="#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>for details.</p>
     <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which Mutt will check for mail remotely can be controlled by the
     <a class="link" href="reference.html#pop-checkinterval" title="3.229.&#160;pop_checkinterval">$pop_checkinterval</a>variable, which defaults to every 60 seconds.</p>
     <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
-    <a class="xref" href="optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a>and
-    <a class="xref" href="optionalfeatures.html#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a>Mutt simulates the new/old/read flags as well as flagged and replied. Mutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by Mutt or other tools).</p>
+    <a class="xref" href="#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a>and
+    <a class="xref" href="#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a>Mutt simulates the new/old/read flags as well as flagged and replied. Mutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by Mutt or other tools).</p>
     <a class="offset" id="fetch-mail"></a>
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
@@ -205,7 +205,7 @@ smtp://user@host:587/
       <em>--enable-imap</em>
     </span>flag), it has the ability to work with folders located on a remote IMAP server.</p>
     <p>You can access the remote inbox by selecting the folder by its URL (see
-    <a class="xref" href="optionalfeatures.html#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>for details) using the
+    <a class="xref" href="#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>for details) using the
     <code class="literal">imap</code>or
     <code class="literal">imaps</code>protocol. Alternatively, a pine-compatible notation is also supported, i.e.
     <code class="literal">{[username@]imapserver[:port][/ssl]}path/to/folder</code></p>
@@ -322,7 +322,7 @@ set timeout=15
     <a class="link" href="reference.html#smtp-url" title="3.331.&#160;smtp_url">$smtp_url</a>is set, Mutt will contact the given SMTP server to deliver messages; if it is unset, Mutt will use the program specified by
     <a class="link" href="reference.html#sendmail" title="3.281.&#160;sendmail">$sendmail</a>.</p>
     <p>For details on the URL syntax, please see
-    <a class="xref" href="optionalfeatures.html#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>.</p>
+    <a class="xref" href="#url-syntax" title="1.3.&#160;URL Syntax">Section&#160;1.3, “URL Syntax”</a>.</p>
     <p>The built-in SMTP support supports encryption (the
     <code class="literal">smtps</code>protocol using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms for SASL are specified in
     <a class="link" href="reference.html#smtp-authenticators" title="3.329.&#160;smtp_authenticators">$smtp_authenticators</a>defaulting to an empty list which makes Mutt try all available methods from most-secure to least-secure.</p>
@@ -349,7 +349,7 @@ set timeout=15
       </p>
     </div>
     <p>If you happen to have accounts on multiple IMAP, POP and/or SMTP servers, you may find managing all the authentication settings inconvenient and error-prone. The
-    <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">
+    <a class="link" href="#account-hook" title="6.&#160;Managing Multiple Accounts">
       <span class="command">
         <strong>account-hook</strong>
       </span>
@@ -359,12 +359,12 @@ set timeout=15
         <strong>folder-hook</strong>
       </span>
     </a>but is invoked whenever Mutt needs to access a remote mailbox (including inside the folder browser), not just when you open the mailbox. This includes (for example) polling for new mail, storing Fcc messages and saving messages to a folder. As a consequence,
-    <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">
+    <a class="link" href="#account-hook" title="6.&#160;Managing Multiple Accounts">
       <span class="command">
         <strong>account-hook</strong>
       </span>
     </a>should only be used to set connection-related settings such as passwords or tunnel commands but not settings such as sender address or name (because in general it should be considered unpredictable which
-    <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">
+    <a class="link" href="#account-hook" title="6.&#160;Managing Multiple Accounts">
       <span class="command">
         <strong>account-hook</strong>
       </span>
@@ -405,7 +405,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     </div>
     <br class="example-break" />
     <p>In example
-    <a class="xref" href="optionalfeatures.html#ex-multiaccount" title="Example&#160;6.2.&#160;Managing multiple accounts">Example&#160;6.2, “Managing multiple accounts”</a>the folders are defined using
+    <a class="xref" href="#ex-multiaccount" title="Example&#160;6.2.&#160;Managing multiple accounts">Example&#160;6.2, “Managing multiple accounts”</a>the folders are defined using
     <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">
       <span class="command">
         <strong>mailboxes</strong>

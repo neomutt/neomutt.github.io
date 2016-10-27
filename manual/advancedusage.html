@@ -55,7 +55,7 @@ title: Advanced Usage
       </div>
     </div>
     <p>All string patterns in Mutt including those in more complex
-    <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>must be specified using regular expressions (regexp) in the
+    <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>must be specified using regular expressions (regexp) in the
     <span class="quote">“
     <span class="quote">POSIX extended</span>”</span>syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
     <p>The search is case sensitive if the pattern contains at least one upper case letter, and case insensitive otherwise.</p>
@@ -107,7 +107,7 @@ title: Advanced Usage
     <span class="quote">[:</span>”</span>, a keyword denoting the class, and
     <span class="quote">“
     <span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
-    <a class="xref" href="advancedusage.html#posix-regex-char-classes" title="Table&#160;4.1.&#160;POSIX regular expression character classes">Table&#160;4.1, “POSIX regular expression character classes”</a></p>
+    <a class="xref" href="#posix-regex-char-classes" title="Table&#160;4.1.&#160;POSIX regular expression character classes">Table&#160;4.1, “POSIX regular expression character classes”</a></p>
     <div class="table">
       <a class="offset" id="posix-regex-char-classes"></a>
       <p class="title">
@@ -255,7 +255,7 @@ title: Advanced Usage
       </dl>
     </div>
     <p>A regular expression matching a single character may be followed by one of several repetition operators described in
-    <a class="xref" href="advancedusage.html#regex-repeat" title="Table&#160;4.2.&#160;Regular expression repetition operators">Table&#160;4.2, “Regular expression repetition operators”</a>.</p>
+    <a class="xref" href="#regex-repeat" title="Table&#160;4.2.&#160;Regular expression repetition operators">Table&#160;4.2, “Regular expression repetition operators”</a>.</p>
     <div class="table">
       <a class="offset" id="regex-repeat"></a>
       <p class="title">
@@ -330,7 +330,7 @@ title: Advanced Usage
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you compile Mutt with the included regular expression engine, the following operators may also be used in regular expressions as described in
-      <a class="xref" href="advancedusage.html#regex-gnu-ext" title="Table&#160;4.3.&#160;GNU regular expression extensions">Table&#160;4.3, “GNU regular expression extensions”</a>.</p>
+      <a class="xref" href="#regex-gnu-ext" title="Table&#160;4.3.&#160;GNU regular expression extensions">Table&#160;4.3, “GNU regular expression extensions”</a>.</p>
     </div>
     <div class="table">
       <a class="offset" id="regex-gnu-ext"></a>
@@ -411,7 +411,7 @@ title: Advanced Usage
       <code class="literal">limit</code>,
       <code class="literal">tag-pattern</code>,
       <code class="literal">delete-pattern</code>, etc.).
-      <a class="xref" href="advancedusage.html#tab-patterns" title="Table&#160;4.4.&#160;Pattern modifiers">Table&#160;4.4, “Pattern modifiers”</a>shows several ways to select messages.</p>
+      <a class="xref" href="#tab-patterns" title="Table&#160;4.4.&#160;Pattern modifiers">Table&#160;4.4, “Pattern modifiers”</a>shows several ways to select messages.</p>
       <div class="table">
         <a class="offset" id="tab-patterns"></a>
         <p class="title">
@@ -878,7 +878,7 @@ title: Advanced Usage
       <span class="emphasis">
         <em>EXPR</em>
       </span>is a
-      <a class="link" href="advancedusage.html#regexp" title="2.&#160;Regular Expressions">regular expression</a>, and
+      <a class="link" href="#regexp" title="2.&#160;Regular Expressions">regular expression</a>, and
       <span class="emphasis">
         <em>GROUP</em>
       </span>is an
@@ -960,7 +960,7 @@ title: Advanced Usage
       <span class="quote">“
       <span class="quote">\</span>”</span>).</p>
       <p>The first type is by checking whether the query string equals a keyword case-insensitively from
-      <a class="xref" href="advancedusage.html#tab-simplesearch-keywords" title="Table&#160;4.5.&#160;Simple search keywords">Table&#160;4.5, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
+      <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.5.&#160;Simple search keywords">Table&#160;4.5, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
       <span class="quote">“
       <span class="quote">flag</span>”</span>(using
       <a class="link" href="reference.html#simple-search" title="3.302.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
@@ -1171,7 +1171,7 @@ Limit to messages matching: ~d 20/1/95-31/10
         <span class="quote">“
         <span class="quote">-</span>”</span>), only messages sent on the given date will be selected.</p>
         <p>You can add error margins to absolute dates. An error margin is a sign (+ or -), followed by a digit, followed by one of the units in
-        <a class="xref" href="advancedusage.html#tab-date-units" title="Table&#160;4.6.&#160;Date units">Table&#160;4.6, “Date units”</a>. As a special case, you can replace the sign by a
+        <a class="xref" href="#tab-date-units" title="Table&#160;4.6.&#160;Date units">Table&#160;4.6, “Date units”</a>. As a special case, you can replace the sign by a
         <span class="quote">“
         <span class="quote">*</span>”</span>character, which is equivalent to giving identical plus and minus error margins.</p>
         <div class="table">
@@ -1263,7 +1263,7 @@ Limit to messages matching: ~d 15/1/2001*2w
         <span class="emphasis">
           <em>offset</em>
         </span>is specified as a positive number with one of the units from
-        <a class="xref" href="advancedusage.html#tab-date-units" title="Table&#160;4.6.&#160;Date units">Table&#160;4.6, “Date units”</a>.</p>
+        <a class="xref" href="#tab-date-units" title="Table&#160;4.6.&#160;Date units">Table&#160;4.6, “Date units”</a>.</p>
         <p>Example: to select messages less than 1 month old, you would use</p>
         <pre class="screen">
 Limit to messages matching: ~d &lt;1m
@@ -1299,7 +1299,7 @@ Limit to messages matching: ~d &lt;1m
     <code class="literal">&lt;tag-message&gt;</code>function, which is bound to
     <span class="quote">“
     <span class="quote">t</span>”</span>by default. See
-    <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>for Mutt's pattern matching syntax.</p>
+    <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>for Mutt's pattern matching syntax.</p>
     <p>Once you have tagged the desired messages, you can use the
     <span class="quote">“
     <span class="quote">tag-prefix</span>”</span>operator, which is the
@@ -1346,8 +1346,8 @@ Limit to messages matching: ~d &lt;1m
     <span class="emphasis">
       <em>hook</em>
     </span>consists of a
-    <a class="link" href="advancedusage.html#regexp" title="2.&#160;Regular Expressions">regular expression</a>or
-    <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">pattern</a>along with a configuration option/command. See:</p>
+    <a class="link" href="#regexp" title="2.&#160;Regular Expressions">regular expression</a>or
+    <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">pattern</a>along with a configuration option/command. See:</p>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
@@ -1522,7 +1522,7 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
     </div>
     <br class="example-break" />
     <p>In
-    <a class="xref" href="advancedusage.html#ex-default-hook" title="Example&#160;4.3.&#160;Specifying a “default” hook">Example&#160;4.3, “Specifying a
+    <a class="xref" href="#ex-default-hook" title="Example&#160;4.3.&#160;Specifying a “default” hook">Example&#160;4.3, “Specifying a
     <span class="quote">“
     <span class="quote">default</span>”</span>hook”</a>, by default the value of
     <a class="link" href="reference.html#from" title="3.86.&#160;from">$from</a>and
@@ -1557,9 +1557,9 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
       <span class="command">
         <strong>fcc-hook</strong>
       </span>) are evaluated in a slightly different manner. For the other types of hooks, a
-      <a class="link" href="advancedusage.html#regexp" title="2.&#160;Regular Expressions">regular expression</a>is sufficient. But in dealing with messages a finer grain of control is needed for matching since for different purposes you want to match different criteria.</p>
+      <a class="link" href="#regexp" title="2.&#160;Regular Expressions">regular expression</a>is sufficient. But in dealing with messages a finer grain of control is needed for matching since for different purposes you want to match different criteria.</p>
       <p>Mutt allows the use of the
-      <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">search pattern</a>language for matching messages in hook commands. This works in exactly the same way as it would when
+      <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">search pattern</a>language for matching messages in hook commands. This works in exactly the same way as it would when
       <span class="emphasis">
         <em>limiting</em>
       </span>or
@@ -1597,8 +1597,8 @@ send-hook '~t ^me@cs\.hmc\.edu$' 'my_hdr From: Mutt User &lt;user@host&gt;'
       <span class="command">
         <strong>mbox-hook</strong>
       </span>) apply both
-      <a class="link" href="advancedusage.html#regexp" title="2.&#160;Regular Expressions">regular expression</a>syntax as well as
-      <a class="link" href="advancedusage.html#shortcuts" title="8.&#160;Mailbox Shortcuts">mailbox shortcut</a>expansion on the regexp parameter. There is some overlap between these, so special attention should be paid to the first character of the regexp.</p>
+      <a class="link" href="#regexp" title="2.&#160;Regular Expressions">regular expression</a>syntax as well as
+      <a class="link" href="#shortcuts" title="8.&#160;Mailbox Shortcuts">mailbox shortcut</a>expansion on the regexp parameter. There is some overlap between these, so special attention should be paid to the first character of the regexp.</p>
       <pre class="screen">
 # Here, ^ will expand to "the current mailbox" not "beginning of string":
 folder-hook ^/home/user/Mail/bar "set sort=threads"

@@ -227,7 +227,7 @@ over several lines"
     </div>
     <br class="example-break" />
     <p>It is also possible to substitute the output of a Unix command in an initialization file. This is accomplished by enclosing the command in backticks (``). In
-    <a class="xref" href="configuration.html#ex-rc-backtick" title="Example&#160;3.5.&#160;Using external command's output in configuration files">Example&#160;3.5, “Using external command's output in configuration files”</a>, the output of the Unix command
+    <a class="xref" href="#ex-rc-backtick" title="Example&#160;3.5.&#160;Using external command's output in configuration files">Example&#160;3.5, “Using external command's output in configuration files”</a>, the output of the Unix command
     <span class="quote">“
     <span class="quote">uname -a</span>”</span>will be substituted before the line is parsed. Since initialization files are line oriented, only the first line of output from the Unix command will be substituted.</p>
     <div class="example">
@@ -342,7 +342,7 @@ set record=+sent_on_$HOSTNAME
     <span class="quote">mailing list</span>”</span>and
     <span class="quote">“
     <span class="quote">mutt-related</span>”</span>. Using
-    <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">
+    <a class="link" href="#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">
       <code class="literal">send-hook</code>
     </a>, the sender can be set to a dedicated one for writing mailing list messages, and the signature could be set to a mutt-related one for writing to a mutt list — for other lists, the list sender setting still applies but a different signature can be selected. Or, given a group only containing recipients known to accept encrypted mail,
     <span class="quote">“
@@ -357,22 +357,22 @@ set record=+sent_on_$HOSTNAME
     <code class="literal">-rx</code>and
     <code class="literal">-addr</code>specify what the following strings (that cannot begin with a hyphen) should be interpreted as: either a regular expression or an email address, respectively.</p>
     <p>These address groups can also be created implicitly by the
-    <a class="link" href="configuration.html#alias" title="4.&#160;Defining/Using Aliases">
+    <a class="link" href="#alias" title="4.&#160;Defining/Using Aliases">
       <span class="command">
         <strong>alias</strong>
       </span>
     </a>,
-    <a class="link" href="configuration.html#lists" title="12.&#160;Mailing Lists">
+    <a class="link" href="#lists" title="12.&#160;Mailing Lists">
       <span class="command">
         <strong>lists</strong>
       </span>
     </a>,
-    <a class="link" href="configuration.html#lists" title="12.&#160;Mailing Lists">
+    <a class="link" href="#lists" title="12.&#160;Mailing Lists">
       <span class="command">
         <strong>subscribe</strong>
       </span>
     </a>and
-    <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">
+    <a class="link" href="#alternates" title="11.&#160;Alternative Addresses">
       <span class="command">
         <strong>alternates</strong>
       </span>
@@ -473,7 +473,7 @@ alias theguys manny, moe, jack
     <span class="command">
       <strong>alias</strong>
     </span>command can appear anywhere in a configuration file, as long as this file is
-    <a class="link" href="configuration.html#source" title="27.&#160;Reading Initialization Commands From Another File">
+    <a class="link" href="#source" title="27.&#160;Reading Initialization Commands From Another File">
     <span class="command">
       <strong>source</strong>
     </span>d</a>. Consequently, you can have multiple alias files, or you can have all aliases defined in your
@@ -484,7 +484,7 @@ alias theguys manny, moe, jack
     </a>function can use only one file, the one pointed to by the
     <a class="link" href="reference.html#alias-file" title="3.4.&#160;alias_file">$alias_file</a>variable (which is
     <code class="literal">~/.muttrc</code>by default). This file is not special either, in the sense that Mutt will happily append aliases to any file, but in order for the new aliases to take effect you need to explicitly
-    <a class="link" href="configuration.html#source" title="27.&#160;Reading Initialization Commands From Another File">
+    <a class="link" href="#source" title="27.&#160;Reading Initialization Commands From Another File">
       <span class="command">
         <strong>source</strong>
       </span>
@@ -683,7 +683,7 @@ set alias_file=~/.mail_aliases
     <span class="emphasis">
       <em>key</em>
     </span>may be a symbolic name as shown in
-    <a class="xref" href="configuration.html#tab-key-names" title="Table&#160;3.3.&#160;Symbolic key names">Table&#160;3.3, “Symbolic key names”</a>.</p>
+    <a class="xref" href="#tab-key-names" title="Table&#160;3.3.&#160;Symbolic key names">Table&#160;3.3, “Symbolic key names”</a>.</p>
     <div class="table">
       <a class="offset" id="tab-key-names"></a>
       <p class="title">
@@ -939,8 +939,8 @@ folder-hook mutt "set sort=threads"
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The keyboard buffer will not be processed until after all hooks are run; multiple
-      <a class="link" href="configuration.html#push" title="22.&#160;Adding Key Sequences to the Keyboard Buffer">push</a>or
-      <a class="link" href="configuration.html#exec" title="23.&#160;Executing Functions">exec</a>commands will end up being processed in reverse order.</p>
+      <a class="link" href="#push" title="22.&#160;Adding Key Sequences to the Keyboard Buffer">push</a>or
+      <a class="link" href="#exec" title="23.&#160;Executing Functions">exec</a>commands will end up being processed in reverse order.</p>
     </div>
     <p>The following example will set the
     <a class="link" href="reference.html#sort" title="3.332.&#160;sort">sort</a>variable to
@@ -1002,7 +1002,7 @@ folder-hook mutt "set sort=threads"
     <span class="emphasis">
       <em>menu</em>
     </span>is the
-    <a class="link" href="configuration.html#maps">map</a>which the macro will be bound in. Multiple maps may be specified by separating multiple menu arguments by commas. Whitespace may not be used in between the menu arguments and the commas separating them.</p>
+    <a class="link" href="#maps">map</a>which the macro will be bound in. Multiple maps may be specified by separating multiple menu arguments by commas. Whitespace may not be used in between the menu arguments and the commas separating them.</p>
     <p>
     <span class="emphasis">
       <em>key</em>
@@ -1010,7 +1010,7 @@ folder-hook mutt "set sort=threads"
     <span class="emphasis">
       <em>sequence</em>
     </span>are expanded by the same rules as the
-    <a class="link" href="configuration.html#bind" title="5.&#160;Changing the Default Key Bindings">key bindings</a>with some additions. The first is that control characters in
+    <a class="link" href="#bind" title="5.&#160;Changing the Default Key Bindings">key bindings</a>with some additions. The first is that control characters in
     <span class="emphasis">
       <em>sequence</em>
     </span>can also be specified as
@@ -1031,7 +1031,7 @@ folder-hook mutt "set sort=threads"
     <span class="emphasis">
       <em>&lt;function name&gt;</em>
     </span>. For a listing of key names see the section on
-    <a class="link" href="configuration.html#bind" title="5.&#160;Changing the Default Key Bindings">key bindings</a>. Functions are listed in the
+    <a class="link" href="#bind" title="5.&#160;Changing the Default Key Bindings">key bindings</a>. Functions are listed in the
     <a class="link" href="reference.html#functions" title="4.&#160;Functions">reference</a>.</p>
     <p>The advantage with using function names directly is that the macros will work regardless of the current key bindings, so they are not dependent on the user having particular key definitions. This makes them more robust and portable, and also facilitates defining of macros in files used by more than one user (e.g., the system Muttrc).</p>
     <p>Optionally you can specify a descriptive text after
@@ -1814,7 +1814,7 @@ subscribe [0-9]+.*@bugs.debian.org
     </span>^mutt-users@mutt\\.org$</code>to match only mail from the actual list.</p>
     <p>The
     <code class="literal">-group</code>flag adds all of the subsequent regular expressions to the named
-    <a class="link" href="configuration.html#addrgroup" title="3.&#160;Address Groups">address group</a>in addition to adding to the specified address list.</p>
+    <a class="link" href="#addrgroup" title="3.&#160;Address Groups">address group</a>in addition to adding to the specified address list.</p>
     <p>The
     <span class="quote">“
     <span class="quote">unlists</span>”</span>command is used to remove a token from the list of known and subscribed mailing-lists. Use
@@ -1963,7 +1963,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>For example, if you would like to add an
     <span class="quote">“
     <span class="quote">Organization:</span>”</span>header field to all of your outgoing messages, you can put the command something like shown in
-    <a class="xref" href="configuration.html#ex-my-hdr" title="Example&#160;3.11.&#160;Defining custom headers">Example&#160;3.11, “Defining custom headers”</a>in your
+    <a class="xref" href="#ex-my-hdr" title="Example&#160;3.11.&#160;Defining custom headers">Example&#160;3.11, “Defining custom headers”</a>in your
     <code class="literal">.muttrc</code>.</p>
     <div class="example">
       <a class="offset" id="ex-my-hdr"></a>
@@ -2060,7 +2060,7 @@ save-hook aol\\.com$ +spam
     </div>
     <br class="example-break" />
     <p>Also see the
-    <a class="link" href="configuration.html#fcc-save-hook" title="18.&#160;Specify Default Save Filename and Default Fcc: Mailbox at Once">
+    <a class="link" href="#fcc-save-hook" title="18.&#160;Specify Default Save Filename and Default Fcc: Mailbox at Once">
       <span class="command">
         <strong>fcc-save-hook</strong>
       </span>
@@ -2110,7 +2110,7 @@ save-hook aol\\.com$ +spam
 fcc-hook [@.]aol\\.com$ +spammers
 </pre>
     <p>...will save a copy of all messages going to the aol.com domain to the `+spammers' mailbox by default. Also see the
-    <a class="link" href="configuration.html#fcc-save-hook" title="18.&#160;Specify Default Save Filename and Default Fcc: Mailbox at Once">
+    <a class="link" href="#fcc-save-hook" title="18.&#160;Specify Default Save Filename and Default Fcc: Mailbox at Once">
       <span class="command">
         <strong>fcc-save-hook</strong>
       </span>
@@ -2138,12 +2138,12 @@ fcc-hook [@.]aol\\.com$ +spammers
       </p>
     </div>
     <p>This command is a shortcut, equivalent to doing both a
-    <a class="link" href="configuration.html#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">
+    <a class="link" href="#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">
       <span class="command">
         <strong>fcc-hook</strong>
       </span>
     </a>and a
-    <a class="link" href="configuration.html#save-hook" title="16.&#160;Specify Default Save Mailbox">
+    <a class="link" href="#save-hook" title="16.&#160;Specify Default Save Mailbox">
       <span class="command">
         <strong>save-hook</strong>
       </span>
@@ -2293,7 +2293,7 @@ fcc-hook [@.]aol\\.com$ +spammers
         <strong>send-hook</strong>
       </span>to be executed, similarly if
       <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>is set (as then the initial list of recipients is empty). Also note that
-      <a class="link" href="configuration.html#my-hdr" title="15.&#160;User-Defined Headers">
+      <a class="link" href="#my-hdr" title="15.&#160;User-Defined Headers">
         <span class="command">
           <strong>my_hdr</strong>
         </span>
@@ -2393,8 +2393,8 @@ message-hook '~f freshmeat-news' 'set pager="less \"+/^  subject: .*\""'
       </p>
     </div>
     <p>This command adds the named string to the beginning of the keyboard buffer. The string may contain control characters, key names and function names like the sequence string in the
-    <a class="link" href="configuration.html#macro" title="8.&#160;Keyboard Macros">macro</a>command. You may use it to automatically run a sequence of commands at startup, or when entering certain folders. For example,
-    <a class="xref" href="configuration.html#ex-folder-hook-push" title="Example&#160;3.13.&#160;Embedding push in folder-hook">Example&#160;3.13, “Embedding
+    <a class="link" href="#macro" title="8.&#160;Keyboard Macros">macro</a>command. You may use it to automatically run a sequence of commands at startup, or when entering certain folders. For example,
+    <a class="xref" href="#ex-folder-hook-push" title="Example&#160;3.13.&#160;Embedding push in folder-hook">Example&#160;3.13, “Embedding
     <span class="command">push</span>in
     <span class="command">folder-hook</span>”</a>shows how to automatically collapse all threads when entering a folder.</p>
     <div class="example">
@@ -2621,7 +2621,7 @@ folder-hook . 'push \eV'
     </span>strings joined together, with the value of
     <a class="link" href="reference.html#spam-separator" title="3.337.&#160;spam_separator">$spam_separator</a>separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in
-    <a class="xref" href="configuration.html#ex-spam" title="Example&#160;3.14.&#160;Configuring spam detection">Example&#160;3.14, “Configuring spam detection”</a>.</p>
+    <a class="xref" href="#ex-spam" title="Example&#160;3.14.&#160;Configuring spam detection">Example&#160;3.14, “Configuring spam detection”</a>.</p>
     <div class="example">
       <a class="offset" id="ex-spam"></a>
       <p class="title">
@@ -2859,7 +2859,7 @@ spam "^From: .*MAILER-DAEMON"       "999"
           </dt>
           <dd>
             <p>Arbitrary text, see
-            <a class="xref" href="configuration.html#set-myvar" title="26.3.&#160;User-Defined Variables">Section&#160;26.3, “User-Defined Variables”</a>for details.</p>
+            <a class="xref" href="#set-myvar" title="26.3.&#160;User-Defined Variables">Section&#160;26.3, “User-Defined Variables”</a>for details.</p>
           </dd>
         </dl>
       </div>
@@ -3054,7 +3054,7 @@ set ?allow_8bit
         </div>
         <p>The following example defines and uses the variable
         <code class="literal">my_cfgdir</code>to abbreviate the calls of the
-        <a class="link" href="configuration.html#source" title="27.&#160;Reading Initialization Commands From Another File">
+        <a class="link" href="#source" title="27.&#160;Reading Initialization Commands From Another File">
           <span class="command">
             <strong>source</strong>
           </span>
@@ -3136,7 +3136,7 @@ macro pager &lt;PageDown&gt; "\
         </div>
       </div>
       <p>Variables are always assigned string values which Mutt parses into its internal representation according to the type of the variable, for example an integer number for numeric types. For all queries (including $-expansion) the value is converted from its internal type back into string. As a result, any variable can be assigned any value given that its content is valid for the target. This also counts for custom variables which are of type string. In case of parsing errors, Mutt will print error messages.
-      <a class="xref" href="configuration.html#ex-myvar4" title="Example&#160;3.18.&#160;Type conversions using variables">Example&#160;3.18, “Type conversions using variables”</a>demonstrates type conversions.</p>
+      <a class="xref" href="#ex-myvar4" title="Example&#160;3.18.&#160;Type conversions using variables">Example&#160;3.18, “Type conversions using variables”</a>demonstrates type conversions.</p>
       <div class="example">
         <a class="offset" id="ex-myvar4"></a>
         <p class="title">

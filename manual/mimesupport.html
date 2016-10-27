@@ -48,7 +48,7 @@ title: Mutt's MIME Support
         <code class="literal">text</code>
       </span>”</span>with minor types for plain text, HTML and various other formats. Major types also exist for images, audio, video and of course general application data (e.g. to separate cryptographically signed data with a signature, send office documents, and in general arbitrary binary data). There's also the
       <code class="literal">multipart</code>major type which represents the root of a subtree of MIME parts. A list of supported MIME types can be found in
-      <a class="xref" href="mimesupport.html#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>.</p>
+      <a class="xref" href="#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>.</p>
       <p>MIME also defines a set of encoding schemes for transporting MIME content over the network:
       <code class="literal">7bit</code>,
       <code class="literal">8bit</code>,
@@ -178,7 +178,7 @@ audio/x-aiff                    aif aifc aiff
     <code class="literal">text/plain</code>. If the file contains binary information, then Mutt will mark it as
     <code class="literal">application/octet-stream</code>. You can change the MIME type that Mutt assigns to an attachment by using the
     <code class="literal">&lt;edit-type&gt;</code>command from the compose menu (default: ^T), see
-    <a class="xref" href="mimesupport.html#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>for supported major types. Mutt recognizes all of these if the appropriate entry is found in the
+    <a class="xref" href="#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>for supported major types. Mutt recognizes all of these if the appropriate entry is found in the
     <code class="literal">mime.types</code>file. Non-recognized mime types should only be used if the recipient of the message is likely to be expecting such attachments.</p>
     <div class="table">
       <a class="offset" id="supported-mime-types"></a>
@@ -473,7 +473,7 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
             </dt>
             <dd>
               <p>Mutt uses this flag when viewing attachments with
-              <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
+              <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
                 <span class="command">
                   <strong>auto_view</strong>
                 </span>
@@ -560,7 +560,7 @@ image/gif;      ; print= anytopnm %s | pnmtops | lpr; \
         <code class="literal">image/*</code>entry and use the
         <code class="literal">image/gif</code>entry with the print command.</p>
         <p>In addition, you can use this with
-        <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
+        <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
           <span class="command">
             <strong>auto_view</strong>
           </span>
@@ -574,7 +574,7 @@ text/html;      lynx %s; nametemplate=%s.html
 text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
 </pre>
         <p>For
-        <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
+        <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
           <span class="command">
             <strong>auto_view</strong>
           </span>
@@ -796,7 +796,7 @@ alternative_order text/enriched text/plain text \
         </li>
         <li class="listitem">
           <p>Next, Mutt will check if any of the types have a defined
-          <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
+          <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
             <span class="command">
               <strong>auto_view</strong>
             </span>
