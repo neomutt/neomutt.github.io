@@ -82,7 +82,7 @@ title: Home
 <ul>
     {% for p in site.posts limit:5 %}
     <li>
-      <b>{{ p.date | date: '%Y-%m-%d' }}</b> - 
+      <b>{{ p.date | date: '%Y-%m-%d' }}</b> -
       <a href="{{ p.url }}">{{ p.title }}</a>
     </li>
     {% endfor %}

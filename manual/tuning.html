@@ -25,15 +25,15 @@ title: Performance Tuning
     <div class="orderedlist">
       <ol class="orderedlist" type="1">
         <li class="listitem">
-          <p>For remote folders (IMAP and POP) as well as folders using one-file-per message storage (Maildir and MH), Mutt's performance can be greatly improved using 
+          <p>For remote folders (IMAP and POP) as well as folders using one-file-per message storage (Maildir and MH), Mutt's performance can be greatly improved using
           <a class="link" href="optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">header caching</a>. using a single database per folder.</p>
         </li>
         <li class="listitem">
-          <p>Mutt provides the 
-          <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>and 
+          <p>Mutt provides the
+          <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>and
           <a class="link" href="reference.html#write-inc" title="3.388.&#160;write_inc">$write_inc</a>variables to specify at which rate to update progress counters. If these values are too low, Mutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
-          <p>For example, when opening a maildir folder with a few thousand messages, the default value for 
-          <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>may be too low. It can be tuned on on a folder-basis using 
+          <p>For example, when opening a maildir folder with a few thousand messages, the default value for
+          <a class="link" href="reference.html#read-inc" title="3.252.&#160;read_inc">$read_inc</a>may be too low. It can be tuned on on a folder-basis using
           <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
           <span class="command">
             <strong>folder-hook</strong>
@@ -49,7 +49,7 @@ folder-hook ^pop 'set read_inc=1'
         </li>
       </ol>
     </div>
-    <p>These settings work on a per-message basis. However, as messages may greatly differ in size and certain operations are much faster than others, even per-folder settings of the increment variables may not be desirable as they produce either too few or too much progress updates. Thus, Mutt allows to limit the number of progress updates per second it'll actually send to the terminal using the 
+    <p>These settings work on a per-message basis. However, as messages may greatly differ in size and certain operations are much faster than others, even per-folder settings of the increment variables may not be desirable as they produce either too few or too much progress updates. Thus, Mutt allows to limit the number of progress updates per second it'll actually send to the terminal using the
     <a class="link" href="reference.html#time-inc" title="3.362.&#160;time_inc">$time_inc</a>variable.</p>
   </div>
   <div class="sect1">
@@ -62,7 +62,7 @@ folder-hook ^pop 'set read_inc=1'
       </div>
     </div>
     <p>Reading messages from remote folders such as IMAP an POP can be slow especially for large mailboxes since Mutt only caches a very limited number of recently viewed messages (usually 10) per session (so that it will be gone for the next session.)</p>
-    <p>To improve performance and permanently cache whole messages, please refer to Mutt's so-called 
+    <p>To improve performance and permanently cache whole messages, please refer to Mutt's so-called
     <a class="link" href="optionalfeatures.html#body-caching" title="7.2.&#160;Body Caching">body caching</a>for details.</p>
   </div>
   <div class="sect1">
@@ -74,14 +74,14 @@ folder-hook ^pop 'set read_inc=1'
         </div>
       </div>
     </div>
-    <p>When searching mailboxes either via a search or a limit action, for some patterns Mutt distinguishes between regular expression and string searches. For regular expressions, patterns are prefixed with 
+    <p>When searching mailboxes either via a search or a limit action, for some patterns Mutt distinguishes between regular expression and string searches. For regular expressions, patterns are prefixed with
     <span class="quote">“
-    <span class="quote">~</span>”</span>and with 
+    <span class="quote">~</span>”</span>and with
     <span class="quote">“
     <span class="quote">=</span>”</span>for string searches.</p>
     <p>Even though a regular expression search is fast, it's several times slower than a pure string search which is noticeable especially on large folders. As a consequence, a string search should be used instead of a regular expression search if the user already knows enough about the search pattern.</p>
-    <p>For example, when limiting a large folder to all messages sent to or by an author, it's much faster to search for the initial part of an e-mail address via 
-    <code class="literal">=Luser@</code>instead of 
+    <p>For example, when limiting a large folder to all messages sent to or by an author, it's much faster to search for the initial part of an e-mail address via
+    <code class="literal">=Luser@</code>instead of
     <code class="literal">~Luser@</code>. This is especially true for searching message bodies since a larger amount of input has to be searched.</p>
     <p>As for regular expressions, a lower case string search pattern makes Mutt perform a case-insensitive search except for IMAP (because for IMAP Mutt performs server-side searches which don't support case-insensitivity).</p>
   </div>

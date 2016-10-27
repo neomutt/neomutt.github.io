@@ -23,7 +23,7 @@ Add the file and your `~/.mutt` and add `source vim-keybindings.rc` to your `~/.
 
 ## TODO
 
-- [ ] **⚠** Visual + Interactive vi-key cheat sheet for mutt (similar to sheet.shiar.nl) 
+- [ ] **⚠** Visual + Interactive vi-key cheat sheet for mutt (similar to sheet.shiar.nl)
 - [ ] Maybe remove `dd` since it's hard to press?
 - [ ] How about a command mode (for real power!)**, isn't there `:`?**
 - [ ] **What is** :g/spam/d
@@ -35,7 +35,7 @@ Add the file and your `~/.mutt` and add `source vim-keybindings.rc` to your `~/.
 
 ## Why?
 
-> Roses are red,  
-> Violets are blue,  
-> Sugar is sweet  
+> Roses are red,
+> Violets are blue,
+> Sugar is sweet
 > And so are you.

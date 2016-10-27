@@ -12,8 +12,8 @@ title: Mutt's MIME Support
       </div>
     </div>
   </div>
-  <p>Quite a bit of effort has been made to make Mutt the premier text-mode MIME MUA. Every effort has been made to provide the functionality that the discerning MIME user requires, and the conformance to the standards wherever possible. When configuring Mutt for MIME, there are two extra types of configuration files which Mutt uses. One is the 
-  <code class="literal">mime.types</code>file, which contains the mapping of file extensions to IANA MIME types. The other is the 
+  <p>Quite a bit of effort has been made to make Mutt the premier text-mode MIME MUA. Every effort has been made to provide the functionality that the discerning MIME user requires, and the conformance to the standards wherever possible. When configuring Mutt for MIME, there are two extra types of configuration files which Mutt uses. One is the
+  <code class="literal">mime.types</code>file, which contains the mapping of file extensions to IANA MIME types. The other is the
   <code class="literal">mailcap</code>file, which specifies the external commands to use for handling specific MIME types.</p>
   <div class="sect1">
     <div class="titlepage">
@@ -33,27 +33,27 @@ title: Mutt's MIME Support
           </div>
         </div>
       </div>
-      <p>MIME is short for 
+      <p>MIME is short for
       <span class="quote">“
       <span class="quote">Multipurpose Internet Mail Extension</span>”</span>and describes mechanisms to internationalize and structure mail messages. Before the introduction of MIME, messages had a single text part and were limited to us-ascii header and content. With MIME, messages can have attachments (and even attachments which itself have attachments and thus form a tree structure), nearly arbitrary characters can be used for sender names, recipients and subjects.</p>
-      <p>Besides the handling of non-ascii characters in message headers, to Mutt the most important aspect of MIME are so-called MIME types. These are constructed using a 
+      <p>Besides the handling of non-ascii characters in message headers, to Mutt the most important aspect of MIME are so-called MIME types. These are constructed using a
       <span class="emphasis">
         <em>major</em>
-      </span>and 
+      </span>and
       <span class="emphasis">
         <em>minor</em>
-      </span>type separated by a forward slash. These specify details about the content that follows. Based upon these, Mutt decides how to handle this part. The most popular major type is 
+      </span>type separated by a forward slash. These specify details about the content that follows. Based upon these, Mutt decides how to handle this part. The most popular major type is
       <span class="quote">“
       <span class="quote">
         <code class="literal">text</code>
-      </span>”</span>with minor types for plain text, HTML and various other formats. Major types also exist for images, audio, video and of course general application data (e.g. to separate cryptographically signed data with a signature, send office documents, and in general arbitrary binary data). There's also the 
-      <code class="literal">multipart</code>major type which represents the root of a subtree of MIME parts. A list of supported MIME types can be found in 
+      </span>”</span>with minor types for plain text, HTML and various other formats. Major types also exist for images, audio, video and of course general application data (e.g. to separate cryptographically signed data with a signature, send office documents, and in general arbitrary binary data). There's also the
+      <code class="literal">multipart</code>major type which represents the root of a subtree of MIME parts. A list of supported MIME types can be found in
       <a class="xref" href="mimesupport.html#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>.</p>
-      <p>MIME also defines a set of encoding schemes for transporting MIME content over the network: 
-      <code class="literal">7bit</code>, 
-      <code class="literal">8bit</code>, 
-      <code class="literal">quoted-printable</code>, 
-      <code class="literal">base64</code>and 
+      <p>MIME also defines a set of encoding schemes for transporting MIME content over the network:
+      <code class="literal">7bit</code>,
+      <code class="literal">8bit</code>,
+      <code class="literal">quoted-printable</code>,
+      <code class="literal">base64</code>and
       <code class="literal">binary</code>. There're some rules when to choose what for encoding headers and/or body (if needed), and Mutt will in general make a good choice.</p>
       <p>Mutt does most of MIME encoding/decoding behind the scenes to form messages conforming to MIME on the sending side. On reception, it can be flexibly configured as to how what MIME structure is displayed (and if it's displayed): these decisions are based on the content's MIME type. There are three areas/menus in dealing with MIME: the pager (while viewing a message), the attachment menu and the compose menu.</p>
     </div>
@@ -66,20 +66,20 @@ title: Mutt's MIME Support
           </div>
         </div>
       </div>
-      <p>When you select a message from the index and view it in the pager, Mutt decodes as much of a message as possible to a text representation. Mutt internally supports a number of MIME types, including the 
-      <code class="literal">text</code>major type (with all minor types), the 
-      <code class="literal">message/rfc822</code>(mail messages) type and some 
-      <code class="literal">multipart</code>types. In addition, it recognizes a variety of PGP MIME types, including PGP/MIME and 
+      <p>When you select a message from the index and view it in the pager, Mutt decodes as much of a message as possible to a text representation. Mutt internally supports a number of MIME types, including the
+      <code class="literal">text</code>major type (with all minor types), the
+      <code class="literal">message/rfc822</code>(mail messages) type and some
+      <code class="literal">multipart</code>types. In addition, it recognizes a variety of PGP MIME types, including PGP/MIME and
       <code class="literal">application/pgp</code>.</p>
       <p>Mutt will denote attachments with a couple lines describing them. These lines are of the form:</p>
       <pre class="screen">
 [-- Attachment #1: Description --]
 [-- Type: text/plain, Encoding: 7bit, Size: 10000 --]
 </pre>
-      <p>Where the 
+      <p>Where the
       <span class="emphasis">
         <em>Description</em>
-      </span>is the description or filename given for the attachment, and the 
+      </span>is the description or filename given for the attachment, and the
       <span class="emphasis">
         <em>Encoding</em>
       </span>is one of the already mentioned content encodings.</p>
@@ -97,19 +97,19 @@ title: Mutt's MIME Support
           </div>
         </div>
       </div>
-      <p>The default binding for 
-      <code class="literal">&lt;view-attachments&gt;</code>is 
+      <p>The default binding for
+      <code class="literal">&lt;view-attachments&gt;</code>is
       <span class="quote">“
-      <span class="quote">v</span>”</span>, which displays the attachment menu for a message. The attachment menu displays a list of the attachments in a message. From the attachment menu, you can save, print, pipe, delete, and view attachments. You can apply these operations to a group of attachments at once, by tagging the attachments and by using the 
+      <span class="quote">v</span>”</span>, which displays the attachment menu for a message. The attachment menu displays a list of the attachments in a message. From the attachment menu, you can save, print, pipe, delete, and view attachments. You can apply these operations to a group of attachments at once, by tagging the attachments and by using the
       <code class="literal">&lt;tag-prefix&gt;</code>operator. You can also reply to the current message from this menu, and only the current attachment (or the attachments tagged) will be quoted in your reply. You can view attachments as text, or view them using the mailcap viewer definition (the mailcap mechanism is explained later in detail).</p>
-      <p>Finally, you can apply the usual message-related functions (like 
+      <p>Finally, you can apply the usual message-related functions (like
       <a class="link" href="gettingstarted.html#resend-message">
         <code class="literal">&lt;resend-message&gt;</code>
-      </a>, and the 
-      <code class="literal">&lt;reply&gt;</code>and 
-      <code class="literal">&lt;forward&gt;</code>functions) to attachments of type 
+      </a>, and the
+      <code class="literal">&lt;reply&gt;</code>and
+      <code class="literal">&lt;forward&gt;</code>functions) to attachments of type
       <code class="literal">message/rfc822</code>.</p>
-      <p>See table 
+      <p>See table
       <a class="xref" href="reference.html#tab-attachment-bindings" title="Table&#160;38.7.&#160;Default Attachment Menu Bindings">Table&#160;38.7, “Default Attachment Menu Bindings”</a>for all available functions.</p>
     </div>
     <div class="sect2">
@@ -127,14 +127,14 @@ title: Mutt's MIME Support
 - 1 [text/plain, 7bit, 1K]           /tmp/mutt-euler-8082-0 &lt;no description&gt;
   2 [applica/x-gunzip, base64, 422K] ~/src/mutt-0.85.tar.gz &lt;no description&gt;
 </pre>
-      <p>The 
+      <p>The
       <span class="quote">“
-      <span class="quote">-</span>”</span>denotes that Mutt will delete the file after sending (or postponing, or canceling) the message. It can be toggled with the 
-      <code class="literal">&lt;toggle-unlink&gt;</code>command (default: u). The next field is the MIME content-type, and can be changed with the 
-      <code class="literal">&lt;edit-type&gt;</code>command (default: ^T). The next field is the encoding for the attachment, which allows a binary message to be encoded for transmission on 7bit links. It can be changed with the 
-      <code class="literal">&lt;edit-encoding&gt;</code>command (default: ^E). The next field is the size of the attachment, rounded to kilobytes or megabytes. The next field is the filename, which can be changed with the 
-      <code class="literal">&lt;rename-file&gt;</code>command (default: R). The final field is the description of the attachment, and can be changed with the 
-      <code class="literal">&lt;edit-description&gt;</code>command (default: d). See 
+      <span class="quote">-</span>”</span>denotes that Mutt will delete the file after sending (or postponing, or canceling) the message. It can be toggled with the
+      <code class="literal">&lt;toggle-unlink&gt;</code>command (default: u). The next field is the MIME content-type, and can be changed with the
+      <code class="literal">&lt;edit-type&gt;</code>command (default: ^T). The next field is the encoding for the attachment, which allows a binary message to be encoded for transmission on 7bit links. It can be changed with the
+      <code class="literal">&lt;edit-encoding&gt;</code>command (default: ^E). The next field is the size of the attachment, rounded to kilobytes or megabytes. The next field is the filename, which can be changed with the
+      <code class="literal">&lt;rename-file&gt;</code>command (default: R). The final field is the description of the attachment, and can be changed with the
+      <code class="literal">&lt;edit-description&gt;</code>command (default: d). See
       <a class="link" href="reference.html#attach-format" title="3.16.&#160;attach_format">$attach_format</a>for a full list of available expandos to format this display to your needs.</p>
     </div>
   </div>
@@ -143,18 +143,18 @@ title: Mutt's MIME Support
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="mime-types"></a>2.&#160;MIME Type Configuration with 
+          <a class="offset" id="mime-types"></a>2.&#160;MIME Type Configuration with
           <code class="literal">mime.types</code></h2>
         </div>
       </div>
     </div>
-    <p>To get most out of MIME, it's important that a MIME part's content type matches the content as closely as possible so that the recipient's client can automatically select the right viewer for the content. However, there's no reliable for Mutt to know how to detect every possible file type. Instead, it uses a simple plain text mapping file that specifies what file extension corresponds to what MIME type. This file is called 
+    <p>To get most out of MIME, it's important that a MIME part's content type matches the content as closely as possible so that the recipient's client can automatically select the right viewer for the content. However, there's no reliable for Mutt to know how to detect every possible file type. Instead, it uses a simple plain text mapping file that specifies what file extension corresponds to what MIME type. This file is called
     <code class="literal">mime.types</code>.</p>
-    <p>When you add an attachment to your mail message, Mutt searches your personal 
-    <code class="literal">mime.types</code>file at 
-    <code class="literal">$HOME/.mime.types</code>, and then the system 
-    <code class="literal">mime.types</code>file at 
-    <code class="literal">/usr/local/share/mutt/mime.types</code>or 
+    <p>When you add an attachment to your mail message, Mutt searches your personal
+    <code class="literal">mime.types</code>file at
+    <code class="literal">$HOME/.mime.types</code>, and then the system
+    <code class="literal">mime.types</code>file at
+    <code class="literal">/usr/local/share/mutt/mime.types</code>or
     <code class="literal">/etc/mime.types</code></p>
     <p>Each line starts with the full MIME type, followed by a space and space-separated list of file extensions. For example you could use:</p>
     <div class="example">
@@ -172,13 +172,13 @@ audio/x-aiff                    aif aifc aiff
       </div>
     </div>
     <br class="example-break" />
-    <p>A sample 
+    <p>A sample
     <code class="literal">mime.types</code>file comes with the Mutt distribution, and should contain most of the MIME types you are likely to use.</p>
-    <p>If Mutt can not determine the MIME type by the extension of the file you attach, it will look at the file. If the file is free of binary information, Mutt will assume that the file is plain text, and mark it as 
-    <code class="literal">text/plain</code>. If the file contains binary information, then Mutt will mark it as 
-    <code class="literal">application/octet-stream</code>. You can change the MIME type that Mutt assigns to an attachment by using the 
-    <code class="literal">&lt;edit-type&gt;</code>command from the compose menu (default: ^T), see 
-    <a class="xref" href="mimesupport.html#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>for supported major types. Mutt recognizes all of these if the appropriate entry is found in the 
+    <p>If Mutt can not determine the MIME type by the extension of the file you attach, it will look at the file. If the file is free of binary information, Mutt will assume that the file is plain text, and mark it as
+    <code class="literal">text/plain</code>. If the file contains binary information, then Mutt will mark it as
+    <code class="literal">application/octet-stream</code>. You can change the MIME type that Mutt assigns to an attachment by using the
+    <code class="literal">&lt;edit-type&gt;</code>command from the compose menu (default: ^T), see
+    <a class="xref" href="mimesupport.html#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a>for supported major types. Mutt recognizes all of these if the appropriate entry is found in the
     <code class="literal">mime.types</code>file. Non-recognized mime types should only be used if the recipient of the message is likely to be expecting such attachments.</p>
     <div class="table">
       <a class="offset" id="supported-mime-types"></a>
@@ -268,7 +268,7 @@ audio/x-aiff                    aif aifc aiff
       </div>
     </div>
     <br class="table-break" />
-    <p>MIME types are not arbitrary, they need to be assigned by 
+    <p>MIME types are not arbitrary, they need to be assigned by
     <a class="ulink" href="http://www.iana.org/assignments/media-types/" target="_top">IANA</a>.</p>
   </div>
   <div class="sect1">
@@ -280,7 +280,7 @@ audio/x-aiff                    aif aifc aiff
         </div>
       </div>
     </div>
-    <p>Mutt supports RFC 1524 MIME Configuration, in particular the Unix specific format specified in Appendix A of RFC 1524. This file format is commonly referred to as the 
+    <p>Mutt supports RFC 1524 MIME Configuration, in particular the Unix specific format specified in Appendix A of RFC 1524. This file format is commonly referred to as the
     <span class="quote">“
     <span class="quote">mailcap</span>”</span>format. Many MIME compliant programs utilize the mailcap format, allowing you to specify handling for all MIME types in one place for all programs. Programs known to use this format include Firefox, lynx and metamail.</p>
     <p>In order to handle various MIME types that Mutt doesn't have built-in support for, it parses a series of external configuration files to find an external handler. The default search string for these files is a colon delimited list containing the following files:</p>
@@ -318,15 +318,15 @@ audio/x-aiff                    aif aifc aiff
         </li>
       </ol>
     </div>
-    <p>where 
-    <code class="literal">$HOME</code>is your home directory. The 
-    <code class="literal">$PKGDATADIR</code>and the 
+    <p>where
+    <code class="literal">$HOME</code>is your home directory. The
+    <code class="literal">$PKGDATADIR</code>and the
     <code class="literal">$SYSCONFDIR</code>directories depend on where Mutt is installed: the former is the default for shared data, the latter for system configuration files.</p>
     <p>The default search path can be obtained by running the following command:</p>
     <pre class="screen">
 mutt -nF /dev/null -Q mailcap_path
 </pre>
-    <p>In particular, the metamail distribution will install a mailcap file, usually as 
+    <p>In particular, the metamail distribution will install a mailcap file, usually as
     <code class="literal">/usr/local/etc/mailcap</code>, which contains some baseline entries.</p>
     <div class="sect2">
       <div class="titlepage">
@@ -340,27 +340,27 @@ mutt -nF /dev/null -Q mailcap_path
       <p>A mailcap file consists of a series of lines which are comments, blank, or definitions.</p>
       <p>A comment line consists of a # character followed by anything you want.</p>
       <p>A blank line is blank.</p>
-      <p>A definition line consists of a content type, a view command, and any number of optional fields. Each field of a definition line is divided by a semicolon 
+      <p>A definition line consists of a content type, a view command, and any number of optional fields. Each field of a definition line is divided by a semicolon
       <span class="quote">“
       <span class="quote">;</span>”</span>character.</p>
-      <p>The content type is specified in the MIME standard 
+      <p>The content type is specified in the MIME standard
       <span class="quote">“
-      <span class="quote">type/subtype</span>”</span>notation. For example, 
-      <code class="literal">text/plain</code>, 
-      <code class="literal">text/html</code>, 
-      <code class="literal">image/gif</code>, etc. In addition, the mailcap format includes two formats for wildcards, one using the special 
+      <span class="quote">type/subtype</span>”</span>notation. For example,
+      <code class="literal">text/plain</code>,
+      <code class="literal">text/html</code>,
+      <code class="literal">image/gif</code>, etc. In addition, the mailcap format includes two formats for wildcards, one using the special
       <span class="quote">“
-      <span class="quote">*</span>”</span>subtype, the other is the implicit wild, where you only include the major type. For example, 
-      <code class="literal">image/*</code>, or 
+      <span class="quote">*</span>”</span>subtype, the other is the implicit wild, where you only include the major type. For example,
+      <code class="literal">image/*</code>, or
       <code class="literal">video</code>will match all image types and video types, respectively.</p>
-      <p>The view command is a Unix command for viewing the type specified. There are two different types of commands supported. The default is to send the body of the MIME message to the command on stdin. You can change this behavior by using 
-      <code class="literal">%s</code>as a parameter to your view command. This will cause Mutt to save the body of the MIME message to a temporary file, and then call the view command with the 
-      <code class="literal">%s</code>replaced by the name of the temporary file. In both cases, Mutt will turn over the terminal to the view program until the program quits, at which time Mutt will remove the temporary file if it exists. This means that mailcap does 
+      <p>The view command is a Unix command for viewing the type specified. There are two different types of commands supported. The default is to send the body of the MIME message to the command on stdin. You can change this behavior by using
+      <code class="literal">%s</code>as a parameter to your view command. This will cause Mutt to save the body of the MIME message to a temporary file, and then call the view command with the
+      <code class="literal">%s</code>replaced by the name of the temporary file. In both cases, Mutt will turn over the terminal to the view program until the program quits, at which time Mutt will remove the temporary file if it exists. This means that mailcap does
       <span class="emphasis">
         <em>not</em>
-      </span>work out of the box with programs which detach themselves from the terminal right after starting, like 
+      </span>work out of the box with programs which detach themselves from the terminal right after starting, like
       <code class="literal">open</code>on Mac OS X. In order to nevertheless use these programs with mailcap, you probably need custom shell scripts.</p>
-      <p>So, in the simplest form, you can send a 
+      <p>So, in the simplest form, you can send a
       <code class="literal">text/plain</code>message to the external pager more on standard input:</p>
       <pre class="screen">
 text/plain; more
@@ -369,29 +369,29 @@ text/plain; more
       <pre class="screen">
 text/plain; more %s
 </pre>
-      <p>Perhaps you would like to use lynx to interactively view a 
+      <p>Perhaps you would like to use lynx to interactively view a
       <code class="literal">text/html</code>message:</p>
       <pre class="screen">
 text/html; lynx %s
 </pre>
-      <p>In this case, lynx does not support viewing a file from standard input, so you must use the 
+      <p>In this case, lynx does not support viewing a file from standard input, so you must use the
       <code class="literal">%s</code>syntax.</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>
           <span class="emphasis">
-            <em>Some older versions of lynx contain a bug where they will check the mailcap file for a viewer for 
+            <em>Some older versions of lynx contain a bug where they will check the mailcap file for a viewer for
             <code class="literal">text/html</code>. They will find the line which calls lynx, and run it. This causes lynx to continuously spawn itself to view the object.</em>
           </span>
         </p>
       </div>
-      <p>On the other hand, maybe you don't want to use lynx interactively, you just want to have it convert the 
-      <code class="literal">text/html</code>to 
+      <p>On the other hand, maybe you don't want to use lynx interactively, you just want to have it convert the
+      <code class="literal">text/html</code>to
       <code class="literal">text/plain</code>, then you can use:</p>
       <pre class="screen">
 text/html; lynx -dump %s | more
 </pre>
-      <p>Perhaps you wish to use lynx to view 
+      <p>Perhaps you wish to use lynx to view
       <code class="literal">text/html</code>files, and a pager on all other text formats, then you would use the following:</p>
       <pre class="screen">
 text/html; lynx %s
@@ -407,15 +407,15 @@ text/*; more
           </div>
         </div>
       </div>
-      <p>The interpretation of shell meta-characters embedded in MIME parameters can lead to security problems in general. Mutt tries to quote parameters in expansion of 
-      <code class="literal">%s</code>syntaxes properly, and avoids risky characters by substituting them, see the 
+      <p>The interpretation of shell meta-characters embedded in MIME parameters can lead to security problems in general. Mutt tries to quote parameters in expansion of
+      <code class="literal">%s</code>syntaxes properly, and avoids risky characters by substituting them, see the
       <a class="link" href="reference.html#mailcap-sanitize" title="3.139.&#160;mailcap_sanitize">$mailcap_sanitize</a>variable.</p>
       <p>Although Mutt's procedures to invoke programs with mailcap seem to be safe, there are other applications parsing mailcap, maybe taking less care of it. Therefore you should pay attention to the following rules:</p>
       <p>
       <span class="emphasis">
         <em>Keep the %-expandos away from shell quoting.</em>
       </span>Don't quote them with single or double quotes. Mutt does this for you, the right way, as should any other program which interprets mailcap. Don't put them into backtick expansions. Be highly careful with evil statements, and avoid them if possible at all. Trying to fix broken behavior with quotes introduces new leaks — there is no alternative to correct quoting in the first place.</p>
-      <p>If you have to use the %-expandos' values in context where you need quoting or backtick expansions, put that value into a shell variable and reference the shell variable where necessary, as in the following example (using 
+      <p>If you have to use the %-expandos' values in context where you need quoting or backtick expansions, put that value into a shell variable and reference the shell variable where necessary, as in the following example (using
       <code class="literal">$charset</code>inside the backtick expansion is safe, since it is not itself subject to any further expansion):</p>
       <pre class="screen">
 text/test-mailcap-bug; cat %s; copiousoutput; test=charset=%{charset} \
@@ -440,7 +440,7 @@ text/test-mailcap-bug; cat %s; copiousoutput; test=charset=%{charset} \
             </div>
           </div>
         </div>
-        <p>In addition to the required content-type and view command fields, you can add semi-colon 
+        <p>In addition to the required content-type and view command fields, you can add semi-colon
         <span class="quote">“
         <span class="quote">;</span>”</span>separated fields to set flags and other options. Mutt recognizes the following optional fields:</p>
         <div class="variablelist">
@@ -449,21 +449,21 @@ text/test-mailcap-bug; cat %s; copiousoutput; test=charset=%{charset} \
               <span class="term">copiousoutput</span>
             </dt>
             <dd>
-              <p>This flag tells Mutt that the command passes possibly large amounts of text on standard output. This causes Mutt to invoke a pager (either the internal pager or the external pager defined by the pager variable) on the output of the view command. Without this flag, Mutt assumes that the command is interactive. One could use this to replace the pipe to 
-              <code class="literal">more</code>in the 
+              <p>This flag tells Mutt that the command passes possibly large amounts of text on standard output. This causes Mutt to invoke a pager (either the internal pager or the external pager defined by the pager variable) on the output of the view command. Without this flag, Mutt assumes that the command is interactive. One could use this to replace the pipe to
+              <code class="literal">more</code>in the
               <code class="literal">lynx -dump</code>example in the Basic section:</p>
               <pre class="screen">
 text/html; lynx -dump %s ; copiousoutput
 </pre>
-              <p>This will cause lynx to format the 
-              <code class="literal">text/html</code>output as 
+              <p>This will cause lynx to format the
+              <code class="literal">text/html</code>output as
               <code class="literal">text/plain</code>and Mutt will use your standard pager to display the results.</p>
-              <p>Mutt will set the 
+              <p>Mutt will set the
               <code class="literal">COLUMNS</code>environment variable to the width of the pager. Some programs make use of this environment variable automatically. Others provide a command line argument that can use this to set the output width:</p>
               <pre class="screen">
 text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
 </pre>
-              <p>Note that when using the built-in pager, 
+              <p>Note that when using the built-in pager,
               <span class="emphasis">
                 <em>only</em>
               </span>entries with this flag will be considered a handler for a MIME type — all other entries will be ignored.</p>
@@ -472,16 +472,16 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
               <span class="term">needsterminal</span>
             </dt>
             <dd>
-              <p>Mutt uses this flag when viewing attachments with 
+              <p>Mutt uses this flag when viewing attachments with
               <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
                 <span class="command">
                   <strong>auto_view</strong>
                 </span>
-              </a>, in order to decide whether it should honor the setting of the 
-              <a class="link" href="reference.html#wait-key" title="3.381.&#160;wait_key">$wait_key</a>variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a 
+              </a>, in order to decide whether it should honor the setting of the
+              <a class="link" href="reference.html#wait-key" title="3.381.&#160;wait_key">$wait_key</a>variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
-              </span>flag, Mutt will use 
+              </span>flag, Mutt will use
               <a class="link" href="reference.html#wait-key" title="3.381.&#160;wait_key">$wait_key</a>and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
@@ -506,17 +506,17 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
               <span class="term">edit=&lt;command&gt;</span>
             </dt>
             <dd>
-              <p>This flag specifies the command to use to edit a specific MIME type. Mutt supports this from the compose menu, and also uses it to compose new attachments. Mutt will default to the defined 
+              <p>This flag specifies the command to use to edit a specific MIME type. Mutt supports this from the compose menu, and also uses it to compose new attachments. Mutt will default to the defined
               <a class="link" href="reference.html#editor" title="3.68.&#160;editor">$editor</a>for text attachments.</p>
             </dd>
             <dt>
               <span class="term">nametemplate=&lt;template&gt;</span>
             </dt>
             <dd>
-              <p>This field specifies the format for the file denoted by 
-              <code class="literal">%s</code>in the command fields. Certain programs will require a certain file extension, for instance, to correctly view a file. For instance, lynx will only interpret a file as 
-              <code class="literal">text/html</code>if the file ends in 
-              <code class="literal">.html</code>. So, you would specify lynx as a 
+              <p>This field specifies the format for the file denoted by
+              <code class="literal">%s</code>in the command fields. Certain programs will require a certain file extension, for instance, to correctly view a file. For instance, lynx will only interpret a file as
+              <code class="literal">text/html</code>if the file ends in
+              <code class="literal">.html</code>. So, you would specify lynx as a
               <code class="literal">text/html</code>viewer with a line in the mailcap file like:</p>
               <pre class="screen">
 text/html; lynx %s; nametemplate=%s.html
@@ -531,10 +531,10 @@ text/html; lynx %s; nametemplate=%s.html
 text/html; firefox -remote 'openURL(%s)' ; test=RunningX
 text/html; lynx %s
 </pre>
-              <p>In this example, Mutt will run the program 
-              <code class="literal">RunningX</code>which will return 0 if the X Window manager is running, and non-zero if it isn't. If 
-              <code class="literal">RunningX</code>returns 0, then Mutt will run firefox to display the 
-              <code class="literal">text/html</code>object. If RunningX doesn't return 0, then Mutt will go on to the next entry and use lynx to display the 
+              <p>In this example, Mutt will run the program
+              <code class="literal">RunningX</code>which will return 0 if the X Window manager is running, and non-zero if it isn't. If
+              <code class="literal">RunningX</code>returns 0, then Mutt will run firefox to display the
+              <code class="literal">text/html</code>object. If RunningX doesn't return 0, then Mutt will go on to the next entry and use lynx to display the
               <code class="literal">text/html</code>object.</p>
             </dd>
           </dl>
@@ -549,23 +549,23 @@ text/html; lynx %s
             </div>
           </div>
         </div>
-        <p>When searching for an entry in the mailcap file, Mutt will search for the most useful entry for its purpose. For instance, if you are attempting to print an 
+        <p>When searching for an entry in the mailcap file, Mutt will search for the most useful entry for its purpose. For instance, if you are attempting to print an
         <code class="literal">image/gif</code>, and you have the following entries in your mailcap file, Mutt will search for an entry with the print command:</p>
         <pre class="screen">
 image/*;        xv %s
 image/gif;      ; print= anytopnm %s | pnmtops | lpr; \
                 nametemplate=%s.gif
 </pre>
-        <p>Mutt will skip the 
-        <code class="literal">image/*</code>entry and use the 
+        <p>Mutt will skip the
+        <code class="literal">image/*</code>entry and use the
         <code class="literal">image/gif</code>entry with the print command.</p>
-        <p>In addition, you can use this with 
+        <p>In addition, you can use this with
         <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
           <span class="command">
             <strong>auto_view</strong>
           </span>
-        </a>to denote two commands for viewing an attachment, one to be viewed automatically, the other to be viewed interactively from the attachment menu using the 
-        <code class="literal">&lt;view-mailcap&gt;</code>function (bound to 
+        </a>to denote two commands for viewing an attachment, one to be viewed automatically, the other to be viewed interactively from the attachment menu using the
+        <code class="literal">&lt;view-mailcap&gt;</code>function (bound to
         <span class="quote">“
         <span class="quote">m</span>”</span>by default). In addition, you can then use the test feature to determine which viewer to use interactively depending on your environment.</p>
         <pre class="screen">
@@ -573,19 +573,19 @@ text/html;      firefox -remote 'openURL(%s)' ; test=RunningX
 text/html;      lynx %s; nametemplate=%s.html
 text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
 </pre>
-        <p>For 
+        <p>For
         <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
           <span class="command">
             <strong>auto_view</strong>
           </span>
-        </a>, Mutt will choose the third entry because of the 
-        <code class="literal">copiousoutput</code>tag. For interactive viewing, Mutt will run the program 
-        <code class="literal">RunningX</code>to determine if it should use the first entry. If the program returns non-zero, Mutt will use the second entry for interactive viewing. The last entry is for inline display in the pager and the 
+        </a>, Mutt will choose the third entry because of the
+        <code class="literal">copiousoutput</code>tag. For interactive viewing, Mutt will run the program
+        <code class="literal">RunningX</code>to determine if it should use the first entry. If the program returns non-zero, Mutt will use the second entry for interactive viewing. The last entry is for inline display in the pager and the
         <code class="literal">&lt;view-attach&gt;</code>function in the attachment menu.</p>
-        <p>Entries with the 
-        <code class="literal">copiousoutput</code>tag should always be specified as the last one per type. For non-interactive use, the last entry will then actually be the first matching one with the tag set. For non-interactive use, only 
-        <code class="literal">copiousoutput</code>-tagged entries are considered. For interactive use, Mutt ignores this tag and treats all entries equally. Therefore, if not specified last, all following entries without this tag would never be considered for 
-        <code class="literal">&lt;view-attach&gt;</code>because the 
+        <p>Entries with the
+        <code class="literal">copiousoutput</code>tag should always be specified as the last one per type. For non-interactive use, the last entry will then actually be the first matching one with the tag set. For non-interactive use, only
+        <code class="literal">copiousoutput</code>-tagged entries are considered. For interactive use, Mutt ignores this tag and treats all entries equally. Therefore, if not specified last, all following entries without this tag would never be considered for
+        <code class="literal">&lt;view-attach&gt;</code>because the
         <code class="literal">copiousoutput</code>before them matched already.</p>
       </div>
       <div class="sect3">
@@ -597,9 +597,9 @@ text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
             </div>
           </div>
         </div>
-        <p>The various commands defined in the mailcap files are passed to the 
-        <code class="literal">/bin/sh</code>shell using the 
-        <code class="literal">system(3)</code>function. Before the command is passed to 
+        <p>The various commands defined in the mailcap files are passed to the
+        <code class="literal">/bin/sh</code>shell using the
+        <code class="literal">system(3)</code>function. Before the command is passed to
         <code class="literal">/bin/sh -c</code>, it is parsed to expand various special parameters with information from Mutt. The keywords Mutt expands are:</p>
         <div class="variablelist">
           <dl class="variablelist">
@@ -613,9 +613,9 @@ text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
               <span class="term">%t</span>
             </dt>
             <dd>
-              <p>Mutt will expand 
-              <code class="literal">%t</code>to the text representation of the content type of the message in the same form as the first parameter of the mailcap definition line, i.e. 
-              <code class="literal">text/html</code>or 
+              <p>Mutt will expand
+              <code class="literal">%t</code>to the text representation of the content type of the message in the same form as the first parameter of the mailcap definition line, i.e.
+              <code class="literal">text/html</code>or
               <code class="literal">image/gif</code>.</p>
             </dd>
             <dt>
@@ -626,8 +626,8 @@ text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
               <pre class="screen">
 Content-Type: text/plain; charset=iso-8859-1
 </pre>
-              <p>then Mutt will expand 
-              <code class="literal">%{charset}</code>to 
+              <p>then Mutt will expand
+              <code class="literal">%{charset}</code>to
               <span class="quote">“
               <span class="quote">iso-8859-1</span>”</span>. The default metamail mailcap file uses this feature to test the charset to spawn an xterm using the right charset to view the message.</p>
             </dd>
@@ -635,13 +635,13 @@ Content-Type: text/plain; charset=iso-8859-1
               <span class="term">\%</span>
             </dt>
             <dd>
-              <p>This will be replaced by a literal 
+              <p>This will be replaced by a literal
               <code class="literal">%</code>.</p>
             </dd>
           </dl>
         </div>
-        <p>Mutt does not currently support the 
-        <code class="literal">%F</code>and 
+        <p>Mutt does not currently support the
+        <code class="literal">%F</code>and
         <code class="literal">%n</code>keywords specified in RFC 1524. The main purpose of these parameters is for multipart messages, which is handled internally by Mutt.</p>
       </div>
     </div>
@@ -718,23 +718,23 @@ application/ms-excel; open.pl %s
       <code class="command">auto_view</code>
       <em class="replaceable">
         <code>mimetype</code>
-      </em>[ 
+      </em>[
       <em class="replaceable">
         <code>mimetype</code>
       </em>...]
       <br />
-      <code class="command">unauto_view</code>{ 
+      <code class="command">unauto_view</code>{
       <em class="replaceable">
         <code>*</code>
-      </em>| 
+      </em>|
       <em class="replaceable">
         <code>mimetype</code>
       </em>... }</p>
     </div>
     <p>In addition to explicitly telling Mutt to view an attachment with the MIME viewer defined in the mailcap file from the attachments menu, Mutt has support for automatically viewing MIME attachments while in the pager.</p>
-    <p>For this to work, you must define a viewer in the mailcap file which uses the 
+    <p>For this to work, you must define a viewer in the mailcap file which uses the
     <code class="literal">copiousoutput</code>option to denote that it is non-interactive. Usually, you also use the entry to convert the attachment to a text representation which you can view in the pager.</p>
-    <p>You then use the 
+    <p>You then use the
     <span class="command">
       <strong>auto_view</strong>
     </span>configuration command to list the content-types that you wish to view automatically. For instance, if you set it to:</p>
@@ -754,15 +754,15 @@ application/postscript; ps2ascii %s; copiousoutput
     <p>
     <span class="command">
       <strong>unauto_view</strong>
-    </span>can be used to remove previous entries from the 
+    </span>can be used to remove previous entries from the
     <span class="command">
       <strong>auto_view</strong>
-    </span>list. This can be used with 
+    </span>list. This can be used with
     <a class="link" href="configuration.html#message-hook" title="20.&#160;Change Settings Before Formatting a Message">
       <span class="command">
         <strong>message-hook</strong>
       </span>
-    </a>to autoview messages based on size, etc. 
+    </a>to autoview messages based on size, etc.
     <span class="quote">“
     <span class="quote">
     <span class="command">
@@ -778,14 +778,14 @@ application/postscript; ps2ascii %s; copiousoutput
         </div>
       </div>
     </div>
-    <p>The 
+    <p>The
     <code class="literal">multipart/alternative</code>container type only has child MIME parts which represent the same content in an alternative way. This is often used to send HTML messages which contain an alternative plain text representation.</p>
-    <p>Mutt has some heuristics for determining which attachment of a 
+    <p>Mutt has some heuristics for determining which attachment of a
     <code class="literal">multipart/alternative</code>type to display:</p>
     <div class="orderedlist">
       <ol class="orderedlist" type="1">
         <li class="listitem">
-          <p>First, Mutt will check the 
+          <p>First, Mutt will check the
           <span class="command">
             <strong>alternative_order</strong>
           </span>list to determine if one of the available types is preferred. It consists of a number of MIME types in order, including support for implicit and explicit wildcards. For example:</p>
@@ -795,7 +795,7 @@ alternative_order text/enriched text/plain text \
 </pre>
         </li>
         <li class="listitem">
-          <p>Next, Mutt will check if any of the types have a defined 
+          <p>Next, Mutt will check if any of the types have a defined
           <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">
             <span class="command">
               <strong>auto_view</strong>
@@ -810,10 +810,10 @@ alternative_order text/enriched text/plain text \
         </li>
       </ol>
     </div>
-    <p>To remove a MIME type from the 
+    <p>To remove a MIME type from the
     <span class="command">
       <strong>alternative_order</strong>
-    </span>list, use the 
+    </span>list, use the
     <span class="command">
       <strong>unalternative_order</strong>
     </span>command.</p>
@@ -827,14 +827,14 @@ alternative_order text/enriched text/plain text \
         </div>
       </div>
     </div>
-    <p>If you ever lose track of attachments in your mailboxes, Mutt's attachment-counting and -searching support might be for you. You can make your message index display the number of qualifying attachments in each message, or search for messages by attachment count. You also can configure what kinds of attachments qualify for this feature with the 
+    <p>If you ever lose track of attachments in your mailboxes, Mutt's attachment-counting and -searching support might be for you. You can make your message index display the number of qualifying attachments in each message, or search for messages by attachment count. You also can configure what kinds of attachments qualify for this feature with the
     <span class="command">
       <strong>attachments</strong>
-    </span>and 
+    </span>and
     <span class="command">
       <strong>unattachments</strong>
     </span>commands.</p>
-    <p>In order to provide this information, Mutt needs to fully MIME-parse all messages affected first. This can slow down operation especially for remote mail folders such as IMAP because all messages have to be downloaded first regardless whether the user really wants to view them or not though using 
+    <p>In order to provide this information, Mutt needs to fully MIME-parse all messages affected first. This can slow down operation especially for remote mail folders such as IMAP because all messages have to be downloaded first regardless whether the user really wants to view them or not though using
     <a class="xref" href="optionalfeatures.html#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a>usually means to download the message just once.</p>
     <p>The syntax is:</p>
     <div class="cmdsynopsis">
@@ -864,44 +864,44 @@ alternative_order text/enriched text/plain text \
     <p>
     <span class="emphasis">
       <em>disposition</em>
-    </span>is the attachment's Content-Disposition type — either 
-    <code class="literal">inline</code>or 
-    <code class="literal">attachment</code>. You can abbreviate this to 
-    <code class="literal">I</code>or 
+    </span>is the attachment's Content-Disposition type — either
+    <code class="literal">inline</code>or
+    <code class="literal">attachment</code>. You can abbreviate this to
+    <code class="literal">I</code>or
     <code class="literal">A</code>.</p>
-    <p>Disposition is prefixed by either a 
+    <p>Disposition is prefixed by either a
     <span class="quote">“
-    <span class="quote">+</span>”</span>symbol or a 
+    <span class="quote">+</span>”</span>symbol or a
     <span class="quote">“
-    <span class="quote">-</span>”</span>symbol. If it's a 
+    <span class="quote">-</span>”</span>symbol. If it's a
     <span class="quote">“
-    <span class="quote">+</span>”</span>, you're saying that you want to allow this disposition and MIME type to qualify. If it's a 
+    <span class="quote">+</span>”</span>, you're saying that you want to allow this disposition and MIME type to qualify. If it's a
     <span class="quote">“
-    <span class="quote">-</span>”</span>, you're saying that this disposition and MIME type is an exception to previous 
+    <span class="quote">-</span>”</span>, you're saying that this disposition and MIME type is an exception to previous
     <span class="quote">“
     <span class="quote">+</span>”</span>rules. There are examples below of how this is useful.</p>
     <p>
     <span class="emphasis">
       <em>mime-type</em>
-    </span>is the MIME type of the attachment you want the command to affect. A MIME type is always of the format 
-    <code class="literal">major/minor</code>, where 
-    <code class="literal">major</code>describes the broad category of document you're looking at, and 
-    <code class="literal">minor</code>describes the specific type within that category. The major part of mime-type must be literal text (or the special token 
+    </span>is the MIME type of the attachment you want the command to affect. A MIME type is always of the format
+    <code class="literal">major/minor</code>, where
+    <code class="literal">major</code>describes the broad category of document you're looking at, and
+    <code class="literal">minor</code>describes the specific type within that category. The major part of mime-type must be literal text (or the special token
     <span class="quote">“
     <span class="quote">
       <code class="literal">*</code>
-    </span>”</span>), but the minor part may be a regular expression. (Therefore, 
+    </span>”</span>), but the minor part may be a regular expression. (Therefore,
     <span class="quote">“
     <span class="quote">
       <code class="literal">*/.*</code>
     </span>”</span>matches any MIME type.)</p>
-    <p>The MIME types you give to the 
+    <p>The MIME types you give to the
     <span class="command">
       <strong>attachments</strong>
-    </span>directive are a kind of pattern. When you use the 
+    </span>directive are a kind of pattern. When you use the
     <span class="command">
       <strong>attachments</strong>
-    </span>directive, the patterns you specify are added to a list. When you use 
+    </span>directive, the patterns you specify are added to a list. When you use
     <span class="command">
       <strong>unattachments</strong>
     </span>, the pattern is removed from the list. The patterns are not expanded and matched to specific MIME types at this time — they're just text in a list. They're only matched when actually evaluating a message.</p>
@@ -967,7 +967,7 @@ attachments   -I message/external-body
       </div>
     </div>
     <br class="example-break" />
-    <p>Entering the command 
+    <p>Entering the command
     <span class="quote">“
     <span class="quote">
     <span class="command">
@@ -989,39 +989,39 @@ attachments   -I message/external-body
       <code class="command">mime_lookup</code>
       <em class="replaceable">
         <code>mimetype</code>
-      </em>[ 
+      </em>[
       <em class="replaceable">
         <code>mimetype</code>
       </em>...]
       <br />
-      <code class="command">unmime_lookup</code>{ 
+      <code class="command">unmime_lookup</code>{
       <em class="replaceable">
         <code>*</code>
-      </em>| 
+      </em>|
       <em class="replaceable">
         <code>mimetype</code>
       </em>... }</p>
     </div>
-    <p>Mutt's 
+    <p>Mutt's
     <span class="command">
       <strong>mime_lookup</strong>
-    </span>list specifies a list of MIME types that should 
+    </span>list specifies a list of MIME types that should
     <span class="emphasis">
       <em>not</em>
-    </span>be treated according to their mailcap entry. This option is designed to deal with binary types such as 
-    <code class="literal">application/octet-stream</code>. When an attachment's MIME type is listed in 
+    </span>be treated according to their mailcap entry. This option is designed to deal with binary types such as
+    <code class="literal">application/octet-stream</code>. When an attachment's MIME type is listed in
     <span class="command">
       <strong>mime_lookup</strong>
-    </span>, then the extension of the filename will be compared to the list of extensions in the 
-    <code class="literal">mime.types</code>file. The MIME type associated with this extension will then be used to process the attachment according to the rules in the mailcap file and according to any other configuration options (such as 
+    </span>, then the extension of the filename will be compared to the list of extensions in the
+    <code class="literal">mime.types</code>file. The MIME type associated with this extension will then be used to process the attachment according to the rules in the mailcap file and according to any other configuration options (such as
     <span class="command">
       <strong>auto_view</strong>
     </span>) specified. Common usage would be:</p>
     <pre class="screen">
 mime_lookup application/octet-stream application/X-Lotus-Manuscript
 </pre>
-    <p>In addition, the 
-    <code class="literal">unmime_lookup</code>command may be used to disable this feature for any particular MIME type if it had been set, for example, in a global 
+    <p>In addition, the
+    <code class="literal">unmime_lookup</code>command may be used to disable this feature for any particular MIME type if it had been set, for example, in a global
     <code class="literal">.muttrc</code>.</p>
   </div>
 </div>

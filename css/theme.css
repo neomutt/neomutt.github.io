@@ -220,7 +220,7 @@ tr:nth-child(odd) {
 
 tr:nth-child(even), th {
   background: #f4f4f4;
-} 
+}
 
 a:link, a:visited {
   color: #00a;
