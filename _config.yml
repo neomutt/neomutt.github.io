@@ -42,12 +42,10 @@ exclude:
   - CNAME
 
 collections:
-  features:
+  feature:
     output: true
-    permalink: /feature/:path/
   contrib:
     output: true
-    permalink: /contrib/:path/
 
 gems:
   - jekyll-paginate

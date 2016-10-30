@@ -1,7 +1,7 @@
 ---
 layout: features
-title: Quasi-Delete
-description: Mark emails that should be hidden, but not deleted
+title: Initials Expando
+description: Expando for author's initials
 status: stable
 ---
 {% raw %}
@@ -10,11 +10,11 @@ status: stable
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="feature/quasi-delete"></a>Quasi-Delete Feature</h1>
+        <a class="offset" id="feature/initials"></a>Initials Expando Feature</h1>
       </div>
       <div>
         <h3 class="subtitle">
-          <em>Mark emails that should be hidden, but not deleted</em>
+          <em>Expando for author's initials</em>
         </h3>
       </div>
     </div>
@@ -30,9 +30,9 @@ status: stable
     </div>
     <p>To check if NeoMutt supports
     <span class="quote">“
-    <span class="quote">Quasi-Delete</span>”</span>, look for
+    <span class="quote">Initials</span>”</span>, look for
     <span class="quote">“
-    <span class="quote">patch-quasi-delete</span>”</span>in the version info. See:
+    <span class="quote">patch-initials</span>”</span>in the version info. See:
     <a class="xref" href="/manual/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
     <div class="itemizedlist">
       <p class="title">
@@ -58,53 +58,21 @@ status: stable
     </div>
     <p>The
     <span class="quote">“
-    <span class="quote">quasi-delete</span>”</span>function marks an email that should be hidden from the index, but NOT deleted.</p>
-    <p>On its own, this feature isn't very useful. It forms a useful part of the notmuch plugin.</p>
+    <span class="quote">initials</span>”</span>patch adds an expando (%I) for an author's initials.</p>
+    <p>The index panel displays a list of emails. Its layout is controlled by the
+    <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="functions"></a>3.&#160;Functions</h2>
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
-    <div class="table">
-      <a class="offset" id="table-quasi-delete-functions"></a>
-      <p class="title">
-        <strong>Table&#160;27.1.&#160;Quasi-Delete Functions</strong>
-      </p>
-      <div class="table-contents">
-        <table summary="Quasi-Delete Functions" border="1">
-          <colgroup>
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Menus</th>
-              <th>Default Key</th>
-              <th>Function</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>index,pager</td>
-              <td>(none)</td>
-              <td>
-                <code class="literal">&lt;quasi-delete&gt;</code>
-              </td>
-              <td>delete from mutt, don't touch on disk</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <br class="table-break" />
+    <p>This feature has no config of its own. It adds an expando which can be used in the
+    <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -116,13 +84,33 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the quasi-delete feature.
+<span class="comment"># Example NeoMutt config file for the initials feature.
 
-# The 'quasi-delete' function marks an email that should be hidden
-# from the index, but NOT deleted.</span>
-bind index,pager Q quasi-delete
+# The 'initials' feature has no config of its own.
+# It adds an expando for an author's initials,
+# which can be used in the 'index_format' variable.
 
-<span class="comment"># vim: syntax=muttrc</span>
+# The default 'index_format' is:</span>
+set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
+
+<span class="comment"># Where %L represents the author/recipient
+
+# This might look like:
+#       1   + Nov 17 David Bowie   Changesbowie    ( 689)
+#       2   ! Nov 17 Stevie Nicks  Rumours         ( 555)
+#       3   + Nov 16 Jimi Hendrix  Voodoo Child    ( 263)
+#       4   + Nov 16 Debbie Harry  Parallel Lines  ( 540)
+
+# Using the %I expando:</span>
+set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
+
+<span class="comment"># This might look like:
+#       1   + Nov 17 DB Changesbowie    ( 689)
+#       2   ! Nov 17 SN Rumours         ( 555)
+#       3   + Nov 16 JH Voodoo Child    ( 263)
+#       4   + Nov 16 DH Parallel Lines  ( 540)
+
+# vim: syntax=muttrc</span>
 </pre>
   </div>
   <div class="sect1">
@@ -143,7 +131,17 @@ bind index,pager Q quasi-delete
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="../notmuch" title="Notmuch Feature">notmuch patch</a>
+            <a class="link" href="/manual/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/index-color" title="Index Color Feature">index-color patch</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/manual/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>
@@ -172,9 +170,9 @@ bind index,pager Q quasi-delete
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
-          <p>Karel Zak
+          <p>Vsevolod Volkov
           <code class="email">&lt;
-          <a class="email" href="mailto:kzak@redhat.com">kzak@redhat.com</a>&gt;</code></p>
+          <a class="email" href="mailto:vvv@mutt.org.ua">vvv@mutt.org.ua</a>&gt;</code></p>
         </li>
         <li class="listitem">
           <p>Richard Russon
