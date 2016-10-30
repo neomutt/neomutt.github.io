@@ -48,10 +48,6 @@ collections:
   contrib:
     output: true
     permalink: /contrib/:path/
-  bugs:
-    output: false
-  tasks:
-    output: false
 
 gems:
   - jekyll-paginate
