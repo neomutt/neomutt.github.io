@@ -3,9 +3,9 @@
 
     <ul>
         {% for f in site.features %}
-	  {% if f.status == 'ignore' %}
-	    {% continue %}
-	  {% endif %}
+          {% if f.status == 'ignore' %}
+            {% continue %}
+          {% endif %}
           {% if f.url == page.url %}
             <li class="current">
           {% else %}
