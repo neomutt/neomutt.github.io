@@ -238,3 +238,9 @@ a.devel, span.warning {
   text-align: center;
 }
 
+div.author {
+  padding: 1em;
+  border-radius: 10px;
+  font-weight: bold;
+  background: #ccc;
+}

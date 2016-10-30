@@ -14,6 +14,10 @@
                 </div>
             </div>
           </div>
+          <div class="author">
+            {% assign person = site.data.people[page.author] %}
+            <a href="{{ person.github }}">{{ person.name }} ({{ page.author }})</h2>
+          </div>
           <div class="pagination">
               {% if page.previous %}
                 <a class="btn btn-default" href="{{ page.previous.url }}" class="previous">Older</a>
@@ -22,7 +26,6 @@
                 <a class="btn btn-default" href="{{ page.next.url }}" class="next">Newer</a>
               {% endif %}
           </div>
-
         </div>
     </div>
 </div>
