@@ -42,9 +42,23 @@ exclude:
   - CNAME
 
 collections:
+  contrib:
+    output: true
+  dev:
+    output: true
+  distro:
+    output: true
   feature:
     output: true
-  contrib:
+  howto:
+    output: true
+  man:
+    output: true
+  person:
+    output: true
+  rfc:
+    output: true
+  run:
     output: true
 
 gems:
