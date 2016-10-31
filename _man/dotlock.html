@@ -1,0 +1,286 @@
+---
+layout: man
+command: mutt_dotlock
+description: Lock mail spool files.
+---
+{% raw %}
+<div class="refentry">
+  <a class="offset" id="dotlockman"></a>
+  <div class="titlepage" />
+  <div class="refnamediv">
+    <h2>Name</h2>
+    <p>mutt_dotlock — Lock mail spool files.</p>
+  </div>
+  <div class="refsynopsisdiv">
+    <a class="offset" id="synopsis"></a>
+    <h2>Synopsis</h2>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt_dotlock</code>[ -t | -f | -u | -d ] [-p ] [-r 
+      <em class="replaceable">
+        <code>retries</code>
+      </em>] 
+      <em class="replaceable">
+        <code>file</code>
+      </em></p>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="description"></a>
+    <h2>DESCRIPTION</h2>
+    <p>
+    <span class="command">
+      <strong>mutt_dotlock</strong>
+    </span>implements the traditional mail spool file locking method: To lock 
+    <span class="emphasis">
+      <em>file</em>
+    </span>, a file named 
+    <span class="emphasis">
+      <em>file</em>
+    </span>.lock is created. The program operates with group mail privileges if necessary.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="options"></a>
+    <h2>OPTIONS</h2>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">-t</span>
+        </dt>
+        <dd>
+          <p>Just try. 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>won't actually lock a file, but inform the invoking process if it's at all possible to lock 
+          <span class="emphasis">
+            <em>file</em>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">-f</span>
+        </dt>
+        <dd>
+          <p>Force the lock. If another process holds a lock on 
+          <span class="emphasis">
+            <em>file</em>
+          </span>longer than a certain amount of time, 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>will break that lock by removing the lockfile.</p>
+        </dd>
+        <dt>
+          <span class="term">-u</span>
+        </dt>
+        <dd>
+          <p>Unlock. 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>will remove 
+          <span class="emphasis">
+            <em>file</em>
+          </span>.lock.</p>
+        </dd>
+        <dt>
+          <span class="term">-d</span>
+        </dt>
+        <dd>
+          <p>Delete. 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>will lock 
+          <span class="emphasis">
+            <em>file</em>
+          </span>, remove it if it has length 0, and afterwards remove 
+          <span class="emphasis">
+            <em>file</em>
+          </span>.lock.</p>
+        </dd>
+        <dt>
+          <span class="term">-p</span>
+        </dt>
+        <dd>
+          <p>Use privileges. If given this option, 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>will operate with group mail privileges when creating and deleting lock files.</p>
+        </dd>
+        <dt>
+          <span class="term">-r 
+          <span class="emphasis">
+            <em>retries</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>This command line option tells 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>to try locking 
+          <span class="emphasis">
+            <em>retries</em>
+          </span>times before giving up or (if invoked with the 
+          <code class="option">-f</code>command line option) break a lock. The default value is 5. 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>waits one second between successive locking attempts.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="files"></a>
+    <h2>FILES</h2>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">
+          <span class="emphasis">
+            <em>file</em>
+          </span>.lock</span>
+        </dt>
+        <dd>
+          <p>The lock file 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>generates.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="see_also"></a>
+    <h2>SEE ALSO</h2>
+    <p>
+    <span class="citerefentry">
+    <span class="refentrytitle">fcntl</span>(2)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">flock</span>(2)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">lockfile</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">mutt</span>(1)</span></p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="diagnostics"></a>
+    <h2>DIAGNOSTICS</h2>
+    <p>
+    <span class="command">
+      <strong>mutt_dotlock</strong>
+    </span>gives all diagnostics in its return values:</p>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">
+            <strong class="userinput">
+              <code>0 - DL_EX_OK</code>
+            </strong>
+          </span>
+        </dt>
+        <dd>
+          <p>The program was successful.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <strong class="userinput">
+              <code>1 - DL_EX_ERROR</code>
+            </strong>
+          </span>
+        </dt>
+        <dd>
+          <p>An unspecified error such as bad command line parameters, lack of system memory and the like has occurred.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <strong class="userinput">
+              <code>3 - DL_EX_EXIST</code>
+            </strong>
+          </span>
+        </dt>
+        <dd>
+          <p>The user wants to lock a file which has been locked by another process already. If 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>is invoked with the 
+          <code class="option">-f</code>command line option, 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>won't generate this error, but break other processes' locks.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <strong class="userinput">
+              <code>4 - DL_EX_NEED_RPIVS</code>
+            </strong>
+          </span>
+        </dt>
+        <dd>
+          <p>This return value only occurs if 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>has been invoked with the 
+          <code class="option">-t</code>command line option. It means that 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>will have to use its group mail privileges to lock 
+          <span class="emphasis">
+            <em>file</em>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <strong class="userinput">
+              <code>5 - DL_EX_IMPOSSIBLE</code>
+            </strong>
+          </span>
+        </dt>
+        <dd>
+          <p>This return value only occurs if 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>has been invoked with the 
+          <code class="option">-t</code>command line option. It means that 
+          <span class="command">
+            <strong>mutt_dotlock</strong>
+          </span>is unable to lock 
+          <span class="emphasis">
+            <em>file</em>
+          </span>even with group mail privileges.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="notes"></a>
+    <h2>NOTES</h2>
+    <p>
+    <span class="command">
+      <strong>mutt_dotlock</strong>
+    </span>tries to implement an NFS-safe dotlocking method which was borrowed from 
+    <span class="emphasis">
+      <em>lockfile</em>
+    </span>(1).</p>
+    <p>If the user can't open 
+    <span class="emphasis">
+      <em>file</em>
+    </span>for reading with his normal privileges, 
+    <span class="command">
+      <strong>mutt_dotlock</strong>
+    </span>will return the 
+    <span class="emphasis">
+      <em>DL_EX_ERROR</em>
+    </span>exit value to avoid certain attacks against other users' spool files. The code carefully avoids race conditions when checking permissions; for details of all this see the comments in dotlock.c.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="history"></a>
+    <h2>HISTORY</h2>
+    <p>
+    <span class="command">
+      <strong>mutt_dotlock</strong>
+    </span>is part of the Mutt mail user agent package. It has been created to avoid running mutt with group mail privileges.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="author"></a>
+    <h2>AUTHOR</h2>
+    <p>Thomas Roessler &lt;roessler@does-not-exist.org&gt;</p>
+  </div>
+</div>
+{% endraw %}

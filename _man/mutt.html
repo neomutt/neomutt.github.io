@@ -1,0 +1,643 @@
+---
+layout: man
+command: mutt
+description: The Mutt Mail User Agent
+---
+{% raw %}
+<div class="refentry">
+  <a class="offset" id="muttman"></a>
+  <div class="titlepage" />
+  <div class="refnamediv">
+    <h2>Name</h2>
+    <p>mutt — The Mutt Mail User Agent</p>
+  </div>
+  <div class="refsynopsisdiv">
+    <a class="offset" id="synopsis"></a>
+    <h2>Synopsis</h2>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt</code>[-GnRyzZ ] [-e 
+      <em class="replaceable">
+        <code>cmd</code>
+      </em>] [-F 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] [-g 
+      <em class="replaceable">
+        <code>server</code>
+      </em>] [-m 
+      <em class="replaceable">
+        <code>type</code>
+      </em>] [-f 
+      <em class="replaceable">
+        <code>file</code>
+      </em>]</p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt</code>[-Enx ] [-e 
+      <em class="replaceable">
+        <code>cmd</code>
+      </em>] [-F 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] [-H 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] [-i 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] [-s 
+      <em class="replaceable">
+        <code>subj</code>
+      </em>] [-b 
+      <em class="replaceable">
+        <code>addr</code>
+      </em>] [-c 
+      <em class="replaceable">
+        <code>addr</code>
+      </em>] [ -a 
+      <em class="replaceable">
+        <code>file</code>
+      </em>
+      <em class="replaceable">
+        <code>.[..]</code>
+      </em>-- ] 
+      <em class="replaceable">
+        <code>addr</code>
+      </em>| 
+      <em class="replaceable">
+        <code>mailto_url</code>
+      </em>| 
+      <em class="replaceable">
+        <code>.[..]</code>
+      </em>
+      <em class="replaceable">
+        <code>mutt</code>
+      </em>[-nx ] [-e 
+      <em class="replaceable">
+        <code>cmd</code>
+      </em>] [-F 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] [-s 
+      <em class="replaceable">
+        <code>subj</code>
+      </em>] [-b 
+      <em class="replaceable">
+        <code>addr</code>
+      </em>] [-c 
+      <em class="replaceable">
+        <code>addr</code>
+      </em>] [ -a 
+      <em class="replaceable">
+        <code>file</code>
+      </em>
+      <em class="replaceable">
+        <code>.[..]</code>
+      </em>-- ] 
+      <em class="replaceable">
+        <code>addr</code>
+      </em>| 
+      <em class="replaceable">
+        <code>mailto_url</code>
+      </em>| 
+      <em class="replaceable">
+        <code>.[..]</code>
+      </em>| 
+      <em class="replaceable">
+        <code>&lt;</code>
+      </em>| 
+      <em class="replaceable">
+        <code>message</code>
+      </em>
+      <em class="replaceable">
+        <code>mutt</code>
+      </em>[-n ] [-e 
+      <em class="replaceable">
+        <code>cmd</code>
+      </em>] [-F 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] -p</p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt</code>[-n ] [-e 
+      <em class="replaceable">
+        <code>cmd</code>
+      </em>] [-F 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] -A 
+      <em class="replaceable">
+        <code>alias</code>
+      </em></p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt</code>[-n ] [-e 
+      <em class="replaceable">
+        <code>cmd</code>
+      </em>] [-F 
+      <em class="replaceable">
+        <code>file</code>
+      </em>] -Q 
+      <em class="replaceable">
+        <code>query</code>
+      </em></p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt</code>-v [ 
+      <em class="replaceable">
+        <code>v</code>
+      </em>]</p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">mutt</code>-D</p>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="description"></a>
+    <h2>DESCRIPTION</h2>
+    <p>Mutt is a small but very powerful text based program for reading and sending electronic mail under unix operating systems, including support for color terminals, MIME, OpenPGP, and a threaded sorting mode.</p>
+    <p>
+    <span class="emphasis">
+      <em>Note:</em>
+    </span>
+    <span class="emphasis">
+      <em>This</em>
+    </span>manual 
+    <span class="emphasis">
+      <em>page</em>
+    </span>gives 
+    <span class="emphasis">
+      <em>a</em>
+    </span>brief 
+    <span class="emphasis">
+      <em>overview</em>
+    </span>of 
+    <span class="emphasis">
+      <em>mutt's</em>
+    </span>command 
+    <span class="emphasis">
+      <em>line</em>
+    </span>options. You should find a copy of the full manual in @docdir@, in text, HTML, and/or PDF format.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="options"></a>
+    <h2>OPTIONS</h2>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">-A 
+          <span class="emphasis">
+            <em>alias</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>An expanded version of the given alias is passed to stdout.</p>
+        </dd>
+        <dt>
+          <span class="term">-a 
+          <span class="emphasis">
+            <em>file</em>
+          </span>[...]</span>
+        </dt>
+        <dd>
+          <p>Attach a file to your message using MIME. When attaching single or multiple files, separating filenames and recipient addresses with "--" is mandatory, e.g. 
+          <strong class="userinput">
+            <code>mutt -a image.jpg -- addr1</code>
+          </strong>or 
+          <strong class="userinput">
+            <code>mutt -a img.jpg *.png -- addr1 addr2</code>
+          </strong>. The -a option must be placed at the end of command line options.</p>
+        </dd>
+        <dt>
+          <span class="term">-b 
+          <span class="emphasis">
+            <em>address</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify a blind-carbon-copy (BCC) recipient</p>
+        </dd>
+        <dt>
+          <span class="term">-c 
+          <span class="emphasis">
+            <em>address</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify a carbon-copy (CC) recipient</p>
+        </dd>
+        <dt>
+          <span class="term">-d 
+          <span class="emphasis">
+            <em>level</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>If mutt was compiled with +DEBUG log debugging output to ~/.muttdebug0. 
+          <span class="emphasis">
+            <em>Level</em>
+          </span>can range from 1-5 and effects verbosity. A value of 2 is recommended.</p>
+        </dd>
+        <dt>
+          <span class="term">-D</span>
+        </dt>
+        <dd>
+          <p>Print the value of all configuration options to stdout.</p>
+        </dd>
+        <dt>
+          <span class="term">-E</span>
+        </dt>
+        <dd>
+          <p>Causes the draft file specified by -H or include file specified by -i to be edited during message composition.</p>
+        </dd>
+        <dt>
+          <span class="term">-e 
+          <span class="emphasis">
+            <em>command</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify a configuration command to be run after processing of initialization files.</p>
+        </dd>
+        <dt>
+          <span class="term">-f 
+          <span class="emphasis">
+            <em>mailbox</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify which mailbox to load.</p>
+        </dd>
+        <dt>
+          <span class="term">-F 
+          <span class="emphasis">
+            <em>muttrc</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify an initialization file to read instead of ~/.muttrc</p>
+        </dd>
+        <dt>
+          <span class="term">-g 
+          <span class="emphasis">
+            <em>server</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Start Mutt with a listing of subscribed newsgroups at specified news server.</p>
+        </dd>
+        <dt>
+          <span class="term">-G</span>
+        </dt>
+        <dd>
+          <p>Start Mutt with a listing of subscribed newsgroups.</p>
+        </dd>
+        <dt>
+          <span class="term">-h</span>
+        </dt>
+        <dd>
+          <p>Display help.</p>
+        </dd>
+        <dt>
+          <span class="term">-H 
+          <span class="emphasis">
+            <em>draft</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify a draft file which contains header and body to use to send a message.</p>
+        </dd>
+        <dt>
+          <span class="term">-i 
+          <span class="emphasis">
+            <em>include</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify a file to include into the body of a message.</p>
+        </dd>
+        <dt>
+          <span class="term">-m 
+          <span class="emphasis">
+            <em>type</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>specify a default mailbox type for newly created folders.</p>
+        </dd>
+        <dt>
+          <span class="term">-n</span>
+        </dt>
+        <dd>
+          <p>Causes Mutt to bypass the system configuration file.</p>
+        </dd>
+        <dt>
+          <span class="term">-p</span>
+        </dt>
+        <dd>
+          <p>Resume a postponed message.</p>
+        </dd>
+        <dt>
+          <span class="term">-Q 
+          <span class="emphasis">
+            <em>query</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Query a configuration variables value. The query is executed after all configuration files have been parsed, and any commands given on the command line have been executed.</p>
+        </dd>
+        <dt>
+          <span class="term">-R</span>
+        </dt>
+        <dd>
+          <p>Open a mailbox in 
+          <span class="emphasis">
+            <em>read-only</em>
+          </span>mode.</p>
+        </dd>
+        <dt>
+          <span class="term">-s 
+          <span class="emphasis">
+            <em>subject</em>
+          </span></span>
+        </dt>
+        <dd>
+          <p>Specify the subject of the message.</p>
+        </dd>
+        <dt>
+          <span class="term">-v</span>
+        </dt>
+        <dd>
+          <p>Display the Mutt version number and compile-time definitions.</p>
+        </dd>
+        <dt>
+          <span class="term">-vv</span>
+        </dt>
+        <dd>
+          <p>Display license and copyright information.</p>
+        </dd>
+        <dt>
+          <span class="term">-x</span>
+        </dt>
+        <dd>
+          <p>Emulate the mailx compose mode.</p>
+        </dd>
+        <dt>
+          <span class="term">-y</span>
+        </dt>
+        <dd>
+          <p>Start Mutt with a listing of all mailboxes specified by the 
+          <span class="emphasis">
+            <em>mailboxes</em>
+          </span>command.</p>
+        </dd>
+        <dt>
+          <span class="term">-z</span>
+        </dt>
+        <dd>
+          <p>When used with -f, causes Mutt not to start if there are no messages in the mailbox.</p>
+        </dd>
+        <dt>
+          <span class="term">-Z</span>
+        </dt>
+        <dd>
+          <p>Causes Mutt to open the first mailbox specified by the 
+          <span class="emphasis">
+            <em>mailboxes</em>
+          </span>command which contains new mail.</p>
+        </dd>
+        <dt>
+          <span class="term">--</span>
+        </dt>
+        <dd>
+          <p>Treat remaining arguments as 
+          <span class="emphasis">
+            <em>addr</em>
+          </span>even if they start with a dash. See also "-a" above.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="environment"></a>
+    <h2>ENVIRONMENT</h2>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">EDITOR</span>
+        </dt>
+        <dd>
+          <p>Specifies the editor to use if VISUAL is unset.</p>
+        </dd>
+        <dt>
+          <span class="term">EMAIL</span>
+        </dt>
+        <dd>
+          <p>The user's e-mail address.</p>
+        </dd>
+        <dt>
+          <span class="term">HOME</span>
+        </dt>
+        <dd>
+          <p>Full path of the user's home directory.</p>
+        </dd>
+        <dt>
+          <span class="term">MAIL</span>
+        </dt>
+        <dd>
+          <p>Full path of the user's spool mailbox.</p>
+        </dd>
+        <dt>
+          <span class="term">MAILDIR</span>
+        </dt>
+        <dd>
+          <p>Full path of the user's spool mailbox if MAIL is unset. Commonly used when the spool mailbox is a 
+          <span class="emphasis">
+            <em>maildir (5)</em>
+          </span>folder.</p>
+        </dd>
+        <dt>
+          <span class="term">MAILCAPS</span>
+        </dt>
+        <dd>
+          <p>Path to search for mailcap files.</p>
+        </dd>
+        <dt>
+          <span class="term">MM_NOASK</span>
+        </dt>
+        <dd>
+          <p>If this variable is set, mailcap are always used without prompting first.</p>
+        </dd>
+        <dt>
+          <span class="term">PGPPATH</span>
+        </dt>
+        <dd>
+          <p>Directory in which the user's PGP public keyring can be found. When used with the original PGP program, mutt and 
+          <span class="emphasis">
+            <em>pgpring (1)</em>
+          </span>rely on this being set.</p>
+        </dd>
+        <dt>
+          <span class="term">TMPDIR</span>
+        </dt>
+        <dd>
+          <p>Directory in which temporary files are created.</p>
+        </dd>
+        <dt>
+          <span class="term">REPLYTO</span>
+        </dt>
+        <dd>
+          <p>Default Reply-To address.</p>
+        </dd>
+        <dt>
+          <span class="term">VISUAL</span>
+        </dt>
+        <dd>
+          <p>Specifies the editor to use when composing messages.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="files"></a>
+    <h2>FILES</h2>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">
+            <code class="filename">~/.muttrc or ~/.mutt/muttrc</code>
+          </span>
+        </dt>
+        <dd>
+          <p>User configuration file.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">@sysconfdir@/Muttrc</code>
+          </span>
+        </dt>
+        <dd>
+          <p>System-wide configuration file.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">/tmp/muttXXXXXX</code>
+          </span>
+        </dt>
+        <dd>
+          <p>Temporary files created by Mutt.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">~/.mailcap</code>
+          </span>
+        </dt>
+        <dd>
+          <p>User definition for handling non-text MIME types.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">@sysconfdir@/mailcap</code>
+          </span>
+        </dt>
+        <dd>
+          <p>System definition for handling non-text MIME types.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">~/.mime.types</code>
+          </span>
+        </dt>
+        <dd>
+          <p>User's personal mapping between MIME types and file extensions.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">@sysconfdir@/mime.types</code>
+          </span>
+        </dt>
+        <dd>
+          <p>System mapping between MIME types and file extensions.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">@bindir@/mutt_dotlock</code>
+          </span>
+        </dt>
+        <dd>
+          <p>The privileged dotlocking program.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <code class="filename">@docdir@/manual.txt</code>
+          </span>
+        </dt>
+        <dd>
+          <p>The Mutt manual.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="bugs"></a>
+    <h2>BUGS</h2>
+    <p>None. Mutts have fleas, not bugs.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="fleas"></a>
+    <h2>FLEAS</h2>
+    <p>Suspend/resume while editing a file with an external editor does not work under SunOS 4.x if you use the curses lib in /usr/5lib. It 
+    <span class="emphasis">
+      <em>does</em>
+    </span>work with the S-Lang library, however.</p>
+    <p>Resizing the screen while using an external pager causes Mutt to go haywire on some systems.</p>
+    <p>Suspend/resume does not work under Ultrix.</p>
+    <p>The help line for the index menu is not updated if you change the bindings for one of the functions listed while Mutt is running.</p>
+    <p>For a more up-to-date list of bugs, errm, fleas, please visit the mutt project's bug tracking system under 
+    <a class="ulink" href="http://bugs.mutt.org/" target="_top">http://bugs.mutt.org/</a>.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="no_warranties"></a>
+    <h2>NO WARRANTIES</h2>
+    <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="see_also"></a>
+    <h2>SEE ALSO</h2>
+    <p>
+    <span class="citerefentry">
+    <span class="refentrytitle">curses</span>(3)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">mailcap</span>(5)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">maildir</span>(5)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">mbox</span>(5)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">mutt_dotlock</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">muttrc</span>(5)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">ncurses</span>(3)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">sendmail</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">smail</span>(1)</span>.</p>
+    <p>Mutt Home Page: 
+    <a class="ulink" href="http://www.mutt.org/" target="_top">http://www.mutt.org/</a></p>
+    <p>The Mutt manual</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="author"></a>
+    <h2>AUTHOR</h2>
+    <p>Michael Elkins, and others. Use &lt;mutt-dev@mutt.org&gt; to contact the developers.</p>
+  </div>
+</div>
+{% endraw %}

@@ -1,0 +1,155 @@
+---
+layout: man
+command: smime_keys
+description: Utility to add S/MIME certificate to the internal database used by mutt
+---
+{% raw %}
+<div class="refentry">
+  <a class="offset" id="smime_keysman"></a>
+  <div class="titlepage" />
+  <div class="refnamediv">
+    <h2>Name</h2>
+    <p>smime_keys — Utility to add S/MIME certificate to the internal database used by mutt</p>
+  </div>
+  <div class="refsynopsisdiv">
+    <a class="offset" id="synopsis"></a>
+    <h2>Synopsis</h2>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">smime_keys</code>
+      <em class="replaceable">
+        <code>&lt;operation&gt;</code>
+      </em>[ 
+      <em class="replaceable">
+        <code>file(s)</code>
+      </em>| 
+      <em class="replaceable">
+        <code>keyID</code>
+      </em>| [ 
+      <em class="replaceable">
+        <code>file(s)</code>
+      </em>]]</p>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="description"></a>
+    <h2>DESCRIPTION</h2>
+    <p>The purpose of this tool is to manipulate the internal database of S/MIME certificates used by mutt to sign mail messages which will be sent or to verify mail messages received and signed with S/MIME</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="options"></a>
+    <h2>OPTIONS</h2>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>init</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>no files needed, inits directory structure.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>list</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>lists the certificates stored in database.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>label</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>keyID required. changes/removes/adds label.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>remove</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>keyID required.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>verify</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>1=keyID and optionally 2=CRL Verifies the certificate chain, and optionally whether this certificate is included in supplied CRL (PEM format). Note: to verify all certificates at the same time, replace keyID with "all"</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>add_cert</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>certificate required.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>add_chain</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>three files reqd: 1=Key, 2=certificate plus 3=intermediate certificate(s).</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>add_p12</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>one file reqd. Adds keypair to database. file is PKCS12 (e.g. export from netscape).</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>add_pem</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>one file reqd. Adds keypair to database. (file was converted from e.g. PKCS12).</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="emphasis">
+              <em>add_root</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>one file reqd. Adds PEM root certificate to the location specified within muttrc (smime_verify_* command)</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="no_warranties"></a>
+    <h2>NO WARRANTIES</h2>
+    <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+    <p>Mutt Home Page: 
+    <a class="ulink" href="http://www.mutt.org/" target="_top">http://www.mutt.org/</a></p>
+  </div>
+</div>
+{% endraw %}

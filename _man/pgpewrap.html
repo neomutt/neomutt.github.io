@@ -1,0 +1,48 @@
+---
+layout: man
+command: pgpewrap
+description: Mutt command line munging tool
+---
+{% raw %}
+<div class="refentry">
+  <a class="offset" id="pgpewrapman"></a>
+  <div class="titlepage" />
+  <div class="refnamediv">
+    <h2>Name</h2>
+    <p>pgpewrap — Mutt command line munging tool</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="syntax"></a>
+    <h2>SYNTAX</h2>
+    <p>
+    <span class="emphasis">
+      <em>pgpewrap</em>
+    </span>[ 
+    <span class="emphasis">
+      <em>flags</em>
+    </span>] -- 
+    <span class="emphasis">
+      <em>prefix</em>
+    </span>[ 
+    <span class="emphasis">
+      <em>recipients</em>
+    </span>]</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="description"></a>
+    <h2>DESCRIPTION</h2>
+    <p>This is a little C program which does some command line munging: The first argument is a command to be executed. When 
+    <span class="emphasis">
+      <em>pgpewrap</em>
+    </span>encounters a "--" (dash-dash) argument, it will interpret the next argument as a prefix which is put in front of all following arguments.</p>
+  </div>
+  <div class="refsect1">
+    <a class="offset" id="example"></a>
+    <h2>EXAMPLE</h2>
+    <p>pgpewrap pgpe file -- -r a b c</p>
+    <p>will execute:</p>
+    <p>pgpe file -r a -r b -r c</p>
+    <p>This script is needed with PGP 5 and with GPG, since their command line interfaces can't be properly served by mutt's format mechanism.</p>
+  </div>
+</div>
+{% endraw %}
