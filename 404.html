@@ -1,0 +1,54 @@
+---
+layout: home
+title: Page Not Found
+permalink: /404.html
+---
+
+<h1>Sorry, Page not found</h1>
+<p>Here's a list of everything, just in case...</p>
+
+<h2><a href="/">home</a></h2>
+<p>
+<a href="about.html">about</a>
+<a href="contrib.html">contrib</a>
+<a href="credits.html">credits</a>
+<a href="downloads.md">downloads</a>
+<a href="help.html">help</a>
+<a href="links.html">links</a>
+<a href="site.html">site</a>
+</p>
+
+<h2><a href="/devel/">devel</a></h2>
+<p>
+<a href="devel/coding.html">coding</a>
+<a href="devel/github.html">github</a>
+<a href="devel/index.html">index</a>
+<a href="devel/obsolescence.html">obsolescence</a>
+<a href="devel/tasks.html">tasks</a>
+
+<h2><a href="/manual/">manual</a></h2>
+<p>
+<a href="manual/advancedusage.html">advancedusage</a>
+<a href="manual/configuration.html">configuration</a>
+<a href="manual/gettingstarted.html">gettingstarted</a>
+<a href="manual/index.html">index</a>
+<a href="manual/intro.html">intro</a>
+<a href="manual/mimesupport.html">mimesupport</a>
+<a href="manual/miscellany.html">miscellany</a>
+<a href="manual/optionalfeatures.html">optionalfeatures</a>
+<a href="manual/reference.html">reference</a>
+<a href="manual/security.html">security</a>
+<a href="manual/tuning.html">tuning</a>
+</p>
+
+{% for col in site.collections %}
+  <h2><a href="{{col.label}}.html">{{col.label}}</a></h2>
+  <p>
+  {% for doc in col.docs %}
+    {% assign prefix = '/' | append: col.label | append: '/' %}
+    {% assign new = doc.url | remove_first: prefix %}
+    <a href="{{doc.url}}">{{new}}</a>
+  {% endfor %}
+  </p>
+{% endfor %}
+
