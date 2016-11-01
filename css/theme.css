@@ -1,7 +1,7 @@
 body {
   padding-top: 76px;
   padding-bottom: 8px;
-  background: #060;
+  background: #cec;
   color: #000;
 }
 
@@ -55,7 +55,7 @@ body {
 
 div.well {
   padding: 0.5em;
-  margin-top: 1em;
+  border-radius: 10px;
 }
 
 div.col-md-9 {
@@ -79,11 +79,14 @@ div.note {
   font-weight: bold;
 }
 
+pre {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
 pre.screen, pre.highlight {
   background: #000;
   color: #fff;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
 }
 
 span.indicator { background: #000060; color: #ffffff; }
@@ -96,17 +99,21 @@ ul.nav {
 }
 
 a.navbar-brand {
-  color: #fff !important;
+  color: #000 !important;
   font-size: 160%;
   font-weight: bold;
   padding: 10px;
   margin-left: 48px;
   height: 42px;
-  border: 2px solid #000;
+}
+
+li.active a {
+  color: #000 !important;
+  background: inherit !important;
 }
 
 .navbar {
-  background: #000;
+  background: #6c6;
   min-height: 28px;
 }
 
@@ -118,21 +125,18 @@ a.logo {
   position: fixed;
 }
 
+li.active {
+  backgroud: #f00;
+}
+
 li.active a, li.active2 a {
   padding: 5px;
   margin: 5px 10px 5px 0;
-  border: 2px solid #000;
 }
 
 li.active2 a {
   padding: 9px;
-  background: black;
-}
-
-li.active a:hover, li.active2 a:hover, a.navbar-brand:hover {
-  /* background: #060 !important; */
-  border: 2px solid #090;
-  border-radius: 10px;
+  background: #6c6;
 }
 
 a.offset {
