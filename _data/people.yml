@@ -1,134 +1,180 @@
-4nd3r:
+- nick: 4nd3r
   name: Ander Punnar
   github: https://github.com/4nd3r
 
-alexpearce:
+- nick: aetherith
+  name: Thomas Foulds
+  github: https://github.com/aetherith
+
+- nick: alexpearce
   name: Alex Pearce
   github: https://github.com/alexpearce
 
-aradici:
+- nick: aradici
   name: Antonio Radici
   github: https://github.com/aradici
 
-bitstreamout:
+- nick: bapt
+  name: Baptiste Daroussin
+  github: https://github.com/bapt
+
+- nick: bitstreamout
   name: Werner Fink
   github: https://github.com/bitstreamout
 
-christopher-john-czettel:
+- nick: christophberg
+  name: Christoph Berg
+  github: https://github.com/christophberg
+
+- nick: christopher-john-czettel
   name: Chris Czettel
   github: https://github.com/christopher-john-czettel
 
-darnir:
+- nick: darnir
   name: Darshit Shah
   github: https://github.com/darnir
 
-eldeveloper:
+- nick: doweaver
+  name: Doug Stone-Weaver
+  github: https://github.com/doweaver
+
+- nick: eldeveloper
   name: Yoshiki Vázquez Baeza
   github: https://github.com/ElDeveloper
 
-evgeni:
+- nick: evgeni
   name: Evgeni Golov
   github: https://github.com/evgeni
 
-fale:
+- nick: fale
   name: Fabio Alessandro Locati
   github: https://github.com/Fale
 
-flatcap:
+- nick: flatcap
   name:   Richard Russon
   email:  rich@flatcap.org
   home:   https://flatcap.org
   github: https://github.com/flatcap
 
-gahr:
+- nick: gahr
   name: Pietro Cerutti
   github: https://github.com/gahr
 
-grobian:
+- nick: grobian
   name: Fabian Groffen
   github: https://github.com/grobian
 
-guckes:
+- nick: guckes
   name: Sven Guckes
   github: https://github.com/guckes
 
-guiniol:
+- nick: guiniol
   name: Guillaume Brogi
   github: https://github.com/guiniol
 
-jakkinstewart:
+- nick: immae
+  name: Ismaël Bouya
+  github: https://github.com/immae
+
+- nick: jakkinstewart
   name: Joshua Jordi
   github: https://github.com/JakkinStewart
 
-karelzak:
+- nick: karelzak
   name: Karel Zak
   github: https://github.com/karelzak
 
-kdave:
+- nick: kdave
   name: David Sterba
   github: https://github.com/kdave
 
-lbschenkel:
+- nick: lbschenkel
   name: Leonardo Brondani Schenkel
   github: https://github.com/lbschenkel
 
-neverpanic:
+- nick: mfvescovi
+  name: Matteo Vescovi
+  github: https://github.com/mfvescovi
+
+- nick: mhinz
+  name: Marco Hinz
+  github: https://github.com/mhinz
+
+- nick: neverpanic
   name: Clemens Lang
   github: https://github.com/neverpanic
 
-nuclearsandwich:
-  name: Steven! Ragnarök
+- nick: nuclearsandwich
+  name: Steven Ragnarök
   github: https://github.com/nuclearsandwich
 
-p-eb:
+- nick: opsec
+  name: Kurt Jaeger
+  github: https://github.com/opsec
+
+- nick: p-eb
   name: Pierre-Elliott Bécue
   github: https://github.com/P-EB
 
-paretje:
+- nick: paravoid
+  name: Faidon Liambotis
+  github: https://github.com/paravoid
+
+- nick: paretje
   name: Kevin Velghe
   github: https://github.com/paretje
 
-pickfire:
+- nick: pickfire
   name: Ivan Tham
   github: https://github.com/pickfire
 
-richih:
+- nick: richih
   name: Richard Hartmann
   github: https://github.com/RichiH
 
-riesebie:
+- nick: riesebie
   name: Elimar Riesebieter
   github: https://github.com/riesebie
 
-sadsfae:
+- nick: sadsfae
   name: Will Foster
   github: https://github.com/sadsfae
 
-santiagotorres:
+- nick: santiagotorres
   name: Santiago Torres
   github: https://github.com/SantiagoTorres
 
-shioyama:
+- nick: shioyama
   name: Chris Salzberg
   github: https://github.com/shioyama
 
-thomasadam:
+- nick: thomasadam
   name: Thomas Adam
   github: https://github.com/ThomasAdam
 
-toogley:
+- nick: toogley
   name: Tobias Angele
   github: https://github.com/toogley
 
-tsuflux:
+- nick: tsuflux
   name: Johannes Frankenau
   github: https://github.com/tsuflux
 
-vaelatern:
+- nick: udo
+  name: Udo Schweigert
+
+- nick: vaelatern
   name: Toyam Cox
   github: https://github.com/Vaelatern
 
-weisslj:
+- nick: vvv
+  name: Vsevolod Volkov
+
+- nick: weisslj
   name: Johannes Weißl
   github: https://github.com/weisslj
+
+- nick: wiz
+  name: Thomas Klausner
+  github: https://github.com/0-wiz-0
 
