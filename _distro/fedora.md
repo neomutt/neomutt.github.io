@@ -1,72 +1,184 @@
 ---
-layout: distro
+layout: concertina
 distro: Fedora
 icon: fedora.png
 homepage: https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/
-title: NeoMutt RPMs for Fedora
+title: NeoMutt for Fedora
 maintainer: flatcap
 ---
 
-# {{ page.title }}
+# ![logo](/images/{{page.icon}}) {{ page.title }}
 
-## Status
+## Support <a class="offset" id="support"></a>
 
-Maintained
-Packager: [Richard Russon (FlatCap)](https://github.com/flatcap) <rich@flatcap.org>
+| Fedora  | Support                  |
+|:--------|:-------------------------|
+| 22      | Obsolete, please upgrade |
+| 23      | Supported                |
+| 24      | Supported                |
+| 25      | Supported                |
+| Rawhide | Supported                |
 
-## Support
+The NeoMutt RPMs are published in a <abbr title="Cool Other Package Repo">COPR</abbr>.
+This is a public repository run by
+Richard Russon ([FlatCap](https://github.com/flatcap)) <[rich@flatcap.org](mailto:rich@flatcap.org)>
 
-The RPMs are published in a COPR.
-23, 24, 25, rawhide
+## Installation <a class="offset" id="install"></a>
 
-Releases of Fedora	Avail		Status
-	22 & older	Mutt & Neo	x Obsolete
-	23		Mutt & Neo	✓ Maintained
-	24		Mutt & Neo	✓ Maintained
-	25		--
-	rawhide		Mutt & Neo	✓ Maintained
+The instructions work for all versions of Fedora.
+The commands should be run as root, or prefixed with `sudo`.
 
-## Installation
+"dnf-plugins-core" will probably already be installed.
 
+```
 dnf install dnf-plugins-core
+```
+
+```reply
+Package dnf-plugins-core.noarch is already installed, skipping.
+Dependencies resolved.
+Nothing to do.
+Complete!
+```
+
+Next, enable the NeoMutt COPR:
+
+```
 dnf copr enable flatcap/neomutt
+```
+
+You will be shown a warning, which you need to say **yes** to:
+
+```reply
+You are about to enable a Copr repository. Please note that this
+repository is not part of the main Fedora distribution, and quality
+may vary.
+
+The Fedora Project does not exercise any power over the contents of
+this repository beyond the rules outlined in the Copr FAQ at
+<https://fedorahosted.org/copr/wiki/UserDocs#WhatIcanbuildinCopr>, and
+packages are not held to any quality or security level.
+
+Please do not file bug reports about these packages in Fedora
+Bugzilla. In case of problems, contact the owner of this repository.
+
+Do you want to continue? [y/N]:
+```
+
+Finally, install the NeoMutt package:
+
+```
 dnf install neomutt
+```
 
-Alternatively, you can download the RPMs directly from the server.
-https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/
+During the installation, dnf will ask you to verify the public key of the package.
+Check that fingerprint **exactly** matches the one shown below, then say **yes**.
+This step only has to be done once -- for the first install.
 
-Installation instructions
-	include verify step
-	dnf copr
-	dnf installl
-	including uninstall of mutt if nec
+```reply
+Importing GPG key 0xFACB00B1:
+ Userid     : "flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>"
+ Fingerprint: 654D 24A3 6315 9304 787B 8F9B FC43 0E26 FACB 00B1
+ From       : https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg
+Is this ok [y/N]: 
+```
 
-include extras, e.g. notmuch
+Well done!  You've just installed NeoMutt.
 
-## Update
+- **Learn more about NeoMutt**: [browse our website](https://www.neomutt.org)
+- **Latest news**: Subscribe to our [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for
+[NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
+- **Talk to the developers**: Join our IRC channel: #neomutt on irc.freenode.net or the
+[NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org) mailing list
+
+## Alternative Install <a class="offset" id="alternate"></a>
+
+An alternative way to install NeoMutt is to download the rpm directly from the server
+(and verify it using the [public key](https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg)).
+
+[https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/](https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/)
+
+```
+gpg2 --with-fingerprint pubkey.gpg
+```
+
+```reply
+pub   rsa2048 2016-04-10 [SCEA] [expires: 2021-04-09]
+      654D 24A3 6315 9304 787B  8F9B FC43 0E26 FACB 00B1
+uid           flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>
+```
+
+## Update <a class="offset" id="update"></a>
+
+Once NeoMutt is installed, it will be updated automatically when you perform system updates.
+You can make that happen sooner by running:
 
 ```
 dnf update
 ```
 
-## Removal
+## Removal <a class="offset" id="remove"></a>
 
-Uninstall instructions
-	restore to mutt
+To completely remove NeoMutt from your system:
 
 ```
 dnf remove neomutt
+dnf copr remove flatcap/neomutt
 ```
+
+```reply
+Repository successfully removed.
+```
+
+If, instead, you would like to downgrade to Mutt:
 
 ```
 dnf install --allowerasing mutt
 ```
 
-## Building from Source
+```reply
+========================================================================
+ Package      Arch     Version                 Repository          Size
+========================================================================
+Installing:
+ mutt         x86_64   5:1.7.1-1.fc24          updates            1.4 M
+Removing:
+ neomutt      x86_64   5:1.7.1-20161028.fc24   @flatcap-neomutt   7.6 M
+```
 
-Dependencies
+## Building from Source <a class="offset" id="build"></a>
 
-## Debugging
+These instructions will help you install all the dependencies you'll need to
+build NeoMutt from the source code.
 
-Dependencies
+1. The best way to get the latest source code is to use `git`.
+2. Minimum tools you need to build NeoMutt
+3. Generate the documentation
+4. Advanced features of NeoMutt
+5. Local caching of emails
+
+```
+dnf install git
+dnf install autoconf automake gcc ncurses-devel
+dnf install docbook-dtds docbook-style-xsl libxslt lynx
+dnf install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel notmuch-devel
+dnf install tokyocabinet-devel kyotocabinet-devel lmdb-devel
+```
+
+Now you can follow the [guide for building NeoMutt]().
+
+## Debugging <a class="offset" id="debug"></a>
+
+These instructions will help you install all the dependencies you'll need to
+debug NeoMutt.
+
+```
+dnf install cgdb
+dnf debuginfo-install bzip2-libs cyrus-sasl-lib glib2 glibc gmime gmp gnutls gpgme keyutils-libs
+dnf debuginfo-install krb5-libs kyotocabinet-libs libassuan libcom_err libffi libgcc libgpg-error
+dnf debuginfo-install libidn libselinux libstdc++ libtalloc libtasn1 libuuid lzo ncurses-libs nettle
+dnf debuginfo-install notmuch nss-softokn-freebl p11-kit pcre tokyocabinet xapian-core-libs xz-libs
+```
+
+Now you can follow the [guide for debugging NeoMutt]().
 

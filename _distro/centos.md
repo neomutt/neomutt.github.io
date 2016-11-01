@@ -1,11 +1,14 @@
 ---
-layout: distro
+layout: concertina
 distro: CentOS
 icon: centos.png
 homepage: https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/
-title: NeoMutt RPMs for CentOS
+title: NeoMutt for CentOS
 maintainer: flatcap
 ---
+
+# ![logo](/images/{{page.icon}}) {{ page.title }}
+
 RPMs for Fedora, RedHat Enterprise, CentOS
 
 Packager: Richard Russon (FlatCap)
@@ -24,15 +27,35 @@ yum copr enable flatcap/neomutt
 
 Alternatively, you can download the RPMs directly from the server.
 
-## Status
+## Support <a class="offset" id="support"></a>
 
-## Support
+## Installation <a class="offset" id="install"></a>
 
-## Installation
+```
+install commands
+```
 
-## Removal
+```reply
+command output
+```
 
-## Building from Source
+## Update <a class="offset" id="update"></a>
 
-## Debugging
+## Removal <a class="offset" id="remove"></a>
+
+## Building from Source <a class="offset" id="build"></a>
+
+These instructions will help you install all the dependencies you'll need to
+build NeoMutt from the source code.
+
+
+Now you can follow the [guide for building NeoMutt]().
+
+## Debugging <a class="offset" id="debug"></a>
+
+These instructions will help you install all the dependencies you'll need to
+debug NeoMutt.
+
+
+Now you can follow the [guide for debugging NeoMutt]().
 

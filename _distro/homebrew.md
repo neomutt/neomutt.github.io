@@ -1,26 +1,49 @@
 ---
-layout: distro
+layout: concertina
 distro: Homebrew
 icon: osx.png
 homepage: 
 title: NeoMutt for Homebrew
 maintainer: alexpearce
 ---
+
+# ![logo](/images/{{page.icon}}) {{ page.title }}
+
+## Support <a class="offset" id="support"></a>
+
 If you have Homebrew installed, then getting NeoMutt is as simple as:
 
 brew install neomutt/homebrew-neomutt/neomutt
 
 For more information, see the readme.
 
-## Status
+## Installation <a class="offset" id="install"></a>
 
-## Support
+```
+install commands
+```
 
-## Installation
+```reply
+command output
+```
 
-## Removal
+## Update <a class="offset" id="update"></a>
 
-## Building from Source
+## Removal <a class="offset" id="remove"></a>
 
-## Debugging
+## Building from Source <a class="offset" id="build"></a>
+
+These instructions will help you install all the dependencies you'll need to
+build NeoMutt from the source code.
+
+
+Now you can follow the [guide for building NeoMutt]().
+
+## Debugging <a class="offset" id="debug"></a>
+
+These instructions will help you install all the dependencies you'll need to
+debug NeoMutt.
+
+
+Now you can follow the [guide for debugging NeoMutt]().
 
