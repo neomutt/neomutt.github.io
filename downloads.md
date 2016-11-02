@@ -159,3 +159,28 @@ Installing NeoMutt is as simple as:
 ```
 xbps-install neomutt
 ```
+
+## NixOS
+
+Packagers:
+* [Charles Strahan](https://github.com/cstrahan),
+* [Christian Lask](https://github.com/hiberno) and 
+* [Erik Rybakken](https://github.com/erikryb)
+
+To install NeoMutt:
+
+add `pkgs.neomutt` into `configuration.nix` like that:
+
+```
+environment.systemPackages = [ pkgs.neomutt ];
+```
+
+and run 
+```
+nixos-rebuild switch
+```
+
+
+
+
+
