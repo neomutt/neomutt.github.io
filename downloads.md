@@ -181,7 +181,3 @@ and run
 nixos-rebuild switch
 ```
 
-
-
-
-
