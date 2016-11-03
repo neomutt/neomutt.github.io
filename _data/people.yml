@@ -1,180 +1,195 @@
-- nick: 4nd3r
+4nd3r:
   name: Ander Punnar
   github: https://github.com/4nd3r
 
-- nick: aetherith
+aetherith:
   name: Thomas Foulds
   github: https://github.com/aetherith
 
-- nick: alexpearce
+alexpearce:
   name: Alex Pearce
   github: https://github.com/alexpearce
 
-- nick: aradici
+aradici:
   name: Antonio Radici
   github: https://github.com/aradici
 
-- nick: bapt
+bapt:
   name: Baptiste Daroussin
   github: https://github.com/bapt
 
-- nick: bitstreamout
+bitstreamout:
   name: Werner Fink
   github: https://github.com/bitstreamout
 
-- nick: christophberg
+christophberg:
   name: Christoph Berg
   github: https://github.com/christophberg
 
-- nick: christopher-john-czettel
+christopher-john-czettel:
   name: Chris Czettel
   github: https://github.com/christopher-john-czettel
 
-- nick: darnir
+cstrahan:
+  name: Charles Strahan
+  github: https://github.com/cstrahan
+
+darnir:
   name: Darshit Shah
   github: https://github.com/darnir
 
-- nick: doweaver
+doweaver:
   name: Doug Stone-Weaver
   github: https://github.com/doweaver
 
-- nick: eldeveloper
+eldeveloper:
   name: Yoshiki Vázquez Baeza
   github: https://github.com/ElDeveloper
 
-- nick: evgeni
+evgeni:
   name: Evgeni Golov
   github: https://github.com/evgeni
 
-- nick: fale
+fale:
   name: Fabio Alessandro Locati
   github: https://github.com/Fale
 
-- nick: flatcap
+flatcap:
   name:   Richard Russon
   email:  rich@flatcap.org
   home:   https://flatcap.org
   github: https://github.com/flatcap
 
-- nick: gahr
+gahr:
   name: Pietro Cerutti
   github: https://github.com/gahr
 
-- nick: grobian
+grobian:
   name: Fabian Groffen
   github: https://github.com/grobian
 
-- nick: guckes
+guckes:
   name: Sven Guckes
   github: https://github.com/guckes
 
-- nick: guiniol
+guiniol:
   name: Guillaume Brogi
   github: https://github.com/guiniol
 
-- nick: immae
+hiberno:
+  name: Christian Lask
+  github: https://github.com/hiberno
+
+immae:
   name: Ismaël Bouya
   github: https://github.com/immae
 
-- nick: jakkinstewart
+jakkinstewart:
   name: Joshua Jordi
   github: https://github.com/JakkinStewart
 
-- nick: karelzak
+karelzak:
   name: Karel Zak
   github: https://github.com/karelzak
 
-- nick: kdave
+kdave:
   name: David Sterba
   github: https://github.com/kdave
 
-- nick: lbschenkel
+lbschenkel:
   name: Leonardo Brondani Schenkel
   github: https://github.com/lbschenkel
 
-- nick: mfvescovi
+mfvescovi:
   name: Matteo Vescovi
   github: https://github.com/mfvescovi
 
-- nick: mhinz
+mhinz:
   name: Marco Hinz
   github: https://github.com/mhinz
 
-- nick: neverpanic
+neverpanic:
   name: Clemens Lang
   github: https://github.com/neverpanic
 
-- nick: nuclearsandwich
+nuclearsandwich:
   name: Steven Ragnarök
   github: https://github.com/nuclearsandwich
 
-- nick: opsec
+opsec:
   name: Kurt Jaeger
   github: https://github.com/opsec
 
-- nick: p-eb
+p-eb:
   name: Pierre-Elliott Bécue
   github: https://github.com/P-EB
 
-- nick: paravoid
+paravoid:
   name: Faidon Liambotis
   github: https://github.com/paravoid
 
-- nick: paretje
+paretje:
   name: Kevin Velghe
   github: https://github.com/paretje
 
-- nick: pickfire
+pickfire:
   name: Ivan Tham
   github: https://github.com/pickfire
 
-- nick: richih
+richih:
   name: Richard Hartmann
   github: https://github.com/RichiH
 
-- nick: riesebie
+riesebie:
   name: Elimar Riesebieter
   github: https://github.com/riesebie
 
-- nick: sadsfae
+sadsfae:
   name: Will Foster
   github: https://github.com/sadsfae
 
-- nick: santiagotorres
+santiagotorres:
   name: Santiago Torres
   github: https://github.com/SantiagoTorres
 
-- nick: shioyama
+shioyama:
   name: Chris Salzberg
   github: https://github.com/shioyama
 
-- nick: thomasadam
+sthen:
+  name: Stuart Henderson
+
+thomasadam:
   name: Thomas Adam
   github: https://github.com/ThomasAdam
 
-- nick: toogley
+toogley:
   name: Tobias Angele
   github: https://github.com/toogley
 
-- nick: tsuflux
+tsuflux:
   name: Johannes Frankenau
   github: https://github.com/tsuflux
 
-- nick: udo
+udo:
   name: Udo Schweigert
 
-- nick: vaelatern
+vaelatern:
   name: Toyam Cox
   github: https://github.com/Vaelatern
 
-- nick: vvv
+vrthra:
+  name: Rahul Gopinath
+  github: https://github.com/vrthra
+
+vvv:
   name: Vsevolod Volkov
 
-- nick: weisslj
+weisslj:
   name: Johannes Weißl
   github: https://github.com/weisslj
 
-- nick: wiz
+wiz:
   name: Thomas Klausner
   github: https://github.com/0-wiz-0
 
