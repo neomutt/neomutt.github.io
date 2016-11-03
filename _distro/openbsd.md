@@ -2,7 +2,7 @@
 layout: concertina
 distro: OpenBSD
 icon: openbsd.png
-homepage: 
+homepage: https://www.openbsd.org/
 title: NeoMutt for OpenBSD
 maintainer: sthen
 ---
@@ -33,7 +33,7 @@ These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
 
 
-Now you can follow the [guide for building NeoMutt]().
+Now you can follow the [guide for building NeoMutt](/dev/build).
 
 ## Debugging <a class="offset" id="debug"></a>
 
@@ -41,5 +41,5 @@ These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
 
-Now you can follow the [guide for debugging NeoMutt]().
+Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 

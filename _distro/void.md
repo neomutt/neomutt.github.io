@@ -3,7 +3,7 @@ layout: concertina
 distro: Void Linux
 package: xbps
 icon: void.png
-homepage: 
+homepage: http://www.voidlinux.eu/
 title: NeoMutt for Void Linux
 maintainer: vaelatern
 ---
@@ -16,14 +16,8 @@ maintainer: vaelatern
 
 Installing NeoMutt is as simple as:
 
+```
 xbps-install neomutt
-
-```
-install commands
-```
-
-```reply
-command output
 ```
 
 ## Update <a class="offset" id="update"></a>
@@ -36,7 +30,7 @@ These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
 
 
-Now you can follow the [guide for building NeoMutt]().
+Now you can follow the [guide for building NeoMutt](/dev/build).
 
 ## Debugging <a class="offset" id="debug"></a>
 
@@ -44,5 +38,5 @@ These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
 
-Now you can follow the [guide for debugging NeoMutt]().
+Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 

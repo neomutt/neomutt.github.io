@@ -4,7 +4,7 @@ distro: NetBSD
 icon: netbsd.png
 homepage: http://pkgsrc.se/mail/neomutt
 title: NeoMutt for NetBSD
-maintainer: 0-wiz-0
+maintainer: wiz
 ---
 
 # ![logo](/images/{{page.icon}}) {{ page.title }}
@@ -31,7 +31,7 @@ These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
 
 
-Now you can follow the [guide for building NeoMutt]().
+Now you can follow the [guide for building NeoMutt](/dev/build).
 
 ## Debugging <a class="offset" id="debug"></a>
 
@@ -39,5 +39,5 @@ These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
 
-Now you can follow the [guide for debugging NeoMutt]().
+Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 

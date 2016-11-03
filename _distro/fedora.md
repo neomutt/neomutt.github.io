@@ -11,13 +11,13 @@ maintainer: flatcap
 
 ## Support <a class="offset" id="support"></a>
 
-| Fedora  | Support                  |
-|:--------|:-------------------------|
-| 22      | Obsolete, please upgrade |
-| 23      | Supported                |
-| 24      | Supported                |
-| 25      | Supported                |
-| Rawhide | Supported                |
+| Fedora       | Support                  |
+|:-------------|:-------------------------|
+| 22 or before | Obsolete, please upgrade |
+| 23           | Supported                |
+| 24           | Supported                |
+| 25           | Supported                |
+| Rawhide      | Supported                |
 
 The NeoMutt RPMs are published in a <abbr title="Cool Other Package Repo">COPR</abbr>.
 This is a public repository run by
@@ -159,13 +159,13 @@ build NeoMutt from the source code.
 
 ```
 dnf install git
-dnf install autoconf automake gcc ncurses-devel
+dnf install autoconf automake gcc ncurses-devel slang-devel
 dnf install docbook-dtds docbook-style-xsl libxslt lynx
 dnf install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel notmuch-devel
 dnf install tokyocabinet-devel kyotocabinet-devel lmdb-devel
 ```
 
-Now you can follow the [guide for building NeoMutt]().
+Now you can follow the [guide for building NeoMutt](/dev/build).
 
 ## Debugging <a class="offset" id="debug"></a>
 
@@ -180,5 +180,5 @@ dnf debuginfo-install libidn libselinux libstdc++ libtalloc libtasn1 libuuid lzo
 dnf debuginfo-install notmuch nss-softokn-freebl p11-kit pcre tokyocabinet xapian-core-libs xz-libs
 ```
 
-Now you can follow the [guide for debugging NeoMutt]().
+Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 

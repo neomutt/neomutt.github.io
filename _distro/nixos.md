@@ -1,22 +1,35 @@
 ---
 layout: concertina
-distro: MacPorts
-icon: macports.png
-homepage: https://www.macports.org/ports.php?by=name&substr=neomutt
-title: NeoMutt for MacPorts for macOS
-maintainer: lbschenkel
+distro: NixOS Linux
+icon: nixos.png
+homepage: https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/mailreaders/neomutt/default.nix
+title: NeoMutt for NixOS
+maintainer: hiberno
 ---
 
 # ![logo](/images/{{page.icon}}) {{ page.title }}
 
 ## Support <a class="offset" id="support"></a>
 
+Packagers:
+
+- [Charles Strahan](https://github.com/cstrahan)
+- [Christian Lask](https://github.com/hiberno)
+- [Rahul Gopinath](https://github.com/vrthra)
+- [Erik Rybakken](https://github.com/erikryb)
+
 ## Installation <a class="offset" id="install"></a>
 
-If you have MacPorts installed, then getting NeoMutt is as simple as:
+add `pkgs.neomutt` into `configuration.nix` like this:
+
+```reply
+environment.systemPackages = [ pkgs.neomutt ];
+```
+
+then run:
 
 ```
-port install neomutt
+nixos-rebuild switch
 ```
 
 ## Update <a class="offset" id="update"></a>
