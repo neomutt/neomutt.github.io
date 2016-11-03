@@ -1,0 +1,28 @@
+---
+layout: concertina
+title: People
+---
+
+<h1>People Pages</h1>
+
+<p>People involved in the NeoMutt project</p>
+
+<table summary="list of people">
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in site.person %}
+      <tr>
+        <td><img src="https://github.com/{{f.nick}}.png?size=40"</img></td>
+        <td><a href="{{ f.url }}">{{ f.name }} ({{ f.nick }})</a></td>
+        <td>{{ f.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+

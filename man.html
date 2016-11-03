@@ -1,0 +1,26 @@
+---
+layout: concertina
+title: Manual Pages
+---
+
+<h1>Manual Pages</h1>
+
+<p>Man pages for the programs installed by NeoMutt</p>
+
+<table summary="list of manual pages">
+  <thead>
+    <tr>
+      <th>Manual</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in site.man %}
+      <tr>
+        <td><a href="{{ f.url }}">{{ f.command }}</a></td>
+        <td>{{ f.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+

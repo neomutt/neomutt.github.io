@@ -1,0 +1,62 @@
+---
+layout: concertina
+title: Development
+---
+
+<h1>Development</h1>
+<h2 class="subtitle">What's Going On?</h2>
+
+<h2>Development</h2>
+
+<p>
+  Any development on features is done in "devel/" feature branches in the
+  <a href="https://github.com/neomutt/neomutt">NeoMutt repository</a>.  Once
+  development is complete, the work will be merged into the "neomutt" branch.
+</p>
+
+<p>
+  Finally, some automatic checking is done on commits and pull-requests for
+  NeoMutt.  It benefits from two free services (free for Open Source).  They are
+  triggered on every commit to GitHub.
+</p>
+
+<p>
+  <a href="https://travis-ci.com/">Travis CI</a> automatically build projects on every commit (Continuous Integration).
+  <a href="https://scan.coverity.com/">Coverity</a> performs static analysis on the code looking for potential problems.
+</p>
+
+<p>
+  <a href="https://travis-ci.org/neomutt/neomutt"><img alt="travis status" src="https://api.travis-ci.org/neomutt/neomutt.svg?branch=neomutt" /></a>
+  <a href="https://scan.coverity.com/projects/neomutt-neomutt"><img alt="coverity status" src="https://img.shields.io/coverity/scan/8495.svg" /></a>
+</p>
+
+<h2>Development Docs</h2>
+
+<table summary="list of dev">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in site.dev %}
+      <tr>
+        <td><a href="{{ f.url }}">{{ f.title }}</a></td>
+        <td>{{ f.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Blue Sky</h2>
+
+<p>
+  NeoMutt also has a couple of speculative ideas:
+  <ul>
+    <li>Redesigning Mutt's <a href="https://github.com/neomutt/arch#arch">architecture</a></li>
+    <li>Redesigning Mutt's <a href="https://github.com/neomutt/panel-manager#panel-manager">gui</a></li>
+  </ul>
+  <b>Note:</b> These are just toys (for now).
+</p>
+

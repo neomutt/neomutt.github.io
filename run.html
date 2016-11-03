@@ -1,0 +1,26 @@
+---
+layout: concertina
+title: Management
+---
+
+<h1>Managing the NeoMutt Project</h1>
+
+<p>Guide to running the project</p>
+
+<table summary="list of mangement">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in site.run %}
+      <tr>
+        <td><a href="{{ f.url }}">{{ f.title }}</a></td>
+        <td>{{ f.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
