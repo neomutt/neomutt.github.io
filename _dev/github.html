@@ -1,0 +1,208 @@
+---
+layout: concertina
+title: GitHub
+description: Descriptions of all the NeoMutt repositories and how the branches fit together
+---
+
+<h1>GitHub Repositories</h1>
+
+<p>
+  All the source code for NeoMutt, and its patches, is available on GitHub.
+  The majority is in the <a href="https://github.com/neomutt/neomutt">neomutt
+  repo</a>.
+</p>
+
+<p>
+  Each feature has its own branch in the repo. Any changes to features
+  happen there. This means each can be cleanly merged into Mutt.
+</p>
+
+<p>
+  The NeoMutt branch is mostly merge commits from the feature branches. It
+  also contains commits that aren't appropriate to merge into Mutt, such as
+  changing the version number.
+</p>
+
+<p>
+  Here are some diagrams showing alternative release strategies.<br>
+  In the future, these release strategies may be adopted instead of the
+  "release with hotfixes"
+</p>
+
+<h3>Periodic Release</h3>
+
+<p>
+  After a period of time, all the features are merged into NeoMutt and a
+  release is made.<br>
+  The features are merged immediately before a release is made.
+</p>
+
+<p>
+  <img class="img-responsive" alt="branch diagram" src="/images/release.png" />
+</p>
+
+<p><strong>History</strong></p>
+<ul>
+  <li>Two commits are made to the features</li>
+  <li>Features are merged into NeoMutt</li>
+  <li>Release <strong>R<sup>1</sup></strong> is made</li>
+  <li>More commits are made to the features.</li>
+  <li>Time passes (// on diagram)</li>
+  <li>Features are merged into NeoMutt</li>
+  <li>Release <strong>R<sup>2</sup></strong> is made</li>
+</ul>
+
+<h3>Advanced</h3>
+<p>
+  This is the same as the hotfix method, but also incorporated the latest
+  development features.
+</p>
+
+<p>
+  <img class="img-responsive" alt="advanced branch diagram" src="/images/advanced.png" />
+</p>
+
+<p><strong>History</strong></p>
+<ul>
+  <li>Two commits are made to the features</li>
+  <li>Features are merged into NeoMutt</li>
+  <li>Release <strong>R<sup>1</sup></strong> is made</li>
+  <li>Release is merged into Advanced <strong>A<sup>1</sup></strong></li>
+  <li>A commit is made to a feature</li>
+  <li>The commit is merged into NeoMutt</li>
+  <li>This becomes Hotfix <strong>H<sup>1</sup></strong></li>
+  <li>A commit is made to a another feature</li>
+  <li>The commit is merged into NeoMutt</li>
+  <li>This becomes Hotfix <strong>H<sup>2</sup></strong></li>
+  <li>Some rolling release distros may pick up those Hot Fixes</li>
+  <li>The hotfixes are merged into Advanced
+  <strong>A<sup>2</sup></strong></li>
+  <li>A commit is made to a development feature</li>
+  <li>The commit is merged into Advanced <strong>A<sup>3</sup></strong></li>
+  <li>Release <strong>R<sup>2</sup></strong> is made</li>
+  <li>Release is merged into Advanced <strong>A<sup>4</sup></strong></li>
+</ul>
+
+<h2>All Repositories</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/arch">arch</a>
+      </td>
+      <td>Ideas for a new mutt architecture</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/aur-build">aur-build</a>
+      </td>
+      <td>Arch Linux User Repository for NeoMutt</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/community">community</a>
+      </td>
+      <td>Birds-eye view of the Mutt Community</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/copr-neomutt">copr-neomutt</a>
+      </td>
+      <td>Automated rpm builds for Fedora/RHEL</td>
+    </tr>
+    <tr>
+      <td>
+        <a href=
+        "https://github.com/neomutt/homebrew-neomutt">homebrew-neomutt</a>
+      </td>
+      <td>Automated builds for OS X</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/integration">integration</a>
+      </td>
+      <td>Patch sets for downstream distros</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/management">management</a>
+      </td>
+      <td>Automation scripts and notes</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/mutt-kz">mutt-kz</a>
+      </td>
+      <td>Transfer area for patches for NotMuch</td>
+    </tr>
+    <tr>
+      <td><strong><a href=
+      "https://github.com/neomutt/neomutt">neomutt</a></strong></td>
+      <td><strong>Teaching an Old Dog New Tricks</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/neomutt-old">neomutt-old</a>
+      </td>
+      <td>Retired branches of NeoMutt</td>
+    </tr>
+    <tr>
+      <td>
+        <a href=
+        "https://github.com/neomutt/neomutt-unstable">neomutt-unstable</a>
+      </td>
+      <td>Don't use this repo.</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/neomutt-wiki-backup">neomutt-wiki-backup</a>
+      </td>
+      <td>backup repository for old neomutt wiki</td>
+    </tr>
+    <tr>
+      <td>
+        <a href=
+        "https://github.com/neomutt/neomutt.github.io">neomutt.github.io</a>
+      </td>
+      <td>NeoMutt web pages</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/panel-manager">panel-manager</a>
+      </td>
+      <td>Mock-up of a panel manager for mutt</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/release">release</a>
+      </td>
+      <td>How to make a NeoMutt Release</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/scripts">scripts</a>
+      </td>
+      <td>assorted scripts</td>
+    </tr>
+    <tr>
+      <td>
+        <a href=
+        "https://github.com/neomutt/sidebar-history">sidebar-history</a>
+      </td>
+      <td>Old versions of mutt-sidebar</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/neomutt/travis-build">travis-build</a>
+      </td>
+      <td>Try to control the Travis builds more
+      transparently</td>
+    </tr>
+  </tbody>
+</table>
