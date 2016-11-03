@@ -1,0 +1,12 @@
+<h1><a {% if page.url == '/run' %} class="current" {% endif %} href="/run.html">Management</a></h1>
+
+{% assign parts = page.url | split: '/' %}
+
+{% if parts[1] == 'run' %}
+  <ul>
+    {% for f in site.run %}
+    {% include list-bold.html lb_path=f.url lb_title=f.title %}
+    {% endfor %}
+  </ul>
+{% endif %}
+

@@ -1,0 +1,19 @@
+<h1><a {% if page.url == '/guide/' %} class="current" {% endif %} href="/guide/">NeoMutt Guide</a></h1>
+
+{% assign parts = page.url | split: '/' %}
+
+{% if parts[1] == 'guide' %}
+  <ul>
+    {% include list-bold.html lb_path="/guide/intro"            lb_title="Introduction"            %}
+    {% include list-bold.html lb_path="/guide/gettingstarted"   lb_title="Getting Started"         %}
+    {% include list-bold.html lb_path="/guide/configuration"    lb_title="Configuration"           %}
+    {% include list-bold.html lb_path="/guide/advancedusage"    lb_title="Advanced Usage"          %}
+    {% include list-bold.html lb_path="/guide/mimesupport"      lb_title="Mutt's MIME Support"     %}
+    {% include list-bold.html lb_path="/guide/optionalfeatures" lb_title="Optional Features"       %}
+    {% include list-bold.html lb_path="/guide/security"         lb_title="Security Considerations" %}
+    {% include list-bold.html lb_path="/guide/tuning"           lb_title="Performance Tuning"      %}
+    {% include list-bold.html lb_path="/guide/reference"        lb_title="Reference"               %}
+    {% include list-bold.html lb_path="/guide/miscellany"       lb_title="Miscellany"              %}
+  </ul>
+{% endif %}
+

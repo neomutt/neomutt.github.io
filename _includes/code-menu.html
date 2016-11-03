@@ -1,0 +1,11 @@
+<h1><a {% if page.url == '/code/' %} class="current" {% endif %} href="/code/">Code</a></h1>
+
+{% assign parts = page.url | split: '/' %}
+
+{% if parts[1] == 'code' %}
+  <ul>
+    {% include list-bold.html lb_path='/code/functions' lb_title='Functions' %}
+    {% include list-bold.html lb_path='/code/structs'   lb_title='Structs'   %}
+  </ul>
+{% endif %}
+

@@ -1,0 +1,27 @@
+{% include header.html %}
+
+<div class="container container-left">
+    <div class="row">
+        <div class="col-md-3 hidden-xs">
+            <div class="sidebar well">
+                {% include home-menu.html %}
+                {% include feature-menu.html %}
+                <!-- {% include howto-menu.html %} -->
+                {% include guide-menu.html %}
+                {% include distro-menu.html %}
+                {% include contrib-menu.html %}
+                {% include person-menu.html %}
+                {% include man-menu.html %}
+                {% include dev-menu.html %}
+                <!-- {% include code-menu.html %} -->
+                {% include rfc-menu.html %}
+                {% include run-menu.html %}
+            </div>
+        </div>
+        <div class="col-md-9">
+            {{ content }}
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

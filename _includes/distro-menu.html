@@ -1,0 +1,12 @@
+<h1><a {% if page.url == '/distro' %} class="current" {% endif %} href="/distro.html">Distro Pages</a></h1>
+
+{% assign parts = page.url | split: '/' %}
+
+{% if parts[1] == 'distro' %}
+  <ul>
+    {% for f in site.distro %}
+    {% include list-bold.html lb_path=f.url lb_title=f.distro %}
+    {% endfor %}
+  </ul>
+{% endif %}
+
