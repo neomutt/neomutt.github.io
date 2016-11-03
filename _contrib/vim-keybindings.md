@@ -1,5 +1,5 @@
 ---
-layout: contrib
+layout: concertina
 title: Vi Keys
 description: Easy and clean Vi-keys for Mutt
 author: Ivan Tham
