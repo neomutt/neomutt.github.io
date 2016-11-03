@@ -146,7 +146,11 @@ a.offset {
   visibility: hidden;
 }
 
-li.current {
+.current {
+  background: #00a;
+  color: #fff !important;
+  padding: 1px 5px 1px 5px;
+  border-radius: 10px;
   font-weight: bold;
 }
 
@@ -169,13 +173,17 @@ h1 {
 }
 
 h2 {
+  border-top: 1px solid #666;
+  padding-top: 0.5em;
   font-size: 140%;
   font-weight: bold;
 }
 
-h3 {
+h3, h4 {
   font-size: 120%;
   font-weight: bold;
+  color: #333;
+  text-decoration: underline;
 }
 
 .subtitle {
@@ -242,9 +250,14 @@ a.devel, span.warning {
   text-align: center;
 }
 
-div.author {
+div.post_author {
   padding: 1em;
   border-radius: 10px;
   font-weight: bold;
   background: #ccc;
 }
+
+div.article {
+  padding-top: 1em;
+}
+

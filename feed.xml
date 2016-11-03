@@ -14,7 +14,15 @@ layout: null
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>
-          {{ post.content | xml_escape }}
+          {% assign c = post.content %}
+
+          {% for p in site.data.people %}
+          {% assign at = '@' | append: p.nick %}
+          {% capture with %}{{p.name}} (<a href="{{https://github.com/p.nick}}">{{p.nick}}</a>){% endcapture %}
+          {% assign c = c | replace: at, with %}
+          {% endfor %}
+
+          {{ c | xml_escape }}
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
