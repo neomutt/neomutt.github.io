@@ -13,6 +13,7 @@ title: People
       <th>Icon</th>
       <th>Name</th>
       <th>Description</th>
+      <th>Residence</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@ title: People
         <td><img src="https://github.com/{{f.nick}}.png?size=40"</img></td>
         <td><a href="{{ f.url }}">{{ f.name }} ({{ f.nick }})</a></td>
         <td>{{ f.description }}</td>
+        <td>{{ f.residence }}</td>
       </tr>
     {% endfor %}
   </tbody>
