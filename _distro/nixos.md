@@ -19,6 +19,11 @@ Packagers:
 
 ## Installation <a class="offset" id="install"></a>
 
+there are currently two different ways to install software on NixOS. One is declarative and the other more imperative.
+
+
+### declarative package management
+
 add `pkgs.neomutt` into `configuration.nix` like this:
 
 ```reply
@@ -30,6 +35,18 @@ then run:
 ```
 nixos-rebuild switch
 ```
+
+For further reference, you might want to read the [nixOS manual](http://nixos.org/nixos/manual/index.html#sec-declarative-package-mgmt).
+
+
+### imperative package management
+
+You just have to run
+
+```
+nix-env -i nixos.neomutt
+```
+
 
 ## Update <a class="offset" id="update"></a>
 
