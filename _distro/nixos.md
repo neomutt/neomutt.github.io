@@ -14,7 +14,6 @@ maintainer: hiberno
 Packagers:
 
 - [Charles Strahan](https://github.com/cstrahan)
-- [Christian Lask](https://github.com/hiberno)
 - [Rahul Gopinath](https://github.com/vrthra)
 - [Erik Rybakken](https://github.com/erikryb)
 
