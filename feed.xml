@@ -22,7 +22,15 @@ layout: null
           {% assign c = c | replace: at, with %}
           {% endfor %}
 
+          {% capture author %}
+          <div class="author">
+            {% assign person = site.data.people[post.author] %}
+            <a href="{{ person.github }}">{{ person.name }} ({{ post.author }})</h2>
+          </div>
+          {% endcapture %}
+
           {{ c | xml_escape }}
+          {{ author | xml_escape }}
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
