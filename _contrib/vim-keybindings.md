@@ -5,7 +5,7 @@ description: Easy and clean Vi-keys for Mutt
 author: Ivan Tham
 username: pickfire
 status: devel
-dir: vim-keybindings
+dir: vim-keys
 ---
 
 ## Vi-keys for Mutt
@@ -14,7 +14,7 @@ Now's the time to let your finger **Rest In Peace** without those weird combinat
 
 ## Quick Start
 
-Add the file and your `~/.mutt` and add `source vim-keybindings.rc` to your `~/.mutt/muttrc`.
+Add the file and your `~/.mutt` and add `source vim-keys.rc` to your `~/.mutt/muttrc`.
 
 1. Rolling cursors: `H`, `M`, `L`, `^E`, `^Y`, `^F`, `^B`, `^D`, `^U` and of course `gg`, `G`
 1. Deleting stuffs: `dt`, `dT`, `dd` (*T*hread)
