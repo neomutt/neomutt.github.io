@@ -30,6 +30,7 @@ title: Features
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Since</th>
       <th>Status</th>
     </tr>
   </thead>
@@ -45,6 +46,7 @@ title: Features
         {% endif %}
         </td>
         <td>{{ f.description }}</td>
+        <td>{{ f.since }}</td>
         <td>
           {% case f.status %}
           {% when 'stable' %}
