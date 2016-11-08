@@ -1,0 +1,3117 @@
+---
+layout: concertina
+title: RFC2045
+description: Multipurpose Internet Mail Extensions (MIME) Part One - Format of Internet Message Bodies.
+short: MIME format
+---
+<table class="quiet"><tr><td><pre class="line-numbers">
+<a name="L1" class="offset"></a><a href="#L1">0001</a>
+<a name="L2" class="offset"></a><a href="#L2">0002</a>
+<a name="L3" class="offset"></a><a href="#L3">0003</a>
+<a name="L4" class="offset"></a><a href="#L4">0004</a>
+<a name="L5" class="offset"></a><a href="#L5">0005</a>
+<a name="L6" class="offset"></a><a href="#L6">0006</a>
+<a name="L7" class="offset"></a><a href="#L7">0007</a>
+<a name="L8" class="offset"></a><a href="#L8">0008</a>
+<a name="L9" class="offset"></a><a href="#L9">0009</a>
+<a name="L10" class="offset"></a><a href="#L10">0010</a>
+<a name="L11" class="offset"></a><a href="#L11">0011</a>
+<a name="L12" class="offset"></a><a href="#L12">0012</a>
+<a name="L13" class="offset"></a><a href="#L13">0013</a>
+<a name="L14" class="offset"></a><a href="#L14">0014</a>
+<a name="L15" class="offset"></a><a href="#L15">0015</a>
+<a name="L16" class="offset"></a><a href="#L16">0016</a>
+<a name="L17" class="offset"></a><a href="#L17">0017</a>
+<a name="L18" class="offset"></a><a href="#L18">0018</a>
+<a name="L19" class="offset"></a><a href="#L19">0019</a>
+<a name="L20" class="offset"></a><a href="#L20">0020</a>
+<a name="L21" class="offset"></a><a href="#L21">0021</a>
+<a name="L22" class="offset"></a><a href="#L22">0022</a>
+<a name="L23" class="offset"></a><a href="#L23">0023</a>
+<a name="L24" class="offset"></a><a href="#L24">0024</a>
+<a name="L25" class="offset"></a><a href="#L25">0025</a>
+<a name="L26" class="offset"></a><a href="#L26">0026</a>
+<a name="L27" class="offset"></a><a href="#L27">0027</a>
+<a name="L28" class="offset"></a><a href="#L28">0028</a>
+<a name="L29" class="offset"></a><a href="#L29">0029</a>
+<a name="L30" class="offset"></a><a href="#L30">0030</a>
+<a name="L31" class="offset"></a><a href="#L31">0031</a>
+<a name="L32" class="offset"></a><a href="#L32">0032</a>
+<a name="L33" class="offset"></a><a href="#L33">0033</a>
+<a name="L34" class="offset"></a><a href="#L34">0034</a>
+<a name="L35" class="offset"></a><a href="#L35">0035</a>
+<a name="L36" class="offset"></a><a href="#L36">0036</a>
+<a name="L37" class="offset"></a><a href="#L37">0037</a>
+<a name="L38" class="offset"></a><a href="#L38">0038</a>
+<a name="L39" class="offset"></a><a href="#L39">0039</a>
+<a name="L40" class="offset"></a><a href="#L40">0040</a>
+<a name="L41" class="offset"></a><a href="#L41">0041</a>
+<a name="L42" class="offset"></a><a href="#L42">0042</a>
+<a name="L43" class="offset"></a><a href="#L43">0043</a>
+<a name="L44" class="offset"></a><a href="#L44">0044</a>
+<a name="L45" class="offset"></a><a href="#L45">0045</a>
+<a name="L46" class="offset"></a><a href="#L46">0046</a>
+<a name="L47" class="offset"></a><a href="#L47">0047</a>
+<a name="L48" class="offset"></a><a href="#L48">0048</a>
+<a name="L49" class="offset"></a><a href="#L49">0049</a>
+<a name="L50" class="offset"></a><a href="#L50">0050</a>
+<a name="L51" class="offset"></a><a href="#L51">0051</a>
+<a name="L52" class="offset"></a><a href="#L52">0052</a>
+<a name="L53" class="offset"></a><a href="#L53">0053</a>
+<a name="L54" class="offset"></a><a href="#L54">0054</a>
+<a name="L55" class="offset"></a><a href="#L55">0055</a>
+<a name="L56" class="offset"></a><a href="#L56">0056</a>
+<a name="L57" class="offset"></a><a href="#L57">0057</a>
+<a name="L58" class="offset"></a><a href="#L58">0058</a>
+<a name="L59" class="offset"></a><a href="#L59">0059</a>
+<a name="L60" class="offset"></a><a href="#L60">0060</a>
+<a name="L61" class="offset"></a><a href="#L61">0061</a>
+<a name="L62" class="offset"></a><a href="#L62">0062</a>
+<a name="L63" class="offset"></a><a href="#L63">0063</a>
+<a name="L64" class="offset"></a><a href="#L64">0064</a>
+<a name="L65" class="offset"></a><a href="#L65">0065</a>
+<a name="L66" class="offset"></a><a href="#L66">0066</a>
+<a name="L67" class="offset"></a><a href="#L67">0067</a>
+<a name="L68" class="offset"></a><a href="#L68">0068</a>
+<a name="L69" class="offset"></a><a href="#L69">0069</a>
+<a name="L70" class="offset"></a><a href="#L70">0070</a>
+<a name="L71" class="offset"></a><a href="#L71">0071</a>
+<a name="L72" class="offset"></a><a href="#L72">0072</a>
+<a name="L73" class="offset"></a><a href="#L73">0073</a>
+<a name="L74" class="offset"></a><a href="#L74">0074</a>
+<a name="L75" class="offset"></a><a href="#L75">0075</a>
+<a name="L76" class="offset"></a><a href="#L76">0076</a>
+<a name="L77" class="offset"></a><a href="#L77">0077</a>
+<a name="L78" class="offset"></a><a href="#L78">0078</a>
+<a name="L79" class="offset"></a><a href="#L79">0079</a>
+<a name="L80" class="offset"></a><a href="#L80">0080</a>
+<a name="L81" class="offset"></a><a href="#L81">0081</a>
+<a name="L82" class="offset"></a><a href="#L82">0082</a>
+<a name="L83" class="offset"></a><a href="#L83">0083</a>
+<a name="L84" class="offset"></a><a href="#L84">0084</a>
+<a name="L85" class="offset"></a><a href="#L85">0085</a>
+<a name="L86" class="offset"></a><a href="#L86">0086</a>
+<a name="L87" class="offset"></a><a href="#L87">0087</a>
+<a name="L88" class="offset"></a><a href="#L88">0088</a>
+<a name="L89" class="offset"></a><a href="#L89">0089</a>
+<a name="L90" class="offset"></a><a href="#L90">0090</a>
+<a name="L91" class="offset"></a><a href="#L91">0091</a>
+<a name="L92" class="offset"></a><a href="#L92">0092</a>
+<a name="L93" class="offset"></a><a href="#L93">0093</a>
+<a name="L94" class="offset"></a><a href="#L94">0094</a>
+<a name="L95" class="offset"></a><a href="#L95">0095</a>
+<a name="L96" class="offset"></a><a href="#L96">0096</a>
+<a name="L97" class="offset"></a><a href="#L97">0097</a>
+<a name="L98" class="offset"></a><a href="#L98">0098</a>
+<a name="L99" class="offset"></a><a href="#L99">0099</a>
+<a name="L100" class="offset"></a><a href="#L100">0100</a>
+<a name="L101" class="offset"></a><a href="#L101">0101</a>
+<a name="L102" class="offset"></a><a href="#L102">0102</a>
+<a name="L103" class="offset"></a><a href="#L103">0103</a>
+<a name="L104" class="offset"></a><a href="#L104">0104</a>
+<a name="L105" class="offset"></a><a href="#L105">0105</a>
+<a name="L106" class="offset"></a><a href="#L106">0106</a>
+<a name="L107" class="offset"></a><a href="#L107">0107</a>
+<a name="L108" class="offset"></a><a href="#L108">0108</a>
+<a name="L109" class="offset"></a><a href="#L109">0109</a>
+<a name="L110" class="offset"></a><a href="#L110">0110</a>
+<a name="L111" class="offset"></a><a href="#L111">0111</a>
+<a name="L112" class="offset"></a><a href="#L112">0112</a>
+<a name="L113" class="offset"></a><a href="#L113">0113</a>
+<a name="L114" class="offset"></a><a href="#L114">0114</a>
+<a name="L115" class="offset"></a><a href="#L115">0115</a>
+<a name="L116" class="offset"></a><a href="#L116">0116</a>
+<a name="L117" class="offset"></a><a href="#L117">0117</a>
+<a name="L118" class="offset"></a><a href="#L118">0118</a>
+<a name="L119" class="offset"></a><a href="#L119">0119</a>
+<a name="L120" class="offset"></a><a href="#L120">0120</a>
+<a name="L121" class="offset"></a><a href="#L121">0121</a>
+<a name="L122" class="offset"></a><a href="#L122">0122</a>
+<a name="L123" class="offset"></a><a href="#L123">0123</a>
+<a name="L124" class="offset"></a><a href="#L124">0124</a>
+<a name="L125" class="offset"></a><a href="#L125">0125</a>
+<a name="L126" class="offset"></a><a href="#L126">0126</a>
+<a name="L127" class="offset"></a><a href="#L127">0127</a>
+<a name="L128" class="offset"></a><a href="#L128">0128</a>
+<a name="L129" class="offset"></a><a href="#L129">0129</a>
+<a name="L130" class="offset"></a><a href="#L130">0130</a>
+<a name="L131" class="offset"></a><a href="#L131">0131</a>
+<a name="L132" class="offset"></a><a href="#L132">0132</a>
+<a name="L133" class="offset"></a><a href="#L133">0133</a>
+<a name="L134" class="offset"></a><a href="#L134">0134</a>
+<a name="L135" class="offset"></a><a href="#L135">0135</a>
+<a name="L136" class="offset"></a><a href="#L136">0136</a>
+<a name="L137" class="offset"></a><a href="#L137">0137</a>
+<a name="L138" class="offset"></a><a href="#L138">0138</a>
+<a name="L139" class="offset"></a><a href="#L139">0139</a>
+<a name="L140" class="offset"></a><a href="#L140">0140</a>
+<a name="L141" class="offset"></a><a href="#L141">0141</a>
+<a name="L142" class="offset"></a><a href="#L142">0142</a>
+<a name="L143" class="offset"></a><a href="#L143">0143</a>
+<a name="L144" class="offset"></a><a href="#L144">0144</a>
+<a name="L145" class="offset"></a><a href="#L145">0145</a>
+<a name="L146" class="offset"></a><a href="#L146">0146</a>
+<a name="L147" class="offset"></a><a href="#L147">0147</a>
+<a name="L148" class="offset"></a><a href="#L148">0148</a>
+<a name="L149" class="offset"></a><a href="#L149">0149</a>
+<a name="L150" class="offset"></a><a href="#L150">0150</a>
+<a name="L151" class="offset"></a><a href="#L151">0151</a>
+<a name="L152" class="offset"></a><a href="#L152">0152</a>
+<a name="L153" class="offset"></a><a href="#L153">0153</a>
+<a name="L154" class="offset"></a><a href="#L154">0154</a>
+<a name="L155" class="offset"></a><a href="#L155">0155</a>
+<a name="L156" class="offset"></a><a href="#L156">0156</a>
+<a name="L157" class="offset"></a><a href="#L157">0157</a>
+<a name="L158" class="offset"></a><a href="#L158">0158</a>
+<a name="L159" class="offset"></a><a href="#L159">0159</a>
+<a name="L160" class="offset"></a><a href="#L160">0160</a>
+<a name="L161" class="offset"></a><a href="#L161">0161</a>
+<a name="L162" class="offset"></a><a href="#L162">0162</a>
+<a name="L163" class="offset"></a><a href="#L163">0163</a>
+<a name="L164" class="offset"></a><a href="#L164">0164</a>
+<a name="L165" class="offset"></a><a href="#L165">0165</a>
+<a name="L166" class="offset"></a><a href="#L166">0166</a>
+<a name="L167" class="offset"></a><a href="#L167">0167</a>
+<a name="L168" class="offset"></a><a href="#L168">0168</a>
+<a name="L169" class="offset"></a><a href="#L169">0169</a>
+<a name="L170" class="offset"></a><a href="#L170">0170</a>
+<a name="L171" class="offset"></a><a href="#L171">0171</a>
+<a name="L172" class="offset"></a><a href="#L172">0172</a>
+<a name="L173" class="offset"></a><a href="#L173">0173</a>
+<a name="L174" class="offset"></a><a href="#L174">0174</a>
+<a name="L175" class="offset"></a><a href="#L175">0175</a>
+<a name="L176" class="offset"></a><a href="#L176">0176</a>
+<a name="L177" class="offset"></a><a href="#L177">0177</a>
+<a name="L178" class="offset"></a><a href="#L178">0178</a>
+<a name="L179" class="offset"></a><a href="#L179">0179</a>
+<a name="L180" class="offset"></a><a href="#L180">0180</a>
+<a name="L181" class="offset"></a><a href="#L181">0181</a>
+<a name="L182" class="offset"></a><a href="#L182">0182</a>
+<a name="L183" class="offset"></a><a href="#L183">0183</a>
+<a name="L184" class="offset"></a><a href="#L184">0184</a>
+<a name="L185" class="offset"></a><a href="#L185">0185</a>
+<a name="L186" class="offset"></a><a href="#L186">0186</a>
+<a name="L187" class="offset"></a><a href="#L187">0187</a>
+<a name="L188" class="offset"></a><a href="#L188">0188</a>
+<a name="L189" class="offset"></a><a href="#L189">0189</a>
+<a name="L190" class="offset"></a><a href="#L190">0190</a>
+<a name="L191" class="offset"></a><a href="#L191">0191</a>
+<a name="L192" class="offset"></a><a href="#L192">0192</a>
+<a name="L193" class="offset"></a><a href="#L193">0193</a>
+<a name="L194" class="offset"></a><a href="#L194">0194</a>
+<a name="L195" class="offset"></a><a href="#L195">0195</a>
+<a name="L196" class="offset"></a><a href="#L196">0196</a>
+<a name="L197" class="offset"></a><a href="#L197">0197</a>
+<a name="L198" class="offset"></a><a href="#L198">0198</a>
+<a name="L199" class="offset"></a><a href="#L199">0199</a>
+<a name="L200" class="offset"></a><a href="#L200">0200</a>
+<a name="L201" class="offset"></a><a href="#L201">0201</a>
+<a name="L202" class="offset"></a><a href="#L202">0202</a>
+<a name="L203" class="offset"></a><a href="#L203">0203</a>
+<a name="L204" class="offset"></a><a href="#L204">0204</a>
+<a name="L205" class="offset"></a><a href="#L205">0205</a>
+<a name="L206" class="offset"></a><a href="#L206">0206</a>
+<a name="L207" class="offset"></a><a href="#L207">0207</a>
+<a name="L208" class="offset"></a><a href="#L208">0208</a>
+<a name="L209" class="offset"></a><a href="#L209">0209</a>
+<a name="L210" class="offset"></a><a href="#L210">0210</a>
+<a name="L211" class="offset"></a><a href="#L211">0211</a>
+<a name="L212" class="offset"></a><a href="#L212">0212</a>
+<a name="L213" class="offset"></a><a href="#L213">0213</a>
+<a name="L214" class="offset"></a><a href="#L214">0214</a>
+<a name="L215" class="offset"></a><a href="#L215">0215</a>
+<a name="L216" class="offset"></a><a href="#L216">0216</a>
+<a name="L217" class="offset"></a><a href="#L217">0217</a>
+<a name="L218" class="offset"></a><a href="#L218">0218</a>
+<a name="L219" class="offset"></a><a href="#L219">0219</a>
+<a name="L220" class="offset"></a><a href="#L220">0220</a>
+<a name="L221" class="offset"></a><a href="#L221">0221</a>
+<a name="L222" class="offset"></a><a href="#L222">0222</a>
+<a name="L223" class="offset"></a><a href="#L223">0223</a>
+<a name="L224" class="offset"></a><a href="#L224">0224</a>
+<a name="L225" class="offset"></a><a href="#L225">0225</a>
+<a name="L226" class="offset"></a><a href="#L226">0226</a>
+<a name="L227" class="offset"></a><a href="#L227">0227</a>
+<a name="L228" class="offset"></a><a href="#L228">0228</a>
+<a name="L229" class="offset"></a><a href="#L229">0229</a>
+<a name="L230" class="offset"></a><a href="#L230">0230</a>
+<a name="L231" class="offset"></a><a href="#L231">0231</a>
+<a name="L232" class="offset"></a><a href="#L232">0232</a>
+<a name="L233" class="offset"></a><a href="#L233">0233</a>
+<a name="L234" class="offset"></a><a href="#L234">0234</a>
+<a name="L235" class="offset"></a><a href="#L235">0235</a>
+<a name="L236" class="offset"></a><a href="#L236">0236</a>
+<a name="L237" class="offset"></a><a href="#L237">0237</a>
+<a name="L238" class="offset"></a><a href="#L238">0238</a>
+<a name="L239" class="offset"></a><a href="#L239">0239</a>
+<a name="L240" class="offset"></a><a href="#L240">0240</a>
+<a name="L241" class="offset"></a><a href="#L241">0241</a>
+<a name="L242" class="offset"></a><a href="#L242">0242</a>
+<a name="L243" class="offset"></a><a href="#L243">0243</a>
+<a name="L244" class="offset"></a><a href="#L244">0244</a>
+<a name="L245" class="offset"></a><a href="#L245">0245</a>
+<a name="L246" class="offset"></a><a href="#L246">0246</a>
+<a name="L247" class="offset"></a><a href="#L247">0247</a>
+<a name="L248" class="offset"></a><a href="#L248">0248</a>
+<a name="L249" class="offset"></a><a href="#L249">0249</a>
+<a name="L250" class="offset"></a><a href="#L250">0250</a>
+<a name="L251" class="offset"></a><a href="#L251">0251</a>
+<a name="L252" class="offset"></a><a href="#L252">0252</a>
+<a name="L253" class="offset"></a><a href="#L253">0253</a>
+<a name="L254" class="offset"></a><a href="#L254">0254</a>
+<a name="L255" class="offset"></a><a href="#L255">0255</a>
+<a name="L256" class="offset"></a><a href="#L256">0256</a>
+<a name="L257" class="offset"></a><a href="#L257">0257</a>
+<a name="L258" class="offset"></a><a href="#L258">0258</a>
+<a name="L259" class="offset"></a><a href="#L259">0259</a>
+<a name="L260" class="offset"></a><a href="#L260">0260</a>
+<a name="L261" class="offset"></a><a href="#L261">0261</a>
+<a name="L262" class="offset"></a><a href="#L262">0262</a>
+<a name="L263" class="offset"></a><a href="#L263">0263</a>
+<a name="L264" class="offset"></a><a href="#L264">0264</a>
+<a name="L265" class="offset"></a><a href="#L265">0265</a>
+<a name="L266" class="offset"></a><a href="#L266">0266</a>
+<a name="L267" class="offset"></a><a href="#L267">0267</a>
+<a name="L268" class="offset"></a><a href="#L268">0268</a>
+<a name="L269" class="offset"></a><a href="#L269">0269</a>
+<a name="L270" class="offset"></a><a href="#L270">0270</a>
+<a name="L271" class="offset"></a><a href="#L271">0271</a>
+<a name="L272" class="offset"></a><a href="#L272">0272</a>
+<a name="L273" class="offset"></a><a href="#L273">0273</a>
+<a name="L274" class="offset"></a><a href="#L274">0274</a>
+<a name="L275" class="offset"></a><a href="#L275">0275</a>
+<a name="L276" class="offset"></a><a href="#L276">0276</a>
+<a name="L277" class="offset"></a><a href="#L277">0277</a>
+<a name="L278" class="offset"></a><a href="#L278">0278</a>
+<a name="L279" class="offset"></a><a href="#L279">0279</a>
+<a name="L280" class="offset"></a><a href="#L280">0280</a>
+<a name="L281" class="offset"></a><a href="#L281">0281</a>
+<a name="L282" class="offset"></a><a href="#L282">0282</a>
+<a name="L283" class="offset"></a><a href="#L283">0283</a>
+<a name="L284" class="offset"></a><a href="#L284">0284</a>
+<a name="L285" class="offset"></a><a href="#L285">0285</a>
+<a name="L286" class="offset"></a><a href="#L286">0286</a>
+<a name="L287" class="offset"></a><a href="#L287">0287</a>
+<a name="L288" class="offset"></a><a href="#L288">0288</a>
+<a name="L289" class="offset"></a><a href="#L289">0289</a>
+<a name="L290" class="offset"></a><a href="#L290">0290</a>
+<a name="L291" class="offset"></a><a href="#L291">0291</a>
+<a name="L292" class="offset"></a><a href="#L292">0292</a>
+<a name="L293" class="offset"></a><a href="#L293">0293</a>
+<a name="L294" class="offset"></a><a href="#L294">0294</a>
+<a name="L295" class="offset"></a><a href="#L295">0295</a>
+<a name="L296" class="offset"></a><a href="#L296">0296</a>
+<a name="L297" class="offset"></a><a href="#L297">0297</a>
+<a name="L298" class="offset"></a><a href="#L298">0298</a>
+<a name="L299" class="offset"></a><a href="#L299">0299</a>
+<a name="L300" class="offset"></a><a href="#L300">0300</a>
+<a name="L301" class="offset"></a><a href="#L301">0301</a>
+<a name="L302" class="offset"></a><a href="#L302">0302</a>
+<a name="L303" class="offset"></a><a href="#L303">0303</a>
+<a name="L304" class="offset"></a><a href="#L304">0304</a>
+<a name="L305" class="offset"></a><a href="#L305">0305</a>
+<a name="L306" class="offset"></a><a href="#L306">0306</a>
+<a name="L307" class="offset"></a><a href="#L307">0307</a>
+<a name="L308" class="offset"></a><a href="#L308">0308</a>
+<a name="L309" class="offset"></a><a href="#L309">0309</a>
+<a name="L310" class="offset"></a><a href="#L310">0310</a>
+<a name="L311" class="offset"></a><a href="#L311">0311</a>
+<a name="L312" class="offset"></a><a href="#L312">0312</a>
+<a name="L313" class="offset"></a><a href="#L313">0313</a>
+<a name="L314" class="offset"></a><a href="#L314">0314</a>
+<a name="L315" class="offset"></a><a href="#L315">0315</a>
+<a name="L316" class="offset"></a><a href="#L316">0316</a>
+<a name="L317" class="offset"></a><a href="#L317">0317</a>
+<a name="L318" class="offset"></a><a href="#L318">0318</a>
+<a name="L319" class="offset"></a><a href="#L319">0319</a>
+<a name="L320" class="offset"></a><a href="#L320">0320</a>
+<a name="L321" class="offset"></a><a href="#L321">0321</a>
+<a name="L322" class="offset"></a><a href="#L322">0322</a>
+<a name="L323" class="offset"></a><a href="#L323">0323</a>
+<a name="L324" class="offset"></a><a href="#L324">0324</a>
+<a name="L325" class="offset"></a><a href="#L325">0325</a>
+<a name="L326" class="offset"></a><a href="#L326">0326</a>
+<a name="L327" class="offset"></a><a href="#L327">0327</a>
+<a name="L328" class="offset"></a><a href="#L328">0328</a>
+<a name="L329" class="offset"></a><a href="#L329">0329</a>
+<a name="L330" class="offset"></a><a href="#L330">0330</a>
+<a name="L331" class="offset"></a><a href="#L331">0331</a>
+<a name="L332" class="offset"></a><a href="#L332">0332</a>
+<a name="L333" class="offset"></a><a href="#L333">0333</a>
+<a name="L334" class="offset"></a><a href="#L334">0334</a>
+<a name="L335" class="offset"></a><a href="#L335">0335</a>
+<a name="L336" class="offset"></a><a href="#L336">0336</a>
+<a name="L337" class="offset"></a><a href="#L337">0337</a>
+<a name="L338" class="offset"></a><a href="#L338">0338</a>
+<a name="L339" class="offset"></a><a href="#L339">0339</a>
+<a name="L340" class="offset"></a><a href="#L340">0340</a>
+<a name="L341" class="offset"></a><a href="#L341">0341</a>
+<a name="L342" class="offset"></a><a href="#L342">0342</a>
+<a name="L343" class="offset"></a><a href="#L343">0343</a>
+<a name="L344" class="offset"></a><a href="#L344">0344</a>
+<a name="L345" class="offset"></a><a href="#L345">0345</a>
+<a name="L346" class="offset"></a><a href="#L346">0346</a>
+<a name="L347" class="offset"></a><a href="#L347">0347</a>
+<a name="L348" class="offset"></a><a href="#L348">0348</a>
+<a name="L349" class="offset"></a><a href="#L349">0349</a>
+<a name="L350" class="offset"></a><a href="#L350">0350</a>
+<a name="L351" class="offset"></a><a href="#L351">0351</a>
+<a name="L352" class="offset"></a><a href="#L352">0352</a>
+<a name="L353" class="offset"></a><a href="#L353">0353</a>
+<a name="L354" class="offset"></a><a href="#L354">0354</a>
+<a name="L355" class="offset"></a><a href="#L355">0355</a>
+<a name="L356" class="offset"></a><a href="#L356">0356</a>
+<a name="L357" class="offset"></a><a href="#L357">0357</a>
+<a name="L358" class="offset"></a><a href="#L358">0358</a>
+<a name="L359" class="offset"></a><a href="#L359">0359</a>
+<a name="L360" class="offset"></a><a href="#L360">0360</a>
+<a name="L361" class="offset"></a><a href="#L361">0361</a>
+<a name="L362" class="offset"></a><a href="#L362">0362</a>
+<a name="L363" class="offset"></a><a href="#L363">0363</a>
+<a name="L364" class="offset"></a><a href="#L364">0364</a>
+<a name="L365" class="offset"></a><a href="#L365">0365</a>
+<a name="L366" class="offset"></a><a href="#L366">0366</a>
+<a name="L367" class="offset"></a><a href="#L367">0367</a>
+<a name="L368" class="offset"></a><a href="#L368">0368</a>
+<a name="L369" class="offset"></a><a href="#L369">0369</a>
+<a name="L370" class="offset"></a><a href="#L370">0370</a>
+<a name="L371" class="offset"></a><a href="#L371">0371</a>
+<a name="L372" class="offset"></a><a href="#L372">0372</a>
+<a name="L373" class="offset"></a><a href="#L373">0373</a>
+<a name="L374" class="offset"></a><a href="#L374">0374</a>
+<a name="L375" class="offset"></a><a href="#L375">0375</a>
+<a name="L376" class="offset"></a><a href="#L376">0376</a>
+<a name="L377" class="offset"></a><a href="#L377">0377</a>
+<a name="L378" class="offset"></a><a href="#L378">0378</a>
+<a name="L379" class="offset"></a><a href="#L379">0379</a>
+<a name="L380" class="offset"></a><a href="#L380">0380</a>
+<a name="L381" class="offset"></a><a href="#L381">0381</a>
+<a name="L382" class="offset"></a><a href="#L382">0382</a>
+<a name="L383" class="offset"></a><a href="#L383">0383</a>
+<a name="L384" class="offset"></a><a href="#L384">0384</a>
+<a name="L385" class="offset"></a><a href="#L385">0385</a>
+<a name="L386" class="offset"></a><a href="#L386">0386</a>
+<a name="L387" class="offset"></a><a href="#L387">0387</a>
+<a name="L388" class="offset"></a><a href="#L388">0388</a>
+<a name="L389" class="offset"></a><a href="#L389">0389</a>
+<a name="L390" class="offset"></a><a href="#L390">0390</a>
+<a name="L391" class="offset"></a><a href="#L391">0391</a>
+<a name="L392" class="offset"></a><a href="#L392">0392</a>
+<a name="L393" class="offset"></a><a href="#L393">0393</a>
+<a name="L394" class="offset"></a><a href="#L394">0394</a>
+<a name="L395" class="offset"></a><a href="#L395">0395</a>
+<a name="L396" class="offset"></a><a href="#L396">0396</a>
+<a name="L397" class="offset"></a><a href="#L397">0397</a>
+<a name="L398" class="offset"></a><a href="#L398">0398</a>
+<a name="L399" class="offset"></a><a href="#L399">0399</a>
+<a name="L400" class="offset"></a><a href="#L400">0400</a>
+<a name="L401" class="offset"></a><a href="#L401">0401</a>
+<a name="L402" class="offset"></a><a href="#L402">0402</a>
+<a name="L403" class="offset"></a><a href="#L403">0403</a>
+<a name="L404" class="offset"></a><a href="#L404">0404</a>
+<a name="L405" class="offset"></a><a href="#L405">0405</a>
+<a name="L406" class="offset"></a><a href="#L406">0406</a>
+<a name="L407" class="offset"></a><a href="#L407">0407</a>
+<a name="L408" class="offset"></a><a href="#L408">0408</a>
+<a name="L409" class="offset"></a><a href="#L409">0409</a>
+<a name="L410" class="offset"></a><a href="#L410">0410</a>
+<a name="L411" class="offset"></a><a href="#L411">0411</a>
+<a name="L412" class="offset"></a><a href="#L412">0412</a>
+<a name="L413" class="offset"></a><a href="#L413">0413</a>
+<a name="L414" class="offset"></a><a href="#L414">0414</a>
+<a name="L415" class="offset"></a><a href="#L415">0415</a>
+<a name="L416" class="offset"></a><a href="#L416">0416</a>
+<a name="L417" class="offset"></a><a href="#L417">0417</a>
+<a name="L418" class="offset"></a><a href="#L418">0418</a>
+<a name="L419" class="offset"></a><a href="#L419">0419</a>
+<a name="L420" class="offset"></a><a href="#L420">0420</a>
+<a name="L421" class="offset"></a><a href="#L421">0421</a>
+<a name="L422" class="offset"></a><a href="#L422">0422</a>
+<a name="L423" class="offset"></a><a href="#L423">0423</a>
+<a name="L424" class="offset"></a><a href="#L424">0424</a>
+<a name="L425" class="offset"></a><a href="#L425">0425</a>
+<a name="L426" class="offset"></a><a href="#L426">0426</a>
+<a name="L427" class="offset"></a><a href="#L427">0427</a>
+<a name="L428" class="offset"></a><a href="#L428">0428</a>
+<a name="L429" class="offset"></a><a href="#L429">0429</a>
+<a name="L430" class="offset"></a><a href="#L430">0430</a>
+<a name="L431" class="offset"></a><a href="#L431">0431</a>
+<a name="L432" class="offset"></a><a href="#L432">0432</a>
+<a name="L433" class="offset"></a><a href="#L433">0433</a>
+<a name="L434" class="offset"></a><a href="#L434">0434</a>
+<a name="L435" class="offset"></a><a href="#L435">0435</a>
+<a name="L436" class="offset"></a><a href="#L436">0436</a>
+<a name="L437" class="offset"></a><a href="#L437">0437</a>
+<a name="L438" class="offset"></a><a href="#L438">0438</a>
+<a name="L439" class="offset"></a><a href="#L439">0439</a>
+<a name="L440" class="offset"></a><a href="#L440">0440</a>
+<a name="L441" class="offset"></a><a href="#L441">0441</a>
+<a name="L442" class="offset"></a><a href="#L442">0442</a>
+<a name="L443" class="offset"></a><a href="#L443">0443</a>
+<a name="L444" class="offset"></a><a href="#L444">0444</a>
+<a name="L445" class="offset"></a><a href="#L445">0445</a>
+<a name="L446" class="offset"></a><a href="#L446">0446</a>
+<a name="L447" class="offset"></a><a href="#L447">0447</a>
+<a name="L448" class="offset"></a><a href="#L448">0448</a>
+<a name="L449" class="offset"></a><a href="#L449">0449</a>
+<a name="L450" class="offset"></a><a href="#L450">0450</a>
+<a name="L451" class="offset"></a><a href="#L451">0451</a>
+<a name="L452" class="offset"></a><a href="#L452">0452</a>
+<a name="L453" class="offset"></a><a href="#L453">0453</a>
+<a name="L454" class="offset"></a><a href="#L454">0454</a>
+<a name="L455" class="offset"></a><a href="#L455">0455</a>
+<a name="L456" class="offset"></a><a href="#L456">0456</a>
+<a name="L457" class="offset"></a><a href="#L457">0457</a>
+<a name="L458" class="offset"></a><a href="#L458">0458</a>
+<a name="L459" class="offset"></a><a href="#L459">0459</a>
+<a name="L460" class="offset"></a><a href="#L460">0460</a>
+<a name="L461" class="offset"></a><a href="#L461">0461</a>
+<a name="L462" class="offset"></a><a href="#L462">0462</a>
+<a name="L463" class="offset"></a><a href="#L463">0463</a>
+<a name="L464" class="offset"></a><a href="#L464">0464</a>
+<a name="L465" class="offset"></a><a href="#L465">0465</a>
+<a name="L466" class="offset"></a><a href="#L466">0466</a>
+<a name="L467" class="offset"></a><a href="#L467">0467</a>
+<a name="L468" class="offset"></a><a href="#L468">0468</a>
+<a name="L469" class="offset"></a><a href="#L469">0469</a>
+<a name="L470" class="offset"></a><a href="#L470">0470</a>
+<a name="L471" class="offset"></a><a href="#L471">0471</a>
+<a name="L472" class="offset"></a><a href="#L472">0472</a>
+<a name="L473" class="offset"></a><a href="#L473">0473</a>
+<a name="L474" class="offset"></a><a href="#L474">0474</a>
+<a name="L475" class="offset"></a><a href="#L475">0475</a>
+<a name="L476" class="offset"></a><a href="#L476">0476</a>
+<a name="L477" class="offset"></a><a href="#L477">0477</a>
+<a name="L478" class="offset"></a><a href="#L478">0478</a>
+<a name="L479" class="offset"></a><a href="#L479">0479</a>
+<a name="L480" class="offset"></a><a href="#L480">0480</a>
+<a name="L481" class="offset"></a><a href="#L481">0481</a>
+<a name="L482" class="offset"></a><a href="#L482">0482</a>
+<a name="L483" class="offset"></a><a href="#L483">0483</a>
+<a name="L484" class="offset"></a><a href="#L484">0484</a>
+<a name="L485" class="offset"></a><a href="#L485">0485</a>
+<a name="L486" class="offset"></a><a href="#L486">0486</a>
+<a name="L487" class="offset"></a><a href="#L487">0487</a>
+<a name="L488" class="offset"></a><a href="#L488">0488</a>
+<a name="L489" class="offset"></a><a href="#L489">0489</a>
+<a name="L490" class="offset"></a><a href="#L490">0490</a>
+<a name="L491" class="offset"></a><a href="#L491">0491</a>
+<a name="L492" class="offset"></a><a href="#L492">0492</a>
+<a name="L493" class="offset"></a><a href="#L493">0493</a>
+<a name="L494" class="offset"></a><a href="#L494">0494</a>
+<a name="L495" class="offset"></a><a href="#L495">0495</a>
+<a name="L496" class="offset"></a><a href="#L496">0496</a>
+<a name="L497" class="offset"></a><a href="#L497">0497</a>
+<a name="L498" class="offset"></a><a href="#L498">0498</a>
+<a name="L499" class="offset"></a><a href="#L499">0499</a>
+<a name="L500" class="offset"></a><a href="#L500">0500</a>
+<a name="L501" class="offset"></a><a href="#L501">0501</a>
+<a name="L502" class="offset"></a><a href="#L502">0502</a>
+<a name="L503" class="offset"></a><a href="#L503">0503</a>
+<a name="L504" class="offset"></a><a href="#L504">0504</a>
+<a name="L505" class="offset"></a><a href="#L505">0505</a>
+<a name="L506" class="offset"></a><a href="#L506">0506</a>
+<a name="L507" class="offset"></a><a href="#L507">0507</a>
+<a name="L508" class="offset"></a><a href="#L508">0508</a>
+<a name="L509" class="offset"></a><a href="#L509">0509</a>
+<a name="L510" class="offset"></a><a href="#L510">0510</a>
+<a name="L511" class="offset"></a><a href="#L511">0511</a>
+<a name="L512" class="offset"></a><a href="#L512">0512</a>
+<a name="L513" class="offset"></a><a href="#L513">0513</a>
+<a name="L514" class="offset"></a><a href="#L514">0514</a>
+<a name="L515" class="offset"></a><a href="#L515">0515</a>
+<a name="L516" class="offset"></a><a href="#L516">0516</a>
+<a name="L517" class="offset"></a><a href="#L517">0517</a>
+<a name="L518" class="offset"></a><a href="#L518">0518</a>
+<a name="L519" class="offset"></a><a href="#L519">0519</a>
+<a name="L520" class="offset"></a><a href="#L520">0520</a>
+<a name="L521" class="offset"></a><a href="#L521">0521</a>
+<a name="L522" class="offset"></a><a href="#L522">0522</a>
+<a name="L523" class="offset"></a><a href="#L523">0523</a>
+<a name="L524" class="offset"></a><a href="#L524">0524</a>
+<a name="L525" class="offset"></a><a href="#L525">0525</a>
+<a name="L526" class="offset"></a><a href="#L526">0526</a>
+<a name="L527" class="offset"></a><a href="#L527">0527</a>
+<a name="L528" class="offset"></a><a href="#L528">0528</a>
+<a name="L529" class="offset"></a><a href="#L529">0529</a>
+<a name="L530" class="offset"></a><a href="#L530">0530</a>
+<a name="L531" class="offset"></a><a href="#L531">0531</a>
+<a name="L532" class="offset"></a><a href="#L532">0532</a>
+<a name="L533" class="offset"></a><a href="#L533">0533</a>
+<a name="L534" class="offset"></a><a href="#L534">0534</a>
+<a name="L535" class="offset"></a><a href="#L535">0535</a>
+<a name="L536" class="offset"></a><a href="#L536">0536</a>
+<a name="L537" class="offset"></a><a href="#L537">0537</a>
+<a name="L538" class="offset"></a><a href="#L538">0538</a>
+<a name="L539" class="offset"></a><a href="#L539">0539</a>
+<a name="L540" class="offset"></a><a href="#L540">0540</a>
+<a name="L541" class="offset"></a><a href="#L541">0541</a>
+<a name="L542" class="offset"></a><a href="#L542">0542</a>
+<a name="L543" class="offset"></a><a href="#L543">0543</a>
+<a name="L544" class="offset"></a><a href="#L544">0544</a>
+<a name="L545" class="offset"></a><a href="#L545">0545</a>
+<a name="L546" class="offset"></a><a href="#L546">0546</a>
+<a name="L547" class="offset"></a><a href="#L547">0547</a>
+<a name="L548" class="offset"></a><a href="#L548">0548</a>
+<a name="L549" class="offset"></a><a href="#L549">0549</a>
+<a name="L550" class="offset"></a><a href="#L550">0550</a>
+<a name="L551" class="offset"></a><a href="#L551">0551</a>
+<a name="L552" class="offset"></a><a href="#L552">0552</a>
+<a name="L553" class="offset"></a><a href="#L553">0553</a>
+<a name="L554" class="offset"></a><a href="#L554">0554</a>
+<a name="L555" class="offset"></a><a href="#L555">0555</a>
+<a name="L556" class="offset"></a><a href="#L556">0556</a>
+<a name="L557" class="offset"></a><a href="#L557">0557</a>
+<a name="L558" class="offset"></a><a href="#L558">0558</a>
+<a name="L559" class="offset"></a><a href="#L559">0559</a>
+<a name="L560" class="offset"></a><a href="#L560">0560</a>
+<a name="L561" class="offset"></a><a href="#L561">0561</a>
+<a name="L562" class="offset"></a><a href="#L562">0562</a>
+<a name="L563" class="offset"></a><a href="#L563">0563</a>
+<a name="L564" class="offset"></a><a href="#L564">0564</a>
+<a name="L565" class="offset"></a><a href="#L565">0565</a>
+<a name="L566" class="offset"></a><a href="#L566">0566</a>
+<a name="L567" class="offset"></a><a href="#L567">0567</a>
+<a name="L568" class="offset"></a><a href="#L568">0568</a>
+<a name="L569" class="offset"></a><a href="#L569">0569</a>
+<a name="L570" class="offset"></a><a href="#L570">0570</a>
+<a name="L571" class="offset"></a><a href="#L571">0571</a>
+<a name="L572" class="offset"></a><a href="#L572">0572</a>
+<a name="L573" class="offset"></a><a href="#L573">0573</a>
+<a name="L574" class="offset"></a><a href="#L574">0574</a>
+<a name="L575" class="offset"></a><a href="#L575">0575</a>
+<a name="L576" class="offset"></a><a href="#L576">0576</a>
+<a name="L577" class="offset"></a><a href="#L577">0577</a>
+<a name="L578" class="offset"></a><a href="#L578">0578</a>
+<a name="L579" class="offset"></a><a href="#L579">0579</a>
+<a name="L580" class="offset"></a><a href="#L580">0580</a>
+<a name="L581" class="offset"></a><a href="#L581">0581</a>
+<a name="L582" class="offset"></a><a href="#L582">0582</a>
+<a name="L583" class="offset"></a><a href="#L583">0583</a>
+<a name="L584" class="offset"></a><a href="#L584">0584</a>
+<a name="L585" class="offset"></a><a href="#L585">0585</a>
+<a name="L586" class="offset"></a><a href="#L586">0586</a>
+<a name="L587" class="offset"></a><a href="#L587">0587</a>
+<a name="L588" class="offset"></a><a href="#L588">0588</a>
+<a name="L589" class="offset"></a><a href="#L589">0589</a>
+<a name="L590" class="offset"></a><a href="#L590">0590</a>
+<a name="L591" class="offset"></a><a href="#L591">0591</a>
+<a name="L592" class="offset"></a><a href="#L592">0592</a>
+<a name="L593" class="offset"></a><a href="#L593">0593</a>
+<a name="L594" class="offset"></a><a href="#L594">0594</a>
+<a name="L595" class="offset"></a><a href="#L595">0595</a>
+<a name="L596" class="offset"></a><a href="#L596">0596</a>
+<a name="L597" class="offset"></a><a href="#L597">0597</a>
+<a name="L598" class="offset"></a><a href="#L598">0598</a>
+<a name="L599" class="offset"></a><a href="#L599">0599</a>
+<a name="L600" class="offset"></a><a href="#L600">0600</a>
+<a name="L601" class="offset"></a><a href="#L601">0601</a>
+<a name="L602" class="offset"></a><a href="#L602">0602</a>
+<a name="L603" class="offset"></a><a href="#L603">0603</a>
+<a name="L604" class="offset"></a><a href="#L604">0604</a>
+<a name="L605" class="offset"></a><a href="#L605">0605</a>
+<a name="L606" class="offset"></a><a href="#L606">0606</a>
+<a name="L607" class="offset"></a><a href="#L607">0607</a>
+<a name="L608" class="offset"></a><a href="#L608">0608</a>
+<a name="L609" class="offset"></a><a href="#L609">0609</a>
+<a name="L610" class="offset"></a><a href="#L610">0610</a>
+<a name="L611" class="offset"></a><a href="#L611">0611</a>
+<a name="L612" class="offset"></a><a href="#L612">0612</a>
+<a name="L613" class="offset"></a><a href="#L613">0613</a>
+<a name="L614" class="offset"></a><a href="#L614">0614</a>
+<a name="L615" class="offset"></a><a href="#L615">0615</a>
+<a name="L616" class="offset"></a><a href="#L616">0616</a>
+<a name="L617" class="offset"></a><a href="#L617">0617</a>
+<a name="L618" class="offset"></a><a href="#L618">0618</a>
+<a name="L619" class="offset"></a><a href="#L619">0619</a>
+<a name="L620" class="offset"></a><a href="#L620">0620</a>
+<a name="L621" class="offset"></a><a href="#L621">0621</a>
+<a name="L622" class="offset"></a><a href="#L622">0622</a>
+<a name="L623" class="offset"></a><a href="#L623">0623</a>
+<a name="L624" class="offset"></a><a href="#L624">0624</a>
+<a name="L625" class="offset"></a><a href="#L625">0625</a>
+<a name="L626" class="offset"></a><a href="#L626">0626</a>
+<a name="L627" class="offset"></a><a href="#L627">0627</a>
+<a name="L628" class="offset"></a><a href="#L628">0628</a>
+<a name="L629" class="offset"></a><a href="#L629">0629</a>
+<a name="L630" class="offset"></a><a href="#L630">0630</a>
+<a name="L631" class="offset"></a><a href="#L631">0631</a>
+<a name="L632" class="offset"></a><a href="#L632">0632</a>
+<a name="L633" class="offset"></a><a href="#L633">0633</a>
+<a name="L634" class="offset"></a><a href="#L634">0634</a>
+<a name="L635" class="offset"></a><a href="#L635">0635</a>
+<a name="L636" class="offset"></a><a href="#L636">0636</a>
+<a name="L637" class="offset"></a><a href="#L637">0637</a>
+<a name="L638" class="offset"></a><a href="#L638">0638</a>
+<a name="L639" class="offset"></a><a href="#L639">0639</a>
+<a name="L640" class="offset"></a><a href="#L640">0640</a>
+<a name="L641" class="offset"></a><a href="#L641">0641</a>
+<a name="L642" class="offset"></a><a href="#L642">0642</a>
+<a name="L643" class="offset"></a><a href="#L643">0643</a>
+<a name="L644" class="offset"></a><a href="#L644">0644</a>
+<a name="L645" class="offset"></a><a href="#L645">0645</a>
+<a name="L646" class="offset"></a><a href="#L646">0646</a>
+<a name="L647" class="offset"></a><a href="#L647">0647</a>
+<a name="L648" class="offset"></a><a href="#L648">0648</a>
+<a name="L649" class="offset"></a><a href="#L649">0649</a>
+<a name="L650" class="offset"></a><a href="#L650">0650</a>
+<a name="L651" class="offset"></a><a href="#L651">0651</a>
+<a name="L652" class="offset"></a><a href="#L652">0652</a>
+<a name="L653" class="offset"></a><a href="#L653">0653</a>
+<a name="L654" class="offset"></a><a href="#L654">0654</a>
+<a name="L655" class="offset"></a><a href="#L655">0655</a>
+<a name="L656" class="offset"></a><a href="#L656">0656</a>
+<a name="L657" class="offset"></a><a href="#L657">0657</a>
+<a name="L658" class="offset"></a><a href="#L658">0658</a>
+<a name="L659" class="offset"></a><a href="#L659">0659</a>
+<a name="L660" class="offset"></a><a href="#L660">0660</a>
+<a name="L661" class="offset"></a><a href="#L661">0661</a>
+<a name="L662" class="offset"></a><a href="#L662">0662</a>
+<a name="L663" class="offset"></a><a href="#L663">0663</a>
+<a name="L664" class="offset"></a><a href="#L664">0664</a>
+<a name="L665" class="offset"></a><a href="#L665">0665</a>
+<a name="L666" class="offset"></a><a href="#L666">0666</a>
+<a name="L667" class="offset"></a><a href="#L667">0667</a>
+<a name="L668" class="offset"></a><a href="#L668">0668</a>
+<a name="L669" class="offset"></a><a href="#L669">0669</a>
+<a name="L670" class="offset"></a><a href="#L670">0670</a>
+<a name="L671" class="offset"></a><a href="#L671">0671</a>
+<a name="L672" class="offset"></a><a href="#L672">0672</a>
+<a name="L673" class="offset"></a><a href="#L673">0673</a>
+<a name="L674" class="offset"></a><a href="#L674">0674</a>
+<a name="L675" class="offset"></a><a href="#L675">0675</a>
+<a name="L676" class="offset"></a><a href="#L676">0676</a>
+<a name="L677" class="offset"></a><a href="#L677">0677</a>
+<a name="L678" class="offset"></a><a href="#L678">0678</a>
+<a name="L679" class="offset"></a><a href="#L679">0679</a>
+<a name="L680" class="offset"></a><a href="#L680">0680</a>
+<a name="L681" class="offset"></a><a href="#L681">0681</a>
+<a name="L682" class="offset"></a><a href="#L682">0682</a>
+<a name="L683" class="offset"></a><a href="#L683">0683</a>
+<a name="L684" class="offset"></a><a href="#L684">0684</a>
+<a name="L685" class="offset"></a><a href="#L685">0685</a>
+<a name="L686" class="offset"></a><a href="#L686">0686</a>
+<a name="L687" class="offset"></a><a href="#L687">0687</a>
+<a name="L688" class="offset"></a><a href="#L688">0688</a>
+<a name="L689" class="offset"></a><a href="#L689">0689</a>
+<a name="L690" class="offset"></a><a href="#L690">0690</a>
+<a name="L691" class="offset"></a><a href="#L691">0691</a>
+<a name="L692" class="offset"></a><a href="#L692">0692</a>
+<a name="L693" class="offset"></a><a href="#L693">0693</a>
+<a name="L694" class="offset"></a><a href="#L694">0694</a>
+<a name="L695" class="offset"></a><a href="#L695">0695</a>
+<a name="L696" class="offset"></a><a href="#L696">0696</a>
+<a name="L697" class="offset"></a><a href="#L697">0697</a>
+<a name="L698" class="offset"></a><a href="#L698">0698</a>
+<a name="L699" class="offset"></a><a href="#L699">0699</a>
+<a name="L700" class="offset"></a><a href="#L700">0700</a>
+<a name="L701" class="offset"></a><a href="#L701">0701</a>
+<a name="L702" class="offset"></a><a href="#L702">0702</a>
+<a name="L703" class="offset"></a><a href="#L703">0703</a>
+<a name="L704" class="offset"></a><a href="#L704">0704</a>
+<a name="L705" class="offset"></a><a href="#L705">0705</a>
+<a name="L706" class="offset"></a><a href="#L706">0706</a>
+<a name="L707" class="offset"></a><a href="#L707">0707</a>
+<a name="L708" class="offset"></a><a href="#L708">0708</a>
+<a name="L709" class="offset"></a><a href="#L709">0709</a>
+<a name="L710" class="offset"></a><a href="#L710">0710</a>
+<a name="L711" class="offset"></a><a href="#L711">0711</a>
+<a name="L712" class="offset"></a><a href="#L712">0712</a>
+<a name="L713" class="offset"></a><a href="#L713">0713</a>
+<a name="L714" class="offset"></a><a href="#L714">0714</a>
+<a name="L715" class="offset"></a><a href="#L715">0715</a>
+<a name="L716" class="offset"></a><a href="#L716">0716</a>
+<a name="L717" class="offset"></a><a href="#L717">0717</a>
+<a name="L718" class="offset"></a><a href="#L718">0718</a>
+<a name="L719" class="offset"></a><a href="#L719">0719</a>
+<a name="L720" class="offset"></a><a href="#L720">0720</a>
+<a name="L721" class="offset"></a><a href="#L721">0721</a>
+<a name="L722" class="offset"></a><a href="#L722">0722</a>
+<a name="L723" class="offset"></a><a href="#L723">0723</a>
+<a name="L724" class="offset"></a><a href="#L724">0724</a>
+<a name="L725" class="offset"></a><a href="#L725">0725</a>
+<a name="L726" class="offset"></a><a href="#L726">0726</a>
+<a name="L727" class="offset"></a><a href="#L727">0727</a>
+<a name="L728" class="offset"></a><a href="#L728">0728</a>
+<a name="L729" class="offset"></a><a href="#L729">0729</a>
+<a name="L730" class="offset"></a><a href="#L730">0730</a>
+<a name="L731" class="offset"></a><a href="#L731">0731</a>
+<a name="L732" class="offset"></a><a href="#L732">0732</a>
+<a name="L733" class="offset"></a><a href="#L733">0733</a>
+<a name="L734" class="offset"></a><a href="#L734">0734</a>
+<a name="L735" class="offset"></a><a href="#L735">0735</a>
+<a name="L736" class="offset"></a><a href="#L736">0736</a>
+<a name="L737" class="offset"></a><a href="#L737">0737</a>
+<a name="L738" class="offset"></a><a href="#L738">0738</a>
+<a name="L739" class="offset"></a><a href="#L739">0739</a>
+<a name="L740" class="offset"></a><a href="#L740">0740</a>
+<a name="L741" class="offset"></a><a href="#L741">0741</a>
+<a name="L742" class="offset"></a><a href="#L742">0742</a>
+<a name="L743" class="offset"></a><a href="#L743">0743</a>
+<a name="L744" class="offset"></a><a href="#L744">0744</a>
+<a name="L745" class="offset"></a><a href="#L745">0745</a>
+<a name="L746" class="offset"></a><a href="#L746">0746</a>
+<a name="L747" class="offset"></a><a href="#L747">0747</a>
+<a name="L748" class="offset"></a><a href="#L748">0748</a>
+<a name="L749" class="offset"></a><a href="#L749">0749</a>
+<a name="L750" class="offset"></a><a href="#L750">0750</a>
+<a name="L751" class="offset"></a><a href="#L751">0751</a>
+<a name="L752" class="offset"></a><a href="#L752">0752</a>
+<a name="L753" class="offset"></a><a href="#L753">0753</a>
+<a name="L754" class="offset"></a><a href="#L754">0754</a>
+<a name="L755" class="offset"></a><a href="#L755">0755</a>
+<a name="L756" class="offset"></a><a href="#L756">0756</a>
+<a name="L757" class="offset"></a><a href="#L757">0757</a>
+<a name="L758" class="offset"></a><a href="#L758">0758</a>
+<a name="L759" class="offset"></a><a href="#L759">0759</a>
+<a name="L760" class="offset"></a><a href="#L760">0760</a>
+<a name="L761" class="offset"></a><a href="#L761">0761</a>
+<a name="L762" class="offset"></a><a href="#L762">0762</a>
+<a name="L763" class="offset"></a><a href="#L763">0763</a>
+<a name="L764" class="offset"></a><a href="#L764">0764</a>
+<a name="L765" class="offset"></a><a href="#L765">0765</a>
+<a name="L766" class="offset"></a><a href="#L766">0766</a>
+<a name="L767" class="offset"></a><a href="#L767">0767</a>
+<a name="L768" class="offset"></a><a href="#L768">0768</a>
+<a name="L769" class="offset"></a><a href="#L769">0769</a>
+<a name="L770" class="offset"></a><a href="#L770">0770</a>
+<a name="L771" class="offset"></a><a href="#L771">0771</a>
+<a name="L772" class="offset"></a><a href="#L772">0772</a>
+<a name="L773" class="offset"></a><a href="#L773">0773</a>
+<a name="L774" class="offset"></a><a href="#L774">0774</a>
+<a name="L775" class="offset"></a><a href="#L775">0775</a>
+<a name="L776" class="offset"></a><a href="#L776">0776</a>
+<a name="L777" class="offset"></a><a href="#L777">0777</a>
+<a name="L778" class="offset"></a><a href="#L778">0778</a>
+<a name="L779" class="offset"></a><a href="#L779">0779</a>
+<a name="L780" class="offset"></a><a href="#L780">0780</a>
+<a name="L781" class="offset"></a><a href="#L781">0781</a>
+<a name="L782" class="offset"></a><a href="#L782">0782</a>
+<a name="L783" class="offset"></a><a href="#L783">0783</a>
+<a name="L784" class="offset"></a><a href="#L784">0784</a>
+<a name="L785" class="offset"></a><a href="#L785">0785</a>
+<a name="L786" class="offset"></a><a href="#L786">0786</a>
+<a name="L787" class="offset"></a><a href="#L787">0787</a>
+<a name="L788" class="offset"></a><a href="#L788">0788</a>
+<a name="L789" class="offset"></a><a href="#L789">0789</a>
+<a name="L790" class="offset"></a><a href="#L790">0790</a>
+<a name="L791" class="offset"></a><a href="#L791">0791</a>
+<a name="L792" class="offset"></a><a href="#L792">0792</a>
+<a name="L793" class="offset"></a><a href="#L793">0793</a>
+<a name="L794" class="offset"></a><a href="#L794">0794</a>
+<a name="L795" class="offset"></a><a href="#L795">0795</a>
+<a name="L796" class="offset"></a><a href="#L796">0796</a>
+<a name="L797" class="offset"></a><a href="#L797">0797</a>
+<a name="L798" class="offset"></a><a href="#L798">0798</a>
+<a name="L799" class="offset"></a><a href="#L799">0799</a>
+<a name="L800" class="offset"></a><a href="#L800">0800</a>
+<a name="L801" class="offset"></a><a href="#L801">0801</a>
+<a name="L802" class="offset"></a><a href="#L802">0802</a>
+<a name="L803" class="offset"></a><a href="#L803">0803</a>
+<a name="L804" class="offset"></a><a href="#L804">0804</a>
+<a name="L805" class="offset"></a><a href="#L805">0805</a>
+<a name="L806" class="offset"></a><a href="#L806">0806</a>
+<a name="L807" class="offset"></a><a href="#L807">0807</a>
+<a name="L808" class="offset"></a><a href="#L808">0808</a>
+<a name="L809" class="offset"></a><a href="#L809">0809</a>
+<a name="L810" class="offset"></a><a href="#L810">0810</a>
+<a name="L811" class="offset"></a><a href="#L811">0811</a>
+<a name="L812" class="offset"></a><a href="#L812">0812</a>
+<a name="L813" class="offset"></a><a href="#L813">0813</a>
+<a name="L814" class="offset"></a><a href="#L814">0814</a>
+<a name="L815" class="offset"></a><a href="#L815">0815</a>
+<a name="L816" class="offset"></a><a href="#L816">0816</a>
+<a name="L817" class="offset"></a><a href="#L817">0817</a>
+<a name="L818" class="offset"></a><a href="#L818">0818</a>
+<a name="L819" class="offset"></a><a href="#L819">0819</a>
+<a name="L820" class="offset"></a><a href="#L820">0820</a>
+<a name="L821" class="offset"></a><a href="#L821">0821</a>
+<a name="L822" class="offset"></a><a href="#L822">0822</a>
+<a name="L823" class="offset"></a><a href="#L823">0823</a>
+<a name="L824" class="offset"></a><a href="#L824">0824</a>
+<a name="L825" class="offset"></a><a href="#L825">0825</a>
+<a name="L826" class="offset"></a><a href="#L826">0826</a>
+<a name="L827" class="offset"></a><a href="#L827">0827</a>
+<a name="L828" class="offset"></a><a href="#L828">0828</a>
+<a name="L829" class="offset"></a><a href="#L829">0829</a>
+<a name="L830" class="offset"></a><a href="#L830">0830</a>
+<a name="L831" class="offset"></a><a href="#L831">0831</a>
+<a name="L832" class="offset"></a><a href="#L832">0832</a>
+<a name="L833" class="offset"></a><a href="#L833">0833</a>
+<a name="L834" class="offset"></a><a href="#L834">0834</a>
+<a name="L835" class="offset"></a><a href="#L835">0835</a>
+<a name="L836" class="offset"></a><a href="#L836">0836</a>
+<a name="L837" class="offset"></a><a href="#L837">0837</a>
+<a name="L838" class="offset"></a><a href="#L838">0838</a>
+<a name="L839" class="offset"></a><a href="#L839">0839</a>
+<a name="L840" class="offset"></a><a href="#L840">0840</a>
+<a name="L841" class="offset"></a><a href="#L841">0841</a>
+<a name="L842" class="offset"></a><a href="#L842">0842</a>
+<a name="L843" class="offset"></a><a href="#L843">0843</a>
+<a name="L844" class="offset"></a><a href="#L844">0844</a>
+<a name="L845" class="offset"></a><a href="#L845">0845</a>
+<a name="L846" class="offset"></a><a href="#L846">0846</a>
+<a name="L847" class="offset"></a><a href="#L847">0847</a>
+<a name="L848" class="offset"></a><a href="#L848">0848</a>
+<a name="L849" class="offset"></a><a href="#L849">0849</a>
+<a name="L850" class="offset"></a><a href="#L850">0850</a>
+<a name="L851" class="offset"></a><a href="#L851">0851</a>
+<a name="L852" class="offset"></a><a href="#L852">0852</a>
+<a name="L853" class="offset"></a><a href="#L853">0853</a>
+<a name="L854" class="offset"></a><a href="#L854">0854</a>
+<a name="L855" class="offset"></a><a href="#L855">0855</a>
+<a name="L856" class="offset"></a><a href="#L856">0856</a>
+<a name="L857" class="offset"></a><a href="#L857">0857</a>
+<a name="L858" class="offset"></a><a href="#L858">0858</a>
+<a name="L859" class="offset"></a><a href="#L859">0859</a>
+<a name="L860" class="offset"></a><a href="#L860">0860</a>
+<a name="L861" class="offset"></a><a href="#L861">0861</a>
+<a name="L862" class="offset"></a><a href="#L862">0862</a>
+<a name="L863" class="offset"></a><a href="#L863">0863</a>
+<a name="L864" class="offset"></a><a href="#L864">0864</a>
+<a name="L865" class="offset"></a><a href="#L865">0865</a>
+<a name="L866" class="offset"></a><a href="#L866">0866</a>
+<a name="L867" class="offset"></a><a href="#L867">0867</a>
+<a name="L868" class="offset"></a><a href="#L868">0868</a>
+<a name="L869" class="offset"></a><a href="#L869">0869</a>
+<a name="L870" class="offset"></a><a href="#L870">0870</a>
+<a name="L871" class="offset"></a><a href="#L871">0871</a>
+<a name="L872" class="offset"></a><a href="#L872">0872</a>
+<a name="L873" class="offset"></a><a href="#L873">0873</a>
+<a name="L874" class="offset"></a><a href="#L874">0874</a>
+<a name="L875" class="offset"></a><a href="#L875">0875</a>
+<a name="L876" class="offset"></a><a href="#L876">0876</a>
+<a name="L877" class="offset"></a><a href="#L877">0877</a>
+<a name="L878" class="offset"></a><a href="#L878">0878</a>
+<a name="L879" class="offset"></a><a href="#L879">0879</a>
+<a name="L880" class="offset"></a><a href="#L880">0880</a>
+<a name="L881" class="offset"></a><a href="#L881">0881</a>
+<a name="L882" class="offset"></a><a href="#L882">0882</a>
+<a name="L883" class="offset"></a><a href="#L883">0883</a>
+<a name="L884" class="offset"></a><a href="#L884">0884</a>
+<a name="L885" class="offset"></a><a href="#L885">0885</a>
+<a name="L886" class="offset"></a><a href="#L886">0886</a>
+<a name="L887" class="offset"></a><a href="#L887">0887</a>
+<a name="L888" class="offset"></a><a href="#L888">0888</a>
+<a name="L889" class="offset"></a><a href="#L889">0889</a>
+<a name="L890" class="offset"></a><a href="#L890">0890</a>
+<a name="L891" class="offset"></a><a href="#L891">0891</a>
+<a name="L892" class="offset"></a><a href="#L892">0892</a>
+<a name="L893" class="offset"></a><a href="#L893">0893</a>
+<a name="L894" class="offset"></a><a href="#L894">0894</a>
+<a name="L895" class="offset"></a><a href="#L895">0895</a>
+<a name="L896" class="offset"></a><a href="#L896">0896</a>
+<a name="L897" class="offset"></a><a href="#L897">0897</a>
+<a name="L898" class="offset"></a><a href="#L898">0898</a>
+<a name="L899" class="offset"></a><a href="#L899">0899</a>
+<a name="L900" class="offset"></a><a href="#L900">0900</a>
+<a name="L901" class="offset"></a><a href="#L901">0901</a>
+<a name="L902" class="offset"></a><a href="#L902">0902</a>
+<a name="L903" class="offset"></a><a href="#L903">0903</a>
+<a name="L904" class="offset"></a><a href="#L904">0904</a>
+<a name="L905" class="offset"></a><a href="#L905">0905</a>
+<a name="L906" class="offset"></a><a href="#L906">0906</a>
+<a name="L907" class="offset"></a><a href="#L907">0907</a>
+<a name="L908" class="offset"></a><a href="#L908">0908</a>
+<a name="L909" class="offset"></a><a href="#L909">0909</a>
+<a name="L910" class="offset"></a><a href="#L910">0910</a>
+<a name="L911" class="offset"></a><a href="#L911">0911</a>
+<a name="L912" class="offset"></a><a href="#L912">0912</a>
+<a name="L913" class="offset"></a><a href="#L913">0913</a>
+<a name="L914" class="offset"></a><a href="#L914">0914</a>
+<a name="L915" class="offset"></a><a href="#L915">0915</a>
+<a name="L916" class="offset"></a><a href="#L916">0916</a>
+<a name="L917" class="offset"></a><a href="#L917">0917</a>
+<a name="L918" class="offset"></a><a href="#L918">0918</a>
+<a name="L919" class="offset"></a><a href="#L919">0919</a>
+<a name="L920" class="offset"></a><a href="#L920">0920</a>
+<a name="L921" class="offset"></a><a href="#L921">0921</a>
+<a name="L922" class="offset"></a><a href="#L922">0922</a>
+<a name="L923" class="offset"></a><a href="#L923">0923</a>
+<a name="L924" class="offset"></a><a href="#L924">0924</a>
+<a name="L925" class="offset"></a><a href="#L925">0925</a>
+<a name="L926" class="offset"></a><a href="#L926">0926</a>
+<a name="L927" class="offset"></a><a href="#L927">0927</a>
+<a name="L928" class="offset"></a><a href="#L928">0928</a>
+<a name="L929" class="offset"></a><a href="#L929">0929</a>
+<a name="L930" class="offset"></a><a href="#L930">0930</a>
+<a name="L931" class="offset"></a><a href="#L931">0931</a>
+<a name="L932" class="offset"></a><a href="#L932">0932</a>
+<a name="L933" class="offset"></a><a href="#L933">0933</a>
+<a name="L934" class="offset"></a><a href="#L934">0934</a>
+<a name="L935" class="offset"></a><a href="#L935">0935</a>
+<a name="L936" class="offset"></a><a href="#L936">0936</a>
+<a name="L937" class="offset"></a><a href="#L937">0937</a>
+<a name="L938" class="offset"></a><a href="#L938">0938</a>
+<a name="L939" class="offset"></a><a href="#L939">0939</a>
+<a name="L940" class="offset"></a><a href="#L940">0940</a>
+<a name="L941" class="offset"></a><a href="#L941">0941</a>
+<a name="L942" class="offset"></a><a href="#L942">0942</a>
+<a name="L943" class="offset"></a><a href="#L943">0943</a>
+<a name="L944" class="offset"></a><a href="#L944">0944</a>
+<a name="L945" class="offset"></a><a href="#L945">0945</a>
+<a name="L946" class="offset"></a><a href="#L946">0946</a>
+<a name="L947" class="offset"></a><a href="#L947">0947</a>
+<a name="L948" class="offset"></a><a href="#L948">0948</a>
+<a name="L949" class="offset"></a><a href="#L949">0949</a>
+<a name="L950" class="offset"></a><a href="#L950">0950</a>
+<a name="L951" class="offset"></a><a href="#L951">0951</a>
+<a name="L952" class="offset"></a><a href="#L952">0952</a>
+<a name="L953" class="offset"></a><a href="#L953">0953</a>
+<a name="L954" class="offset"></a><a href="#L954">0954</a>
+<a name="L955" class="offset"></a><a href="#L955">0955</a>
+<a name="L956" class="offset"></a><a href="#L956">0956</a>
+<a name="L957" class="offset"></a><a href="#L957">0957</a>
+<a name="L958" class="offset"></a><a href="#L958">0958</a>
+<a name="L959" class="offset"></a><a href="#L959">0959</a>
+<a name="L960" class="offset"></a><a href="#L960">0960</a>
+<a name="L961" class="offset"></a><a href="#L961">0961</a>
+<a name="L962" class="offset"></a><a href="#L962">0962</a>
+<a name="L963" class="offset"></a><a href="#L963">0963</a>
+<a name="L964" class="offset"></a><a href="#L964">0964</a>
+<a name="L965" class="offset"></a><a href="#L965">0965</a>
+<a name="L966" class="offset"></a><a href="#L966">0966</a>
+<a name="L967" class="offset"></a><a href="#L967">0967</a>
+<a name="L968" class="offset"></a><a href="#L968">0968</a>
+<a name="L969" class="offset"></a><a href="#L969">0969</a>
+<a name="L970" class="offset"></a><a href="#L970">0970</a>
+<a name="L971" class="offset"></a><a href="#L971">0971</a>
+<a name="L972" class="offset"></a><a href="#L972">0972</a>
+<a name="L973" class="offset"></a><a href="#L973">0973</a>
+<a name="L974" class="offset"></a><a href="#L974">0974</a>
+<a name="L975" class="offset"></a><a href="#L975">0975</a>
+<a name="L976" class="offset"></a><a href="#L976">0976</a>
+<a name="L977" class="offset"></a><a href="#L977">0977</a>
+<a name="L978" class="offset"></a><a href="#L978">0978</a>
+<a name="L979" class="offset"></a><a href="#L979">0979</a>
+<a name="L980" class="offset"></a><a href="#L980">0980</a>
+<a name="L981" class="offset"></a><a href="#L981">0981</a>
+<a name="L982" class="offset"></a><a href="#L982">0982</a>
+<a name="L983" class="offset"></a><a href="#L983">0983</a>
+<a name="L984" class="offset"></a><a href="#L984">0984</a>
+<a name="L985" class="offset"></a><a href="#L985">0985</a>
+<a name="L986" class="offset"></a><a href="#L986">0986</a>
+<a name="L987" class="offset"></a><a href="#L987">0987</a>
+<a name="L988" class="offset"></a><a href="#L988">0988</a>
+<a name="L989" class="offset"></a><a href="#L989">0989</a>
+<a name="L990" class="offset"></a><a href="#L990">0990</a>
+<a name="L991" class="offset"></a><a href="#L991">0991</a>
+<a name="L992" class="offset"></a><a href="#L992">0992</a>
+<a name="L993" class="offset"></a><a href="#L993">0993</a>
+<a name="L994" class="offset"></a><a href="#L994">0994</a>
+<a name="L995" class="offset"></a><a href="#L995">0995</a>
+<a name="L996" class="offset"></a><a href="#L996">0996</a>
+<a name="L997" class="offset"></a><a href="#L997">0997</a>
+<a name="L998" class="offset"></a><a href="#L998">0998</a>
+<a name="L999" class="offset"></a><a href="#L999">0999</a>
+<a name="L1000" class="offset"></a><a href="#L1000">1000</a>
+<a name="L1001" class="offset"></a><a href="#L1001">1001</a>
+<a name="L1002" class="offset"></a><a href="#L1002">1002</a>
+<a name="L1003" class="offset"></a><a href="#L1003">1003</a>
+<a name="L1004" class="offset"></a><a href="#L1004">1004</a>
+<a name="L1005" class="offset"></a><a href="#L1005">1005</a>
+<a name="L1006" class="offset"></a><a href="#L1006">1006</a>
+<a name="L1007" class="offset"></a><a href="#L1007">1007</a>
+<a name="L1008" class="offset"></a><a href="#L1008">1008</a>
+<a name="L1009" class="offset"></a><a href="#L1009">1009</a>
+<a name="L1010" class="offset"></a><a href="#L1010">1010</a>
+<a name="L1011" class="offset"></a><a href="#L1011">1011</a>
+<a name="L1012" class="offset"></a><a href="#L1012">1012</a>
+<a name="L1013" class="offset"></a><a href="#L1013">1013</a>
+<a name="L1014" class="offset"></a><a href="#L1014">1014</a>
+<a name="L1015" class="offset"></a><a href="#L1015">1015</a>
+<a name="L1016" class="offset"></a><a href="#L1016">1016</a>
+<a name="L1017" class="offset"></a><a href="#L1017">1017</a>
+<a name="L1018" class="offset"></a><a href="#L1018">1018</a>
+<a name="L1019" class="offset"></a><a href="#L1019">1019</a>
+<a name="L1020" class="offset"></a><a href="#L1020">1020</a>
+<a name="L1021" class="offset"></a><a href="#L1021">1021</a>
+<a name="L1022" class="offset"></a><a href="#L1022">1022</a>
+<a name="L1023" class="offset"></a><a href="#L1023">1023</a>
+<a name="L1024" class="offset"></a><a href="#L1024">1024</a>
+<a name="L1025" class="offset"></a><a href="#L1025">1025</a>
+<a name="L1026" class="offset"></a><a href="#L1026">1026</a>
+<a name="L1027" class="offset"></a><a href="#L1027">1027</a>
+<a name="L1028" class="offset"></a><a href="#L1028">1028</a>
+<a name="L1029" class="offset"></a><a href="#L1029">1029</a>
+<a name="L1030" class="offset"></a><a href="#L1030">1030</a>
+<a name="L1031" class="offset"></a><a href="#L1031">1031</a>
+<a name="L1032" class="offset"></a><a href="#L1032">1032</a>
+<a name="L1033" class="offset"></a><a href="#L1033">1033</a>
+<a name="L1034" class="offset"></a><a href="#L1034">1034</a>
+<a name="L1035" class="offset"></a><a href="#L1035">1035</a>
+<a name="L1036" class="offset"></a><a href="#L1036">1036</a>
+<a name="L1037" class="offset"></a><a href="#L1037">1037</a>
+<a name="L1038" class="offset"></a><a href="#L1038">1038</a>
+<a name="L1039" class="offset"></a><a href="#L1039">1039</a>
+<a name="L1040" class="offset"></a><a href="#L1040">1040</a>
+<a name="L1041" class="offset"></a><a href="#L1041">1041</a>
+<a name="L1042" class="offset"></a><a href="#L1042">1042</a>
+<a name="L1043" class="offset"></a><a href="#L1043">1043</a>
+<a name="L1044" class="offset"></a><a href="#L1044">1044</a>
+<a name="L1045" class="offset"></a><a href="#L1045">1045</a>
+<a name="L1046" class="offset"></a><a href="#L1046">1046</a>
+<a name="L1047" class="offset"></a><a href="#L1047">1047</a>
+<a name="L1048" class="offset"></a><a href="#L1048">1048</a>
+<a name="L1049" class="offset"></a><a href="#L1049">1049</a>
+<a name="L1050" class="offset"></a><a href="#L1050">1050</a>
+<a name="L1051" class="offset"></a><a href="#L1051">1051</a>
+<a name="L1052" class="offset"></a><a href="#L1052">1052</a>
+<a name="L1053" class="offset"></a><a href="#L1053">1053</a>
+<a name="L1054" class="offset"></a><a href="#L1054">1054</a>
+<a name="L1055" class="offset"></a><a href="#L1055">1055</a>
+<a name="L1056" class="offset"></a><a href="#L1056">1056</a>
+<a name="L1057" class="offset"></a><a href="#L1057">1057</a>
+<a name="L1058" class="offset"></a><a href="#L1058">1058</a>
+<a name="L1059" class="offset"></a><a href="#L1059">1059</a>
+<a name="L1060" class="offset"></a><a href="#L1060">1060</a>
+<a name="L1061" class="offset"></a><a href="#L1061">1061</a>
+<a name="L1062" class="offset"></a><a href="#L1062">1062</a>
+<a name="L1063" class="offset"></a><a href="#L1063">1063</a>
+<a name="L1064" class="offset"></a><a href="#L1064">1064</a>
+<a name="L1065" class="offset"></a><a href="#L1065">1065</a>
+<a name="L1066" class="offset"></a><a href="#L1066">1066</a>
+<a name="L1067" class="offset"></a><a href="#L1067">1067</a>
+<a name="L1068" class="offset"></a><a href="#L1068">1068</a>
+<a name="L1069" class="offset"></a><a href="#L1069">1069</a>
+<a name="L1070" class="offset"></a><a href="#L1070">1070</a>
+<a name="L1071" class="offset"></a><a href="#L1071">1071</a>
+<a name="L1072" class="offset"></a><a href="#L1072">1072</a>
+<a name="L1073" class="offset"></a><a href="#L1073">1073</a>
+<a name="L1074" class="offset"></a><a href="#L1074">1074</a>
+<a name="L1075" class="offset"></a><a href="#L1075">1075</a>
+<a name="L1076" class="offset"></a><a href="#L1076">1076</a>
+<a name="L1077" class="offset"></a><a href="#L1077">1077</a>
+<a name="L1078" class="offset"></a><a href="#L1078">1078</a>
+<a name="L1079" class="offset"></a><a href="#L1079">1079</a>
+<a name="L1080" class="offset"></a><a href="#L1080">1080</a>
+<a name="L1081" class="offset"></a><a href="#L1081">1081</a>
+<a name="L1082" class="offset"></a><a href="#L1082">1082</a>
+<a name="L1083" class="offset"></a><a href="#L1083">1083</a>
+<a name="L1084" class="offset"></a><a href="#L1084">1084</a>
+<a name="L1085" class="offset"></a><a href="#L1085">1085</a>
+<a name="L1086" class="offset"></a><a href="#L1086">1086</a>
+<a name="L1087" class="offset"></a><a href="#L1087">1087</a>
+<a name="L1088" class="offset"></a><a href="#L1088">1088</a>
+<a name="L1089" class="offset"></a><a href="#L1089">1089</a>
+<a name="L1090" class="offset"></a><a href="#L1090">1090</a>
+<a name="L1091" class="offset"></a><a href="#L1091">1091</a>
+<a name="L1092" class="offset"></a><a href="#L1092">1092</a>
+<a name="L1093" class="offset"></a><a href="#L1093">1093</a>
+<a name="L1094" class="offset"></a><a href="#L1094">1094</a>
+<a name="L1095" class="offset"></a><a href="#L1095">1095</a>
+<a name="L1096" class="offset"></a><a href="#L1096">1096</a>
+<a name="L1097" class="offset"></a><a href="#L1097">1097</a>
+<a name="L1098" class="offset"></a><a href="#L1098">1098</a>
+<a name="L1099" class="offset"></a><a href="#L1099">1099</a>
+<a name="L1100" class="offset"></a><a href="#L1100">1100</a>
+<a name="L1101" class="offset"></a><a href="#L1101">1101</a>
+<a name="L1102" class="offset"></a><a href="#L1102">1102</a>
+<a name="L1103" class="offset"></a><a href="#L1103">1103</a>
+<a name="L1104" class="offset"></a><a href="#L1104">1104</a>
+<a name="L1105" class="offset"></a><a href="#L1105">1105</a>
+<a name="L1106" class="offset"></a><a href="#L1106">1106</a>
+<a name="L1107" class="offset"></a><a href="#L1107">1107</a>
+<a name="L1108" class="offset"></a><a href="#L1108">1108</a>
+<a name="L1109" class="offset"></a><a href="#L1109">1109</a>
+<a name="L1110" class="offset"></a><a href="#L1110">1110</a>
+<a name="L1111" class="offset"></a><a href="#L1111">1111</a>
+<a name="L1112" class="offset"></a><a href="#L1112">1112</a>
+<a name="L1113" class="offset"></a><a href="#L1113">1113</a>
+<a name="L1114" class="offset"></a><a href="#L1114">1114</a>
+<a name="L1115" class="offset"></a><a href="#L1115">1115</a>
+<a name="L1116" class="offset"></a><a href="#L1116">1116</a>
+<a name="L1117" class="offset"></a><a href="#L1117">1117</a>
+<a name="L1118" class="offset"></a><a href="#L1118">1118</a>
+<a name="L1119" class="offset"></a><a href="#L1119">1119</a>
+<a name="L1120" class="offset"></a><a href="#L1120">1120</a>
+<a name="L1121" class="offset"></a><a href="#L1121">1121</a>
+<a name="L1122" class="offset"></a><a href="#L1122">1122</a>
+<a name="L1123" class="offset"></a><a href="#L1123">1123</a>
+<a name="L1124" class="offset"></a><a href="#L1124">1124</a>
+<a name="L1125" class="offset"></a><a href="#L1125">1125</a>
+<a name="L1126" class="offset"></a><a href="#L1126">1126</a>
+<a name="L1127" class="offset"></a><a href="#L1127">1127</a>
+<a name="L1128" class="offset"></a><a href="#L1128">1128</a>
+<a name="L1129" class="offset"></a><a href="#L1129">1129</a>
+<a name="L1130" class="offset"></a><a href="#L1130">1130</a>
+<a name="L1131" class="offset"></a><a href="#L1131">1131</a>
+<a name="L1132" class="offset"></a><a href="#L1132">1132</a>
+<a name="L1133" class="offset"></a><a href="#L1133">1133</a>
+<a name="L1134" class="offset"></a><a href="#L1134">1134</a>
+<a name="L1135" class="offset"></a><a href="#L1135">1135</a>
+<a name="L1136" class="offset"></a><a href="#L1136">1136</a>
+<a name="L1137" class="offset"></a><a href="#L1137">1137</a>
+<a name="L1138" class="offset"></a><a href="#L1138">1138</a>
+<a name="L1139" class="offset"></a><a href="#L1139">1139</a>
+<a name="L1140" class="offset"></a><a href="#L1140">1140</a>
+<a name="L1141" class="offset"></a><a href="#L1141">1141</a>
+<a name="L1142" class="offset"></a><a href="#L1142">1142</a>
+<a name="L1143" class="offset"></a><a href="#L1143">1143</a>
+<a name="L1144" class="offset"></a><a href="#L1144">1144</a>
+<a name="L1145" class="offset"></a><a href="#L1145">1145</a>
+<a name="L1146" class="offset"></a><a href="#L1146">1146</a>
+<a name="L1147" class="offset"></a><a href="#L1147">1147</a>
+<a name="L1148" class="offset"></a><a href="#L1148">1148</a>
+<a name="L1149" class="offset"></a><a href="#L1149">1149</a>
+<a name="L1150" class="offset"></a><a href="#L1150">1150</a>
+<a name="L1151" class="offset"></a><a href="#L1151">1151</a>
+<a name="L1152" class="offset"></a><a href="#L1152">1152</a>
+<a name="L1153" class="offset"></a><a href="#L1153">1153</a>
+<a name="L1154" class="offset"></a><a href="#L1154">1154</a>
+<a name="L1155" class="offset"></a><a href="#L1155">1155</a>
+<a name="L1156" class="offset"></a><a href="#L1156">1156</a>
+<a name="L1157" class="offset"></a><a href="#L1157">1157</a>
+<a name="L1158" class="offset"></a><a href="#L1158">1158</a>
+<a name="L1159" class="offset"></a><a href="#L1159">1159</a>
+<a name="L1160" class="offset"></a><a href="#L1160">1160</a>
+<a name="L1161" class="offset"></a><a href="#L1161">1161</a>
+<a name="L1162" class="offset"></a><a href="#L1162">1162</a>
+<a name="L1163" class="offset"></a><a href="#L1163">1163</a>
+<a name="L1164" class="offset"></a><a href="#L1164">1164</a>
+<a name="L1165" class="offset"></a><a href="#L1165">1165</a>
+<a name="L1166" class="offset"></a><a href="#L1166">1166</a>
+<a name="L1167" class="offset"></a><a href="#L1167">1167</a>
+<a name="L1168" class="offset"></a><a href="#L1168">1168</a>
+<a name="L1169" class="offset"></a><a href="#L1169">1169</a>
+<a name="L1170" class="offset"></a><a href="#L1170">1170</a>
+<a name="L1171" class="offset"></a><a href="#L1171">1171</a>
+<a name="L1172" class="offset"></a><a href="#L1172">1172</a>
+<a name="L1173" class="offset"></a><a href="#L1173">1173</a>
+<a name="L1174" class="offset"></a><a href="#L1174">1174</a>
+<a name="L1175" class="offset"></a><a href="#L1175">1175</a>
+<a name="L1176" class="offset"></a><a href="#L1176">1176</a>
+<a name="L1177" class="offset"></a><a href="#L1177">1177</a>
+<a name="L1178" class="offset"></a><a href="#L1178">1178</a>
+<a name="L1179" class="offset"></a><a href="#L1179">1179</a>
+<a name="L1180" class="offset"></a><a href="#L1180">1180</a>
+<a name="L1181" class="offset"></a><a href="#L1181">1181</a>
+<a name="L1182" class="offset"></a><a href="#L1182">1182</a>
+<a name="L1183" class="offset"></a><a href="#L1183">1183</a>
+<a name="L1184" class="offset"></a><a href="#L1184">1184</a>
+<a name="L1185" class="offset"></a><a href="#L1185">1185</a>
+<a name="L1186" class="offset"></a><a href="#L1186">1186</a>
+<a name="L1187" class="offset"></a><a href="#L1187">1187</a>
+<a name="L1188" class="offset"></a><a href="#L1188">1188</a>
+<a name="L1189" class="offset"></a><a href="#L1189">1189</a>
+<a name="L1190" class="offset"></a><a href="#L1190">1190</a>
+<a name="L1191" class="offset"></a><a href="#L1191">1191</a>
+<a name="L1192" class="offset"></a><a href="#L1192">1192</a>
+<a name="L1193" class="offset"></a><a href="#L1193">1193</a>
+<a name="L1194" class="offset"></a><a href="#L1194">1194</a>
+<a name="L1195" class="offset"></a><a href="#L1195">1195</a>
+<a name="L1196" class="offset"></a><a href="#L1196">1196</a>
+<a name="L1197" class="offset"></a><a href="#L1197">1197</a>
+<a name="L1198" class="offset"></a><a href="#L1198">1198</a>
+<a name="L1199" class="offset"></a><a href="#L1199">1199</a>
+<a name="L1200" class="offset"></a><a href="#L1200">1200</a>
+<a name="L1201" class="offset"></a><a href="#L1201">1201</a>
+<a name="L1202" class="offset"></a><a href="#L1202">1202</a>
+<a name="L1203" class="offset"></a><a href="#L1203">1203</a>
+<a name="L1204" class="offset"></a><a href="#L1204">1204</a>
+<a name="L1205" class="offset"></a><a href="#L1205">1205</a>
+<a name="L1206" class="offset"></a><a href="#L1206">1206</a>
+<a name="L1207" class="offset"></a><a href="#L1207">1207</a>
+<a name="L1208" class="offset"></a><a href="#L1208">1208</a>
+<a name="L1209" class="offset"></a><a href="#L1209">1209</a>
+<a name="L1210" class="offset"></a><a href="#L1210">1210</a>
+<a name="L1211" class="offset"></a><a href="#L1211">1211</a>
+<a name="L1212" class="offset"></a><a href="#L1212">1212</a>
+<a name="L1213" class="offset"></a><a href="#L1213">1213</a>
+<a name="L1214" class="offset"></a><a href="#L1214">1214</a>
+<a name="L1215" class="offset"></a><a href="#L1215">1215</a>
+<a name="L1216" class="offset"></a><a href="#L1216">1216</a>
+<a name="L1217" class="offset"></a><a href="#L1217">1217</a>
+<a name="L1218" class="offset"></a><a href="#L1218">1218</a>
+<a name="L1219" class="offset"></a><a href="#L1219">1219</a>
+<a name="L1220" class="offset"></a><a href="#L1220">1220</a>
+<a name="L1221" class="offset"></a><a href="#L1221">1221</a>
+<a name="L1222" class="offset"></a><a href="#L1222">1222</a>
+<a name="L1223" class="offset"></a><a href="#L1223">1223</a>
+<a name="L1224" class="offset"></a><a href="#L1224">1224</a>
+<a name="L1225" class="offset"></a><a href="#L1225">1225</a>
+<a name="L1226" class="offset"></a><a href="#L1226">1226</a>
+<a name="L1227" class="offset"></a><a href="#L1227">1227</a>
+<a name="L1228" class="offset"></a><a href="#L1228">1228</a>
+<a name="L1229" class="offset"></a><a href="#L1229">1229</a>
+<a name="L1230" class="offset"></a><a href="#L1230">1230</a>
+<a name="L1231" class="offset"></a><a href="#L1231">1231</a>
+<a name="L1232" class="offset"></a><a href="#L1232">1232</a>
+<a name="L1233" class="offset"></a><a href="#L1233">1233</a>
+<a name="L1234" class="offset"></a><a href="#L1234">1234</a>
+<a name="L1235" class="offset"></a><a href="#L1235">1235</a>
+<a name="L1236" class="offset"></a><a href="#L1236">1236</a>
+<a name="L1237" class="offset"></a><a href="#L1237">1237</a>
+<a name="L1238" class="offset"></a><a href="#L1238">1238</a>
+<a name="L1239" class="offset"></a><a href="#L1239">1239</a>
+<a name="L1240" class="offset"></a><a href="#L1240">1240</a>
+<a name="L1241" class="offset"></a><a href="#L1241">1241</a>
+<a name="L1242" class="offset"></a><a href="#L1242">1242</a>
+<a name="L1243" class="offset"></a><a href="#L1243">1243</a>
+<a name="L1244" class="offset"></a><a href="#L1244">1244</a>
+<a name="L1245" class="offset"></a><a href="#L1245">1245</a>
+<a name="L1246" class="offset"></a><a href="#L1246">1246</a>
+<a name="L1247" class="offset"></a><a href="#L1247">1247</a>
+<a name="L1248" class="offset"></a><a href="#L1248">1248</a>
+<a name="L1249" class="offset"></a><a href="#L1249">1249</a>
+<a name="L1250" class="offset"></a><a href="#L1250">1250</a>
+<a name="L1251" class="offset"></a><a href="#L1251">1251</a>
+<a name="L1252" class="offset"></a><a href="#L1252">1252</a>
+<a name="L1253" class="offset"></a><a href="#L1253">1253</a>
+<a name="L1254" class="offset"></a><a href="#L1254">1254</a>
+<a name="L1255" class="offset"></a><a href="#L1255">1255</a>
+<a name="L1256" class="offset"></a><a href="#L1256">1256</a>
+<a name="L1257" class="offset"></a><a href="#L1257">1257</a>
+<a name="L1258" class="offset"></a><a href="#L1258">1258</a>
+<a name="L1259" class="offset"></a><a href="#L1259">1259</a>
+<a name="L1260" class="offset"></a><a href="#L1260">1260</a>
+<a name="L1261" class="offset"></a><a href="#L1261">1261</a>
+<a name="L1262" class="offset"></a><a href="#L1262">1262</a>
+<a name="L1263" class="offset"></a><a href="#L1263">1263</a>
+<a name="L1264" class="offset"></a><a href="#L1264">1264</a>
+<a name="L1265" class="offset"></a><a href="#L1265">1265</a>
+<a name="L1266" class="offset"></a><a href="#L1266">1266</a>
+<a name="L1267" class="offset"></a><a href="#L1267">1267</a>
+<a name="L1268" class="offset"></a><a href="#L1268">1268</a>
+<a name="L1269" class="offset"></a><a href="#L1269">1269</a>
+<a name="L1270" class="offset"></a><a href="#L1270">1270</a>
+<a name="L1271" class="offset"></a><a href="#L1271">1271</a>
+<a name="L1272" class="offset"></a><a href="#L1272">1272</a>
+<a name="L1273" class="offset"></a><a href="#L1273">1273</a>
+<a name="L1274" class="offset"></a><a href="#L1274">1274</a>
+<a name="L1275" class="offset"></a><a href="#L1275">1275</a>
+<a name="L1276" class="offset"></a><a href="#L1276">1276</a>
+<a name="L1277" class="offset"></a><a href="#L1277">1277</a>
+<a name="L1278" class="offset"></a><a href="#L1278">1278</a>
+<a name="L1279" class="offset"></a><a href="#L1279">1279</a>
+<a name="L1280" class="offset"></a><a href="#L1280">1280</a>
+<a name="L1281" class="offset"></a><a href="#L1281">1281</a>
+<a name="L1282" class="offset"></a><a href="#L1282">1282</a>
+<a name="L1283" class="offset"></a><a href="#L1283">1283</a>
+<a name="L1284" class="offset"></a><a href="#L1284">1284</a>
+<a name="L1285" class="offset"></a><a href="#L1285">1285</a>
+<a name="L1286" class="offset"></a><a href="#L1286">1286</a>
+<a name="L1287" class="offset"></a><a href="#L1287">1287</a>
+<a name="L1288" class="offset"></a><a href="#L1288">1288</a>
+<a name="L1289" class="offset"></a><a href="#L1289">1289</a>
+<a name="L1290" class="offset"></a><a href="#L1290">1290</a>
+<a name="L1291" class="offset"></a><a href="#L1291">1291</a>
+<a name="L1292" class="offset"></a><a href="#L1292">1292</a>
+<a name="L1293" class="offset"></a><a href="#L1293">1293</a>
+<a name="L1294" class="offset"></a><a href="#L1294">1294</a>
+<a name="L1295" class="offset"></a><a href="#L1295">1295</a>
+<a name="L1296" class="offset"></a><a href="#L1296">1296</a>
+<a name="L1297" class="offset"></a><a href="#L1297">1297</a>
+<a name="L1298" class="offset"></a><a href="#L1298">1298</a>
+<a name="L1299" class="offset"></a><a href="#L1299">1299</a>
+<a name="L1300" class="offset"></a><a href="#L1300">1300</a>
+<a name="L1301" class="offset"></a><a href="#L1301">1301</a>
+<a name="L1302" class="offset"></a><a href="#L1302">1302</a>
+<a name="L1303" class="offset"></a><a href="#L1303">1303</a>
+<a name="L1304" class="offset"></a><a href="#L1304">1304</a>
+<a name="L1305" class="offset"></a><a href="#L1305">1305</a>
+<a name="L1306" class="offset"></a><a href="#L1306">1306</a>
+<a name="L1307" class="offset"></a><a href="#L1307">1307</a>
+<a name="L1308" class="offset"></a><a href="#L1308">1308</a>
+<a name="L1309" class="offset"></a><a href="#L1309">1309</a>
+<a name="L1310" class="offset"></a><a href="#L1310">1310</a>
+<a name="L1311" class="offset"></a><a href="#L1311">1311</a>
+<a name="L1312" class="offset"></a><a href="#L1312">1312</a>
+<a name="L1313" class="offset"></a><a href="#L1313">1313</a>
+<a name="L1314" class="offset"></a><a href="#L1314">1314</a>
+<a name="L1315" class="offset"></a><a href="#L1315">1315</a>
+<a name="L1316" class="offset"></a><a href="#L1316">1316</a>
+<a name="L1317" class="offset"></a><a href="#L1317">1317</a>
+<a name="L1318" class="offset"></a><a href="#L1318">1318</a>
+<a name="L1319" class="offset"></a><a href="#L1319">1319</a>
+<a name="L1320" class="offset"></a><a href="#L1320">1320</a>
+<a name="L1321" class="offset"></a><a href="#L1321">1321</a>
+<a name="L1322" class="offset"></a><a href="#L1322">1322</a>
+<a name="L1323" class="offset"></a><a href="#L1323">1323</a>
+<a name="L1324" class="offset"></a><a href="#L1324">1324</a>
+<a name="L1325" class="offset"></a><a href="#L1325">1325</a>
+<a name="L1326" class="offset"></a><a href="#L1326">1326</a>
+<a name="L1327" class="offset"></a><a href="#L1327">1327</a>
+<a name="L1328" class="offset"></a><a href="#L1328">1328</a>
+<a name="L1329" class="offset"></a><a href="#L1329">1329</a>
+<a name="L1330" class="offset"></a><a href="#L1330">1330</a>
+<a name="L1331" class="offset"></a><a href="#L1331">1331</a>
+<a name="L1332" class="offset"></a><a href="#L1332">1332</a>
+<a name="L1333" class="offset"></a><a href="#L1333">1333</a>
+<a name="L1334" class="offset"></a><a href="#L1334">1334</a>
+<a name="L1335" class="offset"></a><a href="#L1335">1335</a>
+<a name="L1336" class="offset"></a><a href="#L1336">1336</a>
+<a name="L1337" class="offset"></a><a href="#L1337">1337</a>
+<a name="L1338" class="offset"></a><a href="#L1338">1338</a>
+<a name="L1339" class="offset"></a><a href="#L1339">1339</a>
+<a name="L1340" class="offset"></a><a href="#L1340">1340</a>
+<a name="L1341" class="offset"></a><a href="#L1341">1341</a>
+<a name="L1342" class="offset"></a><a href="#L1342">1342</a>
+<a name="L1343" class="offset"></a><a href="#L1343">1343</a>
+<a name="L1344" class="offset"></a><a href="#L1344">1344</a>
+<a name="L1345" class="offset"></a><a href="#L1345">1345</a>
+<a name="L1346" class="offset"></a><a href="#L1346">1346</a>
+<a name="L1347" class="offset"></a><a href="#L1347">1347</a>
+<a name="L1348" class="offset"></a><a href="#L1348">1348</a>
+<a name="L1349" class="offset"></a><a href="#L1349">1349</a>
+<a name="L1350" class="offset"></a><a href="#L1350">1350</a>
+<a name="L1351" class="offset"></a><a href="#L1351">1351</a>
+<a name="L1352" class="offset"></a><a href="#L1352">1352</a>
+<a name="L1353" class="offset"></a><a href="#L1353">1353</a>
+<a name="L1354" class="offset"></a><a href="#L1354">1354</a>
+<a name="L1355" class="offset"></a><a href="#L1355">1355</a>
+<a name="L1356" class="offset"></a><a href="#L1356">1356</a>
+<a name="L1357" class="offset"></a><a href="#L1357">1357</a>
+<a name="L1358" class="offset"></a><a href="#L1358">1358</a>
+<a name="L1359" class="offset"></a><a href="#L1359">1359</a>
+<a name="L1360" class="offset"></a><a href="#L1360">1360</a>
+<a name="L1361" class="offset"></a><a href="#L1361">1361</a>
+<a name="L1362" class="offset"></a><a href="#L1362">1362</a>
+<a name="L1363" class="offset"></a><a href="#L1363">1363</a>
+<a name="L1364" class="offset"></a><a href="#L1364">1364</a>
+<a name="L1365" class="offset"></a><a href="#L1365">1365</a>
+<a name="L1366" class="offset"></a><a href="#L1366">1366</a>
+<a name="L1367" class="offset"></a><a href="#L1367">1367</a>
+<a name="L1368" class="offset"></a><a href="#L1368">1368</a>
+<a name="L1369" class="offset"></a><a href="#L1369">1369</a>
+<a name="L1370" class="offset"></a><a href="#L1370">1370</a>
+<a name="L1371" class="offset"></a><a href="#L1371">1371</a>
+<a name="L1372" class="offset"></a><a href="#L1372">1372</a>
+<a name="L1373" class="offset"></a><a href="#L1373">1373</a>
+<a name="L1374" class="offset"></a><a href="#L1374">1374</a>
+<a name="L1375" class="offset"></a><a href="#L1375">1375</a>
+<a name="L1376" class="offset"></a><a href="#L1376">1376</a>
+<a name="L1377" class="offset"></a><a href="#L1377">1377</a>
+<a name="L1378" class="offset"></a><a href="#L1378">1378</a>
+<a name="L1379" class="offset"></a><a href="#L1379">1379</a>
+<a name="L1380" class="offset"></a><a href="#L1380">1380</a>
+<a name="L1381" class="offset"></a><a href="#L1381">1381</a>
+<a name="L1382" class="offset"></a><a href="#L1382">1382</a>
+<a name="L1383" class="offset"></a><a href="#L1383">1383</a>
+<a name="L1384" class="offset"></a><a href="#L1384">1384</a>
+<a name="L1385" class="offset"></a><a href="#L1385">1385</a>
+<a name="L1386" class="offset"></a><a href="#L1386">1386</a>
+<a name="L1387" class="offset"></a><a href="#L1387">1387</a>
+<a name="L1388" class="offset"></a><a href="#L1388">1388</a>
+<a name="L1389" class="offset"></a><a href="#L1389">1389</a>
+<a name="L1390" class="offset"></a><a href="#L1390">1390</a>
+<a name="L1391" class="offset"></a><a href="#L1391">1391</a>
+<a name="L1392" class="offset"></a><a href="#L1392">1392</a>
+<a name="L1393" class="offset"></a><a href="#L1393">1393</a>
+<a name="L1394" class="offset"></a><a href="#L1394">1394</a>
+<a name="L1395" class="offset"></a><a href="#L1395">1395</a>
+<a name="L1396" class="offset"></a><a href="#L1396">1396</a>
+<a name="L1397" class="offset"></a><a href="#L1397">1397</a>
+<a name="L1398" class="offset"></a><a href="#L1398">1398</a>
+<a name="L1399" class="offset"></a><a href="#L1399">1399</a>
+<a name="L1400" class="offset"></a><a href="#L1400">1400</a>
+<a name="L1401" class="offset"></a><a href="#L1401">1401</a>
+<a name="L1402" class="offset"></a><a href="#L1402">1402</a>
+<a name="L1403" class="offset"></a><a href="#L1403">1403</a>
+<a name="L1404" class="offset"></a><a href="#L1404">1404</a>
+<a name="L1405" class="offset"></a><a href="#L1405">1405</a>
+<a name="L1406" class="offset"></a><a href="#L1406">1406</a>
+<a name="L1407" class="offset"></a><a href="#L1407">1407</a>
+<a name="L1408" class="offset"></a><a href="#L1408">1408</a>
+<a name="L1409" class="offset"></a><a href="#L1409">1409</a>
+<a name="L1410" class="offset"></a><a href="#L1410">1410</a>
+<a name="L1411" class="offset"></a><a href="#L1411">1411</a>
+<a name="L1412" class="offset"></a><a href="#L1412">1412</a>
+<a name="L1413" class="offset"></a><a href="#L1413">1413</a>
+<a name="L1414" class="offset"></a><a href="#L1414">1414</a>
+<a name="L1415" class="offset"></a><a href="#L1415">1415</a>
+<a name="L1416" class="offset"></a><a href="#L1416">1416</a>
+<a name="L1417" class="offset"></a><a href="#L1417">1417</a>
+<a name="L1418" class="offset"></a><a href="#L1418">1418</a>
+<a name="L1419" class="offset"></a><a href="#L1419">1419</a>
+<a name="L1420" class="offset"></a><a href="#L1420">1420</a>
+<a name="L1421" class="offset"></a><a href="#L1421">1421</a>
+<a name="L1422" class="offset"></a><a href="#L1422">1422</a>
+<a name="L1423" class="offset"></a><a href="#L1423">1423</a>
+<a name="L1424" class="offset"></a><a href="#L1424">1424</a>
+<a name="L1425" class="offset"></a><a href="#L1425">1425</a>
+<a name="L1426" class="offset"></a><a href="#L1426">1426</a>
+<a name="L1427" class="offset"></a><a href="#L1427">1427</a>
+<a name="L1428" class="offset"></a><a href="#L1428">1428</a>
+<a name="L1429" class="offset"></a><a href="#L1429">1429</a>
+<a name="L1430" class="offset"></a><a href="#L1430">1430</a>
+<a name="L1431" class="offset"></a><a href="#L1431">1431</a>
+<a name="L1432" class="offset"></a><a href="#L1432">1432</a>
+<a name="L1433" class="offset"></a><a href="#L1433">1433</a>
+<a name="L1434" class="offset"></a><a href="#L1434">1434</a>
+<a name="L1435" class="offset"></a><a href="#L1435">1435</a>
+<a name="L1436" class="offset"></a><a href="#L1436">1436</a>
+<a name="L1437" class="offset"></a><a href="#L1437">1437</a>
+<a name="L1438" class="offset"></a><a href="#L1438">1438</a>
+<a name="L1439" class="offset"></a><a href="#L1439">1439</a>
+<a name="L1440" class="offset"></a><a href="#L1440">1440</a>
+<a name="L1441" class="offset"></a><a href="#L1441">1441</a>
+<a name="L1442" class="offset"></a><a href="#L1442">1442</a>
+<a name="L1443" class="offset"></a><a href="#L1443">1443</a>
+<a name="L1444" class="offset"></a><a href="#L1444">1444</a>
+<a name="L1445" class="offset"></a><a href="#L1445">1445</a>
+<a name="L1446" class="offset"></a><a href="#L1446">1446</a>
+<a name="L1447" class="offset"></a><a href="#L1447">1447</a>
+<a name="L1448" class="offset"></a><a href="#L1448">1448</a>
+<a name="L1449" class="offset"></a><a href="#L1449">1449</a>
+<a name="L1450" class="offset"></a><a href="#L1450">1450</a>
+<a name="L1451" class="offset"></a><a href="#L1451">1451</a>
+<a name="L1452" class="offset"></a><a href="#L1452">1452</a>
+<a name="L1453" class="offset"></a><a href="#L1453">1453</a>
+<a name="L1454" class="offset"></a><a href="#L1454">1454</a>
+<a name="L1455" class="offset"></a><a href="#L1455">1455</a>
+<a name="L1456" class="offset"></a><a href="#L1456">1456</a>
+<a name="L1457" class="offset"></a><a href="#L1457">1457</a>
+<a name="L1458" class="offset"></a><a href="#L1458">1458</a>
+<a name="L1459" class="offset"></a><a href="#L1459">1459</a>
+<a name="L1460" class="offset"></a><a href="#L1460">1460</a>
+<a name="L1461" class="offset"></a><a href="#L1461">1461</a>
+<a name="L1462" class="offset"></a><a href="#L1462">1462</a>
+<a name="L1463" class="offset"></a><a href="#L1463">1463</a>
+<a name="L1464" class="offset"></a><a href="#L1464">1464</a>
+<a name="L1465" class="offset"></a><a href="#L1465">1465</a>
+<a name="L1466" class="offset"></a><a href="#L1466">1466</a>
+<a name="L1467" class="offset"></a><a href="#L1467">1467</a>
+<a name="L1468" class="offset"></a><a href="#L1468">1468</a>
+<a name="L1469" class="offset"></a><a href="#L1469">1469</a>
+<a name="L1470" class="offset"></a><a href="#L1470">1470</a>
+<a name="L1471" class="offset"></a><a href="#L1471">1471</a>
+<a name="L1472" class="offset"></a><a href="#L1472">1472</a>
+<a name="L1473" class="offset"></a><a href="#L1473">1473</a>
+<a name="L1474" class="offset"></a><a href="#L1474">1474</a>
+<a name="L1475" class="offset"></a><a href="#L1475">1475</a>
+<a name="L1476" class="offset"></a><a href="#L1476">1476</a>
+<a name="L1477" class="offset"></a><a href="#L1477">1477</a>
+<a name="L1478" class="offset"></a><a href="#L1478">1478</a>
+<a name="L1479" class="offset"></a><a href="#L1479">1479</a>
+<a name="L1480" class="offset"></a><a href="#L1480">1480</a>
+<a name="L1481" class="offset"></a><a href="#L1481">1481</a>
+<a name="L1482" class="offset"></a><a href="#L1482">1482</a>
+<a name="L1483" class="offset"></a><a href="#L1483">1483</a>
+<a name="L1484" class="offset"></a><a href="#L1484">1484</a>
+<a name="L1485" class="offset"></a><a href="#L1485">1485</a>
+<a name="L1486" class="offset"></a><a href="#L1486">1486</a>
+<a name="L1487" class="offset"></a><a href="#L1487">1487</a>
+<a name="L1488" class="offset"></a><a href="#L1488">1488</a>
+<a name="L1489" class="offset"></a><a href="#L1489">1489</a>
+<a name="L1490" class="offset"></a><a href="#L1490">1490</a>
+<a name="L1491" class="offset"></a><a href="#L1491">1491</a>
+<a name="L1492" class="offset"></a><a href="#L1492">1492</a>
+<a name="L1493" class="offset"></a><a href="#L1493">1493</a>
+<a name="L1494" class="offset"></a><a href="#L1494">1494</a>
+<a name="L1495" class="offset"></a><a href="#L1495">1495</a>
+<a name="L1496" class="offset"></a><a href="#L1496">1496</a>
+<a name="L1497" class="offset"></a><a href="#L1497">1497</a>
+<a name="L1498" class="offset"></a><a href="#L1498">1498</a>
+<a name="L1499" class="offset"></a><a href="#L1499">1499</a>
+<a name="L1500" class="offset"></a><a href="#L1500">1500</a>
+<a name="L1501" class="offset"></a><a href="#L1501">1501</a>
+<a name="L1502" class="offset"></a><a href="#L1502">1502</a>
+<a name="L1503" class="offset"></a><a href="#L1503">1503</a>
+<a name="L1504" class="offset"></a><a href="#L1504">1504</a>
+<a name="L1505" class="offset"></a><a href="#L1505">1505</a>
+<a name="L1506" class="offset"></a><a href="#L1506">1506</a>
+<a name="L1507" class="offset"></a><a href="#L1507">1507</a>
+<a name="L1508" class="offset"></a><a href="#L1508">1508</a>
+<a name="L1509" class="offset"></a><a href="#L1509">1509</a>
+<a name="L1510" class="offset"></a><a href="#L1510">1510</a>
+<a name="L1511" class="offset"></a><a href="#L1511">1511</a>
+<a name="L1512" class="offset"></a><a href="#L1512">1512</a>
+<a name="L1513" class="offset"></a><a href="#L1513">1513</a>
+<a name="L1514" class="offset"></a><a href="#L1514">1514</a>
+<a name="L1515" class="offset"></a><a href="#L1515">1515</a>
+<a name="L1516" class="offset"></a><a href="#L1516">1516</a>
+<a name="L1517" class="offset"></a><a href="#L1517">1517</a>
+<a name="L1518" class="offset"></a><a href="#L1518">1518</a>
+<a name="L1519" class="offset"></a><a href="#L1519">1519</a>
+<a name="L1520" class="offset"></a><a href="#L1520">1520</a>
+<a name="L1521" class="offset"></a><a href="#L1521">1521</a>
+<a name="L1522" class="offset"></a><a href="#L1522">1522</a>
+<a name="L1523" class="offset"></a><a href="#L1523">1523</a>
+<a name="L1524" class="offset"></a><a href="#L1524">1524</a>
+<a name="L1525" class="offset"></a><a href="#L1525">1525</a>
+<a name="L1526" class="offset"></a><a href="#L1526">1526</a>
+<a name="L1527" class="offset"></a><a href="#L1527">1527</a>
+<a name="L1528" class="offset"></a><a href="#L1528">1528</a>
+<a name="L1529" class="offset"></a><a href="#L1529">1529</a>
+<a name="L1530" class="offset"></a><a href="#L1530">1530</a>
+<a name="L1531" class="offset"></a><a href="#L1531">1531</a>
+<a name="L1532" class="offset"></a><a href="#L1532">1532</a>
+<a name="L1533" class="offset"></a><a href="#L1533">1533</a>
+<a name="L1534" class="offset"></a><a href="#L1534">1534</a>
+<a name="L1535" class="offset"></a><a href="#L1535">1535</a>
+<a name="L1536" class="offset"></a><a href="#L1536">1536</a>
+<a name="L1537" class="offset"></a><a href="#L1537">1537</a>
+<a name="L1538" class="offset"></a><a href="#L1538">1538</a>
+<a name="L1539" class="offset"></a><a href="#L1539">1539</a>
+<a name="L1540" class="offset"></a><a href="#L1540">1540</a>
+<a name="L1541" class="offset"></a><a href="#L1541">1541</a>
+<a name="L1542" class="offset"></a><a href="#L1542">1542</a>
+<a name="L1543" class="offset"></a><a href="#L1543">1543</a>
+<a name="L1544" class="offset"></a><a href="#L1544">1544</a>
+<a name="L1545" class="offset"></a><a href="#L1545">1545</a>
+<a name="L1546" class="offset"></a><a href="#L1546">1546</a>
+<a name="L1547" class="offset"></a><a href="#L1547">1547</a>
+<a name="L1548" class="offset"></a><a href="#L1548">1548</a>
+<a name="L1549" class="offset"></a><a href="#L1549">1549</a>
+<a name="L1550" class="offset"></a><a href="#L1550">1550</a>
+<a name="L1551" class="offset"></a><a href="#L1551">1551</a>
+<a name="L1552" class="offset"></a><a href="#L1552">1552</a>
+<a name="L1553" class="offset"></a><a href="#L1553">1553</a>
+<a name="L1554" class="offset"></a><a href="#L1554">1554</a>
+</pre></td><td><pre class="line-numbers">
+Network Working Group                                          N. Freed
+Request for Comments: 2045                                     Innosoft
+Obsoletes: 1521, 1522, 1590                               N. Borenstein
+Category: Standards Track                                 First Virtual
+                                                          November 1996
+
+                 Multipurpose Internet Mail Extensions
+                            (MIME) Part One:
+                   Format of Internet Message Bodies
+
+Status of this Memo
+
+   This document specifies an Internet standards track protocol for the
+   Internet community, and requests discussion and suggestions for
+   improvements.  Please refer to the current edition of the &quot;Internet
+   Official Protocol Standards&quot; (STD 1) for the standardization state
+   and status of this protocol.  Distribution of this memo is unlimited.
+
+Abstract
+
+   STD 11, RFC 822, defines a message representation protocol specifying
+   considerable detail about US-ASCII message headers, and leaves the
+   message content, or message body, as flat US-ASCII text.  This set of
+   documents, collectively called the Multipurpose Internet Mail
+   Extensions, or MIME, redefines the format of messages to allow for
+
+    (1)   textual message bodies in character sets other than
+          US-ASCII,
+
+    (2)   an extensible set of different formats for non-textual
+          message bodies,
+
+    (3)   multi-part message bodies, and
+
+    (4)   textual header information in character sets other than
+          US-ASCII.
+
+   These documents are based on earlier work documented in RFC 934, STD
+   11, and RFC 1049, but extends and revises them.  Because RFC 822 said
+   so little about message bodies, these documents are largely
+   orthogonal to (rather than a revision of) RFC 822.
+
+   This initial document specifies the various headers used to describe
+   the structure of MIME messages. The second document, RFC 2046,
+   defines the general structure of the MIME media typing system and
+   defines an initial set of media types. The third document, RFC 2047,
+   describes extensions to RFC 822 to allow non-US-ASCII text data in
+
+Freed &amp; Borenstein          Standards Track                     [Page 1]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   Internet mail header fields. The fourth document, RFC 2048, specifies
+   various IANA registration procedures for MIME-related facilities. The
+   fifth and final document, RFC 2049, describes MIME conformance
+   criteria as well as providing some illustrative examples of MIME
+   message formats, acknowledgements, and the bibliography.
+
+   These documents are revisions of RFCs 1521, 1522, and 1590, which
+   themselves were revisions of RFCs 1341 and 1342.  An appendix in RFC
+   2049 describes differences and changes from previous versions.
+
+Table of Contents
+
+   1. Introduction .........................................    3
+   2. Definitions, Conventions, and Generic BNF Grammar ....    5
+   2.1 CRLF ................................................    5
+   2.2 Character Set .......................................    6
+   2.3 Message .............................................    6
+   2.4 Entity ..............................................    6
+   2.5 Body Part ...........................................    7
+   2.6 Body ................................................    7
+   2.7 7bit Data ...........................................    7
+   2.8 8bit Data ...........................................    7
+   2.9 Binary Data .........................................    7
+   2.10 Lines ..............................................    7
+   3. MIME Header Fields ...................................    8
+   4. MIME-Version Header Field ............................    8
+   5. Content-Type Header Field ............................   10
+   5.1 Syntax of the Content-Type Header Field .............   12
+   5.2 Content-Type Defaults ...............................   14
+   6. Content-Transfer-Encoding Header Field ...............   14
+   6.1 Content-Transfer-Encoding Syntax ....................   14
+   6.2 Content-Transfer-Encodings Semantics ................   15
+   6.3 New Content-Transfer-Encodings ......................   16
+   6.4 Interpretation and Use ..............................   16
+   6.5 Translating Encodings ...............................   18
+   6.6 Canonical Encoding Model ............................   19
+   6.7 Quoted-Printable Content-Transfer-Encoding ..........   19
+   6.8 Base64 Content-Transfer-Encoding ....................   24
+   7. Content-ID Header Field ..............................   26
+   8. Content-Description Header Field .....................   27
+   9. Additional MIME Header Fields ........................   27
+   10. Summary .............................................   27
+   11. Security Considerations .............................   27
+   12. Authors' Addresses ..................................   28
+   A. Collected Grammar ....................................   29
+
+Freed &amp; Borenstein          Standards Track                     [Page 2]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+1.  Introduction
+
+   Since its publication in 1982, RFC 822 has defined the standard
+   format of textual mail messages on the Internet.  Its success has
+   been such that the RFC 822 format has been adopted, wholly or
+   partially, well beyond the confines of the Internet and the Internet
+   SMTP transport defined by RFC 821.  As the format has seen wider use,
+   a number of limitations have proven increasingly restrictive for the
+   user community.
+
+   RFC 822 was intended to specify a format for text messages.  As such,
+   non-text messages, such as multimedia messages that might include
+   audio or images, are simply not mentioned.  Even in the case of text,
+   however, RFC 822 is inadequate for the needs of mail users whose
+   languages require the use of character sets richer than US-ASCII.
+   Since RFC 822 does not specify mechanisms for mail containing audio,
+   video, Asian language text, or even text in most European languages,
+   additional specifications are needed.
+
+   One of the notable limitations of RFC 821/822 based mail systems is
+   the fact that they limit the contents of electronic mail messages to
+   relatively short lines (e.g. 1000 characters or less [RFC-821]) of
+   7bit US-ASCII.  This forces users to convert any non-textual data
+   that they may wish to send into seven-bit bytes representable as
+   printable US-ASCII characters before invoking a local mail UA (User
+   Agent, a program with which human users send and receive mail).
+   Examples of such encodings currently used in the Internet include
+   pure hexadecimal, uuencode, the 3-in-4 base 64 scheme specified in
+   RFC 1421, the Andrew Toolkit Representation [ATK], and many others.
+
+   The limitations of RFC 822 mail become even more apparent as gateways
+   are designed to allow for the exchange of mail messages between RFC
+   822 hosts and X.400 hosts.  X.400 [X400] specifies mechanisms for the
+   inclusion of non-textual material within electronic mail messages.
+   The current standards for the mapping of X.400 messages to RFC 822
+   messages specify either that X.400 non-textual material must be
+   converted to (not encoded in) IA5Text format, or that they must be
+   discarded, notifying the RFC 822 user that discarding has occurred.
+   This is clearly undesirable, as information that a user may wish to
+   receive is lost.  Even though a user agent may not have the
+   capability of dealing with the non-textual material, the user might
+   have some mechanism external to the UA that can extract useful
+   information from the material.  Moreover, it does not allow for the
+   fact that the message may eventually be gatewayed back into an X.400
+   message handling system (i.e., the X.400 message is &quot;tunneled&quot;
+   through Internet mail), where the non-textual information would
+   definitely become useful again.
+
+Freed &amp; Borenstein          Standards Track                     [Page 3]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   This document describes several mechanisms that combine to solve most
+   of these problems without introducing any serious incompatibilities
+   with the existing world of RFC 822 mail.  In particular, it
+   describes:
+
+    (1)   A MIME-Version header field, which uses a version
+          number to declare a message to be conformant with MIME
+          and allows mail processing agents to distinguish
+          between such messages and those generated by older or
+          non-conformant software, which are presumed to lack
+          such a field.
+
+    (2)   A Content-Type header field, generalized from RFC 1049,
+          which can be used to specify the media type and subtype
+          of data in the body of a message and to fully specify
+          the native representation (canonical form) of such
+          data.
+
+    (3)   A Content-Transfer-Encoding header field, which can be
+          used to specify both the encoding transformation that
+          was applied to the body and the domain of the result.
+          Encoding transformations other than the identity
+          transformation are usually applied to data in order to
+          allow it to pass through mail transport mechanisms
+          which may have data or character set limitations.
+
+    (4)   Two additional header fields that can be used to
+          further describe the data in a body, the Content-ID and
+          Content-Description header fields.
+
+   All of the header fields defined in this document are subject to the
+   general syntactic rules for header fields specified in RFC 822.  In
+   particular, all of these header fields except for Content-Disposition
+   can include RFC 822 comments, which have no semantic content and
+   should be ignored during MIME processing.
+
+   Finally, to specify and promote interoperability, RFC 2049 provides a
+   basic applicability statement for a subset of the above mechanisms
+   that defines a minimal level of &quot;conformance&quot; with this document.
+
+   HISTORICAL NOTE:  Several of the mechanisms described in this set of
+   documents may seem somewhat strange or even baroque at first reading.
+   It is important to note that compatibility with existing standards
+   AND robustness across existing practice were two of the highest
+   priorities of the working group that developed this set of documents.
+   In particular, compatibility was always favored over elegance.
+
+Freed &amp; Borenstein          Standards Track                     [Page 4]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   Please refer to the current edition of the &quot;Internet Official
+   Protocol Standards&quot; for the standardization state and status of this
+   protocol.  RFC 822 and STD 3, RFC 1123 also provide essential
+   background for MIME since no conforming implementation of MIME can
+   violate them.  In addition, several other informational RFC documents
+   will be of interest to the MIME implementor, in particular RFC 1344,
+   RFC 1345, and RFC 1524.
+
+2.  Definitions, Conventions, and Generic BNF Grammar
+
+   Although the mechanisms specified in this set of documents are all
+   described in prose, most are also described formally in the augmented
+   BNF notation of RFC 822. Implementors will need to be familiar with
+   this notation in order to understand this set of documents, and are
+   referred to RFC 822 for a complete explanation of the augmented BNF
+   notation.
+
+   Some of the augmented BNF in this set of documents makes named
+   references to syntax rules defined in RFC 822.  A complete formal
+   grammar, then, is obtained by combining the collected grammar
+   appendices in each document in this set with the BNF of RFC 822 plus
+   the modifications to RFC 822 defined in RFC 1123 (which specifically
+   changes the syntax for `return', `date' and `mailbox').
+
+   All numeric and octet values are given in decimal notation in this
+   set of documents. All media type values, subtype values, and
+   parameter names as defined are case-insensitive.  However, parameter
+   values are case-sensitive unless otherwise specified for the specific
+   parameter.
+
+   FORMATTING NOTE:  Notes, such at this one, provide additional
+   nonessential information which may be skipped by the reader without
+   missing anything essential.  The primary purpose of these non-
+   essential notes is to convey information about the rationale of this
+   set of documents, or to place these documents in the proper
+   historical or evolutionary context.  Such information may in
+   particular be skipped by those who are focused entirely on building a
+   conformant implementation, but may be of use to those who wish to
+   understand why certain design choices were made.
+
+2.1.  CRLF
+
+   The term CRLF, in this set of documents, refers to the sequence of
+   octets corresponding to the two US-ASCII characters CR (decimal value
+   13) and LF (decimal value 10) which, taken together, in this order,
+   denote a line break in RFC 822 mail.
+
+Freed &amp; Borenstein          Standards Track                     [Page 5]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+2.2.  Character Set
+
+   The term &quot;character set&quot; is used in MIME to refer to a method of
+   converting a sequence of octets into a sequence of characters.  Note
+   that unconditional and unambiguous conversion in the other direction
+   is not required, in that not all characters may be representable by a
+   given character set and a character set may provide more than one
+   sequence of octets to represent a particular sequence of characters.
+
+   This definition is intended to allow various kinds of character
+   encodings, from simple single-table mappings such as US-ASCII to
+   complex table switching methods such as those that use ISO 2022's
+   techniques, to be used as character sets.  However, the definition
+   associated with a MIME character set name must fully specify the
+   mapping to be performed.  In particular, use of external profiling
+   information to determine the exact mapping is not permitted.
+
+   NOTE: The term &quot;character set&quot; was originally to describe such
+   straightforward schemes as US-ASCII and ISO-8859-1 which have a
+   simple one-to-one mapping from single octets to single characters.
+   Multi-octet coded character sets and switching techniques make the
+   situation more complex. For example, some communities use the term
+   &quot;character encoding&quot; for what MIME calls a &quot;character set&quot;, while
+   using the phrase &quot;coded character set&quot; to denote an abstract mapping
+   from integers (not octets) to characters.
+
+2.3.  Message
+
+   The term &quot;message&quot;, when not further qualified, means either a
+   (complete or &quot;top-level&quot;) RFC 822 message being transferred on a
+   network, or a message encapsulated in a body of type &quot;message/rfc822&quot;
+   or &quot;message/partial&quot;.
+
+2.4.  Entity
+
+   The term &quot;entity&quot;, refers specifically to the MIME-defined header
+   fields and contents of either a message or one of the parts in the
+   body of a multipart entity.  The specification of such entities is
+   the essence of MIME.  Since the contents of an entity are often
+   called the &quot;body&quot;, it makes sense to speak about the body of an
+   entity.  Any sort of field may be present in the header of an entity,
+   but only those fields whose names begin with &quot;content-&quot; actually have
+   any MIME-related meaning.  Note that this does NOT imply thay they
+   have no meaning at all -- an entity that is also a message has non-
+   MIME header fields whose meanings are defined by RFC 822.
+
+Freed &amp; Borenstein          Standards Track                     [Page 6]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+2.5.  Body Part
+
+   The term &quot;body part&quot; refers to an entity inside of a multipart
+   entity.
+
+2.6.  Body
+
+   The term &quot;body&quot;, when not further qualified, means the body of an
+   entity, that is, the body of either a message or of a body part.
+
+   NOTE:  The previous four definitions are clearly circular.  This is
+   unavoidable, since the overall structure of a MIME message is indeed
+   recursive.
+
+2.7.  7bit Data
+
+   &quot;7bit data&quot; refers to data that is all represented as relatively
+   short lines with 998 octets or less between CRLF line separation
+   sequences [RFC-821].  No octets with decimal values greater than 127
+   are allowed and neither are NULs (octets with decimal value 0).  CR
+   (decimal value 13) and LF (decimal value 10) octets only occur as
+   part of CRLF line separation sequences.
+
+2.8.  8bit Data
+
+   &quot;8bit data&quot; refers to data that is all represented as relatively
+   short lines with 998 octets or less between CRLF line separation
+   sequences [RFC-821]), but octets with decimal values greater than 127
+   may be used.  As with &quot;7bit data&quot; CR and LF octets only occur as part
+   of CRLF line separation sequences and no NULs are allowed.
+
+2.9.  Binary Data
+
+   &quot;Binary data&quot; refers to data where any sequence of octets whatsoever
+   is allowed.
+
+2.10.  Lines
+
+   &quot;Lines&quot; are defined as sequences of octets separated by a CRLF
+   sequences.  This is consistent with both RFC 821 and RFC 822.
+   &quot;Lines&quot; only refers to a unit of data in a message, which may or may
+   not correspond to something that is actually displayed by a user
+   agent.
+
+Freed &amp; Borenstein          Standards Track                     [Page 7]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+3.  MIME Header Fields
+
+   MIME defines a number of new RFC 822 header fields that are used to
+   describe the content of a MIME entity.  These header fields occur in
+   at least two contexts:
+
+    (1)   As part of a regular RFC 822 message header.
+
+    (2)   In a MIME body part header within a multipart
+          construct.
+
+   The formal definition of these header fields is as follows:
+
+     entity-headers := [ content CRLF ]
+                       [ encoding CRLF ]
+                       [ id CRLF ]
+                       [ description CRLF ]
+                       *( MIME-extension-field CRLF )
+
+     MIME-message-headers := entity-headers
+                             fields
+                             version CRLF
+                             ; The ordering of the header
+                             ; fields implied by this BNF
+                             ; definition should be ignored.
+
+     MIME-part-headers := entity-headers
+                          [ fields ]
+                          ; Any field not beginning with
+                          ; &quot;content-&quot; can have no defined
+                          ; meaning and may be ignored.
+                          ; The ordering of the header
+                          ; fields implied by this BNF
+                          ; definition should be ignored.
+
+   The syntax of the various specific MIME header fields will be
+   described in the following sections.
+
+4.  MIME-Version Header Field
+
+   Since RFC 822 was published in 1982, there has really been only one
+   format standard for Internet messages, and there has been little
+   perceived need to declare the format standard in use.  This document
+   is an independent specification that complements RFC 822.  Although
+   the extensions in this document have been defined in such a way as to
+   be compatible with RFC 822, there are still circumstances in which it
+   might be desirable for a mail-processing agent to know whether a
+   message was composed with the new standard in mind.
+
+Freed &amp; Borenstein          Standards Track                     [Page 8]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   Therefore, this document defines a new header field, &quot;MIME-Version&quot;,
+   which is to be used to declare the version of the Internet message
+   body format standard in use.
+
+   Messages composed in accordance with this document MUST include such
+   a header field, with the following verbatim text:
+
+     MIME-Version: 1.0
+
+   The presence of this header field is an assertion that the message
+   has been composed in compliance with this document.
+
+   Since it is possible that a future document might extend the message
+   format standard again, a formal BNF is given for the content of the
+   MIME-Version field:
+
+     version := &quot;MIME-Version&quot; &quot;:&quot; 1*DIGIT &quot;.&quot; 1*DIGIT
+
+   Thus, future format specifiers, which might replace or extend &quot;1.0&quot;,
+   are constrained to be two integer fields, separated by a period.  If
+   a message is received with a MIME-version value other than &quot;1.0&quot;, it
+   cannot be assumed to conform with this document.
+
+   Note that the MIME-Version header field is required at the top level
+   of a message.  It is not required for each body part of a multipart
+   entity.  It is required for the embedded headers of a body of type
+   &quot;message/rfc822&quot; or &quot;message/partial&quot; if and only if the embedded
+   message is itself claimed to be MIME-conformant.
+
+   It is not possible to fully specify how a mail reader that conforms
+   with MIME as defined in this document should treat a message that
+   might arrive in the future with some value of MIME-Version other than
+   &quot;1.0&quot;.
+
+   It is also worth noting that version control for specific media types
+   is not accomplished using the MIME-Version mechanism.  In particular,
+   some formats (such as application/postscript) have version numbering
+   conventions that are internal to the media format.  Where such
+   conventions exist, MIME does nothing to supersede them.  Where no
+   such conventions exist, a MIME media type might use a &quot;version&quot;
+   parameter in the content-type field if necessary.
+
+Freed &amp; Borenstein          Standards Track                     [Page 9]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   NOTE TO IMPLEMENTORS:  When checking MIME-Version values any RFC 822
+   comment strings that are present must be ignored.  In particular, the
+   following four MIME-Version fields are equivalent:
+
+     MIME-Version: 1.0
+
+     MIME-Version: 1.0 (produced by MetaSend Vx.x)
+
+     MIME-Version: (produced by MetaSend Vx.x) 1.0
+
+     MIME-Version: 1.(produced by MetaSend Vx.x)0
+
+   In the absence of a MIME-Version field, a receiving mail user agent
+   (whether conforming to MIME requirements or not) may optionally
+   choose to interpret the body of the message according to local
+   conventions.  Many such conventions are currently in use and it
+   should be noted that in practice non-MIME messages can contain just
+   about anything.
+
+   It is impossible to be certain that a non-MIME mail message is
+   actually plain text in the US-ASCII character set since it might well
+   be a message that, using some set of nonstandard local conventions
+   that predate MIME, includes text in another character set or non-
+   textual data presented in a manner that cannot be automatically
+   recognized (e.g., a uuencoded compressed UNIX tar file).
+
+5.  Content-Type Header Field
+
+   The purpose of the Content-Type field is to describe the data
+   contained in the body fully enough that the receiving user agent can
+   pick an appropriate agent or mechanism to present the data to the
+   user, or otherwise deal with the data in an appropriate manner. The
+   value in this field is called a media type.
+
+   HISTORICAL NOTE:  The Content-Type header field was first defined in
+   RFC 1049.  RFC 1049 used a simpler and less powerful syntax, but one
+   that is largely compatible with the mechanism given here.
+
+   The Content-Type header field specifies the nature of the data in the
+   body of an entity by giving media type and subtype identifiers, and
+   by providing auxiliary information that may be required for certain
+   media types.  After the media type and subtype names, the remainder
+   of the header field is simply a set of parameters, specified in an
+   attribute=value notation.  The ordering of parameters is not
+   significant.
+
+Freed &amp; Borenstein          Standards Track                    [Page 10]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   In general, the top-level media type is used to declare the general
+   type of data, while the subtype specifies a specific format for that
+   type of data.  Thus, a media type of &quot;image/xyz&quot; is enough to tell a
+   user agent that the data is an image, even if the user agent has no
+   knowledge of the specific image format &quot;xyz&quot;.  Such information can
+   be used, for example, to decide whether or not to show a user the raw
+   data from an unrecognized subtype -- such an action might be
+   reasonable for unrecognized subtypes of text, but not for
+   unrecognized subtypes of image or audio.  For this reason, registered
+   subtypes of text, image, audio, and video should not contain embedded
+   information that is really of a different type.  Such compound
+   formats should be represented using the &quot;multipart&quot; or &quot;application&quot;
+   types.
+
+   Parameters are modifiers of the media subtype, and as such do not
+   fundamentally affect the nature of the content.  The set of
+   meaningful parameters depends on the media type and subtype.  Most
+   parameters are associated with a single specific subtype.  However, a
+   given top-level media type may define parameters which are applicable
+   to any subtype of that type.  Parameters may be required by their
+   defining content type or subtype or they may be optional. MIME
+   implementations must ignore any parameters whose names they do not
+   recognize.
+
+   For example, the &quot;charset&quot; parameter is applicable to any subtype of
+   &quot;text&quot;, while the &quot;boundary&quot; parameter is required for any subtype of
+   the &quot;multipart&quot; media type.
+
+   There are NO globally-meaningful parameters that apply to all media
+   types.  Truly global mechanisms are best addressed, in the MIME
+   model, by the definition of additional Content-* header fields.
+
+   An initial set of seven top-level media types is defined in RFC 2046.
+   Five of these are discrete types whose content is essentially opaque
+   as far as MIME processing is concerned.  The remaining two are
+   composite types whose contents require additional handling by MIME
+   processors.
+
+   This set of top-level media types is intended to be substantially
+   complete.  It is expected that additions to the larger set of
+   supported types can generally be accomplished by the creation of new
+   subtypes of these initial types.  In the future, more top-level types
+   may be defined only by a standards-track extension to this standard.
+   If another top-level type is to be used for any reason, it must be
+   given a name starting with &quot;X-&quot; to indicate its non-standard status
+   and to avoid a potential conflict with a future official name.
+
+Freed &amp; Borenstein          Standards Track                    [Page 11]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+5.1.  Syntax of the Content-Type Header Field
+
+   In the Augmented BNF notation of RFC 822, a Content-Type header field
+   value is defined as follows:
+
+     content := &quot;Content-Type&quot; &quot;:&quot; type &quot;/&quot; subtype
+                *(&quot;;&quot; parameter)
+                ; Matching of media type and subtype
+                ; is ALWAYS case-insensitive.
+
+     type := discrete-type / composite-type
+
+     discrete-type := &quot;text&quot; / &quot;image&quot; / &quot;audio&quot; / &quot;video&quot; /
+                      &quot;application&quot; / extension-token
+
+     composite-type := &quot;message&quot; / &quot;multipart&quot; / extension-token
+
+     extension-token := ietf-token / x-token
+
+     ietf-token := &lt;An extension token defined by a
+                    standards-track RFC and registered
+                    with IANA.&gt;
+
+     x-token := &lt;The two characters &quot;X-&quot; or &quot;x-&quot; followed, with
+                 no intervening white space, by any token&gt;
+
+     subtype := extension-token / iana-token
+
+     iana-token := &lt;A publicly-defined extension token. Tokens
+                    of this form must be registered with IANA
+                    as specified in RFC 2048.&gt;
+
+     parameter := attribute &quot;=&quot; value
+
+     attribute := token
+                  ; Matching of attributes
+                  ; is ALWAYS case-insensitive.
+
+     value := token / quoted-string
+
+     token := 1*&lt;any (US-ASCII) CHAR except SPACE, CTLs,
+                 or tspecials&gt;
+
+     tspecials :=  &quot;(&quot; / &quot;)&quot; / &quot;&lt;&quot; / &quot;&gt;&quot; / &quot;@&quot; /
+                   &quot;,&quot; / &quot;;&quot; / &quot;:&quot; / &quot;\&quot; / &lt;&quot;&gt;
+                   &quot;/&quot; / &quot;[&quot; / &quot;]&quot; / &quot;?&quot; / &quot;=&quot;
+                   ; Must be in quoted-string,
+                   ; to use within parameter values
+
+Freed &amp; Borenstein          Standards Track                    [Page 12]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   Note that the definition of &quot;tspecials&quot; is the same as the RFC 822
+   definition of &quot;specials&quot; with the addition of the three characters
+   &quot;/&quot;, &quot;?&quot;, and &quot;=&quot;, and the removal of &quot;.&quot;.
+
+   Note also that a subtype specification is MANDATORY -- it may not be
+   omitted from a Content-Type header field.  As such, there are no
+   default subtypes.
+
+   The type, subtype, and parameter names are not case sensitive.  For
+   example, TEXT, Text, and TeXt are all equivalent top-level media
+   types.  Parameter values are normally case sensitive, but sometimes
+   are interpreted in a case-insensitive fashion, depending on the
+   intended use.  (For example, multipart boundaries are case-sensitive,
+   but the &quot;access-type&quot; parameter for message/External-body is not
+   case-sensitive.)
+
+   Note that the value of a quoted string parameter does not include the
+   quotes.  That is, the quotation marks in a quoted-string are not a
+   part of the value of the parameter, but are merely used to delimit
+   that parameter value.  In addition, comments are allowed in
+   accordance with RFC 822 rules for structured header fields.  Thus the
+   following two forms
+
+     Content-type: text/plain; charset=us-ascii (Plain text)
+
+     Content-type: text/plain; charset=&quot;us-ascii&quot;
+
+   are completely equivalent.
+
+   Beyond this syntax, the only syntactic constraint on the definition
+   of subtype names is the desire that their uses must not conflict.
+   That is, it would be undesirable to have two different communities
+   using &quot;Content-Type: application/foobar&quot; to mean two different
+   things.  The process of defining new media subtypes, then, is not
+   intended to be a mechanism for imposing restrictions, but simply a
+   mechanism for publicizing their definition and usage.  There are,
+   therefore, two acceptable mechanisms for defining new media subtypes:
+
+    (1)   Private values (starting with &quot;X-&quot;) may be defined
+          bilaterally between two cooperating agents without
+          outside registration or standardization. Such values
+          cannot be registered or standardized.
+
+    (2)   New standard values should be registered with IANA as
+          described in RFC 2048.
+
+   The second document in this set, RFC 2046, defines the initial set of
+   media types for MIME.
+
+Freed &amp; Borenstein          Standards Track                    [Page 13]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+5.2.  Content-Type Defaults
+
+   Default RFC 822 messages without a MIME Content-Type header are taken
+   by this protocol to be plain text in the US-ASCII character set,
+   which can be explicitly specified as:
+
+     Content-type: text/plain; charset=us-ascii
+
+   This default is assumed if no Content-Type header field is specified.
+   It is also recommend that this default be assumed when a
+   syntactically invalid Content-Type header field is encountered. In
+   the presence of a MIME-Version header field and the absence of any
+   Content-Type header field, a receiving User Agent can also assume
+   that plain US-ASCII text was the sender's intent.  Plain US-ASCII
+   text may still be assumed in the absence of a MIME-Version or the
+   presence of an syntactically invalid Content-Type header field, but
+   the sender's intent might have been otherwise.
+
+6.  Content-Transfer-Encoding Header Field
+
+   Many media types which could be usefully transported via email are
+   represented, in their &quot;natural&quot; format, as 8bit character or binary
+   data.  Such data cannot be transmitted over some transfer protocols.
+   For example, RFC 821 (SMTP) restricts mail messages to 7bit US-ASCII
+   data with lines no longer than 1000 characters including any trailing
+   CRLF line separator.
+
+   It is necessary, therefore, to define a standard mechanism for
+   encoding such data into a 7bit short line format.  Proper labelling
+   of unencoded material in less restrictive formats for direct use over
+   less restrictive transports is also desireable.  This document
+   specifies that such encodings will be indicated by a new &quot;Content-
+   Transfer-Encoding&quot; header field.  This field has not been defined by
+   any previous standard.
+
+6.1.  Content-Transfer-Encoding Syntax
+
+   The Content-Transfer-Encoding field's value is a single token
+   specifying the type of encoding, as enumerated below.  Formally:
+
+     encoding := &quot;Content-Transfer-Encoding&quot; &quot;:&quot; mechanism
+
+     mechanism := &quot;7bit&quot; / &quot;8bit&quot; / &quot;binary&quot; /
+                  &quot;quoted-printable&quot; / &quot;base64&quot; /
+                  ietf-token / x-token
+
+   These values are not case sensitive -- Base64 and BASE64 and bAsE64
+   are all equivalent.  An encoding type of 7BIT requires that the body
+
+Freed &amp; Borenstein          Standards Track                    [Page 14]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   is already in a 7bit mail-ready representation.  This is the default
+   value -- that is, &quot;Content-Transfer-Encoding: 7BIT&quot; is assumed if the
+   Content-Transfer-Encoding header field is not present.
+
+6.2.  Content-Transfer-Encodings Semantics
+
+   This single Content-Transfer-Encoding token actually provides two
+   pieces of information.  It specifies what sort of encoding
+   transformation the body was subjected to and hence what decoding
+   operation must be used to restore it to its original form, and it
+   specifies what the domain of the result is.
+
+   The transformation part of any Content-Transfer-Encodings specifies,
+   either explicitly or implicitly, a single, well-defined decoding
+   algorithm, which for any sequence of encoded octets either transforms
+   it to the original sequence of octets which was encoded, or shows
+   that it is illegal as an encoded sequence.  Content-Transfer-
+   Encodings transformations never depend on any additional external
+   profile information for proper operation. Note that while decoders
+   must produce a single, well-defined output for a valid encoding no
+   such restrictions exist for encoders: Encoding a given sequence of
+   octets to different, equivalent encoded sequences is perfectly legal.
+
+   Three transformations are currently defined: identity, the &quot;quoted-
+   printable&quot; encoding, and the &quot;base64&quot; encoding.  The domains are
+   &quot;binary&quot;, &quot;8bit&quot; and &quot;7bit&quot;.
+
+   The Content-Transfer-Encoding values &quot;7bit&quot;, &quot;8bit&quot;, and &quot;binary&quot; all
+   mean that the identity (i.e. NO) encoding transformation has been
+   performed.  As such, they serve simply as indicators of the domain of
+   the body data, and provide useful information about the sort of
+   encoding that might be needed for transmission in a given transport
+   system.  The terms &quot;7bit data&quot;, &quot;8bit data&quot;, and &quot;binary data&quot; are
+   all defined in Section 2.
+
+   The quoted-printable and base64 encodings transform their input from
+   an arbitrary domain into material in the &quot;7bit&quot; range, thus making it
+   safe to carry over restricted transports.  The specific definition of
+   the transformations are given below.
+
+   The proper Content-Transfer-Encoding label must always be used.
+   Labelling unencoded data containing 8bit characters as &quot;7bit&quot; is not
+   allowed, nor is labelling unencoded non-line-oriented data as
+   anything other than &quot;binary&quot; allowed.
+
+   Unlike media subtypes, a proliferation of Content-Transfer-Encoding
+   values is both undesirable and unnecessary.  However, establishing
+   only a single transformation into the &quot;7bit&quot; domain does not seem
+
+Freed &amp; Borenstein          Standards Track                    [Page 15]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   possible.  There is a tradeoff between the desire for a compact and
+   efficient encoding of largely- binary data and the desire for a
+   somewhat readable encoding of data that is mostly, but not entirely,
+   7bit.  For this reason, at least two encoding mechanisms are
+   necessary: a more or less readable encoding (quoted-printable) and a
+   &quot;dense&quot; or &quot;uniform&quot; encoding (base64).
+
+   Mail transport for unencoded 8bit data is defined in RFC 1652.  As of
+   the initial publication of this document, there are no standardized
+   Internet mail transports for which it is legitimate to include
+   unencoded binary data in mail bodies.  Thus there are no
+   circumstances in which the &quot;binary&quot; Content-Transfer-Encoding is
+   actually valid in Internet mail.  However, in the event that binary
+   mail transport becomes a reality in Internet mail, or when MIME is
+   used in conjunction with any other binary-capable mail transport
+   mechanism, binary bodies must be labelled as such using this
+   mechanism.
+
+   NOTE: The five values defined for the Content-Transfer-Encoding field
+   imply nothing about the media type other than the algorithm by which
+   it was encoded or the transport system requirements if unencoded.
+
+6.3.  New Content-Transfer-Encodings
+
+   Implementors may, if necessary, define private Content-Transfer-
+   Encoding values, but must use an x-token, which is a name prefixed by
+   &quot;X-&quot;, to indicate its non-standard status, e.g., &quot;Content-Transfer-
+   Encoding: x-my-new-encoding&quot;.  Additional standardized Content-
+   Transfer-Encoding values must be specified by a standards-track RFC.
+   The requirements such specifications must meet are given in RFC 2048.
+   As such, all content-transfer-encoding namespace except that
+   beginning with &quot;X-&quot; is explicitly reserved to the IETF for future
+   use.
+
+   Unlike media types and subtypes, the creation of new Content-
+   Transfer-Encoding values is STRONGLY discouraged, as it seems likely
+   to hinder interoperability with little potential benefit
+
+6.4.  Interpretation and Use
+
+   If a Content-Transfer-Encoding header field appears as part of a
+   message header, it applies to the entire body of that message.  If a
+   Content-Transfer-Encoding header field appears as part of an entity's
+   headers, it applies only to the body of that entity.  If an entity is
+   of type &quot;multipart&quot; the Content-Transfer-Encoding is not permitted to
+   have any value other than &quot;7bit&quot;, &quot;8bit&quot; or &quot;binary&quot;.  Even more
+   severe restrictions apply to some subtypes of the &quot;message&quot; type.
+
+Freed &amp; Borenstein          Standards Track                    [Page 16]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   It should be noted that most media types are defined in terms of
+   octets rather than bits, so that the mechanisms described here are
+   mechanisms for encoding arbitrary octet streams, not bit streams.  If
+   a bit stream is to be encoded via one of these mechanisms, it must
+   first be converted to an 8bit byte stream using the network standard
+   bit order (&quot;big-endian&quot;), in which the earlier bits in a stream
+   become the higher-order bits in a 8bit byte.  A bit stream not ending
+   at an 8bit boundary must be padded with zeroes. RFC 2046 provides a
+   mechanism for noting the addition of such padding in the case of the
+   application/octet-stream media type, which has a &quot;padding&quot; parameter.
+
+   The encoding mechanisms defined here explicitly encode all data in
+   US-ASCII.  Thus, for example, suppose an entity has header fields
+   such as:
+
+     Content-Type: text/plain; charset=ISO-8859-1
+     Content-transfer-encoding: base64
+
+   This must be interpreted to mean that the body is a base64 US-ASCII
+   encoding of data that was originally in ISO-8859-1, and will be in
+   that character set again after decoding.
+
+   Certain Content-Transfer-Encoding values may only be used on certain
+   media types.  In particular, it is EXPRESSLY FORBIDDEN to use any
+   encodings other than &quot;7bit&quot;, &quot;8bit&quot;, or &quot;binary&quot; with any composite
+   media type, i.e. one that recursively includes other Content-Type
+   fields.  Currently the only composite media types are &quot;multipart&quot; and
+   &quot;message&quot;.  All encodings that are desired for bodies of type
+   multipart or message must be done at the innermost level, by encoding
+   the actual body that needs to be encoded.
+
+   It should also be noted that, by definition, if a composite entity
+   has a transfer-encoding value such as &quot;7bit&quot;, but one of the enclosed
+   entities has a less restrictive value such as &quot;8bit&quot;, then either the
+   outer &quot;7bit&quot; labelling is in error, because 8bit data are included,
+   or the inner &quot;8bit&quot; labelling placed an unnecessarily high demand on
+   the transport system because the actual included data were actually
+   7bit-safe.
+
+   NOTE ON ENCODING RESTRICTIONS:  Though the prohibition against using
+   content-transfer-encodings on composite body data may seem overly
+   restrictive, it is necessary to prevent nested encodings, in which
+   data are passed through an encoding algorithm multiple times, and
+   must be decoded multiple times in order to be properly viewed.
+   Nested encodings add considerable complexity to user agents:  Aside
+   from the obvious efficiency problems with such multiple encodings,
+   they can obscure the basic structure of a message.  In particular,
+   they can imply that several decoding operations are necessary simply
+
+Freed &amp; Borenstein          Standards Track                    [Page 17]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   to find out what types of bodies a message contains.  Banning nested
+   encodings may complicate the job of certain mail gateways, but this
+   seems less of a problem than the effect of nested encodings on user
+   agents.
+
+   Any entity with an unrecognized Content-Transfer-Encoding must be
+   treated as if it has a Content-Type of &quot;application/octet-stream&quot;,
+   regardless of what the Content-Type header field actually says.
+
+   NOTE ON THE RELATIONSHIP BETWEEN CONTENT-TYPE AND CONTENT-TRANSFER-
+   ENCODING: It may seem that the Content-Transfer-Encoding could be
+   inferred from the characteristics of the media that is to be encoded,
+   or, at the very least, that certain Content-Transfer-Encodings could
+   be mandated for use with specific media types.  There are several
+   reasons why this is not the case. First, given the varying types of
+   transports used for mail, some encodings may be appropriate for some
+   combinations of media types and transports but not for others.  (For
+   example, in an 8bit transport, no encoding would be required for text
+   in certain character sets, while such encodings are clearly required
+   for 7bit SMTP.)
+
+   Second, certain media types may require different types of transfer
+   encoding under different circumstances.  For example, many PostScript
+   bodies might consist entirely of short lines of 7bit data and hence
+   require no encoding at all.  Other PostScript bodies (especially
+   those using Level 2 PostScript's binary encoding mechanism) may only
+   be reasonably represented using a binary transport encoding.
+   Finally, since the Content-Type field is intended to be an open-ended
+   specification mechanism, strict specification of an association
+   between media types and encodings effectively couples the
+   specification of an application protocol with a specific lower-level
+   transport.  This is not desirable since the developers of a media
+   type should not have to be aware of all the transports in use and
+   what their limitations are.
+
+6.5.  Translating Encodings
+
+   The quoted-printable and base64 encodings are designed so that
+   conversion between them is possible.  The only issue that arises in
+   such a conversion is the handling of hard line breaks in quoted-
+   printable encoding output. When converting from quoted-printable to
+   base64 a hard line break in the quoted-printable form represents a
+   CRLF sequence in the canonical form of the data. It must therefore be
+   converted to a corresponding encoded CRLF in the base64 form of the
+   data.  Similarly, a CRLF sequence in the canonical form of the data
+   obtained after base64 decoding must be converted to a quoted-
+   printable hard line break, but ONLY when converting text data.
+
+Freed &amp; Borenstein          Standards Track                    [Page 18]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+6.6.  Canonical Encoding Model
+
+   There was some confusion, in the previous versions of this RFC,
+   regarding the model for when email data was to be converted to
+   canonical form and encoded, and in particular how this process would
+   affect the treatment of CRLFs, given that the representation of
+   newlines varies greatly from system to system, and the relationship
+   between content-transfer-encodings and character sets.  A canonical
+   model for encoding is presented in RFC 2049 for this reason.
+
+6.7.  Quoted-Printable Content-Transfer-Encoding
+
+   The Quoted-Printable encoding is intended to represent data that
+   largely consists of octets that correspond to printable characters in
+   the US-ASCII character set.  It encodes the data in such a way that
+   the resulting octets are unlikely to be modified by mail transport.
+   If the data being encoded are mostly US-ASCII text, the encoded form
+   of the data remains largely recognizable by humans.  A body which is
+   entirely US-ASCII may also be encoded in Quoted-Printable to ensure
+   the integrity of the data should the message pass through a
+   character-translating, and/or line-wrapping gateway.
+
+   In this encoding, octets are to be represented as determined by the
+   following rules:
+
+    (1)   (General 8bit representation) Any octet, except a CR or
+          LF that is part of a CRLF line break of the canonical
+          (standard) form of the data being encoded, may be
+          represented by an &quot;=&quot; followed by a two digit
+          hexadecimal representation of the octet's value.  The
+          digits of the hexadecimal alphabet, for this purpose,
+          are &quot;0123456789ABCDEF&quot;.  Uppercase letters must be
+          used; lowercase letters are not allowed.  Thus, for
+          example, the decimal value 12 (US-ASCII form feed) can
+          be represented by &quot;=0C&quot;, and the decimal value 61 (US-
+          ASCII EQUAL SIGN) can be represented by &quot;=3D&quot;.  This
+          rule must be followed except when the following rules
+          allow an alternative encoding.
+
+    (2)   (Literal representation) Octets with decimal values of
+          33 through 60 inclusive, and 62 through 126, inclusive,
+          MAY be represented as the US-ASCII characters which
+          correspond to those octets (EXCLAMATION POINT through
+          LESS THAN, and GREATER THAN through TILDE,
+          respectively).
+
+    (3)   (White Space) Octets with values of 9 and 32 MAY be
+          represented as US-ASCII TAB (HT) and SPACE characters,
+
+Freed &amp; Borenstein          Standards Track                    [Page 19]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+          respectively, but MUST NOT be so represented at the end
+          of an encoded line.  Any TAB (HT) or SPACE characters
+          on an encoded line MUST thus be followed on that line
+          by a printable character.  In particular, an &quot;=&quot; at the
+          end of an encoded line, indicating a soft line break
+          (see rule #5) may follow one or more TAB (HT) or SPACE
+          characters.  It follows that an octet with decimal
+          value 9 or 32 appearing at the end of an encoded line
+          must be represented according to Rule #1.  This rule is
+          necessary because some MTAs (Message Transport Agents,
+          programs which transport messages from one user to
+          another, or perform a portion of such transfers) are
+          known to pad lines of text with SPACEs, and others are
+          known to remove &quot;white space&quot; characters from the end
+          of a line.  Therefore, when decoding a Quoted-Printable
+          body, any trailing white space on a line must be
+          deleted, as it will necessarily have been added by
+          intermediate transport agents.
+
+    (4)   (Line Breaks) A line break in a text body, represented
+          as a CRLF sequence in the text canonical form, must be
+          represented by a (RFC 822) line break, which is also a
+          CRLF sequence, in the Quoted-Printable encoding.  Since
+          the canonical representation of media types other than
+          text do not generally include the representation of
+          line breaks as CRLF sequences, no hard line breaks
+          (i.e. line breaks that are intended to be meaningful
+          and to be displayed to the user) can occur in the
+          quoted-printable encoding of such types.  Sequences
+          like &quot;=0D&quot;, &quot;=0A&quot;, &quot;=0A=0D&quot; and &quot;=0D=0A&quot; will routinely
+          appear in non-text data represented in quoted-
+          printable, of course.
+
+          Note that many implementations may elect to encode the
+          local representation of various content types directly
+          rather than converting to canonical form first,
+          encoding, and then converting back to local
+          representation.  In particular, this may apply to plain
+          text material on systems that use newline conventions
+          other than a CRLF terminator sequence.  Such an
+          implementation optimization is permissible, but only
+          when the combined canonicalization-encoding step is
+          equivalent to performing the three steps separately.
+
+    (5)   (Soft Line Breaks) The Quoted-Printable encoding
+          REQUIRES that encoded lines be no more than 76
+          characters long.  If longer lines are to be encoded
+          with the Quoted-Printable encoding, &quot;soft&quot; line breaks
+
+Freed &amp; Borenstein          Standards Track                    [Page 20]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+          must be used.  An equal sign as the last character on a
+          encoded line indicates such a non-significant (&quot;soft&quot;)
+          line break in the encoded text.
+
+   Thus if the &quot;raw&quot; form of the line is a single unencoded line that
+   says:
+
+     Now's the time for all folk to come to the aid of their country.
+
+   This can be represented, in the Quoted-Printable encoding, as:
+
+     Now's the time =
+     for all folk to come=
+      to the aid of their country.
+
+   This provides a mechanism with which long lines are encoded in such a
+   way as to be restored by the user agent.  The 76 character limit does
+   not count the trailing CRLF, but counts all other characters,
+   including any equal signs.
+
+   Since the hyphen character (&quot;-&quot;) may be represented as itself in the
+   Quoted-Printable encoding, care must be taken, when encapsulating a
+   quoted-printable encoded body inside one or more multipart entities,
+   to ensure that the boundary delimiter does not appear anywhere in the
+   encoded body.  (A good strategy is to choose a boundary that includes
+   a character sequence such as &quot;=_&quot; which can never appear in a
+   quoted-printable body.  See the definition of multipart messages in
+   RFC 2046.)
+
+   NOTE: The quoted-printable encoding represents something of a
+   compromise between readability and reliability in transport.  Bodies
+   encoded with the quoted-printable encoding will work reliably over
+   most mail gateways, but may not work perfectly over a few gateways,
+   notably those involving translation into EBCDIC.  A higher level of
+   confidence is offered by the base64 Content-Transfer-Encoding.  A way
+   to get reasonably reliable transport through EBCDIC gateways is to
+   also quote the US-ASCII characters
+
+     !&quot;#$@[\]^`{|}~
+
+   according to rule #1.
+
+   Because quoted-printable data is generally assumed to be line-
+   oriented, it is to be expected that the representation of the breaks
+   between the lines of quoted-printable data may be altered in
+   transport, in the same manner that plain text mail has always been
+   altered in Internet mail when passing between systems with differing
+   newline conventions.  If such alterations are likely to constitute a
+
+Freed &amp; Borenstein          Standards Track                    [Page 21]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   corruption of the data, it is probably more sensible to use the
+   base64 encoding rather than the quoted-printable encoding.
+
+   NOTE: Several kinds of substrings cannot be generated according to
+   the encoding rules for the quoted-printable content-transfer-
+   encoding, and hence are formally illegal if they appear in the output
+   of a quoted-printable encoder. This note enumerates these cases and
+   suggests ways to handle such illegal substrings if any are
+   encountered in quoted-printable data that is to be decoded.
+
+    (1)   An &quot;=&quot; followed by two hexadecimal digits, one or both
+          of which are lowercase letters in &quot;abcdef&quot;, is formally
+          illegal. A robust implementation might choose to
+          recognize them as the corresponding uppercase letters.
+
+    (2)   An &quot;=&quot; followed by a character that is neither a
+          hexadecimal digit (including &quot;abcdef&quot;) nor the CR
+          character of a CRLF pair is illegal.  This case can be
+          the result of US-ASCII text having been included in a
+          quoted-printable part of a message without itself
+          having been subjected to quoted-printable encoding.  A
+          reasonable approach by a robust implementation might be
+          to include the &quot;=&quot; character and the following
+          character in the decoded data without any
+          transformation and, if possible, indicate to the user
+          that proper decoding was not possible at this point in
+          the data.
+
+    (3)   An &quot;=&quot; cannot be the ultimate or penultimate character
+          in an encoded object.  This could be handled as in case
+          (2) above.
+
+    (4)   Control characters other than TAB, or CR and LF as
+          parts of CRLF pairs, must not appear. The same is true
+          for octets with decimal values greater than 126.  If
+          found in incoming quoted-printable data by a decoder, a
+          robust implementation might exclude them from the
+          decoded data and warn the user that illegal characters
+          were discovered.
+
+    (5)   Encoded lines must not be longer than 76 characters,
+          not counting the trailing CRLF. If longer lines are
+          found in incoming, encoded data, a robust
+          implementation might nevertheless decode the lines, and
+          might report the erroneous encoding to the user.
+
+Freed &amp; Borenstein          Standards Track                    [Page 22]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   WARNING TO IMPLEMENTORS:  If binary data is encoded in quoted-
+   printable, care must be taken to encode CR and LF characters as &quot;=0D&quot;
+   and &quot;=0A&quot;, respectively.  In particular, a CRLF sequence in binary
+   data should be encoded as &quot;=0D=0A&quot;.  Otherwise, if CRLF were
+   represented as a hard line break, it might be incorrectly decoded on
+   platforms with different line break conventions.
+
+   For formalists, the syntax of quoted-printable data is described by
+   the following grammar:
+
+     quoted-printable := qp-line *(CRLF qp-line)
+
+     qp-line := *(qp-segment transport-padding CRLF)
+                qp-part transport-padding
+
+     qp-part := qp-section
+                ; Maximum length of 76 characters
+
+     qp-segment := qp-section *(SPACE / TAB) &quot;=&quot;
+                   ; Maximum length of 76 characters
+
+     qp-section := [*(ptext / SPACE / TAB) ptext]
+
+     ptext := hex-octet / safe-char
+
+     safe-char := &lt;any octet with decimal value of 33 through
+                  60 inclusive, and 62 through 126&gt;
+                  ; Characters not listed as &quot;mail-safe&quot; in
+                  ; RFC 2049 are also not recommended.
+
+     hex-octet := &quot;=&quot; 2(DIGIT / &quot;A&quot; / &quot;B&quot; / &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot;)
+                  ; Octet must be used for characters &gt; 127, =,
+                  ; SPACEs or TABs at the ends of lines, and is
+                  ; recommended for any character not listed in
+                  ; RFC 2049 as &quot;mail-safe&quot;.
+
+     transport-padding := *LWSP-char
+                          ; Composers MUST NOT generate
+                          ; non-zero length transport
+                          ; padding, but receivers MUST
+                          ; be able to handle padding
+                          ; added by message transports.
+
+   IMPORTANT:  The addition of LWSP between the elements shown in this
+   BNF is NOT allowed since this BNF does not specify a structured
+   header field.
+
+Freed &amp; Borenstein          Standards Track                    [Page 23]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+6.8.  Base64 Content-Transfer-Encoding
+
+   The Base64 Content-Transfer-Encoding is designed to represent
+   arbitrary sequences of octets in a form that need not be humanly
+   readable.  The encoding and decoding algorithms are simple, but the
+   encoded data are consistently only about 33 percent larger than the
+   unencoded data.  This encoding is virtually identical to the one used
+   in Privacy Enhanced Mail (PEM) applications, as defined in RFC 1421.
+
+   A 65-character subset of US-ASCII is used, enabling 6 bits to be
+   represented per printable character. (The extra 65th character, &quot;=&quot;,
+   is used to signify a special processing function.)
+
+   NOTE:  This subset has the important property that it is represented
+   identically in all versions of ISO 646, including US-ASCII, and all
+   characters in the subset are also represented identically in all
+   versions of EBCDIC. Other popular encodings, such as the encoding
+   used by the uuencode utility, Macintosh binhex 4.0 [RFC-1741], and
+   the base85 encoding specified as part of Level 2 PostScript, do not
+   share these properties, and thus do not fulfill the portability
+   requirements a binary transport encoding for mail must meet.
+
+   The encoding process represents 24-bit groups of input bits as output
+   strings of 4 encoded characters.  Proceeding from left to right, a
+   24-bit input group is formed by concatenating 3 8bit input groups.
+   These 24 bits are then treated as 4 concatenated 6-bit groups, each
+   of which is translated into a single digit in the base64 alphabet.
+   When encoding a bit stream via the base64 encoding, the bit stream
+   must be presumed to be ordered with the most-significant-bit first.
+   That is, the first bit in the stream will be the high-order bit in
+   the first 8bit byte, and the eighth bit will be the low-order bit in
+   the first 8bit byte, and so on.
+
+   Each 6-bit group is used as an index into an array of 64 printable
+   characters.  The character referenced by the index is placed in the
+   output string.  These characters, identified in Table 1, below, are
+   selected so as to be universally representable, and the set excludes
+   characters with particular significance to SMTP (e.g., &quot;.&quot;, CR, LF)
+   and to the multipart boundary delimiters defined in RFC 2046 (e.g.,
+   &quot;-&quot;).
+
+Freed &amp; Borenstein          Standards Track                    [Page 24]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+                    Table 1: The Base64 Alphabet
+
+     Value Encoding  Value Encoding  Value Encoding  Value Encoding
+         0 A            17 R            34 i            51 z
+         1 B            18 S            35 j            52 0
+         2 C            19 T            36 k            53 1
+         3 D            20 U            37 l            54 2
+         4 E            21 V            38 m            55 3
+         5 F            22 W            39 n            56 4
+         6 G            23 X            40 o            57 5
+         7 H            24 Y            41 p            58 6
+         8 I            25 Z            42 q            59 7
+         9 J            26 a            43 r            60 8
+        10 K            27 b            44 s            61 9
+        11 L            28 c            45 t            62 +
+        12 M            29 d            46 u            63 /
+        13 N            30 e            47 v
+        14 O            31 f            48 w         (pad) =
+        15 P            32 g            49 x
+        16 Q            33 h            50 y
+
+   The encoded output stream must be represented in lines of no more
+   than 76 characters each.  All line breaks or other characters not
+   found in Table 1 must be ignored by decoding software.  In base64
+   data, characters other than those in Table 1, line breaks, and other
+   white space probably indicate a transmission error, about which a
+   warning message or even a message rejection might be appropriate
+   under some circumstances.
+
+   Special processing is performed if fewer than 24 bits are available
+   at the end of the data being encoded.  A full encoding quantum is
+   always completed at the end of a body.  When fewer than 24 input bits
+   are available in an input group, zero bits are added (on the right)
+   to form an integral number of 6-bit groups.  Padding at the end of
+   the data is performed using the &quot;=&quot; character.  Since all base64
+   input is an integral number of octets, only the following cases can
+   arise: (1) the final quantum of encoding input is an integral
+   multiple of 24 bits; here, the final unit of encoded output will be
+   an integral multiple of 4 characters with no &quot;=&quot; padding, (2) the
+   final quantum of encoding input is exactly 8 bits; here, the final
+   unit of encoded output will be two characters followed by two &quot;=&quot;
+   padding characters, or (3) the final quantum of encoding input is
+   exactly 16 bits; here, the final unit of encoded output will be three
+   characters followed by one &quot;=&quot; padding character.
+
+   Because it is used only for padding at the end of the data, the
+   occurrence of any &quot;=&quot; characters may be taken as evidence that the
+   end of the data has been reached (without truncation in transit).  No
+
+Freed &amp; Borenstein          Standards Track                    [Page 25]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+   such assurance is possible, however, when the number of octets
+   transmitted was a multiple of three and no &quot;=&quot; characters are
+   present.
+
+   Any characters outside of the base64 alphabet are to be ignored in
+   base64-encoded data.
+
+   Care must be taken to use the proper octets for line breaks if base64
+   encoding is applied directly to text material that has not been
+   converted to canonical form.  In particular, text line breaks must be
+   converted into CRLF sequences prior to base64 encoding.  The
+   important thing to note is that this may be done directly by the
+   encoder rather than in a prior canonicalization step in some
+   implementations.
+
+   NOTE: There is no need to worry about quoting potential boundary
+   delimiters within base64-encoded bodies within multipart entities
+   because no hyphen characters are used in the base64 encoding.
+
+7.  Content-ID Header Field
+
+   In constructing a high-level user agent, it may be desirable to allow
+   one body to make reference to another.  Accordingly, bodies may be
+   labelled using the &quot;Content-ID&quot; header field, which is syntactically
+   identical to the &quot;Message-ID&quot; header field:
+
+     id := &quot;Content-ID&quot; &quot;:&quot; msg-id
+
+   Like the Message-ID values, Content-ID values must be generated to be
+   world-unique.
+
+   The Content-ID value may be used for uniquely identifying MIME
+   entities in several contexts, particularly for caching data
+   referenced by the message/external-body mechanism.  Although the
+   Content-ID header is generally optional, its use is MANDATORY in
+   implementations which generate data of the optional MIME media type
+   &quot;message/external-body&quot;.  That is, each message/external-body entity
+   must have a Content-ID field to permit caching of such data.
+
+   It is also worth noting that the Content-ID value has special
+   semantics in the case of the multipart/alternative media type.  This
+   is explained in the section of RFC 2046 dealing with
+   multipart/alternative.
+
+Freed &amp; Borenstein          Standards Track                    [Page 26]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+8.  Content-Description Header Field
+
+   The ability to associate some descriptive information with a given
+   body is often desirable.  For example, it may be useful to mark an
+   &quot;image&quot; body as &quot;a picture of the Space Shuttle Endeavor.&quot;  Such text
+   may be placed in the Content-Description header field.  This header
+   field is always optional.
+
+     description := &quot;Content-Description&quot; &quot;:&quot; *text
+
+   The description is presumed to be given in the US-ASCII character
+   set, although the mechanism specified in RFC 2047 may be used for
+   non-US-ASCII Content-Description values.
+
+9.  Additional MIME Header Fields
+
+   Future documents may elect to define additional MIME header fields
+   for various purposes.  Any new header field that further describes
+   the content of a message should begin with the string &quot;Content-&quot; to
+   allow such fields which appear in a message header to be
+   distinguished from ordinary RFC 822 message header fields.
+
+     MIME-extension-field := &lt;Any RFC 822 header field which
+                              begins with the string
+                              &quot;Content-&quot;&gt;
+
+10.  Summary
+
+   Using the MIME-Version, Content-Type, and Content-Transfer-Encoding
+   header fields, it is possible to include, in a standardized way,
+   arbitrary types of data with RFC 822 conformant mail messages.  No
+   restrictions imposed by either RFC 821 or RFC 822 are violated, and
+   care has been taken to avoid problems caused by additional
+   restrictions imposed by the characteristics of some Internet mail
+   transport mechanisms (see RFC 2049).
+
+   The next document in this set, RFC 2046, specifies the initial set of
+   media types that can be labelled and transported using these headers.
+
+11.  Security Considerations
+
+   Security issues are discussed in the second document in this set, RFC
+   2046.
+
+Freed &amp; Borenstein          Standards Track                    [Page 27]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+12.  Authors' Addresses
+
+   For more information, the authors of this document are best contacted
+   via Internet mail:
+
+   Ned Freed
+   Innosoft International, Inc.
+   1050 East Garvey Avenue South
+   West Covina, CA 91790
+   USA
+
+   Phone: +1 818 919 3600
+   Fax:   +1 818 919 3614
+   EMail: ned@innosoft.com
+
+   Nathaniel S. Borenstein
+   First Virtual Holdings
+   25 Washington Avenue
+   Morristown, NJ 07960
+   USA
+
+   Phone: +1 201 540 8967
+   Fax:   +1 201 993 3032
+   EMail: nsb@nsb.fv.com
+
+   MIME is a result of the work of the Internet Engineering Task Force
+   Working Group on RFC 822 Extensions.  The chairman of that group,
+   Greg Vaudreuil, may be reached at:
+
+   Gregory M. Vaudreuil
+   Octel Network Services
+   17080 Dallas Parkway
+   Dallas, TX 75248-1905
+   USA
+
+   EMail: Greg.Vaudreuil@Octel.Com
+
+Freed &amp; Borenstein          Standards Track                    [Page 28]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+Appendix A -- Collected Grammar
+
+   This appendix contains the complete BNF grammar for all the syntax
+   specified by this document.
+
+   By itself, however, this grammar is incomplete.  It refers by name to
+   several syntax rules that are defined by RFC 822.  Rather than
+   reproduce those definitions here, and risk unintentional differences
+   between the two, this document simply refers the reader to RFC 822
+   for the remaining definitions. Wherever a term is undefined, it
+   refers to the RFC 822 definition.
+
+  attribute := token
+               ; Matching of attributes
+               ; is ALWAYS case-insensitive.
+
+  composite-type := &quot;message&quot; / &quot;multipart&quot; / extension-token
+
+  content := &quot;Content-Type&quot; &quot;:&quot; type &quot;/&quot; subtype
+             *(&quot;;&quot; parameter)
+             ; Matching of media type and subtype
+             ; is ALWAYS case-insensitive.
+
+  description := &quot;Content-Description&quot; &quot;:&quot; *text
+
+  discrete-type := &quot;text&quot; / &quot;image&quot; / &quot;audio&quot; / &quot;video&quot; /
+                   &quot;application&quot; / extension-token
+
+  encoding := &quot;Content-Transfer-Encoding&quot; &quot;:&quot; mechanism
+
+  entity-headers := [ content CRLF ]
+                    [ encoding CRLF ]
+                    [ id CRLF ]
+                    [ description CRLF ]
+                    *( MIME-extension-field CRLF )
+
+  extension-token := ietf-token / x-token
+
+  hex-octet := &quot;=&quot; 2(DIGIT / &quot;A&quot; / &quot;B&quot; / &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot;)
+               ; Octet must be used for characters &gt; 127, =,
+               ; SPACEs or TABs at the ends of lines, and is
+               ; recommended for any character not listed in
+               ; RFC 2049 as &quot;mail-safe&quot;.
+
+  iana-token := &lt;A publicly-defined extension token. Tokens
+                 of this form must be registered with IANA
+                 as specified in RFC 2048.&gt;
+
+Freed &amp; Borenstein          Standards Track                    [Page 29]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+  ietf-token := &lt;An extension token defined by a
+                 standards-track RFC and registered
+                 with IANA.&gt;
+
+  id := &quot;Content-ID&quot; &quot;:&quot; msg-id
+
+  mechanism := &quot;7bit&quot; / &quot;8bit&quot; / &quot;binary&quot; /
+               &quot;quoted-printable&quot; / &quot;base64&quot; /
+               ietf-token / x-token
+
+  MIME-extension-field := &lt;Any RFC 822 header field which
+                           begins with the string
+                           &quot;Content-&quot;&gt;
+
+  MIME-message-headers := entity-headers
+                          fields
+                          version CRLF
+                          ; The ordering of the header
+                          ; fields implied by this BNF
+                          ; definition should be ignored.
+
+  MIME-part-headers := entity-headers
+                       [fields]
+                       ; Any field not beginning with
+                       ; &quot;content-&quot; can have no defined
+                       ; meaning and may be ignored.
+                       ; The ordering of the header
+                       ; fields implied by this BNF
+                       ; definition should be ignored.
+
+  parameter := attribute &quot;=&quot; value
+
+  ptext := hex-octet / safe-char
+
+  qp-line := *(qp-segment transport-padding CRLF)
+             qp-part transport-padding
+
+  qp-part := qp-section
+             ; Maximum length of 76 characters
+
+  qp-section := [*(ptext / SPACE / TAB) ptext]
+
+  qp-segment := qp-section *(SPACE / TAB) &quot;=&quot;
+                ; Maximum length of 76 characters
+
+  quoted-printable := qp-line *(CRLF qp-line)
+
+Freed &amp; Borenstein          Standards Track                    [Page 30]
+
+RFC 2045                Internet Message Bodies            November 1996
+
+  safe-char := &lt;any octet with decimal value of 33 through
+               60 inclusive, and 62 through 126&gt;
+               ; Characters not listed as &quot;mail-safe&quot; in
+               ; RFC 2049 are also not recommended.
+
+  subtype := extension-token / iana-token
+
+  token := 1*&lt;any (US-ASCII) CHAR except SPACE, CTLs,
+              or tspecials&gt;
+
+  transport-padding := *LWSP-char
+                       ; Composers MUST NOT generate
+                       ; non-zero length transport
+                       ; padding, but receivers MUST
+                       ; be able to handle padding
+                       ; added by message transports.
+
+  tspecials :=  &quot;(&quot; / &quot;)&quot; / &quot;&lt;&quot; / &quot;&gt;&quot; / &quot;@&quot; /
+                &quot;,&quot; / &quot;;&quot; / &quot;:&quot; / &quot;\&quot; / &lt;&quot;&gt;
+                &quot;/&quot; / &quot;[&quot; / &quot;]&quot; / &quot;?&quot; / &quot;=&quot;
+                ; Must be in quoted-string,
+                ; to use within parameter values
+
+  type := discrete-type / composite-type
+
+  value := token / quoted-string
+
+  version := &quot;MIME-Version&quot; &quot;:&quot; 1*DIGIT &quot;.&quot; 1*DIGIT
+
+  x-token := &lt;The two characters &quot;X-&quot; or &quot;x-&quot; followed, with
+              no  intervening white space, by any token&gt;
+
+Freed &amp; Borenstein          Standards Track                    [Page 31]
+</pre></td></tr></table>

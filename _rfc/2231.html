@@ -1,0 +1,953 @@
+---
+layout: concertina
+title: RFC2231
+description: MIME Parameter Value and Encoded Word Extensions - Character Sets, Languages, and Continuations.
+short: MIME Charsets
+---
+<table class="quiet"><tr><td><pre class="line-numbers">
+<a name="L1" class="offset"></a><a href="#L1">0001</a>
+<a name="L2" class="offset"></a><a href="#L2">0002</a>
+<a name="L3" class="offset"></a><a href="#L3">0003</a>
+<a name="L4" class="offset"></a><a href="#L4">0004</a>
+<a name="L5" class="offset"></a><a href="#L5">0005</a>
+<a name="L6" class="offset"></a><a href="#L6">0006</a>
+<a name="L7" class="offset"></a><a href="#L7">0007</a>
+<a name="L8" class="offset"></a><a href="#L8">0008</a>
+<a name="L9" class="offset"></a><a href="#L9">0009</a>
+<a name="L10" class="offset"></a><a href="#L10">0010</a>
+<a name="L11" class="offset"></a><a href="#L11">0011</a>
+<a name="L12" class="offset"></a><a href="#L12">0012</a>
+<a name="L13" class="offset"></a><a href="#L13">0013</a>
+<a name="L14" class="offset"></a><a href="#L14">0014</a>
+<a name="L15" class="offset"></a><a href="#L15">0015</a>
+<a name="L16" class="offset"></a><a href="#L16">0016</a>
+<a name="L17" class="offset"></a><a href="#L17">0017</a>
+<a name="L18" class="offset"></a><a href="#L18">0018</a>
+<a name="L19" class="offset"></a><a href="#L19">0019</a>
+<a name="L20" class="offset"></a><a href="#L20">0020</a>
+<a name="L21" class="offset"></a><a href="#L21">0021</a>
+<a name="L22" class="offset"></a><a href="#L22">0022</a>
+<a name="L23" class="offset"></a><a href="#L23">0023</a>
+<a name="L24" class="offset"></a><a href="#L24">0024</a>
+<a name="L25" class="offset"></a><a href="#L25">0025</a>
+<a name="L26" class="offset"></a><a href="#L26">0026</a>
+<a name="L27" class="offset"></a><a href="#L27">0027</a>
+<a name="L28" class="offset"></a><a href="#L28">0028</a>
+<a name="L29" class="offset"></a><a href="#L29">0029</a>
+<a name="L30" class="offset"></a><a href="#L30">0030</a>
+<a name="L31" class="offset"></a><a href="#L31">0031</a>
+<a name="L32" class="offset"></a><a href="#L32">0032</a>
+<a name="L33" class="offset"></a><a href="#L33">0033</a>
+<a name="L34" class="offset"></a><a href="#L34">0034</a>
+<a name="L35" class="offset"></a><a href="#L35">0035</a>
+<a name="L36" class="offset"></a><a href="#L36">0036</a>
+<a name="L37" class="offset"></a><a href="#L37">0037</a>
+<a name="L38" class="offset"></a><a href="#L38">0038</a>
+<a name="L39" class="offset"></a><a href="#L39">0039</a>
+<a name="L40" class="offset"></a><a href="#L40">0040</a>
+<a name="L41" class="offset"></a><a href="#L41">0041</a>
+<a name="L42" class="offset"></a><a href="#L42">0042</a>
+<a name="L43" class="offset"></a><a href="#L43">0043</a>
+<a name="L44" class="offset"></a><a href="#L44">0044</a>
+<a name="L45" class="offset"></a><a href="#L45">0045</a>
+<a name="L46" class="offset"></a><a href="#L46">0046</a>
+<a name="L47" class="offset"></a><a href="#L47">0047</a>
+<a name="L48" class="offset"></a><a href="#L48">0048</a>
+<a name="L49" class="offset"></a><a href="#L49">0049</a>
+<a name="L50" class="offset"></a><a href="#L50">0050</a>
+<a name="L51" class="offset"></a><a href="#L51">0051</a>
+<a name="L52" class="offset"></a><a href="#L52">0052</a>
+<a name="L53" class="offset"></a><a href="#L53">0053</a>
+<a name="L54" class="offset"></a><a href="#L54">0054</a>
+<a name="L55" class="offset"></a><a href="#L55">0055</a>
+<a name="L56" class="offset"></a><a href="#L56">0056</a>
+<a name="L57" class="offset"></a><a href="#L57">0057</a>
+<a name="L58" class="offset"></a><a href="#L58">0058</a>
+<a name="L59" class="offset"></a><a href="#L59">0059</a>
+<a name="L60" class="offset"></a><a href="#L60">0060</a>
+<a name="L61" class="offset"></a><a href="#L61">0061</a>
+<a name="L62" class="offset"></a><a href="#L62">0062</a>
+<a name="L63" class="offset"></a><a href="#L63">0063</a>
+<a name="L64" class="offset"></a><a href="#L64">0064</a>
+<a name="L65" class="offset"></a><a href="#L65">0065</a>
+<a name="L66" class="offset"></a><a href="#L66">0066</a>
+<a name="L67" class="offset"></a><a href="#L67">0067</a>
+<a name="L68" class="offset"></a><a href="#L68">0068</a>
+<a name="L69" class="offset"></a><a href="#L69">0069</a>
+<a name="L70" class="offset"></a><a href="#L70">0070</a>
+<a name="L71" class="offset"></a><a href="#L71">0071</a>
+<a name="L72" class="offset"></a><a href="#L72">0072</a>
+<a name="L73" class="offset"></a><a href="#L73">0073</a>
+<a name="L74" class="offset"></a><a href="#L74">0074</a>
+<a name="L75" class="offset"></a><a href="#L75">0075</a>
+<a name="L76" class="offset"></a><a href="#L76">0076</a>
+<a name="L77" class="offset"></a><a href="#L77">0077</a>
+<a name="L78" class="offset"></a><a href="#L78">0078</a>
+<a name="L79" class="offset"></a><a href="#L79">0079</a>
+<a name="L80" class="offset"></a><a href="#L80">0080</a>
+<a name="L81" class="offset"></a><a href="#L81">0081</a>
+<a name="L82" class="offset"></a><a href="#L82">0082</a>
+<a name="L83" class="offset"></a><a href="#L83">0083</a>
+<a name="L84" class="offset"></a><a href="#L84">0084</a>
+<a name="L85" class="offset"></a><a href="#L85">0085</a>
+<a name="L86" class="offset"></a><a href="#L86">0086</a>
+<a name="L87" class="offset"></a><a href="#L87">0087</a>
+<a name="L88" class="offset"></a><a href="#L88">0088</a>
+<a name="L89" class="offset"></a><a href="#L89">0089</a>
+<a name="L90" class="offset"></a><a href="#L90">0090</a>
+<a name="L91" class="offset"></a><a href="#L91">0091</a>
+<a name="L92" class="offset"></a><a href="#L92">0092</a>
+<a name="L93" class="offset"></a><a href="#L93">0093</a>
+<a name="L94" class="offset"></a><a href="#L94">0094</a>
+<a name="L95" class="offset"></a><a href="#L95">0095</a>
+<a name="L96" class="offset"></a><a href="#L96">0096</a>
+<a name="L97" class="offset"></a><a href="#L97">0097</a>
+<a name="L98" class="offset"></a><a href="#L98">0098</a>
+<a name="L99" class="offset"></a><a href="#L99">0099</a>
+<a name="L100" class="offset"></a><a href="#L100">0100</a>
+<a name="L101" class="offset"></a><a href="#L101">0101</a>
+<a name="L102" class="offset"></a><a href="#L102">0102</a>
+<a name="L103" class="offset"></a><a href="#L103">0103</a>
+<a name="L104" class="offset"></a><a href="#L104">0104</a>
+<a name="L105" class="offset"></a><a href="#L105">0105</a>
+<a name="L106" class="offset"></a><a href="#L106">0106</a>
+<a name="L107" class="offset"></a><a href="#L107">0107</a>
+<a name="L108" class="offset"></a><a href="#L108">0108</a>
+<a name="L109" class="offset"></a><a href="#L109">0109</a>
+<a name="L110" class="offset"></a><a href="#L110">0110</a>
+<a name="L111" class="offset"></a><a href="#L111">0111</a>
+<a name="L112" class="offset"></a><a href="#L112">0112</a>
+<a name="L113" class="offset"></a><a href="#L113">0113</a>
+<a name="L114" class="offset"></a><a href="#L114">0114</a>
+<a name="L115" class="offset"></a><a href="#L115">0115</a>
+<a name="L116" class="offset"></a><a href="#L116">0116</a>
+<a name="L117" class="offset"></a><a href="#L117">0117</a>
+<a name="L118" class="offset"></a><a href="#L118">0118</a>
+<a name="L119" class="offset"></a><a href="#L119">0119</a>
+<a name="L120" class="offset"></a><a href="#L120">0120</a>
+<a name="L121" class="offset"></a><a href="#L121">0121</a>
+<a name="L122" class="offset"></a><a href="#L122">0122</a>
+<a name="L123" class="offset"></a><a href="#L123">0123</a>
+<a name="L124" class="offset"></a><a href="#L124">0124</a>
+<a name="L125" class="offset"></a><a href="#L125">0125</a>
+<a name="L126" class="offset"></a><a href="#L126">0126</a>
+<a name="L127" class="offset"></a><a href="#L127">0127</a>
+<a name="L128" class="offset"></a><a href="#L128">0128</a>
+<a name="L129" class="offset"></a><a href="#L129">0129</a>
+<a name="L130" class="offset"></a><a href="#L130">0130</a>
+<a name="L131" class="offset"></a><a href="#L131">0131</a>
+<a name="L132" class="offset"></a><a href="#L132">0132</a>
+<a name="L133" class="offset"></a><a href="#L133">0133</a>
+<a name="L134" class="offset"></a><a href="#L134">0134</a>
+<a name="L135" class="offset"></a><a href="#L135">0135</a>
+<a name="L136" class="offset"></a><a href="#L136">0136</a>
+<a name="L137" class="offset"></a><a href="#L137">0137</a>
+<a name="L138" class="offset"></a><a href="#L138">0138</a>
+<a name="L139" class="offset"></a><a href="#L139">0139</a>
+<a name="L140" class="offset"></a><a href="#L140">0140</a>
+<a name="L141" class="offset"></a><a href="#L141">0141</a>
+<a name="L142" class="offset"></a><a href="#L142">0142</a>
+<a name="L143" class="offset"></a><a href="#L143">0143</a>
+<a name="L144" class="offset"></a><a href="#L144">0144</a>
+<a name="L145" class="offset"></a><a href="#L145">0145</a>
+<a name="L146" class="offset"></a><a href="#L146">0146</a>
+<a name="L147" class="offset"></a><a href="#L147">0147</a>
+<a name="L148" class="offset"></a><a href="#L148">0148</a>
+<a name="L149" class="offset"></a><a href="#L149">0149</a>
+<a name="L150" class="offset"></a><a href="#L150">0150</a>
+<a name="L151" class="offset"></a><a href="#L151">0151</a>
+<a name="L152" class="offset"></a><a href="#L152">0152</a>
+<a name="L153" class="offset"></a><a href="#L153">0153</a>
+<a name="L154" class="offset"></a><a href="#L154">0154</a>
+<a name="L155" class="offset"></a><a href="#L155">0155</a>
+<a name="L156" class="offset"></a><a href="#L156">0156</a>
+<a name="L157" class="offset"></a><a href="#L157">0157</a>
+<a name="L158" class="offset"></a><a href="#L158">0158</a>
+<a name="L159" class="offset"></a><a href="#L159">0159</a>
+<a name="L160" class="offset"></a><a href="#L160">0160</a>
+<a name="L161" class="offset"></a><a href="#L161">0161</a>
+<a name="L162" class="offset"></a><a href="#L162">0162</a>
+<a name="L163" class="offset"></a><a href="#L163">0163</a>
+<a name="L164" class="offset"></a><a href="#L164">0164</a>
+<a name="L165" class="offset"></a><a href="#L165">0165</a>
+<a name="L166" class="offset"></a><a href="#L166">0166</a>
+<a name="L167" class="offset"></a><a href="#L167">0167</a>
+<a name="L168" class="offset"></a><a href="#L168">0168</a>
+<a name="L169" class="offset"></a><a href="#L169">0169</a>
+<a name="L170" class="offset"></a><a href="#L170">0170</a>
+<a name="L171" class="offset"></a><a href="#L171">0171</a>
+<a name="L172" class="offset"></a><a href="#L172">0172</a>
+<a name="L173" class="offset"></a><a href="#L173">0173</a>
+<a name="L174" class="offset"></a><a href="#L174">0174</a>
+<a name="L175" class="offset"></a><a href="#L175">0175</a>
+<a name="L176" class="offset"></a><a href="#L176">0176</a>
+<a name="L177" class="offset"></a><a href="#L177">0177</a>
+<a name="L178" class="offset"></a><a href="#L178">0178</a>
+<a name="L179" class="offset"></a><a href="#L179">0179</a>
+<a name="L180" class="offset"></a><a href="#L180">0180</a>
+<a name="L181" class="offset"></a><a href="#L181">0181</a>
+<a name="L182" class="offset"></a><a href="#L182">0182</a>
+<a name="L183" class="offset"></a><a href="#L183">0183</a>
+<a name="L184" class="offset"></a><a href="#L184">0184</a>
+<a name="L185" class="offset"></a><a href="#L185">0185</a>
+<a name="L186" class="offset"></a><a href="#L186">0186</a>
+<a name="L187" class="offset"></a><a href="#L187">0187</a>
+<a name="L188" class="offset"></a><a href="#L188">0188</a>
+<a name="L189" class="offset"></a><a href="#L189">0189</a>
+<a name="L190" class="offset"></a><a href="#L190">0190</a>
+<a name="L191" class="offset"></a><a href="#L191">0191</a>
+<a name="L192" class="offset"></a><a href="#L192">0192</a>
+<a name="L193" class="offset"></a><a href="#L193">0193</a>
+<a name="L194" class="offset"></a><a href="#L194">0194</a>
+<a name="L195" class="offset"></a><a href="#L195">0195</a>
+<a name="L196" class="offset"></a><a href="#L196">0196</a>
+<a name="L197" class="offset"></a><a href="#L197">0197</a>
+<a name="L198" class="offset"></a><a href="#L198">0198</a>
+<a name="L199" class="offset"></a><a href="#L199">0199</a>
+<a name="L200" class="offset"></a><a href="#L200">0200</a>
+<a name="L201" class="offset"></a><a href="#L201">0201</a>
+<a name="L202" class="offset"></a><a href="#L202">0202</a>
+<a name="L203" class="offset"></a><a href="#L203">0203</a>
+<a name="L204" class="offset"></a><a href="#L204">0204</a>
+<a name="L205" class="offset"></a><a href="#L205">0205</a>
+<a name="L206" class="offset"></a><a href="#L206">0206</a>
+<a name="L207" class="offset"></a><a href="#L207">0207</a>
+<a name="L208" class="offset"></a><a href="#L208">0208</a>
+<a name="L209" class="offset"></a><a href="#L209">0209</a>
+<a name="L210" class="offset"></a><a href="#L210">0210</a>
+<a name="L211" class="offset"></a><a href="#L211">0211</a>
+<a name="L212" class="offset"></a><a href="#L212">0212</a>
+<a name="L213" class="offset"></a><a href="#L213">0213</a>
+<a name="L214" class="offset"></a><a href="#L214">0214</a>
+<a name="L215" class="offset"></a><a href="#L215">0215</a>
+<a name="L216" class="offset"></a><a href="#L216">0216</a>
+<a name="L217" class="offset"></a><a href="#L217">0217</a>
+<a name="L218" class="offset"></a><a href="#L218">0218</a>
+<a name="L219" class="offset"></a><a href="#L219">0219</a>
+<a name="L220" class="offset"></a><a href="#L220">0220</a>
+<a name="L221" class="offset"></a><a href="#L221">0221</a>
+<a name="L222" class="offset"></a><a href="#L222">0222</a>
+<a name="L223" class="offset"></a><a href="#L223">0223</a>
+<a name="L224" class="offset"></a><a href="#L224">0224</a>
+<a name="L225" class="offset"></a><a href="#L225">0225</a>
+<a name="L226" class="offset"></a><a href="#L226">0226</a>
+<a name="L227" class="offset"></a><a href="#L227">0227</a>
+<a name="L228" class="offset"></a><a href="#L228">0228</a>
+<a name="L229" class="offset"></a><a href="#L229">0229</a>
+<a name="L230" class="offset"></a><a href="#L230">0230</a>
+<a name="L231" class="offset"></a><a href="#L231">0231</a>
+<a name="L232" class="offset"></a><a href="#L232">0232</a>
+<a name="L233" class="offset"></a><a href="#L233">0233</a>
+<a name="L234" class="offset"></a><a href="#L234">0234</a>
+<a name="L235" class="offset"></a><a href="#L235">0235</a>
+<a name="L236" class="offset"></a><a href="#L236">0236</a>
+<a name="L237" class="offset"></a><a href="#L237">0237</a>
+<a name="L238" class="offset"></a><a href="#L238">0238</a>
+<a name="L239" class="offset"></a><a href="#L239">0239</a>
+<a name="L240" class="offset"></a><a href="#L240">0240</a>
+<a name="L241" class="offset"></a><a href="#L241">0241</a>
+<a name="L242" class="offset"></a><a href="#L242">0242</a>
+<a name="L243" class="offset"></a><a href="#L243">0243</a>
+<a name="L244" class="offset"></a><a href="#L244">0244</a>
+<a name="L245" class="offset"></a><a href="#L245">0245</a>
+<a name="L246" class="offset"></a><a href="#L246">0246</a>
+<a name="L247" class="offset"></a><a href="#L247">0247</a>
+<a name="L248" class="offset"></a><a href="#L248">0248</a>
+<a name="L249" class="offset"></a><a href="#L249">0249</a>
+<a name="L250" class="offset"></a><a href="#L250">0250</a>
+<a name="L251" class="offset"></a><a href="#L251">0251</a>
+<a name="L252" class="offset"></a><a href="#L252">0252</a>
+<a name="L253" class="offset"></a><a href="#L253">0253</a>
+<a name="L254" class="offset"></a><a href="#L254">0254</a>
+<a name="L255" class="offset"></a><a href="#L255">0255</a>
+<a name="L256" class="offset"></a><a href="#L256">0256</a>
+<a name="L257" class="offset"></a><a href="#L257">0257</a>
+<a name="L258" class="offset"></a><a href="#L258">0258</a>
+<a name="L259" class="offset"></a><a href="#L259">0259</a>
+<a name="L260" class="offset"></a><a href="#L260">0260</a>
+<a name="L261" class="offset"></a><a href="#L261">0261</a>
+<a name="L262" class="offset"></a><a href="#L262">0262</a>
+<a name="L263" class="offset"></a><a href="#L263">0263</a>
+<a name="L264" class="offset"></a><a href="#L264">0264</a>
+<a name="L265" class="offset"></a><a href="#L265">0265</a>
+<a name="L266" class="offset"></a><a href="#L266">0266</a>
+<a name="L267" class="offset"></a><a href="#L267">0267</a>
+<a name="L268" class="offset"></a><a href="#L268">0268</a>
+<a name="L269" class="offset"></a><a href="#L269">0269</a>
+<a name="L270" class="offset"></a><a href="#L270">0270</a>
+<a name="L271" class="offset"></a><a href="#L271">0271</a>
+<a name="L272" class="offset"></a><a href="#L272">0272</a>
+<a name="L273" class="offset"></a><a href="#L273">0273</a>
+<a name="L274" class="offset"></a><a href="#L274">0274</a>
+<a name="L275" class="offset"></a><a href="#L275">0275</a>
+<a name="L276" class="offset"></a><a href="#L276">0276</a>
+<a name="L277" class="offset"></a><a href="#L277">0277</a>
+<a name="L278" class="offset"></a><a href="#L278">0278</a>
+<a name="L279" class="offset"></a><a href="#L279">0279</a>
+<a name="L280" class="offset"></a><a href="#L280">0280</a>
+<a name="L281" class="offset"></a><a href="#L281">0281</a>
+<a name="L282" class="offset"></a><a href="#L282">0282</a>
+<a name="L283" class="offset"></a><a href="#L283">0283</a>
+<a name="L284" class="offset"></a><a href="#L284">0284</a>
+<a name="L285" class="offset"></a><a href="#L285">0285</a>
+<a name="L286" class="offset"></a><a href="#L286">0286</a>
+<a name="L287" class="offset"></a><a href="#L287">0287</a>
+<a name="L288" class="offset"></a><a href="#L288">0288</a>
+<a name="L289" class="offset"></a><a href="#L289">0289</a>
+<a name="L290" class="offset"></a><a href="#L290">0290</a>
+<a name="L291" class="offset"></a><a href="#L291">0291</a>
+<a name="L292" class="offset"></a><a href="#L292">0292</a>
+<a name="L293" class="offset"></a><a href="#L293">0293</a>
+<a name="L294" class="offset"></a><a href="#L294">0294</a>
+<a name="L295" class="offset"></a><a href="#L295">0295</a>
+<a name="L296" class="offset"></a><a href="#L296">0296</a>
+<a name="L297" class="offset"></a><a href="#L297">0297</a>
+<a name="L298" class="offset"></a><a href="#L298">0298</a>
+<a name="L299" class="offset"></a><a href="#L299">0299</a>
+<a name="L300" class="offset"></a><a href="#L300">0300</a>
+<a name="L301" class="offset"></a><a href="#L301">0301</a>
+<a name="L302" class="offset"></a><a href="#L302">0302</a>
+<a name="L303" class="offset"></a><a href="#L303">0303</a>
+<a name="L304" class="offset"></a><a href="#L304">0304</a>
+<a name="L305" class="offset"></a><a href="#L305">0305</a>
+<a name="L306" class="offset"></a><a href="#L306">0306</a>
+<a name="L307" class="offset"></a><a href="#L307">0307</a>
+<a name="L308" class="offset"></a><a href="#L308">0308</a>
+<a name="L309" class="offset"></a><a href="#L309">0309</a>
+<a name="L310" class="offset"></a><a href="#L310">0310</a>
+<a name="L311" class="offset"></a><a href="#L311">0311</a>
+<a name="L312" class="offset"></a><a href="#L312">0312</a>
+<a name="L313" class="offset"></a><a href="#L313">0313</a>
+<a name="L314" class="offset"></a><a href="#L314">0314</a>
+<a name="L315" class="offset"></a><a href="#L315">0315</a>
+<a name="L316" class="offset"></a><a href="#L316">0316</a>
+<a name="L317" class="offset"></a><a href="#L317">0317</a>
+<a name="L318" class="offset"></a><a href="#L318">0318</a>
+<a name="L319" class="offset"></a><a href="#L319">0319</a>
+<a name="L320" class="offset"></a><a href="#L320">0320</a>
+<a name="L321" class="offset"></a><a href="#L321">0321</a>
+<a name="L322" class="offset"></a><a href="#L322">0322</a>
+<a name="L323" class="offset"></a><a href="#L323">0323</a>
+<a name="L324" class="offset"></a><a href="#L324">0324</a>
+<a name="L325" class="offset"></a><a href="#L325">0325</a>
+<a name="L326" class="offset"></a><a href="#L326">0326</a>
+<a name="L327" class="offset"></a><a href="#L327">0327</a>
+<a name="L328" class="offset"></a><a href="#L328">0328</a>
+<a name="L329" class="offset"></a><a href="#L329">0329</a>
+<a name="L330" class="offset"></a><a href="#L330">0330</a>
+<a name="L331" class="offset"></a><a href="#L331">0331</a>
+<a name="L332" class="offset"></a><a href="#L332">0332</a>
+<a name="L333" class="offset"></a><a href="#L333">0333</a>
+<a name="L334" class="offset"></a><a href="#L334">0334</a>
+<a name="L335" class="offset"></a><a href="#L335">0335</a>
+<a name="L336" class="offset"></a><a href="#L336">0336</a>
+<a name="L337" class="offset"></a><a href="#L337">0337</a>
+<a name="L338" class="offset"></a><a href="#L338">0338</a>
+<a name="L339" class="offset"></a><a href="#L339">0339</a>
+<a name="L340" class="offset"></a><a href="#L340">0340</a>
+<a name="L341" class="offset"></a><a href="#L341">0341</a>
+<a name="L342" class="offset"></a><a href="#L342">0342</a>
+<a name="L343" class="offset"></a><a href="#L343">0343</a>
+<a name="L344" class="offset"></a><a href="#L344">0344</a>
+<a name="L345" class="offset"></a><a href="#L345">0345</a>
+<a name="L346" class="offset"></a><a href="#L346">0346</a>
+<a name="L347" class="offset"></a><a href="#L347">0347</a>
+<a name="L348" class="offset"></a><a href="#L348">0348</a>
+<a name="L349" class="offset"></a><a href="#L349">0349</a>
+<a name="L350" class="offset"></a><a href="#L350">0350</a>
+<a name="L351" class="offset"></a><a href="#L351">0351</a>
+<a name="L352" class="offset"></a><a href="#L352">0352</a>
+<a name="L353" class="offset"></a><a href="#L353">0353</a>
+<a name="L354" class="offset"></a><a href="#L354">0354</a>
+<a name="L355" class="offset"></a><a href="#L355">0355</a>
+<a name="L356" class="offset"></a><a href="#L356">0356</a>
+<a name="L357" class="offset"></a><a href="#L357">0357</a>
+<a name="L358" class="offset"></a><a href="#L358">0358</a>
+<a name="L359" class="offset"></a><a href="#L359">0359</a>
+<a name="L360" class="offset"></a><a href="#L360">0360</a>
+<a name="L361" class="offset"></a><a href="#L361">0361</a>
+<a name="L362" class="offset"></a><a href="#L362">0362</a>
+<a name="L363" class="offset"></a><a href="#L363">0363</a>
+<a name="L364" class="offset"></a><a href="#L364">0364</a>
+<a name="L365" class="offset"></a><a href="#L365">0365</a>
+<a name="L366" class="offset"></a><a href="#L366">0366</a>
+<a name="L367" class="offset"></a><a href="#L367">0367</a>
+<a name="L368" class="offset"></a><a href="#L368">0368</a>
+<a name="L369" class="offset"></a><a href="#L369">0369</a>
+<a name="L370" class="offset"></a><a href="#L370">0370</a>
+<a name="L371" class="offset"></a><a href="#L371">0371</a>
+<a name="L372" class="offset"></a><a href="#L372">0372</a>
+<a name="L373" class="offset"></a><a href="#L373">0373</a>
+<a name="L374" class="offset"></a><a href="#L374">0374</a>
+<a name="L375" class="offset"></a><a href="#L375">0375</a>
+<a name="L376" class="offset"></a><a href="#L376">0376</a>
+<a name="L377" class="offset"></a><a href="#L377">0377</a>
+<a name="L378" class="offset"></a><a href="#L378">0378</a>
+<a name="L379" class="offset"></a><a href="#L379">0379</a>
+<a name="L380" class="offset"></a><a href="#L380">0380</a>
+<a name="L381" class="offset"></a><a href="#L381">0381</a>
+<a name="L382" class="offset"></a><a href="#L382">0382</a>
+<a name="L383" class="offset"></a><a href="#L383">0383</a>
+<a name="L384" class="offset"></a><a href="#L384">0384</a>
+<a name="L385" class="offset"></a><a href="#L385">0385</a>
+<a name="L386" class="offset"></a><a href="#L386">0386</a>
+<a name="L387" class="offset"></a><a href="#L387">0387</a>
+<a name="L388" class="offset"></a><a href="#L388">0388</a>
+<a name="L389" class="offset"></a><a href="#L389">0389</a>
+<a name="L390" class="offset"></a><a href="#L390">0390</a>
+<a name="L391" class="offset"></a><a href="#L391">0391</a>
+<a name="L392" class="offset"></a><a href="#L392">0392</a>
+<a name="L393" class="offset"></a><a href="#L393">0393</a>
+<a name="L394" class="offset"></a><a href="#L394">0394</a>
+<a name="L395" class="offset"></a><a href="#L395">0395</a>
+<a name="L396" class="offset"></a><a href="#L396">0396</a>
+<a name="L397" class="offset"></a><a href="#L397">0397</a>
+<a name="L398" class="offset"></a><a href="#L398">0398</a>
+<a name="L399" class="offset"></a><a href="#L399">0399</a>
+<a name="L400" class="offset"></a><a href="#L400">0400</a>
+<a name="L401" class="offset"></a><a href="#L401">0401</a>
+<a name="L402" class="offset"></a><a href="#L402">0402</a>
+<a name="L403" class="offset"></a><a href="#L403">0403</a>
+<a name="L404" class="offset"></a><a href="#L404">0404</a>
+<a name="L405" class="offset"></a><a href="#L405">0405</a>
+<a name="L406" class="offset"></a><a href="#L406">0406</a>
+<a name="L407" class="offset"></a><a href="#L407">0407</a>
+<a name="L408" class="offset"></a><a href="#L408">0408</a>
+<a name="L409" class="offset"></a><a href="#L409">0409</a>
+<a name="L410" class="offset"></a><a href="#L410">0410</a>
+<a name="L411" class="offset"></a><a href="#L411">0411</a>
+<a name="L412" class="offset"></a><a href="#L412">0412</a>
+<a name="L413" class="offset"></a><a href="#L413">0413</a>
+<a name="L414" class="offset"></a><a href="#L414">0414</a>
+<a name="L415" class="offset"></a><a href="#L415">0415</a>
+<a name="L416" class="offset"></a><a href="#L416">0416</a>
+<a name="L417" class="offset"></a><a href="#L417">0417</a>
+<a name="L418" class="offset"></a><a href="#L418">0418</a>
+<a name="L419" class="offset"></a><a href="#L419">0419</a>
+<a name="L420" class="offset"></a><a href="#L420">0420</a>
+<a name="L421" class="offset"></a><a href="#L421">0421</a>
+<a name="L422" class="offset"></a><a href="#L422">0422</a>
+<a name="L423" class="offset"></a><a href="#L423">0423</a>
+<a name="L424" class="offset"></a><a href="#L424">0424</a>
+<a name="L425" class="offset"></a><a href="#L425">0425</a>
+<a name="L426" class="offset"></a><a href="#L426">0426</a>
+<a name="L427" class="offset"></a><a href="#L427">0427</a>
+<a name="L428" class="offset"></a><a href="#L428">0428</a>
+<a name="L429" class="offset"></a><a href="#L429">0429</a>
+<a name="L430" class="offset"></a><a href="#L430">0430</a>
+<a name="L431" class="offset"></a><a href="#L431">0431</a>
+<a name="L432" class="offset"></a><a href="#L432">0432</a>
+<a name="L433" class="offset"></a><a href="#L433">0433</a>
+<a name="L434" class="offset"></a><a href="#L434">0434</a>
+<a name="L435" class="offset"></a><a href="#L435">0435</a>
+<a name="L436" class="offset"></a><a href="#L436">0436</a>
+<a name="L437" class="offset"></a><a href="#L437">0437</a>
+<a name="L438" class="offset"></a><a href="#L438">0438</a>
+<a name="L439" class="offset"></a><a href="#L439">0439</a>
+<a name="L440" class="offset"></a><a href="#L440">0440</a>
+<a name="L441" class="offset"></a><a href="#L441">0441</a>
+<a name="L442" class="offset"></a><a href="#L442">0442</a>
+<a name="L443" class="offset"></a><a href="#L443">0443</a>
+<a name="L444" class="offset"></a><a href="#L444">0444</a>
+<a name="L445" class="offset"></a><a href="#L445">0445</a>
+<a name="L446" class="offset"></a><a href="#L446">0446</a>
+<a name="L447" class="offset"></a><a href="#L447">0447</a>
+<a name="L448" class="offset"></a><a href="#L448">0448</a>
+<a name="L449" class="offset"></a><a href="#L449">0449</a>
+<a name="L450" class="offset"></a><a href="#L450">0450</a>
+<a name="L451" class="offset"></a><a href="#L451">0451</a>
+<a name="L452" class="offset"></a><a href="#L452">0452</a>
+<a name="L453" class="offset"></a><a href="#L453">0453</a>
+<a name="L454" class="offset"></a><a href="#L454">0454</a>
+<a name="L455" class="offset"></a><a href="#L455">0455</a>
+<a name="L456" class="offset"></a><a href="#L456">0456</a>
+<a name="L457" class="offset"></a><a href="#L457">0457</a>
+<a name="L458" class="offset"></a><a href="#L458">0458</a>
+<a name="L459" class="offset"></a><a href="#L459">0459</a>
+<a name="L460" class="offset"></a><a href="#L460">0460</a>
+<a name="L461" class="offset"></a><a href="#L461">0461</a>
+<a name="L462" class="offset"></a><a href="#L462">0462</a>
+<a name="L463" class="offset"></a><a href="#L463">0463</a>
+<a name="L464" class="offset"></a><a href="#L464">0464</a>
+<a name="L465" class="offset"></a><a href="#L465">0465</a>
+<a name="L466" class="offset"></a><a href="#L466">0466</a>
+<a name="L467" class="offset"></a><a href="#L467">0467</a>
+<a name="L468" class="offset"></a><a href="#L468">0468</a>
+<a name="L469" class="offset"></a><a href="#L469">0469</a>
+<a name="L470" class="offset"></a><a href="#L470">0470</a>
+<a name="L471" class="offset"></a><a href="#L471">0471</a>
+<a name="L472" class="offset"></a><a href="#L472">0472</a>
+</pre></td><td><pre class="line-numbers">
+Network Working Group                                         N. Freed
+Request for Comments: 2231                                    Innosoft
+Updates: 2045, 2047, 2183                                     K. Moore
+Obsoletes: 2184                                University of Tennessee
+Category: Standards Track                                November 1997
+
+           MIME Parameter Value and Encoded Word Extensions:
+              Character Sets, Languages, and Continuations
+
+Status of this Memo
+
+   This document specifies an Internet standards track protocol for the
+   Internet community, and requests discussion and suggestions for
+   improvements.  Please refer to the current edition of the &quot;Internet
+   Official Protocol Standards&quot; (STD 1) for the standardization state
+   and status of this protocol.  Distribution of this memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) The Internet Society (1997).  All Rights Reserved.
+
+1.  Abstract
+
+   This memo defines extensions to the RFC 2045 media type and RFC 2183
+   disposition parameter value mechanisms to provide
+
+    (1)   a means to specify parameter values in character sets
+          other than US-ASCII,
+
+    (2)   to specify the language to be used should the value be
+          displayed, and
+
+    (3)   a continuation mechanism for long parameter values to
+          avoid problems with header line wrapping.
+
+   This memo also defines an extension to the encoded words defined in
+   RFC 2047 to allow the specification of the language to be used for
+   display as well as the character set.
+
+2.  Introduction
+
+   The Multipurpose Internet Mail Extensions, or MIME [RFC-2045, RFC-
+   2046, RFC-2047, RFC-2048, RFC-2049], define a message format that
+   allows for:
+
+Freed &amp; Moore               Standards Track                     [Page 1]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+    (1)   textual message bodies in character sets other than
+          US-ASCII,
+
+    (2)   non-textual message bodies,
+
+    (3)   multi-part message bodies, and
+
+    (4)   textual header information in character sets other than
+          US-ASCII.
+
+   MIME is now widely deployed and is used by a variety of Internet
+   protocols, including, of course, Internet email.  However, MIME's
+   success has resulted in the need for additional mechanisms that were
+   not provided in the original protocol specification.
+
+   In particular, existing MIME mechanisms provide for named media type
+   (content-type field) parameters as well as named disposition
+   (content-disposition field).  A MIME media type may specify any
+   number of parameters associated with all of its subtypes, and any
+   specific subtype may specify additional parameters for its own use. A
+   MIME disposition value may specify any number of associated
+   parameters, the most important of which is probably the attachment
+   disposition's filename parameter.
+
+   These parameter names and values end up appearing in the content-type
+   and content-disposition header fields in Internet email.  This
+   inherently imposes three crucial limitations:
+
+    (1)   Lines in Internet email header fields are folded
+          according to RFC 822 folding rules.  This makes long
+          parameter values problematic.
+
+    (2)   MIME headers, like the RFC 822 headers they often
+          appear in, are limited to 7bit US-ASCII, and the
+          encoded-word mechanisms of RFC 2047 are not available
+          to parameter values.  This makes it impossible to have
+          parameter values in character sets other than US-ASCII
+          without specifying some sort of private per-parameter
+          encoding.
+
+    (3)   It has recently become clear that character set
+          information is not sufficient to properly display some
+          sorts of information -- language information is also
+          needed [RFC-2130].  For example, support for
+          handicapped users may require reading text string
+
+Freed &amp; Moore               Standards Track                     [Page 2]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+          aloud. The language the text is written in is needed
+          for this to be done correctly.  Some parameter values
+          may need to be displayed, hence there is a need to
+          allow for the inclusion of language information.
+
+   The last problem on this list is also an issue for the encoded words
+   defined by RFC 2047, as encoded words are intended primarily for
+   display purposes.
+
+   This document defines extensions that address all of these
+   limitations. All of these extensions are implemented in a fashion
+   that is completely compatible at a syntactic level with existing MIME
+   implementations. In addition, the extensions are designed to have as
+   little impact as possible on existing uses of MIME.
+
+   IMPORTANT NOTE:  These mechanisms end up being somewhat gibbous when
+   they actually are used. As such, these mechanisms should not be used
+   lightly; they should be reserved for situations where a real need for
+   them exists.
+
+2.1.  Requirements notation
+
+   This document occasionally uses terms that appear in capital letters.
+   When the terms &quot;MUST&quot;, &quot;SHOULD&quot;, &quot;MUST NOT&quot;, &quot;SHOULD NOT&quot;, and &quot;MAY&quot;
+   appear capitalized, they are being used to indicate particular
+   requirements of this specification. A discussion of the meanings of
+   these terms appears in [RFC- 2119].
+
+3.  Parameter Value Continuations
+
+   Long MIME media type or disposition parameter values do not interact
+   well with header line wrapping conventions.  In particular, proper
+   header line wrapping depends on there being places where linear
+   whitespace (LWSP) is allowed, which may or may not be present in a
+   parameter value, and even if present may not be recognizable as such
+   since specific knowledge of parameter value syntax may not be
+   available to the agent doing the line wrapping. The result is that
+   long parameter values may end up getting truncated or otherwise
+   damaged by incorrect line wrapping implementations.
+
+   A mechanism is therefore needed to break up parameter values into
+   smaller units that are amenable to line wrapping. Any such mechanism
+   MUST be compatible with existing MIME processors. This means that
+
+    (1)   the mechanism MUST NOT change the syntax of MIME media
+          type and disposition lines, and
+
+Freed &amp; Moore               Standards Track                     [Page 3]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+    (2)   the mechanism MUST NOT depend on parameter ordering
+          since MIME states that parameters are not order
+          sensitive.  Note that while MIME does prohibit
+          modification of MIME headers during transport, it is
+          still possible that parameters will be reordered when
+          user agent level processing is done.
+
+   The obvious solution, then, is to use multiple parameters to contain
+   a single parameter value and to use some kind of distinguished name
+   to indicate when this is being done.  And this obvious solution is
+   exactly what is specified here: The asterisk character (&quot;*&quot;) followed
+   by a decimal count is employed to indicate that multiple parameters
+   are being used to encapsulate a single parameter value.  The count
+   starts at 0 and increments by 1 for each subsequent section of the
+   parameter value.  Decimal values are used and neither leading zeroes
+   nor gaps in the sequence are allowed.
+
+   The original parameter value is recovered by concatenating the
+   various sections of the parameter, in order.  For example, the
+   content-type field
+
+        Content-Type: message/external-body; access-type=URL;
+         URL*0=&quot;ftp://&quot;;
+         URL*1=&quot;cs.utk.edu/pub/moore/bulk-mailer/bulk-mailer.tar&quot;
+
+   is semantically identical to
+
+        Content-Type: message/external-body; access-type=URL;
+          URL=&quot;ftp://cs.utk.edu/pub/moore/bulk-mailer/bulk-mailer.tar&quot;
+
+   Note that quotes around parameter values are part of the value
+   syntax; they are NOT part of the value itself.  Furthermore, it is
+   explicitly permitted to have a mixture of quoted and unquoted
+   continuation fields.
+
+4.  Parameter Value Character Set and Language Information
+
+   Some parameter values may need to be qualified with character set or
+   language information.  It is clear that a distinguished parameter
+   name is needed to identify when this information is present along
+   with a specific syntax for the information in the value itself.  In
+   addition, a lightweight encoding mechanism is needed to accommodate 8
+   bit information in parameter values.
+
+Freed &amp; Moore               Standards Track                     [Page 4]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+   Asterisks (&quot;*&quot;) are reused to provide the indicator that language and
+   character set information is present and encoding is being used. A
+   single quote (&quot;'&quot;) is used to delimit the character set and language
+   information at the beginning of the parameter value. Percent signs
+   (&quot;%&quot;) are used as the encoding flag, which agrees with RFC 2047.
+
+   Specifically, an asterisk at the end of a parameter name acts as an
+   indicator that character set and language information may appear at
+   the beginning of the parameter value. A single quote is used to
+   separate the character set, language, and actual value information in
+   the parameter value string, and an percent sign is used to flag
+   octets encoded in hexadecimal.  For example:
+
+        Content-Type: application/x-stuff;
+         title*=us-ascii'en-us'This%20is%20%2A%2A%2Afun%2A%2A%2A
+
+   Note that it is perfectly permissible to leave either the character
+   set or language field blank.  Note also that the single quote
+   delimiters MUST be present even when one of the field values is
+   omitted.  This is done when either character set, language, or both
+   are not relevant to the parameter value at hand.  This MUST NOT be
+   done in order to indicate a default character set or language --
+   parameter field definitions MUST NOT assign a default character set
+   or language.
+
+4.1.  Combining Character Set, Language, and Parameter Continuations
+
+   Character set and language information may be combined with the
+   parameter continuation mechanism. For example:
+
+   Content-Type: application/x-stuff
+    title*0*=us-ascii'en'This%20is%20even%20more%20
+    title*1*=%2A%2A%2Afun%2A%2A%2A%20
+    title*2=&quot;isn't it!&quot;
+
+   Note that:
+
+    (1)   Language and character set information only appear at
+          the beginning of a given parameter value.
+
+    (2)   Continuations do not provide a facility for using more
+          than one character set or language in the same
+          parameter value.
+
+    (3)   A value presented using multiple continuations may
+          contain a mixture of encoded and unencoded segments.
+
+Freed &amp; Moore               Standards Track                     [Page 5]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+    (4)   The first segment of a continuation MUST be encoded if
+          language and character set information are given.
+
+    (5)   If the first segment of a continued parameter value is
+          encoded the language and character set field delimiters
+          MUST be present even when the fields are left blank.
+
+5.  Language specification in Encoded Words
+
+   RFC 2047 provides support for non-US-ASCII character sets in RFC 822
+   message header comments, phrases, and any unstructured text field.
+   This is done by defining an encoded word construct which can appear
+   in any of these places.  Given that these are fields intended for
+   display, it is sometimes necessary to associate language information
+   with encoded words as well as just the character set.  This
+   specification extends the definition of an encoded word to allow the
+   inclusion of such information.  This is simply done by suffixing the
+   character set specification with an asterisk followed by the language
+   tag.  For example:
+
+          From: =?US-ASCII*EN?Q?Keith_Moore?= &lt;moore@cs.utk.edu&gt;
+
+6.  IMAP4 Handling of Parameter Values
+
+   IMAP4 [RFC-2060] servers SHOULD decode parameter value continuations
+   when generating the BODY and BODYSTRUCTURE fetch attributes.
+
+7.  Modifications to MIME ABNF
+
+   The ABNF for MIME parameter values given in RFC 2045 is:
+
+   parameter := attribute &quot;=&quot; value
+
+   attribute := token
+                ; Matching of attributes
+                ; is ALWAYS case-insensitive.
+
+   This specification changes this ABNF to:
+
+   parameter := regular-parameter / extended-parameter
+
+   regular-parameter := regular-parameter-name &quot;=&quot; value
+
+   regular-parameter-name := attribute [section]
+
+   attribute := 1*attribute-char
+
+Freed &amp; Moore               Standards Track                     [Page 6]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+   attribute-char := &lt;any (US-ASCII) CHAR except SPACE, CTLs,
+                     &quot;*&quot;, &quot;'&quot;, &quot;%&quot;, or tspecials&gt;
+
+   section := initial-section / other-sections
+
+   initial-section := &quot;*0&quot;
+
+   other-sections := &quot;*&quot; (&quot;1&quot; / &quot;2&quot; / &quot;3&quot; / &quot;4&quot; / &quot;5&quot; /
+                          &quot;6&quot; / &quot;7&quot; / &quot;8&quot; / &quot;9&quot;) *DIGIT)
+
+   extended-parameter := (extended-initial-name &quot;=&quot;
+                          extended-value) /
+                         (extended-other-names &quot;=&quot;
+                          extended-other-values)
+
+   extended-initial-name := attribute [initial-section] &quot;*&quot;
+
+   extended-other-names := attribute other-sections &quot;*&quot;
+
+   extended-initial-value := [charset] &quot;'&quot; [language] &quot;'&quot;
+                             extended-other-values
+
+   extended-other-values := *(ext-octet / attribute-char)
+
+   ext-octet := &quot;%&quot; 2(DIGIT / &quot;A&quot; / &quot;B&quot; / &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot;)
+
+   charset := &lt;registered character set name&gt;
+
+   language := &lt;registered language tag [RFC-1766]&gt;
+
+   The ABNF given in RFC 2047 for encoded-words is:
+
+   encoded-word := &quot;=?&quot; charset &quot;?&quot; encoding &quot;?&quot; encoded-text &quot;?=&quot;
+
+   This specification changes this ABNF to:
+
+   encoded-word := &quot;=?&quot; charset [&quot;*&quot; language] &quot;?&quot; encoded-text &quot;?=&quot;
+
+8.  Character sets which allow specification of language
+
+   In the future it is likely that some character sets will provide
+   facilities for inline language labeling. Such facilities are
+   inherently more flexible than those defined here as they allow for
+   language switching in the middle of a string.
+
+Freed &amp; Moore               Standards Track                     [Page 7]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+   If and when such facilities are developed they SHOULD be used in
+   preference to the language labeling facilities specified here. Note
+   that all the mechanisms defined here allow for the omission of
+   language labels so as to be able to accommodate this possible future
+   usage.
+
+9.  Security Considerations
+
+   This RFC does not discuss security issues and is not believed to
+   raise any security issues not already endemic in electronic mail and
+   present in fully conforming implementations of MIME.
+
+10.  References
+
+   [RFC-822]
+        Crocker, D., &quot;Standard for the Format of ARPA Internet
+        Text Messages&quot;, STD 11, RFC 822 August 1982.
+
+   [RFC-1766]
+        Alvestrand, H., &quot;Tags for the Identification of
+        Languages&quot;, RFC 1766, March 1995.
+
+   [RFC-2045]
+        Freed, N., and N. Borenstein, &quot;Multipurpose Internet Mail
+        Extensions (MIME) Part One: Format of Internet Message
+        Bodies&quot;, RFC 2045, December 1996.
+
+   [RFC-2046]
+        Freed, N. and N. Borenstein, &quot;Multipurpose Internet Mail
+        Extensions (MIME) Part Two: Media Types&quot;, RFC 2046,
+        December 1996.
+
+   [RFC-2047]
+        Moore, K., &quot;Multipurpose Internet Mail Extensions (MIME)
+        Part Three: Representation of Non-ASCII Text in Internet
+        Message Headers&quot;, RFC 2047, December 1996.
+
+   [RFC-2048]
+        Freed, N., Klensin, J. and J. Postel, &quot;Multipurpose
+        Internet Mail Extensions (MIME) Part Four: MIME
+        Registration Procedures&quot;, RFC 2048, December 1996.
+
+   [RFC-2049]
+        Freed, N. and N. Borenstein, &quot;Multipurpose Internet Mail
+        Extensions (MIME) Part Five: Conformance Criteria and
+        Examples&quot;, RFC 2049, December 1996.
+
+Freed &amp; Moore               Standards Track                     [Page 8]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+   [RFC-2060]
+        Crispin, M., &quot;Internet Message Access Protocol - Version
+        4rev1&quot;, RFC 2060, December 1996.
+
+   [RFC-2119]
+        Bradner, S., &quot;Key words for use in RFCs to Indicate
+        Requirement Levels&quot;, RFC 2119, March 1997.
+
+   [RFC-2130]
+        Weider, C., Preston, C., Simonsen, K., Alvestrand, H.,
+        Atkinson, R., Crispin, M., and P. Svanberg, &quot;Report from the
+        IAB Character Set Workshop&quot;, RFC 2130, April 1997.
+
+   [RFC-2183]
+        Troost, R., Dorner, S. and K. Moore, &quot;Communicating
+        Presentation Information in Internet Messages:  The
+        Content-Disposition Header&quot;, RFC 2183, August 1997.
+
+11.  Authors' Addresses
+
+   Ned Freed
+   Innosoft International, Inc.
+   1050 Lakes Drive
+   West Covina, CA 91790
+   USA
+
+   Phone: +1 626 919 3600
+   Fax:   +1 626 919 3614
+   EMail: ned.freed@innosoft.com
+
+   Keith Moore
+   Computer Science Dept.
+   University of Tennessee
+   107 Ayres Hall
+   Knoxville, TN 37996-1301
+   USA
+
+   EMail: moore@cs.utk.edu
+
+Freed &amp; Moore               Standards Track                     [Page 9]
+
+RFC 2231         MIME Value and Encoded Word Extensions    November 1997
+
+12.  Full Copyright Statement
+
+   Copyright (C) The Internet Society (1997).  All Rights Reserved.
+
+   This document and translations of it may be copied and furnished to
+   others, and derivative works that comment on or otherwise explain it
+   or assist in its implementation may be prepared, copied, published
+   and distributed, in whole or in part, without restriction of any
+   kind, provided that the above copyright notice and this paragraph are
+   included on all such copies and derivative works.  However, this
+   document itself may not be modified in any way, such as by removing
+   the copyright notice or references to the Internet Society or other
+   Internet organizations, except as needed for the purpose of
+   developing Internet standards in which case the procedures for
+   copyrights defined in the Internet Standards process must be
+   followed, or as required to translate it into languages other than
+   English.
+
+   The limited permissions granted above are perpetual and will not be
+   revoked by the Internet Society or its successors or assigns.
+
+   This document and the information contained herein is provided on an
+   &quot;AS IS&quot; basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+   TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+   BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+   HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Freed &amp; Moore               Standards Track                    [Page 10]
+</pre></td></tr></table>
