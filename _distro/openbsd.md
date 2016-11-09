@@ -1,7 +1,7 @@
 ---
 layout: concertina
 distro: OpenBSD
-icon: https://www.openbsd.org/images/blowfish-notext.jpg
+icon: openbsd.png
 homepage: https://www.openbsd.org/
 title: NeoMutt for OpenBSD
 maintainer: sthen
