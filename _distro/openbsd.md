@@ -16,6 +16,14 @@ The first release containing it will be 6.1.
 
 ## Installation <a class="offset" id="install"></a>
 
+The Mutt and NeoMutt packages don't coexist, so remove Mutt first if installed:
+
+```
+# pkg_delete mutt
+```
+
+Then install NeoMutt, choosing from the list of pre-built packages:
+
 ```
 # pkg_add neomutt
 Ambiguous: choose package for neomutt
@@ -41,11 +49,16 @@ Your choice:
 
 ## Building from Source <a class="offset" id="build"></a>
 
-These instructions will help you install all the dependencies you'll need to
-build NeoMutt from the source code.
+To install the main dependencies for building NeoMutt and documentation:
 
+```
+# pkg_add docbook-xsl lynx gettext
+```
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
+
+Alternatively, checkout/update the ports tree and build in the usual way (NeoMutt is in /usr/ports/mail/neomutt).
+
 
 ## Debugging <a class="offset" id="debug"></a>
 
