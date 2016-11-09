@@ -13,17 +13,30 @@ maintainer: shioyama
 
 ## Installation <a class="offset" id="install"></a>
 
+Neomutt is available in the Arch User Repository(AUR) as both `neomutt` and
+`neomutt-git`. Use your favourite AUR helper to download and install it.
 ```
-install commands
+mkdir -p /tmp/makepkg && cd /tmp/makepkg
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/neomutt.tar.gz
+tar xf neomutt.tar.gz
+cd neomutt
+makepkg -si
 ```
 
-```reply
-command output
-```
+This will download the latest Neomutt release from GitHub, compile it and
+install it.
 
 ## Update <a class="offset" id="update"></a>
+You must manually run the installation commands again to update Neomutt. Or you
+can use an AUR helper to automate it for you. Take a look at the ArchWiki page
+for the [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository).
 
 ## Removal <a class="offset" id="remove"></a>
+To remove Neomutt along with any dependencies that will be orphaned use the
+following command:
+```
+# pacman -Rsc neomutt
+```
 
 ## Building from Source <a class="offset" id="build"></a>
 
