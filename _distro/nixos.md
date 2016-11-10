@@ -50,13 +50,34 @@ nix-env -i nixos.neomutt
 
 ## Update <a class="offset" id="update"></a>
 
+### imperative
+
+To update a particular package, run
+
+```
+nix-env -u nixos.neomutt
+```
+
 ## Removal <a class="offset" id="remove"></a>
+
+### imperative
+
+To remove a particular package, run
+
+```
+nix-env -e nixos.neomutt
+```
 
 ## Building from Source <a class="offset" id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
 
+```
+nix-build -A neomutt
+```
+
+This will build the neomutt and print the directory where it was built.
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
