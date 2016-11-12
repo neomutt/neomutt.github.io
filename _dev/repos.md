@@ -20,7 +20,6 @@ This is a list of all the git repositories in the NeoMutt GitHub Project.
 | [integration](https://github.com/neomutt/integration)                 | Patch sets for downstream distros                                                |
 | [lua-samples](https://github.com/neomutt/lua-samples)                 | Sample C code to interact with LUA Scripts                                       |
 | [management](https://github.com/neomutt/management)                   | Automation scripts and notes                                                     |
-| [mutt-kz](https://github.com/neomutt/mutt-kz)                         | Transfer area for patches for NotMuch                                            |
 | [neomutt](https://github.com/neomutt/neomutt)                         | Teaching an Old Dog New Tricks -- IRC: #neomutt on irc.freenode.net              |
 | [neomutt-flatcap](https://github.com/neomutt/neomutt-flatcap)         | flatcap's work area -- not for public use                                        |
 | [neomutt-old](https://github.com/neomutt/neomutt-old)                 | Retired branches of NeoMutt                                                      |
