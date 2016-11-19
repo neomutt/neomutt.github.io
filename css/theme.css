@@ -297,3 +297,10 @@ div.article {
   padding-top: 1em;
 }
 
+span.donate {
+  border: 2px solid #000;
+  background: white;
+  padding: 0 0.5em 0 0.5em;
+  border-radius: 10px;
+}
+
