@@ -7,7 +7,7 @@ title: NeoMutt for MacPorts for macOS
 maintainer: lbschenkel
 ---
 
-# ![logo](/images/{{page.icon}}) {{ page.title }}
+# ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
 ## Support <a class="offset" id="support"></a>
 

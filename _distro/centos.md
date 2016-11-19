@@ -7,7 +7,7 @@ title: NeoMutt for CentOS
 maintainer: flatcap
 ---
 
-# ![logo](/images/{{page.icon}}) {{ page.title }}
+# ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
 ## Support <a class="offset" id="support"></a>
 

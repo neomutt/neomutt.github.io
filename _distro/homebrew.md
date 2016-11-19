@@ -7,7 +7,7 @@ title: NeoMutt for Homebrew
 maintainer: alexpearce
 ---
 
-# ![logo](/images/{{page.icon}}) {{ page.title }}
+# ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
 [Homebrew][homebrew] is a package manager for [macOS]. It allows you to easily 
 install and manage software that didn't come pre-installed on your system and 
