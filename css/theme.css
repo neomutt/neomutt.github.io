@@ -265,7 +265,7 @@ a:link, a:visited {
   color: #00a;
 }
 
-a.devel, span.warning {
+a.devel, span.warning, span.notes, span.wip {
   padding: 0;
   margin: 1em 0 1em 0;
   border-radius: 10px;
@@ -276,12 +276,12 @@ a.devel, span.warning {
   border: 2px solid black;
 }
 
-a.devel {
+a.devel, span.wip {
   background: yellow;
   color: black;
 }
 
-span.warning {
+span.warning, span.notes {
   background: red;
   color: white;
 }

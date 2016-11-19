@@ -19,9 +19,14 @@
             </div>
         </div>
         <div class="col-md-9">
+            {% case page.status %}
+            {% when "devel" %}    <a class="devel" href="/devel/">This feature is still under development</a>
+            {% when "disabled" %} <span class="warning">{{ page.warning }}</span>
+            {% when "notes" %}    <span class="notes">These are just notes -- soon there will be more</span>
+            {% when "wip" %}      <span class="wip">This is a Work in Progress</span>
+            {% endcase %}
             {{ content }}
         </div>
     </div>
 </div>
-
 {% include footer.html %}
