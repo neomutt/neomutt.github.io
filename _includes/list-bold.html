@@ -4,4 +4,8 @@
 {% else %}
 <span>
 {% endif %}
-{{ include.lb_title }}</span></a></li>
+{{ include.lb_title }}</span></a>
+{% if (include.lb_status == "devel") or (include.lb_status == "disabled") %}
+<span class="devel">⚠</span>
+{% endif %}
+</li>
