@@ -28,7 +28,7 @@ the source code.</p>
     </tr>
     {% for d in site.distro %}
       <tr>
-        <td><img src="/images/{{ d.icon }}"></td>
+        <td><img src="/images/distros/{{ d.icon }}"></td>
         <td><a href="{{ d.url }}">{{ d.distro }}</a></td>
         <td>
           {% assign p = site.data.people[d.maintainer] %}
