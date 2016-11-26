@@ -16,12 +16,6 @@ layout: null
         <description>
           {% assign c = post.content %}
 
-          {% for p in site.data.people %}
-          {% assign at = '@' | append: p.nick %}
-          {% capture with %}{{p.name}} (<a href="{{https://github.com/p.nick}}">{{p.nick}}</a>){% endcapture %}
-          {% assign c = c | replace: at, with %}
-          {% endfor %}
-
           {% capture author %}
           <div class="author">
             {% assign person = site.data.people[post.author] %}
