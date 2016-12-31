@@ -8,11 +8,12 @@ description: Official Release of Mutt
 
 Here are the latest Mutt releases.
 
-The git hashes link to our GitHub repository.
-The hg hashes links to Mutt's Mercurial repository.
+The Git hashes link to our GitHub repository.
+The Hg hashes link to Mutt's Mercurial repository.
 
 | Date       | Version | Git Hash | Hg Hash      |
 |:-----------|:--------|:---------|:-------------|
+| 2016-12-04 | 1.7.2   | [`6b1ca7e`](https://github.com/neomutt/neomutt/commit/6b1ca7e) | [`99f5624d1f52`](https://dev.mutt.org/hg/mutt/rev/99f5624d1f52) |
 | 2016-10-08 | 1.7.1   | [`4f4f02c`](https://github.com/neomutt/neomutt/commit/4f4f02c) | [`0ce5f9bff1fd`](https://dev.mutt.org/hg/mutt/rev/0ce5f9bff1fd) |
 | 2016-08-18 | 1.7.0   | [`4effa43`](https://github.com/neomutt/neomutt/commit/4effa43) | [`a4e83f60e42f`](https://dev.mutt.org/hg/mutt/rev/a4e83f60e42f) |
 | 2016-07-06 | 1.6.2   | [`b9dfebb`](https://github.com/neomutt/neomutt/commit/b9dfebb) | [`7ccd4417bd70`](https://dev.mutt.org/hg/mutt/rev/7ccd4417bd70) |
