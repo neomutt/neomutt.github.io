@@ -24,4 +24,4 @@ Then just throw these into your .muttrc
 
 Done!
 
-Check out the [Github page](https://github.com/neomutt/neomutt/tree/contrib/keybase) for the full documentation.
+Check out the [Github page](https://github.com/neomutt/neomutt/tree/neomutt/contrib/keybase) for the full documentation.
