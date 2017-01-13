@@ -141,9 +141,9 @@ dnf install --allowerasing mutt
  Package      Arch     Version                 Repository          Size
 ========================================================================
 Installing:
- mutt         x86_64   5:1.7.1-1.fc24          updates            1.4 M
+ mutt         x86_64   5:1.7.2-1.fc24          updates            1.4 M
 Removing:
- neomutt      x86_64   5:1.7.1-20161028.fc24   @flatcap-neomutt   7.6 M
+ neomutt      x86_64   5:1.7.2-20170113.fc24   @flatcap-neomutt   7.6 M
 ```
 
 ## Building from Source <a class="offset" id="build"></a>

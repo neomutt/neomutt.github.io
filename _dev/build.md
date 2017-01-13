@@ -44,7 +44,7 @@ https://github.com/neomutt/neomutt/archive/devel/summary.zip
 
 ### Mutt + NeoMutt Patch
 
-ftp://ftp.mutt.org/pub/mutt/mutt-1.7.1.tar.gz
+ftp://ftp.mutt.org/pub/mutt/mutt-1.7.2.tar.gz
 https://github.com/neomutt/neomutt/releases/latest
 select neomutt patch
 
