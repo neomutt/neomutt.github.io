@@ -29,24 +29,14 @@ status: stable
         </div>
       </div>
     </div>
-    <p>To check if NeoMutt supports
-    <span class="quote">“
-    <span class="quote">encrypt-to-self</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">patch-encrypt-to-self</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
-    <div class="itemizedlist">
-      <p class="title">
-        <strong>Dependencies:</strong>
-      </p>
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
-      </ul>
-    </div>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-07-23</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -58,17 +48,17 @@ status: stable
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/guide/reference.html#fcc-clear" title="3.75.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="/guide/reference.html#fcc-clear" title="3.74.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/guide/reference.html#smime-encrypt-self" title="3.314.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
-    <a class="link" href="/guide/reference.html#smime-default-key" title="3.312.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
+    <a class="link" href="/guide/reference.html#smime-encrypt-self" title="3.323.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
+    <a class="link" href="/guide/reference.html#smime-default-key" title="3.321.&#160;smime_default_key">$smime_default_key</a>to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_encrypt_self = yes
 set smime_default_key  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
-    <a class="link" href="/guide/reference.html#pgp-encrypt-self" title="3.52.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
-    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.216.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
+    <a class="link" href="/guide/reference.html#pgp-encrypt-self" title="3.51.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
+    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.225.&#160;pgp_sign_as">$pgp_sign_as</a>to your personal PGP key id.</p>
     <pre class="screen">
 set pgp_encrypt_self = yes
 set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
@@ -153,26 +143,7 @@ set pgp_encrypt_self = "no"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
-        </div>
-      </div>
-    </div>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h2 class="title" style="clear: both">
-          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
+          <a class="offset" id="known-bugs"></a>5.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -183,7 +154,7 @@ set pgp_encrypt_self = "no"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
+          <a class="offset" id="credits"></a>6.&#160;Credits</h2>
         </div>
       </div>
     </div>

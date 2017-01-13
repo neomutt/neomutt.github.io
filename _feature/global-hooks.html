@@ -1,0 +1,238 @@
+---
+layout: concertina
+title: 
+description: Define actions to run globally within Mutt
+since: 2016-08-08
+status: stable
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a class="offset" id="feature/global-hooks"></a>Global Hooks</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Define actions to run globally within Mutt</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>1.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>These hooks are called when global events take place in Mutt.</p>
+    <div class="itemizedlist">
+      <p class="title">
+        <strong>Run a command...</strong>
+      </p>
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>timeout-hook</strong>
+          </span>- periodically</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>startup-hook</strong>
+          </span>- when mutt starts up, before opening the first mailbox</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>shutdown-hook</strong>
+          </span>- mutt shuts down, before closing the last mailbox</p>
+        </li>
+      </ul>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="timeout-hook-intro"></a>1.1.&#160;Timeout Hook</h3>
+          </div>
+          <div>
+            <h4 class="subtitle">Run a command periodically</h4>
+          </div>
+        </div>
+      </div>
+      <p>
+      <span class="bold">
+        <strong>Since:</strong>
+      </span>NeoMutt 2016-08-08</p>
+      <p>This feature implements a new hook that is called periodically when Mutt checks for new mail. This hook is called every
+      <code class="literal">$timeout</code>seconds.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="startup-hook-intro"></a>1.2.&#160;Startup Hook</h3>
+          </div>
+          <div>
+            <h4 class="subtitle">Run a command when mutt starts up, before opening the first mailbox</h4>
+          </div>
+        </div>
+      </div>
+      <p>
+      <span class="bold">
+        <strong>Since:</strong>
+      </span>NeoMutt 2016-11-25</p>
+      <p>This feature implements a new hook that is called when Mutt first starts up, but before opening the first mailbox. This is most likely to be useful to users of
+      <a class="link" href="/feature/notmuch" title="Notmuch Feature">notmuch</a>.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="shutdown-hook"></a>1.3.&#160;Shutdown Hook</h3>
+          </div>
+          <div>
+            <h4 class="subtitle">Run a command when mutt shuts down, before closing the last mailbox</h4>
+          </div>
+        </div>
+      </div>
+      <p>
+      <span class="bold">
+        <strong>Since:</strong>
+      </span>NeoMutt 2016-11-25</p>
+      <p>This feature implements a hook that is called when Mutt shuts down, but before closing the first mailbox. This is most likely to be useful to users of
+      <a class="link" href="/feature/notmuch" title="Notmuch Feature">notmuch</a>.</p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>2.&#160;Commands</h2>
+        </div>
+      </div>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">timeout-hook</code>
+        <em class="replaceable">
+          <code>MUTT-COMMAND</code>
+        </em>
+      </p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">startup-hook</code>
+        <em class="replaceable">
+          <code>MUTT-COMMAND</code>
+        </em>
+      </p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">shutdown-hook</code>
+        <em class="replaceable">
+          <code>MUTT-COMMAND</code>
+        </em>
+      </p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="muttrc"></a>3.&#160;Muttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example NeoMutt config file for the global hooks feature.
+
+# --------------------------------------------------------------------------
+# COMMANDS - shown with an example argument
+# --------------------------------------------------------------------------
+
+# After $timeout seconds of inactivity, run this mutt command</span>
+timeout-hook 'exec sync-mailbox'
+
+<span class="comment"># When mutt first loads, run this mutt command</span>
+startup-hook 'exec sync-mailbox'
+
+<span class="comment"># When mutt quits, run this mutt command</span>
+shutdown-hook 'exec sync-mailbox'
+
+<span class="comment"># vim: syntax=muttrc</span>
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="timeout-see-also"></a>4.&#160;See Also</h2>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="link" href="#timeout-hook-intro" title="1.1.&#160;Timeout Hook">$timeout</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="known-bugs"></a>5.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>6.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Armin Wolfermann
+          <code class="email">&lt;
+          <a class="email" href="mailto:armin@wolfermann.org">armin@wolfermann.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Thomas Adam
+          <code class="email">&lt;
+          <a class="email" href="mailto:thomas@xteddy.org">thomas@xteddy.org</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endraw %}

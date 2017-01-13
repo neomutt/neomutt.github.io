@@ -11,7 +11,7 @@ status: stable
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="feature/trash"></a>Trash Folder Feature</h1>
+        <a class="offset" id="feature/trash-folder"></a>Trash Folder Feature</h1>
       </div>
       <div>
         <h3 class="subtitle">
@@ -29,28 +29,24 @@ status: stable
         </div>
       </div>
     </div>
-    <p>To check if Mutt supports
-    <span class="quote">“
-    <span class="quote">Trash Folder</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">patch-trash</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
-    <p>If IMAP is enabled, this patch will use it</p>
-    <div class="itemizedlist">
-      <p class="title">
-        <strong>Dependencies:</strong>
-      </p>
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
-        <li class="listitem">
-          <p>IMAP support</p>
-        </li>
-      </ul>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-09-10, Mutt 1.7.0</p>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">
+            <span class="bold">
+              <strong>Dependencies:</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>If IMAP is enabled, the trash folder will use it wisely</p>
+        </dd>
+      </dl>
     </div>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -68,7 +64,7 @@ status: stable
     <p>After
     <code class="literal">&lt;sync-mailbox&gt;</code>has been called the email is gone forever.</p>
     <p>The
-    <a class="link" href="/guide/reference.html#trash" title="3.366.&#160;trash">$trash</a>variable defines a folder in which to keep old emails. As before, first you mark emails for deletion. When &lt;sync-mailbox&gt; is called the emails are moved to the trash folder.</p>
+    <a class="link" href="/guide/reference.html#feature/trash" title="3.376.&#160;trash">$trash</a>variable defines a folder in which to keep old emails. As before, first you mark emails for deletion. When &lt;sync-mailbox&gt; is called the emails are moved to the trash folder.</p>
     <p>The
     <code class="literal">$trash</code>path can be either a full directory, or be relative to the
     <a class="link" href="/guide/reference.html#folder" title="3.76.&#160;folder">$folder</a>variable, like the
@@ -202,11 +198,6 @@ bind index D purge-message
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
         <li class="listitem">
           <p>
             <a class="link" href="/guide/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>

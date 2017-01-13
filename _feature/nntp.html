@@ -29,24 +29,14 @@ status: stable
         </div>
       </div>
     </div>
-    <p>To check if NeoMutt supports
-    <span class="quote">“
-    <span class="quote">NNTP</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">+USE_NNTP</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
-    <div class="itemizedlist">
-      <p class="title">
-        <strong>Dependencies:</strong>
-      </p>
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
-      </ul>
-    </div>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-05-30</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -58,14 +48,17 @@ status: stable
       </div>
     </div>
     <p>Reading news via NNTP</p>
-    <p>If compiled with
+    <p>If Mutt is compiled with the
     <span class="emphasis">
       <em>--enable-nntp</em>
-    </span>option, Mutt can read news from news server via NNTP. You can open a newsgroup with function ``change-newsgroup'' (default: ``i''). Default news server can be obtained from
-    <code class="literal">$NNTPSERVER</code>environment variable or from
-    <code class="literal">/etc/nntpserver</code>file. Like other news readers, info about subscribed newsgroups is saved in file by
-    <a class="link" href="/guide/reference.html#newsrc" title="3.172.&#160;newsrc">$newsrc</a>variable. The variable
-    <a class="link" href="/guide/reference.html#news-cache-dir" title="3.169.&#160;news_cache_dir">$news_cache_dir</a>can be used to point to a directory. Mutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. Also the hierarchy is used to store header cache if Mutt was compiled with
+    </span>option, it can read from a news server using NNTP.</p>
+    <p>The default news server can be obtained from the
+    <code class="literal">$NNTPSERVER</code>environment variable or from the
+    <code class="literal">/etc/nntpserver</code>file. Like in other news readers, information about the subscribed newsgroups is saved in the file specified by the
+    <a class="link" href="/guide/reference.html#newsrc" title="3.177.&#160;newsrc">$newsrc</a>variable. You can open a newsgroup with the function
+    <code class="literal">&lt;change-newsgroup&gt;</code></p>
+    <p>The variable
+    <a class="link" href="/guide/reference.html#news-cache-dir" title="3.174.&#160;news_cache_dir">$news_cache_dir</a>can be used to point to a directory. Mutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. The hierarchy is also used to store header cache if Mutt was compiled with
     <a class="link" href="/guide/optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">header cache</a>support.</p>
   </div>
   <div class="sect1">
@@ -80,7 +73,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-nntp-variables"></a>
       <p class="title">
-        <strong>Table&#160;24.1.&#160;NNTP Variables</strong>
+        <strong>Table&#160;25.1.&#160;NNTP Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="NNTP Variables" border="1">
@@ -313,7 +306,7 @@ status: stable
     <div class="table">
       <a class="offset" id="table-nntp-functions"></a>
       <p class="title">
-        <strong>Table&#160;24.2.&#160;NNTP Functions</strong>
+        <strong>Table&#160;25.2.&#160;NNTP Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="NNTP Functions" border="1">
@@ -586,11 +579,6 @@ bind index \CG get-message
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
         <li class="listitem">
           <p>
             <a class="link" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>

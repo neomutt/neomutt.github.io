@@ -29,24 +29,14 @@ status: stable
         </div>
       </div>
     </div>
-    <p>To check if NeoMutt supports
-    <span class="quote">“
-    <span class="quote">Compress Folders</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">+USE_COMPRESSED</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
-    <div class="itemizedlist">
-      <p class="title">
-        <strong>Dependencies:</strong>
-      </p>
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
-      </ul>
-    </div>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-05-30</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -106,7 +96,7 @@ status: stable
     <span class="quote">“
     <span class="quote">from</span>”</span>and
     <span class="quote">“
-    <span class="quote">to</span>”</span>filenames. It's a good idea to put quotes around these placeholders.</p>
+    <span class="quote">to</span>”</span>filenames. These placeholders should be placed inside single-quotes to prevent unintended shell expansions.</p>
     <p>If you need the exact string
     <span class="quote">“
     <span class="quote">%f</span>”</span>or
@@ -210,12 +200,13 @@ open-hook regexp shell-command
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="open-hook-example"></a>3.1.1.&#160;Example of open-hook</h4>
+              <a class="offset" id="open-hook-example"></a>3.1.1.&#160;Example of
+              <code class="literal">open-hook</code></h4>
             </div>
           </div>
         </div>
         <pre class="screen">
-open-hook '\.gz$' "gzip -cd '%f' &gt; '%t'"
+open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
 </pre>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
@@ -265,12 +256,13 @@ close-hook regexp shell-command
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="close-hook-example"></a>3.2.1.&#160;Example of close-hook</h4>
+              <a class="offset" id="close-hook-example"></a>3.2.1.&#160;Example of
+              <code class="literal">close-hook</code></h4>
             </div>
           </div>
         </div>
         <pre class="screen">
-close-hook '\.gz$' "gzip -c '%t' &gt; '%f'"
+close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
 </pre>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
@@ -293,6 +285,12 @@ close-hook '\.gz$' "gzip -c '%t' &gt; '%f'"
               <code class="literal">gzip -c</code>to create a new compressed file</p>
             </li>
           </ul>
+        </div>
+        <div class="note">
+          <h3 class="title">Note</h3>
+          <p>The
+          <code class="literal">close-hook</code>can also include extra options, e.g. compression level:
+          <code class="literal">--best</code></p>
         </div>
       </div>
     </div>
@@ -333,12 +331,13 @@ append-hook regexp shell-command
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="append-hook-example"></a>3.3.1.&#160;Example of append-hook</h4>
+              <a class="offset" id="append-hook-example"></a>3.3.1.&#160;Example of
+              <code class="literal">append-hook</code></h4>
             </div>
           </div>
         </div>
         <pre class="screen">
-append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
+append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
 </pre>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
@@ -363,6 +362,12 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
             </li>
           </ul>
         </div>
+        <div class="note">
+          <h3 class="title">Note</h3>
+          <p>The
+          <code class="literal">append-hook</code>can also include extra options, e.g. compression level:
+          <code class="literal">--best</code></p>
+        </div>
       </div>
     </div>
     <div class="sect2">
@@ -375,7 +380,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Mutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/guide/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/guide/reference.html#save-empty" title="3.281.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -387,7 +392,7 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.373.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -413,19 +418,19 @@ append-hook '\.gz$' "gzip -c '%t' &gt;&gt; '%f'"
 # The 'append-hook' is optional.
 
 # Handler for gzip compressed mailboxes</span>
-open-hook   '\.gz$'  "gzip -cd  '%f' &gt;  '%t'"
-close-hook  '\.gz$'  "gzip -c   '%t' &gt;  '%f'"
-append-hook '\.gz$'  "gzip -c   '%t' &gt;&gt; '%f'"
+open-hook   '\.gz$' "gzip --stdout --decompress '%f' &gt;  '%t'"
+close-hook  '\.gz$' "gzip --stdout              '%t' &gt;  '%f'"
+append-hook '\.gz$' "gzip --stdout              '%t' &gt;&gt; '%f'"
 
 <span class="comment"># Handler for bzip2 compressed mailboxes</span>
-open-hook   '\.bz2$' "bzip2 -cd '%f' &gt;  '%t'"
-close-hook  '\.bz2$' "bzip2 -c  '%t' &gt;  '%f'"
-append-hook '\.bz2$' "bzip2 -c  '%t' &gt;&gt; '%f'"
+open-hook   '\.bz2$' "bzip2 --stdout --decompress '%f' &gt;  '%t'"
+close-hook  '\.bz2$' "bzip2 --stdout              '%t' &gt;  '%f'"
+append-hook '\.bz2$' "bzip2 --stdout              '%t' &gt;&gt; '%f'"
 
 <span class="comment"># Handler for xz compressed mailboxes</span>
-open-hook   '\.xz$'  "xz    -cd '%f' &gt;  '%t'"
-close-hook  '\.xz$'  "xz    -c  '%t' &gt;  '%f'"
-append-hook '\.xz$'  "xz    -c  '%t' &gt;&gt; '%f'"
+open-hook   '\.xz$' "xz --stdout --decompress '%f' &gt;  '%t'"
+close-hook  '\.xz$' "xz --stdout              '%t' &gt;  '%f'"
+append-hook '\.xz$' "xz --stdout              '%t' &gt;&gt; '%f'"
 
 <span class="comment"># Handler for pgp encrypted mailboxes
 # PGP does not support appending to an encrypted file</span>
@@ -453,11 +458,6 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
-        <li class="listitem">
-          <p>
             <a class="link" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
           </p>
         </li>
@@ -468,17 +468,17 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.364.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.373.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#mbox-type" title="3.147.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/guide/reference.html#mbox-type" title="3.151.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#save-empty" title="3.272.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/guide/reference.html#save-empty" title="3.281.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">
@@ -494,24 +494,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
-        </div>
-      </div>
-    </div>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>The Compressed Folder hooks cannot deal with filenames that contains quotes/apostrophes.</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h2 class="title" style="clear: both">
-          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
+          <a class="offset" id="credits"></a>6.&#160;Credits</h2>
         </div>
       </div>
     </div>

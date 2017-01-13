@@ -29,24 +29,14 @@ status: stable
         </div>
       </div>
     </div>
-    <p>To check if NeoMutt supports
-    <span class="quote">“
-    <span class="quote">forgotten-attachment</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">patch-forgotten-attachment</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
-    <div class="itemizedlist">
-      <p class="title">
-        <strong>Dependencies:</strong>
-      </p>
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
-      </ul>
-    </div>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-09-10</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -58,7 +48,7 @@ status: stable
       </div>
     </div>
     <p>The 'forgotten-attachment' patch provides a new setting for Mutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail. The attachment keyword will not be scanned in text matched by
-    <a class="link" href="/guide/reference.html#quote-regexp" title="3.251.&#160;quote_regexp">$quote_regexp</a>.</p>
+    <a class="link" href="/guide/reference.html#quote-regexp" title="3.260.&#160;quote_regexp">$quote_regexp</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -166,11 +156,6 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
         <li class="listitem">
           <p>
             <a class="link" href="/guide/mimesupport.html#attach-menu" title="1.3.&#160;The Attachment Menu">The Attachment Menu</a>

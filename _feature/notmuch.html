@@ -29,20 +29,17 @@ status: stable
         </div>
       </div>
     </div>
-    <p>To check if NeoMutt supports
-    <span class="quote">“
-    <span class="quote">Notmuch</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">+USE_NOTMUCH</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Section&#160;1.1, “Enabling/Disabling Features”</a>.</p>
-    <div class="itemizedlist">
-      <p class="title">
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-03-17</p>
+    <p>
+      <span class="bold">
         <strong>Dependencies:</strong>
-      </p>
+      </span>
+    </p>
+    <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
         <li class="listitem">
           <p>
             <a class="link" href="/feature/quasi-delete" title="Quasi-Delete Feature">quasi-delete patch</a>
@@ -58,8 +55,6 @@ status: stable
         </li>
       </ul>
     </div>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -181,10 +176,10 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
       <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/guide/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="/guide/reference.html#index-format" title="3.131.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
-        <table border="1">
+        <table class="informaltable" border="1">
           <colgroup>
             <col />
             <col />
@@ -234,7 +229,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/guide/reference.html#index-format" title="3.128.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="/guide/reference.html#index-format" title="3.131.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
@@ -250,7 +245,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-variables"></a>
       <p class="title">
-        <strong>Table&#160;25.1.&#160;Notmuch Variables</strong>
+        <strong>Table&#160;26.1.&#160;Notmuch Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Variables" border="1">
@@ -379,7 +374,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
-        <strong>Table&#160;25.2.&#160;Notmuch Functions</strong>
+        <strong>Table&#160;26.2.&#160;Notmuch Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Functions" border="1">
@@ -438,6 +433,27 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>generate virtual folder from query</td>
             </tr>
+            <tr>
+              <td>index,pager</td>
+              <td>
+                <code class="literal">&lt;windowed-vfolder-from-query&gt;</code>
+              </td>
+              <td>generate virtual folder from query with window applied</td>
+            </tr>
+            <tr>
+              <td>index,pager</td>
+              <td>
+                <code class="literal">&lt;windowed-vfolder-forward&gt;</code>
+              </td>
+              <td>generate virtual folder by moving the query's time window forward</td>
+            </tr>
+            <tr>
+              <td>index,pager</td>
+              <td>
+                <code class="literal">&lt;windowed-vfolder-backward&gt;</code>
+              </td>
+              <td>generate virtual folder by moving the query's time window backward</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -468,6 +484,14 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <em class="replaceable">
         <code>notmuch-URI</code>
       </em>...}
+      <br />
+      <code class="command">unvirtual-mailboxes</code>{
+      <em class="replaceable">
+        <code>*</code>
+      </em>|
+      <em class="replaceable">
+        <code>mailbox</code>
+      </em>... }
       <br />
       <code class="command">tag-transforms</code>
       <em class="replaceable">
@@ -511,7 +535,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div class="table">
       <a class="offset" id="table-notmuch-colors"></a>
       <p class="title">
-        <strong>Table&#160;25.3.&#160;Index Colors</strong>
+        <strong>Table&#160;26.3.&#160;Index Colors</strong>
       </p>
       <div class="table-contents">
         <table summary="Index Colors" border="1">
@@ -604,6 +628,11 @@ set vfolder_format = "%6n(%6N) %f"
 # as a spoolfile.</span>
 set virtual_spoolfile = no
 
+<span class="comment"># setup time window preferences
+# first setup the duration, and then the time unit of that duration</span>
+set nm_query_window_duration=2
+set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
+
 <span class="comment"># --------------------------------------------------------------------------
 # FUNCTIONS - shown with an example mapping
 # --------------------------------------------------------------------------
@@ -620,6 +649,11 @@ bind index,pager \` modify-labels
 <span class="comment"># generate virtual folder from query</span>
 bind index,pager \eX vfolder-from-query
 
+<span class="comment"># generate virtual folder from query with time window</span>
+bind index,pager \\ windowed-vfolder-from-query
+bind index,pager &lt; windowed-vfolder-backward
+bind index,pager &gt; windowed-vfolder-forward
+
 <span class="comment"># modify labels and then hide message
 # bind index,pager ??? modify-labels-then-hide
 
@@ -632,6 +666,8 @@ bind index,pager \eX vfolder-from-query
 
 # virtual-mailboxes description notmuch-URI { description notmuch-URI ...}
 # virtual-mailboxes "Climbing" "notmuch://?query=climbing"
+
+# unvirtual-mailboxes { * | mailbox ...}
 
 # Replace some tags with icons
 # tag-transforms tag transformed-string { tag transformed-string ...}
@@ -685,11 +721,6 @@ color index_tags green default
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
         <li class="listitem">
           <p>
             <a class="link" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
@@ -839,6 +870,11 @@ color index_tags green default
           <p>Richard Russon
           <code class="email">&lt;
           <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Bernard 'Guyzmo' Pratz
+          <code class="email">&lt;
+          <a class="email" href="mailto:guyzmo+github+pub@m0g.net">guyzmo+github+pub@m0g.net</a>&gt;</code></p>
         </li>
       </ul>
     </div>

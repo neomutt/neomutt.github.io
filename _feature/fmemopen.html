@@ -30,32 +30,29 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
         </div>
       </div>
     </div>
-    <p>To check if NeoMutt supports
-    <span class="quote">“
-    <span class="quote">fmemopen</span>”</span>, look for
-    <span class="quote">“
-    <span class="quote">patch-fmemopen</span>”</span>in the version info. See:
-    <a class="xref" href="/guide/optionalfeatures.html#mutt-patches" title="1.2.&#160;Mutt Patches">Section&#160;1.2, “Mutt Patches”</a>.</p>
-    <div class="itemizedlist">
-      <p class="title">
-        <strong>Dependencies:</strong>
-      </p>
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>mutt-1.7.1</p>
-        </li>
-        <li class="listitem">
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2016-03-07</p>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">
+            <span class="bold">
+              <strong>Dependencies:</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
           <p>
           <code class="literal">open_memstream()</code>,
           <code class="literal">fmemopen()</code>from glibc</p>
-        </li>
-      </ul>
+        </dd>
+      </dl>
     </div>
-    <p>This feature can be disabled by running
+    <p>This feature can be enabled by running
     <code class="literal">configure</code>with the option
-    <code class="literal">--disable-fmemopen</code></p>
-    <p>This feature is part of the
-    <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>.</p>
+    <code class="literal">--enable-fmemopen</code></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -70,7 +67,7 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     <span class="quote">“
     <span class="quote">fmemopen</span>”</span>patch speeds up some searches.</p>
     <p>This feature changes a few places where Mutt creates temporary files. It replaces them with in-memory buffers. This should improve the performance when searching the header or body using the
-    <a class="link" href="/guide/reference.html#thorough-search" title="3.359.&#160;thorough_search">$thorough_search</a>option.</p>
+    <a class="link" href="/guide/reference.html#thorough-search" title="3.368.&#160;thorough_search">$thorough_search</a>option.</p>
     <p>There are no user-configurable parts.</p>
     <p>This feature depends on
     <code class="literal">open_memstream()</code>and
@@ -87,11 +84,6 @@ warning: fmemopen has been disabled until an awkward bug has been fixed
     </div>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-            <a class="ulink" href="https://www.neomutt.org/" target="_top">NeoMutt Project</a>
-          </p>
-        </li>
         <li class="listitem">
           <p>
             <a class="link" href="/guide/optionalfeatures.html#compile-time-features" title="1.1.&#160;Enabling/Disabling Features">Compile-Time Features</a>
