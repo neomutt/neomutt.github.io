@@ -48,6 +48,20 @@ ftp://ftp.mutt.org/pub/mutt/mutt-1.7.2.tar.gz
 https://github.com/neomutt/neomutt/releases/latest
 select neomutt patch
 
+## Autoreconf
+
+Generate the appropriate configuration and build scripts
+
+```
+autoreconf -i                     
+configure.ac:17: installing './compile'
+configure.ac:21: installing './config.guess'
+configure.ac:21: installing './config.sub'
+configure.ac:12: installing './install-sh'
+configure.ac:12: installing './missing'
+Makefile.am: installing './depcomp'
+```
+
 ## Configure
 
 ./configure --help
