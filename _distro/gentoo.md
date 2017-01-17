@@ -19,11 +19,12 @@ Gentoo.  You need to add the overlay to your repos.conf first
 
 You can check the overlay out in any place, you like, for this example,
 we use /usr/local/portage/neomutt:
+
 ```
 # mkdir -p /usr/local/portage/neomutt
 # cd /usr/local/portage/neomutt
-# git clone https://github.org/neomutt/gentoo-neomutt neomutt
-``
+# git clone https://github.com/neomutt/gentoo-neomutt neomutt
+```
 
 ## Adding the NeoMutt overlay <a class="offset" id="overlay"></a>
 
