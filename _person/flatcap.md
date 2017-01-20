@@ -21,10 +21,10 @@ My emails will be signed with this key: [flatcap-rich.pub](flatcap-rich.pub)
 Fingerprint:
 
 ```reply
-pub   rsa4096 2015-10-24 [SC] [expires: 2018-08-08]
+pub   rsa4096 2015-10-24 [SC] [expires: 2018-11-15]
       69AD 1D63 6AC2 92E8 2065  8C16 EBC1 50E4 B5DA 63DF
 uid           Richard Russon (flatcap) <rich@flatcap.org>
-sub   rsa4096 2015-10-24 [E] [expired: 2016-10-23]
+sub   rsa4096 2015-10-24 [E] [expires: 2018-11-15]
 ```
 
 NeoMutt releases (tags) will be signed with this key: [flatcap-neomutt.pub](flatcap-neomutt.pub)
