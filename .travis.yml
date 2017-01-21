@@ -12,6 +12,7 @@ rvm:
   - 2.4
 
 install:
+  - gem install jekyll
   - gem install html-proofer
   - git clone https://github.com/neomutt/neomutt.github.io
 
