@@ -9,6 +9,9 @@ sudo: required
 dist: trusty
 language: ruby
 
+rvm:
+  - 2.4
+
 install:
   - sudo gem install html-proofer
   - git clone https://github.com/neomutt/neomutt.github.io
