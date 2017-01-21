@@ -41,6 +41,11 @@ exclude:
   - LICENSE.md
   - CNAME
 
+  # is suggested by
+  # http://jekyllrb.com/docs/continuous-integration/#configuring-your-travis-builds
+  - [vendor]
+
+
 collections:
   contrib:
     output: true
@@ -65,4 +70,3 @@ gems:
   - jekyll-paginate
   - jekyll-gist
   - jekyll-sitemap
-
