@@ -1,0 +1,17 @@
+notifications:
+  email:
+    recipients:
+      - toogley@mailbox.org
+    on_success: change
+    on_failure: always
+
+sudo: required
+dist: trusty
+language: ruby
+
+install:
+  - sudo gem install html-proofer
+  - git clone https://github.com/neomutt/neomutt.github.io
+
+script:
+  - ./test-html.sh
