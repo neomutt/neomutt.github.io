@@ -13,6 +13,7 @@ rvm:
 
 install:
   - gem install jekyll
+  - gem install jekyll-paginate
   - gem install html-proofer
   - git clone https://github.com/neomutt/neomutt.github.io
 
