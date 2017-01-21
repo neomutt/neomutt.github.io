@@ -15,6 +15,8 @@ install:
   - gem install jekyll
   - gem install jekyll-paginate
   - gem install html-proofer
+  - gem install jekyll-gist
+  - gem install jekyll-sitemap
   - git clone https://github.com/neomutt/neomutt.github.io
 
 script:
