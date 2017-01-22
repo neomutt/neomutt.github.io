@@ -91,6 +91,7 @@ makes up NeoMutt, the documentation, build scripts and experiments
 ([read more about them](repos)).
 
 GitHub allows you to watch:
+
 - **Repos** -- Choose a repository and click the **Watch** button
 - **Issues** -- Open an issue and click **Subscribe** in the right-hand panel
 - **Pull-Requests** -- Open a PR and click **Subscribe** in the right-hand panel
@@ -103,8 +104,8 @@ See your [notifications](https://github.com/settings/notifications) and
 ## Invitation  <a class="offset" id="invite"></a>
 
 This section is for people who have been invited to join the NeoMutt project.
-Invites will be given to people who contribute: code, docs, translations
-(it's a very inclusive club :-)
+Invites will be given to people who contribute: code, docs, translations and to
+the people who maintain NeoMutt packages for distros (it's a very inclusive club :-)
 
 **Thank you for your contribution and Welcome to NeoMutt**.
 
