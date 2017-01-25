@@ -34,38 +34,34 @@ sub generate_svg
 	my ($name, $fg, $bg) = @_;
 	my $output = '';
 
-	$output .= "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"120\" height=\"18\">\n";
+	$output .= "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"18\">\n";
 	$output .= "  <mask id=\"a\">\n";
-	$output .= "    <rect width=\"120\" height=\"18\" rx=\"4\" fill=\"#fff\" />\n";
+	$output .= "    <rect width=\"160\" height=\"18\" rx=\"4\" fill=\"#fff\" />\n";
 	$output .= "  </mask>\n";
 	$output .= "  <g mask=\"url(#a)\">\n";
-	$output .= "    <path fill=\"#$bg\" d=\"M0 0h120v18H0z\" />\n";
+	$output .= "    <path fill=\"#$bg\" d=\"M0 0h160v18H0z\" />\n";
 	$output .= "  </g>\n";
-	$output .= "  <g fill=\"#$fg\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"11\">\n";
-	$output .= "    <text x=\"60\" y=\"13\">$name</text>\n";
+	# $output .= "  <g fill=\"#$fg\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"11\">\n";
+	$output .= "  <g fill=\"#$fg\" font-family=\"sans-serif\" font-size=\"11\">\n";
+	$output .= "    <text x=\"10\" y=\"13\">$name</text>\n";
 	$output .= "  </g>\n";
 	$output .= "</svg>\n";
 
 	return $output;
 }
 
-sub main
+sub get_page_of_labels
 {
-	my ($slug) = @_;
+	my ($slug, $page) = @_;
 
-	if (!defined $slug) {
-		$slug = "neomutt/neomutt";
-	}
+	my $api = "https://api.github.com/repos/$slug/labels?page=$page";
 
-	my $url = "https://api.github.com/repos/$slug/labels";
-
-	my $json = get ($url);
+	my $json = get ($api);
 
 	my $decoded_json = decode_json ($json);
 
 	# print Dumper $decoded_json;
 
-	printf "%s\n", $slug;
 	foreach (@{$decoded_json}) {
 		my $label = $_;
 
@@ -74,7 +70,11 @@ sub main
 		my $bg   = $label->{'color'};
 
 		my $file = $name . '.svg';
-		$file =~ s/\s/-/msxg;
+		$file =~ s/[\s:]/-/msxg;
+
+    my $search = $name;
+    $search =~ s/:/%3A/msxg;
+    $search =~ s/\s/%20/msxg;
 
 		my $bg_red = hex(substr $bg, 0, 2);
 		my $bg_grn = hex(substr $bg, 2, 2);
@@ -95,9 +95,23 @@ sub main
 
 		save_file ($file, $svg);
 
-		printf "\033[38;2;$fg_red;$fg_grn;${fg_blu}m\033[48;2;$bg_red;$bg_grn;${bg_blu}m  %-30s\033[m %-30s %s\n", $name, $file, $url;
+		printf "\033[38;2;$fg_red;$fg_grn;${fg_blu}m\033[48;2;$bg_red;$bg_grn;${bg_blu}m  %-30s\033[m %-30s https://github.com/%s/labels/%s\n", $name, $file, $slug, $search;
 		# printf "  \033[38;2;$fg_red;$fg_grn;${fg_blu}m\033[48;2;$bg_red;$bg_grn;${bg_blu}m%s\033[m\n", $name;
 	}
+}
+
+sub main
+{
+	my ($slug) = @_;
+
+	if (!defined $slug) {
+		$slug = "neomutt/neomutt";
+	}
+
+	printf "%s\n", $slug;
+
+  get_page_of_labels ($slug, 1);
+  get_page_of_labels ($slug, 2);
 }
 
 

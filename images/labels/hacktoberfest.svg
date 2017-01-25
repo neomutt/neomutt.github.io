@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="18">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="18">
   <mask id="a">
-    <rect width="120" height="18" rx="4" fill="#fff" />
+    <rect width="160" height="18" rx="4" fill="#fff" />
   </mask>
   <g mask="url(#a)">
-    <path fill="#b0581d" d="M0 0h120v18H0z" />
+    <path fill="#b0581d" d="M0 0h160v18H0z" />
   </g>
-  <g fill="#ffffff" text-anchor="middle" font-family="sans-serif" font-size="11">
-    <text x="60" y="13">hacktoberfest</text>
+  <g fill="#ffffff" font-family="sans-serif" font-size="11">
+    <text x="10" y="13">hacktoberfest</text>
   </g>
 </svg>
