@@ -2,6 +2,8 @@
 layout: concertina
 title: Doxygen
 description: Formatted Comment Blocks
+status: wip
+author: flatcap
 ---
 
 # Doxygen Comments
@@ -27,14 +29,14 @@ Here's a basic template for a function comment.  It begins with two asterisks.
 
 ```
 /**
- * ONE LINE DESCRIPTION OF FUNCTION
+ * FUNCTION-NAME - ONE LINE DESCRIPTION OF FUNCTION
  * @param NAME1 SHORT-DESC
  * @param NAME2 SHORT-DESC
  * ...
  *
- * LONG DESCRIPTION
- *
  * @return DESC-OF-RETURN-VALUE
+ *
+ * LONG DESCRIPTION
  */
 ```
 
@@ -54,34 +56,35 @@ The `@param` can have an optional suffix indicating the direction:
 The return value `@return` could be descriptive, e.g. "Number of apples", or a
 list of possible values.
 
-Here, we have inserted and extra `*` to make the text into a list (in Markdown).
+Here, we have XXX inserted and extra `*` to make the text into a list (in Markdown).
 
 ```
  *
- * @return
- * *    0:  Error
- * *    n:  Success
- */
+ * @retval  0:  Error
+ * @retval  n:  Success
+ *
 ```
 
 Here's an example function comment block from `sidebar.c`:
 
 ```
 /**
- * Draw a line between the sidebar and the rest of mutt
- * @param num_rows Height of the Sidebar
- * @param num_cols Width of the Sidebar
+ * draw_divider - Draw a line between the sidebar and the rest of mutt
+ * @param num_rows  Height of the Sidebar
+ * @param num_cols  Width of the Sidebar
+ *
+ * @retval  0:  Empty string
+ * @retval  n:  Divider occupies n screen columns
  *
  * Draw a divider using characters from the config option "sidebar_divider_char".
- * This can be an ASCII or Unicode character.  First we calculate this
- * character's width in screen columns, then subtract that from the config
- * option "sidebar_width".
+ * These can be an ASCII or Unicode characters.
+ * We calculate these characters' width in screen columns.
  *
- * @return
- * *    -1: Error: bad character, etc
- * *    0:  Error: 0 width character
- * *    n:  Success: character occupies n screen columns
+ * If the user hasn't set $sidebar_divider_char we pick a character for them,
+ * respecting the value of $ascii_chars.
  */
-static int draw_divider (int num_rows, int num_cols)
+static int draw_divider(int num_rows, int num_cols)
 ```
+
+
 

@@ -10,61 +10,80 @@ description: Labelling of GitHub Issues
 
 When someone [raises an issue](https://github.com/neomutt/neomutt/issues) it will be given one of these tags:
 
-### Categories
+### Types
 
-- [![bug](/images/labels/bug.svg)](https://github.com/neomutt/neomutt/labels/bug)                          Something broken
-- [![enhancement](/images/labels/enhancement.svg)](https://github.com/neomutt/neomutt/labels/enhancement)  A request for something new
-- [![question](/images/labels/question.svg)](https://github.com/neomutt/neomutt/labels/question)           A question about NeoMutt
+- [![type:bug](/images/labels/type-bug.svg)](https://github.com/neomutt/neomutt/labels/type%3Abug)                                        Something broken            
+- [![type:enhancement](/images/labels/type-enhancement.svg)](https://github.com/neomutt/neomutt/labels/type%3Aenhancement)                An improvement of an existing feature
+- [![type:feature request](/images/labels/type-feature-request.svg)](https://github.com/neomutt/neomutt/labels/type%3Afeature%20request)  A request for something new 
+- [![type:question](/images/labels/type-question.svg)](https://github.com/neomutt/neomutt/labels/type%3Aquestion)                         A question about NeoMutt    
 
 ### Miscellaneous
 
 It may be given one of these tags:
 
-- [![ask-upstream](/images/labels/ask-upstream.svg)](https://github.com/neomutt/neomutt/labels/ask-upstream)                      Needs discussion with Mutt
-- [![blue-sky](/images/labels/blue-sky.svg)](https://github.com/neomutt/neomutt/labels/blue-sky)                                  A very optimistic request
-- [![crash](/images/labels/crash.svg)](https://github.com/neomutt/neomutt/labels/crash)                                           Bug causes NeoMutt to crash
-- [![discussion](/images/labels/discussion.svg)](https://github.com/neomutt/neomutt/labels/discussion)                            We want your opinion on something
-- [![docs](/images/labels/docs.svg)](https://github.com/neomutt/neomutt/labels/docs)                                              Related to the Documentation / Website
-- [![easy](/images/labels/easy.svg)](https://github.com/neomutt/neomutt/labels/easy)                                              Suitable for a new NeoMutt developer
-- [![forward-to-upstream](/images/labels/forward-to-upstream.svg)](https://github.com/neomutt/neomutt/labels/forward-to-upstream) Should be handled by Mutt
-- [![hacktoberfest](/images/labels/hacktoberfest.svg)](https://github.com/neomutt/neomutt/labels/hacktoberfest)                   Suitable for Hackoberfest
-- [![help-wanted](/images/labels/help-wanted.svg)](https://github.com/neomutt/neomutt/labels/help-wanted)                         We need your help
-- [![priority:high](/images/labels/priority:high.svg)](https://github.com/neomutt/neomutt/labels/priority:high)                   A very important problem
-- [![priority:low](/images/labels/priority:low.svg)](https://github.com/neomutt/neomutt/labels/priority:low)                      This is currently not very important
+- [![bug:confirmed](/images/labels/bug-confirmed.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aconfirmed)                                            Problem confirmed by a NeoMutt member
+- [![bug:crash](/images/labels/bug-crash.svg)](https://github.com/neomutt/neomutt/labels/bug%3Acrash)                                                        Bug causes NeoMutt to crash
+- [![bug:upstream](/images/labels/bug-upstream.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aupstream)                                               Should be handled by Mutt
+
+- [![docs:code](/images/labels/docs-code.svg)](https://github.com/neomutt/neomutt/labels/docs%3Acode)                                                        Related to the Documentation embedded in the code
+- [![docs:manual](/images/labels/docs-manual.svg)](https://github.com/neomutt/neomutt/labels/docs%3Amanual)                                                  Related to the main manual
+- [![docs:website](/images/labels/docs-website.svg)](https://github.com/neomutt/neomutt/labels/docs%3Awebsite)                                               Related to the Website
+
+- [![easy](/images/labels/easy.svg)](https://github.com/neomutt/neomutt/labels/easy)                                                                         Suitable for a new NeoMutt developer
+- [![hacktoberfest](/images/labels/hacktoberfest.svg)](https://github.com/neomutt/neomutt/labels/hacktoberfest)                                              Suitable for Hackoberfest
+
+- [![needs:decision](/images/labels/needs-decision.svg)](https://github.com/neomutt/neomutt/labels/needs%3Adecision)                                         Someone need to make a decision
+- [![needs:help](/images/labels/needs-help.svg)](https://github.com/neomutt/neomutt/labels/needs%3Ahelp)                                                     We need your help
+- [![needs:more info from user](/images/labels/needs-more-info-from-user.svg)](https://github.com/neomutt/neomutt/labels/needs%3Amore%20info%20from%20user)  We need more information to be able to help
+- [![needs:upstream-opinion](/images/labels/needs-upstream-opinion.svg)](https://github.com/neomutt/neomutt/labels/needs%3Aupstream-opinion)                 Needs discussion with Mutt
+
+- [![priority:high](/images/labels/priority-high.svg)](https://github.com/neomutt/neomutt/labels/priority%3Ahigh)                                            A very important problem
+- [![priority:low](/images/labels/priority-low.svg)](https://github.com/neomutt/neomutt/labels/priority%3Alow)                                               This is currently not very important
 
 ### Specific to a Distro
 
-- [![distro:arch](/images/labels/distro:arch.svg)](https://github.com/neomutt/neomutt/labels/distro:arch)       This relates to Arch
-- [![distro:debian](/images/labels/distro:debian.svg)](https://github.com/neomutt/neomutt/labels/distro:debian) This relates to Debian
-- [![distro:fedora](/images/labels/distro:fedora.svg)](https://github.com/neomutt/neomutt/labels/distro:fedora) This relates to Fedora
+- [![distro:arch](/images/labels/distro-arch.svg)](https://github.com/neomutt/neomutt/labels/distro%3Aarch)        This relates to Arch   
+- [![distro:debian](/images/labels/distro-debian.svg)](https://github.com/neomutt/neomutt/labels/distro%3Adebian)  This relates to Debian 
+- [![distro:fedora](/images/labels/distro-fedora.svg)](https://github.com/neomutt/neomutt/labels/distro%3Afedora)  This relates to Fedora 
 
 ### Issue has Attachments
 
-- [![patch](/images/labels/patch.svg)](https://github.com/neomutt/neomutt/labels/patch)                A patch is included
-- [![screenshot](/images/labels/screenshot.svg)](https://github.com/neomutt/neomutt/labels/screenshot) A screenshot is included
-- [![backtrace](/images/labels/backtrace.svg)](https://github.com/neomutt/neomutt/labels/backtrace)    A backtrace/callstack is included
-- [![config](/images/labels/config.svg)](https://github.com/neomutt/neomutt/labels/config)             Sample NeoMutt config is included
-- [![logs](/images/labels/logs.svg)](https://github.com/neomutt/neomutt/labels/logs)                   Log files are included
+- [![has-attached:backtrace](/images/labels/has-attached-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Abacktrace)     A backtrace/callstack is included 
+- [![has-attached:config](/images/labels/has-attached-config.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Aconfig)              Sample NeoMutt config is included 
+- [![has-attached:logs](/images/labels/has-attached-logs.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Alogs)                    Log files are included            
+- [![has-attached:patch](/images/labels/has-attached-patch.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Apatch)                 A patch is included               
+- [![has-attached:screenshot](/images/labels/has-attached-screenshot.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Ascreenshot)  A screenshot is included          
 
-### Work in Progress
+### Topics
 
-- [![confirmed](/images/labels/confirmed.svg)](https://github.com/neomutt/neomutt/labels/confirmed) Problem confirmed by a NeoMutt member
-- [![devel](/images/labels/devel.svg)](https://github.com/neomutt/neomutt/labels/devel)             This is being worked on (in combination with assigning a user to the issue)
-- [![need-info](/images/labels/need-info.svg)](https://github.com/neomutt/neomutt/labels/need-info) We need more information to be able to help
+- [![topic:automatization](/images/labels/topic-automatization.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aautomatization)              Concerning: automating project processes
+- [![topic:build process](/images/labels/topic-build-process.svg)](https://github.com/neomutt/neomutt/labels/topic%3Abuild%20process)               Concerning: building the source code
+- [![topic:code docs](/images/labels/topic-code-docs.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acode%20docs)                           Concerning: documentation embedded in the code
+- [![topic:coding-style](/images/labels/topic-coding-style.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acoding-style)                    Concerning: style of the source code
+- [![topic:config file](/images/labels/topic-config-file.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aconfig%20file)                     Concerning: configuration file
+- [![topic:lua-scripting](/images/labels/topic-lua-scripting.svg)](https://github.com/neomutt/neomutt/labels/topic%3Alua-scripting)                 Concerning: lua scripting
+- [![topic:project-management](/images/labels/topic-project-management.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aproject-management)  Concerning: management of the NeoMutt project
+- [![topic:refactoring](/images/labels/topic-refactoring.svg)](https://github.com/neomutt/neomutt/labels/topic%3Arefactoring)                       Concerning: refactoring the code
+- [![topic:security](/images/labels/topic-security.svg)](https://github.com/neomutt/neomutt/labels/topic%3Asecurity)                                Concerning: security / safety
+- [![topic:stability](/images/labels/topic-stability.svg)](https://github.com/neomutt/neomutt/labels/topic%3Astability)                             Concerning: stabilty
+- [![topic:testing](/images/labels/topic-testing.svg)](https://github.com/neomutt/neomutt/labels/topic%3Atesting)                                   Concerning: testing of neomutt
+- [![topic:translation](/images/labels/topic-translation.svg)](https://github.com/neomutt/neomutt/labels/topic%3Atranslation)                       Concerning: translation into other languages
+
+### Status
+
+- [![status:backlog](/images/labels/status-backlog.svg)](https://github.com/neomutt/neomutt/labels/status%3Abacklog)              Expected in the next release
+- [![status:discussion](/images/labels/status-discussion.svg)](https://github.com/neomutt/neomutt/labels/status%3Adiscussion)     We want your opinion on something
+- [![status:in-progress](/images/labels/status-in-progress.svg)](https://github.com/neomutt/neomutt/labels/status%3Ain-progress)  Work is ongoing
+- [![status:new-bug](/images/labels/status-new-bug.svg)](https://github.com/neomutt/neomutt/labels/status%3Anew-bug)              New, possibly unconfirmed, bug
+- [![status:ready](/images/labels/status-ready.svg)](https://github.com/neomutt/neomutt/labels/status%3Aready)                    Ready to be merged
 
 ### Closing the Issue
 
 It will probably be closed with one of these tags:
 
-- [![closed:duplicate](/images/labels/closed:duplicate.svg)](https://github.com/neomutt/neomutt/labels/closed:duplicate) Issue already reported
-- [![closed:invalid](/images/labels/closed:invalid.svg)](https://github.com/neomutt/neomutt/labels/closed:invalid)       The issue isn't relevant to NeoMutt
-- [![closed:not-a-bug](/images/labels/closed:not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed:not-a-bug) This is the correct behaviour
-- [![closed:wontfix](/images/labels/closed:wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed:wontfix)       For some reason we are not prepared to fix this
-
-### Obsolete
-
-Not really used any more
-
-- [![git](/images/labels/git.svg)](https://github.com/neomutt/neomutt/labels/git)             A fix has been committed to git
-- [![release](/images/labels/release.svg)](https://github.com/neomutt/neomutt/labels/release) Issue resolved in the next release of NeoMutt
+- [![closed:duplicate](/images/labels/closed-duplicate.svg)](https://github.com/neomutt/neomutt/labels/closed%3Aduplicate)      Issue already reported                          
+- [![closed:fixed](/images/labels/closed-fixed.svg)](https://github.com/neomutt/neomutt/labels/closed%3Afixed)                  The issue was fixed successfully                
+- [![closed:invalid](/images/labels/closed-invalid.svg)](https://github.com/neomutt/neomutt/labels/closed%3Ainvalid)            The issue isn't relevant to NeoMutt             
+- [![closed:not a bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed%3Anot%20a%20bug)  This is the correct behaviour                   
+- [![closed:wontfix](/images/labels/closed-wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed%3Awontfix)            For some reason we are not prepared to fix this 
 
