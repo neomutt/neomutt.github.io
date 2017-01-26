@@ -13,27 +13,39 @@ maintainer: paravoid
 
 Debian, Ubuntu
 
-Currently in Testing.
+Currently in Testing. Note, that there's currently no plain mutt package
+available in debian testing, because it was substituted with neomutt.
 
 ## Installation <a class="offset" id="install"></a>
 
-```
-install commands
-```
-
 ```reply
-command output
+apt-get install mutt
 ```
 
 ## Update <a class="offset" id="update"></a>
 
+```reply
+apt-get update && apt-get upgrade
+```
+
+
 ## Removal <a class="offset" id="remove"></a>
+
+```reply
+apt-get remove mutt
+```
 
 ## Building from Source <a class="offset" id="build"></a>
 
-These instructions will help you install all the dependencies you'll need to
-build NeoMutt from the source code.
+The commmand
 
+```reply
+apt-get build-dep mutt
+```
+
+will install all build dependencies of your neomutt package. Note that you may
+have to install additional packages, if you're running debian stable and want to
+build the most current version of neomutt.
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
@@ -44,4 +56,3 @@ debug NeoMutt.
 
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
-
