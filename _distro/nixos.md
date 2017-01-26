@@ -19,7 +19,8 @@ Packagers:
 
 ## Installation <a class="offset" id="install"></a>
 
-there are currently two different ways to install software on NixOS. One is declarative and the other more imperative.
+there are currently two different ways to install software on NixOS. One is
+declarative and the other more imperative.
 
 
 ### declarative package management
@@ -36,7 +37,8 @@ then run:
 nixos-rebuild switch
 ```
 
-For further reference, you might want to read the [nixOS manual](http://nixos.org/nixos/manual/index.html#sec-declarative-package-mgmt).
+For further reference, you might want to read the
+[nixOS manual](http://nixos.org/nixos/manual/index.html#sec-declarative-package-mgmt).
 
 
 ### imperative package management
@@ -70,14 +72,14 @@ nix-env -e nixos.neomutt
 
 ## Building from Source <a class="offset" id="build"></a>
 
-These instructions will help you install all the dependencies you'll need to
-build NeoMutt from the source code.
-
 ```
-nix-build -A neomutt
+ nix-shell '<nixpkgs>' -A neomutt
 ```
 
-This will build the neomutt and print the directory where it was built.
+That will install all build dependencies and put you into a shell where every
+needed environment variable is already set. For further information, you may
+want to consult the
+[nix-shell manual](http://nixos.org/nix/manual/#description-13).
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
@@ -88,4 +90,3 @@ debug NeoMutt.
 
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
-
