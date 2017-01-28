@@ -12,5 +12,8 @@ install:
   - gem install jekyll-sitemap
   - git clone https://github.com/neomutt/neomutt.github.io
 
+branches:
+  only:
+    - devel/fix-issue-19
 script:
   - cd neomutt.github.io && jekyll build && htmlproofer ./_site
