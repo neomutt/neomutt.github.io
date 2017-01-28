@@ -13,4 +13,4 @@ install:
   - git clone https://github.com/neomutt/neomutt.github.io
 
 script:
-  - cd neomutt.github.io && jekyll build && htmlproofer ./_site
+  - cd neomutt.github.io && sh ./travis-build.sh
