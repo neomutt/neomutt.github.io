@@ -30,6 +30,18 @@ struct q_class_t
 
 * define functions with underscores like `void mutt_account_unsetpass (..)`
 
+* what a function does *should* be clear without the need to look into ites
+  implementation - that means use expressive names!
+
+* No global variable is a good variable - therefore avoid them.
+
+* Explain with comments what a function does. That includes:
+
+    - the return value and their meaning
+
+    - parameters and their meaning
+
+
 * Use only `/* Comment */` style comments. Don't use single line comments (`//
   Comment`)
 
