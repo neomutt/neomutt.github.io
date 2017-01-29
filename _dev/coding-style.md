@@ -28,6 +28,8 @@ struct q_class_t
 };
 ```
 
+* define functions with underscores like `void mutt_account_unsetpass (..)`
+
 * Use only `/* Comment */` style comments. Don't use single line comments (`//
   Comment`)
 
