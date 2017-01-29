@@ -16,7 +16,7 @@ That means:
 
 * put your the braces of functions in new lines, like so:
 
-```
+```c
 struct q_class_t
 {
   int length;
@@ -38,4 +38,19 @@ struct q_class_t
 * Remove the braces of control statements (`if`, `switch` and such) which are
   only one line big.
 
+```c
+  if (a1->flags & MUTT_ACCT_USER)
+    return (!strcmp (a1->user, user));
+  if (a2->flags & MUTT_ACCT_USER)
+    return (!strcmp (a2->user, user));
+```
+
 * Remove trailing whitespace
+
+* Align operators like so:
+
+```c
+#define hexdigitp(a) (digitp (a) \
+                      || (*(a) >= 'A' && *(a) <= 'F')  \
+                      || (*(a) >= 'a' && *(a) <= 'f'))
+```
