@@ -39,31 +39,3 @@ struct q_class_t
   only one line big.
 
 * Remove trailing whitespace
-
-
-
-## in the future (post-fork)
-
-
-After we have competely forked from upstream mutt, we'll also change our coding
-style.
-
-
-* Use a 4 spaces based indentation.
-
-* Wrap code and comments at 80 Columns.
-
-* Put Braces from `structs`, `if` statements and such on the same line. That
-  means:
-
-```
-for (i = 0; i < maxLine ; i++) {
-  /* cleanup */
-  if (lineInfo[i].search) {
-    FREE (&(lineInfo[i].search));
-  }
-  lineInfo[i].search_cnt = -1;
-}
-```
-
-* Remove trailing whitespace.
