@@ -31,6 +31,13 @@ author: flatcap
 **Who gives approval?**
 
 * Project reviewers (team on github)
+  - Richard Russon ([@flatcap](https://github.com/flatcap))
+  - Darshit Shah ([@darnir](https://github.com/darnir))
+  - Guillaume Brogi ([@guiniol](https://github.com/guiniol))
+  - Pierre-Elliott Bécue ([@p-eb](https://github.com/p-eb))
+  - Bernard Pratz ([@guyzmo](https://github.com/guyzmo))
+  - Damien Riegel ([@d-k-c](https://github.com/d-k-c))
+  - Pietro Cerutti ([@gahr](https://github.com/gahr))
 
 **Don't need approval for:**
 
@@ -47,9 +54,9 @@ author: flatcap
 
 **When does a user want:**
 
-* feedback?
-* review?
-* merge?
+* Feedback?
+* Review?
+* Merge?
 
 ## Scenario - NeoMutt Member
 
@@ -82,7 +89,7 @@ author: flatcap
 
 ### When code is ready for review...
 
-- Comment asking for review (or a new tag)
+- Comment: "@neomutt/reviewers please review"
 - Reviewer 1: "change this"
 - code
 - Reviewer 1: "approved"
