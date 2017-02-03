@@ -1,12 +1,45 @@
 ---
 layout: concertina
-title: Mutt Releases
-description: Official Release of Mutt
+title: Releases
+description: Release of NeoMutt and Mutt
 ---
 
 # {{ page.title }}
 
-Here are the latest Mutt releases.
+## NeoMutt
+
+The Git hashes link to our GitHub repository.
+
+| Date       | Release          | Git Hash |
+|:-----------|:-----------------|
+| 2017-01-28 | 20170128 (1.7.2) | [`d8fd0708`](https://github.com/neomutt/neomutt/commit/d8fd0708) |
+| 2017-01-13 | 20170113 (1.7.2) | [`20fa9f43`](https://github.com/neomutt/neomutt/commit/20fa9f43) |
+| 2016-11-26 | 20161126 (1.7.1) | [`9494a795`](https://github.com/neomutt/neomutt/commit/9494a795) |
+| 2016-11-04 | 20161104 (1.7.1) | [`4c6a49da`](https://github.com/neomutt/neomutt/commit/4c6a49da) |
+| 2016-10-28 | 20161028 (1.7.1) | [`bbe1a51e`](https://github.com/neomutt/neomutt/commit/bbe1a51e) |
+| 2016-10-14 | 20161014 (1.7.1) | [`d37ce59e`](https://github.com/neomutt/neomutt/commit/d37ce59e) |
+| 2016-10-03 | 20161003 (1.7.0) | [`79b784e1`](https://github.com/neomutt/neomutt/commit/79b784e1) |
+| 2016-10-02 | 20161002 (1.7.0) | [`25c43c5d`](https://github.com/neomutt/neomutt/commit/25c43c5d) |
+| 2016-09-16 | 20160916 (1.7.0) | [`c0b3dee8`](https://github.com/neomutt/neomutt/commit/c0b3dee8) |
+| 2016-09-10 | 20160910 (1.7.0) | [`0d28e3bd`](https://github.com/neomutt/neomutt/commit/0d28e3bd) |
+| 2016-08-27 | 20160827 (1.7.0) | [`392ed701`](https://github.com/neomutt/neomutt/commit/392ed701) |
+| 2016-08-26 | 20160826         | [`aa2d82cd`](https://github.com/neomutt/neomutt/commit/aa2d82cd) |
+| 2016-08-22 | 20160822         | [`9c0ead11`](https://github.com/neomutt/neomutt/commit/9c0ead11) |
+| 2016-08-21 | 20160821         | [`db71bc16`](https://github.com/neomutt/neomutt/commit/db71bc16) |
+| 2016-08-08 | 20160808         | [`f5f0a61c`](https://github.com/neomutt/neomutt/commit/f5f0a61c) |
+| 2016-07-23 | 20160723         | [`34175118`](https://github.com/neomutt/neomutt/commit/34175118) |
+| 2016-07-09 | 20160709         | [`4eb2bd70`](https://github.com/neomutt/neomutt/commit/4eb2bd70) |
+| 2016-06-11 | 20160611         | [`de9a4c03`](https://github.com/neomutt/neomutt/commit/de9a4c03) |
+| 2016-05-30 | 20160530         | [`af632ae3`](https://github.com/neomutt/neomutt/commit/af632ae3) |
+| 2016-05-02 | 20160502         | [`d7080ffe`](https://github.com/neomutt/neomutt/commit/d7080ffe) |
+| 2016-04-16 | 20160416         | [`178e9c43`](https://github.com/neomutt/neomutt/commit/178e9c43) |
+| 2016-04-04 | 20160404         | [`a000f51a`](https://github.com/neomutt/neomutt/commit/a000f51a) |
+| 2016-03-28 | 20160328         | [`04049a12`](https://github.com/neomutt/neomutt/commit/04049a12) |
+| 2016-03-20 | 20160320         | [`c69fe614`](https://github.com/neomutt/neomutt/commit/c69fe614) |
+| 2016-03-17 | 20160317         | [`d1c71184`](https://github.com/neomutt/neomutt/commit/d1c71184) |
+| 2016-03-07 | 20160307         | [`6cc2afdc`](https://github.com/neomutt/neomutt/commit/6cc2afdc) |
+
+## Mutt
 
 The Git hashes link to our GitHub repository.
 The Hg hashes link to Mutt's Mercurial repository.
