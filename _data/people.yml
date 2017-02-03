@@ -34,6 +34,10 @@ cstrahan:
   name: Charles Strahan
   github: https://github.com/cstrahan
 
+d-k-c:
+  name: Damien Riegel
+  github: https://github.com/d-k-c
+
 darnir:
   name: Darshit Shah
   github: https://github.com/darnir
@@ -46,13 +50,17 @@ eldeveloper:
   name: Yoshiki Vázquez Baeza
   github: https://github.com/ElDeveloper
 
+erikryb:
+  name: Erik Rybakken
+  github: https://github.com/erikryb
+
 evgeni:
   name: Evgeni Golov
   github: https://github.com/evgeni
 
 fale:
-  name: Fabio Alessandro Locati
-  github: https://github.com/Fale
+  name: Fabio Locati
+  github: https://github.com/fale
 
 flatcap:
   name:   Richard Russon
@@ -76,9 +84,17 @@ guiniol:
   name: Guillaume Brogi
   github: https://github.com/guiniol
 
+guyzmo:
+  name: Bernard Pratz
+  github: https://github.com/guyzmo
+
 hiberno:
   name: Christian Lask
   github: https://github.com/hiberno
+
+hvkls:
+  name: André Berger
+  github: https://github.com/hvkls
 
 immae:
   name: Ismaël Bouya
@@ -96,8 +112,12 @@ kdave:
   name: David Sterba
   github: https://github.com/kdave
 
+kwantam:
+  name: Riad Wahby
+  github: https://github.com/kwantam
+
 lbschenkel:
-  name: Leonardo Brondani Schenkel
+  name: Leonardo Schenkel
   github: https://github.com/lbschenkel
 
 mfvescovi:
@@ -112,6 +132,10 @@ neverpanic:
   name: Clemens Lang
   github: https://github.com/neverpanic
 
+nobrowser:
+  name: Ian Zimmerman
+  github: https://github.com/nobrowser
+
 nuclearsandwich:
   name: Steven Ragnarök
   github: https://github.com/nuclearsandwich
@@ -122,7 +146,7 @@ opsec:
 
 p-eb:
   name: Pierre-Elliott Bécue
-  github: https://github.com/P-EB
+  github: https://github.com/p-eb
 
 paravoid:
   name: Faidon Liambotis
@@ -138,7 +162,7 @@ pickfire:
 
 richih:
   name: Richard Hartmann
-  github: https://github.com/RichiH
+  github: https://github.com/richih
 
 riesebie:
   name: Elimar Riesebieter
@@ -156,8 +180,13 @@ shioyama:
   name: Chris Salzberg
   github: https://github.com/shioyama
 
+somini:
+  name: somini
+  github: https://github.com/somini
+
 sthen:
   name: Stuart Henderson
+  github: https://github.com/sthen
 
 thomasadam:
   name: Thomas Adam
