@@ -28,3 +28,4 @@ status: devel
 * http://pyropus.ca/software/getmail/
 * https://wiki.archlinux.org/index.php/Procmail
 * passwordstore.org
+* https://github.com/dmedvinsky/mutt-ics
