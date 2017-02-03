@@ -1,11 +1,14 @@
 ---
 layout: concertina
-title: List of useful programs interacting with mutt.
+title: Useful programs
 description: List of useful programs interacting with mutt.
 author: Tobias Angele
 username: toogley
 status: devel
 ---
+# {{ page.title }}
+
+{{ page.description }}
 
 * generally every tool that's listed on https://dev.mutt.org/trac/wiki/MuttTools
 * https://github.com/guyzmo/notmuch-abook
