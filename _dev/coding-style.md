@@ -34,6 +34,7 @@ comments (or we cannot run automatic tidying).
 > cases of the mutt source code.
 
 I think that the best we can do is:
+
 - Pick some options that approximate Mutt's style
 - Run clang-format on the source tree
 - Cherry-pick old code where it looks better
@@ -41,6 +42,7 @@ I think that the best we can do is:
 ## Upstream
 
 Upstream's preferences are:
+
 - No tabs
 - 2 space indent
 - `{}`s on new lines
@@ -60,7 +62,7 @@ have expressed a preference.
 - Line length should have a soft limit of 80 characters.
   This can be achieved by using clang-format's style penalties:
 
-```
+```conf
 # Allow about 5 characters over the column limit, before forcing a line-break
 PenaltyExcessCharacter 1
 ```
