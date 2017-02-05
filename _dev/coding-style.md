@@ -286,6 +286,7 @@ comments:
 These should be used as little as possible.
 
 An alternative, for some situations is to use a strategically-placed comment:
+
 ```c
 #define hexdigitp(a) (digitp (a)      // significant comment  \
    || (*(a) >= 'A' && *(a) <= 'F')                            \
@@ -295,6 +296,7 @@ An alternative, for some situations is to use a strategically-placed comment:
 Many people have shown a preference for the `{}`s to be nestled.  Unfortunately,
 this means there are changes to the 'if' line, which make a nightmare out of
 importing upstream changes.
+
 ```c
 if (test) {
 } else {
