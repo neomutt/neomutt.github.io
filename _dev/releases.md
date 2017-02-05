@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: Releases
-description: Release of NeoMutt and Mutt
+description: Releases of NeoMutt and Mutt
 ---
 
 # {{ page.title }}

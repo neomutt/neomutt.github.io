@@ -2,7 +2,7 @@
 layout: concertina
 title: Make a Release
 author: Richard Russon
-status: notes
+status: wip
 ---
 
 # {{ page.title }}
@@ -65,7 +65,7 @@ Templates:
 
 Code:
 - Update references to version numbers
-  - XXX LIST?
+  - configure.ac YYYYDDMM, 1.7.2
 - ChangeLog.neomutt
 - configure.ac (fix date)
 - Update neomuttrc.vim with new variables, etc
@@ -127,14 +127,6 @@ Gentoo
 - Update Manifest
 - push
 
-## Clean Up
-
-- Waffle: Archive the "Done" column
-- Update milestones
-  - next-release -> release-YYYY-MM-DD
-  - delayed      -> next-release
-  - create "delayed"
-
 ## Announcements
 
 GitHub Release
@@ -151,6 +143,16 @@ Email
 - Translators - send them new po files
 
 Update IRC topic
+
+## Post-Release
+
+- Waffle: Archive the "Done" column
+- Update milestones
+  - next-release -> release-YYYY-MM-DD
+  - delayed      -> next-release
+  - create "delayed"
+- GitHub: delete old branches
+- Merge delayed issues
 
 --------------------------------------------------------------------------------
 

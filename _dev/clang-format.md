@@ -22,11 +22,13 @@ BreakBeforeBraces: Allman
 IncludeCategories:
   - Regex:      '"config.h"'
     Priority:   -1
-  - Regex:      '"mutt.h"'
-    Priority:   1
-  - Regex:      '".*"'
-    Priority:   2
   - Regex:      '<.*>'
+    Priority:   1
+  - Regex:      '"mutt.h"'
+    Priority:   2
+  - Regex:      '"imap_private.h"'
+    Priority:   2
+  - Regex:      '".*"'
     Priority:   3
 
 AlignAfterOpenBracket:            true
@@ -53,6 +55,9 @@ SpacesInParentheses:              false
 SpacesInSquareBrackets:           false
 IndentWrappedFunctionNames:       false
 
+# Allow some slightly over-long lines
+PenaltyExcessCharacter: 1
+
 # NEVER
 
 AllowShortFunctionsOnASingleLine:    false
@@ -63,8 +68,8 @@ AllowShortLoopsOnASingleLine:        false
 
 # OPTIONAL
 
-# AlignTrailingComments:             true
-# AlignConsecutiveAssignments:       true
+AlignTrailingComments:             true
+AlignConsecutiveAssignments:       true
 # AlignConsecutiveDeclarations:      true
 # AlwaysBreakBeforeMultilineStrings: true
 # SpacesBeforeTrailingComments:      2
