@@ -177,6 +177,7 @@ fp = NULL;
 `strcmp()` returns `0` when the strings match, but the code below is misleading.
 You might be mistaken and think that `something()` is called if the strings
 match.
+
 ```c
 if (strcmp(apple, banana))
   something();
@@ -212,6 +213,7 @@ if (!str)
 ### Put `()`s around logic that contains whitespace
 
 C allows you to write statements like:
+
 ```c
 if (a == x && b == y && c == z)
 ```
@@ -219,6 +221,7 @@ Here, we're `&&`-ing three logical tokens.
 Because they contain whitespace, the 'if' can be a little hard to read.
 
 This is easier to read:
+
 ```c
 if ((a == x) && (b == y) && (c == z))
 ```
@@ -232,6 +235,7 @@ if (x && y && !z)
 ### Ternary operator `x ? y : z` - one at a time
 
 The ternary operator is good for short and simple if-then-else type things, e.g.
+
 ```c
 x = (y > 0) ? 1 : 0;
 ```
@@ -239,6 +243,7 @@ x = (y > 0) ? 1 : 0;
 However, when several ternary operators are used in one statement, it becomes
 very hard to understand the meaning.  This example is from `mbrtowc_iconv()` in
 [mbyte.c](https://github.com/neomutt/neomutt/blob/neomutt/mbyte.c#L155)
+
 ```c
 return (pwc && *pwc) ? (ib - (k ? bufi + k : s)) : 0;
 ```
@@ -278,6 +283,7 @@ These C99 features may be used in new code added by NeoMutt:
 
 Any code that **needs** to stay as it was written should be surrounded by the
 comments:
+
 ```c
 // clang-format off
 // clang-format on
