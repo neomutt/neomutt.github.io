@@ -90,7 +90,7 @@ for (int i = 0; i < 10; i++)
     action();
 ```
 
-At the other extreme, this is from `find_subject()` in [thread.c](https://github.com/neomutt/neomutt/blob/neomutt/thread.c#L415)
+At the other extreme, this is from `find_subject()` in [thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2a70b1a0a9b06fb3e8b82ae177a9eb3db/thread.c#L415)
 It's hard to tell where the 'if' ends and the action begins.
 
 ```c
@@ -111,7 +111,7 @@ if (tmp != cur &&                    /* don't match the same message */
 ```
 
 This example is simpler, but could still probably do with `{}`s.
-It is from `mutt_check_traditional_pgp()` in [commands.c](https://github.com/neomutt/neomutt/blob/neomutt/commands.c#L1062)
+It is from `mutt_check_traditional_pgp()` in [commands.c](https://github.com/neomutt/neomutt/blob/6b1ecf78dde6a629b97ddaeeddf94d58e6aa60e9/commands.c#L1062)
 
 ```c
 if (Context->hdrs[Context->v2r[i]]->tagged &&
@@ -120,7 +120,7 @@ if (Context->hdrs[Context->v2r[i]]->tagged &&
    || rv;
 ```
 
-Finally, there's ugliness like this in `crypt_init()` in [cryptglue.c](https://github.com/neomutt/neomutt/blob/neomutt/cryptglue.c#L59):
+Finally, there's ugliness like this in `crypt_init()` in [cryptglue.c](https://github.com/neomutt/neomutt/blob/3a415b2b1d5719d729aa60bb6491c496dd2f98f8/cryptglue.c#L59):
 
 ```c
   if (
@@ -242,7 +242,7 @@ x = (y > 0) ? 1 : 0;
 
 However, when several ternary operators are used in one statement, it becomes
 very hard to understand the meaning.  This example is from `mbrtowc_iconv()` in
-[mbyte.c](https://github.com/neomutt/neomutt/blob/neomutt/mbyte.c#L155)
+[mbyte.c](https://github.com/neomutt/neomutt/blob/2f4417e898ac719dee6b0ccb53668533410869e1/mbyte.c#L155)
 
 ```c
 return (pwc && *pwc) ? (ib - (k ? bufi + k : s)) : 0;
