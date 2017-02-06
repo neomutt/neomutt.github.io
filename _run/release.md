@@ -28,6 +28,7 @@ stabilising bug-fix release.
 ## Preparation
 
 Check these repos for contributors to thank:
+
 - neomutt
 - neomutt.github.io
 - gentoo-neomutt
@@ -38,11 +39,13 @@ Check these repos for contributors to thank:
 Check translators for credits
 
 Commit/issue list
+
 - git log
 - new-commit.sh
 - list of milestone issues
 
 Credits
+
 - Update README.neomutt
 - Invite new members
 - Update my alias list with all contributors
@@ -50,12 +53,14 @@ Credits
   (even if it's just a personal list)
 
 Website
+
 - Update guide
 - Update man pages
 - Update credits.md
 - Update "since" date on new features
 
 Templates:
+
 - template-changelog.txt
 - template-dev-ml.txt
 - template-github.txt
@@ -64,6 +69,7 @@ Templates:
 - template-website.txt
 
 Code:
+
 - Update references to version numbers
   - configure.ac YYYYDDMM, 1.7.2
 - ChangeLog.neomutt
@@ -74,6 +80,7 @@ Code:
 ## Testing
 
 Tests:
+
 - git fetch github
 - ./check_sec.sh
 - Build (work cleanly)
@@ -100,6 +107,7 @@ build (don't use my script)
 ## Packaging
 
 Assets
+
 - make dist -> tar
 - diff against mutt-1.7.2
   - test patch apply
@@ -108,28 +116,35 @@ Assets
 - create checksum
 
 GitHub
+
 - Generate release
 - Upload assets
 
 ## Downstreams
 
 Fedora COPR
+
 - Update spec
   - version number
   - changelog
 - build
 - test install
+
 MacOS - Homebrew
+
 - update Formula
 - push
 - check travis
+
 Gentoo
+
 - Update Manifest
 - push
 
 ## Announcements
 
 GitHub Release
+
 - /cc @neomutt/downstream-packagers
 
 Website News
@@ -137,6 +152,7 @@ Website News
 Install new version of NeoMutt, then send emails using it.
 "User Agent:" should show the new version:
 Email
+
 - neomutt-users mailing list
 - neomutt-devel mailing list
 - New users with a link to their name in the credits
