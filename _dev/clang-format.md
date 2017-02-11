@@ -48,7 +48,7 @@ ReflowComments:                   false
 SortIncludes:                     true
 SpaceAfterCStyleCast:             true
 SpaceBeforeAssignmentOperators:   true
-SpaceBeforeParens:                Always
+SpaceBeforeParens:                ControlStatements
 SpaceInEmptyParentheses:          false
 SpacesInCStyleCastParentheses:    false
 SpacesInParentheses:              false
