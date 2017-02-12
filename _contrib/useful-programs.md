@@ -17,7 +17,7 @@ status: devel
 * notify-send
 * offlineimap
 * msmtp
-* afew
+* https://github.com/afewmail/afew
 * notmuch
 * https://spamassassin.apache.org/
 * https://pypi.python.org/pypi/goobook/1.9
