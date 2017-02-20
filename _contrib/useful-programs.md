@@ -23,7 +23,7 @@ status: devel
   intended as a replacement for fetchmail. Support for IMAP4, POP3 and SSL
 * [msmtp](http://msmtp.sourceforge.net/) - is an SMTP client, supports multiple
   accounts, TLS/SSL, IDN, Delivery Status Notification and SOCKS Proxy.
-* [isync](​http://isync.sourceforge.net/) - may be better than Mutt with IMAP
+* [isync](http://isync.sourceforge.net/) - may be better than Mutt with IMAP
   header caching.
 
 ## Adressbooks
@@ -53,8 +53,8 @@ status: devel
 
 ## converting text formats
 
-* [antiword](​http://www.winfield.demon.nl/) -  M$-Office-Word to txt converter.
-* [rtf2html](​http://www.wagner.pp.ru/~vitus/software/catdoc/) - RTF to HTML
+* [antiword](http://www.winfield.demon.nl/) -  M$-Office-Word to txt converter.
+* [rtf2html](http://www.wagner.pp.ru/~vitus/software/catdoc/) - RTF to HTML
   converter (which then can be piped through lynx -stdin -dump -force_html).
 * [pandoc](http://pandoc.org/) - Pandoc is a Haskell library for converting from
   one markup format to another, and a command-line tool that uses this library.
@@ -87,10 +87,10 @@ status: devel
 
 * [passwordstore.org](https://www.passwordstore.org/) Password management tool
   which tries to be simple and follow the Unix philosophy.
-* [PGP](​http://www.pgpi.org/) - message encryption for privacy.
-* [GPG, GnuPG](​http://www.gnupg.org/) - GNU's privacy guard, a free (FOSS)
+* [PGP](http://www.pgpi.org/) - message encryption for privacy.
+* [GPG, GnuPG](http://www.gnupg.org/) - GNU's privacy guard, a free (FOSS)
   replacement for PGP.
-* [post mode](​http://post-mode.sourceforge.net/) - An Emacs mode for composing
+* [post mode](http://post-mode.sourceforge.net/) - An Emacs mode for composing
     email or USENET messages for an external user agent (mutt, slrn, etc.).
 * [mairix](http://www.rpcurnow.force9.co.uk/mairix/) - An excellent mailbox
     searching tool for mutt.
@@ -100,5 +100,5 @@ status: devel
     various email problems (long signatures, incorrect quoting, etc.).
 * [mswatch](http://mswatch.sourceforge.net/) use with isync to sync local and
     server IMAP stores to track changes as they happen.
-* [muttzilla](​http://sourceforge.net/projects/muttzilla/) - Make mutt your mail
+* [muttzilla](http://sourceforge.net/projects/muttzilla/) - Make mutt your mail
     reader in Netscape or Mozilla. Unmaintained.
