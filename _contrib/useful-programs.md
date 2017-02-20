@@ -33,6 +33,7 @@ status: devel
 * [goobook](https://pypi.python.org/pypi/goobook/1.9) - Search your google
   contacts from the command-line or mutt.
 * [abook](http://abook.sourceforge.net/) - Text-based address book program.
+* [mutt-addressbook](https://pypi.python.org/pypi/mutt-addressbook) - Extend Mutt's query command using LDAP directories
 
 ## Tagging, filtering, searching
 
