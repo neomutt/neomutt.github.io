@@ -25,6 +25,11 @@ status: devel
   accounts, TLS/SSL, IDN, Delivery Status Notification and SOCKS Proxy.
 * [isync](http://isync.sourceforge.net/) - may be better than Mutt with IMAP
   header caching.
+* [maildrop](http://www.courier-mta.org/maildrop/) - mail delivery agent with
+  filtering abilities
+* [postfix](http://www.postfix.org/) - It is Wietse Venema's mail server that
+  started life at IBM research as an alternative to the widely-used Sendmail
+  program. Now at Google, Wietse continues to support Postfix.
 
 ## Adressbooks
 
@@ -50,6 +55,22 @@ status: devel
 * [procmail](https://wiki.archlinux.org/index.php/Procmail) - can sort incoming
   mail into various directories and filter out spam messages. Procmail is
   stable, but no longer maintained.
+* [mairix](http://www.rpcurnow.force9.co.uk/mairix/) - An excellent mailbox
+    searching tool for mutt. Unmaintained.
+* [nmzmail](http://www.ecademix.com/JohannesHofmann/#nmzmail) - Another
+    excellent mailbox searching tool for mutt.
+* [bogofilter](http://bogofilter.sourceforge.net/) - mail filter that classifies
+  mail as spam or ham (non-spam) by a statistical analysis of the message's
+  header and content (body). The program is able to learn from the user's
+  classifications and corrections.
+
+## encryption
+
+* [passwordstore.org](https://www.passwordstore.org/) Password management tool
+  which tries to be simple and follow the Unix philosophy.
+* [PGP](http://www.pgpi.org/) - message encryption for privacy.
+* [GPG, GnuPG](http://www.gnupg.org/) - GNU's privacy guard, a free (FOSS)
+  replacement for PGP.
 
 
 ## converting text formats
@@ -83,20 +104,8 @@ status: devel
 * [MailtoMutt?](http://mailtomutt.sourceforge.net/) - A Cocoa application which
   handles mail to URLs, forwarding them to mutt using applescript and
   Terminal.app.
-
-## encryption
-
-* [passwordstore.org](https://www.passwordstore.org/) Password management tool
-  which tries to be simple and follow the Unix philosophy.
-* [PGP](http://www.pgpi.org/) - message encryption for privacy.
-* [GPG, GnuPG](http://www.gnupg.org/) - GNU's privacy guard, a free (FOSS)
-  replacement for PGP.
 * [post mode](http://post-mode.sourceforge.net/) - An Emacs mode for composing
     email or USENET messages for an external user agent (mutt, slrn, etc.).
-* [mairix](http://www.rpcurnow.force9.co.uk/mairix/) - An excellent mailbox
-    searching tool for mutt.
-* [nmzmail](http://www.ecademix.com/JohannesHofmann/#nmzmail) - Another
-    excellent mailbox searching tool for mutt.
 * [t-prot](http://www.escape.de/users/tolot/mutt/) - A program to clean up
     various email problems (long signatures, incorrect quoting, etc.).
 * [mswatch](http://mswatch.sourceforge.net/) use with isync to sync local and
