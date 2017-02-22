@@ -67,7 +67,7 @@ have expressed a preference.
 PenaltyExcessCharacter 1
 ```
 
-Example: [**.clang-format**](/dev/clang-format)
+Example: [**.clang-format**](https://github.com/neomutt/neomutt/blob/master/.clang-format)
 
 ## Braces
 
