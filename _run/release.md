@@ -72,7 +72,7 @@ Templates:
 Code:
 
 - Update references to version numbers
-  - configure.ac YYYYDDMM, 1.7.2
+  - configure.ac YYYYDDMM, 1.8.0
 - ChangeLog.neomutt
 - configure.ac (fix date)
 - Update neomuttrc.vim with new variables, etc
@@ -110,7 +110,7 @@ build (don't use my script)
 Assets
 
 - make dist -> tar
-- diff against mutt-1.7.2
+- diff against mutt-1.8.0
   - test patch apply
   - test build
 - filter diff
@@ -140,6 +140,11 @@ MacOS - Homebrew
 Gentoo
 
 - Update Manifest
+- push
+
+Arch (AUR)
+
+- Update
 - push
 
 ## Announcements
