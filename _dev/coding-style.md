@@ -2,87 +2,93 @@
 layout: concertina
 title: Coding Style
 description: The preferred style for code committed to NeoMutt
-status: notes
+status: wip
 author: flatcap
 ---
 
+# {{ page.title }}
+
 ## Overview
 
-@toogley
-> new coding style must **really** be an improvement
+Whatever the language, coding style is always controversial.
 
-Yes, that's the goal, but we should be prepared for a journey of several stages.
+This page outlines a small [set of rules][r], some [guidelines][g] and some
+[top tips][t].  It's hoped that following these examples, we can keep NeoMutt's
+code tidy.
 
-Tidying the code will make it more consistent and easier to read.
-But that's just one step.  After that will come much more refactoring to undo
-the years of neglect that the code has suffered.
+NeoMutt also recommends using [editor-config][e] and [clang-format][c].
 
-> clang-format produces, the following: [ugly code]
+[r]: #rules
+[g]: #guidelines
+[t]: #top-tips
+[e]: #editor-config
+[c]: #clang-format
 
-This will always be a problem.  Whatever style we pick, there will always be
-some places where we want to bend the rules.  The solution will depend on the
-number of exceptions.
+## <a name="rules" class="offset"></a> Rules
 
-If there are **few exceptions** then we can surround the blocks with
-`// clang-format off` type comments.  This would mean that we could run
-`clang-format` automatically before each commit.
+These four rules are important.
+Please follow them to ensure your code is accepted.
 
-If there are **many exceptions**, then the code will become a mess of clang
-comments (or we cannot run automatic tidying).
+### Indent
 
-> we have to make sure that our new clang-format option set really works in all
-> cases of the mutt source code.
+- Code should be indented using **2 spaces**.
 
-I think that the best we can do is:
+```c
+if (x == 0)
+  return;
+```
 
-- Pick some options that approximate Mutt's style
-- Run clang-format on the source tree
-- Cherry-pick old code where it looks better
+### Braces
 
-## Upstream
+- Braces must begin and end on new lines
 
-Upstream's preferences are:
+```c
+if (x == 0)
+{
+  red();
+  blue();
+}
+```
 
-- No tabs
-- 2 space indent
-- `{}`s on new lines
+### No tabs
 
-The plan is to reformat NeoMutt's code base in such a way that we can still
-integrate upstream Mutt's patches.  This limits how much we can change.
+- However deeply nested the code, it should not use tabs for indentation
 
-Additionally, there are three other style choices where the NeoMutt developers
-have expressed a preference.
+### Trailing Whitespace
 
-- No space between the function name and the opening bracket, e.g.
-  `x = function(y);`
+- Delete spaces or tabs at the ends of lines
+
+## <a name="guidelines" class="offset"></a> Guidelines
+
+These guidelines are NeoMutt's preferred way to style code.
+Some exceptions will be allowed.
+
+### General
 
 - Function return type on the same line, e.g.
   `int function(int y)`
 
-- Line length should have a soft limit of 80 characters.
-  This can be achieved by using clang-format's style penalties:
+- Line length should be limited to 80-90 characters.
 
-```conf
-# Allow about 5 characters over the column limit, before forcing a line-break
-PenaltyExcessCharacter 1
-```
+### Braces Placement
 
-Example: [**.clang-format**](https://github.com/neomutt/neomutt/blob/master/.clang-format)
+There are many situations where C doesn't require braces.
+Often, this can lead to code that's hard to read.
 
-## Braces
-
-I'm reluctant to make a strict ruling, here, as long as one guideline is followed:
+**General guideline**:
 - The meaning of the code must be **immediately** clear.
 
-Let's start with a simple case, one that I think everyone will accept.
-Both the condition and the action are short and the entire 'if' is easy to parse.
+First, here are a couple of good examples where braces aren't needed, but the
+code is still clear.
+
+Both the condition and the action are short and the entire 'if' is easy to read.
 
 ```c
 if (condition)
   action();
 ```
 
-Also, this case is simple to read:
+This case, with two levels of nesting is also simple to read.
 
 ```c
 for (int i = 0; i < 10; i++)
@@ -90,7 +96,9 @@ for (int i = 0; i < 10; i++)
     action();
 ```
 
-At the other extreme, this is from `find_subject()` in [thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2a70b1a0a9b06fb3e8b82ae177a9eb3db/thread.c#L415)
+Next are three bad examples.
+
+Here is some code from `find_subject()` in [thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2/thread.c#L415)
 It's hard to tell where the 'if' ends and the action begins.
 
 ```c
@@ -139,28 +147,27 @@ The factors that complicate an 'if' statement are:
 - **Condition** and **Action** are separated by a comment
 - **Condition** contains preprocessor statements
 
-**I propose as guidelines**:
+**Specific guidelines**:
 - Refactor 'if' conditions that span more than 4 lines
 - Enforced `{}`s for actions that span more than 1 line, or that contain comments
 - Preprocessor conditions should not be embedded within an 'if' condition
 
-## Whitespace
+### Whitespace
 
-All these cases are handled by clang-format:
-- No trailing whitespace
-- No tabs
+**Guidelines**:
 - No spaces inside () or []
 - Space around operators:
   - Maths `+-*/`
   - Logic `&&`, `||`
   - Comparisons `>=`, `==`
-  - etc
 - No space between a function name and '('
 
-## Neomutt Additions
+**Note**: All these cases are handled by clang-format.
 
-`clang-format` can enforce a lot of style onto the code, but I'd like to suggest
-a few more things.  If an idea is liked, it may get added to our style guide.
+## <a name="top-tips" class="offset"></a> Top Tips
+
+These tips are generally good ideas.
+Their use is encouraged.
 
 ### Distinguish between `0` and `NULL`
 
@@ -179,6 +186,7 @@ You might be mistaken and think that `something()` is called if the strings
 match.
 
 ```c
+/* Misleading condition */
 if (strcmp(apple, banana))
   something();
 else
@@ -188,6 +196,7 @@ else
 By reminding the user of the return type, the meaning is clearer:
 
 ```c
+/* Clearer condition */
 if (strcmp(apple, banana) == 0)
   something();
 else
@@ -237,6 +246,7 @@ if (x && y && !z)
 The ternary operator is good for short and simple if-then-else type things, e.g.
 
 ```c
+/* Clear use of a ternary operator */
 x = (y > 0) ? 1 : 0;
 ```
 
@@ -245,6 +255,7 @@ very hard to understand the meaning.  This example is from `mbrtowc_iconv()` in
 [mbyte.c](https://github.com/neomutt/neomutt/blob/2f4417e898ac719dee6b0ccb53668533410869e1/mbyte.c#L155)
 
 ```c
+/* Multiple operators make the code hard to read */
 return (pwc && *pwc) ? (ib - (k ? bufi + k : s)) : 0;
 ```
 
@@ -262,24 +273,59 @@ documentation.
 Sometimes, inserting a little whitespace can greatly improve the legibility.
 
 ```c
-if ((ascii_strncasecmp ("supersedes:", uh->data, 11) != 0) &&
-    (ascii_strncasecmp ("subject:", uh->data, 8) != 0) &&
-    (ascii_strncasecmp ("return-path:", uh->data, 12) != 0))
+if ((strcmp("supersedes:", uh->data, 11) != 0) &&
+    (strcmp("subject:", uh->data, 8) != 0) &&
+    (strcmp("return-path:", uh->data, 12) != 0))
 
-if ((ascii_strncasecmp ("supersedes:",  uh->data, 11) != 0) &&
-    (ascii_strncasecmp ("subject:",     uh->data,  8) != 0) &&
-    (ascii_strncasecmp ("return-path:", uh->data, 12) != 0))
+if ((strcmp("supersedes:",  uh->data, 11) != 0) &&
+    (strcmp("subject:",     uh->data,  8) != 0) &&
+    (strcmp("return-path:", uh->data, 12) != 0))
 ```
 
 ### C99 Features
 
-These C99 features may be used in new code added by NeoMutt:
+These C99 features may be used:
 
 - `// line comments`
 - Scoped variables: `for (int i = 0; ...`
 - Booleans: `#include <stdbool.h>`
 
-## Wrap Up
+### Misc
+
+- Return from function early, if possible
+- Initialise pointers to null
+- Limit variables to the smallest possible scope
+- For sets of constants, use `enum` rather than `#define`
+
+## <a name="editor-config" class="offset"></a> Editor Config
+
+[EditorConfig][ec] provides plugins for most common editors which allow
+projects to define their style in one place.
+
+Here's NeoMutt's [.editorconfig][ecf] file.
+
+It looks like this:
+
+```conf
+[*.{c,h}]
+indent_size = 2
+indent_style = space
+```
+
+[ec]: http://editorconfig.org/
+[ecf]: https://github.com/neomutt/neomutt/blob/master/.editorconfig
+
+## <a name="clang-format" class="offset"></a> Clang-Format
+
+Clang-format is a tool which automatically reformats C sources files according
+to configurable style guides.
+
+This tool can re-indent code, correct the placement of `{}`s and much much
+more.  Beginners are strongly recommended to use this tool on their code before
+submitting it to NeoMutt.
+
+Here is NeoMutt's [.clang-format][ncf] file.
+Clang's site has [full documentation][cfd] of the format.
 
 Any code that **needs** to stay as it was written should be surrounded by the
 comments:
@@ -291,48 +337,6 @@ comments:
 
 These should be used as little as possible.
 
-An alternative, for some situations is to use a strategically-placed comment:
-
-```c
-#define hexdigitp(a) (digitp (a)      // significant comment  \
-   || (*(a) >= 'A' && *(a) <= 'F')                            \
-   || (*(a) >= 'a' && *(a) <= 'f'))
-```
-
-Many people have shown a preference for the `{}`s to be nestled.  Unfortunately,
-this means there are changes to the 'if' line, which make a nightmare out of
-importing upstream changes.
-
-```c
-if (test) {
-} else {
-}
-```
-
-@nobrowser
-> If someone creates an issue for cleaning the header files, I'll take it.
-
-Noted, thanks.
-
-> We need a policy decision though
-
-Nearly there...
-
-> A proper fix will probably lead to huge merge conflicts.
-
-Fortunately, the header files seldom change.
-I will happily exchange a small amount of merge pain, for tidier headers.
-
-@guyzmo
-> Subtle, unimportant, changes to whitespace will lead to HUGE diffs
-
-Yes, but if we're going to reformat the source, we might as well do it
-thoroughly.
-
----
-
-Very soon, we will have a style guide for our code.
-There will be a `.clang-format` config file and plenty of code examples.
-
-Thank you for your thoughtful debate.
+[ncf]: https://github.com/neomutt/neomutt/blob/master/.clang-format
+[cfd]: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 
