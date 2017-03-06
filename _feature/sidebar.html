@@ -2,7 +2,7 @@
 layout: concertina
 title: Sidebar
 description: Overview of mailboxes
-since: 2016-03-07
+since: 
 status: stable
 ---
 {% raw %}
@@ -61,7 +61,7 @@ status: stable
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-sidebar-variables"></a>
       <p class="title">
         <strong>Table&#160;31.1.&#160;Sidebar Variables</strong>
@@ -207,7 +207,7 @@ status: stable
       </div>
     </div>
     <p>Sidebar adds the following functions to Mutt. By default, none of them are bound to keys.</p>
-    <div class="table">
+    <div >
       <a class="offset" id="table-sidebar-functions"></a>
       <p class="title">
         <strong>Table&#160;31.2.&#160;Sidebar Functions</strong>
@@ -310,16 +310,16 @@ status: stable
       </em>...]
       <br />
       <code class="command">unsidebar_whitelist
-      <a class="offset" id="unsidebar-whitelist"></a></code>
+      <a class="offset" id="unsidebar-whitelist"></a></code>{
       <em class="replaceable">
         <code>*</code>
-      </em>
+      </em>|
       <em class="replaceable">
         <code>mailbox</code>
-      </em>...</p>
+      </em>... }</p>
     </div>
     <p>This command specifies mailboxes that will always be displayed in the sidebar, even if
-    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.301.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a>is set and the mailbox does not contain new mail.</p>
+    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.303.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a>is set and the mailbox does not contain new mail.</p>
     <p>The
     <span class="quote">“
     <span class="quote">unsidebar_whitelist</span>”</span>command is used to remove a mailbox from the list of whitelisted mailboxes. Use
@@ -335,7 +335,7 @@ status: stable
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-sidebar-colors"></a>
       <p class="title">
         <strong>Table&#160;31.3.&#160;Sidebar Colors</strong>
@@ -422,7 +422,7 @@ status: stable
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-sidebar-sort"></a>
       <p class="title">
         <strong>Table&#160;31.4.&#160;Sidebar Sort</strong>
@@ -468,13 +468,19 @@ status: stable
               <td>
                 <code class="literal">new</code>
               </td>
-              <td>Number of new messages</td>
+              <td>Number of unread messages</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">path</code>
               </td>
               <td>Alphabetically by path</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">unread</code>
+              </td>
+              <td>Number of unread messages</td>
             </tr>
             <tr>
               <td>

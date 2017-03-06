@@ -2,7 +2,7 @@
 layout: concertina
 title: New Mail
 description: Execute a command upon the receipt of new mail.
-since: 2016-07-23
+since: 
 status: stable
 ---
 {% raw %}
@@ -11,7 +11,7 @@ status: stable
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="feature/new-mail-hook"></a>New Mail Feature</h1>
+        <a class="offset" id="feature/new-mail"></a>New Mail Feature</h1>
       </div>
       <div>
         <h3 class="subtitle">
@@ -25,7 +25,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-support"></a>1.&#160;Support</h2>
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -43,14 +43,14 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-intro"></a>2.&#160;Introduction</h2>
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
     <p>This feature enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%f</code>for the folder name. For a complete list, see:
-    <a class="link" href="/guide/reference.html#status-format" title="3.363.&#160;status_format">$status_format</a>.</p>
+    <a class="link" href="/guide/reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>.</p>
     <p>For example in Linux you can use (most distributions already provide notify-send):</p>
     <pre class="screen">
 set new_mail_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
@@ -66,11 +66,11 @@ set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-variables"></a>3.&#160;Variables</h2>
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-new-mail-variables"></a>
       <p class="title">
         <strong>Table&#160;24.1.&#160;New Mail Command Variables</strong>
@@ -108,7 +108,7 @@ set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-muttrc"></a>4.&#160;Muttrc</h2>
+          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -138,7 +138,7 @@ set new_mail_command = ""
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-see-also"></a>5.&#160;See Also</h2>
+          <a class="offset" id="see-also"></a>5.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@ set new_mail_command = ""
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-known-bugs"></a>6.&#160;Known Bugs</h2>
+          <a class="offset" id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@ set new_mail_command = ""
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail-credits"></a>7.&#160;Credits</h2>
+          <a class="offset" id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

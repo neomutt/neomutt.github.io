@@ -2,7 +2,7 @@
 layout: concertina
 title: Notmuch
 description: Email search engine
-since: 2016-03-17
+since: 
 status: stable
 ---
 {% raw %}
@@ -128,11 +128,11 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
           <strong>query=&lt;string&gt;</strong>
         </span>
       </p>
-      <p>See SEARCH SYNTAX in notmuch man page. Don't forget to use
+      <p>See SEARCH SYNTAX in notmuch man page. Don't forget to use operators (
       <span class="quote">“
-      <span class="quote">and</span>”</span>and
+      <span class="quote">and</span>”</span>/
       <span class="quote">“
-      <span class="quote">or</span>”</span>operators in your queries.</p>
+      <span class="quote">or</span>”</span>) in your queries.</p>
       <p>Note that proper URI should not contain blank space and all
       <span class="quote">“
       <span class="quote">bad</span>”</span>chars should be encoded, for example</p>
@@ -176,7 +176,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
       <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/guide/reference.html#index-format" title="3.131.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -229,7 +229,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/guide/reference.html#index-format" title="3.131.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
@@ -242,7 +242,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-notmuch-variables"></a>
       <p class="title">
         <strong>Table&#160;26.1.&#160;Notmuch Variables</strong>
@@ -371,7 +371,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <p>Notmuch adds the following functions to Mutt. By default, none of them are bound to keys.</p>
-    <div class="table">
+    <div >
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
         <strong>Table&#160;26.2.&#160;Notmuch Functions</strong>
@@ -417,7 +417,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">&lt;modify-labels-then-hide&gt;</code>
               </td>
-              <td>modify labels and then hide message</td>
+              <td>modify labels and then hide message by applying the "quasi-deleted" state. Normal redisplay rules apply here, so the user must call &lt;sync-mailbox&gt; for the changes to be displayed</td>
             </tr>
             <tr>
               <td>index,pager</td>
@@ -436,21 +436,14 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
             <tr>
               <td>index,pager</td>
               <td>
-                <code class="literal">&lt;windowed-vfolder-from-query&gt;</code>
-              </td>
-              <td>generate virtual folder from query with window applied</td>
-            </tr>
-            <tr>
-              <td>index,pager</td>
-              <td>
-                <code class="literal">&lt;windowed-vfolder-forward&gt;</code>
+                <code class="literal">&lt;vfolder-window-forward&gt;</code>
               </td>
               <td>generate virtual folder by moving the query's time window forward</td>
             </tr>
             <tr>
               <td>index,pager</td>
               <td>
-                <code class="literal">&lt;windowed-vfolder-backward&gt;</code>
+                <code class="literal">&lt;vfolder-window-backward&gt;</code>
               </td>
               <td>generate virtual folder by moving the query's time window backward</td>
             </tr>
@@ -532,7 +525,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <p>Adds these to index-color patch:</p>
-    <div class="table">
+    <div >
       <a class="offset" id="table-notmuch-colors"></a>
       <p class="title">
         <strong>Table&#160;26.3.&#160;Index Colors</strong>
@@ -629,7 +622,8 @@ set vfolder_format = "%6n(%6N) %f"
 set virtual_spoolfile = no
 
 <span class="comment"># setup time window preferences
-# first setup the duration, and then the time unit of that duration</span>
+# first setup the duration, and then the time unit of that duration
+# when set to 0 (the default) the search window feature is disabled</span>
 set nm_query_window_duration=2
 set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
 
@@ -646,13 +640,15 @@ bind index,pager + entire-thread
 <span class="comment"># modify (notmuch) tags</span>
 bind index,pager \` modify-labels
 
+<span class="comment"># modify (notmuch) tag non-interactively.</span>
+bind index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
+
 <span class="comment"># generate virtual folder from query</span>
 bind index,pager \eX vfolder-from-query
 
 <span class="comment"># generate virtual folder from query with time window</span>
-bind index,pager \\ windowed-vfolder-from-query
-bind index,pager &lt; windowed-vfolder-backward
-bind index,pager &gt; windowed-vfolder-forward
+bind index,pager &lt; vfolder-window-backward
+bind index,pager &gt; vfolder-window-forward
 
 <span class="comment"># modify labels and then hide message
 # bind index,pager ??? modify-labels-then-hide
@@ -689,7 +685,7 @@ bind index,pager &gt; windowed-vfolder-forward
 #              "deleted" "GD" \
 #              "invites" "Gi"
 
-# set index_format='4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
+# set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
 
 # --------------------------------------------------------------------------
 # COLORS - some unpleasant examples are given

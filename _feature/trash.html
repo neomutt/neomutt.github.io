@@ -2,7 +2,7 @@
 layout: concertina
 title: Trash Folder
 description: Automatically move deleted emails to a trash bin
-since: 2016-03-07
+since: 
 status: stable
 ---
 {% raw %}
@@ -11,7 +11,7 @@ status: stable
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="feature/trash-folder"></a>Trash Folder Feature</h1>
+        <a class="offset" id="feature/trash"></a>Trash Folder Feature</h1>
       </div>
       <div>
         <h3 class="subtitle">
@@ -25,7 +25,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="support"></a>1.&#160;Support</h2>
+          <a class="offset" id="folder-support"></a>1.&#160;Support</h2>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
+          <a class="offset" id="folder-intro"></a>2.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -64,10 +64,10 @@ status: stable
     <p>After
     <code class="literal">&lt;sync-mailbox&gt;</code>has been called the email is gone forever.</p>
     <p>The
-    <a class="link" href="/guide/reference.html#feature/trash" title="3.376.&#160;trash">$trash</a>variable defines a folder in which to keep old emails. As before, first you mark emails for deletion. When &lt;sync-mailbox&gt; is called the emails are moved to the trash folder.</p>
+    <a class="link" href="/feature/trash" title="Trash Folder Feature">$trash</a>variable defines a folder in which to keep old emails. As before, first you mark emails for deletion. When &lt;sync-mailbox&gt; is called the emails are moved to the trash folder.</p>
     <p>The
     <code class="literal">$trash</code>path can be either a full directory, or be relative to the
-    <a class="link" href="/guide/reference.html#folder" title="3.76.&#160;folder">$folder</a>variable, like the
+    <a class="link" href="/guide/reference.html#folder" title="3.77.&#160;folder">$folder</a>variable, like the
     <code class="literal">mailboxes</code>command.</p>
     <div class="note">
       <h3 class="title">Note</h3>
@@ -79,11 +79,11 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
+          <a class="offset" id="folder-variables"></a>3.&#160;Variables</h2>
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-trash-variables"></a>
       <p class="title">
         <strong>Table&#160;35.1.&#160;Trash Variables</strong>
@@ -119,11 +119,11 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="functions"></a>4.&#160;Functions</h2>
+          <a class="offset" id="folder-functions"></a>4.&#160;Functions</h2>
         </div>
       </div>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="table-trash-functions"></a>
       <p class="title">
         <strong>Table&#160;35.2.&#160;Trash Functions</strong>
@@ -164,7 +164,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>5.&#160;Muttrc</h2>
+          <a class="offset" id="folder-muttrc"></a>5.&#160;Muttrc</h2>
         </div>
       </div>
     </div>
@@ -192,7 +192,7 @@ bind index D purge-message
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="see-also"></a>6.&#160;See Also</h2>
+          <a class="offset" id="folder-see-also"></a>6.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -211,7 +211,7 @@ bind index D purge-message
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="known-bugs"></a>7.&#160;Known Bugs</h2>
+          <a class="offset" id="folder-known-bugs"></a>7.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -222,7 +222,7 @@ bind index D purge-message
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="credits"></a>8.&#160;Credits</h2>
+          <a class="offset" id="folder-credits"></a>8.&#160;Credits</h2>
         </div>
       </div>
     </div>
