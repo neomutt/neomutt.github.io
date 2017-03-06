@@ -108,7 +108,7 @@ title: Advanced Usage
     <span class="quote">“
     <span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
     <a class="xref" href="#posix-regex-char-classes" title="Table&#160;4.1.&#160;POSIX regular expression character classes">Table&#160;4.1, “POSIX regular expression character classes”</a></p>
-    <div class="table">
+    <div >
       <a class="offset" id="posix-regex-char-classes"></a>
       <p class="title">
         <strong>Table&#160;4.1.&#160;POSIX regular expression character classes</strong>
@@ -256,7 +256,7 @@ title: Advanced Usage
     </div>
     <p>A regular expression matching a single character may be followed by one of several repetition operators described in
     <a class="xref" href="#regex-repeat" title="Table&#160;4.2.&#160;Regular expression repetition operators">Table&#160;4.2, “Regular expression repetition operators”</a>.</p>
-    <div class="table">
+    <div >
       <a class="offset" id="regex-repeat"></a>
       <p class="title">
         <strong>Table&#160;4.2.&#160;Regular expression repetition operators</strong>
@@ -332,7 +332,7 @@ title: Advanced Usage
       <p>If you compile Mutt with the included regular expression engine, the following operators may also be used in regular expressions as described in
       <a class="xref" href="#regex-gnu-ext" title="Table&#160;4.3.&#160;GNU regular expression extensions">Table&#160;4.3, “GNU regular expression extensions”</a>.</p>
     </div>
-    <div class="table">
+    <div >
       <a class="offset" id="regex-gnu-ext"></a>
       <p class="title">
         <strong>Table&#160;4.3.&#160;GNU regular expression extensions</strong>
@@ -412,7 +412,7 @@ title: Advanced Usage
       <code class="literal">tag-pattern</code>,
       <code class="literal">delete-pattern</code>, etc.).
       <a class="xref" href="#tab-patterns" title="Table&#160;4.4.&#160;Pattern modifiers">Table&#160;4.4, “Pattern modifiers”</a>shows several ways to select messages.</p>
-      <div class="table">
+      <div >
         <a class="offset" id="tab-patterns"></a>
         <p class="title">
           <strong>Table&#160;4.4.&#160;Pattern modifiers</strong>
@@ -682,13 +682,59 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>MAX</em>
                 </span>]</td>
-                <td>messages in the range
+                <td>messages with numbers in the range
                 <span class="emphasis">
                   <em>MIN</em>
                 </span>to
                 <span class="emphasis">
                   <em>MAX</em>
-                </span>*)</td>
+                </span>***)</td>
+              </tr>
+              <tr>
+                <td>~m &lt;[
+                <span class="emphasis">
+                  <em>MAX</em>
+                </span>]</td>
+                <td>messages with numbers less than
+                <span class="emphasis">
+                  <em>MAX</em>
+                </span>***)</td>
+              </tr>
+              <tr>
+                <td>~m &gt;[
+                <span class="emphasis">
+                  <em>MIN</em>
+                </span>]</td>
+                <td>messages with numbers greater than
+                <span class="emphasis">
+                  <em>MIN</em>
+                </span>***)</td>
+              </tr>
+              <tr>
+                <td>~m [
+                <span class="emphasis">
+                  <em>M</em>
+                </span>]</td>
+                <td>just message number
+                <span class="emphasis">
+                  <em>M</em>
+                </span>***)</td>
+              </tr>
+              <tr>
+                <td>~m [
+                <span class="emphasis">
+                  <em>MIN</em>
+                </span>],[
+                <span class="emphasis">
+                  <em>MAX</em>
+                </span>]</td>
+                <td>messages with offsets (from selected message) in the range
+                <span class="emphasis">
+                  <em>MIN</em>
+                </span>to
+                <span class="emphasis">
+                  <em>MAX</em>
+                </span>***)</td>
               </tr>
               <tr>
                 <td>~n [
@@ -909,6 +955,9 @@ title: Advanced Usage
       <span class="quote">K</span>”</span>and
       <span class="quote">“
       <span class="quote">M</span>”</span>are allowed to specify kilobyte and megabyte respectively.</p>
+      <p>***) The message number ranges (introduced by
+      <code class="literal">~m</code>) are even more general and powerful than the other types of ranges. Read on and see
+      <a class="xref" href="#message-ranges" title="3.1.1.&#160;Message Ranges">Section&#160;3.1.1, “Message Ranges”</a>below.</p>
       <p>Special attention has to be payed when using regular expressions inside of patterns. Specifically, Mutt's parser for these patterns will strip one level of backslash (
       <span class="quote">“
       <span class="quote">\</span>”</span>), which is normally used for quoting. If it is your intention to use a backslash in the regular expression, you will need to use two backslashes instead (
@@ -964,6 +1013,196 @@ title: Advanced Usage
         </div>
       </div>
       <br class="example-break" />
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title">
+              <a class="offset" id="message-ranges"></a>3.1.1.&#160;Message Ranges</h4>
+            </div>
+          </div>
+        </div>
+        <p>If a message number range (from now on: MNR) contains a comma (
+        <code class="literal">,</code>), it is a
+        <span class="emphasis">
+          <em>relative</em>
+        </span>MNR. That means the numbers denote
+        <span class="emphasis">
+          <em>offsets</em>
+        </span>from the highlighted message. For example:</p>
+        <div >
+          <a class="offset" id="relative-mnrs"></a>
+          <p class="title">
+            <strong>Table&#160;4.5.&#160;Relative Message Number Ranges</strong>
+          </p>
+          <div class="table-contents">
+            <table summary="Relative Message Number Ranges" border="1">
+              <colgroup>
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Pattern</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="literal">~m -2,2</code>
+                  </td>
+                  <td>Previous 2, highlighted and next 2 emails</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m 0,1</code>
+                  </td>
+                  <td>Highlighted and next email</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br class="table-break" />
+        <p>In addition to numbers, either side of the range can also contain one of the special characters (shortcuts)
+        <code class="literal">.^$</code>. The meaning is:</p>
+        <div >
+          <a class="offset" id="mnrs-shortcuts"></a>
+          <p class="title">
+            <strong>Table&#160;4.6.&#160;Message Number Shortcuts</strong>
+          </p>
+          <div class="table-contents">
+            <table summary="Message Number Shortcuts" border="1">
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Shortcut</th>
+                  <th>Explanation</th>
+                  <th>Example</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="literal">.</code>
+                  </td>
+                  <td>Current / Highlighted</td>
+                  <td>
+                    <code class="literal">~m -3,.</code>
+                  </td>
+                  <td>Previous 3 emails plus the highlighted one</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">$</code>
+                  </td>
+                  <td>Last</td>
+                  <td>
+                    <code class="literal">~m .,$</code>
+                  </td>
+                  <td>Highlighted email and all the later ones</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">^</code>
+                  </td>
+                  <td>First</td>
+                  <td>
+                    <code class="literal">~m ^,1</code>
+                  </td>
+                  <td>Highlighted, next and all preceding ones</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br class="table-break" />
+        <p>Lastly, you can also leave either side of the range blank, to make it extend as far as possible. For example,
+        <code class="literal">~m ,1</code>has the same meaning as the last example in
+        <a class="xref" href="#mnrs-shortcuts" title="Table&#160;4.6.&#160;Message Number Shortcuts">Table&#160;4.6, “Message Number Shortcuts”</a>.</p>
+        <p>Otherwise, if a MNR
+        <span class="emphasis">
+          <em>doesn't</em>
+        </span>contain a comma, the meaning is similar to other ranges, except that the shortcuts are still available. Examples:</p>
+        <div >
+          <a class="offset" id="mnrs-absolute"></a>
+          <p class="title">
+            <strong>Table&#160;4.7.&#160;Absolute Message Number Ranges</strong>
+          </p>
+          <div class="table-contents">
+            <table summary="Absolute Message Number Ranges" border="1">
+              <colgroup>
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Pattern</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="literal">~m 3-10</code>
+                  </td>
+                  <td>Emails 3 to 10</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m -10</code>
+                  </td>
+                  <td>Emails 1 to 10</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m 10-</code>
+                  </td>
+                  <td>Emails 10 to last</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m &lt;3</code>
+                  </td>
+                  <td>First and second email</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m ^-2</code>
+                  </td>
+                  <td>First and second email</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m &gt;1</code>
+                  </td>
+                  <td>Everything but first email</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m 2-$</code>
+                  </td>
+                  <td>Everything but first email</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="literal">~m 2</code>
+                  </td>
+                  <td>Just the second email</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br class="table-break" />
+      </div>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -986,18 +1225,18 @@ title: Advanced Usage
       <span class="quote">“
       <span class="quote">\</span>”</span>).</p>
       <p>The first type is by checking whether the query string equals a keyword case-insensitively from
-      <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.5.&#160;Simple search keywords">Table&#160;4.5, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
+      <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.8.&#160;Simple search keywords">Table&#160;4.8, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
       <span class="quote">“
       <span class="quote">flag</span>”</span>(using
-      <a class="link" href="reference.html#simple-search" title="3.311.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
+      <a class="link" href="reference.html#simple-search" title="3.313.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
       <span class="quote">“
       <span class="quote">
         <code class="literal">[f]lag</code>
       </span>”</span>.</p>
-      <div class="table">
+      <div >
         <a class="offset" id="tab-simplesearch-keywords"></a>
         <p class="title">
-          <strong>Table&#160;4.5.&#160;Simple search keywords</strong>
+          <strong>Table&#160;4.8.&#160;Simple search keywords</strong>
         </p>
         <div class="table-contents">
           <table summary="Simple search keywords" border="1">
@@ -1062,7 +1301,7 @@ title: Advanced Usage
       </div>
       <br class="table-break" />
       <p>The second type of simple search is to build a complex search pattern using
-      <a class="link" href="reference.html#simple-search" title="3.311.&#160;simple_search">$simple_search</a>as a template. Mutt will insert your query properly quoted and search for the composed complex query.</p>
+      <a class="link" href="reference.html#simple-search" title="3.313.&#160;simple_search">$simple_search</a>as a template. Mutt will insert your query properly quoted and search for the composed complex query.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1197,13 +1436,13 @@ Limit to messages matching: ~d 20/1/95-31/10
         <span class="quote">“
         <span class="quote">-</span>”</span>), only messages sent on the given date will be selected.</p>
         <p>You can add error margins to absolute dates. An error margin is a sign (+ or -), followed by a digit, followed by one of the units in
-        <a class="xref" href="#tab-date-units" title="Table&#160;4.6.&#160;Date units">Table&#160;4.6, “Date units”</a>. As a special case, you can replace the sign by a
+        <a class="xref" href="#tab-date-units" title="Table&#160;4.9.&#160;Date units">Table&#160;4.9, “Date units”</a>. As a special case, you can replace the sign by a
         <span class="quote">“
         <span class="quote">*</span>”</span>character, which is equivalent to giving identical plus and minus error margins.</p>
-        <div class="table">
+        <div >
           <a class="offset" id="tab-date-units"></a>
           <p class="title">
-            <strong>Table&#160;4.6.&#160;Date units</strong>
+            <strong>Table&#160;4.9.&#160;Date units</strong>
           </p>
           <div class="table-contents">
             <table summary="Date units" border="1">
@@ -1289,7 +1528,7 @@ Limit to messages matching: ~d 15/1/2001*2w
         <span class="emphasis">
           <em>offset</em>
         </span>is specified as a positive number with one of the units from
-        <a class="xref" href="#tab-date-units" title="Table&#160;4.6.&#160;Date units">Table&#160;4.6, “Date units”</a>.</p>
+        <a class="xref" href="#tab-date-units" title="Table&#160;4.9.&#160;Date units">Table&#160;4.9, “Date units”</a>.</p>
         <p>Example: to select messages less than 1 month old, you would use</p>
         <pre class="screen">
 Limit to messages matching: ~d &lt;1m
@@ -1300,7 +1539,7 @@ Limit to messages matching: ~d &lt;1m
           <span class="emphasis">
             <em>local</em>
           </span>time zone, so unless you change the setting of your
-          <a class="link" href="reference.html#index-format" title="3.131.&#160;index_format">$index_format</a>to include a
+          <a class="link" href="reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>to include a
           <code class="literal">%[...]</code>format, these are
           <span class="emphasis">
             <em>not</em>
@@ -1326,7 +1565,7 @@ Limit to messages matching: ~d &lt;1m
     <span class="quote">“
     <span class="quote">'</span>”</span>and the name that you previously entered.</p>
     <p>(Message marking is really just a shortcut for defining a macro that returns you to the current message by searching for its Message-ID. You can choose a different prefix by setting the
-    <a class="link" href="reference.html#mark-macro-prefix" title="3.146.&#160;mark_macro_prefix">$mark_macro_prefix</a>variable.)</p>
+    <a class="link" href="reference.html#mark-macro-prefix" title="3.148.&#160;mark_macro_prefix">$mark_macro_prefix</a>variable.)</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -1570,8 +1809,8 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
     <a class="xref" href="#ex-default-hook" title="Example&#160;4.5.&#160;Specifying a “default” hook">Example&#160;4.5, “Specifying a
     <span class="quote">“
     <span class="quote">default</span>”</span>hook”</a>, by default the value of
-    <a class="link" href="reference.html#from" title="3.87.&#160;from">$from</a>and
-    <a class="link" href="reference.html#realname" title="3.263.&#160;realname">$realname</a>is not overridden. When sending messages either To: or Cc: to
+    <a class="link" href="reference.html#from" title="3.88.&#160;from">$from</a>and
+    <a class="link" href="reference.html#realname" title="3.265.&#160;realname">$realname</a>is not overridden. When sending messages either To: or Cc: to
     <code class="literal">&lt;b@b.b&gt;</code>, the From: header is changed to
     <code class="literal">&lt;c@c.c&gt;</code>.</p>
     <div class="sect2">
@@ -1696,7 +1935,7 @@ setenv ?LESS
       </div>
     </div>
     <p>Mutt supports connecting to external directory databases such as LDAP, ph/qi, bbdb, or NIS through a wrapper script which connects to Mutt using a simple interface. Using the
-    <a class="link" href="reference.html#query-command" title="3.257.&#160;query_command">$query_command</a>variable, you specify the wrapper command to use. For example:</p>
+    <a class="link" href="reference.html#query-command" title="3.259.&#160;query_command">$query_command</a>variable, you specify the wrapper command to use. For example:</p>
     <pre class="screen">
 set query_command = "mutt_ldap_query.pl %s"
 </pre>
@@ -1723,7 +1962,7 @@ roessler@does-not-exist.org        Thomas Roessler mutt pgp
       </div>
     </div>
     <p>Mutt supports reading and writing of four different local mailbox formats: mbox, MMDF, MH and Maildir. The mailbox type is auto detected, so there is no need to use a flag for different mailbox types. When creating new mailboxes, Mutt uses the default specified with the
-    <a class="link" href="reference.html#mbox-type" title="3.151.&#160;mbox_type">$mbox_type</a>variable. A short description of the formats follows.</p>
+    <a class="link" href="reference.html#mbox-type" title="3.153.&#160;mbox_type">$mbox_type</a>variable. A short description of the formats follows.</p>
     <p>
     <span class="emphasis">
       <em>mbox</em>
@@ -1785,10 +2024,10 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
       </div>
     </div>
     <p>There are a number of built in shortcuts which refer to specific mailboxes. These shortcuts can be used anywhere you are prompted for a file or mailbox path or in path-related configuration variables. Note that these only work at the beginning of a string.</p>
-    <div class="table">
+    <div >
       <a class="offset" id="tab-mailbox-shortcuts"></a>
       <p class="title">
-        <strong>Table&#160;4.7.&#160;Mailbox shortcuts</strong>
+        <strong>Table&#160;4.10.&#160;Mailbox shortcuts</strong>
       </p>
       <div class="table-contents">
         <table summary="Mailbox shortcuts" border="1">
@@ -1808,21 +2047,21 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
                 <code class="literal">!</code>
               </td>
               <td>your
-              <a class="link" href="reference.html#spoolfile" title="3.347.&#160;spoolfile">$spoolfile</a>(incoming) mailbox</td>
+              <a class="link" href="reference.html#spoolfile" title="3.349.&#160;spoolfile">$spoolfile</a>(incoming) mailbox</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">&gt;</code>
               </td>
               <td>your
-              <a class="link" href="reference.html#mbox" title="3.150.&#160;mbox">$mbox</a>file</td>
+              <a class="link" href="reference.html#mbox" title="3.152.&#160;mbox">$mbox</a>file</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">&lt;</code>
               </td>
               <td>your
-              <a class="link" href="reference.html#record" title="3.265.&#160;record">$record</a>file</td>
+              <a class="link" href="reference.html#record" title="3.267.&#160;record">$record</a>file</td>
             </tr>
             <tr>
               <td>
@@ -1847,7 +2086,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
               <code class="literal">=</code>or
               <code class="literal">+</code></td>
               <td>your
-              <a class="link" href="reference.html#folder" title="3.76.&#160;folder">$folder</a>directory</td>
+              <a class="link" href="reference.html#folder" title="3.77.&#160;folder">$folder</a>directory</td>
             </tr>
             <tr>
               <td>
@@ -1869,7 +2108,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
         <strong>folder-hook</strong>
       </span>
     </a>can be used to set
-    <a class="link" href="reference.html#record" title="3.265.&#160;record">$record</a>:</p>
+    <a class="link" href="reference.html#record" title="3.267.&#160;record">$record</a>:</p>
     <pre class="screen">
 folder-hook . 'set record=^'
 </pre>
@@ -1896,7 +2135,7 @@ folder-hook . 'set record=^'
     <span class="emphasis">
       <em>index</em>
     </span>menu display. This is useful to distinguish between personal and list mail in the same mailbox. In the
-    <a class="link" href="reference.html#index-format" title="3.131.&#160;index_format">$index_format</a>variable, the expando
+    <a class="link" href="reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>variable, the expando
     <span class="quote">“
     <span class="quote">%L</span>”</span>will print the string
     <span class="quote">“
@@ -1926,12 +2165,12 @@ folder-hook . 'set record=^'
     <code class="literal">Mail-Followup-To</code>, see below).</p>
     <p>Mutt also supports the
     <code class="literal">Mail-Followup-To</code>header. When you send a message to a list of recipients which includes one or several subscribed mailing lists, and if the
-    <a class="link" href="reference.html#followup-to" title="3.78.&#160;followup_to">$followup_to</a>option is set, Mutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
+    <a class="link" href="reference.html#followup-to" title="3.79.&#160;followup_to">$followup_to</a>option is set, Mutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
     <span class="quote">“
     <span class="quote">followups</span>”</span>) to this message should only be sent to the original recipients of the message, and not separately to you - you'll receive your copy through one of the mailing lists you are subscribed to.</p>
     <p>Conversely, when group-replying or list-replying to a message which has a
     <code class="literal">Mail-Followup-To</code>header, Mutt will respect this header if the
-    <a class="link" href="reference.html#honor-followup-to" title="3.107.&#160;honor_followup_to">$honor_followup_to</a>configuration variable is set. Using
+    <a class="link" href="reference.html#honor-followup-to" title="3.108.&#160;honor_followup_to">$honor_followup_to</a>configuration variable is set. Using
     <a class="link" href="gettingstarted.html#list-reply">list-reply</a>will in this case also make sure that the reply goes to the mailing list, even if it's not specified in the list of recipients in the
     <code class="literal">Mail-Followup-To</code>.</p>
     <div class="note">
@@ -1944,7 +2183,7 @@ folder-hook . 'set record=^'
     <span class="quote">Reply-To</span>”</span>field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
     <span class="quote">“
     <span class="quote">Reply-To</span>”</span>field. Mutt uses the
-    <a class="link" href="reference.html#reply-to" title="3.271.&#160;reply_to">$reply_to</a>variable to help decide which address to use. If set to
+    <a class="link" href="reference.html#reply-to" title="3.273.&#160;reply_to">$reply_to</a>variable to help decide which address to use. If set to
     <span class="emphasis">
       <em>ask-yes</em>
     </span>or
@@ -1960,8 +2199,15 @@ folder-hook . 'set record=^'
     </span>, the
     <span class="quote">“
     <span class="quote">Reply-To</span>”</span>field will be used when present.</p>
+    <p>You can change or delete the
+    <span class="quote">“
+    <span class="quote">X-Label:</span>”</span>field within Mutt using the
+    <span class="quote">“
+    <span class="quote">edit-label</span>”</span>command, bound to the
+    <span class="quote">“
+    <span class="quote">y</span>”</span>key by default. This works for tagged messages, too. While in the edit-label function, pressing the &lt;complete&gt; binding (TAB, by default) will perform completion against all labels currently in use.</p>
     <p>Lastly, Mutt has the ability to
-    <a class="link" href="reference.html#sort" title="3.341.&#160;sort">sort</a>the mailbox into
+    <a class="link" href="reference.html#sort" title="3.343.&#160;sort">sort</a>the mailbox into
     <a class="link" href="gettingstarted.html#threads" title="5.3.&#160;Threaded Mode">threads</a>. A thread is a group of messages which all relate to the same subject. This is usually organized into a tree-like structure where a message and all of its replies are represented graphically. If you've ever used a threaded news client, this is the same concept. It makes dealing with large volume mailing lists easier because you can easily delete uninteresting threads and quickly find topics of value.</p>
   </div>
   <div class="sect1">
@@ -1978,8 +2224,7 @@ folder-hook . 'set record=^'
     <span class="quote">keywords</span>”</span>or
     <span class="quote">“
     <span class="quote">tags</span>”</span>.</p>
-    <p>If you are new to Mutt or to using keywords in Mutt, you only need to know that the &lt;edit-label&gt; binding (
-    <code class="literal">y</code>by default) will edit keywords, and that you can search for keywords using the
+    <p>If you are new to Mutt or to using keywords in Mutt, you only need to know that the &lt;edit-label&gt; binding will edit keywords, and that you can search for keywords using the
     <code class="literal">~y</code>pattern, and use the
     <code class="literal">%y</code>expando to display it in your
     <code class="literal">$index_format</code>. You also can sort by keyword. Keywords that you set will be stored to the
@@ -2010,20 +2255,20 @@ folder-hook . 'set record=^'
         </dt>
         <dd>
           <p>Mutt-specific design; freeform text (but see
-          <a class="link" href="reference.html#xlabel-delimiter" title="3.400.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
+          <a class="link" href="reference.html#xlabel-delimiter" title="3.402.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
         </dd>
       </dl>
     </div>
     <p>With X-Label, mutt's only notion of a message keyword was the literal string value of the X-Label header. Under the new, integrated support, each message may have a list of distinct message keywords. When reading keywords from one of the headers in the list above, the header value is split on the indicated delimiter (space or comma-space) for X-Keywords:, X-Mozilla-Keys:, and Keywords:. By default, X-Label: is parsed as a single keyword. By setting $xlabel_delimiter, you can force splitting of X-Label: as well.</p>
     <p>Two boolean variables control how keywords are saved when writing messages to a mailbox. The default settings preserve backward compatibility within mutt completely, but by changing these values you can transition to more standard keyword storage.
-    <a class="link" href="reference.html#keywords-legacy" title="3.135.&#160;keywords_legacy">$keywords_legacy</a>, if set, will tell mutt to use only "legacy" headers -- i.e.,
+    <a class="link" href="reference.html#keywords-legacy" title="3.137.&#160;keywords_legacy">$keywords_legacy</a>, if set, will tell mutt to use only "legacy" headers -- i.e.,
     <code class="literal">X-Keywords:</code>,
     <code class="literal">X-Mozilla-Keys</code>,
     <code class="literal">Keywords</code>, or
     <code class="literal">X-Label:</code>. Keywords will be saved to whichever header was in use by the message the keyword was read from. If
-    <a class="link" href="reference.html#keywords-standard" title="3.136.&#160;keywords_standard">$keywords_standard</a>is set, keywords will be saved without exception to the standard
+    <a class="link" href="reference.html#keywords-standard" title="3.138.&#160;keywords_standard">$keywords_standard</a>is set, keywords will be saved without exception to the standard
     <code class="literal">Keywords:</code>header. (If both are set, both will be used; if both are unset, legacy headers are used.) Additionally,
-    <a class="link" href="reference.html#xlabel-delimiter" title="3.400.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
+    <a class="link" href="reference.html#xlabel-delimiter" title="3.402.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
     <p>To migrate completely to the new standard, unset
     <code class="literal">$keywords_legacy</code>and set
     <code class="literal">$keywords_standard</code>, and set
@@ -2038,7 +2283,75 @@ folder-hook . 'set record=^'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="feature/new-mail"></a>13.&#160;New Mail Detection</h2>
+          <a class="offset" id="display-munging"></a>13.&#160;Display Munging</h2>
+        </div>
+      </div>
+    </div>
+    <p>Working within the confines of a console or terminal window, it is often useful to be able to modify certain information elements in a non-destructive way -- to change how they display, without changing the stored value of the information itself. This is especially so of message subjects, which may often be polluted with extraneous metadata that either is reproduced elsewhere, or is of secondary interest.</p>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">subjectrx</code>
+      <em class="replaceable">
+        <code>pattern</code>
+      </em>
+      <em class="replaceable">
+        <code>replacement</code>
+      </em>
+      <br />
+      <code class="command">unsubjectrx</code>{
+      <em class="replaceable">
+        <code>*</code>
+      </em>|
+      <em class="replaceable">
+        <code>pattern</code>
+      </em>}</p>
+    </div>
+    <p>
+    <code class="literal">subjectrx</code>specifies a regular expression
+    <span class="quote">“
+    <span class="quote">pattern</span>”</span>which, if detected in a message subject, causes the subject to be replaced with the
+    <span class="quote">“
+    <span class="quote">replacement</span>”</span>value. The replacement is subject to substitutions in the same way as for the
+    <a class="link" href="configuration.html#spam" title="25.&#160;Spam Detection">spam</a>command:
+    <code class="literal">%L</code>for the text to the left of the match,
+    <code class="literal">%R</code>for text to the right of the match, and
+    <code class="literal">%1</code>for the first subgroup in the match (etc). If you simply want to erase the match, set it to
+    <span class="quote">“
+    <span class="quote">%L%R</span>”</span>. Any number of
+    <code class="literal">subjectrx</code>commands may coexist.</p>
+    <p>Note this well: the
+    <span class="quote">“
+    <span class="quote">replacement</span>”</span>value replaces the entire subject, not just the match!</p>
+    <p>
+    <code class="literal">unsubjectrx</code>removes a given subjectrx from the substitution list. If
+    <code class="literal">*</code>is used as the pattern, all substitutions will be removed.</p>
+    <div class="example">
+      <a class="offset" id="ex-subjectrx"></a>
+      <p class="title">
+        <strong>Example&#160;4.6.&#160;Subject Munging</strong>
+      </p>
+      <div class="example-contents">
+        <pre class="screen">
+# Erase [rt #12345] tags from Request Tracker (RT) e-mails
+subjectrx '\[rt #[0-9]+\] *' '%L%R'
+
+# Servicedesk is another RT that sends more complex subjects.
+# Keep the ticket number.
+subjectrx '\[servicedesk #([0-9]+)\] ([^.]+)\.([^.]+) - (new|open|pending|update) - ' '%L[#%1] %R'
+
+# Strip out annoying [listname] prefixes in subjects
+subjectrx '\[[^\]]*\]:? *' '%L%R'
+</pre>
+      </div>
+    </div>
+    <br class="example-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="new-mail"></a>14.&#160;New Mail Detection</h2>
         </div>
       </div>
     </div>
@@ -2049,7 +2362,7 @@ folder-hook . 'set record=^'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="new-mail-formats"></a>13.1.&#160;How New Mail Detection Works</h3>
+            <a class="offset" id="new-mail-formats"></a>14.1.&#160;How New Mail Detection Works</h3>
           </div>
         </div>
       </div>
@@ -2065,23 +2378,23 @@ folder-hook . 'set record=^'
       <a class="link" href="reference.html#check-mbox-size" title="3.32.&#160;check_mbox_size">$check_mbox_size</a>option can be used to make Mutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
       <p>New mail for Maildir is assumed if there is one message in the
       <code class="literal">new/</code>subdirectory which is not marked deleted (see
-      <a class="link" href="reference.html#maildir-trash" title="3.144.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
+      <a class="link" href="reference.html#maildir-trash" title="3.146.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
       <span class="quote">“
       <span class="quote">unseen</span>”</span>sequence as specified by
-      <a class="link" href="reference.html#mh-seq-unseen" title="3.163.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
-      <a class="link" href="reference.html#new-mail-command" title="3.173.&#160;new_mail_command">$new_mail_command</a>can be configured to execute an external program every time new mail is detected in the current inbox.</p>
+      <a class="link" href="reference.html#mh-seq-unseen" title="3.165.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
+      <a class="link" href="reference.html#new-mail-command" title="3.175.&#160;new_mail_command">$new_mail_command</a>can be configured to execute an external program every time new mail is detected in the current inbox.</p>
       <p>Mutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
       <p>For IMAP, by default Mutt uses recent message counts provided by the server to detect new mail. If the
-      <a class="link" href="reference.html#imap-idle" title="3.117.&#160;imap_idle">$imap_idle</a>option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
+      <a class="link" href="reference.html#imap-idle" title="3.119.&#160;imap_idle">$imap_idle</a>option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
       <p>The
-      <a class="link" href="reference.html#mail-check-recent" title="3.138.&#160;mail_check_recent">$mail_check_recent</a>option changes whether Mutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, Mutt will notify you of any new mail in the mailbox.</p>
+      <a class="link" href="reference.html#mail-check-recent" title="3.140.&#160;mail_check_recent">$mail_check_recent</a>option changes whether Mutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, Mutt will notify you of any new mail in the mailbox.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="new-mail-polling"></a>13.2.&#160;Polling For New Mail</h3>
+            <a class="offset" id="new-mail-polling"></a>14.2.&#160;Polling For New Mail</h3>
           </div>
         </div>
       </div>
@@ -2090,8 +2403,8 @@ folder-hook . 'set record=^'
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. The interval depends on the folder type: for local/IMAP folders it consults
-      <a class="link" href="reference.html#mail-check" title="3.137.&#160;mail_check">$mail_check</a>and
-      <a class="link" href="reference.html#pop-checkinterval" title="3.238.&#160;pop_checkinterval">$pop_checkinterval</a>for POP folders.</p>
+      <a class="link" href="reference.html#mail-check" title="3.139.&#160;mail_check">$mail_check</a>and
+      <a class="link" href="reference.html#pop-checkinterval" title="3.240.&#160;pop_checkinterval">$pop_checkinterval</a>for POP folders.</p>
       <p>Outside the index menu the directory browser supports checking for new mail using the
       <code class="literal">&lt;check-new&gt;</code>function which is unbound by default. Pressing TAB will bring up a menu showing the files specified by the
       <span class="command">
@@ -2103,7 +2416,7 @@ folder-hook . 'set record=^'
       <span class="quote">“
       <span class="quote">.</span>”</span>by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default Mutt displays the number of mailboxes with new mail in the status bar, please refer to the
-      <a class="link" href="reference.html#status-format" title="3.363.&#160;status_format">$status_format</a>variable for details.</p>
+      <a class="link" href="reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>variable for details.</p>
       <p>When changing folders, Mutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
       <code class="literal">&lt;Space&gt;</code>will cycle through folders with new mail. The (by default unbound) function
       <code class="literal">&lt;next-unread-mailbox&gt;</code>in the index can be used to immediately open the next folder with unread mail (if any).</p>
@@ -2113,18 +2426,18 @@ folder-hook . 'set record=^'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="calc-mailbox-counts"></a>13.3.&#160;Calculating Mailbox Message Counts</h3>
+            <a class="offset" id="calc-mailbox-counts"></a>14.3.&#160;Calculating Mailbox Message Counts</h3>
           </div>
         </div>
       </div>
       <p>If
-      <a class="link" href="reference.html#mail-check-stats" title="3.139.&#160;mail_check_stats">$mail_check_stats</a>is set, Mutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
+      <a class="link" href="reference.html#mail-check-stats" title="3.141.&#160;mail_check_stats">$mail_check_stats</a>is set, Mutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. This calculation takes place at the same time as new mail polling, but is controlled by a separate timer:
-      <a class="link" href="reference.html#mail-check-stats-interval" title="3.140.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>.</p>
+      <a class="link" href="reference.html#mail-check-stats-interval" title="3.142.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>.</p>
       <p>The sidebar can display these message counts. See
-      <a class="link" href="reference.html#sidebar-format" title="3.299.&#160;sidebar_format">$sidebar_format</a>.</p>
+      <a class="link" href="reference.html#sidebar-format" title="3.301.&#160;sidebar_format">$sidebar_format</a>.</p>
     </div>
   </div>
   <div class="sect1">
@@ -2132,7 +2445,7 @@ folder-hook . 'set record=^'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="editing-threads"></a>14.&#160;Editing Threads</h2>
+          <a class="offset" id="editing-threads"></a>15.&#160;Editing Threads</h2>
         </div>
       </div>
     </div>
@@ -2142,7 +2455,7 @@ folder-hook . 'set record=^'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="link-threads"></a>14.1.&#160;Linking Threads</h3>
+            <a class="offset" id="link-threads"></a>15.1.&#160;Linking Threads</h3>
           </div>
         </div>
       </div>
@@ -2165,7 +2478,7 @@ folder-hook . 'set record=^'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="break-threads"></a>14.2.&#160;Breaking Threads</h3>
+            <a class="offset" id="break-threads"></a>15.2.&#160;Breaking Threads</h3>
           </div>
         </div>
       </div>
@@ -2180,7 +2493,7 @@ folder-hook . 'set record=^'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="dsn"></a>15.&#160;Delivery Status Notification (DSN) Support</h2>
+          <a class="offset" id="dsn"></a>16.&#160;Delivery Status Notification (DSN) Support</h2>
         </div>
       </div>
     </div>
@@ -2191,16 +2504,16 @@ folder-hook . 'set record=^'
     <a class="link" href="reference.html#dsn-notify" title="3.63.&#160;dsn_notify">$dsn_notify</a>is used to request receipts for different results (such as failed message, message delivered, etc.).
     <a class="link" href="reference.html#dsn-return" title="3.64.&#160;dsn_return">$dsn_return</a>requests how much of your message should be returned with the receipt (headers or full message).</p>
     <p>When using
-    <a class="link" href="reference.html#sendmail" title="3.290.&#160;sendmail">$sendmail</a>for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
+    <a class="link" href="reference.html#sendmail" title="3.292.&#160;sendmail">$sendmail</a>for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
     <p>For SMTP delivery using
-    <a class="link" href="reference.html#smtp-url" title="3.340.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether Mutt will attempt to request DSN or not.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.342.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether Mutt will attempt to request DSN or not.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="urlview"></a>16.&#160;Start a WWW Browser on URLs</h2>
+          <a class="offset" id="urlview"></a>17.&#160;Start a WWW Browser on URLs</h2>
         </div>
       </div>
     </div>
@@ -2216,7 +2529,7 @@ macro pager \cb |urlview\n
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="misc-topics"></a>17.&#160;Miscellany</h2>
+          <a class="offset" id="misc-topics"></a>18.&#160;Miscellany</h2>
         </div>
       </div>
     </div>
@@ -2243,7 +2556,7 @@ macro pager \cb |urlview\n
           <p>The folder Mutt opens at startup is determined as follows: the folder specified in the
           <code class="literal">$MAIL</code>environment variable if present. Otherwise, the value of
           <code class="literal">$MAILDIR</code>is taken into account. If that isn't present either, Mutt takes the user's mailbox in the mailspool as determined at compile-time (which may also reside in the home directory). The
-          <a class="link" href="reference.html#spoolfile" title="3.347.&#160;spoolfile">$spoolfile</a>setting overrides this selection. Highest priority has the mailbox given with the
+          <a class="link" href="reference.html#spoolfile" title="3.349.&#160;spoolfile">$spoolfile</a>setting overrides this selection. Highest priority has the mailbox given with the
           <code class="literal">-f</code>command line option.</p>
         </dd>
       </dl>
