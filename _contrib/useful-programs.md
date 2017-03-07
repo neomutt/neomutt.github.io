@@ -57,7 +57,7 @@ status: devel
   stable, but no longer maintained.
 * [mairix](http://www.rpcurnow.force9.co.uk/mairix/) - An excellent mailbox
     searching tool for mutt. Unmaintained.
-* [nmzmail](http://www.ecademix.com/JohannesHofmann/#nmzmail) - Another
+* [nmzmail](http://flpsed.org/nmzmail.html) - Another
     excellent mailbox searching tool for mutt.
 * [bogofilter](http://bogofilter.sourceforge.net/) - mail filter that classifies
   mail as spam or ham (non-spam) by a statistical analysis of the message's
