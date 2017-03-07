@@ -45,7 +45,7 @@ status: devel
 
 * [afew](https://github.com/afewmail/afew) - initial tagging script for notmuch
   mail
-* [notmuch](initial tagging script for notmuch mail) - is a mail indexer.
+* [notmuch](https://notmuchmail.org/) - is a mail indexer.
   Essentially, is a very thin front end on top of xapian. It provides python,
   vim, and emacs bindings.
 * [spamassassin](https://spamassassin.apache.org/) - Spam-filtering tool, uses a
