@@ -4,8 +4,5 @@ language: ruby
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
 
-branches:
-  only:
-    - master
 script:
   - bash travis-build.sh
