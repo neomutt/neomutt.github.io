@@ -1,0 +1,194 @@
+digraph build {
+	graph [
+		rankdir="LR"
+		nodesep="0.5"
+		ranksep="0.3"
+	]
+
+	node [
+		shape="Mrecord"
+		style="solid"
+		height="0.2"
+		penwidth="3.0"
+		color="blue"
+		fontcolor="black"
+		fontsize="18"
+	]
+
+	edge [
+		penwidth="2.0"
+		color="#000000"
+		arrowsize="1.0"
+	]
+
+
+	comp_ops         [ label="\{OPS.compulsory\}"  ]
+	cond_ops         [ label="\{OPS.conditional\}" ]
+	configure_ac     [ label="configure.ac"        ]
+	config_h         [ label="config.h"            ]
+	conststrings_c   [ label="conststrings.c"      ]
+	functions_h      [ label="functions.h"         ]
+	gitver_h         [ label="gitver.h"            ]
+	hcachever_h      [ label="hcachever.h"         ]
+	hcachever_sh     [ label="hcachever.sh"        ]
+	hcachever_sh_in  [ label="hcachever.sh.in"     ]
+	init_h           [ label="init.h"              ]
+	keymap_alldefs_h [ label="keymap_alldefs.h"    ]
+	keymap_defs_h    [ label="keymap_defs.h"       ]
+	lots_1           [ label="\{example.1\}"       ]
+	lots_man         [ label="\{example.man\}"     ]
+	lots_mo          [ label="\{example.mo\}"      ]
+	lots_muttrc      [ label="\{muttrc.example\}"  ]
+	lots_obj         [ label="\{source.o\}"        ]
+	lots_po          [ label="\{example.po\}"      ]
+	lots_vimrc       [ label="\{vimrc.example\}"   ]
+	lots_xsl         [ label="\{mutt.xsl\}"        ]
+	makedoc_src      [ label="makedoc.c"           ]
+	manual_html      [ label="\{manual.html\}"     ]
+	manual_pdf       [ label="manual.pdf"          ]
+	manual_tex       [ label="manual.tex"          ]
+	manual_txt       [ label="manual.txt"          ]
+	manual_xml       [ label="manual.xml"          ]
+	manual_xml_head  [ label="manual.xml.head"     ]
+	manual_xml_tail  [ label="manual.xml.tail"     ]
+	muttrc           [ label="muttrc"              ]
+	muttrc_man       [ label="muttrc.man"          ]
+	muttrc_man_head  [ label="muttrc.man.head"     ]
+	muttrc_man_tail  [ label="muttrc.man.tail"     ]
+	mutt_css         [ label="mutt.css"            ]
+	mutt_h           [ label="mutt.h"              ]
+	mutt_pot         [ label="mutt.pot"            ]
+	ops              [ label="\{OPS*\}"            ]
+	patchlist_c      [ label="patchlist.c"         ]
+
+	dot_configure [ label=<./configure <font color="red">●</font><font color="green">★</font>> shape="box" ]
+	gen_alldefs   [ label="gen_defs" color="green" shape="box" ]
+	gen_defs      [ label="gen_defs" color="green" shape="box" ]
+	gen_map_doc   [ label="gen-map-doc" color="green" shape="box" ]
+	git           [ label=<git <font color="red">●</font>> shape="box" ]
+	hcachever_sh  [ label=<hcachever.sh <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
+	ld            [ label="ld" shape="box" ]
+	makedoc_c     [ label="makedoc -c" color="green" shape="box" ]
+	makedoc_m     [ label="makedoc -m" color="green" shape="box" ]
+	makedoc_s     [ label="makedoc -s" color="green" shape="box" ]
+	patchlist_sh  [ label="patchlist.sh" color="green" shape="box" ]
+	txt2c         [ label=<txt2c <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
+	xgettext      [ label="xgettext" shape="box" ]
+	xsltproc      [ label="xsltproc" shape="box" ]
+
+	compulsory -> lots_obj [ label="gcc" ]
+	lots_obj -> ld
+	ld -> mutt
+
+	dot_configure -> config_h
+	config_h -> generated [ style="dashed" ]
+
+	git -> gitver_h
+	gitver_h -> generated [ style="dashed" ]
+
+	txt2c -> conststrings_c
+	conststrings_c -> generated [ style="dashed" ]
+
+	config_h -> hcachever_sh
+	mutt_h -> hcachever_sh
+	mutt_h -> compulsory [ style="dashed" ]
+	hcachever_sh -> hcachever_h
+	hcachever_h -> generated [ style="dashed" ]
+
+	PATCHES -> patchlist_sh
+	patchlist_sh -> patchlist_c
+	patchlist_c -> generated [ style="dashed" ]
+
+	ops -> gen_defs
+	gen_defs -> keymap_defs_h
+	ops -> gen_alldefs
+	gen_alldefs -> keymap_alldefs_h
+	keymap_defs_h -> generated [ style="dashed" ]
+
+	cond_ops -> ops [ style="dashed" ]
+	comp_ops -> ops [ style="dashed" ]
+
+	subgraph cluster_imap {
+		fontcolor="red"
+		label="IMAP"
+		color="#ff0000"
+
+		lots_imap_c [ label="\{imap.c\}" ]
+		lots_imap_o [ label="\{imap.o\}" ]
+
+		lots_imap_c -> lots_imap_o [ label="gcc" ]
+		lots_imap_o -> imap_a [ label="ar" ]
+	}
+
+	subgraph cluster_source {
+		fontcolor="red"
+		label="Source"
+		color="#ff0000"
+
+		compulsory   [ label="\{compulsory.c\}"   ]
+		conditional  [ label="\{conditional.c\}"  ]
+		enviromental [ label="\{enviromental.c\}" ]
+		foreign      [ label="\{foreign.c\}"      ]
+		generated    [ label="\{generated.c\}"    ]
+		shared       [ label="\{shared.c\}"       ]
+	}
+
+	imap_a -> ld
+	POTFILES -> xgettext
+	keymap_alldefs_h -> xgettext
+	compulsory -> xgettext
+	xgettext -> mutt_pot
+
+	lots_man -> lots_1 [ label="sed" ]
+
+	configure_ac -> dot_configure [ label="autoreconf" ]
+
+	manual_xml -> xsltproc
+	lots_xsl -> xsltproc
+	mutt_css -> xsltproc
+	xsltproc -> manual_html
+	manual_html -> manual_txt [ label="links" ]
+
+	mutt_pot -> lots_po [ label="translator" ]
+	lots_po -> lots_mo [ label="msgfmt" ]
+
+	init_h -> makedoc_m
+	muttrc_man_head -> muttrc_man
+	makedoc_m -> muttrc_man
+	muttrc_man_tail -> muttrc_man
+
+	muttrc_head -> muttrc [ label="sed" ]
+	init_h -> makedoc_c
+	makedoc_c -> muttrc
+
+	init_h -> lots_muttrc [ label="cut'n'paste" ]
+	init_h -> lots_vimrc [ label="cut'n'paste" ]
+
+	init_h -> compulsory [ style="dashed" ]
+
+	hcachever_sh_in -> hcachever_sh [ label="cp" ]
+	dotlock_c -> mutt_dotlock_c [ label="cp" ]
+	mutt_dotlock_c -> mutt_dotlock [ label="gcc" ]
+	pgpewrap_c -> pgpewrap [ label="gcc" ]
+	smime_keys_pl -> smime_keys [ label="cp" ]
+	makedoc_src -> makedoc [ label="gcc" ]
+
+	config_h -> manual_xml [ label="sed" ]
+	manual_xml_head -> manual_xml [ label="sed" ]
+
+	manual_xml_tail -> gen_map_doc
+	ops -> gen_map_doc
+	gen_map_doc -> manual_xml
+	init_h -> makedoc_s
+	makedoc_s -> manual_xml
+	functions_h -> manual_xml
+
+	manual_xml -> manual_tex [ label="openjade" ]
+	manual_tex -> manual_pdf [ label="pdfjadetex" ]
+
+	shared_src -> gcc
+	shared_src -> shared [ style="dashed" ]
+	ring_src -> gcc
+	gcc -> pgpring
+}
+
