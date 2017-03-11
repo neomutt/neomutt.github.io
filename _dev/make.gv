@@ -181,7 +181,7 @@ digraph build {
 	gen_map_doc -> manual_xml
 	init_h -> makedoc_s
 	makedoc_s -> manual_xml
-	functions_h -> manual_xml
+	functions_h -> gen_map_doc
 
 	manual_xml -> manual_tex [ label="openjade" ]
 	manual_tex -> manual_pdf [ label="pdfjadetex" ]
