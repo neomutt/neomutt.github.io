@@ -4,7 +4,7 @@ title: Useful programs
 description: List of useful programs interacting with mutt.
 author: Tobias Angele
 username: toogley
-status: devel
+status: stable
 ---
 # {{ page.title }}
 
@@ -83,12 +83,18 @@ status: devel
 * [xlhtml](http://chicago.sourceforge.net/xlhtml/) - M$-Excel, Powerpoint to
   HTML converter, see rtf2html.
 
-## miscellaneous
+## grabbing urls
 
 * [urlview](https://github.com/sigpipe/urlview) - Extract URLs from a text file
   and allow the user to select via a menu
 * [urlscan](https://github.com/firecat53/urlscan) - Mutt and terminal url
   selector (similar to urlview)
+* [extract_url](http://www.memoryhole.net/~kyle/extract_url/) - This is a Perl 
+  script that extracts URLs from correctly-encoded MIME email messages or plain 
+  text. 
+
+## miscellaneous
+
 * [notify-osd](https://launchpad.net/notify-osd) - The Desktop Notifications
   framework provides a standard way of doing passive pop-up notifications on the
   Linux desktop. These are designed to notify the user of something without
