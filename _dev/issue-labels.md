@@ -14,7 +14,6 @@ When someone [raises an issue](https://github.com/neomutt/neomutt/issues) it wil
 
 - [![type:bug](/images/labels/type-bug.svg)](https://github.com/neomutt/neomutt/labels/type%3Abug)                                        Something broken            
 - [![type:enhancement](/images/labels/type-enhancement.svg)](https://github.com/neomutt/neomutt/labels/type%3Aenhancement)                An improvement of an existing feature
-- [![type:feature request](/images/labels/type-feature-request.svg)](https://github.com/neomutt/neomutt/labels/type%3Afeature%20request)  A request for something new 
 - [![type:question](/images/labels/type-question.svg)](https://github.com/neomutt/neomutt/labels/type%3Aquestion)                         A question about NeoMutt    
 
 ### Miscellaneous
@@ -24,6 +23,7 @@ It may be given one of these tags:
 - [![bug:confirmed](/images/labels/bug-confirmed.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aconfirmed)                                            Problem confirmed by a NeoMutt member
 - [![bug:crash](/images/labels/bug-crash.svg)](https://github.com/neomutt/neomutt/labels/bug%3Acrash)                                                        Bug causes NeoMutt to crash
 - [![bug:upstream](/images/labels/bug-upstream.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aupstream)                                               Should be handled by Mutt
+- [![bug:regression](/images/labels/bug-regression.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aregression)                                         This problem has been fixed before
 
 - [![docs:code](/images/labels/docs-code.svg)](https://github.com/neomutt/neomutt/labels/docs%3Acode)                                                        Related to the Documentation embedded in the code
 - [![docs:manual](/images/labels/docs-manual.svg)](https://github.com/neomutt/neomutt/labels/docs%3Amanual)                                                  Related to the main manual
@@ -33,8 +33,7 @@ It may be given one of these tags:
 - [![hacktoberfest](/images/labels/hacktoberfest.svg)](https://github.com/neomutt/neomutt/labels/hacktoberfest)                                              Suitable for Hackoberfest
 
 - [![needs:decision](/images/labels/needs-decision.svg)](https://github.com/neomutt/neomutt/labels/needs%3Adecision)                                         Someone need to make a decision
-- [![needs:help](/images/labels/needs-help.svg)](https://github.com/neomutt/neomutt/labels/needs%3Ahelp)                                                     We need your help
-- [![needs:more info from user](/images/labels/needs-more-info-from-user.svg)](https://github.com/neomutt/neomutt/labels/needs%3Amore%20info%20from%20user)  We need more information to be able to help
+- [![needs:info from user](/images/labels/needs-info-from-user.svg)](https://github.com/neomutt/neomutt/labels/needs%3Ainfo%20from%20user)                   We need more information to be able to help
 - [![needs:upstream-opinion](/images/labels/needs-upstream-opinion.svg)](https://github.com/neomutt/neomutt/labels/needs%3Aupstream-opinion)                 Needs discussion with Mutt
 
 - [![priority:high](/images/labels/priority-high.svg)](https://github.com/neomutt/neomutt/labels/priority%3Ahigh)                                            A very important problem
@@ -48,11 +47,11 @@ It may be given one of these tags:
 
 ### Issue has Attachments
 
-- [![has-attached:backtrace](/images/labels/has-attached-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Abacktrace)     A backtrace/callstack is included 
-- [![has-attached:config](/images/labels/has-attached-config.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Aconfig)              Sample NeoMutt config is included 
-- [![has-attached:logs](/images/labels/has-attached-logs.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Alogs)                    Log files are included            
-- [![has-attached:patch](/images/labels/has-attached-patch.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Apatch)                 A patch is included               
-- [![has-attached:screenshot](/images/labels/has-attached-screenshot.svg)](https://github.com/neomutt/neomutt/labels/has-attached%3Ascreenshot)  A screenshot is included          
+- [![has:backtrace](/images/labels/has-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has%3Abacktrace)     A backtrace/callstack is included 
+- [![has:config](/images/labels/has-config.svg)](https://github.com/neomutt/neomutt/labels/has%3Aconfig)              Sample NeoMutt config is included 
+- [![has:logs](/images/labels/has-logs.svg)](https://github.com/neomutt/neomutt/labels/has%3Alogs)                    Log files are included            
+- [![has:patch](/images/labels/has-patch.svg)](https://github.com/neomutt/neomutt/labels/has%3Apatch)                 A patch is included               
+- [![has:screenshot](/images/labels/has-screenshot.svg)](https://github.com/neomutt/neomutt/labels/has%3Ascreenshot)  A screenshot is included          
 
 ### Topics
 
@@ -61,6 +60,7 @@ It may be given one of these tags:
 - [![topic:code docs](/images/labels/topic-code-docs.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acode%20docs)                           Concerning: documentation embedded in the code
 - [![topic:coding-style](/images/labels/topic-coding-style.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acoding-style)                    Concerning: style of the source code
 - [![topic:config file](/images/labels/topic-config-file.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aconfig%20file)                     Concerning: configuration file
+- [![topic:imap](/images/labels/topic-imap.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aimap)                                            Concerning: IMAP
 - [![topic:lua-scripting](/images/labels/topic-lua-scripting.svg)](https://github.com/neomutt/neomutt/labels/topic%3Alua-scripting)                 Concerning: lua scripting
 - [![topic:project-management](/images/labels/topic-project-management.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aproject-management)  Concerning: management of the NeoMutt project
 - [![topic:refactoring](/images/labels/topic-refactoring.svg)](https://github.com/neomutt/neomutt/labels/topic%3Arefactoring)                       Concerning: refactoring the code
@@ -72,7 +72,7 @@ It may be given one of these tags:
 ### Status
 
 - [![status:backlog](/images/labels/status-backlog.svg)](https://github.com/neomutt/neomutt/labels/status%3Abacklog)              Expected in the next release
-- [![status:discussion](/images/labels/status-discussion.svg)](https://github.com/neomutt/neomutt/labels/status%3Adiscussion)     We want your opinion on something
+- [![status:discuss](/images/labels/status-discuss.svg)](https://github.com/neomutt/neomutt/labels/status%3Adiscuss)              We want your opinion on something
 - [![status:in-progress](/images/labels/status-in-progress.svg)](https://github.com/neomutt/neomutt/labels/status%3Ain-progress)  Work is ongoing
 - [![status:new-bug](/images/labels/status-new-bug.svg)](https://github.com/neomutt/neomutt/labels/status%3Anew-bug)              New, possibly unconfirmed, bug
 - [![status:ready](/images/labels/status-ready.svg)](https://github.com/neomutt/neomutt/labels/status%3Aready)                    Ready to be merged
