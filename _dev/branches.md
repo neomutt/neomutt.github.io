@@ -10,7 +10,7 @@ The [neomutt](https://github.com/neomutt/neomutt) repository has 5 permanent bra
 
 | Branch                                                               | Description                                                                             |
 |:---------------------------------------------------------------------|:----------------------------------------------------------------------------------------|
-| [neomutt](https://github.com/neomutt/neomutt/tree/neomutt)           | Main branch -- The Official NeoMutt                                                     |
+| [neomutt](https://github.com/neomutt/neomutt/tree/master)           | Main branch -- The Official NeoMutt                                                     |
 | [mutt/default](https://github.com/neomutt/neomutt/tree/mutt/default) | A copy of Mutt's [development branch](https://dev.mutt.org/hg/mutt/shortlog/default)    |
 | [mutt/stable](https://github.com/neomutt/neomutt/tree/mutt/stable)   | A copy of Mutt's [stable branch](https://dev.mutt.org/hg/mutt/shortlog/stable)          |
 | [travis](https://github.com/neomutt/neomutt/tree/travis)             | Code sent to [TravisCI](https://travis-ci.org/neomutt/neomutt) for testing              |
