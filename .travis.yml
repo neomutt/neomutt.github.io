@@ -1,8 +1,18 @@
 dist: trusty
 language: ruby
 
+cache:
+  directories:
+  - $TRAVIS_BUILD_DIR/tmp/.htmlproofer
+
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
+  - gem install jekyll 
+  - gem install jekyll-paginate 
+  - gem install jekyll-gist 
+  - gem install jekyll-sitemap
+  - gem install html-proofer
 
 script:
-  - bash travis-build.sh
+  - travis_wait rake --trace test
+
