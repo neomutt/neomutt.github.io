@@ -76,6 +76,7 @@ It may be given one of these tags:
 - [![status:in-progress](/images/labels/status-in-progress.svg)](https://github.com/neomutt/neomutt/labels/status%3Ain-progress)  Work is ongoing
 - [![status:new-bug](/images/labels/status-new-bug.svg)](https://github.com/neomutt/neomutt/labels/status%3Anew-bug)              New, possibly unconfirmed, bug
 - [![status:ready](/images/labels/status-ready.svg)](https://github.com/neomutt/neomutt/labels/status%3Aready)                    Ready to be merged
+- [![status:blocked](/images/labels/status-blocked.svg)](https://github.com/neomutt/neomutt/labels/status%3Ablocked)              blocked by other issues
 
 ### Closing the Issue
 
