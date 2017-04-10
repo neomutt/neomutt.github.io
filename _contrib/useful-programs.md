@@ -68,7 +68,6 @@ status: stable
 
 * [passwordstore.org](https://www.passwordstore.org/) Password management tool
   which tries to be simple and follow the Unix philosophy.
-* [PGP](http://www.pgpi.org/) - message encryption for privacy.
 * [GPG, GnuPG](http://www.gnupg.org/) - GNU's privacy guard, a free (FOSS)
   replacement for PGP.
 
