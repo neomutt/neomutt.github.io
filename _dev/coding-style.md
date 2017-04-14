@@ -26,7 +26,7 @@ NeoMutt also recommends using [editor-config][e] and [clang-format][c].
 
 ## <a name="rules" class="offset"></a> Rules
 
-These four rules are important.
+These rules are important.
 Please follow them to ensure your code is accepted.
 
 ### Indent
@@ -57,6 +57,29 @@ if (x == 0)
 ### Trailing Whitespace
 
 - Delete spaces or tabs at the ends of lines
+
+### new options
+
+- when new options are added, the old behavior should be the default.
+
+### avoid global variables!
+
+- We consider the use of global variables to be bad style, because it makes
+  changes/refactorings much harder to realize.
+  Neomutt still has a lot of them. So if you want to reduce them, you're very
+  welcome to do so. Ask on the devel mailinglist or on IRC, if you are
+  interested.
+
+### special characters should be utf8
+
+- special characters should be in utf-8.  If you find remnants
+  from the times when this was an iso-8859-1 source code tree,
+  please feel free to fix them.
+
+### global and non-global functions
+
+- global functions should have the prefix "mutt_".  All
+  other functions should be declared "static".
 
 ## <a name="guidelines" class="offset"></a> Guidelines
 
