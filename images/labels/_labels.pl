@@ -1,5 +1,11 @@
 #!/usr/bin/perl
 
+
+# fedora packages:
+#    * perl
+#    * perl-LWP-Protocol-https
+#    * perl-JSON
+
 use strict;
 use warnings;
 
