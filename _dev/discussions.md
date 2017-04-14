@@ -11,10 +11,12 @@ NeoMutt is very popular and its users come up with lots of great new ideas.
 
 Unfortunately NeoMutt's development team is quite small, so they can't implement everything.
 
-Below is a list of the issues that the developers can't help with.
+Below is a list of the issues where either the developers have no interest in or
+can't help with.
 
 They are closed for now, but they can be re-opened if someone volunteers to do the work.
-Help will be freely given to volunteers.
+Help will be freely given to volunteers. Issues where the result is hard are
+labeled with [difficulty:hard](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=label%3Adifficulty%3Ahard%20).
 
 ### [#467 Use cp1252 instead of iso-8859-1](https://github.com/neomutt/neomutt/issues/467)
 
