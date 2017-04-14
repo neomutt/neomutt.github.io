@@ -29,7 +29,8 @@ It may be given one of these tags:
 - [![docs:manual](/images/labels/docs-manual.svg)](https://github.com/neomutt/neomutt/labels/docs%3Amanual)                                                  Related to the main manual
 - [![docs:website](/images/labels/docs-website.svg)](https://github.com/neomutt/neomutt/labels/docs%3Awebsite)                                               Related to the Website
 
-- [![easy](/images/labels/easy.svg)](https://github.com/neomutt/neomutt/labels/easy)                                                                         Suitable for a new NeoMutt developer
+- [![difficulty-easy](/images/labels/difficulty-easy.svg)](https://github.com/neomutt/neomutt/labels/difficulty-easy)                                                                         Suitable for a new NeoMutt developer
+- [![difficulty-hard](/images/labels/difficulty-hard.svg)](https://github.com/neomutt/neomutt/labels/difficulty-hard)                                                                         very hard to solve
 - [![hacktoberfest](/images/labels/hacktoberfest.svg)](https://github.com/neomutt/neomutt/labels/hacktoberfest)                                              Suitable for Hackoberfest
 
 - [![needs:decision](/images/labels/needs-decision.svg)](https://github.com/neomutt/neomutt/labels/needs%3Adecision)                                         Someone need to make a decision
