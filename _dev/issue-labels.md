@@ -30,7 +30,7 @@ It may be given one of these tags:
 - [![docs:website](/images/labels/docs-website.svg)](https://github.com/neomutt/neomutt/labels/docs%3Awebsite)                                               Related to the Website
 
 - [![difficulty-easy](/images/labels/difficulty-easy.svg)](https://github.com/neomutt/neomutt/labels/difficulty-easy)                                                                         Suitable for a new NeoMutt developer
-- [![difficulty-hard](/images/labels/difficulty-hard.svg)](https://github.com/neomutt/neomutt/labels/difficulty-hard)                                                                         very hard to solve
+- [![difficulty-hard](/images/labels/difficulty-hard.svg)](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=label%3Adifficulty-hard%20)                                                                         very hard to solve
 - [![hacktoberfest](/images/labels/hacktoberfest.svg)](https://github.com/neomutt/neomutt/labels/hacktoberfest)                                              Suitable for Hackoberfest
 
 - [![needs:decision](/images/labels/needs-decision.svg)](https://github.com/neomutt/neomutt/labels/needs%3Adecision)                                         Someone need to make a decision
