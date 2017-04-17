@@ -12,9 +12,9 @@ When someone [raises an issue](https://github.com/neomutt/neomutt/issues) it wil
 
 ### Types
 
-- [![type:bug](/images/labels/type-bug.svg)](https://github.com/neomutt/neomutt/labels/type%3Abug)                                        Something broken            
+- [![type:bug](/images/labels/type-bug.svg)](https://github.com/neomutt/neomutt/labels/type%3Abug)                                        Something broken
 - [![type:enhancement](/images/labels/type-enhancement.svg)](https://github.com/neomutt/neomutt/labels/type%3Aenhancement)                An improvement of an existing feature
-- [![type:question](/images/labels/type-question.svg)](https://github.com/neomutt/neomutt/labels/type%3Aquestion)                         A question about NeoMutt    
+- [![type:question](/images/labels/type-question.svg)](https://github.com/neomutt/neomutt/labels/type%3Aquestion)                         A question about NeoMutt
 
 ### Miscellaneous
 
@@ -42,17 +42,17 @@ It may be given one of these tags:
 
 ### Specific to a Distro
 
-- [![distro:arch](/images/labels/distro-arch.svg)](https://github.com/neomutt/neomutt/labels/distro%3Aarch)        This relates to Arch   
-- [![distro:debian](/images/labels/distro-debian.svg)](https://github.com/neomutt/neomutt/labels/distro%3Adebian)  This relates to Debian 
-- [![distro:fedora](/images/labels/distro-fedora.svg)](https://github.com/neomutt/neomutt/labels/distro%3Afedora)  This relates to Fedora 
+- [![distro:arch](/images/labels/distro-arch.svg)](https://github.com/neomutt/neomutt/labels/distro%3Aarch)        This relates to Arch
+- [![distro:debian](/images/labels/distro-debian.svg)](https://github.com/neomutt/neomutt/labels/distro%3Adebian)  This relates to Debian
+- [![distro:fedora](/images/labels/distro-fedora.svg)](https://github.com/neomutt/neomutt/labels/distro%3Afedora)  This relates to Fedora
 
 ### Issue has Attachments
 
-- [![has:backtrace](/images/labels/has-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has%3Abacktrace)     A backtrace/callstack is included 
-- [![has:config](/images/labels/has-config.svg)](https://github.com/neomutt/neomutt/labels/has%3Aconfig)              Sample NeoMutt config is included 
-- [![has:logs](/images/labels/has-logs.svg)](https://github.com/neomutt/neomutt/labels/has%3Alogs)                    Log files are included            
-- [![has:patch](/images/labels/has-patch.svg)](https://github.com/neomutt/neomutt/labels/has%3Apatch)                 A patch is included               
-- [![has:screenshot](/images/labels/has-screenshot.svg)](https://github.com/neomutt/neomutt/labels/has%3Ascreenshot)  A screenshot is included          
+- [![has:backtrace](/images/labels/has-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has%3Abacktrace)     A backtrace/callstack is included
+- [![has:config](/images/labels/has-config.svg)](https://github.com/neomutt/neomutt/labels/has%3Aconfig)              Sample NeoMutt config is included
+- [![has:logs](/images/labels/has-logs.svg)](https://github.com/neomutt/neomutt/labels/has%3Alogs)                    Log files are included
+- [![has:patch](/images/labels/has-patch.svg)](https://github.com/neomutt/neomutt/labels/has%3Apatch)                 A patch is included
+- [![has:screenshot](/images/labels/has-screenshot.svg)](https://github.com/neomutt/neomutt/labels/has%3Ascreenshot)  A screenshot is included
 
 ### Topics
 
@@ -83,11 +83,11 @@ It may be given one of these tags:
 
 It will probably be closed with one of these tags:
 
-- [![closed:duplicate](/images/labels/closed-duplicate.svg)](https://github.com/neomutt/neomutt/labels/closed%3Aduplicate)      Issue already reported                          
-- [![closed:fixed](/images/labels/closed-fixed.svg)](https://github.com/neomutt/neomutt/labels/closed%3Afixed)                  The issue was fixed successfully                
-- [![closed:invalid](/images/labels/closed-invalid.svg)](https://github.com/neomutt/neomutt/labels/closed%3Ainvalid)            The issue isn't relevant to NeoMutt             
-- [![closed:not a bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed%3Anot%20a%20bug)  This is the correct behaviour                   
-- [![closed:wontfix](/images/labels/closed-wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed%3Awontfix)            For some reason we are not prepared to fix this 
+- [![closed:duplicate](/images/labels/closed-duplicate.svg)](https://github.com/neomutt/neomutt/labels/closed%3Aduplicate)      Issue already reported
+- [![closed:fixed](/images/labels/closed-fixed.svg)](https://github.com/neomutt/neomutt/labels/closed%3Afixed)                  The issue was fixed successfully
+- [![closed:invalid](/images/labels/closed-invalid.svg)](https://github.com/neomutt/neomutt/labels/closed%3Ainvalid)            The issue isn't relevant to NeoMutt
+- [![closed:not a bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed%3Anot%20a%20bug)  This is the correct behaviour
+- [![closed:wontfix](/images/labels/closed-wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed%3Awontfix)            For some reason we are not prepared to fix this
 
 
 [mailinglist-post]: http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-April/000371.html
