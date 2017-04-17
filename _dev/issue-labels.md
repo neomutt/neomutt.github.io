@@ -20,10 +20,10 @@ When someone [raises an issue](https://github.com/neomutt/neomutt/issues) it wil
 
 It may be given one of these tags:
 
-- [![bug:confirmed](/images/labels/bug-confirmed.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aconfirmed)                                            Problem confirmed by a NeoMutt member
+- [![bug:confirmed](/images/labels/bug-confirmed.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aconfirmed)                                            Problem confirmed by a NeoMutt member (See this [mailinglist-post] for what that means)
 - [![bug:crash](/images/labels/bug-crash.svg)](https://github.com/neomutt/neomutt/labels/bug%3Acrash)                                                        Bug causes NeoMutt to crash
 - [![bug:upstream](/images/labels/bug-upstream.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aupstream)                                               Should be handled by Mutt
-- [![bug:regression](/images/labels/bug-regression.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aregression)                                         This problem has been fixed before
+- [![bug:regression](/images/labels/bug-regression.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aregression)                                         This problem has been fixed before (See this [mailinglist-post] for what that means)
 
 - [![docs:code](/images/labels/docs-code.svg)](https://github.com/neomutt/neomutt/labels/docs%3Acode)                                                        Related to the Documentation embedded in the code
 - [![docs:manual](/images/labels/docs-manual.svg)](https://github.com/neomutt/neomutt/labels/docs%3Amanual)                                                  Related to the main manual
@@ -89,3 +89,5 @@ It will probably be closed with one of these tags:
 - [![closed:not a bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed%3Anot%20a%20bug)  This is the correct behaviour                   
 - [![closed:wontfix](/images/labels/closed-wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed%3Awontfix)            For some reason we are not prepared to fix this 
 
+
+[mailinglist-post]: http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-April/000371.html
