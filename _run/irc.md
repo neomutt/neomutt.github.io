@@ -1,6 +1,7 @@
 ---
 layout: concertina
 title: IRC
+description: How to run an IRC channel
 author: Richard Russon
 ---
 
