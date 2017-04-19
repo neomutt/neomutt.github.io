@@ -2,10 +2,33 @@ require 'html-proofer'
 
 task :test do
   sh "jekyll build"
-  options = { 
+  options = {
       :assume_extension => true,
-      :empty_alt_ignore => true,
-      :cache => { :timeframe => '30d' },
+      :alt_ignore => [ "*" ],
+
+      # only in _site !
+      :file_ignore => [ 
+          "js/*",
+          "images/*",
+          "contrib/images/*",
+          "fonts/*",
+          "google*",
+          "*.txt",
+          "*.rc",
+          "*.sh",
+          "*.gv",
+          "*.ico",
+          "Rakefile",
+          "sitemap.xml",
+          "robots.txt"
+      ],
+      :checks_to_ignore => [
+          "ImageCheck",
+          "ScriptCheck"
+      ],
+      :cache => {
+          :timeframe => '30d'
+      },
       :only_4xx => true,
       :typhoeus => {
         :ssl_verifypeer => false,
