@@ -50,7 +50,7 @@ status: stable
     <p>This feature enables the new_mail_command setting, which can be used to execute a custom script (e.g., a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%f</code>for the folder name. For a complete list, see:
-    <a class="link" href="/guide/reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>.</p>
+    <a class="link" href="/guide/reference.html#status-format" title="3.366.&#160;status_format">$status_format</a>.</p>
     <p>For example in Linux you can use (most distributions already provide notify-send):</p>
     <pre class="screen">
 set new_mail_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
@@ -118,18 +118,13 @@ set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
-
 # Set the command you want mutt to execute upon the receipt of a new email</span>
 set new_mail_command = ""
-
 <span class="comment"># Linux example:
 # set new_command="notify-send --icon='/home/santiago/Pictures/mutt.png' 'New Email in %f' '%n new messages, %u unread.' &amp;"
-
 # OS X example:
 # set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail in %f' -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
-
 # --------------------------------------------------------------------------
-
 # vim: syntax=muttrc</span>
 </pre>
   </div>

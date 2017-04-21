@@ -170,11 +170,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
       <p>Default:</p>
       <div class="literallayout">
-        <p>
-          <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;&#160;&#160;&#160;&#160;?%4m&#160;%f</code>
-        </p>
+        <code class="literal">%2C %?n?%4n/&amp; ?%4m %f</code>
       </div>
-      <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
       <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
@@ -580,91 +577,66 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
-
 # This variable specifies notmuch query limit.</span>
 set nm_db_limit = 0
-
 <span class="comment"># This variable specifies the default Notmuch database in format:
 # notmuch://&lt;absolute path&gt;</span>
 set nm_default_uri = ""
-
 <span class="comment"># The messages tagged with these tags are excluded and not loaded
 # from notmuch DB to mutt unless specified explicitly.</span>
 set nm_exclude_tags = ""
-
 <span class="comment"># This variable specifies private notmuch tags which should not be printed
 # on screen (index, pager).</span>
 set nm_hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
-
 <span class="comment"># This option specifies timeout for Notmuch database. Default is 5 seconds.</span>
 set nm_open_timeout = 5
-
 <span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and
 # 'messages'.</span>
 set nm_query_type = messages
-
 <span class="comment"># Add messages stored to the mutt record (see $record in the mutt docs)
 # also to notmuch DB.</span>
 set nm_record = no
-
 <span class="comment"># Tags that should be removed or added to the to the messages stored in the mutt record.</span>
 set nm_record_tags = ""
-
 <span class="comment"># This variable specifies notmuch tag which is used for unread messages.</span>
 set nm_unread_tag = unread
-
 <span class="comment"># This variable allows you to customize the file browser display for virtual
 # folders to your personal taste.</span>
 set vfolder_format = "%6n(%6N) %f"
-
 <span class="comment"># When set, mutt will use the first virtual mailbox (see virtual-mailboxes)
 # as a spoolfile.</span>
 set virtual_spoolfile = no
-
 <span class="comment"># setup time window preferences
 # first setup the duration, and then the time unit of that duration
 # when set to 0 (the default) the search window feature is disabled</span>
 set nm_query_window_duration=2
 set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
-
 <span class="comment"># --------------------------------------------------------------------------
 # FUNCTIONS - shown with an example mapping
 # --------------------------------------------------------------------------
-
 # open a different virtual folder</span>
 bind index,pager X change-vfolder
-
 <span class="comment"># read entire thread of the current message</span>
 bind index,pager + entire-thread
-
 <span class="comment"># modify (notmuch) tags</span>
 bind index,pager \` modify-labels
-
 <span class="comment"># modify (notmuch) tag non-interactively.</span>
 bind index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
-
 <span class="comment"># generate virtual folder from query</span>
 bind index,pager \eX vfolder-from-query
-
 <span class="comment"># generate virtual folder from query with time window</span>
 bind index,pager &lt; vfolder-window-backward
 bind index,pager &gt; vfolder-window-forward
-
 <span class="comment"># modify labels and then hide message
 # bind index,pager ??? modify-labels-then-hide
-
 # toggle between mailboxes and virtual mailboxes
 # bind index,pager ??? sidebar-toggle-virtual
-
 # --------------------------------------------------------------------------
 # COMMANDS - shown with an example
 # --------------------------------------------------------------------------
-
 # virtual-mailboxes description notmuch-URI { description notmuch-URI ...}
 # virtual-mailboxes "Climbing" "notmuch://?query=climbing"
-
 # unvirtual-mailboxes { * | mailbox ...}
-
 # Replace some tags with icons
 # tag-transforms tag transformed-string { tag transformed-string ...}
 # tag-transforms "inbox"   "i"   \
@@ -674,7 +646,6 @@ bind index,pager &gt; vfolder-window-forward
 #                "todo"    "T"   \
 #                "deleted" "DEL" \
 #                "invites" "CAL"
-
 # See README.notmuch for an explanation
 # tag-formats tag format-string { tag format-string ...}
 # tag-formats "inbox"   "GI" \
@@ -684,25 +655,18 @@ bind index,pager &gt; vfolder-window-forward
 #              "todo"    "Gt" \
 #              "deleted" "GD" \
 #              "invites" "Gi"
-
 # set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
-
 # --------------------------------------------------------------------------
 # COLORS - some unpleasant examples are given
 # --------------------------------------------------------------------------
-
 # These symbols are added to the index-color feature:
-
 # an individual message tag, %G, uses tag name
 # this symbol uses a pattern</span>
 color index_tag red white "inbox"
-
 <span class="comment"># the transformed message tags, %g
 # this symbol does not use a pattern</span>
 color index_tags green default
-
 <span class="comment"># --------------------------------------------------------------------------
-
 # vim: syntax=muttrc</span>
 </pre>
   </div>

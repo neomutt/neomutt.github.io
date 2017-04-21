@@ -1806,7 +1806,7 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
     </div>
     <br class="example-break" />
     <p>In
-    <a class="xref" href="#ex-default-hook" title="Example&#160;4.5.&#160;Specifying a “default” hook">Example&#160;4.5, “Specifying a
+    <a class="xref" href="#ex-default-hook" title="Example&#160;4.5.&#160;Specifying a “default”hook">Example&#160;4.5, “Specifying a
     <span class="quote">“
     <span class="quote">default</span>”</span>hook”</a>, by default the value of
     <a class="link" href="reference.html#from" title="3.88.&#160;from">$from</a>and
@@ -1886,15 +1886,12 @@ send-hook '~t ^me@cs\.hmc\.edu$' 'my_hdr From: Mutt User &lt;user@host&gt;'
       <pre class="screen">
 # Here, ^ will expand to "the current mailbox" not "beginning of string":
 folder-hook ^/home/user/Mail/bar "set sort=threads"
-
 # If you want ^ to be interpreted as "beginning of string", one workaround
 # is to enclose the regexp in parenthesis:
 folder-hook (^/home/user/Mail/bar) "set sort=threads"
-
 # This will expand to the default save folder for the alias "imap.example.com", which
 # is probably not what you want:
 folder-hook @imap.example.com "set sort=threads"
-
 # A workaround is to use parenthesis or a backslash:
 folder-hook (@imap.example.com) "set sort=threads"
 folder-hook '\@imap.example.com' "set sort=threads"
@@ -2255,7 +2252,7 @@ folder-hook . 'set record=^'
         </dt>
         <dd>
           <p>Mutt-specific design; freeform text (but see
-          <a class="link" href="reference.html#xlabel-delimiter" title="3.402.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
+          <a class="link" href="reference.html#xlabel-delimiter" title="3.403.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
         </dd>
       </dl>
     </div>
@@ -2268,7 +2265,7 @@ folder-hook . 'set record=^'
     <code class="literal">X-Label:</code>. Keywords will be saved to whichever header was in use by the message the keyword was read from. If
     <a class="link" href="reference.html#keywords-standard" title="3.138.&#160;keywords_standard">$keywords_standard</a>is set, keywords will be saved without exception to the standard
     <code class="literal">Keywords:</code>header. (If both are set, both will be used; if both are unset, legacy headers are used.) Additionally,
-    <a class="link" href="reference.html#xlabel-delimiter" title="3.402.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
+    <a class="link" href="reference.html#xlabel-delimiter" title="3.403.&#160;xlabel_delimiter">$xlabel_delimiter</a>is used to format the X-Label: header on saves.</p>
     <p>To migrate completely to the new standard, unset
     <code class="literal">$keywords_legacy</code>and set
     <code class="literal">$keywords_standard</code>, and set
@@ -2334,11 +2331,11 @@ folder-hook . 'set record=^'
         <pre class="screen">
 # Erase [rt #12345] tags from Request Tracker (RT) e-mails
 subjectrx '\[rt #[0-9]+\] *' '%L%R'
-
 # Servicedesk is another RT that sends more complex subjects.
-# Keep the ticket number.
-subjectrx '\[servicedesk #([0-9]+)\] ([^.]+)\.([^.]+) - (new|open|pending|update) - ' '%L[#%1] %R'
 
+# Keep the ticket number.
+
+subjectrx '\[servicedesk #([0-9]+)\] ([^.]+)\.([^.]+) - (new|open|pending|update) - ' '%L[#%1] %R'
 # Strip out annoying [listname] prefixes in subjects
 subjectrx '\[[^\]]*\]:? *' '%L%R'
 </pre>
@@ -2416,7 +2413,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <span class="quote">“
       <span class="quote">.</span>”</span>by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default Mutt displays the number of mailboxes with new mail in the status bar, please refer to the
-      <a class="link" href="reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>variable for details.</p>
+      <a class="link" href="reference.html#status-format" title="3.366.&#160;status_format">$status_format</a>variable for details.</p>
       <p>When changing folders, Mutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
       <code class="literal">&lt;Space&gt;</code>will cycle through folders with new mail. The (by default unbound) function
       <code class="literal">&lt;next-unread-mailbox&gt;</code>in the index can be used to immediately open the next folder with unread mail (if any).</p>

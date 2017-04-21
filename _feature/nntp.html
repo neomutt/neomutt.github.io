@@ -477,7 +477,6 @@ status: stable
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------</span>
-
 set ask_follow_up = no
 set ask_x_comment_to = no
 set catchup_newsgroup = ask-yes
@@ -501,70 +500,48 @@ set save_unsubscribed = no
 set show_new_news = yes
 set show_only_unread = no
 set x_comment_to = no
-
 <span class="comment"># --------------------------------------------------------------------------
 # FUNCTIONS - shown with an example mapping
 # --------------------------------------------------------------------------
-
 # mark all articles in newsgroup as read</span>
 bind browser,index y catchup
-
 <span class="comment"># open a different newsgroup</span>
 bind index,pager i change-newsgroup
-
 <span class="comment"># edit the Followup-To field</span>
 bind compose o edit-followup-to
-
 <span class="comment"># edit the newsgroups list</span>
 bind compose N edit-newsgroups
-
 <span class="comment"># edit the X-Comment-To field</span>
 bind compose x edit-x-comment-to
-
 <span class="comment"># followup to newsgroup</span>
 bind attach,index,pager F followup-message
-
 <span class="comment"># post message to newsgroup</span>
 bind index,pager P post-message
-
 <span class="comment"># load list of all newsgroups from NNTP server</span>
 bind browser g reload-active
-
 <span class="comment"># subscribe to current mbox (IMAP/NNTP only)</span>
 bind browser s subscribe
-
 <span class="comment"># subscribe to newsgroups matching a pattern</span>
 bind browser S subscribe-pattern
-
 <span class="comment"># mark all articles in newsgroup as unread</span>
 bind browser Y uncatchup
-
 <span class="comment"># unsubscribe from current mbox (IMAP/NNTP only)</span>
 bind browser u unsubscribe
-
 <span class="comment"># unsubscribe from newsgroups matching a pattern</span>
 bind browser U unsubscribe-pattern
-
 <span class="comment"># open a different newsgroup in read only mode</span>
 bind index,pager \ei change-newsgroup-readonly
-
 <span class="comment"># forward to newsgroup</span>
 bind attach,index,pager \eF forward-to-group
-
 <span class="comment"># get all children of the current message
 # bind index ??? get-children
-
 # get parent of the current message</span>
 bind index \eG get-parent
-
 <span class="comment"># reconstruct thread containing current message
 # bind index ??? reconstruct-thread
-
 # get message with Message-Id</span>
 bind index \CG get-message
-
 <span class="comment"># --------------------------------------------------------------------------
-
 # vim: syntax=muttrc</span>
 </pre>
   </div>

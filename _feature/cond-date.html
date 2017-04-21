@@ -446,20 +446,19 @@ status: stable
     </div>
     <pre class="screen">
 <span class="comment"># Example NeoMutt config file for the cond-date feature.
+
 #
 # The default index_format is:
 #       '%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 #
 # We replace the date field '%{%b %d}', giving:</span>
 set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;%[%b %d]&gt;&amp;%[%m/%y ]&gt; %-15.15L (%?l?%4l&amp;%4c?) %s'
-
 <span class="comment"># Test  Date Range  Format String  Example
 # --------------------------------------------
 # %[d   Today       %[%H:%M ]      12:34
 # %[m   This month  %[%a %d]       Thu 12
 # %[y   This year   %[%b %d]       Dec 10
 # -     Older       %[%m/%y ]      06/15
-
 # vim: syntax=muttrc</span>
 </pre>
   </div>

@@ -392,7 +392,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.375.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.376.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -414,33 +414,29 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
 #       open-hook   regexp "shell-command"
 #       close-hook  regexp "shell-command"
 #       append-hook regexp "shell-command"
-
 # The 'append-hook' is optional.
 
 # Handler for gzip compressed mailboxes</span>
 open-hook   '\.gz$' "gzip --stdout --decompress '%f' &gt;  '%t'"
 close-hook  '\.gz$' "gzip --stdout              '%t' &gt;  '%f'"
 append-hook '\.gz$' "gzip --stdout              '%t' &gt;&gt; '%f'"
-
 <span class="comment"># Handler for bzip2 compressed mailboxes</span>
 open-hook   '\.bz2$' "bzip2 --stdout --decompress '%f' &gt;  '%t'"
 close-hook  '\.bz2$' "bzip2 --stdout              '%t' &gt;  '%f'"
 append-hook '\.bz2$' "bzip2 --stdout              '%t' &gt;&gt; '%f'"
-
 <span class="comment"># Handler for xz compressed mailboxes</span>
 open-hook   '\.xz$' "xz --stdout --decompress '%f' &gt;  '%t'"
 close-hook  '\.xz$' "xz --stdout              '%t' &gt;  '%f'"
 append-hook '\.xz$' "xz --stdout              '%t' &gt;&gt; '%f'"
-
 <span class="comment"># Handler for pgp encrypted mailboxes
 # PGP does not support appending to an encrypted file</span>
 open-hook   '\.pgp$' "pgp -f &lt; '%f' &gt; '%t'"
 close-hook  '\.pgp$' "pgp -fe YourPgpUserIdOrKeyId &lt; '%t' &gt; '%f'"
-
 <span class="comment"># Handler for gpg encrypted mailboxes
 # gpg does not support appending to an encrypted file</span>
 open-hook   '\.gpg$' "gpg --decrypt &lt; '%f' &gt; '%t'"
 close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &gt; '%f'"
+
 
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
@@ -468,7 +464,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.375.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.376.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">

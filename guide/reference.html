@@ -191,7 +191,7 @@ title: Reference
       <code class="option">-a</code>
       <em class="replaceable">
         <code>file</code>
-      </em>[...] -- ]
+      </em>[...]--]
       <em class="replaceable">
         <code>address</code>
       </em>|
@@ -2177,7 +2177,7 @@ set certificate_file=~/.mutt/certificates
       <p>Controls the format of the status line displayed in the
       <span class="quote">“
       <span class="quote">compose</span>”</span>menu. This string is similar to
-      <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>, but has its own set of
+      <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -2206,7 +2206,7 @@ set certificate_file=~/.mutt/certificates
         </table>
       </div>
       <p>See the text describing the
-      <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>option for more information on how to set
+      <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>option for more information on how to set
       <a class="link" href="#compose-format" title="3.35.&#160;compose_format">$compose_format</a>.</p>
     </div>
     <div class="sect2">
@@ -3008,7 +3008,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>envelope</em>
       </span>sender for outgoing messages. This value is ignored if
-      <a class="link" href="#use-envelope-from" title="3.387.&#160;use_envelope_from">$use_envelope_from</a>is
+      <a class="link" href="#use-envelope-from" title="3.388.&#160;use_envelope_from">$use_envelope_from</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -3482,7 +3482,7 @@ sh -c 'string'
         <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span>) and
       <a class="link" href="#reverse-name" title="3.279.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
-      <a class="link" href="#use-from" title="3.388.&#160;use_from">$use_from</a>is
+      <a class="link" href="#use-from" title="3.389.&#160;use_from">$use_from</a>is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -3699,7 +3699,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, this variable causes Mutt to include the header of the message you are replying to into the edit buffer. The
-      <a class="link" href="#weed" title="3.395.&#160;weed">$weed</a>setting applies.</p>
+      <a class="link" href="#weed" title="3.396.&#160;weed">$weed</a>setting applies.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4006,7 +4006,7 @@ sh -c 'string'
       <code class="literal">gethostname(2)</code>and
       <code class="literal">getaddrinfo(3)</code>functions. If those calls are unable to determine the domain, the full value returned by uname is used. Optionally, Mutt can be compiled with a fixed domain name in which case a detected one is not used.</p>
       <p>Also see
-      <a class="link" href="#use-domain" title="3.386.&#160;use_domain">$use_domain</a>and
+      <a class="link" href="#use-domain" title="3.387.&#160;use_domain">$use_domain</a>and
       <a class="link" href="#hidden-host" title="3.99.&#160;hidden_host">$hidden_host</a>.</p>
     </div>
     <div class="sect2">
@@ -4515,7 +4515,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>Specifies the string to prepend to each line of text quoted in a message to which you are replying. You are strongly encouraged not to change this value, as it tends to agitate the more fanatical netizens.</p>
       <p>The value of this option is ignored if
-      <a class="link" href="#text-flowed" title="3.369.&#160;text_flowed">$text_flowed</a>is set, too because the quoting mechanism is strictly defined for format=flowed.</p>
+      <a class="link" href="#text-flowed" title="3.370.&#160;text_flowed">$text_flowed</a>is set, too because the quoting mechanism is strictly defined for format=flowed.</p>
       <p>This option is a format string, please see the description of
       <a class="link" href="#index-format" title="3.133.&#160;index_format">$index_format</a>for supported
       <code class="literal">printf(3)</code>-style sequences.</p>
@@ -4616,6 +4616,10 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>message-id of the current message</td>
             </tr>
             <tr>
+              <td>%K</td>
+              <td>the list to which the letter was sent (if any; otherwise: empty).</td>
+            </tr>
+            <tr>
               <td>%l</td>
               <td>number of lines in the message (does not work with maildir, mh, and possibly IMAP folders)</td>
             </tr>
@@ -4694,7 +4698,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%T</td>
               <td>the appropriate character from the
-              <a class="link" href="#to-chars" title="3.376.&#160;to_chars">$to_chars</a>string</td>
+              <a class="link" href="#to-chars" title="3.377.&#160;to_chars">$to_chars</a>string</td>
             </tr>
             <tr>
               <td>%u</td>
@@ -5747,7 +5751,7 @@ set inews="/usr/local/bin/inews -hS"
       <a class="link" href="#net-inc" title="3.174.&#160;net_inc">$net_inc</a>kilobytes. If set to 0, no progress messages will be displayed.</p>
       <p>See also
       <a class="link" href="#read-inc" title="3.263.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="#write-inc" title="3.401.&#160;write_inc">$write_inc</a>and
+      <a class="link" href="#write-inc" title="3.402.&#160;write_inc">$write_inc</a>and
       <a class="link" href="#net-inc" title="3.174.&#160;net_inc">$net_inc</a>.</p>
     </div>
     <div class="sect2">
@@ -5771,7 +5775,7 @@ set inews="/usr/local/bin/inews -hS"
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will call this command after a new message is received. See the
-      <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>documentation for the values that can be formatted into this command.</p>
+      <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>documentation for the values that can be formatted into this command.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7630,7 +7634,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="quote">soft-fill</span>”</span>, see the
       <a class="link" href="#index-format" title="3.133.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero, see the
-      <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>documentation.</p>
+      <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>documentation.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7707,9 +7711,9 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </div>
       <p>If set to a value greater than 0, Mutt will display which message it is currently on when reading a mailbox or when performing search actions such as search and limit. The message is printed after this many messages have been read or searched (e.g., if set to 25, Mutt will print a message when it is at message 25, and then again when it gets to message 50). This variable is meant to indicate progress when reading or searching large mailboxes which may take some time. When set to 0, only a single message will appear before the reading the mailbox.</p>
       <p>Also see the
-      <a class="link" href="#write-inc" title="3.401.&#160;write_inc">$write_inc</a>,
+      <a class="link" href="#write-inc" title="3.402.&#160;write_inc">$write_inc</a>,
       <a class="link" href="#net-inc" title="3.174.&#160;net_inc">$net_inc</a>and
-      <a class="link" href="#time-inc" title="3.373.&#160;time_inc">$time_inc</a>variables and the
+      <a class="link" href="#time-inc" title="3.374.&#160;time_inc">$time_inc</a>variables and the
       <span class="quote">“
       <span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
@@ -7831,7 +7835,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;yes</p>
       </div>
       <p>This option controls how quotes from format=flowed messages are displayed in the pager and when replying (with
-      <a class="link" href="#text-flowed" title="3.369.&#160;text_flowed">$text_flowed</a>
+      <a class="link" href="#text-flowed" title="3.370.&#160;text_flowed">$text_flowed</a>
       <span class="emphasis">
         <em>unset</em>
       </span>). When set, this option adds spaces after each level of quote marks, turning "&gt;&gt;&gt;foo" into "&gt; &gt; &gt; foo".</p>
@@ -7843,7 +7847,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>unset</em>
       </span>, this option has no effect. Also, this option does not affect replies when
-      <a class="link" href="#text-flowed" title="3.369.&#160;text_flowed">$text_flowed</a>is
+      <a class="link" href="#text-flowed" title="3.370.&#160;text_flowed">$text_flowed</a>is
       <span class="emphasis">
         <em>set</em>
       </span>.</p>
@@ -7873,7 +7877,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </span>format.</p>
       <p>Also see
       <a class="link" href="#reflow-wrap" title="3.270.&#160;reflow_wrap">$reflow_wrap</a>, and
-      <a class="link" href="#wrap" title="3.396.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#wrap" title="3.397.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7894,7 +7898,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <em>set</em>
       </span>. When the value is 0, paragraphs will be wrapped at the terminal's right margin. A positive value sets the paragraph width relative to the left margin. A negative value set the paragraph width relative to the right margin.</p>
       <p>Also see
-      <a class="link" href="#wrap" title="3.396.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#wrap" title="3.397.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8389,8 +8393,8 @@ From: abd30425@somewhere.net
       </div>
       <p>Specifies the program and arguments used to deliver mail sent by Mutt. Mutt expects that the specified program interprets additional arguments as recipient addresses. Mutt appends all recipients after adding a
       <code class="literal">--</code>delimiter (if not already present). Additional flags, such as for
-      <a class="link" href="#use-8bitmime" title="3.385.&#160;use_8bitmime">$use_8bitmime</a>,
-      <a class="link" href="#use-envelope-from" title="3.387.&#160;use_envelope_from">$use_envelope_from</a>,
+      <a class="link" href="#use-8bitmime" title="3.386.&#160;use_8bitmime">$use_8bitmime</a>,
+      <a class="link" href="#use-envelope-from" title="3.388.&#160;use_envelope_from">$use_envelope_from</a>,
       <a class="link" href="#dsn-notify" title="3.63.&#160;dsn_notify">$dsn_notify</a>, or
       <a class="link" href="#dsn-return" title="3.64.&#160;dsn_return">$dsn_return</a>will be added before the delimiter.</p>
     </div>
@@ -10143,7 +10147,28 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="ssl-ciphers"></a>3.363.&#160;ssl_ciphers</h3>
+            <a class="offset" id="ssl-verify-partial-chains"></a>3.363.&#160;ssl_verify_partial_chains</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;boolean
+        <br />Default:&#160;no</p>
+      </div>
+      <p>This option should not be changed from the default unless you understand what you are doing.</p>
+      <p>Setting this variable to
+      <span class="emphasis">
+        <em>yes</em>
+      </span>will permit verifying partial certification chains, i. e. a certificate chain where not the root, but an intermediate certificate CA, or the host certificate, are marked trusted (in
+      <a class="link" href="#certificate-file" title="3.30.&#160;certificate_file">$certificate_file</a>), without marking the root signing CA as trusted.</p>
+      <p>(OpenSSL 1.0.2b and newer only).</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="ssl-ciphers"></a>3.364.&#160;ssl_ciphers</h3>
           </div>
         </div>
       </div>
@@ -10159,7 +10184,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="status-chars"></a>3.364.&#160;status_chars</h3>
+            <a class="offset" id="status-chars"></a>3.365.&#160;status_chars</h3>
           </div>
         </div>
       </div>
@@ -10174,7 +10199,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the characters used by the
       <span class="quote">“
       <span class="quote">%r</span>”</span>indicator in
-      <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>.</p>
+      <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>.</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -10231,7 +10256,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="status-format"></a>3.365.&#160;status_format</h3>
+            <a class="offset" id="status-format"></a>3.366.&#160;status_format</h3>
           </div>
         </div>
       </div>
@@ -10310,7 +10335,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
             <tr>
               <td>%r</td>
               <td>modified/read-only/won't-write/attach-message indicator, according to
-              <a class="link" href="#status-chars" title="3.364.&#160;status_chars">$status_chars</a></td>
+              <a class="link" href="#status-chars" title="3.365.&#160;status_chars">$status_chars</a></td>
             </tr>
             <tr>
               <td>%s</td>
@@ -10422,7 +10447,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="status-on-top"></a>3.366.&#160;status_on_top</h3>
+            <a class="offset" id="status-on-top"></a>3.367.&#160;status_on_top</h3>
           </div>
         </div>
       </div>
@@ -10443,7 +10468,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="strict-threads"></a>3.367.&#160;strict_threads</h3>
+            <a class="offset" id="strict-threads"></a>3.368.&#160;strict_threads</h3>
           </div>
         </div>
       </div>
@@ -10471,7 +10496,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="suspend"></a>3.368.&#160;suspend</h3>
+            <a class="offset" id="suspend"></a>3.369.&#160;suspend</h3>
           </div>
         </div>
       </div>
@@ -10498,7 +10523,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="text-flowed"></a>3.369.&#160;text_flowed</h3>
+            <a class="offset" id="text-flowed"></a>3.370.&#160;text_flowed</h3>
           </div>
         </div>
       </div>
@@ -10527,7 +10552,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="thorough-search"></a>3.370.&#160;thorough_search</h3>
+            <a class="offset" id="thorough-search"></a>3.371.&#160;thorough_search</h3>
           </div>
         </div>
       </div>
@@ -10558,7 +10583,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="thread-received"></a>3.371.&#160;thread_received</h3>
+            <a class="offset" id="thread-received"></a>3.372.&#160;thread_received</h3>
           </div>
         </div>
       </div>
@@ -10576,7 +10601,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="tilde"></a>3.372.&#160;tilde</h3>
+            <a class="offset" id="tilde"></a>3.373.&#160;tilde</h3>
           </div>
         </div>
       </div>
@@ -10596,7 +10621,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="time-inc"></a>3.373.&#160;time_inc</h3>
+            <a class="offset" id="time-inc"></a>3.374.&#160;time_inc</h3>
           </div>
         </div>
       </div>
@@ -10606,9 +10631,9 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Along with
       <a class="link" href="#read-inc" title="3.263.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="#write-inc" title="3.401.&#160;write_inc">$write_inc</a>, and
+      <a class="link" href="#write-inc" title="3.402.&#160;write_inc">$write_inc</a>, and
       <a class="link" href="#net-inc" title="3.174.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
-      <a class="link" href="#time-inc" title="3.373.&#160;time_inc">$time_inc</a>milliseconds apart. This can improve throughput on systems with slow terminals, or when running mutt on a remote system.</p>
+      <a class="link" href="#time-inc" title="3.374.&#160;time_inc">$time_inc</a>milliseconds apart. This can improve throughput on systems with slow terminals, or when running mutt on a remote system.</p>
       <p>Also see the
       <span class="quote">“
       <span class="quote">
@@ -10620,7 +10645,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="timeout"></a>3.374.&#160;timeout</h3>
+            <a class="offset" id="timeout"></a>3.375.&#160;timeout</h3>
           </div>
         </div>
       </div>
@@ -10637,7 +10662,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="tmpdir"></a>3.375.&#160;tmpdir</h3>
+            <a class="offset" id="tmpdir"></a>3.376.&#160;tmpdir</h3>
           </div>
         </div>
       </div>
@@ -10658,7 +10683,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="to-chars"></a>3.376.&#160;to_chars</h3>
+            <a class="offset" id="to-chars"></a>3.377.&#160;to_chars</h3>
           </div>
         </div>
       </div>
@@ -10744,7 +10769,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="flag-chars"></a>3.377.&#160;flag_chars</h3>
+            <a class="offset" id="flag-chars"></a>3.378.&#160;flag_chars</h3>
           </div>
         </div>
       </div>
@@ -10845,7 +10870,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="trash"></a>3.378.&#160;trash</h3>
+            <a class="offset" id="trash"></a>3.379.&#160;trash</h3>
           </div>
         </div>
       </div>
@@ -10861,7 +10886,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="ts-icon-format"></a>3.379.&#160;ts_icon_format</h3>
+            <a class="offset" id="ts-icon-format"></a>3.380.&#160;ts_icon_format</h3>
           </div>
         </div>
       </div>
@@ -10876,11 +10901,11 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the format of the icon title, as long as
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="#ts-enabled" title="3.380.&#160;ts_enabled">$ts_enabled</a>
+        <a class="link" href="#ts-enabled" title="3.381.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span>is set. This string is identical in formatting to the one used by
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>
+        <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -10888,7 +10913,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="ts-enabled"></a>3.380.&#160;ts_enabled</h3>
+            <a class="offset" id="ts-enabled"></a>3.381.&#160;ts_enabled</h3>
           </div>
         </div>
       </div>
@@ -10903,7 +10928,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="ts-status-format"></a>3.381.&#160;ts_status_format</h3>
+            <a class="offset" id="ts-status-format"></a>3.382.&#160;ts_status_format</h3>
           </div>
         </div>
       </div>
@@ -10918,11 +10943,11 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Controls the format of the terminal status line (or window title), provided that
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="#ts-enabled" title="3.380.&#160;ts_enabled">$ts_enabled</a>
+        <a class="link" href="#ts-enabled" title="3.381.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span>has been set. This string is identical in formatting to the one used by
       <span class="quote">“
       <span class="quote">
-        <a class="link" href="#status-format" title="3.365.&#160;status_format">$status_format</a>
+        <a class="link" href="#status-format" title="3.366.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -10930,7 +10955,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="tunnel"></a>3.382.&#160;tunnel</h3>
+            <a class="offset" id="tunnel"></a>3.383.&#160;tunnel</h3>
           </div>
         </div>
       </div>
@@ -10954,7 +10979,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="uncollapse-jump"></a>3.383.&#160;uncollapse_jump</h3>
+            <a class="offset" id="uncollapse-jump"></a>3.384.&#160;uncollapse_jump</h3>
           </div>
         </div>
       </div>
@@ -10975,7 +11000,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="uncollapse-new"></a>3.384.&#160;uncollapse_new</h3>
+            <a class="offset" id="uncollapse-new"></a>3.385.&#160;uncollapse_new</h3>
           </div>
         </div>
       </div>
@@ -10996,7 +11021,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="use-8bitmime"></a>3.385.&#160;use_8bitmime</h3>
+            <a class="offset" id="use-8bitmime"></a>3.386.&#160;use_8bitmime</h3>
           </div>
         </div>
       </div>
@@ -11021,7 +11046,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="use-domain"></a>3.386.&#160;use_domain</h3>
+            <a class="offset" id="use-domain"></a>3.387.&#160;use_domain</h3>
           </div>
         </div>
       </div>
@@ -11045,7 +11070,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="use-envelope-from"></a>3.387.&#160;use_envelope_from</h3>
+            <a class="offset" id="use-envelope-from"></a>3.388.&#160;use_envelope_from</h3>
           </div>
         </div>
       </div>
@@ -11081,7 +11106,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="use-from"></a>3.388.&#160;use_from</h3>
+            <a class="offset" id="use-from"></a>3.389.&#160;use_from</h3>
           </div>
         </div>
       </div>
@@ -11110,7 +11135,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="use-ipv6"></a>3.389.&#160;use_ipv6</h3>
+            <a class="offset" id="use-ipv6"></a>3.390.&#160;use_ipv6</h3>
           </div>
         </div>
       </div>
@@ -11131,7 +11156,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="user-agent"></a>3.390.&#160;user_agent</h3>
+            <a class="offset" id="user-agent"></a>3.391.&#160;user_agent</h3>
           </div>
         </div>
       </div>
@@ -11151,7 +11176,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="visual"></a>3.391.&#160;visual</h3>
+            <a class="offset" id="visual"></a>3.392.&#160;visual</h3>
           </div>
         </div>
       </div>
@@ -11170,7 +11195,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="vfolder-format"></a>3.392.&#160;vfolder_format</h3>
+            <a class="offset" id="vfolder-format"></a>3.393.&#160;vfolder_format</h3>
           </div>
         </div>
       </div>
@@ -11190,7 +11215,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="virtual-spoolfile"></a>3.393.&#160;virtual_spoolfile</h3>
+            <a class="offset" id="virtual-spoolfile"></a>3.394.&#160;virtual_spoolfile</h3>
           </div>
         </div>
       </div>
@@ -11198,14 +11223,17 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>When \fset, mutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
+      <p>When
+      <span class="emphasis">
+        <em>set</em>
+      </span>, mutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="wait-key"></a>3.394.&#160;wait_key</h3>
+            <a class="offset" id="wait-key"></a>3.395.&#160;wait_key</h3>
           </div>
         </div>
       </div>
@@ -11240,7 +11268,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="weed"></a>3.395.&#160;weed</h3>
+            <a class="offset" id="weed"></a>3.396.&#160;weed</h3>
           </div>
         </div>
       </div>
@@ -11258,7 +11286,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="wrap"></a>3.396.&#160;wrap</h3>
+            <a class="offset" id="wrap"></a>3.397.&#160;wrap</h3>
           </div>
         </div>
       </div>
@@ -11267,8 +11295,8 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;0</p>
       </div>
       <p>When set to a positive value, mutt will wrap text at
-      <a class="link" href="#wrap" title="3.396.&#160;wrap">$wrap</a>characters. When set to a negative value, mutt will wrap text so that there are
-      <a class="link" href="#wrap" title="3.396.&#160;wrap">$wrap</a>characters of empty space on the right side of the terminal. Setting it to zero makes mutt wrap at the terminal width.</p>
+      <a class="link" href="#wrap" title="3.397.&#160;wrap">$wrap</a>characters. When set to a negative value, mutt will wrap text so that there are
+      <a class="link" href="#wrap" title="3.397.&#160;wrap">$wrap</a>characters of empty space on the right side of the terminal. Setting it to zero makes mutt wrap at the terminal width.</p>
       <p>Also see
       <a class="link" href="#reflow-wrap" title="3.270.&#160;reflow_wrap">$reflow_wrap</a>.</p>
     </div>
@@ -11277,7 +11305,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="wrap-headers"></a>3.397.&#160;wrap_headers</h3>
+            <a class="offset" id="wrap-headers"></a>3.398.&#160;wrap_headers</h3>
           </div>
         </div>
       </div>
@@ -11299,7 +11327,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="wrap-search"></a>3.398.&#160;wrap_search</h3>
+            <a class="offset" id="wrap-search"></a>3.399.&#160;wrap_search</h3>
           </div>
         </div>
       </div>
@@ -11321,7 +11349,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="wrapmargin"></a>3.399.&#160;wrapmargin</h3>
+            <a class="offset" id="wrapmargin"></a>3.400.&#160;wrapmargin</h3>
           </div>
         </div>
       </div>
@@ -11330,14 +11358,14 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;0</p>
       </div>
       <p>(DEPRECATED) Equivalent to setting
-      <a class="link" href="#wrap" title="3.396.&#160;wrap">$wrap</a>with a negative value.</p>
+      <a class="link" href="#wrap" title="3.397.&#160;wrap">$wrap</a>with a negative value.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="write-bcc"></a>3.400.&#160;write_bcc</h3>
+            <a class="offset" id="write-bcc"></a>3.401.&#160;write_bcc</h3>
           </div>
         </div>
       </div>
@@ -11357,7 +11385,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="write-inc"></a>3.401.&#160;write_inc</h3>
+            <a class="offset" id="write-inc"></a>3.402.&#160;write_inc</h3>
           </div>
         </div>
       </div>
@@ -11366,11 +11394,11 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;10</p>
       </div>
       <p>When writing a mailbox, a message will be printed every
-      <a class="link" href="#write-inc" title="3.401.&#160;write_inc">$write_inc</a>messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
+      <a class="link" href="#write-inc" title="3.402.&#160;write_inc">$write_inc</a>messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
       <p>Also see the
       <a class="link" href="#read-inc" title="3.263.&#160;read_inc">$read_inc</a>,
       <a class="link" href="#net-inc" title="3.174.&#160;net_inc">$net_inc</a>and
-      <a class="link" href="#time-inc" title="3.373.&#160;time_inc">$time_inc</a>variables and the
+      <a class="link" href="#time-inc" title="3.374.&#160;time_inc">$time_inc</a>variables and the
       <span class="quote">“
       <span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
@@ -11381,7 +11409,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="xlabel-delimiter"></a>3.402.&#160;xlabel_delimiter</h3>
+            <a class="offset" id="xlabel-delimiter"></a>3.403.&#160;xlabel_delimiter</h3>
           </div>
         </div>
       </div>
@@ -11397,7 +11425,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="x-comment-to"></a>3.403.&#160;x_comment_to</h3>
+            <a class="offset" id="x-comment-to"></a>3.404.&#160;x_comment_to</h3>
           </div>
         </div>
       </div>
@@ -11417,7 +11445,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="collapse-all"></a>3.404.&#160;collapse_all</h3>
+            <a class="offset" id="collapse-all"></a>3.405.&#160;collapse_all</h3>
           </div>
         </div>
       </div>

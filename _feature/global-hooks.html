@@ -162,15 +162,13 @@ status: stable
 # --------------------------------------------------------------------------
 # COMMANDS - shown with an example argument
 # --------------------------------------------------------------------------
-
 # After $timeout seconds of inactivity, run this mutt command</span>
 timeout-hook 'exec sync-mailbox'
-
 <span class="comment"># When mutt first loads, run this mutt command</span>
 startup-hook 'exec sync-mailbox'
-
 <span class="comment"># When mutt quits, run this mutt command</span>
 shutdown-hook 'exec sync-mailbox'
+
 
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>

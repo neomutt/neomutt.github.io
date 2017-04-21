@@ -145,44 +145,31 @@ set status_format='-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 set sort=threads
 set sort_aux=last-date-received
-
 <span class="comment"># 'status color' can take up to 2 extra parameters
-
 # color status foreground background [ regex [ num ]]
-
 # 0 extra parameters
 # Set the default color for the entire status line</span>
 color status blue white
-
 <span class="comment"># 1 extra parameter
 # Set the color for a matching pattern
 # color status foreground background regexp
-
 # Highlight New, Deleted, or Flagged emails</span>
 color status brightred white '(New|Del|Flag):[0-9]+'
-
 <span class="comment"># Highlight mailbox ordering if it's different from the default
 # First, highlight anything (*/*)</span>
 color status brightred default '\([^)]+/[^)]+\)'
-
 <span class="comment"># Then override the color for one specific case</span>
 color status default   default '\(threads/last-date-received\)'
-
 <span class="comment"># 2 extra parameters
 # Set the color for the nth submatch of a pattern
 # color status foreground background regexp num
-
 # Highlight the contents of the []s but not the [] themselves</span>
 color status red default '\[([^]]+)\]' 1
-
 <span class="comment"># The '1' refers to the first regex submatch, which is the inner
 # part in ()s
-
 # Highlight the mailbox</span>
 color status brightwhite default 'Mutt: ([^ ]+)' 1
-
 <span class="comment"># Search for 'Mutt: ' but only highlight what comes after it
-
 # vim: syntax=muttrc</span>
 </pre>
   </div>

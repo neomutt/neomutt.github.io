@@ -39,13 +39,13 @@ title: Configuration
           </colgroup>
           <tbody>
             <tr>
-              <td>neomuttrc-20170306</td>
+              <td>neomuttrc-20170421</td>
             </tr>
             <tr>
               <td>neomuttrc</td>
             </tr>
             <tr>
-              <td>muttrc-1.8.0</td>
+              <td>muttrc-1.8.2</td>
             </tr>
             <tr>
               <td>muttrc</td>
@@ -95,7 +95,7 @@ title: Configuration
             </thead>
             <tbody>
               <tr>
-                <td>/etc/xdg/mutt/neomuttrc-20170306</td>
+                <td>/etc/xdg/mutt/neomuttrc-20170421</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -103,7 +103,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>/etc/xdg/mutt/Muttrc-1.8.0</td>
+                <td>/etc/xdg/mutt/Muttrc-1.8.2</td>
                 <td>Mutt release version, Note the case of the filename</td>
               </tr>
               <tr>
@@ -111,7 +111,7 @@ title: Configuration
                 <td>Note the case of the filename</td>
               </tr>
               <tr>
-                <td>/etc/mutt/neomuttrc-20170306</td>
+                <td>/etc/mutt/neomuttrc-20170421</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -119,7 +119,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>/etc/mutt/Muttrc-1.8.0</td>
+                <td>/etc/mutt/Muttrc-1.8.2</td>
                 <td>Mutt release version, Note the case of the filename</td>
               </tr>
               <tr>
@@ -127,7 +127,7 @@ title: Configuration
                 <td>Note the case of the filename</td>
               </tr>
               <tr>
-                <td>/usr/share/mutt/neomuttrc-20170306</td>
+                <td>/usr/share/mutt/neomuttrc-20170421</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -135,7 +135,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>/usr/share/mutt/Muttrc-1.8.0</td>
+                <td>/usr/share/mutt/Muttrc-1.8.2</td>
                 <td>Mutt release version, Note the case of the filename</td>
               </tr>
               <tr>
@@ -186,7 +186,7 @@ title: Configuration
             </thead>
             <tbody>
               <tr>
-                <td>~/.config/mutt/neomuttrc-20170306</td>
+                <td>~/.config/mutt/neomuttrc-20170421</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -194,7 +194,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.config/mutt/muttrc-1.8.0</td>
+                <td>~/.config/mutt/muttrc-1.8.2</td>
                 <td>Mutt release version</td>
               </tr>
               <tr>
@@ -202,7 +202,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.neomuttrc-20170306</td>
+                <td>~/.neomuttrc-20170421</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -210,7 +210,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.muttrc-1.8.0</td>
+                <td>~/.muttrc-1.8.2</td>
                 <td>Mutt release version</td>
               </tr>
               <tr>
@@ -218,7 +218,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.mutt/neomuttrc-20170306</td>
+                <td>~/.mutt/neomuttrc-20170421</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -226,7 +226,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.mutt/muttrc-1.8.0</td>
+                <td>~/.mutt/muttrc-1.8.2</td>
                 <td>Mutt release version</td>
               </tr>
               <tr>
@@ -278,6 +278,7 @@ set realname='Mutt user' ; ignore x-
       <div class="example-contents">
         <pre class="screen">
 my_hdr X-Disclaimer: Why are you listening to me?
+
 <span class="comment"># This is a comment</span>
 </pre>
       </div>
@@ -1603,7 +1604,7 @@ export COLORFGBG
         </div>
       </div>
       <p>When displaying a message in the pager, Mutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.396.&#160;wrap">$wrap</a>columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.397.&#160;wrap">$wrap</a>columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2161,10 +2162,8 @@ unmy_hdr to cc
         <pre class="screen">
 <span class="comment"># default: save all to ~/Mail/&lt;author name&gt;</span>
 save-hook . ~/Mail/%F
-
 <span class="comment"># save from me@turing.cs.hmc.edu and me@cs.hmc.edu to $folder/elkins</span>
 save-hook me@(turing\\.)?cs\\.hmc\\.edu$ +elkins
-
 <span class="comment"># save from aol.com to $folder/spam</span>
 save-hook aol\\.com$ +spam
 </pre>
@@ -2506,7 +2505,7 @@ message-hook '~f freshmeat-news' 'set pager="less \"+/^  subject: .*\""'
     </div>
     <p>This command adds the named string to the beginning of the keyboard buffer. The string may contain control characters, key names and function names like the sequence string in the
     <a class="link" href="#macro" title="8.&#160;Keyboard Macros">macro</a>command. You may use it to automatically run a sequence of commands at startup, or when entering certain folders. For example,
-    <a class="xref" href="#ex-folder-hook-push" title="Example&#160;3.13.&#160;Embedding push in folder-hook">Example&#160;3.13, “Embedding
+    <a class="xref" href="#ex-folder-hook-push" title="Example&#160;3.13.&#160;Embedding pushin folder-hook">Example&#160;3.13, “Embedding
     <span class="command">push</span>in
     <span class="command">folder-hook</span>”</a>shows how to automatically collapse all threads when entering a folder.</p>
     <div class="example">
@@ -3179,7 +3178,6 @@ set ?allow_8bit
           <div class="example-contents">
             <pre class="screen">
 set my_cfgdir = $HOME/mutt/config
-
 source $my_cfgdir/hooks
 source $my_cfgdir/macros
 <span class="comment"># more source commands...</span>
@@ -3260,15 +3258,14 @@ set my_lines = "5"
 <span class="comment"># value is string "5"</span>
 set pager_index_lines = $my_lines
 <span class="comment"># value is integer 5</span>
-
 set my_sort = "date-received"
 <span class="comment"># value is string "date-received"</span>
 set sort = "last-$my_sort"
 <span class="comment"># value is sort last-date-received</span>
-
 set my_inc = $read_inc
 <span class="comment"># value is string "10" (default of $read_inc)</span>
 set my_foo = $my_inc
+
 <span class="comment"># value is string "10"</span>
 </pre>
         </div>
@@ -3283,7 +3280,6 @@ set my_foo = $my_inc
       <pre class="screen">
 set my_pattern = "~A"
 set my_number = "10"
-
 <span class="comment"># same as: score ~A +10</span>
 score $my_pattern +$my_number
 </pre>
@@ -3385,7 +3381,7 @@ mailboxes $my_mx +mailbox3
       <p>Format strings are a general concept you'll find in several locations through the Mutt configuration, especially in the
       <a class="link" href="reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>,
       <a class="link" href="reference.html#pager-format" title="3.202.&#160;pager_format">$pager_format</a>,
-      <a class="link" href="reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#status-format" title="3.366.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code>represents a message's Subject: header in the
       <a class="link" href="reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>variable. The
@@ -3440,7 +3436,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in
-      <a class="link" href="reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.366.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %?n?%n new messages.?
 </pre>
@@ -3499,7 +3495,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code>script installed in the
       <code class="literal">samples</code>subdirectory of the Mutt documentation: it can be used as filter for
-      <a class="link" href="reference.html#status-format" title="3.365.&#160;status_format">$status_format</a>to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.366.&#160;status_format">$status_format</a>to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

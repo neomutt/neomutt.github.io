@@ -478,11 +478,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.394.&#160;wait_key">$wait_key</a>variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.395.&#160;wait_key">$wait_key</a>variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, Mutt will use
-              <a class="link" href="reference.html#wait-key" title="3.394.&#160;wait_key">$wait_key</a>and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.395.&#160;wait_key">$wait_key</a>and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -659,7 +659,6 @@ Content-Type: text/plain; charset=iso-8859-1
 <span class="comment"># I'm always running X :)</span>
 video/*;        xanim %s &gt; /dev/null
 image/*;        xv %s &gt; /dev/null
-
 <span class="comment"># I'm always running firefox (if my computer had more memory, maybe)</span>
 text/html;      firefox -remote 'openURL(%s)'
 </pre>
@@ -668,36 +667,27 @@ text/html;      firefox -remote 'openURL(%s)'
 <span class="comment"># Use xanim to view all videos   Xanim produces a header on startup,
 # send that to /dev/null so I don't see it</span>
 video/*;        xanim %s &gt; /dev/null
-
 <span class="comment"># Send html to a running firefox by remote</span>
 text/html;      firefox -remote 'openURL(%s)'; test=RunningFirefox
-
 <span class="comment"># If I'm not running firefox but I am running X, start firefox on the
 # object</span>
 text/html;      firefox %s; test=RunningX
-
 <span class="comment"># Else use lynx to view it as text</span>
 text/html;      lynx %s
-
 <span class="comment"># This version would convert the text/html to text/plain</span>
 text/html;      lynx -dump %s; copiousoutput
-
 <span class="comment"># I use enscript to print text in two columns to a page</span>
 text/*;         more %s; print=enscript -2Gr %s
-
 <span class="comment"># Firefox adds a flag to tell itself to view jpegs internally</span>
 image/jpeg;xv %s; x-mozilla-flags=internal
-
 <span class="comment"># Use xv to view images if I'm running X</span>
 <span class="comment"># In addition, this uses the \ to extend the line and set my editor</span>
 <span class="comment"># for images</span>
 image/*;xv %s; test=RunningX; \
         edit=xpaint %s
-
 <span class="comment"># Convert images to text using the netpbm tools</span>
 image/*;  (anytopnm %s | pnmscale -xysize 80 46 | ppmtopgm | pgmtopbm |
 pbmtoascii -1x2 ) 2&gt;&amp;1 ; copiousoutput
-
 <span class="comment"># Send excel spreadsheets to my NT box</span>
 application/ms-excel; open.pl %s
 </pre>
@@ -916,6 +906,7 @@ alternative_order text/enriched text/plain text \
 <span class="comment">
 # Removing a pattern from a list removes that pattern literally. It
 # does not remove any type matching the pattern.
+
 #
 #  attachments   +A */.*
 #  attachments   +A image/jpeg
@@ -924,8 +915,10 @@ alternative_order text/enriched text/plain text \
 # This leaves "attached" image/jpeg files on the allowed attachments
 # list. It does not remove all items, as you might expect, because the
 # second */.* is not a matching expression at this time.
+
 #
 # Remember: "unattachments" only undoes what "attachments" has done!
+
 # It does not trigger any matching on actual messages.
 
 # Qualify any MIME part with an "attachment" disposition, EXCEPT for
@@ -935,19 +928,18 @@ alternative_order text/enriched text/plain text \
 # I've added x-pkcs7 to this, since it functions (for S/MIME)
 # analogously to PGP signature attachments. S/MIME isn't supported
 # in a stock mutt build, but we can still treat it specially here.
+
 #
 </span>
 attachments   +A */.*
 attachments   -A text/x-vcard application/pgp.*
 attachments   -A application/x-pkcs7-.*
-
 <span class="comment">
 # Discount all MIME parts with an "inline" disposition, unless they're
 # text/plain. (Why inline a text/plain part unless it's external to the
 # message flow?)
 </span>
 attachments   +I text/plain
-
 <span class="comment">
 # These two lines make Mutt qualify MIME containers.  (So, for example,
 # a message/rfc822 forward will count as an attachment.)  The first
@@ -959,7 +951,6 @@ attachments   +I text/plain
 #attachments  +A message/.* multipart/.*
 #attachments  +I message/.* multipart/.*
 </span>
-
 <span class="comment">## You probably don't really care to know about deleted attachments.</span>
 attachments   -A message/external-body
 attachments   -I message/external-body

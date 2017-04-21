@@ -191,37 +191,28 @@ color index-object foreground background pattern
 
 # Entire index line</span>
 color index white black '.*'
-
 <span class="comment"># Author name, %A %a %F %L %n
-
 # Give the author column a dark grey background</span>
 color index_author default color234 '.*'
-
 <span class="comment"># Highlight a particular from (~f)</span>
 color index_author brightyellow color234 '~fRay Charles'
-
 <span class="comment"># Message flags, %S %Z
 # Highlight the flags for flagged (~F) emails</span>
 color index_flags default red '~F'
-
 <span class="comment"># Subject, %s
 # Look for a particular subject (~s)</span>
 color index_subject brightcyan default '~s\(closes #[0-9]+\)'
-
 <span class="comment"># Number of messages in a collapsed thread, %M</span>
 color index_collapsed default brightblue
-
 <span class="comment"># Date field</span>
 color index_date green default
-
 <span class="comment"># Message label, %y %Y</span>
 color index_label default brightgreen
-
 <span class="comment"># Message number, %C</span>
 color index_number red default
-
 <span class="comment"># Message size, %c %l</span>
 color index_size cyan default
+
 
 <span class="comment"># vim: syntax=muttrc</span>
 </pre>
