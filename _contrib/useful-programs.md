@@ -94,6 +94,7 @@ status: stable
 
 ## miscellaneous
 
+* [notifynotmuch](https://github.com/kspi/notifymuch)
 * [notify-osd](https://launchpad.net/notify-osd) - The Desktop Notifications
   framework provides a standard way of doing passive pop-up notifications on the
   Linux desktop. These are designed to notify the user of something without
