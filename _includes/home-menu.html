@@ -1,13 +1,12 @@
 <h1><a {% if page.url == '/' %} class="current" {% endif %} href="/">Home</a></h1>
 
-{% assign dirs = '/ /news /help /site /about /translate /credits /conduct' | split:" " %}
+{% assign dirs = '/ /news /site /about /translate /credits /conduct' | split:" " %}
 {% assign u = page.url | slice: 0, 6 %}
 
 {% for item in dirs %}
   {% if item == page.url or u == '/2016/' or u == '/2017/' %}
     <ul>
       <li><a href="/news"><span{% if page.url == '/news' or u == '/2016/' or u == '/2017/' %} class="current" {% endif %}>News</span></a></li>
-      {% include list-bold.html lb_path='/help'      lb_title='Help'      %}
       {% include list-bold.html lb_path='/site'      lb_title='Site'      %}
       {% include list-bold.html lb_path='/translate' lb_title='Translate' %}
       {% include list-bold.html lb_path='/about'     lb_title='About'     %}

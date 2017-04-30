@@ -7,5 +7,4 @@ version:
 
   https://www.neomutt.org/
 
-If you want to contribute, please see our [Getting Started
-Guide](/dev/getting-started)
+If you want to contribute, please see our [Getting Started Guide](neomutt.org/dev/getting-started)

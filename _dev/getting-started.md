@@ -11,14 +11,13 @@ know.
 
 ## TOC
 
-<!-- vim-markdown-toc GFM -->
 * [contact](#contact)
-    * [IRC <a class="offset" id="irc"></a>](#irc-a-classoffset-idirca)
-    * [Mailing lists <a class="offset" id="email"></a>](#mailing-lists-a-classoffset-idemaila)
-* [GitHub <a class="offset" id="github"></a>](#github-a-classoffset-idgithuba)
+    * [IRC](#irc)
+    * [Mailing lists](#mailing-lists)
+* [GitHub](#github)
     * [Labels](#labels)
     * [Branches](#branches)
-* [Invitation  <a class="offset" id="invite"></a>](#invitation--a-classoffset-idinvitea)
+* [Invitation](#invitation)
 * [What you can do in Neomutt](#what-you-can-do-in-neomutt)
     * [Coding](#coding)
         * [Required tools](#required-tools)
@@ -32,15 +31,13 @@ know.
     * [Packager](#packager)
     * [Mentoring](#mentoring)
 
-<!-- vim-markdown-toc -->
-
 ## contact
 
 The NeoMutt developers are scattered all over the globe.  To keep in touch they
 use [GitHub](https://github.com/neomutt), [IRC](#irc) and [mailing
 lists](#email).
 
-### IRC <a class="offset" id="irc"></a>
+### IRC
 
 Channel: **#neomutt** on **irc.freenode.net**
 
@@ -53,7 +50,7 @@ discussions to light-hearted nonsense (late at night).
 If you don't have a IRC client, you can use FreeNode's [web
 client](http://webchat.freenode.net/?channels=neomutt).
 
-### Mailing lists <a class="offset" id="email"></a>
+### Mailing lists
 
 NeoMutt has two moderated mailing lists: Users, Devel.
 
@@ -99,7 +96,7 @@ Discussions here are likely to be about:
 - attachments small, or better still: link to the files Remember that we're
 - volunteers and we may take a while to reply
 
-## GitHub <a class="offset" id="github"></a>
+## GitHub
 
 If you're a GitHub user, there are lots of ways to keep informed about NeoMutt
 development.
@@ -133,7 +130,7 @@ of them and ask if something is unclear.
 Some of [our Branches](/dev/branches) have a special meaning.
 
 
-## Invitation  <a class="offset" id="invite"></a>
+## Invitation
 
 This section is for people who have been invited to join the NeoMutt project.
 Invites will be given to people who contribute: code, docs, translations and to
