@@ -7,12 +7,14 @@ cache:
 
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
-  - gem install jekyll 
-  - gem install jekyll-paginate 
-  - gem install jekyll-gist 
+  - gem install jekyll
+  - gem install jekyll-paginate
+  - gem install jekyll-gist
   - gem install jekyll-sitemap
   - gem install html-proofer
 
 script:
-  - travis_wait rake --trace test
+    - rake TestFeatures
+    - rake TestGuide
+    - rake TestDevel
 
