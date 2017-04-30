@@ -36,3 +36,5 @@ Render the diagram with the command:
 dot -Tpng make.gv > make.png
 ```
 
+(from the `graphviz` package)
+
