@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: Getting Started
+title: Newbie Tutorial
 description: Things every Newbie Should Know
 ---
 
@@ -15,6 +15,7 @@ know.
     * [IRC](#irc)
     * [Mailing lists](#mailing-lists)
 * [GitHub](#github)
+    * [Usage Tipps](#usage-tipps)
     * [Labels](#labels)
     * [Branches](#branches)
 * [Invitation](#invitation)
@@ -118,6 +119,15 @@ GitHub allows you to watch:
 By watching things in GitHub, you will receive emails when events occur.
 See your [notifications](https://github.com/settings/notifications) and
 [emails](https://github.com/settings/emails) settings for more information.
+
+### Usage tips
+
+    * We use Github's "assignee" feature to communicate who's working on what.
+    That way, we can easily identify who's working on what.
+
+    * Please read and understand [Github's documentation
+    ](https://help.github.com/articles/searching-issues/) for searching through
+    issue's and Pull Requests.
 
 ### Labels
 
