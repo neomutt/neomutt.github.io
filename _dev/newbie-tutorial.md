@@ -15,7 +15,7 @@ know.
     * [IRC](#irc)
     * [Mailing lists](#mailing-lists)
 * [GitHub](#github)
-    * [Usage Tipps](#usage-tipps)
+    * [Usage Tipps](#usage-tips)
     * [Labels](#labels)
     * [Branches](#branches)
 * [Invitation](#invitation)
@@ -36,7 +36,7 @@ know.
 
 The NeoMutt developers are scattered all over the globe.  To keep in touch they
 use [GitHub](https://github.com/neomutt), [IRC](#irc) and [mailing
-lists](#email).
+lists](#mailing-lists).
 
 ### IRC
 
