@@ -41,12 +41,9 @@ digraph build {
 	lots_muttrc      [ label="\{muttrc.example\}"  ]
 	lots_obj         [ label="\{source.o\}"        ]
 	lots_po          [ label="\{example.po\}"      ]
-	lots_vimrc       [ label="\{vimrc.example\}"   ]
 	lots_xsl         [ label="\{mutt.xsl\}"        ]
 	makedoc_src      [ label="makedoc.c"           ]
 	manual_html      [ label="\{manual.html\}"     ]
-	manual_pdf       [ label="manual.pdf"          ]
-	manual_tex       [ label="manual.tex"          ]
 	manual_txt       [ label="manual.txt"          ]
 	manual_xml       [ label="manual.xml"          ]
 	manual_xml_head  [ label="manual.xml.head"     ]
@@ -147,7 +144,7 @@ digraph build {
 	lots_xsl -> xsltproc
 	mutt_css -> xsltproc
 	xsltproc -> manual_html
-	manual_html -> manual_txt [ label="links" ]
+	manual_html -> manual_txt [ label="w3m/links" ]
 
 	mutt_pot -> lots_po [ label="translator" ]
 	lots_po -> lots_mo [ label="msgfmt" ]
@@ -162,7 +159,6 @@ digraph build {
 	makedoc_c -> muttrc
 
 	init_h -> lots_muttrc [ label="cut'n'paste" ]
-	init_h -> lots_vimrc [ label="cut'n'paste" ]
 
 	init_h -> compulsory [ style="dashed" ]
 
@@ -182,9 +178,6 @@ digraph build {
 	init_h -> makedoc_s
 	makedoc_s -> manual_xml
 	functions_h -> gen_map_doc
-
-	manual_xml -> manual_tex [ label="openjade" ]
-	manual_tex -> manual_pdf [ label="pdfjadetex" ]
 
 	shared_src -> gcc
 	shared_src -> shared [ style="dashed" ]
