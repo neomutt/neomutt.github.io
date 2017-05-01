@@ -3,23 +3,30 @@ require 'html-proofer'
 
 options = {
     :assume_extension => true,
-    :alt_ignore => [ "*" ],
+    :alt_ignore => [ /.*/ ],
 
     # only in _site !
     :file_ignore => [
-        "js/*",
-        "images/*",
-        "contrib/images/*",
-        "fonts/*",
-        "google*",
-        "*.txt",
-        "*.rc",
-        "*.sh",
-        "*.gv",
-        "*.ico",
-        "Rakefile",
-        "sitemap.xml",
-        "robots.txt"
+        /.*js\/*/,
+        /.*images\/*/,
+        /.*contrib\/images\/*/,
+        /.*fonts\/*/,
+        /.*google*/,
+
+        /.*feature.*/,
+        /.*guide.*/,
+
+        /.*txt/,
+        /.*rc/,
+        /.*pl/,
+        /.*pub/,
+        /.*gv/,
+        /.*sh/,
+        /.*gv/,
+        /.*ico/,
+        /.*xml/,
+
+        /Rakefile/,
     ],
     :checks_to_ignore => [
         "ImageCheck",
@@ -36,43 +43,8 @@ options = {
 }
 
 
-# for every test
 sh "jekyll build"
 
-task :TestFeatures do
-    print("\n")
-    print("\n")
-    puts("=====================================")
-    print("\n")
-    print("\n")
-    puts("testing features..")
 
-    HTMLProofer.check_directory("./_site/feature", options).run
-    HTMLProofer.check_file("./_site/feature.html", options).run
-end
-
-task :TestGuide do
-    print("\n")
-    print("\n")
-    puts("=====================================")
-    print("\n")
-    print("\n")
-    puts("testing Guide..")
-
-    HTMLProofer.check_directory("./_site/guide", options).run
-end
-
-
-task :TestDevel do
-    print("\n")
-    print("\n")
-    puts("=====================================")
-    print("\n")
-    print("\n")
-    puts("testing Devel..")
-
-    HTMLProofer.check_directory("./_site/dev", options).run
-    HTMLProofer.check_file("./_site/dev.html", options).run
-end
-
+HTMLProofer.check_directory("./_site/", options).run
 
