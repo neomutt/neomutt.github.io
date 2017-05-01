@@ -66,6 +66,5 @@ collections:
     output: true
 
 gems:
-  - jekyll-paginate
   - jekyll-gist
   - jekyll-sitemap

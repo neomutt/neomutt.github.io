@@ -8,7 +8,6 @@ cache:
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
   - gem install jekyll
-  - gem install jekyll-paginate
   - gem install jekyll-gist
   - gem install jekyll-sitemap
   - gem install html-proofer
