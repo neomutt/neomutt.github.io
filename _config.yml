@@ -26,7 +26,6 @@ timezone: UTC
 gaaccount: 'UA-377438-9'
 
 permalink: /:year/:month/:day/:title
-paginate: 3
 
 kramdown:
   auto_ids:       true
