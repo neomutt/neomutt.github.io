@@ -43,8 +43,11 @@ options = {
 }
 
 
-sh "jekyll build"
 
+task :default do
+    sh "jekyll build"
+    HTMLProofer.check_directory("./_site/", options).run
 
-HTMLProofer.check_directory("./_site/", options).run
+end
+
 
