@@ -1,6 +1,7 @@
 ---
 layout: concertina
-title: list of architectures/OS's
+title: Architectures
+description: List of supported architectures / operating systems
 ---
 
 # {{ page.title }}
