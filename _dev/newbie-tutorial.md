@@ -122,12 +122,11 @@ See your [notifications](https://github.com/settings/notifications) and
 
 ### Usage tips
 
-    * We use Github's "assignee" feature to communicate who's working on what.
-    That way, we can easily identify who's working on what.
+* We use Github's "assignee" feature to communicate who's working on what.
+  That way, we can easily identify who's working on what.
 
-    * Please read and understand [Github's documentation
-    ](https://help.github.com/articles/searching-issues/) for searching through
-    issue's and Pull Requests.
+* Please read and understand [Github's documentation](https://help.github.com/articles/searching-issues/) 
+  for searching through issue's and Pull Requests.
 
 ### Labels
 
