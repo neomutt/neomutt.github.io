@@ -70,10 +70,6 @@ Makefile.am: installing './depcomp'
 
   --prefix=/usr/local
 
-  --enable-pop            Enable POP3 support
-  --enable-imap           Enable IMAP support
-  --enable-smtp           include internal SMTP relay support
-
 ### Curses vs Slang
 
   --with-slang[=DIR]      Use S-Lang instead of ncurses
@@ -81,10 +77,7 @@ Makefile.am: installing './depcomp'
 
 ### Features
 
-  --enable-sidebar        Enable Sidebar support
-  --enable-compressed     Enable compressed folders support
   --enable-notmuch        Enable NOTMUCH support
-  --enable-nntp           Enable NNTP support
   --enable-gpgme          Enable GPGME support
 
 ### Caching Options
