@@ -12,6 +12,8 @@ The Git hashes link to our GitHub repository.
 
 | Date       | Release          | Git Hash                                                         |
 | :--------- | :--------------- | :--------------------------------------------------------------- |
+| 2017-05-26 | 20170526 (1.8.2) | [`c1580b0f`](https://github.com/neomutt/neomutt/commit/c1580b0f) |
+| 2017-04-28 | 20170428 (1.8.2) | [`26b1c69d`](https://github.com/neomutt/neomutt/commit/26b1c69d) |
 | 2017-04-21 | 20170421 (1.8.2) | [`f6e066c8`](https://github.com/neomutt/neomutt/commit/f6e066c8) |
 | 2017-04-14 | 20170414 (1.8.1) | [`9ff455fb`](https://github.com/neomutt/neomutt/commit/9ff455fb) |
 | 2017-03-06 | 20170306 (1.8.0) | [`a665080a`](https://github.com/neomutt/neomutt/commit/a665080a) |
