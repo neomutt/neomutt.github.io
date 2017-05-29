@@ -93,7 +93,8 @@ Discussions here are likely to be about:
 
 **Please:**
 
-- Send emails in plain text, not HTML Use an informative subject line
+- Send emails in plain text, not HTML
+- Use an informative subject line
 - Keep attachments small, or better still: link to the files
 - Remember that we're volunteers and we may take a while to reply
 
