@@ -47,8 +47,8 @@ status: stable
         </div>
       </div>
     </div>
-    <p>The Compressed Folder patch allows Mutt to read mailbox files that are compressed. But it isn't limited to compressed files. It works well with encrypted files, too. In fact, if you can create a program/script to convert to and from your format, then Mutt can read it.</p>
-    <p>The patch adds three hooks to Mutt:
+    <p>The Compressed Folder feature allows Mutt to read mailbox files that are compressed. But it isn't limited to compressed files. It works well with encrypted files, too. In fact, if you can create a program/script to convert to and from your format, then Mutt can read it.</p>
+    <p>The feature adds three hooks to Mutt:
     <code class="literal">open-hook</code>,
     <code class="literal">close-hook</code>and
     <code class="literal">append-hook</code>. They define commands to: uncompress a file; compress a file; append messages to an already compressed file.</p>
@@ -380,7 +380,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Mutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/guide/reference.html#save-empty" title="3.283.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/guide/reference.html#save-empty" title="3.289.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -392,7 +392,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.376.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.383.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -464,17 +464,17 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.376.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.383.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#mbox-type" title="3.153.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/guide/reference.html#mbox-type" title="3.157.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#save-empty" title="3.283.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/guide/reference.html#save-empty" title="3.289.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">

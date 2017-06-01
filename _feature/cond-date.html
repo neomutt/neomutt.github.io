@@ -61,8 +61,8 @@ status: stable
     </div>
     <p>The
     <span class="quote">“
-    <span class="quote">cond-date</span>”</span>patch allows you to construct
-    <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
+    <span class="quote">Conditional Dates</span>”</span>feature allows you to construct
+    <a class="link" href="/guide/reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>expressions based on the age of the email.</p>
     <p>Mutt's default
     <code class="literal">$index_format</code>displays email dates in the form: abbreviated-month day-of-month —
     <span class="quote">“
@@ -319,7 +319,8 @@ status: stable
       <p>Reparsed a little, for clarity, you can see the test condition and the two format strings.</p>
       <pre class="screen">
 %?[1m?        &amp;           ?
-      %[%b %d] %[%Y-%m-%d]
+
+    %[%b %d] %[%Y-%m-%d]
 </pre>
     </div>
     <div class="sect2">
@@ -404,21 +405,17 @@ status: stable
       <p>Reparsed a little, for clarity, you can see the test conditions and the four format strings.</p>
       <pre class="screen">
 %&lt;[y?                                       &amp;%[%m/%y ]&gt;  Older
-     %&lt;[m?                        &amp;%[%b %d]&gt;             This year
-          %&lt;[d?         &amp;%[%a %d]&gt;                       This month
-               %[%H:%M ]                                 Today
+    %&lt;[m?                        &amp;%[%b %d]&gt;             This year
+        %&lt;[d?         &amp;%[%a %d]&gt;                       This month
+              %[%H:%M ]                                 Today
 </pre>
       <p>This a another view of the same example, with some whitespace for clarity.</p>
       <pre class="screen">
 %&lt;[y? %&lt;[m? %&lt;[d? AAA &amp; BBB &gt; &amp; CCC &gt; &amp; DDD &gt;
 </pre>
       <div class="literallayout">
-        <p>
-        <br />AAA&#160;=&#160;%[%H:%M&#160;]
-        <br />BBB&#160;=&#160;%[%a&#160;%d]
-        <br />CCC&#160;=&#160;%[%b&#160;%d]
-        <br />DDD&#160;=&#160;%[%m/%y&#160;]
-        <br />&#160;&#160;&#160;&#160;&#160;&#160;</p>
+        <p>AAA&#160;=&#160;%[%H:%M&#160;]&#160;BBB&#160;=&#160;%[%a&#160;%d]&#160;CCC&#160;=&#160;%[%b&#160;%d]&#160;DDD&#160;=
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%[%m/%y&#160;]</p>
       </div>
     </div>
   </div>
@@ -433,7 +430,7 @@ status: stable
     </div>
     <p>The
     <span class="quote">“
-    <span class="quote">cond-date</span>”</span>patch doesn't have any config of its own. It modifies the behavior of the format strings.</p>
+    <span class="quote">Conditional Dates</span>”</span>feature doesn't have any config of its own. It modifies the behavior of the format strings.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -475,12 +472,12 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>
+            <a class="link" href="/guide/reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/nested-if" title="Nested If Feature">nested-if patch</a>
+            <a class="link" href="/feature/nested-if" title="Nested If Feature">nested-if feature</a>
           </p>
         </li>
         <li class="listitem">

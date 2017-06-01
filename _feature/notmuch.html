@@ -42,12 +42,12 @@ status: stable
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/quasi-delete" title="Quasi-Delete Feature">quasi-delete patch</a>
+            <a class="link" href="/feature/quasi-delete" title="Quasi-Delete Feature">quasi-delete feature</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/index-color" title="Index Color Feature">index-color patch</a>
+            <a class="link" href="/feature/index-color" title="Index Color Feature">index-color feature</a>
           </p>
         </li>
         <li class="listitem">
@@ -170,10 +170,13 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
       <p>Default:</p>
       <div class="literallayout">
-        <code class="literal">%2C %?n?%4n/&amp; ?%4m %f</code>
+        <p>
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;?%4m&#160;%f</code>
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
       </div>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="/guide/reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -226,7 +229,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>documentation.</p>
+      <a class="link" href="/guide/reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
@@ -393,7 +396,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">&lt;change-vfolder&gt;</code>
               </td>
-              <td>open a different virtual folder</td>
+              <td>switch to another virtual folder, a new folder maybe be specified by vfolder description (see virtual-mailboxes) or URI. the default is next vfolder with unread messages</td>
             </tr>
             <tr>
               <td>index,pager</td>
@@ -407,14 +410,14 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">&lt;modify-labels&gt;</code>
               </td>
-              <td>modify (notmuch) tags</td>
+              <td>add, remove, or toggle notmuch tags; [+]&lt;tag&gt; to add, -&lt;tag&gt; to remove, !&lt;tag&gt; to toggle(notmuch) tags. Note: Tab completion of tag names is available</td>
             </tr>
             <tr>
               <td>index,pager</td>
               <td>
                 <code class="literal">&lt;modify-labels-then-hide&gt;</code>
               </td>
-              <td>modify labels and then hide message by applying the "quasi-deleted" state. Normal redisplay rules apply here, so the user must call &lt;sync-mailbox&gt; for the changes to be displayed</td>
+              <td>add, remove, or toggle notmuch tags; [+]&lt;tag&gt; to add, -&lt;tag&gt; to remove, !&lt;tag&gt; to togglelabels and then hide message by applying the "quasi-deleted" state. Normal redisplay rules apply here, so the user must call &lt;sync-mailbox&gt; for the changes to be displayed. Note: Tab completion of tag names is available.</td>
             </tr>
             <tr>
               <td>index,pager</td>
@@ -428,7 +431,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">&lt;vfolder-from-query&gt;</code>
               </td>
-              <td>generate virtual folder from query</td>
+              <td>generate virtual folder from notmuch search query. Note: TAB completion of 'tag:' names is available.</td>
             </tr>
             <tr>
               <td>index,pager</td>
@@ -521,7 +524,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </div>
       </div>
     </div>
-    <p>Adds these to index-color patch:</p>
+    <p>Adds these to index-color feature:</p>
     <div >
       <a class="offset" id="table-notmuch-colors"></a>
       <p class="title">
@@ -593,15 +596,30 @@ set nm_open_timeout = 5
 <span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and
 # 'messages'.</span>
 set nm_query_type = messages
-<span class="comment"># Add messages stored to the mutt record (see $record in the mutt docs)
-# also to notmuch DB.</span>
+<span class="comment"># Add messages stored to the mutt record (see $record in the mutt docs) also to notmuch DB. If you reply to an email then the new email inherits tags from the original email.
+</span>
 set nm_record = no
-<span class="comment"># Tags that should be removed or added to the to the messages stored in the mutt record.</span>
+<span class="comment"># Tags that should be removed or added to the to the messages stored in the mutt record.
+
+example:
+set record = "~/sent-mails"
+set nm_record = yes
+set nm_record_tags = "-inbox,archive,me"
+</span>
 set nm_record_tags = ""
 <span class="comment"># This variable specifies notmuch tag which is used for unread messages.</span>
 set nm_unread_tag = unread
 <span class="comment"># This variable allows you to customize the file browser display for virtual
-# folders to your personal taste.</span>
+# folders to your personal taste.
+# %C   current folder number
+# %f   folder name (description)
+# %m   number of messages in the mailbox *
+# %n   number of unread messages in the mailbox *
+# %N   N if mailbox has new mail, blank otherwise
+# %&gt;X  right justify the rest of the string and pad with character ``X''
+# %|X  pad to the end of the line with character ``X''
+# %*X  soft-fill with character ``X'' as pad
+</span>
 set vfolder_format = "%6n(%6N) %f"
 <span class="comment"># When set, mutt will use the first virtual mailbox (see virtual-mailboxes)
 # as a spoolfile.</span>
@@ -646,7 +664,8 @@ bind index,pager &gt; vfolder-window-forward
 #                "todo"    "T"   \
 #                "deleted" "DEL" \
 #                "invites" "CAL"
-# See README.notmuch for an explanation
+
+# The formats must start with 'G' and the entire sequence is case sensitive.
 # tag-formats tag format-string { tag format-string ...}
 # tag-formats "inbox"   "GI" \
 #              "unread"  "GU" \
@@ -655,7 +674,15 @@ bind index,pager &gt; vfolder-window-forward
 #              "todo"    "Gt" \
 #              "deleted" "GD" \
 #              "invites" "Gi"
+
+# Now instead of using '%g' in your $index_format, which lists all tags
+# in a non-deterministic order, you can something like the following which puts
+# a transformed tag name in a specific spot on the index line:
 # set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
+
+# The %G formatting sequence may display all tags including tags hidden by
+# nm_hidden_tags.
+#
 # --------------------------------------------------------------------------
 # COLORS - some unpleasant examples are given
 # --------------------------------------------------------------------------

@@ -62,13 +62,8 @@ status: stable
     <code class="literal">%?S?Size: %S&amp;Empty?</code></p>
     <p>Which can be read as:</p>
     <div class="literallayout">
-      <p>
-      <br />if&#160;(%S&#160;&gt;&#160;0)&#160;{
-      <br />&#160;&#160;&#160;&#160;print&#160;"Size:&#160;%S"
-      <br />}&#160;else&#160;{
-      <br />&#160;&#160;&#160;&#160;print&#160;"Empty"
-      <br />}
-      <br />&#160;&#160;&#160;&#160;</p>
+      <p>if&#160;(%S&#160;&gt;&#160;0)&#160;{&#160;print&#160;"Size:&#160;%S"&#160;}&#160;else&#160;{&#160;print&#160;"Empty"
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;}</p>
     </div>
     <p>These conditions are useful, but in Mutt they cannot be nested within one another. This feature uses the notation
     <code class="literal">%&lt;VAR?TRUE&amp;FALSE&gt;</code>and allows them to be nested.</p>
@@ -77,61 +72,40 @@ status: stable
     <p>A simple nested condition might be: (Some whitespace has been introduced for clarity)</p>
     <pre class="screen">
 %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions
-     %&lt;y? XY &amp; X &gt;                      x&gt;0
-          XY                            x&gt;0,y&gt;0
-               X                        x&gt;0,y=0
+    %&lt;y? XY &amp; X &gt;                      x&gt;0
+        XY                            x&gt;0,y&gt;0
+              X                        x&gt;0,y=0
 </pre>
     <pre class="screen">
 %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions
-                     %&lt;y? Y &amp; NONE &gt;    x=0
-                          Y             x=0,y&gt;0
-                              NONE      x=0,y=0
+                    %&lt;y? Y &amp; NONE &gt;    x=0
+                        Y             x=0,y&gt;0
+                            NONE      x=0,y=0
 </pre>
     <p>Equivalent to:</p>
     <div class="literallayout">
-      <p>
-      <br />if&#160;(x&#160;&gt;&#160;0)&#160;{
-      <br />&#160;&#160;&#160;&#160;if&#160;(y&#160;&gt;&#160;0)&#160;{
-      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'XY'
-      <br />&#160;&#160;&#160;&#160;}&#160;else&#160;{
-      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'X'
-      <br />&#160;&#160;&#160;&#160;}
-      <br />}&#160;else&#160;{
-      <br />&#160;&#160;&#160;&#160;if&#160;(y&#160;&gt;&#160;0)&#160;{
-      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'Y'
-      <br />&#160;&#160;&#160;&#160;}&#160;else&#160;{
-      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'NONE'
-      <br />&#160;&#160;&#160;&#160;}
-      <br />}
-      <br />&#160;&#160;&#160;&#160;</p>
+      <p>if&#160;(x&#160;&gt;&#160;0)&#160;{&#160;if&#160;(y&#160;&gt;&#160;0)&#160;{&#160;print&#160;'XY'&#160;}&#160;else&#160;{
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;print&#160;'X'&#160;}&#160;}&#160;else&#160;{&#160;if&#160;(y&#160;&gt;&#160;0)&#160;{&#160;print&#160;'Y'&#160;}&#160;else&#160;{&#160;print&#160;'NONE'&#160;}
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;}</p>
     </div>
     <p>Examples:</p>
     <pre class="screen">
 set index_format='%4C %Z %{%b %d} %-25.25n %s%&gt; %&lt;M?%M Msgs &amp;%&lt;l?%l Lines&amp;%c Bytes&gt;&gt;'
 </pre>
     <div class="literallayout">
-      <p>
-      <br />if&#160;a&#160;thread&#160;is&#160;folded
-      <br />&#160;&#160;&#160;&#160;display&#160;the&#160;number&#160;of&#160;messages&#160;(%M)
-      <br />else&#160;if&#160;we&#160;know&#160;how&#160;many&#160;lines&#160;in&#160;the&#160;message
-      <br />&#160;&#160;&#160;&#160;display&#160;lines&#160;in&#160;message&#160;(%l)
-      <br />else
-      <br />&#160;&#160;&#160;&#160;display&#160;the&#160;size&#160;of&#160;the&#160;message&#160;in&#160;bytes&#160;(%c)
-      <br />&#160;&#160;&#160;&#160;</p>
+      <p>if&#160;a&#160;thread&#160;is&#160;folded&#160;display&#160;the&#160;number&#160;of&#160;messages
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;(%M)&#160;else&#160;if&#160;we&#160;know&#160;how&#160;many&#160;lines&#160;in&#160;the&#160;message&#160;display&#160;lines&#160;in
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;message&#160;(%l)&#160;else&#160;display&#160;the&#160;size&#160;of&#160;the&#160;message&#160;in&#160;bytes
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;(%c)</p>
     </div>
     <pre class="screen">
 set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp;%c&gt;&gt;'
 </pre>
     <div class="literallayout">
-      <p>
-      <br />if&#160;a&#160;thread&#160;is&#160;folded
-      <br />&#160;&#160;&#160;&#160;display&#160;the&#160;number&#160;of&#160;messages&#160;(%M)
-      <br />&#160;&#160;&#160;&#160;display&#160;the&#160;subject&#160;(%s)
-      <br />else&#160;if&#160;we&#160;know&#160;how&#160;many&#160;lines&#160;in&#160;the&#160;message
-      <br />&#160;&#160;&#160;&#160;display&#160;lines&#160;in&#160;message&#160;(%l)
-      <br />else
-      <br />&#160;&#160;&#160;&#160;display&#160;the&#160;size&#160;of&#160;the&#160;message&#160;in&#160;bytes&#160;(%c)
-      <br />&#160;&#160;&#160;&#160;</p>
+      <p>if&#160;a&#160;thread&#160;is&#160;folded&#160;display&#160;the&#160;number&#160;of&#160;messages
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;(%M)&#160;display&#160;the&#160;subject&#160;(%s)&#160;else&#160;if&#160;we&#160;know&#160;how&#160;many&#160;lines&#160;in&#160;the
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;message&#160;display&#160;lines&#160;in&#160;message&#160;(%l)&#160;else&#160;display&#160;the&#160;size&#160;of&#160;the
+      <br />&#160;&#160;&#160;&#160;&#160;&#160;message&#160;in&#160;bytes&#160;(%c)</p>
     </div>
   </div>
   <div class="sect1">
@@ -145,7 +119,7 @@ set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp
     </div>
     <p>The
     <span class="quote">“
-    <span class="quote">nested-if</span>”</span>patch doesn't have any config of its own. It modifies the behavior of the format strings.</p>
+    <span class="quote">nested-if</span>”</span>feature doesn't have any config of its own. It modifies the behavior of the format strings.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -196,17 +170,17 @@ set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/feature/cond-date" title="Conditional Dates Feature">cond-date patch</a>
+            <a class="link" href="/feature/cond-date" title="Conditional Dates Feature">cond-date feature</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#index-format" title="3.133.&#160;index_format">$index_format</a>
+            <a class="link" href="/guide/reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#status-format" title="3.366.&#160;status_format">$status_format</a>
+            <a class="link" href="/guide/reference.html#status-format" title="3.373.&#160;status_format">$status_format</a>
           </p>
         </li>
       </ul>
@@ -221,7 +195,7 @@ set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp
         </div>
       </div>
     </div>
-    <p>Patch overwrites $&lt;fmt&gt; handler in
+    <p>Feature overwrites $&lt;fmt&gt; handler in
     <code class="literal">$index_format</code></p>
   </div>
   <div class="sect1">
