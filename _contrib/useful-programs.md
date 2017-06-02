@@ -33,6 +33,7 @@ status: stable
 
 ## Adressbooks
 
+* [ppl](http://ppladdressbook.org/) - decentralized command line address book
 * [notmuch-abook](https://github.com/guyzmo/notmuch-abook) - Notmuch Addressbook
   manager for vim
 * [goobook](https://pypi.python.org/pypi/goobook/1.9) - Search your google
