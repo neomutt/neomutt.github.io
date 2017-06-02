@@ -26,6 +26,23 @@ version of Neomutt.
 [macos]: http://www.apple.com/macos/
 [neomutt-homebrew]: https://github.com/neomutt/homebrew-neomutt
 
+[Homebrew][homebrew] is a package manager for [macOS]. It allows you to easily 
+install and manage software that didn't come pre-installed on your system and 
+that isn't available on the App Store.
+
+Neomutt can be installed with Homebrew. The Neomutt developers maintain the 
+[Homebrew package for Neomutt][neomutt-homebrew].
+
+The instructions for installing Homebrew are provided on the [Homebrew 
+homepage][homebrew]. Run the command that's given in a terminal, and then 
+follow the instructions it gives you. This page will show you how to install, 
+update, and uninstall Neomutt with Homebrew, as well as how to install a debug 
+version of Neomutt.
+
+[homebrew]: {{ page.homepage }}
+[macos]: http://www.apple.com/macos/
+[neomutt-homebrew]: https://github.com/neomutt/homebrew-neomutt
+
 ## Support <a class="offset" id="support"></a>
 
 Homebrew supports macOS versions from 10.6 Snow Leopard. Any version of macOS 
