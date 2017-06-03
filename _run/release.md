@@ -145,7 +145,7 @@ Gentoo
 Arch (AUR)
 
 - Update
-- push
+- push to BOTH neomutt and AUR
 
 ## Announcements
 
