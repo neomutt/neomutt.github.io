@@ -92,10 +92,6 @@ digraph build {
 	hcachever_sh -> hcachever_h
 	hcachever_h -> generated [ style="dashed" ]
 
-	PATCHES -> patchlist_sh
-	patchlist_sh -> patchlist_c
-	patchlist_c -> generated [ style="dashed" ]
-
 	ops -> gen_defs
 	gen_defs -> keymap_defs_h
 	ops -> gen_alldefs
