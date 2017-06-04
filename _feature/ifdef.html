@@ -63,13 +63,20 @@ finish
     <a class="link" href="/guide/reference.html#functions" title="4.&#160;Functions">&lt;function&gt;</a>,
     <a class="link" href="/guide/reference.html#commands" title="2.&#160;Configuration Commands">command</a>or compile-time symbol, such as
     <span class="quote">“
-    <span class="quote">USE_IMAP</span>”</span>.</p>
+    <span class="quote">imap</span>”</span>.</p>
+    <p>A list of compile-time symbols can be seen in the output of the command</p>
+    <pre class="screen">
+mutt -v
+</pre>
+    <p>(in the
+    <span class="quote">“
+    <span class="quote">Compile options</span>”</span>section).</p>
     <p>
     <code class="literal">finish</code>is particularly useful when combined with
     <code class="literal">ifndef</code>. e.g.</p>
     <pre class="screen">
 <span class="comment"># Sidebar config file</span>
-ifndef USE_SIDEBAR finish
+ifndef sidebar finish
 </pre>
   </div>
   <div class="sect1">
@@ -137,9 +144,9 @@ ifdef trash 'set trash=~/Mail/trash'
 ifdef tag-pattern 'bind index &lt;F6&gt; tag-pattern'
 <span class="comment"># If the 'imap-fetch-mail' command exists, read my IMAP config.</span>
 ifdef imap-fetch-mail 'source ~/.mutt/imap.rc'
-<span class="comment"># If the compile-time symbol 'USE_SIDEBAR' does not exist, then
+<span class="comment"># If the compile-time symbol 'sidebar' does not exist, then
 # stop reading the current config file.</span>
-ifndef USE_SIDEBAR finish
+ifndef sidebar finish
 
 
 <span class="comment"># vim: syntax=muttrc</span>

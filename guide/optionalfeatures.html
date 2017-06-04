@@ -47,7 +47,7 @@ title: Optional Features
       <span class="quote">-</span>”</span>. For example, if Mutt was compiled using GnuTLS for encrypted communication instead of OpenSSL,
       <code class="literal">mutt -v</code>would contain:</p>
       <pre class="screen">
--USE_SSL_OPENSSL +USE_SSL_GNUTLS
+-openssl +gnutls
 </pre>
     </div>
     <div class="sect2">
@@ -522,7 +522,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <span class="emphasis">
       <em>--enable-exact-address</em>
     </span>switch can be given to configure to build it with write-support for the latter syntax.
-    <code class="literal">EXACT_ADDRESS</code>in the output of
+    <code class="literal">+exact_address</code>in the output of
     <code class="literal">mutt -v</code>indicates whether it's supported.</p>
   </div>
   <div class="sect1">
