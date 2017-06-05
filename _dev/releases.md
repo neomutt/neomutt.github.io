@@ -55,8 +55,8 @@ The Hg hashes link to Mutt's Mercurial repository.
 | Date       | Version | Git Hash                                                       | Hg Hash                                                         |
 | :--------- | :------ | :------------------------------------------------------------- | :-------------------------------------------------------------- |
 | 2017-05-30 | 1.8.3   | [`96a9aac4`](https://github.com/neomutt/neomutt/commit/96a9aac4) | [`fe5275246e13`](https://dev.mutt.org/hg/mutt/rev/fe5275246e13) |
-| 2017-04-18 | 1.8.2   | [`66ca3dd8`](https://github.com/neomutt/neomutt/commit/66ca3dd8) | [`c6ea4aed6bec`](https://dev.mutt.org/hg/mutt/rev/c6ea4aed6bec) |
-| 2017-04-12 | 1.8.1   | [`412e614b`](https://github.com/neomutt/neomutt/commit/412e614b) | [`f44974c10990`](https://dev.mutt.org/hg/mutt/rev/f44974c10990) |
+| 2017-04-18 | 1.8.2   | [`b8a4b09b`](https://github.com/neomutt/neomutt/commit/b8a4b09b) | [`c6ea4aed6bec`](https://dev.mutt.org/hg/mutt/rev/c6ea4aed6bec) |
+| 2017-04-12 | 1.8.1   | [`c47e6ab9`](https://github.com/neomutt/neomutt/commit/c47e6ab9) | [`f44974c10990`](https://dev.mutt.org/hg/mutt/rev/f44974c10990) |
 | 2017-02-25 | 1.8.0   | [`eb4610b6`](https://github.com/neomutt/neomutt/commit/eb4610b6) | [`d897983752f9`](https://dev.mutt.org/hg/mutt/rev/d897983752f9) |
 | 2016-12-04 | 1.7.2   | [`6b1ca7e2`](https://github.com/neomutt/neomutt/commit/6b1ca7e2) | [`99f5624d1f52`](https://dev.mutt.org/hg/mutt/rev/99f5624d1f52) |
 | 2016-10-08 | 1.7.1   | [`4f4f02c1`](https://github.com/neomutt/neomutt/commit/4f4f02c1) | [`0ce5f9bff1fd`](https://dev.mutt.org/hg/mutt/rev/0ce5f9bff1fd) |
