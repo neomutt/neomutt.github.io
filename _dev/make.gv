@@ -56,7 +56,6 @@ digraph build {
 	mutt_h           [ label="mutt.h"              ]
 	mutt_pot         [ label="mutt.pot"            ]
 	ops              [ label="\{OPS*\}"            ]
-	patchlist_c      [ label="patchlist.c"         ]
 
 	dot_configure [ label=<./configure <font color="red">●</font><font color="green">★</font>> shape="box" ]
 	gen_alldefs   [ label="gen_defs" color="green" shape="box" ]
@@ -68,7 +67,6 @@ digraph build {
 	makedoc_c     [ label="makedoc -c" color="green" shape="box" ]
 	makedoc_m     [ label="makedoc -m" color="green" shape="box" ]
 	makedoc_s     [ label="makedoc -s" color="green" shape="box" ]
-	patchlist_sh  [ label="patchlist.sh" color="green" shape="box" ]
 	txt2c         [ label=<txt2c <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
 	xgettext      [ label="xgettext" shape="box" ]
 	xsltproc      [ label="xsltproc" shape="box" ]
