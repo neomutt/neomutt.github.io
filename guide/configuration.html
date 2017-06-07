@@ -939,6 +939,29 @@ set alias_file=~/.mail_aliases
     </span>to be specified without angle brackets.</p>
     <p>The special function
     <code class="literal">&lt;noop&gt;</code>unbinds the specified key sequence.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a class="offset" id="bind-warnings"></a>5.1.&#160;Warnings about Duplicated Bindings</h3>
+          </div>
+        </div>
+      </div>
+      <p>Due to a limitation of Mutt, creating key bindings, or macros, will overwrite existing mappings with similar, shorter, names.</p>
+      <pre class="screen">
+bind index g  group-reply
+bind index gg first-entry
+</pre>
+      <p>In this example, the
+      <code class="literal">g</code>binding will be overwritten and cannot be used. Newer versions of Mutt will warn the user about this.</p>
+      <p>To avoid warnings on startup, first set the shorter binding to
+      <code class="literal">noop</code>(no operation).</p>
+      <pre class="screen">
+bind index g  noop
+bind index gg first-entry
+</pre>
+    </div>
   </div>
   <div class="sect1">
     <div class="titlepage">
