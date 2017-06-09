@@ -165,6 +165,7 @@ Email
 - Translators - send them new po files
 
 Update IRC topic
+Twitter
 
 ## Post-Release
 
