@@ -207,10 +207,8 @@ mutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
 </pre>
     <p>will send a message to
     <code class="literal">&lt;professor@bigschool.edu&gt;</code>with a subject of
-    <span class="quote">“
-    <span class="quote">data set for run #2</span>”</span>. In the body of the message will be the contents of the file
-    <span class="quote">“
-    <span class="quote">~/run2.dat</span>”</span>.</p>
+    <span class="quote">“<span class="quote">data set for run #2</span>”</span>. In the body of the message will be the contents of the file
+    <span class="quote">“<span class="quote">~/run2.dat</span>”</span>.</p>
     <p>An include file passed with
     <code class="literal">-i</code> will be used as the body of the message. When combined with
     <code class="literal">-E</code>, the include file will be directly edited during message composition. The file will be modified regardless of whether the message is sent or aborted.</p>
@@ -1363,8 +1361,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <span class="bold">
         <strong>Note:</strong>
       </span>Mutt will not automatically source this file; you must explicitly use the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#source" title="27.&#160;Reading Initialization Commands From Another File">source</a>
       </span>”</span> command for it to be executed in case this option points to a dedicated alias file.</p>
       <p>The default for this option is the currently used muttrc file, or
@@ -1739,8 +1736,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </table>
       </div>
       <p>For an explanation of
-      <span class="quote">“
-      <span class="quote">soft-fill</span>”</span>, see the
+      <span class="quote">“<span class="quote">soft-fill</span>”</span>, see the
       <a class="link" href="#index-format" title="3.137.&#160;index_format">$index_format</a> documentation.</p>
     </div>
     <div class="sect2">
@@ -1755,8 +1751,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <div class="literallayout">
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">\&lt;(attach|attached|attachments?)\&gt;</code>
         </span>”</span></p>
       </div>
@@ -1775,8 +1770,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">\n</code>
         </span>”</span></p>
       </div>
@@ -2085,8 +2079,7 @@ set certificate_file=~/.mutt/certificates
         <em>unset</em>
       </span>by default and should only be enabled when new mail detection for these folder types is unreliable or doesn't work.</p>
       <p>Note that enabling this variable should happen before any
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">mailboxes</a>
       </span>”</span> directives occur in configuration files regarding mbox or mmdf folders because mutt needs to determine the initial new mail status of such a mailbox by performing a fast mailbox scan when it is defined. Afterwards the new mail status is tracked by file size changes.</p>
     </div>
@@ -2151,14 +2144,12 @@ set certificate_file=~/.mutt/certificates
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">--&#160;NeoMutt:&#160;Compose&#160;&#160;[Approx.&#160;msg&#160;size:&#160;%l&#160;&#160;&#160;Atts:&#160;%a]%&gt;-</code>
         </span>”</span></p>
       </div>
       <p>Controls the format of the status line displayed in the
-      <span class="quote">“
-      <span class="quote">compose</span>”</span> menu. This string is similar to
+      <span class="quote">“<span class="quote">compose</span>”</span> menu. This string is similar to
       <a class="link" href="#status-format" title="3.373.&#160;status_format">$status_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
@@ -2275,8 +2266,7 @@ set certificate_file=~/.mutt/certificates
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">text/plain</code>
         </span>”</span></p>
       </div>
@@ -2299,8 +2289,7 @@ set certificate_file=~/.mutt/certificates
       <a class="link" href="#record" title="3.273.&#160;record">$record</a>,
       <a class="link" href="#save-name" title="3.291.&#160;save_name">$save_name</a>,
       <a class="link" href="#force-name" title="3.83.&#160;force_name">$force_name</a> and
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">fcc-hook</a>
       </span>”</span>.</p>
     </div>
@@ -2601,14 +2590,12 @@ set certificate_file=~/.mutt/certificates
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">!%a,&#160;%b&#160;%d,&#160;%Y&#160;at&#160;%I:%M:%S%p&#160;%Z</code>
         </span>”</span></p>
       </div>
       <p>This variable controls the format of the date printed by the
-      <span class="quote">“
-      <span class="quote">%d</span>”</span> sequence in
+      <span class="quote">“<span class="quote">%d</span>”</span> sequence in
       <a class="link" href="#index-format" title="3.137.&#160;index_format">$index_format</a>. This is passed to the
       <code class="literal">strftime(3)</code>function to process the date, see the man page for the proper syntax.</p>
       <p>Unless the first character in the string is a bang (
@@ -2645,14 +2632,12 @@ set certificate_file=~/.mutt/certificates
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">~/.muttdebug</code>
         </span>”</span></p>
       </div>
       <p>The location prefix of the debug file, 0 is append to the debug file Old debug files are renamed with the prefix 1, 2, 3 and 4. See
-      <span class="quote">“
-      <span class="quote">debug_level</span>”</span> for more detail.</p>
+      <span class="quote">“<span class="quote">debug_level</span>”</span> for more detail.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2781,8 +2766,7 @@ set certificate_file=~/.mutt/certificates
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">/home/mutt/install/bin/mutt_dotlock</code>
         </span>”</span></p>
       </div>
@@ -3133,12 +3117,9 @@ sh -c 'string'
       <span class="emphasis">
         <em>before</em>
       </span>you use
-      <span class="quote">“
-      <span class="quote">+</span>”</span> or
-      <span class="quote">“
-      <span class="quote">=</span>”</span> for any other variables since expansion takes place when handling the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">+</span>”</span> or
+      <span class="quote">“<span class="quote">=</span>”</span> for any other variables since expansion takes place when handling the
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">mailboxes</a>
       </span>”</span> command.</p>
     </div>
@@ -3401,8 +3382,7 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">[%a:&#160;%s]</code>
         </span>”</span></p>
       </div>
@@ -3449,10 +3429,8 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, forwarded messages set the
-      <span class="quote">“
-      <span class="quote">In-Reply-To:</span>”</span> and
-      <span class="quote">“
-      <span class="quote">References:</span>”</span> headers in the same way as normal replies would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
+      <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
+      <span class="quote">“<span class="quote">References:</span>”</span> headers in the same way as normal replies would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3471,12 +3449,10 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, this variable contains a default from address. It can be overridden using
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#my-hdr" title="15.&#160;User-Defined Headers">my_hdr</a>
       </span>”</span>(including from a
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span>) and
       <a class="link" href="#reverse-name" title="3.285.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
@@ -3565,14 +3541,10 @@ sh -c 'string'
         <code class="literal">.*</code>
       </span>”</span>.</p>
       <p>This can be useful if you see the following behavior: you address an e-mail to user ID
-      <span class="quote">“
-      <span class="quote">stevef</span>”</span> whose full name is
-      <span class="quote">“
-      <span class="quote">Steve Franklin</span>”</span>. If mutt expands
-      <span class="quote">“
-      <span class="quote">stevef</span>”</span> to
-      <span class="quote">“
-      <span class="quote">"Franklin" stevef@foo.bar</span>”</span> then you should set the
+      <span class="quote">“<span class="quote">stevef</span>”</span> whose full name is
+      <span class="quote">“<span class="quote">Steve Franklin</span>”</span>. If mutt expands
+      <span class="quote">“<span class="quote">stevef</span>”</span> to
+      <span class="quote">“<span class="quote">"Franklin" stevef@foo.bar</span>”</span> then you should set the
       <a class="link" href="#gecos-mask" title="3.92.&#160;gecos_mask">$gecos_mask</a> to a regular expression that will match the whole name so mutt will expand
       <span class="quote">“<span class="quote">Franklin</span>”</span> to
       <span class="quote">“<span class="quote">Franklin, Steve</span>”</span>.</p>
@@ -3589,14 +3561,12 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%4C&#160;%M%N&#160;%5s&#160;&#160;%-45.45f&#160;%d</code>
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the newsgroup browser display to your personal taste. This string is similar to
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="#index-format" title="3.137.&#160;index_format">index_format</a>
       </span>”</span>, but has its own set of printf()-like sequences:</p>
       <div class="informaltable">
@@ -3663,8 +3633,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>unset</em>
       </span>, the header fields normally added by the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#my-hdr" title="15.&#160;User-Defined Headers">my_hdr</a>
       </span>”</span> command are not created. This variable
       <span class="emphasis">
@@ -3711,8 +3680,7 @@ sh -c 'string'
         <em>unset</em>
       </span>so no header caching will be used.</p>
       <p>Header caching can greatly improve speed when opening POP, IMAP MH or Maildir folders, see
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="optionalfeatures.html#caching" title="7.&#160;Local Caching">caching</a>
       </span>”</span> for details.</p>
     </div>
@@ -4001,8 +3969,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will not display attachments with a disposition of
-      <span class="quote">“
-      <span class="quote">attachment</span>”</span> inline even if it could render the part to plain text. These MIME parts can only be viewed from the attachment menu.</p>
+      <span class="quote">“<span class="quote">attachment</span>”</span> inline even if it could render the part to plain text. These MIME parts can only be viewed from the attachment menu.</p>
       <p>If
       <span class="emphasis">
         <em>unset</em>
@@ -4037,8 +4004,7 @@ sh -c 'string'
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Specifies the fully-qualified hostname of the system mutt is running on containing the host's name and the DNS domain it belongs to. It is used as the domain part (after
-      <span class="quote">“
-      <span class="quote">@</span>”</span>) for local email addresses as well as Message-Id headers.</p>
+      <span class="quote">“<span class="quote">@</span>”</span>) for local email addresses as well as Message-Id headers.</p>
       <p>Its value is determined at startup as follows: the node's hostname is first determined by the
       <code class="literal">uname(3)</code>function. The domain is then looked up using the
       <code class="literal">gethostname(2)</code>and
@@ -4233,14 +4199,12 @@ set imap_authenticators="gssapi:cram-md5:login"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">/.</code>
         </span>”</span></p>
       </div>
       <p>This contains the list of characters which you would like to treat as folder separators for displaying IMAP paths. In particular it helps in using the
-      <span class="quote">“
-      <span class="quote">=</span>”</span> shortcut for your
+      <span class="quote">“<span class="quote">=</span>”</span> shortcut for your
       <span class="emphasis">
         <em>folder</em>
       </span>variable.</p>
@@ -4259,44 +4223,27 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Mutt requests these header fields in addition to the default headers (
-      <span class="quote">“
-      <span class="quote">Date:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">From:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Subject:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">To:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Cc:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Message-Id:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">References:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Content-Type:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Content-Description:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">In-Reply-To:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Reply-To:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">Lines:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">List-Post:</span>”</span>,
-      <span class="quote">“
-      <span class="quote">X-Label:</span>”</span>) from IMAP servers before displaying the index menu. You may want to add more headers for spam detection.</p>
+      <span class="quote">“<span class="quote">Date:</span>”</span>,
+      <span class="quote">“<span class="quote">From:</span>”</span>,
+      <span class="quote">“<span class="quote">Subject:</span>”</span>,
+      <span class="quote">“<span class="quote">To:</span>”</span>,
+      <span class="quote">“<span class="quote">Cc:</span>”</span>,
+      <span class="quote">“<span class="quote">Message-Id:</span>”</span>,
+      <span class="quote">“<span class="quote">References:</span>”</span>,
+      <span class="quote">“<span class="quote">Content-Type:</span>”</span>,
+      <span class="quote">“<span class="quote">Content-Description:</span>”</span>,
+      <span class="quote">“<span class="quote">In-Reply-To:</span>”</span>,
+      <span class="quote">“<span class="quote">Reply-To:</span>”</span>,
+      <span class="quote">“<span class="quote">Lines:</span>”</span>,
+      <span class="quote">“<span class="quote">List-Post:</span>”</span>,
+      <span class="quote">“<span class="quote">X-Label:</span>”</span>) from IMAP servers before displaying the index menu. You may want to add more headers for spam detection.</p>
       <p>
       <span class="bold">
         <strong>Note:</strong>
       </span>This is a space separated list, items should be uppercase and not contain the colon, e.g.
-      <span class="quote">“
-      <span class="quote">X-BOGOSITY X-SPAM-STATUS</span>”</span> for the
-      <span class="quote">“
-      <span class="quote">X-Bogosity:</span>”</span> and
-      <span class="quote">“
-      <span class="quote">X-Spam-Status:</span>”</span> header fields.</p>
+      <span class="quote">“<span class="quote">X-BOGOSITY X-SPAM-STATUS</span>”</span> for the
+      <span class="quote">“<span class="quote">X-Bogosity:</span>”</span> and
+      <span class="quote">“<span class="quote">X-Spam-Status:</span>”</span> header fields.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4569,8 +4516,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>This variable allows you to customize the message index display to your personal taste.</p>
       <p>
-      <span class="quote">“
-      <span class="quote">Format strings</span>”</span> are similar to the strings used in the C function
+      <span class="quote">“<span class="quote">Format strings</span>”</span> are similar to the strings used in the C function
       <code class="literal">printf(3)</code>to format output (see the man page for more details). The following sequences are defined in Mutt:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -4803,8 +4749,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%[fmt]</td>
               <td>the date and time of the message is converted to the local time zone, and
-              <span class="quote">“
-              <span class="quote">fmt</span>”</span> is expanded by the library function
+              <span class="quote">“<span class="quote">fmt</span>”</span> is expanded by the library function
               <code class="literal">strftime(3)</code>; a leading bang disables locales</td>
             </tr>
             <tr>
@@ -4839,12 +4784,9 @@ set imap_authenticators="gssapi:cram-md5:login"
         </table>
       </div>
       <p>Date format expressions can be constructed based on relative dates. Using the date formatting operators along with nested conditionals, the date format can be modified based on how old a message is. See the section on
-      <span class="quote">“
-      <span class="quote">Conditional Dates</span>”</span> for an explanation and examples
-      <span class="quote">“
-      <span class="quote">Soft-fill</span>”</span> deserves some explanation: Normal right-justification will print everything to the left of the
-      <span class="quote">“
-      <span class="quote">%&gt;</span>”</span>, displaying padding and whatever lies to the right only if there's room. By contrast, soft-fill gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text.</p>
+      <span class="quote">“<span class="quote">Conditional Dates</span>”</span> for an explanation and examples
+      <span class="quote">“<span class="quote">Soft-fill</span>”</span> deserves some explanation: Normal right-justification will print everything to the left of the
+      <span class="quote">“<span class="quote">%&gt;</span>”</span>, displaying padding and whatever lies to the right only if there's room. By contrast, soft-fill gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text.</p>
       <p>Note that these expandos are supported in
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#save-hook" title="16.&#160;Specify Default Save Mailbox">save-hook</a>
@@ -4945,8 +4887,7 @@ set inews="/usr/local/bin/inews -hS"
         <em>set</em>
       </span>, read messages marked as flagged will not be moved from your spool mailbox to your
       <a class="link" href="#mbox" title="3.156.&#160;mbox">$mbox</a> mailbox, or as a result of a
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mbox-hook" title="13.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>
       </span>”</span> command.</p>
     </div>
@@ -5191,8 +5132,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">'</code>
         </span>”</span></p>
       </div>
@@ -5271,8 +5211,7 @@ set inews="/usr/local/bin/inews -hS"
       <span class="emphasis">
         <em>not</em>
       </span>operator
-      <span class="quote">“
-      <span class="quote">!</span>”</span>. Only files whose names match this mask will be shown. The match is always case-sensitive.</p>
+      <span class="quote">“<span class="quote">!</span>”</span>. Only files whose names match this mask will be shown. The match is always case-sensitive.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5513,8 +5452,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">flagged</code>
         </span>”</span></p>
       </div>
@@ -5651,8 +5589,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%4n&#160;%c&#160;%-16s&#160;%a</code>
         </span>”</span></p>
       </div>
@@ -5697,8 +5634,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">mixmaster</code>
         </span>”</span></p>
       </div>
@@ -5719,8 +5655,7 @@ set inews="/usr/local/bin/inews -hS"
       </div>
       <p>Controls whether or not Mutt will move read messages from your spool mailbox to your
       <a class="link" href="#mbox" title="3.156.&#160;mbox">$mbox</a> mailbox, or as a result of a
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mbox-hook" title="13.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>
       </span>”</span> command.</p>
     </div>
@@ -5907,14 +5842,10 @@ set inews="/usr/local/bin/inews -hS"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to a news server, in the order mutt should try them. Authentication methods are either
-      <span class="quote">“
-      <span class="quote">user</span>”</span> or any SASL mechanism, e.g.
-      <span class="quote">“
-      <span class="quote">digest-md5</span>”</span>,
-      <span class="quote">“
-      <span class="quote">gssapi</span>”</span> or
-      <span class="quote">“
-      <span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it's
+      <span class="quote">“<span class="quote">user</span>”</span> or any SASL mechanism, e.g.
+      <span class="quote">“<span class="quote">digest-md5</span>”</span>,
+      <span class="quote">“<span class="quote">gssapi</span>”</span> or
+      <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it's
       <span class="emphasis">
         <em>unset</em>
       </span>(the default) mutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -6239,14 +6170,12 @@ set nntp_authenticators="digest-md5:user"
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">builtin</code>
         </span>”</span></p>
       </div>
       <p>This variable specifies which pager you would like to use to view messages. The value
-      <span class="quote">“
-      <span class="quote">builtin</span>”</span> means to use the built-in pager, otherwise this variable should specify the pathname of the external pager you would like to use.</p>
+      <span class="quote">“<span class="quote">builtin</span>”</span> means to use the built-in pager, otherwise this variable should specify the pathname of the external pager you would like to use.</p>
       <p>Using an external pager may have some disadvantages: Additional keystrokes are necessary because you can't call mutt functions directly from the pager, and screen resizes cause lines longer than the screen width to be badly formatted in the help menu.</p>
     </div>
     <div class="sect2">
@@ -6277,14 +6206,12 @@ set nntp_authenticators="digest-md5:user"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">-%Z-&#160;%C/%m:&#160;%-20.20n&#160;&#160;&#160;%s%*&#160;&#160;--&#160;(%P)</code>
         </span>”</span></p>
       </div>
       <p>This variable controls the format of the one-line message
-      <span class="quote">“
-      <span class="quote">status</span>”</span> displayed before each message in either the internal or an external pager. The valid sequences are listed in the
+      <span class="quote">“<span class="quote">status</span>”</span> displayed before each message in either the internal or an external pager. The valid sequences are listed in the
       <a class="link" href="#index-format" title="3.137.&#160;index_format">$index_format</a> section.</p>
     </div>
     <div class="sect2">
@@ -6403,8 +6330,7 @@ set nntp_authenticators="digest-md5:user"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This format is used to create an old-style
-      <span class="quote">“
-      <span class="quote">clearsigned</span>”</span> PGP message. Note that the use of this format is
+      <span class="quote">“<span class="quote">clearsigned</span>”</span> PGP message. Note that the use of this format is
       <span class="bold">
         <strong>strongly</strong>
       </span>
@@ -7095,8 +7021,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">\n</code>
         </span>”</span></p>
       </div>
@@ -7161,16 +7086,11 @@ gpg --list-keys --with-colons --with-fingerprint
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to an POP server, in the order mutt should try them. Authentication methods are either
-      <span class="quote">“
-      <span class="quote">user</span>”</span>,
-      <span class="quote">“
-      <span class="quote">apop</span>”</span> or any SASL mechanism, e.g.
-      <span class="quote">“
-      <span class="quote">digest-md5</span>”</span>,
-      <span class="quote">“
-      <span class="quote">gssapi</span>”</span> or
-      <span class="quote">“
-      <span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If this option is
+      <span class="quote">“<span class="quote">user</span>”</span>,
+      <span class="quote">“<span class="quote">apop</span>”</span> or any SASL mechanism, e.g.
+      <span class="quote">“<span class="quote">digest-md5</span>”</span>,
+      <span class="quote">“<span class="quote">gssapi</span>”</span> or
+      <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If this option is
       <span class="emphasis">
         <em>unset</em>
       </span>(the default) mutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -7239,8 +7159,7 @@ set pop_authenticators="digest-md5:apop:user"
 [pop[s]://][username[:password]@]popserver[:port]
 </pre>
       <p>where
-      <span class="quote">“
-      <span class="quote">[...]</span>”</span> denotes an optional part.</p>
+      <span class="quote">“<span class="quote">[...]</span>”</span> denotes an optional part.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7259,8 +7178,7 @@ set pop_authenticators="digest-md5:apop:user"
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will try to use the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">LAST</code>
       </span>”</span> POP command for retrieving only unread messages from the POP server when using the
       <code class="literal">
@@ -7387,14 +7305,12 @@ set pop_authenticators="digest-md5:apop:user"
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">~/postponed</code>
         </span>”</span></p>
       </div>
       <p>Mutt allows you to indefinitely
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
       <a class="link" href="#postpone" title="3.255.&#160;postpone">postpone</a> sending a message</span>”</span> which you are editing. When you choose to postpone a message, Mutt saves it in the mailbox specified by this variable.</p>
       <p>Also see the
       <a class="link" href="#postpone" title="3.255.&#160;postpone">$postpone</a> variable.</p>
@@ -7461,12 +7377,9 @@ set preconnect="ssh -f -q -L 1234:mailhost.net:143 mailhost.net \
 sleep 20 &lt; /dev/null &gt; /dev/null"
 </pre>
       <p>Mailbox
-      <span class="quote">“
-      <span class="quote">foo</span>”</span> on
-      <span class="quote">“
-      <span class="quote">mailhost.net</span>”</span> can now be reached as
-      <span class="quote">“
-      <span class="quote">{localhost:1234}foo</span>”</span>.</p>
+      <span class="quote">“<span class="quote">foo</span>”</span> on
+      <span class="quote">“<span class="quote">mailhost.net</span>”</span> can now be reached as
+      <span class="quote">“<span class="quote">{localhost:1234}foo</span>”</span>.</p>
       <p>Note: For this example to work, you must be able to log in to the remote machine without having to enter a password.</p>
     </div>
     <div class="sect2">
@@ -7483,10 +7396,8 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;ask-no</p>
       </div>
       <p>Controls whether or not Mutt really prints messages. This is set to
-      <span class="quote">“
-      <span class="quote">ask-no</span>”</span> by default, because some people accidentally hit
-      <span class="quote">“
-      <span class="quote">p</span>”</span> often.</p>
+      <span class="quote">“<span class="quote">ask-no</span>”</span> by default, because some people accidentally hit
+      <span class="quote">“<span class="quote">p</span>”</span> often.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7721,8 +7632,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <div class="literallayout">
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">^([&#160;\t]*[|&gt;:}#])+</code>
         </span>”</span></p>
       </div>
@@ -7791,10 +7701,8 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This variable specifies what
-      <span class="quote">“
-      <span class="quote">real</span>”</span> or
-      <span class="quote">“
-      <span class="quote">personal</span>”</span> name should be used when sending messages.</p>
+      <span class="quote">“<span class="quote">real</span>”</span> or
+      <span class="quote">“<span class="quote">personal</span>”</span> name should be used when sending messages.</p>
       <p>By default, this is the GECOS field from
       <code class="literal">/etc/passwd</code>. Note that this variable will
       <span class="emphasis">
@@ -8391,18 +8299,12 @@ From: abd30425@somewhere.net
       </div>
       <p>A colon-delimited list of character sets for outgoing messages. Mutt will use the first character set into which the text can be converted exactly. If your
       <a class="link" href="#charset" title="3.31.&#160;charset">$charset</a> is not
-      <span class="quote">“
-      <span class="quote">iso-8859-1</span>”</span> and recipients may not understand
-      <span class="quote">“
-      <span class="quote">UTF-8</span>”</span>, it is advisable to include in the list an appropriate widely used standard character set (such as
-      <span class="quote">“
-      <span class="quote">iso-8859-2</span>”</span>,
-      <span class="quote">“
-      <span class="quote">koi8-r</span>”</span> or
-      <span class="quote">“
-      <span class="quote">iso-2022-jp</span>”</span>) either instead of or after
-      <span class="quote">“
-      <span class="quote">iso-8859-1</span>”</span>.</p>
+      <span class="quote">“<span class="quote">iso-8859-1</span>”</span> and recipients may not understand
+      <span class="quote">“<span class="quote">UTF-8</span>”</span>, it is advisable to include in the list an appropriate widely used standard character set (such as
+      <span class="quote">“<span class="quote">iso-8859-2</span>”</span>,
+      <span class="quote">“<span class="quote">koi8-r</span>”</span> or
+      <span class="quote">“<span class="quote">iso-2022-jp</span>”</span>) either instead of or after
+      <span class="quote">“<span class="quote">iso-8859-1</span>”</span>.</p>
       <p>In case the text cannot be converted into one of these exactly, mutt uses
       <a class="link" href="#charset" title="3.31.&#160;charset">$charset</a> as a fallback.</p>
     </div>
@@ -8623,8 +8525,7 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%B%*&#160;&#160;%n</code>
         </span>”</span></p>
       </div>
@@ -8661,12 +8562,9 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%!</td>
               <td>
-              <span class="quote">“
-              <span class="quote">!</span>”</span>: one flagged message;
-              <span class="quote">“
-              <span class="quote">!!</span>”</span>: two flagged messages;
-              <span class="quote">“
-              <span class="quote">n!</span>”</span>: n flagged messages (for n &gt; 2). Otherwise prints nothing.</td>
+              <span class="quote">“<span class="quote">!</span>”</span>: one flagged message;
+              <span class="quote">“<span class="quote">!!</span>”</span>: two flagged messages;
+              <span class="quote">“<span class="quote">n!</span>”</span>: n flagged messages (for n &gt; 2). Otherwise prints nothing.</td>
             </tr>
             <tr>
               <td>%d</td>
@@ -8683,20 +8581,17 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%&gt;X</td>
               <td>right justify the rest of the string and pad with
-              <span class="quote">“
-              <span class="quote">X</span>”</span></td>
+              <span class="quote">“<span class="quote">X</span>”</span></td>
             </tr>
             <tr>
               <td>%|X</td>
               <td>pad to the end of the line with
-              <span class="quote">“
-              <span class="quote">X</span>”</span></td>
+              <span class="quote">“<span class="quote">X</span>”</span></td>
             </tr>
             <tr>
               <td>%*X</td>
               <td>soft-fill with character
-              <span class="quote">“
-              <span class="quote">X</span>”</span> as pad</td>
+              <span class="quote">“<span class="quote">X</span>”</span> as pad</td>
             </tr>
           </tbody>
         </table>
@@ -8989,8 +8884,7 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>unset</em>
       </span>this variable unless your signature contains just your name. The reason for this is because many software packages use
-      <span class="quote">“
-      <span class="quote">-- \n</span>”</span> to detect your signature. For example, Mutt has the ability to highlight the signature in a different color in the built-in pager.</p>
+      <span class="quote">“<span class="quote">-- \n</span>”</span> to detect your signature. For example, Mutt has the ability to highlight the signature in a different color in the built-in pager.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9025,14 +8919,12 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">~/.signature</code>
         </span>”</span></p>
       </div>
       <p>Specifies the filename of your signature, which is appended to all outgoing messages. If the filename ends with a pipe (
-      <span class="quote">“
-      <span class="quote">|</span>”</span>), it is assumed that filename is a shell command and input should be read from its standard output.</p>
+      <span class="quote">“<span class="quote">|</span>”</span>), it is assumed that filename is a shell command and input should be read from its standard output.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9769,8 +9661,7 @@ set sort=reverse-date-sent
         <br />Default:&#160;alias</p>
       </div>
       <p>Specifies how the entries in the
-      <span class="quote">“
-      <span class="quote">alias</span>”</span> menu are sorted. The following are legal values:</p>
+      <span class="quote">“<span class="quote">alias</span>”</span> menu are sorted. The following are legal values:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
@@ -10217,14 +10108,12 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">-*%A</code>
         </span>”</span></p>
       </div>
       <p>Controls the characters used by the
-      <span class="quote">“
-      <span class="quote">%r</span>”</span> indicator in
+      <span class="quote">“<span class="quote">%r</span>”</span> indicator in
       <a class="link" href="#status-format" title="3.373.&#160;status_format">$status_format</a>.</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -10265,8 +10154,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
               <td>%</td>
               <td>Mailbox is read-only, or will not be written when exiting. (You can toggle whether to write changes to a mailbox with the
               <code class="literal">&lt;toggle-write&gt;</code>operation, bound by default to
-              <span class="quote">“
-              <span class="quote">%</span>”</span>)</td>
+              <span class="quote">“<span class="quote">%</span>”</span>)</td>
             </tr>
             <tr>
               <td>4</td>
@@ -10289,14 +10177,12 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">-%r-NeoMutt:&#160;%f&#160;[Msgs:%?M?%M/?%m%?n?&#160;New:%n?%?o?&#160;Old:%o?%?d?&#160;Del:%d?%?F?&#160;Flag:%F?%?t?&#160;Tag:%t?%?p?&#160;Post:%p?%?b?&#160;Inc:%b?%?l?&#160;%l?]---(%s/%S)-%&gt;-(%P)---</code>
         </span>”</span></p>
       </div>
       <p>Controls the format of the status line displayed in the
-      <span class="quote">“
-      <span class="quote">index</span>”</span> menu. This string is similar to
+      <span class="quote">“<span class="quote">index</span>”</span> menu. This string is similar to
       <a class="link" href="#index-format" title="3.137.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
@@ -10503,10 +10389,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="quote">“<span class="quote">In-Reply-To</span>”</span> and
       <span class="quote">“<span class="quote">References:</span>”</span> fields when you
       <a class="link" href="#sort" title="3.350.&#160;sort">$sort</a> by message threads. By default, messages with the same subject are grouped together in
-      <span class="quote">“
-      <span class="quote">pseudo threads.</span>”</span>. This may not always be desirable, such as in a personal mailbox where you might have several unrelated messages with the subjects like
-      <span class="quote">“
-      <span class="quote">hi</span>”</span> which will get grouped together. See also
+      <span class="quote">“<span class="quote">pseudo threads.</span>”</span>. This may not always be desirable, such as in a personal mailbox where you might have several unrelated messages with the subjects like
+      <span class="quote">“<span class="quote">hi</span>”</span> which will get grouped together. See also
       <a class="link" href="#sort-re" title="3.354.&#160;sort_re">$sort_re</a> for a less drastic way of controlling this behavior.</p>
     </div>
     <div class="sect2">
@@ -10529,10 +10413,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>susp</em>
       </span>key, usually
-      <span class="quote">“
-      <span class="quote">^Z</span>”</span>. This is useful if you run mutt inside an xterm using a command like
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">^Z</span>”</span>. This is useful if you run mutt inside an xterm using a command like
+      <span class="quote">“<span class="quote">
         <code class="literal">xterm -e mutt</code>
       </span>”</span>.</p>
     </div>
@@ -10553,10 +10435,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will generate
-      <span class="quote">“
-      <span class="quote">format=flowed</span>”</span> bodies with a content type of
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">format=flowed</span>”</span> bodies with a content type of
+      <span class="quote">“<span class="quote">
         <code class="literal">text/plain; format=flowed</code>
       </span>”</span>. This format is easier to handle for some mailing software, and generally just looks like ordinary text. To actually make use of this format's features, you'll need support in your editor.</p>
       <p>Note that
@@ -10581,8 +10461,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Affects the
       <code class="literal">~b</code> and
       <code class="literal">~h</code> search operations described in section
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>
       </span>”</span>. If
       <span class="emphasis">
@@ -10631,8 +10510,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>set</em>
       </span>, the internal-pager will pad blank lines to the bottom of the screen with a tilde (
-      <span class="quote">“
-      <span class="quote">~</span>”</span>).</p>
+      <span class="quote">“<span class="quote">~</span>”</span>).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10653,8 +10531,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <a class="link" href="#net-inc" title="3.178.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
       <a class="link" href="#time-inc" title="3.381.&#160;time_inc">$time_inc</a> milliseconds apart. This can improve throughput on systems with slow terminals, or when running mutt on a remote system.</p>
       <p>Also see the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
       </span>”</span> section of the manual for performance considerations.</p>
     </div>
@@ -10691,8 +10568,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>This variable allows you to specify where Mutt will place its temporary files needed for displaying and composing messages. If this variable is not set, the environment variable
       <code class="literal">$TMPDIR</code> is used. If
       <code class="literal">$TMPDIR</code> is not set then
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">/tmp</code>
       </span>”</span> is used.</p>
     </div>
@@ -11135,10 +11011,8 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>unset</em>
       </span>, no
-      <span class="quote">“
-      <span class="quote">From:</span>”</span> header field will be generated unless the user explicitly sets one using the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">From:</span>”</span> header field will be generated unless the user explicitly sets one using the
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#my-hdr" title="15.&#160;User-Defined Headers">my_hdr</a>
       </span>”</span> command.</p>
     </div>
@@ -11385,8 +11259,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>Controls whether mutt writes out the
       <span class="quote">“<span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Exim users may wish to unset this. If mutt is set to deliver directly via SMTP (see
       <a class="link" href="#smtp-url" title="3.349.&#160;smtp_url">$smtp_url</a>), this option does nothing: mutt will never write out the
-      <span class="quote">“
-      <span class="quote">Bcc:</span>”</span> header in this case.</p>
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header in this case.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11407,8 +11280,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <a class="link" href="#read-inc" title="3.269.&#160;read_inc">$read_inc</a>,
       <a class="link" href="#net-inc" title="3.178.&#160;net_inc">$net_inc</a> and
       <a class="link" href="#time-inc" title="3.381.&#160;time_inc">$time_inc</a> variables and the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
       </span>”</span> section of the manual for performance considerations.</p>
     </div>
@@ -11445,8 +11317,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will add
-      <span class="quote">“
-      <span class="quote">X-Comment-To:</span>”</span> field (that contains full name of original article author) to article that followuped to newsgroup.</p>
+      <span class="quote">“<span class="quote">X-Comment-To:</span>”</span> field (that contains full name of original article author) to article that followuped to newsgroup.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

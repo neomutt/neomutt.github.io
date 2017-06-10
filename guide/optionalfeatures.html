@@ -121,10 +121,8 @@ smtp://user@host:587/
     <span class="emphasis">
       <em>--enable-gnutls=...</em>
     </span>for GnuTLS). Mutt can then attempt to encrypt communication with remote servers if these protocols are suffixed with
-    <span class="quote">“
-    <span class="quote">s</span>”</span> for
-    <span class="quote">“
-    <span class="quote">secure communication</span>”</span>.</p>
+    <span class="quote">“<span class="quote">s</span>”</span> for
+    <span class="quote">“<span class="quote">secure communication</span>”</span>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -185,8 +183,7 @@ smtp://user@host:587/
     <code class="literal">imaps</code> protocol. Alternatively, a pine-compatible notation is also supported, i.e.
     <code class="literal">{[username@]imapserver[:port][/ssl]}path/to/folder</code></p>
     <p>Note that not all servers use
-    <span class="quote">“
-    <span class="quote">/</span>”</span> as the hierarchy separator. Mutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
+    <span class="quote">“<span class="quote">/</span>”</span> as the hierarchy separator. Mutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
     <p>When browsing folders on an IMAP server, you can toggle whether to look at only the folders you are subscribed to, or all folders with the
     <span class="emphasis">
       <em>toggle-subscribed</em>
@@ -253,8 +250,7 @@ set timeout=15
         </div>
       </div>
       <p>Mutt supports four authentication methods with IMAP servers: SASL, GSSAPI, CRAM-MD5, and LOGIN. There is also support for the pseudo-protocol ANONYMOUS, which allows you to log in to a public IMAP server without having an account. To use ANONYMOUS, simply make your username blank or
-      <span class="quote">“
-      <span class="quote">anonymous</span>”</span>.</p>
+      <span class="quote">“<span class="quote">anonymous</span>”</span>.</p>
       <p>SASL is a special super-authenticator, which selects among several protocols (including GSSAPI, CRAM-MD5, ANONYMOUS, and DIGEST-MD5) the most secure method available on your host and the server. Using some of these methods (including DIGEST-MD5 and possibly GSSAPI), your entire session will be encrypted and invisible to those teeming network snoops. It is the best option if you have it. To use it, you must have the Cyrus SASL library installed on your system and compile Mutt with the
       <span class="emphasis">
         <em>--with-sasl</em>
@@ -421,8 +417,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <span class="emphasis">
       <em>(2)</em>
     </span>the so-called
-    <span class="quote">“
-    <span class="quote">body caching</span>”</span> which are both described in this section.</p>
+    <span class="quote">“<span class="quote">body caching</span>”</span> which are both described in this section.</p>
     <p>Header caching is optional as it depends on external libraries, body caching is always enabled if Mutt is compiled with POP and/or IMAP support as these use it (body caching requires no external library).</p>
     <div class="sect2">
       <div class="titlepage">

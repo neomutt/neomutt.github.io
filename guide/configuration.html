@@ -305,14 +305,10 @@ set realname="Michael \"MuttDude\" Elkins"
     </div>
     <br class="example-break" />
     <p>
-    <span class="quote">“
-    <span class="quote">\\</span>”</span> means to insert a literal
-    <span class="quote">“
-    <span class="quote">\</span>”</span> into the line.
-    <span class="quote">“
-    <span class="quote">\n</span>”</span> and
-    <span class="quote">“
-    <span class="quote">\r</span>”</span> have their usual C meanings of linefeed and carriage-return, respectively.</p>
+    <span class="quote">“<span class="quote">\\</span>”</span> means to insert a literal
+    <span class="quote">“<span class="quote">\</span>”</span> into the line.
+    <span class="quote">“<span class="quote">\n</span>”</span> and
+    <span class="quote">“<span class="quote">\r</span>”</span> have their usual C meanings of linefeed and carriage-return, respectively.</p>
     <p>A
     <span class="quote">“<span class="quote">\</span>”</span> at the end of a line can be used to split commands over multiple lines as it
     <span class="quote">“<span class="quote">escapes</span>”</span> the line end, provided that the split points don't appear in the middle of command names. Lines are first concatenated before interpretation so that a multi-line can be commented by commenting out the first line only.</p>
@@ -363,8 +359,7 @@ set record=+sent_on_$HOSTNAME
     <p>will cause Mutt to save outgoing messages to a folder named
     <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
-    <span class="quote">“
-    <span class="quote">kremvax.</span>”</span>(See
+    <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
     <a class="link" href="reference.html#record" title="3.273.&#160;record">$record</a> for details.)</p>
     <p>Mutt expands the variable when it is assigned, not when it is used. If the value of a variable on the right-hand side of an assignment changes after the assignment, the variable on the left-hand side will not be affected.</p>
     <p>The commands understood by Mutt are explained in the next paragraphs. For a complete list, see the
@@ -445,8 +440,7 @@ set record=+sent_on_$HOSTNAME
     <a class="link" href="#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">
       <code class="literal">send-hook</code>
     </a>, the sender can be set to a dedicated one for writing mailing list messages, and the signature could be set to a mutt-related one for writing to a mutt list — for other lists, the list sender setting still applies but a different signature can be selected. Or, given a group only containing recipients known to accept encrypted mail,
-    <span class="quote">“
-    <span class="quote">auto-encryption</span>”</span> can be achieved easily.</p>
+    <span class="quote">“<span class="quote">auto-encryption</span>”</span> can be achieved easily.</p>
     <p>The
     <span class="command">
       <strong>group</strong>
@@ -483,10 +477,8 @@ alternates -group me address1 address2
 alternates -group me -group work address3
 </pre>
     <p>would create a group named
-    <span class="quote">“
-    <span class="quote">me</span>”</span> which contains all your addresses and a group named
-    <span class="quote">“
-    <span class="quote">work</span>”</span> which contains only your work address
+    <span class="quote">“<span class="quote">me</span>”</span> which contains all your addresses and a group named
+    <span class="quote">“<span class="quote">work</span>”</span> which contains only your work address
     <span class="emphasis">
       <em>address3</em>
     </span>. Besides many other possibilities, this could be used to automatically mark your own messages in a mailing list folder as read or use a special signature for work-related messages.</p>
@@ -543,16 +535,14 @@ alternates -group me -group work address3
       </em>... }</p>
     </div>
     <p>It's usually very cumbersome to remember or type out the address of someone you are communicating with. Mutt allows you to create
-    <span class="quote">“
-    <span class="quote">aliases</span>”</span> which map a short string to a full address.</p>
+    <span class="quote">“<span class="quote">aliases</span>”</span> which map a short string to a full address.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you want to create an alias for more than one address, you
       <span class="emphasis">
         <em>must</em>
       </span>separate the addresses with a comma (
-      <span class="quote">“
-      <span class="quote">,</span>”</span>).</p>
+      <span class="quote">“<span class="quote">,</span>”</span>).</p>
     </div>
     <p>The optional
     <code class="literal">-group</code> argument to
@@ -563,8 +553,7 @@ alternates -group me -group work address3
       <em>group</em>
     </span>.</p>
     <p>To remove an alias or aliases (
-    <span class="quote">“
-    <span class="quote">*</span>”</span> means all aliases):</p>
+    <span class="quote">“<span class="quote">*</span>”</span> means all aliases):</p>
     <pre class="screen">
 alias muttdude me@cs.hmc.edu (Michael Elkins)
 alias theguys manny, moe, jack
@@ -1063,8 +1052,7 @@ folder-hook mutt "set sort=threads"
     <a class="link" href="reference.html#sort" title="3.350.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
-    <span class="quote">“
-    <span class="quote">mutt</span>”</span> in their name.</p>
+    <span class="quote">“<span class="quote">mutt</span>”</span> in their name.</p>
     <div class="example">
       <a class="offset" id="ex-folder-sorting"></a>
       <p class="title">
@@ -1351,8 +1339,7 @@ folder-hook mutt "set sort=threads"
         </li>
         <li class="listitem">
           <p>tilde (the
-          <span class="quote">“
-          <span class="quote">~</span>”</span> used to pad blank lines in the pager)</p>
+          <span class="quote">“<span class="quote">~</span>”</span> used to pad blank lines in the pager)</p>
         </li>
         <li class="listitem">
           <p>tree (thread tree drawn in the message index and attachment menu)</p>
@@ -1537,8 +1524,7 @@ export COLORFGBG
       <span class="command">
         <strong>color</strong>
       </span>command for it to be removed. The pattern
-      <span class="quote">“
-      <span class="quote">*</span>”</span> is a special token which means to clear the color list of all entries.</p>
+      <span class="quote">“<span class="quote">*</span>”</span> is a special token which means to clear the color list of all entries.</p>
     </div>
     <p>Mutt also recognizes the keywords
     <span class="emphasis">
@@ -1561,8 +1547,7 @@ export COLORFGBG
     </span>for your xterm), since color names may then lose their normal meaning.</p>
     <a class="offset" id="mono"></a>
     <p>If your terminal does not support color, it is still possible change the video attributes through the use of the
-    <span class="quote">“
-    <span class="quote">mono</span>”</span> command. Usage:</p>
+    <span class="quote">“<span class="quote">mono</span>”</span> command. Usage:</p>
     <div class="cmdsynopsis">
       <p>
       <code class="command">mono</code>
@@ -2947,22 +2932,17 @@ spam "^From: .*MAILER-DAEMON"       "999"
           <dd>
             <p>A specialized string for representing paths including support for mailbox shortcuts (see
             <a class="xref" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">Section&#160;10, “Mailbox Shortcuts”</a>) as well as tilde (
-            <span class="quote">“
-            <span class="quote">~</span>”</span>) for a user's home directory and more.</p>
+            <span class="quote">“<span class="quote">~</span>”</span>) for a user's home directory and more.</p>
           </dd>
           <dt>
             <span class="term">quadoption</span>
           </dt>
           <dd>
             <p>Like a boolean but triggers a prompt when set to
-            <span class="quote">“
-            <span class="quote">ask-yes</span>”</span> or
-            <span class="quote">“
-            <span class="quote">ask-no</span>”</span> with
-            <span class="quote">“
-            <span class="quote">yes</span>”</span> and
-            <span class="quote">“
-            <span class="quote">no</span>”</span> preselected respectively.</p>
+            <span class="quote">“<span class="quote">ask-yes</span>”</span> or
+            <span class="quote">“<span class="quote">ask-no</span>”</span> with
+            <span class="quote">“<span class="quote">yes</span>”</span> and
+            <span class="quote">“<span class="quote">no</span>”</span> preselected respectively.</p>
           </dd>
           <dt>
             <span class="term">sort order</span>
@@ -3095,8 +3075,7 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>ask-yes</em>
       </span>will cause a prompt with a default answer of
-      <span class="quote">“
-      <span class="quote">yes</span>”</span> and
+      <span class="quote">“<span class="quote">yes</span>”</span> and
       <span class="emphasis">
         <em>ask-no</em>
       </span>will provide a default answer of
@@ -3151,8 +3130,7 @@ set ?allow_8bit
       <span class="command">
         <strong>reset</strong>
       </span>command there exists the special variable
-      <span class="quote">“
-      <span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
+      <span class="quote">“<span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3309,8 +3287,7 @@ set my_foo = $my_inc
       <br class="example-break" />
       <p>These assignments are all valid. If, however, the value of
       <code class="literal">$my_lines</code> would have been
-      <span class="quote">“
-      <span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
+      <span class="quote">“<span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
       <code class="literal">$pager_index_lines</code> would have produced an error message.</p>
       <p>Type conversion applies to all configuration commands which take arguments. But please note that every expanded value of a variable is considered just a single token. A working example is:</p>
       <pre class="screen">
@@ -3329,8 +3306,7 @@ mailboxes $my_mx +mailbox3
 </pre>
       <p>because the value of
       <code class="literal">$my_mx</code> is interpreted as a single mailbox named
-      <span class="quote">“
-      <span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
+      <span class="quote">“<span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
     </div>
   </div>
   <div class="sect1">
@@ -3355,8 +3331,7 @@ mailboxes $my_mx +mailbox3
     <code class="literal">~/.mail_aliases</code> so that I can make my
     <code class="literal">~/.muttrc</code> readable and keep my aliases private.</p>
     <p>If the filename begins with a tilde (
-    <span class="quote">“
-    <span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
+    <span class="quote">“<span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
     <p>If the filename ends with a vertical bar (
     <span class="quote">“<span class="quote">|</span>”</span>), then
     <span class="emphasis">
@@ -3433,10 +3408,8 @@ mailboxes $my_mx +mailbox3
       <p>Mutt adds some other modifiers to format strings. If you use an equals symbol (
       <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion — that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
-      <span class="quote">“
-      <span class="quote">test</span>”</span>, that expansion would look like
-      <span class="quote">“
-      <span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
+      <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
+      <span class="quote">“<span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
       <p>There are two very little-known modifiers that affect the way that an expando is replaced. If there is an underline (
       <span class="quote">“<span class="quote">_</span>”</span>) character between any format modifiers (as above) and the expando letter, it will expands in all lower case. And if you use a colon (
       <span class="quote">“<span class="quote">:</span>”</span>), it will replace all decimal points with underlines.</p>
@@ -3505,8 +3478,7 @@ mailboxes $my_mx +mailbox3
         </div>
       </div>
       <p>Any format string ending in a vertical bar (
-      <span class="quote">“
-      <span class="quote">|</span>”</span>) will be expanded and piped through the first word in the string, using spaces as separator. The string returned will be used for display. If the returned string ends in %, it will be passed through the formatter a second time. This allows the filter to generate a replacement format string including % expandos.</p>
+      <span class="quote">“<span class="quote">|</span>”</span>) will be expanded and piped through the first word in the string, using spaces as separator. The string returned will be used for display. If the returned string ends in %, it will be passed through the formatter a second time. This allows the filter to generate a replacement format string including % expandos.</p>
       <p>All % expandos in a format string are expanded before the script is called so that:</p>
       <div class="example">
         <a class="offset" id="ex-fmtpipe"></a>
@@ -3575,8 +3547,7 @@ set status_format = "%B: %?n?%n&amp;no? new messages %&gt; (%v on %h)"
           <dd>
             <p>Normal right-justification will print everything to the left of the
             <code class="literal">%&gt;</code>, displaying padding and whatever lies to the right only if there's room. By contrast,
-            <span class="quote">“
-            <span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
+            <span class="quote">“<span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
             <code class="literal">%*</code>: the second ensures there's a space between the truncated right-hand side and the subject):</p>
             <pre class="screen">
 set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"

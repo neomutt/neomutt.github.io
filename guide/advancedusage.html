@@ -79,26 +79,19 @@ title: Advanced Usage
     <span class="quote">“<span class="quote">^</span>”</span> and the dollar sign
     <span class="quote">“<span class="quote">$</span>”</span> are metacharacters that respectively match the empty string at the beginning and end of a line.</p>
     <p>A list of characters enclosed by
-    <span class="quote">“
-    <span class="quote">[</span>”</span> and
-    <span class="quote">“
-    <span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
-    <span class="quote">“
-    <span class="quote">^</span>”</span> then it matches any character
+    <span class="quote">“<span class="quote">[</span>”</span> and
+    <span class="quote">“<span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
+    <span class="quote">“<span class="quote">^</span>”</span> then it matches any character
     <span class="emphasis">
       <em>not</em>
     </span>in the list. For example, the regular expression
     <span class="emphasis">
       <em>[0123456789]</em>
     </span>matches any single digit. A range of ASCII characters may be specified by giving the first and last characters, separated by a hyphen
-    <span class="quote">“
-    <span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
-    <span class="quote">“
-    <span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
-    <span class="quote">“
-    <span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
-    <span class="quote">“
-    <span class="quote">-</span>”</span> place it last.</p>
+    <span class="quote">“<span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
+    <span class="quote">“<span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
+    <span class="quote">“<span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
+    <span class="quote">“<span class="quote">-</span>”</span> place it last.</p>
     <p>Certain named classes of characters are predefined. Character classes consist of
     <span class="quote">“<span class="quote">[:</span>”</span>, a keyword denoting the class, and
     <span class="quote">“<span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
@@ -313,8 +306,7 @@ title: Advanced Usage
     <br class="table-break" />
     <p>Two regular expressions may be concatenated; the resulting regular expression matches any string formed by concatenating two substrings that respectively match the concatenated subexpressions.</p>
     <p>Two regular expressions may be joined by the infix operator
-    <span class="quote">“
-    <span class="quote">|</span>”</span>; the resulting regular expression matches any string matching either subexpression.</p>
+    <span class="quote">“<span class="quote">|</span>”</span>; the resulting regular expression matches any string matching either subexpression.</p>
     <p>Repetition takes precedence over concatenation, which in turn takes precedence over alternation. A whole subexpression may be enclosed in parentheses to override these precedence rules.</p>
     <div class="note">
       <h3 class="title">Note</h3>
@@ -919,8 +911,7 @@ title: Advanced Usage
       <span class="emphasis">
         <em>MIN</em>
       </span>]</span>”</span>,
-      <span class="quote">“
-      <span class="quote">[
+      <span class="quote">“<span class="quote">[
       <span class="emphasis">
         <em>MIN</em>
       </span>]-</span>”</span> and
@@ -943,8 +934,7 @@ title: Advanced Usage
       <code class="literal">=b *.*</code>will find all messages that contain the literal string
       <span class="quote">“<span class="quote">*.*</span>”</span>. Simple string matches are less powerful than regular expressions but can be considerably faster. This is especially true for IMAP folders, because string matches can be performed on the server instead of by fetching every message. IMAP treats
       <code class="literal">=h</code> specially: it must be of the form
-      <span class="quote">“
-      <span class="quote">header: substring</span>”</span> and will not partially match header names. The substring part may be omitted if you simply wish to find messages containing a particular header without regard to its value.</p>
+      <span class="quote">“<span class="quote">header: substring</span>”</span> and will not partially match header names. The substring part may be omitted if you simply wish to find messages containing a particular header without regard to its value.</p>
       <p>Patterns matching lists of addresses (notably c, C, p, P and t) match if there is at least one match in the whole list. If you want to make sure that all elements of that list match, you need to prefix your pattern with
       <span class="quote">“<span class="quote">^</span>”</span>. This example matches all mails which only has recipients from Germany.</p>
       <div class="example">
@@ -1393,8 +1383,7 @@ Limit to messages matching: ~d 20/1/95-31/10
         <span class="emphasis">
           <em>before</em>
         </span>the given date will be selected. If you omit the maximum (second) date, and specify
-        <span class="quote">“
-        <span class="quote">DD/MM/YY-</span>”</span>, all messages
+        <span class="quote">“<span class="quote">DD/MM/YY-</span>”</span>, all messages
         <span class="emphasis">
           <em>after</em>
         </span>the given date will be selected. If you specify a single date with no dash (
@@ -1521,12 +1510,9 @@ Limit to messages matching: ~d &lt;1m
       </div>
     </div>
     <p>There are times that it's useful to ask Mutt to "remember" which message you're currently looking at, while you move elsewhere in your mailbox. You can do this with the
-    <span class="quote">“
-    <span class="quote">mark-message</span>”</span> operator, which is bound to the
-    <span class="quote">“
-    <span class="quote">~</span>”</span> key by default. Press this key to enter an identifier for the marked message. When you want to return to this message, press
-    <span class="quote">“
-    <span class="quote">'</span>”</span> and the name that you previously entered.</p>
+    <span class="quote">“<span class="quote">mark-message</span>”</span> operator, which is bound to the
+    <span class="quote">“<span class="quote">~</span>”</span> key by default. Press this key to enter an identifier for the marked message. When you want to return to this message, press
+    <span class="quote">“<span class="quote">'</span>”</span> and the name that you previously entered.</p>
     <p>(Message marking is really just a shortcut for defining a macro that returns you to the current message by searching for its Message-ID. You can choose a different prefix by setting the
     <a class="link" href="reference.html#mark-macro-prefix" title="3.152.&#160;mark_macro_prefix">$mark_macro_prefix</a> variable.)</p>
   </div>
@@ -1541,8 +1527,7 @@ Limit to messages matching: ~d &lt;1m
     </div>
     <p>Sometimes it is desirable to perform an operation on a group of messages all at once rather than one at a time. An example might be to save messages to a mailing list to a separate folder, or to delete all messages with a given subject. To tag all messages matching a pattern, use the
     <code class="literal">&lt;tag-pattern&gt;</code>function, which is bound to
-    <span class="quote">“
-    <span class="quote">shift-T</span>”</span> by default. Or you can select individual messages by hand using the
+    <span class="quote">“<span class="quote">shift-T</span>”</span> by default. Or you can select individual messages by hand using the
     <code class="literal">&lt;tag-message&gt;</code>function, which is bound to
     <span class="quote">“<span class="quote">t</span>”</span> by default. See
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> for Mutt's pattern matching syntax.</p>
@@ -1751,8 +1736,7 @@ Limit to messages matching: ~d &lt;1m
       <a class="offset" id="ex-default-hook"></a>
       <p class="title">
         <strong>Example&#160;4.5.&#160;Specifying a
-        <span class="quote">“
-        <span class="quote">default</span>”</span> hook</strong>
+        <span class="quote">“<span class="quote">default</span>”</span> hook</strong>
       </p>
       <div class="example-contents">
         <pre class="screen">
@@ -1921,8 +1905,7 @@ roessler@does-not-exist.org        Thomas Roessler mutt pgp
 From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
 </pre>
     <p>to denote the start of a new message (this is often referred to as the
-    <span class="quote">“
-    <span class="quote">From_</span>”</span> line). The mbox format requires mailbox locking, is prone to mailbox corruption with concurrently writing clients or misinterpreted From_ lines. Depending on the environment, new mail detection can be unreliable. Mbox folders are fast to open and easy to archive.</p>
+    <span class="quote">“<span class="quote">From_</span>”</span> line). The mbox format requires mailbox locking, is prone to mailbox corruption with concurrently writing clients or misinterpreted From_ lines. Depending on the environment, new mail detection can be unreliable. Mbox folders are fast to open and easy to archive.</p>
     <p>
     <span class="emphasis">
       <em>MMDF</em>
@@ -2091,10 +2074,8 @@ folder-hook . 'set record=^'
     <span class="quote">“<span class="quote">Cc &lt;list&gt;</span>”</span> when it appears in the
     <span class="quote">“<span class="quote">Cc</span>”</span> field (otherwise it prints the name of the author).</p>
     <p>Often times the
-    <span class="quote">“
-    <span class="quote">To</span>”</span> and
-    <span class="quote">“
-    <span class="quote">Cc</span>”</span> fields in mailing list messages tend to get quite large. Most people do not bother to remove the author of the message they reply to from the list, resulting in two or more copies being sent to that person. The
+    <span class="quote">“<span class="quote">To</span>”</span> and
+    <span class="quote">“<span class="quote">Cc</span>”</span> fields in mailing list messages tend to get quite large. Most people do not bother to remove the author of the message they reply to from the list, resulting in two or more copies being sent to that person. The
     <code class="literal">&lt;list-reply&gt;</code>function, which by default is bound to
     <span class="quote">“<span class="quote">L</span>”</span> in the
     <span class="emphasis">
@@ -2119,10 +2100,8 @@ folder-hook . 'set record=^'
       <code class="literal">Mail-Followup-To</code> header manually. Mutt will only auto-generate this header if it doesn't exist when you send the message.</p>
     </div>
     <p>The other method some mailing list admins use is to generate a
-    <span class="quote">“
-    <span class="quote">Reply-To</span>”</span> field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
-    <span class="quote">“
-    <span class="quote">Reply-To</span>”</span> field. Mutt uses the
+    <span class="quote">“<span class="quote">Reply-To</span>”</span> field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
+    <span class="quote">“<span class="quote">Reply-To</span>”</span> field. Mutt uses the
     <a class="link" href="reference.html#reply-to" title="3.279.&#160;reply_to">$reply_to</a> variable to help decide which address to use. If set to
     <span class="emphasis">
       <em>ask-yes</em>
@@ -2135,8 +2114,7 @@ folder-hook . 'set record=^'
     <span class="emphasis">
       <em>yes</em>
     </span>, the
-    <span class="quote">“
-    <span class="quote">Reply-To</span>”</span> field will be used when present.</p>
+    <span class="quote">“<span class="quote">Reply-To</span>”</span> field will be used when present.</p>
     <p>You can change or delete the
     <span class="quote">“<span class="quote">X-Label:</span>”</span> field within Mutt using the
     <span class="quote">“<span class="quote">edit-label</span>”</span> command, bound to the
@@ -2395,8 +2373,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <code class="literal">&lt;link-threads&gt;</code>function (bound to &amp; by default). The reply will then be connected to this parent message.</p>
       <p>You can also connect multiple children at once, tagging them and using the
       <code class="literal">&lt;tag-prefix&gt;</code>command (
-      <span class="quote">“
-      <span class="quote">;</span>”</span>) or the
+      <span class="quote">“<span class="quote">;</span>”</span>) or the
       <a class="link" href="reference.html#auto-tag" title="3.22.&#160;auto_tag">$auto_tag</a> option.</p>
     </div>
     <div class="sect2">
@@ -2409,8 +2386,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         </div>
       </div>
       <p>On mailing lists, some people are in the bad habit of starting a new discussion by hitting
-      <span class="quote">“
-      <span class="quote">reply</span>”</span> to any message from the list and changing the subject to a totally unrelated one. You can fix such threads by using the
+      <span class="quote">“<span class="quote">reply</span>”</span> to any message from the list and changing the subject to a totally unrelated one. You can fix such threads by using the
       <code class="literal">&lt;break-thread&gt;</code>function (bound by default to #), which will turn the subthread starting from the current message into a whole different thread.</p>
     </div>
   </div>
