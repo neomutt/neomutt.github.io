@@ -50,7 +50,7 @@ status: stable
     <p>The Compressed Folder feature allows Mutt to read mailbox files that are compressed. But it isn't limited to compressed files. It works well with encrypted files, too. In fact, if you can create a program/script to convert to and from your format, then Mutt can read it.</p>
     <p>The feature adds three hooks to Mutt:
     <code class="literal">open-hook</code>,
-    <code class="literal">close-hook</code>and
+    <code class="literal">close-hook</code> and
     <code class="literal">append-hook</code>. They define commands to: uncompress a file; compress a file; append messages to an already compressed file.</p>
     <p>There are some examples of both compressed and encrypted files, later. For now, the documentation will just concentrate on compressed files.</p>
   </div>
@@ -91,7 +91,7 @@ status: stable
       </p>
     </div>
     <p>The shell-command must contain two placeholders for filenames:
-    <code class="literal">%f</code>and
+    <code class="literal">%f</code> and
     <code class="literal">%t</code>. These represent
     <span class="quote">“
     <span class="quote">from</span>”</span>and
@@ -192,7 +192,7 @@ status: stable
 open-hook regexp shell-command
 </pre>
       <p>If Mutt is unable to open a file, it then looks for
-      <code class="literal">open-hook</code>that matches the filename.</p>
+      <code class="literal">open-hook</code> that matches the filename.</p>
       <p>If your compression program doesn't have a well-defined extension, then you can use
       <code class="literal">.</code>as the regexp.</p>
       <div class="sect3">
@@ -217,12 +217,12 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
             </li>
             <li class="listitem">
               <p>Mutt has an
-              <code class="literal">open-hook</code>whose regexp matches the filename:
+              <code class="literal">open-hook</code> whose regexp matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
               <p>Mutt uses the command
-              <code class="literal">gzip -cd</code>to create a temporary file that it
+              <code class="literal">gzip -cd</code> to create a temporary file that it
               <span class="emphasis">
                 <em>can</em>
               </span>read</p>
@@ -244,12 +244,12 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
 close-hook regexp shell-command
 </pre>
       <p>When Mutt has finished with a compressed mail folder, it will look for a matching
-      <code class="literal">close-hook</code>to recompress the file. This hook is
+      <code class="literal">close-hook</code> to recompress the file. This hook is
       <a class="link" href="#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>If the folder has not been modified, the
-        <code class="literal">close-hook</code>will not be called.</p>
+        <code class="literal">close-hook</code> will not be called.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -277,19 +277,19 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
             </li>
             <li class="listitem">
               <p>Mutt has a
-              <code class="literal">close-hook</code>whose regexp matches the filename:
+              <code class="literal">close-hook</code> whose regexp matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
               <p>Mutt uses the command
-              <code class="literal">gzip -c</code>to create a new compressed file</p>
+              <code class="literal">gzip -c</code> to create a new compressed file</p>
             </li>
           </ul>
         </div>
         <div class="note">
           <h3 class="title">Note</h3>
           <p>The
-          <code class="literal">close-hook</code>can also include extra options, e.g. compression level:
+          <code class="literal">close-hook</code> can also include extra options, e.g. compression level:
           <code class="literal">--best</code></p>
         </div>
       </div>
@@ -310,15 +310,15 @@ append-hook regexp shell-command
       <code class="literal">append-hook</code>. This hook is
       <a class="link" href="#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <p>Using the
-      <code class="literal">append-hook</code>will save time, but Mutt won't be able to determine the type of the mail folder inside the compressed file.</p>
+      <code class="literal">append-hook</code> will save time, but Mutt won't be able to determine the type of the mail folder inside the compressed file.</p>
       <p>Mutt will
       <span class="emphasis">
         <em>assume</em>
       </span>the type to be that of the
-      <code class="literal">$mbox_type</code>variable. Mutt also uses this type for temporary files.</p>
+      <code class="literal">$mbox_type</code> variable. Mutt also uses this type for temporary files.</p>
       <p>Mutt will only use the
-      <code class="literal">append-hook</code>for existing files. The
-      <code class="literal">close-hook</code>will be used for empty, or missing files.</p>
+      <code class="literal">append-hook</code> for existing files. The
+      <code class="literal">close-hook</code> will be used for empty, or missing files.</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>If your command writes to stdout, it is vital that you use
@@ -349,23 +349,23 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
             </li>
             <li class="listitem">
               <p>Mutt has an
-              <code class="literal">append-hook</code>whose regexp matches the filename:
+              <code class="literal">append-hook</code> whose regexp matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
               <p>Mutt knows the mailbox type from the
-              <code class="literal">$mbox</code>variable</p>
+              <code class="literal">$mbox</code> variable</p>
             </li>
             <li class="listitem">
               <p>Mutt uses the command
-              <code class="literal">gzip -c</code>to append to an existing compressed file</p>
+              <code class="literal">gzip -c</code> to append to an existing compressed file</p>
             </li>
           </ul>
         </div>
         <div class="note">
           <h3 class="title">Note</h3>
           <p>The
-          <code class="literal">append-hook</code>can also include extra options, e.g. compression level:
+          <code class="literal">append-hook</code> can also include extra options, e.g. compression level:
           <code class="literal">--best</code></p>
         </div>
       </div>
@@ -392,7 +392,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.383.&#160;tmpdir">$tmpdir</a>directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.383.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
