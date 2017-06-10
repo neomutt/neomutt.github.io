@@ -1673,14 +1673,10 @@ export COLORFGBG
       <span class="quote">“<span class="quote">content-</span>”</span>.
       <span class="quote">“<span class="quote">ignore *</span>”</span> will ignore all headers.</p>
       <p>To remove a previously added token from the list, use the
-      <span class="quote">“
-      <span class="quote">unignore</span>”</span> command. The
-      <span class="quote">“
-      <span class="quote">unignore</span>”</span> command will make Mutt display headers with the given pattern. For example, if you do
-      <span class="quote">“
-      <span class="quote">ignore x-</span>”</span> it is possible to
-      <span class="quote">“
-      <span class="quote">unignore x-mailer</span>”</span>.</p>
+      <span class="quote">“<span class="quote">unignore</span>”</span> command. The
+      <span class="quote">“<span class="quote">unignore</span>”</span> command will make Mutt display headers with the given pattern. For example, if you do
+      <span class="quote">“<span class="quote">ignore x-</span>”</span> it is possible to
+      <span class="quote">“<span class="quote">unignore x-mailer</span>”</span>.</p>
       <p>
       <span class="quote">“<span class="quote">unignore *</span>”</span> will remove all tokens from the ignore list.</p>
       <div class="example">
@@ -1955,10 +1951,8 @@ subscribe [0-9]+.*@bugs.debian.org
     <code class="literal">-group</code> flag adds all of the subsequent regular expressions to the named
     <a class="link" href="#addrgroup" title="3.&#160;Address Groups">address group</a> in addition to adding to the specified address list.</p>
     <p>The
-    <span class="quote">“
-    <span class="quote">unlists</span>”</span> command is used to remove a token from the list of known and subscribed mailing-lists. Use
-    <span class="quote">“
-    <span class="quote">unlists *</span>”</span> to remove all tokens.</p>
+    <span class="quote">“<span class="quote">unlists</span>”</span> command is used to remove a token from the list of known and subscribed mailing-lists. Use
+    <span class="quote">“<span class="quote">unlists *</span>”</span> to remove all tokens.</p>
     <p>To remove a mailing list from the list of subscribed mailing lists, but keep it on the list of known mailing lists, use
     <span class="command">
       <strong>unsubscribe</strong>
@@ -1989,8 +1983,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <span class="emphasis">
       <em>regexp</em>
     </span>is a regular expression specifying the mailbox to treat as a
-    <span class="quote">“
-    <span class="quote">spool</span>”</span> mailbox and
+    <span class="quote">“<span class="quote">spool</span>”</span> mailbox and
     <span class="emphasis">
       <em>mailbox</em>
     </span>specifies where mail should be saved when read.</p>
@@ -1999,8 +1992,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <a class="xref" href="advancedusage.html#mailbox-hook" title="6.2.&#160;Mailbox Matching in Hooks">Mailbox Matching in Hooks</a> for more details.</p>
     <p>Note that execution of mbox-hooks is dependent on the
     <a class="link" href="reference.html#move" title="3.176.&#160;move">$move</a> configuration variable. If set to
-    <span class="quote">“
-    <span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
+    <span class="quote">“<span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
     <p>Unlike some of the other
     <span class="emphasis">
       <em>hook</em>
@@ -2061,10 +2053,8 @@ subscribe [0-9]+.*@bugs.debian.org
         <strong>mailboxes</strong>
       </span>command are resolved when the command is executed, so if these names contain
       <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">shortcut characters</a>(such as
-      <span class="quote">“
-      <span class="quote">=</span>”</span> and
-      <span class="quote">“
-      <span class="quote">!</span>”</span>), any variable definition that affects these characters (like
+      <span class="quote">“<span class="quote">=</span>”</span> and
+      <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
       <a class="link" href="reference.html#folder" title="3.79.&#160;folder">$folder</a> and
       <a class="link" href="reference.html#spoolfile" title="3.356.&#160;spoolfile">$spoolfile</a>) should be set before the
       <span class="command">
@@ -2103,8 +2093,7 @@ subscribe [0-9]+.*@bugs.debian.org
     </span>command allows you to create your own header fields which will be added to every message you send and appear in the editor if
     <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> is set.</p>
     <p>For example, if you would like to add an
-    <span class="quote">“
-    <span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
+    <span class="quote">“<span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
     <a class="xref" href="#ex-my-hdr" title="Example&#160;3.11.&#160;Defining custom headers">Example&#160;3.11, “Defining custom headers”</a> in your
     <code class="literal">.muttrc</code>.</p>
     <div class="example">
@@ -2125,24 +2114,19 @@ my_hdr Organization: A Really Big Company, Anytown, USA
       <span class="emphasis">
         <em>not</em>
       </span>allowed between the keyword and the colon (
-      <span class="quote">“
-      <span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so Mutt enforces the rule.</p>
+      <span class="quote">“<span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so Mutt enforces the rule.</p>
     </div>
     <p>If you would like to add a header field to a single message, you should either set the
     <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> variable, or use the
     <code class="literal">&lt;edit-headers&gt;</code>function (default:
-    <span class="quote">“
-    <span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
+    <span class="quote">“<span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
     <p>To remove user defined header fields, use the
     <span class="command">
       <strong>unmy_hdr</strong>
     </span>command. You may specify an asterisk (
-    <span class="quote">“
-    <span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
-    <span class="quote">“
-    <span class="quote">To</span>”</span> and
-    <span class="quote">“
-    <span class="quote">Cc</span>”</span> header fields, you could use:</p>
+    <span class="quote">“<span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
+    <span class="quote">“<span class="quote">To</span>”</span> and
+    <span class="quote">“<span class="quote">Cc</span>”</span> header fields, you could use:</p>
     <pre class="screen">
 unmy_hdr to cc
 </pre>
@@ -2589,8 +2573,7 @@ folder-hook . 'push \eV'
     </div>
     <p>This command can be used to execute any function. Functions are listed in the
     <a class="link" href="reference.html#functions" title="4.&#160;Functions">function reference</a>.
-    <span class="quote">“
-    <span class="quote">
+    <span class="quote">“<span class="quote">
       <span class="command">
         <strong>exec</strong>
       </span>
@@ -2779,10 +2762,8 @@ set spam_separator=", "
     </div>
     <br class="example-break" />
     <p>If then a message is received that DCC registered with
-    <span class="quote">“
-    <span class="quote">many</span>”</span> hits under the
-    <span class="quote">“
-    <span class="quote">Fuz2</span>”</span> checksum, and that PureMessage registered with a 97% probability of being spam, that message's spam tag would read
+    <span class="quote">“<span class="quote">many</span>”</span> hits under the
+    <span class="quote">“<span class="quote">Fuz2</span>”</span> checksum, and that PureMessage registered with a 97% probability of being spam, that message's spam tag would read
     <code class="literal">90+/DCC-Fuz2, 97/PM</code>. (The four characters before
     <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used — in this case,
     <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
@@ -2809,10 +2790,8 @@ set spam_separator=", "
     <span class="command">
       <strong>spam</strong>
     </span>patterns — is sorted at lowest priority. Numbers are sorted next, beginning with 0 and ranging upward. Finally, non-numeric strings are sorted, with
-    <span class="quote">“
-    <span class="quote">a</span>”</span> taking lower priority than
-    <span class="quote">“
-    <span class="quote">z</span>”</span>. Clearly, in general, sorting by spam tags is most effective when you can coerce your filter to give you a raw number. But in case you can't, Mutt can still do something useful.</p>
+    <span class="quote">“<span class="quote">a</span>”</span> taking lower priority than
+    <span class="quote">“<span class="quote">z</span>”</span>. Clearly, in general, sorting by spam tags is most effective when you can coerce your filter to give you a raw number. But in case you can't, Mutt can still do something useful.</p>
     <p>The
     <span class="command">
       <strong>nospam</strong>
@@ -3058,10 +3037,8 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>string</em>
       </span>variables consist of any number of printable characters and must be enclosed in quotes if they contain spaces or tabs. You may also use the escape sequences
-      <span class="quote">“
-      <span class="quote">\n</span>”</span> and
-      <span class="quote">“
-      <span class="quote">\t</span>”</span> for newline and tab, respectively.
+      <span class="quote">“<span class="quote">\n</span>”</span> and
+      <span class="quote">“<span class="quote">\t</span>”</span> for newline and tab, respectively.
       <span class="emphasis">
         <em>quadoption</em>
       </span>variables are used to control whether or not to be prompted for certain actions, or to specify a default action. A value of
@@ -3081,8 +3058,7 @@ spam "^From: .*MAILER-DAEMON"       "999"
       </span>will provide a default answer of
       <span class="quote">“<span class="quote">no.</span>”</span></p>
       <p>Prefixing a variable with
-      <span class="quote">“
-      <span class="quote">no</span>”</span> will unset it. Example:
+      <span class="quote">“<span class="quote">no</span>”</span> will unset it. Example:
       <code class="literal">
       <span class="command">
         <strong>set</strong>
@@ -3363,8 +3339,7 @@ mailboxes $my_mx +mailbox3
       </em>}</p>
     </div>
     <p>This command permits you to flush hooks you have previously defined. You can either remove all hooks by giving the
-    <span class="quote">“
-    <span class="quote">*</span>”</span> character as an argument, or you can remove all hooks of a specific type by saying something like
+    <span class="quote">“<span class="quote">*</span>”</span> character as an argument, or you can remove all hooks of a specific type by saying something like
     <code class="literal">
     <span class="command">
       <strong>unhook</strong>
@@ -3395,8 +3370,7 @@ mailboxes $my_mx +mailbox3
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code> represents a message's Subject: header in the
       <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> variable. The
-      <span class="quote">“
-      <span class="quote">expandos</span>”</span> available are documented with each format variable, but there are general modifiers available with all formatting expandos, too. Those are our concern here.</p>
+      <span class="quote">“<span class="quote">expandos</span>”</span> available are documented with each format variable, but there are general modifiers available with all formatting expandos, too. Those are our concern here.</p>
       <p>Some of the modifiers are borrowed right out of C (though you might know them from Perl, Python, shell, or another language). These are the
       <code class="literal">[-]m.n</code> modifiers, as in
       <code class="literal">%-12.12s</code>. As with such programming languages, these modifiers allow you to specify the minimum and maximum size of the resulting string, as well as its justification. If the

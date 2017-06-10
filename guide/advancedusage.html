@@ -187,44 +187,31 @@ title: Advanced Usage
         </dt>
         <dd>
           <p>A collating symbol is a multi-character collating element enclosed in
-          <span class="quote">“
-          <span class="quote">[.</span>”</span> and
-          <span class="quote">“
-          <span class="quote">.]</span>”</span>. For example, if
-          <span class="quote">“
-          <span class="quote">ch</span>”</span> is a collating element, then
+          <span class="quote">“<span class="quote">[.</span>”</span> and
+          <span class="quote">“<span class="quote">.]</span>”</span>. For example, if
+          <span class="quote">“<span class="quote">ch</span>”</span> is a collating element, then
           <span class="emphasis">
             <em>[[.ch.]]</em>
           </span>is a regexp that matches this collating element, while
           <span class="emphasis">
             <em>[ch]</em>
           </span>is a regexp that matches either
-          <span class="quote">“
-          <span class="quote">c</span>”</span> or
-          <span class="quote">“
-          <span class="quote">h</span>”</span>.</p>
+          <span class="quote">“<span class="quote">c</span>”</span> or
+          <span class="quote">“<span class="quote">h</span>”</span>.</p>
         </dd>
         <dt>
           <span class="term">Equivalence Classes</span>
         </dt>
         <dd>
           <p>An equivalence class is a locale-specific name for a list of characters that are equivalent. The name is enclosed in
-          <span class="quote">“
-          <span class="quote">[=</span>”</span> and
-          <span class="quote">“
-          <span class="quote">=]</span>”</span>. For example, the name
-          <span class="quote">“
-          <span class="quote">e</span>”</span> might be used to represent all of
-          <span class="quote">“
-          <span class="quote">e</span>”</span> with grave (
-          <span class="quote">“
-          <span class="quote">è</span>”</span>),
-          <span class="quote">“
-          <span class="quote">e</span>”</span> with acute (
-          <span class="quote">“
-          <span class="quote">é</span>”</span>) and
-          <span class="quote">“
-          <span class="quote">e</span>”</span>. In this case,
+          <span class="quote">“<span class="quote">[=</span>”</span> and
+          <span class="quote">“<span class="quote">=]</span>”</span>. For example, the name
+          <span class="quote">“<span class="quote">e</span>”</span> might be used to represent all of
+          <span class="quote">“<span class="quote">e</span>”</span> with grave (
+          <span class="quote">“<span class="quote">è</span>”</span>),
+          <span class="quote">“<span class="quote">e</span>”</span> with acute (
+          <span class="quote">“<span class="quote">é</span>”</span>) and
+          <span class="quote">“<span class="quote">e</span>”</span>. In this case,
           <span class="emphasis">
             <em>[[=e=]]</em>
           </span>is a regexp that matches any of:
@@ -902,8 +889,7 @@ title: Advanced Usage
       </span>is an
       <a class="link" href="configuration.html#addrgroup" title="3.&#160;Address Groups">address group</a>.</p>
       <p>*) The forms
-      <span class="quote">“
-      <span class="quote">&lt;[
+      <span class="quote">“<span class="quote">&lt;[
       <span class="emphasis">
         <em>MAX</em>
       </span>]</span>”</span>,
@@ -1176,20 +1162,14 @@ title: Advanced Usage
         </div>
       </div>
       <p>Mutt supports two versions of so called
-      <span class="quote">“
-      <span class="quote">simple searches</span>”</span>. These are issued if the query entered for searching, limiting and similar operations does not seem to contain a valid pattern modifier (i.e. it does not contain one of these characters:
-      <span class="quote">“
-      <span class="quote">~</span>”</span>,
-      <span class="quote">“
-      <span class="quote">=</span>”</span> or
-      <span class="quote">“
-      <span class="quote">%</span>”</span>). If the query is supposed to contain one of these special characters, they must be escaped by prepending a backslash (
-      <span class="quote">“
-      <span class="quote">\</span>”</span>).</p>
+      <span class="quote">“<span class="quote">simple searches</span>”</span>. These are issued if the query entered for searching, limiting and similar operations does not seem to contain a valid pattern modifier (i.e. it does not contain one of these characters:
+      <span class="quote">“<span class="quote">~</span>”</span>,
+      <span class="quote">“<span class="quote">=</span>”</span> or
+      <span class="quote">“<span class="quote">%</span>”</span>). If the query is supposed to contain one of these special characters, they must be escaped by prepending a backslash (
+      <span class="quote">“<span class="quote">\</span>”</span>).</p>
       <p>The first type is by checking whether the query string equals a keyword case-insensitively from
       <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.8.&#160;Simple search keywords">Table&#160;4.8, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
-      <span class="quote">“
-      <span class="quote">flag</span>”</span>(using
+      <span class="quote">“<span class="quote">flag</span>”</span>(using
       <a class="link" href="reference.html#simple-search" title="3.319.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
       <span class="quote">“<span class="quote">
         <code class="literal">[f]lag</code>
@@ -1282,10 +1262,8 @@ title: Advanced Usage
       <span class="emphasis">
         <em>and</em>
       </span>that have the word
-      <span class="quote">“
-      <span class="quote">elkins</span>”</span> in the
-      <span class="quote">“
-      <span class="quote">From</span>”</span> header field.</p>
+      <span class="quote">“<span class="quote">elkins</span>”</span> in the
+      <span class="quote">“<span class="quote">From</span>”</span> header field.</p>
       <p>Mutt also recognizes the following operators to create more complex search patterns:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
@@ -1318,16 +1296,11 @@ title: Advanced Usage
       </div>
       <br class="example-break" />
       <p>Here is an example using white space in the regular expression (note the
-      <span class="quote">“
-      <span class="quote">'</span>”</span> and
-      <span class="quote">“
-      <span class="quote">"</span>”</span> delimiters). For this to match, the mail's subject must match the
-      <span class="quote">“
-      <span class="quote">^Junk +From +Me$</span>”</span> and it must be from either
-      <span class="quote">“
-      <span class="quote">Jim +Somebody</span>”</span> or
-      <span class="quote">“
-      <span class="quote">Ed +SomeoneElse</span>”</span>:</p>
+      <span class="quote">“<span class="quote">'</span>”</span> and
+      <span class="quote">“<span class="quote">"</span>”</span> delimiters). For this to match, the mail's subject must match the
+      <span class="quote">“<span class="quote">^Junk +From +Me$</span>”</span> and it must be from either
+      <span class="quote">“<span class="quote">Jim +Somebody</span>”</span> or
+      <span class="quote">“<span class="quote">Ed +SomeoneElse</span>”</span>:</p>
       <pre class="screen">
 '~s "^Junk +From +Me$" ~f ("Jim +Somebody"|"Ed +SomeoneElse")'
 </pre>
@@ -1551,10 +1524,8 @@ Limit to messages matching: ~d &lt;1m
       </span>
     </a>commands, you can use the
     <code class="literal">&lt;tag-prefix-cond&gt;</code>operator. If there are no tagged messages, Mutt will
-    <span class="quote">“
-    <span class="quote">eat</span>”</span> the rest of the macro to abort it's execution. Mutt will stop
-    <span class="quote">“
-    <span class="quote">eating</span>”</span> the macro when it encounters the
+    <span class="quote">“<span class="quote">eat</span>”</span> the rest of the macro to abort it's execution. Mutt will stop
+    <span class="quote">“<span class="quote">eating</span>”</span> the macro when it encounters the
     <code class="literal">&lt;end-cond&gt;</code>operator; after this operator the rest of the macro will be executed as normal.</p>
   </div>
   <div class="sect1">
@@ -2184,8 +2155,7 @@ folder-hook . 'set record=^'
     <code class="literal">$keywords_legacy</code> and set
     <code class="literal">$keywords_standard</code>, and set
     <code class="literal">$xlabel_delimiter</code> either to what you currently use to delimit keywords in X-Labels, or to
-    <span class="quote">“
-    <span class="quote">,&#160;</span>”</span>(comma space).</p>
+    <span class="quote">“<span class="quote">,&#160;</span>”</span>(comma space).</p>
     <p>Note that it is common practice to insert
     <code class="literal">X-Label:</code>or other keyword headers from proxmail or other mail filters. This is a useful trick for categorizing messages en masse as they are delivered to your inbox, and it is fully compatible with the new keywords code.</p>
   </div>
@@ -2286,8 +2256,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <p>New mail for Maildir is assumed if there is one message in the
       <code class="literal">new/</code>subdirectory which is not marked deleted (see
       <a class="link" href="reference.html#maildir-trash" title="3.150.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
-      <span class="quote">“
-      <span class="quote">unseen</span>”</span> sequence as specified by
+      <span class="quote">“<span class="quote">unseen</span>”</span> sequence as specified by
       <a class="link" href="reference.html#mh-seq-unseen" title="3.169.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
       <a class="link" href="reference.html#new-mail-command" title="3.179.&#160;new_mail_command">$new_mail_command</a> can be configured to execute an external program every time new mail is detected in the current inbox.</p>
       <p>Mutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
@@ -2320,8 +2289,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <code class="literal">-y</code> option.</p>
       <p>For the pager, index and directory browser menus, Mutt contains the
       <code class="literal">&lt;buffy-list&gt;</code>function (bound to
-      <span class="quote">“
-      <span class="quote">.</span>”</span> by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
+      <span class="quote">“<span class="quote">.</span>”</span> by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default Mutt displays the number of mailboxes with new mail in the status bar, please refer to the
       <a class="link" href="reference.html#status-format" title="3.373.&#160;status_format">$status_format</a> variable for details.</p>
       <p>When changing folders, Mutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing

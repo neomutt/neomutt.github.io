@@ -1379,14 +1379,12 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%4n&#160;%2f&#160;%t&#160;%-10a&#160;&#160;&#160;%r</code>
         </span>”</span></p>
       </div>
       <p>Specifies the format of the data displayed for the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#alias" title="4.&#160;Defining/Using Aliases">alias</a>
       </span>”</span> menu. The following
       <code class="literal">printf(3)</code>-style sequences are available:</p>
@@ -1625,14 +1623,12 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%u%D%I&#160;%t%4n&#160;%T%.40d%&gt;&#160;[%.7m/%.10M,&#160;%.6e%?C?,&#160;%C?,&#160;%s]&#160;</code>
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the
-      <span class="quote">“
-      <span class="quote">attachment</span>”</span> menu. The following
+      <span class="quote">“<span class="quote">attachment</span>”</span> menu. The following
       <code class="literal">printf(3)</code>-style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -2675,8 +2671,7 @@ set certificate_file=~/.mutt/certificates
         <a class="link" href="configuration.html#fcc-hook" title="17.&#160;Specify Default Fcc: Mailbox When Composing">fcc-hook</a>
       </span>”</span> will be interpreted if they are specified with only a simple regexp, instead of a matching pattern. The hooks are expanded when they are declared, so a hook will be interpreted according to the value of this variable at the time the hook is declared.</p>
       <p>The default value matches if the message is either from a user matching the regular expression given, or if it is from you (if the from address matches
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">alternates</a>
       </span>”</span>) and is to or cc'ed to a user matching the given regular expression.</p>
     </div>
@@ -2938,8 +2933,7 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">Re:&#160;your&#160;mail</code>
         </span>”</span></p>
       </div>
@@ -2962,8 +2956,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will quoted-printable encode messages when they contain the string
-      <span class="quote">“
-      <span class="quote">From</span>”</span>(note the trailing space) in the beginning of a line. This is useful to avoid the tampering certain mail delivery and transport agents tend to do with messages (in order to prevent tools from misinterpreting the line as a mbox message separator).</p>
+      <span class="quote">“<span class="quote">From</span>”</span>(note the trailing space) in the beginning of a line. This is useful to avoid the tampering certain mail delivery and transport agents tend to do with messages (in order to prevent tools from misinterpreting the line as a mbox message separator).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3014,8 +3007,7 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">~</code>
         </span>”</span></p>
       </div>
@@ -3165,12 +3157,9 @@ sh -c 'string'
             <tr>
               <td>%f</td>
               <td>filename (
-              <span class="quote">“
-              <span class="quote">/</span>”</span> is appended to directory names,
-              <span class="quote">“
-              <span class="quote">@</span>”</span> to symbolic links and
-              <span class="quote">“
-              <span class="quote">*</span>”</span> to executable files)</td>
+              <span class="quote">“<span class="quote">/</span>”</span> is appended to directory names,
+              <span class="quote">“<span class="quote">@</span>”</span> to symbolic links and
+              <span class="quote">“<span class="quote">*</span>”</span> to executable files)</td>
             </tr>
             <tr>
               <td>%F</td>
@@ -3203,8 +3192,7 @@ sh -c 'string'
             <tr>
               <td>%t</td>
               <td>
-              <span class="quote">“
-              <span class="quote">*</span>”</span> if the file is tagged, blank otherwise</td>
+              <span class="quote">“<span class="quote">*</span>”</span> if the file is tagged, blank otherwise</td>
             </tr>
             <tr>
               <td>%u</td>
@@ -3213,20 +3201,17 @@ sh -c 'string'
             <tr>
               <td>%&gt;X</td>
               <td>right justify the rest of the string and pad with character
-              <span class="quote">“
-              <span class="quote">X</span>”</span></td>
+              <span class="quote">“<span class="quote">X</span>”</span></td>
             </tr>
             <tr>
               <td>%|X</td>
               <td>pad to the end of the line with character
-              <span class="quote">“
-              <span class="quote">X</span>”</span></td>
+              <span class="quote">“<span class="quote">X</span>”</span></td>
             </tr>
             <tr>
               <td>%*X</td>
               <td>soft-fill with character
-              <span class="quote">“
-              <span class="quote">X</span>”</span> as pad</td>
+              <span class="quote">“<span class="quote">X</span>”</span> as pad</td>
             </tr>
           </tbody>
         </table>
@@ -3257,12 +3242,10 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, Mutt will generate this field when you are replying to a known mailing list, specified with the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#subscribe">subscribe</a>
       </span>”</span> or
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#lists" title="12.&#160;Mailing Lists">lists</a>
       </span>”</span> commands.</p>
       <p>This field has two purposes. First, preventing you from receiving duplicate copies of replies to messages which you send to mailing lists, and second, ensuring that you do get a reply separately for any messages sent to known lists to which you are not subscribed.</p>
@@ -3754,8 +3737,7 @@ sh -c 'string'
       </span>, color is applied to the entire header.</p>
       <p>One use of this option might be to apply color to just the header labels.</p>
       <p>See
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">color</a>
       </span>”</span> for more details.</p>
     </div>
@@ -4092,12 +4074,9 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, if the
-      <span class="quote">“
-      <span class="quote">Reply-To:</span>”</span> field is set to the same value as the
-      <span class="quote">“
-      <span class="quote">To:</span>”</span> field, Mutt assumes that the
-      <span class="quote">“
-      <span class="quote">Reply-To:</span>”</span> field was set by the mailing list to automate responses to the list, and will ignore this field. To direct a response to the mailing list when this option is
+      <span class="quote">“<span class="quote">Reply-To:</span>”</span> field is set to the same value as the
+      <span class="quote">“<span class="quote">To:</span>”</span> field, Mutt assumes that the
+      <span class="quote">“<span class="quote">Reply-To:</span>”</span> field was set by the mailing list to automate responses to the list, and will ignore this field. To direct a response to the mailing list when this option is
       <span class="emphasis">
         <em>set</em>
       </span>, use the
@@ -4144,16 +4123,11 @@ sh -c 'string'
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to an IMAP server, in the order mutt should try them. Authentication methods are either
-      <span class="quote">“
-      <span class="quote">login</span>”</span> or the right side of an IMAP
-      <span class="quote">“
-      <span class="quote">AUTH=xxx</span>”</span> capability string, e.g.
-      <span class="quote">“
-      <span class="quote">digest-md5</span>”</span>,
-      <span class="quote">“
-      <span class="quote">gssapi</span>”</span> or
-      <span class="quote">“
-      <span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it's
+      <span class="quote">“<span class="quote">login</span>”</span> or the right side of an IMAP
+      <span class="quote">“<span class="quote">AUTH=xxx</span>”</span> capability string, e.g.
+      <span class="quote">“<span class="quote">digest-md5</span>”</span>,
+      <span class="quote">“<span class="quote">gssapi</span>”</span> or
+      <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it's
       <span class="emphasis">
         <em>unset</em>
       </span>(the default) mutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -4684,34 +4658,29 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%W</td>
               <td>name of organization of author (
-              <span class="quote">“
-              <span class="quote">Organization:</span>”</span> field)</td>
+              <span class="quote">“<span class="quote">Organization:</span>”</span> field)</td>
             </tr>
             <tr>
               <td>%x</td>
               <td>
-              <span class="quote">“
-              <span class="quote">X-Comment-To:</span>”</span> field (if present and compiled with NNTP support)</td>
+              <span class="quote">“<span class="quote">X-Comment-To:</span>”</span> field (if present and compiled with NNTP support)</td>
             </tr>
             <tr>
               <td>%X</td>
               <td>number of attachments (please see the
-              <span class="quote">“
-              <span class="quote">
+              <span class="quote">“<span class="quote">
                 <a class="link" href="mimesupport.html#attachments" title="6.&#160;Attachment Searching and Counting">attachments</a>
               </span>”</span> section for possible speed effects)</td>
             </tr>
             <tr>
               <td>%y</td>
               <td>
-              <span class="quote">“
-              <span class="quote">X-Label:</span>”</span> field, if present</td>
+              <span class="quote">“<span class="quote">X-Label:</span>”</span> field, if present</td>
             </tr>
             <tr>
               <td>%Y</td>
               <td>
-              <span class="quote">“
-              <span class="quote">X-Label:</span>”</span> field, if present, and
+              <span class="quote">“<span class="quote">X-Label:</span>”</span> field, if present, and
               <span class="emphasis">
                 <em>(1)</em>
               </span>not at part of a thread tree,
@@ -4761,8 +4730,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%&lt;fmt&gt;</td>
               <td>the current local time.
-              <span class="quote">“
-              <span class="quote">fmt</span>”</span> is expanded by the library function
+              <span class="quote">“<span class="quote">fmt</span>”</span> is expanded by the library function
               <code class="literal">strftime(3)</code>; a leading bang disables locales.</td>
             </tr>
             <tr>
@@ -5186,8 +5154,7 @@ set inews="/usr/local/bin/inews -hS"
         <br />Default:&#160;yes</p>
       </div>
       <p>Controls the display of wrapped lines in the internal pager. If set, a
-      <span class="quote">“
-      <span class="quote">+</span>”</span> marker is displayed at the beginning of wrapped lines.</p>
+      <span class="quote">“<span class="quote">+</span>”</span> marker is displayed at the beginning of wrapped lines.</p>
       <p>Also see the
       <a class="link" href="#smart-wrap" title="3.322.&#160;smart_wrap">$smart_wrap</a> variable.</p>
     </div>
@@ -5488,8 +5455,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">unseen</code>
         </span>”</span></p>
       </div>
@@ -5731,8 +5697,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">~/.mutt</code>
         </span>”</span></p>
       </div>
@@ -5769,8 +5734,7 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">utf-8</code>
         </span>”</span></p>
       </div>
@@ -6818,8 +6782,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <span class="emphasis">
         <em>set</em>
       </span>, mutt will display non-usable keys on the PGP key selection menu. This includes keys which have been revoked, have expired, or have been marked as
-      <span class="quote">“
-      <span class="quote">disabled</span>”</span> by the user. (PGP only)</p>
+      <span class="quote">“<span class="quote">disabled</span>”</span> by the user. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7505,14 +7468,10 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This specifies the command Mutt will use to make external address queries. The string may contain a
-      <span class="quote">“
-      <span class="quote">%s</span>”</span>, which will be substituted with the query string the user types. Mutt will add quotes around the string substituted for
-      <span class="quote">“
-      <span class="quote">%s</span>”</span> automatically according to shell quoting rules, so you should avoid adding your own. If no
-      <span class="quote">“
-      <span class="quote">%s</span>”</span> is found in the string, Mutt will append the user's query to the end of the string. See
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">%s</span>”</span>, which will be substituted with the query string the user types. Mutt will add quotes around the string substituted for
+      <span class="quote">“<span class="quote">%s</span>”</span> automatically according to shell quoting rules, so you should avoid adding your own. If no
+      <span class="quote">“<span class="quote">%s</span>”</span> is found in the string, Mutt will append the user's query to the end of the string. See
+      <span class="quote">“<span class="quote">
         <a class="link" href="advancedusage.html#query" title="8.&#160;External Address Queries">query</a>
       </span>”</span> for more information.</p>
     </div>
@@ -7561,26 +7520,22 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
             <tr>
               <td>%t</td>
               <td>
-              <span class="quote">“
-              <span class="quote">*</span>”</span> if current entry is tagged, a space otherwise</td>
+              <span class="quote">“<span class="quote">*</span>”</span> if current entry is tagged, a space otherwise</td>
             </tr>
             <tr>
               <td>%&gt;X</td>
               <td>right justify the rest of the string and pad with
-              <span class="quote">“
-              <span class="quote">X</span>”</span></td>
+              <span class="quote">“<span class="quote">X</span>”</span></td>
             </tr>
             <tr>
               <td>%|X</td>
               <td>pad to the end of the line with
-              <span class="quote">“
-              <span class="quote">X</span>”</span></td>
+              <span class="quote">“<span class="quote">X</span>”</span></td>
             </tr>
             <tr>
               <td>%*X</td>
               <td>soft-fill with character
-              <span class="quote">“
-              <span class="quote">X</span>”</span> as pad</td>
+              <span class="quote">“<span class="quote">X</span>”</span> as pad</td>
             </tr>
           </tbody>
         </table>
@@ -7640,10 +7595,8 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <code class="literal">&lt;toggle-quoted&gt;</code>command, or colored according to the
       <span class="quote">“<span class="quote">color quoted</span>”</span> family of directives.</p>
       <p>Higher levels of quoting may be colored differently (
-      <span class="quote">“
-      <span class="quote">color quoted1</span>”</span>,
-      <span class="quote">“
-      <span class="quote">color quoted2</span>”</span>, etc.). The quoting level is determined by removing the last character from the matched text and recursively reapplying the regular expression until it fails to produce a match.</p>
+      <span class="quote">“<span class="quote">color quoted1</span>”</span>,
+      <span class="quote">“<span class="quote">color quoted2</span>”</span>, etc.). The quoting level is determined by removing the last character from the matched text and recursively reapplying the regular expression until it fails to produce a match.</p>
       <p>Match detection may be overridden by the
       <a class="link" href="#smileys" title="3.323.&#160;smileys">$smileys</a> regular expression.</p>
     </div>
@@ -7880,8 +7833,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <em>unset</em>
       </span>and you are replying to a message sent by you, Mutt will assume that you want to reply to the recipients of that message rather than to yourself.</p>
       <p>Also see the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">alternates</a>
       </span>”</span> command.</p>
     </div>
@@ -7920,8 +7872,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;no</p>
       </div>
       <p>This variable provides a toggle. When active, the From: header will be extracted from the current mail's `X-Original-To:' header. This setting does not have precedence over
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="#reverse-realname" title="3.286.&#160;reverse_realname">reverse_realname</a>
       </span>”</span>.</p>
       <p>Assuming `fast_reply' is disabled, this option will prompt the user with a prefilled From: header.</p>
@@ -8000,8 +7951,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;no</p>
       </div>
       <p>This variable controls whether or not Mutt will display the
-      <span class="quote">“
-      <span class="quote">personal</span>”</span> name from your aliases in the index menu if it finds an alias that matches the message's sender. For example, if you have the following alias:</p>
+      <span class="quote">“<span class="quote">personal</span>”</span> name from your aliases in the index menu if it finds an alias that matches the message's sender. For example, if you have the following alias:</p>
       <pre class="screen">
 alias juser abd30425@somewhere.net (Joe User)
 </pre>
@@ -8010,10 +7960,8 @@ alias juser abd30425@somewhere.net (Joe User)
 From: abd30425@somewhere.net
 </pre>
       <p>It would be displayed in the index menu as
-      <span class="quote">“
-      <span class="quote">Joe User</span>”</span> instead of
-      <span class="quote">“
-      <span class="quote">abd30425@somewhere.net.</span>”</span> This is useful when the person's e-mail address is not human friendly.</p>
+      <span class="quote">“<span class="quote">Joe User</span>”</span> instead of
+      <span class="quote">“<span class="quote">abd30425@somewhere.net.</span>”</span> This is useful when the person's e-mail address is not human friendly.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8038,8 +7986,7 @@ From: abd30425@somewhere.net
       <span class="bold">
         <strong>if</strong>
       </span>that address matches your
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">alternates</a>
       </span>”</span>. If the variable is
       <span class="emphasis">
@@ -8404,8 +8351,7 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>set</em>
       </span>, info about unsubscribed newsgroups will be saved into
-      <span class="quote">“
-      <span class="quote">newsrc</span>”</span> file and into cache.</p>
+      <span class="quote">“<span class="quote">newsrc</span>”</span> file and into cache.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8948,14 +8894,10 @@ set sidebar_delim_chars='.'
         <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>
       </span>”</span> for more information on search patterns.</p>
       <p>For example, if you simply type
-      <span class="quote">“
-      <span class="quote">joe</span>”</span> at a search or limit prompt, Mutt will automatically expand it to the value specified by this variable by replacing
-      <span class="quote">“
-      <span class="quote">%s</span>”</span> with the supplied string. For the default value,
-      <span class="quote">“
-      <span class="quote">joe</span>”</span> would be expanded to:
-      <span class="quote">“
-      <span class="quote">~f joe | ~s joe</span>”</span>.</p>
+      <span class="quote">“<span class="quote">joe</span>”</span> at a search or limit prompt, Mutt will automatically expand it to the value specified by this variable by replacing
+      <span class="quote">“<span class="quote">%s</span>”</span> with the supplied string. For the default value,
+      <span class="quote">“<span class="quote">joe</span>”</span> would be expanded to:
+      <span class="quote">“<span class="quote">~f joe | ~s joe</span>”</span>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9140,8 +9082,7 @@ set sidebar_delim_chars='.'
               <td>%C</td>
               <td>CA location: Depending on whether
               <a class="link" href="#smime-ca-location" title="3.325.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file, this expands to
-              <span class="quote">“
-              <span class="quote">-CApath
+              <span class="quote">“<span class="quote">-CApath
               <a class="link" href="#smime-ca-location" title="3.325.&#160;smime_ca_location">$smime_ca_location</a></span>”</span> or
               <span class="quote">“<span class="quote">-CAfile
               <a class="link" href="#smime-ca-location" title="3.325.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>.</td>
@@ -9296,8 +9237,7 @@ set sidebar_delim_chars='.'
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to extract only the signers X509 certificate from a S/MIME signature, so that the certificate's owner may get compared to the email's
-      <span class="quote">“
-      <span class="quote">From:</span>”</span> field.</p>
+      <span class="quote">“<span class="quote">From:</span>”</span> field.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.327.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
@@ -9442,24 +9382,17 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">sha256</code>
         </span>”</span></p>
       </div>
       <p>This sets the algorithm that should be used for the signature message digest. Valid choices are
-      <span class="quote">“
-      <span class="quote">md5</span>”</span>,
-      <span class="quote">“
-      <span class="quote">sha1</span>”</span>,
-      <span class="quote">“
-      <span class="quote">sha224</span>”</span>,
-      <span class="quote">“
-      <span class="quote">sha256</span>”</span>,
-      <span class="quote">“
-      <span class="quote">sha384</span>”</span>,
-      <span class="quote">“
-      <span class="quote">sha512</span>”</span>. (S/MIME only)</p>
+      <span class="quote">“<span class="quote">md5</span>”</span>,
+      <span class="quote">“<span class="quote">sha1</span>”</span>,
+      <span class="quote">“<span class="quote">sha224</span>”</span>,
+      <span class="quote">“<span class="quote">sha256</span>”</span>,
+      <span class="quote">“<span class="quote">sha384</span>”</span>,
+      <span class="quote">“<span class="quote">sha512</span>”</span>. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9528,18 +9461,12 @@ set sidebar_delim_chars='.'
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to an SMTP server, in the order mutt should try them. Authentication methods are any SASL mechanism, e.g.
-      <span class="quote">“
-      <span class="quote">plain</span>”</span>,
-      <span class="quote">“
-      <span class="quote">digest-md5</span>”</span>,
-      <span class="quote">“
-      <span class="quote">gssapi</span>”</span> or
-      <span class="quote">“
-      <span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it is
-      <span class="quote">“
-      <span class="quote">unset</span>”</span>(the default) mutt will try all available methods, in order from most-secure to least-secure. Support for the
-      <span class="quote">“
-      <span class="quote">plain</span>”</span> mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of mutt -v).</p>
+      <span class="quote">“<span class="quote">plain</span>”</span>,
+      <span class="quote">“<span class="quote">digest-md5</span>”</span>,
+      <span class="quote">“<span class="quote">gssapi</span>”</span> or
+      <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it is
+      <span class="quote">“<span class="quote">unset</span>”</span>(the default) mutt will try all available methods, in order from most-secure to least-secure. Support for the
+      <span class="quote">“<span class="quote">plain</span>”</span> mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of mutt -v).</p>
       <p>Example:</p>
       <pre class="screen">
 set smtp_authenticators="digest-md5:cram-md5"
@@ -9586,8 +9513,7 @@ set smtp_authenticators="digest-md5:cram-md5"
 smtp[s]://[user[:pass]@]host[:port]
 </pre>
       <p>where
-      <span class="quote">“
-      <span class="quote">[...]</span>”</span> denotes an optional part. Setting this variable overrides the value of the
+      <span class="quote">“<span class="quote">[...]</span>”</span> denotes an optional part. Setting this variable overrides the value of the
       <a class="link" href="#sendmail" title="3.298.&#160;sendmail">$sendmail</a> variable.</p>
     </div>
     <div class="sect2">
@@ -9604,8 +9530,7 @@ smtp[s]://[user[:pass]@]host[:port]
         <br />Default:&#160;date</p>
       </div>
       <p>Specifies how to sort messages in the
-      <span class="quote">“
-      <span class="quote">index</span>”</span> menu. Valid values are:</p>
+      <span class="quote">“<span class="quote">index</span>”</span> menu. Valid values are:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
@@ -9703,8 +9628,7 @@ set sort=reverse-date-sent
 set sort_aux=last-date-received
 </pre>
       <p>would mean that if a new message is received in a thread, that thread becomes the last one displayed (or the first, if you have
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">set sort=reverse-threads</code>
       </span>”</span>.)</p>
       <p>Note: For reversed
@@ -9751,10 +9675,8 @@ set sort_aux=last-date-received
         </ul>
       </div>
       <p>You may optionally use the
-      <span class="quote">“
-      <span class="quote">reverse-</span>”</span> prefix to specify reverse sorting order (example:
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">reverse-</span>”</span> prefix to specify reverse sorting order (example:
+      <span class="quote">“<span class="quote">
         <code class="literal">set sort_browser=reverse-date</code>
       </span>”</span>).</p>
     </div>
