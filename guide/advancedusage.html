@@ -23,7 +23,7 @@ title: Advanced Usage
     </div>
     <p>A
     <span class="quote">“
-    <span class="quote">character set</span>”</span>is basically a mapping between bytes and glyphs and implies a certain character encoding scheme. For example, for the ISO 8859 family of character sets, an encoding of 8bit per character is used. For the Unicode character set, different character encodings may be used, UTF-8 being the most popular. In UTF-8, a character is represented using a variable number of bytes ranging from 1 to 4.</p>
+    <span class="quote">character set</span>”</span> is basically a mapping between bytes and glyphs and implies a certain character encoding scheme. For example, for the ISO 8859 family of character sets, an encoding of 8bit per character is used. For the Unicode character set, different character encodings may be used, UTF-8 being the most popular. In UTF-8, a character is represented using a variable number of bytes ranging from 1 to 4.</p>
     <p>Since Mutt is a command-line tool run from a shell, and delegates certain tasks to external tools (such as an editor for composing/editing messages), all of these tools need to agree on a character set and encoding. There exists no way to reliably deduce the character set a plain text file has. Interoperability is gained by the use of well-defined environment variables. The full set can be printed by issuing
     <code class="literal">locale</code> on the command line.</p>
     <p>Upon startup, Mutt determines the character set on its own using routines that inspect locale-specific environment variables. Therefore, it is generally not necessary to set the
@@ -35,7 +35,7 @@ title: Advanced Usage
       <em>not</em>
     </span>derive the locale from environment variables, they need to be configured separately. If the terminal is incorrectly configured, Mutt may display random and unexpected characters (question marks, octal codes, or just random glyphs), format strings may not work as expected, you may not be abled to enter non-ascii characters, and possible more. Data is always represented using bytes and so a correct setup is very important as to the machine, all character sets
     <span class="quote">“
-    <span class="quote">look</span>”</span>the same.</p>
+    <span class="quote">look</span>”</span> the same.</p>
     <p>Warning: A mismatch between what system and library functions think the locale is and what Mutt was told what the locale is may make it behave badly with non-ascii input: it will fail at seemingly random places. This warning is to be taken seriously since not only local mail handling may suffer: sent messages may carry wrong character set information the
     <span class="emphasis">
       <em>receiver</em>
@@ -57,13 +57,13 @@ title: Advanced Usage
     <p>All string patterns in Mutt including those in more complex
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> must be specified using regular expressions (regexp) in the
     <span class="quote">“
-    <span class="quote">POSIX extended</span>”</span>syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
+    <span class="quote">POSIX extended</span>”</span> syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
     <p>The search is case sensitive if the pattern contains at least one upper case letter, and case insensitive otherwise.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>
       <span class="quote">“
-      <span class="quote">\</span>”</span>must be quoted if used for a regular expression in an initialization command:
+      <span class="quote">\</span>”</span> must be quoted if used for a regular expression in an initialization command:
       <span class="quote">“
       <span class="quote">\\</span>”</span>.</p>
     </div>
@@ -75,19 +75,16 @@ title: Advanced Usage
     </div>
     <p>The fundamental building blocks are the regular expressions that match a single character. Most characters, including all letters and digits, are regular expressions that match themselves. Any metacharacter with special meaning may be quoted by preceding it with a backslash.</p>
     <p>The period
-    <span class="quote">“
-    <span class="quote">.</span>”</span>matches any single character. The caret
-    <span class="quote">“
-    <span class="quote">^</span>”</span>and the dollar sign
-    <span class="quote">“
-    <span class="quote">$</span>”</span>are metacharacters that respectively match the empty string at the beginning and end of a line.</p>
+    <span class="quote">“<span class="quote">.</span>”</span> matches any single character. The caret
+    <span class="quote">“<span class="quote">^</span>”</span> and the dollar sign
+    <span class="quote">“<span class="quote">$</span>”</span> are metacharacters that respectively match the empty string at the beginning and end of a line.</p>
     <p>A list of characters enclosed by
     <span class="quote">“
-    <span class="quote">[</span>”</span>and
+    <span class="quote">[</span>”</span> and
     <span class="quote">“
-    <span class="quote">]</span>”</span>matches any single character in that list; if the first character of the list is a caret
+    <span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
     <span class="quote">“
-    <span class="quote">^</span>”</span>then it matches any character
+    <span class="quote">^</span>”</span> then it matches any character
     <span class="emphasis">
       <em>not</em>
     </span>in the list. For example, the regular expression
@@ -97,16 +94,14 @@ title: Advanced Usage
     <span class="quote">“
     <span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
     <span class="quote">“
-    <span class="quote">]</span>”</span>place it first in the list. Similarly, to include a literal
+    <span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
     <span class="quote">“
-    <span class="quote">^</span>”</span>place it anywhere but first. Finally, to include a literal hyphen
+    <span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
     <span class="quote">“
-    <span class="quote">-</span>”</span>place it last.</p>
+    <span class="quote">-</span>”</span> place it last.</p>
     <p>Certain named classes of characters are predefined. Character classes consist of
-    <span class="quote">“
-    <span class="quote">[:</span>”</span>, a keyword denoting the class, and
-    <span class="quote">“
-    <span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
+    <span class="quote">“<span class="quote">[:</span>”</span>, a keyword denoting the class, and
+    <span class="quote">“<span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
     <a class="xref" href="#posix-regex-char-classes" title="Table&#160;4.1.&#160;POSIX regular expression character classes">Table&#160;4.1, “POSIX regular expression character classes”</a></p>
     <div >
       <a class="offset" id="posix-regex-char-classes"></a>
@@ -149,8 +144,7 @@ title: Advanced Usage
             <tr>
               <td>[:graph:]</td>
               <td>Characters that are both printable and visible. (A space is printable, but not visible, while an
-              <span class="quote">“
-              <span class="quote">a</span>”</span>is both)</td>
+              <span class="quote">“<span class="quote">a</span>”</span> is both)</td>
             </tr>
             <tr>
               <td>[:lower:]</td>
@@ -201,11 +195,11 @@ title: Advanced Usage
         <dd>
           <p>A collating symbol is a multi-character collating element enclosed in
           <span class="quote">“
-          <span class="quote">[.</span>”</span>and
+          <span class="quote">[.</span>”</span> and
           <span class="quote">“
           <span class="quote">.]</span>”</span>. For example, if
           <span class="quote">“
-          <span class="quote">ch</span>”</span>is a collating element, then
+          <span class="quote">ch</span>”</span> is a collating element, then
           <span class="emphasis">
             <em>[[.ch.]]</em>
           </span>is a regexp that matches this collating element, while
@@ -213,7 +207,7 @@ title: Advanced Usage
             <em>[ch]</em>
           </span>is a regexp that matches either
           <span class="quote">“
-          <span class="quote">c</span>”</span>or
+          <span class="quote">c</span>”</span> or
           <span class="quote">“
           <span class="quote">h</span>”</span>.</p>
         </dd>
@@ -223,17 +217,17 @@ title: Advanced Usage
         <dd>
           <p>An equivalence class is a locale-specific name for a list of characters that are equivalent. The name is enclosed in
           <span class="quote">“
-          <span class="quote">[=</span>”</span>and
+          <span class="quote">[=</span>”</span> and
           <span class="quote">“
           <span class="quote">=]</span>”</span>. For example, the name
           <span class="quote">“
-          <span class="quote">e</span>”</span>might be used to represent all of
+          <span class="quote">e</span>”</span> might be used to represent all of
           <span class="quote">“
-          <span class="quote">e</span>”</span>with grave (
+          <span class="quote">e</span>”</span> with grave (
           <span class="quote">“
           <span class="quote">è</span>”</span>),
           <span class="quote">“
-          <span class="quote">e</span>”</span>with acute (
+          <span class="quote">e</span>”</span> with acute (
           <span class="quote">“
           <span class="quote">é</span>”</span>) and
           <span class="quote">“
@@ -241,16 +235,11 @@ title: Advanced Usage
           <span class="emphasis">
             <em>[[=e=]]</em>
           </span>is a regexp that matches any of:
-          <span class="quote">“
-          <span class="quote">e</span>”</span>with grave (
-          <span class="quote">“
-          <span class="quote">è</span>”</span>),
-          <span class="quote">“
-          <span class="quote">e</span>”</span>with acute (
-          <span class="quote">“
-          <span class="quote">é</span>”</span>) and
-          <span class="quote">“
-          <span class="quote">e</span>”</span>.</p>
+          <span class="quote">“<span class="quote">e</span>”</span> with grave (
+          <span class="quote">“<span class="quote">è</span>”</span>),
+          <span class="quote">“<span class="quote">e</span>”</span> with acute (
+          <span class="quote">“<span class="quote">é</span>”</span>) and
+          <span class="quote">“<span class="quote">e</span>”</span>.</p>
         </dd>
       </dl>
     </div>
@@ -411,7 +400,7 @@ title: Advanced Usage
       <code class="literal">limit</code>,
       <code class="literal">tag-pattern</code>,
       <code class="literal">delete-pattern</code>, etc.).
-      <a class="xref" href="#tab-patterns" title="Table&#160;4.4.&#160;Pattern modifiers">Table&#160;4.4, “Pattern modifiers”</a>shows several ways to select messages.</p>
+      <a class="xref" href="#tab-patterns" title="Table&#160;4.4.&#160;Pattern modifiers">Table&#160;4.4, “Pattern modifiers”</a> shows several ways to select messages.</p>
       <div >
         <a class="offset" id="tab-patterns"></a>
         <p class="title">
@@ -529,8 +518,7 @@ title: Advanced Usage
                   <em>MAX</em>
                 </span>]</td>
                 <td>messages with
-                <span class="quote">“
-                <span class="quote">date-sent</span>”</span>in a Date range</td>
+                <span class="quote">“<span class="quote">date-sent</span>”</span> in a Date range</td>
               </tr>
               <tr>
                 <td>~D</td>
@@ -545,8 +533,7 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>EXPR</em>
                 </span>in the
-                <span class="quote">“
-                <span class="quote">Sender</span>”</span>field</td>
+                <span class="quote">“<span class="quote">Sender</span>”</span> field</td>
               </tr>
               <tr>
                 <td>%e
@@ -557,8 +544,7 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>GROUP</em>
                 </span>in the
-                <span class="quote">“
-                <span class="quote">Sender</span>”</span>field</td>
+                <span class="quote">“<span class="quote">Sender</span>”</span> field</td>
               </tr>
               <tr>
                 <td>~E</td>
@@ -621,8 +607,7 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>STRING</em>
                 </span>must be of the form
-                <span class="quote">“
-                <span class="quote">header: substring</span>”</span>(see below).</td>
+                <span class="quote">“<span class="quote">header: substring</span>”</span>(see below).</td>
               </tr>
               <tr>
                 <td>~H
@@ -643,8 +628,7 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>EXPR</em>
                 </span>in the
-                <span class="quote">“
-                <span class="quote">Message-ID</span>”</span>field</td>
+                <span class="quote">“<span class="quote">Message-ID</span>”</span> field</td>
               </tr>
               <tr>
                 <td>~k</td>
@@ -787,8 +771,7 @@ title: Advanced Usage
                   <em>MAX</em>
                 </span>]</td>
                 <td>messages with
-                <span class="quote">“
-                <span class="quote">date-received</span>”</span>in a Date range</td>
+                <span class="quote">“<span class="quote">date-received</span>”</span> in a Date range</td>
               </tr>
               <tr>
                 <td>~R</td>
@@ -803,8 +786,7 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>EXPR</em>
                 </span>in the
-                <span class="quote">“
-                <span class="quote">Subject</span>”</span>field.</td>
+                <span class="quote">“<span class="quote">Subject</span>”</span> field.</td>
               </tr>
               <tr>
                 <td>~S</td>
@@ -849,10 +831,8 @@ title: Advanced Usage
                 <span class="emphasis">
                   <em>EXPR</em>
                 </span>in the
-                <span class="quote">“
-                <span class="quote">References</span>”</span>or
-                <span class="quote">“
-                <span class="quote">In-Reply-To</span>”</span>field</td>
+                <span class="quote">“<span class="quote">References</span>”</span> or
+                <span class="quote">“<span class="quote">In-Reply-To</span>”</span> field</td>
               </tr>
               <tr>
                 <td>~X [
@@ -935,8 +915,7 @@ title: Advanced Usage
       <span class="emphasis">
         <em>MAX</em>
       </span>]</span>”</span>,
-      <span class="quote">“
-      <span class="quote">&gt;[
+      <span class="quote">“<span class="quote">&gt;[
       <span class="emphasis">
         <em>MIN</em>
       </span>]</span>”</span>,
@@ -944,37 +923,30 @@ title: Advanced Usage
       <span class="quote">[
       <span class="emphasis">
         <em>MIN</em>
-      </span>]-</span>”</span>and
-      <span class="quote">“
-      <span class="quote">-[
+      </span>]-</span>”</span> and
+      <span class="quote">“<span class="quote">-[
       <span class="emphasis">
         <em>MAX</em>
-      </span>]</span>”</span>are allowed, too.</p>
+      </span>]</span>”</span> are allowed, too.</p>
       <p>**) The suffixes
-      <span class="quote">“
-      <span class="quote">K</span>”</span>and
-      <span class="quote">“
-      <span class="quote">M</span>”</span>are allowed to specify kilobyte and megabyte respectively.</p>
+      <span class="quote">“<span class="quote">K</span>”</span> and
+      <span class="quote">“<span class="quote">M</span>”</span> are allowed to specify kilobyte and megabyte respectively.</p>
       <p>***) The message number ranges (introduced by
       <code class="literal">~m</code>) are even more general and powerful than the other types of ranges. Read on and see
-      <a class="xref" href="#message-ranges" title="3.1.1.&#160;Message Ranges">Section&#160;3.1.1, “Message Ranges”</a>below.</p>
+      <a class="xref" href="#message-ranges" title="3.1.1.&#160;Message Ranges">Section&#160;3.1.1, “Message Ranges”</a> below.</p>
       <p>Special attention has to be paid when using regular expressions inside of patterns. Specifically, Mutt's parser for these patterns will strip one level of backslash (
-      <span class="quote">“
-      <span class="quote">\</span>”</span>), which is normally used for quoting. If it is your intention to use a backslash in the regular expression, you will need to use two backslashes instead (
-      <span class="quote">“
-      <span class="quote">\\</span>”</span>). You can force Mutt to treat
+      <span class="quote">“<span class="quote">\</span>”</span>), which is normally used for quoting. If it is your intention to use a backslash in the regular expression, you will need to use two backslashes instead (
+      <span class="quote">“<span class="quote">\\</span>”</span>). You can force Mutt to treat
       <span class="emphasis">
         <em>EXPR</em>
       </span>as a simple string instead of a regular expression by using = instead of ~ in the pattern name. For example,
       <code class="literal">=b *.*</code>will find all messages that contain the literal string
-      <span class="quote">“
-      <span class="quote">*.*</span>”</span>. Simple string matches are less powerful than regular expressions but can be considerably faster. This is especially true for IMAP folders, because string matches can be performed on the server instead of by fetching every message. IMAP treats
+      <span class="quote">“<span class="quote">*.*</span>”</span>. Simple string matches are less powerful than regular expressions but can be considerably faster. This is especially true for IMAP folders, because string matches can be performed on the server instead of by fetching every message. IMAP treats
       <code class="literal">=h</code> specially: it must be of the form
       <span class="quote">“
-      <span class="quote">header: substring</span>”</span>and will not partially match header names. The substring part may be omitted if you simply wish to find messages containing a particular header without regard to its value.</p>
+      <span class="quote">header: substring</span>”</span> and will not partially match header names. The substring part may be omitted if you simply wish to find messages containing a particular header without regard to its value.</p>
       <p>Patterns matching lists of addresses (notably c, C, p, P and t) match if there is at least one match in the whole list. If you want to make sure that all elements of that list match, you need to prefix your pattern with
-      <span class="quote">“
-      <span class="quote">^</span>”</span>. This example matches all mails which only has recipients from Germany.</p>
+      <span class="quote">“<span class="quote">^</span>”</span>. This example matches all mails which only has recipients from Germany.</p>
       <div class="example">
         <a class="offset" id="ex-recips"></a>
         <p class="title">
@@ -1219,7 +1191,7 @@ title: Advanced Usage
       <span class="quote">“
       <span class="quote">~</span>”</span>,
       <span class="quote">“
-      <span class="quote">=</span>”</span>or
+      <span class="quote">=</span>”</span> or
       <span class="quote">“
       <span class="quote">%</span>”</span>). If the query is supposed to contain one of these special characters, they must be escaped by prepending a backslash (
       <span class="quote">“
@@ -1229,8 +1201,7 @@ title: Advanced Usage
       <span class="quote">“
       <span class="quote">flag</span>”</span>(using
       <a class="link" href="reference.html#simple-search" title="3.319.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">[f]lag</code>
       </span>”</span>.</p>
       <div >
@@ -1317,15 +1288,14 @@ title: Advanced Usage
 ~t mutt ~f elkins
 </pre>
       <p>would select messages which contain the word
-      <span class="quote">“
-      <span class="quote">mutt</span>”</span>in the list of recipients
+      <span class="quote">“<span class="quote">mutt</span>”</span> in the list of recipients
       <span class="emphasis">
         <em>and</em>
       </span>that have the word
       <span class="quote">“
-      <span class="quote">elkins</span>”</span>in the
+      <span class="quote">elkins</span>”</span> in the
       <span class="quote">“
-      <span class="quote">From</span>”</span>header field.</p>
+      <span class="quote">From</span>”</span> header field.</p>
       <p>Mutt also recognizes the following operators to create more complex search patterns:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
@@ -1341,14 +1311,10 @@ title: Advanced Usage
         </ul>
       </div>
       <p>Here is an example illustrating a complex search pattern. This pattern will select all messages which do not contain
-      <span class="quote">“
-      <span class="quote">mutt</span>”</span>in the
-      <span class="quote">“
-      <span class="quote">To</span>”</span>or
-      <span class="quote">“
-      <span class="quote">Cc</span>”</span>field and which are from
-      <span class="quote">“
-      <span class="quote">elkins</span>”</span>.</p>
+      <span class="quote">“<span class="quote">mutt</span>”</span> in the
+      <span class="quote">“<span class="quote">To</span>”</span> or
+      <span class="quote">“<span class="quote">Cc</span>”</span> field and which are from
+      <span class="quote">“<span class="quote">elkins</span>”</span>.</p>
       <div class="example">
         <a class="offset" id="ex-pattern-bool"></a>
         <p class="title">
@@ -1363,13 +1329,13 @@ title: Advanced Usage
       <br class="example-break" />
       <p>Here is an example using white space in the regular expression (note the
       <span class="quote">“
-      <span class="quote">'</span>”</span>and
+      <span class="quote">'</span>”</span> and
       <span class="quote">“
-      <span class="quote">"</span>”</span>delimiters). For this to match, the mail's subject must match the
+      <span class="quote">"</span>”</span> delimiters). For this to match, the mail's subject must match the
       <span class="quote">“
-      <span class="quote">^Junk +From +Me$</span>”</span>and it must be from either
+      <span class="quote">^Junk +From +Me$</span>”</span> and it must be from either
       <span class="quote">“
-      <span class="quote">Jim +Somebody</span>”</span>or
+      <span class="quote">Jim +Somebody</span>”</span> or
       <span class="quote">“
       <span class="quote">Ed +SomeoneElse</span>”</span>:</p>
       <pre class="screen">
@@ -1423,8 +1389,7 @@ title: Advanced Usage
 Limit to messages matching: ~d 20/1/95-31/10
 </pre>
         <p>If you omit the minimum (first) date, and just specify
-        <span class="quote">“
-        <span class="quote">-DD/MM/YY</span>”</span>, all messages
+        <span class="quote">“<span class="quote">-DD/MM/YY</span>”</span>, all messages
         <span class="emphasis">
           <em>before</em>
         </span>the given date will be selected. If you omit the maximum (second) date, and specify
@@ -1433,12 +1398,10 @@ Limit to messages matching: ~d 20/1/95-31/10
         <span class="emphasis">
           <em>after</em>
         </span>the given date will be selected. If you specify a single date with no dash (
-        <span class="quote">“
-        <span class="quote">-</span>”</span>), only messages sent on the given date will be selected.</p>
+        <span class="quote">“<span class="quote">-</span>”</span>), only messages sent on the given date will be selected.</p>
         <p>You can add error margins to absolute dates. An error margin is a sign (+ or -), followed by a digit, followed by one of the units in
         <a class="xref" href="#tab-date-units" title="Table&#160;4.9.&#160;Date units">Table&#160;4.9, “Date units”</a>. As a special case, you can replace the sign by a
-        <span class="quote">“
-        <span class="quote">*</span>”</span>character, which is equivalent to giving identical plus and minus error margins.</p>
+        <span class="quote">“<span class="quote">*</span>”</span> character, which is equivalent to giving identical plus and minus error margins.</p>
         <div >
           <a class="offset" id="tab-date-units"></a>
           <p class="title">
@@ -1559,11 +1522,11 @@ Limit to messages matching: ~d &lt;1m
     </div>
     <p>There are times that it's useful to ask Mutt to "remember" which message you're currently looking at, while you move elsewhere in your mailbox. You can do this with the
     <span class="quote">“
-    <span class="quote">mark-message</span>”</span>operator, which is bound to the
+    <span class="quote">mark-message</span>”</span> operator, which is bound to the
     <span class="quote">“
-    <span class="quote">~</span>”</span>key by default. Press this key to enter an identifier for the marked message. When you want to return to this message, press
+    <span class="quote">~</span>”</span> key by default. Press this key to enter an identifier for the marked message. When you want to return to this message, press
     <span class="quote">“
-    <span class="quote">'</span>”</span>and the name that you previously entered.</p>
+    <span class="quote">'</span>”</span> and the name that you previously entered.</p>
     <p>(Message marking is really just a shortcut for defining a macro that returns you to the current message by searching for its Message-ID. You can choose a different prefix by setting the
     <a class="link" href="reference.html#mark-macro-prefix" title="3.152.&#160;mark_macro_prefix">$mark_macro_prefix</a> variable.)</p>
   </div>
@@ -1579,24 +1542,19 @@ Limit to messages matching: ~d &lt;1m
     <p>Sometimes it is desirable to perform an operation on a group of messages all at once rather than one at a time. An example might be to save messages to a mailing list to a separate folder, or to delete all messages with a given subject. To tag all messages matching a pattern, use the
     <code class="literal">&lt;tag-pattern&gt;</code>function, which is bound to
     <span class="quote">“
-    <span class="quote">shift-T</span>”</span>by default. Or you can select individual messages by hand using the
+    <span class="quote">shift-T</span>”</span> by default. Or you can select individual messages by hand using the
     <code class="literal">&lt;tag-message&gt;</code>function, which is bound to
-    <span class="quote">“
-    <span class="quote">t</span>”</span>by default. See
+    <span class="quote">“<span class="quote">t</span>”</span> by default. See
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> for Mutt's pattern matching syntax.</p>
     <p>Once you have tagged the desired messages, you can use the
-    <span class="quote">“
-    <span class="quote">tag-prefix</span>”</span>operator, which is the
-    <span class="quote">“
-    <span class="quote">;</span>”</span>(semicolon) key by default. When the
-    <span class="quote">“
-    <span class="quote">tag-prefix</span>”</span>operator is used, the
+    <span class="quote">“<span class="quote">tag-prefix</span>”</span> operator, which is the
+    <span class="quote">“<span class="quote">;</span>”</span>(semicolon) key by default. When the
+    <span class="quote">“<span class="quote">tag-prefix</span>”</span> operator is used, the
     <span class="emphasis">
       <em>next</em>
     </span>operation will be applied to all tagged messages if that operation can be used in that manner. If the
     <a class="link" href="reference.html#auto-tag" title="3.22.&#160;auto_tag">$auto_tag</a> variable is set, the next operation applies to the tagged messages automatically, without requiring the
-    <span class="quote">“
-    <span class="quote">tag-prefix</span>”</span>.</p>
+    <span class="quote">“<span class="quote">tag-prefix</span>”</span>.</p>
     <p>In
     <a class="link" href="configuration.html#macro" title="8.&#160;Keyboard Macros">
     <span class="command">
@@ -1609,9 +1567,9 @@ Limit to messages matching: ~d &lt;1m
     </a>commands, you can use the
     <code class="literal">&lt;tag-prefix-cond&gt;</code>operator. If there are no tagged messages, Mutt will
     <span class="quote">“
-    <span class="quote">eat</span>”</span>the rest of the macro to abort it's execution. Mutt will stop
+    <span class="quote">eat</span>”</span> the rest of the macro to abort it's execution. Mutt will stop
     <span class="quote">“
-    <span class="quote">eating</span>”</span>the macro when it encounters the
+    <span class="quote">eating</span>”</span> the macro when it encounters the
     <code class="literal">&lt;end-cond&gt;</code>operator; after this operator the rest of the macro will be executed as normal.</p>
   </div>
   <div class="sect1">
@@ -1787,15 +1745,14 @@ Limit to messages matching: ~d &lt;1m
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If a hook changes configuration settings, these changes remain effective until the end of the current Mutt session. As this is generally not desired, a
-      <span class="quote">“
-      <span class="quote">default</span>”</span>hook needs to be added before all other hooks of that type to restore configuration defaults.</p>
+      <span class="quote">“<span class="quote">default</span>”</span> hook needs to be added before all other hooks of that type to restore configuration defaults.</p>
     </div>
     <div class="example">
       <a class="offset" id="ex-default-hook"></a>
       <p class="title">
         <strong>Example&#160;4.5.&#160;Specifying a
         <span class="quote">“
-        <span class="quote">default</span>”</span>hook</strong>
+        <span class="quote">default</span>”</span> hook</strong>
       </p>
       <div class="example-contents">
         <pre class="screen">
@@ -1807,8 +1764,7 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
     <br class="example-break" />
     <p>In
     <a class="xref" href="#ex-default-hook" title="Example&#160;4.5.&#160;Specifying a “default” hook">Example&#160;4.5, “Specifying a
-    <span class="quote">“
-    <span class="quote">default</span>”</span>hook”</a>, by default the value of
+    <span class="quote">“<span class="quote">default</span>”</span> hook”</a>, by default the value of
     <a class="link" href="reference.html#from" title="3.90.&#160;from">$from</a> and
     <a class="link" href="reference.html#realname" title="3.271.&#160;realname">$realname</a> is not overridden. When sending messages either To: or Cc: to
     <code class="literal">&lt;b@b.b&gt;</code>, the From: header is changed to
@@ -1909,12 +1865,9 @@ folder-hook '\@imap.example.com' "set sort=threads"
       </div>
     </div>
     <p>You can alter the environment that Mutt passes on to its child processes using the
-    <span class="quote">“
-    <span class="quote">setenv</span>”</span>and
-    <span class="quote">“
-    <span class="quote">unsetenv</span>”</span>operators. (N.B. These follow Mutt-style syntax, not shell-style!) You can also query current environment values by prefixing a
-    <span class="quote">“
-    <span class="quote">?</span>”</span>character.</p>
+    <span class="quote">“<span class="quote">setenv</span>”</span> and
+    <span class="quote">“<span class="quote">unsetenv</span>”</span> operators. (N.B. These follow Mutt-style syntax, not shell-style!) You can also query current environment values by prefixing a
+    <span class="quote">“<span class="quote">?</span>”</span> character.</p>
     <pre class="screen">
 setenv TERM vt100
 setenv ORGANIZATION "The Mutt Development Team"
@@ -1969,7 +1922,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
 </pre>
     <p>to denote the start of a new message (this is often referred to as the
     <span class="quote">“
-    <span class="quote">From_</span>”</span>line). The mbox format requires mailbox locking, is prone to mailbox corruption with concurrently writing clients or misinterpreted From_ lines. Depending on the environment, new mail detection can be unreliable. Mbox folders are fast to open and easy to archive.</p>
+    <span class="quote">From_</span>”</span> line). The mbox format requires mailbox locking, is prone to mailbox corruption with concurrently writing clients or misinterpreted From_ lines. Depending on the environment, new mail detection can be unreliable. Mbox folders are fast to open and easy to archive.</p>
     <p>
     <span class="emphasis">
       <em>MMDF</em>
@@ -1977,8 +1930,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
     <span class="emphasis">
       <em>mbox</em>
     </span>format. Each message is surrounded by lines containing
-    <span class="quote">“
-    <span class="quote">^A^A^A^A</span>”</span>(four times control-A's). The same problems as for mbox apply (also with finding the right message separator as four control-A's may appear in message bodies).</p>
+    <span class="quote">“<span class="quote">^A^A^A^A</span>”</span>(four times control-A's). The same problems as for mbox apply (also with finding the right message separator as four control-A's may appear in message bodies).</p>
     <p>
     <span class="emphasis">
       <em>MH</em>
@@ -1989,11 +1941,10 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
     <span class="emphasis">
       <em>MMDF</em>
     </span>, a mailbox consists of a directory and each message is stored in a separate file. The filename indicates the message number (however, this is may not correspond to the message number Mutt displays). Deleted messages are renamed with a comma (
-    <span class="quote">“
-    <span class="quote">,</span>”</span>) prepended to the filename. Mutt detects this type of mailbox by looking for either
+    <span class="quote">“<span class="quote">,</span>”</span>) prepended to the filename. Mutt detects this type of mailbox by looking for either
     <code class="literal">.mh_sequences</code> or
     <code class="literal">.xmhcache</code> files (needed to distinguish normal directories from MH mailboxes). MH is more robust with concurrent clients writing the mailbox, but still may suffer from lost flags; message corruption is less likely to occur than with mbox/mmdf. It's usually slower to open compared to mbox/mmdf since many small files have to be read (Mutt provides
-    <a class="xref" href="optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a>to greatly speed this process up). Depending on the environment, MH is not very disk-space efficient.</p>
+    <a class="xref" href="optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a> to greatly speed this process up). Depending on the environment, MH is not very disk-space efficient.</p>
     <p>
     <span class="emphasis">
       <em>Maildir</em>
@@ -2133,26 +2084,19 @@ folder-hook . 'set record=^'
       <em>index</em>
     </span>menu display. This is useful to distinguish between personal and list mail in the same mailbox. In the
     <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> variable, the expando
-    <span class="quote">“
-    <span class="quote">%L</span>”</span>will print the string
-    <span class="quote">“
-    <span class="quote">To &lt;list&gt;</span>”</span>when
-    <span class="quote">“
-    <span class="quote">list</span>”</span>appears in the
-    <span class="quote">“
-    <span class="quote">To</span>”</span>field, and
-    <span class="quote">“
-    <span class="quote">Cc &lt;list&gt;</span>”</span>when it appears in the
-    <span class="quote">“
-    <span class="quote">Cc</span>”</span>field (otherwise it prints the name of the author).</p>
+    <span class="quote">“<span class="quote">%L</span>”</span> will print the string
+    <span class="quote">“<span class="quote">To &lt;list&gt;</span>”</span> when
+    <span class="quote">“<span class="quote">list</span>”</span> appears in the
+    <span class="quote">“<span class="quote">To</span>”</span> field, and
+    <span class="quote">“<span class="quote">Cc &lt;list&gt;</span>”</span> when it appears in the
+    <span class="quote">“<span class="quote">Cc</span>”</span> field (otherwise it prints the name of the author).</p>
     <p>Often times the
     <span class="quote">“
-    <span class="quote">To</span>”</span>and
+    <span class="quote">To</span>”</span> and
     <span class="quote">“
-    <span class="quote">Cc</span>”</span>fields in mailing list messages tend to get quite large. Most people do not bother to remove the author of the message they reply to from the list, resulting in two or more copies being sent to that person. The
+    <span class="quote">Cc</span>”</span> fields in mailing list messages tend to get quite large. Most people do not bother to remove the author of the message they reply to from the list, resulting in two or more copies being sent to that person. The
     <code class="literal">&lt;list-reply&gt;</code>function, which by default is bound to
-    <span class="quote">“
-    <span class="quote">L</span>”</span>in the
+    <span class="quote">“<span class="quote">L</span>”</span> in the
     <span class="emphasis">
       <em>index</em>
     </span>menu and
@@ -2163,8 +2107,7 @@ folder-hook . 'set record=^'
     <p>Mutt also supports the
     <code class="literal">Mail-Followup-To</code> header. When you send a message to a list of recipients which includes one or several subscribed mailing lists, and if the
     <a class="link" href="reference.html#followup-to" title="3.81.&#160;followup_to">$followup_to</a> option is set, Mutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
-    <span class="quote">“
-    <span class="quote">followups</span>”</span>) to this message should only be sent to the original recipients of the message, and not separately to you - you'll receive your copy through one of the mailing lists you are subscribed to.</p>
+    <span class="quote">“<span class="quote">followups</span>”</span>) to this message should only be sent to the original recipients of the message, and not separately to you - you'll receive your copy through one of the mailing lists you are subscribed to.</p>
     <p>Conversely, when group-replying or list-replying to a message which has a
     <code class="literal">Mail-Followup-To</code> header, Mutt will respect this header if the
     <a class="link" href="reference.html#honor-followup-to" title="3.112.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. Using
@@ -2177,9 +2120,9 @@ folder-hook . 'set record=^'
     </div>
     <p>The other method some mailing list admins use is to generate a
     <span class="quote">“
-    <span class="quote">Reply-To</span>”</span>field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
+    <span class="quote">Reply-To</span>”</span> field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
     <span class="quote">“
-    <span class="quote">Reply-To</span>”</span>field. Mutt uses the
+    <span class="quote">Reply-To</span>”</span> field. Mutt uses the
     <a class="link" href="reference.html#reply-to" title="3.279.&#160;reply_to">$reply_to</a> variable to help decide which address to use. If set to
     <span class="emphasis">
       <em>ask-yes</em>
@@ -2187,22 +2130,17 @@ folder-hook . 'set record=^'
     <span class="emphasis">
       <em>ask-no</em>
     </span>, you will be prompted as to whether or not you would like to use the address given in the
-    <span class="quote">“
-    <span class="quote">Reply-To</span>”</span>field, or reply directly to the address given in the
-    <span class="quote">“
-    <span class="quote">From</span>”</span>field. When set to
+    <span class="quote">“<span class="quote">Reply-To</span>”</span> field, or reply directly to the address given in the
+    <span class="quote">“<span class="quote">From</span>”</span> field. When set to
     <span class="emphasis">
       <em>yes</em>
     </span>, the
     <span class="quote">“
-    <span class="quote">Reply-To</span>”</span>field will be used when present.</p>
+    <span class="quote">Reply-To</span>”</span> field will be used when present.</p>
     <p>You can change or delete the
-    <span class="quote">“
-    <span class="quote">X-Label:</span>”</span>field within Mutt using the
-    <span class="quote">“
-    <span class="quote">edit-label</span>”</span>command, bound to the
-    <span class="quote">“
-    <span class="quote">y</span>”</span>key by default. This works for tagged messages, too. While in the edit-label function, pressing the &lt;complete&gt; binding (TAB, by default) will perform completion against all labels currently in use.</p>
+    <span class="quote">“<span class="quote">X-Label:</span>”</span> field within Mutt using the
+    <span class="quote">“<span class="quote">edit-label</span>”</span> command, bound to the
+    <span class="quote">“<span class="quote">y</span>”</span> key by default. This works for tagged messages, too. While in the edit-label function, pressing the &lt;complete&gt; binding (TAB, by default) will perform completion against all labels currently in use.</p>
     <p>Lastly, Mutt has the ability to
     <a class="link" href="reference.html#sort" title="3.350.&#160;sort">sort</a> the mailbox into
     <a class="link" href="gettingstarted.html#threads" title="5.3.&#160;Threaded Mode">threads</a>. A thread is a group of messages which all relate to the same subject. This is usually organized into a tree-like structure where a message and all of its replies are represented graphically. If you've ever used a threaded news client, this is the same concept. It makes dealing with large volume mailing lists easier because you can easily delete uninteresting threads and quickly find topics of value.</p>
@@ -2217,10 +2155,8 @@ folder-hook . 'set record=^'
       </div>
     </div>
     <p>Mutt has supported textual labels (usually known as X-Labels after the header that we use to store them) for many years. Since we initially added support for X-Labels, however, the larger community has evolved more common ways of using and managing such labels, often known as
-    <span class="quote">“
-    <span class="quote">keywords</span>”</span>or
-    <span class="quote">“
-    <span class="quote">tags</span>”</span>.</p>
+    <span class="quote">“<span class="quote">keywords</span>”</span> or
+    <span class="quote">“<span class="quote">tags</span>”</span>.</p>
     <p>If you are new to Mutt or to using keywords in Mutt, you only need to know that the &lt;edit-label&gt; binding will edit keywords, and that you can search for keywords using the
     <code class="literal">~y</code> pattern, and use the
     <code class="literal">%y</code> expando to display it in your
@@ -2305,20 +2241,16 @@ folder-hook . 'set record=^'
     </div>
     <p>
     <code class="literal">subjectrx</code> specifies a regular expression
-    <span class="quote">“
-    <span class="quote">pattern</span>”</span>which, if detected in a message subject, causes the subject to be replaced with the
-    <span class="quote">“
-    <span class="quote">replacement</span>”</span>value. The replacement is subject to substitutions in the same way as for the
+    <span class="quote">“<span class="quote">pattern</span>”</span> which, if detected in a message subject, causes the subject to be replaced with the
+    <span class="quote">“<span class="quote">replacement</span>”</span> value. The replacement is subject to substitutions in the same way as for the
     <a class="link" href="configuration.html#spam" title="25.&#160;Spam Detection">spam</a> command:
     <code class="literal">%L</code> for the text to the left of the match,
     <code class="literal">%R</code> for text to the right of the match, and
     <code class="literal">%1</code> for the first subgroup in the match (etc). If you simply want to erase the match, set it to
-    <span class="quote">“
-    <span class="quote">%L%R</span>”</span>. Any number of
+    <span class="quote">“<span class="quote">%L%R</span>”</span>. Any number of
     <code class="literal">subjectrx</code> commands may coexist.</p>
     <p>Note this well: the
-    <span class="quote">“
-    <span class="quote">replacement</span>”</span>value replaces the entire subject, not just the match!</p>
+    <span class="quote">“<span class="quote">replacement</span>”</span> value replaces the entire subject, not just the match!</p>
     <p>
     <code class="literal">unsubjectrx</code> removes a given subjectrx from the substitution list. If
     <code class="literal">*</code>is used as the pattern, all substitutions will be removed.</p>
@@ -2353,7 +2285,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       </div>
     </div>
     <p>Mutt supports setups with multiple folders, allowing all of them to be monitored for new mail (see
-    <a class="xref" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">Section&#160;14, “Monitoring Incoming Mail”</a>for details).</p>
+    <a class="xref" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">Section&#160;14, “Monitoring Incoming Mail”</a> for details).</p>
     <div class="sect2">
       <div class="titlepage">
         <div>
@@ -2377,7 +2309,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <code class="literal">new/</code>subdirectory which is not marked deleted (see
       <a class="link" href="reference.html#maildir-trash" title="3.150.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
       <span class="quote">“
-      <span class="quote">unseen</span>”</span>sequence as specified by
+      <span class="quote">unseen</span>”</span> sequence as specified by
       <a class="link" href="reference.html#mh-seq-unseen" title="3.169.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
       <a class="link" href="reference.html#new-mail-command" title="3.179.&#160;new_mail_command">$new_mail_command</a> can be configured to execute an external program every time new mail is detected in the current inbox.</p>
       <p>Mutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
@@ -2411,7 +2343,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <p>For the pager, index and directory browser menus, Mutt contains the
       <code class="literal">&lt;buffy-list&gt;</code>function (bound to
       <span class="quote">“
-      <span class="quote">.</span>”</span>by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
+      <span class="quote">.</span>”</span> by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default Mutt displays the number of mailboxes with new mail in the status bar, please refer to the
       <a class="link" href="reference.html#status-format" title="3.373.&#160;status_format">$status_format</a> variable for details.</p>
       <p>When changing folders, Mutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
@@ -2457,12 +2389,9 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         </div>
       </div>
       <p>Some mailers tend to
-      <span class="quote">“
-      <span class="quote">forget</span>”</span>to correctly set the
-      <span class="quote">“
-      <span class="quote">In-Reply-To:</span>”</span>and
-      <span class="quote">“
-      <span class="quote">References:</span>”</span>headers when replying to a message. This results in broken discussions because Mutt has not enough information to guess the correct threading. You can fix this by tagging the reply, then moving to the parent message and using the
+      <span class="quote">“<span class="quote">forget</span>”</span> to correctly set the
+      <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
+      <span class="quote">“<span class="quote">References:</span>”</span> headers when replying to a message. This results in broken discussions because Mutt has not enough information to guess the correct threading. You can fix this by tagging the reply, then moving to the parent message and using the
       <code class="literal">&lt;link-threads&gt;</code>function (bound to &amp; by default). The reply will then be connected to this parent message.</p>
       <p>You can also connect multiple children at once, tagging them and using the
       <code class="literal">&lt;tag-prefix&gt;</code>command (
@@ -2481,7 +2410,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       </div>
       <p>On mailing lists, some people are in the bad habit of starting a new discussion by hitting
       <span class="quote">“
-      <span class="quote">reply</span>”</span>to any message from the list and changing the subject to a totally unrelated one. You can fix such threads by using the
+      <span class="quote">reply</span>”</span> to any message from the list and changing the subject to a totally unrelated one. You can fix such threads by using the
       <code class="literal">&lt;break-thread&gt;</code>function (bound by default to #), which will turn the subthread starting from the current message into a whole different thread.</p>
     </div>
   </div>
@@ -2495,8 +2424,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       </div>
     </div>
     <p>RFC1894 defines a set of MIME content types for relaying information about the status of electronic mail messages. These can be thought of as
-    <span class="quote">“
-    <span class="quote">return receipts.</span>”</span></p>
+    <span class="quote">“<span class="quote">return receipts.</span>”</span></p>
     <p>To support DSN, there are two variables.
     <a class="link" href="reference.html#dsn-notify" title="3.65.&#160;dsn_notify">$dsn_notify</a> is used to request receipts for different results (such as failed message, message delivered, etc.).
     <a class="link" href="reference.html#dsn-return" title="3.66.&#160;dsn_return">$dsn_return</a> requests how much of your message should be returned with the receipt (headers or full message).</p>

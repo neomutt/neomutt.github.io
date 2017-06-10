@@ -57,7 +57,7 @@ title: Security Considerations
       </div>
       <p>Message-Id: headers contain a local part that is to be created in a unique fashion. In order to do so, Mutt will
       <span class="quote">“
-      <span class="quote">leak</span>”</span>some information to the outside world when sending messages: the generation of this header includes a step counter which is increased (and rotated) with every message sent. In a longer running mutt session, others can make assumptions about your mailing habits depending on the number of messages sent. If this is not desired, the header can be manually provided using
+      <span class="quote">leak</span>”</span> some information to the outside world when sending messages: the generation of this header includes a step counter which is increased (and rotated) with every message sent. In a longer running mutt session, others can make assumptions about your mailing habits depending on the number of messages sent. If this is not desired, the header can be manually provided using
       <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a>(though not recommended).</p>
     </div>
     <div class="sect2">

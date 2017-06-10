@@ -15,8 +15,7 @@ title: Getting Started
   <p>This section is intended as a brief overview of how to use Mutt. There are many other features which are described elsewhere in the manual. There is even more information available in the Mutt FAQ and various web pages. See the
   <a class="ulink" href="http://www.mutt.org/" target="_top">Mutt homepage</a> for more details.</p>
   <p>The keybindings described in this section are the defaults as distributed. Your local system administrator may have altered the defaults for your site. You can always type
-  <span class="quote">“
-  <span class="quote">?</span>”</span>in any menu to display the current bindings.</p>
+  <span class="quote">“<span class="quote">?</span>”</span> in any menu to display the current bindings.</p>
   <p>The first thing you need to do is invoke Mutt, simply by typing
   <code class="literal">mutt</code> at the command line. There are various command-line options, see either the Mutt man page or the
   <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">reference</a>.</p>
@@ -31,21 +30,20 @@ title: Getting Started
     </div>
     <p>Mutt is a text-based application which interacts with users through different menus which are mostly line-/entry-based or page-based. A line-based menu is the so-called
     <span class="quote">“
-    <span class="quote">index</span>”</span>menu (listing all messages of the currently opened folder) or the
+    <span class="quote">index</span>”</span> menu (listing all messages of the currently opened folder) or the
     <span class="quote">“
-    <span class="quote">alias</span>”</span>menu (allowing you to select recipients from a list). Examples for page-based menus are the
+    <span class="quote">alias</span>”</span> menu (allowing you to select recipients from a list). Examples for page-based menus are the
     <span class="quote">“
     <span class="quote">pager</span>”</span>(showing one message at a time) or the
     <span class="quote">“
-    <span class="quote">help</span>”</span>menu listing all available key bindings.</p>
+    <span class="quote">help</span>”</span> menu listing all available key bindings.</p>
     <p>The user interface consists of a context sensitive help line at the top, the menu's contents followed by a context sensitive status line and finally the command line. The command line is used to display informational and error messages as well as for prompts and for entering interactive commands.</p>
     <p>Mutt is configured through variables which, if the user wants to permanently use a non-default value, are written to configuration files. Mutt supports a rich config file syntax to make even complex configuration files readable and commentable.</p>
     <p>Because Mutt allows for customizing almost all key bindings, there are so-called
-    <span class="quote">“
-    <span class="quote">functions</span>”</span>which can be executed manually (using the command line) or in macros. Macros allow the user to bind a sequence of commands to a single key or a short key sequence instead of repeating a sequence of actions over and over.</p>
+    <span class="quote">“<span class="quote">functions</span>”</span> which can be executed manually (using the command line) or in macros. Macros allow the user to bind a sequence of commands to a single key or a short key sequence instead of repeating a sequence of actions over and over.</p>
     <p>Many commands (such as saving or copying a message to another folder) can be applied to a single message or a set of messages (so-called
     <span class="quote">“
-    <span class="quote">tagged</span>”</span>messages). To help selecting messages, Mutt provides a rich set of message patterns (such as recipients, sender, body contents, date sent/received, etc.) which can be combined into complex expressions using the boolean
+    <span class="quote">tagged</span>”</span> messages). To help selecting messages, Mutt provides a rich set of message patterns (such as recipients, sender, body contents, date sent/received, etc.) which can be combined into complex expressions using the boolean
     <span class="emphasis">
       <em>and</em>
     </span>and
@@ -53,11 +51,10 @@ title: Getting Started
       <em>or</em>
     </span>operations as well as negating. These patterns can also be used to (for example) search for messages or to limit the index to show only matching messages.</p>
     <p>Mutt supports a
-    <span class="quote">“
-    <span class="quote">hook</span>”</span>concept which allows the user to execute arbitrary configuration commands and functions in certain situations such as entering a folder, starting a new message or replying to an existing one. These hooks can be used to highly customize Mutt's behavior including managing multiple identities, customizing the display for a folder or even implementing auto-archiving based on a per-folder basis and much more.</p>
+    <span class="quote">“<span class="quote">hook</span>”</span> concept which allows the user to execute arbitrary configuration commands and functions in certain situations such as entering a folder, starting a new message or replying to an existing one. These hooks can be used to highly customize Mutt's behavior including managing multiple identities, customizing the display for a folder or even implementing auto-archiving based on a per-folder basis and much more.</p>
     <p>Besides an interactive mode, Mutt can also be used as a command-line tool only send messages. It also supports a
     <code class="literal">mailx(1)</code>-compatible interface, see
-    <a class="xref" href="reference.html#tab-commandline-options" title="Table&#160;38.1.&#160;Command line options">Table&#160;38.1, “Command line options”</a>for a complete list of command-line options.</p>
+    <a class="xref" href="reference.html#tab-commandline-options" title="Table&#160;38.1.&#160;Command line options">Table&#160;38.1, “Command line options”</a> for a complete list of command-line options.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -117,8 +114,7 @@ title: Getting Started
       <a class="link" href="/feature/sidebar" title="Sidebar Feature">Sidebar guide</a>. If you just want to get started, you could use the sample
       <a class="link" href="/feature/sidebar#muttrc" title="8.&#160;Muttrc">Sidebar muttrc</a>.</p>
       <p>To check if Mutt supports
-      <span class="quote">“
-      <span class="quote">Sidebar</span>”</span>, look for the string
+      <span class="quote">“<span class="quote">Sidebar</span>”</span>, look for the string
       <code class="literal">+sidebar</code> in the mutt version.</p>
       <pre class="screen">
 mutt -v
@@ -153,14 +149,12 @@ Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
       <span class="quote">“
       <span class="quote">Cars</span>”</span>,
       <span class="quote">“
-      <span class="quote">Animals</span>”</span>and
+      <span class="quote">Animals</span>”</span> and
       <span class="quote">“
       <span class="quote">Seas</span>”</span>.</p>
       <p>The current, open, mailbox is
-      <span class="quote">“
-      <span class="quote">Fruit</span>”</span>. We can also see information about the other mailboxes. For example: The
-      <span class="quote">“
-      <span class="quote">Animals</span>”</span>mailbox contains, 1 flagged email, 2 new emails out of a total of 6 emails.</p>
+      <span class="quote">“<span class="quote">Fruit</span>”</span>. We can also see information about the other mailboxes. For example: The
+      <span class="quote">“<span class="quote">Animals</span>”</span> mailbox contains, 1 flagged email, 2 new emails out of a total of 6 emails.</p>
       <div class="sect3">
         <div class="titlepage">
           <div>
@@ -173,11 +167,10 @@ Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
         <p>The Sidebar adds some new
         <a class="link" href="/feature/sidebar#functions" title="4.&#160;Functions">functions</a> to Mutt.</p>
         <p>The user pressed the
-        <span class="quote">“
-        <span class="quote">c</span>”</span>key to
+        <span class="quote">“<span class="quote">c</span>”</span> key to
         <code class="literal">&lt;change-folder&gt;</code>to the
         <span class="quote">“
-        <span class="quote">Animals</span>”</span>mailbox. The Sidebar automatically updated the indicator to match.</p>
+        <span class="quote">Animals</span>”</span> mailbox. The Sidebar automatically updated the indicator to match.</p>
         <pre class="screen">
 Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
 <span class="indicator">Animals [1]   2/6</span>|  2    + Jan 22  Rhys Lee         ( 48)  Dolphin
@@ -201,13 +194,12 @@ bind index,pager \CO sidebar-open
 <span class="comment"># Ctrl-Shift-O - Open Highlighted Mailbox</span>
 </pre>
         <p>Press
-        <span class="quote">“
-        <span class="quote">Ctrl-Shift-N</span>”</span>(Next mailbox) twice will move the Sidebar
+        <span class="quote">“<span class="quote">Ctrl-Shift-N</span>”</span>(Next mailbox) twice will move the Sidebar
         <span class="bold">
           <strong>highlight</strong>
         </span>to down to the
         <span class="quote">“
-        <span class="quote">Seas</span>”</span>mailbox.</p>
+        <span class="quote">Seas</span>”</span> mailbox.</p>
         <pre class="screen">
 Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
 <span class="indicator">Animals [1]   2/6</span>|  2    + Jan 22  Rhys Lee         ( 48)  Dolphin
@@ -421,8 +413,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
           </div>
           <p>The most important variable is
           <code class="literal">$sidebar_visible</code>. You can set this in your
-          <span class="quote">“
-          <span class="quote">muttrc</span>”</span>, or bind a key to the function
+          <span class="quote">“<span class="quote">muttrc</span>”</span>, or bind a key to the function
           <code class="literal">&lt;sidebar-toggle-visible&gt;</code>.</p>
           <pre class="screen">
 set sidebar_visible
@@ -486,7 +477,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a class="offset" id="idm139752414372608"></a>
+            <a class="offset" id="idm140505355487712"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -529,8 +520,7 @@ set sidebar_divider_char = '│'
                     <td>%n</td>
                     <td>*</td>
                     <td>If there's new mail, display
-                    <span class="quote">“
-                    <span class="quote">N</span>”</span>, otherwise nothing</td>
+                    <span class="quote">“<span class="quote">N</span>”</span>, otherwise nothing</td>
                   </tr>
                   <tr>
                     <td>%!</td>
@@ -569,15 +559,14 @@ set sidebar_divider_char = '│'
                     <td>%|X</td>
                     <td>&#160;</td>
                     <td>Pad to the end of the line with
-                    <span class="quote">“
-                    <span class="quote">X</span>”</span></td>
+                    <span class="quote">“<span class="quote">X</span>”</span></td>
                   </tr>
                   <tr>
                     <td>%*X</td>
                     <td>&#160;</td>
                     <td>Soft-fill with character
                     <span class="quote">“
-                    <span class="quote">X</span>”</span>as pad</td>
+                    <span class="quote">X</span>”</span> as pad</td>
                   </tr>
                 </tbody>
               </table>
@@ -592,7 +581,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a class="offset" id="idm139752414345904"></a>
+            <a class="offset" id="idm140505355460896"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format</strong>
             </p>
@@ -1031,8 +1020,8 @@ color sidebar_divider   color8  default
       </div>
     </div>
     <p>The most important navigation keys common to line- or entry-based menus are shown in
-    <a class="xref" href="#tab-keys-nav-line" title="Table&#160;2.5.&#160;Most common navigation keys in entry-based menus">Table&#160;2.5, “Most common navigation keys in entry-based menus”</a>and in
-    <a class="xref" href="#tab-keys-nav-page" title="Table&#160;2.6.&#160;Most common navigation keys in page-based menus">Table&#160;2.6, “Most common navigation keys in page-based menus”</a>for page-based menus.</p>
+    <a class="xref" href="#tab-keys-nav-line" title="Table&#160;2.5.&#160;Most common navigation keys in entry-based menus">Table&#160;2.5, “Most common navigation keys in entry-based menus”</a> and in
+    <a class="xref" href="#tab-keys-nav-page" title="Table&#160;2.6.&#160;Most common navigation keys in page-based menus">Table&#160;2.6, “Most common navigation keys in page-based menus”</a> for page-based menus.</p>
     <div >
       <a class="offset" id="tab-keys-nav-line"></a>
       <p class="title">
@@ -1201,7 +1190,7 @@ color sidebar_divider   color8  default
         </div>
       </div>
       <p>Mutt has a built-in line editor for inputting text, e.g. email addresses or filenames. The keys used to manipulate text input are very similar to those of Emacs. See
-      <a class="xref" href="#tab-keys-editor" title="Table&#160;2.7.&#160;Most common line editor keys">Table&#160;2.7, “Most common line editor keys”</a>for a full reference of available functions, their default key bindings, and short descriptions.</p>
+      <a class="xref" href="#tab-keys-editor" title="Table&#160;2.7.&#160;Most common line editor keys">Table&#160;2.7, “Most common line editor keys”</a> for a full reference of available functions, their default key bindings, and short descriptions.</p>
       <div >
         <a class="offset" id="tab-keys-editor"></a>
         <p class="title">
@@ -1443,10 +1432,8 @@ bind editor &lt;delete&gt; backspace
       </div>
     </div>
     <p>Similar to many other mail clients, there are two modes in which mail is read in Mutt. The first is a list of messages in the mailbox, which is called the
-    <span class="quote">“
-    <span class="quote">index</span>”</span>menu in Mutt. The second mode is the display of the message contents. This is called the
-    <span class="quote">“
-    <span class="quote">pager.</span>”</span></p>
+    <span class="quote">“<span class="quote">index</span>”</span> menu in Mutt. The second mode is the display of the message contents. This is called the
+    <span class="quote">“<span class="quote">pager.</span>”</span></p>
     <p>The next few sections describe the functions provided in each of these modes.</p>
     <div class="sect2">
       <div class="titlepage">
@@ -1601,16 +1588,14 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>In addition to who sent the message and the subject, a short summary of the disposition of each message is printed beside the message number. Zero or more of the
       <span class="quote">“
-      <span class="quote">flags</span>”</span>in
-      <a class="xref" href="#tab-msg-status-flags" title="Table&#160;2.9.&#160;Message status flags">Table&#160;2.9, “Message status flags”</a>may appear, some of which can be turned on or off using these functions:
+      <span class="quote">flags</span>”</span> in
+      <a class="xref" href="#tab-msg-status-flags" title="Table&#160;2.9.&#160;Message status flags">Table&#160;2.9, “Message status flags”</a> may appear, some of which can be turned on or off using these functions:
       <code class="literal">&lt;set-flag&gt;</code>and
       <code class="literal">&lt;clear-flag&gt;</code>bound by default to
-      <span class="quote">“
-      <span class="quote">w</span>”</span>and
-      <span class="quote">“
-      <span class="quote">W</span>”</span>respectively.</p>
+      <span class="quote">“<span class="quote">w</span>”</span> and
+      <span class="quote">“<span class="quote">W</span>”</span> respectively.</p>
       <p>Furthermore, the flags in
-      <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.10.&#160;Message recipient flags">Table&#160;2.10, “Message recipient flags”</a>reflect who the message is addressed to. They can be customized with the
+      <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.10.&#160;Message recipient flags">Table&#160;2.10, “Message recipient flags”</a> reflect who the message is addressed to. They can be customized with the
       <a class="link" href="reference.html#to-chars" title="3.384.&#160;to_chars">$to_chars</a> variable.</p>
       <div >
         <a class="offset" id="tab-msg-status-flags"></a>
@@ -1817,11 +1802,11 @@ bind editor &lt;delete&gt; backspace
       <code class="literal">&lt;copy-message&gt;</code>(this is one advantage over using an external pager to view messages).</p>
       <p>Also, the internal pager supports a couple other advanced features. For one, it will accept and translate the
       <span class="quote">“
-      <span class="quote">standard</span>”</span>nroff sequences for bold and underline. These sequences are a series of either the letter, backspace (
+      <span class="quote">standard</span>”</span> nroff sequences for bold and underline. These sequences are a series of either the letter, backspace (
       <span class="quote">“
       <span class="quote">^H</span>”</span>), the letter again for bold or the letter, backspace,
       <span class="quote">“
-      <span class="quote">_</span>”</span>for denoting underline. Mutt will attempt to display these in bold and underline respectively if your terminal supports them. If not, you can use the bold and underline
+      <span class="quote">_</span>”</span> for denoting underline. Mutt will attempt to display these in bold and underline respectively if your terminal supports them. If not, you can use the bold and underline
       <a class="link" href="configuration.html#color" title="9.&#160;Using Color and Mono Video Attributes">color</a> objects to specify a
       <span class="command">
         <strong>color</strong>
@@ -1991,7 +1976,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>So-called
       <span class="quote">“
-      <span class="quote">threads</span>”</span>provide a hierarchy of messages where replies are linked to their parent message(s). This organizational form is extremely useful in mailing lists where different parts of the discussion diverge. Mutt displays threads as a tree structure.</p>
+      <span class="quote">threads</span>”</span> provide a hierarchy of messages where replies are linked to their parent message(s). This organizational form is extremely useful in mailing lists where different parts of the discussion diverge. Mutt displays threads as a tree structure.</p>
       <p>In Mutt, when a mailbox is
       <a class="link" href="reference.html#sort" title="3.350.&#160;sort">sorted</a> by
       <span class="emphasis">
@@ -2129,8 +2114,7 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in
       <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>. For example, you could use
-      <span class="quote">“
-      <span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span>in
+      <span class="quote">“<span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span> in
       <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
       <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">format string conditionals</a>.</p>
@@ -2187,7 +2171,7 @@ bind editor &lt;delete&gt; backspace
           <dd>
             <p>This function will search the current message for content signed or encrypted with PGP the
             <span class="quote">“
-            <span class="quote">traditional</span>”</span>way, that is, without proper MIME tagging. Technically, this function will temporarily change the MIME content types of the body parts containing PGP data; this is similar to the
+            <span class="quote">traditional</span>”</span> way, that is, without proper MIME tagging. Technically, this function will temporarily change the MIME content types of the body parts containing PGP data; this is similar to the
             <a class="link" href="#edit-type">
               <code class="literal">&lt;edit-type&gt;</code>
             </a>function's effect.</p>
@@ -2215,8 +2199,7 @@ bind editor &lt;delete&gt; backspace
             <span class="term">
             <code class="literal">&lt;enter-command&gt;</code>
             <a class="offset" id="enter-command"></a>(default:
-            <span class="quote">“
-            <span class="quote">:</span>”</span>)</span>
+            <span class="quote">“<span class="quote">:</span>”</span>)</span>
           </dt>
           <dd>
             <p>This command is used to execute any command you would normally put in a configuration file. A common use is to check the settings of variables, or in conjunction with
@@ -2329,7 +2312,7 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>The bindings shown in
-      <a class="xref" href="#tab-key-send" title="Table&#160;2.15.&#160;Most common mail sending keys">Table&#160;2.15, “Most common mail sending keys”</a>are available in the
+      <a class="xref" href="#tab-key-send" title="Table&#160;2.15.&#160;Most common mail sending keys">Table&#160;2.15, “Most common mail sending keys”</a> are available in the
       <span class="emphasis">
         <em>index</em>
       </span>and
@@ -2417,18 +2400,16 @@ bind editor &lt;delete&gt; backspace
       <span class="emphasis">
         <em>Forwarding</em>
       </span>a message allows you to add comments or modify the message you are forwarding. These items are discussed in greater detail in the next section
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
       <a class="link" href="#forwarding-mail" title="7.&#160;Forwarding and Bouncing Mail">Forwarding and Bouncing Mail</a>.</span>”</span></p>
       <p>Mutt will then enter the
       <span class="emphasis">
         <em>compose</em>
       </span>menu and prompt you for the recipients to place on the
       <span class="quote">“
-      <span class="quote">To:</span>”</span>header field when you hit
+      <span class="quote">To:</span>”</span> header field when you hit
       <code class="literal">m</code> to start a new message. Next, it will ask you for the
-      <span class="quote">“
-      <span class="quote">Subject:</span>”</span>field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
+      <span class="quote">“<span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
       <a class="link" href="reference.html#askcc" title="3.11.&#160;askcc">$askcc</a>,
       <a class="link" href="reference.html#askbcc" title="3.10.&#160;askbcc">$askbcc</a>,
       <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>,
@@ -2460,7 +2441,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Reply to all mailing list addresses found, either specified via configuration or auto-detected. See
-            <a class="xref" href="configuration.html#lists" title="12.&#160;Mailing Lists">Section&#160;12, “Mailing Lists”</a>for details.</p>
+            <a class="xref" href="configuration.html#lists" title="12.&#160;Mailing Lists">Section&#160;12, “Mailing Lists”</a> for details.</p>
           </dd>
         </dl>
       </div>
@@ -2476,7 +2457,7 @@ bind editor &lt;delete&gt; backspace
       <span class="emphasis">
         <em>compose</em>
       </span>menu providing the functions shown in
-      <a class="xref" href="#tab-func-compose" title="Table&#160;2.16.&#160;Most common compose menu keys">Table&#160;2.16, “Most common compose menu keys”</a>to modify, send or postpone the message.</p>
+      <a class="xref" href="#tab-func-compose" title="Table&#160;2.16.&#160;Most common compose menu keys">Table&#160;2.16, “Most common compose menu keys”</a> to modify, send or postpone the message.</p>
       <div >
         <a class="offset" id="tab-func-compose"></a>
         <p class="title">
@@ -2595,7 +2576,7 @@ bind editor &lt;delete&gt; backspace
                 </td>
                 <td>specify an
                 <span class="quote">“
-                <span class="quote">Fcc</span>”</span>mailbox</td>
+                <span class="quote">Fcc</span>”</span> mailbox</td>
               </tr>
               <tr>
                 <td>p</td>
@@ -2651,7 +2632,7 @@ bind editor &lt;delete&gt; backspace
         <p>Note that certain operations like composing a new mail, replying, forwarding, etc. are not permitted when you are in that folder. The %r in
         <a class="link" href="reference.html#status-format" title="3.373.&#160;status_format">$status_format</a> will change to a
         <span class="quote">“
-        <span class="quote">A</span>”</span>to indicate that you are in attach-message mode.</p>
+        <span class="quote">A</span>”</span> to indicate that you are in attach-message mode.</p>
       </div>
     </div>
     <div class="sect2">
@@ -2715,8 +2696,7 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>description</em>
         </span>is an optional string to use as the description of the attached file. Spaces in filenames have to be escaped using backslash (
-        <span class="quote">“
-        <span class="quote">\</span>”</span>). The file can be removed as well as more added from the compose menu.</p>
+        <span class="quote">“<span class="quote">\</span>”</span>). The file can be removed as well as more added from the compose menu.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -2737,12 +2717,9 @@ bind editor &lt;delete&gt; backspace
           <em>&lt;id&gt;</em>
         </span>]</p>
         <p>
-        <span class="quote">“
-        <span class="quote">E</span>”</span>selects encryption,
-        <span class="quote">“
-        <span class="quote">S</span>”</span>selects signing and
-        <span class="quote">“
-        <span class="quote">S&lt;id&gt;</span>”</span>selects signing with the given key, setting
+        <span class="quote">“<span class="quote">E</span>”</span> selects encryption,
+        <span class="quote">“<span class="quote">S</span>”</span> selects signing and
+        <span class="quote">“<span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
         <a class="link" href="reference.html#pgp-sign-as" title="3.233.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
       </div>
       <div class="sect3">
@@ -2765,8 +2742,7 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>In-Reply-To:</em>
         </span>header in your editor. Otherwise, though you'll produce a technically valid reply, some netiquette guardians will be annoyed by this so-called
-        <span class="quote">“
-        <span class="quote">thread hijacking</span>”</span>.</p>
+        <span class="quote">“<span class="quote">thread hijacking</span>”</span>.</p>
       </div>
     </div>
     <div class="sect2">
@@ -2785,8 +2761,7 @@ bind editor &lt;delete&gt; backspace
       <p>Most fields of the entries in the key selection menu (see also
       <a class="link" href="reference.html#pgp-entry-format" title="3.218.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
       <p>The flags sequence (
-      <span class="quote">“
-      <span class="quote">%f</span>”</span>) will expand to one of the flags in
+      <span class="quote">“<span class="quote">%f</span>”</span>) will expand to one of the flags in
       <a class="xref" href="#tab-pgp-menuflags" title="Table&#160;2.17.&#160;PGP key menu flags">Table&#160;2.17, “PGP key menu flags”</a>.</p>
       <div >
         <a class="offset" id="tab-pgp-menuflags"></a>
@@ -2835,16 +2810,12 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“
       <span class="quote">.</span>”</span>) means that it's marked as a signature key in one of the user IDs, but may also be used for encryption. The letter
       <span class="quote">“
-      <span class="quote">e</span>”</span>indicates that this key can be used for encryption.</p>
+      <span class="quote">e</span>”</span> indicates that this key can be used for encryption.</p>
       <p>The second character indicates the key's signing capabilities. Once again, a
-      <span class="quote">“
-      <span class="quote">-</span>”</span>implies
-      <span class="quote">“
-      <span class="quote">not for signing</span>”</span>,
-      <span class="quote">“
-      <span class="quote">.</span>”</span>implies that the key is marked as an encryption key in one of the user-ids, and
-      <span class="quote">“
-      <span class="quote">s</span>”</span>denotes a key which can be used for signing.</p>
+      <span class="quote">“<span class="quote">-</span>”</span> implies
+      <span class="quote">“<span class="quote">not for signing</span>”</span>,
+      <span class="quote">“<span class="quote">.</span>”</span> implies that the key is marked as an encryption key in one of the user-ids, and
+      <span class="quote">“<span class="quote">s</span>”</span> denotes a key which can be used for signing.</p>
       <p>Finally, the validity field (
       <span class="quote">“
       <span class="quote">%t</span>”</span>) indicates how well-certified a user-id is. A question mark (
@@ -2877,8 +2848,7 @@ bind editor &lt;delete&gt; backspace
         <code class="literal">format=flowed</code>-style messages (or
         <code class="literal">f=f</code> for short) are
         <code class="literal">text/plain</code> messages that consist of paragraphs which a receiver's mail client may reformat to its own needs which mostly means to customize line lengths regardless of what the sender sent. Technically this is achieved by letting lines of a
-        <span class="quote">“
-        <span class="quote">flowable</span>”</span>paragraph end in spaces except for the last line.</p>
+        <span class="quote">“<span class="quote">flowable</span>”</span> paragraph end in spaces except for the last line.</p>
         <p>While for text-mode clients like Mutt it's the best way to assume only a standard 80x25 character cell terminal, it may be desired to let the receiver decide completely how to view a message.</p>
       </div>
       <div class="sect3">
@@ -2905,17 +2875,16 @@ bind editor &lt;delete&gt; backspace
             </li>
             <li class="listitem">
               <p>lines starting with the word
-              <span class="quote">“
-              <span class="quote">
+              <span class="quote">“<span class="quote">
                 <code class="literal">From</code>
-              </span>”</span>followed by space</p>
+              </span>”</span> followed by space</p>
             </li>
             <li class="listitem">
               <p>all lines starting with
               <span class="quote">“
               <span class="quote">
                 <code class="literal">&gt;</code>
-              </span>”</span>which is not intended to be a quote character</p>
+              </span>”</span> which is not intended to be a quote character</p>
             </li>
           </ul>
         </div>
@@ -2997,25 +2966,24 @@ bind editor &lt;delete&gt; backspace
     <code class="literal">&lt;bounce&gt;</code>function and forwarding using the
     <code class="literal">&lt;forward&gt;</code>function bound to
     <span class="quote">“
-    <span class="quote">b</span>”</span>and
+    <span class="quote">b</span>”</span> and
     <span class="quote">“
-    <span class="quote">f</span>”</span>respectively.</p>
+    <span class="quote">f</span>”</span> respectively.</p>
     <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines) or including it as a MIME attachment, depending on the value of the
     <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> variable. Decoding of attachments, like in the pager, can be controlled by the
     <a class="link" href="reference.html#forward-decode" title="3.84.&#160;forward_decode">$forward_decode</a> and
     <a class="link" href="reference.html#mime-forward-decode" title="3.171.&#160;mime_forward_decode">$mime_forward_decode</a> variables, respectively. The desired forwarding format may depend on the content, therefore
     <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> is a quadoption which, for example, can be set to
-    <span class="quote">“
-    <span class="quote">ask-no</span>”</span>.</p>
+    <span class="quote">“<span class="quote">ask-no</span>”</span>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
     <a class="link" href="reference.html#weed" title="3.403.&#160;weed">$weed</a> variable, unless
     <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> is set.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
     <a class="link" href="reference.html#forward-references" title="3.89.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
     <span class="quote">“
-    <span class="quote">In-Reply-To:</span>”</span>and
+    <span class="quote">In-Reply-To:</span>”</span> and
     <span class="quote">“
-    <span class="quote">References:</span>”</span>headers, just like a reply would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
+    <span class="quote">References:</span>”</span> headers, just like a reply would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
     <p>Editing the message to forward follows the same procedure as sending or replying to a message does.</p>
   </div>
   <div class="sect1">
@@ -3035,7 +3003,7 @@ bind editor &lt;delete&gt; backspace
     <a class="link" href="reference.html#postponed" title="3.256.&#160;postponed">$postponed</a> variable. This means that you can recall the message even if you exit Mutt and then restart it at a later time.</p>
     <p>Once a message is postponed, there are several ways to resume it. From the command line you can use the
     <span class="quote">“
-    <span class="quote">-p</span>”</span>option, or if you compose a new message from the
+    <span class="quote">-p</span>”</span> option, or if you compose a new message from the
     <span class="emphasis">
       <em>index</em>
     </span>or

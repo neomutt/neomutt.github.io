@@ -35,16 +35,14 @@ title: Optional Features
         <em>configure</em>
       </span>script certain arguments. These are listed in the
       <span class="quote">“
-      <span class="quote">Optional features</span>”</span>section of the
+      <span class="quote">Optional features</span>”</span> section of the
       <span class="emphasis">
         <em>configure --help</em>
       </span>output.</p>
       <p>Which features are enabled or disabled can later be determined from the output of
       <code class="literal">mutt -v</code>. If a compile option starts with
-      <span class="quote">“
-      <span class="quote">+</span>”</span>it is enabled and disabled if prefixed with
-      <span class="quote">“
-      <span class="quote">-</span>”</span>. For example, if Mutt was compiled using GnuTLS for encrypted communication instead of OpenSSL,
+      <span class="quote">“<span class="quote">+</span>”</span> it is enabled and disabled if prefixed with
+      <span class="quote">“<span class="quote">-</span>”</span>. For example, if Mutt was compiled using GnuTLS for encrypted communication instead of OpenSSL,
       <code class="literal">mutt -v</code> would contain:</p>
       <pre class="screen">
 -openssl +gnutls
@@ -71,22 +69,17 @@ proto[s]://[username[:password]@]server[:port][/path]
       <code class="literal">imap</code> for IMAP,
       <code class="literal">pop</code> for POP3 and
       <code class="literal">smtp</code> for SMTP. If
-      <span class="quote">“
-      <span class="quote">s</span>”</span>for
-      <span class="quote">“
-      <span class="quote">secure communication</span>”</span>is appended, Mutt will attempt to establish an encrypted communication using SSL or TLS.</p>
+      <span class="quote">“<span class="quote">s</span>”</span> for
+      <span class="quote">“<span class="quote">secure communication</span>”</span> is appended, Mutt will attempt to establish an encrypted communication using SSL or TLS.</p>
       <p>Since all protocols supported by Mutt support/require authentication, login credentials may be specified in the URL. This has the advantage that multiple IMAP, POP3 or SMTP servers may be specified (which isn't possible using, for example,
       <a class="link" href="reference.html#imap-user" title="3.132.&#160;imap_user">$imap_user</a>). The username may contain the
-      <span class="quote">“
-      <span class="quote">@</span>”</span>symbol being used by many mail systems as part of the login name. The special characters
-      <span class="quote">“
-      <span class="quote">/</span>”</span>(
+      <span class="quote">“<span class="quote">@</span>”</span> symbol being used by many mail systems as part of the login name. The special characters
+      <span class="quote">“<span class="quote">/</span>”</span>(
       <code class="literal">%2F</code>),
       <span class="quote">“
       <span class="quote">:</span>”</span>(
       <code class="literal">%3A</code>) and
-      <span class="quote">“
-      <span class="quote">%</span>”</span>(
+      <span class="quote">“<span class="quote">%</span>”</span>(
       <code class="literal">%25</code>) have to be URL-encoded in usernames using the
       <code class="literal">%</code>-notation.</p>
       <p>A password can be given, too but is not recommended if the URL is specified in a configuration file on disk.</p>
@@ -129,7 +122,7 @@ smtp://user@host:587/
       <em>--enable-gnutls=...</em>
     </span>for GnuTLS). Mutt can then attempt to encrypt communication with remote servers if these protocols are suffixed with
     <span class="quote">“
-    <span class="quote">s</span>”</span>for
+    <span class="quote">s</span>”</span> for
     <span class="quote">“
     <span class="quote">secure communication</span>”</span>.</p>
   </div>
@@ -152,12 +145,12 @@ smtp://user@host:587/
     <p>Remote POP3 servers can be accessed using URLs with the
     <code class="literal">pop</code> protocol for unencrypted and
     <code class="literal">pops</code> for encrypted communication, see
-    <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>for details.</p>
+    <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details.</p>
     <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which Mutt will check for mail remotely can be controlled by the
     <a class="link" href="reference.html#pop-checkinterval" title="3.246.&#160;pop_checkinterval">$pop_checkinterval</a> variable, which defaults to every 60 seconds.</p>
     <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
-    <a class="xref" href="#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a>and
-    <a class="xref" href="#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a>Mutt simulates the new/old/read flags as well as flagged and replied. Mutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by Mutt or other tools).</p>
+    <a class="xref" href="#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a> and
+    <a class="xref" href="#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a> Mutt simulates the new/old/read flags as well as flagged and replied. Mutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by Mutt or other tools).</p>
     <a class="offset" id="fetch-mail"></a>
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
@@ -187,13 +180,13 @@ smtp://user@host:587/
       <em>--enable-imap</em>
     </span>flag), it has the ability to work with folders located on a remote IMAP server.</p>
     <p>You can access the remote inbox by selecting the folder by its URL (see
-    <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>for details) using the
+    <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details) using the
     <code class="literal">imap</code> or
     <code class="literal">imaps</code> protocol. Alternatively, a pine-compatible notation is also supported, i.e.
     <code class="literal">{[username@]imapserver[:port][/ssl]}path/to/folder</code></p>
     <p>Note that not all servers use
     <span class="quote">“
-    <span class="quote">/</span>”</span>as the hierarchy separator. Mutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
+    <span class="quote">/</span>”</span> as the hierarchy separator. Mutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
     <p>When browsing folders on an IMAP server, you can toggle whether to look at only the folders you are subscribed to, or all folders with the
     <span class="emphasis">
       <em>toggle-subscribed</em>
@@ -225,10 +218,8 @@ set timeout=15
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
             <p>In lieu of file permissions, Mutt displays the string
-            <span class="quote">“
-            <span class="quote">IMAP</span>”</span>, possibly followed by the symbol
-            <span class="quote">“
-            <span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders.</p>
+            <span class="quote">“<span class="quote">IMAP</span>”</span>, possibly followed by the symbol
+            <span class="quote">“<span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders.</p>
           </li>
           <li class="listitem">
             <p>For the case where an entry can contain both messages and subfolders, the selection key (bound to
@@ -386,7 +377,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     </div>
     <br class="example-break" />
     <p>In example
-    <a class="xref" href="#ex-multiaccount" title="Example&#160;6.2.&#160;Managing multiple accounts">Example&#160;6.2, “Managing multiple accounts”</a>the folders are defined using
+    <a class="xref" href="#ex-multiaccount" title="Example&#160;6.2.&#160;Managing multiple accounts">Example&#160;6.2, “Managing multiple accounts”</a> the folders are defined using
     <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">
       <span class="command">
         <strong>mailboxes</strong>
@@ -403,8 +394,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <em>INBOX/Sent</em>
     </span>folder below the newly set
     <a class="link" href="reference.html#folder" title="3.79.&#160;folder">$folder</a>. Please notice that the value the
-    <span class="quote">“
-    <span class="quote">+</span>”</span>
+    <span class="quote">“<span class="quote">+</span>”</span>
     <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">mailbox shortcut</a> refers to depends on the
     <span class="emphasis">
       <em>current</em>
@@ -427,13 +417,12 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <span class="emphasis">
       <em>(1)</em>
     </span>the so-called
-    <span class="quote">“
-    <span class="quote">header caching</span>”</span>and
+    <span class="quote">“<span class="quote">header caching</span>”</span> and
     <span class="emphasis">
       <em>(2)</em>
     </span>the so-called
     <span class="quote">“
-    <span class="quote">body caching</span>”</span>which are both described in this section.</p>
+    <span class="quote">body caching</span>”</span> which are both described in this section.</p>
     <p>Header caching is optional as it depends on external libraries, body caching is always enabled if Mutt is compiled with POP and/or IMAP support as these use it (body caching requires no external library).</p>
     <div class="sect2">
       <div class="titlepage">
@@ -483,12 +472,9 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <p>In a header or body cache directory, Mutt creates a directory hierarchy named like:
       <code class="literal">proto:user@hostname</code> where
       <code class="literal">proto</code> is either
-      <span class="quote">“
-      <span class="quote">pop</span>”</span>or
-      <span class="quote">“
-      <span class="quote">imap.</span>”</span>Within there, for each folder, Mutt stores messages in single files and header caches in files with the
-      <span class="quote">“
-      <span class="quote">.hcache</span>”</span>extension. All files can be removed as needed if the consumed disk space becomes an issue as Mutt will silently fetch missing items again. Pathnames are always stored in UTF-8 encoding.</p>
+      <span class="quote">“<span class="quote">pop</span>”</span> or
+      <span class="quote">“<span class="quote">imap.</span>”</span> Within there, for each folder, Mutt stores messages in single files and header caches in files with the
+      <span class="quote">“<span class="quote">.hcache</span>”</span> extension. All files can be removed as needed if the consumed disk space becomes an issue as Mutt will silently fetch missing items again. Pathnames are always stored in UTF-8 encoding.</p>
       <p>For Maildir and MH, the header cache files are named after the MD5 checksum of the path.</p>
     </div>
     <div class="sect2">
@@ -515,10 +501,8 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       </div>
     </div>
     <p>Mutt supports the
-    <span class="quote">“
-    <span class="quote">Name &lt;user@host&gt;</span>”</span>address syntax for reading and writing messages, the older
-    <span class="quote">“
-    <span class="quote">user@host (Name)</span>”</span>syntax is only supported when reading messages. The
+    <span class="quote">“<span class="quote">Name &lt;user@host&gt;</span>”</span> address syntax for reading and writing messages, the older
+    <span class="quote">“<span class="quote">user@host (Name)</span>”</span> syntax is only supported when reading messages. The
     <span class="emphasis">
       <em>--enable-exact-address</em>
     </span>switch can be given to configure to build it with write-support for the latter syntax.
@@ -551,10 +535,8 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <code class="literal">Return</code> key.</p>
     <p>Note that different remailers do have different capabilities, indicated in the %c entry of the remailer menu lines (see
     <a class="link" href="reference.html#mix-entry-format" title="3.174.&#160;mix_entry_format">$mix_entry_format</a>). Most important is the
-    <span class="quote">“
-    <span class="quote">middleman</span>”</span>capability, indicated by a capital
-    <span class="quote">“
-    <span class="quote">M</span>”</span>: This means that the remailer in question cannot be used as the final element of a chain, but will only forward messages to other mixmaster remailers. For details on the other capabilities, please have a look at the mixmaster documentation.</p>
+    <span class="quote">“<span class="quote">middleman</span>”</span> capability, indicated by a capital
+    <span class="quote">“<span class="quote">M</span>”</span>: This means that the remailer in question cannot be used as the final element of a chain, but will only forward messages to other mixmaster remailers. For details on the other capabilities, please have a look at the mixmaster documentation.</p>
   </div>
 </div>
 {% endraw %}

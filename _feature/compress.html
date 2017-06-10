@@ -94,20 +94,15 @@ status: stable
     <code class="literal">%f</code> and
     <code class="literal">%t</code>. These represent
     <span class="quote">“
-    <span class="quote">from</span>”</span>and
+    <span class="quote">from</span>”</span> and
     <span class="quote">“
-    <span class="quote">to</span>”</span>filenames. These placeholders should be placed inside single-quotes to prevent unintended shell expansions.</p>
+    <span class="quote">to</span>”</span> filenames. These placeholders should be placed inside single-quotes to prevent unintended shell expansions.</p>
     <p>If you need the exact string
-    <span class="quote">“
-    <span class="quote">%f</span>”</span>or
-    <span class="quote">“
-    <span class="quote">%t</span>”</span>in your command, simply double up the
-    <span class="quote">“
-    <span class="quote">%</span>”</span>character, e.g.
-    <span class="quote">“
-    <span class="quote">%%f</span>”</span>or
-    <span class="quote">“
-    <span class="quote">%%t</span>”</span>.</p>
+    <span class="quote">“<span class="quote">%f</span>”</span> or
+    <span class="quote">“<span class="quote">%t</span>”</span> in your command, simply double up the
+    <span class="quote">“<span class="quote">%</span>”</span> character, e.g.
+    <span class="quote">“<span class="quote">%%f</span>”</span> or
+    <span class="quote">“<span class="quote">%%t</span>”</span>.</p>
     <div >
       <a class="offset" id="table-compress-optional"></a>
       <p class="title">
@@ -212,8 +207,7 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>Mutt finds a file,
-              <span class="quote">“
-              <span class="quote">example.gz</span>”</span>, that it can't read</p>
+              <span class="quote">“<span class="quote">example.gz</span>”</span>, that it can't read</p>
             </li>
             <li class="listitem">
               <p>Mutt has an
@@ -268,8 +262,7 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>Mutt has finished with a folder,
-              <span class="quote">“
-              <span class="quote">example.gz</span>”</span>, that it opened with
+              <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
               <code class="literal">open-hook</code></p>
             </li>
             <li class="listitem">
@@ -508,8 +501,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>Christoph
-          <span class="quote">“
-          <span class="quote">Myon</span>”</span>Berg
+          <span class="quote">“<span class="quote">Myon</span>”</span> Berg
           <code class="email">&lt;
           <a class="email" href="mailto:myon@debian.org">myon@debian.org</a>&gt;</code></p>
         </li>
