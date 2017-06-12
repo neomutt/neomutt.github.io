@@ -1,0 +1,14 @@
+<h1><a {% if page.url == '/changes/' %} class="current" {% endif %} href="/changes/">Changes</a></h1>
+
+{% assign parts = page.url | split: '/' %}
+
+{% if parts[1] == 'changes' %}
+  <ul>
+    {% include list-bold.html lb_path="/changes/user"         lb_title="User View"       %}
+    {% include list-bold.html lb_path="/changes/devel"        lb_title="Developers View" %}
+    {% include list-bold.html lb_path="/changes/header-split" lb_title="Header Split"    %}
+    {% include list-bold.html lb_path="/changes/files"        lb_title="Files"           %}
+    {% include list-bold.html lb_path="/changes/structs"      lb_title="Structs"         %}
+  </ul>
+{% endif %}
+

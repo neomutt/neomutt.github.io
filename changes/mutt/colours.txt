@@ -1,0 +1,30 @@
+attachment
+body
+bold
+compose header
+compose security_both
+compose security_encrypt
+compose security_none
+compose security_sign
+error
+hdrdefault
+header
+index
+indicator
+markers
+message
+normal
+prompt
+quoted
+search
+sidebar_divider
+sidebar_flagged
+sidebar_highlight
+sidebar_indicator
+sidebar_new
+sidebar_spoolfile
+signature
+status
+tilde
+tree
+underline
