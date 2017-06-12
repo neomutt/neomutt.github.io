@@ -217,6 +217,8 @@ The guide should explain how to perform simple tasks
 The simple guide can list some more advanced features of Mutt, but leave a
 full explanation to the main manual.
 
+See also: [Docs Rebuild](/dev/docs-rebuild)
+
 The Mutt program has been translated into 30 languages, but
 <a href="/translate">some of the translations</a> are out-of-date.
 
