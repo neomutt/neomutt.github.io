@@ -19,10 +19,10 @@ Besides the changes to the code, NeoMutt uses several free services.
 
 NeoMutt makes heavy use of all of GitHub's facilities.
 
-- Git hosting
-- Issue Tracking
-- Pull Requests handling
-- Web Hosting
+- [Git hosting](https://github.com/neomutt/neomutt)
+- [Issue Tracking](https://github.com/neomutt/neomutt/issues)
+- [Pull Requests handling](https://github.com/neomutt/neomutt/pulls)
+- [Web Hosting](https://www.neomutt.org/)
 
 ### Travis
 
@@ -119,20 +119,20 @@ improvements.
 
 Some documentation has been removed from NeoMutt.
 
-| Doc             | Reason for removal    |
-| :-------------- | :-------------------- |
-| ABOUT-NLS       | Auto-generated        |
-| BEWARE          | Obsolete              |
-| ChangeLog       | Replaced by NeoMutt's |
-| doc/TODO        | Obsolete              |
-| imap/TODO       | Obsolete              |
-| NEWS            | Obsolete              |
-| PATCHES         | Obsolete              |
-| README          | Replaced by NeoMutt's |
-| README.SECURITY | Obsolete              |
-| TODO            | Obsolete              |
-| UPDATING        | Obsolete              |
-| VERSION         | Obsolete              |
+| Doc                                                                      | Reason for removal    |
+| :----------------------------------------------------------------------- | :-------------------- |
+| ABOUT-NLS                                                                | Auto-generated        |
+| BEWARE                                                                   | Obsolete              |
+| [ChangeLog](https://github.com/neomutt/neomutt/blob/master/ChangeLog.md) | Replaced by NeoMutt's |
+| doc/TODO                                                                 | Obsolete              |
+| imap/TODO                                                                | Obsolete              |
+| NEWS                                                                     | Obsolete              |
+| PATCHES                                                                  | Obsolete              |
+| [README](https://github.com/neomutt/neomutt/blob/master/README.md)       | Replaced by NeoMutt's |
+| README.SECURITY                                                          | Obsolete              |
+| TODO                                                                     | Obsolete              |
+| UPDATING                                                                 | Obsolete              |
+| VERSION                                                                  | Obsolete              |
 
 Also, NeoMutt no longer distributes PDF or LaTeX docs.
 
@@ -152,6 +152,7 @@ to group them, or to better match the other files.
 ### Configure
 
 configure has been extensively refactored:
+
 - Easier to maintain
 - Faster running
 - Fewer unnecessary checks
@@ -184,13 +185,13 @@ The code has undergone extensive improvements.
 
 - Remove tabs and trailing whitespace
 - Clang-format the entire source tree
-- Refactor the header cache (hcache)
-- Refactor encryption / signing (ncrypt)
-- Refactor struct Buffer code (buffer.c)
+- Refactor the header cache ([hcache](https://github.com/neomutt/neomutt/tree/master/hcache))
+- Refactor encryption / signing ([ncrypt](https://github.com/neomutt/neomutt/tree/master/ncrypt))
+- Refactor struct Buffer code ([buffer.c](https://github.com/neomutt/neomutt/blob/master/buffer.c))
 
 **Code style changes**:
 
-- Run IWYU (Include What You Use)
+- Run IWYU ([Include What You Use](https://include-what-you-use.org/))
 - Initialise pointers
 - Boolify functions
 - Boolify struct members
@@ -203,16 +204,16 @@ The code has undergone extensive improvements.
 - Unify #include guards
 - Renamed shadow variables
 - #ifdef, not #if for variables
-- fn(); -> fn(void);
+- fn(); -\> fn(void);
 - snake_case for function names
 - Abbreviate pointers tests (x), (!x)
 - Fix typos & grammar
 - Don't case malloc return
 - Use SEEK_SET SEEK_CUR SEEK_END
-- sizeof X -> sizeof(X)
+- sizeof X -\> sizeof(X)
 - Fix calloc args (num, size)
 - Remove Mutt-isms: FOREVER, etc
-- dprint -> mutt_debug
+- dprint -\> mutt_debug
 
 ### Docs
 
@@ -254,8 +255,6 @@ These configure options have been added to NeoMutt.
 
 ### Code
 
-
-
 All the code that has been added to NeoMutt is already accounted for in the new
 features and in the code refactoring.
 
@@ -270,17 +269,17 @@ All NeoMutt features come with full documentation.
 
 The new NeoMutt documentation:
 
-| File                     | Description                          |
-| :----------------------- | :----------------------------------- |
-| README.md                | An Introduction to NeoMutt           |
-| CONTRIBUTING.md          | How to start contributing to NeoMutt |
-| ISSUE_TEMPLATE.md        | How to write a perfect bug report    |
-| PULL_REQUEST_TEMPLATE.md | How to write a perfect pull request  |
+| File                                                                                                        | Description                          |
+| :---------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| [README.md](https://github.com/neomutt/neomutt/blob/master/README.md)                                       | An Introduction to NeoMutt           |
+| [CONTRIBUTING.md](https://github.com/neomutt/neomutt/blob/master/CONTRIBUTING.md)                           | How to start contributing to NeoMutt |
+| [ISSUE_TEMPLATE.md](https://github.com/neomutt/neomutt/blob/master/.github/ISSUE_TEMPLATE.md)               | How to write a perfect bug report    |
+| [PULL_REQUEST_TEMPLATE.md](https://github.com/neomutt/neomutt/blob/master/.github/PULL_REQUEST_TEMPLATE.md) | How to write a perfect pull request  |
 
 ## Not Yet Analysed
 
 NeoMutt uses lots of format strings.
-NeoMutt changes to the expandos hasn't been documented yet.
+NeoMutt's changes to the expandos haven't been documented yet.
 
 - `alias_format`
 - `attach_format`
