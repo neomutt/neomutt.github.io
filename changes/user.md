@@ -406,6 +406,55 @@ set debug_file = ~/neomutt.log
 | `unvirtual-mailboxes` | [NotMuch](/feature/notmuch)           |
 | `virtual-mailboxes`   | [NotMuch](/feature/notmuch)           |
 
+### Format Strings
+
+Some of NeoMutt's formatting strings have extra expandos.
+
+**index_format**, forward_format, message_format, pager_format:
+
+| Expando | Description                                                       |
+| :------ | :---------------------------------------------------------------- |
+| %G      | transformed notmuch tags                                          |
+| %g      | message labels (e.g. notmuch tags)                                |
+| %I      | initials of author                                                |
+| %K      | the list to which the letter was sent (if any; otherwise: empty)  |
+| %q      | newsgroup name (if compiled with NNTP support)                    |
+| %W      | name of organization of author (“Organization:” field)            |
+| %x      | “X-Comment-To:” field (if present and compiled with NNTP support) |
+| %zs     | message status flags                                              |
+| %zc     | message crypto flags                                              |
+| %zt     | message tag flags                                                 |
+
+The **group_index_format** is used to display lists of newsgroups:
+
+| Expando | Description                                                      |
+| :------ | :--------------------------------------------------------------  |
+| %C      | current newsgroup number                                         |
+| %d      | description of newsgroup (becomes from server)                   |
+| %f      | newsgroup name                                                   |
+| %M      | if newsgroup not allowed for direct post (moderated for example) |
+| %N      | N if newsgroup is new, u if unsubscribed, blank otherwise        |
+| %n      | number of new articles in newsgroup                              |
+| %s      | number of unread articles in newsgroup                           |
+
+The **vfolder_format** is used to display list of virtual mailboxes:
+
+| Expando | Description                                                               |
+| :------ | :------------------------------------------------------------------------ |
+| %C      | current file number                                                       |
+| %d      | date/time folder was last modified                                        |
+| %D      | date/time folder was last modified using $date_format                     |
+| %f      | filename ("/" is appended for dirs, "@" to symlinks and "*" to exe files) |
+| %F      | file permissions                                                          |
+| %g      | group name (or numeric gid, if missing)                                   |
+| %l      | number of hard links                                                      |
+| %m      | number of messages in the mailbox                                         |
+| %n      | number of unread messages in the mailbox                                  |
+| %N      | N if mailbox has new mail, blank otherwise                                |
+| %s      | size in bytes                                                             |
+| %t      | "*" if the file is tagged, blank otherwise                                |
+| %u      | owner name (or numeric uid, if missing)                                   |
+
 ### Colours
 
 | Colour             | Feature                                               |

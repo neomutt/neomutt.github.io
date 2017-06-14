@@ -276,27 +276,3 @@ The new NeoMutt documentation:
 | [ISSUE_TEMPLATE.md](https://github.com/neomutt/neomutt/blob/master/.github/ISSUE_TEMPLATE.md)               | How to write a perfect bug report    |
 | [PULL_REQUEST_TEMPLATE.md](https://github.com/neomutt/neomutt/blob/master/.github/PULL_REQUEST_TEMPLATE.md) | How to write a perfect pull request  |
 
-## Not Yet Analysed
-
-NeoMutt uses lots of format strings.
-NeoMutt's changes to the expandos haven't been documented yet.
-
-- `alias_format`
-- `attach_format`
-- `compose_format`
-- `date_format`
-- `folder_format`
-- `forward_format`
-- `group_index_format`
-- `index_format`
-- `message_format`
-- `mix_entry_format`
-- `pager_format`
-- `pgp_entry_format`
-- `query_format`
-- `sidebar_format`
-- `status_format`
-- `ts_icon_format`
-- `ts_status_format`
-- `vfolder_format`
-
