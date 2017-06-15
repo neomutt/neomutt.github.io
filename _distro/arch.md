@@ -78,8 +78,12 @@ Now you can follow the [guide for building NeoMutt](/dev/build).
 ## Debugging <a class="offset" id="debug"></a>
 
 Archlinux does not have separate `-dbg` packages. In order to debug `neomutt`,
-you must install the packages listed in `depends` and `optdepends` in the
-[`PKGBUILD`](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=neomutt-git)
+you must first compile with debug symbols. Download the AUR package and edit the 
+`PKGBUILD` adding the following:
+```
+options=(debug !strip)
+```
+Build and install the new package which contains debug symbols.
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 
