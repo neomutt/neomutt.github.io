@@ -62,19 +62,6 @@ following command:
 pacman -Rsc neomutt
 ```
 
-
-## Building from Source <a class="offset" id="build"></a>
-
-Archlinux does not have separate `-dev` packages. In order to build `neomutt`
-from source, you must run the following commands as root:
-
-```
-pacman -Syu && pacman -S gcc automake notmuch lynx gpgme kyotocabinet autoconf gdbm gnupg krb5 libidn libsasl mime-types notmuch-runtime openssl git libxslt make
-```
-
-Now you can follow the [guide for building NeoMutt](/dev/build).
-
-
 ## Debugging <a class="offset" id="debug"></a>
 
 Archlinux does not have separate `-dbg` packages. In order to debug `neomutt`,
