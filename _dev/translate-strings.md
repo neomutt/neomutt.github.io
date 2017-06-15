@@ -34,10 +34,10 @@ Here are some recent statistics for the Swedish translation:
 
 | Count  | Description                              |
 |-------:|------------------------------------------|
-|   1285 | Total number of strings to be translated |
-|   1009 | Already translated                       |
-|    186 | Fuzzy -- need checking by a human        |
-|     90 | To do -- need translating                |
+|   1321 | Total number of strings to be translated |
+|    998 | Already translated                       |
+|    219 | Fuzzy -- need checking by a human        |
+|    104 | To do -- need translating                |
 
 The "fuzzy" translations appear when the `msgfmt` tool finds a translation that it thinks is correct.
 These translations are often wrong.
@@ -51,7 +51,7 @@ The translations are stored in "Portable Object" text files (.po)
 Here's a sample from the Japanese translation (ja.po)
 
 ```
-#: main.c:867
+#: main.c:905
 msgid "Mailbox is empty."
 msgstr "メールボックスが空。"
 ```
@@ -83,12 +83,12 @@ Here are some of the relevant parts of their docs:
 If you're technical you could look at the NeoMutt source code:
 
 ```
-git clone -b devel/translate https://github.com/neomutt/neomutt
+git clone -b translate https://github.com/neomutt/neomutt
 ```
 
 ## Sharing Your Work
 
-NeoMutt has new releases about every two weeks.
+NeoMutt has new releases about once a month.
 Before each release, the translators will be emailed and asked for their latest `.po` file.
 This will be merged into NeoMutt and an updated copy will be mailed back.
 
