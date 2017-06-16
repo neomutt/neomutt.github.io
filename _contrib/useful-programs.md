@@ -40,6 +40,8 @@ status: stable
   contacts from the command-line or mutt.
 * [abook](http://abook.sourceforge.net/) - Text-based address book program.
 * [mutt-addressbook](https://pypi.python.org/pypi/mutt-addressbook) - Extend Mutt's query command using LDAP directories
+* [mates](https://github.com/pimutils/mates.rs) - A very simple, highly extensible234 commandline addressbook
+
 
 ## Tagging, filtering, searching
 
