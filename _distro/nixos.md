@@ -19,13 +19,13 @@ Packagers:
 
 ## Installation <a class="offset" id="install"></a>
 
-there are currently two different ways to install software on NixOS. One is
+There are currently two different ways to install software on NixOS. One is
 declarative and the other more imperative.
 
 
 ### declarative package management
 
-add `pkgs.neomutt` into `configuration.nix` like this:
+Add `pkgs.neomutt` into your `configuration.nix` like this:
 
 ```reply
 environment.systemPackages = [ pkgs.neomutt ];
@@ -46,7 +46,7 @@ For further reference, you might want to read the
 You just have to run
 
 ```
-nix-env -i nixos.neomutt
+nix-env -iA nixos.neomutt
 ```
 
 
@@ -57,7 +57,7 @@ nix-env -i nixos.neomutt
 To update a particular package, run
 
 ```
-nix-env -u nixos.neomutt
+nix-env -u neomutt
 ```
 
 ## Removal <a class="offset" id="remove"></a>
@@ -67,7 +67,7 @@ nix-env -u nixos.neomutt
 To remove a particular package, run
 
 ```
-nix-env -e nixos.neomutt
+nix-env -e neomutt
 ```
 
 ## Building from Source <a class="offset" id="build"></a>
