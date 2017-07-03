@@ -21,11 +21,47 @@ hard to achieve are labeled with
 Please note, those hard issues are intentionally closed - they are sometimes
 demotivating due to its difficulty.
 
+### [#587 Better support for multipart/alternative?](https://github.com/neomutt/neomutt/issues/587)
+
+Allow better nesting of mime parts
+
+**Raised by** ([@mrzool](https://github.com/mrzool)) -- **Result**: desired, no interest
+
+### [#535 Could  '^g' be remapped?](https://github.com/neomutt/neomutt/issues/535)
+
+Allow the 'abort' key to be remapped
+
+**Raised by** ([@Alok](https://github.com/Alok)) -- **Result**: no interest
+
+### [#504 imap: Mutt should handle dropped connections/routing problems gracefully.](https://github.com/neomutt/neomutt/issues/504)
+
+Make IMAP able to handle dropped connections
+
+**Raised by** ([@toogley](https://github.com/toogley)) -- **Result**: desired, hard
+
 ### [#467 Use cp1252 instead of iso-8859-1](https://github.com/neomutt/neomutt/issues/467)
 
 Workaround some bad mailers sending cp1252 chars as iso-8859-1
 
 **Raised by** [@gahr](https://github.com/gahr) on 2017-03-14 -- **Result**: low risk, charset-hook workaround
+
+### [#469 Wish: more intelligent pasting](https://github.com/neomutt/neomutt/issues/469)
+
+Respect the escape sequences for bracked paste mode
+
+**Raised by** ([@phmarek](https://github.com/phmarek)) -- **Result**: no interest
+
+### [#468 Stop asking for "Exit Mutt?"](https://github.com/neomutt/neomutt/issues/468)
+
+Copy vim: don't try to exit on Ctrl-C, but tell the user what they need to know
+
+**Raised by** ([@tdehaeze](https://github.com/tdehaeze)) -- **Result**: desired, no interest
+
+### [#464 Limit or search by alias](https://github.com/neomutt/neomutt/issues/464)
+
+Add the ability to limit, or search, the index by an alias
+
+**Raised by** ([@mingsu](https://github.com/mingsu)) -- **Result**: no interest
 
 ### [#404 Use of gpg's group option](https://github.com/neomutt/neomutt/issues/404)
 
@@ -86,6 +122,12 @@ Custom display of a folded collapsed thread
 Support mouse clicks in the index, sidebar, etc
 
 **Raised by** [@Chinggis6](https://github.com/Chinggis6) on 2017-01-20 -- **Result**: not too hard, low prority
+
+### [#277 Subject separate from tree?](https://github.com/neomutt/neomutt/issues/277)
+
+Create index_format expandos to display just the tree and just the subject
+
+**Raised by** ([@iKarith](https://github.com/iKarith)) -- **Result**: desired, no interest
 
 ### [#273 Bindable command to unsubscribe from a mailing list](https://github.com/neomutt/neomutt/issues/273)
 
@@ -165,6 +207,18 @@ All the user to mute (ignore/hide) all/part of a thread
 
 **Raised by** [@kronat](https://github.com/kronat) on 2016-08-30 -- **Result**: desired, hard
 
+### [#109 feature-request - make index_label take support pattern](https://github.com/neomutt/neomutt/issues/109)
+
+Add a regex to the index_label color object
+
+**Raised by** ([@antognolli](https://github.com/antognolli)) -- **Result**: no interest
+
+### [#105 notmuch entire-thread outside a virtual folder](https://github.com/neomutt/neomutt/issues/105)
+
+Locate all the messages in a thread of the given message
+
+**Raised by** ([@a3nm](https://github.com/a3nm)) -- **Result**: no interest
+
 ### [#99 Add support for proxy](https://github.com/neomutt/neomutt/issues/99)
 
 Let NeoMutt use a socks5 proxy
@@ -193,7 +247,13 @@ Using Torify causes NeoMutt to crash
 
 Extract message-id of last-sent email (when using command line)
 
-**Raised by** [@ymuv](https://github.com/ymuv) on 2016-07-08 -- **Result**: no enough interest
+**Raised by** [@ymuv](https://github.com/ymuv) on 2016-07-08 -- **Result**: not enough interest
+
+### [#69 Option for robust macros with shell-escapes](https://github.com/neomutt/neomutt/issues/69)
+
+Ideas to make macros more reliable and predictable
+
+**Raised by** ([@scottkosty](https://github.com/scottkosty)) -- **Result**: desired, no interest
 
 ### [#67 Mailto handling](https://github.com/neomutt/neomutt/issues/67)
 
