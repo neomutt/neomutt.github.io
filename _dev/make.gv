@@ -42,6 +42,7 @@ digraph build {
 	lots_obj         [ label="\{source.o\}"        ]
 	lots_po          [ label="\{example.po\}"      ]
 	lots_xsl         [ label="\{mutt.xsl\}"        ]
+	pgpewrap_src     [ label="pgpewrap.c"          ]
 	makedoc_src      [ label="makedoc.c"           ]
 	manual_html      [ label="\{manual.html\}"     ]
 	manual_txt       [ label="manual.txt"          ]
@@ -111,6 +112,18 @@ digraph build {
 		lots_imap_o -> imap_a [ label="ar" ]
 	}
 
+	subgraph cluster_ncrypt {
+		fontcolor="red"
+		label="NCRYPT"
+		color="#ff0000"
+
+		lots_ncrypt_c [ label="\{ncrypt.c\}" ]
+		lots_ncrypt_o [ label="\{ncrypt.o\}" ]
+
+		lots_ncrypt_c -> lots_ncrypt_o [ label="gcc" ]
+		lots_ncrypt_o -> ncrypt_a [ label="ar" ]
+	}
+
 	subgraph cluster_source {
 		fontcolor="red"
 		label="Source"
@@ -125,6 +138,7 @@ digraph build {
 	}
 
 	imap_a -> ld
+	ncrypt_a -> ld
 	POTFILES -> xgettext
 	keymap_alldefs_h -> xgettext
 	compulsory -> xgettext
@@ -157,10 +171,7 @@ digraph build {
 	init_h -> compulsory [ style="dashed" ]
 
 	hcachever_sh_in -> hcachever_sh [ label="cp" ]
-	dotlock_c -> mutt_dotlock_c [ label="cp" ]
-	mutt_dotlock_c -> mutt_dotlock [ label="gcc" ]
-	pgpewrap_c -> pgpewrap [ label="gcc" ]
-	smime_keys_pl -> smime_keys [ label="cp" ]
+	pgpewrap_src -> pgpewrap [ label="gcc" ]
 	makedoc_src -> makedoc [ label="gcc" ]
 
 	config_h -> manual_xml [ label="sed" ]
