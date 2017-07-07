@@ -26,23 +26,24 @@ NeoMutt Developers
 Here's a list of everyone who's helped NeoMutt:
 
 **Adam Borowski**, **Alex Pearce**, **Alok Singh**, **Ander Punnar**,
-**André Berger**, **Antonio Radici**, **Baptiste Daroussin**, **Bernard Pratz**,
-**Bo Yu**, **Bryan Bennett**, **Christian Dröge**, **Christoph Berg**,
-**Chris Czettel**, **Chris Salzberg**, **Clemens Lang**, **Damien Riegel**,
-**Darshit Shah**, **David Sterba**, **Doug Stone-Weaver**, **Edward Betts**,
-**Elimar Riesebieter**, **Evgeni Golov**, **Fabian Groffen**,
+**André Berger**, **Antonio Radici**, **Baptiste Daroussin**,
+**Bernard Pratz**, **Bo Yu**, **Bryan Bennett**, **Christian Dröge**,
+**Christoph Berg**, **Chris Czettel**, **Chris Salzberg**, **Clemens Lang**,
+**Damien Riegel**, **Darshit Shah**, **David Sterba**, **Doug Stone-Weaver**,
+**Edward Betts**, **Elimar Riesebieter**, **Evgeni Golov**, **Fabian Groffen**,
 **Fabio Alessandro Locati**, **Faidon Liambotis**, **František Hájik**,
 **Guillaume Brogi**, **Ian Zimmerman**, **Ismaël Bouya**, **Ivan Tham**,
-**Jack Stratton**, **Johannes Frankenau**, **Johannes Weißl**, **Joshua Jordi**,
-**Karel Zak**, **Kevin Velghe**, **Kurt Jaeger**, **Marcin Rajner**,
-**Marco Hinz**, **Matteo Vescovi**, **Mehdi Abaakouk**, **Olaf Lessenich**,
-**Peter Hogg**, **Philipp Marek**, **Pierre-Elliott Bécue**, **Pietro Cerutti**,
-**Riad Wahby**, **Richard Hartmann**, **Richard Russon**, **Rubén Llorente**,
+**Jack Stratton**, **Johannes Frankenau**, **Johannes Weißl**,
+**Joshua Jordi**, **Karel Zak**, **Kevin Velghe**, **Kurt Jaeger**,
+**Marcin Rajner**, **Marco Hinz**, **Matteo Vescovi**, **Mehdi Abaakouk**,
+**Olaf Lessenich**, **Peter Hogg**, **Philipp Marek**,
+**Pierre-Elliott Bécue**, **Pietro Cerutti**, **Riad Wahby**,
+**Richard Hartmann**, **Richard Russon**, **Rubén Llorente**,
 **Santiago Torres**, **Serge Gebhardt**, **Somini**, **Stefan Assmann**,
 **Stephen Gilles**, **Steven Ragnarök**, **Sven Guckes**, **Thomas Adam**,
-**Thomas Klausner**, **Tobias Angele**, **Udo Schweigert**, **Vsevolod Volkov**,
-**Werner Fink**, **Wieland Hoffmann**, **William Pettersson**,
-**Yoshiki Vázquez Baeza**, **Zero King**.
+**Thomas Klausner**, **Tobias Angele**, **Udo Schweigert**,
+**Vsevolod Volkov**, **Werner Fink**, **Wieland Hoffmann**,
+**William Pettersson**, **Yoshiki Vázquez Baeza**, **Zero King**.
 
 Original Patch Authors
 ----------------------
