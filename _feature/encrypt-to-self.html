@@ -48,20 +48,20 @@ status: stable
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/guide/reference.html#fcc-clear" title="3.77.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="/guide/reference.html#fcc-clear" title="3.76.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/guide/reference.html#smime-encrypt-self" title="3.331.&#160;smime_encrypt_self">$smime_encrypt_self</a>, then set
-    <a class="link" href="/guide/reference.html#smime-default-key" title="3.329.&#160;smime_default_key">$smime_default_key</a> to your personal S/MIME key id.</p>
+    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.327.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#smime-self-encrypt-as" title="3.328.&#160;smime_self_encrypt_as">$smime_self_encrypt_as</a> to your personal S/MIME key id.</p>
     <pre class="screen">
-set smime_encrypt_self = yes
-set smime_default_key  = bb345e23.0
+set smime_self_encrypt     = yes
+set smime_self_encrypt_as  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
-    <a class="link" href="/guide/reference.html#pgp-encrypt-self" title="3.51.&#160;pgp_encrypt_self">$pgp_encrypt_self</a>, then set
-    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.233.&#160;pgp_sign_as">$pgp_sign_as</a> to your personal PGP key id.</p>
+    <a class="link" href="/guide/reference.html#pgp-self-encrypt" title="3.218.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#pgp-self-encrypt-as" title="3.219.&#160;pgp_self_encrypt_as">$pgp_self_encrypt_as</a> to your personal PGP key id.</p>
     <pre class="screen">
-set pgp_encrypt_self = yes
-set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
+set pgp_self_encrypt    = yes
+set pgp_self_encrypt_as = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 </pre>
   </div>
   <div class="sect1">
@@ -95,17 +95,35 @@ set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
           <tbody>
             <tr>
               <td>
-                <code class="literal">smime_encrypt_self</code>
+                <code class="literal">smime_self_encrypt</code>
               </td>
-              <td>quad</td>
-              <td>No</td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">no</code>
+              </td>
             </tr>
             <tr>
               <td>
-                <code class="literal">pgp_encrypt_self</code>
+                <code class="literal">smime_self_encrypt_as</code>
               </td>
-              <td>quad</td>
-              <td>No</td>
+              <td>string</td>
+              <td>(empty)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">pgp_self_encrypt</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">no</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">pgp_self_encrypt_as</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
             </tr>
           </tbody>
         </table>
@@ -129,12 +147,14 @@ set pgp_sign_as      = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
 # Save a copy of outgoing email, encrypted to yourself</span>
-set smime_encrypt_self = "no"
-<span class="comment"># Save a copy of outgoing email, encrypted to yourself</span>
-set pgp_encrypt_self = "no"
+set smime_self_encrypt = "no"
+<span class="comment"># set smime_self_encrypt_as = "SMIME-KEY"
 
+# Save a copy of outgoing email, encrypted to yourself</span>
+set pgp_self_encrypt = "no"
+<span class="comment">set pgp_self_encrypt_as = "PGP-KEY"
 
-<span class="comment"># vim: syntax=muttrc</span>
+# vim: syntax=muttrc</span>
 </pre>
   </div>
   <div class="sect1">
