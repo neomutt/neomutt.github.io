@@ -39,7 +39,7 @@ title: Configuration
           </colgroup>
           <tbody>
             <tr>
-              <td>neomuttrc-20170609</td>
+              <td>neomuttrc-20170707</td>
             </tr>
             <tr>
               <td>neomuttrc</td>
@@ -95,7 +95,7 @@ title: Configuration
             </thead>
             <tbody>
               <tr>
-                <td>/etc/xdg/mutt/neomuttrc-20170609</td>
+                <td>/etc/xdg/mutt/neomuttrc-20170707</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -111,7 +111,7 @@ title: Configuration
                 <td>Note the case of the filename</td>
               </tr>
               <tr>
-                <td>/etc/mutt/neomuttrc-20170609</td>
+                <td>/etc/mutt/neomuttrc-20170707</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -127,7 +127,7 @@ title: Configuration
                 <td>Note the case of the filename</td>
               </tr>
               <tr>
-                <td>/usr/share/mutt/neomuttrc-20170609</td>
+                <td>/usr/share/mutt/neomuttrc-20170707</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -185,7 +185,7 @@ title: Configuration
             </thead>
             <tbody>
               <tr>
-                <td>~/.config/mutt/neomuttrc-20170609</td>
+                <td>~/.config/mutt/neomuttrc-20170707</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -201,7 +201,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.neomuttrc-20170609</td>
+                <td>~/.neomuttrc-20170707</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -217,7 +217,7 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.mutt/neomuttrc-20170609</td>
+                <td>~/.mutt/neomuttrc-20170707</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
@@ -360,14 +360,14 @@ set record=+sent_on_$HOSTNAME
     <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
     <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
-    <a class="link" href="reference.html#record" title="3.273.&#160;record">$record</a> for details.)</p>
+    <a class="link" href="reference.html#record" title="3.261.&#160;record">$record</a> for details.)</p>
     <p>Mutt expands the variable when it is assigned, not when it is used. If the value of a variable on the right-hand side of an assignment changes after the assignment, the variable on the left-hand side will not be affected.</p>
     <p>The commands understood by Mutt are explained in the next paragraphs. For a complete list, see the
     <a class="link" href="reference.html#commands" title="2.&#160;Configuration Commands">command reference</a>.</p>
     <p>All configuration files are expected to be in the current locale as specified by the
     <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a> variable which doesn't have a default value since it's determined by Mutt at startup. If a configuration file is not encoded in the same character set the
-    <a class="link" href="reference.html#config-charset" title="3.36.&#160;config_charset">$config_charset</a> variable should be used: all lines starting with the next are recoded from
-    <a class="link" href="reference.html#config-charset" title="3.36.&#160;config_charset">$config_charset</a> to
+    <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> variable should be used: all lines starting with the next are recoded from
+    <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> to
     <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a>.</p>
     <p>This mechanism should be avoided if possible as it has the following implications:</p>
     <div class="itemizedlist">
@@ -375,11 +375,11 @@ set record=+sent_on_$HOSTNAME
         <li class="listitem">
           <p>These variables should be set early in a configuration file with
           <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a> preceding
-          <a class="link" href="reference.html#config-charset" title="3.36.&#160;config_charset">$config_charset</a> so Mutt knows what character set to convert to.</p>
+          <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> so Mutt knows what character set to convert to.</p>
         </li>
         <li class="listitem">
           <p>If
-          <a class="link" href="reference.html#config-charset" title="3.36.&#160;config_charset">$config_charset</a> is set, it should be set in each configuration file because the value is global and
+          <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> is set, it should be set in each configuration file because the value is global and
           <span class="emphasis">
             <em>not</em>
           </span>per configuration file.</p>
@@ -599,7 +599,7 @@ set alias_file=~/.mail_aliases
     <span class="emphasis">
       <em>Cc:</em>
     </span>prompt. You can also enter aliases in your editor at the appropriate headers if you have the
-    <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> variable set.</p>
+    <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> variable set.</p>
     <p>In addition, at the various address prompts, you can use the tab character to expand a partial alias to the full alias. If there are multiple matches, Mutt will bring up a menu with the matching aliases. In order to be presented with the full list of aliases, you must hit tab without a partial alias, such as at the beginning of the prompt or after a comma denoting multiple addresses.</p>
     <p>In the alias menu, you can select as many aliases as you want with the
     <code class="literal">select-entry</code> key (default: &lt;Return&gt;), and use the
@@ -721,7 +721,7 @@ set alias_file=~/.mail_aliases
         </dt>
         <dd>
           <p>The query menu is the browser for results returned by
-          <a class="link" href="reference.html#query-command" title="3.265.&#160;query_command">$query_command</a>.</p>
+          <a class="link" href="reference.html#query-command" title="3.253.&#160;query_command">$query_command</a>.</p>
         </dd>
         <dt>
           <span class="term">mix</span>
@@ -1016,7 +1016,7 @@ bind index gg first-entry
       <h3 class="title">Note</h3>
       <p>If you use the
       <span class="quote">“<span class="quote">!</span>”</span> shortcut for
-      <a class="link" href="reference.html#spoolfile" title="3.356.&#160;spoolfile">$spoolfile</a> at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical
+      <a class="link" href="reference.html#spoolfile" title="3.343.&#160;spoolfile">$spoolfile</a> at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical
       <span class="emphasis">
         <em>not</em>
       </span>operator for the expression.</p>
@@ -1049,7 +1049,7 @@ folder-hook mutt "set sort=threads"
       <a class="link" href="#exec" title="23.&#160;Executing Functions">exec</a> commands will end up being processed in reverse order.</p>
     </div>
     <p>The following example will set the
-    <a class="link" href="reference.html#sort" title="3.350.&#160;sort">sort</a> variable to
+    <a class="link" href="reference.html#sort" title="3.337.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
     <span class="quote">“<span class="quote">mutt</span>”</span> in their name.</p>
@@ -1240,7 +1240,7 @@ folder-hook mutt "set sort=threads"
     </span>(see
     <a class="xref" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Section&#160;3, “Patterns: Searching, Limiting and Tagging”</a>) in the message index. Note that IMAP server-side searches (=b, =B, =h) are not supported for color index patterns.</p>
     <p>When
-    <a class="link" href="reference.html#header-color-partial" title="3.100.&#160;header_color_partial">$header_color_partial</a> is unset (the default), a
+    <a class="link" href="reference.html#header-color-partial" title="3.101.&#160;header_color_partial">$header_color_partial</a> is unset (the default), a
     <span class="emphasis">
       <em>header</em>
     </span>matched by
@@ -1320,7 +1320,7 @@ folder-hook mutt "set sort=threads"
         </li>
         <li class="listitem">
           <p>quoted (text matching
-          <a class="link" href="reference.html#quote-regexp" title="3.268.&#160;quote_regexp">$quote_regexp</a> in the body of a message)</p>
+          <a class="link" href="reference.html#quote-regexp" title="3.256.&#160;quote_regexp">$quote_regexp</a> in the body of a message)</p>
         </li>
         <li class="listitem">
           <p>quoted1, quoted2, ..., quoted
@@ -1637,7 +1637,7 @@ export COLORFGBG
         </div>
       </div>
       <p>When displaying a message in the pager, Mutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.404.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.389.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1784,7 +1784,7 @@ hdr_order From Date: From: To: Cc: Subject:
       </em>... }</p>
     </div>
     <p>With various functions, Mutt will treat messages differently, depending on whether you sent them or whether you received them from someone else. For instance, when replying to a message that you sent to a different party, Mutt will automatically suggest to send the response to the original message's recipients — responding to yourself won't make much sense in many cases. (See
-    <a class="link" href="reference.html#reply-to" title="3.279.&#160;reply_to">$reply_to</a>.)</p>
+    <a class="link" href="reference.html#reply-to" title="3.267.&#160;reply_to">$reply_to</a>.)</p>
     <p>Many users receive e-mail under a number of different addresses. To fully use Mutt's features here, the program must be able to recognize what e-mail addresses you receive mail under. That's the purpose of the
     <span class="command">
       <strong>alternates</strong>
@@ -1917,7 +1917,7 @@ alternates '^user@example$'
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The Mail-Followup-To header is a non-standard extension which is not supported by all mail user agents. Adding it is not bullet-proof against receiving personal CCs of list messages. Also note that the generation of the Mail-Followup-To header is controlled by the
-      <a class="link" href="reference.html#followup-to" title="3.81.&#160;followup_to">$followup_to</a> configuration variable since it's common practice on some mailing lists to send Cc upon replies (which is more a group- than a list-reply).</p>
+      <a class="link" href="reference.html#followup-to" title="3.80.&#160;followup_to">$followup_to</a> configuration variable since it's common practice on some mailing lists to send Cc upon replies (which is more a group- than a list-reply).</p>
     </div>
     <p>More precisely, Mutt maintains lists of patterns for the addresses of known and subscribed mailing lists. Every subscribed mailing list is known. To mark a mailing list as known, use the
     <span class="command">
@@ -1991,7 +1991,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">mailbox shortcut</a> expansion performed on the first character. See
     <a class="xref" href="advancedusage.html#mailbox-hook" title="6.2.&#160;Mailbox Matching in Hooks">Mailbox Matching in Hooks</a> for more details.</p>
     <p>Note that execution of mbox-hooks is dependent on the
-    <a class="link" href="reference.html#move" title="3.176.&#160;move">$move</a> configuration variable. If set to
+    <a class="link" href="reference.html#move" title="3.177.&#160;move">$move</a> configuration variable. If set to
     <span class="quote">“<span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
     <p>Unlike some of the other
     <span class="emphasis">
@@ -2055,8 +2055,8 @@ subscribe [0-9]+.*@bugs.debian.org
       <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">shortcut characters</a>(such as
       <span class="quote">“<span class="quote">=</span>”</span> and
       <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
-      <a class="link" href="reference.html#folder" title="3.79.&#160;folder">$folder</a> and
-      <a class="link" href="reference.html#spoolfile" title="3.356.&#160;spoolfile">$spoolfile</a>) should be set before the
+      <a class="link" href="reference.html#folder" title="3.78.&#160;folder">$folder</a> and
+      <a class="link" href="reference.html#spoolfile" title="3.343.&#160;spoolfile">$spoolfile</a>) should be set before the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise Mutt tries to find it relative to the directory from where Mutt was started which may not always be desired.</p>
@@ -2091,7 +2091,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <span class="command">
       <strong>my_hdr</strong>
     </span>command allows you to create your own header fields which will be added to every message you send and appear in the editor if
-    <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> is set.</p>
+    <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> is set.</p>
     <p>For example, if you would like to add an
     <span class="quote">“<span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
     <a class="xref" href="#ex-my-hdr" title="Example&#160;3.11.&#160;Defining custom headers">Example&#160;3.11, “Defining custom headers”</a> in your
@@ -2117,7 +2117,7 @@ my_hdr Organization: A Really Big Company, Anytown, USA
       <span class="quote">“<span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so Mutt enforces the rule.</p>
     </div>
     <p>If you would like to add a header field to a single message, you should either set the
-    <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> variable, or use the
+    <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> variable, or use the
     <code class="literal">&lt;edit-headers&gt;</code>function (default:
     <span class="quote">“<span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
     <p>To remove user defined header fields, use the
@@ -2161,7 +2161,7 @@ unmy_hdr to cc
     </span>, see
     <a class="xref" href="advancedusage.html#pattern-hook" title="6.1.&#160;Message Matching in Hooks">Message Matching in Hooks</a> for information on the exact format.</p>
     <p>To provide more flexibility and good defaults, Mutt applies the expandos of
-    <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> to
+    <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a> to
     <span class="emphasis">
       <em>mailbox</em>
     </span>after it was expanded.</p>
@@ -2212,16 +2212,16 @@ save-hook aol\\.com$ +spam
       </p>
     </div>
     <p>This command is used to save outgoing mail in a mailbox other than
-    <a class="link" href="reference.html#record" title="3.273.&#160;record">$record</a>. Mutt searches the initial list of message recipients for the first matching
+    <a class="link" href="reference.html#record" title="3.261.&#160;record">$record</a>. Mutt searches the initial list of message recipients for the first matching
     <span class="emphasis">
       <em>pattern</em>
     </span>and uses
     <span class="emphasis">
       <em>mailbox</em>
     </span>as the default Fcc: mailbox. If no match is found the message will be saved to
-    <a class="link" href="reference.html#record" title="3.273.&#160;record">$record</a> mailbox.</p>
+    <a class="link" href="reference.html#record" title="3.261.&#160;record">$record</a> mailbox.</p>
     <p>To provide more flexibility and good defaults, Mutt applies the expandos of
-    <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> to
+    <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a> to
     <span class="emphasis">
       <em>mailbox</em>
     </span>after it was expanded.</p>
@@ -2275,7 +2275,7 @@ fcc-hook [@.]aol\\.com$ +spammers
     <span class="emphasis">
       <em>mailbox</em>
     </span>according to
-    <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>.</p>
+    <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -2386,7 +2386,7 @@ fcc-hook [@.]aol\\.com$ +spammers
     <span class="command">
       <strong>send-hook</strong>
     </span>, and can, e.g., be used to set parameters such as the
-    <a class="link" href="reference.html#sendmail" title="3.298.&#160;sendmail">$sendmail</a> variable depending on the message's sender address.</p>
+    <a class="link" href="reference.html#sendmail" title="3.286.&#160;sendmail">$sendmail</a> variable depending on the message's sender address.</p>
     <p>For each type of
     <span class="command">
       <strong>send-hook</strong>
@@ -2406,7 +2406,7 @@ fcc-hook [@.]aol\\.com$ +spammers
     <p>Another typical use for this command is to change the values of the
     <a class="link" href="reference.html#attribution" title="3.20.&#160;attribution">$attribution</a>,
     <a class="link" href="reference.html#attribution-locale" title="3.21.&#160;attribution_locale">$attribution_locale</a>, and
-    <a class="link" href="reference.html#signature" title="3.318.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
+    <a class="link" href="reference.html#signature" title="3.306.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>
@@ -2492,7 +2492,7 @@ message-hook '~f freshmeat-news' 'set pager="less \"+/^  subject: .*\""'
     <span class="command">
       <strong>crypt-hook</strong>
     </span>command provides a method by which you can specify the ID of the public key to be used when encrypting messages to a certain recipient. You may use multiple crypt-hooks with the same regexp; multiple matching crypt-hooks result in the use of multiple keyids for a recipient. During key selection, Mutt will confirm whether each crypt-hook is to be used (unless the
-    <a class="link" href="reference.html#crypt-confirmhook" title="3.46.&#160;crypt_confirmhook">$crypt_confirmhook</a> option is unset). If all crypt-hooks for a recipient are declined, Mutt will use the original recipient address for key selection instead.</p>
+    <a class="link" href="reference.html#crypt-confirmhook" title="3.47.&#160;crypt_confirmhook">$crypt_confirmhook</a> option is unset). If all crypt-hooks for a recipient are declined, Mutt will use the original recipient address for key selection instead.</p>
     <p>The meaning of
     <span class="emphasis">
       <em>keyid</em>
@@ -2707,7 +2707,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
       <em>sort</em>
     </span>your mail based on its spam attributes, as determined by the external filter. You also can display the spam attributes in your index display using the
     <code class="literal">%H</code> selector in the
-    <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> variable. (Tip: try
+    <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a> variable. (Tip: try
     <code class="literal">%?H?[%H] ?</code>to display spam tags only when they are defined for a given message.)</p>
     <p>Your first step is to define your external filter's spam patterns using the
     <span class="command">
@@ -2734,16 +2734,16 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <code class="literal">%1</code> is replaced with the first back-reference in the regex,
     <code class="literal">%2</code> with the second, etc.</p>
     <p>To match spam tags, mutt needs the corresponding header information which is always the case for local and POP folders but not for IMAP in the default configuration. Depending on the spam header to be analyzed,
-    <a class="link" href="reference.html#imap-headers" title="3.122.&#160;imap_headers">$imap_headers</a> may need to be adjusted.</p>
+    <a class="link" href="reference.html#imap-headers" title="3.123.&#160;imap_headers">$imap_headers</a> may need to be adjusted.</p>
     <p>If you're using multiple spam filters, a message can have more than one spam-related header. You can define
     <span class="command">
       <strong>spam</strong>
     </span>patterns for each filter you use. If a message matches two or more of these patterns, and the
-    <a class="link" href="reference.html#spam-separator" title="3.355.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
+    <a class="link" href="reference.html#spam-separator" title="3.342.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
     <span class="emphasis">
       <em>format</em>
     </span>strings joined together, with the value of
-    <a class="link" href="reference.html#spam-separator" title="3.355.&#160;spam_separator">$spam_separator</a> separating them.</p>
+    <a class="link" href="reference.html#spam-separator" title="3.342.&#160;spam_separator">$spam_separator</a> separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in
     <a class="xref" href="#ex-spam" title="Example&#160;3.14.&#160;Configuring spam detection">Example&#160;3.14, “Configuring spam detection”</a>.</p>
     <div class="example">
@@ -2768,13 +2768,13 @@ set spam_separator=", "
     <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used — in this case,
     <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the
-    <a class="link" href="reference.html#spam-separator" title="3.355.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined
+    <a class="link" href="reference.html#spam-separator" title="3.342.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined
     <span class="emphasis">
       <em>format</em>
     </span>strings, you'll get only the last one to match.</p>
     <p>The spam tag is what will be displayed in the index when you use
     <code class="literal">%H</code> in the
-    <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> variable. It's also the string that the
+    <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a> variable. It's also the string that the
     <code class="literal">~H</code> pattern-matching expression matches against for
     <code class="literal">&lt;search&gt;</code>and
     <code class="literal">&lt;limit&gt;</code>functions. And it's what sorting by spam attribute will use as a sort key.</p>
@@ -3168,8 +3168,7 @@ set ?allow_8bit
           <div class="example-contents">
             <pre class="screen">
 set my_cfgdir = $HOME/mutt/config
-source $my_cfgdir/hooks
-source $my_cfgdir/macros
+source $my_cfgdir/hooks $my_cfgdir/macros
 <span class="comment"># more source commands...</span>
 </pre>
           </div>
@@ -3297,11 +3296,10 @@ mailboxes $my_mx +mailbox3
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-        <code class="command">source</code>
-        <em class="replaceable">
-          <code>filename</code>
-        </em>
-      </p>
+      <code class="command">source</code>
+      <em class="replaceable">
+        <code>file</code>
+      </em>...</p>
     </div>
     <p>This command allows the inclusion of initialization commands from other files. For example, I place all of my aliases in
     <code class="literal">~/.mail_aliases</code> so that I can make my
@@ -3364,12 +3362,12 @@ mailboxes $my_mx +mailbox3
         </div>
       </div>
       <p>Format strings are a general concept you'll find in several locations through the Mutt configuration, especially in the
-      <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a>,
-      <a class="link" href="reference.html#pager-format" title="3.206.&#160;pager_format">$pager_format</a>,
-      <a class="link" href="reference.html#status-format" title="3.373.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a>,
+      <a class="link" href="reference.html#pager-format" title="3.194.&#160;pager_format">$pager_format</a>,
+      <a class="link" href="reference.html#status-format" title="3.360.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code> represents a message's Subject: header in the
-      <a class="link" href="reference.html#index-format" title="3.137.&#160;index_format">$index_format</a> variable. The
+      <a class="link" href="reference.html#index-format" title="3.138.&#160;index_format">$index_format</a> variable. The
       <span class="quote">“<span class="quote">expandos</span>”</span> available are documented with each format variable, but there are general modifiers available with all formatting expandos, too. Those are our concern here.</p>
       <p>Some of the modifiers are borrowed right out of C (though you might know them from Perl, Python, shell, or another language). These are the
       <code class="literal">[-]m.n</code> modifiers, as in
@@ -3415,7 +3413,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in
-      <a class="link" href="reference.html#status-format" title="3.373.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.360.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %?n?%n new messages.?
 </pre>
@@ -3473,7 +3471,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code> script installed in the
       <code class="literal">samples</code> subdirectory of the Mutt documentation: it can be used as filter for
-      <a class="link" href="reference.html#status-format" title="3.373.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.360.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3587,7 +3585,10 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
     <p>Mutt initializes the default list to contain only the
     <code class="literal">Subject</code> and
     <code class="literal">Body</code> header fields, which are the only requirement specified by the
-    <code class="literal">mailto:</code>specification in RFC2368.</p>
+    <code class="literal">mailto:</code>specification in RFC2368, and the
+    <code class="literal">Cc</code>,
+    <code class="literal">In-Reply-To</code>,
+    <code class="literal">References</code> headers to aid with replies to mailing lists.</p>
   </div>
 </div>
 {% endraw %}
