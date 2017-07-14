@@ -952,7 +952,7 @@ title: Advanced Usage
       <span class="quote">“<span class="quote">\\</span>”</span>). You can force Mutt to treat
       <span class="emphasis">
         <em>EXPR</em>
-      </span>as a simple string instead of a regular expression by using = instead of ~ in the pattern name. For example,
+      </span>as a simple substring instead of a regular expression by using = instead of ~ in the pattern name. For example,
       <code class="literal">=b *.*</code>will find all messages that contain the literal string
       <span class="quote">“<span class="quote">*.*</span>”</span>. Simple string matches are less powerful than regular expressions but can be considerably faster. This is especially true for IMAP folders, because string matches can be performed on the server instead of by fetching every message. IMAP treats
       <code class="literal">=h</code> specially: it must be of the form
