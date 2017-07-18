@@ -65,6 +65,6 @@ collections:
   run:
     output: true
 
-gems:
+plugins:
   - jekyll-gist
   - jekyll-sitemap
