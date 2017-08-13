@@ -23,7 +23,7 @@ we use /usr/local/portage/neomutt:
 ```
 # mkdir -p /usr/local/portage/neomutt
 # cd /usr/local/portage/neomutt
-# git clone https://github.com/neomutt/gentoo-neomutt neomutt
+# git clone https://github.com/neomutt/gentoo-neomutt .
 ```
 
 ## Adding the NeoMutt overlay <a class="offset" id="overlay"></a>
