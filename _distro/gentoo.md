@@ -31,7 +31,7 @@ we use /usr/local/portage/neomutt:
 See <a href="https://wiki.gentoo.org/wiki//etc/portage/repos.conf">Gentoo
 Wiki on /etc/portage/repos.conf</a> to add the following to repos.conf:
 ```
-[NeoMutt]
+[neomutt_gentoo]
 location = /usr/local/portage/neomutt
 masters = gentoo
 auto-sync = no
