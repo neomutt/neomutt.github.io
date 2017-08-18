@@ -15,6 +15,7 @@ options = {
 
         /.*feature.*/,
         /.*guide.*/,
+        /.*code.*/,
 
         /.*txt/,
         /.*rc/,
