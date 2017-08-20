@@ -21,12 +21,10 @@ This is a list of all the git repositories in the NeoMutt GitHub Project.
 | [lua-samples](https://github.com/neomutt/lua-samples)                 | Sample C code to interact with LUA Scripts                                       |
 | [management](https://github.com/neomutt/management)                   | Automation scripts and notes                                                     |
 | [neomutt](https://github.com/neomutt/neomutt)                         | Teaching an Old Dog New Tricks -- IRC: #neomutt on irc.freenode.net              |
-| [neomutt-flatcap](https://github.com/neomutt/neomutt-flatcap)         | flatcap's work area -- not for public use                                        |
 | [neomutt-old](https://github.com/neomutt/neomutt-old)                 | Retired branches of NeoMutt                                                      |
 | [neomutt.github.io](https://github.com/neomutt/neomutt.github.io)     | NeoMutt web pages                                                                |
 | [panel-manager](https://github.com/neomutt/panel-manager)             | Mock-up of a panel manager for mutt                                              |
 | [release](https://github.com/neomutt/release)                         | How to make a NeoMutt Release                                                    |
-| [scripts](https://github.com/neomutt/scripts)                         | assorted scripts                                                                 |
 | [sidebar-history](https://github.com/neomutt/sidebar-history)         | Old versions of mutt-sidebar                                                     |
 | [travis-build](https://github.com/neomutt/travis-build)               | Try to control the Travis builds more transparently                              |
 
