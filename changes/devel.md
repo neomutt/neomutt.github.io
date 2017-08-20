@@ -187,7 +187,7 @@ The code has undergone extensive improvements.
 - Clang-format the entire source tree
 - Refactor the header cache ([hcache](https://github.com/neomutt/neomutt/tree/master/hcache))
 - Refactor encryption / signing ([ncrypt](https://github.com/neomutt/neomutt/tree/master/ncrypt))
-- Refactor struct Buffer code ([buffer.c](https://github.com/neomutt/neomutt/blob/master/buffer.c))
+- Refactor struct Buffer code ([buffer.c](https://github.com/neomutt/neomutt/blob/master/lib/buffer.c))
 
 **Code style changes**:
 
