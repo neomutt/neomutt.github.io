@@ -25,7 +25,6 @@ The diagram below shows how all the files fit together.
 - compulsory   : always compiled into mutt
 - conditional  : depends on user config
 - enviromental : depends on OS's available libraries
-- foreign      : 3rd-party source, e.g. regex
 - generated    : created from other files
 - shared       : used in multiple places
 

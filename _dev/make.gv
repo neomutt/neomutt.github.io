@@ -31,7 +31,6 @@ digraph build {
 	gitver_h         [ label="gitver.h"            ]
 	hcachever_h      [ label="hcachever.h"         ]
 	hcachever_sh     [ label="hcachever.sh"        ]
-	hcachever_sh_in  [ label="hcachever.sh.in"     ]
 	init_h           [ label="init.h"              ]
 	keymap_alldefs_h [ label="keymap_alldefs.h"    ]
 	keymap_defs_h    [ label="keymap_defs.h"       ]
@@ -54,11 +53,12 @@ digraph build {
 	muttrc_man_head  [ label="muttrc.man.head"     ]
 	muttrc_man_tail  [ label="muttrc.man.tail"     ]
 	mutt_css         [ label="mutt.css"            ]
-	mutt_h           [ label="mutt.h"              ]
+	mutt_h           [ label="\{hcache deps\}"     ]
 	mutt_pot         [ label="mutt.pot"            ]
 	ops              [ label="\{OPS*\}"            ]
 
 	dot_configure [ label=<./configure <font color="red">●</font><font color="green">★</font>> shape="box" ]
+	gcc           [ label="gcc" shape="box" ]
 	gen_alldefs   [ label="gen_defs" color="green" shape="box" ]
 	gen_defs      [ label="gen_defs" color="green" shape="box" ]
 	gen_map_doc   [ label="gen-map-doc" color="green" shape="box" ]
@@ -100,6 +100,18 @@ digraph build {
 	cond_ops -> ops [ style="dashed" ]
 	comp_ops -> ops [ style="dashed" ]
 
+	subgraph cluster_lib {
+		fontcolor="red"
+		label="LIBMUTT"
+		color="#ff0000"
+
+		lots_lib_c [ label="\{lib.c\}" ]
+		lots_lib_o [ label="\{lib.o\}" ]
+
+		lots_lib_c -> lots_lib_o [ label="gcc" ]
+		lots_lib_o -> libmutt_a [ label="ar" ]
+	}
+
 	subgraph cluster_imap {
 		fontcolor="red"
 		label="IMAP"
@@ -132,12 +144,11 @@ digraph build {
 		compulsory   [ label="\{compulsory.c\}"   ]
 		conditional  [ label="\{conditional.c\}"  ]
 		enviromental [ label="\{enviromental.c\}" ]
-		foreign      [ label="\{foreign.c\}"      ]
 		generated    [ label="\{generated.c\}"    ]
-		shared       [ label="\{shared.c\}"       ]
 	}
 
 	imap_a -> ld
+	libmutt_a -> ld
 	ncrypt_a -> ld
 	POTFILES -> xgettext
 	keymap_alldefs_h -> xgettext
@@ -170,7 +181,6 @@ digraph build {
 
 	init_h -> compulsory [ style="dashed" ]
 
-	hcachever_sh_in -> hcachever_sh [ label="cp" ]
 	pgpewrap_src -> pgpewrap [ label="gcc" ]
 	makedoc_src -> makedoc [ label="gcc" ]
 
@@ -184,8 +194,7 @@ digraph build {
 	makedoc_s -> manual_xml
 	functions_h -> gen_map_doc
 
-	shared_src -> gcc
-	shared_src -> shared [ style="dashed" ]
+  libmutt_a -> gcc
 	ring_src -> gcc
 	gcc -> pgpring
 }
