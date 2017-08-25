@@ -184,15 +184,14 @@ digraph build {
 	pgpewrap_src -> pgpewrap [ label="gcc" ]
 	makedoc_src -> makedoc [ label="gcc" ]
 
-	config_h -> manual_xml [ label="sed" ]
 	manual_xml_head -> manual_xml [ label="sed" ]
 
 	manual_xml_tail -> gen_map_doc
 	ops -> gen_map_doc
 	gen_map_doc -> manual_xml
-	init_h -> makedoc_s
+	init_h -> makedoc_s [ label="cpp" ]
 	makedoc_s -> manual_xml
-	functions_h -> gen_map_doc
+	functions_h -> gen_map_doc [ label="cpp" ]
 
   libmutt_a -> gcc
 	ring_src -> gcc
