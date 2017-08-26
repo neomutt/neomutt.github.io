@@ -1,0 +1,183 @@
+digraph build {
+	graph [
+		rankdir="LR"
+		nodesep="0.5"
+		ranksep="0.3"
+	];
+
+	node [
+		shape="Mrecord"
+		style="solid"
+		height="0.2"
+		penwidth="2.0"
+		color="blue"
+		fontcolor="black"
+		fontsize="18"
+	];
+
+	edge [
+		penwidth="1.5"
+		color="#000000"
+		arrowsize="1.0"
+	];
+
+
+	comp_ops         [ label="\{OPS.compulsory\}"  ]
+	cond_ops         [ label="\{OPS.conditional\}" ]
+	configure_ac     [ label="configure.ac"        ]
+	config_h         [ label="config.h"            ]
+	conststrings_c   [ label="conststrings.c"      ]
+	gitver_h         [ label="gitver.h"            ]
+	keymap_defs_h    [ label="keymap_defs.h"       ]
+	mutt_h           [ label="\{hcache deps\}"     ]
+	ops              [ label="\{OPS*\}"            ]
+
+	dot_configure [ label=<./configure <font color="red">●</font><font color="green">★</font>> shape="box" ]
+	ld_tool       [ label="ld" shape="box" ]
+	gen_alldefs   [ label="gen_defs" color="green" shape="box" ]
+	gen_defs      [ label="gen_defs" color="green" shape="box" ]
+	git           [ label=<git <font color="red">●</font>> shape="box" ]
+	ld_mutt       [ label="ld" shape="box" ]
+	txt2c         [ label=<txt2c <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
+
+	lots_obj -> ld_mutt
+	ld_mutt -> mutt
+
+	dot_configure -> config_h
+	config_h -> generated [ style="dashed" ]
+
+	git -> gitver_h
+	gitver_h -> generated [ style="dashed" ]
+
+	txt2c -> conststrings_c
+	conststrings_c -> generated [ style="dashed" ]
+
+	config_h -> hcachever_sh
+	mutt_h -> hcachever_sh
+	mutt_h -> compulsory [ style="dashed" ]
+
+	ops -> gen_defs
+	gen_defs -> keymap_defs_h
+	ops -> gen_alldefs
+	gen_alldefs -> keymap_alldefs_h
+	keymap_defs_h -> generated [ style="dashed" ]
+
+	cond_ops -> ops [ style="dashed" ]
+	comp_ops -> ops [ style="dashed" ]
+
+	subgraph cluster_imap {
+		fontcolor="red"
+		label="IMAP"
+		color="#ff0000"
+
+		lots_imap_c [ label="\{imap.c\}" ]
+		lots_imap_o [ label="\{imap.o\}" ]
+		imap_a      [ label="libimap.a"  ]
+
+		lots_imap_c -> lots_imap_o [ label="gcc" ]
+		lots_imap_o -> imap_a [ label="ar" ]
+	}
+
+	subgraph cluster_ncrypt {
+		fontcolor="red"
+		label="NCRYPT"
+		color="#ff0000"
+
+		lots_ncrypt_c [ label="\{ncrypt.c\}" ]
+		lots_ncrypt_o [ label="\{ncrypt.o\}" ]
+		ncrypt_a      [ label="libncrypt.a"  ]
+
+		lots_ncrypt_c -> lots_ncrypt_o [ label="gcc" ]
+		lots_ncrypt_o -> ncrypt_a [ label="ar" ]
+	}
+
+	subgraph cluster_hcache {
+		fontcolor="red"
+		label="HCACHE"
+		color="#ff0000"
+
+		lots_hcache_c [ label="\{hcache.c\}"                                                                                  ]
+		lots_hcache_o [ label="\{hcache.o\}"                                                                                  ]
+		backends_c    [ label=<\{backends.c\} <font color="green">★</font>>                                                   ]
+		hcachever_h   [ label="hcachever.h"                                                                                   ]
+		hcachever_sh  [ label=<hcachever.sh <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
+		hcache_a      [ label="libhcache.a"                                                                                   ]
+
+		hcachever_sh  -> hcachever_h
+		hcachever_h   -> lots_hcache_o
+		backends_c    -> lots_hcache_o [ label="gcc" ]
+		lots_hcache_c -> lots_hcache_o [ label="gcc" ]
+		lots_hcache_o -> hcache_a      [ label="ar"  ]
+	}
+
+	subgraph cluster_source {
+		fontcolor="red"
+		label="SOURCE"
+		color="#ff0000"
+
+		compulsory   [ label="\{compulsory.c\}"                               ]
+		conditional  [ label=<\{conditional.c\} <font color="green">★</font>> ]
+		enviromental [ label="\{enviromental.c\}"                             ]
+		generated    [ label="\{generated.c\}"                                ]
+		lots_obj     [ label="\{source.o\}"                                   ]
+
+		compulsory   -> lots_obj [ label="gcc" ]
+		conditional  -> lots_obj [ label="gcc" ]
+		enviromental -> lots_obj [ label="gcc" ]
+		generated    -> lots_obj [ label="gcc" ]
+	}
+
+	subgraph cluster_messages {
+		fontcolor="red"
+		label="MESSAGES"
+		color="#ff0000"
+
+		keymap_alldefs_h [ label="keymap_alldefs.h"     ]
+		lots_mo          [ label="\{lang.mo\}"          ]
+		lots_po          [ label="\{lang.po\}"          ]
+		mutt_pot         [ label="mutt.pot"             ]
+		xgettext         [ label="xgettext" shape="box" ]
+
+		keymap_alldefs_h -> xgettext
+		POTFILES         -> xgettext
+		compulsory       -> xgettext
+		xgettext         -> mutt_pot
+		mutt_pot         -> lots_po [ label="translator" ]
+		lots_po          -> lots_mo [ label="msgfmt" ]
+	}
+
+	subgraph cluster_libmutt {
+		fontcolor="red"
+		label="LIBMUTT"
+		color="#ff0000"
+
+		lots_lib_c [ label="\{lib.c\}" ]
+		lots_lib_o [ label="\{lib.o\}" ]
+		mutt_a     [ label="libmutt.a" ]
+
+		lots_lib_c -> lots_lib_o [ label="gcc" ]
+		lots_lib_o -> mutt_a [ label="ar" ]
+	}
+
+	subgraph cluster_tools {
+		fontcolor="red"
+		label="TOOLS"
+		color="#ff0000"
+
+		pgpewrap_src [ label="pgpewrap.c" ]
+		pgpring_src  [ label="pgpring.c"  ]
+
+		pgpewrap_src -> pgpewrap [ label="gcc" ]
+		mutt_a       -> ld_tool
+		pgpring_src  -> ld_tool [ label="gcc" ]
+		ld_tool      -> pgpring
+	}
+
+	hcache_a -> ld_mutt
+	imap_a -> ld_mutt
+	mutt_a -> ld_mutt
+	ncrypt_a -> ld_mutt
+
+	configure_ac -> dot_configure [ label="autoreconf" ]
+}
+

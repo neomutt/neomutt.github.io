@@ -39,6 +39,7 @@ exclude:
   - README.md
   - LICENSE.md
   - CNAME
+  - tags*
 
   # is suggested by
   # http://jekyllrb.com/docs/continuous-integration/#configuring-your-travis-builds

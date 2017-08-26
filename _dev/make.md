@@ -8,9 +8,9 @@ description: How NeoMutt Assembles the Source
 
 The NeoMutt build relies on a lot of pre-/post-processing.
 
-The diagram below shows how all the files fit together.
+The diagrams below shows how the code and docs fit together.
 
-[![make](/images/make-thumb.png)](/images/make.png)
+[![make](/images/make-code-thumb.png)](/images/make-code.png) [![make](/images/make-docs-thumb.png)](/images/make-docs.png)
 
 **Key**:
 - Ellipse    : source file
@@ -22,13 +22,15 @@ The diagram below shows how all the files fit together.
 - {Braces}   : multiple files follow this pattern
 
 **Source Code**:
-- compulsory   : always compiled into mutt
-- conditional  : depends on user config
-- enviromental : depends on OS's available libraries
-- generated    : created from other files
-- shared       : used in multiple places
+- compulsory    : always compiled into mutt
+- conditional   : depends on user config
+- environmental : depends on OS's available libraries
+- generated     : created from other files
+- shared        : used in multiple places
 
-[Diagram's source](make.gv)
+**Diagram Source**:
+- [Code](make-code.gv)
+- [Docs](make-docs.gv)
 
 Render the diagram with the command:
 ```

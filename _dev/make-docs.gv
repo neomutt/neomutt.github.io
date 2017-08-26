@@ -1,0 +1,80 @@
+digraph build {
+	graph [
+		rankdir="LR"
+		nodesep="0.5"
+		ranksep="0.3"
+	];
+
+	node [
+		shape="Mrecord"
+		style="solid"
+		height="0.2"
+		penwidth="2.0"
+		color="blue"
+		fontcolor="black"
+		fontsize="18"
+	];
+
+	edge [
+		penwidth="1.5"
+		color="#000000"
+		arrowsize="1.0"
+	];
+
+
+	functions_h      [ label="functions.h" color="red" ]
+	ops              [ label="\{OPS*\}"    color="red" ]
+	init_h           [ label="init.h"      color="red" ]
+
+	lots_1           [ label="\{example.1\}"       ]
+	lots_man         [ label="\{example.man\}"     ]
+	lots_muttrc      [ label="\{muttrc.example\}"  ]
+	lots_xsl         [ label="\{mutt.xsl\}"        ]
+	makedoc_src      [ label="makedoc.c"           ]
+	manual_html      [ label="\{manual.html\}"     ]
+	manual_txt       [ label="manual.txt"          ]
+	manual_xml       [ label="manual.xml"          ]
+	manual_xml_head  [ label="manual.xml.head"     ]
+	manual_xml_tail  [ label="manual.xml.tail"     ]
+	muttrc           [ label="muttrc"              ]
+	muttrc_man       [ label="muttrc.man"          ]
+	muttrc_man_head  [ label="muttrc.man.head"     ]
+	muttrc_man_tail  [ label="muttrc.man.tail"     ]
+	mutt_css         [ label="mutt.css"            ]
+
+	gen_map_doc   [ label="gen-map-doc" color="green" shape="box" ]
+	makedoc_c     [ label="makedoc -c" color="green" shape="box" ]
+	makedoc_m     [ label="makedoc -m" color="green" shape="box" ]
+	makedoc_s     [ label="makedoc -s" color="green" shape="box" ]
+	xsltproc      [ label="xsltproc" shape="box" ]
+
+	lots_man -> lots_1 [ label="sed" ]
+
+	manual_xml -> xsltproc
+	lots_xsl -> xsltproc
+	mutt_css -> xsltproc
+	xsltproc -> manual_html
+	manual_html -> manual_txt [ label="w3m/links" ]
+
+	init_h -> makedoc_m
+	muttrc_man_head -> muttrc_man
+	makedoc_m -> muttrc_man
+	muttrc_man_tail -> muttrc_man
+
+	muttrc_head -> muttrc [ label="sed" ]
+	init_h -> makedoc_c
+	makedoc_c -> muttrc
+
+	init_h -> lots_muttrc [ label="cut'n'paste" ]
+
+	makedoc_src -> makedoc [ label="gcc" ]
+	manual_xml_head -> manual_xml [ label="sed" ]
+
+	manual_xml_tail -> gen_map_doc
+	ops -> gen_map_doc
+	gen_map_doc -> manual_xml
+	init_h -> makedoc_s [ label="cpp" ]
+	makedoc_s -> manual_xml
+	functions_h -> gen_map_doc [ label="cpp" ]
+}
+
