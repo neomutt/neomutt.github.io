@@ -23,7 +23,7 @@ digraph build {
 
 
 	functions_h      [ label="functions.h" color="red" ]
-	ops              [ label="\{OPS*\}"    color="red" ]
+	opcodes          [ label="opcodes.h"   color="red" ]
 	init_h           [ label="init.h"      color="red" ]
 
 	lots_1           [ label="\{example.1\}"       ]
@@ -71,7 +71,7 @@ digraph build {
 	manual_xml_head -> manual_xml [ label="sed" ]
 
 	manual_xml_tail -> gen_map_doc
-	ops -> gen_map_doc
+	opcodes -> gen_map_doc
 	gen_map_doc -> manual_xml
 	init_h -> makedoc_s [ label="cpp" ]
 	makedoc_s -> manual_xml

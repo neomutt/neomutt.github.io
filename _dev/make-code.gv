@@ -22,20 +22,14 @@ digraph build {
 	];
 
 
-	comp_ops         [ label="\{OPS.compulsory\}"  ]
-	cond_ops         [ label="\{OPS.conditional\}" ]
 	configure_ac     [ label="configure.ac"        ]
 	config_h         [ label="config.h"            ]
 	conststrings_c   [ label="conststrings.c"      ]
 	gitver_h         [ label="gitver.h"            ]
-	keymap_defs_h    [ label="keymap_defs.h"       ]
 	mutt_h           [ label="\{hcache deps\}"     ]
-	ops              [ label="\{OPS*\}"            ]
 
 	dot_configure [ label=<./configure <font color="red">●</font><font color="green">★</font>> shape="box" ]
 	ld_tool       [ label="ld" shape="box" ]
-	gen_alldefs   [ label="gen_defs" color="green" shape="box" ]
-	gen_defs      [ label="gen_defs" color="green" shape="box" ]
 	git           [ label=<git <font color="red">●</font>> shape="box" ]
 	ld_mutt       [ label="ld" shape="box" ]
 	txt2c         [ label=<txt2c <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
@@ -55,15 +49,6 @@ digraph build {
 	config_h -> hcachever_sh
 	mutt_h -> hcachever_sh
 	mutt_h -> compulsory [ style="dashed" ]
-
-	ops -> gen_defs
-	gen_defs -> keymap_defs_h
-	ops -> gen_alldefs
-	gen_alldefs -> keymap_alldefs_h
-	keymap_defs_h -> generated [ style="dashed" ]
-
-	cond_ops -> ops [ style="dashed" ]
-	comp_ops -> ops [ style="dashed" ]
 
 	subgraph cluster_imap {
 		fontcolor="red"
@@ -132,13 +117,11 @@ digraph build {
 		label="MESSAGES"
 		color="#ff0000"
 
-		keymap_alldefs_h [ label="keymap_alldefs.h"     ]
 		lots_mo          [ label="\{lang.mo\}"          ]
 		lots_po          [ label="\{lang.po\}"          ]
 		mutt_pot         [ label="mutt.pot"             ]
 		xgettext         [ label="xgettext" shape="box" ]
 
-		keymap_alldefs_h -> xgettext
 		POTFILES         -> xgettext
 		compulsory       -> xgettext
 		xgettext         -> mutt_pot
