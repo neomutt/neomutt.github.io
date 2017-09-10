@@ -48,14 +48,14 @@ status: stable
       </div>
     </div>
     <p>Reading news via NNTP</p>
-    <p>Mutt can read from a news server using NNTP.</p>
+    <p>NeoMutt can read from a news server using NNTP.</p>
     <p>The default news server can be obtained from the
     <code class="literal">$NNTPSERVER</code> environment variable or from the
     <code class="literal">/etc/nntpserver</code> file. Like in other news readers, information about the subscribed newsgroups is saved in the file specified by the
     <a class="link" href="/guide/reference.html#newsrc" title="3.187.&#160;newsrc">$newsrc</a> variable. You can open a newsgroup with the function
     <code class="literal">&lt;change-newsgroup&gt;</code></p>
     <p>The variable
-    <a class="link" href="/guide/reference.html#news-cache-dir" title="3.184.&#160;news_cache_dir">$news_cache_dir</a> can be used to point to a directory. Mutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. The hierarchy is also used to store header cache if Mutt was compiled with
+    <a class="link" href="/guide/reference.html#news-cache-dir" title="3.184.&#160;news_cache_dir">$news_cache_dir</a> can be used to point to a directory. NeoMutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. The hierarchy is also used to store header cache if NeoMutt was compiled with
     <a class="link" href="/guide/optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">header cache</a> support.</p>
   </div>
   <div class="sect1">
@@ -172,7 +172,7 @@ status: stable
               </td>
               <td>string</td>
               <td>
-                <code class="literal">~/.mutt</code>
+                <code class="literal">~/.neomutt</code>
               </td>
             </tr>
             <tr>
@@ -299,7 +299,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>NNTP adds the following functions to Mutt. By default, none of them are bound to keys.</p>
+    <p>NNTP adds the following functions to NeoMutt. By default, none of them are bound to keys.</p>
     <div >
       <a class="offset" id="table-nntp-functions"></a>
       <p class="title">
@@ -464,7 +464,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>5.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>5.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -483,7 +483,7 @@ set inews = ''
 set mime_subject = yes
 set newsgroups_charset = utf-8
 set newsrc = '~/.newsrc'
-set news_cache_dir = '~/.mutt'
+set news_cache_dir = '~/.neomutt'
 set news_server = ''
 set nntp_authenticators = ''
 set nntp_context = 1000
@@ -539,7 +539,7 @@ bind index \eG get-parent
 # get message with Message-Id</span>
 bind index \CG get-message
 <span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=muttrc</span>
+# vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

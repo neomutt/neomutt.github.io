@@ -48,7 +48,7 @@ status: stable
       </div>
     </div>
     <p>The
-    <span class="quote">“<span class="quote">forgotten-attachment</span>”</span> feature provides a new setting for Mutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail. The attachment keyword will not be scanned in text matched by
+    <span class="quote">“<span class="quote">forgotten-attachment</span>”</span> feature provides a new setting for NeoMutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail. The attachment keyword will not be scanned in text matched by
     <a class="link" href="/guide/reference.html#quote-regexp" title="3.272.&#160;quote_regexp">$quote_regexp</a>.</p>
   </div>
   <div class="sect1">
@@ -109,14 +109,14 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>4.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
     <pre class="screen">
 <span class="comment"># Example NeoMutt config file for the forgotten-attachment feature.
 
-# The 'forgotten-attachment' feature provides a new setting for Mutt that
+# The 'forgotten-attachment' feature provides a new setting for NeoMutt that
 # alerts the user if the message body contains a certain regular expression but there are
 # no attachments added. This is meant to ensure that the user does not forget
 # to attach a file after promising to do so in the mail.
@@ -137,7 +137,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
 # set attach_keyword = "\\&lt;(anhängen|angehängt|anhang|anhänge|hängt an)\\&gt;"
 # Français:
 # set attach_keyword = "\\&lt;(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\&gt;"
-# vim: syntax=muttrc</span>
+# vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

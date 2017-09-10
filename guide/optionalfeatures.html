@@ -30,7 +30,7 @@ title: Optional Features
           </div>
         </div>
       </div>
-      <p>Mutt supports several of optional features which can be enabled or disabled at compile-time by giving the
+      <p>NeoMutt supports several of optional features which can be enabled or disabled at compile-time by giving the
       <span class="emphasis">
         <em>configure</em>
       </span>script certain arguments. These are listed in the
@@ -40,10 +40,10 @@ title: Optional Features
         <em>configure --help</em>
       </span>output.</p>
       <p>Which features are enabled or disabled can later be determined from the output of
-      <code class="literal">mutt -v</code>. If a compile option starts with
+      <code class="literal">neomutt -v</code>. If a compile option starts with
       <span class="quote">“<span class="quote">+</span>”</span> it is enabled and disabled if prefixed with
-      <span class="quote">“<span class="quote">-</span>”</span>. For example, if Mutt was compiled using GnuTLS for encrypted communication instead of OpenSSL,
-      <code class="literal">mutt -v</code> would contain:</p>
+      <span class="quote">“<span class="quote">-</span>”</span>. For example, if NeoMutt was compiled using GnuTLS for encrypted communication instead of OpenSSL,
+      <code class="literal">neomutt -v</code> would contain:</p>
       <pre class="screen">
 -openssl +gnutls
 </pre>
@@ -57,7 +57,7 @@ title: Optional Features
           </div>
         </div>
       </div>
-      <p>Mutt optionally supports the IMAP, POP3 and SMTP protocols which require to access servers using URLs. The canonical syntax for specifying URLs in Mutt is (an item enclosed in
+      <p>NeoMutt optionally supports the IMAP, POP3 and SMTP protocols which require to access servers using URLs. The canonical syntax for specifying URLs in NeoMutt is (an item enclosed in
       <code class="literal">[]</code>means it is optional and may be omitted):</p>
       <pre class="screen">
 proto[s]://[username[:password]@]server[:port][/path]
@@ -70,8 +70,8 @@ proto[s]://[username[:password]@]server[:port][/path]
       <code class="literal">pop</code> for POP3 and
       <code class="literal">smtp</code> for SMTP. If
       <span class="quote">“<span class="quote">s</span>”</span> for
-      <span class="quote">“<span class="quote">secure communication</span>”</span> is appended, Mutt will attempt to establish an encrypted communication using SSL or TLS.</p>
-      <p>Since all protocols supported by Mutt support/require authentication, login credentials may be specified in the URL. This has the advantage that multiple IMAP, POP3 or SMTP servers may be specified (which isn't possible using, for example,
+      <span class="quote">“<span class="quote">secure communication</span>”</span> is appended, NeoMutt will attempt to establish an encrypted communication using SSL or TLS.</p>
+      <p>Since all protocols supported by NeoMutt support/require authentication, login credentials may be specified in the URL. This has the advantage that multiple IMAP, POP3 or SMTP servers may be specified (which isn't possible using, for example,
       <a class="link" href="reference.html#imap-user" title="3.134.&#160;imap_user">$imap_user</a>). The username may contain the
       <span class="quote">“<span class="quote">@</span>”</span> symbol being used by many mail systems as part of the login name. The special characters
       <span class="quote">“<span class="quote">/</span>”</span>(
@@ -83,7 +83,7 @@ proto[s]://[username[:password]@]server[:port][/path]
       <code class="literal">%25</code>) have to be URL-encoded in usernames using the
       <code class="literal">%</code>-notation.</p>
       <p>A password can be given, too but is not recommended if the URL is specified in a configuration file on disk.</p>
-      <p>If no port number is given, Mutt will use the system's default for the given protocol (usually consulting
+      <p>If no port number is given, NeoMutt will use the system's default for the given protocol (usually consulting
       <code class="literal">/etc/services</code>).</p>
       <p>The optional path is only relevant for IMAP and ignored elsewhere.</p>
       <div class="example">
@@ -111,7 +111,7 @@ smtp://user@host:587/
         </div>
       </div>
     </div>
-    <p>If Mutt is compiled with IMAP, POP3 and/or SMTP support, it can also be compiled with support for SSL or TLS using either OpenSSL or GnuTLS ( by running the
+    <p>If NeoMutt is compiled with IMAP, POP3 and/or SMTP support, it can also be compiled with support for SSL or TLS using either OpenSSL or GnuTLS ( by running the
     <span class="emphasis">
       <em>configure</em>
     </span>script with the
@@ -120,7 +120,7 @@ smtp://user@host:587/
     </span>option for OpenSSL or
     <span class="emphasis">
       <em>--enable-gnutls=...</em>
-    </span>for GnuTLS). Mutt can then attempt to encrypt communication with remote servers if these protocols are suffixed with
+    </span>for GnuTLS). NeoMutt can then attempt to encrypt communication with remote servers if these protocols are suffixed with
     <span class="quote">“<span class="quote">s</span>”</span> for
     <span class="quote">“<span class="quote">secure communication</span>”</span>.</p>
   </div>
@@ -133,21 +133,21 @@ smtp://user@host:587/
         </div>
       </div>
     </div>
-    <p>Mutt has POP3 support and has the ability to work with mailboxes located on a remote POP3 server and fetch mail for local browsing.</p>
+    <p>NeoMutt has POP3 support and has the ability to work with mailboxes located on a remote POP3 server and fetch mail for local browsing.</p>
     <p>Remote POP3 servers can be accessed using URLs with the
     <code class="literal">pop</code> protocol for unencrypted and
     <code class="literal">pops</code> for encrypted communication, see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details.</p>
-    <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which Mutt will check for mail remotely can be controlled by the
+    <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which NeoMutt will check for mail remotely can be controlled by the
     <a class="link" href="reference.html#pop-checkinterval" title="3.250.&#160;pop_checkinterval">$pop_checkinterval</a> variable, which defaults to every 60 seconds.</p>
     <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
     <a class="xref" href="#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a> and
-    <a class="xref" href="#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a> Mutt simulates the new/old/read flags as well as flagged and replied. Mutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by Mutt or other tools).</p>
+    <a class="xref" href="#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a> NeoMutt simulates the new/old/read flags as well as flagged and replied. NeoMutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by NeoMutt or other tools).</p>
     <a class="offset" id="fetch-mail"></a>
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
     <a class="link" href="reference.html#pop-host" title="3.252.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
-    <a class="link" href="reference.html#spoolfile" title="3.359.&#160;spoolfile">$spoolfile</a>. After this point, Mutt runs exactly as if the mail had always been local.</p>
+    <a class="link" href="reference.html#spoolfile" title="3.359.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as
@@ -164,14 +164,14 @@ smtp://user@host:587/
         </div>
       </div>
     </div>
-    <p>Mutt has IMAP support and has the ability to work with folders located on a remote IMAP server.</p>
+    <p>NeoMutt has IMAP support and has the ability to work with folders located on a remote IMAP server.</p>
     <p>You can access the remote inbox by selecting the folder by its URL (see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details) using the
     <code class="literal">imap</code> or
     <code class="literal">imaps</code> protocol. Alternatively, a pine-compatible notation is also supported, i.e.
     <code class="literal">{[username@]imapserver[:port][/ssl]}path/to/folder</code></p>
     <p>Note that not all servers use
-    <span class="quote">“<span class="quote">/</span>”</span> as the hierarchy separator. Mutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
+    <span class="quote">“<span class="quote">/</span>”</span> as the hierarchy separator. NeoMutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
     <p>When browsing folders on an IMAP server, you can toggle whether to look at only the folders you are subscribed to, or all folders with the
     <span class="emphasis">
       <em>toggle-subscribed</em>
@@ -198,11 +198,11 @@ set timeout=15
           </div>
         </div>
       </div>
-      <p>As of version 1.2, Mutt supports browsing mailboxes on an IMAP server. This is mostly the same as the local file browser, with the following differences:</p>
+      <p>As of version 1.2, NeoMutt supports browsing mailboxes on an IMAP server. This is mostly the same as the local file browser, with the following differences:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
-            <p>In lieu of file permissions, Mutt displays the string
+            <p>In lieu of file permissions, NeoMutt displays the string
             <span class="quote">“<span class="quote">IMAP</span>”</span>, possibly followed by the symbol
             <span class="quote">“<span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders.</p>
           </li>
@@ -237,13 +237,13 @@ set timeout=15
           </div>
         </div>
       </div>
-      <p>Mutt supports four authentication methods with IMAP servers: SASL, GSSAPI, CRAM-MD5, and LOGIN. There is also support for the pseudo-protocol ANONYMOUS, which allows you to log in to a public IMAP server without having an account. To use ANONYMOUS, simply make your username blank or
+      <p>NeoMutt supports four authentication methods with IMAP servers: SASL, GSSAPI, CRAM-MD5, and LOGIN. There is also support for the pseudo-protocol ANONYMOUS, which allows you to log in to a public IMAP server without having an account. To use ANONYMOUS, simply make your username blank or
       <span class="quote">“<span class="quote">anonymous</span>”</span>.</p>
-      <p>SASL is a special super-authenticator, which selects among several protocols (including GSSAPI, CRAM-MD5, ANONYMOUS, and DIGEST-MD5) the most secure method available on your host and the server. Using some of these methods (including DIGEST-MD5 and possibly GSSAPI), your entire session will be encrypted and invisible to those teeming network snoops. It is the best option if you have it. To use it, you must have the Cyrus SASL library installed on your system and compile Mutt with the
+      <p>SASL is a special super-authenticator, which selects among several protocols (including GSSAPI, CRAM-MD5, ANONYMOUS, and DIGEST-MD5) the most secure method available on your host and the server. Using some of these methods (including DIGEST-MD5 and possibly GSSAPI), your entire session will be encrypted and invisible to those teeming network snoops. It is the best option if you have it. To use it, you must have the Cyrus SASL library installed on your system and compile NeoMutt with the
       <span class="emphasis">
         <em>--with-sasl</em>
       </span>flag.</p>
-      <p>Mutt will try whichever methods are compiled in and available on the server, in the following order: SASL, ANONYMOUS, GSSAPI, CRAM-MD5, LOGIN.</p>
+      <p>NeoMutt will try whichever methods are compiled in and available on the server, in the following order: SASL, ANONYMOUS, GSSAPI, CRAM-MD5, LOGIN.</p>
       <p>There are a few variables which control authentication:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
@@ -258,7 +258,7 @@ set timeout=15
           </li>
           <li class="listitem">
             <p>
-            <a class="link" href="reference.html#imap-authenticators" title="3.120.&#160;imap_authenticators">$imap_authenticators</a>- a colon-delimited list of IMAP authentication methods to try, in the order you wish to try them. If specified, this overrides Mutt's default (attempt everything, in the order listed above).</p>
+            <a class="link" href="reference.html#imap-authenticators" title="3.120.&#160;imap_authenticators">$imap_authenticators</a>- a colon-delimited list of IMAP authentication methods to try, in the order you wish to try them. If specified, this overrides NeoMutt's default (attempt everything, in the order listed above).</p>
           </li>
         </ul>
       </div>
@@ -273,15 +273,15 @@ set timeout=15
         </div>
       </div>
     </div>
-    <p>Besides supporting traditional mail delivery through a sendmail-compatible program, Mutt supports delivery through SMTP.</p>
+    <p>Besides supporting traditional mail delivery through a sendmail-compatible program, NeoMutt supports delivery through SMTP.</p>
     <p>If the configuration variable
-    <a class="link" href="reference.html#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a> is set, Mutt will contact the given SMTP server to deliver messages; if it is unset, Mutt will use the program specified by
+    <a class="link" href="reference.html#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
     <a class="link" href="reference.html#sendmail" title="3.302.&#160;sendmail">$sendmail</a>.</p>
     <p>For details on the URL syntax, please see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>.</p>
     <p>The built-in SMTP support supports encryption (the
     <code class="literal">smtps</code> protocol using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms for SASL are specified in
-    <a class="link" href="reference.html#smtp-authenticators" title="3.350.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes Mutt try all available methods from most-secure to least-secure.</p>
+    <a class="link" href="reference.html#smtp-authenticators" title="3.350.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -314,7 +314,7 @@ set timeout=15
       <span class="command">
         <strong>folder-hook</strong>
       </span>
-    </a>but is invoked whenever Mutt needs to access a remote mailbox (including inside the folder browser), not just when you open the mailbox. This includes (for example) polling for new mail, storing Fcc messages and saving messages to a folder. As a consequence,
+    </a>but is invoked whenever NeoMutt needs to access a remote mailbox (including inside the folder browser), not just when you open the mailbox. This includes (for example) polling for new mail, storing Fcc messages and saving messages to a folder. As a consequence,
     <a class="link" href="#account-hook" title="6.&#160;Managing Multiple Accounts">
       <span class="command">
         <strong>account-hook</strong>
@@ -365,7 +365,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <span class="command">
         <strong>mailboxes</strong>
       </span>
-    </a>so Mutt polls them for new mail. Each
+    </a>so NeoMutt polls them for new mail. Each
     <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
@@ -396,7 +396,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         </div>
       </div>
     </div>
-    <p>Mutt contains two types of local caching:
+    <p>NeoMutt contains two types of local caching:
     <span class="emphasis">
       <em>(1)</em>
     </span>the so-called
@@ -405,7 +405,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <em>(2)</em>
     </span>the so-called
     <span class="quote">“<span class="quote">body caching</span>”</span> which are both described in this section.</p>
-    <p>Header caching is optional as it depends on external libraries, body caching is always enabled if Mutt is compiled with POP and/or IMAP support as these use it (body caching requires no external library).</p>
+    <p>Header caching is optional as it depends on external libraries, body caching is always enabled if NeoMutt is compiled with POP and/or IMAP support as these use it (body caching requires no external library).</p>
     <div class="sect2">
       <div class="titlepage">
         <div>
@@ -415,7 +415,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
           </div>
         </div>
       </div>
-      <p>Mutt provides optional support for caching message headers for the following types of folders: IMAP, POP, Maildir and MH. Header caching greatly speeds up opening large folders because for remote folders, headers usually only need to be downloaded once. For Maildir and MH, reading the headers from a single file is much faster than looking at possibly thousands of single files (since Maildir and MH use one file per message.)</p>
+      <p>NeoMutt provides optional support for caching message headers for the following types of folders: IMAP, POP, Maildir and MH. Header caching greatly speeds up opening large folders because for remote folders, headers usually only need to be downloaded once. For Maildir and MH, reading the headers from a single file is much faster than looking at possibly thousands of single files (since Maildir and MH use one file per message.)</p>
       <p>Header caching can be enabled by configuring one of the database backends. One of tokyocabinet, kyotocabinet, qdbm, gdbm, lmdb or bdb.</p>
       <p>If enabled,
       <a class="link" href="reference.html#header-cache" title="3.97.&#160;header_cache">$header_cache</a> can be used to either point to a file or a directory. If set to point to a file, one database file for all folders will be used (which may result in lower performance), but one file per folder if it points to a directory.</p>
@@ -432,9 +432,9 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         </div>
       </div>
       <p>Both cache methods can be combined using the same directory for storage (and for IMAP/POP even provide meaningful file names) which simplifies manual maintenance tasks.</p>
-      <p>In addition to caching message headers only, Mutt can also cache whole message bodies. This results in faster display of messages for POP and IMAP folders because messages usually have to be downloaded only once.</p>
+      <p>In addition to caching message headers only, NeoMutt can also cache whole message bodies. This results in faster display of messages for POP and IMAP folders because messages usually have to be downloaded only once.</p>
       <p>For configuration, the variable
-      <a class="link" href="reference.html#message-cachedir" title="3.164.&#160;message_cachedir">$message_cachedir</a> must point to a directory. There, Mutt will create a hierarchy of subdirectories named like the account and mailbox path the cache is for.</p>
+      <a class="link" href="reference.html#message-cachedir" title="3.164.&#160;message_cachedir">$message_cachedir</a> must point to a directory. There, NeoMutt will create a hierarchy of subdirectories named like the account and mailbox path the cache is for.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -448,12 +448,12 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <p>For using both, header and body caching,
       <a class="link" href="reference.html#header-cache" title="3.97.&#160;header_cache">$header_cache</a> and
       <a class="link" href="reference.html#message-cachedir" title="3.164.&#160;message_cachedir">$message_cachedir</a> can be safely set to the same value.</p>
-      <p>In a header or body cache directory, Mutt creates a directory hierarchy named like:
+      <p>In a header or body cache directory, NeoMutt creates a directory hierarchy named like:
       <code class="literal">proto:user@hostname</code> where
       <code class="literal">proto</code> is either
       <span class="quote">“<span class="quote">pop</span>”</span> or
-      <span class="quote">“<span class="quote">imap.</span>”</span> Within there, for each folder, Mutt stores messages in single files and header caches in files with the
-      <span class="quote">“<span class="quote">.hcache</span>”</span> extension. All files can be removed as needed if the consumed disk space becomes an issue as Mutt will silently fetch missing items again. Pathnames are always stored in UTF-8 encoding.</p>
+      <span class="quote">“<span class="quote">imap.</span>”</span> Within there, for each folder, NeoMutt stores messages in single files and header caches in files with the
+      <span class="quote">“<span class="quote">.hcache</span>”</span> extension. All files can be removed as needed if the consumed disk space becomes an issue as NeoMutt will silently fetch missing items again. Pathnames are always stored in UTF-8 encoding.</p>
       <p>For Maildir and MH, the header cache files are named after the MD5 checksum of the path.</p>
     </div>
     <div class="sect2">
@@ -465,9 +465,9 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
           </div>
         </div>
       </div>
-      <p>Mutt does not (yet) support maintenance features for header cache database files so that files have to be removed in case they grow too big. It depends on the database library used for header caching whether disk space freed by removing messages is re-used.</p>
-      <p>For body caches, Mutt can keep the local cache in sync with the remote mailbox if the
-      <a class="link" href="reference.html#message-cache-clean" title="3.163.&#160;message_cache_clean">$message_cache_clean</a> variable is set. Cleaning means to remove messages from the cache which are no longer present in the mailbox which only happens when other mail clients or instances of Mutt using a different body cache location delete messages (Mutt itself removes deleted messages from the cache when syncing a mailbox). As cleaning can take a noticeable amount of time, it should not be set in general but only occasionally.</p>
+      <p>NeoMutt does not (yet) support maintenance features for header cache database files so that files have to be removed in case they grow too big. It depends on the database library used for header caching whether disk space freed by removing messages is re-used.</p>
+      <p>For body caches, NeoMutt can keep the local cache in sync with the remote mailbox if the
+      <a class="link" href="reference.html#message-cache-clean" title="3.163.&#160;message_cache_clean">$message_cache_clean</a> variable is set. Cleaning means to remove messages from the cache which are no longer present in the mailbox which only happens when other mail clients or instances of NeoMutt using a different body cache location delete messages (NeoMutt itself removes deleted messages from the cache when syncing a mailbox). As cleaning can take a noticeable amount of time, it should not be set in general but only occasionally.</p>
     </div>
   </div>
   <div class="sect1">
@@ -479,10 +479,10 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         </div>
       </div>
     </div>
-    <p>You may also have compiled Mutt to co-operate with Mixmaster, an anonymous remailer. Mixmaster permits you to send your messages anonymously using a chain of remailers. Mixmaster support in Mutt is for mixmaster version 2.04 or later.</p>
+    <p>You may also have compiled NeoMutt to co-operate with Mixmaster, an anonymous remailer. Mixmaster permits you to send your messages anonymously using a chain of remailers. Mixmaster support in NeoMutt is for mixmaster version 2.04 or later.</p>
     <p>To use it, you'll have to obey certain restrictions. Most important, you cannot use the
     <code class="literal">Cc</code> and
-    <code class="literal">Bcc</code> headers. To tell Mutt to use mixmaster, you have to select a remailer chain, using the mix function on the compose menu.</p>
+    <code class="literal">Bcc</code> headers. To tell NeoMutt to use mixmaster, you have to select a remailer chain, using the mix function on the compose menu.</p>
     <p>The chain selection screen is divided into two parts. In the (larger) upper part, you get a list of remailers you may use. In the lower part, you see the currently selected chain of remailers.</p>
     <p>You can navigate in the chain using the
     <code class="literal">&lt;chain-prev&gt;</code>and

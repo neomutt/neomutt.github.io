@@ -78,9 +78,9 @@ status: stable
         <code>num</code>
       </em>]]</p>
     </div>
-    <p>With zero parameters, Mutt will set the default color for the entire status bar.</p>
-    <p>With one parameter, Mutt will only color the parts matching the regex.</p>
-    <p>With two parameters, Mutt will only color the num'th sub-match of the regex.</p>
+    <p>With zero parameters, NeoMutt will set the default color for the entire status bar.</p>
+    <p>With one parameter, NeoMutt will only color the parts matching the regex.</p>
+    <p>With two parameters, NeoMutt will only color the num'th sub-match of the regex.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -129,7 +129,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>5.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>5.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@ status: stable
 # the status bar (also when it's used by the index).
 
 # For the examples below, set some defaults</span>
-set status_format='-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
+set status_format='-%r-NeoMutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 set sort=threads
 set sort_aux=last-date-received
@@ -167,9 +167,9 @@ color status red default '\[([^]]+)\]' 1
 <span class="comment"># The '1' refers to the first regex submatch, which is the inner
 # part in ()s
 # Highlight the mailbox</span>
-color status brightwhite default 'Mutt: ([^ ]+)' 1
-<span class="comment"># Search for 'Mutt: ' but only highlight what comes after it
-# vim: syntax=muttrc</span>
+color status brightwhite default 'NeoMutt: ([^ ]+)' 1
+<span class="comment"># Search for 'NeoMutt: ' but only highlight what comes after it
+# vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

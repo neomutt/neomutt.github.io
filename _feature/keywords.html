@@ -48,17 +48,17 @@ status: stable
       </div>
     </div>
     <p>Unify label/keyword handling.</p>
-    <p>Since x-labels were added to mutt in 2000, a number of other approaches to what we now call
+    <p>Since x-labels were added to NeoMutt in 2000, a number of other approaches to what we now call
     <span class="quote">“
     <span class="quote">tagging</span>”</span> have also emerged. One of them was even made standard in RFC 2822. This update unifies the handling of all these strategies.</p>
-    <p>We start by changing mutt's internal keyword storage from a single string which may contain whitespace to a list of discrete keywords. This has advantages for keyword completion as well as for portability among varying "standards" for keyword storage. This may represent a significant change for existing mutt users who have set x-labels containing spaces, and should be regarded with suspicion. The advantages are significant, though.</p>
-    <p>Next we allow mutt to parse keywords into this internal list from any of the following headers: X-Label (freeform), X-Keywords (space-delimited), X-Mozilla-Keys (space-delimited), and Keywords (RFC 2822, comma-space-delimited). Mutt remembers which headers it sourced keywords from, and can rewrite those headers when saving messages for compatibility with the mailer of origin.</p>
-    <p>(X-Label was specified as freeform text by mutt, its only known implementation. X-Labels have been used both as a
+    <p>We start by changing NeoMutt's internal keyword storage from a single string which may contain whitespace to a list of discrete keywords. This has advantages for keyword completion as well as for portability among varying "standards" for keyword storage. This may represent a significant change for existing NeoMutt users who have set x-labels containing spaces, and should be regarded with suspicion. The advantages are significant, though.</p>
+    <p>Next we allow NeoMutt to parse keywords into this internal list from any of the following headers: X-Label (freeform), X-Keywords (space-delimited), X-Mozilla-Keys (space-delimited), and Keywords (RFC 2822, comma-space-delimited). NeoMutt remembers which headers it sourced keywords from, and can rewrite those headers when saving messages for compatibility with the mailer of origin.</p>
+    <p>(X-Label was specified as freeform text by NeoMutt, its only known implementation. X-Labels have been used both as a
     <span class="quote">“<span class="quote">tagging</span>”</span> device, probably with space delimiting, and as a
-    <span class="quote">“<span class="quote">memo</span>”</span> field, where space-delimited parsing would ruin the semantics of the memo. By default mutt will not split X-Labels at all. Set $xlabel_delimiter if your needs vary.)</p>
-    <p>Finally we add two booleans: $keywords_legacy=true and $keywords_standard=FALSE. When $keywords_legacy is true, mutt will always save keyword to whatever original header it came from. When $keywords_standard=true, mutt will save to the Keywords: header. If both are true mutt saves to both; if neither is true, mutt saves only to legacy headers to avoid complete loss of keywords.</p>
+    <span class="quote">“<span class="quote">memo</span>”</span> field, where space-delimited parsing would ruin the semantics of the memo. By default NeoMutt will not split X-Labels at all. Set $xlabel_delimiter if your needs vary.)</p>
+    <p>Finally we add two booleans: $keywords_legacy=true and $keywords_standard=FALSE. When $keywords_legacy is true, NeoMutt will always save keyword to whatever original header it came from. When $keywords_standard=true, NeoMutt will save to the Keywords: header. If both are true NeoMutt saves to both; if neither is true, NeoMutt saves only to legacy headers to avoid complete loss of keywords.</p>
     <p>Overall this represents convergence path for all competing labelling/tagging/keywording systems toward one that is specified by RFC.</p>
-    <p>You can change or delete the X-Label: field within Mutt using the edit-label command. This works for tagged messages, too.</p>
+    <p>You can change or delete the X-Label: field within NeoMutt using the edit-label command. This works for tagged messages, too.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -129,7 +129,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>Keywords adds the following function to Mutt. By default, it is not bound to a key.</p>
+    <p>Keywords adds the following function to NeoMutt. By default, it is not bound to a key.</p>
     <div >
       <a class="offset" id="table-keywords-funcions"></a>
       <p class="title">
@@ -207,7 +207,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>6.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>6.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -217,9 +217,9 @@ status: stable
 # --------------------------------------------------------------------------
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
-# Should Mutt save the keywords to whatever keyword it came from?</span>
+# Should NeoMutt save the keywords to whatever keyword it came from?</span>
 set keywords_legacy = yes
-<span class="comment"># Should Mutt use the "Keywords:" header?</span>
+<span class="comment"># Should NeoMutt use the "Keywords:" header?</span>
 set keywords_standard = no
 <span class="comment"># How should the keywords be separated?</span>
 set xlabel_delimiter = ""
@@ -230,7 +230,7 @@ set xlabel_delimiter = ""
 bind index,pager y edit-label
 
 
-<span class="comment"># vim: syntax=muttrc</span>
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

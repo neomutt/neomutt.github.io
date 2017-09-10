@@ -24,23 +24,23 @@ title: Advanced Usage
     <p>A
     <span class="quote">“
     <span class="quote">character set</span>”</span> is basically a mapping between bytes and glyphs and implies a certain character encoding scheme. For example, for the ISO 8859 family of character sets, an encoding of 8bit per character is used. For the Unicode character set, different character encodings may be used, UTF-8 being the most popular. In UTF-8, a character is represented using a variable number of bytes ranging from 1 to 4.</p>
-    <p>Since Mutt is a command-line tool run from a shell, and delegates certain tasks to external tools (such as an editor for composing/editing messages), all of these tools need to agree on a character set and encoding. There exists no way to reliably deduce the character set a plain text file has. Interoperability is gained by the use of well-defined environment variables. The full set can be printed by issuing
+    <p>Since NeoMutt is a command-line tool run from a shell, and delegates certain tasks to external tools (such as an editor for composing/editing messages), all of these tools need to agree on a character set and encoding. There exists no way to reliably deduce the character set a plain text file has. Interoperability is gained by the use of well-defined environment variables. The full set can be printed by issuing
     <code class="literal">locale</code> on the command line.</p>
-    <p>Upon startup, Mutt determines the character set on its own using routines that inspect locale-specific environment variables. Therefore, it is generally not necessary to set the
-    <code class="literal">$charset</code> variable in Mutt. It may even be counter-productive as Mutt uses system and library functions that derive the character set themselves and on which Mutt has no influence. It's safest to let Mutt work out the locale setup itself.</p>
+    <p>Upon startup, NeoMutt determines the character set on its own using routines that inspect locale-specific environment variables. Therefore, it is generally not necessary to set the
+    <code class="literal">$charset</code> variable in NeoMutt. It may even be counter-productive as NeoMutt uses system and library functions that derive the character set themselves and on which NeoMutt has no influence. It's safest to let NeoMutt work out the locale setup itself.</p>
     <p>If you happen to work with several character sets on a regular basis, it's highly advisable to use Unicode and an UTF-8 locale. Unicode can represent nearly all characters in a message at the same time. When not using a Unicode locale, it may happen that you receive messages with characters not representable in your locale. When displaying such a message, or replying to or forwarding it, information may get lost possibly rendering the message unusable (not only for you but also for the recipient, this breakage is not reversible as lost information cannot be guessed).</p>
-    <p>A Unicode locale makes all conversions superfluous which eliminates the risk of conversion errors. It also eliminates potentially wrong expectations about the character set between Mutt and external programs.</p>
+    <p>A Unicode locale makes all conversions superfluous which eliminates the risk of conversion errors. It also eliminates potentially wrong expectations about the character set between NeoMutt and external programs.</p>
     <p>The terminal emulator used also must be properly configured for the current locale. Terminal emulators usually do
     <span class="emphasis">
       <em>not</em>
-    </span>derive the locale from environment variables, they need to be configured separately. If the terminal is incorrectly configured, Mutt may display random and unexpected characters (question marks, octal codes, or just random glyphs), format strings may not work as expected, you may not be abled to enter non-ascii characters, and possible more. Data is always represented using bytes and so a correct setup is very important as to the machine, all character sets
+    </span>derive the locale from environment variables, they need to be configured separately. If the terminal is incorrectly configured, NeoMutt may display random and unexpected characters (question marks, octal codes, or just random glyphs), format strings may not work as expected, you may not be abled to enter non-ascii characters, and possible more. Data is always represented using bytes and so a correct setup is very important as to the machine, all character sets
     <span class="quote">“
     <span class="quote">look</span>”</span> the same.</p>
-    <p>Warning: A mismatch between what system and library functions think the locale is and what Mutt was told what the locale is may make it behave badly with non-ascii input: it will fail at seemingly random places. This warning is to be taken seriously since not only local mail handling may suffer: sent messages may carry wrong character set information the
+    <p>Warning: A mismatch between what system and library functions think the locale is and what NeoMutt was told what the locale is may make it behave badly with non-ascii input: it will fail at seemingly random places. This warning is to be taken seriously since not only local mail handling may suffer: sent messages may carry wrong character set information the
     <span class="emphasis">
       <em>receiver</em>
     </span>has too deal with. The need to set
-    <code class="literal">$charset</code> directly in most cases points at terminal and environment variable setup problems, not Mutt problems.</p>
+    <code class="literal">$charset</code> directly in most cases points at terminal and environment variable setup problems, not NeoMutt problems.</p>
     <p>A list of officially assigned and known character sets can be found at
     <a class="ulink" href="http://www.iana.org/assignments/character-sets" target="_top">IANA</a>, a list of locally supported locales can be obtained by running
     <code class="literal">locale -a</code>.</p>
@@ -54,7 +54,7 @@ title: Advanced Usage
         </div>
       </div>
     </div>
-    <p>All string patterns in Mutt including those in more complex
+    <p>All string patterns in NeoMutt including those in more complex
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> must be specified using regular expressions (regexp) in the
     <span class="quote">“
     <span class="quote">POSIX extended</span>”</span> syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
@@ -71,7 +71,7 @@ title: Advanced Usage
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The regular expression can be enclosed/delimited by either " or ' which is useful if the regular expression includes a white-space character. See
-      <a class="xref" href="configuration.html#muttrc-syntax" title="2.&#160;Syntax of Initialization Files">Syntax of Initialization Files</a> for more information on " and ' delimiter processing. To match a literal " or ' you must preface it with \ (backslash).</p>
+      <a class="xref" href="configuration.html#neomuttrc-syntax" title="2.&#160;Syntax of Initialization Files">Syntax of Initialization Files</a> for more information on " and ' delimiter processing. To match a literal " or ' you must preface it with \ (backslash).</p>
     </div>
     <p>The fundamental building blocks are the regular expressions that match a single character. Most characters, including all letters and digits, are regular expressions that match themselves. Any metacharacter with special meaning may be quoted by preceding it with a backslash.</p>
     <p>The period
@@ -297,7 +297,7 @@ title: Advanced Usage
     <p>Repetition takes precedence over concatenation, which in turn takes precedence over alternation. A whole subexpression may be enclosed in parentheses to override these precedence rules.</p>
     <div class="note">
       <h3 class="title">Note</h3>
-      <p>If you compile Mutt with the included regular expression engine, the following operators may also be used in regular expressions as described in
+      <p>If you compile NeoMutt with the included regular expression engine, the following operators may also be used in regular expressions as described in
       <a class="xref" href="#regex-gnu-ext" title="Table&#160;4.3.&#160;GNU regular expression extensions">Table&#160;4.3, “GNU regular expression extensions”</a>.</p>
     </div>
     <div >
@@ -375,7 +375,7 @@ title: Advanced Usage
           </div>
         </div>
       </div>
-      <p>Many of Mutt's commands allow you to specify a pattern to match (
+      <p>Many of NeoMutt's commands allow you to specify a pattern to match (
       <code class="literal">limit</code>,
       <code class="literal">tag-pattern</code>,
       <code class="literal">delete-pattern</code>, etc.).
@@ -947,9 +947,9 @@ title: Advanced Usage
       <p>***) The message number ranges (introduced by
       <code class="literal">~m</code>) are even more general and powerful than the other types of ranges. Read on and see
       <a class="xref" href="#message-ranges" title="3.1.1.&#160;Message Ranges">Section&#160;3.1.1, “Message Ranges”</a> below.</p>
-      <p>Special attention has to be paid when using regular expressions inside of patterns. Specifically, Mutt's parser for these patterns will strip one level of backslash (
+      <p>Special attention has to be paid when using regular expressions inside of patterns. Specifically, NeoMutt's parser for these patterns will strip one level of backslash (
       <span class="quote">“<span class="quote">\</span>”</span>), which is normally used for quoting. If it is your intention to use a backslash in the regular expression, you will need to use two backslashes instead (
-      <span class="quote">“<span class="quote">\\</span>”</span>). You can force Mutt to treat
+      <span class="quote">“<span class="quote">\\</span>”</span>). You can force NeoMutt to treat
       <span class="emphasis">
         <em>EXPR</em>
       </span>as a simple substring instead of a regular expression by using = instead of ~ in the pattern name. For example,
@@ -1197,14 +1197,14 @@ title: Advanced Usage
           </div>
         </div>
       </div>
-      <p>Mutt supports two versions of so called
+      <p>NeoMutt supports two versions of so called
       <span class="quote">“<span class="quote">simple searches</span>”</span>. These are issued if the query entered for searching, limiting and similar operations does not seem to contain a valid pattern modifier (i.e. it does not contain one of these characters:
       <span class="quote">“<span class="quote">~</span>”</span>,
       <span class="quote">“<span class="quote">=</span>”</span> or
       <span class="quote">“<span class="quote">%</span>”</span>). If the query is supposed to contain one of these special characters, they must be escaped by prepending a backslash (
       <span class="quote">“<span class="quote">\</span>”</span>).</p>
       <p>The first type is by checking whether the query string equals a keyword case-insensitively from
-      <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.8.&#160;Simple search keywords">Table&#160;4.8, “Simple search keywords”</a>: If that is the case, Mutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
+      <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.8.&#160;Simple search keywords">Table&#160;4.8, “Simple search keywords”</a>: If that is the case, NeoMutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
       <span class="quote">“<span class="quote">flag</span>”</span>(using
       <a class="link" href="reference.html#simple-search" title="3.323.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
       <span class="quote">“<span class="quote">
@@ -1278,7 +1278,7 @@ title: Advanced Usage
       </div>
       <br class="table-break" />
       <p>The second type of simple search is to build a complex search pattern using
-      <a class="link" href="reference.html#simple-search" title="3.323.&#160;simple_search">$simple_search</a> as a template. Mutt will insert your query properly quoted and search for the composed complex query.</p>
+      <a class="link" href="reference.html#simple-search" title="3.323.&#160;simple_search">$simple_search</a> as a template. NeoMutt will insert your query properly quoted and search for the composed complex query.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1291,16 +1291,16 @@ title: Advanced Usage
       </div>
       <p>Logical AND is performed by specifying more than one criterion. For example:</p>
       <pre class="screen">
-~t mutt ~f elkins
+~t work ~f elkins
 </pre>
       <p>would select messages which contain the word
-      <span class="quote">“<span class="quote">mutt</span>”</span> in the list of recipients
+      <span class="quote">“<span class="quote">work</span>”</span> in the list of recipients
       <span class="emphasis">
         <em>and</em>
       </span>that have the word
       <span class="quote">“<span class="quote">elkins</span>”</span> in the
       <span class="quote">“<span class="quote">From</span>”</span> header field.</p>
-      <p>Mutt also recognizes the following operators to create more complex search patterns:</p>
+      <p>NeoMutt also recognizes the following operators to create more complex search patterns:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
@@ -1315,7 +1315,7 @@ title: Advanced Usage
         </ul>
       </div>
       <p>Here is an example illustrating a complex search pattern. This pattern will select all messages which do not contain
-      <span class="quote">“<span class="quote">mutt</span>”</span> in the
+      <span class="quote">“<span class="quote">work</span>”</span> in the
       <span class="quote">“<span class="quote">To</span>”</span> or
       <span class="quote">“<span class="quote">Cc</span>”</span> field and which are from
       <span class="quote">“<span class="quote">elkins</span>”</span>.</p>
@@ -1326,7 +1326,7 @@ title: Advanced Usage
         </p>
         <div class="example-contents">
           <pre class="screen">
-!(~t mutt|~c mutt) ~f elkins
+!(~t work|~c work) ~f elkins
 </pre>
         </div>
       </div>
@@ -1345,13 +1345,13 @@ title: Advanced Usage
         <p>If a regular expression contains parenthesis, or a vertical bar ("|"), you
         <span class="emphasis">
           <em>must</em>
-        </span>enclose the expression in double or single quotes since those characters are also used to separate different parts of Mutt's pattern language. For example:
-        <code class="literal">~f "me@(mutt\.org|cs\.hmc\.edu)"</code>Without the quotes, the parenthesis wouldn't end. This would be separated to two OR'd patterns:
+        </span>enclose the expression in double or single quotes since those characters are also used to separate different parts of NeoMutt's pattern language. For example:
+        <code class="literal">~f "user@(home\.org|work\.com)"</code>Without the quotes, the parenthesis wouldn't end. This would be separated to two OR'd patterns:
         <span class="emphasis">
-          <em>~f me@(mutt\.org</em>
+          <em>~f user@(home\.org</em>
         </span>and
         <span class="emphasis">
-          <em>cs\.hmc\.edu)</em>
+          <em>work\.com)</em>
         </span>. They are never what you want.</p>
       </div>
     </div>
@@ -1364,7 +1364,7 @@ title: Advanced Usage
           </div>
         </div>
       </div>
-      <p>Mutt supports two types of dates,
+      <p>NeoMutt supports two types of dates,
       <span class="emphasis">
         <em>absolute</em>
       </span>and
@@ -1521,7 +1521,7 @@ Limit to messages matching: ~d &lt;1m
       <code class="literal">=/ "search terms"</code>invokes server-side search, passing along the search terms provided. Search results are constrained by IMAP to be within the current folder. At present this only supports Gmail's search API IMAP extension. The search language is entirely up to the mail provider and changes at their discretion. Using
       <code class="literal">~/</code>will silently fail.</p>
       <p>For up-to-date information about searching, see:
-      <a class="ulink" href="https://support.google.com/mail/answer/7190?hl=en" target="_top">GMail's Support Page</a>. You will need to (once) use a web-browser to visit Settings/Labels and enable "Show in IMAP" for "All Mail". When searching, visit that folder in mutt to most closely match Gmail search semantics.</p>
+      <a class="ulink" href="https://support.google.com/mail/answer/7190?hl=en" target="_top">GMail's Support Page</a>. You will need to (once) use a web-browser to visit Settings/Labels and enable "Show in IMAP" for "All Mail". When searching, visit that folder in NeoMutt to most closely match Gmail search semantics.</p>
       <div >
         <a class="offset" id="gmail-example-patterns"></a>
         <p class="title">
@@ -1568,7 +1568,7 @@ Limit to messages matching: ~d &lt;1m
         </div>
       </div>
     </div>
-    <p>There are times that it's useful to ask Mutt to "remember" which message you're currently looking at, while you move elsewhere in your mailbox. You can do this with the
+    <p>There are times that it's useful to ask NeoMutt to "remember" which message you're currently looking at, while you move elsewhere in your mailbox. You can do this with the
     <span class="quote">“<span class="quote">mark-message</span>”</span> operator, which is bound to the
     <span class="quote">“<span class="quote">~</span>”</span> key by default. Press this key to enter an identifier for the marked message. When you want to return to this message, press
     <span class="quote">“<span class="quote">'</span>”</span> and the name that you previously entered.</p>
@@ -1589,7 +1589,7 @@ Limit to messages matching: ~d &lt;1m
     <span class="quote">“<span class="quote">shift-T</span>”</span> by default. Or you can select individual messages by hand using the
     <code class="literal">&lt;tag-message&gt;</code>function, which is bound to
     <span class="quote">“<span class="quote">t</span>”</span> by default. See
-    <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> for Mutt's pattern matching syntax.</p>
+    <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> for NeoMutt's pattern matching syntax.</p>
     <p>Once you have tagged the desired messages, you can use the
     <span class="quote">“<span class="quote">tag-prefix</span>”</span> operator, which is the
     <span class="quote">“<span class="quote">;</span>”</span>(semicolon) key by default. When the
@@ -1609,8 +1609,8 @@ Limit to messages matching: ~d &lt;1m
         <strong>push</strong>
       </span>
     </a>commands, you can use the
-    <code class="literal">&lt;tag-prefix-cond&gt;</code>operator. If there are no tagged messages, Mutt will
-    <span class="quote">“<span class="quote">eat</span>”</span> the rest of the macro to abort it's execution. Mutt will stop
+    <code class="literal">&lt;tag-prefix-cond&gt;</code>operator. If there are no tagged messages, NeoMutt will
+    <span class="quote">“<span class="quote">eat</span>”</span> the rest of the macro to abort it's execution. NeoMutt will stop
     <span class="quote">“<span class="quote">eating</span>”</span> the macro when it encounters the
     <code class="literal">&lt;end-cond&gt;</code>operator; after this operator the rest of the macro will be executed as normal.</p>
   </div>
@@ -1626,7 +1626,7 @@ Limit to messages matching: ~d &lt;1m
     <p>A
     <span class="emphasis">
       <em>hook</em>
-    </span>is a concept found in many other programs which allows you to execute arbitrary commands before performing some operation. For example, you may wish to tailor your configuration based upon which mailbox you are reading, or to whom you are sending mail. In the Mutt world, a
+    </span>is a concept found in many other programs which allows you to execute arbitrary commands before performing some operation. For example, you may wish to tailor your configuration based upon which mailbox you are reading, or to whom you are sending mail. In the NeoMutt world, a
     <span class="emphasis">
       <em>hook</em>
     </span>consists of a
@@ -1786,7 +1786,7 @@ Limit to messages matching: ~d &lt;1m
     </span>available.</p>
     <div class="note">
       <h3 class="title">Note</h3>
-      <p>If a hook changes configuration settings, these changes remain effective until the end of the current Mutt session. As this is generally not desired, a
+      <p>If a hook changes configuration settings, these changes remain effective until the end of the current NeoMutt session. As this is generally not desired, a
       <span class="quote">“<span class="quote">default</span>”</span> hook needs to be added before all other hooks of that type to restore configuration defaults.</p>
     </div>
     <div class="example">
@@ -1839,26 +1839,26 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
         <strong>fcc-hook</strong>
       </span>) are evaluated in a slightly different manner. For the other types of hooks, a
       <a class="link" href="#regexp" title="2.&#160;Regular Expressions">regular expression</a> is sufficient. But in dealing with messages a finer grain of control is needed for matching since for different purposes you want to match different criteria.</p>
-      <p>Mutt allows the use of the
+      <p>NeoMutt allows the use of the
       <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">search pattern</a> language for matching messages in hook commands. This works in exactly the same way as it would when
       <span class="emphasis">
         <em>limiting</em>
       </span>or
       <span class="emphasis">
         <em>searching</em>
-      </span>the mailbox, except that you are restricted to those operators which match information Mutt extracts from the header of the message (i.e., from, to, cc, date, subject, etc.).</p>
+      </span>the mailbox, except that you are restricted to those operators which match information NeoMutt extracts from the header of the message (i.e., from, to, cc, date, subject, etc.).</p>
       <p>For example, if you wanted to set your return address based upon sending mail to a specific address, you could do something like:</p>
       <pre class="screen">
-send-hook '~t ^me@cs\.hmc\.edu$' 'my_hdr From: Mutt User &lt;user@host&gt;'
+send-hook '~t ^user@work\.com$' 'my_hdr From: John Smith &lt;user@host&gt;'
 </pre>
       <p>which would execute the given command when sending mail to
       <span class="emphasis">
-        <em>me@cs.hmc.edu</em>
+        <em>user@work.com</em>
       </span>.</p>
       <p>However, it is not required that you write the pattern to match using the full searching language. You can still specify a simple
       <span class="emphasis">
         <em>regular expression</em>
-      </span>like the other hooks, in which case Mutt will translate your pattern into the full language, using the translation specified by the
+      </span>like the other hooks, in which case NeoMutt will translate your pattern into the full language, using the translation specified by the
       <a class="link" href="reference.html#default-hook" title="3.59.&#160;default_hook">$default_hook</a> variable. The pattern is translated at the time the hook is declared, so the value of
       <a class="link" href="reference.html#default-hook" title="3.59.&#160;default_hook">$default_hook</a> that is in effect at that time will be used.</p>
     </div>
@@ -1893,7 +1893,7 @@ folder-hook @imap.example.com "set sort=threads"
 folder-hook (@imap.example.com) "set sort=threads"
 folder-hook '\@imap.example.com' "set sort=threads"
 </pre>
-      <p>Keep in mind that mailbox shortcut expansion on the regexp parameter takes place when the hook is initially parsed, not when the hook is matching against a mailbox. When Mutt starts up and is reading the .muttrc, some mailbox shortcuts may not be usable. For example, the "current mailbox" shortcut, ^, will expand to an empty string because no mailbox has been opened yet. Mutt will issue an error for this case or if the mailbox shortcut results in an empty regexp.</p>
+      <p>Keep in mind that mailbox shortcut expansion on the regexp parameter takes place when the hook is initially parsed, not when the hook is matching against a mailbox. When NeoMutt starts up and is reading the .neomuttrc, some mailbox shortcuts may not be usable. For example, the "current mailbox" shortcut, ^, will expand to an empty string because no mailbox has been opened yet. NeoMutt will issue an error for this case or if the mailbox shortcut results in an empty regexp.</p>
     </div>
   </div>
   <div class="sect1">
@@ -1905,13 +1905,13 @@ folder-hook '\@imap.example.com' "set sort=threads"
         </div>
       </div>
     </div>
-    <p>You can alter the environment that Mutt passes on to its child processes using the
+    <p>You can alter the environment that NeoMutt passes on to its child processes using the
     <span class="quote">“<span class="quote">setenv</span>”</span> and
-    <span class="quote">“<span class="quote">unsetenv</span>”</span> operators. (N.B. These follow Mutt-style syntax, not shell-style!) You can also query current environment values by prefixing a
+    <span class="quote">“<span class="quote">unsetenv</span>”</span> operators. (N.B. These follow NeoMutt-style syntax, not shell-style!) You can also query current environment values by prefixing a
     <span class="quote">“<span class="quote">?</span>”</span> character.</p>
     <pre class="screen">
 setenv TERM vt100
-setenv ORGANIZATION "The Mutt Development Team"
+setenv ORGANIZATION "The NeoMutt Development Team"
 unsetenv DISPLAY
 setenv ?LESS
 </pre>
@@ -1925,7 +1925,7 @@ setenv ?LESS
         </div>
       </div>
     </div>
-    <p>Mutt supports connecting to external directory databases such as LDAP, ph/qi, bbdb, or NIS through a wrapper script which connects to Mutt using a simple interface. Using the
+    <p>NeoMutt supports connecting to external directory databases such as LDAP, ph/qi, bbdb, or NIS through a wrapper script which connects to NeoMutt using a simple interface. Using the
     <a class="link" href="reference.html#query-command" title="3.269.&#160;query_command">$query_command</a> variable, you specify the wrapper command to use. For example:</p>
     <pre class="screen">
 set query_command = "mutt_ldap_query.pl %s"
@@ -1938,10 +1938,10 @@ me@cs.hmc.edu           Michael Elkins  mutt dude
 blong@fiction.net       Brandon Long    mutt and more
 roessler@does-not-exist.org        Thomas Roessler mutt pgp
 </pre>
-    <p>There are two mechanisms for accessing the query function of Mutt. One is to do a query from the index menu using the
+    <p>There are two mechanisms for accessing the query function of NeoMutt. One is to do a query from the index menu using the
     <code class="literal">&lt;query&gt;</code>function (default: Q). This will prompt for a query, then bring up the query menu which will list the matching responses. From the query menu, you can select addresses to create aliases, or to mail. You can tag multiple addresses to mail, start a new query, or have a new query appended to the current responses.</p>
     <p>The other mechanism for accessing the query function is for address completion, similar to the alias completion. In any prompt for address entry, you can use the
-    <code class="literal">&lt;complete-query&gt;</code>function (default: ^T) to run a query based on the current address you have typed. Like aliases, Mutt will look for what you have typed back to the last space or comma. If there is a single response for that query, Mutt will expand the address in place. If there are multiple responses, Mutt will activate the query menu. At the query menu, you can select one or more addresses to be added to the prompt.</p>
+    <code class="literal">&lt;complete-query&gt;</code>function (default: ^T) to run a query based on the current address you have typed. Like aliases, NeoMutt will look for what you have typed back to the last space or comma. If there is a single response for that query, NeoMutt will expand the address in place. If there are multiple responses, NeoMutt will activate the query menu. At the query menu, you can select one or more addresses to be added to the prompt.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -1952,7 +1952,7 @@ roessler@does-not-exist.org        Thomas Roessler mutt pgp
         </div>
       </div>
     </div>
-    <p>Mutt supports reading and writing of four different local mailbox formats: mbox, MMDF, MH and Maildir. The mailbox type is auto detected, so there is no need to use a flag for different mailbox types. When creating new mailboxes, Mutt uses the default specified with the
+    <p>NeoMutt supports reading and writing of four different local mailbox formats: mbox, MMDF, MH and Maildir. The mailbox type is auto detected, so there is no need to use a flag for different mailbox types. When creating new mailboxes, NeoMutt uses the default specified with the
     <a class="link" href="reference.html#mbox-type" title="3.159.&#160;mbox_type">$mbox_type</a> variable. A short description of the formats follows.</p>
     <p>
     <span class="emphasis">
@@ -1980,10 +1980,10 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
     </span>and
     <span class="emphasis">
       <em>MMDF</em>
-    </span>, a mailbox consists of a directory and each message is stored in a separate file. The filename indicates the message number (however, this is may not correspond to the message number Mutt displays). Deleted messages are renamed with a comma (
-    <span class="quote">“<span class="quote">,</span>”</span>) prepended to the filename. Mutt detects this type of mailbox by looking for either
+    </span>, a mailbox consists of a directory and each message is stored in a separate file. The filename indicates the message number (however, this is may not correspond to the message number NeoMutt displays). Deleted messages are renamed with a comma (
+    <span class="quote">“<span class="quote">,</span>”</span>) prepended to the filename. NeoMutt detects this type of mailbox by looking for either
     <code class="literal">.mh_sequences</code> or
-    <code class="literal">.xmhcache</code> files (needed to distinguish normal directories from MH mailboxes). MH is more robust with concurrent clients writing the mailbox, but still may suffer from lost flags; message corruption is less likely to occur than with mbox/mmdf. It's usually slower to open compared to mbox/mmdf since many small files have to be read (Mutt provides
+    <code class="literal">.xmhcache</code> files (needed to distinguish normal directories from MH mailboxes). MH is more robust with concurrent clients writing the mailbox, but still may suffer from lost flags; message corruption is less likely to occur than with mbox/mmdf. It's usually slower to open compared to mbox/mmdf since many small files have to be read (NeoMutt provides
     <a class="xref" href="optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a> to greatly speed this process up). Depending on the environment, MH is not very disk-space efficient.</p>
     <p>
     <span class="emphasis">
@@ -2000,7 +2000,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
     </span>and
     <span class="emphasis">
       <em>cur</em>
-    </span>. Filenames for the messages are chosen in such a way they are unique, even when two programs are writing the mailbox over NFS, which means that no file locking is needed and corruption is very unlikely. Maildir maybe slower to open without caching in Mutt, it too is not very disk-space efficient depending on the environment. Since no additional files are used for metadata (which is embedded in the message filenames) and Maildir is locking-free, it's easy to sync across different machines using file-level synchronization tools.</p>
+    </span>. Filenames for the messages are chosen in such a way they are unique, even when two programs are writing the mailbox over NFS, which means that no file locking is needed and corruption is very unlikely. Maildir maybe slower to open without caching in NeoMutt, it too is not very disk-space efficient depending on the environment. Since no additional files are used for metadata (which is embedded in the message filenames) and Maildir is locking-free, it's easy to sync across different machines using file-level synchronization tools.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -2110,7 +2110,7 @@ folder-hook . 'set record=^'
         </div>
       </div>
     </div>
-    <p>Mutt has a few configuration options that make dealing with large amounts of mail easier. The first thing you must do is to let Mutt know what addresses you consider to be mailing lists (technically this does not have to be a mailing list, but that is what it is most often used for), and what lists you are subscribed to. This is accomplished through the use of the
+    <p>NeoMutt has a few configuration options that make dealing with large amounts of mail easier. The first thing you must do is to let NeoMutt know what addresses you consider to be mailing lists (technically this does not have to be a mailing list, but that is what it is most often used for), and what lists you are subscribed to. This is accomplished through the use of the
     <a class="link" href="configuration.html#lists" title="12.&#160;Mailing Lists">
     <span class="command">
       <strong>lists</strong>
@@ -2118,8 +2118,8 @@ folder-hook . 'set record=^'
     <span class="command">
       <strong>subscribe</strong>
     </span></a>commands in your
-    <code class="literal">.muttrc</code>.</p>
-    <p>Now that Mutt knows what your mailing lists are, it can do several things, the first of which is the ability to show the name of a list through which you received a message (i.e., of a subscribed list) in the
+    <code class="literal">.neomuttrc</code>.</p>
+    <p>Now that NeoMutt knows what your mailing lists are, it can do several things, the first of which is the ability to show the name of a list through which you received a message (i.e., of a subscribed list) in the
     <span class="emphasis">
       <em>index</em>
     </span>menu display. This is useful to distinguish between personal and list mail in the same mailbox. In the
@@ -2142,23 +2142,23 @@ folder-hook . 'set record=^'
       <em>pager</em>
     </span>, helps reduce the clutter by only replying to the known mailing list addresses instead of all recipients (except as specified by
     <code class="literal">Mail-Followup-To</code>, see below).</p>
-    <p>Mutt also supports the
+    <p>NeoMutt also supports the
     <code class="literal">Mail-Followup-To</code> header. When you send a message to a list of recipients which includes one or several subscribed mailing lists, and if the
-    <a class="link" href="reference.html#followup-to" title="3.80.&#160;followup_to">$followup_to</a> option is set, Mutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
+    <a class="link" href="reference.html#followup-to" title="3.80.&#160;followup_to">$followup_to</a> option is set, NeoMutt will generate a Mail-Followup-To header which contains all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
     <span class="quote">“<span class="quote">followups</span>”</span>) to this message should only be sent to the original recipients of the message, and not separately to you - you'll receive your copy through one of the mailing lists you are subscribed to.</p>
     <p>Conversely, when group-replying or list-replying to a message which has a
-    <code class="literal">Mail-Followup-To</code> header, Mutt will respect this header if the
+    <code class="literal">Mail-Followup-To</code> header, NeoMutt will respect this header if the
     <a class="link" href="reference.html#honor-followup-to" title="3.113.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. Using
     <a class="link" href="gettingstarted.html#list-reply">list-reply</a> will in this case also make sure that the reply goes to the mailing list, even if it's not specified in the list of recipients in the
     <code class="literal">Mail-Followup-To</code>.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>When header editing is enabled, you can create a
-      <code class="literal">Mail-Followup-To</code> header manually. Mutt will only auto-generate this header if it doesn't exist when you send the message.</p>
+      <code class="literal">Mail-Followup-To</code> header manually. NeoMutt will only auto-generate this header if it doesn't exist when you send the message.</p>
     </div>
     <p>The other method some mailing list admins use is to generate a
     <span class="quote">“<span class="quote">Reply-To</span>”</span> field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
-    <span class="quote">“<span class="quote">Reply-To</span>”</span> field. Mutt uses the
+    <span class="quote">“<span class="quote">Reply-To</span>”</span> field. NeoMutt uses the
     <a class="link" href="reference.html#reply-to" title="3.283.&#160;reply_to">$reply_to</a> variable to help decide which address to use. If set to
     <span class="emphasis">
       <em>ask-yes</em>
@@ -2173,10 +2173,10 @@ folder-hook . 'set record=^'
     </span>, the
     <span class="quote">“<span class="quote">Reply-To</span>”</span> field will be used when present.</p>
     <p>You can change or delete the
-    <span class="quote">“<span class="quote">X-Label:</span>”</span> field within Mutt using the
+    <span class="quote">“<span class="quote">X-Label:</span>”</span> field within NeoMutt using the
     <span class="quote">“<span class="quote">edit-label</span>”</span> command, bound to the
     <span class="quote">“<span class="quote">y</span>”</span> key by default. This works for tagged messages, too. While in the edit-label function, pressing the &lt;complete&gt; binding (TAB, by default) will perform completion against all labels currently in use.</p>
-    <p>Lastly, Mutt has the ability to
+    <p>Lastly, NeoMutt has the ability to
     <a class="link" href="reference.html#sort" title="3.353.&#160;sort">sort</a> the mailbox into
     <a class="link" href="gettingstarted.html#threads" title="5.3.&#160;Threaded Mode">threads</a>. A thread is a group of messages which all relate to the same subject. This is usually organized into a tree-like structure where a message and all of its replies are represented graphically. If you've ever used a threaded news client, this is the same concept. It makes dealing with large volume mailing lists easier because you can easily delete uninteresting threads and quickly find topics of value.</p>
   </div>
@@ -2189,15 +2189,15 @@ folder-hook . 'set record=^'
         </div>
       </div>
     </div>
-    <p>Mutt has supported textual labels (usually known as X-Labels after the header that we use to store them) for many years. Since we initially added support for X-Labels, however, the larger community has evolved more common ways of using and managing such labels, often known as
+    <p>NeoMutt has supported textual labels (usually known as X-Labels after the header that we use to store them) for many years. Since we initially added support for X-Labels, however, the larger community has evolved more common ways of using and managing such labels, often known as
     <span class="quote">“<span class="quote">keywords</span>”</span> or
     <span class="quote">“<span class="quote">tags</span>”</span>.</p>
-    <p>If you are new to Mutt or to using keywords in Mutt, you only need to know that the &lt;edit-label&gt; binding will edit keywords, and that you can search for keywords using the
+    <p>If you are new to NeoMutt or to using keywords in NeoMutt, you only need to know that the &lt;edit-label&gt; binding will edit keywords, and that you can search for keywords using the
     <code class="literal">~y</code> pattern, and use the
     <code class="literal">%y</code> expando to display it in your
     <code class="literal">$index_format</code>. You also can sort by keyword. Keywords that you set will be stored to the
     <code class="literal">X-Label:</code>header by default.</p>
-    <p>If you've been using X-Labels for a while, things have grown slightly. Mutt still supports X-Labels much as it has since 2000, but the scope of this support has expanded to support three additional header-based techniques for storing keyword metadata on messages:</p>
+    <p>If you've been using X-Labels for a while, things have grown slightly. NeoMutt still supports X-Labels much as it has since 2000, but the scope of this support has expanded to support three additional header-based techniques for storing keyword metadata on messages:</p>
     <div class="variablelist">
       <dl class="variablelist">
         <dt>
@@ -2222,14 +2222,14 @@ folder-hook . 'set record=^'
           <span class="term">X-Label</span>
         </dt>
         <dd>
-          <p>Mutt-specific design; freeform text (but see
+          <p>NeoMutt-specific design; freeform text (but see
           <a class="link" href="reference.html#xlabel-delimiter" title="3.413.&#160;xlabel_delimiter">$xlabel_delimiter</a>)</p>
         </dd>
       </dl>
     </div>
-    <p>With X-Label, mutt's only notion of a message keyword was the literal string value of the X-Label header. Under the new, integrated support, each message may have a list of distinct message keywords. When reading keywords from one of the headers in the list above, the header value is split on the indicated delimiter (space or comma-space) for X-Keywords:, X-Mozilla-Keys:, and Keywords:. By default, X-Label: is parsed as a single keyword. By setting $xlabel_delimiter, you can force splitting of X-Label: as well.</p>
-    <p>Two boolean variables control how keywords are saved when writing messages to a mailbox. The default settings preserve backward compatibility within mutt completely, but by changing these values you can transition to more standard keyword storage.
-    <a class="link" href="reference.html#keywords-legacy" title="3.143.&#160;keywords_legacy">$keywords_legacy</a>, if set, will tell mutt to use only "legacy" headers -- i.e.,
+    <p>With X-Label, NeoMutt's only notion of a message keyword was the literal string value of the X-Label header. Under the new, integrated support, each message may have a list of distinct message keywords. When reading keywords from one of the headers in the list above, the header value is split on the indicated delimiter (space or comma-space) for X-Keywords:, X-Mozilla-Keys:, and Keywords:. By default, X-Label: is parsed as a single keyword. By setting $xlabel_delimiter, you can force splitting of X-Label: as well.</p>
+    <p>Two boolean variables control how keywords are saved when writing messages to a mailbox. The default settings preserve backward compatibility within NeoMutt completely, but by changing these values you can transition to more standard keyword storage.
+    <a class="link" href="reference.html#keywords-legacy" title="3.143.&#160;keywords_legacy">$keywords_legacy</a>, if set, will tell NeoMutt to use only "legacy" headers -- i.e.,
     <code class="literal">X-Keywords:</code>,
     <code class="literal">X-Mozilla-Keys</code>,
     <code class="literal">Keywords</code>, or
@@ -2318,7 +2318,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         </div>
       </div>
     </div>
-    <p>Mutt supports setups with multiple folders, allowing all of them to be monitored for new mail (see
+    <p>NeoMutt supports setups with multiple folders, allowing all of them to be monitored for new mail (see
     <a class="xref" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">Section&#160;14, “Monitoring Incoming Mail”</a> for details).</p>
     <div class="sect2">
       <div class="titlepage">
@@ -2329,27 +2329,27 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
           </div>
         </div>
       </div>
-      <p>For Mbox and Mmdf folders, new mail is detected by comparing access and/or modification times of files: Mutt assumes a folder has new mail if it wasn't accessed after it was last modified. Utilities like
+      <p>For Mbox and Mmdf folders, new mail is detected by comparing access and/or modification times of files: NeoMutt assumes a folder has new mail if it wasn't accessed after it was last modified. Utilities like
       <code class="literal">biff</code> or
-      <code class="literal">frm</code> or any other program which accesses the mailbox might cause Mutt to never detect new mail for that mailbox if they do not properly reset the access time. Other possible causes of Mutt not detecting new mail in these folders are backup tools (updating access times) or filesystems mounted without access time update support (for Linux systems, see the
+      <code class="literal">frm</code> or any other program which accesses the mailbox might cause NeoMutt to never detect new mail for that mailbox if they do not properly reset the access time. Other possible causes of NeoMutt not detecting new mail in these folders are backup tools (updating access times) or filesystems mounted without access time update support (for Linux systems, see the
       <code class="literal">relatime</code> option).</p>
       <div class="note">
         <h3 class="title">Note</h3>
-        <p>Contrary to older Mutt releases, it now maintains the new mail status of a folder by properly resetting the access time if the folder contains at least one message which is neither read, nor deleted, nor marked as old.</p>
+        <p>Contrary to older NeoMutt releases, it now maintains the new mail status of a folder by properly resetting the access time if the folder contains at least one message which is neither read, nor deleted, nor marked as old.</p>
       </div>
       <p>In cases where new mail detection for Mbox or Mmdf folders appears to be unreliable, the
-      <a class="link" href="reference.html#check-mbox-size" title="3.32.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make Mutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
+      <a class="link" href="reference.html#check-mbox-size" title="3.32.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make NeoMutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
       <p>New mail for Maildir is assumed if there is one message in the
       <code class="literal">new/</code>subdirectory which is not marked deleted (see
       <a class="link" href="reference.html#maildir-trash" title="3.152.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
       <span class="quote">“<span class="quote">unseen</span>”</span> sequence as specified by
       <a class="link" href="reference.html#mh-seq-unseen" title="3.171.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
       <a class="link" href="reference.html#new-mail-command" title="3.183.&#160;new_mail_command">$new_mail_command</a> can be configured to execute an external program every time new mail is detected in the current inbox.</p>
-      <p>Mutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
-      <p>For IMAP, by default Mutt uses recent message counts provided by the server to detect new mail. If the
+      <p>NeoMutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
+      <p>For IMAP, by default NeoMutt uses recent message counts provided by the server to detect new mail. If the
       <a class="link" href="reference.html#imap-idle" title="3.124.&#160;imap_idle">$imap_idle</a> option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
       <p>The
-      <a class="link" href="reference.html#mail-check-recent" title="3.146.&#160;mail_check_recent">$mail_check_recent</a> option changes whether Mutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, Mutt will notify you of any new mail in the mailbox.</p>
+      <a class="link" href="reference.html#mail-check-recent" title="3.146.&#160;mail_check_recent">$mail_check_recent</a> option changes whether NeoMutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, NeoMutt will notify you of any new mail in the mailbox.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2361,7 +2361,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         </div>
       </div>
       <p>When in the index menu and being idle (also see
-      <a class="link" href="reference.html#feature/timeout" title="3.385.&#160;timeout">$timeout</a>), Mutt periodically checks for new mail in all folders which have been configured via the
+      <a class="link" href="reference.html#feature/timeout" title="3.385.&#160;timeout">$timeout</a>), NeoMutt periodically checks for new mail in all folders which have been configured via the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. The interval depends on the folder type: for local/IMAP folders it consults
@@ -2371,14 +2371,14 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <code class="literal">&lt;check-new&gt;</code>function which is unbound by default. Pressing TAB will bring up a menu showing the files specified by the
       <span class="command">
         <strong>mailboxes</strong>
-      </span>command, and indicate which contain new messages. Mutt will automatically enter this mode when invoked from the command line with the
+      </span>command, and indicate which contain new messages. NeoMutt will automatically enter this mode when invoked from the command line with the
       <code class="literal">-y</code> option.</p>
-      <p>For the pager, index and directory browser menus, Mutt contains the
+      <p>For the pager, index and directory browser menus, NeoMutt contains the
       <code class="literal">&lt;buffy-list&gt;</code>function (bound to
       <span class="quote">“<span class="quote">.</span>”</span> by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
-      <p>For the index, by default Mutt displays the number of mailboxes with new mail in the status bar, please refer to the
+      <p>For the index, by default NeoMutt displays the number of mailboxes with new mail in the status bar, please refer to the
       <a class="link" href="reference.html#status-format" title="3.376.&#160;status_format">$status_format</a> variable for details.</p>
-      <p>When changing folders, Mutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
+      <p>When changing folders, NeoMutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
       <code class="literal">&lt;Space&gt;</code>will cycle through folders with new mail. The (by default unbound) function
       <code class="literal">&lt;next-unread-mailbox&gt;</code>in the index can be used to immediately open the next folder with unread mail (if any).</p>
     </div>
@@ -2392,7 +2392,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         </div>
       </div>
       <p>If
-      <a class="link" href="reference.html#mail-check-stats" title="3.147.&#160;mail_check_stats">$mail_check_stats</a> is set, Mutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
+      <a class="link" href="reference.html#mail-check-stats" title="3.147.&#160;mail_check_stats">$mail_check_stats</a> is set, NeoMutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. This calculation takes place at the same time as new mail polling, but is controlled by a separate timer:
@@ -2410,7 +2410,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         </div>
       </div>
     </div>
-    <p>Mutt has the ability to dynamically restructure threads that are broken either by misconfigured software or bad behavior from some correspondents. This allows to clean your mailboxes from these annoyances which make it hard to follow a discussion.</p>
+    <p>NeoMutt has the ability to dynamically restructure threads that are broken either by misconfigured software or bad behavior from some correspondents. This allows to clean your mailboxes from these annoyances which make it hard to follow a discussion.</p>
     <div class="sect2">
       <div class="titlepage">
         <div>
@@ -2423,7 +2423,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <p>Some mailers tend to
       <span class="quote">“<span class="quote">forget</span>”</span> to correctly set the
       <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
-      <span class="quote">“<span class="quote">References:</span>”</span> headers when replying to a message. This results in broken discussions because Mutt has not enough information to guess the correct threading. You can fix this by tagging the reply, then moving to the parent message and using the
+      <span class="quote">“<span class="quote">References:</span>”</span> headers when replying to a message. This results in broken discussions because NeoMutt has not enough information to guess the correct threading. You can fix this by tagging the reply, then moving to the parent message and using the
       <code class="literal">&lt;link-threads&gt;</code>function (bound to &amp; by default). The reply will then be connected to this parent message.</p>
       <p>You can also connect multiple children at once, tagging them and using the
       <code class="literal">&lt;tag-prefix&gt;</code>command (
@@ -2461,7 +2461,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
     <p>When using
     <a class="link" href="reference.html#sendmail" title="3.302.&#160;sendmail">$sendmail</a> for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
     <p>For SMTP delivery using
-    <a class="link" href="reference.html#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether Mutt will attempt to request DSN or not.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether NeoMutt will attempt to request DSN or not.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -2495,22 +2495,22 @@ macro pager \cb |urlview\n
           <span class="term">Address normalization</span>
         </dt>
         <dd>
-          <p>Mutt normalizes all e-mail addresses to the simplest form possible. If an address contains a realname, the form
+          <p>NeoMutt normalizes all e-mail addresses to the simplest form possible. If an address contains a realname, the form
           <span class="emphasis">
             <em>Joe User &lt;joe@example.com&gt;</em>
           </span>is used and the pure e-mail address without angle brackets otherwise, i.e. just
           <span class="emphasis">
             <em>joe@example.com</em>
           </span>.</p>
-          <p>This normalization affects all headers Mutt generates including aliases.</p>
+          <p>This normalization affects all headers NeoMutt generates including aliases.</p>
         </dd>
         <dt>
           <span class="term">Initial folder selection</span>
         </dt>
         <dd>
-          <p>The folder Mutt opens at startup is determined as follows: the folder specified in the
+          <p>The folder NeoMutt opens at startup is determined as follows: the folder specified in the
           <code class="literal">$MAIL</code> environment variable if present. Otherwise, the value of
-          <code class="literal">$MAILDIR</code> is taken into account. If that isn't present either, Mutt takes the user's mailbox in the mailspool as determined at compile-time (which may also reside in the home directory). The
+          <code class="literal">$MAILDIR</code> is taken into account. If that isn't present either, NeoMutt takes the user's mailbox in the mailspool as determined at compile-time (which may also reside in the home directory). The
           <a class="link" href="reference.html#spoolfile" title="3.359.&#160;spoolfile">$spoolfile</a> setting overrides this selection. Highest priority has the mailbox given with the
           <code class="literal">-f</code> command line option.</p>
         </dd>

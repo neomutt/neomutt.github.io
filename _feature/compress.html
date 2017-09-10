@@ -47,8 +47,8 @@ status: stable
         </div>
       </div>
     </div>
-    <p>The Compressed Folder feature allows Mutt to read mailbox files that are compressed. But it isn't limited to compressed files. It works well with encrypted files, too. In fact, if you can create a program/script to convert to and from your format, then Mutt can read it.</p>
-    <p>The feature adds three hooks to Mutt:
+    <p>The Compressed Folder feature allows NeoMutt to read mailbox files that are compressed. But it isn't limited to compressed files. It works well with encrypted files, too. In fact, if you can create a program/script to convert to and from your format, then NeoMutt can read it.</p>
+    <p>The feature adds three hooks to NeoMutt:
     <code class="literal">open-hook</code>,
     <code class="literal">close-hook</code> and
     <code class="literal">append-hook</code>. They define commands to: uncompress a file; compress a file; append messages to an already compressed file.</p>
@@ -186,7 +186,7 @@ status: stable
       <pre class="screen">
 open-hook regexp shell-command
 </pre>
-      <p>If Mutt is unable to open a file, it then looks for
+      <p>If NeoMutt is unable to open a file, it then looks for
       <code class="literal">open-hook</code> that matches the filename.</p>
       <p>If your compression program doesn't have a well-defined extension, then you can use
       <code class="literal">.</code>as the regexp.</p>
@@ -206,16 +206,16 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
-              <p>Mutt finds a file,
+              <p>NeoMutt finds a file,
               <span class="quote">“<span class="quote">example.gz</span>”</span>, that it can't read</p>
             </li>
             <li class="listitem">
-              <p>Mutt has an
+              <p>NeoMutt has an
               <code class="literal">open-hook</code> whose regexp matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
-              <p>Mutt uses the command
+              <p>NeoMutt uses the command
               <code class="literal">gzip -cd</code> to create a temporary file that it
               <span class="emphasis">
                 <em>can</em>
@@ -237,7 +237,7 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
       <pre class="screen">
 close-hook regexp shell-command
 </pre>
-      <p>When Mutt has finished with a compressed mail folder, it will look for a matching
+      <p>When NeoMutt has finished with a compressed mail folder, it will look for a matching
       <code class="literal">close-hook</code> to recompress the file. This hook is
       <a class="link" href="#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <div class="note">
@@ -261,7 +261,7 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
-              <p>Mutt has finished with a folder,
+              <p>NeoMutt has finished with a folder,
               <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
               <code class="literal">open-hook</code></p>
             </li>
@@ -269,12 +269,12 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
               <p>The folder has been modified</p>
             </li>
             <li class="listitem">
-              <p>Mutt has a
+              <p>NeoMutt has a
               <code class="literal">close-hook</code> whose regexp matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
-              <p>Mutt uses the command
+              <p>NeoMutt uses the command
               <code class="literal">gzip -c</code> to create a new compressed file</p>
             </li>
           </ul>
@@ -299,17 +299,17 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
       <pre class="screen">
 append-hook regexp shell-command
 </pre>
-      <p>When Mutt wants to append an email to a compressed mail folder, it will look for a matching
+      <p>When NeoMutt wants to append an email to a compressed mail folder, it will look for a matching
       <code class="literal">append-hook</code>. This hook is
       <a class="link" href="#table-compress-optional" title="Table&#160;9.1.&#160;Not all Hooks are Required">optional</a>.</p>
       <p>Using the
-      <code class="literal">append-hook</code> will save time, but Mutt won't be able to determine the type of the mail folder inside the compressed file.</p>
-      <p>Mutt will
+      <code class="literal">append-hook</code> will save time, but NeoMutt won't be able to determine the type of the mail folder inside the compressed file.</p>
+      <p>NeoMutt will
       <span class="emphasis">
         <em>assume</em>
       </span>the type to be that of the
-      <code class="literal">$mbox_type</code> variable. Mutt also uses this type for temporary files.</p>
-      <p>Mutt will only use the
+      <code class="literal">$mbox_type</code> variable. NeoMutt also uses this type for temporary files.</p>
+      <p>NeoMutt will only use the
       <code class="literal">append-hook</code> for existing files. The
       <code class="literal">close-hook</code> will be used for empty, or missing files.</p>
       <div class="note">
@@ -334,21 +334,21 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
-              <p>Mutt wants to append an email to a folder,
+              <p>NeoMutt wants to append an email to a folder,
               <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
               <code class="literal">open-hook</code></p>
             </li>
             <li class="listitem">
-              <p>Mutt has an
+              <p>NeoMutt has an
               <code class="literal">append-hook</code> whose regexp matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
-              <p>Mutt knows the mailbox type from the
+              <p>NeoMutt knows the mailbox type from the
               <code class="literal">$mbox</code> variable</p>
             </li>
             <li class="listitem">
-              <p>Mutt uses the command
+              <p>NeoMutt uses the command
               <code class="literal">gzip -c</code> to append to an existing compressed file</p>
             </li>
           </ul>
@@ -370,7 +370,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
           </div>
         </div>
       </div>
-      <p>Mutt assumes that an empty file is not compressed. In this situation, unset
+      <p>NeoMutt assumes that an empty file is not compressed. In this situation, unset
       <a class="link" href="/guide/reference.html#save-empty" title="3.293.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
@@ -391,14 +391,14 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>4.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
     <pre class="screen">
 <span class="comment"># Example NeoMutt config file for the compress feature.
 
-# This feature adds three hooks to Mutt which allow it to
+# This feature adds three hooks to NeoMutt which allow it to
 # work with compressed, or encrypted, mailboxes.
 
 # The hooks are of the form:
@@ -429,7 +429,7 @@ open-hook   '\.gpg$' "gpg --decrypt &lt; '%f' &gt; '%t'"
 close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &gt; '%f'"
 
 
-<span class="comment"># vim: syntax=muttrc</span>
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

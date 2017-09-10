@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: 
-description: Define actions to run globally within Mutt
+description: Define actions to run globally within NeoMutt
 since: 2016-08-08
 status: stable
 ---
@@ -15,7 +15,7 @@ status: stable
       </div>
       <div>
         <h3 class="subtitle">
-          <em>Define actions to run globally within Mutt</em>
+          <em>Define actions to run globally within NeoMutt</em>
         </h3>
       </div>
     </div>
@@ -29,7 +29,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>These hooks are called when global events take place in Mutt.</p>
+    <p>These hooks are called when global events take place in NeoMutt.</p>
     <div class="itemizedlist">
       <p class="title">
         <strong>Run a command...</strong>
@@ -45,13 +45,13 @@ status: stable
           <p>
           <span class="bold">
             <strong>startup-hook</strong>
-          </span>- when mutt starts up, before opening the first mailbox</p>
+          </span>- when NeoMutt starts up, before opening the first mailbox</p>
         </li>
         <li class="listitem">
           <p>
           <span class="bold">
             <strong>shutdown-hook</strong>
-          </span>- mutt shuts down, before closing the last mailbox</p>
+          </span>- NeoMutt shuts down, before closing the last mailbox</p>
         </li>
       </ul>
     </div>
@@ -71,7 +71,7 @@ status: stable
       <span class="bold">
         <strong>Since:</strong>
       </span>NeoMutt 2016-08-08</p>
-      <p>This feature implements a new hook that is called periodically when Mutt checks for new mail. This hook is called every
+      <p>This feature implements a new hook that is called periodically when NeoMutt checks for new mail. This hook is called every
       <code class="literal">$timeout</code> seconds.</p>
     </div>
     <div class="sect2">
@@ -82,7 +82,7 @@ status: stable
             <a class="offset" id="startup-hook-intro"></a>1.2.&#160;Startup Hook</h3>
           </div>
           <div>
-            <h4 class="subtitle">Run a command when mutt starts up, before opening the first mailbox</h4>
+            <h4 class="subtitle">Run a command when NeoMutt starts up, before opening the first mailbox</h4>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@ status: stable
       <span class="bold">
         <strong>Since:</strong>
       </span>NeoMutt 2016-11-25</p>
-      <p>This feature implements a new hook that is called when Mutt first starts up, but before opening the first mailbox. This is most likely to be useful to users of
+      <p>This feature implements a new hook that is called when NeoMutt first starts up, but before opening the first mailbox. This is most likely to be useful to users of
       <a class="link" href="/feature/notmuch" title="Notmuch Feature">notmuch</a>.</p>
     </div>
     <div class="sect2">
@@ -101,7 +101,7 @@ status: stable
             <a class="offset" id="shutdown-hook"></a>1.3.&#160;Shutdown Hook</h3>
           </div>
           <div>
-            <h4 class="subtitle">Run a command when mutt shuts down, before closing the last mailbox</h4>
+            <h4 class="subtitle">Run a command when NeoMutt shuts down, before closing the last mailbox</h4>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@ status: stable
       <span class="bold">
         <strong>Since:</strong>
       </span>NeoMutt 2016-11-25</p>
-      <p>This feature implements a hook that is called when Mutt shuts down, but before closing the first mailbox. This is most likely to be useful to users of
+      <p>This feature implements a hook that is called when NeoMutt shuts down, but before closing the first mailbox. This is most likely to be useful to users of
       <a class="link" href="/feature/notmuch" title="Notmuch Feature">notmuch</a>.</p>
     </div>
   </div>
@@ -126,7 +126,7 @@ status: stable
       <p>
         <code class="command">timeout-hook</code>
         <em class="replaceable">
-          <code>MUTT-COMMAND</code>
+          <code>NEOMUTT-COMMAND</code>
         </em>
       </p>
     </div>
@@ -134,7 +134,7 @@ status: stable
       <p>
         <code class="command">startup-hook</code>
         <em class="replaceable">
-          <code>MUTT-COMMAND</code>
+          <code>NEOMUTT-COMMAND</code>
         </em>
       </p>
     </div>
@@ -142,7 +142,7 @@ status: stable
       <p>
         <code class="command">shutdown-hook</code>
         <em class="replaceable">
-          <code>MUTT-COMMAND</code>
+          <code>NEOMUTT-COMMAND</code>
         </em>
       </p>
     </div>
@@ -152,7 +152,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>3.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>3.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -162,15 +162,15 @@ status: stable
 # --------------------------------------------------------------------------
 # COMMANDS - shown with an example argument
 # --------------------------------------------------------------------------
-# After $timeout seconds of inactivity, run this mutt command</span>
+# After $timeout seconds of inactivity, run this NeoMutt command</span>
 timeout-hook 'exec sync-mailbox'
-<span class="comment"># When mutt first loads, run this mutt command</span>
+<span class="comment"># When NeoMutt first loads, run this NeoMutt command</span>
 startup-hook 'exec sync-mailbox'
-<span class="comment"># When mutt quits, run this mutt command</span>
+<span class="comment"># When NeoMutt quits, run this NeoMutt command</span>
 shutdown-hook 'exec sync-mailbox'
 
 
-<span class="comment"># vim: syntax=muttrc</span>
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

@@ -48,7 +48,7 @@ status: stable
       </div>
     </div>
     <p>The
-    <span class="quote">“<span class="quote">ifdef</span>”</span> feature introduces three new commands to Mutt and allow you to share one config file between versions of Mutt that may have different features compiled in.</p>
+    <span class="quote">“<span class="quote">ifdef</span>”</span> feature introduces three new commands to NeoMutt and allow you to share one config file between versions of NeoMutt that may have different features compiled in.</p>
     <pre class="screen">
 ifdef  symbol config-command [args...]
 <span class="comment"># If a symbol is defined</span>
@@ -64,7 +64,7 @@ finish
     <span class="quote">“<span class="quote">imap</span>”</span>.</p>
     <p>A list of compile-time symbols can be seen in the output of the command</p>
     <pre class="screen">
-mutt -v
+neomutt -v
 </pre>
     <p>(in the
     <span class="quote">“
@@ -113,7 +113,7 @@ ifndef sidebar finish
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>4.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -121,33 +121,33 @@ ifndef sidebar finish
 <span class="comment"># Example NeoMutt config file for the ifdef feature.
 
 # This feature introduces three useful commands which allow you to share
-# one config file between versions of Mutt that may have different
+# one config file between versions of NeoMutt that may have different
 # features compiled in.
 
 #   ifdef  symbol config-command [args...]
 #   ifndef symbol config-command [args...]
 #   finish
-# The 'ifdef' command tests whether Mutt understands the name of
+# The 'ifdef' command tests whether NeoMutt understands the name of
 # a variable, function, command or compile-time symbol.
 
 # If it does, then it executes a config command.
 
 # The 'ifndef' command tests whether a symbol does NOT exist.
 
-# The 'finish' command tells Mutt to stop reading current config file.
+# The 'finish' command tells NeoMutt to stop reading current config file.
 
 # If the 'trash' variable exists, set it.</span>
 ifdef trash 'set trash=~/Mail/trash'
 <span class="comment"># If the 'tag-pattern' function exists, bind a key to it.</span>
 ifdef tag-pattern 'bind index &lt;F6&gt; tag-pattern'
 <span class="comment"># If the 'imap-fetch-mail' command exists, read my IMAP config.</span>
-ifdef imap-fetch-mail 'source ~/.mutt/imap.rc'
+ifdef imap-fetch-mail 'source ~/.neomutt/imap.rc'
 <span class="comment"># If the compile-time symbol 'sidebar' does not exist, then
 # stop reading the current config file.</span>
 ifndef sidebar finish
 
 
-<span class="comment"># vim: syntax=muttrc</span>
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

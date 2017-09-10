@@ -21,19 +21,19 @@ title: Configuration
         </div>
       </div>
     </div>
-    <p>When Mutt starts up it looks for two configuration files -- one
+    <p>When NeoMutt starts up it looks for two configuration files -- one
     <span class="quote">“
     <span class="quote">system</span>”</span> file and one
     <span class="quote">“
     <span class="quote">user</span>”</span> file.</p>
-    <p>Mutt searches for several different file names when looking for config. It looks for NeoMutt config files before Mutt config files and versioned config before plain config. For example:</p>
+    <p>NeoMutt searches for several different file names when looking for config. It looks for NeoMutt config files before NeoMutt config files and versioned config before plain config. For example:</p>
     <div >
-      <a class="offset" id="muttrc-order"></a>
+      <a class="offset" id="neomuttrc-order"></a>
       <p class="title">
-        <strong>Table&#160;3.1.&#160;Mutt config file search order</strong>
+        <strong>Table&#160;3.1.&#160;NeoMutt config file search order</strong>
       </p>
       <div class="table-contents">
-        <table summary="Mutt config file search order" border="1">
+        <table summary="NeoMutt config file search order" border="1">
           <colgroup>
             <col />
           </colgroup>
@@ -45,9 +45,6 @@ title: Configuration
               <td>neomuttrc</td>
             </tr>
             <tr>
-              <td>muttrc-1.9.0</td>
-            </tr>
-            <tr>
               <td>muttrc</td>
             </tr>
           </tbody>
@@ -55,34 +52,33 @@ title: Configuration
       </div>
     </div>
     <br class="table-break" />
-    <p>This allows the user to create separate Mutt and NeoMutt config files on the same system.</p>
+    <p>This allows the user to create separate NeoMutt and NeoMutt config files on the same system.</p>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="muttrc-system"></a>1.1.&#160;Location of system config files</h3>
+            <a class="offset" id="neomuttrc-system"></a>1.1.&#160;Location of system config files</h3>
           </div>
         </div>
       </div>
-      <p>Mutt will search for a system config file in a
-      <code class="literal">mutt</code> directory in several places. First it searches the locations specified in the
+      <p>NeoMutt will search for a system config file in a
+      <code class="literal">neomutt</code> directory in several places. First it searches the locations specified in the
       <code class="literal">XDG_CONFIG_DIRS</code> environment variable, which defaults to
       <code class="literal">/etc/xdg</code>. Next, it looks in
       <code class="literal">/etc</code>. Finally, it tries
       <code class="literal">/usr/share</code>.</p>
       <p>The system config file will not be read if the
-      <span class="quote">“
-      <span class="quote">-n</span>”</span> option is used on the
+      <span class="quote">“<span class="quote">-n</span>”</span> option is used on the
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">command line</a>.</p>
-      <p>Mutt will read just one file, the first file it finds, from the list below.</p>
+      <p>NeoMutt will read just one file, the first file it finds, from the list below.</p>
       <div >
-        <a class="offset" id="muttrc-system-files"></a>
+        <a class="offset" id="neomuttrc-system-files"></a>
         <p class="title">
-          <strong>Table&#160;3.2.&#160;Mutt system config file locations</strong>
+          <strong>Table&#160;3.2.&#160;NeoMutt system config file locations</strong>
         </p>
         <div class="table-contents">
-          <table summary="Mutt system config file locations" border="1">
+          <table summary="NeoMutt system config file locations" border="1">
             <colgroup>
               <col />
               <col />
@@ -95,51 +91,39 @@ title: Configuration
             </thead>
             <tbody>
               <tr>
-                <td>/etc/xdg/mutt/neomuttrc-20170907</td>
+                <td>/etc/xdg/neomutt/neomuttrc-20170907</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
-                <td>/etc/xdg/mutt/neomuttrc</td>
+                <td>/etc/xdg/neomutt/neomuttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>/etc/xdg/mutt/Muttrc-1.9.0</td>
-                <td>Mutt release version, Note the case of the filename</td>
-              </tr>
-              <tr>
-                <td>/etc/xdg/mutt/Muttrc</td>
+                <td>/etc/xdg/neomutt/Muttrc</td>
                 <td>Note the case of the filename</td>
               </tr>
               <tr>
-                <td>/etc/mutt/neomuttrc-20170907</td>
+                <td>/etc/neomuttrc-20170907</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
-                <td>/etc/mutt/neomuttrc</td>
+                <td>/etc/neomuttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>/etc/mutt/Muttrc-1.9.0</td>
-                <td>Mutt release version, Note the case of the filename</td>
-              </tr>
-              <tr>
-                <td>/etc/mutt/Muttrc</td>
+                <td>/etc/Muttrc</td>
                 <td>Note the case of the filename</td>
               </tr>
               <tr>
-                <td>/usr/share/mutt/neomuttrc-20170907</td>
+                <td>/usr/share/neomutt/neomuttrc-20170907</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
-                <td>/usr/share/mutt/neomuttrc</td>
+                <td>/usr/share/neomutt/neomuttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>/usr/share/mutt/Muttrc-1.9.0</td>
-                <td>Mutt release version, Note the case of the filename</td>
-              </tr>
-              <tr>
-                <td>/usr/share/mutt/Muttrc</td>
+                <td>/usr/share/neomutt/Muttrc</td>
                 <td>Note the case of the filename</td>
               </tr>
             </tbody>
@@ -153,26 +137,26 @@ title: Configuration
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="muttrc-user"></a>1.2.&#160;Location of user config files</h3>
+            <a class="offset" id="neomuttrc-user"></a>1.2.&#160;Location of user config files</h3>
           </div>
         </div>
       </div>
-      <p>Mutt will search for a user config file in several places. First it looks in the directory specified in the
+      <p>NeoMutt will search for a user config file in several places. First it looks in the directory specified in the
       <code class="literal">XDG_CONFIG_HOME</code> environment variable, which defaults to
-      <code class="literal">~/.config/mutt</code>. Next, it looks in
+      <code class="literal">~/.config/neomutt</code>. Next, it looks in
       <code class="literal">~</code>(your home directory). Finally, it tries
-      <code class="literal">~/.mutt</code>.</p>
+      <code class="literal">~/.neomutt</code>.</p>
       <p>You may specify your own location for the user config file using the
       <span class="quote">“<span class="quote">-F</span>”</span> option on the
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">command line</a>.</p>
-      <p>Mutt will read just one file, the first file it finds, from the list below.</p>
+      <p>NeoMutt will read just one file, the first file it finds, from the list below.</p>
       <div >
-        <a class="offset" id="muttrc-user-files"></a>
+        <a class="offset" id="neomuttrc-user-files"></a>
         <p class="title">
-          <strong>Table&#160;3.3.&#160;Mutt user config file locations</strong>
+          <strong>Table&#160;3.3.&#160;NeoMutt user config file locations</strong>
         </p>
         <div class="table-contents">
-          <table summary="Mutt user config file locations" border="1">
+          <table summary="NeoMutt user config file locations" border="1">
             <colgroup>
               <col />
               <col />
@@ -185,35 +169,27 @@ title: Configuration
             </thead>
             <tbody>
               <tr>
-                <td>~/.config/mutt/neomuttrc-20170907</td>
+                <td>~/.config/neomutt/neomuttrc-20170907</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
-                <td>~/.config/mutt/neomuttrc</td>
+                <td>~/.config/neomutt/neomuttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.config/mutt/muttrc-1.9.0</td>
-                <td>Mutt release version</td>
-              </tr>
-              <tr>
-                <td>~/.config/mutt/muttrc</td>
+                <td>~/.config/neomutt/muttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.neomuttrc-20170907</td>
+                <td>~/.neomutt/neomuttrc-20170907</td>
                 <td>NeoMutt release version</td>
               </tr>
               <tr>
-                <td>~/.neomuttrc</td>
+                <td>~/.neomutt/neomuttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.muttrc-1.9.0</td>
-                <td>Mutt release version</td>
-              </tr>
-              <tr>
-                <td>~/.muttrc</td>
+                <td>~/.neomutt/muttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
@@ -225,11 +201,19 @@ title: Configuration
                 <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.mutt/muttrc-1.9.0</td>
-                <td>Mutt release version</td>
+                <td>~/.mutt/muttrc</td>
+                <td class="auto-generated">&#160;</td>
               </tr>
               <tr>
-                <td>~/.mutt/muttrc</td>
+                <td>~/.neomuttrc-20170907</td>
+                <td>NeoMutt release version</td>
+              </tr>
+              <tr>
+                <td>~/.neomuttrc</td>
+                <td class="auto-generated">&#160;</td>
+              </tr>
+              <tr>
+                <td>~/.muttrc</td>
                 <td class="auto-generated">&#160;</td>
               </tr>
             </tbody>
@@ -244,7 +228,7 @@ title: Configuration
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc-syntax"></a>2.&#160;Syntax of Initialization Files</h2>
+          <a class="offset" id="neomuttrc-syntax"></a>2.&#160;Syntax of Initialization Files</h2>
         </div>
       </div>
     </div>
@@ -258,16 +242,14 @@ title: Configuration
       </p>
       <div class="example-contents">
         <pre class="screen">
-set realname='Mutt user' ; ignore x-
+set realname='John Smith' ; ignore x-
 </pre>
       </div>
     </div>
     <br class="example-break" />
     <p>The hash mark, or pound sign (
-    <span class="quote">“
-    <span class="quote">#</span>”</span>), is used as a
-    <span class="quote">“
-    <span class="quote">comment</span>”</span> character. You can use it to annotate your initialization file. All text after the comment character to the end of the line is ignored.</p>
+    <span class="quote">“<span class="quote">#</span>”</span>), is used as a
+    <span class="quote">“<span class="quote">comment</span>”</span> character. You can use it to annotate your initialization file. All text after the comment character to the end of the line is ignored.</p>
     <div class="example">
       <a class="offset" id="ex-ec-comment"></a>
       <p class="title">
@@ -341,9 +323,8 @@ my_hdr X-Operating-System: `uname -a`
       </div>
     </div>
     <br class="example-break" />
-    <p>Both environment variables and Mutt variables can be accessed by prepending
-    <span class="quote">“
-    <span class="quote">$</span>”</span> to the name of the variable. For example,</p>
+    <p>Both environment variables and NeoMutt variables can be accessed by prepending
+    <span class="quote">“<span class="quote">$</span>”</span> to the name of the variable. For example,</p>
     <div class="example">
       <a class="offset" id="ex-rc-env"></a>
       <p class="title">
@@ -356,16 +337,17 @@ set record=+sent_on_$HOSTNAME
       </div>
     </div>
     <br class="example-break" />
-    <p>will cause Mutt to save outgoing messages to a folder named
-    <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
+    <p>will cause NeoMutt to save outgoing messages to a folder named
+    <span class="quote">“
+    <span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
     <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
     <a class="link" href="reference.html#record" title="3.277.&#160;record">$record</a> for details.)</p>
-    <p>Mutt expands the variable when it is assigned, not when it is used. If the value of a variable on the right-hand side of an assignment changes after the assignment, the variable on the left-hand side will not be affected.</p>
-    <p>The commands understood by Mutt are explained in the next paragraphs. For a complete list, see the
+    <p>NeoMutt expands the variable when it is assigned, not when it is used. If the value of a variable on the right-hand side of an assignment changes after the assignment, the variable on the left-hand side will not be affected.</p>
+    <p>The commands understood by NeoMutt are explained in the next paragraphs. For a complete list, see the
     <a class="link" href="reference.html#commands" title="2.&#160;Configuration Commands">command reference</a>.</p>
     <p>All configuration files are expected to be in the current locale as specified by the
-    <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a> variable which doesn't have a default value since it's determined by Mutt at startup. If a configuration file is not encoded in the same character set the
+    <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a> variable which doesn't have a default value since it's determined by NeoMutt at startup. If a configuration file is not encoded in the same character set the
     <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> variable should be used: all lines starting with the next are recoded from
     <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> to
     <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a>.</p>
@@ -375,7 +357,7 @@ set record=+sent_on_$HOSTNAME
         <li class="listitem">
           <p>These variables should be set early in a configuration file with
           <a class="link" href="reference.html#charset" title="3.31.&#160;charset">$charset</a> preceding
-          <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> so Mutt knows what character set to convert to.</p>
+          <a class="link" href="reference.html#config-charset" title="3.37.&#160;config_charset">$config_charset</a> so NeoMutt knows what character set to convert to.</p>
         </li>
         <li class="listitem">
           <p>If
@@ -385,7 +367,7 @@ set record=+sent_on_$HOSTNAME
           </span>per configuration file.</p>
         </li>
         <li class="listitem">
-          <p>Because Mutt first recodes a line before it attempts to parse it, a conversion introducing question marks or other characters as part of errors (unconvertable characters, transliteration) may introduce syntax errors or silently change the meaning of certain tokens (e.g. inserting question marks into regular expressions).</p>
+          <p>Because NeoMutt first recodes a line before it attempts to parse it, a conversion introducing question marks or other characters as part of errors (unconvertable characters, transliteration) may introduce syntax errors or silently change the meaning of certain tokens (e.g. inserting question marks into regular expressions).</p>
         </li>
       </ul>
     </div>
@@ -433,13 +415,13 @@ set record=+sent_on_$HOSTNAME
         <code>expr</code>
       </em>... }</p>
     </div>
-    <p>Mutt supports grouping addresses logically into named groups. An address or address pattern can appear in several groups at the same time. These groups can be used in
-    <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>(for searching, limiting and tagging) and in hooks by using group patterns. This can be useful to classify mail and take certain actions depending on in what groups the message is. For example, the mutt user's mailing list would fit into the categories
+    <p>NeoMutt supports grouping addresses logically into named groups. An address or address pattern can appear in several groups at the same time. These groups can be used in
+    <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>(for searching, limiting and tagging) and in hooks by using group patterns. This can be useful to classify mail and take certain actions depending on in what groups the message is. For example, the NeoMutt user's mailing list would fit into the categories
     <span class="quote">“<span class="quote">mailing list</span>”</span> and
-    <span class="quote">“<span class="quote">mutt-related</span>”</span>. Using
+    <span class="quote">“<span class="quote">NeoMutt-related</span>”</span>. Using
     <a class="link" href="#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">
       <code class="literal">send-hook</code>
-    </a>, the sender can be set to a dedicated one for writing mailing list messages, and the signature could be set to a mutt-related one for writing to a mutt list — for other lists, the list sender setting still applies but a different signature can be selected. Or, given a group only containing recipients known to accept encrypted mail,
+    </a>, the sender can be set to a dedicated one for writing mailing list messages, and the signature could be set to a NeoMutt-related one for writing to a NeoMutt list — for other lists, the list sender setting still applies but a different signature can be selected. Or, given a group only containing recipients known to accept encrypted mail,
     <span class="quote">“<span class="quote">auto-encryption</span>”</span> can be achieved easily.</p>
     <p>The
     <span class="command">
@@ -534,7 +516,7 @@ alternates -group me -group work address3
         <code>key</code>
       </em>... }</p>
     </div>
-    <p>It's usually very cumbersome to remember or type out the address of someone you are communicating with. Mutt allows you to create
+    <p>It's usually very cumbersome to remember or type out the address of someone you are communicating with. NeoMutt allows you to create
     <span class="quote">“<span class="quote">aliases</span>”</span> which map a short string to a full address.</p>
     <div class="note">
       <h3 class="title">Note</h3>
@@ -558,7 +540,7 @@ alternates -group me -group work address3
 alias muttdude me@cs.hmc.edu (Michael Elkins)
 alias theguys manny, moe, jack
 </pre>
-    <p>Unlike other mailers, Mutt doesn't require aliases to be defined in a special file. The
+    <p>Unlike other mailers, NeoMutt doesn't require aliases to be defined in a special file. The
     <span class="command">
       <strong>alias</strong>
     </span>command can appear anywhere in a configuration file, as long as this file is
@@ -566,13 +548,13 @@ alias theguys manny, moe, jack
     <span class="command">
       <strong>source</strong>
     </span>d</a>. Consequently, you can have multiple alias files, or you can have all aliases defined in your
-    <code class="literal">.muttrc</code>.</p>
+    <code class="literal">.neomuttrc</code>.</p>
     <p>On the other hand, the
     <a class="link" href="gettingstarted.html#create-alias">
       <code class="literal">&lt;create-alias&gt;</code>
     </a>function can use only one file, the one pointed to by the
     <a class="link" href="reference.html#alias-file" title="3.4.&#160;alias_file">$alias_file</a> variable (which is
-    <code class="literal">~/.muttrc</code> by default). This file is not special either, in the sense that Mutt will happily append aliases to any file, but in order for the new aliases to take effect you need to explicitly
+    <code class="literal">~/.neomuttrc</code> by default). This file is not special either, in the sense that NeoMutt will happily append aliases to any file, but in order for the new aliases to take effect you need to explicitly
     <a class="link" href="#source" title="27.&#160;Reading Initialization Commands From Another File">
       <span class="command">
         <strong>source</strong>
@@ -585,14 +567,14 @@ alias theguys manny, moe, jack
       </p>
       <div class="example-contents">
         <pre class="screen">
-source /usr/local/share/Mutt.aliases
+source /usr/local/share/NeoMutt.aliases
 source ~/.mail_aliases
 set alias_file=~/.mail_aliases
 </pre>
       </div>
     </div>
     <br class="example-break" />
-    <p>To use aliases, you merely use the alias at any place in Mutt where Mutt prompts for addresses, such as the
+    <p>To use aliases, you merely use the alias at any place in NeoMutt where NeoMutt prompts for addresses, such as the
     <span class="emphasis">
       <em>To:</em>
     </span>or
@@ -600,7 +582,7 @@ set alias_file=~/.mail_aliases
       <em>Cc:</em>
     </span>prompt. You can also enter aliases in your editor at the appropriate headers if you have the
     <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> variable set.</p>
-    <p>In addition, at the various address prompts, you can use the tab character to expand a partial alias to the full alias. If there are multiple matches, Mutt will bring up a menu with the matching aliases. In order to be presented with the full list of aliases, you must hit tab without a partial alias, such as at the beginning of the prompt or after a comma denoting multiple addresses.</p>
+    <p>In addition, at the various address prompts, you can use the tab character to expand a partial alias to the full alias. If there are multiple matches, NeoMutt will bring up a menu with the matching aliases. In order to be presented with the full list of aliases, you must hit tab without a partial alias, such as at the beginning of the prompt or after a comma denoting multiple addresses.</p>
     <p>In the alias menu, you can select as many aliases as you want with the
     <code class="literal">select-entry</code> key (default: &lt;Return&gt;), and use the
     <span class="emphasis">
@@ -643,7 +625,7 @@ set alias_file=~/.mail_aliases
           <span class="term">generic</span>
         </dt>
         <dd>
-          <p>This is not a real menu, but is used as a fallback for all of the other menus except for the pager and editor modes. If a key is not defined in another menu, Mutt will look for a binding to use in this menu. This allows you to bind a key to a certain function in multiple menus instead of having multiple
+          <p>This is not a real menu, but is used as a fallback for all of the other menus except for the pager and editor modes. If a key is not defined in another menu, NeoMutt will look for a binding to use in this menu. This allows you to bind a key to a certain function in multiple menus instead of having multiple
           <span class="command">
             <strong>bind</strong>
           </span>statements to accomplish the same task.</p>
@@ -653,7 +635,7 @@ set alias_file=~/.mail_aliases
         </dt>
         <dd>
           <p>The alias menu is the list of your personal aliases as defined in your
-          <code class="literal">.muttrc</code>. It is the mapping from a short alias name to the full email address(es) of the recipient(s).</p>
+          <code class="literal">.neomuttrc</code>. It is the mapping from a short alias name to the full email address(es) of the recipient(s).</p>
         </dd>
         <dt>
           <span class="term">attach</span>
@@ -727,7 +709,7 @@ set alias_file=~/.mail_aliases
           <span class="term">mix</span>
         </dt>
         <dd>
-          <p>The mixmaster screen is used to select remailer options for outgoing messages (if Mutt is compiled with Mixmaster support).</p>
+          <p>The mixmaster screen is used to select remailer options for outgoing messages (if NeoMutt is compiled with Mixmaster support).</p>
         </dd>
       </dl>
     </div>
@@ -920,13 +902,13 @@ set alias_file=~/.mail_aliases
           </div>
         </div>
       </div>
-      <p>Due to a limitation of Mutt, creating key bindings, or macros, will overwrite existing mappings with similar, shorter, names.</p>
+      <p>Due to a limitation of NeoMutt, creating key bindings, or macros, will overwrite existing mappings with similar, shorter, names.</p>
       <pre class="screen">
 bind index g  group-reply
 bind index gg first-entry
 </pre>
       <p>In this example, the
-      <code class="literal">g</code> binding will be overwritten and cannot be used. Newer versions of Mutt will warn the user about this.</p>
+      <code class="literal">g</code> binding will be overwritten and cannot be used. Newer versions of NeoMutt will warn the user about this.</p>
       <p>To avoid warnings on startup, first set the shorter binding to
       <code class="literal">noop</code>(no operation).</p>
       <pre class="screen">
@@ -968,7 +950,7 @@ bind index gg first-entry
     <p>The
     <span class="command">
       <strong>charset-hook</strong>
-    </span>command defines an alias for a character set. This is useful to properly display messages which are tagged with a character set name not known to Mutt.</p>
+    </span>command defines an alias for a character set. This is useful to properly display messages which are tagged with a character set name not known to NeoMutt.</p>
     <p>The
     <span class="command">
       <strong>iconv-hook</strong>
@@ -1008,7 +990,7 @@ bind index gg first-entry
     <span class="command">
       <strong>folder-hook</strong>
     </span>s, they are executed in the order given in the
-    <code class="literal">.muttrc</code>.</p>
+    <code class="literal">.neomuttrc</code>.</p>
     <p>The regexp parameter has
     <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">mailbox shortcut</a> expansion performed on the first character. See
     <a class="xref" href="advancedusage.html#mailbox-hook" title="6.2.&#160;Mailbox Matching in Hooks">Mailbox Matching in Hooks</a> for more details.</p>
@@ -1028,7 +1010,7 @@ bind index gg first-entry
         <em>not</em>
       </span>restored when you leave the mailbox. For example, a command action to perform is to change the sorting method based upon the mailbox being read:</p>
       <pre class="screen">
-folder-hook mutt "set sort=threads"
+folder-hook work "set sort=threads"
 </pre>
       <p>However, the sorting method is not restored to its previous value when reading a different mailbox. To specify a
       <span class="emphasis">
@@ -1052,7 +1034,7 @@ folder-hook mutt "set sort=threads"
     <a class="link" href="reference.html#sort" title="3.353.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
-    <span class="quote">“<span class="quote">mutt</span>”</span> in their name.</p>
+    <span class="quote">“<span class="quote">work</span>”</span> in their name.</p>
     <div class="example">
       <a class="offset" id="ex-folder-sorting"></a>
       <p class="title">
@@ -1061,7 +1043,7 @@ folder-hook mutt "set sort=threads"
       <div class="example-contents">
         <pre class="screen">
 folder-hook . "set sort=date-sent"
-folder-hook mutt "set sort=threads"
+folder-hook work "set sort=threads"
 </pre>
       </div>
     </div>
@@ -1099,7 +1081,7 @@ folder-hook mutt "set sort=threads"
     </span>in menu
     <span class="emphasis">
       <em>menu</em>
-    </span>, Mutt will behave as if you had typed
+    </span>, NeoMutt will behave as if you had typed
     <span class="emphasis">
       <em>sequence</em>
     </span>. So if you have a common sequence of commands you type, you can create a macro to execute those commands with a single key or fewer keys.</p>
@@ -1122,7 +1104,8 @@ folder-hook mutt "set sort=threads"
     <span class="emphasis">
       <em>^x</em>
     </span>. In order to get a caret (
-    <span class="quote">“<span class="quote">^</span>”</span>) you need to use
+    <span class="quote">“
+    <span class="quote">^</span>”</span>) you need to use
     <span class="emphasis">
       <em>^^</em>
     </span>. Secondly, to specify a certain key such as
@@ -1137,7 +1120,7 @@ folder-hook mutt "set sort=threads"
     </span>. For a listing of key names see the section on
     <a class="link" href="#bind" title="5.&#160;Changing the Default Key Bindings">key bindings</a>. Functions are listed in the
     <a class="link" href="reference.html#functions" title="4.&#160;Functions">reference</a>.</p>
-    <p>The advantage with using function names directly is that the macros will work regardless of the current key bindings, so they are not dependent on the user having particular key definitions. This makes them more robust and portable, and also facilitates defining of macros in files used by more than one user (e.g., the system Muttrc).</p>
+    <p>The advantage with using function names directly is that the macros will work regardless of the current key bindings, so they are not dependent on the user having particular key definitions. This makes them more robust and portable, and also facilitates defining of macros in files used by more than one user (e.g., the system neomuttrc).</p>
     <p>Optionally you can specify a descriptive text after
     <span class="emphasis">
       <em>sequence</em>
@@ -1218,7 +1201,7 @@ folder-hook mutt "set sort=threads"
         <code>pattern</code>
       </em>... }</p>
     </div>
-    <p>If your terminal supports color, you can spice up Mutt by creating your own color scheme. To define the color of an object (type of information), you must specify both a foreground color
+    <p>If your terminal supports color, you can spice up NeoMutt by creating your own color scheme. To define the color of an object (type of information), you must specify both a foreground color
     <span class="emphasis">
       <em>and</em>
     </span>a background color (it is not possible to only specify one or the other).</p>
@@ -1263,7 +1246,7 @@ folder-hook mutt "set sort=threads"
           <p>bold (highlighting bold patterns in the body of messages)</p>
         </li>
         <li class="listitem">
-          <p>error (error messages printed by Mutt)</p>
+          <p>error (error messages printed by NeoMutt)</p>
         </li>
         <li class="listitem">
           <p>hdrdefault (default color of the message header in the pager)</p>
@@ -1303,7 +1286,8 @@ folder-hook mutt "set sort=threads"
         </li>
         <li class="listitem">
           <p>markers (the
-          <span class="quote">“<span class="quote">+</span>”</span> markers at the beginning of wrapped lines in the pager)</p>
+          <span class="quote">“
+          <span class="quote">+</span>”</span> markers at the beginning of wrapped lines in the pager)</p>
         </li>
         <li class="listitem">
           <p>message (informational messages)</p>
@@ -1484,7 +1468,7 @@ folder-hook mutt "set sort=threads"
     </span>can be used as a transparent color. The value
     <span class="emphasis">
       <em>brightdefault</em>
-    </span>is also valid. If Mutt is linked against the
+    </span>is also valid. If NeoMutt is linked against the
     <span class="emphasis">
       <em>S-Lang</em>
     </span>library, you also need to set the
@@ -1526,7 +1510,7 @@ export COLORFGBG
       </span>command for it to be removed. The pattern
       <span class="quote">“<span class="quote">*</span>”</span> is a special token which means to clear the color list of all entries.</p>
     </div>
-    <p>Mutt also recognizes the keywords
+    <p>NeoMutt also recognizes the keywords
     <span class="emphasis">
       <em>color0</em>
     </span>,
@@ -1636,8 +1620,8 @@ export COLORFGBG
           </div>
         </div>
       </div>
-      <p>When displaying a message in the pager, Mutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.407.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, Mutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, Mutt tries to implement standards compliant folding.)</p>
+      <p>When displaying a message in the pager, NeoMutt folds long header lines at
+      <a class="link" href="reference.html#wrap" title="3.407.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1674,7 +1658,7 @@ export COLORFGBG
       <span class="quote">“<span class="quote">ignore *</span>”</span> will ignore all headers.</p>
       <p>To remove a previously added token from the list, use the
       <span class="quote">“<span class="quote">unignore</span>”</span> command. The
-      <span class="quote">“<span class="quote">unignore</span>”</span> command will make Mutt display headers with the given pattern. For example, if you do
+      <span class="quote">“<span class="quote">unignore</span>”</span> command will make NeoMutt display headers with the given pattern. For example, if you do
       <span class="quote">“<span class="quote">ignore x-</span>”</span> it is possible to
       <span class="quote">“<span class="quote">unignore x-mailer</span>”</span>.</p>
       <p>
@@ -1727,7 +1711,7 @@ unignore posted-to:
       <p>With the
       <span class="command">
         <strong>hdr_order</strong>
-      </span>command you can specify an order in which Mutt will attempt to present these headers to you when viewing messages.</p>
+      </span>command you can specify an order in which NeoMutt will attempt to present these headers to you when viewing messages.</p>
       <p>
       <span class="quote">“<span class="quote">
       <span class="command">
@@ -1783,9 +1767,9 @@ hdr_order From Date: From: To: Cc: Subject:
         <code>regexp</code>
       </em>... }</p>
     </div>
-    <p>With various functions, Mutt will treat messages differently, depending on whether you sent them or whether you received them from someone else. For instance, when replying to a message that you sent to a different party, Mutt will automatically suggest to send the response to the original message's recipients — responding to yourself won't make much sense in many cases. (See
+    <p>With various functions, NeoMutt will treat messages differently, depending on whether you sent them or whether you received them from someone else. For instance, when replying to a message that you sent to a different party, NeoMutt will automatically suggest to send the response to the original message's recipients — responding to yourself won't make much sense in many cases. (See
     <a class="link" href="reference.html#reply-to" title="3.283.&#160;reply_to">$reply_to</a>.)</p>
-    <p>Many users receive e-mail under a number of different addresses. To fully use Mutt's features here, the program must be able to recognize what e-mail addresses you receive mail under. That's the purpose of the
+    <p>Many users receive e-mail under a number of different addresses. To fully use NeoMutt's features here, the program must be able to recognize what e-mail addresses you receive mail under. That's the purpose of the
     <span class="command">
       <strong>alternates</strong>
     </span>command: It takes a list of regular expressions, each of which can identify an address under which you receive e-mail.</p>
@@ -1793,7 +1777,7 @@ hdr_order From Date: From: To: Cc: Subject:
     <pre class="screen">
 alternates user@example
 </pre>
-    <p>Mutt will consider
+    <p>NeoMutt will consider
     <span class="quote">“<span class="quote">
       <code class="literal">some-user@example</code>
     </span>”</span> as being your address, too which may not be desired. As a solution, in such cases addresses should be specified as:</p>
@@ -1904,8 +1888,8 @@ alternates '^user@example$'
         <code>regexp</code>
       </em>... }</p>
     </div>
-    <p>Mutt has a few nice features for
-    <a class="link" href="advancedusage.html#using-lists" title="11.&#160;Handling Mailing Lists">handling mailing lists</a>. In order to take advantage of them, you must specify which addresses belong to mailing lists, and which mailing lists you are subscribed to. Mutt also has limited support for auto-detecting mailing lists: it supports parsing
+    <p>NeoMutt has a few nice features for
+    <a class="link" href="advancedusage.html#using-lists" title="11.&#160;Handling Mailing Lists">handling mailing lists</a>. In order to take advantage of them, you must specify which addresses belong to mailing lists, and which mailing lists you are subscribed to. NeoMutt also has limited support for auto-detecting mailing lists: it supports parsing
     <code class="literal">mailto:</code>links in the common
     <code class="literal">List-Post:</code>header which has the same effect as specifying the list address via the
     <span class="command">
@@ -1913,13 +1897,13 @@ alternates '^user@example$'
     </span>command (except the group feature). Once you have done this, the
     <a class="link" href="gettingstarted.html#list-reply">
       <code class="literal">&lt;list-reply&gt;</code>
-    </a>function will work for all known lists. Additionally, when you send a message to a subscribed list, Mutt will add a Mail-Followup-To header to tell other users' mail user agents not to send copies of replies to your personal address.</p>
+    </a>function will work for all known lists. Additionally, when you send a message to a subscribed list, NeoMutt will add a Mail-Followup-To header to tell other users' mail user agents not to send copies of replies to your personal address.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The Mail-Followup-To header is a non-standard extension which is not supported by all mail user agents. Adding it is not bullet-proof against receiving personal CCs of list messages. Also note that the generation of the Mail-Followup-To header is controlled by the
       <a class="link" href="reference.html#followup-to" title="3.80.&#160;followup_to">$followup_to</a> configuration variable since it's common practice on some mailing lists to send Cc upon replies (which is more a group- than a list-reply).</p>
     </div>
-    <p>More precisely, Mutt maintains lists of patterns for the addresses of known and subscribed mailing lists. Every subscribed mailing list is known. To mark a mailing list as known, use the
+    <p>More precisely, NeoMutt maintains lists of patterns for the addresses of known and subscribed mailing lists. Every subscribed mailing list is known. To mark a mailing list as known, use the
     <span class="command">
       <strong>list</strong>
     </span>command. To mark it as subscribed, use
@@ -1931,22 +1915,22 @@ alternates '^user@example$'
 subscribe [0-9]+.*@bugs.debian.org
 </pre>
     <p>as it's often sufficient to just give a portion of the list's e-mail address.</p>
-    <p>Specify as much of the address as you need to to remove ambiguity. For example, if you've subscribed to the Mutt mailing list, you will receive mail addressed to
-    <code class="literal">mutt-users@mutt.org</code>. So, to tell Mutt that this is a mailing list, you could add
-    <code class="literal">lists mutt-users@</code>to your initialization file. To tell Mutt that you are subscribed to it, add
+    <p>Specify as much of the address as you need to to remove ambiguity. For example, if you've subscribed to the NeoMutt mailing list, you will receive mail addressed to
+    <code class="literal">neomutt-users@neomutt.org</code>. So, to tell NeoMutt that this is a mailing list, you could add
+    <code class="literal">lists neomutt-users@</code>to your initialization file. To tell NeoMutt that you are subscribed to it, add
     <code class="literal">
     <span class="command">
       <strong>subscribe</strong>
-    </span>mutt-users</code> to your initialization file instead. If you also happen to get mail from someone whose address is
-    <code class="literal">mutt-users@example.com</code>, you could use
+    </span>neomutt-users</code> to your initialization file instead. If you also happen to get mail from someone whose address is
+    <code class="literal">neomutt-users@example.com</code>, you could use
     <code class="literal">
     <span class="command">
       <strong>lists</strong>
-    </span>^mutt-users@mutt\\.org$</code>or
+    </span>^neomutt-users@neomutt\\.org$</code>or
     <code class="literal">
     <span class="command">
       <strong>subscribe</strong>
-    </span>^mutt-users@mutt\\.org$</code>to match only mail from the actual list.</p>
+    </span>^neomutt-users@neomutt\\.org$</code>to match only mail from the actual list.</p>
     <p>The
     <code class="literal">-group</code> flag adds all of the subsequent regular expressions to the named
     <a class="link" href="#addrgroup" title="3.&#160;Address Groups">address group</a> in addition to adding to the specified address list.</p>
@@ -2033,16 +2017,16 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>
     <span class="emphasis">
       <em>folder</em>
-    </span>can either be a local file or directory (Mbox/Mmdf or Maildir/Mh). If Mutt was built with POP and/or IMAP support,
+    </span>can either be a local file or directory (Mbox/Mmdf or Maildir/Mh). If NeoMutt was built with POP and/or IMAP support,
     <span class="emphasis">
       <em>folder</em>
     </span>can also be a POP/IMAP folder URL. The URL syntax is described in
     <a class="xref" href="optionalfeatures.html#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>, POP and IMAP are described in
     <a class="xref" href="optionalfeatures.html#pop" title="3.&#160;POP3 Support">Section&#160;3, “POP3 Support”</a> and
     <a class="xref" href="optionalfeatures.html#imap" title="4.&#160;IMAP Support">Section&#160;4, “IMAP Support”</a> respectively.</p>
-    <p>Mutt provides a number of advanced features for handling (possibly many) folders and new mail within them, please refer to
+    <p>NeoMutt provides a number of advanced features for handling (possibly many) folders and new mail within them, please refer to
     <a class="xref" href="/feature/new-mail" title="New Mail Feature">Chapter&#160;24,
-    <em>New Mail Feature</em></a>for details (including in what situations and how often Mutt checks for new mail).</p>
+    <em>New Mail Feature</em></a>for details (including in what situations and how often NeoMutt checks for new mail).</p>
     <p>The
     <span class="quote">“<span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail. Use
     <span class="quote">“<span class="quote">unmailboxes *</span>”</span> to remove all tokens.</p>
@@ -2059,7 +2043,7 @@ subscribe [0-9]+.*@bugs.debian.org
       <a class="link" href="reference.html#spoolfile" title="3.359.&#160;spoolfile">$spoolfile</a>) should be set before the
       <span class="command">
         <strong>mailboxes</strong>
-      </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise Mutt tries to find it relative to the directory from where Mutt was started which may not always be desired.</p>
+      </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise NeoMutt tries to find it relative to the directory from where NeoMutt was started which may not always be desired.</p>
     </div>
   </div>
   <div class="sect1">
@@ -2095,7 +2079,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>For example, if you would like to add an
     <span class="quote">“<span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
     <a class="xref" href="#ex-my-hdr" title="Example&#160;3.11.&#160;Defining custom headers">Example&#160;3.11, “Defining custom headers”</a> in your
-    <code class="literal">.muttrc</code>.</p>
+    <code class="literal">.neomuttrc</code>.</p>
     <div class="example">
       <a class="offset" id="ex-my-hdr"></a>
       <p class="title">
@@ -2114,7 +2098,7 @@ my_hdr Organization: A Really Big Company, Anytown, USA
       <span class="emphasis">
         <em>not</em>
       </span>allowed between the keyword and the colon (
-      <span class="quote">“<span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so Mutt enforces the rule.</p>
+      <span class="quote">“<span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so NeoMutt enforces the rule.</p>
     </div>
     <p>If you would like to add a header field to a single message, you should either set the
     <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> variable, or use the
@@ -2160,7 +2144,7 @@ unmy_hdr to cc
       <em>pattern</em>
     </span>, see
     <a class="xref" href="advancedusage.html#pattern-hook" title="6.1.&#160;Message Matching in Hooks">Message Matching in Hooks</a> for information on the exact format.</p>
-    <p>To provide more flexibility and good defaults, Mutt applies the expandos of
+    <p>To provide more flexibility and good defaults, NeoMutt applies the expandos of
     <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">$index_format</a> to
     <span class="emphasis">
       <em>mailbox</em>
@@ -2212,7 +2196,7 @@ save-hook aol\\.com$ +spam
       </p>
     </div>
     <p>This command is used to save outgoing mail in a mailbox other than
-    <a class="link" href="reference.html#record" title="3.277.&#160;record">$record</a>. Mutt searches the initial list of message recipients for the first matching
+    <a class="link" href="reference.html#record" title="3.277.&#160;record">$record</a>. NeoMutt searches the initial list of message recipients for the first matching
     <span class="emphasis">
       <em>pattern</em>
     </span>and uses
@@ -2220,7 +2204,7 @@ save-hook aol\\.com$ +spam
       <em>mailbox</em>
     </span>as the default Fcc: mailbox. If no match is found the message will be saved to
     <a class="link" href="reference.html#record" title="3.277.&#160;record">$record</a> mailbox.</p>
-    <p>To provide more flexibility and good defaults, Mutt applies the expandos of
+    <p>To provide more flexibility and good defaults, NeoMutt applies the expandos of
     <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">$index_format</a> to
     <span class="emphasis">
       <em>mailbox</em>
@@ -2394,12 +2378,12 @@ fcc-hook [@.]aol\\.com$ +spammers
     <span class="command">
       <strong>reply-hook</strong>
     </span>, when multiple matches occur, commands are executed in the order they are specified in the
-    <code class="literal">.muttrc</code>(for that type of hook).</p>
+    <code class="literal">.neomuttrc</code>(for that type of hook).</p>
     <p>Example:
     <code class="literal">
     <span class="command">
       <strong>send-hook</strong>
-    </span>mutt "
+    </span>work "
     <span class="command">
       <strong>set</strong>
     </span>mime_forward signature=''"</code></p>
@@ -2455,7 +2439,7 @@ fcc-hook [@.]aol\\.com$ +spammers
     <span class="emphasis">
       <em>pattern</em>
     </span>matches the message to be displayed. When multiple matches occur, commands are executed in the order they are specified in the
-    <code class="literal">.muttrc</code>.</p>
+    <code class="literal">.neomuttrc</code>.</p>
     <p>See
     <a class="xref" href="advancedusage.html#pattern-hook" title="6.1.&#160;Message Matching in Hooks">Message Matching in Hooks</a> for information on the exact format of
     <span class="emphasis">
@@ -2488,11 +2472,11 @@ message-hook '~f freshmeat-news' 'set pager="less \"+/^  subject: .*\""'
         </em>
       </p>
     </div>
-    <p>When encrypting messages with PGP/GnuPG or OpenSSL, you may want to associate a certain key with a given e-mail address automatically, either because the recipient's public key can't be deduced from the destination address, or because, for some reasons, you need to override the key Mutt would normally use. The
+    <p>When encrypting messages with PGP/GnuPG or OpenSSL, you may want to associate a certain key with a given e-mail address automatically, either because the recipient's public key can't be deduced from the destination address, or because, for some reasons, you need to override the key NeoMutt would normally use. The
     <span class="command">
       <strong>crypt-hook</strong>
-    </span>command provides a method by which you can specify the ID of the public key to be used when encrypting messages to a certain recipient. You may use multiple crypt-hooks with the same regexp; multiple matching crypt-hooks result in the use of multiple keyids for a recipient. During key selection, Mutt will confirm whether each crypt-hook is to be used (unless the
-    <a class="link" href="reference.html#crypt-confirmhook" title="3.47.&#160;crypt_confirmhook">$crypt_confirmhook</a> option is unset). If all crypt-hooks for a recipient are declined, Mutt will use the original recipient address for key selection instead.</p>
+    </span>command provides a method by which you can specify the ID of the public key to be used when encrypting messages to a certain recipient. You may use multiple crypt-hooks with the same regexp; multiple matching crypt-hooks result in the use of multiple keyids for a recipient. During key selection, NeoMutt will confirm whether each crypt-hook is to be used (unless the
+    <a class="link" href="reference.html#crypt-confirmhook" title="3.47.&#160;crypt_confirmhook">$crypt_confirmhook</a> option is unset). If all crypt-hooks for a recipient are declined, NeoMutt will use the original recipient address for key selection instead.</p>
     <p>The meaning of
     <span class="emphasis">
       <em>keyid</em>
@@ -2537,7 +2521,7 @@ folder-hook . 'push &lt;collapse-all&gt;'
     <br class="example-break" />
     <p>For using functions like shown in the example, it's important to use angle brackets (
     <span class="quote">“<span class="quote">&lt;</span>”</span> and
-    <span class="quote">“<span class="quote">&gt;</span>”</span>) to make Mutt recognize the input as a function name. Otherwise it will simulate individual just keystrokes, i.e.
+    <span class="quote">“<span class="quote">&gt;</span>”</span>) to make NeoMutt recognize the input as a function name. Otherwise it will simulate individual just keystrokes, i.e.
     <span class="quote">“<span class="quote">
       <code class="literal">push collapse-all</code>
     </span>”</span> would be interpreted as if you had typed
@@ -2692,7 +2676,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
         <code>pattern</code>
       </em>}</p>
     </div>
-    <p>Mutt has generalized support for external spam-scoring filters. By defining your spam patterns with the
+    <p>NeoMutt has generalized support for external spam-scoring filters. By defining your spam patterns with the
     <span class="command">
       <strong>spam</strong>
     </span>and
@@ -2733,7 +2717,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="quote">“<span class="quote">back-reference</span>”</span> refers to a sub-expression contained within parentheses.)
     <code class="literal">%1</code> is replaced with the first back-reference in the regex,
     <code class="literal">%2</code> with the second, etc.</p>
-    <p>To match spam tags, mutt needs the corresponding header information which is always the case for local and POP folders but not for IMAP in the default configuration. Depending on the spam header to be analyzed,
+    <p>To match spam tags, NeoMutt needs the corresponding header information which is always the case for local and POP folders but not for IMAP in the default configuration. Depending on the spam header to be analyzed,
     <a class="link" href="reference.html#imap-headers" title="3.123.&#160;imap_headers">$imap_headers</a> may need to be adjusted.</p>
     <p>If you're using multiple spam filters, a message can have more than one spam-related header. You can define
     <span class="command">
@@ -2778,11 +2762,11 @@ set spam_separator=", "
     <code class="literal">~H</code> pattern-matching expression matches against for
     <code class="literal">&lt;search&gt;</code>and
     <code class="literal">&lt;limit&gt;</code>functions. And it's what sorting by spam attribute will use as a sort key.</p>
-    <p>That's a pretty complicated example, and most people's actual environments will have only one spam filter. The simpler your configuration, the more effective Mutt can be, especially when it comes to sorting.</p>
-    <p>Generally, when you sort by spam tag, Mutt will sort
+    <p>That's a pretty complicated example, and most people's actual environments will have only one spam filter. The simpler your configuration, the more effective NeoMutt can be, especially when it comes to sorting.</p>
+    <p>Generally, when you sort by spam tag, NeoMutt will sort
     <span class="emphasis">
       <em>lexically</em>
-    </span>— that is, by ordering strings alphanumerically. However, if a spam tag begins with a number, Mutt will sort numerically first, and lexically only when two numbers are equal in value. (This is like UNIX's
+    </span>— that is, by ordering strings alphanumerically. However, if a spam tag begins with a number, NeoMutt will sort numerically first, and lexically only when two numbers are equal in value. (This is like UNIX's
     <code class="literal">sort -n</code>.) A message with no spam attributes at all — that is, one that didn't match
     <span class="emphasis">
       <em>any</em>
@@ -2791,7 +2775,7 @@ set spam_separator=", "
       <strong>spam</strong>
     </span>patterns — is sorted at lowest priority. Numbers are sorted next, beginning with 0 and ranging upward. Finally, non-numeric strings are sorted, with
     <span class="quote">“<span class="quote">a</span>”</span> taking lower priority than
-    <span class="quote">“<span class="quote">z</span>”</span>. Clearly, in general, sorting by spam tags is most effective when you can coerce your filter to give you a raw number. But in case you can't, Mutt can still do something useful.</p>
+    <span class="quote">“<span class="quote">z</span>”</span>. Clearly, in general, sorting by spam tags is most effective when you can coerce your filter to give you a raw number. But in case you can't, NeoMutt can still do something useful.</p>
     <p>The
     <span class="command">
       <strong>nospam</strong>
@@ -2855,7 +2839,7 @@ set spam_separator=", "
     </span>commands as you like. You can even do your own primitive
     <span class="command">
       <strong>spam</strong>
-    </span>detection within Mutt — for example, if you consider all mail from
+    </span>detection within NeoMutt — for example, if you consider all mail from
     <code class="literal">MAILER-DAEMON</code> to be spam, you can use a
     <span class="command">
       <strong>spam</strong>
@@ -2882,7 +2866,7 @@ spam "^From: .*MAILER-DAEMON"       "999"
           </div>
         </div>
       </div>
-      <p>Mutt supports these types of configuration variables:</p>
+      <p>NeoMutt supports these types of configuration variables:</p>
       <div class="variablelist">
         <dl class="variablelist">
           <dt>
@@ -3127,7 +3111,7 @@ set ?allow_8bit
           </div>
         </div>
         <p>Along with the variables listed in the
-        <a class="link" href="reference.html#variables" title="3.&#160;Configuration Variables">Configuration variables</a> section, Mutt supports user-defined variables with names starting with
+        <a class="link" href="reference.html#variables" title="3.&#160;Configuration Variables">Configuration variables</a> section, NeoMutt supports user-defined variables with names starting with
         <code class="literal">my_</code> as in, for example,
         <code class="literal">my_cfgdir</code>.</p>
         <p>The
@@ -3167,7 +3151,7 @@ set ?allow_8bit
           </p>
           <div class="example-contents">
             <pre class="screen">
-set my_cfgdir = $HOME/mutt/config
+set my_cfgdir = $HOME/neomutt/config
 source $my_cfgdir/hooks $my_cfgdir/macros
 <span class="comment"># more source commands...</span>
 </pre>
@@ -3194,7 +3178,7 @@ macro pager ,x '\
           </div>
         </div>
         <br class="example-break" />
-        <p>Since Mutt expands such values already when parsing the configuration file(s), the value of
+        <p>Since NeoMutt expands such values already when parsing the configuration file(s), the value of
         <code class="literal">$my_delete</code> in the last example would be the value of
         <a class="link" href="reference.html#delete" title="3.60.&#160;delete">$delete</a> exactly as it was at that point during parsing the configuration file. If another statement would change the value for
         <a class="link" href="reference.html#delete" title="3.60.&#160;delete">$delete</a> later in the same or another file, it would have no effect on
@@ -3219,7 +3203,7 @@ macro pager &lt;PageDown&gt; "\
         <code class="literal">&lt;enter-command&gt;</code>and the
         <span class="command">
           <strong>set</strong>
-        </span>configuration command, preventing Mutt from recording the
+        </span>configuration command, preventing NeoMutt from recording the
         <span class="command">
           <strong>macro</strong>
         </span>'s commands into its history.</p>
@@ -3234,7 +3218,7 @@ macro pager &lt;PageDown&gt; "\
           </div>
         </div>
       </div>
-      <p>Variables are always assigned string values which Mutt parses into its internal representation according to the type of the variable, for example an integer number for numeric types. For all queries (including $-expansion) the value is converted from its internal type back into string. As a result, any variable can be assigned any value given that its content is valid for the target. This also counts for custom variables which are of type string. In case of parsing errors, Mutt will print error messages.
+      <p>Variables are always assigned string values which NeoMutt parses into its internal representation according to the type of the variable, for example an integer number for numeric types. For all queries (including $-expansion) the value is converted from its internal type back into string. As a result, any variable can be assigned any value given that its content is valid for the target. This also counts for custom variables which are of type string. In case of parsing errors, NeoMutt will print error messages.
       <a class="xref" href="#ex-myvar4" title="Example&#160;3.18.&#160;Type conversions using variables">Example&#160;3.18, “Type conversions using variables”</a> demonstrates type conversions.</p>
       <div class="example">
         <a class="offset" id="ex-myvar4"></a>
@@ -3262,7 +3246,8 @@ set my_foo = $my_inc
       <br class="example-break" />
       <p>These assignments are all valid. If, however, the value of
       <code class="literal">$my_lines</code> would have been
-      <span class="quote">“<span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
+      <span class="quote">“
+      <span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
       <code class="literal">$pager_index_lines</code> would have produced an error message.</p>
       <p>Type conversion applies to all configuration commands which take arguments. But please note that every expanded value of a variable is considered just a single token. A working example is:</p>
       <pre class="screen">
@@ -3281,7 +3266,8 @@ mailboxes $my_mx +mailbox3
 </pre>
       <p>because the value of
       <code class="literal">$my_mx</code> is interpreted as a single mailbox named
-      <span class="quote">“<span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
+      <span class="quote">“
+      <span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
     </div>
   </div>
   <div class="sect1">
@@ -3303,7 +3289,7 @@ mailboxes $my_mx +mailbox3
     </div>
     <p>This command allows the inclusion of initialization commands from other files. For example, I place all of my aliases in
     <code class="literal">~/.mail_aliases</code> so that I can make my
-    <code class="literal">~/.muttrc</code> readable and keep my aliases private.</p>
+    <code class="literal">~/.neomuttrc</code> readable and keep my aliases private.</p>
     <p>If the filename begins with a tilde (
     <span class="quote">“<span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
     <p>If the filename ends with a vertical bar (
@@ -3361,7 +3347,7 @@ mailboxes $my_mx +mailbox3
           </div>
         </div>
       </div>
-      <p>Format strings are a general concept you'll find in several locations through the Mutt configuration, especially in the
+      <p>Format strings are a general concept you'll find in several locations through the NeoMutt configuration, especially in the
       <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">$index_format</a>,
       <a class="link" href="reference.html#pager-format" title="3.210.&#160;pager_format">$pager_format</a>,
       <a class="link" href="reference.html#status-format" title="3.376.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
@@ -3377,7 +3363,7 @@ mailboxes $my_mx +mailbox3
       <code class="literal">%4c</code>,
       <code class="literal">%.15F</code> and
       <code class="literal">%-12.15L</code>.</p>
-      <p>Mutt adds some other modifiers to format strings. If you use an equals symbol (
+      <p>NeoMutt adds some other modifiers to format strings. If you use an equals symbol (
       <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion — that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
       <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
@@ -3464,13 +3450,13 @@ set status_format="script.sh '%r %f (%L)'|"
         </div>
       </div>
       <br class="example-break" />
-      <p>will make Mutt expand
+      <p>will make NeoMutt expand
       <code class="literal">%r</code>,
       <code class="literal">%f</code> and
       <code class="literal">%L</code> before calling the script. The example also shows that arguments can be quoted: the script will receive the expanded string between the single quotes as the only argument.</p>
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code> script installed in the
-      <code class="literal">samples</code> subdirectory of the Mutt documentation: it can be used as filter for
+      <code class="literal">samples</code> subdirectory of the NeoMutt documentation: it can be used as filter for
       <a class="link" href="reference.html#status-format" title="3.376.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
@@ -3482,7 +3468,7 @@ set status_format="script.sh '%r %f (%L)'|"
           </div>
         </div>
       </div>
-      <p>In most format strings, Mutt supports different types of padding using special %-expandos:</p>
+      <p>In most format strings, NeoMutt supports different types of padding using special %-expandos:</p>
       <div class="variablelist">
         <dl class="variablelist">
           <dt>
@@ -3491,7 +3477,7 @@ set status_format="script.sh '%r %f (%L)'|"
             </span>
           </dt>
           <dd>
-            <p>When this occurs, Mutt will fill the rest of the line with the character
+            <p>When this occurs, NeoMutt will fill the rest of the line with the character
             <code class="literal">X</code>. For example, filling the rest of the line with dashes is done by setting:</p>
             <pre class="screen">
 set status_format = "%v on %h: %B: %?n?%n&amp;no? new messages %|-"
@@ -3577,12 +3563,12 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
         <code>header-field</code>
       </em>... }</p>
     </div>
-    <p>As a security measure, Mutt will only add user-approved header fields from a
-    <code class="literal">mailto:</code>URL. This is necessary since Mutt will handle certain header fields, such as
+    <p>As a security measure, NeoMutt will only add user-approved header fields from a
+    <code class="literal">mailto:</code>URL. This is necessary since NeoMutt will handle certain header fields, such as
     <code class="literal">Attach:</code>, in a special way. The
     <code class="literal">mailto_allow</code> and
     <code class="literal">unmailto_allow</code> commands allow the user to modify the list of approved headers.</p>
-    <p>Mutt initializes the default list to contain only the
+    <p>NeoMutt initializes the default list to contain only the
     <code class="literal">Subject</code> and
     <code class="literal">Body</code> header fields, which are the only requirement specified by the
     <code class="literal">mailto:</code>specification in RFC2368, and the

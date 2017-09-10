@@ -22,7 +22,7 @@ title: Reference
       </div>
     </div>
     <p>Running
-    <code class="literal">mutt</code> with no arguments will make Mutt attempt to read your spool mailbox. However, it is possible to read other mailboxes and to send messages from the command line as well.</p>
+    <code class="literal">neomutt</code> with no arguments will make NeoMutt attempt to read your spool mailbox. However, it is possible to read other mailboxes and to send messages from the command line as well.</p>
     <div >
       <a class="offset" id="tab-commandline-options"></a>
       <p class="title">
@@ -59,12 +59,12 @@ title: Reference
             </tr>
             <tr>
               <td>-d</td>
-              <td>log debugging output to ~/.muttdebug0 if mutt was compiled with
+              <td>log debugging output to ~/.muttdebug0 if NeoMutt was compiled with
               <code class="literal">+debug</code>; it can range from 1-5 and affects verbosity (a value of 2 is recommended)</td>
             </tr>
             <tr>
               <td>-D</td>
-              <td>print the value of all Mutt variables to stdout</td>
+              <td>print the value of all NeoMutt variables to stdout</td>
             </tr>
             <tr>
               <td>-D -S</td>
@@ -104,7 +104,7 @@ title: Reference
             </tr>
             <tr>
               <td>-n</td>
-              <td>do not read the system Muttrc</td>
+              <td>do not read the system neomuttrc</td>
             </tr>
             <tr>
               <td>-p</td>
@@ -153,11 +153,11 @@ title: Reference
     <p>To read messages in a mailbox</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mutt</code>[
+      <code class="command">neomutt</code>[
       <code class="option">-nz</code>] [
       <code class="option">-F</code>
       <em class="replaceable">
-        <code>muttrc</code>
+        <code>neomuttrc</code>
       </em>] [
       <code class="option">-m</code>
       <em class="replaceable">
@@ -171,11 +171,11 @@ title: Reference
     <p>To compose a new message</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mutt</code>[
+      <code class="command">neomutt</code>[
       <code class="option">-En</code>] [
       <code class="option">-F</code>
       <em class="replaceable">
-        <code>muttrc</code>
+        <code>neomuttrc</code>
       </em>] [
       <code class="option">-c</code>
       <em class="replaceable">
@@ -200,10 +200,10 @@ title: Reference
         <code>mailto_url</code>
       </em>...</p>
     </div>
-    <p>Mutt also supports a
+    <p>NeoMutt also supports a
     <span class="quote">“<span class="quote">batch</span>”</span> mode to send prepared messages. Simply redirect input from the file you wish to send. For example,</p>
     <pre class="screen">
-mutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
+neomutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
 </pre>
     <p>will send a message to
     <code class="literal">&lt;professor@bigschool.edu&gt;</code>with a subject of
@@ -222,21 +222,21 @@ mutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
     </span>will be attached as a MIME part to the message. To attach a single or several files, use
     <span class="quote">“<span class="quote">--</span>”</span> to separate files and recipient addresses:</p>
     <pre class="screen">
-mutt -a image.png -- some@one.org
+neomutt -a image.png -- some@one.org
 </pre>
     <p>or</p>
     <pre class="screen">
-mutt -a *.png -- some@one.org
+neomutt -a *.png -- some@one.org
 </pre>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The
       <code class="literal">-a</code> option must be last in the option list.</p>
     </div>
-    <p>In addition to accepting a list of email addresses, Mutt also accepts a URL with the
-    <code class="literal">mailto:</code>schema as specified in RFC2368. This is useful when configuring a web browser to launch Mutt when clicking on mailto links.</p>
+    <p>In addition to accepting a list of email addresses, NeoMutt also accepts a URL with the
+    <code class="literal">mailto:</code>schema as specified in RFC2368. This is useful when configuring a web browser to launch NeoMutt when clicking on mailto links.</p>
     <pre class="screen">
-mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
+neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
 </pre>
   </div>
   <div class="sect1">
@@ -248,7 +248,7 @@ mutt mailto:some@one.org?subject=test&amp;cc=other@one.org
         </div>
       </div>
     </div>
-    <p>The following are the commands understood by Mutt:</p>
+    <p>The following are the commands understood by NeoMutt:</p>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
@@ -1346,7 +1346,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
         <p>Type:&#160;path
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">~/.muttrc</code>
+          <code class="literal">~/.neomuttrc</code>
         </span>”</span></p>
       </div>
       <p>The default file in which to save aliases created by the
@@ -1360,12 +1360,12 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <p>
       <span class="bold">
         <strong>Note:</strong>
-      </span>Mutt will not automatically source this file; you must explicitly use the
+      </span>NeoMutt will not automatically source this file; you must explicitly use the
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#source" title="27.&#160;Reading Initialization Commands From Another File">source</a>
       </span>”</span> command for it to be executed in case this option points to a dedicated alias file.</p>
-      <p>The default for this option is the currently used muttrc file, or
-      <span class="quote">“<span class="quote">~/.muttrc</span>”</span> if no user muttrc was found.</p>
+      <p>The default for this option is the currently used neomuttrc file, or
+      <span class="quote">“<span class="quote">~/.neomuttrc</span>”</span> if no user neomuttrc was found.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1493,7 +1493,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will use plain ASCII characters when displaying thread and attachment trees, instead of the default
+      </span>, NeoMutt will use plain ASCII characters when displaying thread and attachment trees, instead of the default
       <span class="emphasis">
         <em>ACS</em>
       </span>characters.</p>
@@ -1514,7 +1514,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will prompt you for blind-carbon-copy (Bcc) recipients before editing an outgoing message.</p>
+      </span>, NeoMutt will prompt you for blind-carbon-copy (Bcc) recipients before editing an outgoing message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1532,7 +1532,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will prompt you for carbon-copy (Cc) recipients before editing the body of an outgoing message.</p>
+      </span>, NeoMutt will prompt you for carbon-copy (Cc) recipients before editing the body of an outgoing message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1547,7 +1547,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>If set, Mutt will prompt you for follow-up groups before editing the body of an outgoing message.</p>
+      <p>If set, NeoMutt will prompt you for follow-up groups before editing the body of an outgoing message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1562,7 +1562,7 @@ set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>If set, Mutt will prompt you for x-comment-to field before editing the body of an outgoing message.</p>
+      <p>If set, NeoMutt will prompt you for x-comment-to field before editing the body of an outgoing message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1598,7 +1598,7 @@ set assumed_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable is a colon-separated list of character encoding schemes for text file attachments. Mutt uses this setting to guess which encoding files being attached are encoded in to convert them to a proper character set given in
+      <p>This variable is a colon-separated list of character encoding schemes for text file attachments. NeoMutt uses this setting to guess which encoding files being attached are encoded in to convert them to a proper character set given in
       <a class="link" href="#send-charset" title="3.301.&#160;send_charset">$send_charset</a>.</p>
       <p>If
       <span class="emphasis">
@@ -1788,11 +1788,11 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>If this variable is
       <span class="emphasis">
         <em>unset</em>
-      </span>, when operating (saving, printing, piping, etc) on a list of tagged attachments, Mutt will concatenate the attachments and will operate on them as a single attachment. The
+      </span>, when operating (saving, printing, piping, etc) on a list of tagged attachments, NeoMutt will concatenate the attachments and will operate on them as a single attachment. The
       <a class="link" href="#attach-sep" title="3.18.&#160;attach_sep">$attach_sep</a> separator is added after each attachment. When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will operate on the attachments one by one.</p>
+      </span>, NeoMutt will operate on the attachments one by one.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1831,7 +1831,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <code class="literal">strftime(3)</code>to format dates in the
       <a class="link" href="#attribution" title="3.20.&#160;attribution">attribution</a> string. Legal values are the strings your system accepts for the locale environment variable
       <code class="literal">$LC_TIME</code>.</p>
-      <p>This variable is to allow the attribution date format to be customized by recipient or folder using hooks. By default, Mutt will use your locale environment, so there is no need to set this except to override that default.</p>
+      <p>This variable is to allow the attribution date format to be customized by recipient or folder using hooks. By default, NeoMutt will use your locale environment, so there is no need to set this except to override that default.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1874,7 +1874,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>set</em>
       </span>along with
-      <a class="link" href="#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>, Mutt will skip the initial send-menu (prompting for subject and recipients) and allow you to immediately begin editing the body of your message. The send-menu may still be accessed once you have finished editing the body of your message.</p>
+      <a class="link" href="#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>, NeoMutt will skip the initial send-menu (prompting for subject and recipients) and allow you to immediately begin editing the body of your message. The send-menu may still be accessed once you have finished editing the body of your message.</p>
       <p>
       <span class="bold">
         <strong>Note:</strong>
@@ -1901,7 +1901,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>When this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will beep when an error occurs.</p>
+      </span>, NeoMutt will beep when an error occurs.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1919,7 +1919,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>When this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will beep whenever it prints a message notifying you of new mail. This is independent of the setting of the
+      </span>, NeoMutt will beep whenever it prints a message notifying you of new mail. This is independent of the setting of the
       <a class="link" href="#beep" title="3.24.&#160;beep">$beep</a> variable.</p>
     </div>
     <div class="sect2">
@@ -1959,7 +1959,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>When this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will include Delivered-To headers when bouncing messages. Postfix users may wish to
+      </span>, NeoMutt will include Delivered-To headers when bouncing messages. Postfix users may wish to
       <span class="emphasis">
         <em>unset</em>
       </span>this variable.</p>
@@ -1980,7 +1980,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>When this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will place the cursor at the beginning of the current line in menus, even when the
+      </span>, NeoMutt will place the cursor at the beginning of the current line in menus, even when the
       <a class="link" href="#arrow-cursor" title="3.8.&#160;arrow_cursor">$arrow_cursor</a> variable is
       <span class="emphasis">
         <em>unset</em>
@@ -2005,7 +2005,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>If this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will mark all articles in newsgroup as read when you quit the newsgroup (catchup newsgroup).</p>
+      </span>, NeoMutt will mark all articles in newsgroup as read when you quit the newsgroup (catchup newsgroup).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2027,7 +2027,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>You can also manually add CA certificates in this file. Any server certificate that is signed with one of these CA certificates is also automatically accepted.</p>
       <p>Example:</p>
       <pre class="screen">
-set certificate_file=~/.mutt/certificates
+set certificate_file=~/.neomutt/certificates
 </pre>
     </div>
     <div class="sect2">
@@ -2045,13 +2045,13 @@ set certificate_file=~/.mutt/certificates
       </div>
       <p>Character set your terminal uses to display and enter textual data. It is also the fallback for
       <a class="link" href="#send-charset" title="3.301.&#160;send_charset">$send_charset</a>.</p>
-      <p>Upon startup Mutt tries to derive this value from environment variables such as
+      <p>Upon startup NeoMutt tries to derive this value from environment variables such as
       <code class="literal">$LC_CTYPE</code> or
       <code class="literal">$LANG</code>.</p>
       <p>
       <span class="bold">
         <strong>Note:</strong>
-      </span>It should only be set in case Mutt isn't able to determine the character set used correctly.</p>
+      </span>It should only be set in case NeoMutt isn't able to determine the character set used correctly.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2069,7 +2069,7 @@ set certificate_file=~/.mutt/certificates
       <p>When this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will use file size attribute instead of access time when checking for new mail in mbox and mmdf folders.</p>
+      </span>, NeoMutt will use file size attribute instead of access time when checking for new mail in mbox and mmdf folders.</p>
       <p>This variable is
       <span class="emphasis">
         <em>unset</em>
@@ -2077,7 +2077,7 @@ set certificate_file=~/.mutt/certificates
       <p>Note that enabling this variable should happen before any
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">mailboxes</a>
-      </span>”</span> directives occur in configuration files regarding mbox or mmdf folders because mutt needs to determine the initial new mail status of such a mailbox by performing a fast mailbox scan when it is defined. Afterwards the new mail status is tracked by file size changes.</p>
+      </span>”</span> directives occur in configuration files regarding mbox or mmdf folders because NeoMutt needs to determine the initial new mail status of such a mailbox by performing a fast mailbox scan when it is defined. Afterwards the new mail status is tracked by file size changes.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2105,7 +2105,7 @@ set certificate_file=~/.mutt/certificates
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will check for new mail delivered while the mailbox is open. Especially with MH mailboxes, this operation can take quite some time since it involves scanning the directory and checking each file to see if it has already been looked at. If this variable is
+      </span>, NeoMutt will check for new mail delivered while the mailbox is open. Especially with MH mailboxes, this operation can take quite some time since it involves scanning the directory and checking each file to see if it has already been looked at. If this variable is
       <span class="emphasis">
         <em>unset</em>
       </span>, no check for new mail is performed while the mailbox is open.</p>
@@ -2126,7 +2126,7 @@ set certificate_file=~/.mutt/certificates
       <p>When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will not collapse a thread if it contains any unread messages.</p>
+      </span>, NeoMutt will not collapse a thread if it contains any unread messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2144,7 +2144,7 @@ set certificate_file=~/.mutt/certificates
       <p>When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will not collapse a thread if it contains any flagged messages.</p>
+      </span>, NeoMutt will not collapse a thread if it contains any flagged messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2187,7 +2187,7 @@ set certificate_file=~/.mutt/certificates
             </tr>
             <tr>
               <td>%v</td>
-              <td>Mutt version string</td>
+              <td>NeoMutt version string</td>
             </tr>
           </tbody>
         </table>
@@ -2209,7 +2209,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>When defined, Mutt will recode commands in rc files from this encoding to the current character set as specified by
+      <p>When defined, NeoMutt will recode commands in rc files from this encoding to the current character set as specified by
       <a class="link" href="#charset" title="3.31.&#160;charset">$charset</a> and aliases written to
       <a class="link" href="#alias-file" title="3.4.&#160;alias_file">$alias_file</a> from the current character set.</p>
       <p>Please note that if setting
@@ -2233,7 +2233,7 @@ set certificate_file=~/.mutt/certificates
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will prompt for confirmation when appending messages to an existing mailbox.</p>
+      </span>, NeoMutt will prompt for confirmation when appending messages to an existing mailbox.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2251,7 +2251,7 @@ set certificate_file=~/.mutt/certificates
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will prompt for confirmation when saving messages to a mailbox which does not yet exist before creating it.</p>
+      </span>, NeoMutt will prompt for confirmation when saving messages to a mailbox which does not yet exist before creating it.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2266,7 +2266,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;number
         <br />Default:&#160;30</p>
       </div>
-      <p>Causes Mutt to timeout a network connection (for IMAP, POP or SMTP) after this many seconds if the connection is not able to be established. A negative value causes Mutt to wait indefinitely for the connection attempt to succeed.</p>
+      <p>Causes NeoMutt to timeout a network connection (for IMAP, POP or SMTP) after this many seconds if the connection is not able to be established. A negative value causes NeoMutt to wait indefinitely for the connection attempt to succeed.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2320,7 +2320,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Setting this variable will cause Mutt to always attempt to PGP encrypt outgoing messages. This is probably only useful in connection to the
+      <p>Setting this variable will cause NeoMutt to always attempt to PGP encrypt outgoing messages. This is probably only useful in connection to the
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span> command. It can be overridden by use of the pgp menu, when encryption is not required or signing is requested as well. If
@@ -2342,7 +2342,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>This variable controls whether or not mutt may automatically enable PGP encryption/signing for messages. See also
+      <p>This variable controls whether or not NeoMutt may automatically enable PGP encryption/signing for messages. See also
       <a class="link" href="#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
       <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
       <a class="link" href="#crypt-autosign" title="3.45.&#160;crypt_autosign">$crypt_autosign</a>,
@@ -2362,7 +2362,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Setting this variable will cause Mutt to always attempt to cryptographically sign outgoing messages. This can be overridden by use of the pgp menu, when signing is not required or encryption is requested as well. If
+      <p>Setting this variable will cause NeoMutt to always attempt to cryptographically sign outgoing messages. This can be overridden by use of the pgp menu, when signing is not required or encryption is requested as well. If
       <a class="link" href="#smime-is-default" title="3.340.&#160;smime_is_default">$smime_is_default</a> is
       <span class="emphasis">
         <em>set</em>
@@ -2381,7 +2381,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>This variable controls whether or not mutt may automatically enable S/MIME encryption/signing for messages. See also
+      <p>This variable controls whether or not NeoMutt may automatically enable S/MIME encryption/signing for messages. See also
       <a class="link" href="#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
       <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
       <a class="link" href="#crypt-autosign" title="3.45.&#160;crypt_autosign">$crypt_autosign</a>,
@@ -2419,9 +2419,9 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Setting this variable will cause Mutt to automatically enable and disable encryption, based on whether all message recipient keys can be located by Mutt.</p>
-      <p>When this option is enabled, Mutt will enable/disable encryption each time the TO, CC, and BCC lists are edited. If
-      <a class="link" href="#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> is set, Mutt will also do so each time the message is edited.</p>
+      <p>Setting this variable will cause NeoMutt to automatically enable and disable encryption, based on whether all message recipient keys can be located by NeoMutt.</p>
+      <p>When this option is enabled, NeoMutt will enable/disable encryption each time the TO, CC, and BCC lists are edited. If
+      <a class="link" href="#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> is set, NeoMutt will also do so each time the message is edited.</p>
       <p>While this is set, encryption can't be manually enabled/disabled. The pgp or smime menus provide a selection to temporarily disable this option for the current message.</p>
       <p>If
       <a class="link" href="#crypt-autoencrypt" title="3.43.&#160;crypt_autoencrypt">$crypt_autoencrypt</a> or
@@ -2488,7 +2488,7 @@ set certificate_file=~/.mutt/certificates
         <em>set</em>
       </span>, automatically PGP or OpenSSL sign replies to messages which are encrypted. This makes sense in combination with
       <a class="link" href="#crypt-replyencrypt" title="3.49.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>, because it allows you to sign all messages which are automatically encrypted. This works around the problem noted in
-      <a class="link" href="#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>, that mutt is not able to find out whether an encrypted message is also signed. (Crypto only)</p>
+      <a class="link" href="#crypt-replysign" title="3.50.&#160;crypt_replysign">$crypt_replysign</a>, that NeoMutt is not able to find out whether an encrypted message is also signed. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2506,7 +2506,7 @@ set certificate_file=~/.mutt/certificates
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will include a time stamp in the lines surrounding PGP or S/MIME output, so spoofing such lines is more difficult. If you are using colors to mark these lines, and rely on these, you may
+      </span>, NeoMutt will include a time stamp in the lines surrounding PGP or S/MIME output, so spoofing such lines is more difficult. If you are using colors to mark these lines, and rely on these, you may
       <span class="emphasis">
         <em>unset</em>
       </span>this setting. (Crypto only)</p>
@@ -2527,7 +2527,7 @@ set certificate_file=~/.mutt/certificates
       <p>This variable controls the use of the GPGME-enabled crypto backends. If it is
       <span class="emphasis">
         <em>set</em>
-      </span>and Mutt was built with gpgme support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .muttrc; it won't have any effect when used interactively.</p>
+      </span>and NeoMutt was built with gpgme support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .neomuttrc; it won't have any effect when used interactively.</p>
       <p>Note that the GPGME backend does not support creating old-style inline (traditional) PGP encrypted or signed messages (see
       <a class="link" href="#pgp-autoinline" title="3.214.&#160;pgp_autoinline">$pgp_autoinline</a>).</p>
     </div>
@@ -2544,7 +2544,7 @@ set certificate_file=~/.mutt/certificates
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether mutt uses PKA (see http://www.g10code.de/docs/pka-intro.de.pdf) during signature verification (only supported by the GPGME backend).</p>
+      <p>Controls whether NeoMutt uses PKA (see http://www.g10code.de/docs/pka-intro.de.pdf) during signature verification (only supported by the GPGME backend).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2616,7 +2616,7 @@ set certificate_file=~/.mutt/certificates
         <br />Default:&#160;0</p>
       </div>
       <p>The debug level. Note: to debug the early startup process (before the configuration is loaded),
-      <span class="quote">“<span class="quote">-d</span>”</span> mutt argument must be used. debug_level/debug_file are ignored until it's read from the configuration file.</p>
+      <span class="quote">“<span class="quote">-d</span>”</span> neomutt argument must be used. debug_level/debug_file are ignored until it's read from the configuration file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2714,7 +2714,7 @@ set certificate_file=~/.mutt/certificates
       <p>If this option is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will untag messages when marking them for deletion. This applies when you either explicitly delete a message, or when you save it to another folder.</p>
+      </span>, NeoMutt will untag messages when marking them for deletion. This applies when you either explicitly delete a message, or when you save it to another folder.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2732,7 +2732,7 @@ set certificate_file=~/.mutt/certificates
       <p>If this option is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt's received-attachments menu will not show the subparts of individual messages in a multipart/digest. To see these subparts, press
+      </span>, NeoMutt's received-attachments menu will not show the subparts of individual messages in a multipart/digest. To see these subparts, press
       <span class="quote">“<span class="quote">v</span>”</span> on that menu.</p>
     </div>
     <div class="sect2">
@@ -2834,7 +2834,7 @@ set dsn_return=hdrs
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>This variable controls whether mutt, when
+      <p>This variable controls whether NeoMutt, when
       <a class="link" href="#sort" title="3.353.&#160;sort">$sort</a> is set to
       <span class="emphasis">
         <em>threads</em>
@@ -2860,7 +2860,7 @@ set dsn_return=hdrs
       <p>Although the compose menu may have localized header labels, the labels passed to your editor will be standard RFC2822 headers, (e.g. To:, Cc:, Subject:). Headers added in your editor must also be RFC2822 headers, or one of the pseudo headers listed in
       <span class="quote">“<span class="quote">
         <a class="link" href="gettingstarted.html#edit-header" title="6.2.&#160;Editing the Message Header">edit-header</a>
-      </span>”</span>. Mutt will not understand localized header labels, just as it would not when parsing an actual email.</p>
+      </span>”</span>. NeoMutt will not understand localized header labels, just as it would not when parsing an actual email.</p>
       <p>
       <span class="bold">
         <strong>Note</strong>
@@ -2879,7 +2879,7 @@ set dsn_return=hdrs
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable specifies which editor is used by mutt. It defaults to the value of the
+      <p>This variable specifies which editor is used by NeoMutt. It defaults to the value of the
       <code class="literal">$VISUAL</code>, or
       <code class="literal">$EDITOR</code>, environment variable, or to the string
       <span class="quote">“<span class="quote">vi</span>”</span> if neither of those are set.</p>
@@ -2942,7 +2942,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will quoted-printable encode messages when they contain the string
+      </span>, NeoMutt will quoted-printable encode messages when they contain the string
       <span class="quote">“<span class="quote">From</span>”</span>(note the trailing space) in the beginning of a line. This is useful to avoid the tampering certain mail delivery and transport agents tend to do with messages (in order to prevent tools from misinterpreting the line as a mbox message separator).</p>
     </div>
     <div class="sect2">
@@ -3229,7 +3229,7 @@ sh -c 'string'
       <span class="quote">“<span class="quote">Mail-Followup-To:</span>”</span> header field is generated when sending mail. When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will generate this field when you are replying to a known mailing list, specified with the
+      </span>, NeoMutt will generate this field when you are replying to a known mailing list, specified with the
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#subscribe">subscribe</a>
       </span>”</span> or
@@ -3274,7 +3274,7 @@ sh -c 'string'
         <br />Default:&#160;no</p>
       </div>
       <p>This variable is similar to
-      <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a>, except that Mutt will store a copy of your outgoing message by the username of the address you are sending to even if that mailbox does not exist.</p>
+      <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a>, except that NeoMutt will store a copy of your outgoing message by the username of the address you are sending to even if that mailbox does not exist.</p>
       <p>Also see the
       <a class="link" href="#record" title="3.277.&#160;record">$record</a> variable.</p>
     </div>
@@ -3533,7 +3533,7 @@ sh -c 'string'
         </table>
       </div>
       <p>If this is empty or unset (default), the traditional long "To ", "Cc " and "Bcc " prefixes are used. If set but too short to include a character for a particular case, a single space will be prepended to the field. To prevent any prefix at all from being added in a particular case, use the special value CR (aka ^M) for the corresponding character.</p>
-      <p>This slightly odd interface is necessitated by mutt's handling of string variables; one cannot tell a variable that is unset from one that is set to the empty string.</p>
+      <p>This slightly odd interface is necessitated by NeoMutt's handling of string variables; one cannot tell a variable that is unset from one that is set to the empty string.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3551,7 +3551,7 @@ sh -c 'string'
           <code class="literal">^[^,]*</code>
         </span>”</span></p>
       </div>
-      <p>A regular expression used by mutt to parse the GECOS field of a password entry when expanding the alias. The default value will return the string up to the first
+      <p>A regular expression used by NeoMutt to parse the GECOS field of a password entry when expanding the alias. The default value will return the string up to the first
       <span class="quote">“<span class="quote">,</span>”</span> encountered. If the GECOS field contains a string like
       <span class="quote">“<span class="quote">lastname, firstname</span>”</span> then you should set it to
       <span class="quote">“<span class="quote">
@@ -3559,10 +3559,10 @@ sh -c 'string'
       </span>”</span>.</p>
       <p>This can be useful if you see the following behavior: you address an e-mail to user ID
       <span class="quote">“<span class="quote">stevef</span>”</span> whose full name is
-      <span class="quote">“<span class="quote">Steve Franklin</span>”</span>. If mutt expands
+      <span class="quote">“<span class="quote">Steve Franklin</span>”</span>. If NeoMutt expands
       <span class="quote">“<span class="quote">stevef</span>”</span> to
       <span class="quote">“<span class="quote">"Franklin" stevef@foo.bar</span>”</span> then you should set the
-      <a class="link" href="#gecos-mask" title="3.93.&#160;gecos_mask">$gecos_mask</a> to a regular expression that will match the whole name so mutt will expand
+      <a class="link" href="#gecos-mask" title="3.93.&#160;gecos_mask">$gecos_mask</a> to a regular expression that will match the whole name so NeoMutt will expand
       <span class="quote">“<span class="quote">Franklin</span>”</span> to
       <span class="quote">“<span class="quote">Franklin, Steve</span>”</span>.</p>
     </div>
@@ -3676,7 +3676,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, this variable causes Mutt to include the header of the message you are replying to into the edit buffer. The
+      </span>, this variable causes NeoMutt to include the header of the message you are replying to into the edit buffer. The
       <a class="link" href="#weed" title="3.406.&#160;weed">$weed</a> setting applies.</p>
     </div>
     <div class="sect2">
@@ -3692,7 +3692,7 @@ sh -c 'string'
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable points to the header cache database. If pointing to a directory Mutt will contain a header cache database file per folder, if pointing to a file that file will be a single global header cache. By default it is
+      <p>This variable points to the header cache database. If pointing to a directory NeoMutt will contain a header cache database file per folder, if pointing to a file that file will be a single global header cache. By default it is
       <span class="emphasis">
         <em>unset</em>
       </span>so no header caching will be used.</p>
@@ -3729,7 +3729,7 @@ sh -c 'string'
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>When mutt is compiled with qdbm, tokyocabinet or kyotocabinet as header cache backend, this option determines whether the database will be compressed. Compression results in database files roughly being one fifth of the usual diskspace, but the decompression can result in a slower opening of cached folder(s) which in general is still much faster than opening non header cached folders.</p>
+      <p>When NeoMutt is compiled with qdbm, tokyocabinet or kyotocabinet as header cache backend, this option determines whether the database will be compressed. Compression results in database files roughly being one fifth of the usual diskspace, but the decompression can result in a slower opening of cached folder(s) which in general is still much faster than opening non header cached folders.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3747,7 +3747,7 @@ sh -c 'string'
           <code class="literal">16384</code>
         </span>”</span></p>
       </div>
-      <p>When mutt is compiled with either gdbm or bdb4 as the header cache backend, this option changes the database page size. Too large or too small values can waste space, memory, or CPU time. The default should be more or less optimal for most use cases.</p>
+      <p>When NeoMutt is compiled with either gdbm or bdb4 as the header cache backend, this option changes the database page size. Too large or too small values can waste space, memory, or CPU time. The default should be more or less optimal for most use cases.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3795,7 +3795,7 @@ sh -c 'string'
       <p>
       <span class="bold">
         <strong>Note:</strong>
-      </span>The binding will not be displayed correctly if the function is bound to a sequence rather than a single keystroke. Also, the help line may not be updated if a binding is changed while Mutt is running. Since this variable is primarily aimed at new users, neither of these should present a major problem.</p>
+      </span>The binding will not be displayed correctly if the function is bound to a sequence rather than a single keystroke. Also, the help line may not be updated if a binding is changed while NeoMutt is running. Since this variable is primarily aimed at new users, neither of these should present a major problem.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3813,7 +3813,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will skip the host name part of
+      </span>, NeoMutt will skip the host name part of
       <a class="link" href="#hostname" title="3.114.&#160;hostname">$hostname</a> variable when adding the domain part to addresses. This variable does not affect the generation of Message-IDs, and it will not lead to the cut-off of first-level domains.</p>
     </div>
     <div class="sect2">
@@ -3832,7 +3832,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will not show the presence of messages that are hidden by limiting, in the thread tree.</p>
+      </span>, NeoMutt will not show the presence of messages that are hidden by limiting, in the thread tree.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3850,7 +3850,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will not show the presence of missing messages in the thread tree.</p>
+      </span>, NeoMutt will not show the presence of missing messages in the thread tree.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3868,7 +3868,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will not show the subject of messages in the thread tree that have the same subject as their parent or closest previously displayed sibling.</p>
+      </span>, NeoMutt will not show the subject of messages in the thread tree that have the same subject as their parent or closest previously displayed sibling.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3886,7 +3886,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will not show the presence of messages that are hidden by limiting, at the top of threads in the thread tree. Note that when
+      </span>, NeoMutt will not show the presence of messages that are hidden by limiting, at the top of threads in the thread tree. Note that when
       <a class="link" href="#hide-limited" title="3.104.&#160;hide_limited">$hide_limited</a> is
       <span class="emphasis">
         <em>set</em>
@@ -3908,7 +3908,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will not show the presence of missing messages at the top of threads in the thread tree. Note that when
+      </span>, NeoMutt will not show the presence of missing messages at the top of threads in the thread tree. Note that when
       <a class="link" href="#hide-missing" title="3.105.&#160;hide_missing">$hide_missing</a> is
       <span class="emphasis">
         <em>set</em>
@@ -3945,7 +3945,7 @@ sh -c 'string'
           <code class="literal">~/.mutthistory</code>
         </span>”</span></p>
       </div>
-      <p>The file in which Mutt will save its history.</p>
+      <p>The file in which NeoMutt will save its history.</p>
       <p>Also see
       <a class="link" href="#save-history" title="3.294.&#160;save_history">$save_history</a>.</p>
     </div>
@@ -3984,12 +3984,12 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will not display attachments with a disposition of
+      </span>, NeoMutt will not display attachments with a disposition of
       <span class="quote">“<span class="quote">attachment</span>”</span> inline even if it could render the part to plain text. These MIME parts can only be viewed from the attachment menu.</p>
       <p>If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will render all MIME parts it can properly transform to plain text.</p>
+      </span>, NeoMutt will render all MIME parts it can properly transform to plain text.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4019,12 +4019,12 @@ sh -c 'string'
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>Specifies the fully-qualified hostname of the system mutt is running on containing the host's name and the DNS domain it belongs to. It is used as the domain part (after
+      <p>Specifies the fully-qualified hostname of the system NeoMutt is running on containing the host's name and the DNS domain it belongs to. It is used as the domain part (after
       <span class="quote">“<span class="quote">@</span>”</span>) for local email addresses as well as Message-Id headers.</p>
       <p>Its value is determined at startup as follows: the node's hostname is first determined by the
       <code class="literal">uname(3)</code>function. The domain is then looked up using the
       <code class="literal">gethostname(2)</code>and
-      <code class="literal">getaddrinfo(3)</code>functions. If those calls are unable to determine the domain, the full value returned by uname is used. Optionally, Mutt can be compiled with a fixed domain name in which case a detected one is not used.</p>
+      <code class="literal">getaddrinfo(3)</code>functions. If those calls are unable to determine the domain, the full value returned by uname is used. Optionally, NeoMutt can be compiled with a fixed domain name in which case a detected one is not used.</p>
       <p>Also see
       <a class="link" href="#use-domain" title="3.397.&#160;use_domain">$use_domain</a> and
       <a class="link" href="#hidden-host" title="3.103.&#160;hidden_host">$hidden_host</a>.</p>
@@ -4045,7 +4045,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will show you international domain names decoded. Note: You can use IDNs for addresses even if this is
+      </span>, NeoMutt will show you international domain names decoded. Note: You can use IDNs for addresses even if this is
       <span class="emphasis">
         <em>unset</em>
       </span>. This variable only affects decoding. (IDN only)</p>
@@ -4066,7 +4066,7 @@ sh -c 'string'
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will encode international domain names using IDN. Unset this if your SMTP server can handle newer (RFC6531) UTF-8 encoded domains. (IDN only)</p>
+      </span>, NeoMutt will encode international domain names using IDN. Unset this if your SMTP server can handle newer (RFC6531) UTF-8 encoded domains. (IDN only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4109,7 +4109,7 @@ sh -c 'string'
         <em>set</em>
       </span>, if the
       <span class="quote">“<span class="quote">Reply-To:</span>”</span> field is set to the same value as the
-      <span class="quote">“<span class="quote">To:</span>”</span> field, Mutt assumes that the
+      <span class="quote">“<span class="quote">To:</span>”</span> field, NeoMutt assumes that the
       <span class="quote">“<span class="quote">Reply-To:</span>”</span> field was set by the mailing list to automate responses to the list, and will ignore this field. To direct a response to the mailing list when this option is
       <span class="emphasis">
         <em>set</em>
@@ -4156,7 +4156,7 @@ sh -c 'string'
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to an IMAP server, in the order mutt should try them. Authentication methods are either
+      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an IMAP server, in the order NeoMutt should try them. Authentication methods are either
       <span class="quote">“<span class="quote">login</span>”</span> or the right side of an IMAP
       <span class="quote">“<span class="quote">AUTH=xxx</span>”</span> capability string, e.g.
       <span class="quote">“<span class="quote">digest-md5</span>”</span>,
@@ -4164,7 +4164,7 @@ sh -c 'string'
       <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it's
       <span class="emphasis">
         <em>unset</em>
-      </span>(the default) mutt will try all available methods, in order from most-secure to least-secure.</p>
+      </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
       <p>Example:</p>
       <pre class="screen">
 set imap_authenticators="gssapi:cram-md5:login"
@@ -4172,7 +4172,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>
       <span class="bold">
         <strong>Note:</strong>
-      </span>Mutt will only fall back to other authentication methods if the previous methods are unavailable. If a method is available but authentication fails, mutt will not connect to the IMAP server.</p>
+      </span>NeoMutt will only fall back to other authentication methods if the previous methods are unavailable. If a method is available but authentication fails, NeoMutt will not connect to the IMAP server.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4190,7 +4190,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will fetch the set of subscribed folders from your server on connection, and add them to the set of mailboxes it polls for new mail just as if you had issued individual
+      </span>, NeoMutt will fetch the set of subscribed folders from your server on connection, and add them to the set of mailboxes it polls for new mail just as if you had issued individual
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">mailboxes</a>
       </span>”</span> commands.</p>
@@ -4230,7 +4230,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>Mutt requests these header fields in addition to the default headers (
+      <p>NeoMutt requests these header fields in addition to the default headers (
       <span class="quote">“<span class="quote">Date:</span>”</span>,
       <span class="quote">“<span class="quote">From:</span>”</span>,
       <span class="quote">“<span class="quote">Subject:</span>”</span>,
@@ -4269,7 +4269,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will attempt to use the IMAP IDLE extension to check for new mail in the current mailbox. Some servers (dovecot was the inspiration for this option) react badly to mutt's implementation. If your connection seems to freeze up periodically, try unsetting this.</p>
+      </span>, NeoMutt will attempt to use the IMAP IDLE extension to check for new mail in the current mailbox. Some servers (dovecot was the inspiration for this option) react badly to NeoMutt's implementation. If your connection seems to freeze up periodically, try unsetting this.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4284,7 +4284,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;number
         <br />Default:&#160;300</p>
       </div>
-      <p>This variable specifies the maximum amount of time in seconds that mutt will wait before polling open IMAP connections, to prevent the server from closing them before mutt has finished with them. The default is well within the RFC-specified minimum amount of time (30 minutes) before a server is allowed to do this, but in practice the RFC does get violated every now and then. Reduce this number if you find yourself getting disconnected from your IMAP server due to inactivity.</p>
+      <p>This variable specifies the maximum amount of time in seconds that NeoMutt will wait before polling open IMAP connections, to prevent the server from closing them before NeoMutt has finished with them. The default is well within the RFC-specified minimum amount of time (30 minutes) before a server is allowed to do this, but in practice the RFC does get violated every now and then. Reduce this number if you find yourself getting disconnected from your IMAP server due to inactivity.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4335,12 +4335,12 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>Specifies the password for your IMAP account. If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will prompt you for your password when you invoke the
+      </span>, NeoMutt will prompt you for your password when you invoke the
       <code class="literal">&lt;imap-fetch-mail&gt;</code>function or try to open an IMAP folder.</p>
       <p>
       <span class="bold">
         <strong>Warning</strong>
-      </span>: you should only use this option when you are on a fairly secure machine, because the superuser can read your muttrc even if you are the only one who can read the file.</p>
+      </span>: you should only use this option when you are on a fairly secure machine, because the superuser can read your neomuttrc even if you are the only one who can read the file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4358,7 +4358,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will not open new IMAP connections to check for new mail. Mutt will only check for new mail over existing IMAP connections. This is useful if you don't want to be prompted to user/password pairs on mutt invocation, or if opening the connection is slow.</p>
+      </span>, NeoMutt will not open new IMAP connections to check for new mail. NeoMutt will only check for new mail over existing IMAP connections. This is useful if you don't want to be prompted to user/password pairs on NeoMutt invocation, or if opening the connection is slow.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4376,7 +4376,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will avoid implicitly marking your mail as read whenever you fetch a message from the server. This is generally a good thing, but can make closing an IMAP folder somewhat slower. This option exists to appease speed freaks.</p>
+      </span>, NeoMutt will avoid implicitly marking your mail as read whenever you fetch a message from the server. This is generally a good thing, but can make closing an IMAP folder somewhat slower. This option exists to appease speed freaks.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4391,7 +4391,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;number
         <br />Default:&#160;15</p>
       </div>
-      <p>Controls the number of IMAP commands that may be queued up before they are sent to the server. A deeper pipeline reduces the amount of time mutt must wait for the server, and can make IMAP servers feel much more responsive. But not all servers correctly handle pipelined commands, so if you have problems you might want to try setting this variable to 0.</p>
+      <p>Controls the number of IMAP commands that may be queued up before they are sent to the server. A deeper pipeline reduces the amount of time NeoMutt must wait for the server, and can make IMAP servers feel much more responsive. But not all servers correctly handle pipelined commands, so if you have problems you might want to try setting this variable to 0.</p>
       <p>
       <span class="bold">
         <strong>Note:</strong>
@@ -4410,7 +4410,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;number
         <br />Default:&#160;15</p>
       </div>
-      <p>This variable specifies the maximum amount of time in seconds that mutt will wait for a response when polling IMAP connections for new mail, before timing out and closing the connection. Set to 0 to disable timing out.</p>
+      <p>This variable specifies the maximum amount of time in seconds that NeoMutt will wait for a response when polling IMAP connections for new mail, before timing out and closing the connection. Set to 0 to disable timing out.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4428,7 +4428,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will display warning messages from the IMAP server as error messages. Since these messages are often harmless, or generated due to configuration problems on the server which are out of the users' hands, you may wish to suppress them at some point.</p>
+      </span>, NeoMutt will display warning messages from the IMAP server as error messages. Since these messages are often harmless, or generated due to configuration problems on the server which are out of the users' hands, you may wish to suppress them at some point.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4460,13 +4460,13 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;no</p>
       </div>
       <p>If set to
-      <span class="quote">“<span class="quote">yes</span>”</span>, mutt will look for a mailcap entry with the
+      <span class="quote">“<span class="quote">yes</span>”</span>, NeoMutt will look for a mailcap entry with the
       <span class="quote">“<span class="quote">
         <code class="literal">copiousoutput</code>
       </span>”</span> flag set for
       <span class="emphasis">
         <em>every</em>
-      </span>MIME attachment it doesn't have an internal viewer defined for. If such an entry is found, mutt will use the viewer defined in that entry to convert the body part to text form.</p>
+      </span>MIME attachment it doesn't have an internal viewer defined for. If such an entry is found, NeoMutt will use the viewer defined in that entry to convert the body part to text form.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4496,7 +4496,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether or not Mutt includes only the first attachment of the message you are replying.</p>
+      <p>Controls whether or not NeoMutt includes only the first attachment of the message you are replying.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4541,7 +4541,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>
       <span class="quote">“<span class="quote">Format strings</span>”</span> are similar to the strings used in the C function
       <code class="literal">printf(3)</code>to format output (see the man page for more details). For an explanation of the %? construct, see the
-      <a class="link" href="#status-format" title="3.376.&#160;status_format">status_format</a> description. The following sequences are defined in Mutt:</p>
+      <a class="link" href="#status-format" title="3.376.&#160;status_format">status_format</a> description. The following sequences are defined in NeoMutt:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -4654,7 +4654,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             </tr>
             <tr>
               <td>%O</td>
-              <td>original save folder where mutt would formerly have stashed the message: list name or recipient name if not sent to a list</td>
+              <td>original save folder where NeoMutt would formerly have stashed the message: list name or recipient name if not sent to a list</td>
             </tr>
             <tr>
               <td>%P</td>
@@ -4846,7 +4846,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>If set, specifies the program and arguments used to deliver news posted by Mutt. Otherwise, mutt posts article using current connection to news server. The following printf-style sequence is understood:</p>
+      <p>If set, specifies the program and arguments used to deliver news posted by NeoMutt. Otherwise, NeoMutt posts article using current connection to news server. The following printf-style sequence is understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -4950,7 +4950,7 @@ set inews="/usr/local/bin/inews -hS"
       <span class="quote">“<span class="quote">
         <a class="link" href="#keywords-standard" title="3.144.&#160;keywords_standard">$keywords_standard</a>
       </span>”</span> are
-      <code class="literal">false</code>, mutt will save keywords to legacy headers to ensure that it does not lose your labels.</p>
+      <code class="literal">false</code>, NeoMutt will save keywords to legacy headers to ensure that it does not lose your labels.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4976,7 +4976,7 @@ set inews="/usr/local/bin/inews -hS"
       <span class="quote">“<span class="quote">
         <a class="link" href="#keywords-standard" title="3.144.&#160;keywords_standard">$keywords_standard</a>
       </span>”</span> are
-      <code class="literal">false</code>, mutt will save keywords to legacy headers to ensure that it does not lose your labels.</p>
+      <code class="literal">false</code>, NeoMutt will save keywords to legacy headers to ensure that it does not lose your labels.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4991,7 +4991,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;number
         <br />Default:&#160;5</p>
       </div>
-      <p>This variable configures how often (in seconds) mutt should look for new mail. Also see the
+      <p>This variable configures how often (in seconds) NeoMutt should look for new mail. Also see the
       <a class="link" href="#feature/timeout" title="3.385.&#160;timeout">$timeout</a> variable.</p>
     </div>
     <div class="sect2">
@@ -5010,16 +5010,16 @@ set inews="/usr/local/bin/inews -hS"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will only notify you about new mail that has been received since the last time you opened the mailbox. When
+      </span>, NeoMutt will only notify you about new mail that has been received since the last time you opened the mailbox. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will notify you if any new mail exists in the mailbox, regardless of whether you have visited it recently.</p>
+      </span>, NeoMutt will notify you if any new mail exists in the mailbox, regardless of whether you have visited it recently.</p>
       <p>When
       <span class="emphasis">
         <em>
           <a class="link" href="#mark-old" title="3.155.&#160;mark_old">$mark_old</a>
         </em>
-      </span>is set, Mutt does not consider the mailbox to contain new mail if only old messages exist.</p>
+      </span>is set, NeoMutt does not consider the mailbox to contain new mail if only old messages exist.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5037,7 +5037,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will periodically calculate message statistics of a mailbox while polling for new mail. It will check for unread, flagged, and total message counts. Because this operation is more performance intensive, it defaults to
+      </span>, NeoMutt will periodically calculate message statistics of a mailbox while polling for new mail. It will check for unread, flagged, and total message counts. Because this operation is more performance intensive, it defaults to
       <span class="emphasis">
         <em>unset</em>
       </span>, and has a separate option,
@@ -5060,7 +5060,7 @@ set inews="/usr/local/bin/inews -hS"
       <a class="link" href="#mail-check-stats" title="3.147.&#160;mail_check_stats">$mail_check_stats</a> is
       <span class="emphasis">
         <em>set</em>
-      </span>, this variable configures how often (in seconds) mutt will update message counts.</p>
+      </span>, this variable configures how often (in seconds) NeoMutt will update message counts.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5075,7 +5075,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable specifies which files to consult when attempting to display MIME bodies not directly supported by Mutt.</p>
+      <p>This variable specifies which files to consult when attempting to display MIME bodies not directly supported by NeoMutt.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5093,7 +5093,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will restrict possible characters in mailcap % expandos to a well-defined set of safe characters. This is the safe setting, but we are not sure it doesn't break some more advanced MIME stuff.</p>
+      </span>, NeoMutt will restrict possible characters in mailcap % expandos to a well-defined set of safe characters. This is the safe setting, but we are not sure it doesn't break some more advanced MIME stuff.</p>
       <p>
         <span class="bold">
           <strong>DON'T CHANGE THIS SETTING UNLESS YOU ARE REALLY SURE WHAT YOU ARE DOING!</strong>
@@ -5113,7 +5113,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>Check for Maildir unaware programs other than mutt having modified maildir files when the header cache is in use. This incurs one
+      <p>Check for Maildir unaware programs other than NeoMutt having modified maildir files when the header cache is in use. This incurs one
       <code class="literal">stat(2)</code>per message every time the folder is opened (which can be very slow for NFS folders).</p>
     </div>
     <div class="sect2">
@@ -5153,7 +5153,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will poll both the new and cur directories of a maildir folder for new messages. This might be useful if other programs interacting with the folder (e.g. dovecot) are moving new messages to the cur directory. Note that setting this option may slow down polling for new messages in large folders, since mutt has to scan all cur messages.</p>
+      </span>, NeoMutt will poll both the new and cur directories of a maildir folder for new messages. This might be useful if other programs interacting with the folder (e.g. dovecot) are moving new messages to the cur directory. Note that setting this option may slow down polling for new messages in large folders, since NeoMutt has to scan all cur messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5192,7 +5192,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>Controls whether or not mutt marks
+      <p>Controls whether or not NeoMutt marks
       <span class="emphasis">
         <em>new</em>
       </span>
@@ -5204,7 +5204,7 @@ set inews="/usr/local/bin/inews -hS"
       </span>if you exit a mailbox without reading them. With this option
       <span class="emphasis">
         <em>set</em>
-      </span>, the next time you start mutt, the messages will show up with an
+      </span>, the next time you start NeoMutt, the messages will show up with an
       <span class="quote">“<span class="quote">O</span>”</span> next to them in the index menu, indicating that they are old.</p>
     </div>
     <div class="sect2">
@@ -5362,7 +5362,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will clean out obsolete entries from the message cache when the mailbox is synchronized. You probably only want to set it every once in a while, since it can be a little slow (especially for large folders).</p>
+      </span>, NeoMutt will clean out obsolete entries from the message cache when the mailbox is synchronized. You probably only want to set it every once in a while, since it can be a little slow (especially for large folders).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5377,8 +5377,8 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>Set this to a directory and mutt will cache copies of messages from your IMAP and POP servers here. You are free to remove entries at any time.</p>
-      <p>When setting this variable to a directory, mutt needs to fetch every remote message only once and can perform regular expression searches as fast as for local folders.</p>
+      <p>Set this to a directory and NeoMutt will cache copies of messages from your IMAP and POP servers here. You are free to remove entries at any time.</p>
+      <p>When setting this variable to a directory, NeoMutt needs to fetch every remote message only once and can perform regular expression searches as fast as for local folders.</p>
       <p>Also see the
       <a class="link" href="#message-cache-clean" title="3.163.&#160;message_cache_clean">$message_cache_clean</a> variable.</p>
     </div>
@@ -5420,7 +5420,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, forces Mutt to interpret keystrokes with the high bit (bit 8) set as if the user had pressed the Esc key and whatever key remains after having the high bit removed. For example, if the key pressed has an ASCII value of
+      </span>, forces NeoMutt to interpret keystrokes with the high bit (bit 8) set as if the user had pressed the Esc key and whatever key remains after having the high bit removed. For example, if the key pressed has an ASCII value of
       <code class="literal">0xf8</code>, then this is treated as if the user had pressed Esc then
       <span class="quote">“<span class="quote">x</span>”</span>. This is because the result of removing the high bit from
       <code class="literal">0xf8</code> is
@@ -5443,7 +5443,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will remove your address (see the
+      </span>, NeoMutt will remove your address (see the
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">alternates</a>
       </span>”</span> command) from the list of recipients when replying to a message.</p>
@@ -5464,7 +5464,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>When
       <span class="emphasis">
         <em>unset</em>
-      </span>, mutt will mimic mh's behavior and rename deleted messages to
+      </span>, NeoMutt will mimic mh's behavior and rename deleted messages to
       <span class="emphasis">
         <em>,&lt;old file name&gt;</em>
       </span>in mh folders instead of really deleting them. This leaves the message on disk but makes programs reading the folder ignore it. If the variable is
@@ -5626,9 +5626,9 @@ set inews="/usr/local/bin/inews -hS"
       <p>This specifies a command to run, to determine the mime type of a new attachment when composing a message. Unless
       <a class="link" href="#mime-type-query-first" title="3.177.&#160;mime_type_query_first">$mime_type_query_first</a> is set, this will only be run if the attachment's extension is not found in the mime.types file.</p>
       <p>The string may contain a
-      <span class="quote">“<span class="quote">%s</span>”</span>, which will be substituted with the attachment filename. Mutt will add quotes around the string substituted for
+      <span class="quote">“<span class="quote">%s</span>”</span>, which will be substituted with the attachment filename. NeoMutt will add quotes around the string substituted for
       <span class="quote">“<span class="quote">%s</span>”</span> automatically according to shell quoting rules, so you should avoid adding your own. If no
-      <span class="quote">“<span class="quote">%s</span>”</span> is found in the string, Mutt will append the attachment filename to the end of the string.</p>
+      <span class="quote">“<span class="quote">%s</span>”</span> is found in the string, NeoMutt will append the attachment filename to the end of the string.</p>
       <p>The command should output a single line containing the attachment's mime type.</p>
       <p>Suggested values are
       <span class="quote">“<span class="quote">xdg-mime query filetype</span>”</span> or
@@ -5729,7 +5729,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;quadoption
         <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether or not Mutt will move read messages from your spool mailbox to your
+      <p>Controls whether or not NeoMutt will move read messages from your spool mailbox to your
       <a class="link" href="#mbox" title="3.158.&#160;mbox">$mbox</a> mailbox, or as a result of a
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mbox-hook" title="13.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>
@@ -5792,7 +5792,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will call this command after a new message is received. See the
+      </span>, NeoMutt will call this command after a new message is received. See the
       <a class="link" href="#status-format" title="3.376.&#160;status_format">$status_format</a> documentation for the values that can be formatted into this command.</p>
     </div>
     <div class="sect2">
@@ -5808,10 +5808,10 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;path
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">~/.mutt</code>
+          <code class="literal">~/.neomutt</code>
         </span>”</span></p>
       </div>
-      <p>This variable pointing to directory where Mutt will save cached news articles and headers in. If
+      <p>This variable pointing to directory where NeoMutt will save cached news articles and headers in. If
       <span class="emphasis">
         <em>unset</em>
       </span>, articles and headers will not be saved at all and will be reloaded from the server each time.</p>
@@ -5915,14 +5915,14 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to a news server, in the order mutt should try them. Authentication methods are either
+      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to a news server, in the order NeoMutt should try them. Authentication methods are either
       <span class="quote">“<span class="quote">user</span>”</span> or any SASL mechanism, e.g.
       <span class="quote">“<span class="quote">digest-md5</span>”</span>,
       <span class="quote">“<span class="quote">gssapi</span>”</span> or
       <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it's
       <span class="emphasis">
         <em>unset</em>
-      </span>(the default) mutt will try all available methods, in order from most-secure to least-secure.</p>
+      </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
       <p>Example:</p>
       <pre class="screen">
 set nntp_authenticators="digest-md5:user"
@@ -5930,7 +5930,7 @@ set nntp_authenticators="digest-md5:user"
       <p>
       <span class="bold">
         <strong>Note:</strong>
-      </span>Mutt will only fall back to other authentication methods if the previous methods are unavailable. If a method is available but authentication fails, mutt will not connect to the IMAP server.</p>
+      </span>NeoMutt will only fall back to other authentication methods if the previous methods are unavailable. If a method is available but authentication fails, NeoMutt will not connect to the IMAP server.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5993,7 +5993,7 @@ set nntp_authenticators="digest-md5:user"
       <p>Your login name on the NNTP server. If
       <span class="emphasis">
         <em>unset</em>
-      </span>and NNTP server requires authentication, Mutt will prompt you for your account name when you connect to news server.</p>
+      </span>and NNTP server requires authentication, NeoMutt will prompt you for your account name when you connect to news server.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6023,7 +6023,7 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;number
         <br />Default:&#160;60</p>
       </div>
-      <p>The time in seconds until any operations on newsgroup except post new article will cause recheck for new news. If set to 0, Mutt will recheck newsgroup on each operation in index (stepping, read article, etc.).</p>
+      <p>The time in seconds until any operations on newsgroup except post new article will cause recheck for new news. If set to 0, NeoMutt will recheck newsgroup on each operation in index (stepping, read article, etc.).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6086,7 +6086,7 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>The messages tagged with these tags are excluded and not loaded from notmuch DB to mutt unless specified explicitly.</p>
+      <p>The messages tagged with these tags are excluded and not loaded from notmuch DB to NeoMutt unless specified explicitly.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6104,7 +6104,7 @@ set nntp_authenticators="digest-md5:user"
           <code class="literal">unread</code>
         </span>”</span></p>
       </div>
-      <p>This variable specifies notmuch tag which is used for unread messages. The variable is used to count unread messages in DB only. All other mutt commands use standard (e.g. maildir) flags.</p>
+      <p>This variable specifies notmuch tag which is used for unread messages. The variable is used to count unread messages in DB only. All other NeoMutt commands use standard (e.g. maildir) flags.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6152,7 +6152,7 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>This variable specifies if the mutt record should indexed by notmuch.</p>
+      <p>This variable specifies if the NeoMutt record should indexed by notmuch.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6167,7 +6167,7 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable specifies the default tags applied to messages stored to the mutt record. When set to 0 this variable disable the window feature.</p>
+      <p>This variable specifies the default tags applied to messages stored to the NeoMutt record. When set to 0 this variable disable the window feature.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6250,7 +6250,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This variable specifies which pager you would like to use to view messages. The value
       <span class="quote">“<span class="quote">builtin</span>”</span> means to use the built-in pager, otherwise this variable should specify the pathname of the external pager you would like to use.</p>
-      <p>Using an external pager may have some disadvantages: Additional keystrokes are necessary because you can't call mutt functions directly from the pager, and screen resizes cause lines longer than the screen width to be badly formatted in the help menu.</p>
+      <p>Using an external pager may have some disadvantages: Additional keystrokes are necessary because you can't call NeoMutt functions directly from the pager, and screen resizes cause lines longer than the screen width to be badly formatted in the help menu.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6265,7 +6265,7 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;number
         <br />Default:&#160;0</p>
       </div>
-      <p>This variable controls the number of lines of context that are given when displaying the next or previous page in the internal pager. By default, Mutt will display the line after the last one on the screen at the top of the next page (0 lines of context).</p>
+      <p>This variable controls the number of lines of context that are given when displaying the next or previous page in the internal pager. By default, NeoMutt will display the line after the last one on the screen at the top of the next page (0 lines of context).</p>
       <p>This variable also specifies the amount of context given for search results. If positive, this many lines will be given before a match, if 0, the match will be top-aligned.</p>
     </div>
     <div class="sect2">
@@ -6342,10 +6342,10 @@ set nntp_authenticators="digest-md5:user"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will automatically attempt to decrypt traditional PGP messages whenever the user performs an operation which ordinarily would result in the contents of the message being operated on. For example, if the user displays a pgp-traditional message which has not been manually checked with the
+      </span>, NeoMutt will automatically attempt to decrypt traditional PGP messages whenever the user performs an operation which ordinarily would result in the contents of the message being operated on. For example, if the user displays a pgp-traditional message which has not been manually checked with the
       <code class="literal">
         <a class="link" href="gettingstarted.html#check-traditional-pgp">&lt;check-traditional-pgp&gt;</a>
-      </code>function, mutt will automatically check the message for traditional pgp.</p>
+      </code>function, NeoMutt will automatically check the message for traditional pgp.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6360,8 +6360,8 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>This option controls whether Mutt generates old-style inline (traditional) PGP encrypted or signed messages under certain circumstances. This can be overridden by use of the pgp menu, when inline is not required. The GPGME backend does not support this option.</p>
-      <p>Note that Mutt might automatically use PGP/MIME for messages which consist of more than a single MIME part. Mutt can be configured to ask before sending PGP/MIME messages when inline (traditional) would not work.</p>
+      <p>This option controls whether NeoMutt generates old-style inline (traditional) PGP encrypted or signed messages under certain circumstances. This can be overridden by use of the pgp menu, when inline is not required. The GPGME backend does not support this option.</p>
+      <p>Note that NeoMutt might automatically use PGP/MIME for messages which consist of more than a single MIME part. NeoMutt can be configured to ask before sending PGP/MIME messages when inline (traditional) would not work.</p>
       <p>Also see the
       <a class="link" href="#pgp-mime-auto" title="3.231.&#160;pgp_mime_auto">$pgp_mime_auto</a> variable.</p>
       <p>Also note that using the old-style PGP message format is
@@ -6388,7 +6388,7 @@ set nntp_authenticators="digest-md5:user"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will check the exit code of the PGP subprocess when signing or encrypting. A non-zero exit code means that the subprocess failed. (PGP only)</p>
+      </span>, NeoMutt will check the exit code of the PGP subprocess when signing or encrypting. A non-zero exit code means that the subprocess failed. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6639,9 +6639,9 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This command is invoked whenever Mutt needs to fetch the public key associated with an email address. Of the sequences supported by
+      <p>This command is invoked whenever NeoMutt needs to fetch the public key associated with an email address. Of the sequences supported by
       <a class="link" href="#pgp-decode-command" title="3.217.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
-      <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why Mutt is invoking this command). (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6672,7 +6672,7 @@ set nntp_authenticators="digest-md5:user"
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>Setting this variable will cause Mutt to ignore OpenPGP subkeys. Instead, the principal key will inherit the subkeys' capabilities.
+      <p>Setting this variable will cause NeoMutt to ignore OpenPGP subkeys. Instead, the principal key will inherit the subkeys' capabilities.
       <span class="emphasis">
         <em>Unset</em>
       </span>this if you want to play interesting key selection games. (PGP only)</p>
@@ -6713,9 +6713,9 @@ set nntp_authenticators="digest-md5:user"
 gpg --list-keys --with-colons --with-fingerprint
 </pre>
       <p>This format is also generated by the
-      <code class="literal">pgpring</code> utility which comes with mutt.</p>
+      <code class="literal">pgpring</code> utility which comes with NeoMutt.</p>
       <p>Note: gpg's
-      <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in mutt showing incorrect key generation dates.</p>
+      <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in NeoMutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.217.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
@@ -6738,9 +6738,9 @@ gpg --list-keys --with-colons --with-fingerprint
 gpg --list-keys --with-colons --with-fingerprint
 </pre>
       <p>This format is also generated by the
-      <code class="literal">pgpring</code> utility which comes with mutt.</p>
+      <code class="literal">pgpring</code> utility which comes with NeoMutt.</p>
       <p>Note: gpg's
-      <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in mutt showing incorrect key generation dates.</p>
+      <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in NeoMutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.217.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
@@ -6764,7 +6764,7 @@ gpg --list-keys --with-colons --with-fingerprint
       </span>, use 64 bit PGP key IDs, if
       <span class="emphasis">
         <em>unset</em>
-      </span>use the normal 32 bit key IDs. NOTE: Internally, Mutt has transitioned to using fingerprints (or long key IDs as a fallback). This option now only controls the display of key IDs in the key selection menu and a few other places. (PGP only)</p>
+      </span>use the normal 32 bit key IDs. NOTE: Internally, NeoMutt has transitioned to using fingerprints (or long key IDs as a fallback). This option now only controls the display of key IDs in the key selection menu and a few other places. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6779,7 +6779,7 @@ gpg --list-keys --with-colons --with-fingerprint
         <p>Type:&#160;quadoption
         <br />Default:&#160;ask-yes</p>
       </div>
-      <p>This option controls whether Mutt will prompt you for automatically sending a (signed/encrypted) message using PGP/MIME when inline (traditional) fails (for any reason).</p>
+      <p>This option controls whether NeoMutt will prompt you for automatically sending a (signed/encrypted) message using PGP/MIME when inline (traditional) fails (for any reason).</p>
       <p>Also note that using the old-style PGP message format is
       <span class="bold">
         <strong>strongly</strong>
@@ -6801,8 +6801,8 @@ gpg --list-keys --with-colons --with-fingerprint
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Setting this variable will cause Mutt to always attempt to create an inline (traditional) message when replying to a message which is PGP encrypted/signed inline. This can be overridden by use of the pgp menu, when inline is not required. This option does not automatically detect if the (replied-to) message is inline; instead it relies on Mutt internals for previously checked/flagged messages.</p>
-      <p>Note that Mutt might automatically use PGP/MIME for messages which consist of more than a single MIME part. Mutt can be configured to ask before sending PGP/MIME messages when inline (traditional) would not work.</p>
+      <p>Setting this variable will cause NeoMutt to always attempt to create an inline (traditional) message when replying to a message which is PGP encrypted/signed inline. This can be overridden by use of the pgp menu, when inline is not required. This option does not automatically detect if the (replied-to) message is inline; instead it relies on NeoMutt internals for previously checked/flagged messages.</p>
+      <p>Note that NeoMutt might automatically use PGP/MIME for messages which consist of more than a single MIME part. NeoMutt can be configured to ask before sending PGP/MIME messages when inline (traditional) would not work.</p>
       <p>Also see the
       <a class="link" href="#pgp-mime-auto" title="3.231.&#160;pgp_mime_auto">$pgp_mime_auto</a> variable.</p>
       <p>Also note that using the old-style PGP message format is
@@ -6891,7 +6891,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will display non-usable keys on the PGP key selection menu. This includes keys which have been revoked, have expired, or have been marked as
+      </span>, NeoMutt will display non-usable keys on the PGP key selection menu. This includes keys which have been revoked, have expired, or have been marked as
       <span class="quote">“
       <span class="quote">disabled</span>”</span> by the user. (PGP only)</p>
     </div>
@@ -6989,7 +6989,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will automatically encode PGP/MIME signed messages as quoted-printable. Please note that unsetting this variable may lead to problems with non-verifyable PGP signatures, so only change this if you know what you are doing. (PGP only)</p>
+      </span>, NeoMutt will automatically encode PGP/MIME signed messages as quoted-printable. Please note that unsetting this variable may lead to problems with non-verifyable PGP signatures, so only change this if you know what you are doing. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7022,8 +7022,8 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will use a possibly-running
-      <code class="literal">gpg-agent(1)</code>process. Note that as of version 2.1, GnuPG no longer exports GPG_AGENT_INFO, so mutt no longer verifies if the agent is running. (PGP only)</p>
+      </span>, NeoMutt will use a possibly-running
+      <code class="literal">gpg-agent(1)</code>process. Note that as of version 2.1, GnuPG no longer exports GPG_AGENT_INFO, so NeoMutt no longer verifies if the agent is running. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7078,10 +7078,10 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">&lt;pipe-message&gt;</code>command. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will pipe the messages without any preprocessing. When
+      </span>, NeoMutt will pipe the messages without any preprocessing. When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will weed headers and will attempt to decode the messages first.</p>
+      </span>, NeoMutt will weed headers and will attempt to decode the messages first.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7119,10 +7119,10 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">&lt;tag-prefix&gt;</code>. If this variable is
       <span class="emphasis">
         <em>unset</em>
-      </span>, when piping a list of tagged messages Mutt will concatenate the messages and will pipe them all concatenated. When
+      </span>, when piping a list of tagged messages NeoMutt will concatenate the messages and will pipe them all concatenated. When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will pipe the messages one by one. In both cases the messages are piped in the current sorted order, and the
+      </span>, NeoMutt will pipe the messages one by one. In both cases the messages are piped in the current sorted order, and the
       <a class="link" href="#pipe-sep" title="3.246.&#160;pipe_sep">$pipe_sep</a> separator is added after each message.</p>
     </div>
     <div class="sect2">
@@ -7141,10 +7141,10 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will try all available authentication methods. When
+      </span>, NeoMutt will try all available authentication methods. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will only fall back to other authentication methods if the previous methods are unavailable. If a method is available but authentication fails, Mutt will not connect to the POP server.</p>
+      </span>, NeoMutt will only fall back to other authentication methods if the previous methods are unavailable. If a method is available but authentication fails, NeoMutt will not connect to the POP server.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7159,7 +7159,7 @@ gpg --list-keys --with-colons --with-fingerprint
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to an POP server, in the order mutt should try them. Authentication methods are either
+      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an POP server, in the order NeoMutt should try them. Authentication methods are either
       <span class="quote">“<span class="quote">user</span>”</span>,
       <span class="quote">“<span class="quote">apop</span>”</span> or any SASL mechanism, e.g.
       <span class="quote">“<span class="quote">digest-md5</span>”</span>,
@@ -7167,7 +7167,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <span class="quote">“<span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If this option is
       <span class="emphasis">
         <em>unset</em>
-      </span>(the default) mutt will try all available methods, in order from most-secure to least-secure.</p>
+      </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
       <p>Example:</p>
       <pre class="screen">
 set pop_authenticators="digest-md5:apop:user"
@@ -7186,7 +7186,7 @@ set pop_authenticators="digest-md5:apop:user"
         <p>Type:&#160;number
         <br />Default:&#160;60</p>
       </div>
-      <p>This variable configures how often (in seconds) mutt should look for new mail in the currently selected mailbox if it is a POP mailbox.</p>
+      <p>This variable configures how often (in seconds) NeoMutt should look for new mail in the currently selected mailbox if it is a POP mailbox.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7204,13 +7204,13 @@ set pop_authenticators="digest-md5:apop:user"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will delete successfully downloaded messages from the POP server when using the
+      </span>, NeoMutt will delete successfully downloaded messages from the POP server when using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
       </code>function. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will download messages but also leave them on the POP server.</p>
+      </span>, NeoMutt will download messages but also leave them on the POP server.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7251,7 +7251,7 @@ set pop_authenticators="digest-md5:apop:user"
       <p>If this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will try to use the
+      </span>, NeoMutt will try to use the
       <span class="quote">“<span class="quote">
         <code class="literal">LAST</code>
       </span>”</span> POP command for retrieving only unread messages from the POP server when using the
@@ -7275,11 +7275,11 @@ set pop_authenticators="digest-md5:apop:user"
       <p>Specifies the password for your POP account. If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will prompt you for your password when you open a POP mailbox.</p>
+      </span>, NeoMutt will prompt you for your password when you open a POP mailbox.</p>
       <p>
       <span class="bold">
         <strong>Warning</strong>
-      </span>: you should only use this option when you are on a fairly secure machine, because the superuser can read your muttrc even if you are the only one who can read the file.</p>
+      </span>: you should only use this option when you are on a fairly secure machine, because the superuser can read your neomuttrc even if you are the only one who can read the file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7294,7 +7294,7 @@ set pop_authenticators="digest-md5:apop:user"
         <p>Type:&#160;quadoption
         <br />Default:&#160;ask-yes</p>
       </div>
-      <p>Controls whether or not Mutt will try to reconnect to the POP server if the connection is lost.</p>
+      <p>Controls whether or not NeoMutt will try to reconnect to the POP server if the connection is lost.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7326,7 +7326,7 @@ set pop_authenticators="digest-md5:apop:user"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Similar to the
-      <a class="link" href="#attribution" title="3.20.&#160;attribution">$attribution</a> variable, Mutt will append this string after the inclusion of a message which is being replied to.</p>
+      <a class="link" href="#attribution" title="3.20.&#160;attribution">$attribution</a> variable, NeoMutt will append this string after the inclusion of a message which is being replied to.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7344,7 +7344,7 @@ set pop_authenticators="digest-md5:apop:user"
       <p>If set to
       <span class="emphasis">
         <em>yes</em>
-      </span>, Mutt will post article to newsgroup that have not permissions to posting (e.g. moderated).
+      </span>, NeoMutt will post article to newsgroup that have not permissions to posting (e.g. moderated).
       <span class="bold">
         <strong>Note:</strong>
       </span>if news server does not support posting to that newsgroup or totally read-only, that posting will not have an effect.</p>
@@ -7383,9 +7383,9 @@ set pop_authenticators="digest-md5:apop:user"
           <code class="literal">~/postponed</code>
         </span>”</span></p>
       </div>
-      <p>Mutt allows you to indefinitely
+      <p>NeoMutt allows you to indefinitely
       <span class="quote">“<span class="quote">
-      <a class="link" href="#postpone" title="3.259.&#160;postpone">postpone</a> sending a message</span>”</span> which you are editing. When you choose to postpone a message, Mutt saves it in the mailbox specified by this variable.</p>
+      <a class="link" href="#postpone" title="3.259.&#160;postpone">postpone</a> sending a message</span>”</span> which you are editing. When you choose to postpone a message, NeoMutt saves it in the mailbox specified by this variable.</p>
       <p>Also see the
       <a class="link" href="#postpone" title="3.259.&#160;postpone">$postpone</a> variable.</p>
     </div>
@@ -7405,7 +7405,7 @@ set pop_authenticators="digest-md5:apop:user"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, postponed messages that are marked for encryption will be self-encrypted. Mutt will first try to encrypt using the value specified in
+      </span>, postponed messages that are marked for encryption will be self-encrypted. NeoMutt will first try to encrypt using the value specified in
       <a class="link" href="#pgp-self-encrypt-as" title="3.235.&#160;pgp_self_encrypt_as">$pgp_self_encrypt_as</a> or
       <a class="link" href="#smime-self-encrypt-as" title="3.344.&#160;smime_self_encrypt_as">$smime_self_encrypt_as</a>. If those are not set, it will try the deprecated
       <a class="link" href="#postpone-encrypt-as" title="3.262.&#160;postpone_encrypt_as">$postpone_encrypt_as</a>. (Crypto only)</p>
@@ -7444,8 +7444,8 @@ set pop_authenticators="digest-md5:apop:user"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, a shell command to be executed if mutt fails to establish a connection to the server. This is useful for setting up secure connections, e.g. with
-      <code class="literal">ssh(1)</code>. If the command returns a nonzero status, mutt gives up opening the server. Example:</p>
+      </span>, a shell command to be executed if NeoMutt fails to establish a connection to the server. This is useful for setting up secure connections, e.g. with
+      <code class="literal">ssh(1)</code>. If the command returns a nonzero status, NeoMutt gives up opening the server. Example:</p>
       <pre class="screen">
 set preconnect="ssh -f -q -L 1234:mailhost.net:143 mailhost.net \
 sleep 20 &lt; /dev/null &gt; /dev/null"
@@ -7469,7 +7469,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <p>Type:&#160;quadoption
         <br />Default:&#160;ask-no</p>
       </div>
-      <p>Controls whether or not Mutt really prints messages. This is set to
+      <p>Controls whether or not NeoMutt really prints messages. This is set to
       <span class="quote">“<span class="quote">ask-no</span>”</span> by default, because some people accidentally hit
       <span class="quote">“<span class="quote">p</span>”</span> often.</p>
     </div>
@@ -7560,10 +7560,10 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>external</em>
       </span>
-      <a class="link" href="#pager" title="3.208.&#160;pager">$pager</a>, setting this variable will cause Mutt to prompt you for a command when the pager exits rather than returning to the index menu. If
+      <a class="link" href="#pager" title="3.208.&#160;pager">$pager</a>, setting this variable will cause NeoMutt to prompt you for a command when the pager exits rather than returning to the index menu. If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will return to the index menu when the external pager exits.</p>
+      </span>, NeoMutt will return to the index menu when the external pager exits.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7578,10 +7578,10 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This specifies the command Mutt will use to make external address queries. The string may contain a
-      <span class="quote">“<span class="quote">%s</span>”</span>, which will be substituted with the query string the user types. Mutt will add quotes around the string substituted for
+      <p>This specifies the command NeoMutt will use to make external address queries. The string may contain a
+      <span class="quote">“<span class="quote">%s</span>”</span>, which will be substituted with the query string the user types. NeoMutt will add quotes around the string substituted for
       <span class="quote">“<span class="quote">%s</span>”</span> automatically according to shell quoting rules, so you should avoid adding your own. If no
-      <span class="quote">“<span class="quote">%s</span>”</span> is found in the string, Mutt will append the user's query to the end of the string. See
+      <span class="quote">“<span class="quote">%s</span>”</span> is found in the string, NeoMutt will append the user's query to the end of the string. See
       <span class="quote">“<span class="quote">
         <a class="link" href="advancedusage.html#query" title="8.&#160;External Address Queries">query</a>
       </span>”</span> for more information.</p>
@@ -7672,7 +7672,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </div>
       <p>This variable controls whether
       <span class="quote">“<span class="quote">quit</span>”</span> and
-      <span class="quote">“<span class="quote">exit</span>”</span> actually quit from mutt. If this option is
+      <span class="quote">“<span class="quote">exit</span>”</span> actually quit from NeoMutt. If this option is
       <span class="emphasis">
         <em>set</em>
       </span>, they do quit, if it is
@@ -7726,7 +7726,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <p>Type:&#160;number
         <br />Default:&#160;10</p>
       </div>
-      <p>If set to a value greater than 0, Mutt will display which message it is currently on when reading a mailbox or when performing search actions such as search and limit. The message is printed after this many messages have been read or searched (e.g., if set to 25, Mutt will print a message when it is at message 25, and then again when it gets to message 50). This variable is meant to indicate progress when reading or searching large mailboxes which may take some time. When set to 0, only a single message will appear before the reading the mailbox.</p>
+      <p>If set to a value greater than 0, NeoMutt will display which message it is currently on when reading a mailbox or when performing search actions such as search and limit. The message is printed after this many messages have been read or searched (e.g., if set to 25, NeoMutt will print a message when it is at message 25, and then again when it gets to message 50). This variable is meant to indicate progress when reading or searching large mailboxes which may take some time. When set to 0, only a single message will appear before the reading the mailbox.</p>
       <p>Also see the
       <a class="link" href="#write-inc" title="3.412.&#160;write_inc">$write_inc</a>,
       <a class="link" href="#net-inc" title="3.182.&#160;net_inc">$net_inc</a> and
@@ -7789,7 +7789,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <p>Type:&#160;quadoption
         <br />Default:&#160;ask-yes</p>
       </div>
-      <p>Controls whether or not Mutt recalls postponed messages when composing a new message.</p>
+      <p>Controls whether or not NeoMutt recalls postponed messages when composing a new message.</p>
       <p>Setting this variable to
       <span class="emphasis">
         <em>yes</em>
@@ -7878,10 +7878,10 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will reformat paragraphs in text/plain parts marked format=flowed. If
+      </span>, NeoMutt will reformat paragraphs in text/plain parts marked format=flowed. If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will display paragraphs unaltered from how they appear in the message body. See RFC3676 for details on the
+      </span>, NeoMutt will display paragraphs unaltered from how they appear in the message body. See RFC3676 for details on the
       <span class="emphasis">
         <em>format=flowed</em>
       </span>format.</p>
@@ -7944,7 +7944,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>If
       <span class="emphasis">
         <em>unset</em>
-      </span>and you are replying to a message sent by you, Mutt will assume that you want to reply to the recipients of that message rather than to yourself.</p>
+      </span>and you are replying to a message sent by you, NeoMutt will assume that you want to reply to the recipients of that message rather than to yourself.</p>
       <p>Also see the
       <span class="quote">“
       <span class="quote">
@@ -7967,7 +7967,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, when replying to a message, Mutt will use the address listed in the Reply-to: header as the recipient of the reply. If
+      </span>, when replying to a message, NeoMutt will use the address listed in the Reply-to: header as the recipient of the reply. If
       <span class="emphasis">
         <em>unset</em>
       </span>, it will use the address in the From: header field instead. This option is useful for reading a mailing list that sets the Reply-To: header field to the list address and you want to send a private message to the author of a message.</p>
@@ -8048,7 +8048,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </span>, draft files previously edited (via
       <code class="literal">-E -H</code> on the command line) will have
       <a class="link" href="#resume-draft-files" title="3.286.&#160;resume_draft_files">$resume_draft_files</a> automatically set when they are used as a draft file again.</p>
-      <p>The first time a draft file is saved, mutt will add a header, X-Mutt-Resume-Draft to the saved file. The next time the draft file is read in, if mutt sees the header, it will set
+      <p>The first time a draft file is saved, NeoMutt will add a header, X-Mutt-Resume-Draft to the saved file. The next time the draft file is read in, if NeoMutt sees the header, it will set
       <a class="link" href="#resume-draft-files" title="3.286.&#160;resume_draft_files">$resume_draft_files</a>.</p>
       <p>This option is designed to prevent multiple signatures, user-defined headers, and other processing effects from being made multiple times to the draft file.</p>
     </div>
@@ -8065,7 +8065,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>This variable controls whether or not Mutt will display the
+      <p>This variable controls whether or not NeoMutt will display the
       <span class="quote">“
       <span class="quote">personal</span>”</span> name from your aliases in the index menu if it finds an alias that matches the message's sender. For example, if you have the following alias:</p>
       <pre class="screen">
@@ -8139,10 +8139,10 @@ From: abd30425@somewhere.net
       <a class="link" href="#reverse-name" title="3.289.&#160;reverse_name">$reverse_name</a> feature. When it is
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will use the address from incoming messages as-is, possibly including eventual real names. When it is
+      </span>, NeoMutt will use the address from incoming messages as-is, possibly including eventual real names. When it is
       <span class="emphasis">
         <em>unset</em>
-      </span>, mutt will override any such real names with the setting of the
+      </span>, NeoMutt will override any such real names with the setting of the
       <a class="link" href="#realname" title="3.275.&#160;realname">$realname</a> variable.</p>
     </div>
     <div class="sect2">
@@ -8161,7 +8161,7 @@ From: abd30425@somewhere.net
       <p>When this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will decode RFC2047-encoded MIME parameters. You want to set this variable when mutt suggests you to save attachments to files named like:</p>
+      </span>, NeoMutt will decode RFC2047-encoded MIME parameters. You want to set this variable when NeoMutt suggests you to save attachments to files named like:</p>
       <pre class="screen">
 =?iso-8859-1?Q?file=5F=E4=5F991116=2Ezip?=
 </pre>
@@ -8173,10 +8173,10 @@ From: abd30425@somewhere.net
       <p>Also note that setting this parameter will
       <span class="emphasis">
         <em>not</em>
-      </span>have the effect that mutt
+      </span>have the effect that NeoMutt
       <span class="emphasis">
         <em>generates</em>
-      </span>this kind of encoding. Instead, mutt will unconditionally use the encoding specified in RFC2231.</p>
+      </span>this kind of encoding. Instead, NeoMutt will unconditionally use the encoding specified in RFC2231.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8194,7 +8194,7 @@ From: abd30425@somewhere.net
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will take the sender's full address when choosing a default folder for saving a mail. If
+      </span>, NeoMutt will take the sender's full address when choosing a default folder for saving a mail. If
       <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a> or
       <a class="link" href="#force-name" title="3.82.&#160;force_name">$force_name</a> is
       <span class="emphasis">
@@ -8225,7 +8225,7 @@ From: abd30425@somewhere.net
       <p>
       <span class="bold">
         <strong>Note:</strong>
-      </span>This only applies to mbox and MMDF folders, Mutt does not delete MH and Maildir directories.</p>
+      </span>This only applies to mbox and MMDF folders, NeoMutt does not delete MH and Maildir directories.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8300,7 +8300,7 @@ From: abd30425@somewhere.net
         <p>Type:&#160;number
         <br />Default:&#160;-1</p>
       </div>
-      <p>Messages which have been assigned a score equal to or lower than the value of this variable are automatically marked for deletion by mutt. Since mutt scores are always greater than or equal to zero, the default setting of this variable will never mark a message for deletion.</p>
+      <p>Messages which have been assigned a score equal to or lower than the value of this variable are automatically marked for deletion by NeoMutt. Since NeoMutt scores are always greater than or equal to zero, the default setting of this variable will never mark a message for deletion.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8330,7 +8330,7 @@ From: abd30425@somewhere.net
         <p>Type:&#160;number
         <br />Default:&#160;-1</p>
       </div>
-      <p>Messages which have been assigned a score equal to or lower than the value of this variable are automatically marked as read by mutt. Since mutt scores are always greater than or equal to zero, the default setting of this variable will never mark a message read.</p>
+      <p>Messages which have been assigned a score equal to or lower than the value of this variable are automatically marked as read by NeoMutt. Since NeoMutt scores are always greater than or equal to zero, the default setting of this variable will never mark a message read.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8363,7 +8363,7 @@ From: abd30425@somewhere.net
           <code class="literal">us-ascii:iso-8859-1:utf-8</code>
         </span>”</span></p>
       </div>
-      <p>A colon-delimited list of character sets for outgoing messages. Mutt will use the first character set into which the text can be converted exactly. If your
+      <p>A colon-delimited list of character sets for outgoing messages. NeoMutt will use the first character set into which the text can be converted exactly. If your
       <a class="link" href="#charset" title="3.31.&#160;charset">$charset</a> is not
       <span class="quote">“<span class="quote">iso-8859-1</span>”</span> and recipients may not understand
       <span class="quote">“<span class="quote">UTF-8</span>”</span>, it is advisable to include in the list an appropriate widely used standard character set (such as
@@ -8371,7 +8371,7 @@ From: abd30425@somewhere.net
       <span class="quote">“<span class="quote">koi8-r</span>”</span> or
       <span class="quote">“<span class="quote">iso-2022-jp</span>”</span>) either instead of or after
       <span class="quote">“<span class="quote">iso-8859-1</span>”</span>.</p>
-      <p>In case the text cannot be converted into one of these exactly, mutt uses
+      <p>In case the text cannot be converted into one of these exactly, NeoMutt uses
       <a class="link" href="#charset" title="3.31.&#160;charset">$charset</a> as a fallback.</p>
     </div>
     <div class="sect2">
@@ -8390,7 +8390,7 @@ From: abd30425@somewhere.net
           <code class="literal">/usr/sbin/sendmail&#160;-oem&#160;-oi</code>
         </span>”</span></p>
       </div>
-      <p>Specifies the program and arguments used to deliver mail sent by Mutt. Mutt expects that the specified program interprets additional arguments as recipient addresses. Mutt appends all recipients after adding a
+      <p>Specifies the program and arguments used to deliver mail sent by NeoMutt. NeoMutt expects that the specified program interprets additional arguments as recipient addresses. NeoMutt appends all recipients after adding a
       <code class="literal">--</code>delimiter (if not already present). Additional flags, such as for
       <a class="link" href="#use-8bitmime" title="3.396.&#160;use_8bitmime">$use_8bitmime</a>,
       <a class="link" href="#use-envelope-from" title="3.398.&#160;use_envelope_from">$use_envelope_from</a>,
@@ -8412,7 +8412,7 @@ From: abd30425@somewhere.net
       </div>
       <p>Specifies the number of seconds to wait for the
       <a class="link" href="#sendmail" title="3.302.&#160;sendmail">$sendmail</a> process to finish before giving up and putting delivery in the background.</p>
-      <p>Mutt interprets the value of this variable as follows:</p>
+      <p>NeoMutt interprets the value of this variable as follows:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8555,7 +8555,7 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This specifies the characters to be drawn between the sidebar (when visible) and the other Mutt panels. ASCII and Unicode line-drawing characters are supported.</p>
+      <p>This specifies the characters to be drawn between the sidebar (when visible) and the other NeoMutt panels. ASCII and Unicode line-drawing characters are supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8950,7 +8950,7 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>unset</em>
       </span>this variable unless your signature contains just your name. The reason for this is because many software packages use
-      <span class="quote">“<span class="quote">-- \n</span>”</span> to detect your signature. For example, Mutt has the ability to highlight the signature in a different color in the built-in pager.</p>
+      <span class="quote">“<span class="quote">-- \n</span>”</span> to detect your signature. For example, NeoMutt has the ability to highlight the signature in a different color in the built-in pager.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9008,14 +9008,14 @@ set sidebar_delim_chars='.'
           <code class="literal">~f&#160;%s&#160;|&#160;~s&#160;%s</code>
         </span>”</span></p>
       </div>
-      <p>Specifies how Mutt should expand a simple search into a real search pattern. A simple search is one that does not contain any of the
+      <p>Specifies how NeoMutt should expand a simple search into a real search pattern. A simple search is one that does not contain any of the
       <span class="quote">“<span class="quote">~</span>”</span> pattern operators. See
       <span class="quote">“<span class="quote">
         <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>
       </span>”</span> for more information on search patterns.</p>
       <p>For example, if you simply type
       <span class="quote">“
-      <span class="quote">joe</span>”</span> at a search or limit prompt, Mutt will automatically expand it to the value specified by this variable by replacing
+      <span class="quote">joe</span>”</span> at a search or limit prompt, NeoMutt will automatically expand it to the value specified by this variable by replacing
       <span class="quote">“
       <span class="quote">%s</span>”</span> with the supplied string. For the default value,
       <span class="quote">“
@@ -9145,7 +9145,7 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>Since for S/MIME there is no pubring/secring as with PGP, mutt has to handle storage and retrieval of keys by itself. This is very basic right now, and keys and certificates are stored in two different directories, both named as the hash-value retrieved from OpenSSL. There is an index file which contains mailbox-address keyid pairs, and which can be manually edited. This option points to the location of the certificates. (S/MIME only)</p>
+      <p>Since for S/MIME there is no pubring/secring as with PGP, NeoMutt has to handle storage and retrieval of keys by itself. This is very basic right now, and keys and certificates are stored in two different directories, both named as the hash-value retrieved from OpenSSL. There is an index file which contains mailbox-address keyid pairs, and which can be manually edited. This option points to the location of the certificates. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9235,7 +9235,7 @@ set sidebar_delim_chars='.'
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>(default) this tells mutt to use the default key for decryption. Otherwise, if managing multiple certificate-key-pairs, mutt will try to use the mailbox-address to determine the key to use. It will ask you to supply a key, if it can't find one. (S/MIME only)</p>
+      </span>(default) this tells NeoMutt to use the default key for decryption. Otherwise, if managing multiple certificate-key-pairs, NeoMutt will try to use the mailbox-address to determine the key to use. It will ask you to supply a key, if it can't find one. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9385,10 +9385,10 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>The default behavior of mutt is to use PGP on all auto-sign/encryption operations. To override and to use OpenSSL instead this must be
+      <p>The default behavior of NeoMutt is to use PGP on all auto-sign/encryption operations. To override and to use OpenSSL instead this must be
       <span class="emphasis">
         <em>set</em>
-      </span>. However, this has no effect while replying, since mutt will automatically select the same application that was used to sign/encrypt the original message. (Note that this variable can be overridden by unsetting
+      </span>. However, this has no effect while replying, since NeoMutt will automatically select the same application that was used to sign/encrypt the original message. (Note that this variable can be overridden by unsetting
       <a class="link" href="#crypt-autosmime" title="3.46.&#160;crypt_autosmime">$crypt_autosmime</a>.) (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9404,7 +9404,7 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>Since for S/MIME there is no pubring/secring as with PGP, mutt has to handle storage and retrieval of keys/certs by itself. This is very basic right now, and stores keys and certificates in two different directories, both named as the hash-value retrieved from OpenSSL. There is an index file which contains mailbox-address keyid pair, and which can be manually edited. This option points to the location of the private keys. (S/MIME only)</p>
+      <p>Since for S/MIME there is no pubring/secring as with PGP, NeoMutt has to handle storage and retrieval of keys/certs by itself. This is very basic right now, and stores keys and certificates in two different directories, both named as the hash-value retrieved from OpenSSL. There is an index file which contains mailbox-address keyid pair, and which can be manually edited. This option points to the location of the private keys. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9579,7 +9579,7 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods mutt may attempt to use to log in to an SMTP server, in the order mutt should try them. Authentication methods are any SASL mechanism, e.g.
+      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an SMTP server, in the order NeoMutt should try them. Authentication methods are any SASL mechanism, e.g.
       <span class="quote">“
       <span class="quote">plain</span>”</span>,
       <span class="quote">“
@@ -9589,9 +9589,9 @@ set sidebar_delim_chars='.'
       <span class="quote">“
       <span class="quote">cram-md5</span>”</span>. This option is case-insensitive. If it is
       <span class="quote">“
-      <span class="quote">unset</span>”</span>(the default) mutt will try all available methods, in order from most-secure to least-secure. Support for the
+      <span class="quote">unset</span>”</span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure. Support for the
       <span class="quote">“
-      <span class="quote">plain</span>”</span> mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of mutt -v).</p>
+      <span class="quote">plain</span>”</span> mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of neomutt -v).</p>
       <p>Example:</p>
       <pre class="screen">
 set smtp_authenticators="digest-md5:cram-md5"
@@ -9613,12 +9613,12 @@ set smtp_authenticators="digest-md5:cram-md5"
       <p>Specifies the password for your SMTP account. If
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will prompt you for your password when you first send mail via SMTP. See
-      <a class="link" href="#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a> to configure mutt to send mail via SMTP.</p>
+      </span>, NeoMutt will prompt you for your password when you first send mail via SMTP. See
+      <a class="link" href="#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a> to configure NeoMutt to send mail via SMTP.</p>
       <p>
       <span class="bold">
         <strong>Warning</strong>
-      </span>: you should only use this option when you are on a fairly secure machine, because the superuser can read your muttrc even if you are the only one who can read the file.</p>
+      </span>: you should only use this option when you are on a fairly secure machine, because the superuser can read your neomuttrc even if you are the only one who can read the file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9723,7 +9723,7 @@ set sort=reverse-date-sent
             <p>alias (sort alphabetically by alias name)</p>
           </li>
           <li class="listitem">
-            <p>unsorted (leave in order specified in .muttrc)</p>
+            <p>unsorted (leave in order specified in .neomuttrc)</p>
           </li>
         </ul>
       </div>
@@ -9743,7 +9743,7 @@ set sort=reverse-date-sent
       </div>
       <p>When sorting by threads, this variable controls how threads are sorted in relation to other threads, and how the branches of the thread trees are sorted. This can be set to any value that
       <a class="link" href="#sort" title="3.353.&#160;sort">$sort</a> can, except
-      <span class="quote">“<span class="quote">threads</span>”</span>(in that case, mutt will just use
+      <span class="quote">“<span class="quote">threads</span>”</span>(in that case, NeoMutt will just use
       <span class="quote">“<span class="quote">date-sent</span>”</span>). You can also specify the
       <span class="quote">“<span class="quote">last-</span>”</span> prefix in addition to the
       <span class="quote">“<span class="quote">reverse-</span>”</span> prefix, but
@@ -9878,7 +9878,7 @@ set sort_aux=last-date-received
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>If your spool mailbox is in a non-default place where Mutt cannot find it, you can specify its location with this variable. Mutt will initially set this variable to the value of the environment variable
+      <p>If your spool mailbox is in a non-default place where NeoMutt cannot find it, you can specify its location with this variable. NeoMutt will initially set this variable to the value of the environment variable
       <code class="literal">$MAIL</code> or
       <code class="literal">$MAILDIR</code> if either is defined.</p>
     </div>
@@ -9932,7 +9932,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>If this variable is
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will require that all connections to remote servers be encrypted. Furthermore it will attempt to negotiate TLS even if the server does not advertise the capability, since it would otherwise have to abort the connection anyway. This option supersedes
+      </span>, NeoMutt will require that all connections to remote servers be encrypted. Furthermore it will attempt to negotiate TLS even if the server does not advertise the capability, since it would otherwise have to abort the connection anyway. This option supersedes
       <a class="link" href="#ssl-starttls" title="3.364.&#160;ssl_starttls">$ssl_starttls</a>.</p>
     </div>
     <div class="sect2">
@@ -9966,11 +9966,11 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>(the default), mutt will attempt to use
+      </span>(the default), NeoMutt will attempt to use
       <code class="literal">STARTTLS</code> on servers advertising the capability. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, mutt will not attempt to use
+      </span>, NeoMutt will not attempt to use
       <code class="literal">STARTTLS</code> regardless of the server's capabilities.</p>
     </div>
     <div class="sect2">
@@ -10064,7 +10064,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>If set to
       <span class="emphasis">
         <em>yes</em>
-      </span>, mutt will use CA certificates in the system-wide certificate store when checking if a server certificate is signed by a trusted CA.</p>
+      </span>, NeoMutt will use CA certificates in the system-wide certificate store when checking if a server certificate is signed by a trusted CA.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10082,7 +10082,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>(the default), mutt will not automatically accept a server certificate that is either not yet valid or already expired. You should only unset this for particular known hosts, using the
+      </span>(the default), NeoMutt will not automatically accept a server certificate that is either not yet valid or already expired. You should only unset this for particular known hosts, using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">&lt;account-hook&gt;</a>
       </code>function.</p>
@@ -10103,7 +10103,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>(the default), mutt will not automatically accept a server certificate whose host name does not match the host used in your folder URL. You should only unset this for particular known hosts, using the
+      </span>(the default), NeoMutt will not automatically accept a server certificate whose host name does not match the host used in your folder URL. You should only unset this for particular known hosts, using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">&lt;account-hook&gt;</a>
       </code>function.</p>
@@ -10318,7 +10318,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
             </tr>
             <tr>
               <td>%v</td>
-              <td>Mutt version string</td>
+              <td>NeoMutt version string</td>
             </tr>
             <tr>
               <td>%V</td>
@@ -10394,7 +10394,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <code class="literal">%_h</code>
       </span>”</span>.</p>
       <p>If you prefix the sequence character with a colon (
-      <span class="quote">“<span class="quote">:</span>”</span>) character, mutt will replace any dots in the expansion by underscores. This might be helpful with IMAP folders that don't like dots in folder names.</p>
+      <span class="quote">“<span class="quote">:</span>”</span>) character, NeoMutt will replace any dots in the expansion by underscores. This might be helpful with IMAP folders that don't like dots in folder names.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10456,13 +10456,13 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>When
       <span class="emphasis">
         <em>unset</em>
-      </span>, mutt won't stop when the user presses the terminal's
+      </span>, NeoMutt won't stop when the user presses the terminal's
       <span class="emphasis">
         <em>susp</em>
       </span>key, usually
-      <span class="quote">“<span class="quote">^Z</span>”</span>. This is useful if you run mutt inside an xterm using a command like
+      <span class="quote">“<span class="quote">^Z</span>”</span>. This is useful if you run NeoMutt inside an xterm using a command like
       <span class="quote">“<span class="quote">
-        <code class="literal">xterm -e mutt</code>
+        <code class="literal">xterm -e neomutt</code>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -10481,7 +10481,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will generate
+      </span>, NeoMutt will generate
       <span class="quote">“<span class="quote">format=flowed</span>”</span> bodies with a content type of
       <span class="quote">“<span class="quote">
         <code class="literal">text/plain; format=flowed</code>
@@ -10520,7 +10520,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>Users searching attachments or for non-ASCII characters should
       <span class="emphasis">
         <em>set</em>
-      </span>this value because decoding also includes MIME parsing/decoding and possible character set conversions. Otherwise mutt will attempt to match against the raw message received (for example quoted-printable encoded or with encoded headers) which may lead to incorrect search results.</p>
+      </span>this value because decoding also includes MIME parsing/decoding and possible character set conversions. Otherwise NeoMutt will attempt to match against the raw message received (for example quoted-printable encoded or with encoded headers) which may lead to incorrect search results.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10538,7 +10538,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt uses the date received rather than the date sent to thread messages by subject.</p>
+      </span>, NeoMutt uses the date received rather than the date sent to thread messages by subject.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10576,7 +10576,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <a class="link" href="#read-inc" title="3.273.&#160;read_inc">$read_inc</a>,
       <a class="link" href="#write-inc" title="3.412.&#160;write_inc">$write_inc</a>, and
       <a class="link" href="#net-inc" title="3.182.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
-      <a class="link" href="#time-inc" title="3.384.&#160;time_inc">$time_inc</a> milliseconds apart. This can improve throughput on systems with slow terminals, or when running mutt on a remote system.</p>
+      <a class="link" href="#time-inc" title="3.384.&#160;time_inc">$time_inc</a> milliseconds apart. This can improve throughput on systems with slow terminals, or when running NeoMutt on a remote system.</p>
       <p>Also see the
       <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
@@ -10595,9 +10595,9 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;number
         <br />Default:&#160;600</p>
       </div>
-      <p>When Mutt is waiting for user input either idling in menus or in an interactive prompt, Mutt would block until input is present. Depending on the context, this would prevent certain operations from working, like checking for new mail or keeping an IMAP connection alive.</p>
-      <p>This variable controls how many seconds Mutt will at most wait until it aborts waiting for input, performs these operations and continues to wait for input.</p>
-      <p>A value of zero or less will cause Mutt to never time out.</p>
+      <p>When NeoMutt is waiting for user input either idling in menus or in an interactive prompt, NeoMutt would block until input is present. Depending on the context, this would prevent certain operations from working, like checking for new mail or keeping an IMAP connection alive.</p>
+      <p>This variable controls how many seconds NeoMutt will at most wait until it aborts waiting for input, performs these operations and continues to wait for input.</p>
+      <p>A value of zero or less will cause NeoMutt to never time out.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10612,7 +10612,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;path
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable allows you to specify where Mutt will place its temporary files needed for displaying and composing messages. If this variable is not set, the environment variable
+      <p>This variable allows you to specify where NeoMutt will place its temporary files needed for displaying and composing messages. If this variable is not set, the environment variable
       <code class="literal">$TMPDIR</code> is used. If
       <code class="literal">$TMPDIR</code> is not set then
       <span class="quote">“<span class="quote">
@@ -10855,7 +10855,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether mutt tries to set the terminal status line and icon name. Most terminal emulators emulate the status line in the window title.</p>
+      <p>Controls whether NeoMutt tries to set the terminal status line and icon name. Most terminal emulators emulate the status line in the window title.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10894,12 +10894,12 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>Setting this variable will cause mutt to open a pipe to a command instead of a raw socket. You may be able to use this to set up preauthenticated connections to your IMAP/POP3/SMTP server. Example:</p>
+      <p>Setting this variable will cause NeoMutt to open a pipe to a command instead of a raw socket. You may be able to use this to set up preauthenticated connections to your IMAP/POP3/SMTP server. Example:</p>
       <pre class="screen">
 set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
 </pre>
       <p>Note: For this example to work you must be able to log in to the remote machine without having to enter a password.</p>
-      <p>When set, Mutt uses the tunnel for all remote connections. Please see
+      <p>When set, NeoMutt uses the tunnel for all remote connections. Please see
       <span class="quote">“<span class="quote">
         <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">account-hook</a>
       </span>”</span> in the manual for how to use different tunnel commands per connection.</p>
@@ -10920,7 +10920,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will jump to the next unread message, if any, when the current thread is
+      </span>, NeoMutt will jump to the next unread message, if any, when the current thread is
       <span class="emphasis">
         <em>un</em>
       </span>collapsed.</p>
@@ -10941,7 +10941,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will automatically uncollapse any collapsed thread that receives a new message. When
+      </span>, NeoMutt will automatically uncollapse any collapsed thread that receives a new message. When
       <span class="emphasis">
         <em>unset</em>
       </span>, collapsed threads will remain collapsed. the presence of the new message will still affect index sorting, though.</p>
@@ -10967,7 +10967,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will invoke
+      </span>, NeoMutt will invoke
       <a class="link" href="#sendmail" title="3.302.&#160;sendmail">$sendmail</a> with the
       <code class="literal">-B8BITMIME</code> flag when sending 8-bit messages to enable ESMTP negotiation.</p>
     </div>
@@ -10987,7 +10987,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will qualify all local addresses (ones without the
+      </span>, NeoMutt will qualify all local addresses (ones without the
       <span class="quote">“<span class="quote">@host</span>”</span> portion) with the value of
       <a class="link" href="#hostname" title="3.114.&#160;hostname">$hostname</a>. If
       <span class="emphasis">
@@ -11010,7 +11010,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will set the
+      </span>, NeoMutt will set the
       <span class="emphasis">
         <em>envelope</em>
       </span>sender of the message. If
@@ -11020,7 +11020,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       </span>, it will be used as the sender address. If
       <span class="emphasis">
         <em>unset</em>
-      </span>, mutt will attempt to derive the sender from the
+      </span>, NeoMutt will attempt to derive the sender from the
       <span class="quote">“<span class="quote">From:</span>”</span> header.</p>
       <p>Note that this information is passed to sendmail command using the
       <code class="literal">-f</code> command line switch. Therefore setting this option is not useful if the
@@ -11045,7 +11045,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will generate the
+      </span>, NeoMutt will generate the
       <span class="quote">“<span class="quote">From:</span>”</span> header field when sending messages. If
       <span class="emphasis">
         <em>unset</em>
@@ -11071,10 +11071,10 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will look for IPv6 addresses of hosts it tries to contact. If this option is
+      </span>, NeoMutt will look for IPv6 addresses of hosts it tries to contact. If this option is
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will restrict itself to IPv4 addresses. Normally, the default should work.</p>
+      </span>, NeoMutt will restrict itself to IPv4 addresses. Normally, the default should work.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11092,8 +11092,8 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will add a
-      <span class="quote">“<span class="quote">User-Agent:</span>”</span> header to outgoing messages, indicating which version of mutt was used for composing them.</p>
+      </span>, NeoMutt will add a
+      <span class="quote">“<span class="quote">User-Agent:</span>”</span> header to outgoing messages, indicating which version of NeoMutt was used for composing them.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11148,7 +11148,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
+      </span>, NeoMutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11163,7 +11163,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>Controls whether Mutt will ask you to press a key after an external command has been invoked by these functions:
+      <p>Controls whether NeoMutt will ask you to press a key after an external command has been invoked by these functions:
       <code class="literal">&lt;shell-escape&gt;</code>,
       <code class="literal">&lt;pipe-message&gt;</code>,
       <code class="literal">&lt;pipe-entry&gt;</code>,
@@ -11179,10 +11179,10 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will always ask for a key. When
+      </span>, NeoMutt will always ask for a key. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, Mutt will wait for a key only if the external command returned a non-zero status.</p>
+      </span>, NeoMutt will wait for a key only if the external command returned a non-zero status.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11200,7 +11200,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, mutt will weed headers when displaying, forwarding, printing, or replying to messages.</p>
+      </span>, NeoMutt will weed headers when displaying, forwarding, printing, or replying to messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11215,9 +11215,9 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <p>Type:&#160;number
         <br />Default:&#160;0</p>
       </div>
-      <p>When set to a positive value, mutt will wrap text at
-      <a class="link" href="#wrap" title="3.407.&#160;wrap">$wrap</a> characters. When set to a negative value, mutt will wrap text so that there are
-      <a class="link" href="#wrap" title="3.407.&#160;wrap">$wrap</a> characters of empty space on the right side of the terminal. Setting it to zero makes mutt wrap at the terminal width.</p>
+      <p>When set to a positive value, NeoMutt will wrap text at
+      <a class="link" href="#wrap" title="3.407.&#160;wrap">$wrap</a> characters. When set to a negative value, NeoMutt will wrap text so that there are
+      <a class="link" href="#wrap" title="3.407.&#160;wrap">$wrap</a> characters of empty space on the right side of the terminal. Setting it to zero makes NeoMutt wrap at the terminal width.</p>
       <p>Also see
       <a class="link" href="#reflow-wrap" title="3.280.&#160;reflow_wrap">$reflow_wrap</a>.</p>
     </div>
@@ -11294,9 +11294,9 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>Controls whether mutt writes out the
-      <span class="quote">“<span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Exim users may wish to unset this. If mutt is set to deliver directly via SMTP (see
-      <a class="link" href="#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a>), this option does nothing: mutt will never write out the
+      <p>Controls whether NeoMutt writes out the
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Exim users may wish to unset this. If NeoMutt is set to deliver directly via SMTP (see
+      <a class="link" href="#smtp-url" title="3.352.&#160;smtp_url">$smtp_url</a>), this option does nothing: NeoMutt will never write out the
       <span class="quote">“<span class="quote">Bcc:</span>”</span> header in this case.</p>
     </div>
     <div class="sect2">
@@ -11335,7 +11335,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>The character used to delimit distinct keywords in X-Label headers. X-Label is primarily a Mutt artifact, and the semantics of the field were never defined: it is free-form text. However interaction with X-Keywords:, X-Mozilla-Keys:, and Keywords: requires that we adopt some means of identifying separate keywords within the field. Set this to your personal convention.</p>
+      <p>The character used to delimit distinct keywords in X-Label headers. X-Label is primarily a NeoMutt artifact, and the semantics of the field were never defined: it is free-form text. However interaction with X-Keywords:, X-Mozilla-Keys:, and Keywords: requires that we adopt some means of identifying separate keywords within the field. Set this to your personal convention.</p>
       <p>This affect both parsing existing X-Label headers and writing new X-Label headers. You can modify this variable in runtime to accomplish various kinds of conversion.</p>
     </div>
     <div class="sect2">
@@ -11354,7 +11354,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>If
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will add
+      </span>, NeoMutt will add
       <span class="quote">“<span class="quote">X-Comment-To:</span>”</span> field (that contains full name of original article author) to article that followuped to newsgroup.</p>
     </div>
     <div class="sect2">
@@ -11373,7 +11373,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will collapse all threads when entering a folder.</p>
+      </span>, NeoMutt will collapse all threads when entering a folder.</p>
     </div>
   </div>
   <div class="sect1">
@@ -11522,7 +11522,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;enter-command&gt;</code>
                 </td>
                 <td>:</td>
-                <td>enter a muttrc command</td>
+                <td>enter a neomuttrc command</td>
               </tr>
               <tr>
                 <td>
@@ -12194,7 +12194,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;show-version&gt;</code>
                 </td>
                 <td>V</td>
-                <td>show the Mutt version number and date</td>
+                <td>show the NeoMutt version number and date</td>
               </tr>
               <tr>
                 <td>
@@ -12376,7 +12376,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;quasi-delete&gt;</code>
                 </td>
                 <td>&#160;</td>
-                <td>delete from mutt, don't touch on disk</td>
+                <td>delete from NeoMutt, don't touch on disk</td>
               </tr>
               <tr>
                 <td>
@@ -12978,7 +12978,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;show-version&gt;</code>
                 </td>
                 <td>V</td>
-                <td>show the Mutt version number and date</td>
+                <td>show the NeoMutt version number and date</td>
               </tr>
               <tr>
                 <td>
@@ -13062,7 +13062,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;enter-command&gt;</code>
                 </td>
                 <td>:</td>
-                <td>enter a muttrc command</td>
+                <td>enter a neomuttrc command</td>
               </tr>
               <tr>
                 <td>
@@ -13237,7 +13237,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;quasi-delete&gt;</code>
                 </td>
                 <td>&#160;</td>
-                <td>delete from mutt, don't touch on disk</td>
+                <td>delete from NeoMutt, don't touch on disk</td>
               </tr>
               <tr>
                 <td>

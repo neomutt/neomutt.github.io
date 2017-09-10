@@ -138,7 +138,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>
       <code class="literal">tag:AAA and tag:BBB</code>--encoding-&gt;
       <code class="literal">tag:AAA%20and%20tag:BBB</code></p>
-      <p>but mutt config file parser is smart enough to accept space in quoted strings. It means that you can use</p>
+      <p>but NeoMutt config file parser is smart enough to accept space in quoted strings. It means that you can use</p>
       <p>
         <code class="literal">notmuch:///foo?query=tag:AAA and tag:BBB</code>
       </p>
@@ -366,7 +366,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </div>
       </div>
     </div>
-    <p>Notmuch adds the following functions to Mutt. By default, none of them are bound to keys.</p>
+    <p>Notmuch adds the following functions to NeoMutt. By default, none of them are bound to keys.</p>
     <div >
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
@@ -566,7 +566,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>8.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>8.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -582,7 +582,7 @@ set nm_db_limit = 0
 # notmuch://&lt;absolute path&gt;</span>
 set nm_default_uri = ""
 <span class="comment"># The messages tagged with these tags are excluded and not loaded
-# from notmuch DB to mutt unless specified explicitly.</span>
+# from notmuch DB to NeoMutt unless specified explicitly.</span>
 set nm_exclude_tags = ""
 <span class="comment"># This variable specifies private notmuch tags which should not be printed
 # on screen (index, pager).</span>
@@ -592,10 +592,10 @@ set nm_open_timeout = 5
 <span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and
 # 'messages'.</span>
 set nm_query_type = messages
-<span class="comment"># Add messages stored to the mutt record (see $record in the mutt docs) also to notmuch DB. If you reply to an email then the new email inherits tags from the original email.
+<span class="comment"># Add messages stored to the NeoMutt record (see $record in the NeoMutt docs) also to notmuch DB. If you reply to an email then the new email inherits tags from the original email.
 </span>
 set nm_record = no
-<span class="comment"># Tags that should be removed or added to the to the messages stored in the mutt record.
+<span class="comment"># Tags that should be removed or added to the to the messages stored in the NeoMutt record.
 
 example:
 set record = "~/sent-mails"
@@ -617,7 +617,7 @@ set nm_unread_tag = unread
 # %*X  soft-fill with character ``X'' as pad
 </span>
 set vfolder_format = "%6n(%6N) %f"
-<span class="comment"># When set, mutt will use the first virtual mailbox (see virtual-mailboxes)
+<span class="comment"># When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)
 # as a spoolfile.</span>
 set virtual_spoolfile = no
 <span class="comment"># setup time window preferences
@@ -690,7 +690,7 @@ color index_tag red white "inbox"
 # this symbol does not use a pattern</span>
 color index_tags green default
 <span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=muttrc</span>
+# vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

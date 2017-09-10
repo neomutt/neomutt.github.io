@@ -32,7 +32,7 @@ status: stable
     <p>
     <span class="bold">
       <strong>Since:</strong>
-    </span>NeoMutt 2016-09-10, Mutt 1.7.0</p>
+    </span>NeoMutt 2016-09-10, NeoMutt 1.7.0</p>
     <p>
     <span class="bold">
       <strong>Dependencies:</strong>
@@ -50,7 +50,7 @@ status: stable
     <p>The Sidebar shows a list of all your mailboxes. The list can be turned on and off, it can be themed and the list style can be configured.</p>
     <p>This part of the manual is a reference guide. If you want a simple introduction with examples see the
     <a class="link" href="/guide/gettingstarted.html#intro-sidebar" title="2.4.&#160;Sidebar">Sidebar Howto</a>. If you just want to get started, you could use the sample
-    <a class="link" href="#sidebar-muttrc" title="8.&#160;Muttrc">Sidebar muttrc</a>.</p>
+    <a class="link" href="#sidebar-neomuttrc" title="8.&#160;neomuttrc">Sidebar neomuttrc</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -206,7 +206,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>Sidebar adds the following functions to Mutt. By default, none of them are bound to keys.</p>
+    <p>Sidebar adds the following functions to NeoMutt. By default, none of them are bound to keys.</p>
     <div >
       <a class="offset" id="table-sidebar-functions"></a>
       <p class="title">
@@ -380,7 +380,7 @@ status: stable
               <td>
                 <code class="literal">sidebar_indicator</code>
               </td>
-              <td>mutt
+              <td>neomutt
               <code class="literal">indicator</code></td>
               <td>The mailbox open in the Index panel</td>
             </tr>
@@ -411,7 +411,7 @@ status: stable
     </div>
     <br class="table-break" />
     <p>If the
-    <code class="literal">sidebar_indicator</code> color isn't set, then the default Mutt indicator color will be used (the color used in the index panel).</p>
+    <code class="literal">sidebar_indicator</code> color isn't set, then the default NeoMutt indicator color will be used (the color used in the index panel).</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -500,7 +500,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>8.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>8.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -539,7 +539,7 @@ sidebar_whitelist '/home/user/mailbox2'
 set sidebar_next_new_wrap = no
 <span class="comment"># Show the Sidebar on the right-hand side of the screen</span>
 set sidebar_on_right = no
-<span class="comment"># The character to use as the divider between the Sidebar and the other Mutt
+<span class="comment"># The character to use as the divider between the Sidebar and the other NeoMutt
 # panels.</span>
 set sidebar_divider_char = '|'
 <span class="comment"># Enable extended buffy mode to calculate total, new, and flagged
@@ -582,11 +582,11 @@ bind index,pager B sidebar-toggle-visible
 # Note: All color operations are of the form:
 #       color OBJECT FOREGROUND BACKGROUND
 # Color of the current, open, mailbox
-# Note: This is a general Mutt option which colors all selected items.</span>
+# Note: This is a general NeoMutt option which colors all selected items.</span>
 color indicator cyan black
 <span class="comment"># Color of the highlighted, but not open, mailbox.</span>
 color sidebar_highlight black color8
-<span class="comment"># Color of the divider separating the Sidebar from Mutt panels</span>
+<span class="comment"># Color of the divider separating the Sidebar from NeoMutt panels</span>
 color sidebar_divider color8 black
 <span class="comment"># Color to give mailboxes containing flagged mail</span>
 color sidebar_flagged red black
@@ -595,7 +595,7 @@ color sidebar_new green black
 <span class="comment"># Color to give mailboxes containing no new/flagged mail, etc</span>
 color sidebar_ordinary color245 default
 <span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=muttrc</span>
+# vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

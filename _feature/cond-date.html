@@ -62,7 +62,7 @@ status: stable
     <p>The
     <span class="quote">“<span class="quote">Conditional Dates</span>”</span> feature allows you to construct
     <a class="link" href="/guide/reference.html#index-format" title="3.139.&#160;index_format">$index_format</a> expressions based on the age of the email.</p>
-    <p>Mutt's default
+    <p>NeoMutt's default
     <code class="literal">$index_format</code> displays email dates in the form: abbreviated-month day-of-month —
     <span class="quote">“<span class="quote">Jan 14</span>”</span>.</p>
     <p>The format is configurable but only per-mailbox. This feature allows you to configure the display depending on the age of the email.</p>
@@ -122,7 +122,7 @@ status: stable
     <p>For an explanation of the date formatting strings, see
     <code class="literal">strftime(3).</code></p>
     <p>By carefully picking your formats, the dates can remain unambiguous and compact.</p>
-    <p>Mutt's conditional format strings have the form: (whitespace introduced for clarity)</p>
+    <p>NeoMutt's conditional format strings have the form: (whitespace introduced for clarity)</p>
     <pre class="screen">
 %? TEST ? TRUE &amp; FALSE ?
 </pre>
@@ -431,7 +431,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="muttrc"></a>4.&#160;Muttrc</h2>
+          <a class="offset" id="neomuttrc"></a>4.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -450,7 +450,7 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
 # %[m   This month  %[%a %d]       Thu 12
 # %[y   This year   %[%b %d]       Dec 10
 # -     Older       %[%m/%y ]      06/15
-# vim: syntax=muttrc</span>
+# vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">
@@ -497,7 +497,7 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
     <span class="quote">“<span class="quote">
     <span class="emphasis">
       <em>this</em>
-    </span>week</span>”</span>. This doesn't match the normal Mutt behavior: for example
+    </span>week</span>”</span>. This doesn't match the normal NeoMutt behavior: for example
     <code class="literal">~d&gt;1w</code> means emails dated in the last 7 days.</p>
   </div>
   <div class="sect1">
