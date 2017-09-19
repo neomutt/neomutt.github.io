@@ -2,7 +2,7 @@
 layout: concertina
 distro: GNU Guix
 icon: guix.png
-homepage: http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/mail.scm?id=7596ddf3f15a90b26f118fd93c3c80cabbb6af6c#n251
+homepage: https://www.gnu.org/software/guix/packages/n.html#neomutt
 title: NeoMutt for GNU Guix
 maintainer: The GNU Guix team
 ---
@@ -11,9 +11,37 @@ maintainer: The GNU Guix team
 
 ## Installation <a class="offset" id="install"></a>
 
-Just run:
+To install neomutt into your profile, run
 
 ```
-guix package -i neomutt
+guix package --install neomutt
 ```
 
+## Update <a class="offset" id="update"></a>
+
+To upgrade just neomutt in your profile, run
+
+```
+guix package --upgrade neomutt
+```
+
+## From git <a class="offset" id="dev-build"></a>
+
+To build neomutt from the HEAD of the neomutt sources,
+you can use the contrib/guix-neomutt.scm file with any
+of the relevant guix commands. For example
+
+```
+guix package --install-from-file=contrib/guix-neomutt.scm
+```
+
+for installation,
+
+```
+guix build --install-from-file=contrib/guix-neomutt.scm
+```
+
+for building it.
+
+Read the [GNU Guix Reference Manual](https://www.gnu.org/software/guix/manual/guix.html) for more information
+and examples on usage.
