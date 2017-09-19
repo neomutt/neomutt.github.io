@@ -46,9 +46,9 @@ It includes the steps needed to build manual.xml
 To reduce the duplication of text, source of the source code is parsed
 to generate the manual.
 
-### OPS files
+### opcodes.h
 
-[The OPS files](https://github.com/neomutt/neomutt/blob/master/OPS)
+[opcodes.h](https://github.com/neomutt/neomutt/blob/master/opcodes.h)
 are processed by a perl script:
 [gen-map-doc](https://github.com/neomutt/neomutt/blob/master/doc/gen-map-doc)
 
