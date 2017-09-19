@@ -40,6 +40,7 @@ you can use the contrib/guix-neomutt.scm file with any
 of the relevant guix commands. For example
 
 ```
+cd contrib
 guix package --install-from-file=contrib/guix-neomutt.scm
 ```
 
