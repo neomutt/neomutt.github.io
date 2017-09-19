@@ -25,6 +25,14 @@ To upgrade just neomutt in your profile, run
 guix package --upgrade neomutt
 ```
 
+## Uninstall <a class="offset" id="uninstall"></a>
+
+To remove neomutt from your profile, run
+
+```
+guix package --remove neomutt
+```
+
 ## From git <a class="offset" id="dev-build"></a>
 
 To build neomutt from the HEAD of the neomutt sources,
