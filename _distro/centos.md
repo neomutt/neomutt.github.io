@@ -11,11 +11,11 @@ maintainer: flatcap
 
 ## Support <a class="offset" id="support"></a>
 
-| CentOS / RHEL | Support                  |
-|:--------------|:-------------------------|
-| 5 or before   | Obsolete, please upgrade |
-| 6             | Supported                |
-| 7             | Supported                |
+| CentOS / RHEL | Support                     |
+| :------------ | :-------------------------- |
+| 5 or before   | Unsupported, please upgrade |
+| 6             | Supported                   |
+| 7             | Supported                   |
 
 The NeoMutt RPMs are published in a YUM repo.
 This is a public repository run by
@@ -38,6 +38,17 @@ Now, copy it into place and install:
 ```
 cp flatcap-neomutt-epel-7.repo /etc/yum.repos.d/
 yum install neomutt
+```
+
+You will see a warning, which you can say 'y' to.
+
+```reply
+Retrieving key from https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg
+Importing GPG key 0xFACB00B1:
+ Userid: "flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>"
+ Fingerprint: 654d 24a3 6315 9304 787b 8f9b fc43 0e26 facb 00b1
+ From  : https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg
+Is this ok [y/N]: y
 ```
 
 Well done!  You've just installed NeoMutt.
@@ -63,14 +74,14 @@ To completely remove NeoMutt from your system:
 
 ```
 yum remove neomutt
-rm -f /etc/yum.repos.d/flatcap-neomutt-epel-7.repo
+rm -f /etc/yum.repos.d/flatcap-neomutt-epel-*.repo
 ```
 
 If, instead, you would like to downgrade to Mutt:
 
 ```
 yum remove neomutt
-rm -f /etc/yum.repos.d/flatcap-neomutt-epel-7.repo
+rm -f /etc/yum.repos.d/flatcap-neomutt-epel-*.repo
 yum install mutt
 ```
 
@@ -87,7 +98,7 @@ build NeoMutt from the source code.
 
 ```
 yum install git
-yum install autoconf automake gcc ncurses-devel slang-devel
+yum install autoconf automake gcc gettext-devel ncurses-devel slang-devel
 yum install docbook-dtds docbook-style-xsl libxslt lynx
 yum install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel
 yum install tokyocabinet-devel
@@ -108,10 +119,12 @@ debug NeoMutt.
 
 ```
 yum install gdb yum-utils
-debuginfo-install bzip2-libs cyrus-sasl-lib glibc gmp gnutls gpgme keyutils-libs krb5-libs
-debuginfo-install libassuan libcom_err libffi libgcc libgpg-error libselinux libtasn1 ncurses-libs
-debuginfo-install nettle nss-softokn-freebl openssl-libs p11-kit pcre tokyocabinet trousers xz-libs zlib
+debuginfo-install bzip2-libs cyrus-sasl-lib glibc gnutls gpgme libassuan libgcrypt
+debuginfo-install libgpg-error libtasn1 ncurses-libs nss-softokn-freebl tokyocabinet zlib
 ```
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 
+---
+
+Instructions last checked: 2017-09-21 by [@flatcap](https://github.com/flatcap)
