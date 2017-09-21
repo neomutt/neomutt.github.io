@@ -11,11 +11,11 @@ know.
 
 ## TOC
 
-* [contact](#contact)
+* [Contact](#contact)
     * [IRC](#irc)
     * [Mailing lists](#mailing-lists)
 * [GitHub](#github)
-    * [Usage Tipps](#usage-tips)
+    * [Usage Tips](#usage-tips)
     * [Labels](#labels)
     * [Branches](#branches)
 * [Invitation](#invitation)
@@ -32,7 +32,7 @@ know.
     * [Packager](#packager)
     * [Mentoring](#mentoring)
 
-## contact
+## Contact
 
 The NeoMutt developers are scattered all over the globe.  To keep in touch they
 use [GitHub](https://github.com/neomutt), [IRC](#irc) and [mailing
@@ -51,11 +51,11 @@ discussions to light-hearted nonsense (late at night).
 If you don't have a IRC client, you can use FreeNode's [web
 client](http://webchat.freenode.net/?channels=neomutt).
 
-### Mailing lists
+### Mailing Lists
 
 NeoMutt has two moderated mailing lists: Users, Devel.
 
-**NeoMutt Users** <small>(>90 people)</small>
+**NeoMutt Users** <small>(>100 people)</small>
 
 - [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
 - [Archives](http://mailman.neomutt.org/pipermail/neomutt-users-neomutt.org/)
@@ -73,7 +73,7 @@ All non-technical NeoMutt discussions are welcome here.
 When asking for help, remember that we're volunteers.  (and please check Google
 first :-)
 
-**NeoMutt Developers** (~50 people)
+**NeoMutt Developers** (~60 people)
 
 - [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
 - [Archives](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/)
@@ -87,7 +87,7 @@ to get early warning of new bugs.
 
 Discussions here are likely to be about:
 
-- Bugs Features Code Distros Enhancements Git
+Bugs, Features, Code, Distros, Enhancements, Git
 
 **Mailing List Guidelines**
 
@@ -126,8 +126,8 @@ See your [notifications](https://github.com/settings/notifications) and
 * We use Github's "assignee" feature to communicate who's working on what.
   That way, we can easily identify who's working on what.
 
-* Please read and understand [Github's documentation](https://help.github.com/articles/searching-issues/) 
-  for searching through issue's and Pull Requests.
+* Please read and understand [Github's documentation](https://help.github.com/articles/searching-issues/)
+  for searching through Issues and Pull Requests.
 
 ### Labels
 
@@ -138,7 +138,6 @@ of them and ask if something is unclear.
 ### Branches
 
 Some of [our Branches](/dev/branches) have a special meaning.
-
 
 ## Invitation
 
@@ -155,6 +154,18 @@ most branches of most repos.  Everything is backed up, but please be careful :-)
 When you join, please consider making your membership public.  Being a public
 member will add a NeoMutt icon to your home page and it will tag any comments
 you make in the issues.
+
+### Teams
+
+All NeoMutt members are welcome to [join our Teams](https://github.com/orgs/neomutt/teams).
+This allows you to **@mention** people with similar interests.
+
+- Arch Users
+- Debian Users
+- Gentoo Users
+- Homebrew Users
+- NotMuch Users
+- Downstream Packagers
 
 ## What you can do in Neomutt
 
@@ -182,9 +193,9 @@ Usually, the [.travis.yml](https://github.com/neomutt/neomutt/blob/master/.travi
 Over its twenty year life, Mutt has gathered 84,000 lines of code and a
 lot of cruft (messy code and bad habits).  It's time to sort out the mess and
 make Mutt robust.
-We have written up the consens among the Neomutt Developers in the [coding
+We have written up the consensus among the Neomutt Developers in the [coding
 style Section](/dev/coding-style). You can make of course suggestions to that - but
-please follow the consens. Otherwise it makes the work very hard.
+please follow the consensus. Otherwise it makes the work very hard.
 
 Of course, especially refactorings/cleanups of the source code are welcome. If
 you are interested, please talk to us.
