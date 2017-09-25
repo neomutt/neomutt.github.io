@@ -98,7 +98,7 @@ Bugs, Features, Code, Distros, Enhancements, Git
 - Keep attachments small, or better still: link to the files
 - Remember that we're volunteers and we may take a while to reply
 
-## GitHub
+## GitHub <a class="offset" id="github"></a>
 
 If you're a GitHub user, there are lots of ways to keep informed about NeoMutt
 development.

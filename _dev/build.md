@@ -14,7 +14,7 @@ See [Distro Pages](/distro.html).
 ## Obtain the Source
 
 The NeoMutt project is hosted on GitHub, so there are two main options to get
-the sources --- either as Git repository or GitHub archive file. A repository,
+the sources — either as Git repository or GitHub archive file. A repository,
 not only for [GitHub users](/dev/newbie-tutorial#github), provides some
 benefits over a single release or snapshot archive, e.g. will empower you to
 work with the source code and contribute to the project more easily.
@@ -100,7 +100,7 @@ List supported options to adapt or fine tune NeoMutt's build.
 
 ## Build
 
-Targets: neomutt, doc, ...
+Targets: neomutt, doc, …
 
 ```
 make
@@ -128,10 +128,10 @@ make uninstall
 [co_kcab]:  <http://fallabs.com/kyotocabinet/>
 [co_qdbm]:  <http://fallabs.com/qdbm/>
 [co_lmdb]:  <https://symas.com/lmdb/technical/>
-[co_gss2]:  <https://tools.ietf.org/html/rfc2744>
+[co_gss2]:  <https://en.wikipedia.org/wiki/Generic_Security_Services_Application_Program_Interface>
 [co_ossl]:  <https://www.openssl.org/>
 [co_gtls]:  <https://www.gnutls.org/>
-[co_sasl]:  <https://tools.ietf.org/html/rfc4422>
+[co_sasl]:  <https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer>
 [co_obdb]:  <http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html>
 [co_dgcc]:  <https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html>
 

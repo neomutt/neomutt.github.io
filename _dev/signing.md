@@ -13,7 +13,7 @@ All **release commits** in git are signed and all **GitHub downloads** come with
 
 ## Keys
 
-The NeoMutt signing key is: 
+The NeoMutt signing key is:
 - `86C2397270DD7A561263CA4E5FAF0A6EE7371805`
 - Richard Russon (NeoMutt) <rich@flatcap.org>
 
@@ -38,7 +38,7 @@ This confirms that the release matches the NeoMutt signing key.
 ```sh
 git clone https://github.com/neomutt/neomutt
 cd neomutt
-git 
+git
 git tag -v neomutt-20170428
 ```
 
@@ -58,7 +58,7 @@ git checkout -b neomutt-20170428
 # build
 ```
 
-## Source Example
+## Source Example <a class="offset" id="source-example"></a>
 
 Download a source package and the CHECKSUM file from the [release page](https://github.com/neomutt/neomutt/releases/latest)
 
@@ -66,7 +66,7 @@ Download a source package and the CHECKSUM file from the [release page](https://
 wget https://github.com/neomutt/neomutt/archive/neomutt-20170428.tar.gz
 wget https://github.com/neomutt/neomutt/releases/download/neomutt-20170428/neomutt-20170428-CHECKSUM
 
-gpg2 --verify neomutt-20170428-CHECKSUM 
+gpg2 --verify neomutt-20170428-CHECKSUM
 ```
 
 ```reply
@@ -75,7 +75,7 @@ gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [ultimate
 ```
 
 ```sh
-sha256sum -c neomutt-20170428-CHECKSUM 
+sha256sum -c neomutt-20170428-CHECKSUM
 ```
 
 ```reply
