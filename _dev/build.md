@@ -13,18 +13,23 @@ See [Distro Pages](/distro.html).
 
 ## Obtain the Source
 
-Git, GitHub ZIP, Mutt tarball + NeoMutt patch
+The NeoMutt project is hosted on GitHub, so there are two main options to get
+the sources --- either as Git repository or GitHub archive file. A repository,
+not only for [GitHub users](/dev/newbie-tutorial#github), provides some
+benefits over a single release or snapshot archive, e.g. will empower you to
+work with the source code and contribute to the project more easily.
 
-### Git
+### Git <a class="offset" id="git"></a>
 
-Main branch: [neomutt](https://github.com/neomutt/neomutt/tree/master), **see also**:
-[list of branches](/dev/branches)
+Cloning the [main branch](https://github.com/neomutt/neomutt/tree/master) but
+also see our [list of branches](/dev/branches).
 
 ```
 git clone https://github.com/neomutt/neomutt
 ```
 
-Same as above but pointing to an other branch, e.g. `devel/autosetup`, for checkout.
+Same as above but pointing to an other branch, e.g. `devel/autosetup`, for
+checkout.
 
 ```
 git clone -b devel/autosetup https://github.com/neomutt/neomutt
@@ -44,44 +49,9 @@ Specific branch
 : <https://github.com/neomutt/neomutt/archive/devel/autosetup.zip>
 
 Note, archive file verification isn't possible here because this is not
-a NeoMutt release archive and thus no checksum file is available. Consider
-using Git (as mentioned [above](#git)) to clone a repository with the specific
-branch instead.
-
-### Mutt + NeoMutt Patch
-
-This is deprecated because **NeoMutt 2017-03-06 (1.8.0)** is the last release
-which offers separate patch/diff files for
-[Mutt](https://dev.mutt.org/trac/browser/?rev=6948%3Ad897983752f9) (version
-1.8.0 in this case).
-
-Mutt tarball
-: <ftp://ftp.mutt.org/pub/mutt/mutt-1.8.0.tar.gz>
-: <ftp://ftp.mutt.org/pub/mutt/mutt-1.8.0.tar.gz.asc>
-
-Grab, verify (assuming signing key is available) and extract the Mutt tarball.
-
-```
-curl -LR 'ftp://ftp.mutt.org/pub/mutt/mutt-1.8.0.tar.gz{,.asc}' --output 'mutt-1.8.0.tar.gz#1'
-gpg2 --verify mutt-1.8.0.tar.gz{.asc,}
-tar xzvf mutt-1.8.0.tar.gz
-```
-
-NeoMutt patch
-: <https://github.com/neomutt/neomutt/releases/tag/neomutt-20170306>
-
-Download the checksum and unified diff file and verify both. Afterwards
-apply the patch set in the root directory of extracted Mutt tarball.
-
-```
-GITHUB_URI='https://github.com/neomutt/neomutt/releases/download/neomutt-20170306'
-curl -LR ${GITHUB_URI}'/neomutt-20170306{.diff.gz,-CHECKSUM}' --output 'neomutt-20170306#1'
-unset -v GITHUB_URI
-gpg2 --verify neomutt-20170306-CHECKSUM
-sha256sum --check --ignore-missing neomutt-20170306-CHECKSUM
-gunzip --stdout neomutt-20170306.diff.gz | patch --unified --strip=1 --directory mutt-1.8.0/
-cd mutt-1.8.0/
-```
+a NeoMutt release archive and thus no checksum file is available. Consider to
+use Git instead (as mentioned [above](#git)) to clone the repository and
+checkout the specific branch afterwards.
 
 ## Autoreconf
 
@@ -107,26 +77,26 @@ List supported options to adapt or fine tune NeoMutt's build.
 
 ### Varied configure options
 
-| Category         | Option/Variable          | Description                                                   |
-| :--------------- | :----------------------- | :------------------------------------------------------------ |
-| General options  | `--prefix=PREFIX`        | Install architecture-independent files in PREFIX [/usr/local] |
-| Curses vs S-Lang | `--with-slang[=DIR]`     | Use *S-Lang* instead of *ncurses*                             |
-|                  | `--with-curses=DIR`      | Where *ncurses* is installed                                  |
-| Features         | `--enable-notmuch`       | Enable *Notmuch* support                                      |
-|                  | `--enable-gpgme`         | Enable *GPGME* support                                        |
-| Caching options  | `--enable-hcache`        | Enable header caching                                         |
-|                  | `--without-tokyocabinet` | Don't use *Tokyo Cabinet* even if it is available             |
-|                  | `--without-kyotocabinet` | Don't use *Kyoto Cabinet* even if it is available             |
-|                  | `--without-qdbm`         | Don't use *QDBM* even if it is available                      |
-|                  | `--without-gdbm`         | Don't use *GDBM* even if it is available                      |
-|                  | `--with-bdb[=DIR]`       | Use *Berkeley DB* for the header cache                        |
-|                  | `--with-lmdb[=DIR]`      | Use *LMDB* for the header cache                               |
-| Security         | `--with-gss[=PFX]`       | Compile in *GSSAPI* authentication for IMAP                   |
-|                  | `--with-ssl[=PFX]`       | Enable TLS support using *OpenSSL*                            |
-|                  | `--with-gnutls[=PFX]`    | Enable TLS support using *GnuTLS*                             |
-|                  | `--with-sasl[=PFX]`      | Use *SASL* network security library                           |
-| Debug options    | `--enable-debug`         | Enable debugging support                                      |
-|                  | `CFLAGS="-g -O0"`        | Set C compiler flags, e.g. for [GCC](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html)             |
+| Category         | Option/Variable             | Description                                                   |
+| :--------------- | :-------------------------- | :------------------------------------------------------------ |
+| General          | `--prefix=PREFIX`           | Install architecture-independent files in PREFIX [/usr/local] |
+| Curses vs S-Lang | `--with-slang[=DIR]`        | Use [S-Lang][co_slng] instead of *ncurses*                    |
+|                  | `--with-curses=DIR`         | Where [ncurses][co_crss] is installed                         |
+| Features         | `--enable-notmuch`          | Enable [Notmuch](/feature/notmuch) support                    |
+|                  | `--enable-lua`              | Enable [Lua][co_lua] scripting support                        |
+|                  | `--enable-gpgme`            | Enable [GPGME][co_gpgme] support                              |
+| Header Caching   | `--with-gdbm[=DIR]`         | Use [GDBM][co_gdbm] for the header cache                      |
+|                  | `--with-tokyocabinet[=DIR]` | Use [Tokyo Cabinet][co_tcab] for the header cache             |
+|                  | `--with-kyotocabinet[=DIR]` | Use [Kyoto Cabinet][co_kcab] for the header cache             |
+|                  | `--with-qdbm[=DIR]`         | Use [QDBM][co_qdbm] for the header cache                      |
+|                  | `--with-bdb[=DIR]`          | Use [Berkeley DB][co_obdb] for the header cache               |
+|                  | `--with-lmdb[=DIR]`         | Use [LMDB][co_lmdb] for the header cache                      |
+| Security         | `--with-gss[=PFX]`          | Compile in [GSSAPI][co_gss2] authentication for IMAP          |
+|                  | `--with-ssl[=PFX]`          | Enable TLS support using [OpenSSL][co_ossl]                   |
+|                  | `--with-gnutls[=PFX]`       | Enable TLS support using [GnuTLS][co_gtls]                    |
+|                  | `--with-sasl[=PFX]`         | Use [SASL][co_sasl] network security library                  |
+| Debugging        | `--enable-debug`            | Enable debugging support                                      |
+|                  | `CFLAGS="-g -O0"`           | Set C compiler flags, e.g. for [GCC][co_dgcc]                 |
 
 ## Build
 
@@ -147,4 +117,21 @@ make install
 ```
 make uninstall
 ```
+
+
+[co_slng]:  <http://www.jedsoft.org/slang/>
+[co_crss]:  <https://www.gnu.org/software/ncurses/ncurses.html>
+[co_lua]:   <https://www.lua.org/>
+[co_gpgme]: <https://www.gnupg.org/related_software/gpgme/>
+[co_gdbm]:  <http://www.gnu.org.ua/software/gdbm/gdbm.html>
+[co_tcab]:  <http://fallabs.com/tokyocabinet/>
+[co_kcab]:  <http://fallabs.com/kyotocabinet/>
+[co_qdbm]:  <http://fallabs.com/qdbm/>
+[co_lmdb]:  <https://symas.com/lmdb/technical/>
+[co_gss2]:  <https://tools.ietf.org/html/rfc2744>
+[co_ossl]:  <https://www.openssl.org/>
+[co_gtls]:  <https://www.gnutls.org/>
+[co_sasl]:  <https://tools.ietf.org/html/rfc4422>
+[co_obdb]:  <http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html>
+[co_dgcc]:  <https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html>
 
