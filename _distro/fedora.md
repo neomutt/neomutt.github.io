@@ -11,13 +11,13 @@ maintainer: flatcap
 
 ## Support <a class="offset" id="support"></a>
 
-| Fedora       | Support                  |
-|:-------------|:-------------------------|
-| 22 or before | Obsolete, please upgrade |
-| 23           | Supported                |
-| 24           | Supported                |
-| 25           | Supported                |
-| Rawhide      | Supported                |
+| Fedora       | Support                     |
+| :----------- | :-------------------------- |
+| 23 or before | Unsupported, please upgrade |
+| 24           | Supported                   |
+| 25           | Supported                   |
+| 26           | Supported                   |
+| Rawhide      | Supported                   |
 
 The NeoMutt RPMs are published in a <abbr title="Cool Other Package Repo">COPR</abbr>.
 This is a public repository run by
@@ -159,7 +159,7 @@ build NeoMutt from the source code.
 
 ```
 dnf install git
-dnf install autoconf automake gcc ncurses-devel slang-devel
+dnf install autoconf automake gcc ncurses-devel slang-devel gettext-devel tar
 dnf install docbook-dtds docbook-style-xsl libxslt lynx
 dnf install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel notmuch-devel
 dnf install tokyocabinet-devel kyotocabinet-devel lmdb-devel
