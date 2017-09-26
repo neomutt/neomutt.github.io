@@ -59,6 +59,7 @@ The Hg hashes link to Mutt's Mercurial repository.
 
 | Date       | Version | Git Hash                                                               | Hg Hash                                                         |
 | :--------- | :------ | :--------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| 2017-09-23 | 1.9.1   | [`9af056b7`](https://github.com/neomutt/upstream-mutt/commit/9af056b7) | [`869633ef393e`](https://dev.mutt.org/hg/mutt/rev/869633ef393e) |
 | 2017-09-02 | 1.9.0   | [`92e169f7`](https://github.com/neomutt/upstream-mutt/commit/92e169f7) | [`549821ba69e5`](https://dev.mutt.org/hg/mutt/rev/549821ba69e5) |
 | 2017-05-30 | 1.8.3   | [`96a9aac4`](https://github.com/neomutt/upstream-mutt/commit/96a9aac4) | [`fe5275246e13`](https://dev.mutt.org/hg/mutt/rev/fe5275246e13) |
 | 2017-04-18 | 1.8.2   | [`b8a4b09b`](https://github.com/neomutt/upstream-mutt/commit/b8a4b09b) | [`c6ea4aed6bec`](https://dev.mutt.org/hg/mutt/rev/c6ea4aed6bec) |
