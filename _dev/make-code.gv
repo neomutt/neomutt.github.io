@@ -35,7 +35,7 @@ digraph build {
 	txt2c         [ label=<txt2c <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
 
 	lots_obj -> ld_mutt
-	ld_mutt -> mutt
+	ld_mutt -> neomutt
 
 	dot_configure -> config_h
 	config_h -> generated [ style="dashed" ]
@@ -119,13 +119,13 @@ digraph build {
 
 		lots_mo          [ label="\{lang.mo\}"          ]
 		lots_po          [ label="\{lang.po\}"          ]
-		mutt_pot         [ label="mutt.pot"             ]
+		neomutt_pot      [ label="neomutt.pot"             ]
 		xgettext         [ label="xgettext" shape="box" ]
 
 		POTFILES         -> xgettext
 		compulsory       -> xgettext
-		xgettext         -> mutt_pot
-		mutt_pot         -> lots_po [ label="translator" ]
+		xgettext         -> neomutt_pot
+		neomutt_pot      -> lots_po [ label="translator" ]
 		lots_po          -> lots_mo [ label="msgfmt" ]
 	}
 
