@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: Merging
-description: When to merge?  When to squash?
+description: When to merge? When to squash?
 author: Richard Russon
 status: wip
 ---
@@ -123,10 +123,10 @@ git merge --no-ff topic
 D---E---F---G-----------H master
 ```
 
-The topic branch has been merged into master with a "merge commit".  The
+The topic branch has been merged into master with a "merge commit". The
 topic's history looks the same, but appears to have happened just now.
 
-This option makes the history look tidiers.  Rather than having multiple
+This option makes the history look tidiers. Rather than having multiple
 topic branches being created and merged at different times (all
 overlapping), they are separated out.
 
@@ -140,7 +140,7 @@ o---o---o---o-----------o--o-----------o--o-----------o master
 
 ------------------------------------------------------------------------
 
-When to merge?  When to squash?
+When to merge? When to squash?
 
 When work is merged into master:
 

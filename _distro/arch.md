@@ -65,7 +65,7 @@ pacman -Rsc neomutt
 ## Debugging <a class="offset" id="debug"></a>
 
 Archlinux does not have separate `-dbg` packages. In order to debug `neomutt`,
-you must first compile with debug symbols. Download the AUR package and edit the 
+you must first compile with debug symbols. Download the AUR package and edit the
 `PKGBUILD` adding the following:
 ```
 options=(debug !strip)

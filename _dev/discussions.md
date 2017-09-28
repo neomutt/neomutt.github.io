@@ -15,7 +15,7 @@ Below is a list of the issues where either the developers have no interest in or
 can't help with.
 
 They are closed for now, but they can be re-opened if someone volunteers to do
-the work.  Help will be freely given to volunteers. Issues where the result is
+the work. Help will be freely given to volunteers. Issues where the result is
 hard to achieve are labeled with
 [difficulty:hard](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=label%3Adifficulty%3Ahard%20).
 Please note, those hard issues are intentionally closed - they are sometimes
@@ -27,7 +27,7 @@ Allow better nesting of mime parts
 
 **Raised by** ([@mrzool](https://github.com/mrzool)) -- **Result**: desired, no interest
 
-### [#535 Could  '^g' be remapped?](https://github.com/neomutt/neomutt/issues/535)
+### [#535 Could '^g' be remapped?](https://github.com/neomutt/neomutt/issues/535)
 
 Allow the 'abort' key to be remapped
 
@@ -105,7 +105,7 @@ Replace autotools build system
 
 **Raised by** [@toogley](https://github.com/toogley) on 2017-01-24 -- **Result**: easy, but too many potential problems for distros
 
-### [#315 %F  should display all participants](https://github.com/neomutt/neomutt/issues/315)
+### [#315 %F should display all participants](https://github.com/neomutt/neomutt/issues/315)
 
 Display all the participants of an email in the index
 

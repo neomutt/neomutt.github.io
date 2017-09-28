@@ -80,10 +80,10 @@ Importing GPG key 0xFACB00B1:
  Userid     : "flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>"
  Fingerprint: 654D 24A3 6315 9304 787B 8F9B FC43 0E26 FACB 00B1
  From       : https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg
-Is this ok [y/N]: 
+Is this ok [y/N]:
 ```
 
-Well done!  You've just installed NeoMutt.
+Well done! You've just installed NeoMutt.
 
 - **Learn more about NeoMutt**: [browse our website](https://www.neomutt.org)
 - **Latest news**: Subscribe to our [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for

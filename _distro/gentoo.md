@@ -11,9 +11,9 @@ maintainer: grobian
 
 ## Support <a class="offset" id="support"></a>
 
-Ebuilds for NeoMutt can be found in the gentoo\_neomutt overlay.  These
+Ebuilds for NeoMutt can be found in the gentoo\_neomutt overlay. These
 ebuilds are similar, but not equal to the mail-client/mutt ebuilds in
-Gentoo.  You need to add the overlay to your repos.conf first
+Gentoo. You need to add the overlay to your repos.conf first
 
 ## Checking out the overlay <a class="offset" id="checkout"></a>
 
@@ -70,7 +70,7 @@ emerge -av --depclean mail-client/neomutt
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code, or you can use the Gentoo live
-ebuild (neomutt-99999999).  Add `mail-client/neomutt-99999999 **` to
+ebuild (neomutt-99999999). Add `mail-client/neomutt-99999999 **` to
 your /etc/portage/package.accept\_keywords to enable it.
 
 

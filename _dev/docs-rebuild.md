@@ -24,11 +24,11 @@ The guide needs to be split up and re-grouped, thematically:
 a chapter on the pager; a chapter on IMAP, ...
 
 Some projects' documentation have handy links: "Click here to improve
-the docs".  It would be wonderful if we could do this.
+the docs". It would be wonderful if we could do this.
 
 ## Document Format
 
-The docs are written in DocBook XML.  It's a rich language allowing you
+The docs are written in DocBook XML. It's a rich language allowing you
 can make <note>Notes</note>, <example>Examples</example>,
 <chapter>Chapters</chapter> and <section>Sections</section>.
 As well as normal HTML things like titles and paragraphs.
@@ -73,7 +73,7 @@ is processed by a perl script:
 ### init.h
 
 [init.h](https://github.com/neomutt/neomutt/blob/master/init.h)
-is processed by a program: 
+is processed by a program:
 [makedoc](https://github.com/neomutt/neomutt/blob/master/doc/makedoc.c)
 It reads the variable, its type and default value.
 It also processed the description which is written in NROFF (man) format.
@@ -90,27 +90,27 @@ It also processed the description which is written in NROFF (man) format.
 
 ### Some Assembly Required
 
-Finally we can build `manual.xml`.  Take `doc/manual.xml.head` add the
+Finally we can build `manual.xml`. Take `doc/manual.xml.head` add the
 functions, commands and variables, then add `doc/manual.xml.tail`
 
 `manual.xml` is now complete and valid DocBook.
 
 ## Rendering manual.xml
 
-DocBook comes with some standard XSLT files.  They define
-transformations from DocBook to HTML.  Chapters are turned into separate
-pages.  Sections are given \<h1\>, \<h2\> headings, etc.
+DocBook comes with some standard XSLT files. They define
+transformations from DocBook to HTML. Chapters are turned into separate
+pages. Sections are given \<h1\>, \<h2\> headings, etc.
 
 Also, \<note\> and \<example\> are turned into \<span\> or \<div\> with cla=
 sses,
-so that they can be themed.  This is also where \<quote\>s are turned into
+so that they can be themed. This is also where \<quote\>s are turned into
 “smart quoted” strings.
 
 We now have some HTML, that looks machine-generated.
 
 ## Generating the Website
 
-NeoMutt's website is hosted by GitHub's Pages.  It's a static site which
+NeoMutt's website is hosted by GitHub's Pages. It's a static site which
 uses [Jekyll](https://jekyllrb.com) to allow some templating and "magic".
 
 To turn manual.xml into a website requires quite a lot of post-processing.
@@ -119,15 +119,15 @@ The main script is:
 in the [docbook repo](https://github.com/neomutt/docbook)
 
 `build` takes the HTML files and tidies them, cuts out the bits we want
-and gives them a YAML header (for Jekyll).  It also fixes some of the
-links between documents.  Along the way we also fix any formatting
+and gives them a YAML header (for Jekyll). It also fixes some of the
+links between documents. Along the way we also fix any formatting
 problems that we introduced (smart quotes).
 
 ## The Future
 
 Mutt's re-use strategy means that if you fix one piece of documentation,
 then it will be replicated into all the forms of documentation.
-But, it means you need to know where the source is.  This is preventing
+But, it means you need to know where the source is. This is preventing
 users from helping us.
 
 ### Step 1 - Separation
@@ -144,7 +144,7 @@ Bad:
 
 ### Step 2 - Conversion
 
-I like DocBook.  It's expressive and capable, but it's not user-friendly.
+I like DocBook. It's expressive and capable, but it's not user-friendly.
 A good alternative would be Markdown.
 
 Good:
@@ -167,7 +167,7 @@ To do:
 
 ## Conclusion
 
-NeoMutt is a complex program to use.  It's a big problem for new users.
+NeoMutt is a complex program to use. It's a big problem for new users.
 
 By re-working the docs, we can encourage new users to NeoMutt and make
 sure that all users get the most out of NeoMutt.

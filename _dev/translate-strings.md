@@ -68,8 +68,8 @@ This screenshot shows some translated, some fuzzy and some untranslated strings.
 
 **Notes**:
 
-- **Comments**: "poedit" allows you to add comments to each translation.  If you think that the comment should apply to **all** translations, then notify the NeoMutt project and they can add the comment to the source.
-- **Context**:  The strings are sometimes hard to translate because they have no context.  If you have any questions, ask the translations manager (at the top of the page).
+- **Comments**: "poedit" allows you to add comments to each translation. If you think that the comment should apply to **all** translations, then notify the NeoMutt project and they can add the comment to the source.
+- **Context**: The strings are sometimes hard to translate because they have no context. If you have any questions, ask the translations manager (at the top of the page).
 
 ## More Information
 

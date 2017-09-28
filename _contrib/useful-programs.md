@@ -77,7 +77,7 @@ status: stable
 
 ## converting text formats
 
-* [antiword](http://www.winfield.demon.nl/) -  M$-Office-Word to txt converter.
+* [antiword](http://www.winfield.demon.nl/) - M$-Office-Word to txt converter.
 * [rtf2html](http://www.wagner.pp.ru/~vitus/software/catdoc/) - RTF to HTML
   converter (which then can be piped through lynx -stdin -dump -force_html).
 * [pandoc](http://pandoc.org/) - Pandoc is a Haskell library for converting from
@@ -91,9 +91,9 @@ status: stable
   and allow the user to select via a menu
 * [urlscan](https://github.com/firecat53/urlscan) - Mutt and terminal url
   selector (similar to urlview)
-* [extract_url](http://www.memoryhole.net/~kyle/extract_url/) - This is a Perl 
-  script that extracts URLs from correctly-encoded MIME email messages or plain 
-  text. 
+* [extract_url](http://www.memoryhole.net/~kyle/extract_url/) - This is a Perl
+  script that extracts URLs from correctly-encoded MIME email messages or plain
+  text.
 
 ## miscellaneous
 

@@ -51,7 +51,7 @@ Importing GPG key 0xFACB00B1:
 Is this ok [y/N]: y
 ```
 
-Well done!  You've just installed NeoMutt.
+Well done! You've just installed NeoMutt.
 
 - **Learn more about NeoMutt**: [browse our website](https://www.neomutt.org)
 - **Latest news**: Subscribe to our [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for

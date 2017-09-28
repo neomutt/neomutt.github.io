@@ -17,7 +17,7 @@ doesn't know which Operating system or architecture that would break.
 ## cmake supported platforms
 
 As we thought about changing the build sytem to cmake (See [this issue for
-that](https://github.com/neomutt/neomutt/issues/321) for the discussion), 
+that](https://github.com/neomutt/neomutt/issues/321) for the discussion),
 [the list of platforms cmake does support may be interesting.
 ](https://gitlab.kitware.com/cmake/cmake/tree/master/Modules/Platform)
 
@@ -65,7 +65,7 @@ have a dedicated maintainer and a great amount of users.
 
 ### confirmation missing
 
-* SCO Unix -  Latest release: 2015, recent versions are based on FreeBSD
+* SCO Unix - Latest release: 2015, recent versions are based on FreeBSD
 * Solaris
 
 ### not desirable to support
@@ -83,7 +83,7 @@ those are in my opinion a bit hard to get, not very popular or discontinued.
 * DYNIX/ptx - legacy system
 * AIX - proprietary, Latest release: October 5, 2015
 * Data General Unix (DG/UX) - discontinued in 2001
-* UnixWare - proprietary, Latest release:  June 10, 2013
+* UnixWare - proprietary, Latest release: June 10, 2013
 * Convex - [old Supercomputer](https://en.wikipedia.org/wiki/Convex_Computer)
 * Ultrix - proprietary, Latest release: 1995
 * Atari MiNT - open source. Latest release: 18 March 2013

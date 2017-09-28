@@ -11,7 +11,7 @@ status: stable
 
 ## Introduction
 
-The [shell script](/contrib/hcache-bench.sh) and the [configuration file](/contrib/hcache-bench.rc) can be used to benchmark the NeoMutt hcache backends. 
+The [shell script](/contrib/hcache-bench.sh) and the [configuration file](/contrib/hcache-bench.rc) can be used to benchmark the NeoMutt hcache backends.
 
 ## Preparation
 

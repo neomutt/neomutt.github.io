@@ -12,7 +12,7 @@ author: flatcap
 turns them into documentation.
 
 The Doxygen [documentation](http://www.stack.nl/~dimitri/doxygen/manual/commands.html)
-lists all the possible commands.  Some common ones are:
+lists all the possible commands. Some common ones are:
 
 - **@param**   -- a function parameter
 - **@struct**  -- a C-struct.
@@ -25,7 +25,7 @@ lists all the possible commands.  Some common ones are:
 
 ## Functions
 
-Here's a basic template for a function comment.  It begins with two asterisks.
+Here's a basic template for a function comment. It begins with two asterisks.
 
 ```
 /**

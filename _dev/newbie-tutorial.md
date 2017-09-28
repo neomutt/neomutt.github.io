@@ -34,7 +34,7 @@ know.
 
 ## Contact
 
-The NeoMutt developers are scattered all over the globe.  To keep in touch they
+The NeoMutt developers are scattered all over the globe. To keep in touch they
 use [GitHub](https://github.com/neomutt), [IRC](#irc) and [mailing
 lists](#mailing-lists).
 
@@ -42,8 +42,8 @@ lists](#mailing-lists).
 
 Channel: **#neomutt** on **irc.freenode.net**
 
-This is a good way to meet the developers if you want to say hello.  Everyone's
-welcome.  There are usually about 90 people / lurkers in the channel.
+This is a good way to meet the developers if you want to say hello. Everyone's
+welcome. There are usually about 90 people / lurkers in the channel.
 
 The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
@@ -70,7 +70,7 @@ All non-technical NeoMutt discussions are welcome here.
 - Have you found a bug?
 - Do you want some help?
 
-When asking for help, remember that we're volunteers.  (and please check Google
+When asking for help, remember that we're volunteers. (and please check Google
 first :-)
 
 **NeoMutt Developers** (~60 people)
@@ -106,7 +106,7 @@ development.
 First, though, please [**star our project**](https://github.com/neomutt/neomutt)
 to show your appreciation :-)
 
-The project consists of about 20 git repositories.  They store the code that
+The project consists of about 20 git repositories. They store the code that
 makes up NeoMutt, the documentation, build scripts and experiments
 ([read more about them](repos)).
 
@@ -147,11 +147,11 @@ the people who maintain NeoMutt packages for distros (it's a very inclusive club
 
 **Thank you for your contribution and Welcome to NeoMutt**.
 
-Accepting an invitation does two things.  It shows your support for the project
-and it allows you to commit work directly to the project.  Members can commit to
-most branches of most repos.  Everything is backed up, but please be careful :-)
+Accepting an invitation does two things. It shows your support for the project
+and it allows you to commit work directly to the project. Members can commit to
+most branches of most repos. Everything is backed up, but please be careful :-)
 
-When you join, please consider making your membership public.  Being a public
+When you join, please consider making your membership public. Being a public
 member will add a NeoMutt icon to your home page and it will tag any comments
 you make in the issues.
 
@@ -180,7 +180,7 @@ To get familiar with the Neomutt code, you can start with some
 Whatever your level of skill, NeoMutt has got a task for you.
 There are lots of simple jobs and lots of hard jobs to get you thinking.
 
-Alternatively, you could add a new feature to Mutt.  There are many great Mutt
+Alternatively, you could add a new feature to Mutt. There are many great Mutt
 patches that have been neglected.
 They need to be brought up-to-date and merged into Mutt.
 
@@ -191,7 +191,7 @@ Usually, the [.travis.yml](https://github.com/neomutt/neomutt/blob/master/.travi
 #### Coding style
 
 Over its twenty year life, Mutt has gathered 84,000 lines of code and a
-lot of cruft (messy code and bad habits).  It's time to sort out the mess and
+lot of cruft (messy code and bad habits). It's time to sort out the mess and
 make Mutt robust.
 We have written up the consensus among the Neomutt Developers in the [coding
 style Section](/dev/coding-style). You can make of course suggestions to that - but
@@ -204,20 +204,20 @@ you are interested, please talk to us.
 
 A word of warning about string comparisons: Since mutt may run in a
 huge variety of locales, case-insensitive string comparisons and
-case conversions may be dangerous.  For instance, in iso-8859-9,
+case conversions may be dangerous. For instance, in iso-8859-9,
 tolower('I') is DIFFERENT from 'i' - it's indeed the Turkish dotless
 lowercase i.
 
 For this reason, always use the ascii_* functions defined in ascii.h
 and implemented in ascii.c when comparing or handling strings which
-are defined as us-ascii.  This concerns lots of text-based
+are defined as us-ascii. This concerns lots of text-based
 protocols, message header tags, character set names, domain names,
 e-mail addresses, etc.
 
 
 ### Docs/Translation
 
-The <a href="/guide/">Mutt guide</a> reads like an encyclopaedia.  Everything
+The <a href="/guide/">Mutt guide</a> reads like an encyclopaedia. Everything
 you want to know is in there somewhere, but generally you have to know what
 you're looking for.
 
@@ -235,7 +235,7 @@ The Mutt program has been translated into 30 languages, but
 
 ### Web Design
 
-This website was created by a programmer &ndash; it shows.  If you think you
+This website was created by a programmer &ndash; it shows. If you think you
 could do a better job, prove it.
 
 Please don't edit the *.html and *.md files in the following folders, as they
@@ -246,8 +246,8 @@ are semi-automatically generated:
 
 Of course, you can always send Pull Requests to update those folders.
 
-The site contains information from quite a lot of sources.  Most of it has been
-pulled together by hand.  These processes need to be automated to reduce effort.
+The site contains information from quite a lot of sources. Most of it has been
+pulled together by hand. These processes need to be automated to reduce effort.
 
 ### Social
 
@@ -295,7 +295,7 @@ better quality.
 
 ### Mentoring
 
-Mutt has very few developers.  This won't change until the Mutt community
+Mutt has very few developers. This won't change until the Mutt community
 becomes more welcoming to new developers.
 
 Do you know Mutt well?

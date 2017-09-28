@@ -114,4 +114,4 @@ Then set flags on a user:
 /mode #<channel> +b <filter>
 ```
 
-Where the filter is of the form: `nick!user@host` (with "*" as a wildcard). 
+Where the filter is of the form: `nick!user@host` (with "*" as a wildcard).

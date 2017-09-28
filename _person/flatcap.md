@@ -7,7 +7,7 @@ residence: Oxford, England
 ---
 # {{ page.name }} ({{ page.nick }})
 
-I'm Rich Russon, aka FlatCap.  I'm the creator of NeoMutt.
+I'm Rich Russon, aka FlatCap. I'm the creator of NeoMutt.
 
 When I'm not sat at a keyboard, I love to be outdoors (in all weathers).
 

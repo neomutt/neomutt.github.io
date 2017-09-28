@@ -32,7 +32,7 @@ a	0: <None>
 	2: neomutt-20161028-gpgme
 	3: neomutt-20161028-gpgme-sasl
 	4: neomutt-20161028-sasl
-Your choice: 
+Your choice:
 ```
 
 ## Update <a class="offset" id="update"></a>

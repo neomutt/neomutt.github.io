@@ -19,7 +19,7 @@ Add the file and your `~/.mutt` and add `source vim-keys.rc` to your `~/.mutt/mu
 1. Rolling cursors: `H`, `M`, `L`, `^E`, `^Y`, `^F`, `^B`, `^D`, `^U` and of course `gg`, `G`
 1. Deleting stuffs: `dt`, `dT`, `dd` (*T*hread)
 1. Folding origami: `za`, `zA` (*A*lternate)
-1. Coming soon...          (And must be aligned)
+1. Coming soon... (And must be aligned)
 
 ## TODO
 

@@ -41,7 +41,7 @@ provide a static analysis of the code.
 
 Since splitting from Mutt, NeoMutt have fixed over 200 defects (e.g. resource
 leaks, unset pointers) raised by Coverity.  NeoMutt's "defect density" is 0.70.
-            
+
 ## Removed
 
 NeoMutt wants to remain compatible with Mutt, but it also wants to improve the

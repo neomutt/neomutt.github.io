@@ -13,7 +13,7 @@ author: flatcap
 Whatever the language, coding style is always controversial.
 
 This page outlines a small [set of rules][r], some [guidelines][g] and some
-[top tips][t].  It's hoped that following these examples, we can keep NeoMutt's
+[top tips][t]. It's hoped that following these examples, we can keep NeoMutt's
 code tidy.
 
 NeoMutt also recommends using [editor-config][e] and [clang-format][c].
@@ -72,13 +72,13 @@ if (x == 0)
 
 ### special characters should be utf8
 
-- special characters should be in utf-8.  If you find remnants
+- special characters should be in utf-8. If you find remnants
   from the times when this was an iso-8859-1 source code tree,
   please feel free to fix them.
 
 ### global and non-global functions
 
-- global functions should have the prefix "mutt_".  All
+- global functions should have the prefix "mutt_". All
   other functions should be declared "static".
 
 ## <a name="guidelines" class="offset"></a> Guidelines
@@ -194,7 +194,7 @@ Their use is encouraged.
 
 ### Distinguish between `0` and `NULL`
 
-Pointers should be assigned to `NULL`, not `0`.  This helps to reinforce the
+Pointers should be assigned to `NULL`, not `0`. This helps to reinforce the
 type, especially when you're deep with a function.
 
 ```c
@@ -229,7 +229,7 @@ else
 ### Use `!` to test booleans and pointers only
 
 There are many parts of Mutt's code that use `!` to test if a variable is equal
-to zero.  Using `!` consistently will help to reinforce the types to a human.
+to zero. Using `!` consistently will help to reinforce the types to a human.
 
 ```c
 int x = 0;
@@ -274,7 +274,7 @@ x = (y > 0) ? 1 : 0;
 ```
 
 However, when several ternary operators are used in one statement, it becomes
-very hard to understand the meaning.  This example is from `mbrtowc_iconv()` in
+very hard to understand the meaning. This example is from `mbrtowc_iconv()` in
 [mbyte.c](https://github.com/neomutt/neomutt/blob/2f4417e898ac719dee6b0ccb53668533410869e1/mbyte.c#L155)
 
 ```c
@@ -344,7 +344,7 @@ Clang-format is a tool which automatically reformats C sources files according
 to configurable style guides.
 
 This tool can re-indent code, correct the placement of `{}`s and much much
-more.  Beginners are strongly recommended to use this tool on their code before
+more. Beginners are strongly recommended to use this tool on their code before
 submitting it to NeoMutt.
 
 Here is NeoMutt's [.clang-format][ncf] file.

@@ -14,7 +14,7 @@ stabilising bug-fix release.
 Bug-fixing is a vital part of any project.
 By fixing bugs we keep NeoMutt from becoming unstable or unreliable.
 
-However, the week isn't limited to just bugs.  It's open to anything
+However, the week isn't limited to just bugs. It's open to anything
 that contributes to the project, but doesn't add new code.
 
 Please help with whatever you can...
