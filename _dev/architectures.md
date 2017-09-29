@@ -16,10 +16,10 @@ doesn't know which Operating system or architecture that would break.
 
 ## cmake supported platforms
 
-As we thought about changing the build sytem to cmake (See [this issue for
-that](https://github.com/neomutt/neomutt/issues/321) for the discussion),
-[the list of platforms cmake does support may be interesting.
-](https://gitlab.kitware.com/cmake/cmake/tree/master/Modules/Platform)
+As we thought about changing the build sytem to cmake (See
+[this issue for that](https://github.com/neomutt/neomutt/issues/321) for the
+discussion),
+[the list of platforms cmake does support may be interesting.](https://gitlab.kitware.com/cmake/cmake/tree/master/Modules/Platform)
 
 ## Architectures
 
@@ -39,14 +39,14 @@ support and beyond.
 
 Our NetBSD maintainer
 [@0-wiz-0](https://github.com/neomutt/neomutt/issues/436#issuecomment-282689847)
-said, although neomutt doesn't build on every of those architectures (due to the
-lack of build machines) all those architectures share mostly the same code.
+said, although neomutt doesn't build on every of those architectures (due to
+the lack of build machines) all those architectures share mostly the same code.
 Therfore, he doesn't expect many troubles.
 
-Of course, my argument in the section [Operating Systems // not desirable to
-support](#not-desirable-to-support) also can be applies here: Its difficult to
-provide support for all the above architectures, because of us probably have
-only a amd64 machine.
+Of course, my argument in the section
+[Operating Systems // not desirable to support](#not-desirable-to-support) also
+can be applies here: Its difficult to provide support for all the above
+architectures, because of us probably have only a amd64 machine.
 
 ## Operating Systems
 
@@ -89,5 +89,4 @@ those are in my opinion a bit hard to get, not very popular or discontinued.
 * Atari MiNT - open source. Latest release: 18 March 2013
 * MkLinux - Latest release: August 5, 2002
 * SunOS - proprietary, Latest release: November 1994
-
 

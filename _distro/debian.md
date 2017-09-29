@@ -27,8 +27,6 @@ apt-get install mutt
 ```reply
 apt-get update && apt-get upgrade
 ```
-
-
 ## Removal <a class="offset" id="remove"></a>
 
 ```reply
@@ -44,8 +42,8 @@ apt-get build-dep mutt
 ```
 
 will install all build dependencies of your neomutt package. Note that you may
-have to install additional packages, if you're running debian stable and want to
-build the most current version of neomutt.
+have to install additional packages, if you're running debian stable and want
+to build the most current version of neomutt.
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
@@ -54,5 +52,5 @@ Now you can follow the [guide for building NeoMutt](/dev/build).
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
-
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+

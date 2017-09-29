@@ -16,11 +16,11 @@ that isn't available on the App Store.
 Neomutt can be installed with Homebrew. The Neomutt developers maintain the
 [Homebrew package for Neomutt][neomutt-homebrew].
 
-The instructions for installing Homebrew are provided on the [Homebrew
-homepage][homebrew]. Run the command that's given in a terminal, and then
-follow the instructions it gives you. This page will show you how to install,
-update, and uninstall Neomutt with Homebrew, as well as how to install a debug
-version of Neomutt.
+The instructions for installing Homebrew are provided on the
+[Homebrew homepage][homebrew]. Run the command that's given in a terminal, and
+then follow the instructions it gives you. This page will show you how to
+install, update, and uninstall Neomutt with Homebrew, as well as how to install
+a debug version of Neomutt.
 
 [homebrew]: {{ page.homepage }}
 [macos]: http://www.apple.com/macos/
@@ -96,8 +96,8 @@ $ brew install mutt
 Homebrew will always build Neomutt from source, and knows what dependencies
 must be installed to do this, and how to install them.
 
-The simplest way to get these dependencies is to install Neomutt.
-Otherwise, the following packages can be installed with Homebrew:
+The simplest way to get these dependencies is to install Neomutt. Otherwise,
+the following packages can be installed with Homebrew:
 
 ```shell
 $ brew install autoconf automake openssl tokyo-cabinet gettext gpgme libidn
@@ -115,3 +115,4 @@ $ brew install neomutt --with-debug
 ```
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+

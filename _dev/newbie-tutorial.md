@@ -35,8 +35,8 @@ know.
 ## Contact
 
 The NeoMutt developers are scattered all over the globe. To keep in touch they
-use [GitHub](https://github.com/neomutt), [IRC](#irc) and [mailing
-lists](#mailing-lists).
+use [GitHub](https://github.com/neomutt), [IRC](#irc) and
+[mailing lists](#mailing-lists).
 
 ### IRC
 
@@ -48,8 +48,8 @@ welcome. There are usually about 90 people / lurkers in the channel.
 The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
 
-If you don't have a IRC client, you can use FreeNode's [web
-client](http://webchat.freenode.net/?channels=neomutt).
+If you don't have a IRC client, you can use FreeNode's
+[web client](http://webchat.freenode.net/?channels=neomutt).
 
 ### Mailing Lists
 
@@ -114,19 +114,20 @@ GitHub allows you to watch:
 
 - **Repos** -- Choose a repository and click the **Watch** button
 - **Issues** -- Open an issue and click **Subscribe** in the right-hand panel
-- **Pull-Requests** -- Open a PR and click **Subscribe** in the right-hand panel
+- **Pull-Requests** -- Open a PR and click **Subscribe** in the right-hand
+  panel
 - **People** -- Go to a person's home page and click **Follow** on the left
 
-By watching things in GitHub, you will receive emails when events occur.
-See your [notifications](https://github.com/settings/notifications) and
+By watching things in GitHub, you will receive emails when events occur. See
+your [notifications](https://github.com/settings/notifications) and
 [emails](https://github.com/settings/emails) settings for more information.
 
 ### Usage tips
 
 * We use Github's "assignee" feature to communicate who's working on what.
   That way, we can easily identify who's working on what.
-
-* Please read and understand [Github's documentation](https://help.github.com/articles/searching-issues/)
+* Please read and understand
+  [Github's documentation](https://help.github.com/articles/searching-issues/)
   for searching through Issues and Pull Requests.
 
 ### Labels
@@ -143,7 +144,8 @@ Some of [our Branches](/dev/branches) have a special meaning.
 
 This section is for people who have been invited to join the NeoMutt project.
 Invites will be given to people who contribute: code, docs, translations and to
-the people who maintain NeoMutt packages for distros (it's a very inclusive club :-)
+the people who maintain NeoMutt packages for distros (it's a very inclusive
+club :-)
 
 **Thank you for your contribution and Welcome to NeoMutt**.
 
@@ -157,8 +159,9 @@ you make in the issues.
 
 ### Teams
 
-All NeoMutt members are welcome to [join our Teams](https://github.com/orgs/neomutt/teams).
-This allows you to **@mention** people with similar interests.
+All NeoMutt members are welcome to
+[join our Teams](https://github.com/orgs/neomutt/teams). This allows you to
+**@mention** people with similar interests.
 
 - Arch Users
 - Debian Users
@@ -177,43 +180,42 @@ Do you want to add new features to Mutt?
 To get familiar with the Neomutt code, you can start with some
 <a class="rm" href="/2016/10/07/news">**Easy Coding Tasks**</a>
 
-Whatever your level of skill, NeoMutt has got a task for you.
-There are lots of simple jobs and lots of hard jobs to get you thinking.
+Whatever your level of skill, NeoMutt has got a task for you. There are lots
+of simple jobs and lots of hard jobs to get you thinking.
 
 Alternatively, you could add a new feature to Mutt. There are many great Mutt
-patches that have been neglected.
-They need to be brought up-to-date and merged into Mutt.
+patches that have been neglected. They need to be brought up-to-date and
+merged into Mutt.
 
 #### Required tools
 
-Usually, the [.travis.yml](https://github.com/neomutt/neomutt/blob/master/.travis.yml) files are a good starting point here.
+Usually, the
+[.travis.yml](https://github.com/neomutt/neomutt/blob/master/.travis.yml) files
+are a good starting point here.
 
 #### Coding style
 
-Over its twenty year life, Mutt has gathered 84,000 lines of code and a
-lot of cruft (messy code and bad habits). It's time to sort out the mess and
-make Mutt robust.
-We have written up the consensus among the Neomutt Developers in the [coding
-style Section](/dev/coding-style). You can make of course suggestions to that - but
-please follow the consensus. Otherwise it makes the work very hard.
+Over its twenty year life, Mutt has gathered 84,000 lines of code and a lot of
+cruft (messy code and bad habits). It's time to sort out the mess and make Mutt
+robust. We have written up the consensus among the Neomutt Developers in the
+[coding style Section](/dev/coding-style). You can make of course suggestions
+to that - but please follow the consensus. Otherwise it makes the work very
+hard.
 
 Of course, especially refactorings/cleanups of the source code are welcome. If
 you are interested, please talk to us.
 
 #### Warning of string comparisons
 
-A word of warning about string comparisons: Since mutt may run in a
-huge variety of locales, case-insensitive string comparisons and
-case conversions may be dangerous. For instance, in iso-8859-9,
-tolower('I') is DIFFERENT from 'i' - it's indeed the Turkish dotless
-lowercase i.
+A word of warning about string comparisons: Since mutt may run in a huge
+variety of locales, case-insensitive string comparisons and case conversions
+may be dangerous. For instance, in iso-8859-9, tolower('I') is DIFFERENT from
+'i' - it's indeed the Turkish dotless lowercase i.
 
-For this reason, always use the ascii_* functions defined in ascii.h
-and implemented in ascii.c when comparing or handling strings which
-are defined as us-ascii. This concerns lots of text-based
-protocols, message header tags, character set names, domain names,
-e-mail addresses, etc.
-
+For this reason, always use the ascii_* functions defined in ascii.h and
+implemented in ascii.c when comparing or handling strings which are defined as
+us-ascii. This concerns lots of text-based protocols, message header tags,
+character set names, domain names, e-mail addresses, etc.
 
 ### Docs/Translation
 
@@ -221,12 +223,10 @@ The <a href="/guide/">Mutt guide</a> reads like an encyclopaedia. Everything
 you want to know is in there somewhere, but generally you have to know what
 you're looking for.
 
-
-Mutt needs a simple introduction with pictures.
-The guide should explain how to perform simple tasks
-(just the basics to get a user started).
-The simple guide can list some more advanced features of Mutt, but leave a
-full explanation to the main manual.
+Mutt needs a simple introduction with pictures. The guide should explain how
+to perform simple tasks (just the basics to get a user started). The simple
+guide can list some more advanced features of Mutt, but leave a full
+explanation to the main manual.
 
 See also: [Docs Rebuild](/dev/docs-rebuild)
 
@@ -252,8 +252,7 @@ pulled together by hand. These processes need to be automated to reduce effort.
 ### Social
 
 The NeoMutt project has a
-<a href="https://github.com/neomutt">GitHub organisation</a>
-and a website
+<a href="https://github.com/neomutt">GitHub organisation</a> and a website
 <a href="{{site.url}}">{{site.url}}</a>
 
 These are useful and practical, but in order to reach a wider audience we
@@ -261,34 +260,31 @@ probably need a Twitter and Facebook presence.
 
 ### Testing
 
-NeoMutt already contains lots of features that Mutt doesn't have.
-These features were often only available as patches which meant that they
-didn't get much testing.
+NeoMutt already contains lots of features that Mutt doesn't have. These
+features were often only available as patches which meant that they didn't get
+much testing.
 
-Do you know to to use automatic testing tools?
-What tools exist to test text-only programs like Mutt?
-How easy is it to set up tests?
-What are these tools capable of?
+Do you know to to use automatic testing tools? What tools exist to test
+text-only programs like Mutt? How easy is it to set up tests? What are these
+tools capable of?
 
 If you find a bug in NeoMutt, please report it:
 <a href="https://github.com/neomutt/neomutt/issues">NeoMutt issue</a>.
 
 ### Ideas
 
-Even if you don't have any technical skills, you can probably help here.
-As a mail client, Mutt is missing many features common to modern programs.
-Help compile a list of features that Mutt is missing; help guide development.
+Even if you don't have any technical skills, you can probably help here. As
+a mail client, Mutt is missing many features common to modern programs. Help
+compile a list of features that Mutt is missing; help guide development.
 
 ### Packager
 
-NeoMutt is currently only available as source code / patches.
-NeoMutt is a small project and creating and maintaining binary packages takes
-time.
+NeoMutt is currently only available as source code / patches. NeoMutt is
+a small project and creating and maintaining binary packages takes time.
 
-We need someone to create binary packages of NeoMutt.
-A good way to do this would be to set up a
-Debian <abbr title="Personal Package Archive">PPA</abbr> or
-Fedora <abbr title="Cool Other Package Repo">COPR</abbr>.
+We need someone to create binary packages of NeoMutt. A good way to do this
+would be to set up a Debian <abbr title="Personal Package Archive">PPA</abbr>
+or Fedora <abbr title="Cool Other Package Repo">COPR</abbr>.
 
 Automatic packaging, and release, would mean more users, more testing and
 better quality.
@@ -298,14 +294,16 @@ better quality.
 Mutt has very few developers. This won't change until the Mutt community
 becomes more welcoming to new developers.
 
-Do you know Mutt well?
+Do you know Mutt well? \\
 Do you want to encourage others to help?
 
-Richard Russon has compiled a list of simple coding tasks.
-Each task will improve the state of the Mutt code and help to get new
-developers familiar with Mutt.
+Richard Russon has compiled a list of simple coding tasks. Each task will
+improve the state of the Mutt code and help to get new developers familiar with
+Mutt.
 
 The job of the mentor will be to:
+
   * Answer the new coder's questions about Mutt
   * Check the work
   * Help get the code accepted into Mutt
+

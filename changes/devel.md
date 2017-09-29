@@ -2,6 +2,7 @@
 layout: concertina
 title: NeoMutt - A Developer's View
 ---
+
 # {{ page.title }}
 
 NeoMutt has many improvements over Mutt.

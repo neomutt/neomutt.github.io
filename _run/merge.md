@@ -17,8 +17,8 @@ Here are some helpful pictures:
 D---E---F---G master
 ```
 
-A developer has created branch from master's commit E.
-(this is known as a topic branch in git terminology)
+A developer has created branch from master's commit E. (this is known as
+a topic branch in git terminology)
 
 They committed A, B, C.
 
@@ -44,8 +44,8 @@ git merge --no-ff topic
 D---E---F---G---H master
 ```
 
-The topic branch has been merged into master with a "merge commit".
-The topic's history hasn't been changed.
+The topic branch has been merged into master with a "merge commit". The
+topic's history hasn't been changed.
 
 Squash and Merge
 ----------------
@@ -77,8 +77,8 @@ git rebase --interactive
 D---E---F---G master
 ```
 
-Git's interactive rebase allows you to reorder commits and squash them
-into one bit commit: H.
+Git's interactive rebase allows you to reorder commits and squash them into one
+bit commit: H.
 
 ```
 git checkout master
@@ -123,12 +123,12 @@ git merge --no-ff topic
 D---E---F---G-----------H master
 ```
 
-The topic branch has been merged into master with a "merge commit". The
-topic's history looks the same, but appears to have happened just now.
+The topic branch has been merged into master with a "merge commit". The topic's
+history looks the same, but appears to have happened just now.
 
-This option makes the history look tidiers. Rather than having multiple
-topic branches being created and merged at different times (all
-overlapping), they are separated out.
+This option makes the history look tidiers. Rather than having multiple topic
+branches being created and merged at different times (all overlapping), they
+are separated out.
 
 Here are three topic branches being merged sequentially:
 
@@ -138,7 +138,7 @@ Here are three topic branches being merged sequentially:
 o---o---o---o-----------o--o-----------o--o-----------o master
 ```
 
-------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 When to merge? When to squash?
 

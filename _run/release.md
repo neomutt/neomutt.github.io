@@ -12,8 +12,8 @@ This will eventually be a complete guide to making a release of NeoMutt.
 
 ## Schedule
 
-NeoMutt's current development plan is to follow each feature release with a
-stabilising bug-fix release.
+NeoMutt's current development plan is to follow each feature release with
+a stabilising bug-fix release.
 
 * 3 weeks of feature development
 * 1 week of bug-fixing / stabilisation
@@ -176,8 +176,6 @@ Twitter
   - create "delayed"
 - GitHub: delete old branches
 - Merge delayed issues
-
---------------------------------------------------------------------------------
 
 ## Leftover Notes
 

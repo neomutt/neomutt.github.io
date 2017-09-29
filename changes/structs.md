@@ -2,12 +2,13 @@
 layout: concertina
 title: Renamed (typedef'd) structs
 ---
+
 # {{ page.title }}
 
 ### Typedefs
 
-Typedefs will only be used for opaque data types.
-These structs have also been renamed for consistency.
+Typedefs will only be used for opaque data types. These structs have also been
+renamed for consistency.
 
 | Old typedef             | New struct                 |
 | :---------------------- | :------------------------- |

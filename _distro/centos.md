@@ -17,21 +17,22 @@ maintainer: flatcap
 | 6             | Supported                   |
 | 7             | Supported                   |
 
-The NeoMutt RPMs are published in a YUM repo.
-This is a public repository run by
-Richard Russon ([FlatCap](https://github.com/flatcap)) <[rich@flatcap.org](mailto:rich@flatcap.org)>
+The NeoMutt RPMs are published in a YUM repo. This is a public repository run
+by Richard Russon ([FlatCap](https://github.com/flatcap)) <[rich@flatcap.org](mailto:rich@flatcap.org)>
 
 They provide NeoMutt for both CentOS and RedHat Enterprise Linux.
 
 ## Installation <a class="offset" id="install"></a>
 
-The instructions work for all versions of CentOS / RHEL.
-The commands should be run as root, or prefixed with `sudo`.
+The instructions work for all versions of CentOS / RHEL. The commands should
+be run as root, or prefixed with `sudo`.
 
 First download the repo file for your OS:
 
-- CentOS / RHEL v6 [flatcap-neomutt-epel-6.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-6/flatcap-neomutt-epel-6.repo)
-- CentOS / RHEL v7 [flatcap-neomutt-epel-7.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-7/flatcap-neomutt-epel-7.repo)
+- CentOS / RHEL v6
+  [flatcap-neomutt-epel-6.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-6/flatcap-neomutt-epel-6.repo)
+- CentOS / RHEL v7
+  [flatcap-neomutt-epel-7.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-7/flatcap-neomutt-epel-7.repo)
 
 Now, copy it into place and install:
 
@@ -54,15 +55,18 @@ Is this ok [y/N]: y
 Well done! You've just installed NeoMutt.
 
 - **Learn more about NeoMutt**: [browse our website](https://www.neomutt.org)
-- **Latest news**: Subscribe to our [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for
-[NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
-- **Talk to the developers**: Join our IRC channel: #neomutt on irc.freenode.net or the
-[NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org) mailing list
+- **Latest news**: Subscribe to our [RSS feed](https://www.neomutt.org/feed.xml)
+  or our mailing lists for
+  [NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
+- **Talk to the developers**: Join our IRC channel: #neomutt on
+  irc.freenode.net or the
+  [NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
+  mailing list
 
 ## Update <a class="offset" id="update"></a>
 
-Once NeoMutt is installed, it will be updated automatically when you perform system updates.
-You can make that happen sooner by running:
+Once NeoMutt is installed, it will be updated automatically when you perform
+system updates. You can make that happen sooner by running:
 
 ```
 yum update
@@ -128,3 +132,4 @@ Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 ---
 
 Instructions last checked: 2017-09-21 by [@flatcap](https://github.com/flatcap)
+

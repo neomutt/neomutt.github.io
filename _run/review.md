@@ -50,7 +50,8 @@ author: flatcap
 **Feedback:**
 
 * We want to know what's going on, so we can plan releases
-* People need a little freedom to experiment before others express their opinions
+* People need a little freedom to experiment before others express their
+  opinions
 
 **When does a user want:**
 

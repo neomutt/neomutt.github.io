@@ -2,6 +2,7 @@
 layout: concertina
 title: Split up of mutt.h
 ---
+
 # {{ page.title }}
 
 mutt.h has been split up into a separate file for most of the structs within it.

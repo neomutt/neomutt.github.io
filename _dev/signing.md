@@ -7,17 +7,21 @@ status: wip
 
 # {{ page.title }}
 
-If you're planning to build your own version of NeoMutt, it's important to check that the source hasn't been tampered with.
+If you're planning to build your own version of NeoMutt, it's important to
+check that the source hasn't been tampered with.
 
-All **release commits** in git are signed and all **GitHub downloads** come with a SHA256 CHECKSUM file.
+All **release commits** in git are signed and all **GitHub downloads** come
+with a SHA256 CHECKSUM file.
 
 ## Keys
 
 The NeoMutt signing key is:
+
 - `86C2397270DD7A561263CA4E5FAF0A6EE7371805`
 - Richard Russon (NeoMutt) <rich@flatcap.org>
 
-This key is available on keyservers, or insecurely [from our website](https://www.neomutt.org/person/flatcap)
+This key is available on keyservers, or insecurely
+[from our website](https://www.neomutt.org/person/flatcap)
 
 ```sh
 gpg2 --search-keys neomutt
@@ -28,12 +32,14 @@ gpg: data source: http://c-73-164-0-249.hsd1.mn.comcast.net:11371
 (1)	Richard Russon (NeoMutt) <rich@flatcap.org>
 	  4096 bit RSA key 5FAF0A6EE7371805, created: 2016-04-08, expires: 2019-04-13
 Keys 1-1 of 1 for "neomutt".  Enter number(s), N)ext, or Q)uit >
-````
+```
 
 ## Git Example
 
-**Note**: On the [GitHub releases page](https://github.com/neomutt/neomutt/releases), **all** releases should display a "Verified" tag.
-This confirms that the release matches the NeoMutt signing key.
+**Note**: On the
+[GitHub releases page](https://github.com/neomutt/neomutt/releases), **all**
+releases should display a "Verified" tag. This confirms that the release
+matches the NeoMutt signing key.
 
 ```sh
 git clone https://github.com/neomutt/neomutt
@@ -60,7 +66,8 @@ git checkout -b neomutt-20170428
 
 ## Source Example <a class="offset" id="source-example"></a>
 
-Download a source package and the CHECKSUM file from the [release page](https://github.com/neomutt/neomutt/releases/latest)
+Download a source package and the CHECKSUM file from the
+[release page](https://github.com/neomutt/neomutt/releases/latest)
 
 ```sh
 wget https://github.com/neomutt/neomutt/archive/neomutt-20170428.tar.gz

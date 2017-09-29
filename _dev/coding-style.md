@@ -26,8 +26,7 @@ NeoMutt also recommends using [editor-config][e] and [clang-format][c].
 
 ## <a name="rules" class="offset"></a> Rules
 
-These rules are important.
-Please follow them to ensure your code is accepted.
+These rules are important. Please follow them to ensure your code is accepted.
 
 ### Indent
 
@@ -65,46 +64,44 @@ if (x == 0)
 ### avoid global variables!
 
 - We consider the use of global variables to be bad style, because it makes
-  changes/refactorings much harder to realize.
-  Neomutt still has a lot of them. So if you want to reduce them, you're very
-  welcome to do so. Ask on the devel mailinglist or on IRC, if you are
-  interested.
+  changes/refactorings much harder to realize. Neomutt still has a lot of
+  them. So if you want to reduce them, you're very welcome to do so. Ask on the
+  devel mailinglist or on IRC, if you are interested.
 
 ### special characters should be utf8
 
-- special characters should be in utf-8. If you find remnants
-  from the times when this was an iso-8859-1 source code tree,
-  please feel free to fix them.
+- special characters should be in utf-8. If you find remnants from the times
+  when this was an iso-8859-1 source code tree, please feel free to fix them.
 
 ### global and non-global functions
 
-- global functions should have the prefix "mutt_". All
-  other functions should be declared "static".
+- global functions should have the prefix "mutt_". All other functions should
+  be declared "static".
 
 ## <a name="guidelines" class="offset"></a> Guidelines
 
-These guidelines are NeoMutt's preferred way to style code.
-Some exceptions will be allowed.
+These guidelines are NeoMutt's preferred way to style code. Some exceptions
+will be allowed.
 
 ### General
 
-- Function return type on the same line, e.g.
-  `int function(int y)`
-
+- Function return type on the same line, e.g. `int function(int y)`
 - Line length should be limited to 80-90 characters.
 
 ### Braces Placement
 
-There are many situations where C doesn't require braces.
-Often, this can lead to code that's hard to read.
+There are many situations where C doesn't require braces. Often, this can lead
+to code that's hard to read.
 
 **General guideline**:
+
 - The meaning of the code must be **immediately** clear.
 
 First, here are a couple of good examples where braces aren't needed, but the
 code is still clear.
 
-Both the condition and the action are short and the entire 'if' is easy to read.
+Both the condition and the action are short and the entire 'if' is easy to
+read.
 
 ```c
 if (condition)
@@ -121,7 +118,8 @@ for (int i = 0; i < 10; i++)
 
 Next are three bad examples.
 
-Here is some code from `find_subject()` in [thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2/thread.c#L415)
+Here is some code from `find_subject()` in
+[thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2/thread.c#L415)
 It's hard to tell where the 'if' ends and the action begins.
 
 ```c
@@ -141,8 +139,9 @@ if (tmp != cur &&                    /* don't match the same message */
   last = tmp; /* best match so far */
 ```
 
-This example is simpler, but could still probably do with `{}`s.
-It is from `mutt_check_traditional_pgp()` in [commands.c](https://github.com/neomutt/neomutt/blob/6b1ecf78dde6a629b97ddaeeddf94d58e6aa60e9/commands.c#L1062)
+This example is simpler, but could still probably do with `{}`s. It is from
+`mutt_check_traditional_pgp()` in
+[commands.c](https://github.com/neomutt/neomutt/blob/6b1ecf78dde6a629b97ddaeeddf94d58e6aa60e9/commands.c#L1062)
 
 ```c
 if (Context->hdrs[Context->v2r[i]]->tagged &&
@@ -151,7 +150,8 @@ if (Context->hdrs[Context->v2r[i]]->tagged &&
    || rv;
 ```
 
-Finally, there's ugliness like this in `crypt_init()` in [cryptglue.c](https://github.com/neomutt/neomutt/blob/3a415b2b1d5719d729aa60bb6491c496dd2f98f8/cryptglue.c#L59):
+Finally, there's ugliness like this in `crypt_init()` in
+[cryptglue.c](https://github.com/neomutt/neomutt/blob/3a415b2b1d5719d729aa60bb6491c496dd2f98f8/cryptglue.c#L59):
 
 ```c
   if (
@@ -164,6 +164,7 @@ Finally, there's ugliness like this in `crypt_init()` in [cryptglue.c](https://g
 ```
 
 The factors that complicate an 'if' statement are:
+
 - **Condition** spans multiple lines
 - **Condition** is inconsistently indented
 - **Action** spans multiple lines
@@ -171,13 +172,16 @@ The factors that complicate an 'if' statement are:
 - **Condition** contains preprocessor statements
 
 **Specific guidelines**:
+
 - Refactor 'if' conditions that span more than 4 lines
-- Enforced `{}`s for actions that span more than 1 line, or that contain comments
+- Enforced `{}`s for actions that span more than 1 line, or that contain
+  comments
 - Preprocessor conditions should not be embedded within an 'if' condition
 
 ### Whitespace
 
 **Guidelines**:
+
 - No spaces inside () or []
 - Space around operators:
   - Maths `+-*/`
@@ -189,8 +193,7 @@ The factors that complicate an 'if' statement are:
 
 ## <a name="top-tips" class="offset"></a> Top Tips
 
-These tips are generally good ideas.
-Their use is encouraged.
+These tips are generally good ideas. Their use is encouraged.
 
 ### Distinguish between `0` and `NULL`
 
@@ -204,9 +207,9 @@ fclose(fp);
 fp = NULL;
 ```
 
-`strcmp()` returns `0` when the strings match, but the code below is misleading.
-You might be mistaken and think that `something()` is called if the strings
-match.
+`strcmp()` returns `0` when the strings match, but the code below is
+misleading. You might be mistaken and think that `something()` is called if
+the strings match.
 
 ```c
 /* Misleading condition */
@@ -249,8 +252,8 @@ C allows you to write statements like:
 ```c
 if (a == x && b == y && c == z)
 ```
-Here, we're `&&`-ing three logical tokens.
-Because they contain whitespace, the 'if' can be a little hard to read.
+Here, we're `&&`-ing three logical tokens. Because they contain whitespace,
+the 'if' can be a little hard to read.
 
 This is easier to read:
 
@@ -266,7 +269,8 @@ if (x && y && !z)
 
 ### Ternary operator `x ? y : z` - one at a time
 
-The ternary operator is good for short and simple if-then-else type things, e.g.
+The ternary operator is good for short and simple if-then-else type things,
+e.g.
 
 ```c
 /* Clear use of a ternary operator */
@@ -284,9 +288,10 @@ return (pwc && *pwc) ? (ib - (k ? bufi + k : s)) : 0;
 
 ### Doxygen Comment Blocks
 
-New, non-static (shared), functions should have a [doxygen comment block](/dev/doxygen).
-These comment blocks should tell a developer everything they need to know in
-order to use, or debug, that function.
+New, non-static (shared), functions should have a
+[doxygen comment block](/dev/doxygen). These comment blocks should tell
+a developer everything they need to know in order to use, or debug, that
+function.
 
 These comment blocks are parsed by doxygen and turned into cross-referenced
 documentation.
@@ -347,8 +352,8 @@ This tool can re-indent code, correct the placement of `{}`s and much much
 more. Beginners are strongly recommended to use this tool on their code before
 submitting it to NeoMutt.
 
-Here is NeoMutt's [.clang-format][ncf] file.
-Clang's site has [full documentation][cfd] of the format.
+Here is NeoMutt's [.clang-format][ncf] file. Clang's site has
+[full documentation][cfd] of the format.
 
 Any code that **needs** to stay as it was written should be surrounded by the
 comments:

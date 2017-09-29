@@ -35,9 +35,9 @@ guix package --remove neomutt
 
 ## From git <a class="offset" id="dev-build"></a>
 
-To build neomutt from the HEAD of the neomutt sources,
-you can use the contrib/guix-neomutt.scm file with any
-of the relevant guix commands. For example
+To build neomutt from the HEAD of the neomutt sources, you can use the
+contrib/guix-neomutt.scm file with any of the relevant guix commands. For
+example
 
 ```
 cd contrib
@@ -52,5 +52,7 @@ guix build --install-from-file=contrib/guix-neomutt.scm
 
 for building it.
 
-Read the [GNU Guix Reference Manual](https://www.gnu.org/software/guix/manual/guix.html) for more information
-and examples on usage.
+Read the
+[GNU Guix Reference Manual](https://www.gnu.org/software/guix/manual/guix.html)
+for more information and examples on usage.
+

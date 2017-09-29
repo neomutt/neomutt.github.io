@@ -2,14 +2,15 @@
 layout: concertina
 title: NeoMutt - A User's View
 ---
-# NeoMutt - A User's View
 
-NeoMutt has many improvements over Mutt.
-Below is a list of all the differences between Mutt and NeoMutt.
+# {{ page.title }}
 
-This guide is correct as of Mutt-1.8.3 and NeoMutt-20170609.
-It is written for **users** of NeoMutt.
-If you're a developer, see the [Developer's View](devel).
+NeoMutt has many improvements over Mutt. Below is a list of all the
+differences between Mutt and NeoMutt.
+
+This guide is correct as of Mutt-1.8.3 and NeoMutt-20170609. It is written for
+**users** of NeoMutt. If you're a developer, see the
+[Developer's View](devel).
 
 ## Removed from NeoMutt
 

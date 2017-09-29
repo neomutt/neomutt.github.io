@@ -2,6 +2,7 @@
 layout: concertina
 title: Renamed Files
 ---
+
 # {{ page.title }}
 
 Many files have been renamed or moved by NeoMutt.

@@ -2,6 +2,7 @@
 layout: concertina
 title: Code of Conduct
 ---
+
 # {{ page.title }}
 
 NeoMutt's community is made up from developers and enthusiasts around the globe.

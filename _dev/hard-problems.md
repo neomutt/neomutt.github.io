@@ -4,7 +4,6 @@ title: Hard Problems
 description: A list of problems we really need help for
 ---
 
-
 # {{ page.title }}
 
 Here's a list of problems, which are either
@@ -16,15 +15,14 @@ However, everything listed in here would be a **big** help for us if you'd fix
 it. The reason we haven't done that already is mostly the missing time of our
 core developers team.
 
-
 ### Refactoring the code and its build system, making mutt testable
 
 This is probably the problem, we would profit the most from your help. We are
 a small team of programmers with even smaller amount of freetime, so big
 changes take their time.
 
-But please, if you are interested in this,
-send a mail to neomutt-devel@neomutt.org and descibe your thoughts.
+But please, if you are interested in this, send a mail to
+neomutt-devel@neomutt.org and descibe your thoughts.
 
 For some ideas, please see:
 

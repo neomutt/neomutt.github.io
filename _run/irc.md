@@ -7,7 +7,8 @@ author: Richard Russon
 
 # {{ page.title }}
 
-NeoMutt has an IRC channel: **#neomutt** on [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
+NeoMutt has an IRC channel: **#neomutt** on
+[irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
 
 This is a list of useful commands to help run our IRC channel.
 
@@ -15,15 +16,15 @@ This is a list of useful commands to help run our IRC channel.
 
 **Register Nick:**
 
-Before you can become a channel operator, you need to register your nick.
-This will prevent other people from impersonating you.
+Before you can become a channel operator, you need to register your nick. This
+will prevent other people from impersonating you.
 
 ```
 /msg nickserv register <password> <email>
 ```
 
-Then validate your email address.
-Each time you connect to the server, you can then identify yourself:
+Then validate your email address. Each time you connect to the server, you can
+then identify yourself:
 
 ```
 /msg nickserv identify <password>
@@ -81,7 +82,6 @@ Then set flags on a user:
 /msg chanserv set #<channel> email <email>
 ```
 
-
 ## Managing the Channel
 
 **Op User:** (take operator privs)
@@ -115,3 +115,4 @@ Then set flags on a user:
 ```
 
 Where the filter is of the form: `nick!user@host` (with "*" as a wildcard).
+

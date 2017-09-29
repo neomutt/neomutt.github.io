@@ -6,7 +6,8 @@ description: List of Branches in the NeoMutt Repo
 
 # {{ page.title }}
 
-The [neomutt](https://github.com/neomutt/neomutt) repository has 5 permanent branches.
+The [neomutt](https://github.com/neomutt/neomutt) repository has 5 permanent
+branches.
 
 | Branch                                                           | Description                                                                                                                                                                                                                                                                   |
 | :--------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

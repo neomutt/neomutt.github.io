@@ -10,11 +10,13 @@ dir: keybase
 
 # KeybaseMutt
 
-A work in progress. KeybaseMutt exists to let its users utilize Keybase within mutt. (Unfortunately, not natively (yet).)
+A work in progress. KeybaseMutt exists to let its users utilize Keybase within
+mutt. (Unfortunately, not natively (yet).)
 
 ## Quick start
 
-Run the install script. It will set up the directory's and paths for you. Do what it says or suffer the consequences!
+Run the install script. It will set up the directory's and paths for you. Do
+what it says or suffer the consequences!
 
 Then just throw these into your .muttrc
 
@@ -24,4 +26,7 @@ Then just throw these into your .muttrc
 
 Done!
 
-Check out the [Github page](https://github.com/neomutt/neomutt/tree/master/contrib/keybase) for the full documentation.
+Check out the
+[Github page](https://github.com/neomutt/neomutt/tree/master/contrib/keybase)
+for the full documentation.
+

@@ -11,7 +11,8 @@ author: flatcap
 [Doxygen](http://doxygen.org) reads specially formatted comment blocks and
 turns them into documentation.
 
-The Doxygen [documentation](http://www.stack.nl/~dimitri/doxygen/manual/commands.html)
+The Doxygen
+[documentation](http://www.stack.nl/~dimitri/doxygen/manual/commands.html)
 lists all the possible commands. Some common ones are:
 
 - **@param**   -- a function parameter
@@ -53,10 +54,11 @@ The `@param` can have an optional suffix indicating the direction:
  *
 ```
 
-The return value `@return` could be descriptive, e.g. "Number of apples", or a
-list of possible values.
+The return value `@return` could be descriptive, e.g. "Number of apples", or
+a list of possible values.
 
-Here, we have XXX inserted and extra `*` to make the text into a list (in Markdown).
+Here, we have XXX inserted and extra `*` to make the text into a list (in
+Markdown).
 
 ```
  *
@@ -85,6 +87,4 @@ Here's an example function comment block from `sidebar.c`:
  */
 static int draw_divider(int num_rows, int num_cols)
 ```
-
-
 

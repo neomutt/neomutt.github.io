@@ -22,7 +22,6 @@ Packagers:
 There are currently two different ways to install software on NixOS. One is
 declarative and the other more imperative.
 
-
 ### declarative package management
 
 Add `pkgs.neomutt` into your `configuration.nix` like this:
@@ -40,7 +39,6 @@ nixos-rebuild switch
 For further reference, you might want to read the
 [nixOS manual](http://nixos.org/nixos/manual/index.html#sec-declarative-package-mgmt).
 
-
 ### imperative package management
 
 You just have to run
@@ -48,7 +46,6 @@ You just have to run
 ```
 nix-env -iA nixos.neomutt
 ```
-
 
 ## Update <a class="offset" id="update"></a>
 
@@ -88,5 +85,5 @@ Now you can follow the [guide for building NeoMutt](/dev/build).
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
-
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+

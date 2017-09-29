@@ -25,8 +25,8 @@ Richard Russon ([FlatCap](https://github.com/flatcap)) <[rich@flatcap.org](mailt
 
 ## Installation <a class="offset" id="install"></a>
 
-The instructions work for all versions of Fedora.
-The commands should be run as root, or prefixed with `sudo`.
+The instructions work for all versions of Fedora. The commands should be run
+as root, or prefixed with `sudo`.
 
 "dnf-plugins-core" will probably already be installed.
 
@@ -71,9 +71,9 @@ Finally, install the NeoMutt package:
 dnf install neomutt
 ```
 
-During the installation, dnf will ask you to verify the public key of the package.
-Check that fingerprint **exactly** matches the one shown below, then say **yes**.
-This step only has to be done once -- for the first install.
+During the installation, dnf will ask you to verify the public key of the
+package. Check that fingerprint **exactly** matches the one shown below, then
+say **yes**. This step only has to be done once -- for the first install.
 
 ```reply
 Importing GPG key 0xFACB00B1:
@@ -86,15 +86,19 @@ Is this ok [y/N]:
 Well done! You've just installed NeoMutt.
 
 - **Learn more about NeoMutt**: [browse our website](https://www.neomutt.org)
-- **Latest news**: Subscribe to our [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for
-[NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
-- **Talk to the developers**: Join our IRC channel: #neomutt on irc.freenode.net or the
-[NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org) mailing list
+- **Latest news**: Subscribe to our
+  [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for
+  [NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
+- **Talk to the developers**: Join our IRC channel: #neomutt on
+  irc.freenode.net or the
+  [NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
+  mailing list
 
 ## Alternative Install <a class="offset" id="alternate"></a>
 
-An alternative way to install NeoMutt is to download the rpm directly from the server
-(and verify it using the [public key](https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg)).
+An alternative way to install NeoMutt is to download the rpm directly from the
+server (and verify it using the
+ [public key](https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg)).
 
 [https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/](https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/)
 
@@ -110,8 +114,8 @@ uid           flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>
 
 ## Update <a class="offset" id="update"></a>
 
-Once NeoMutt is installed, it will be updated automatically when you perform system updates.
-You can make that happen sooner by running:
+Once NeoMutt is installed, it will be updated automatically when you perform
+system updates. You can make that happen sooner by running:
 
 ```
 dnf update

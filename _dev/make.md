@@ -13,6 +13,7 @@ The diagrams below shows how the code and docs fit together.
 [![make](/images/make-code-thumb.png)](/images/make-code.png) [![make](/images/make-docs-thumb.png)](/images/make-docs.png)
 
 **Key**:
+
 - Ellipse    : source file
 - Square     : action
   - Blue square  : normal command
@@ -22,6 +23,7 @@ The diagrams below shows how the code and docs fit together.
 - {Braces}   : multiple files follow this pattern
 
 **Source Code**:
+
 - compulsory    : always compiled into mutt
 - conditional   : depends on user config
 - environmental : depends on OS's available libraries
@@ -29,10 +31,12 @@ The diagrams below shows how the code and docs fit together.
 - shared        : used in multiple places
 
 **Diagram Source**:
+
 - [Code](make-code.gv)
 - [Docs](make-docs.gv)
 
 Render the diagram with the command:
+
 ```
 dot -Tpng make.gv > make.png
 ```

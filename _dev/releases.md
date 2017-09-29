@@ -54,8 +54,8 @@ The Git hashes link to our GitHub repository.
 
 ## Mutt
 
-The Git hashes link to our GitHub repository.
-The Hg hashes link to Mutt's Mercurial repository.
+The Git hashes link to our GitHub repository. The Hg hashes link to Mutt's
+Mercurial repository.
 
 | Date       | Version | Git Hash                                                               | Hg Hash                                                         |
 | :--------- | :------ | :--------------------------------------------------------------------- | :-------------------------------------------------------------- |

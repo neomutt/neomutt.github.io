@@ -38,6 +38,7 @@ git clone -b devel/autosetup https://github.com/neomutt/neomutt
 ### GitHub
 
 Latest release
+
 : <https://github.com/neomutt/neomutt/releases/latest>
 
 Select a source package (Tar or ZIP archive) and the checksum file for
@@ -46,6 +47,7 @@ integrity, see [Signing Code / Releases](/dev/signing#source-example) for an
 example.
 
 Specific branch
+
 : <https://github.com/neomutt/neomutt/archive/devel/autosetup.zip>
 
 Note, archive file verification isn't possible here because this is not
