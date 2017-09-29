@@ -37,7 +37,7 @@ changed much (in years), [so most of them are still correct](/translate.html).
 Here are some recent statistics for the Swedish translation:
 
 | Count  | Description                              |
-|-------:|------------------------------------------|
+| -----: | :--------------------------------------- |
 |   1321 | Total number of strings to be translated |
 |    998 | Already translated                       |
 |    219 | Fuzzy -- need checking by a human        |

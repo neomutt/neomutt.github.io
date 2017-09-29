@@ -19,9 +19,9 @@ branches.
 
 In addition, there may be some temporary branches.
 
-| Branch         | Description                                                                                                                   |
-| :------------- | :---------------------------------------------------------------------------------------------------------------------------- |
-| devel/{NAME}   | New features are created in `devel` branches. When complete, documented and tested they are merged into the `master` branch.  |
-| distro/{NAME}  | We keep reference copies of some of the downstream distros' neomutt code. **Note:** some of these repos are out-of-date.      |
-| issue/{NUMBER} | When fixing a bug, sometimes we create an `issue` branch for the user to test.                                                |
+| Branch         | Description                                                                                                                  |
+| :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| devel/{NAME}   | New features are created in `devel` branches. When complete, documented and tested they are merged into the `master` branch. |
+| distro/{NAME}  | We keep reference copies of some of the downstream distros' neomutt code. **Note:** some of these repos are out-of-date.     |
+| issue/{NUMBER} | When fixing a bug, sometimes we create an `issue` branch for the user to test.                                               |
 

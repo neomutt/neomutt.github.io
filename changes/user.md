@@ -345,23 +345,23 @@ set debug_file = ~/neomutt.log
 
 **Pager Menu**
 
-| Function                    | Feature                                          |
-| :-------------------------- | :----------------------------------------------- |
-| `compose-to-sender`         | [Compose to Sender](/feature/compose-to-sender)  |
-| `change-newsgroup`          | [NNTP](/feature/nntp)                            |
-| `change-newsgroup-readonly` | [NNTP](/feature/nntp)                            |
-| `followup-message`          | [NNTP](/feature/nntp)                            |
-| `forward-to-group`          | [NNTP](/feature/nntp)                            |
-| `post-message`              | [NNTP](/feature/nntp)                            |
-| `reconstruct-thread`        | [NNTP](/feature/nntp)                            |
-| `change-vfolder`            | [NotMuch](/feature/notmuch)                      |
-| `entire-thread`             | [NotMuch](/feature/notmuch)                      |
-| `modify-labels`             | [NotMuch](/feature/notmuch)                      |
-| `modify-labels-then-hide`   | [NotMuch](/feature/notmuch)                      |
-| `sidebar-toggle-virtual`    | [NotMuch](/feature/notmuch)                      |
-| `vfolder-from-query`        | [NotMuch](/feature/notmuch)                      |
-| `quasi-delete`              | [Quasi-Delete](/feature/quasi-delete)            |
-| `purge-thread`              | [Trash](/feature/trash)                          |
+| Function                    | Feature                                         |
+| :-------------------------- | :---------------------------------------------- |
+| `compose-to-sender`         | [Compose to Sender](/feature/compose-to-sender) |
+| `change-newsgroup`          | [NNTP](/feature/nntp)                           |
+| `change-newsgroup-readonly` | [NNTP](/feature/nntp)                           |
+| `followup-message`          | [NNTP](/feature/nntp)                           |
+| `forward-to-group`          | [NNTP](/feature/nntp)                           |
+| `post-message`              | [NNTP](/feature/nntp)                           |
+| `reconstruct-thread`        | [NNTP](/feature/nntp)                           |
+| `change-vfolder`            | [NotMuch](/feature/notmuch)                     |
+| `entire-thread`             | [NotMuch](/feature/notmuch)                     |
+| `modify-labels`             | [NotMuch](/feature/notmuch)                     |
+| `modify-labels-then-hide`   | [NotMuch](/feature/notmuch)                     |
+| `sidebar-toggle-virtual`    | [NotMuch](/feature/notmuch)                     |
+| `vfolder-from-query`        | [NotMuch](/feature/notmuch)                     |
+| `quasi-delete`              | [Quasi-Delete](/feature/quasi-delete)           |
+| `purge-thread`              | [Trash](/feature/trash)                         |
 
 **Attach Menu**
 
@@ -429,7 +429,7 @@ Some of NeoMutt's formatting strings have extra expandos.
 The **group_index_format** is used to display lists of newsgroups:
 
 | Expando | Description                                                      |
-| :------ | :--------------------------------------------------------------  |
+| :------ | :--------------------------------------------------------------- |
 | %C      | current newsgroup number                                         |
 | %d      | description of newsgroup (becomes from server)                   |
 | %f      | newsgroup name                                                   |

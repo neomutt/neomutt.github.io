@@ -10,8 +10,8 @@ description: Releases of NeoMutt and Mutt
 
 The Git hashes link to our GitHub repository.
 
-| Date       | Release Notes | Git Hash |
-|:-----------|:--------------|:---------|
+| Date       | Release Notes                                                                        | Git Hash                                                         |
+| :--------- | :----------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
 | 2017-09-12 | [20170912 (1.9.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170912) | [`7553613e`](https://github.com/neomutt/neomutt/commit/7553613e) |
 | 2017-09-07 | [20170907 (1.9.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170907) | [`e5d5de50`](https://github.com/neomutt/neomutt/commit/e5d5de50) |
 | 2017-07-14 | [20170714 (1.8.3)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170714) | [`4dfb3718`](https://github.com/neomutt/neomutt/commit/4dfb3718) |
@@ -36,21 +36,21 @@ The Git hashes link to our GitHub repository.
 | 2016-09-16 | [20160916 (1.7.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160916) | [`3a09c61a`](https://github.com/neomutt/neomutt/commit/3a09c61a) |
 | 2016-09-10 | [20160910 (1.7.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160910) | [`5521cc74`](https://github.com/neomutt/neomutt/commit/5521cc74) |
 | 2016-08-27 | [20160827 (1.7.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160827) | [`1313b397`](https://github.com/neomutt/neomutt/commit/1313b397) |
-| 2016-08-26 | [20160826](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160826) | [`76be4106`](https://github.com/neomutt/neomutt/commit/76be4106) |
-| 2016-08-22 | [20160822](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160822) | [`a469efd9`](https://github.com/neomutt/neomutt/commit/a469efd9) |
-| 2016-08-21 | [20160821](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160821) | [`6a25efd4`](https://github.com/neomutt/neomutt/commit/6a25efd4) |
-| 2016-08-08 | [20160808](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160808) | [`28c05edf`](https://github.com/neomutt/neomutt/commit/28c05edf) |
-| 2016-07-23 | [20160723](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160723) | [`8e167d9a`](https://github.com/neomutt/neomutt/commit/8e167d9a) |
-| 2016-07-09 | [20160709](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160709) | [`315ee795`](https://github.com/neomutt/neomutt/commit/315ee795) |
-| 2016-06-11 | [20160611](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160611) | [`32378e11`](https://github.com/neomutt/neomutt/commit/32378e11) |
-| 2016-05-30 | [20160530](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160530) | [`c6871934`](https://github.com/neomutt/neomutt/commit/c6871934) |
-| 2016-05-02 | [20160502](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160502) | [`fcf870a5`](https://github.com/neomutt/neomutt/commit/fcf870a5) |
-| 2016-04-16 | [20160416](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160416) | [`fc12fdf3`](https://github.com/neomutt/neomutt/commit/fc12fdf3) |
-| 2016-04-04 | [20160404](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160404) | [`fba0ecd8`](https://github.com/neomutt/neomutt/commit/fba0ecd8) |
-| 2016-03-28 | [20160328](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160328) | [`bbf00489`](https://github.com/neomutt/neomutt/commit/bbf00489) |
-| 2016-03-20 | [20160320](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160320) | [`43a68a18`](https://github.com/neomutt/neomutt/commit/43a68a18) |
-| 2016-03-17 | [20160317](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160317) | [`ed8cbbb6`](https://github.com/neomutt/neomutt/commit/ed8cbbb6) |
-| 2016-03-07 | [20160307](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160307) | [`e120be3a`](https://github.com/neomutt/neomutt/commit/e120be3a) |
+| 2016-08-26 | [20160826](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160826)         | [`76be4106`](https://github.com/neomutt/neomutt/commit/76be4106) |
+| 2016-08-22 | [20160822](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160822)         | [`a469efd9`](https://github.com/neomutt/neomutt/commit/a469efd9) |
+| 2016-08-21 | [20160821](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160821)         | [`6a25efd4`](https://github.com/neomutt/neomutt/commit/6a25efd4) |
+| 2016-08-08 | [20160808](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160808)         | [`28c05edf`](https://github.com/neomutt/neomutt/commit/28c05edf) |
+| 2016-07-23 | [20160723](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160723)         | [`8e167d9a`](https://github.com/neomutt/neomutt/commit/8e167d9a) |
+| 2016-07-09 | [20160709](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160709)         | [`315ee795`](https://github.com/neomutt/neomutt/commit/315ee795) |
+| 2016-06-11 | [20160611](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160611)         | [`32378e11`](https://github.com/neomutt/neomutt/commit/32378e11) |
+| 2016-05-30 | [20160530](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160530)         | [`c6871934`](https://github.com/neomutt/neomutt/commit/c6871934) |
+| 2016-05-02 | [20160502](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160502)         | [`fcf870a5`](https://github.com/neomutt/neomutt/commit/fcf870a5) |
+| 2016-04-16 | [20160416](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160416)         | [`fc12fdf3`](https://github.com/neomutt/neomutt/commit/fc12fdf3) |
+| 2016-04-04 | [20160404](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160404)         | [`fba0ecd8`](https://github.com/neomutt/neomutt/commit/fba0ecd8) |
+| 2016-03-28 | [20160328](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160328)         | [`bbf00489`](https://github.com/neomutt/neomutt/commit/bbf00489) |
+| 2016-03-20 | [20160320](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160320)         | [`43a68a18`](https://github.com/neomutt/neomutt/commit/43a68a18) |
+| 2016-03-17 | [20160317](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160317)         | [`ed8cbbb6`](https://github.com/neomutt/neomutt/commit/ed8cbbb6) |
+| 2016-03-07 | [20160307](https://github.com/neomutt/neomutt/releases/tag/neomutt-20160307)         | [`e120be3a`](https://github.com/neomutt/neomutt/commit/e120be3a) |
 
 ## Mutt
 

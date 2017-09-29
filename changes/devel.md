@@ -70,17 +70,17 @@ Many files have been removed from the repo:
 
 These options have been removed from configure.
 
-| Options                     | Reason for Removal   |
-| :-------------------------- | -------------------- |
-| `--disable-iconv`           | Use system version   |
-| `--disable-warnings`        | Obsolete             |
-| `--enable-exact-address`    | Obsolete             |
-| `--enable-external-dotlock` | Obsolete             |
-| `--enable-hcache`           | Use backend options  |
-| `--enable-nfs-fix`          | Obsolete             |
-| `--with-exec-shell`         | Obsolete             |
-| `--with-included-gettext`   | Use system version   |
-| `--with-regex`              | Use system version   |
+| Options                     | Reason for Removal  |
+| :-------------------------- | :------------------ |
+| `--disable-iconv`           | Use system version  |
+| `--disable-warnings`        | Obsolete            |
+| `--enable-exact-address`    | Obsolete            |
+| `--enable-external-dotlock` | Obsolete            |
+| `--enable-hcache`           | Use backend options |
+| `--enable-nfs-fix`          | Obsolete            |
+| `--with-exec-shell`         | Obsolete            |
+| `--with-included-gettext`   | Use system version  |
+| `--with-regex`              | Use system version  |
 
 ### Code
 
@@ -170,7 +170,7 @@ The features didn't have any build dependencies, so they are **always** built
 in.
 
 | Options               | State    |
-| :-------------------- | -------- |
+| :-------------------- | :------- |
 | `--enable-compressed` | Built in |
 | `--enable-imap`       | Built in |
 | `--enable-mailtool`   | Built in |
