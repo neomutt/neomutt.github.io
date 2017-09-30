@@ -62,8 +62,7 @@ similar to [ntg]roff:
 
 Do _not_ use any other SGML or nroff formatting instructions here!
 
-Required tools
---------------
+## Required tools
 
 For the complete list, you can always look up the .travis.yml files. Note that
 these are the ubuntu packages.

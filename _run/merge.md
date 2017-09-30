@@ -24,8 +24,7 @@ They committed A, B, C.
 
 Meanwhile commits F and G were added to master.
 
-Create a Merge Commit
----------------------
+## Create a Merge Commit
 
 ```reply
       A---B---C topic
@@ -47,8 +46,7 @@ D---E---F---G---H master
 The topic branch has been merged into master with a "merge commit". The
 topic's history hasn't been changed.
 
-Squash and Merge
-----------------
+## Squash and Merge
 
 ```reply
       A---B---C topic
@@ -91,8 +89,7 @@ D---E---F---G---H master
 
 The squashed commit, H, has been added to the HEAD of master.
 
-Rebase and Merge
-----------------
+## Rebase and Merge
 
 ```reply
       A---B---C topic
