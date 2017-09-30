@@ -28,8 +28,9 @@ You can check the overlay out in any place, you like, for this example, we use
 
 ## Adding the NeoMutt overlay <a class="offset" id="overlay"></a>
 
-See <a href="https://wiki.gentoo.org/wiki//etc/portage/repos.conf">Gentoo
-Wiki on /etc/portage/repos.conf</a> to add the following to repos.conf:
+See
+[Gentoo Wiki on /etc/portage/repos.conf](https://wiki.gentoo.org/wiki//etc/portage/repos.conf)
+to add the following to repos.conf:
 
 ```
 [neomutt_gentoo]

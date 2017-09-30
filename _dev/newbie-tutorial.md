@@ -173,11 +173,11 @@ All NeoMutt members are welcome to
 
 ### Coding
 
-Do you want to fix Mutt?<br>
+Do you want to fix Mutt? \\
 Do you want to add new features to Mutt?
 
 To get familiar with the Neomutt code, you can start with some
-<a class="rm" href="/2016/10/07/news">**Easy Coding Tasks**</a>
+[**_Easy Coding Tasks_**](/2016/10/07/news)
 
 Whatever your level of skill, NeoMutt has got a task for you. There are lots
 of simple jobs and lots of hard jobs to get you thinking.
@@ -218,9 +218,9 @@ character set names, domain names, e-mail addresses, etc.
 
 ### Docs/Translation
 
-The <a href="/guide/">Mutt guide</a> reads like an encyclopaedia. Everything
-you want to know is in there somewhere, but generally you have to know what
-you're looking for.
+The [Mutt Guide](/guide) reads like an encyclopaedia. Everything you want to
+know is in there somewhere, but generally you have to know what you're looking
+for.
 
 Mutt needs a simple introduction with pictures. The guide should explain how
 to perform simple tasks (just the basics to get a user started). The simple
@@ -230,12 +230,12 @@ explanation to the main manual.
 See also: [Docs Rebuild](/dev/docs-rebuild)
 
 The Mutt program has been translated into 30 languages, but
-<a href="/translate">some of the translations</a> are out-of-date.
+[some of the translations](/translate) are out-of-date.
 
 ### Web Design
 
-This website was created by a programmer &ndash; it shows. If you think you
-could do a better job, prove it.
+This website was created by a programmer -- it shows. If you think you could do
+a better job, prove it.
 
 Please don't edit the `*.html` and `*.md` files in the following folders, as they
 are semi-automatically generated:
@@ -250,9 +250,8 @@ pulled together by hand. These processes need to be automated to reduce effort.
 
 ### Social
 
-The NeoMutt project has a
-<a href="https://github.com/neomutt">GitHub organisation</a> and a website
-<a href="{{site.url}}">{{site.url}}</a>
+The NeoMutt project has a [GitHub organisation](https://github.com/neomutt) and
+a website [{{site.url}}]({{site.url}}).
 
 These are useful and practical, but in order to reach a wider audience we
 probably need a Twitter and Facebook presence.
@@ -268,7 +267,7 @@ text-only programs like Mutt? How easy is it to set up tests? What are these
 tools capable of?
 
 If you find a bug in NeoMutt, please report it:
-<a href="https://github.com/neomutt/neomutt/issues">NeoMutt issue</a>.
+[NeoMutt issue](https://github.com/neomutt/neomutt/issues).
 
 ### Ideas
 
@@ -282,8 +281,7 @@ NeoMutt is currently only available as source code / patches. NeoMutt is
 a small project and creating and maintaining binary packages takes time.
 
 We need someone to create binary packages of NeoMutt. A good way to do this
-would be to set up a Debian <abbr title="Personal Package Archive">PPA</abbr>
-or Fedora <abbr title="Cool Other Package Repo">COPR</abbr>.
+would be to set up a Debian PPA or Fedora COPR.
 
 Automatic packaging, and release, would mean more users, more testing and
 better quality.
@@ -305,4 +303,8 @@ The job of the mentor will be to:
   * Answer the new coder's questions about Mutt
   * Check the work
   * Help get the code accepted into Mutt
+
+
+*[COPR]: Cool Other Package Repo
+*[PPA]:  Personal Package Archive
 

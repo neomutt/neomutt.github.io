@@ -19,8 +19,7 @@ maintainer: flatcap
 | 26           | Supported                   |
 | Rawhide      | Supported                   |
 
-The NeoMutt RPMs are published in a <abbr title="Cool Other Package Repo">COPR</abbr>.
-This is a public repository run by
+The NeoMutt RPMs are published in a COPR. This is a public repository run by
 Richard Russon ([FlatCap](https://github.com/flatcap)) <[rich@flatcap.org](mailto:rich@flatcap.org)>
 
 ## Installation <a class="offset" id="install"></a>
@@ -185,4 +184,7 @@ dnf debuginfo-install notmuch nss-softokn-freebl p11-kit pcre tokyocabinet xapia
 ```
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+
+
+*[COPR]: Cool Other Package Repo
 
