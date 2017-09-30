@@ -55,7 +55,7 @@ If you don't have a IRC client, you can use FreeNode's
 
 NeoMutt has two moderated mailing lists: Users, Devel.
 
-**NeoMutt Users** <small>(>100 people)</small>
+**NeoMutt Users** <small>(\>100 people)</small>
 
 - [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
 - [Archives](http://mailman.neomutt.org/pipermail/neomutt-users-neomutt.org/)
@@ -212,7 +212,7 @@ variety of locales, case-insensitive string comparisons and case conversions
 may be dangerous. For instance, in iso-8859-9, tolower('I') is DIFFERENT from
 'i' - it's indeed the Turkish dotless lowercase i.
 
-For this reason, always use the ascii_* functions defined in ascii.h and
+For this reason, always use the ascii\_\* functions defined in ascii.h and
 implemented in ascii.c when comparing or handling strings which are defined as
 us-ascii. This concerns lots of text-based protocols, message header tags,
 character set names, domain names, e-mail addresses, etc.
@@ -238,10 +238,10 @@ The Mutt program has been translated into 30 languages, but
 This website was created by a programmer &ndash; it shows. If you think you
 could do a better job, prove it.
 
-Please don't edit the *.html and *.md files in the following folders, as they
+Please don't edit the `*.html` and `*.md` files in the following folders, as they
 are semi-automatically generated:
 
-* [_man](https://github.com/neomutt/neomutt.github.io/tree/master/_man)
+* [\_man](https://github.com/neomutt/neomutt.github.io/tree/master/_man)
 * [guide](https://github.com/neomutt/neomutt.github.io/tree/master/guide)
 
 Of course, you can always send Pull Requests to update those folders.

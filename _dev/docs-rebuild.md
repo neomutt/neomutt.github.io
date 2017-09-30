@@ -30,9 +30,9 @@ docs". It would be wonderful if we could do this.
 ## Document Format
 
 The docs are written in DocBook XML. It's a rich language allowing you can make
-<note>Notes</note>, <example>Examples</example>, <chapter>Chapters</chapter>
-and <section>Sections</section>. As well as normal HTML things like titles and
-paragraphs.
+\<note\>Notes\</note\>, \<example\>Examples\</example\>,
+\<chapter\>Chapters\</chapter\> and \<section\>Sections\</section\>. As well as
+normal HTML things like titles and paragraphs.
 
 If the docs were stored in a big XML file, things would be easy. Open
 a DocBook-compatible editor and off you go... Unfortunately, `manual.xml`
@@ -113,8 +113,7 @@ NeoMutt's website is hosted by GitHub's Pages. It's a static site which uses
 [Jekyll](https://jekyllrb.com) to allow some templating and "magic".
 
 To turn manual.xml into a website requires quite a lot of post-processing. The
-main script is:
-[build](https://github.com/neomutt/docbook/blob/master/build)
+main script is: [build](https://github.com/neomutt/docbook/blob/master/build)
 in the [docbook repo](https://github.com/neomutt/docbook)
 
 `build` takes the HTML files and tidies them, cuts out the bits we want and

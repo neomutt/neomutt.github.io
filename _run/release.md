@@ -109,7 +109,7 @@ build (don't use my script)
 
 Assets
 
-- make dist -> tar
+- make dist -\> tar
 - diff against mutt-1.8.0
   - test patch apply
   - test build
@@ -171,8 +171,8 @@ Twitter
 
 - Waffle: Archive the "Done" column
 - Update milestones
-  - next-release -> release-YYYY-MM-DD
-  - delayed      -> next-release
+  - next-release -\> release-YYYY-MM-DD
+  - delayed      -\> next-release
   - create "delayed"
 - GitHub: delete old branches
 - Merge delayed issues

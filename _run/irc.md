@@ -58,9 +58,9 @@ First, get a list of available flags:
 
 Then set flags on a user:
 
-- "**+**" Add privs
-- "**-**" Remove privs
-- "**\***" All privs (except Founder)
+- "__+__" Add privs
+- "__-__" Remove privs
+- "__*__" All privs (except Founder)
 
 ```
 /msg chanserv flags #<channel> <username> +*F
@@ -114,5 +114,5 @@ Then set flags on a user:
 /mode #<channel> +b <filter>
 ```
 
-Where the filter is of the form: `nick!user@host` (with "*" as a wildcard).
+Where the filter is of the form: `nick!user@host` (with "\*" as a wildcard).
 

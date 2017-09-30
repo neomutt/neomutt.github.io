@@ -75,7 +75,7 @@ if (x == 0)
 
 ### global and non-global functions
 
-- global functions should have the prefix "mutt_". All other functions should
+- global functions should have the prefix "mutt\_". All other functions should
   be declared "static".
 
 ## <a name="guidelines" class="offset"></a> Guidelines
@@ -340,8 +340,8 @@ indent_size = 2
 indent_style = space
 ```
 
-[ec]: http://editorconfig.org/
-[ecf]: https://github.com/neomutt/neomutt/blob/master/.editorconfig
+[ec]:  <http://editorconfig.org/>
+[ecf]: <https://github.com/neomutt/neomutt/blob/master/.editorconfig>
 
 ## <a name="clang-format" class="offset"></a> Clang-Format
 
@@ -365,6 +365,6 @@ comments:
 
 These should be used as little as possible.
 
-[ncf]: https://github.com/neomutt/neomutt/blob/master/.clang-format
-[cfd]: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+[ncf]: <https://github.com/neomutt/neomutt/blob/master/.clang-format>
+[cfd]: <https://clang.llvm.org/docs/ClangFormatStyleOptions.html>
 

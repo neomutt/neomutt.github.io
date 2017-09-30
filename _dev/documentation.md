@@ -30,35 +30,35 @@ More precisely, variable name, type, and default value are directly extracted
 from the initializer for the MuttVars array. Documentation is expected in
 special comments which _follow_ the initializer. For a line to be included with
 the documentation, it must (after, possibly, some white space) begin with
-either "/**" or "**". Any following white space is ignored. The rest of the
+either "/\*\*" or "\*\*". Any following white space is ignored. The rest of the
 line is expected to be plain text, with some formatting instructions roughly
 similar to [ntg]roff:
 
-- \fI switches to italics
-- \fB switches to boldface
-- \fT switches to monospace
-- \fP switches to normal display after \fI, \fB or \fT
-- \(as can be used to represent an asterisk (*). This is intended to help
-  avoiding character sequences such as /* or */ inside comments.
-- \(rs can be used to represent a backslash (\). This is intended to help
-  avoiding problems when trying to represent any of the \ sequences used by
+- `\fI` switches to italics
+- `\fB` switches to boldface
+- `\fT` switches to monospace
+- `\fP` switches to normal display after `\fI`, `\fB` or `\fT`
+- `\(as` can be used to represent an asterisk (\*). This is intended to help
+  avoiding character sequences such as /\* or \*/ inside comments.
+- `\(rs` can be used to represent a backslash (\\). This is intended to help
+  avoiding problems when trying to represent any of the \\ sequences used by
   makedoc.
-- .dl on a line starts a "definition list" environment (name taken from HTML)
+- `.dl` on a line starts a "definition list" environment (name taken from HTML)
   where terms and definitions alternate.
-- .dt marks a term in a definition list.
-- .dd marks a definition in a definition list.
-- .de on a line finishes a definition list environment.
-- .ts on a line starts a "verbose tscreen" environment (name taken from SGML).
-  Please try to keep lines inside such an environment short; a length of about
-  40 characters should be OK. This is necessary to avoid a really bad-looking
-  muttrc (5) manual page.
+- `.dt` marks a term in a definition list.
+- `.dd` marks a definition in a definition list.
+- `.de` on a line finishes a definition list environment.
+- `.ts` on a line starts a "verbose tscreen" environment (name taken from
+  SGML). Please try to keep lines inside such an environment short; a length
+  of about 40 characters should be OK. This is necessary to avoid a really
+  bad-looking muttrc (5) manual page.
 - .te on a line finishes this environment.
 - .pp on a line starts a paragraph.
-- $word will be converted to a reference to word, where appropriate. Note that
-  $$word is possible as well. Use $$$ to get a literal $ without making
-  a reference.
-- '. ' in the beginning of a line expands to two space characters. This is used
-  to protect indentations in tables.
+- `$word` will be converted to a reference to _word_, where appropriate. Note
+  that `$$word` is possible as well. Use `$$$` to get a literal `$` without
+  making a reference.
+- '`. `' in the beginning of a line expands to two space characters. This is
+  used to protect indentations in tables.
 
 Do _not_ use any other SGML or nroff formatting instructions here!
 
