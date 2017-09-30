@@ -26,7 +26,7 @@ Add the file and your `~/.mutt` and add `source vim-keys.rc` to your
 
 ## TODO
 
-- [ ] **⚠** Visual + Interactive vi-key cheat sheet for mutt (similar to
+- [ ] **&#x26A0;** Visual + Interactive vi-key cheat sheet for mutt (similar to
   sheet.shiar.nl)
 - [ ] Maybe remove `dd` since it's hard to press?
 - [ ] How about a command mode (for real power!)**, isn't there `:`?**
