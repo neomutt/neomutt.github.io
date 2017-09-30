@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: NeoMutt - A Developer's View
+title: NeoMutt -- A Developer's View
 ---
 
 # {{ page.title }}
@@ -213,7 +213,7 @@ The code has undergone extensive improvements.
 - Use SEEK_SET SEEK_CUR SEEK_END
 - sizeof X -\> sizeof(X)
 - Fix calloc args (num, size)
-- Remove Mutt-isms: FOREVER, etc
+- Remove Mutt-isms: FOREVER, etc.
 - dprint -\> mutt_debug
 
 ### Docs

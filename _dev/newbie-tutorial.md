@@ -112,11 +112,10 @@ makes up NeoMutt, the documentation, build scripts and experiments
 
 GitHub allows you to watch:
 
-- **Repos** -- Choose a repository and click the **Watch** button
-- **Issues** -- Open an issue and click **Subscribe** in the right-hand panel
-- **Pull-Requests** -- Open a PR and click **Subscribe** in the right-hand
-  panel
-- **People** -- Go to a person's home page and click **Follow** on the left
+- **Repos**         -- Choose a repository and click the **Watch** button
+- **Issues**        -- Open an issue and click **Subscribe** in the right-hand panel
+- **Pull-Requests** -- Open a PR and click **Subscribe** in the right-hand panel
+- **People**        -- Go to a person's home page and click **Follow** on the left
 
 By watching things in GitHub, you will receive emails when events occur. See
 your [notifications](https://github.com/settings/notifications) and
@@ -199,7 +198,7 @@ Over its twenty year life, Mutt has gathered 84,000 lines of code and a lot of
 cruft (messy code and bad habits). It's time to sort out the mess and make Mutt
 robust. We have written up the consensus among the Neomutt Developers in the
 [coding style Section](/dev/coding-style). You can make of course suggestions
-to that - but please follow the consensus. Otherwise it makes the work very
+to that -- but please follow the consensus. Otherwise it makes the work very
 hard.
 
 Of course, especially refactorings/cleanups of the source code are welcome. If
@@ -210,7 +209,7 @@ you are interested, please talk to us.
 A word of warning about string comparisons: Since mutt may run in a huge
 variety of locales, case-insensitive string comparisons and case conversions
 may be dangerous. For instance, in iso-8859-9, tolower('I') is DIFFERENT from
-'i' - it's indeed the Turkish dotless lowercase i.
+'i' -- it's indeed the Turkish dotless lowercase i.
 
 For this reason, always use the ascii\_\* functions defined in ascii.h and
 implemented in ascii.c when comparing or handling strings which are defined as

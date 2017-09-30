@@ -61,8 +61,8 @@ msgstr "メールボックスが空。"
 ```
 
 - A comment, starting with a `#`
-- "msgid" - The string in English
-- "msgstr" - The string in Japanese
+- "msgid" -- The string in English
+- "msgstr" -- The string in Japanese
 
 There are plenty of tools to help you with the translation process. One of
 them is "poedit" -- it's quite simple to use. This screenshot shows some

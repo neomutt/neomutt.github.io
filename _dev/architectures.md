@@ -65,7 +65,7 @@ have a dedicated maintainer and a great amount of users.
 
 ### confirmation missing
 
-* SCO Unix - Latest release: 2015, recent versions are based on FreeBSD
+* SCO Unix -- Latest release: 2015, recent versions are based on FreeBSD
 * Solaris
 
 ### not desirable to support
@@ -75,18 +75,18 @@ those are in my opinion a bit hard to get, not very popular or discontinued.
 
 (I have the release dates from wikipedia)
 
-* BSDI - seems to be legacy
-* Digital Unix (OSF/1) - discontinued, proprietary
-* QNX - proprietary, Latest release: 2014
-* IRIX - discontinued
-* HP-UX - proprietary
-* DYNIX/ptx - legacy system
-* AIX - proprietary, Latest release: October 5, 2015
-* Data General Unix (DG/UX) - discontinued in 2001
-* UnixWare - proprietary, Latest release: June 10, 2013
-* Convex - [old Supercomputer](https://en.wikipedia.org/wiki/Convex_Computer)
-* Ultrix - proprietary, Latest release: 1995
-* Atari MiNT - open source. Latest release: 18 March 2013
-* MkLinux - Latest release: August 5, 2002
-* SunOS - proprietary, Latest release: November 1994
+* BSDI -- seems to be legacy
+* Digital Unix (OSF/1) -- discontinued, proprietary
+* QNX -- proprietary, Latest release: 2014
+* IRIX -- discontinued
+* HP-UX -- proprietary
+* DYNIX/ptx -- legacy system
+* AIX -- proprietary, Latest release: October 5, 2015
+* Data General Unix (DG/UX) -- discontinued in 2001
+* UnixWare -- proprietary, Latest release: June 10, 2013
+* Convex -- [old Supercomputer](https://en.wikipedia.org/wiki/Convex_Computer)
+* Ultrix -- proprietary, Latest release: 1995
+* Atari MiNT -- open source. Latest release: 18 March 2013
+* MkLinux -- Latest release: August 5, 2002
+* SunOS -- proprietary, Latest release: November 1994
 

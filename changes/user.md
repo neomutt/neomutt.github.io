@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: NeoMutt - A User's View
+title: NeoMutt -- A User's View
 ---
 
 # {{ page.title }}

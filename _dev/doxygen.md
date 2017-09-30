@@ -43,7 +43,7 @@ Here's a basic template for a function comment. It begins with two asterisks.
 
 The `@param` can have an optional suffix indicating the direction:
 
-- `[in]` -- a normal inbound parameter
+- `[in]`  -- a normal inbound parameter
 - `[out]` -- an "out-param" (a value passed to the caller)
 
 ```

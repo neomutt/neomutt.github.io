@@ -14,7 +14,7 @@ See [Distro Pages](/distro.html).
 ## Obtain the Source
 
 The NeoMutt project is hosted on GitHub, so there are two main options to get
-the sources — either as Git repository or GitHub archive file. A repository,
+the sources -- either as Git repository or GitHub archive file. A repository,
 not only for [GitHub users](/dev/newbie-tutorial#github), provides some
 benefits over a single release or snapshot archive, e.g. will empower you to
 work with the source code and contribute to the project more easily.
@@ -102,7 +102,7 @@ List supported options to adapt or fine tune NeoMutt's build.
 
 ## Build
 
-Targets: neomutt, doc, …
+Targets: neomutt, doc, ...
 
 ```
 make

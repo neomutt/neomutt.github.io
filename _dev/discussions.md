@@ -19,7 +19,7 @@ They are closed for now, but they can be re-opened if someone volunteers to do
 the work. Help will be freely given to volunteers. Issues where the result is
 hard to achieve are labeled with
 [difficulty:hard](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=label%3Adifficulty%3Ahard%20).
-Please note, those hard issues are intentionally closed - they are sometimes
+Please note, those hard issues are intentionally closed -- they are sometimes
 demotivating due to its difficulty.
 
 ### [#587 Better support for multipart/alternative?](https://github.com/neomutt/neomutt/issues/587)

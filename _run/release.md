@@ -21,10 +21,10 @@ a stabilising bug-fix release.
 ## Anticipation
 
 - 1 week heads up to dev mailing list
-- Coming soon - list of features to users mailing list
+- Coming soon -- list of features to users mailing list
 - Merge mutt upstream
 - Merge translations
-- Waffle - clear "Ready" column
+- Waffle -- clear "Ready" column
 
 ## Preparation
 
@@ -75,7 +75,7 @@ Code:
   - configure.ac YYYYDDMM, 1.8.0
 - ChangeLog.neomutt
 - configure.ac (fix date)
-- Update neomuttrc.vim with new variables, etc
+- Update neomuttrc.vim with new variables, etc.
 - Update po files
 
 ## Testing
@@ -131,7 +131,7 @@ Fedora COPR
 - build
 - test install
 
-MacOS - Homebrew
+MacOS -- Homebrew
 
 - update Formula
 - push
@@ -162,7 +162,7 @@ Email
 - neomutt-users mailing list
 - neomutt-devel mailing list
 - New users with a link to their name in the credits
-- Translators - send them new po files
+- Translators -- send them new po files
 
 Update IRC topic
 Twitter
@@ -201,7 +201,7 @@ release repo for notes and scripts
 
 check of HCACHEVER has changed, notify if it has
 
-Check notes, emails, etc for promises
+Check notes, emails, etc. for promises
 
 release link new feature to web page
 

@@ -59,7 +59,7 @@ author: flatcap
 * Review?
 * Merge?
 
-## Scenario - NeoMutt Member
+## Scenario -- NeoMutt Member
 
 ### Coder has an idea
 
@@ -96,7 +96,7 @@ author: flatcap
 - Reviewer 1: "approved"
 - Reviewer 2: "approved"
 
-### When code is ready for merge..
+### When code is ready for merge...
 
 - Reviewer: merge code
 

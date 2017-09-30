@@ -127,7 +127,7 @@ Mutt's re-use strategy means that if you fix one piece of documentation, then
 it will be replicated into all the forms of documentation. But, it means you
 need to know where the source is. This is preventing users from helping us.
 
-### Step 1 - Separation
+### Step 1 -- Separation
 
 The docs should be completely separate from the code.
 
@@ -141,7 +141,7 @@ Bad:
 
 - Requires synchronisation between docs and code
 
-### Step 2 - Conversion
+### Step 2 -- Conversion
 
 I like DocBook. It's expressive and capable, but it's not user-friendly.
 A good alternative would be Markdown.
@@ -157,14 +157,14 @@ Bad:
 - Less expressive
 - Initial conversion will take a lot of work
 
-### Step 3 - Reorganisation
+### Step 3 -- Reorganisation
 
 Once the docs are easily editable, then we can encourage users to help.
 
 To do:
 
 - Split guide into more manageable sections
-- Add more HowTos - simple answers to specific problems
+- Add more HowTos -- simple answers to specific problems
 - More pictures of NeoMutt in action
 
 ## Conclusion

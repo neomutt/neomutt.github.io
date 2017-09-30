@@ -267,7 +267,7 @@ Tokens that don't have any whitespace don't need to be `()`d, e.g.
 if (x && y && !z)
 ```
 
-### Ternary operator `x ? y : z` - one at a time
+### Ternary operator `x ? y : z` -- one at a time
 
 The ternary operator is good for short and simple if-then-else type things,
 e.g.
