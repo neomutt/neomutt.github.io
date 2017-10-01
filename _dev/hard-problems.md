@@ -33,7 +33,7 @@ For some ideas, please see:
 * [architecture repository](https://github.com/neomutt/arch#arch)
 * [Our complicated build process](https://www.neomutt.org/dev/make)
 
-### difficult to implement features
+### Difficult to implement features
 
 [is:closed label:difficulty:hard](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adifficulty%3Ahard%20)
 

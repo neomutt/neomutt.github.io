@@ -7,7 +7,7 @@ username: gahr
 status: stable
 ---
 
-# NeoMutt's hcache benchmark
+# {{ page.title }}
 
 ## Introduction
 

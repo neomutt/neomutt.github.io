@@ -1,12 +1,12 @@
 ---
 layout: concertina
-title: Doxygen
+title: Doxygen Comments
 description: Formatted Comment Blocks
 status: wip
 author: flatcap
 ---
 
-# Doxygen Comments
+# {{ page.title }}
 
 [Doxygen](http://doxygen.org) reads specially formatted comment blocks and
 turns them into documentation.

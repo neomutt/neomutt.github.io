@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: Merging
+title: Branch Merging
 description: When to merge? When to squash?
 author: Richard Russon
 status: wip
@@ -24,7 +24,7 @@ They committed A, B, C.
 
 Meanwhile commits F and G were added to master.
 
-## Create a Merge Commit
+## Create a merge commit
 
 ```reply
       A---B---C topic
@@ -46,7 +46,7 @@ D---E---F---G---H master
 The topic branch has been merged into master with a "merge commit". The
 topic's history hasn't been changed.
 
-## Squash and Merge
+## Squash and merge
 
 ```reply
       A---B---C topic
@@ -89,7 +89,7 @@ D---E---F---G---H master
 
 The squashed commit, H, has been added to the HEAD of master.
 
-## Rebase and Merge
+## Rebase and merge
 
 ```reply
       A---B---C topic

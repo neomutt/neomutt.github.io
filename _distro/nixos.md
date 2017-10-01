@@ -67,7 +67,7 @@ To remove a particular package, run
 nix-env -e neomutt
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 ```
  nix-shell '<nixpkgs>' -A neomutt

@@ -47,7 +47,7 @@ Your choice:
 # pkg_delete neomutt
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 To install the main dependencies for building NeoMutt and documentation:
 

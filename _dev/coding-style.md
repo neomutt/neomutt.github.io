@@ -24,7 +24,7 @@ NeoMutt also recommends using [editor-config][e] and [clang-format][c].
 [e]: #editor-config
 [c]: #clang-format
 
-## <a name="rules" class="offset"></a> Rules
+## Rules <a class="offset" id="rules"></a>
 
 These rules are important. Please follow them to ensure your code is accepted.
 
@@ -53,32 +53,32 @@ if (x == 0)
 
 - However deeply nested the code, it should not use tabs for indentation
 
-### Trailing Whitespace
+### Trailing whitespace
 
 - Delete spaces or tabs at the ends of lines
 
-### new options
+### New options
 
 - when new options are added, the old behavior should be the default.
 
-### avoid global variables!
+### Avoid global variables!
 
 - We consider the use of global variables to be bad style, because it makes
   changes/refactorings much harder to realize. Neomutt still has a lot of
   them. So if you want to reduce them, you're very welcome to do so. Ask on the
   devel mailinglist or on IRC, if you are interested.
 
-### special characters should be utf8
+### Special characters should be UTF-8
 
 - special characters should be in utf-8. If you find remnants from the times
   when this was an iso-8859-1 source code tree, please feel free to fix them.
 
-### global and non-global functions
+### Global and non-global functions
 
 - global functions should have the prefix "mutt\_". All other functions should
   be declared "static".
 
-## <a name="guidelines" class="offset"></a> Guidelines
+## Guidelines <a class="offset" id="guidelines"></a>
 
 These guidelines are NeoMutt's preferred way to style code. Some exceptions
 will be allowed.
@@ -88,7 +88,7 @@ will be allowed.
 - Function return type on the same line, e.g. `int function(int y)`
 - Line length should be limited to 80-90 characters.
 
-### Braces Placement
+### Braces placement
 
 There are many situations where C doesn't require braces. Often, this can lead
 to code that's hard to read.
@@ -191,7 +191,7 @@ The factors that complicate an 'if' statement are:
 
 **Note**: All these cases are handled by clang-format.
 
-## <a name="top-tips" class="offset"></a> Top Tips
+## Top tips <a class="offset" id="top-tips"></a>
 
 These tips are generally good ideas. Their use is encouraged.
 
@@ -286,7 +286,7 @@ very hard to understand the meaning. This example is from `mbrtowc_iconv()` in
 return (pwc && *pwc) ? (ib - (k ? bufi + k : s)) : 0;
 ```
 
-### Doxygen Comment Blocks
+### Doxygen comment blocks
 
 New, non-static (shared), functions should have a
 [doxygen comment block](/dev/doxygen). These comment blocks should tell
@@ -296,7 +296,7 @@ function.
 These comment blocks are parsed by doxygen and turned into cross-referenced
 documentation.
 
-### Inserting Whitespace for Clarity
+### Inserting whitespace for clarity
 
 Sometimes, inserting a little whitespace can greatly improve the legibility.
 
@@ -310,7 +310,7 @@ if ((strcmp("supersedes:",  uh->data, 11) != 0) &&
     (strcmp("return-path:", uh->data, 12) != 0))
 ```
 
-### C99 Features
+### C99 features
 
 These C99 features may be used:
 
@@ -325,7 +325,7 @@ These C99 features may be used:
 - Limit variables to the smallest possible scope
 - For sets of constants, use `enum` rather than `#define`
 
-## <a name="editor-config" class="offset"></a> Editor Config
+## EditorConfig <a class="offset" id="editor-config"></a>
 
 [EditorConfig][ec] provides plugins for most common editors which allow
 projects to define their style in one place.
@@ -343,7 +343,7 @@ indent_style = space
 [ec]:  <http://editorconfig.org/>
 [ecf]: <https://github.com/neomutt/neomutt/blob/master/.editorconfig>
 
-## <a name="clang-format" class="offset"></a> Clang-Format
+## Clang-Format <a class="offset" id="clang-format"></a>
 
 Clang-format is a tool which automatically reformats C sources files according
 to configurable style guides.

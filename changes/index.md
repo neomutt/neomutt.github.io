@@ -5,6 +5,10 @@ title: Changes in NeoMutt
 
 # {{ page.title }}
 
+A short overview of some statistic since the project starts
+
+## What has been done
+
 Quick stats about NeoMutt:
 
 - Running for 18 months

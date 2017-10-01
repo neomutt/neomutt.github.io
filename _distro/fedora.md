@@ -93,7 +93,7 @@ Well done! You've just installed NeoMutt.
   [NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
   mailing list
 
-## Alternative Install <a class="offset" id="alternate"></a>
+## Alternative install <a class="offset" id="alternate"></a>
 
 An alternative way to install NeoMutt is to download the rpm directly from the
 server (and verify it using the
@@ -149,7 +149,7 @@ Removing:
  neomutt      x86_64   5:1.8.0-20170225.fc25   @flatcap-neomutt   7.6 M
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.

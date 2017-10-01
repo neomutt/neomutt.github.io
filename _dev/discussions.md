@@ -9,6 +9,8 @@ status: wip
 
 NeoMutt is very popular and its users come up with lots of great new ideas.
 
+## Downside
+
 Unfortunately NeoMutt's development team is quite small, so they can't
 implement everything.
 

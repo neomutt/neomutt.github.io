@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: Renamed (typedef'd) structs
+title: Renamed (typedef'd) Structs
 ---
 
 # {{ page.title }}

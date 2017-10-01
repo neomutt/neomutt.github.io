@@ -51,7 +51,7 @@ discussions to light-hearted nonsense (late at night).
 If you don't have a IRC client, you can use FreeNode's
 [web client](http://webchat.freenode.net/?channels=neomutt).
 
-### Mailing Lists
+### Mailing lists
 
 NeoMutt has two moderated mailing lists: Users, Devel.
 
@@ -73,7 +73,7 @@ All non-technical NeoMutt discussions are welcome here.
 When asking for help, remember that we're volunteers. (and please check Google
 first :-)
 
-**NeoMutt Developers** (~60 people)
+**NeoMutt Developers** <small>(~60 people)</small>
 
 - [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
 - [Archives](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/)
@@ -108,7 +108,7 @@ to show your appreciation :-)
 
 The project consists of about 20 git repositories. They store the code that
 makes up NeoMutt, the documentation, build scripts and experiments
-([read more about them](repos)).
+([read more about them](/dev/repos)).
 
 GitHub allows you to watch:
 
@@ -232,7 +232,7 @@ See also: [Docs Rebuild](/dev/docs-rebuild)
 The Mutt program has been translated into 30 languages, but
 [some of the translations](/translate) are out-of-date.
 
-### Web Design
+### Web design
 
 This website was created by a programmer -- it shows. If you think you could do
 a better job, prove it.

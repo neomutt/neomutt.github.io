@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: Useful programs
+title: Useful Programs
 description: List of useful programs interacting with mutt.
 author: Tobias Angele
 username: toogley
@@ -32,7 +32,7 @@ status: stable
   started life at IBM research as an alternative to the widely-used Sendmail
   program. Now at Google, Wietse continues to support Postfix.
 
-## Adressbooks
+## Address books
 
 * [ppl](http://ppladdressbook.org/) -- decentralized command line address book
 * [notmuch-abook](https://github.com/guyzmo/notmuch-abook) -- Notmuch
@@ -68,14 +68,14 @@ status: stable
   message's header and content (body). The program is able to learn from the
   user's classifications and corrections.
 
-## encryption
+## Encryption
 
 * [passwordstore.org](https://www.passwordstore.org/) Password management tool
   which tries to be simple and follow the Unix philosophy.
 * [GPG, GnuPG](http://www.gnupg.org/) -- GNU's privacy guard, a free (FOSS)
   replacement for PGP.
 
-## converting text formats
+## Converting text formats
 
 * [antiword](http://www.winfield.demon.nl/) -- M$-Office-Word to txt converter.
 * [rtf2html](http://www.wagner.pp.ru/~vitus/software/catdoc/) -- RTF to HTML
@@ -86,7 +86,7 @@ status: stable
 * [xlhtml](http://chicago.sourceforge.net/xlhtml/) -- M$-Excel, Powerpoint to
   HTML converter, see rtf2html.
 
-## grabbing urls
+## Grabbing URLs
 
 * [urlview](https://github.com/sigpipe/urlview) -- Extract URLs from a text
   file and allow the user to select via a menu
@@ -96,7 +96,7 @@ status: stable
   script that extracts URLs from correctly-encoded MIME email messages or plain
   text.
 
-## miscellaneous
+## Miscellaneous
 
 * [notifynotmuch](https://github.com/kspi/notifymuch)
 * [notify-osd](https://launchpad.net/notify-osd) -- The Desktop Notifications

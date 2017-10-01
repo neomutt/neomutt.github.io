@@ -69,7 +69,7 @@ Proceed with deinstalling packages? [y/N]: y
 [localhost] [1/1] Deleting files for neomutt-20161104_1: 100%
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.

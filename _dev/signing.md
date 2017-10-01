@@ -34,7 +34,7 @@ gpg: data source: http://c-73-164-0-249.hsd1.mn.comcast.net:11371
 Keys 1-1 of 1 for "neomutt".  Enter number(s), N)ext, or Q)uit >
 ```
 
-## Git Example
+## Git example
 
 **Note**: On the
 [GitHub releases page](https://github.com/neomutt/neomutt/releases), **all**
@@ -64,7 +64,7 @@ git checkout -b neomutt-20170428
 # build
 ```
 
-## Source Example <a class="offset" id="source-example"></a>
+## Source example <a class="offset" id="source-example"></a>
 
 Download a source package and the CHECKSUM file from the
 [release page](https://github.com/neomutt/neomutt/releases/latest)

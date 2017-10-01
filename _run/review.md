@@ -59,7 +59,7 @@ author: flatcap
 * Review?
 * Merge?
 
-## Scenario -- NeoMutt Member
+## Scenario -- NeoMutt member
 
 ### Coder has an idea
 

@@ -91,7 +91,7 @@ $ brew uninstall neomutt
 $ brew install mutt
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 Homebrew will always build Neomutt from source, and knows what dependencies
 must be installed to do this, and how to install them.

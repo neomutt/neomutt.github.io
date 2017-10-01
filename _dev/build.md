@@ -7,11 +7,11 @@ status: wip
 
 # {{ page.title }}
 
-## Install Dependencies
+## Install dependencies
 
 See [Distro Pages](/distro.html).
 
-## Obtain the Source
+## Obtain the source
 
 The NeoMutt project is hosted on GitHub, so there are two main options to get
 the sources -- either as Git repository or GitHub archive file. A repository,

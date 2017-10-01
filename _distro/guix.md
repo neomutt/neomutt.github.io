@@ -33,7 +33,7 @@ To remove neomutt from your profile, run
 guix package --remove neomutt
 ```
 
-## From git <a class="offset" id="dev-build"></a>
+## From Git <a class="offset" id="dev-build"></a>
 
 To build neomutt from the HEAD of the neomutt sources, you can use the
 contrib/guix-neomutt.scm file with any of the relevant guix commands. For

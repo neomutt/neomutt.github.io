@@ -2,7 +2,7 @@
 layout: concertina
 name: Guillaume Brogi
 nick: guiniol
-description: NeoMutt contributor
+description: NeoMutt Contributor
 residence: Paris, France
 ---
 

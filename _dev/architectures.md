@@ -9,12 +9,12 @@ description: List of supported architectures / operating systems
 **Note**: This is still work in progress and not at all fixed! For the
 discussion, see [#346](https://github.com/neomutt/neomutt/issues/436).
 
-## motivation
+## Motivation
 
 @flatcap said he's being reluctant to change the build system, because he
 doesn't know which Operating system or architecture that would break.
 
-## cmake supported platforms
+## CMake supported platforms
 
 As we thought about changing the build sytem to cmake (See
 [this issue for that](https://github.com/neomutt/neomutt/issues/321) for the

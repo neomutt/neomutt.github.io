@@ -10,7 +10,7 @@ status: wip
 Everything in NeoMutt is documented, but... If you don't know what you're
 looking for, you're unlikely to find it.
 
-## The Problem
+## The problem
 
 The docs are:
 
@@ -27,7 +27,7 @@ pager; a chapter on IMAP, ...
 Some projects' documentation have handy links: "Click here to improve the
 docs". It would be wonderful if we could do this.
 
-## Document Format
+## Document format
 
 The docs are written in DocBook XML. It's a rich language allowing you can make
 \<note\>Notes\</note\>, \<example\>Examples\</example\>,
@@ -88,7 +88,7 @@ description which is written in NROFF (man) format.
  */
 ```
 
-### Some Assembly Required
+### Some assembly required
 
 Finally we can build `manual.xml`. Take `doc/manual.xml.head` add the
 functions, commands and variables, then add `doc/manual.xml.tail`
@@ -107,7 +107,7 @@ sses, so that they can be themed. This is also where \<quote\>s are turned into
 
 We now have some HTML, that looks machine-generated.
 
-## Generating the Website
+## Generating the website
 
 NeoMutt's website is hosted by GitHub's Pages. It's a static site which uses
 [Jekyll](https://jekyllrb.com) to allow some templating and "magic".
@@ -121,7 +121,7 @@ gives them a YAML header (for Jekyll). It also fixes some of the links between
 documents. Along the way we also fix any formatting problems that we introduced
 (smart quotes).
 
-## The Future
+## The future
 
 Mutt's re-use strategy means that if you fix one piece of documentation, then
 it will be replicated into all the forms of documentation. But, it means you

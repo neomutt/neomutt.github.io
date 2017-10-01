@@ -177,7 +177,7 @@ Twitter
 - GitHub: delete old branches
 - Merge delayed issues
 
-## Leftover Notes
+## Leftover notes
 
 change naming from YYYYMMDD to YYYY-MM-DD?
 

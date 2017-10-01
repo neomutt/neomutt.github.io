@@ -29,7 +29,7 @@ The translation team is currently managed by
 It would be a great help to the project (and Rich) if someone volunteered to
 help with this.
 
-## State of the Translations
+## State of the translations
 
 NeoMutt builds upon Mutt, so it has inherited its translations. Mutt hasn't
 changed much (in years), [so most of them are still correct](/translate.html).
@@ -46,7 +46,7 @@ Here are some recent statistics for the Swedish translation:
 The "fuzzy" translations appear when the `msgfmt` tool finds a translation that
 it thinks is correct. These translations are often wrong.
 
-## Is the Job Technical?
+## Is the job technical?
 
 No, it's quite simple -- you just need to be multi-lingual.
 
@@ -79,7 +79,7 @@ translated, some fuzzy and some untranslated strings.
   context. If you have any questions, ask the translations manager (at the top
   of the page).
 
-## More Information
+## More information
 
 The translation mechanism uses GNU's "gettext". Here are some of the relevant
 parts of their docs:
@@ -94,7 +94,7 @@ If you're technical you could look at the NeoMutt source code:
 git clone -b translate https://github.com/neomutt/neomutt
 ```
 
-## Sharing Your Work
+## Sharing your work
 
 NeoMutt has new releases about once a month. Before each release, the
 translators will be emailed and asked for their latest `.po` file. This will

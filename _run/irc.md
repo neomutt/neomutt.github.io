@@ -12,7 +12,7 @@ NeoMutt has an IRC channel: **#neomutt** on
 
 This is a list of useful commands to help run our IRC channel.
 
-## Getting Started
+## Getting started
 
 **Register Nick:**
 
@@ -38,7 +38,7 @@ Registering a channel prevents others taking it over when you're not present.
 /msg chanserv register #<channel>
 ```
 
-## User Privs
+## User privs
 
 **Show User Privs:**
 
@@ -67,7 +67,7 @@ Then set flags on a user:
 /msg chanserv flags #<channel> <username> -OV
 ```
 
-## Channel Privs
+## Channel privs
 
 **Show Channel Privs:**
 
@@ -82,7 +82,7 @@ Then set flags on a user:
 /msg chanserv set #<channel> email <email>
 ```
 
-## Managing the Channel
+## Managing the channel
 
 **Op User:** (take operator privs)
 

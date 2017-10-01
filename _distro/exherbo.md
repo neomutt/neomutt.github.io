@@ -21,7 +21,7 @@ cave resolve mail-client/neomutt
 
 ## Removal <a class="offset" id="remove"></a>
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.

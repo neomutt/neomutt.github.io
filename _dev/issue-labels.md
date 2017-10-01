@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: Issue Labels
-description: Labelling of GitHub Issues
+description: Labelling of GitHub issues
 ---
 
 # {{ page.title }}
@@ -62,7 +62,7 @@ It may be given one of these tags:
 - [![priority:low](/images/labels/priority-low.svg)](https://github.com/neomutt/neomutt/labels/priority%3Alow)
   This is currently not very important
 
-### Specific to a Distro
+### Specific to a distro
 
 - [![distro:arch](/images/labels/distro-arch.svg)](https://github.com/neomutt/neomutt/labels/distro%3Aarch)
   This relates to Arch
@@ -71,7 +71,7 @@ It may be given one of these tags:
 - [![distro:fedora](/images/labels/distro-fedora.svg)](https://github.com/neomutt/neomutt/labels/distro%3Afedora)
   This relates to Fedora
 
-### Issue has Attachments
+### Issue has attachments
 
 - [![has:backtrace](/images/labels/has-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has%3Abacktrace)
   A backtrace/callstack is included
@@ -128,7 +128,7 @@ It may be given one of these tags:
 - [![status:blocked](/images/labels/status-blocked.svg)](https://github.com/neomutt/neomutt/labels/status%3Ablocked)
   blocked by other issues
 
-### Closing the Issue
+### Closing the issue
 
 It will probably be closed with one of these tags:
 

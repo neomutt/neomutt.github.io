@@ -1,6 +1,7 @@
 ---
 layout: concertina
-title: new member
+title: New Member
+description: —
 last-checked: 2016-10-28
 author: Richard Russon
 ---

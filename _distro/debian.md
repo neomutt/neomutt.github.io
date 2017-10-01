@@ -33,7 +33,7 @@ apt-get update && apt-get upgrade
 apt-get remove mutt
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 The commmand
 
