@@ -35,10 +35,11 @@ The diagrams below shows how the code and docs fit together.
 - [Code](make-code.gv)
 - [Docs](make-docs.gv)
 
-Render the diagram with the command:
+Render the diagrams with the `dot` command:
 
 ```
-dot -Tpng make.gv > make.png
+dot -Tpng make-code.gv > make-code.png
+dot -Tpng make-docs.gv > make-docs.png
 ```
 
 (from the `graphviz` package)

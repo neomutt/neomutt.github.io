@@ -103,13 +103,13 @@ These are now readily available and have become build requirements.
 The "security-checking" script `check_sec.sh` has been removed along with the
 comment markers it needed.  This job is better done by coverity:
 
-- `__FOPEN_CHECKED__ `
-- `__FREE_CHECKED__ `
-- `__MEM_CHECKED__ `
-- `__SAFE_FREE_CHECKED__ `
-- `__SPRINTF_CHECKED__ `
-- `__STRCAT_CHECKED__ `
-- `__STRCPY_CHECKED__ `
+- `__FOPEN_CHECKED__`
+- `__FREE_CHECKED__`
+- `__MEM_CHECKED__`
+- `__SAFE_FREE_CHECKED__`
+- `__SPRINTF_CHECKED__`
+- `__STRCAT_CHECKED__`
+- `__STRCPY_CHECKED__`
 - `__STRNCAT_CHECKED__`
 
 Finally, the code that parsed and listed the PATCHES has been dropped.
@@ -198,7 +198,7 @@ The code has undergone extensive improvements.
 - Boolify struct members
 - strcmp-like functions == 0
 - Remove () from return
-- Fix `mutt_message _()` mising ()s
+- Fix `mutt_message` `_()` missing ()s
 - Add argument name to function prototypes
 - Reduce scope of for variables
 - Limit scope of functions (static) and rename

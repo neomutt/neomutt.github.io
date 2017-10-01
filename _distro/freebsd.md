@@ -44,13 +44,12 @@ Proceed with this action? [y/N]: y
 
 ## Update <a class="offset" id="update"></a>
 
-To upgrade your installed packages to their latest versions, run ```pkg
-upgrade```.
+To upgrade your installed packages to their latest versions, run `pkg upgrade`.
 
 ## Removal <a class="offset" id="remove"></a>
 
-To remove neomutt, run ```pkg delete neomutt```. Again, you'll be asked to
-confirm with a 'Y'.
+To remove neomutt, run `pkg delete neomutt`. Again, you'll be asked to confirm
+with a 'Y'.
 
 ```reply
 Checking integrity... done (0 conflicting)
@@ -74,7 +73,9 @@ Proceed with deinstalling packages? [y/N]: y
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
 
-```pkg install automake git neomutt```
+```
+pkg install automake git neomutt
+```
 
 By installing neomutt, you'll automatically get all the dependencies you need
 for building too.

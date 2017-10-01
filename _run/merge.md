@@ -54,8 +54,10 @@ topic's history hasn't been changed.
 D---E---F---G---H master
 ```
 
+```
 git checkout topic
 git rebase master
+```
 
 ```reply
               A---B---C topic
