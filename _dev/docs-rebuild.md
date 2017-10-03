@@ -101,9 +101,9 @@ DocBook comes with some standard XSLT files. They define transformations from
 DocBook to HTML. Chapters are turned into separate pages. Sections are given
 \<h1\>, \<h2\> headings, etc.
 
-Also, \<note\> and \<example\> are turned into \<span\> or \<div\> with cla=
-sses, so that they can be themed. This is also where \<quote\>s are turned into
-“smart quoted” strings.
+Also, \<note\> and \<example\> are turned into \<span\> or \<div\> with
+classes, so that they can be themed. This is also where \<quote\>s are turned
+into “smart quoted” strings.
 
 We now have some HTML, that looks machine-generated.
 

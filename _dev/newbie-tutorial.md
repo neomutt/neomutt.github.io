@@ -19,7 +19,7 @@ know.
     * [Labels](#labels)
     * [Branches](#branches)
 * [Invitation](#invitation)
-* [What you can do in Neomutt](#what-you-can-do-in-neomutt)
+* [What you can do in NeoMutt](#what-you-can-do-in-neomutt)
     * [Coding](#coding)
         * [Required tools](#required-tools)
         * [Coding style](#coding-style)
@@ -106,7 +106,7 @@ development.
 First, though, please [**star our project**](https://github.com/neomutt/neomutt)
 to show your appreciation :-)
 
-The project consists of about 20 git repositories. They store the code that
+The project consists of about 20 Git repositories. They store the code that
 makes up NeoMutt, the documentation, build scripts and experiments
 ([read more about them](/dev/repos)).
 
@@ -123,15 +123,15 @@ your [notifications](https://github.com/settings/notifications) and
 
 ### Usage tips
 
-* We use Github's "assignee" feature to communicate who's working on what.
+* We use GitHub's "assignee" feature to communicate who's working on what.
   That way, we can easily identify who's working on what.
 * Please read and understand
-  [Github's documentation](https://help.github.com/articles/searching-issues/)
-  for searching through Issues and Pull Requests.
+  [GitHub's documentation](https://help.github.com/articles/searching-issues/)
+  for searching through issues and pull requests.
 
 ### Labels
 
-We use Github labels to categorize Pull Requests and Issues.
+We use GitHub labels to categorize pull requests and issues.
 [Here's](/dev/issue-labels) a list of them with their meanings. Please make use
 of them and ask if something is unclear.
 
@@ -166,17 +166,17 @@ All NeoMutt members are welcome to
 - Debian Users
 - Gentoo Users
 - Homebrew Users
-- NotMuch Users
+- Notmuch Users
 - Downstream Packagers
 
-## What you can do in Neomutt
+## What you can do in NeoMutt
 
 ### Coding
 
 Do you want to fix Mutt? \\
 Do you want to add new features to Mutt?
 
-To get familiar with the Neomutt code, you can start with some
+To get familiar with the NeoMutt code, you can start with some
 [**_Easy Coding Tasks_**](/2016/10/07/news)
 
 Whatever your level of skill, NeoMutt has got a task for you. There are lots
@@ -196,7 +196,7 @@ are a good starting point here.
 
 Over its twenty year life, Mutt has gathered 84,000 lines of code and a lot of
 cruft (messy code and bad habits). It's time to sort out the mess and make Mutt
-robust. We have written up the consensus among the Neomutt Developers in the
+robust. We have written up the consensus among the NeoMutt Developers in the
 [coding style Section](/dev/coding-style). You can make of course suggestions
 to that -- but please follow the consensus. Otherwise it makes the work very
 hard.
@@ -206,14 +206,14 @@ you are interested, please talk to us.
 
 #### Warning of string comparisons
 
-A word of warning about string comparisons: Since mutt may run in a huge
+A word of warning about string comparisons: Since Mutt may run in a huge
 variety of locales, case-insensitive string comparisons and case conversions
-may be dangerous. For instance, in iso-8859-9, tolower('I') is DIFFERENT from
+may be dangerous. For instance, in ISO-8859-9, tolower('I') is DIFFERENT from
 'i' -- it's indeed the Turkish dotless lowercase i.
 
-For this reason, always use the ascii\_\* functions defined in ascii.h and
+For this reason, always use the ASCII\_\* functions defined in ascii.h and
 implemented in ascii.c when comparing or handling strings which are defined as
-us-ascii. This concerns lots of text-based protocols, message header tags,
+US-ASCII. This concerns lots of text-based protocols, message header tags,
 character set names, domain names, e-mail addresses, etc.
 
 ### Docs/Translation
@@ -243,7 +243,7 @@ are semi-automatically generated:
 * [\_man](https://github.com/neomutt/neomutt.github.io/tree/master/_man)
 * [guide](https://github.com/neomutt/neomutt.github.io/tree/master/guide)
 
-Of course, you can always send Pull Requests to update those folders.
+Of course, you can always send pull requests to update those folders.
 
 The site contains information from quite a lot of sources. Most of it has been
 pulled together by hand. These processes need to be automated to reduce effort.

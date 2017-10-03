@@ -6,11 +6,11 @@ description: List of GitHub Repositories
 
 # {{ page.title }}
 
-This is a list of all the git repositories in the NeoMutt GitHub Project.
+This is a list of all the Git repositories in the NeoMutt GitHub Project.
 
 | Repository                                                          | Description                                                                   |
 | :------------------------------------------------------------------ | :---------------------------------------------------------------------------- |
-| [arch](https://github.com/neomutt/arch)                             | Ideas for a new mutt architecture                                             |
+| [arch](https://github.com/neomutt/arch)                             | Ideas for a new Mutt architecture                                             |
 | [aur-build](https://github.com/neomutt/aur-build)                   | Arch Linux User Repository for NeoMutt                                        |
 | [community](https://github.com/neomutt/community)                   | Birds-eye view of the Mutt Community                                          |
 | [copr-neomutt](https://github.com/neomutt/copr-neomutt)             | Automated rpm builds for Fedora/RHEL                                          |
@@ -23,7 +23,7 @@ This is a list of all the git repositories in the NeoMutt GitHub Project.
 | [neomutt](https://github.com/neomutt/neomutt)                       | Teaching an Old Dog New Tricks -- IRC: #neomutt on irc.freenode.net           |
 | [neomutt-old](https://github.com/neomutt/neomutt-old)               | Retired branches of NeoMutt                                                   |
 | [neomutt.github.io](https://github.com/neomutt/neomutt.github.io)   | NeoMutt web pages                                                             |
-| [panel-manager](https://github.com/neomutt/panel-manager)           | Mock-up of a panel manager for mutt                                           |
+| [panel-manager](https://github.com/neomutt/panel-manager)           | Mock-up of a panel manager for Mutt                                           |
 | [release](https://github.com/neomutt/release)                       | How to make a NeoMutt Release                                                 |
 | [sidebar-history](https://github.com/neomutt/sidebar-history)       | Old versions of mutt-sidebar                                                  |
 | [travis-build](https://github.com/neomutt/travis-build)             | Try to control the Travis builds more transparently                           |

@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: Documentation
-description: Description of Neomutt's documentation process.
+description: Description of NeoMutt's documentation process
 ---
 
 # {{ page.title }}

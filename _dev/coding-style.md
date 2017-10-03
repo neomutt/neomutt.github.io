@@ -64,14 +64,14 @@ if (x == 0)
 ### Avoid global variables!
 
 - We consider the use of global variables to be bad style, because it makes
-  changes/refactorings much harder to realize. Neomutt still has a lot of
+  changes/refactorings much harder to realize. NeoMutt still has a lot of
   them. So if you want to reduce them, you're very welcome to do so. Ask on the
   devel mailinglist or on IRC, if you are interested.
 
 ### Special characters should be UTF-8
 
-- special characters should be in utf-8. If you find remnants from the times
-  when this was an iso-8859-1 source code tree, please feel free to fix them.
+- special characters should be in UTF-8. If you find remnants from the times
+  when this was an ISO-8859-1 source code tree, please feel free to fix them.
 
 ### Global and non-global functions
 

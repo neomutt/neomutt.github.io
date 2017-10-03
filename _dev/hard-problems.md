@@ -15,7 +15,7 @@ However, everything listed in here would be a **big** help for us if you'd fix
 it. The reason we haven't done that already is mostly the missing time of our
 core developers team.
 
-### Refactoring the code and its build system, making mutt testable
+### Refactoring the code and its build system, making Mutt testable
 
 This is probably the problem, we would profit the most from your help. We are
 a small team of programmers with even smaller amount of freetime, so big
@@ -26,7 +26,7 @@ neomutt-devel@neomutt.org and descibe your thoughts.
 
 For some ideas, please see:
 
-* [plans for refactoring mutt's code](https://github.com/neomutt/neomutt/issues/310)
+* [plans for refactoring Mutt's code](https://github.com/neomutt/neomutt/issues/310)
 * [(Re-)Building the Documentation](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-June/000438.html)
 * [What to do with OPS files?](https://github.com/neomutt/neomutt/issues/562)
 * [topic:testing issues](https://github.com/neomutt/neomutt/labels/topic%3Atesting)

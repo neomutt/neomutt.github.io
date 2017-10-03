@@ -11,7 +11,7 @@ dir: keybase
 # KeybaseMutt
 
 A work in progress. KeybaseMutt exists to let its users utilize Keybase within
-mutt. (Unfortunately, not natively (yet).)
+Mutt. (Unfortunately, not natively (yet).)
 
 ## Quick start
 
@@ -27,6 +27,6 @@ Then just throw these into your .muttrc
 Done!
 
 Check out the
-[Github page](https://github.com/neomutt/neomutt/tree/master/contrib/keybase)
+[GitHub page](https://github.com/neomutt/neomutt/tree/master/contrib/keybase)
 for the full documentation.
 

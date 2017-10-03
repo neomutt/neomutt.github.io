@@ -48,7 +48,7 @@ To upgrade your installed packages to their latest versions, run `pkg upgrade`.
 
 ## Removal <a class="offset" id="remove"></a>
 
-To remove neomutt, run `pkg delete neomutt`. Again, you'll be asked to confirm
+To remove NeoMutt, run `pkg delete neomutt`. Again, you'll be asked to confirm
 with a 'Y'.
 
 ```reply

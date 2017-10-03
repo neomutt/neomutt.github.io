@@ -11,7 +11,7 @@ dir: vim-keys
 ## Vi-keys for Mutt
 
 Now's the time to let your finger **Rest In Peace** without those weird
-combination. And of course, don't just let your time to learn vi be wasted.
+combination. And of course, don't just let your time to learn Vi be wasted.
 
 ## Quick Start
 
@@ -26,7 +26,7 @@ Add the file and your `~/.mutt` and add `source vim-keys.rc` to your
 
 ## TODO
 
-- [ ] **&#x26A0;** Visual + Interactive vi-key cheat sheet for mutt (similar to
+- [ ] **&#x26A0;** Visual + Interactive Vi-key cheat sheet for Mutt (similar to
   sheet.shiar.nl)
 - [ ] Maybe remove `dd` since it's hard to press?
 - [ ] How about a command mode (for real power!)**, isn't there `:`?**

@@ -294,21 +294,21 @@ set debug_file = ~/neomutt.log
 | `show_new_news`                    | [NNTP](/feature/nntp)                                                              |
 | `show_only_unread`                 | [NNTP](/feature/nntp)                                                              |
 | `x_comment_to`                     | [NNTP](/feature/nntp)                                                              |
-| `nm_db_limit`                      | [NotMuch](/feature/notmuch)                                                        |
-| `nm_default_uri`                   | [NotMuch](/feature/notmuch)                                                        |
-| `nm_exclude_tags`                  | [NotMuch](/feature/notmuch)                                                        |
-| `nm_hidden_tags`                   | [NotMuch](/feature/notmuch)                                                        |
-| `nm_open_timeout`                  | [NotMuch](/feature/notmuch)                                                        |
-| `nm_query_type`                    | [NotMuch](/feature/notmuch)                                                        |
-| `nm_query_window_current_position` | [NotMuch](/feature/notmuch)                                                        |
-| `nm_query_window_current_search`   | [NotMuch](/feature/notmuch)                                                        |
-| `nm_query_window_duration`         | [NotMuch](/feature/notmuch)                                                        |
-| `nm_query_window_timebase`         | [NotMuch](/feature/notmuch)                                                        |
-| `nm_record`                        | [NotMuch](/feature/notmuch)                                                        |
-| `nm_record_tags`                   | [NotMuch](/feature/notmuch)                                                        |
-| `nm_unread_tag`                    | [NotMuch](/feature/notmuch)                                                        |
-| `vfolder_format`                   | [NotMuch](/feature/notmuch)                                                        |
-| `virtual_spoolfile`                | [NotMuch](/feature/notmuch)                                                        |
+| `nm_db_limit`                      | [Notmuch](/feature/notmuch)                                                        |
+| `nm_default_uri`                   | [Notmuch](/feature/notmuch)                                                        |
+| `nm_exclude_tags`                  | [Notmuch](/feature/notmuch)                                                        |
+| `nm_hidden_tags`                   | [Notmuch](/feature/notmuch)                                                        |
+| `nm_open_timeout`                  | [Notmuch](/feature/notmuch)                                                        |
+| `nm_query_type`                    | [Notmuch](/feature/notmuch)                                                        |
+| `nm_query_window_current_position` | [Notmuch](/feature/notmuch)                                                        |
+| `nm_query_window_current_search`   | [Notmuch](/feature/notmuch)                                                        |
+| `nm_query_window_duration`         | [Notmuch](/feature/notmuch)                                                        |
+| `nm_query_window_timebase`         | [Notmuch](/feature/notmuch)                                                        |
+| `nm_record`                        | [Notmuch](/feature/notmuch)                                                        |
+| `nm_record_tags`                   | [Notmuch](/feature/notmuch)                                                        |
+| `nm_unread_tag`                    | [Notmuch](/feature/notmuch)                                                        |
+| `vfolder_format`                   | [Notmuch](/feature/notmuch)                                                        |
+| `virtual_spoolfile`                | [Notmuch](/feature/notmuch)                                                        |
 | `reply_with_xorig`                 | [Reply With X-Original-To](/feature/reply-with-xorig)                              |
 | `sidebar_on_right`                 | [Sidebar](/feature/sidebar)                                                        |
 | `skip_quoted_offset`               | [Skip Quoted](/feature/skip-quoted)                                                |
@@ -332,14 +332,14 @@ set debug_file = ~/neomutt.log
 | `post-message`              | [NNTP](/feature/nntp)                                 |
 | `reconstruct-thread`        | [NNTP](/feature/nntp)                                 |
 | `toggle-read`               | [NNTP](/feature/nntp)                                 |
-| `change-vfolder`            | [NotMuch](/feature/notmuch)                           |
-| `entire-thread`             | [NotMuch](/feature/notmuch)                           |
-| `modify-labels`             | [NotMuch](/feature/notmuch)                           |
-| `modify-labels-then-hide`   | [NotMuch](/feature/notmuch)                           |
-| `sidebar-toggle-virtual`    | [NotMuch](/feature/notmuch)                           |
-| `vfolder-from-query`        | [NotMuch](/feature/notmuch)                           |
-| `vfolder-window-backward`   | [NotMuch](/feature/notmuch)                           |
-| `vfolder-window-forward`    | [NotMuch](/feature/notmuch)                           |
+| `change-vfolder`            | [Notmuch](/feature/notmuch)                           |
+| `entire-thread`             | [Notmuch](/feature/notmuch)                           |
+| `modify-labels`             | [Notmuch](/feature/notmuch)                           |
+| `modify-labels-then-hide`   | [Notmuch](/feature/notmuch)                           |
+| `sidebar-toggle-virtual`    | [Notmuch](/feature/notmuch)                           |
+| `vfolder-from-query`        | [Notmuch](/feature/notmuch)                           |
+| `vfolder-window-backward`   | [Notmuch](/feature/notmuch)                           |
+| `vfolder-window-forward`    | [Notmuch](/feature/notmuch)                           |
 | `quasi-delete`              | [Quasi-Delete](/feature/quasi-delete)                 |
 | `purge-thread`              | [Trash](/feature/trash)                               |
 
@@ -354,12 +354,12 @@ set debug_file = ~/neomutt.log
 | `forward-to-group`          | [NNTP](/feature/nntp)                           |
 | `post-message`              | [NNTP](/feature/nntp)                           |
 | `reconstruct-thread`        | [NNTP](/feature/nntp)                           |
-| `change-vfolder`            | [NotMuch](/feature/notmuch)                     |
-| `entire-thread`             | [NotMuch](/feature/notmuch)                     |
-| `modify-labels`             | [NotMuch](/feature/notmuch)                     |
-| `modify-labels-then-hide`   | [NotMuch](/feature/notmuch)                     |
-| `sidebar-toggle-virtual`    | [NotMuch](/feature/notmuch)                     |
-| `vfolder-from-query`        | [NotMuch](/feature/notmuch)                     |
+| `change-vfolder`            | [Notmuch](/feature/notmuch)                     |
+| `entire-thread`             | [Notmuch](/feature/notmuch)                     |
+| `modify-labels`             | [Notmuch](/feature/notmuch)                     |
+| `modify-labels-then-hide`   | [Notmuch](/feature/notmuch)                     |
+| `sidebar-toggle-virtual`    | [Notmuch](/feature/notmuch)                     |
+| `vfolder-from-query`        | [Notmuch](/feature/notmuch)                     |
 | `quasi-delete`              | [Quasi-Delete](/feature/quasi-delete)           |
 | `purge-thread`              | [Trash](/feature/trash)                         |
 
@@ -402,10 +402,10 @@ set debug_file = ~/neomutt.log
 | `ifndef`              | [Ifdef](/feature/ifdef)               |
 | `lua`                 | Lua Scripting                         |
 | `lua-source`          | Lua Scripting                         |
-| `tag-formats`         | [NotMuch](/feature/notmuch)           |
-| `tag-transforms`      | [NotMuch](/feature/notmuch)           |
-| `unvirtual-mailboxes` | [NotMuch](/feature/notmuch)           |
-| `virtual-mailboxes`   | [NotMuch](/feature/notmuch)           |
+| `tag-formats`         | [Notmuch](/feature/notmuch)           |
+| `tag-transforms`      | [Notmuch](/feature/notmuch)           |
+| `unvirtual-mailboxes` | [Notmuch](/feature/notmuch)           |
+| `virtual-mailboxes`   | [Notmuch](/feature/notmuch)           |
 
 ### Format Strings
 
@@ -490,7 +490,7 @@ This is a list of user contributions to NeoMutt.
 | :---------------------------------------------- | :-------------------------------------------- |
 | [Header Cache Benchmark](/contrib/hcache-bench) | Script to test the speed of the header cache  |
 | [Keybase](/contrib/keybase)                     | Keybase Integration                           |
-| [Useful programs](/contrib/useful-programs)     | List of useful programs interacting with mutt |
+| [Useful programs](/contrib/useful-programs)     | List of useful programs interacting with Mutt |
 | [Vi Keys](/contrib/vim-keys)                    | Easy and clean Vi-keys for Mutt               |
 | [Vim Syntax](/contrib/vim-syntax)               | Vim Syntax File                               |
 

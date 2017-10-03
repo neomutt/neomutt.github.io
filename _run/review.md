@@ -30,7 +30,7 @@ author: flatcap
 
 **Who gives approval?**
 
-* Project reviewers (team on github)
+* Project reviewers (team on GitHub)
   - Richard Russon ([@flatcap](https://github.com/flatcap))
   - Darshit Shah ([@darnir](https://github.com/darnir))
   - Guillaume Brogi ([@guiniol](https://github.com/guiniol))
@@ -76,7 +76,7 @@ author: flatcap
 **Work:**
 
 - write code
-- push code (automatic travis build)
+- push code (automatic Travis build)
 - repeat
 
 ### When code is ready for public scrutiny...

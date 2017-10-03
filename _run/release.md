@@ -186,7 +186,7 @@ update release credits
     list of new
     list of returnees
 
-automate github release
+automate GitHub release
     tag, push, create release, push, assets, checksum
 
 reference neomutt repo and neomutt tagline in README

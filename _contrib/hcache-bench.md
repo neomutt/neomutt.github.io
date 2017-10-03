@@ -38,10 +38,10 @@ Example: \\
 
 ## Operation
 
-The benchmark works by instructing mutt to use the backends specified with `-b`
+The benchmark works by instructing Mutt to use the backends specified with `-b`
 one by one and to load the messages from the maildir specified with `-m`. Mutt
 is launched twice with the same configuration. The first time, no header cache
-storage exists, so mutt populates it. The second time, the previously populated
+storage exists, so Mutt populates it. The second time, the previously populated
 header cache storage is used to reload the headers. The times taken to execute
 these two operations are kept track of independently.
 

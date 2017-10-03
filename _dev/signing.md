@@ -10,7 +10,7 @@ status: wip
 If you're planning to build your own version of NeoMutt, it's important to
 check that the source hasn't been tampered with.
 
-All **release commits** in git are signed and all **GitHub downloads** come
+All **release commits** in Git are signed and all **GitHub downloads** come
 with a SHA256 CHECKSUM file.
 
 ## Keys

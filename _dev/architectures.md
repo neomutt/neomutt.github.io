@@ -39,7 +39,7 @@ support and beyond.
 
 Our NetBSD maintainer
 [@0-wiz-0](https://github.com/neomutt/neomutt/issues/436#issuecomment-282689847)
-said, although neomutt doesn't build on every of those architectures (due to
+said, although NeoMutt doesn't build on every of those architectures (due to
 the lack of build machines) all those architectures share mostly the same code.
 Therfore, he doesn't expect many troubles.
 
@@ -54,7 +54,7 @@ architectures, because of us probably have only a amd64 machine.
 
 ### confirmed
 
-For the following, we expect not many troubles to build neomutt. Many of those
+For the following, we expect not many troubles to build NeoMutt. Many of those
 have a dedicated maintainer and a great amount of users.
 
 * FreeBSD
@@ -70,7 +70,7 @@ have a dedicated maintainer and a great amount of users.
 
 ### not desirable to support
 
-For the followinG OS's, I'm reluctant to call neomutt to support them. All of
+For the followinG OS's, I'm reluctant to call NeoMutt to support them. All of
 those are in my opinion a bit hard to get, not very popular or discontinued.
 
 (I have the release dates from wikipedia)

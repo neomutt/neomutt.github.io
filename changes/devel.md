@@ -252,7 +252,7 @@ These configure options have been added to NeoMutt.
 | `--enable-everything` | Build everything possible                |
 | `--enable-fmemopen`   | Unstable feature                         |
 | `--enable-lua`        | Enable Lua Scripting                     |
-| `--enable-notmuch`    | Enable NotMuch searching                 |
+| `--enable-notmuch`    | Enable Notmuch searching                 |
 
 ### Code
 

@@ -17,8 +17,8 @@ Here are some helpful pictures:
 D---E---F---G master
 ```
 
-A developer has created branch from master's commit E. (this is known as
-a topic branch in git terminology)
+A developer has created branch from master's commit E (this is known as a topic
+branch in Git terminology).
 
 They committed A, B, C.
 

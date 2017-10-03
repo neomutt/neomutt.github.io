@@ -17,14 +17,14 @@ The diagrams below shows how the code and docs fit together.
 - Ellipse    : source file
 - Square     : action
   - Blue square  : normal command
-  - Green square : mutt script/command
+  - Green square : Mutt script/command
 - Red dot    : action is dependent on the environment (OS, libs, etc)
 - Green star : action is dependent on user configuration
 - {Braces}   : multiple files follow this pattern
 
 **Source Code**:
 
-- compulsory    : always compiled into mutt
+- compulsory    : always compiled into Mutt
 - conditional   : depends on user config
 - environmental : depends on OS's available libraries
 - generated     : created from other files
