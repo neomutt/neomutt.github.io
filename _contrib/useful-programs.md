@@ -73,15 +73,15 @@ dir: "&mdash;"
 
 * [passwordstore.org](https://www.passwordstore.org/) Password management tool
   which tries to be simple and follow the Unix philosophy.
-* [GPG, GnuPG](http://www.gnupg.org/) -- GNU's privacy guard, a free (FOSS)
+* [GPG, GnuPG](https://www.gnupg.org/) -- GNU's privacy guard, a free (FOSS)
   replacement for PGP.
 
 ## Converting text formats
 
 * [antiword](http://www.winfield.demon.nl/) -- Microsoft Word to txt converter.
-* [rtf2html](http://www.wagner.pp.ru/~vitus/software/catdoc/) -- RTF to HTML
+* [rtf2html](https://www.wagner.pp.ru/~vitus/software/catdoc/) -- RTF to HTML
   converter (which then can be piped through `lynx -stdin -dump -force_html`).
-* [pandoc](http://pandoc.org/) -- Pandoc is a Haskell library for converting
+* [pandoc](https://pandoc.org/) -- Pandoc is a Haskell library for converting
   from one markup format to another, and a command line tool that uses this
   library.
 * [xlhtml](http://chicago.sourceforge.net/xlhtml/) -- Microsoft
@@ -93,7 +93,7 @@ dir: "&mdash;"
   file and allow the user to select via a menu
 * [urlscan](https://github.com/firecat53/urlscan) -- Mutt and terminal URL
   selector (similar to urlview)
-* [extract_url](http://www.memoryhole.net/~kyle/extract_url/) -- This is a Perl
+* [extract_url](https://www.memoryhole.net/~kyle/extract_url/) -- This is a Perl
   script that extracts URLs from correctly-encoded MIME email messages or plain
   text.
 
@@ -121,6 +121,6 @@ dir: "&mdash;"
   various email problems (long signatures, incorrect quoting, etc.).
 * [mswatch](http://mswatch.sourceforge.net/) use with isync to sync local and
   server IMAP stores to track changes as they happen.
-* [muttzilla](http://sourceforge.net/projects/muttzilla/) -- Make Mutt your
+* [muttzilla](https://sourceforge.net/projects/muttzilla/) -- Make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
 

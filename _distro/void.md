@@ -3,7 +3,7 @@ layout: concertina
 distro: Void Linux
 package: xbps
 icon: void.png
-homepage: http://www.voidlinux.eu/
+homepage: https://www.voidlinux.eu/
 title: NeoMutt for Void Linux
 maintainer: vaelatern
 ---

@@ -2,7 +2,7 @@
 layout: concertina
 distro: Homebrew
 icon: osx.png
-homepage: http://brew.sh/
+homepage: https://brew.sh/
 title: NeoMutt for Homebrew
 maintainer: alexpearce
 ---
@@ -23,7 +23,7 @@ install, update, and uninstall NeoMutt with Homebrew, as well as how to install
 a debug version of NeoMutt.
 
 [homebrew]: {{ page.homepage }}
-[macos]: http://www.apple.com/macos/
+[macos]: https://www.apple.com/macos/
 [neomutt-homebrew]: https://github.com/neomutt/homebrew-neomutt
 
 ## Support <a class="offset" id="support"></a>

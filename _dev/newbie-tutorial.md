@@ -49,7 +49,7 @@ The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
 
 If you don't have a IRC client, you can use FreeNode's
-[web client](http://webchat.freenode.net/?channels=neomutt).
+[web client](https://webchat.freenode.net/?channels=neomutt).
 
 ### Mailing lists
 

@@ -37,7 +37,7 @@ nixos-rebuild switch
 ```
 
 For further reference, you might want to read the
-[nixOS manual](http://nixos.org/nixos/manual/index.html#sec-declarative-package-mgmt).
+[nixOS manual](https://nixos.org/nixos/manual/index.html#sec-declarative-package-mgmt).
 
 ### imperative package management
 
@@ -76,7 +76,7 @@ nix-env -e neomutt
 That will install all build dependencies and put you into a shell where every
 needed environment variable is already set. For further information, you may
 want to consult the
-[nix-shell manual](http://nixos.org/nix/manual/#description-13).
+[nix-shell manual](https://nixos.org/nix/manual/#sec-nix-shell).
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 

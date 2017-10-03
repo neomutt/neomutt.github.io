@@ -26,7 +26,7 @@ discussion),
 ### confirmed
 
 I think it makes sense to orientate ourselves at
-[NetBSD](http://netbsd.net/releases/formal-7/NetBSD-7.0.2.html#system-families),
+[NetBSD](https://netbsd.org/releases/formal-7/NetBSD-7.0.2.html#system-families),
 because it probably supports every platform debian, freeBSD, OpenBSD, etc.
 support and beyond.
 
