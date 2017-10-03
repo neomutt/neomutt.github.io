@@ -153,6 +153,7 @@ If there are more than 2 commits, then rebase and merge into master:
   `merge --no-ff`
 
 GitHub's documentation is here:
-  https://help.github.com/articles/merging-a-pull-request/
-  https://help.github.com/articles/about-pull-request-merges/
+
+- [Merging a pull request](https://help.github.com/articles/merging-a-pull-request/)
+- [About pull request merges](https://help.github.com/articles/about-pull-request-merges/)
 

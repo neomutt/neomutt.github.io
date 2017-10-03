@@ -25,15 +25,15 @@ will be given one of these tags:
 It may be given one of these tags:
 
 - [![bug:confirmed](/images/labels/bug-confirmed.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aconfirmed)
-  Problem confirmed by a NeoMutt member (See this [mailinglist-post] for what
-  that means)
+  Problem confirmed by a NeoMutt member (See this
+  [mailinglist-post][mailinglist-post] for what that means)
 - [![bug:crash](/images/labels/bug-crash.svg)](https://github.com/neomutt/neomutt/labels/bug%3Acrash)
   Bug causes NeoMutt to crash
 - [![bug:upstream](/images/labels/bug-upstream.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aupstream)
   Should be handled by Mutt
 - [![bug:regression](/images/labels/bug-regression.svg)](https://github.com/neomutt/neomutt/labels/bug%3Aregression)
-  This problem has been fixed before (See this [mailinglist-post] for what that
-  means)
+  This problem has been fixed before (See this
+  [mailinglist-post][mailinglist-post] for what that means)
 
 - [![docs:code](/images/labels/docs-code.svg)](https://github.com/neomutt/neomutt/labels/docs%3Acode)
   Related to the Documentation embedded in the code
@@ -52,7 +52,7 @@ It may be given one of these tags:
 
 - [![needs:decision](/images/labels/needs-decision.svg)](https://github.com/neomutt/neomutt/labels/needs%3Adecision)
   Someone need to make a decision
-- [![needs:info from user](/images/labels/needs-info-from-user.svg)](https://github.com/neomutt/neomutt/labels/needs%3Ainfo%20from%20user)
+- [![needs:info-from-user](/images/labels/needs-info-from-user.svg)](https://github.com/neomutt/neomutt/labels/needs%3Ainfo-from-user)
   We need more information to be able to help
 - [![needs:upstream-opinion](/images/labels/needs-upstream-opinion.svg)](https://github.com/neomutt/neomutt/labels/needs%3Aupstream-opinion)
   Needs discussion with Mutt
@@ -88,18 +88,22 @@ It may be given one of these tags:
 
 - [![topic:automatization](/images/labels/topic-automatization.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aautomatization)
   Concerning: automating project processes
-- [![topic:build process](/images/labels/topic-build-process.svg)](https://github.com/neomutt/neomutt/labels/topic%3Abuild%20process)
+- [![topic:build-process](/images/labels/topic-build-process.svg)](https://github.com/neomutt/neomutt/labels/topic%3Abuild-process)
   Concerning: building the source code
-- [![topic:code docs](/images/labels/topic-code-docs.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acode%20docs)
+- [![topic:code-docs](/images/labels/topic-code-docs.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acode-docs)
   Concerning: documentation embedded in the code
 - [![topic:coding-style](/images/labels/topic-coding-style.svg)](https://github.com/neomutt/neomutt/labels/topic%3Acoding-style)
   Concerning: style of the source code
-- [![topic:config file](/images/labels/topic-config-file.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aconfig%20file)
+- [![topic:config-file](/images/labels/topic-config-file.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aconfig-file)
   Concerning: configuration file
+- [![topic:design](/images/labels/topic-design.svg)](https://github.com/neomutt/neomutt/labels/topic%3Adesign)
+  Concerning: design of NeoMutt
 - [![topic:imap](/images/labels/topic-imap.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aimap)
   Concerning: IMAP
 - [![topic:lua-scripting](/images/labels/topic-lua-scripting.svg)](https://github.com/neomutt/neomutt/labels/topic%3Alua-scripting)
   Concerning: lua scripting
+- [![topic:not-much](/images/labels/topic-notmuch.svg)](https://github.com/neomutt/neomutt/labels/topic%3Anotmuch)
+  Concerning: Notmuch feature
 - [![topic:project-management](/images/labels/topic-project-management.svg)](https://github.com/neomutt/neomutt/labels/topic%3Aproject-management)
   Concerning: management of the NeoMutt project
 - [![topic:refactoring](/images/labels/topic-refactoring.svg)](https://github.com/neomutt/neomutt/labels/topic%3Arefactoring)
@@ -109,7 +113,7 @@ It may be given one of these tags:
 - [![topic:stability](/images/labels/topic-stability.svg)](https://github.com/neomutt/neomutt/labels/topic%3Astability)
   Concerning: stabilty
 - [![topic:testing](/images/labels/topic-testing.svg)](https://github.com/neomutt/neomutt/labels/topic%3Atesting)
-  Concerning: testing of neomutt
+  Concerning: testing of NeoMutt
 - [![topic:translation](/images/labels/topic-translation.svg)](https://github.com/neomutt/neomutt/labels/topic%3Atranslation)
   Concerning: translation into other languages
 
@@ -138,7 +142,7 @@ It will probably be closed with one of these tags:
   The issue was fixed successfully
 - [![closed:invalid](/images/labels/closed-invalid.svg)](https://github.com/neomutt/neomutt/labels/closed%3Ainvalid)
   The issue isn't relevant to NeoMutt
-- [![closed:not a bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed%3Anot%20a%20bug)
+- [![closed:not-a-bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed%3Anot-a-bug)
   This is the correct behaviour
 - [![closed:wontfix](/images/labels/closed-wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed%3Awontfix)
   For some reason we are not prepared to fix this

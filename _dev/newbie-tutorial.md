@@ -32,13 +32,13 @@ know.
     * [Packager](#packager)
     * [Mentoring](#mentoring)
 
-## Contact
+## Contact <a class="offset" id="contact"></a>
 
 The NeoMutt developers are scattered all over the globe. To keep in touch they
 use [GitHub](https://github.com/neomutt), [IRC](#irc) and
 [mailing lists](#mailing-lists).
 
-### IRC
+### IRC <a class="offset" id="irc"></a>
 
 Channel: **#neomutt** on **irc.freenode.net**
 
@@ -51,7 +51,7 @@ discussions to light-hearted nonsense (late at night).
 If you don't have a IRC client, you can use FreeNode's
 [web client](https://webchat.freenode.net/?channels=neomutt).
 
-### Mailing lists
+### Mailing lists <a class="offset" id="mailing-lists"></a>
 
 NeoMutt has two moderated mailing lists: Users, Devel.
 
@@ -82,8 +82,9 @@ first :-)
 This is a technical list, used for discussing the code, build and documentation
 of NeoMutt.
 
-Users of rolling releases, such as Arch and Homebrew (OSX) are advised to join,
-to get early warning of new bugs.
+Users of rolling releases, such as [Arch](/distro/arch),
+[Gentoo](/distro/gentoo) and [Homebrew (OSX)](/distro/homebrew) are advised to
+join, to get early warning of new bugs.
 
 Discussions here are likely to be about:
 
@@ -121,7 +122,7 @@ By watching things in GitHub, you will receive emails when events occur. See
 your [notifications](https://github.com/settings/notifications) and
 [emails](https://github.com/settings/emails) settings for more information.
 
-### Usage tips
+### Usage tips <a class="offset" id="usage-tips"></a>
 
 * We use GitHub's "assignee" feature to communicate who's working on what.
   That way, we can easily identify who's working on what.
@@ -129,17 +130,17 @@ your [notifications](https://github.com/settings/notifications) and
   [GitHub's documentation](https://help.github.com/articles/searching-issues/)
   for searching through issues and pull requests.
 
-### Labels
+### Labels <a class="offset" id="labels"></a>
 
 We use GitHub labels to categorize pull requests and issues.
 [Here's](/dev/issue-labels) a list of them with their meanings. Please make use
 of them and ask if something is unclear.
 
-### Branches
+### Branches <a class="offset" id="branches"></a>
 
 Some of [our Branches](/dev/branches) have a special meaning.
 
-## Invitation
+## Invitation <a class="offset" id="invitation"></a>
 
 This section is for people who have been invited to join the NeoMutt project.
 Invites will be given to people who contribute: code, docs, translations and to
@@ -156,7 +157,7 @@ When you join, please consider making your membership public. Being a public
 member will add a NeoMutt icon to your home page and it will tag any comments
 you make in the issues.
 
-### Teams
+### Teams <a class="offset" id="teams"></a>
 
 All NeoMutt members are welcome to
 [join our Teams](https://github.com/orgs/neomutt/teams). This allows you to
@@ -169,9 +170,9 @@ All NeoMutt members are welcome to
 - Notmuch Users
 - Downstream Packagers
 
-## What you can do in NeoMutt
+## What you can do in NeoMutt <a class="offset" id="what-you-can-do-in-neomutt"></a>
 
-### Coding
+### Coding <a class="offset" id="coding"></a>
 
 Do you want to fix Mutt? \\
 Do you want to add new features to Mutt?
@@ -186,13 +187,13 @@ Alternatively, you could add a new feature to Mutt. There are many great Mutt
 patches that have been neglected. They need to be brought up-to-date and
 merged into Mutt.
 
-#### Required tools
+#### Required tools <a class="offset" id="required-tools"></a>
 
 Usually, the
 [.travis.yml](https://github.com/neomutt/neomutt/blob/master/.travis.yml) files
 are a good starting point here.
 
-#### Coding style
+#### Coding style <a class="offset" id="coding-style"></a>
 
 Over its twenty year life, Mutt has gathered 84,000 lines of code and a lot of
 cruft (messy code and bad habits). It's time to sort out the mess and make Mutt
@@ -204,7 +205,7 @@ hard.
 Of course, especially refactorings/cleanups of the source code are welcome. If
 you are interested, please talk to us.
 
-#### Warning of string comparisons
+#### Warning of string comparisons <a class="offset" id="warning-of-string-comparisons"></a>
 
 A word of warning about string comparisons: Since Mutt may run in a huge
 variety of locales, case-insensitive string comparisons and case conversions
@@ -216,7 +217,7 @@ implemented in ascii.c when comparing or handling strings which are defined as
 US-ASCII. This concerns lots of text-based protocols, message header tags,
 character set names, domain names, e-mail addresses, etc.
 
-### Docs/Translation
+### Docs/Translation <a class="offset" id="docstranslation"></a>
 
 The [Mutt Guide](/guide) reads like an encyclopaedia. Everything you want to
 know is in there somewhere, but generally you have to know what you're looking
@@ -232,7 +233,7 @@ See also: [Docs Rebuild](/dev/docs-rebuild)
 The Mutt program has been translated into 30 languages, but
 [some of the translations](/translate) are out-of-date.
 
-### Web design
+### Web design <a class="offset" id="web-design"></a>
 
 This website was created by a programmer -- it shows. If you think you could do
 a better job, prove it.
@@ -248,15 +249,16 @@ Of course, you can always send pull requests to update those folders.
 The site contains information from quite a lot of sources. Most of it has been
 pulled together by hand. These processes need to be automated to reduce effort.
 
-### Social
+### Social <a class="offset" id="social"></a>
 
 The NeoMutt project has a [GitHub organisation](https://github.com/neomutt) and
 a website [{{site.url}}]({{site.url}}).
 
-These are useful and practical, but in order to reach a wider audience we
-probably need a Twitter and Facebook presence.
+These are useful and practical, but in order to reach a wider audience we have
+a [Twitter](https://twitter.com/NeoMutt_Org) and probably need a Facebook
+presence.
 
-### Testing
+### Testing <a class="offset" id="testing"></a>
 
 NeoMutt already contains lots of features that Mutt doesn't have. These
 features were often only available as patches which meant that they didn't get
@@ -269,13 +271,13 @@ tools capable of?
 If you find a bug in NeoMutt, please report it:
 [NeoMutt issue](https://github.com/neomutt/neomutt/issues).
 
-### Ideas
+### Ideas <a class="offset" id="ideas"></a>
 
 Even if you don't have any technical skills, you can probably help here. As
 a mail client, Mutt is missing many features common to modern programs. Help
 compile a list of features that Mutt is missing; help guide development.
 
-### Packager
+### Packager <a class="offset" id="packager"></a>
 
 NeoMutt is currently only available as source code / patches. NeoMutt is
 a small project and creating and maintaining binary packages takes time.
@@ -286,7 +288,7 @@ would be to set up a Debian PPA or Fedora COPR.
 Automatic packaging, and release, would mean more users, more testing and
 better quality.
 
-### Mentoring
+### Mentoring <a class="offset" id="mentoring"></a>
 
 Mutt has very few developers. This won't change until the Mutt community
 becomes more welcoming to new developers.

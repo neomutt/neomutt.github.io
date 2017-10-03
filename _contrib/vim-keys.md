@@ -35,7 +35,7 @@ Add the file and your `~/.mutt` and add `source vim-keys.rc` to your
 
 ## Support
 
-- Issue tracker: https://github.com/neomutt/neomutt/issues/56
+- Issue tracker: [https://github.com/neomutt/neomutt/issues/56](https://github.com/neomutt/neomutt/issues/56)
 
 ## Why?
 

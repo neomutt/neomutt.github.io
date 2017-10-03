@@ -24,9 +24,9 @@ author: flatcap
 
 **You can get approval from:**
 
-* IRC
-* Issue
-* Mailing list
+* [IRC #neomutt][irc]
+* [Issue][issues]
+* [Mailing list][maillist]
 
 **Who gives approval?**
 
@@ -99,4 +99,9 @@ author: flatcap
 ### When code is ready for merge...
 
 - Reviewer: merge code
+
+
+[irc]: </dev/newbie-tutorial#irc>
+[issues]: <https://github.com/neomutt/neomutt/issues>
+[maillist]: </dev/newbie-tutorial#mailing-lists>
 

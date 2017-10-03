@@ -68,7 +68,7 @@ There are plenty of tools to help you with the translation process. One of
 them is "poedit" -- it's quite simple to use. This screenshot shows some
 translated, some fuzzy and some untranslated strings.
 
-[![poedit](/images/poedit-thumb.png)](/images/poedit.png)
+[![poedit](/images/poedit-thumb.png)](/images/poedit.png 'click to enlarge')
 
 **Notes**:
 

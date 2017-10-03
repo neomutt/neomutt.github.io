@@ -11,8 +11,9 @@ discussion, see [#346](https://github.com/neomutt/neomutt/issues/436).
 
 ## Motivation
 
-@flatcap said he's being reluctant to change the build system, because he
-doesn't know which Operating system or architecture that would break.
+[@flatcap](https://github.com/flatcap) said he's being reluctant to change the
+build system, because he doesn't know which operating system or architecture
+that would break.
 
 ## CMake supported platforms
 

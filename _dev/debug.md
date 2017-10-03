@@ -7,7 +7,7 @@ description: How to Debug NeoMutt
 # {{ page.title }}
 
 - Logging
-- Starting NeoMutt in a debugger
+- Starting NeoMutt in a debugger, e.g. [cgdb](https://cgdb.github.io/)
 - Attaching a debugger to NeoMutt
 - Debugging a coredump
 

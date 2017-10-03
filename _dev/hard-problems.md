@@ -22,7 +22,8 @@ a small team of programmers with even smaller amount of freetime, so big
 changes take their time.
 
 But please, if you are interested in this, send a mail to
-neomutt-devel@neomutt.org and descibe your thoughts.
+[neomutt-devel@neomutt.org](mailto:neomutt-devel@neomutt.org)
+and descibe your thoughts.
 
 For some ideas, please see:
 
@@ -35,5 +36,5 @@ For some ideas, please see:
 
 ### Difficult to implement features
 
-[is:closed label:difficulty:hard](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adifficulty%3Ahard%20)
+[![difficulty-hard](/images/labels/difficulty-hard.svg)](https://github.com/neomutt/neomutt/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3Adifficulty%3Ahard)
 
