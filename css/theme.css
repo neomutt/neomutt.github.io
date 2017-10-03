@@ -130,7 +130,7 @@ a.logo {
 }
 
 li.active {
-  backgroud: #f00;
+  background: none;
 }
 
 li.active a, li.active2 a {

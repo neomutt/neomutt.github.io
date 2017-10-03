@@ -54,7 +54,7 @@ Would you like to merge these packages? [Yes/No]
 ```
 
 Have a good look at the USE-flags, such that you enable the features you need,
-such as imap, ssmtp, etc.
+such as _imap_, _smtp_, etc.
 
 ## Update <a class="offset" id="update"></a>
 

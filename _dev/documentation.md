@@ -52,8 +52,8 @@ similar to [ntg]roff:
   SGML). Please try to keep lines inside such an environment short; a length
   of about 40 characters should be OK. This is necessary to avoid a really
   bad-looking muttrc (5) manual page.
-- .te on a line finishes this environment.
-- .pp on a line starts a paragraph.
+- `.te` on a line finishes this environment.
+- `.pp` on a line starts a paragraph.
 - `$word` will be converted to a reference to _word_, where appropriate. Note
   that `$$word` is possible as well. Use `$$$` to get a literal `$` without
   making a reference.

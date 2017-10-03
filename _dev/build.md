@@ -102,7 +102,7 @@ List supported options to adapt or fine tune NeoMutt's build.
 
 ## Build
 
-Targets: neomutt, doc, ...
+Targets: **neomutt**, **doc**, ...
 
 ```
 make

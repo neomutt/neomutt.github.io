@@ -14,7 +14,7 @@ title: Features
   but had been abandoned.
 </p>
 
-<p>Before each patch is marked stable:
+<p>Before each patch is marked stable:</p>
 <ul>
   <li>The code is brought up-to-date with Mutt-1.8.0</li>
   <li>The code is tidied up, comments added, checks done</li>
@@ -55,13 +55,10 @@ title: Features
           {% case f.status %}
           {% when 'stable' %}
           {% assign span = true %}
-            <span class="good">✔
-          {% when 'devel' %}
+            <span class="good">&#x2713;
+          {% when 'devel' or 'disabled' %}
           {% assign span = true %}
-            <span class="devel">⚠
-          {% when 'disabled' %}
-          {% assign span = true %}
-            <span class="devel">⚠
+            <span class="devel">&#x26A0;
           {% endcase %}
             {{ f.status }}
           {% if span == true %}

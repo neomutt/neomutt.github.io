@@ -44,7 +44,7 @@ dir: "&mdash;"
 * [mutt-addressbook](https://pypi.python.org/pypi/mutt-addressbook) -- Extend
   Mutt's query command using LDAP directories
 * [mates](https://github.com/pimutils/mates.rs) -- A very simple, highly
-  extensible234 commandline addressbook
+  extensible command line address book
 
 ## Tagging, filtering, searching
 
@@ -80,9 +80,9 @@ dir: "&mdash;"
 
 * [antiword](http://www.winfield.demon.nl/) -- Microsoft Word to txt converter.
 * [rtf2html](http://www.wagner.pp.ru/~vitus/software/catdoc/) -- RTF to HTML
-  converter (which then can be piped through lynx -stdin -dump -force_html).
+  converter (which then can be piped through `lynx -stdin -dump -force_html`).
 * [pandoc](http://pandoc.org/) -- Pandoc is a Haskell library for converting
-  from one markup format to another, and a command-line tool that uses this
+  from one markup format to another, and a command line tool that uses this
   library.
 * [xlhtml](http://chicago.sourceforge.net/xlhtml/) -- Microsoft
   Excel/PowerPoint to HTML converter, see rtf2html.
