@@ -11,7 +11,7 @@ dir: keybase
 # KeybaseMutt
 
 A work in progress. KeybaseMutt exists to let its users utilize Keybase within
-Mutt. (Unfortunately, not natively (yet).)
+NeoMutt. (Unfortunately, not natively (yet).)
 
 ## Quick start
 
@@ -20,9 +20,9 @@ what it says or suffer the consequences!
 
 Then just throw these into your .muttrc
 
-`set editor = 'echo %s > ~/.mutt/keybaseMutt/.tmp; vim %s'`
+`set editor = 'echo %s > ~/.neomutt/keybaseMutt/.tmp; vim %s'`
 
-`macro compose K "<enter-command>unset wait_key<enter><shell-escape>python ~/.mutt/keybaseMutt/keybase.py<enter><enter-command>set wait_key<enter>`
+`macro compose K "<enter-command>unset wait_key<enter><shell-escape>python ~/.neomutt/keybaseMutt/keybase.py<enter><enter-command>set wait_key<enter>`
 
 Done!
 
