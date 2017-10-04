@@ -49,9 +49,11 @@ title: Contrib
         <td>
           <a href="https://github.com/{{ c.username }}">{{ c.author }}</a>
         </td>
-        <td>
-          <a href="https://github.com/neomutt/neomutt/tree/master/contrib/{{ c.dir }}#readme">{{ c.dir }}</a>
-        </td>
+        {% if c.dir %}
+        <td><a href="https://github.com/neomutt/neomutt/tree/master/contrib/{{ c.dir }}#readme">{{ c.dir }}</a></td>
+        {% else %}
+        <td>&mdash;</td>
+        {% endif %}
         <td>
           {% case c.status %}
           {% when 'stable' %}

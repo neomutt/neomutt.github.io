@@ -20,7 +20,7 @@ title: Management
     {% for f in site.run %}
       <tr>
         <td><a href="{{ f.url }}">{{ f.title }}</a></td>
-        <td>{{ f.description }}</td>
+        <td>{{ f.description | default: '&mdash;' }}</td>
       </tr>
     {% endfor %}
   </tbody>

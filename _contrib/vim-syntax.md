@@ -5,7 +5,6 @@ description: Vim Syntax File
 author: Richard Russon
 username: flatcap
 status: stable
-dir: "&mdash;"
 ---
 
 # Vim Syntax

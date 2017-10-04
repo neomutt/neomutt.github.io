@@ -5,7 +5,6 @@ description: List of useful programs interacting with Mutt
 author: Tobias Angele
 username: toogley
 status: stable
-dir: "&mdash;"
 ---
 
 # {{ page.title }}

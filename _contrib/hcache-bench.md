@@ -5,7 +5,6 @@ description: Script to test the speed of the header cache
 author: Pietro Cerutti
 username: gahr
 status: stable
-dir: "&mdash;"
 ---
 
 # {{ page.title }}
