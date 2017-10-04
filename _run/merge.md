@@ -8,7 +8,11 @@ status: wip
 
 # {{ page.title }}
 
-Recently, someone asked me the difference between GitHub's three merge options.
+Integrate your work and bring things together
+
+## Initial situation
+
+Recently, someone asked about the difference between GitHub's three merge options.
 Here are some helpful pictures:
 
 ```reply

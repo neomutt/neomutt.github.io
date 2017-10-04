@@ -6,6 +6,10 @@ description: How to Debug NeoMutt
 
 # {{ page.title }}
 
+When things needs further investigation
+
+## Available procedures
+
 - Logging
 - Starting NeoMutt in a debugger, e.g. [cgdb](https://cgdb.github.io/)
 - Attaching a debugger to NeoMutt

@@ -1,16 +1,13 @@
 ---
 layout: concertina
-title: IRC
+title: 'IRC &ndash; #neomutt'
 description: How to run an IRC channel
 author: Richard Russon
 ---
 
 # {{ page.title }}
 
-NeoMutt has an IRC channel: **#neomutt** on
-[irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
-
-This is a list of useful commands to help run our IRC channel.
+Useful commands to help run our IRC channel [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
 
 ## Getting started
 
