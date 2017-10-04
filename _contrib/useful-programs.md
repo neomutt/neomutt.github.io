@@ -23,8 +23,7 @@ dir: "&mdash;"
 * [getmail](http://pyropus.ca/software/getmail/) -- simple mail retrieval agent
   intended as a replacement for fetchmail. Support for IMAP4, POP3 and SSL
 * [msmtp](http://msmtp.sourceforge.net/) -- is an SMTP client, supports
-  multiple accounts, TLS/SSL, IDN, Delivery Status Notification and SOCKS
-  Proxy.
+  multiple accounts, TLS/SSL, IDN, DSN and SOCKS Proxy.
 * [isync](http://isync.sourceforge.net/) -- may be better than Mutt with IMAP
   header caching.
 * [maildrop](http://www.courier-mta.org/maildrop/) -- mail delivery agent with
@@ -124,4 +123,26 @@ dir: "&mdash;"
   server IMAP stores to track changes as they happen.
 * [muttzilla](https://sourceforge.net/projects/muttzilla/) -- make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
+
+
+*[.ics]: Internet Calendaring and Scheduling (iCalendar)
+*[DNS]: Domain Name System
+*[DSN]: Delivery Status Notification
+*[FOSS]: Free and Open Source Software
+*[HTML]: Hyper Text Markup Language
+*[IDN]: Internationalized Domain Names
+*[IMAP4]: Internet Message Access Protocol version 4
+*[IMAP]: Internet Message Access Protocol
+*[LDAP]: Lightweight Directory Access Protocol
+*[MIME]: Multipurpose Internet Mail Extensions
+*[PGP]: Pretty Good Privacy
+*[POP3]: Post Office Protocol, version 3
+*[POP]: Post Office Protocol
+*[RTF]: Rich Text Format
+*[SMTP]: Simple Mail Transfer Protocol
+*[SOCKS]: Socket Secure (Internet Protocol)
+*[SSL]: Secure Sockets Layer
+*[TLS]: Transport Layer Security
+*[URL]: Uniform Resource Locator
+*[URLs]: Uniform Resource Locator
 
