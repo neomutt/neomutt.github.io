@@ -43,7 +43,7 @@ use [GitHub](https://github.com/neomutt), [IRC](#irc) and
 Channel: **#neomutt** on **irc.freenode.net**
 
 This is a good way to meet the developers if you want to say hello. Everyone's
-welcome. There are usually about 90 people / lurkers in the channel.
+welcome. There are usually about 90&nbsp;people / lurkers in the channel.
 
 The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
@@ -219,18 +219,18 @@ character set names, domain names, e-mail addresses, etc.
 
 ### Docs/Translation <a class="offset" id="docstranslation"></a>
 
-The [Mutt Guide](/guide) reads like an encyclopaedia. Everything you want to
+The [NeoMutt Guide](/guide) reads like an encyclopaedia. Everything you want to
 know is in there somewhere, but generally you have to know what you're looking
 for.
 
-Mutt needs a simple introduction with pictures. The guide should explain how
+NeoMutt needs a simple introduction with pictures. The guide should explain how
 to perform simple tasks (just the basics to get a user started). The simple
-guide can list some more advanced features of Mutt, but leave a full
+guide can list some more advanced features of NeoMutt, but leave a full
 explanation to the main manual.
 
 See also: [Docs Rebuild](/dev/docs-rebuild)
 
-The Mutt program has been translated into 30 languages, but
+The NeoMutt program has been translated into 30&nbsp;languages, but
 [some of the translations](/translate) are out-of-date.
 
 ### Web design <a class="offset" id="web-design"></a>

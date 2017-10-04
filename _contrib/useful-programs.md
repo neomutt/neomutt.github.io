@@ -14,7 +14,7 @@ dir: "&mdash;"
 
 ## Mail downloading and sending
 
-* [offlineimap](https://github.com/OfflineIMAP/offlineimap) -- Read/Sync your
+* [offlineimap](https://github.com/OfflineIMAP/offlineimap) -- read/sync your
   IMAP mailboxes
 * [imapfw](https://github.com/OfflineIMAP/imapfw) -- simple and powerful
   framework to work with mails, successor of OfflineIMAP
@@ -29,7 +29,7 @@ dir: "&mdash;"
   header caching.
 * [maildrop](http://www.courier-mta.org/maildrop/) -- mail delivery agent with
   filtering abilities
-* [postfix](http://www.postfix.org/) -- It is Wietse Venema's mail server that
+* [postfix](http://www.postfix.org/) -- a Wietse Venema's mail server that
   started life at IBM research as an alternative to the widely-used Sendmail
   program. Now at Google, Wietse continues to support Postfix.
 
@@ -38,12 +38,12 @@ dir: "&mdash;"
 * [ppl](http://ppladdressbook.org/) -- decentralized command line address book
 * [notmuch-abook](https://github.com/guyzmo/notmuch-abook) -- Notmuch address
   book manager for Vim
-* [goobook](https://pypi.python.org/pypi/goobook/1.9) -- Search your Google
+* [goobook](https://pypi.python.org/pypi/goobook/1.9) -- search your Google
   Contacts from the command line or Mutt.
-* [abook](http://abook.sourceforge.net/) -- Text-based address book program
-* [mutt-addressbook](https://pypi.python.org/pypi/mutt-addressbook) -- Extend
+* [abook](http://abook.sourceforge.net/) -- text-based address book program
+* [mutt-addressbook](https://pypi.python.org/pypi/mutt-addressbook) -- extend
   Mutt's query command using LDAP directories
-* [mates](https://github.com/pimutils/mates.rs) -- A very simple, highly
+* [mates](https://github.com/pimutils/mates.rs) -- a very simple, highly
   extensible command line address book
 
 ## Tagging, filtering, searching
@@ -60,9 +60,9 @@ dir: "&mdash;"
 * [procmail](https://wiki.archlinux.org/index.php/Procmail) -- can sort
   incoming mail into various directories and filter out spam messages. Procmail
   is stable, but no longer maintained.
-* [mairix](http://www.rpcurnow.force9.co.uk/mairix/) -- An excellent mailbox
+* [mairix](http://www.rpcurnow.force9.co.uk/mairix/) -- an excellent mailbox
   searching tool for Mutt. Unmaintained.
-* [nmzmail](http://flpsed.org/nmzmail.html) -- Another excellent mailbox
+* [nmzmail](http://flpsed.org/nmzmail.html) -- another excellent mailbox
   searching tool for Mutt.
 * [bogofilter](http://bogofilter.sourceforge.net/) -- mail filter that
   classifies mail as spam or ham (non-spam) by a statistical analysis of the
@@ -71,56 +71,57 @@ dir: "&mdash;"
 
 ## Encryption
 
-* [passwordstore.org](https://www.passwordstore.org/) Password management tool
-  which tries to be simple and follow the Unix philosophy.
-* [GPG, GnuPG](https://www.gnupg.org/) -- GNU's privacy guard, a free (FOSS)
+* [passwordstore.org](https://www.passwordstore.org/) -- password management
+  tool which tries to be simple and follow the Unix philosophy.
+* [GPG, GnuPG](https://www.gnupg.org/) -- GNU's Privacy Guard, a free (FOSS)
   replacement for PGP.
 
 ## Converting text formats
 
-* [antiword](http://www.winfield.demon.nl/) -- Microsoft Word to txt converter.
+* [antiword](http://www.winfield.demon.nl/) -- Microsoft Word to TXT converter.
 * [rtf2html](https://www.wagner.pp.ru/~vitus/software/catdoc/) -- RTF to HTML
   converter (which then can be piped through `lynx -stdin -dump -force_html`).
-* [pandoc](https://pandoc.org/) -- Pandoc is a Haskell library for converting
-  from one markup format to another, and a command line tool that uses this
-  library.
+* [pandoc](https://pandoc.org/) -- is a Haskell library for converting from one
+  markup format to another, and a command line tool that uses this library.
 * [xlhtml](http://chicago.sourceforge.net/xlhtml/) -- Microsoft
   Excel/PowerPoint to HTML converter, see rtf2html.
 
 ## Grabbing URLs
 
-* [urlview](https://github.com/sigpipe/urlview) -- Extract URLs from a text
+* [urlview](https://github.com/sigpipe/urlview) -- extract URLs from a text
   file and allow the user to select via a menu
 * [urlscan](https://github.com/firecat53/urlscan) -- Mutt and terminal URL
   selector (similar to urlview)
-* [extract_url](https://www.memoryhole.net/~kyle/extract_url/) -- This is a Perl
-  script that extracts URLs from correctly-encoded MIME email messages or plain
-  text.
+* [extract_url](https://www.memoryhole.net/~kyle/extract_url/) -- a Perl script
+  that extracts URLs from correctly-encoded MIME email messages or plain text.
 
 ## Miscellaneous
 
-* [notifynotmuch](https://github.com/kspi/notifymuch)
-* [notify-osd](https://launchpad.net/notify-osd) -- The Desktop Notifications
-  framework provides a standard way of doing passive pop-up notifications on
-  the Linux desktop. These are designed to notify the user of something without
-  interrupting their work with a dialog box that they must close. Passive
-  popups can automatically disappear after a short period of time.
-* [mutt-vid](https://github.com/protist/mutt-vid) -- Manage multiple sender
+* [notifynotmuch](https://github.com/kspi/notifymuch) -- displays desktop
+  notifications for unread mail in Notmuch database
+* [notify-osd](https://launchpad.net/notify-osd) -- Canonical's
+  on-screen-display notification agent \\
+  The desktop notifications framework provides a standard way of doing passive
+  pop-up notifications on the Linux desktop. These are designed to notify the
+  user of something without interrupting their work with a dialog box that they
+  must close. Passive pop-ups can automatically disappear after a short period
+  of time.
+* [mutt-vid](https://github.com/protist/mutt-vid) -- manage multiple sender
   accounts in Mutt
-* [mutt-ics](https://github.com/dmedvinsky/mutt-ics) -- Simple viewer for .ics
+* [mutt-ics](https://github.com/dmedvinsky/mutt-ics) -- simple viewer for .ics
   files in Mutt
 * [muttprint](http://muttprint.sourceforge.net/)
 * [mailto-mutt](https://dset0x.github.io/mailto-mutt.html)
 * [mailto-mutt](https://github.com/pazz/scripts/blob/master/mailto-mutt)
-* [MailtoMutt?](http://mailtomutt.sourceforge.net/) -- A Cocoa application
+* [MailtoMutt?](http://mailtomutt.sourceforge.net/) -- a Cocoa application
   which handles mail to URLs, forwarding them to Mutt using AppleScript and
   Terminal.app.
-* [post mode](http://post-mode.sourceforge.net/) -- An Emacs mode for composing
-  email or USENET messages for an external user agent (Mutt, slrn, etc.).
-* [t-prot](http://www.escape.de/users/tolot/mutt/) -- A program to clean up
+* [post mode](http://post-mode.sourceforge.net/) -- an Emacs mode for composing
+  email or Usenet messages for an external user agent (Mutt, slrn, etc.).
+* [t-prot](http://www.escape.de/users/tolot/mutt/) -- a program to clean up
   various email problems (long signatures, incorrect quoting, etc.).
 * [mswatch](http://mswatch.sourceforge.net/) use with isync to sync local and
   server IMAP stores to track changes as they happen.
-* [muttzilla](https://sourceforge.net/projects/muttzilla/) -- Make Mutt your
+* [muttzilla](https://sourceforge.net/projects/muttzilla/) -- make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
 

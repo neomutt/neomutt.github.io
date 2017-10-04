@@ -56,7 +56,7 @@ are processed by a perl script:
 | :--------------------- | :---------------------------------------- |
 | OP_ATTACH_VIEW_MAILCAP | force viewing of attachment using mailcap |
 | OP_ATTACH_VIEW_TEXT    | view attachment as text                   |
-| OP_ATTACH_COLLAPSE     | Toggle display of subparts                |
+| OP_ATTACH_COLLAPSE     | toggle display of subparts                |
 
 ### functions.h
 

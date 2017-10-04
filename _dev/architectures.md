@@ -17,18 +17,18 @@ that would break.
 
 ## CMake supported platforms
 
-As we thought about changing the build sytem to cmake (See
+As we thought about changing the build system to CMake (See
 [this issue for that](https://github.com/neomutt/neomutt/issues/321) for the
 discussion),
-[the list of platforms cmake does support may be interesting.](https://gitlab.kitware.com/cmake/cmake/tree/master/Modules/Platform)
+[the list of platforms CMake does support may be interesting.](https://gitlab.kitware.com/cmake/cmake/tree/master/Modules/Platform)
 
 ## Architectures
 
 ### confirmed
 
-I think it makes sense to orientate ourselves at
+We think it makes sense to orientate ourselves at
 [NetBSD](https://netbsd.org/releases/formal-7/NetBSD-7.0.2.html#system-families),
-because it probably supports every platform debian, freeBSD, OpenBSD, etc.
+because it probably supports every platform Debian, FreeBSD, OpenBSD, etc.
 support and beyond.
 
 > acorn26 acorn32 algor alpha amd64 amiga amigappc arc atari bebox cats cesfic
@@ -42,12 +42,12 @@ Our NetBSD maintainer
 [@0-wiz-0](https://github.com/neomutt/neomutt/issues/436#issuecomment-282689847)
 said, although NeoMutt doesn't build on every of those architectures (due to
 the lack of build machines) all those architectures share mostly the same code.
-Therfore, he doesn't expect many troubles.
+Therefore, he doesn't expect many troubles.
 
-Of course, my argument in the section
+Of course, our argument in the section
 [Operating Systems // not desirable to support](#not-desirable-to-support) also
-can be applies here: Its difficult to provide support for all the above
-architectures, because of us probably have only a amd64 machine.
+can be applies here: It's difficult to provide support for all the above
+architectures, because of us probably have only a AMD64 machine.
 
 ## Operating Systems
 
@@ -66,28 +66,27 @@ have a dedicated maintainer and a great amount of users.
 
 ### confirmation missing
 
-* SCO Unix -- Latest release: 2015, recent versions are based on FreeBSD
+* SCO Unix -- latest release: 2015, recent versions are based on FreeBSD
 * Solaris
 
 ### not desirable to support
 
-For the followinG OS's, I'm reluctant to call NeoMutt to support them. All of
-those are in my opinion a bit hard to get, not very popular or discontinued.
-
-(I have the release dates from wikipedia)
+For the following OS's, we reluctant to call NeoMutt to support them. All of
+those are in our opinion a bit hard to get, not very popular or discontinued
+(release dates are from Wikipedia):
 
 * BSDI -- seems to be legacy
 * Digital Unix (OSF/1) -- discontinued, proprietary
-* QNX -- proprietary, Latest release: 2014
+* QNX -- proprietary, latest release: 2014
 * IRIX -- discontinued
 * HP-UX -- proprietary
 * DYNIX/ptx -- legacy system
-* AIX -- proprietary, Latest release: October 5, 2015
+* AIX -- proprietary, latest release: October 5, 2015
 * Data General Unix (DG/UX) -- discontinued in 2001
-* UnixWare -- proprietary, Latest release: June 10, 2013
+* UnixWare -- proprietary, latest release: June 10, 2013
 * Convex -- [old Supercomputer](https://en.wikipedia.org/wiki/Convex_Computer)
-* Ultrix -- proprietary, Latest release: 1995
-* Atari MiNT -- open source. Latest release: 18 March 2013
-* MkLinux -- Latest release: August 5, 2002
-* SunOS -- proprietary, Latest release: November 1994
+* Ultrix -- proprietary, latest release: 1995
+* Atari MiNT -- open source, latest release: 18 March 2013
+* MkLinux -- latest release: August 5, 2002
+* SunOS -- proprietary, latest release: November 1994
 
