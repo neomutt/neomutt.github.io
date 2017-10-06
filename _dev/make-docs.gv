@@ -37,7 +37,7 @@ digraph build {
 	manual_xml_tail    [ label="manual.xml.tail"       ]
 	neomuttrc          [ label="neomuttrc"             ]
 	neomuttrc_head     [ label="neomuttrc.head"        ]
-	neomuttrc_man      [ label="neomuttrc.man"         ]
+	neomuttrc_man      [ label="neomuttrc.5"           ]
 	neomuttrc_man_head [ label="neomuttrc.man.head"    ]
 	neomuttrc_man_tail [ label="neomuttrc.man.tail"    ]
 	neomutt_css        [ label="neomutt.css"           ]
