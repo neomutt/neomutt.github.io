@@ -56,7 +56,7 @@ tagger Richard Russon <rich@flatcap.org> 1493380827 +0100
 
 NeoMutt release 20170428 (1.8.2)
 gpg: Signature made Fri 28 Apr 2017 13:00:27 BST using RSA key ID 5FAF0A6EE7371805
-gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [ultimate]
+gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [full]
 ```
 
 ```sh
@@ -78,7 +78,7 @@ gpg2 --verify neomutt-20170428-CHECKSUM
 
 ```reply
 gpg: Signature made Sun 30 Apr 2017 23:39:42 BST using RSA key ID 5FAF0A6EE7371805
-gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [ultimate]
+gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [full]
 ```
 
 ```sh
