@@ -8,6 +8,8 @@ author: flatcap
 
 # {{ page.title }}
 
+When feedback is needed
+
 ## Overview
 
 **Important points:**
@@ -24,13 +26,13 @@ author: flatcap
 
 **You can get approval from:**
 
-* IRC
-* Issue
-* Mailing list
+* [IRC #neomutt][irc]
+* [Issue][issues]
+* [Mailing list][maillist]
 
 **Who gives approval?**
 
-* Project reviewers (team on github)
+* Project reviewers (team on GitHub)
   - Richard Russon ([@flatcap](https://github.com/flatcap))
   - Darshit Shah ([@darnir](https://github.com/darnir))
   - Guillaume Brogi ([@guiniol](https://github.com/guiniol))
@@ -50,7 +52,8 @@ author: flatcap
 **Feedback:**
 
 * We want to know what's going on, so we can plan releases
-* People need a little freedom to experiment before others express their opinions
+* People need a little freedom to experiment before others express their
+  opinions
 
 **When does a user want:**
 
@@ -58,7 +61,7 @@ author: flatcap
 * Review?
 * Merge?
 
-## Scenario - NeoMutt Member
+## Scenario -- NeoMutt member
 
 ### Coder has an idea
 
@@ -75,7 +78,7 @@ author: flatcap
 **Work:**
 
 - write code
-- push code (automatic travis build)
+- push code (automatic Travis build)
 - repeat
 
 ### When code is ready for public scrutiny...
@@ -95,7 +98,12 @@ author: flatcap
 - Reviewer 1: "approved"
 - Reviewer 2: "approved"
 
-### When code is ready for merge..
+### When code is ready for merge...
 
 - Reviewer: merge code
+
+
+[irc]: </dev/newbie-tutorial#irc>
+[issues]: <https://github.com/neomutt/neomutt/issues>
+[maillist]: </dev/newbie-tutorial#mailing-lists>
 

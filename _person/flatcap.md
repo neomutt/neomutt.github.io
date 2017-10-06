@@ -5,9 +5,10 @@ nick: FlatCap
 description: NeoMutt Maintainer
 residence: Oxford, England
 ---
+
 # {{ page.name }} ({{ page.nick }})
 
-I'm Rich Russon, aka FlatCap.  I'm the creator of NeoMutt.
+I'm Rich Russon, a.k.a. FlatCap. I'm the creator of NeoMutt.
 
 When I'm not sat at a keyboard, I love to be outdoors (in all weathers).
 
@@ -27,7 +28,8 @@ uid           Richard Russon (flatcap) <rich@flatcap.org>
 sub   rsa4096 2015-10-24 [E] [expires: 2018-11-15]
 ```
 
-NeoMutt releases (tags) will be signed with this key: [flatcap-neomutt.pub](flatcap-neomutt.pub)
+NeoMutt releases (tags) will be signed with this key:
+[flatcap-neomutt.pub](flatcap-neomutt.pub)
 
 Fingerprint:
 

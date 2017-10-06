@@ -5,16 +5,18 @@ title: Home
 
 <h1>The NeoMutt Project</h1>
 
-<h2 class="subtitle">“Teaching an Old Dog New Tricks”</h2>
+<p class="subtitle"><b>“Teaching an Old Dog New Tricks”</b></p>
+
+<h2>Overview</h2>
 
 <dl>
   <dt>What is it?</dt>
-  <dd>NeoMutt is a command-line mail reader (or Mail User Agent).
+  <dd>NeoMutt is a command line mail reader (or <abbr title="Mail User Agent">MUA</abbr>).
     It's a version of Mutt with added <b>features</b>.
     <a class="rm" href="about.html">Read more...</a></dd>
 
   <dt>Why?</dt>
-  <dd>The NeoMutt Project is hoping to kick-start development on the Mutt project.<br>
+  <dd>The NeoMutt project is hoping to kick-start development on the Mutt project.<br>
   NeoMutt has already attracted about twenty developers and enthusiasts.</dd>
 
   <dt>What have you achieved, so far?</dt>
@@ -31,30 +33,31 @@ title: Home
 <h2>I need help</h2>
 
 <p>
-  Oh, sorry to hear that.  If you are a GitHub user, you can raise a
+  Oh, sorry to hear that. If you are a GitHub user, you can raise a
   <a href="https://github.com/neomutt/neomutt.github.io/issues">Website issue</a> or a
   <a href="https://github.com/neomutt/neomutt/issues">NeoMutt code issue</a>.
 <p>
 <p>
   Alternatively, you can join the NeoMutt IRC channel:
-  <a href="irc://irc.freenode.net/neomutt">irc://irc.freenode.net/neomutt</a>, or
-  contact the lead developer, Richard&nbsp;Russon&nbsp;<a href="mailto:rich@flatcap.org">&lt;rich@flatcap.org&gt;</a>
+  <a href="irc://irc.freenode.net/neomutt">irc://irc.freenode.net/neomutt</a>
+  (read about <a href="/run/irc">some useful commands</a>), or contact the lead
+  developer, Richard&nbsp;Russon&nbsp;<a href="mailto:rich@flatcap.org">&lt;rich@flatcap.org&gt;</a>
 </p>
 
 <h2>I want to help NeoMutt</h2>
 
 <p>
-  Brilliant.  There are lots of ways you can contribute to the NeoMutt project.
+  Brilliant. There are lots of ways you can contribute to the NeoMutt project.
   Whatever your skills, or time available, <b>you can help</b>.
 </p>
 
 <ul>
-    <li> Are you an experienced Programmer? Do you want a challenge? Please have a look at
+    <li> Are you an experienced programmer? Do you want a challenge? Please have a look at
         <a href="/dev/hard-problems">collection of hard problems</a>
     </li>
 
     <li>
-        You don't have much experience? You are not an experienced Programmer? Or, you just don't know how to write C ?
+        You don't have much experience? You are not an experienced programmer? Or, you just don't know how to write C?
         Then, please have a look at our <a href="/dev/newbie-tutorial">Newbie Tutorial</a>.
         However, you can still try one of the
         <a href="/dev/hard-problems">hard problems</a> later, if you want. Remember, the question
@@ -74,7 +77,7 @@ title: Home
   We have a Twitter Feed <a href="https://twitter.com/NeoMutt_Org">@NeoMutt_Org</a>.
 </p>
 
-<h2>Mailing Lists</h2>
+<h2>Mailing lists</h2>
 
 <p>
   We have two public mailing lists:
@@ -93,18 +96,20 @@ title: Home
     <a href="http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org"><b>Subscribe</b></a></dd>
 </dl>
 
-<h2>IRC - <a href="irc://irc.freenode.net/neomutt">irc://irc.freenode.net/neomutt</a></h2>
+<h2>IRC &ndash; <a href="irc://irc.freenode.net/neomutt">irc://irc.freenode.net/neomutt</a></h2>
 
 <p>
-  We now have a presence on IRC.  Come, say hello! Please note, that we're a
-  small group. Therefore, answers might take some time.  </p>
+  We now have a presence on IRC. To become familar with IRC
+  <a href="/run/irc">read about useful commands</a>. Come, say hello! Please
+  note, that we're a small group. Therefore, answers might take some time.
+</p>
 
-<h2>Latest News</h2>
+<h2>Latest news</h2>
 
 <ul>
     {% for p in site.posts limit:5 %}
     <li>
-      <b>{{ p.date | date: '%Y-%m-%d' }}</b> -
+      <b>{{ p.date | date: '%Y-%m-%d' }}</b> &ndash;
       <a href="{{ p.url }}">{{ p.title }}</a>
     </li>
     {% endfor %}

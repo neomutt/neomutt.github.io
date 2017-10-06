@@ -13,7 +13,7 @@ author: flatcap
 Whatever the language, coding style is always controversial.
 
 This page outlines a small [set of rules][r], some [guidelines][g] and some
-[top tips][t].  It's hoped that following these examples, we can keep NeoMutt's
+[top tips][t]. It's hoped that following these examples, we can keep NeoMutt's
 code tidy.
 
 NeoMutt also recommends using [editor-config][e] and [clang-format][c].
@@ -24,10 +24,9 @@ NeoMutt also recommends using [editor-config][e] and [clang-format][c].
 [e]: #editor-config
 [c]: #clang-format
 
-## <a name="rules" class="offset"></a> Rules
+## Rules <a class="offset" id="rules"></a>
 
-These rules are important.
-Please follow them to ensure your code is accepted.
+These rules are important. Please follow them to ensure your code is accepted.
 
 ### Indent
 
@@ -54,57 +53,55 @@ if (x == 0)
 
 - However deeply nested the code, it should not use tabs for indentation
 
-### Trailing Whitespace
+### Trailing whitespace
 
 - Delete spaces or tabs at the ends of lines
 
-### new options
+### New options
 
 - when new options are added, the old behavior should be the default.
 
-### avoid global variables!
+### Avoid global variables!
 
 - We consider the use of global variables to be bad style, because it makes
-  changes/refactorings much harder to realize.
-  Neomutt still has a lot of them. So if you want to reduce them, you're very
-  welcome to do so. Ask on the devel mailinglist or on IRC, if you are
-  interested.
+  changes/refactorings much harder to realize. NeoMutt still has a lot of
+  them. So if you want to reduce them, you're very welcome to do so. Ask on the
+  devel mailinglist or on IRC, if you are interested.
 
-### special characters should be utf8
+### Special characters should be UTF-8
 
-- special characters should be in utf-8.  If you find remnants
-  from the times when this was an iso-8859-1 source code tree,
-  please feel free to fix them.
+- special characters should be in UTF-8. If you find remnants from the times
+  when this was an ISO-8859-1 source code tree, please feel free to fix them.
 
-### global and non-global functions
+### Global and non-global functions
 
-- global functions should have the prefix "mutt_".  All
-  other functions should be declared "static".
+- global functions should have the prefix "mutt\_". All other functions should
+  be declared "static".
 
-## <a name="guidelines" class="offset"></a> Guidelines
+## Guidelines <a class="offset" id="guidelines"></a>
 
-These guidelines are NeoMutt's preferred way to style code.
-Some exceptions will be allowed.
+These guidelines are NeoMutt's preferred way to style code. Some exceptions
+will be allowed.
 
 ### General
 
-- Function return type on the same line, e.g.
-  `int function(int y)`
-
+- Function return type on the same line, e.g. `int function(int y)`
 - Line length should be limited to 80-90 characters.
 
-### Braces Placement
+### Braces placement
 
-There are many situations where C doesn't require braces.
-Often, this can lead to code that's hard to read.
+There are many situations where C doesn't require braces. Often, this can lead
+to code that's hard to read.
 
 **General guideline**:
+
 - The meaning of the code must be **immediately** clear.
 
 First, here are a couple of good examples where braces aren't needed, but the
 code is still clear.
 
-Both the condition and the action are short and the entire 'if' is easy to read.
+Both the condition and the action are short and the entire 'if' is easy to
+read.
 
 ```c
 if (condition)
@@ -121,7 +118,8 @@ for (int i = 0; i < 10; i++)
 
 Next are three bad examples.
 
-Here is some code from `find_subject()` in [thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2/thread.c#L415)
+Here is some code from `find_subject()` in
+[thread.c](https://github.com/neomutt/neomutt/blob/9f5acdc2/thread.c#L415)
 It's hard to tell where the 'if' ends and the action begins.
 
 ```c
@@ -141,8 +139,9 @@ if (tmp != cur &&                    /* don't match the same message */
   last = tmp; /* best match so far */
 ```
 
-This example is simpler, but could still probably do with `{}`s.
-It is from `mutt_check_traditional_pgp()` in [commands.c](https://github.com/neomutt/neomutt/blob/6b1ecf78dde6a629b97ddaeeddf94d58e6aa60e9/commands.c#L1062)
+This example is simpler, but could still probably do with `{}`s. It is from
+`mutt_check_traditional_pgp()` in
+[commands.c](https://github.com/neomutt/neomutt/blob/6b1ecf78dde6a629b97ddaeeddf94d58e6aa60e9/commands.c#L1062)
 
 ```c
 if (Context->hdrs[Context->v2r[i]]->tagged &&
@@ -151,7 +150,8 @@ if (Context->hdrs[Context->v2r[i]]->tagged &&
    || rv;
 ```
 
-Finally, there's ugliness like this in `crypt_init()` in [cryptglue.c](https://github.com/neomutt/neomutt/blob/3a415b2b1d5719d729aa60bb6491c496dd2f98f8/cryptglue.c#L59):
+Finally, there's ugliness like this in `crypt_init()` in
+[cryptglue.c](https://github.com/neomutt/neomutt/blob/3a415b2b1d5719d729aa60bb6491c496dd2f98f8/cryptglue.c#L59):
 
 ```c
   if (
@@ -164,6 +164,7 @@ Finally, there's ugliness like this in `crypt_init()` in [cryptglue.c](https://g
 ```
 
 The factors that complicate an 'if' statement are:
+
 - **Condition** spans multiple lines
 - **Condition** is inconsistently indented
 - **Action** spans multiple lines
@@ -171,13 +172,16 @@ The factors that complicate an 'if' statement are:
 - **Condition** contains preprocessor statements
 
 **Specific guidelines**:
+
 - Refactor 'if' conditions that span more than 4 lines
-- Enforced `{}`s for actions that span more than 1 line, or that contain comments
+- Enforced `{}`s for actions that span more than 1 line, or that contain
+  comments
 - Preprocessor conditions should not be embedded within an 'if' condition
 
 ### Whitespace
 
 **Guidelines**:
+
 - No spaces inside () or []
 - Space around operators:
   - Maths `+-*/`
@@ -187,14 +191,13 @@ The factors that complicate an 'if' statement are:
 
 **Note**: All these cases are handled by clang-format.
 
-## <a name="top-tips" class="offset"></a> Top Tips
+## Top tips <a class="offset" id="top-tips"></a>
 
-These tips are generally good ideas.
-Their use is encouraged.
+These tips are generally good ideas. Their use is encouraged.
 
 ### Distinguish between `0` and `NULL`
 
-Pointers should be assigned to `NULL`, not `0`.  This helps to reinforce the
+Pointers should be assigned to `NULL`, not `0`. This helps to reinforce the
 type, especially when you're deep with a function.
 
 ```c
@@ -204,9 +207,9 @@ fclose(fp);
 fp = NULL;
 ```
 
-`strcmp()` returns `0` when the strings match, but the code below is misleading.
-You might be mistaken and think that `something()` is called if the strings
-match.
+`strcmp()` returns `0` when the strings match, but the code below is
+misleading. You might be mistaken and think that `something()` is called if
+the strings match.
 
 ```c
 /* Misleading condition */
@@ -229,7 +232,7 @@ else
 ### Use `!` to test booleans and pointers only
 
 There are many parts of Mutt's code that use `!` to test if a variable is equal
-to zero.  Using `!` consistently will help to reinforce the types to a human.
+to zero. Using `!` consistently will help to reinforce the types to a human.
 
 ```c
 int x = 0;
@@ -249,8 +252,8 @@ C allows you to write statements like:
 ```c
 if (a == x && b == y && c == z)
 ```
-Here, we're `&&`-ing three logical tokens.
-Because they contain whitespace, the 'if' can be a little hard to read.
+Here, we're `&&`-ing three logical tokens. Because they contain whitespace,
+the 'if' can be a little hard to read.
 
 This is easier to read:
 
@@ -264,9 +267,10 @@ Tokens that don't have any whitespace don't need to be `()`d, e.g.
 if (x && y && !z)
 ```
 
-### Ternary operator `x ? y : z` - one at a time
+### Ternary operator `x ? y : z` -- one at a time
 
-The ternary operator is good for short and simple if-then-else type things, e.g.
+The ternary operator is good for short and simple if-then-else type things,
+e.g.
 
 ```c
 /* Clear use of a ternary operator */
@@ -274,7 +278,7 @@ x = (y > 0) ? 1 : 0;
 ```
 
 However, when several ternary operators are used in one statement, it becomes
-very hard to understand the meaning.  This example is from `mbrtowc_iconv()` in
+very hard to understand the meaning. This example is from `mbrtowc_iconv()` in
 [mbyte.c](https://github.com/neomutt/neomutt/blob/2f4417e898ac719dee6b0ccb53668533410869e1/mbyte.c#L155)
 
 ```c
@@ -282,16 +286,17 @@ very hard to understand the meaning.  This example is from `mbrtowc_iconv()` in
 return (pwc && *pwc) ? (ib - (k ? bufi + k : s)) : 0;
 ```
 
-### Doxygen Comment Blocks
+### Doxygen comment blocks
 
-New, non-static (shared), functions should have a [doxygen comment block](/dev/doxygen).
-These comment blocks should tell a developer everything they need to know in
-order to use, or debug, that function.
+New, non-static (shared), functions should have a
+[doxygen comment block](/dev/doxygen). These comment blocks should tell
+a developer everything they need to know in order to use, or debug, that
+function.
 
 These comment blocks are parsed by doxygen and turned into cross-referenced
 documentation.
 
-### Inserting Whitespace for Clarity
+### Inserting whitespace for clarity
 
 Sometimes, inserting a little whitespace can greatly improve the legibility.
 
@@ -305,7 +310,7 @@ if ((strcmp("supersedes:",  uh->data, 11) != 0) &&
     (strcmp("return-path:", uh->data, 12) != 0))
 ```
 
-### C99 Features
+### C99 features
 
 These C99 features may be used:
 
@@ -320,7 +325,7 @@ These C99 features may be used:
 - Limit variables to the smallest possible scope
 - For sets of constants, use `enum` rather than `#define`
 
-## <a name="editor-config" class="offset"></a> Editor Config
+## EditorConfig <a class="offset" id="editor-config"></a>
 
 [EditorConfig][ec] provides plugins for most common editors which allow
 projects to define their style in one place.
@@ -335,20 +340,20 @@ indent_size = 2
 indent_style = space
 ```
 
-[ec]: http://editorconfig.org/
-[ecf]: https://github.com/neomutt/neomutt/blob/master/.editorconfig
+[ec]:  <http://editorconfig.org/>
+[ecf]: <https://github.com/neomutt/neomutt/blob/master/.editorconfig>
 
-## <a name="clang-format" class="offset"></a> Clang-Format
+## Clang-Format <a class="offset" id="clang-format"></a>
 
 Clang-format is a tool which automatically reformats C sources files according
 to configurable style guides.
 
 This tool can re-indent code, correct the placement of `{}`s and much much
-more.  Beginners are strongly recommended to use this tool on their code before
+more. Beginners are strongly recommended to use this tool on their code before
 submitting it to NeoMutt.
 
-Here is NeoMutt's [.clang-format][ncf] file.
-Clang's site has [full documentation][cfd] of the format.
+Here is NeoMutt's [.clang-format][ncf] file. Clang's site has
+[full documentation][cfd] of the format.
 
 Any code that **needs** to stay as it was written should be surrounded by the
 comments:
@@ -360,6 +365,6 @@ comments:
 
 These should be used as little as possible.
 
-[ncf]: https://github.com/neomutt/neomutt/blob/master/.clang-format
-[cfd]: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+[ncf]: <https://github.com/neomutt/neomutt/blob/master/.clang-format>
+[cfd]: <https://clang.llvm.org/docs/ClangFormatStyleOptions.html>
 

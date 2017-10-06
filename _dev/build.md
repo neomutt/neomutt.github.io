@@ -7,14 +7,14 @@ status: wip
 
 # {{ page.title }}
 
-## Install Dependencies
+## Install dependencies
 
 See [Distro Pages](/distro.html).
 
-## Obtain the Source
+## Obtain the source
 
 The NeoMutt project is hosted on GitHub, so there are two main options to get
-the sources — either as Git repository or GitHub archive file. A repository,
+the sources -- either as Git repository or GitHub archive file. A repository,
 not only for [GitHub users](/dev/newbie-tutorial#github), provides some
 benefits over a single release or snapshot archive, e.g. will empower you to
 work with the source code and contribute to the project more easily.
@@ -38,6 +38,7 @@ git clone -b devel/autosetup https://github.com/neomutt/neomutt
 ### GitHub
 
 Latest release
+
 : <https://github.com/neomutt/neomutt/releases/latest>
 
 Select a source package (Tar or ZIP archive) and the checksum file for
@@ -46,6 +47,7 @@ integrity, see [Signing Code / Releases](/dev/signing#source-example) for an
 example.
 
 Specific branch
+
 : <https://github.com/neomutt/neomutt/archive/devel/autosetup.zip>
 
 Note, archive file verification isn't possible here because this is not
@@ -80,27 +82,27 @@ List supported options to adapt or fine tune NeoMutt's build.
 | Category         | Option/Variable             | Description                                                   |
 | :--------------- | :-------------------------- | :------------------------------------------------------------ |
 | General          | `--prefix=PREFIX`           | Install architecture-independent files in PREFIX [/usr/local] |
-| Curses vs S-Lang | `--with-slang[=DIR]`        | Use [S-Lang][co_slng] instead of *ncurses*                    |
-|                  | `--with-curses=DIR`         | Where [ncurses][co_crss] is installed                         |
+| Curses vs S-Lang | `--with-slang[=DIR]`        | Use [S-Lang][slng] instead of *ncurses*                       |
+|                  | `--with-curses=DIR`         | Where [ncurses][crss] is installed                            |
 | Features         | `--enable-notmuch`          | Enable [Notmuch](/feature/notmuch) support                    |
-|                  | `--enable-lua`              | Enable [Lua][co_lua] scripting support                        |
-|                  | `--enable-gpgme`            | Enable [GPGME][co_gpgme] support                              |
-| Header Caching   | `--with-gdbm[=DIR]`         | Use [GDBM][co_gdbm] for the header cache                      |
-|                  | `--with-tokyocabinet[=DIR]` | Use [Tokyo Cabinet][co_tcab] for the header cache             |
-|                  | `--with-kyotocabinet[=DIR]` | Use [Kyoto Cabinet][co_kcab] for the header cache             |
-|                  | `--with-qdbm[=DIR]`         | Use [QDBM][co_qdbm] for the header cache                      |
-|                  | `--with-bdb[=DIR]`          | Use [Berkeley DB][co_obdb] for the header cache               |
-|                  | `--with-lmdb[=DIR]`         | Use [LMDB][co_lmdb] for the header cache                      |
-| Security         | `--with-gss[=PFX]`          | Compile in [GSSAPI][co_gss2] authentication for IMAP          |
-|                  | `--with-ssl[=PFX]`          | Enable TLS support using [OpenSSL][co_ossl]                   |
-|                  | `--with-gnutls[=PFX]`       | Enable TLS support using [GnuTLS][co_gtls]                    |
-|                  | `--with-sasl[=PFX]`         | Use [SASL][co_sasl] network security library                  |
+|                  | `--enable-lua`              | Enable [Lua][lua] scripting support                           |
+|                  | `--enable-gpgme`            | Enable [GPGME][gpgme] support                                 |
+| Header Caching   | `--with-gdbm[=DIR]`         | Use [GDBM][gdbm] for the header cache                         |
+|                  | `--with-tokyocabinet[=DIR]` | Use [Tokyo Cabinet][tcab] for the header cache                |
+|                  | `--with-kyotocabinet[=DIR]` | Use [Kyoto Cabinet][kcab] for the header cache                |
+|                  | `--with-qdbm[=DIR]`         | Use [QDBM][qdbm] for the header cache                         |
+|                  | `--with-bdb[=DIR]`          | Use [Berkeley DB][obdb] for the header cache                  |
+|                  | `--with-lmdb[=DIR]`         | Use [LMDB][lmdb] for the header cache                         |
+| Security         | `--with-gss[=PFX]`          | Compile in [GSSAPI][gss2] authentication for IMAP             |
+|                  | `--with-ssl[=PFX]`          | Enable TLS support using [OpenSSL][ossl]                      |
+|                  | `--with-gnutls[=PFX]`       | Enable TLS support using [GnuTLS][gtls]                       |
+|                  | `--with-sasl[=PFX]`         | Use [SASL][sasl] network security library                     |
 | Debugging        | `--enable-debug`            | Enable debugging support                                      |
-|                  | `CFLAGS="-g -O0"`           | Set C compiler flags, e.g. for [GCC][co_dgcc]                 |
+|                  | `CFLAGS="-g -O0"`           | Set C compiler flags, e.g. for [GCC][dgcc]                    |
 
 ## Build
 
-Targets: neomutt, doc, …
+Targets: **neomutt**, **doc**, ...
 
 ```
 make
@@ -118,20 +120,33 @@ make install
 make uninstall
 ```
 
+*[GCC]: GNU Compiler Collection
+*[GDBM]: GNU Data Base Manager
+*[GPGME]: GnuPG Made Easy
+*[GSSAPI]: Generic Security Services Application Program Interface
+*[IMAP]: Internet Message Access Protocol
+*[LMDB]: Lightning Memory-Mapped Database Manager
+*[OBDB]: Oracle Berkeley Database
+*[QDBM]: Quick Data Base Manager
+*[SASL]: Simple Authentication and Security Layer
+*[TLS]: Transport Layer Security
+*[Tar]: Tape archiver
+*[ZIP]: file format, meaning “move at high speed”
+*[tarball]: Tar generated archive file
 
-[co_slng]:  <http://www.jedsoft.org/slang/>
-[co_crss]:  <https://www.gnu.org/software/ncurses/ncurses.html>
-[co_lua]:   <https://www.lua.org/>
-[co_gpgme]: <https://www.gnupg.org/related_software/gpgme/>
-[co_gdbm]:  <http://www.gnu.org.ua/software/gdbm/gdbm.html>
-[co_tcab]:  <http://fallabs.com/tokyocabinet/>
-[co_kcab]:  <http://fallabs.com/kyotocabinet/>
-[co_qdbm]:  <http://fallabs.com/qdbm/>
-[co_lmdb]:  <https://symas.com/lmdb/technical/>
-[co_gss2]:  <https://en.wikipedia.org/wiki/Generic_Security_Services_Application_Program_Interface>
-[co_ossl]:  <https://www.openssl.org/>
-[co_gtls]:  <https://www.gnutls.org/>
-[co_sasl]:  <https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer>
-[co_obdb]:  <http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html>
-[co_dgcc]:  <https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html>
+[crss]:  <https://www.gnu.org/software/ncurses/ncurses.html>
+[dgcc]:  <https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html>
+[gdbm]:  <http://www.gnu.org.ua/software/gdbm/gdbm.html>
+[gpgme]: <https://www.gnupg.org/related_software/gpgme/>
+[gss2]:  <https://en.wikipedia.org/wiki/Generic_Security_Services_Application_Program_Interface>
+[gtls]:  <https://www.gnutls.org/>
+[kcab]:  <http://fallabs.com/kyotocabinet/>
+[lmdb]:  <https://symas.com/lmdb/technical/>
+[lua]:   <https://www.lua.org/>
+[obdb]:  <http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html>
+[ossl]:  <https://www.openssl.org/>
+[qdbm]:  <http://fallabs.com/qdbm/>
+[sasl]:  <https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer>
+[slng]:  <http://www.jedsoft.org/slang/>
+[tcab]:  <http://fallabs.com/tokyocabinet/>
 

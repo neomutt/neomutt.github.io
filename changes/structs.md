@@ -1,13 +1,18 @@
 ---
 layout: concertina
-title: Renamed (typedef'd) structs
+title: Renamed (typedef'd) Structs
 ---
+
 # {{ page.title }}
+
+Many structs have been renamed by NeoMutt
+
+## Overview
 
 ### Typedefs
 
-Typedefs will only be used for opaque data types.
-These structs have also been renamed for consistency.
+Typedefs will only be used for opaque data types. These structs have also been
+renamed for consistency.
 
 | Old typedef             | New struct                 |
 | :---------------------- | :------------------------- |

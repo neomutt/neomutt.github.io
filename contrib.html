@@ -3,10 +3,14 @@ layout: concertina
 title: Contrib
 ---
 
-<h2>User Contributions to NeoMutt</h2>
+<h1>User Contributions to NeoMutt</h1>
+
+<p>Further project data and information provided by NeoMutt users</p>
+
+<h2>Participation</h2>
 
 <p>
-  NeoMutt is a fantastic program.  It's versatile, configurable, scriptable...<br>
+  NeoMutt is a fantastic program. It's versatile, configurable, scriptable...<br>
   This is your chance to help other NeoMutt users...
 </p>
 
@@ -45,16 +49,18 @@ title: Contrib
         <td>
           <a href="https://github.com/{{ c.username }}">{{ c.author }}</a>
         </td>
-        <td>
-          <a href="https://github.com/neomutt/neomutt/tree/master/contrib/{{ c.dir }}#readme">{{ c.dir }}</a>
-        </td>
+        {% if c.dir %}
+        <td><a href="https://github.com/neomutt/neomutt/tree/master/contrib/{{ c.dir }}#readme">{{ c.dir }}</a></td>
+        {% else %}
+        <td>&mdash;</td>
+        {% endif %}
         <td>
           {% case c.status %}
           {% when 'stable' %}
           {% assign span = true %}
-            <span class="good">✔
+            <span class="good">&#x2714;
           {% when 'devel' %}
-            <span class="devel">⚠
+            <span class="devel">&#x26A0;
           {% endcase %}
             {{ c.status }}
           {% if span == true %}

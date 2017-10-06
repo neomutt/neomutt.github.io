@@ -6,8 +6,12 @@ description: How to Debug NeoMutt
 
 # {{ page.title }}
 
+When things needs further investigation
+
+## Available procedures
+
 - Logging
-- Starting NeoMutt in a debugger
+- Starting NeoMutt in a debugger, e.g. [cgdb](https://cgdb.github.io/)
 - Attaching a debugger to NeoMutt
 - Debugging a coredump
 
@@ -24,19 +28,19 @@ tail -F ~/.muttdebug0
 ## Starting NeoMutt in a debugger
 
 ```
-cgdb mutt
+cgdb neomutt
 ```
 
 ## Attaching a debugger to NeoMutt
 
 ```
-ps ux | grep "[m]utt"
+ps ux | grep "neomutt"
 cgdb --pid 1234
 ```
 
 ## Debugging a coredump
 
 ```
-cgdb mutt coredump
+cgdb neomutt coredump
 ```
 

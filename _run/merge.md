@@ -1,14 +1,18 @@
 ---
 layout: concertina
-title: Merging
-description: When to merge?  When to squash?
+title: Branch Merging
+description: When to merge? When to squash?
 author: Richard Russon
 status: wip
 ---
 
 # {{ page.title }}
 
-Recently, someone asked me the difference between GitHub's three merge options.
+Integrate your work and bring things together
+
+## Initial situation
+
+Recently, someone asked about the difference between GitHub's three merge options.
 Here are some helpful pictures:
 
 ```reply
@@ -17,15 +21,14 @@ Here are some helpful pictures:
 D---E---F---G master
 ```
 
-A developer has created branch from master's commit E.
-(this is known as a topic branch in git terminology)
+A developer has created branch from master's commit E (this is known as a topic
+branch in Git terminology).
 
 They committed A, B, C.
 
 Meanwhile commits F and G were added to master.
 
-Create a Merge Commit
----------------------
+## Create a merge commit
 
 ```reply
       A---B---C topic
@@ -44,11 +47,10 @@ git merge --no-ff topic
 D---E---F---G---H master
 ```
 
-The topic branch has been merged into master with a "merge commit".
-The topic's history hasn't been changed.
+The topic branch has been merged into master with a "merge commit". The
+topic's history hasn't been changed.
 
-Squash and Merge
-----------------
+## Squash and merge
 
 ```reply
       A---B---C topic
@@ -56,8 +58,10 @@ Squash and Merge
 D---E---F---G---H master
 ```
 
+```
 git checkout topic
 git rebase master
+```
 
 ```reply
               A---B---C topic
@@ -77,8 +81,8 @@ git rebase --interactive
 D---E---F---G master
 ```
 
-Git's interactive rebase allows you to reorder commits and squash them
-into one bit commit: H.
+Git's interactive rebase allows you to reorder commits and squash them into one
+bit commit: H.
 
 ```
 git checkout master
@@ -91,8 +95,7 @@ D---E---F---G---H master
 
 The squashed commit, H, has been added to the HEAD of master.
 
-Rebase and Merge
-----------------
+## Rebase and merge
 
 ```reply
       A---B---C topic
@@ -123,12 +126,12 @@ git merge --no-ff topic
 D---E---F---G-----------H master
 ```
 
-The topic branch has been merged into master with a "merge commit".  The
-topic's history looks the same, but appears to have happened just now.
+The topic branch has been merged into master with a "merge commit". The topic's
+history looks the same, but appears to have happened just now.
 
-This option makes the history look tidiers.  Rather than having multiple
-topic branches being created and merged at different times (all
-overlapping), they are separated out.
+This option makes the history look tidiers. Rather than having multiple topic
+branches being created and merged at different times (all overlapping), they
+are separated out.
 
 Here are three topic branches being merged sequentially:
 
@@ -138,9 +141,9 @@ Here are three topic branches being merged sequentially:
 o---o---o---o-----------o--o-----------o--o-----------o master
 ```
 
-------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
-When to merge?  When to squash?
+When to merge? When to squash?
 
 When work is merged into master:
 
@@ -154,6 +157,7 @@ If there are more than 2 commits, then rebase and merge into master:
   `merge --no-ff`
 
 GitHub's documentation is here:
-  https://help.github.com/articles/merging-a-pull-request/
-  https://help.github.com/articles/about-pull-request-merges/
+
+- [Merging a pull request](https://help.github.com/articles/merging-a-pull-request/)
+- [About pull request merges](https://help.github.com/articles/about-pull-request-merges/)
 

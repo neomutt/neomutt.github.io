@@ -2,7 +2,12 @@
 layout: concertina
 title: Changes in NeoMutt
 ---
+
 # {{ page.title }}
+
+A short overview of some statistic since the project starts
+
+## What has been done
 
 Quick stats about NeoMutt:
 
@@ -15,6 +20,7 @@ Quick stats about NeoMutt:
 This section lists the differences between Mutt and NeoMutt.
 
 **I am a**:
+
 - [NeoMutt User](user)
 - [NeoMutt Developer](devel)
 

@@ -11,8 +11,8 @@ maintainer: sthen
 
 ## Support <a class="offset" id="support"></a>
 
-NeoMutt is provided as a separate package in -current/snapshots.
-The first release containing it will be 6.1.
+NeoMutt is provided as a separate package in -current/snapshots. The first
+release containing it will be 6.1.
 
 ## Installation <a class="offset" id="install"></a>
 
@@ -32,7 +32,7 @@ a	0: <None>
 	2: neomutt-20161028-gpgme
 	3: neomutt-20161028-gpgme-sasl
 	4: neomutt-20161028-sasl
-Your choice: 
+Your choice:
 ```
 
 ## Update <a class="offset" id="update"></a>
@@ -47,7 +47,7 @@ Your choice:
 # pkg_delete neomutt
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from source <a class="offset" id="build"></a>
 
 To install the main dependencies for building NeoMutt and documentation:
 
@@ -57,14 +57,13 @@ To install the main dependencies for building NeoMutt and documentation:
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-Alternatively, checkout/update the ports tree and build in the usual way (NeoMutt is in /usr/ports/mail/neomutt).
-
+Alternatively, checkout/update the ports tree and build in the usual way
+(NeoMutt is in /usr/ports/mail/neomutt).
 
 ## Debugging <a class="offset" id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
-
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 

@@ -1,7 +1,8 @@
 ---
 layout: concertina
-title: NeoMutt - A Developer's View
+title: NeoMutt -- A Developer's View
 ---
+
 # {{ page.title }}
 
 NeoMutt has many improvements over Mutt.
@@ -41,7 +42,7 @@ provide a static analysis of the code.
 
 Since splitting from Mutt, NeoMutt have fixed over 200 defects (e.g. resource
 leaks, unset pointers) raised by Coverity.  NeoMutt's "defect density" is 0.70.
-            
+
 ## Removed
 
 NeoMutt wants to remain compatible with Mutt, but it also wants to improve the
@@ -69,17 +70,17 @@ Many files have been removed from the repo:
 
 These options have been removed from configure.
 
-| Options                     | Reason for Removal   |
-| :-------------------------- | -------------------- |
-| `--disable-iconv`           | Use system version   |
-| `--disable-warnings`        | Obsolete             |
-| `--enable-exact-address`    | Obsolete             |
-| `--enable-external-dotlock` | Obsolete             |
-| `--enable-hcache`           | Use backend options  |
-| `--enable-nfs-fix`          | Obsolete             |
-| `--with-exec-shell`         | Obsolete             |
-| `--with-included-gettext`   | Use system version   |
-| `--with-regex`              | Use system version   |
+| Options                     | Reason for Removal  |
+| :-------------------------- | :------------------ |
+| `--disable-iconv`           | Use system version  |
+| `--disable-warnings`        | Obsolete            |
+| `--enable-exact-address`    | Obsolete            |
+| `--enable-external-dotlock` | Obsolete            |
+| `--enable-hcache`           | Use backend options |
+| `--enable-nfs-fix`          | Obsolete            |
+| `--with-exec-shell`         | Obsolete            |
+| `--with-included-gettext`   | Use system version  |
+| `--with-regex`              | Use system version  |
 
 ### Code
 
@@ -102,13 +103,13 @@ These are now readily available and have become build requirements.
 The "security-checking" script `check_sec.sh` has been removed along with the
 comment markers it needed.  This job is better done by coverity:
 
-- `__FOPEN_CHECKED__ `
-- `__FREE_CHECKED__ `
-- `__MEM_CHECKED__ `
-- `__SAFE_FREE_CHECKED__ `
-- `__SPRINTF_CHECKED__ `
-- `__STRCAT_CHECKED__ `
-- `__STRCPY_CHECKED__ `
+- `__FOPEN_CHECKED__`
+- `__FREE_CHECKED__`
+- `__MEM_CHECKED__`
+- `__SAFE_FREE_CHECKED__`
+- `__SPRINTF_CHECKED__`
+- `__STRCAT_CHECKED__`
+- `__STRCPY_CHECKED__`
 - `__STRNCAT_CHECKED__`
 
 Finally, the code that parsed and listed the PATCHES has been dropped.
@@ -169,7 +170,7 @@ The features didn't have any build dependencies, so they are **always** built
 in.
 
 | Options               | State    |
-| :-------------------- | -------- |
+| :-------------------- | :------- |
 | `--enable-compressed` | Built in |
 | `--enable-imap`       | Built in |
 | `--enable-mailtool`   | Built in |
@@ -197,7 +198,7 @@ The code has undergone extensive improvements.
 - Boolify struct members
 - strcmp-like functions == 0
 - Remove () from return
-- Fix `mutt_message _()` mising ()s
+- Fix `mutt_message` `_()` missing ()s
 - Add argument name to function prototypes
 - Reduce scope of for variables
 - Limit scope of functions (static) and rename
@@ -212,7 +213,7 @@ The code has undergone extensive improvements.
 - Use SEEK_SET SEEK_CUR SEEK_END
 - sizeof X -\> sizeof(X)
 - Fix calloc args (num, size)
-- Remove Mutt-isms: FOREVER, etc
+- Remove Mutt-isms: FOREVER, etc.
 - dprint -\> mutt_debug
 
 ### Docs
@@ -251,7 +252,7 @@ These configure options have been added to NeoMutt.
 | `--enable-everything` | Build everything possible                |
 | `--enable-fmemopen`   | Unstable feature                         |
 | `--enable-lua`        | Enable Lua Scripting                     |
-| `--enable-notmuch`    | Enable NotMuch searching                 |
+| `--enable-notmuch`    | Enable Notmuch searching                 |
 
 ### Code
 

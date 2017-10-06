@@ -1,18 +1,19 @@
 ---
 layout: concertina
-title: Doxygen
+title: Doxygen Comments
 description: Formatted Comment Blocks
 status: wip
 author: flatcap
 ---
 
-# Doxygen Comments
+# {{ page.title }}
 
-[Doxygen](http://doxygen.org) reads specially formatted comment blocks and
-turns them into documentation.
+[Doxygen](https://www.stack.nl/~dimitri/doxygen/) reads specially formatted
+comment blocks and turns them into documentation.
 
-The Doxygen [documentation](http://www.stack.nl/~dimitri/doxygen/manual/commands.html)
-lists all the possible commands.  Some common ones are:
+The Doxygen
+[documentation](https://www.stack.nl/~dimitri/doxygen/manual/commands.html)
+lists all the possible commands. Some common ones are:
 
 - **@param**   -- a function parameter
 - **@struct**  -- a C-struct.
@@ -25,7 +26,7 @@ lists all the possible commands.  Some common ones are:
 
 ## Functions
 
-Here's a basic template for a function comment.  It begins with two asterisks.
+Here's a basic template for a function comment. It begins with two asterisks.
 
 ```
 /**
@@ -42,7 +43,7 @@ Here's a basic template for a function comment.  It begins with two asterisks.
 
 The `@param` can have an optional suffix indicating the direction:
 
-- `[in]` -- a normal inbound parameter
+- `[in]`  -- a normal inbound parameter
 - `[out]` -- an "out-param" (a value passed to the caller)
 
 ```
@@ -53,10 +54,11 @@ The `@param` can have an optional suffix indicating the direction:
  *
 ```
 
-The return value `@return` could be descriptive, e.g. "Number of apples", or a
-list of possible values.
+The return value `@return` could be descriptive, e.g. "Number of apples", or
+a list of possible values.
 
-Here, we have XXX inserted and extra `*` to make the text into a list (in Markdown).
+Here, we have XXX inserted and extra `*` to make the text into a list (in
+Markdown).
 
 ```
  *
@@ -85,6 +87,4 @@ Here's an example function comment block from `sidebar.c`:
  */
 static int draw_divider(int num_rows, int num_cols)
 ```
-
-
 

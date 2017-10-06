@@ -7,39 +7,50 @@ username: gahr
 status: stable
 ---
 
-# NeoMutt's hcache benchmark
+# {{ page.title }}
 
 ## Introduction
 
-The [shell script](/contrib/hcache-bench.sh) and the [configuration file](/contrib/hcache-bench.rc) can be used to benchmark the NeoMutt hcache backends. 
+The [shell script](/contrib/hcache-bench.sh) and the
+[configuration file](/contrib/hcache-bench.rc) can be used to benchmark the
+NeoMutt hcache backends.
 
 ## Preparation
 
-In order to run the benchmark, you must have a directory in maildir format at hand. Mutt will load messages from there and populate the header cache with them. Please note that you'll need a reasonable large number of messages - >50k - to see anything interesting.
+In order to run the benchmark, you must have a directory in maildir format at
+hand. NeoMutt will load messages from there and populate the header cache with
+them. Please note that you'll need a reasonable large number of messages --
+\>50k -- to see anything interesting.
 
 ## Running the benchmark
 
 The script accepts the following arguments
 
 ```reply
--e Path to the mutt executable
+-e Path to the neomutt executable
 -m Path to the maildir directory
 -t Number of times to repeat the test
 -b List of backends to test
 ```
 
-Example: `./neomutt-hcache-bench.sh -e /usr/local/bin/mutt -m ../maildir -t 10 -b "lmdb qdbm bdb kyotocabinet"`
+Example: \\
+`./neomutt-hcache-bench.sh -e /usr/local/bin/neomutt -m ../maildir -t 10 -b "lmdb qdbm bdb kyotocabinet"`
 
 ## Operation
 
-The benchmark works by instructing mutt to use the backends specified with `-b` one by one and to load the messages from the maildir specified with `-m`. Mutt is launched twice with the same configuration. The first time, no header cache storage exists, so mutt populates it. The second time, the previously populated header cache storage is used to reload the headers. The times taken to execute these two operations are kept track of independently.
+The benchmark works by instructing NeoMutt to use the backends specified with `-b`
+one by one and to load the messages from the maildir specified with `-m`. NeoMutt
+is launched twice with the same configuration. The first time, no header cache
+storage exists, so NeoMutt populates it. The second time, the previously populated
+header cache storage is used to reload the headers. The times taken to execute
+these two operations are kept track of independently.
 
 At the end, a summary with the average times is provided.
 
 ## Sample output
 
 ```
-$ sh neomutt-hcache-bench.sh -m ~/maildir -e mutt -t 10 -b "bdb gdbm qdbm lmdb kyotocabinet tokyocabinet"
+$ sh neomutt-hcache-bench.sh -m ~/maildir -e neomutt -t 10 -b "bdb gdbm qdbm lmdb kyotocabinet tokyocabinet"
 ```
 
 ```reply
@@ -84,16 +95,19 @@ tokyocabinet   2.526 real 1.395 user .581 sys
 
 ## Notes
 
-The benchmark uses a temporary directory for the log files and the header cache storage files. These are left available for inspection. This also means that *you* must take care of removing the temporary directory once you are done.
+The benchmark uses a temporary directory for the log files and the header cache
+storage files. These are left available for inspection. This also means that
+*you* must take care of removing the temporary directory once you are done.
 
-The path to the temporary directory is printed on standard output when the benchmark starts, e.g., `Running in /tmp/tmp.WjSFtdPf`.
+The path to the temporary directory is printed on standard output when the
+benchmark starts, e.g., `Running in /tmp/tmp.WjSFtdPf`.
 
 ## Results of Run 1 - 10 iterations, 100,000 emails
 
 ### populate
 
 | database     | real     | user     | sys      |
-|:-------------|---------:|---------:|---------:|
+| :----------- | -------: | -------: | -------: |
 | bdb          | 3.529000 | 1.820000 | 0.597000 |
 | lmdb         | 3.564000 | 1.720000 | 0.642000 |
 | qdbm         | 3.584000 | 2.886000 | 0.618000 |
@@ -104,7 +118,7 @@ The path to the temporary directory is printed on standard output when the bench
 ### reload
 
 | database     | real     | user     | sys      |
-|:-------------|---------:|---------:|---------:|
+| :----------- | -------: | -------: | -------: |
 | lmdb         | 0.966000 | 0.766000 | 0.183000 |
 | bdb          | 1.060000 | 0.858000 | 0.192000 |
 | gdbm         | 1.179000 | 0.966000 | 0.188000 |
@@ -117,7 +131,7 @@ The path to the temporary directory is printed on standard output when the bench
 ### populate
 
 | database     | real     | user     | sys      |
-|: ------------|---------:|---------:|---------:|
+|: ------------| -------: | -------: | -------: |
 | bdb          | 3.454000 | 1.835000 | 0.595000 |
 | qdbm         | 3.570000 | 2.857000 | 0.629000 |
 | lmdb         | 3.597000 | 1.747000 | 0.636000 |
@@ -128,7 +142,7 @@ The path to the temporary directory is printed on standard output when the bench
 ### reload
 
 | database     | real     | user     | sys      |
-|:-------------|---------:|---------:|---------:|
+| :----------- | -------: | -------: | -------: |
 | lmdb         | 0.926000 | 0.745000 | 0.173000 |
 | bdb          | 1.049000 | 0.855000 | 0.188000 |
 | gdbm         | 1.157000 | 0.954000 | 0.191000 |
@@ -141,7 +155,7 @@ The path to the temporary directory is printed on standard output when the bench
 ### populate
 
 | database     | real     | user     | sys      |
-|:-------------|---------:|---------:|---------:|
+| :----------- | -------: | -------: | -------: |
 | bdb          | 3.306000 | 1.609000 | 0.606000 |
 | qdbm         | 3.344000 | 2.632000 | 0.622000 |
 | tokyocabinet | 3.433000 | 2.690000 | 0.727000 |
@@ -152,7 +166,7 @@ The path to the temporary directory is printed on standard output when the bench
 ### reload
 
 | database     | real     | user     | sys      |
-|:-------------|---------:|---------:|---------:|
+| :----------- | -------: | -------: | -------: |
 | lmdb         | 0.730000 | 0.544000 | 0.179000 |
 | bdb          | 0.854000 | 0.655000 | 0.192000 |
 | gdbm         | 0.936000 | 0.738000 | 0.190000 |

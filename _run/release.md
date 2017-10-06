@@ -12,8 +12,8 @@ This will eventually be a complete guide to making a release of NeoMutt.
 
 ## Schedule
 
-NeoMutt's current development plan is to follow each feature release with a
-stabilising bug-fix release.
+NeoMutt's current development plan is to follow each feature release with
+a stabilising bug-fix release.
 
 * 3 weeks of feature development
 * 1 week of bug-fixing / stabilisation
@@ -21,10 +21,10 @@ stabilising bug-fix release.
 ## Anticipation
 
 - 1 week heads up to dev mailing list
-- Coming soon - list of features to users mailing list
+- Coming soon -- list of features to users mailing list
 - Merge mutt upstream
 - Merge translations
-- Waffle - clear "Ready" column
+- Waffle -- clear "Ready" column
 
 ## Preparation
 
@@ -75,7 +75,7 @@ Code:
   - configure.ac YYYYDDMM, 1.8.0
 - ChangeLog.neomutt
 - configure.ac (fix date)
-- Update neomuttrc.vim with new variables, etc
+- Update neomuttrc.vim with new variables, etc.
 - Update po files
 
 ## Testing
@@ -109,7 +109,7 @@ build (don't use my script)
 
 Assets
 
-- make dist -> tar
+- make dist -\> tar
 - diff against mutt-1.8.0
   - test patch apply
   - test build
@@ -131,7 +131,7 @@ Fedora COPR
 - build
 - test install
 
-MacOS - Homebrew
+MacOS -- Homebrew
 
 - update Formula
 - push
@@ -162,7 +162,7 @@ Email
 - neomutt-users mailing list
 - neomutt-devel mailing list
 - New users with a link to their name in the credits
-- Translators - send them new po files
+- Translators -- send them new po files
 
 Update IRC topic
 Twitter
@@ -171,15 +171,13 @@ Twitter
 
 - Waffle: Archive the "Done" column
 - Update milestones
-  - next-release -> release-YYYY-MM-DD
-  - delayed      -> next-release
+  - next-release -\> release-YYYY-MM-DD
+  - delayed      -\> next-release
   - create "delayed"
 - GitHub: delete old branches
 - Merge delayed issues
 
---------------------------------------------------------------------------------
-
-## Leftover Notes
+## Leftover notes
 
 change naming from YYYYMMDD to YYYY-MM-DD?
 
@@ -188,7 +186,7 @@ update release credits
     list of new
     list of returnees
 
-automate github release
+automate GitHub release
     tag, push, create release, push, assets, checksum
 
 reference neomutt repo and neomutt tagline in README
@@ -203,7 +201,7 @@ release repo for notes and scripts
 
 check of HCACHEVER has changed, notify if it has
 
-Check notes, emails, etc for promises
+Check notes, emails, etc. for promises
 
 release link new feature to web page
 

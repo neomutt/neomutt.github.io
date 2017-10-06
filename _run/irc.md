@@ -1,29 +1,27 @@
 ---
 layout: concertina
-title: IRC
+title: 'IRC &ndash; #neomutt'
 description: How to run an IRC channel
 author: Richard Russon
 ---
 
 # {{ page.title }}
 
-NeoMutt has an IRC channel: **#neomutt** on [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
+Useful commands to help run our IRC channel [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
 
-This is a list of useful commands to help run our IRC channel.
-
-## Getting Started
+## Getting started
 
 **Register Nick:**
 
-Before you can become a channel operator, you need to register your nick.
-This will prevent other people from impersonating you.
+Before you can become a channel operator, you need to register your nick. This
+will prevent other people from impersonating you.
 
 ```
 /msg nickserv register <password> <email>
 ```
 
-Then validate your email address.
-Each time you connect to the server, you can then identify yourself:
+Then validate your email address. Each time you connect to the server, you can
+then identify yourself:
 
 ```
 /msg nickserv identify <password>
@@ -37,7 +35,7 @@ Registering a channel prevents others taking it over when you're not present.
 /msg chanserv register #<channel>
 ```
 
-## User Privs
+## User privs
 
 **Show User Privs:**
 
@@ -57,16 +55,16 @@ First, get a list of available flags:
 
 Then set flags on a user:
 
-- "**+**" Add privs
-- "**-**" Remove privs
-- "**\***" All privs (except Founder)
+- "__+__" Add privs
+- "__-__" Remove privs
+- "__*__" All privs (except Founder)
 
 ```
 /msg chanserv flags #<channel> <username> +*F
 /msg chanserv flags #<channel> <username> -OV
 ```
 
-## Channel Privs
+## Channel privs
 
 **Show Channel Privs:**
 
@@ -81,8 +79,7 @@ Then set flags on a user:
 /msg chanserv set #<channel> email <email>
 ```
 
-
-## Managing the Channel
+## Managing the channel
 
 **Op User:** (take operator privs)
 
@@ -114,4 +111,5 @@ Then set flags on a user:
 /mode #<channel> +b <filter>
 ```
 
-Where the filter is of the form: `nick!user@host` (with "*" as a wildcard). 
+Where the filter is of the form: `nick!user@host` (with "\*" as a wildcard).
+
