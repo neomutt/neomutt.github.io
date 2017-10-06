@@ -184,12 +184,12 @@ status: stable
         </div>
       </div>
       <pre class="screen">
-open-hook regexp shell-command
+open-hook regex shell-command
 </pre>
       <p>If NeoMutt is unable to open a file, it then looks for
       <code class="literal">open-hook</code> that matches the filename.</p>
       <p>If your compression program doesn't have a well-defined extension, then you can use
-      <code class="literal">.</code>as the regexp.</p>
+      <code class="literal">.</code>as the regex.</p>
       <div class="sect3">
         <div class="titlepage">
           <div>
@@ -211,7 +211,7 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
             </li>
             <li class="listitem">
               <p>NeoMutt has an
-              <code class="literal">open-hook</code> whose regexp matches the filename:
+              <code class="literal">open-hook</code> whose regex matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
@@ -235,7 +235,7 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
         </div>
       </div>
       <pre class="screen">
-close-hook regexp shell-command
+close-hook regex shell-command
 </pre>
       <p>When NeoMutt has finished with a compressed mail folder, it will look for a matching
       <code class="literal">close-hook</code> to recompress the file. This hook is
@@ -270,7 +270,7 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
             </li>
             <li class="listitem">
               <p>NeoMutt has a
-              <code class="literal">close-hook</code> whose regexp matches the filename:
+              <code class="literal">close-hook</code> whose regex matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
@@ -297,7 +297,7 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
         </div>
       </div>
       <pre class="screen">
-append-hook regexp shell-command
+append-hook regex shell-command
 </pre>
       <p>When NeoMutt wants to append an email to a compressed mail folder, it will look for a matching
       <code class="literal">append-hook</code>. This hook is
@@ -340,7 +340,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
             </li>
             <li class="listitem">
               <p>NeoMutt has an
-              <code class="literal">append-hook</code> whose regexp matches the filename:
+              <code class="literal">append-hook</code> whose regex matches the filename:
               <code class="literal">\.gz$</code></p>
             </li>
             <li class="listitem">
@@ -371,7 +371,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>NeoMutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/guide/reference.html#save-empty" title="3.293.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/guide/reference.html#save-empty" title="3.291.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -383,7 +383,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.386.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.384.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -402,9 +402,9 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
 # work with compressed, or encrypted, mailboxes.
 
 # The hooks are of the form:
-#       open-hook   regexp "shell-command"
-#       close-hook  regexp "shell-command"
-#       append-hook regexp "shell-command"
+#       open-hook   regex "shell-command"
+#       close-hook  regex "shell-command"
+#       append-hook regex "shell-command"
 # The 'append-hook' is optional.
 
 # Handler for gzip compressed mailboxes</span>
@@ -450,22 +450,22 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="/guide/advancedusage.html#regex" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.386.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.384.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#mbox-type" title="3.159.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/guide/reference.html#mbox-type" title="3.157.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#save-empty" title="3.293.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/guide/reference.html#save-empty" title="3.291.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">

@@ -94,7 +94,7 @@ status: stable
     <div >
       <a class="offset" id="table-status-color-colors"></a>
       <p class="title">
-        <strong>Table&#160;33.1.&#160;Status Colors</strong>
+        <strong>Table&#160;32.1.&#160;Status Colors</strong>
       </p>
       <div class="table-contents">
         <table summary="Status Colors" border="1">
@@ -151,7 +151,7 @@ set sort_aux=last-date-received
 color status blue white
 <span class="comment"># 1 extra parameter
 # Set the color for a matching pattern
-# color status foreground background regexp
+# color status foreground background regex
 # Highlight New, Deleted, or Flagged emails</span>
 color status brightred white '(New|Del|Flag):[0-9]+'
 <span class="comment"># Highlight mailbox ordering if it's different from the default
@@ -161,7 +161,7 @@ color status brightred default '\([^)]+/[^)]+\)'
 color status default   default '\(threads/last-date-received\)'
 <span class="comment"># 2 extra parameters
 # Set the color for the nth submatch of a pattern
-# color status foreground background regexp num
+# color status foreground background regex num
 # Highlight the contents of the []s but not the [] themselves</span>
 color status red default '\[([^]]+)\]' 1
 <span class="comment"># The '1' refers to the first regex submatch, which is the inner
@@ -190,7 +190,7 @@ color status brightwhite default 'NeoMutt: ([^ ]+)' 1
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/advancedusage.html#regexp" title="2.&#160;Regular Expressions">Regular Expressions</a>
+            <a class="link" href="/guide/advancedusage.html#regex" title="2.&#160;Regular Expressions">Regular Expressions</a>
           </p>
         </li>
         <li class="listitem">
