@@ -31,7 +31,7 @@ Please help with whatever you can...
   - Improve the existing docs or [man pages][manuals]
   - Add new documentation
   - Write a [guide to something][contrib] you know and use
-  - Proofread docs and [offer improvement][pullreq] suggestions
+  - Proofread docs and offer improvement suggestions
   - Search the internet for useful guides that we should host
 * Translations -- update a [foreign language][translate]
 * Contrib -- [add something][contrib] that extends NeoMutt
@@ -47,7 +47,6 @@ Please help with whatever you can...
 [doxygen]: </dev/doxygen>
 [issues]: <https://github.com/neomutt/neomutt/issues>
 [manuals]: </man.html>
-[pullreq]: </run/new-pr>
 [translate]: </translate.html>
 [upstream]: <https://github.com/neomutt/upstream-mutt/tree/default>
 
