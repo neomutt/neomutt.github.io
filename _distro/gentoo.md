@@ -12,8 +12,8 @@ maintainer: grobian
 ## Support <a class="offset" id="support"></a>
 
 Ebuilds for NeoMutt can be found in the gentoo\_neomutt overlay. These ebuilds
-are similar, but not equal to the mail‑client/mutt ebuilds in Gentoo. You need
-to add the overlay to your repos.conf first
+are similar, but not equal to the mail&#x2011;client&#x2060;/&#x2060;mutt
+ebuilds in Gentoo. You need to add the overlay to your repos.conf first.
 
 ## Checking out the overlay <a class="offset" id="checkout"></a>
 
