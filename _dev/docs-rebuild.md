@@ -103,7 +103,7 @@ DocBook to HTML. Chapters are turned into separate pages. Sections are given
 
 Also, \<note\> and \<example\> are turned into \<span\> or \<div\> with
 classes, so that they can be themed. This is also where \<quote\>s are turned
-into “smart quoted” strings.
+into "smart quoted" strings.
 
 We now have some HTML, that looks machine-generated.
 

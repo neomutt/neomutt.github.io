@@ -131,7 +131,7 @@ make uninstall
 *[SASL]: Simple Authentication and Security Layer
 *[TLS]: Transport Layer Security
 *[Tar]: Tape archiver
-*[ZIP]: file format, meaning “move at high speed”
+*[ZIP]: archive file format, meaning &ldquo;move at high speed&rdquo;
 *[tarball]: Tar generated archive file
 
 [crss]:  <https://www.gnu.org/software/ncurses/ncurses.html>

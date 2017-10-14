@@ -420,8 +420,8 @@ Some of NeoMutt's formatting strings have extra expandos.
 | %I      | initials of author                                                |
 | %K      | the list to which the letter was sent (if any; otherwise: empty)  |
 | %q      | newsgroup name (if compiled with NNTP support)                    |
-| %W      | name of organization of author (“Organization:” field)            |
-| %x      | “X-Comment-To:” field (if present and compiled with NNTP support) |
+| %W      | name of organization of author ("Organization:" field)            |
+| %x      | "X-Comment-To:" field (if present and compiled with NNTP support) |
 | %zs     | message status flags                                              |
 | %zc     | message crypto flags                                              |
 | %zt     | message tag flags                                                 |
