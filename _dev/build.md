@@ -1,11 +1,13 @@
 ---
 layout: concertina
 title: Building NeoMutt
-description: How to build NeoMutt from the Source Code
+description: How to build NeoMutt from the source code (Autoconf)
 status: wip
 ---
 
 # {{ page.title }}
+
+{{ page.description }}
 
 ## Install dependencies
 
@@ -28,11 +30,11 @@ also see our [list of branches](/dev/branches).
 git clone https://github.com/neomutt/neomutt
 ```
 
-Same as above but pointing to an other branch, e.g. `devel/autosetup`, for
+Same as above but pointing to an other branch, e.g. `sample/summary`, for
 checkout.
 
 ```
-git clone -b devel/autosetup https://github.com/neomutt/neomutt
+git clone -b sample/summary https://github.com/neomutt/neomutt
 ```
 
 ### GitHub
@@ -48,7 +50,7 @@ example.
 
 Specific branch
 
-: <https://github.com/neomutt/neomutt/archive/devel/autosetup.zip>
+: <https://github.com/neomutt/neomutt/archive/sample/summary.zip>
 
 Note, archive file verification isn't possible here because this is not
 a NeoMutt release archive and thus no checksum file is available. Consider to
