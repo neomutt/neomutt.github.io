@@ -1,0 +1,352 @@
+---
+layout: concertina
+title: Custom backend based Tags
+description: Implements Notmuch tags and Imap keywords
+since: 2017-10-13
+status: stable
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a class="offset" id="feature/custom-tags"></a>Custom backend based Tags Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Implements Notmuch tags and Imap keywords</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2017-10-16</p>
+    <p>
+      <span class="bold">
+        <strong>Dependencies:</strong>
+      </span>
+    </p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/quasi-delete" title="Quasi-Delete Feature">quasi-delete feature</a>
+          </p>
+        </li>
+        <li class="listitem">
+          <p>
+            <a class="link" href="/feature/index-color" title="Index Color Feature">index-color feature</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>Some backends allow to index and tags mail without storing the tags within the mail envelope. Two backends are currently implementing this feature. Notmuch handles them natively and IMAP stores them in custom IMAP keywords.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="variables"></a>3.&#160;Variables</h2>
+        </div>
+      </div>
+    </div>
+    <div >
+      <a class="offset" id="table-custom-tags-variables"></a>
+      <p class="title">
+        <strong>Table&#160;25.1.&#160;Custom tags Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Custom tags Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">hidden_tags</code>
+              </td>
+              <td>string</td>
+              <td>
+                <code class="literal">unread,draft,flagged,passed,replied,attachment,signed,encrypted</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="functions"></a>4.&#160;Functions</h2>
+        </div>
+      </div>
+    </div>
+    <p>Notmuch adds the following functions to NeoMutt. By default, none of them are bound to keys.</p>
+    <div >
+      <a class="offset" id="table-custom-tags-functions"></a>
+      <p class="title">
+        <strong>Table&#160;25.2.&#160;Notmuch/IMAP Functions</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Notmuch/IMAP Functions" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Menus</th>
+              <th>Function</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>index,pager</td>
+              <td>
+                <code class="literal">&lt;modify-labels&gt;</code>
+              </td>
+              <td>add, remove, or toggle tags: IMAP: edit the tags list Notmuch: [+]&lt;tag&gt; to add, -&lt;tag&gt; to remove, !&lt;tag&gt; to toggle(notmuch) tags. Note: Tab completion of tag names is available</td>
+            </tr>
+            <tr>
+              <td>index,pager</td>
+              <td>
+                <code class="literal">&lt;modify-labels-then-hide&gt;</code>
+              </td>
+              <td>add, remove, or toggle tags IMAP: edit the tags list Notmuch: [+]&lt;tag&gt; to add, -&lt;tag&gt; to remove, !&lt;tag&gt; to toggle labels and then hide or unhide the message by changing the "quasi-deleted" to match if it would be shown when requerying. Normal redisplay rules apply here, so the user must call &lt;sync-mailbox&gt; for the changes to be displayed. Note: Tab completion of tag names is available.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="commands"></a>5.&#160;Commands</h2>
+        </div>
+      </div>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">tag-transforms</code>
+      <em class="replaceable">
+        <code>tag</code>
+      </em>
+      <em class="replaceable">
+        <code>transformed-string</code>
+      </em>{
+      <em class="replaceable">
+        <code>tag</code>
+      </em>
+      <em class="replaceable">
+        <code>transformed-string</code>
+      </em>...}
+      <br />
+      <code class="command">tag-formats</code>
+      <em class="replaceable">
+        <code>tag</code>
+      </em>
+      <em class="replaceable">
+        <code>format-string</code>
+      </em>{
+      <em class="replaceable">
+        <code>tag</code>
+      </em>
+      <em class="replaceable">
+        <code>format-string</code>
+      </em>...}</p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="colors"></a>6.&#160;Colors</h2>
+        </div>
+      </div>
+    </div>
+    <p>Adds these to index-color feature:</p>
+    <div >
+      <a class="offset" id="table-custom-tags-colors"></a>
+      <p class="title">
+        <strong>Table&#160;25.3.&#160;Index Colors</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Index Colors" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Object</th>
+              <th>Pattern</th>
+              <th>Highlights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">index_tag</code>
+              </td>
+              <td>yes</td>
+              <td>an individual message tag, %G, uses tag name</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_tags</code>
+              </td>
+              <td>no</td>
+              <td>the transformed message tags, %g or %J</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="neomuttrc"></a>7.&#160;neomuttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example NeoMutt config file for the custom tags feature.
+
+# VARIABLES - shown with their default values
+# --------------------------------------------------------------------------
+# This variable specifies private notmuch tags which should not be printed
+# on screen (index, pager).</span>
+set nm_hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
+<span class="comment"># --------------------------------------------------------------------------
+# FUNCTIONS - shown with an example mapping
+# --------------------------------------------------------------------------
+# modify (notmuch/imap) tags</span>
+bind index,pager \` modify-labels
+<span class="comment"># modify (notmuch/imap) tag non-interactively.</span>
+bind index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
+<span class="comment"># modify labels and then hide message
+# bind index,pager ??? modify-labels-then-hide
+# --------------------------------------------------------------------------
+# COMMANDS - shown with an example
+# --------------------------------------------------------------------------
+# Replace some tags with icons
+# tag-transforms tag transformed-string { tag transformed-string ...}
+# tag-transforms "inbox"   "i"   \
+#                "unread"  "u"   \
+#                "replied" "↻ "  \
+#                "sent"    "➥ "  \
+#                "todo"    "T"   \
+#                "deleted" "DEL" \
+#                "invites" "CAL"
+
+# The formats must start with 'G' and the entire sequence is case sensitive.
+# tag-formats tag format-string { tag format-string ...}
+# tag-formats "inbox"   "GI" \
+#              "unread"  "GU" \
+#              "replied" "GR" \
+#              "sent"    "GS" \
+#              "todo"    "Gt" \
+#              "deleted" "GD" \
+#              "invites" "Gi"
+
+# Now instead of using '%g' or '%J' in your $index_format, which lists all tags
+# in a non-deterministic order, you can something like the following which puts
+# a transformed tag name in a specific spot on the index line:
+# set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
+
+# The %G formatting sequence may display all tags including tags hidden by
+# nm_hidden_tags.
+#
+# --------------------------------------------------------------------------
+# COLORS - some unpleasant examples are given
+# --------------------------------------------------------------------------
+# These symbols are added to the index-color feature:
+# an individual message tag, %G, uses tag name
+# this symbol uses a pattern</span>
+color index_tag red white "inbox"
+<span class="comment"># the transformed message tags, %g
+# this symbol does not use a pattern</span>
+color index_tags green default
+<span class="comment"># --------------------------------------------------------------------------
+# vim: syntax=neomuttrc</span>
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a class="offset" id="credits"></a>8.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Mehdi Abaakouk
+          <code class="email">&lt;
+          <a class="email" href="mailto:sileht@sileht.net">sileht@sileht.net</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Richard Russon
+          <code class="email">&lt;
+          <a class="email" href="mailto:rich@flatcap.org">rich@flatcap.org</a>&gt;</code></p>
+        </li>
+        <li class="listitem">
+          <p>Bernard 'Guyzmo' Pratz
+          <code class="email">&lt;
+          <a class="email" href="mailto:guyzmo+github+pub@m0g.net">guyzmo+github+pub@m0g.net</a>&gt;</code></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endraw %}

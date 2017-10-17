@@ -241,7 +241,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div >
       <a class="offset" id="table-notmuch-variables"></a>
       <p class="title">
-        <strong>Table&#160;25.1.&#160;Notmuch Variables</strong>
+        <strong>Table&#160;26.1.&#160;Notmuch Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Variables" border="1">
@@ -280,15 +280,6 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>string</td>
               <td>(empty)</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">nm_hidden_tags</code>
-              </td>
-              <td>string</td>
-              <td>
-                <code class="literal">unread,draft,flagged,passed,replied,attachment,signed,encrypted</code>
-              </td>
             </tr>
             <tr>
               <td>
@@ -356,6 +347,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <br class="table-break" />
+    <p>More variables about tags configuration can be found in
+    <a class="link" href="/feature/custom-tags#custom-tags-variables" title="3.&#160;Variables">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -370,7 +363,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <div >
       <a class="offset" id="table-notmuch-functions"></a>
       <p class="title">
-        <strong>Table&#160;25.2.&#160;Notmuch Functions</strong>
+        <strong>Table&#160;26.2.&#160;Notmuch Functions</strong>
       </p>
       <div class="table-contents">
         <table summary="Notmuch Functions" border="1">
@@ -400,20 +393,6 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
                 <code class="literal">&lt;entire-thread&gt;</code>
               </td>
               <td>read entire thread of the current message</td>
-            </tr>
-            <tr>
-              <td>index,pager</td>
-              <td>
-                <code class="literal">&lt;modify-labels&gt;</code>
-              </td>
-              <td>add, remove, or toggle notmuch tags; [+]&lt;tag&gt; to add, -&lt;tag&gt; to remove, !&lt;tag&gt; to toggle(notmuch) tags. Note: Tab completion of tag names is available</td>
-            </tr>
-            <tr>
-              <td>index,pager</td>
-              <td>
-                <code class="literal">&lt;modify-labels-then-hide&gt;</code>
-              </td>
-              <td>add, remove, or toggle notmuch tags; [+]&lt;tag&gt; to add, -&lt;tag&gt; to remove, !&lt;tag&gt; to togglelabels and then hide or unhide the message by changing the "quasi-deleted" to match if it would be shown when requerying. Normal redisplay rules apply here, so the user must call &lt;sync-mailbox&gt; for the changes to be displayed. Note: Tab completion of tag names is available.</td>
             </tr>
             <tr>
               <td>index,pager</td>
@@ -448,6 +427,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <br class="table-break" />
+    <p>More functions about tags can be found in
+    <a class="link" href="/feature/custom-tags#custom-tags-functions" title="4.&#160;Functions">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -480,36 +461,10 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </em>|
       <em class="replaceable">
         <code>mailbox</code>
-      </em>... }
-      <br />
-      <code class="command">tag-transforms</code>
-      <em class="replaceable">
-        <code>tag</code>
-      </em>
-      <em class="replaceable">
-        <code>transformed-string</code>
-      </em>{
-      <em class="replaceable">
-        <code>tag</code>
-      </em>
-      <em class="replaceable">
-        <code>transformed-string</code>
-      </em>...}
-      <br />
-      <code class="command">tag-formats</code>
-      <em class="replaceable">
-        <code>tag</code>
-      </em>
-      <em class="replaceable">
-        <code>format-string</code>
-      </em>{
-      <em class="replaceable">
-        <code>tag</code>
-      </em>
-      <em class="replaceable">
-        <code>format-string</code>
-      </em>...}</p>
+      </em>... }</p>
     </div>
+    <p>More commands about tags can be found in
+    <a class="link" href="/feature/custom-tags#custom-tags-commands" title="5.&#160;Commands">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -520,46 +475,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </div>
       </div>
     </div>
-    <p>Adds these to index-color feature:</p>
-    <div >
-      <a class="offset" id="table-notmuch-colors"></a>
-      <p class="title">
-        <strong>Table&#160;25.3.&#160;Index Colors</strong>
-      </p>
-      <div class="table-contents">
-        <table summary="Index Colors" border="1">
-          <colgroup>
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Object</th>
-              <th>Pattern</th>
-              <th>Highlights</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code class="literal">index_tag</code>
-              </td>
-              <td>yes</td>
-              <td>an individual message tag, %G, uses tag name</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">index_tags</code>
-              </td>
-              <td>no</td>
-              <td>the transformed message tags, %g</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <br class="table-break" />
+    <p>See
+    <a class="link" href="/feature/custom-tags#custom-tags-colors" title="6.&#160;Colors">Custom backend Tags colors</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -584,9 +501,6 @@ set nm_default_uri = ""
 <span class="comment"># The messages tagged with these tags are excluded and not loaded
 # from notmuch DB to NeoMutt unless specified explicitly.</span>
 set nm_exclude_tags = ""
-<span class="comment"># This variable specifies private notmuch tags which should not be printed
-# on screen (index, pager).</span>
-set nm_hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
 <span class="comment"># This option specifies timeout for Notmuch database. Default is 5 seconds.</span>
 set nm_open_timeout = 5
 <span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and
@@ -632,17 +546,11 @@ set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
 bind index,pager X change-vfolder
 <span class="comment"># read entire thread of the current message</span>
 bind index,pager + entire-thread
-<span class="comment"># modify (notmuch) tags</span>
-bind index,pager \` modify-labels
-<span class="comment"># modify (notmuch) tag non-interactively.</span>
-bind index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
 <span class="comment"># generate virtual folder from query</span>
 bind index,pager \eX vfolder-from-query
 <span class="comment"># generate virtual folder from query with time window</span>
 bind index,pager &lt; vfolder-window-backward
 bind index,pager &gt; vfolder-window-forward
-<span class="comment"># modify labels and then hide message
-# bind index,pager ??? modify-labels-then-hide
 # toggle between mailboxes and virtual mailboxes
 # bind index,pager ??? sidebar-toggle-virtual
 # --------------------------------------------------------------------------
@@ -651,44 +559,7 @@ bind index,pager &gt; vfolder-window-forward
 # virtual-mailboxes description notmuch-URI { description notmuch-URI ...}
 # virtual-mailboxes "Climbing" "notmuch://?query=climbing"
 # unvirtual-mailboxes { * | mailbox ...}
-# Replace some tags with icons
-# tag-transforms tag transformed-string { tag transformed-string ...}
-# tag-transforms "inbox"   "i"   \
-#                "unread"  "u"   \
-#                "replied" "↻ "  \
-#                "sent"    "➥ "  \
-#                "todo"    "T"   \
-#                "deleted" "DEL" \
-#                "invites" "CAL"
-
-# The formats must start with 'G' and the entire sequence is case sensitive.
-# tag-formats tag format-string { tag format-string ...}
-# tag-formats "inbox"   "GI" \
-#              "unread"  "GU" \
-#              "replied" "GR" \
-#              "sent"    "GS" \
-#              "todo"    "Gt" \
-#              "deleted" "GD" \
-#              "invites" "Gi"
-
-# Now instead of using '%g' in your $index_format, which lists all tags
-# in a non-deterministic order, you can something like the following which puts
-# a transformed tag name in a specific spot on the index line:
-# set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
-
-# The %G formatting sequence may display all tags including tags hidden by
-# nm_hidden_tags.
 #
-# --------------------------------------------------------------------------
-# COLORS - some unpleasant examples are given
-# --------------------------------------------------------------------------
-# These symbols are added to the index-color feature:
-# an individual message tag, %G, uses tag name
-# this symbol uses a pattern</span>
-color index_tag red white "inbox"
-<span class="comment"># the transformed message tags, %g
-# this symbol does not use a pattern</span>
-color index_tags green default
 <span class="comment"># --------------------------------------------------------------------------
 # vim: syntax=neomuttrc</span>
 </pre>
