@@ -26,7 +26,12 @@
             {% when "notes" %}    <span class="notes">These are just notes &ndash; soon there will be more</span>
             {% when "wip" %}      <span class="wip">This is a Work in Progress</span>
             {% endcase %}
-            {{ content }}
+            <div class="algolia__initial-content js-algolia__initial-content">{{ content }}</div>
+
+            <div class="algolia__search-content js-algolia__search-content">
+              <h1 class="page-title">Search by <a style="text:undecorated" href="https://www.algolia.com">Algolia <img width=24 height=24 src="/images/algolia.svg"></a></h1>
+              <div class="posts algolia__results"></div>
+            </div>
         </div>
     </div>
 </div>

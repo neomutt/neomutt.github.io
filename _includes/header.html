@@ -10,6 +10,8 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/theme.css" rel="stylesheet" type="text/css">
     <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/algolia.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 </head>
 
 <body>
@@ -35,14 +37,20 @@
               <ul class="nav navbar-nav">
                   <li class="active"><a href="/news.html">News</a></li>
                   <li class="active"><a href="/feature.html">Features</a></li>
-                  <li class="active"><a href="/contrib.html">Contrib</a></li>
-                  <li class="active"><a href="/dev.html">Devel</a></li>
+                  <!-- <li class="active"><a href="/contrib.html">Contrib</a></li> -->
 
+                  <li class="active"><a href="/dev.html">Devel</a></li>
                   <li class="active visible-xs-block"><a href="/links.html">Links</a></li>
 
                   <li class="active"><a href="/guide/index.html">Guide</a></li>
-                  <li class="active"><a href="/distro.html">Downloads</a></li>
+                  <!-- <li class="active"><a href="/distro.html">Downloads</a></li> -->
                   <li class="active"><a href="/about.html">About</a></li>
+
+                  <li class="active" style="margin-top: 0.5em">
+                  <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search..." />
+                  <img width="24" height="24" style="margin-right: 1em" src="/images/algolia.svg">
+                  </li>
+
                   <li class="active"><a title="Twitter" href="https://twitter.com/NeoMutt_Org"><img width="32" height="32" alt="Twitter" src="/images/twitter.png"></a></li>
                   <li class="active"><a title="RSS Feed" href="/feed.xml"><img width="24" height="24" alt="RSS" src="/images/rss.png"></a></li>
                   {% if site.github != '' %}

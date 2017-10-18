@@ -26,6 +26,7 @@ timezone: UTC
 gaaccount: 'UA-377438-9'
 
 permalink: /:year/:month/:day/:title
+excerpt_separator: ""
 
 kramdown:
   auto_ids:       true
@@ -69,3 +70,19 @@ collections:
 plugins:
   - jekyll-gist
   - jekyll-sitemap
+  - algoliasearch-jekyll
+
+algolia:
+  application_id: '6J1SGGRMOD'
+  index_name:     'neomutt'
+  settings:
+    attributesToIndex:
+      - title
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - unordered(text)
+      - unordered(tags)
