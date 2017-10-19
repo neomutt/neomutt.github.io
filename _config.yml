@@ -41,6 +41,7 @@ exclude:
   - LICENSE.md
   - CNAME
   - tags*
+  - Gemfile*
 
   # is suggested by
   # http://jekyllrb.com/docs/continuous-integration/#configuring-your-travis-builds
