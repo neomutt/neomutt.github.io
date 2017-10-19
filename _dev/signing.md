@@ -2,7 +2,6 @@
 layout: concertina
 title: Signing Code / Releases
 description: Be Sure You're Getting the Real Thing
-status: wip
 ---
 
 # {{ page.title }}
@@ -20,8 +19,7 @@ The NeoMutt signing key is:
 - `86C2397270DD7A561263CA4E5FAF0A6EE7371805`
 - Richard Russon (NeoMutt) <rich@flatcap.org>
 
-This key is available on keyservers, or insecurely
-[from our website](https://www.neomutt.org/person/flatcap)
+This key is available on keyservers:
 
 ```sh
 gpg2 --search-keys neomutt
