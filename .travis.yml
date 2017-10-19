@@ -10,6 +10,7 @@ install:
   - gem install jekyll
   - gem install jekyll-gist
   - gem install jekyll-sitemap
+  - gem install jekyll-mentions
   - gem install html-proofer
   - gem install algoliasearch-jekyll
 

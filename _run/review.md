@@ -33,13 +33,13 @@ When feedback is needed
 **Who gives approval?**
 
 * Project reviewers (team on GitHub)
-  - Richard Russon ([@flatcap](https://github.com/flatcap))
-  - Darshit Shah ([@darnir](https://github.com/darnir))
-  - Guillaume Brogi ([@guiniol](https://github.com/guiniol))
-  - Pierre-Elliott Bécue ([@p-eb](https://github.com/p-eb))
-  - Bernard Pratz ([@guyzmo](https://github.com/guyzmo))
-  - Damien Riegel ([@d-k-c](https://github.com/d-k-c))
-  - Pietro Cerutti ([@gahr](https://github.com/gahr))
+  - Richard Russon (@flatcap)
+  - Darshit Shah (@darnir)
+  - Guillaume Brogi (@guiniol)
+  - Pierre-Elliott Bécue (@p-eb)
+  - Bernard Pratz (@guyzmo)
+  - Damien Riegel (@d-k-c)
+  - Pietro Cerutti (@gahr)
 
 **Don't need approval for:**
 

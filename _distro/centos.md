@@ -131,5 +131,5 @@ Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 
 ---
 
-Instructions last checked: 2017-09-21 by [@flatcap](https://github.com/flatcap)
+Instructions last checked: 2017-09-21 by @flatcap
 
