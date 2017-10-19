@@ -208,7 +208,7 @@ Extend the workflow of quasi-delete
 
 All the user to mute (ignore/hide) all/part of a thread
 
-: **Raised by** @kronat on 2016-08-30 -- **Result**: desired, hard
+: **Raised by** kronat on 2016-08-30 -- **Result**: desired, hard
 
 ### [#109 feature-request - make index_label take support pattern][#109]
 

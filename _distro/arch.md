@@ -2,7 +2,7 @@
 layout: concertina
 distro: Arch User Repository
 icon: arch.png
-homepage: https://aur.archlinux.org/packages/neomutt/
+homepage: https://www.archlinux.org/packages/community/x86_64/neomutt/
 title: NeoMutt for Arch
 maintainer: shioyama
 ---
@@ -16,9 +16,8 @@ Other feature branches may work, but there is no guarantee.
 
 ## Installation <a class="offset" id="install"></a>
 
-NeoMutt is available in the Arch User Repository (AUR) as both
-[`neomutt`](https://aur.archlinux.org/packages/neomutt/) and
-[`neomutt-git`](https://aur.archlinux.org/packages/neomutt-git/). Use your
+NeoMutt is available in the Arch User Repository (AUR) as
+[`neomutt`](https://www.archlinux.org/packages/community/x86_64/neomutt/) and
 favourite AUR helper to download and install it. Alternatively, you can install
 it with the following commands:
 
@@ -41,7 +40,7 @@ If you want to customize the options or use unmerged features, edit the
   something else than the default.
 - `source`: you can change the `#branch=neomutt` and replace `neomutt` with the
   branch you want to use. This is only for the
-  [`neomutt-git`](https://aur.archlinux.org/packages/neomutt-git/) package.
+  [`neomutt-git`](https://www.archlinux.org/packages/community/x86_64/neomutt/) package.
 
 ## Update <a class="offset" id="update"></a>
 
