@@ -42,6 +42,7 @@ exclude:
   - CNAME
   - tags*
   - Gemfile*
+  - Rakefile
 
   # is suggested by
   # http://jekyllrb.com/docs/continuous-integration/#configuring-your-travis-builds
