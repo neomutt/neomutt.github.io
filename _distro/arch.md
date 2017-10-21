@@ -4,7 +4,7 @@ distro: Arch User Repository
 icon: arch.png
 homepage: https://www.archlinux.org/packages/community/x86_64/neomutt/
 title: NeoMutt for Arch
-maintainer: shioyama
+maintainer: alad
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
@@ -16,37 +16,54 @@ Other feature branches may work, but there is no guarantee.
 
 ## Installation <a class="offset" id="install"></a>
 
-NeoMutt is available in the Arch User Repository (AUR) as
+NeoMutt is available in the `[community]` official repository as
 [`neomutt`](https://www.archlinux.org/packages/community/x86_64/neomutt/) and
-favourite AUR helper to download and install it. Alternatively, you can install
-it with the following commands:
+can be installed with pacman.
 
 ```
-mkdir -p /tmp/makepkg && cd /tmp/makepkg
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/neomutt.tar.gz
-tar xf neomutt.tar.gz
-cd neomutt
-makepkg -si
+pacman -S neomutt
 ```
 
-This will download the latest NeoMutt release from GitHub, compile it and
-install it.
+If you want to customize the options or use unmerged features, retrieve the
+`PKGBUILD` via `svn` and edit it. 
 
-If you want to customize the options or use unmerged features, edit the
-`PKGBUILD`. The sections of interest are:
+```
+svn checkout --depth=empty svn://svn.archlinux.org/community
+svn update neomutt
+cd neomutt/trunk
+```
 
-- `build`: you can change the compile options after `./prepare`. In particular,
+The sections of interest are:
+
+- `build`: you can change the compile options after `./configure`. In particular,
   this is where you have to add the cache backend you want to use if you want
   something else than the default.
 - `source`: you can change the `#branch=neomutt` and replace `neomutt` with the
   branch you want to use. This is only for the
-  [`neomutt-git`](https://www.archlinux.org/packages/community/x86_64/neomutt/) package.
+  [`neomutt-git`](https://aur.archlinux.org/packages/neomutt-git) package in the
+  [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository).
 
 ## Update <a class="offset" id="update"></a>
 
-You must manually run the installation commands again to update NeoMutt. Or you
-can use an AUR helper to automate it for you. Take a look at the ArchWiki page
-for the [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository).
+Neomutt can be updated together with other packages in the repositories.
+
+```
+pacman -Syu
+```
+
+If the package in the Arch Linux repositories is outdated, first ensure your
+[mirrors](https://wiki.archlinux.org/index.php/Mirrors) are up-to-date:
+
+```
+pacman -S reflector
+reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+If this did not help, check the version on the
+[packages website](https://www.archlinux.org/packages/community/x86_64/neomutt/) 
+and flag the package [out-of-date](https://www.archlinux.org/packages/flaghelp/) 
+if required. Note that a package should only be flagged if a newer *stable*
+release is available.
 
 ## Removal <a class="offset" id="remove"></a>
 
@@ -59,15 +76,19 @@ pacman -Rsc neomutt
 
 ## Debugging <a class="offset" id="debug"></a>
 
-Archlinux does not have separate `-dbg` packages. In order to debug `neomutt`,
-you must first compile with debug symbols. Download the AUR package and edit
-the `PKGBUILD` adding the following:
+Arch Linux does not have separate `-dbg` packages. In order to debug `neomutt`,
+you must first compile with debug symbols. Edit the `PKGBUILD` adding the 
+following:
 
 ```
 options=(debug !strip)
 ```
 
-Build and install the new package which contains debug symbols.
+Build and install the new package which contains 
+[debug symbols](https://wiki.archlinux.org/index.php/Debug_-_Getting_Traces).
+
+```
+makepkg -si
+```
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
-
