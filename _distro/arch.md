@@ -25,7 +25,15 @@ pacman -S neomutt
 ```
 
 If you want to customize the options or use unmerged features, retrieve the
-`PKGBUILD` via `svn` and edit it. 
+`PKGBUILD` via `asp` or`svn` and edit it. 
+
+```
+pacman -S asp
+asp checkout neomutt
+cd neomutt/trunk
+```
+
+`asp` clones the repository as a git repository, and can be updated with `git pull`.
 
 ```
 svn checkout --depth=empty svn://svn.archlinux.org/community
