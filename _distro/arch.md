@@ -1,10 +1,10 @@
 ---
 layout: concertina
-distro: Arch User Repository
+distro: Arch Linux
 icon: arch.png
 homepage: https://www.archlinux.org/packages/community/x86_64/neomutt/
 title: NeoMutt for Arch
-maintainer: alad
+maintainer: aladw
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
