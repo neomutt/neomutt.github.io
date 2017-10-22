@@ -25,7 +25,7 @@ pacman -S neomutt
 ```
 
 If you want to customize the options or use unmerged features, retrieve the
-`PKGBUILD` via `svn` and edit it. 
+`PKGBUILD` via [`svn`](https://www.archlinux.org/svn/) and edit it. 
 
 ```
 svn checkout --depth=empty svn://svn.archlinux.org/community
