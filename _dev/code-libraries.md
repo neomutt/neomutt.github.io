@@ -14,9 +14,6 @@ The goal is that each library is:
 - Fully documented
 - Robust
 
-You can read about the libraries in the Code Docs:
-    https://www.neomutt.org/code/pages.html
-
 ## libmutt - Library of shared functions
 
 **Description:** Shared code for handling strings, files, dates, etc
