@@ -57,54 +57,78 @@ a NeoMutt release archive and thus no checksum file is available. Consider to
 use Git instead (as mentioned [above](#git)) to clone the repository and
 checkout the specific branch afterwards.
 
-## Autoreconf
-
-Generate the appropriate configuration and build scripts.
-
-```
-autoreconf -i
-configure.ac:19: installing '.build-aux/compile'
-configure.ac:23: installing '.build-aux/config.guess'
-configure.ac:23: installing '.build-aux/config.sub'
-configure.ac:10: installing '.build-aux/install-sh'
-configure.ac:10: installing '.build-aux/missing'
-Makefile.am: installing '.build-aux/depcomp'
-```
-
 ## Configure
 
 List supported options to adapt or fine tune NeoMutt's build.
 
 ```
-./configure --help
+./configure.autosetup --help
 ```
 
-### Varied configure options
+### Configure options
 
-| Category         | Option/Variable             | Description                                                   |
-| :--------------- | :-------------------------- | :------------------------------------------------------------ |
-| General          | `--prefix=PREFIX`           | Install architecture-independent files in PREFIX [/usr/local] |
-| Curses vs S-Lang | `--with-slang[=DIR]`        | Use [S-Lang][slng] instead of *ncurses*                       |
-|                  | `--with-curses=DIR`         | Where [ncurses][crss] is installed                            |
-| Features         | `--enable-notmuch`          | Enable [Notmuch](/feature/notmuch) support                    |
-|                  | `--enable-lua`              | Enable [Lua][lua] scripting support                           |
-|                  | `--enable-gpgme`            | Enable [GPGME][gpgme] support                                 |
-| Header Caching   | `--with-gdbm[=DIR]`         | Use [GDBM][gdbm] for the header cache                         |
-|                  | `--with-tokyocabinet[=DIR]` | Use [Tokyo Cabinet][tcab] for the header cache                |
-|                  | `--with-kyotocabinet[=DIR]` | Use [Kyoto Cabinet][kcab] for the header cache                |
-|                  | `--with-qdbm[=DIR]`         | Use [QDBM][qdbm] for the header cache                         |
-|                  | `--with-bdb[=DIR]`          | Use [Berkeley DB][obdb] for the header cache                  |
-|                  | `--with-lmdb[=DIR]`         | Use [LMDB][lmdb] for the header cache                         |
-| Security         | `--with-gss[=PFX]`          | Compile in [GSSAPI][gss2] authentication for IMAP             |
-|                  | `--with-ssl[=PFX]`          | Enable TLS support using [OpenSSL][ossl]                      |
-|                  | `--with-gnutls[=PFX]`       | Enable TLS support using [GnuTLS][gtls]                       |
-|                  | `--with-sasl[=PFX]`         | Use [SASL][sasl] network security library                     |
-| Debugging        | `--enable-debug`            | Enable debugging support                                      |
-|                  | `CFLAGS="-g -O0"`           | Set C compiler flags, e.g. for [GCC][dgcc]                    |
+This is not a comprehensive list of configure options.
+Check `configure.autosetup --help` for full help.
+The options marked "Path" have either take a path, or have an extra option for specifying the library path.
+
+e.g.  `./configure --notmuch --with-notmuch=/usr/local/lib/notmuch`
+
+| Configure option        | Path | Notes                                        |
+| :---------------------- | :--- | :------------------------------------------- |
+| `--with-ui=CHOICE`      |      | Select 'ncurses' or 'slang'                  |
+| `--with-ncurses=path`   |      | Location of ncurses                          |
+| `--with-slang=path`     |      | Location of S-Lang                           |
+|                         |      |                                              |
+| `--gpgme`               | Path | GPG Made Easy                                |
+| `--gnutls`              | Path | Gnu TLS (SSL)                                |
+| `--gss`                 | Path | Generic Security Services                    |
+| `--sasl`                | Path | Simple Authentication and Security Layer     |
+| `--ssl`                 | Path | OpenSSL                                      |
+|                         |      |                                              |
+| `--fmemopen`            |      | Optional Feature (Dangerous)                 |
+| `--lua`                 | Path | Optional Feature                             |
+| `--notmuch`             | Path | Optional Feature                             |
+| `--mixmaster`           |      | Optional Feature                             |
+|                         |      |                                              |
+| `--bdb`                 | Path | Header cache backend                         |
+| `--gdbm`                | Path | Header cache backend                         |
+| `--kyotocabinet`        | Path | Header cache backend                         |
+| `--lmdb`                | Path | Header cache backend                         |
+| `--qdbm`                | Path | Header cache backend                         |
+| `--tokyocabinet`        | Path | Header cache backend                         |
+|                         |      |                                              |
+| `--disable-fcntl`       |      | fcntl(2) file locking                        |
+| `--flock`               |      | flock(2) file locking                        |
+| `--locales-fix`         |      | Workaround for broken locales                |
+| `--disable-nls`         | Path | National Language Support (translations)     |
+| `--disable-pgp`         | Path | Pretty Good Privacy                          |
+| `--disable-smime`       | Path | Secure/Multipurpose Internet Mail Extensions |
+| `--disable-idn`         | Path | Internationalised domain names               |
+| `--logging`             |      | Enable debug logging                         |
+|                         |      |                                              |
+| `--with-domain=DOMAIN`  |      | Default email domain                         |
+| `--with-mailpath`       | Path | Location of spooled mail                     |
+| `--homespool`           | Path | Spooled mail is in user's home dir           |
+|                         |      |                                              |
+| `--prefix`              | Path | Target directory for build (default: `/usr`) |
+| `--disable-doc`         |      | Don't build the docs                         |
+| `--full-doc`            |      | Document disabled features                   |
+| `--quiet`               |      | Only show the summary                        |
 
 ## Build
 
 Targets: **neomutt**, **doc**, ...
+
+The build can be adjusted by setting any of six environment variables:
+
+- `CC` - set the compiler
+- `CFLAGS` - replace **all** the compiler flags
+- `EXTRA_CFLAGS` - append flags to the default compiler flags
+- `LD` - set the linker
+- `LDFLAGS` - replace **all** the linker flags
+- `EXTRA_LDFLAGS` - append flags to the default linker flags
+
+e.g. `make EXTRA_CFLAGS=-g`
 
 ```
 make

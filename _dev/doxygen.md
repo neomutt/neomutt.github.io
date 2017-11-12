@@ -15,14 +15,14 @@ The Doxygen
 [documentation](https://www.stack.nl/~dimitri/doxygen/manual/commands.html)
 lists all the possible commands. Some common ones are:
 
-- **@param**   -- a function parameter
-- **@struct**  -- a C-struct.
-- **@union**   -- a union.
-- **@enum**    -- an enumeration type.
-- **@var**     -- a variable or typedef or enum value.
-- **@def**     -- a #define.
-- **@typedef** -- a type definition.
-- **@file**    -- a file.
+- **`@param`**   -- a function parameter
+- **`@struct`**  -- a C-struct.
+- **`@union`**   -- a union.
+- **`@enum`**    -- an enumeration type.
+- **`@var`**     -- a variable or typedef or enum value.
+- **`@def`**     -- a #define.
+- **`@typedef`** -- a type definition.
+- **`@file`**    -- a file.
 
 ## Functions
 

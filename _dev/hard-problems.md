@@ -29,7 +29,6 @@ For some ideas, please see:
 
 * [plans for refactoring Mutt's code](https://github.com/neomutt/neomutt/issues/310)
 * [(Re-)Building the Documentation](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-June/000438.html)
-* [What to do with OPS files?](https://github.com/neomutt/neomutt/issues/562)
 * [topic:testing issues](https://github.com/neomutt/neomutt/labels/topic%3Atesting)
 * [architecture repository](https://github.com/neomutt/arch#arch)
 * [Our complicated build process](https://www.neomutt.org/dev/make)
