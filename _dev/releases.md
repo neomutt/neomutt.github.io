@@ -12,6 +12,9 @@ The Git hashes link to our GitHub repository.
 
 | Date       | Release Notes                                                                        | Git Hash                                                         |
 | :--------- | :----------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
+| 2017-10-27 | [20171027](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171027)         | [`8788b3f0`](https://github.com/neomutt/neomutt/commit/8788b3f0) |
+| 2017-10-13 | [20171013](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171013)         | [`8c834766`](https://github.com/neomutt/neomutt/commit/8c834766) |
+| 2017-10-06 | [20171006](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171006)         | [`7e22dd47`](https://github.com/neomutt/neomutt/commit/7e22dd47) |
 | 2017-09-12 | [20170912 (1.9.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170912) | [`7553613e`](https://github.com/neomutt/neomutt/commit/7553613e) |
 | 2017-09-07 | [20170907 (1.9.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170907) | [`e5d5de50`](https://github.com/neomutt/neomutt/commit/e5d5de50) |
 | 2017-07-14 | [20170714 (1.8.3)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170714) | [`4dfb3718`](https://github.com/neomutt/neomutt/commit/4dfb3718) |
