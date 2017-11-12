@@ -24,6 +24,30 @@ hard to achieve are labeled with
 Please note, those hard issues are intentionally closed -- they are sometimes
 demotivating due to its difficulty.
 
+### [#741 add Memory Hole support to protect metadata][#741]
+
+Encryption scheme that hides the subject.
+
+: **Raised by** @libBletchley -- **Result**: no interest
+
+### [#678 Give line number to $editor with $edit_headers][#678]
+
+Pass the line number to the editor, of the first line of the body.
+
+: **Raised by** @qsuscs -- **Result**: no interest
+
+### [#658 feature request: using $my_vars in macro \<shell-escape\>'s][#658]
+
+Expand config variables in shell command lines
+
+: **Raised by** @demure -- **Result**: hard, may be possible in future using lua
+
+### [#550 PR: Show alternating padding in help menus][#550]
+
+Show lines of dots in rows in the help page to assist reading. 
+
+: **Raised by** @somini -- **Result**: hard, need better colour support in help
+
 ### [#587 Better support for multipart/alternative?][#587]
 
 Allow better nesting of mime parts
@@ -126,6 +150,12 @@ Support mouse clicks in the index, sidebar, etc
 
 : **Raised by** @Chinggis6 on 2017-01-20 -- **Result**: not too hard, low prority
 
+### [#294 Have the keymap functions accept arguments][#294]
+
+Allow some functions to accept arguments, e.g. `:exec shell-escape "uname -a"`
+
+: **Raised by** @guyzmo -- **Result**: desired, no interest
+
 ### [#277 Subject separate from tree?][#277]
 
 Create index_format expandos to display just the tree and just the subject
@@ -198,6 +228,13 @@ Better handling of deleted emails, modification of flags / headers
 
 : **Raised by** @4nd3r on 2016-09-18 -- **Result**: desired, hard
 
+### [#149 Feature request: crypt-autoselectkey][#149]
+
+Add variable crypt_autoselectkey, which allows forcing neomutt to autoselect a
+key when only (a trusted) one is available in the "PGP keys matching ..." menu. 
+
+: **Raised by** @dannyob -- **Result**: desired, no interest
+
 ### [#131 notmuch: add modify-thread-labels][#131]
 
 Extend the workflow of quasi-delete
@@ -233,6 +270,12 @@ Let NeoMutt use a socks5 proxy
 Partial synchronisation of mailbox changes
 
 : **Raised by** @RichiH on 2016-08-11 -- **Result**: hard, not well-defined
+
+### [#093 Open attachments in the background][#093]
+
+Fork a new process to avoid NeoMutt waiting for an attachment viewer
+
+: **Raised by** @RichiH -- **Result**: desired, too busy
 
 ### [#85 Neomutt true colors support][#85]
 
