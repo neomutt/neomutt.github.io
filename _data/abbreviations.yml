@@ -1,0 +1,562 @@
+# _data/abbreviations.yml                                                       ... custom data file
+#
+# Cause:    Provide data for a glossary page {{{
+# Notes:
+# - Usually most scalars are a quoted or unquoted string (explicit data type prefix !!str). Some can
+#   be written as a sequence (!!seq) while scalar mapping (!!map) has no use cases currently and may
+#   increase complexity significantly, therefore it isn't supported yet.
+# - Declarations with empty term node will be ignored and empty, not optional scalars will be visual
+#   marked as incomplete and "To Be Defined" (TBD).
+#   Where 'empty' here means: absent or any unusable expression like "", [], nil (not in list), etc.
+# - The abbreviation term declaration order herein is not relevant (will be sorted while processing)
+#   but should be kept alphabetically for easier orientation.
+# - Straight quotes in str:, add: and txt: scalars will be converted into smart/curly quotes but has
+#   the downside that escaping straight quotes (to get literal ones in result) won't work.
+#   Using an upper case scalar key (TXT:) instead of txt: disables the straight quote conversion for
+#   long term descriptions. Note, this is not implemented for str: and add: scalars.
+#
+# Abbreviation data types and structure:
+# - term:             !!str; A unique, quoted/unquoted abbreviation term (processed case-sensitive).
+#                     • Must Not be !!seq or !!map. A comma-separated string can be used to specify
+#                       multiple terms, e.g. ".ics, .ifb, .iCal, .iFBf" to describe a file format.
+#   definitions:    + Node to hold different definitions for the same abbreviation term.
+#     - str :         !!str; Starts a new definition and describe its abbreviation term.
+#                     • Must Not be !!seq or !!map because those types breaks Jekyll/Liquid sorting.
+#       add :         !!str, optional; Additional text to the current term definition.
+#                     • This appears in round brackets after the dfn-string => "dfn (add-value)".
+#       txt :         !!str, optional; Long term description – consider to use '>' or '|' prefix.
+#                     • When used, keep it short, precise as possible and within one paragraph.
+#                     • As mentioned in Notes above, use TXT: to disable straight quotes conversion.
+#       url :         !!str, !!seq, optional; Reference URL for further term informations.
+#                     • In case of !!seq, only the first URL will be used for definition linking.
+#       attributes: + Node to hold additional but optional term attributes, e.g. "Category", "Type".
+#                     • The attributes will be used as key/value-pairs (!!str/[!!str|!!seq]), so:
+#                         Category  : ["document format", "file extension"]
+#                         Type      : file extension
+#                         MIME-Type : text/calendar
+#                       results in an attribute listing like:
+#                         "Category:  document format ⋅ file extension"
+#                         "MIME-Type: text/calendar"
+#                         "Reference: link2, link3, ... link10"
+#                         "Type:      file extension"
+#                       Note, the 'Reference' list item. It will be generated from remaining URLs of
+#                       the above url-sequence (the processed URLs are limited to ten). Additionally
+#                       a Markdown abbreviation definition example will be generated if possible.
+#                     • Attribute key/value-pairs are used as is, so keys should be capitalised.
+# Links:
+#   - [1] <http://www.yaml.org/spec/1.2/spec.html>
+#   - [2] <https://github.com/yaml/yaml>
+#   - [3] <https://en.wikipedia.org/wiki/YAML>
+#}}}
+---
+- term: .ics, .ifb, .iCal, .iFBf
+  definitions:
+    - str : Internet Calendaring and Scheduling
+      add : iCalendar
+      txt : >
+            iCalendar is a standard method of transferring calendaring and
+            scheduling, free or busy time information between computer systems.
+      url : ["https://tools.ietf.org/html/rfc5545", "https://icalendar.org/",
+             "https://www.iana.org/assignments/media-types/text/calendar"]
+      attributes:
+        Category  : ["document format", "file extension"]
+        MIME-Type : text/calendar
+        Type      : file extension
+
+- term: ANSI
+  definitions:
+    - str : American National Standards Institute
+      url : https://www.ansi.org/
+      attributes:
+        Category  : ["standard", "non-profit organization"]
+        Type      : acronym
+
+- term: API
+  definitions:
+    - str : Application Programming Interface
+      url : https://en.wikipedia.org/wiki/Application_programming_interface
+      attributes:
+        Category  : ["programming", "communication interface", "specification"]
+        Type      : acronym
+
+- term: ASCII
+  definitions:
+    - str : American Standard Code for Information Interchange
+      url : https://en.wikipedia.org/wiki/ASCII
+      attributes:
+        Category  : ["standard", "character encoding"]
+        Type      : acronym
+
+- term: BCC
+  definitions:
+    - str : Blind Carbon Copy
+      url : https://en.wikipedia.org/wiki/Blind_carbon_copy
+      attributes:
+        Category  : ["email", "header field"]
+        Type      : acronym
+
+- term: BOM
+  definitions:
+    - str : Byte Order Mark
+      url : https://en.wikipedia.org/wiki/Byte_order_mark
+      attributes:
+        Category  : ["unicode", "code point"]
+        Type      : acronym
+
+- term: CC
+  definitions:
+    - str : Carbon Copy
+      url : https://en.wikipedia.org/wiki/Carbon_copy
+      attributes:
+        Category  : ["email", "header field"]
+        Type      : acronym
+
+- term: COPR
+  definitions:
+    - str : Cool Other Package Repo
+      url : https://fedoraproject.org/wiki/Category:Copr
+      attributes:
+        Category  : ["fedora", "software repository"]
+        Type      : acronym
+
+- term: CR
+  definitions:
+    - str : Carriage Return
+      url : https://en.wikipedia.org/wiki/C0_and_C1_control_codes#CR
+      attributes:
+        Category  : ["control character"]
+        Type      : acronym
+
+- term: CSS
+  definitions:
+    - str : Cascading Style Sheets
+      url : https://www.w3.org/Style/CSS/
+      attributes:
+        Category  : ["style sheet language"]
+        Type      : acronym
+
+- term: DBCS
+  definitions:
+    - str : Double-Byte Character Set
+      url : https://en.wikipedia.org/wiki/Double-Byte_Character_Set
+      attributes:
+        Category  : ["character encoding", "character set"]
+        Type      : acronym
+
+- term: DNS
+  definitions:
+    - str : Domain Name System
+      url : https://en.wikipedia.org/wiki/Domain_Name_System
+      attributes:
+        Category  : ["internet protocol"]
+        Type      : acronym
+
+- term: DSN
+  definitions:
+    - str : Delivery Status Notification
+      url : https://en.wikipedia.org/wiki/Bounce_message
+      attributes:
+        Category  : ["email", "bounce message", "reponder"]
+        Type      : acronym
+
+- term: EOF
+  definitions:
+    - str : End of File
+      url : https://en.wikipedia.org/wiki/End-of-file
+      attributes:
+        Category  : ["stream indicator"]
+        Type      : acronym
+
+- term: EOL
+  definitions:
+    - str : End of Line
+      url : https://en.wikipedia.org/wiki/Newline
+      attributes:
+        Category  : ["stream indicator"]
+        Type      : acronym
+
+- term: EOT
+  definitions:
+    - str : End of Transmission
+      url : https://en.wikipedia.org/wiki/C0_and_C1_control_codes#EOT
+      attributes:
+        Category  : ["control character"]
+        Type      : acronym
+
+- term: FOSS
+  definitions:
+    - str : Free and Open Source Software
+      url : https://en.wikipedia.org/wiki/Free_and_open_source_software
+      attributes:
+        Category  : ["license" , "free software", "open source"]
+        Type      : acronym
+
+- term: GCC
+  definitions:
+    - str : GNU Compiler Collection
+      url : https://gcc.gnu.org/
+      attributes:
+        Category  : ["programming", "compiler"]
+        Type      : acronym
+
+- term: GDBM
+  definitions:
+    - str : GNU Data Base Manager
+      url : http://www.gnu.org.ua/software/gdbm/gdbm.html
+      attributes:
+        Category  : ["library", "database"]
+        Type      : acronym
+
+- term: GFM
+  definitions:
+    - str : GitHub Flavoured Markdown
+      url : https://help.github.com/articles/basic-writing-and-formatting-syntax/
+      attributes:
+        Category  : ["markup language", "markdown"]
+        Type      : acronym
+
+- term: GNU
+  definitions:
+    - str : GNU&rsquo;s Not Unix
+      url : https://www.gnu.org/
+      attributes:
+        Category  : ["operating system", "free software", "project"]
+        Type      : recursive acronym
+
+- term: GPGME
+  definitions:
+    - str : GnuPG Made Easy
+      url : https://www.gnupg.org/related_software/gpgme/
+      attributes:
+        Category  : ["library", "cryptographic api"]
+        Type      : acronym
+
+- term: GSSAPI
+  definitions:
+    - str : Generic Security Services Application Program Interface
+      url : https://en.wikipedia.org/wiki/Generic_Security_Services_Application_Program_Interface
+      attributes:
+        Category  : ["standard", "api"]
+        Type      : acronym
+
+- term: HTML
+  definitions:
+    - str : Hypertext Markup Language
+      url : https://www.w3.org/html/
+      attributes:
+        Category  : ["markup language"]
+        Type      : acronym
+
+- term: IDN
+  definitions:
+    - str : Internationalized Domain Names
+      url : https://www.icann.org/resources/pages/idn-2012-02-25-en
+      attributes:
+        Category  : ["internet", "domain name"]
+        Type      : acronym
+
+- term: IMAP, IMAP4
+  definitions:
+    - str : Internet Message Access Protocol
+      url : https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol
+      attributes:
+        Category  : ["email", "internet protocol"]
+        Type      : acronym
+
+- term: IRC
+  definitions:
+    - str : Internet Relay Chat
+      url : ["https://en.wikipedia.org/wiki/Internet_Relay_Chat", "/run/irc.html"]
+      attributes:
+        Category  : ["internet protocol", "communication"]
+        Type      : acronym
+
+- term: LDAP
+  definitions:
+    - str : Lightweight Directory Access Protocol
+      url : https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol
+      attributes:
+        Category  : ["internet protocol", "authentication", "validation"]
+        Type      : acronym
+
+- term: LF
+  definitions:
+    - str : Line Feed
+      url : https://en.wikipedia.org/wiki/C0_and_C1_control_codes#LF
+      attributes:
+        Category  : ["control character"]
+        Type      : acronym
+
+- term: LMDB
+  definitions:
+    - str : Lightning Memory-Mapped Database Manager
+      url : https://symas.com/lmdb/technical/
+      attributes:
+        Category  : ["library", "database"]
+        Type      : acronym
+
+- term: Lua
+  definitions:
+    - str : Scripting Language
+      add : from Portuguese, meaning moon
+      url : https://www.lua.org/
+      attributes:
+        Category  : ["script language"]
+        Type      : noun
+
+- term: MBCS
+  definitions:
+    - str : Multi-Byte Character Set
+      url : https://en.wikipedia.org/wiki/Multi-byte_character_set
+      attributes:
+        Category  : ["character encoding", "character set"]
+        Type      : acronym
+
+- term: MIME
+  definitions:
+    - str : Multipurpose Internet Mail Extensions
+      url : https://www.iana.org/assignments/media-types/media-types.xhtml
+      attributes:
+        Category  : ["content type", "media type", "document format"]
+        Type      : acronym
+
+- term: MUA
+  definitions:
+    - str : Mail User Agent
+      url : https://www.neomutt.org/
+      attributes:
+        Category  : ["email", "client", "mail reader"]
+        Type      : acronym
+
+- term: NCR
+  definitions:
+    - str : Numeric Character Reference
+      url : https://en.wikibooks.org/wiki/Unicode/Character_reference
+      attributes:
+        Category  : ["code point", "character encoding", "character set"]
+        Type      : acronym
+
+- term: Notmuch
+  definitions:
+    - str : Not much mail
+      url : ["https://www.neomutt.org/feature/notmuch", "https://notmuchmail.org/"]
+      attributes:
+        Category  : ["email", "mail indexing", "mail tagging"]
+        Type      : abbreviation
+
+- term: nroff
+  definitions:
+    - str : new runoff
+      url :
+      attributes:
+        Category  : ["software", "document processor", "text formatter"]
+        Type      : abbreviation
+
+- term: OBDB
+  definitions:
+    - str : Oracle Berkeley Database
+      url : http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/overview/index.html
+      attributes:
+        Category  : ["library", "database"]
+        Type      : acronym
+
+- term: PGP
+  definitions:
+    - str : Pretty Good Privacy
+      url : https://www.symantec.com/products/encryption
+      attributes:
+        Category  : ["certification", "signing", "encryption", "authentication"]
+        Type      : acronym
+
+- term: POP, POP3
+  definitions:
+    - str : Post Office Protocol
+      url : https://en.wikipedia.org/wiki/Post_Office_Protocol
+      attributes:
+        Category  : ["email", "internet protocol"]
+        Type      : acronym
+
+- term: PPA
+  definitions:
+    - str : Personal Package Archive
+      url : https://help.launchpad.net/Packaging/PPA
+      attributes:
+        Category  : ["software repository", "packaging"]
+        Type      : acronym
+
+- term: QDBM
+  definitions:
+    - str : Quick Data Base Manager
+      url : http://fallabs.com/qdbm/
+      attributes:
+        Category  : ["library", "database"]
+        Type      : acronym
+
+- term: RFC
+  definitions:
+    - str : Request for Comments
+      url : ["https://www.rfc-editor.org/", "/rfc.html"]
+      attributes:
+        Category  : ["standard", "documentation", "white paper"]
+        Type      : acronym
+
+- term: RTF
+  definitions:
+    - str : Rich Text Format
+      url : ["https://www.microsoft.com/en-us/download/details.aspx?id=10725",
+             "https://www.iana.org/assignments/media-types/application/rtf"]
+      attributes:
+        Category  : ["document format", "file extension"]
+        Type      : acronym
+
+- term: SASL
+  definitions:
+    - str : Simple Authentication and Security Layer
+      url : https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer
+      attributes:
+        Category  : ["library", "framework", "authentication", "negotiation"]
+        Type      : acronym
+
+- term: SBCS
+  definitions:
+    - str : Single-Byte Character Set
+      url : https://en.wikipedia.org/wiki/Single-Byte_Character_Set
+      attributes:
+        Category  : ["character encoding", "character set"]
+        Type      : acronym
+
+- term: SMTP
+  definitions:
+    - str : Simple Mail Transfer Protocol
+      url : https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol
+      attributes:
+        Category  : ["email", "internet protocol"]
+        Type      : acronym
+
+- term: SOCKS
+  definitions:
+    - str : Socket Secure
+      add : Internet Protocol
+      url : https://en.wikipedia.org/wiki/SOCKS
+      attributes:
+        Category  : ["internet protocol", "proxy"]
+        Type      : acronym
+
+- term: SSL
+  definitions:
+    - str : Secure Sockets Layer
+      url : https://en.wikipedia.org/wiki/Transport_Layer_Security
+      attributes:
+        Category  : ["internet protocol"]
+        Type      : acronym
+
+- term: settext
+  definitions:
+    - str : structure-enhanced text
+      url : https://daringfireball.net/projects/markdown/syntax#header
+      attributes:
+        Category  : ["markdown", "header style"]
+        Type      : abbreviation
+
+- term: TBD
+  definitions:
+    - str : To Be Defined
+      url :
+      attributes:
+        Category  : &TBD_dfn1_cat ["management", "draft", "work in progress"]
+        Type      : acronym
+    - str : To Be Determined
+      url :
+      attributes:
+        Category  : *TBD_dfn1_cat
+        Type      : acronym
+
+- term: TLS
+  definitions:
+    - str : Transport Layer Security
+      url : https://en.wikipedia.org/wiki/Transport_Layer_Security
+      attributes:
+        Category  : ["internet protocol"]
+        Type      : acronym
+
+- term: Tar
+  definitions:
+    - str : Tape archiver
+      url : https://en.wikipedia.org/wiki/Tar_(computing)
+      attributes:
+        Category  : ["software", "file archiver"]
+        Type      : acronym
+
+- term: tarball
+  definitions:
+    - str : Tar generated archive file
+      url :
+      attributes:
+        Category  : ["file format", "tar"]
+        Type      : slang
+
+- term: UCS
+  definitions:
+    - str : Universal Coded Character Set
+      add : Unicode, ISO/IEC
+      url : https://en.wikipedia.org/wiki/Universal_Coded_Character_Set
+      attributes:
+        Category  : ["character encoding", "character set", "unicode"]
+        Type      : acronym
+
+- term: URL, URLs
+  definitions:
+    - str : Uniform Resource Locator
+      url : https://url.spec.whatwg.org/
+      attributes:
+        Category  : ["hyperlink", "reference", "identifier"]
+        Type      : acronym
+
+- term: UTF
+  definitions:
+    - str : UCS Transformation Format
+      url : https://en.wikipedia.org/wiki/Unicode_Transformation_Format
+      attributes:
+        Category  : &UTF_dfn1_cat ["character encoding", "character set", "unicode"]
+        Type      : acronym
+
+- term: UTF-8
+  definitions:
+    - str : 8-Bit UCS Transformation Format
+      url : https://en.wikipedia.org/wiki/UTF-8
+      attributes:
+        Category  : *UTF_dfn1_cat
+        Type      : acronym
+
+- term: UTF-16
+  definitions:
+    - str : 16-Bit UCS Transformation Format
+      url : https://en.wikipedia.org/wiki/UTF-16
+      attributes:
+        Category  : *UTF_dfn1_cat
+        Type      : acronym
+
+- term: UTF-32
+  definitions:
+    - str : 32-Bit UCS Transformation Format
+      url : https://en.wikipedia.org/wiki/UTF-32
+      attributes:
+        Category  : *UTF_dfn1_cat
+        Type      : acronym
+
+- term: YAML
+  definitions:
+    - str : YAML Ain't Markup Language
+      url : ["http://yaml.org/", "https://github.com/yaml/yaml", "https://en.wikipedia.org/wiki/YAML"]
+      attributes:
+        Category  : ["markup language"]
+        Type      : recursive acronym
+
+- term: ZIP
+  definitions:
+    - str : archive file format
+      add : 'meaning "move at high speed"'
+      url : https://pkware.com/pkzip
+      attributes:
+        Category  : ["file format", "data compression"]
+        Type      : slang

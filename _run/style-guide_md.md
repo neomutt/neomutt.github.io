@@ -1,10 +1,9 @@
 ---
 layout: concertina
-title: Markdown Style Guide (Draft)
+title: Style Guide (Markdown)
 description: Some style and format suggestions for Markdown files
 author: Floyd Anderson
 username: floand
-status: wip
 ---
 
 # {{ page.title }}
@@ -187,7 +186,8 @@ placing their definitions:
 ```
 
 somewhere into the Markdown file -- the end of file (EOF) is a good location
-for this.
+for this. **Tip**: A certainly incomplete list of definitions can be found in
+[our glossary](/dev/glossary).
 
 One note about abbreviations and contractions, commonly, well known of those
 (a.k.a., etc., vs, ...) doesn't and thus, shouldn't have to be introduced. Try
@@ -564,7 +564,7 @@ Go [back to top](#top) or file an [issue][nmo_git_issue].
 *[EOF]: End of File
 *[GFM]: GitHub Flavoured Markdown
 *[NCR]: Numeric Character Reference
-*[UCS]: Universal Coded Character Set (Unicode)
+*[UCS]: Universal Coded Character Set (Unicode, ISO/IEC)
 *[URL]: Uniform Resource Locator
 *[UTF-8]: 8-Bit UCS Transformation Format
 *[setext]: structure-enhanced text

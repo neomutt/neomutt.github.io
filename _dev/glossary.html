@@ -1,0 +1,189 @@
+---
+layout: concertina
+title: Glossary
+description: A collection of abbreviations/acronyms
+---
+<style>
+  :target:before {
+    content: "";
+    display: block;
+    height: 25px;
+    margin-top: -25px;
+  }
+  a.abbr-id {
+    font-size: 90%;
+    font-weight: normal;
+    padding: 0 .2em;
+  }
+  a.abbr-id:hover {
+    background-color: #cceecc;
+  }
+  h2.abbr-sec-header a.backlink-idx {
+    visibility: hidden;
+  }
+  h2.abbr-sec-header:hover a.backlink-idx {
+    visibility: visible;
+  }
+  table.abbr,
+  table.abbr tr,
+  table.abbr th,
+  table.abbr td {
+    background: none;
+    border: none;
+    font-size: 100%;
+    font-weight: normal;
+  }
+  table.abbr {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  table.abbr .tbd {
+    color: red;
+  }
+  table.abbr tbody {
+    vertical-align: baseline;
+  }
+  table.abbr.dfn col.col2 {
+    width: 30px;
+  }
+  table.abbr.dfn col.col1,
+  table.abbr.dfn col.col3 {
+    width: 100px;
+  }
+  table.abbr.dfn th[scope="col"] {
+    font-size: 110%;
+  }
+  table.abbr.dfn tr * {
+    font-size: 100%;
+    font-weight: normal;
+  }
+  table.abbr.dfn tr:nth-child(1n+3) {
+    font-size: 90%;
+  }
+</style>
+
+{%- assign  NL = '
+' -%}
+{%- assign  BR = '<br />' | append: NL -%}
+{%- assign SEQ = '' | split: '' -%}
+{%- assign TBD = '<span class="tbd">TBD</span>' -%}
+{%- assign DUP = '<span class="tbd">Duplicate</span>' -%}
+{%- assign ERR = '<span class="tbd">&#x26a0;</span>' -%}
+{%- assign abbreviations = site.data.abbreviations
+  | default: SEQ
+  | where_exp: 'this', 'this.term.size > 0'
+  | where_exp: 'this', 'this.definitions.first'
+  | sort: 'term'
+  | group_by_exp: 'this', 'this.term | slice: 0 | upcase'
+-%}
+
+<h1>{{ page.title }}</h1>
+
+<p>{{ page.description }}</p>
+
+<span id="contributing"></span>
+<h2>Contributing</h2>
+
+<p>
+  This page is intended to be a resource for
+  <a href="/run/style-guide_md#h3_abbrevs">Markdown abbreviation definitions</a>
+  (beside its glossary purpose). It is based upon <code>_data/abbreviations.yml</code>,
+  so feel free to improve and extend the list by editing
+  <a href="https://github.com/neomutt/neomutt.github.io/tree/master/_data/abbreviations.yml">
+      the YAML file</a>. Basically it should be enough to add just more definitions
+  or correct existing ones but enhancements, like collapsing sections or filter
+  and displaying only Markdown entries for an easier copy ’n paste scenario,
+  are also welcome.
+</p>
+
+<nav>
+  {%- assign idx = abbreviations | map: 'name' -%}
+  <span id="abbr-idx"></span>
+  <h2>Index [{%- for id in idx -%}<a class="abbr-id" href="#{{ id }}">{{ id }}</a>{%- endfor -%}]</h2>
+</nav>
+
+<main>
+  {%- for group in abbreviations %}
+  <section id="{{ group.name }}">
+    <h2 class="abbr-sec-header">{{ group.name }}<a class="backlink-idx" href="#abbr-idx">&uarr;</a></h2>
+
+    {%- for abbr in group.items %}
+    {%- assign terms = abbr.term | strip | remove: ' ' | replace: ',,', ',' | split: ',' | sort | uniq %}
+    {%- assign term  = terms | join: ', ' %}
+    {%- assign definitions = abbr.definitions | default: SEQ | sort: 'str' %}
+
+    {%- for def in definitions %}
+    {%- if def.str.size > 0 %}
+      {% assign  str = def.str | smartify %}
+      {% capture add %}{% if def.add.size > 0 %} ({{ def.add | smartify }}){% else %}{% endif %}{% endcapture %}
+      {% assign  dfn = str | append: add %}
+      {% assign  dfn_pure = dfn
+        | replace: '“', '&amp;ldquo;' | replace: '”', '&amp;rdquo;'
+        | replace: '‘', '&amp;lsquo;' | replace: '’', '&amp;rsquo;'
+      %}
+
+      {% if dfn_pure == dfn_last %}{% assign dup = DUP %}{% assign err = ERR %}
+        {% else %}{% assign dup = false %}{% assign err = false %}{% endif %}
+
+      {% assign  url = def.url.first | default: def.url | default: nil %}
+      {% if url %}{% capture dfn %}<a href="{{ url }}">{{ str }}</a>{{ add }}{% endcapture %}{% endif %}
+
+      {% capture sep %}]: {{ dfn_pure }}</code><br /><code>*[{% endcapture %}
+      {% capture mde %}<code>*[{{ terms | join: sep }}]: {{ dfn_pure }}</code>{% endcapture %}
+    {% else %}
+      {% capture dfn %}{{ TBD }} <samp>(definitions:str = {{ def.str | inspect }})</samp>{% endcapture %}
+      {% assign  mde = TBD %}
+      {% assign  err = ERR %}
+    {% endif -%}
+
+    {% comment %}
+      Note, the sort filter below is just a hack to get attributes as
+      a sequence of key/value-pairs instead of using another for-loop.
+    {% endcomment %}
+    {%- assign attributes = def.attributes | default: SEQ | sort %}
+
+    {%- if def.url.first and def.url.size > 1 %}
+      {% assign ref = SEQ %}
+      {% for url in def.url offset:1 limit:10 %}
+        {% capture lnk %}<a href="{{ url }}">link{{ forloop.index | plus: 1 }}</a>{% endcapture %}
+        {% assign  ref = ref | push: lnk %}
+      {% endfor %}
+      {% assign ref = ref | join: ', ' %}
+      {% assign references = SEQ | push: 'Reference' | push: ref %}
+      {% assign attributes = attributes | push: references %}
+    {% endif %}
+
+    {%- assign md_example = SEQ | push: 'Markdown' | push: mde %}
+    {%- assign attributes = attributes | push: md_example | sort %}
+    {%- assign th_rowspan = 2 | plus: attributes.size %}
+
+    <table class="abbr dfn">
+      <colgroup>
+        <col class="col1" />
+        <col class="col2" />
+        <col class="col3" />
+        <col class="col4" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th scope="col" rowspan="{{ th_rowspan }}">{{ dup | default: term }}</th>
+          <th scope="col" rowspan="{{ th_rowspan }}">{{ err | default: '&hellip;' }}</th>
+          <th scope="col" colspan="2">{{ dfn }}</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{ def.txt | smartify | default: def.TXT }}</td>
+        </tr>{% for attr in attributes %}
+        <tr>
+          <th scope="row">{{ attr[0] | default: TBD }}:</th>
+          <td>{{ attr[1] | join: '&thinsp;&sdot;&thinsp;' | default: TBD }}</td>
+        </tr>{% endfor %}
+      </tbody>
+    </table>
+    {%- assign term = '' %}
+    {%- assign dfn_last = dfn_pure %}
+    {%- endfor %}
+    {%- endfor %}
+  </section>
+{% endfor %}
+</main>
+
