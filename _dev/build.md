@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: Building NeoMutt
-description: How to build NeoMutt from the source code (Autoconf)
+description: How to build NeoMutt from the source code
 status: wip
 ---
 
@@ -155,10 +155,11 @@ make uninstall
 *[OBDB]: Oracle Berkeley Database
 *[QDBM]: Quick Data Base Manager
 *[SASL]: Simple Authentication and Security Layer
-*[TLS]: Transport Layer Security
+*[SSL]: Secure Sockets Layer
 *[Tar]: Tape archiver
-*[ZIP]: archive file format, meaning &ldquo;move at high speed&rdquo;
+*[TLS]: Transport Layer Security
 *[tarball]: Tar generated archive file
+*[ZIP]: archive file format (meaning &ldquo;move at high speed&rdquo;)
 
 [crss]:  <https://www.gnu.org/software/ncurses/ncurses.html>
 [dgcc]:  <https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html>

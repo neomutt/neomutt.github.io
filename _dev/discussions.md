@@ -42,17 +42,17 @@ Expand config variables in shell command lines
 
 : **Raised by** @demure -- **Result**: hard, may be possible in future using lua
 
-### [#550 PR: Show alternating padding in help menus][#550]
-
-Show lines of dots in rows in the help page to assist reading. 
-
-: **Raised by** @somini -- **Result**: hard, need better colour support in help
-
 ### [#587 Better support for multipart/alternative?][#587]
 
 Allow better nesting of mime parts
 
 : **Raised by** @mrzool -- **Result**: desired, no interest
+
+### [#550 PR: Show alternating padding in help menus][#550]
+
+Show lines of dots in rows in the help page to assist reading.
+
+: **Raised by** @somini -- **Result**: hard, need better colour support in help
 
 ### [#535 Could '^g' be remapped?][#535]
 
@@ -231,7 +231,7 @@ Better handling of deleted emails, modification of flags / headers
 ### [#149 Feature request: crypt-autoselectkey][#149]
 
 Add variable crypt_autoselectkey, which allows forcing neomutt to autoselect a
-key when only (a trusted) one is available in the "PGP keys matching ..." menu. 
+key when only (a trusted) one is available in the "PGP keys matching ..." menu.
 
 : **Raised by** @dannyob -- **Result**: desired, no interest
 
@@ -271,7 +271,7 @@ Partial synchronisation of mailbox changes
 
 : **Raised by** @RichiH on 2016-08-11 -- **Result**: hard, not well-defined
 
-### [#093 Open attachments in the background][#093]
+### [#93 Open attachments in the background][#93]
 
 Fork a new process to avoid NeoMutt waiting for an attachment viewer
 
@@ -350,7 +350,11 @@ Be able to "drive" mutt from other programs, mailto:
 : **Raised by** @257 on 2016-03-15 -- **Result**: hard, would require lots of work
 
 
+[#741]: <https://github.com/neomutt/neomutt/issues/741>
+[#678]: <https://github.com/neomutt/neomutt/issues/678>
+[#658]: <https://github.com/neomutt/neomutt/issues/658>
 [#587]: <https://github.com/neomutt/neomutt/issues/587>
+[#550]: <https://github.com/neomutt/neomutt/issues/550>
 [#535]: <https://github.com/neomutt/neomutt/issues/535>
 [#504]: <https://github.com/neomutt/neomutt/issues/504>
 [#469]: <https://github.com/neomutt/neomutt/issues/469>
@@ -367,6 +371,7 @@ Be able to "drive" mutt from other programs, mailto:
 [#315]: <https://github.com/neomutt/neomutt/issues/315>
 [#314]: <https://github.com/neomutt/neomutt/issues/314>
 [#309]: <https://github.com/neomutt/neomutt/issues/309>
+[#294]: <https://github.com/neomutt/neomutt/issues/294>
 [#277]: <https://github.com/neomutt/neomutt/issues/277>
 [#273]: <https://github.com/neomutt/neomutt/issues/273>
 [#265]: <https://github.com/neomutt/neomutt/issues/265>
@@ -379,12 +384,14 @@ Be able to "drive" mutt from other programs, mailto:
 [#192]: <https://github.com/neomutt/neomutt/issues/192>
 [#171]: <https://github.com/neomutt/neomutt/issues/171>
 [#150]: <https://github.com/neomutt/neomutt/issues/150>
+[#149]: <https://github.com/neomutt/neomutt/issues/149>
 [#131]: <https://github.com/neomutt/neomutt/issues/131>
 [#126]: <https://github.com/neomutt/neomutt/issues/126>
 [#109]: <https://github.com/neomutt/neomutt/issues/109>
 [#105]: <https://github.com/neomutt/neomutt/issues/105>
 [#99]: <https://github.com/neomutt/neomutt/issues/99>
 [#98]: <https://github.com/neomutt/neomutt/issues/98>
+[#93]: <https://github.com/neomutt/neomutt/issues/93>
 [#85]: <https://github.com/neomutt/neomutt/issues/85>
 [#83]: <https://github.com/neomutt/neomutt/issues/83>
 [#72]: <https://github.com/neomutt/neomutt/issues/72>
