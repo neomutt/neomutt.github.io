@@ -1,7 +1,7 @@
 ---
 layout: concertina
-Title: Discussions
-description: Closed Discussions on GitHub
+Title: Closed / Stalled Discussions
+description: Closed and stalled discussions on GitHub
 status: wip
 ---
 
