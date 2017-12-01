@@ -18,7 +18,7 @@ maintainer: flatcap
 | 7             | Supported                   |
 
 The NeoMutt RPMs are published in a YUM repo. This is a public repository run
-by Richard Russon ([FlatCap](https://github.com/flatcap)) <[rich@flatcap.org](mailto:rich@flatcap.org)>
+by Richard Russon (@flatcap) <[rich@flatcap.org](mailto:rich@flatcap.org)>
 
 They provide NeoMutt for both CentOS and RedHat Enterprise Linux.
 
@@ -102,9 +102,9 @@ build NeoMutt from the source code.
 
 ```
 yum install git
-yum install autoconf automake gcc gettext-devel ncurses-devel slang-devel
+yum install gcc gettext-devel libidn-devel ncurses-devel slang-devel tcl
 yum install docbook-dtds docbook-style-xsl libxslt lynx
-yum install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel
+yum install gnutls-devel cyrus-sasl-devel gpgme-devel krb5-devel
 yum install tokyocabinet-devel
 ```
 
@@ -123,13 +123,16 @@ debug NeoMutt.
 
 ```
 yum install gdb yum-utils
-debuginfo-install bzip2-libs cyrus-sasl-lib glibc gnutls gpgme libassuan libgcrypt
-debuginfo-install libgpg-error libtasn1 ncurses-libs nss-softokn-freebl tokyocabinet zlib
+debuginfo-install bzip2-libs cyrus-sasl-lib glibc gnutls gpgme keyutils-libs
+debuginfo-install krb5-libs libcom_err libgcrypt libgpg-error libidn libselinux
+debuginfo-install libtasn1 ncurses-libs nss-softokn-freebl tokyocabinet zlib
 ```
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 
+`gdb` may suggest installing more debuginfo packages.
+
 ---
 
-Instructions last checked: 2017-09-21 by @flatcap
+Instructions last checked: 2017-12-01 by @flatcap
 

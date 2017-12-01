@@ -13,10 +13,10 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 23 or before | Unsupported, please upgrade |
-| 24           | Supported                   |
+| 24 or before | Unsupported, please upgrade |
 | 25           | Supported                   |
 | 26           | Supported                   |
+| 27           | Supported                   |
 | Rawhide      | Supported                   |
 
 The NeoMutt RPMs are published in a COPR. This is a public repository run by
@@ -162,7 +162,7 @@ build NeoMutt from the source code.
 
 ```
 dnf install git
-dnf install autoconf automake gcc ncurses-devel slang-devel gettext-devel tar
+dnf install gcc libidn-devel ncurses-devel slang-devel gettext-devel tcl tar
 dnf install docbook-dtds docbook-style-xsl libxslt lynx
 dnf install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel notmuch-devel
 dnf install tokyocabinet-devel kyotocabinet-devel lmdb-devel
@@ -177,14 +177,22 @@ debug NeoMutt.
 
 ```
 dnf install cgdb
-dnf debuginfo-install bzip2-libs cyrus-sasl-lib glib2 glibc gmime gmp gnutls gpgme keyutils-libs
-dnf debuginfo-install krb5-libs kyotocabinet-libs libassuan libcom_err libffi libgcc libgpg-error
-dnf debuginfo-install libidn libselinux libstdc++ libtalloc libtasn1 libuuid lzo ncurses-libs nettle
-dnf debuginfo-install notmuch nss-softokn-freebl p11-kit pcre tokyocabinet xapian-core-libs xz-libs
+dnf debuginfo-install bzip2-libs cyrus-sasl-lib glib2 gmime gmp gnutls gpgme
+dnf debuginfo-install keyutils-libs krb5-libs kyotocabinet-libs libassuan libblkid
+dnf debuginfo-install libcom_err libcrypt-nss libffi libgcc libgpg-error libidn
+dnf debuginfo-install libidn2 libmount libselinux libstdc++ libtalloc libtasn1
+dnf debuginfo-install libunistring libuuid lmdb-libs lzo ncurses-libs nettle
+dnf debuginfo-install notmuch nss-softokn-freebl p11-kit pcre pcre2 tokyocabinet
+dnf debuginfo-install xapian-core-libs xz-libs zlib
 ```
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 
+`cgdb` may suggest installing more debuginfo packages.
+
+---
+
+Instructions last checked: 2017-12-01 by @flatcap
 
 *[COPR]: Cool Other Package Repo
 
