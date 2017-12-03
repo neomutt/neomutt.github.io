@@ -13,10 +13,6 @@ options = {
         /.*fonts\/*/,
         /.*google*/,
 
-        /.*feature.*/,
-        /.*guide.*/,
-        /.*code.*/,
-
         /.*txt/,
         /.*rc/,
         /.*pl/,
@@ -34,7 +30,8 @@ options = {
         "ScriptCheck"
     ],
     :cache => {
-        :timeframe => '30d'
+        :timeframe => '12w',
+        :storage_dir => '$HOME/.cache/.htmlproofer'
     },
     :only_4xx => true,
     :typhoeus => {
@@ -43,12 +40,26 @@ options = {
     }
 }
 
-
-
 task :default do
     sh "jekyll build"
-    HTMLProofer.check_directory("./_site/", options).run
+    Rake::Task["feature"].execute
+    Rake::Task["guide"].execute
+    Rake::Task["rest"].execute
+end
 
+task :feature do
+    HTMLProofer.check_directory("./_site/feature", options).run
+end
+
+task :guide do
+    HTMLProofer.check_directory("./_site/guide", options).run
+end
+
+task :rest do
+    HTMLProofer.check_directory("./_site/", options + {
+        :file_ignore => [ /.*guide.*/,
+                          /.*feature*/]
+    }).run
 end
 
 

@@ -1,9 +1,14 @@
 dist: trusty
 language: ruby
 
+git:
+  depth: 1
+
+
 cache:
+  bundler: true
   directories:
-  - $TRAVIS_BUILD_DIR/tmp/.htmlproofer
+  - $HOME/.cache/.htmlproofer
 
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
