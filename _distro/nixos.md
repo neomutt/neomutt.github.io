@@ -47,6 +47,17 @@ You just have to run
 nix-env -iA nixos.neomutt
 ```
 
+Alternatively, you can also install a more modern version from NixOS unstable, even
+when you're running NixOS stable.
+
+```
+nix-env -f https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz -iA neomutt
+```
+
+Due to the isolated nature of nix package management, you don't run into
+trouble.
+
+
 ## Update <a class="offset" id="update"></a>
 
 ### imperative
