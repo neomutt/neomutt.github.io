@@ -104,7 +104,6 @@ e.g.  `./configure --notmuch --with-notmuch=/usr/local/lib/notmuch`
 | `--disable-pgp`         | Path | Pretty Good Privacy                          |
 | `--disable-smime`       | Path | Secure/Multipurpose Internet Mail Extensions |
 | `--disable-idn`         | Path | Internationalised domain names               |
-| `--logging`             |      | Enable debug logging                         |
 |                         |      |                                              |
 | `--with-domain=DOMAIN`  |      | Default email domain                         |
 | `--with-mailpath`       | Path | Location of spooled mail                     |
