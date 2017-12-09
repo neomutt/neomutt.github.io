@@ -4,10 +4,12 @@ distro: Debian
 icon: debian.png
 homepage: https://packages.debian.org/testing/mail/neomutt
 title: NeoMutt for Debian
-maintainer: paravoid
+maintainer: Antonio Radici, Faidon Liambotis
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
+
+Maintainers: [Antonio Radici, Faidon Liambotis](email:pkg-mutt-maintainers@lists.alioth.debian.org)
 
 ## Support <a class="offset" id="support"></a>
 
