@@ -2,7 +2,7 @@
 layout: concertina
 distro: Debian
 icon: debian.png
-homepage: https://packages.debian.org/testing/mail/mutt
+homepage: https://packages.debian.org/testing/mail/neomutt
 title: NeoMutt for Debian
 maintainer: paravoid
 ---
@@ -19,7 +19,7 @@ available in Debian testing, because it was substituted with NeoMutt.
 ## Installation <a class="offset" id="install"></a>
 
 ```reply
-apt-get install mutt
+apt-get install neomutt
 ```
 
 ## Update <a class="offset" id="update"></a>
@@ -30,7 +30,7 @@ apt-get update && apt-get upgrade
 ## Removal <a class="offset" id="remove"></a>
 
 ```reply
-apt-get remove mutt
+apt-get remove neomutt
 ```
 
 ## Building from source <a class="offset" id="build"></a>
@@ -38,7 +38,7 @@ apt-get remove mutt
 The commmand
 
 ```reply
-apt-get build-dep mutt
+apt-get build-dep neomutt
 ```
 
 will install all build dependencies of your NeoMutt package. Note that you may
