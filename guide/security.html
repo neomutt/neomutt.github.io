@@ -58,7 +58,7 @@ title: Security Considerations
       <p>Message-Id: headers contain a local part that is to be created in a unique fashion. In order to do so, NeoMutt will
       <span class="quote">“
       <span class="quote">leak</span>”</span> some information to the outside world when sending messages: the generation of this header includes a step counter which is increased (and rotated) with every message sent. In a longer running NeoMutt session, others can make assumptions about your mailing habits depending on the number of messages sent. If this is not desired, the header can be manually provided using
-      <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a>(though not recommended).</p>
+      <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a>(though not recommended).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -73,7 +73,7 @@ title: Security Considerations
       <p>As NeoMutt be can be set up to be the mail client to handle
       <code class="literal">mailto:</code>style links in websites, there're security considerations, too. Arbitrary header fields can be embedded in these links which could override existing header fields or attach arbitrary files using
       <a class="link" href="gettingstarted.html#attach-header" title="6.2.2.&#160;Attach: Pseudo Header">the Attach: pseudoheader</a>. This may be problematic if the
-      <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit-headers</a> variable is
+      <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit-headers</a> variable is
       <span class="emphasis">
         <em>unset</em>
       </span>, i.e. the user doesn't want to see header fields while editing the message and doesn't pay enough attention to the compose menu's listing of attachments.</p>
@@ -109,7 +109,7 @@ mailto:joe@host?Attach=~/.gnupg/secring.gpg
     </div>
     <p>NeoMutt in many places has to rely on external applications or for convenience supports mechanisms involving external applications.</p>
     <p>One of these is the
-    <code class="literal">mailcap</code> mechanism as defined by RfC1524. Details about a secure use of the mailcap mechanisms is given in
+    <code class="literal">mailcap</code> mechanism as defined by RFC1524. Details about a secure use of the mailcap mechanisms is given in
     <a class="xref" href="mimesupport.html#secure-mailcap" title="3.2.&#160;Secure Use of Mailcap">Section&#160;3.2, “Secure Use of Mailcap”</a>.</p>
     <p>Besides the mailcap mechanism, NeoMutt uses a number of other external utilities for operation, for example to provide crypto support, in backtick expansion in configuration files or format string filters. The same security considerations apply for these as for tools involved via mailcap.</p>
   </div>

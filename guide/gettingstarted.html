@@ -345,7 +345,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
             </li>
             <li class="listitem">
               <p>
-                <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.312.&#160;sidebar_next_new_wrap">Wraparound searching</a>
+                <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.313.&#160;sidebar_next_new_wrap">Wraparound searching</a>
               </p>
             </li>
             <li class="listitem">
@@ -430,7 +430,7 @@ set sidebar_divider_char = '│'
           </div>
           <p>
           <code class="literal">$sidebar_format</code> allows you to customize the Sidebar display. For an introduction, read
-          <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">format strings</a> including the section about
+          <a class="link" href="reference.html#index-format" title="3.140.&#160;index_format">format strings</a> including the section about
           <a class="link" href="configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">conditionals</a>.</p>
           <p>The default value is:
           <code class="literal">%B%* %n</code></p>
@@ -466,7 +466,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a class="offset" id="idm140534270110160"></a>
+            <a class="offset" id="idm140639457304528"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -565,7 +565,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a class="offset" id="idm140534270083344"></a>
+            <a class="offset" id="idm140639457277712"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format</strong>
             </p>
@@ -661,11 +661,14 @@ mailboxes =water/ocean/atlantic =water/ocean/pacific   =water/ocean/arctic
             <p>Shorten the names:</p>
             <pre class="screen">
 set sidebar_short_path
-<span class="comment"># Shorten mailbox names</span>
+<span class="comment"># Shorten mailbox names (truncate all subdirs)</span>
+set sidebar_component_depth=1
+<span class="comment"># Shorten mailbox names (truncate 1 subdirs)</span>
 set sidebar_delim_chars="/"
-<span class="comment"># Delete everything up to the last / character</span>
+<span class="comment"># Delete everything up to the last or Nth / character</span>
 </pre>
-            <p>The screenshot below shows what the Sidebar would look like before and after shortening.</p>
+            <p>The screenshot below shows what the Sidebar would look like before and after shortening using
+            <code class="literal">sidebar_short_path</code>.</p>
             <pre class="screen">
 |fruit/apple                            |apple
 |fruit/banana                           |banana
@@ -676,6 +679,19 @@ set sidebar_delim_chars="/"
 |water/ocean/atlantic                   |atlantic
 |water/ocean/pacific                    |pacific
 |water/ocean/arctic                     |arctic
+</pre>
+            <p>The screenshot below shows what the Sidebar would look like before and after shortening using
+            <code class="literal">sidebar_component_depth=1</code>.</p>
+            <pre class="screen">
+|fruit/apple                            |apple
+|fruit/banana                           |banana
+|fruit/cherry                           |cherry
+|water/sea/sicily                       |sea/sicily
+|water/sea/archipelago                  |sea/archipelago
+|water/sea/sibuyan                      |sea/sibuyan
+|water/ocean/atlantic                   |ocean/atlantic
+|water/ocean/pacific                    |ocean/pacific
+|water/ocean/arctic                     |ocean/arctic
 </pre>
           </div>
           <div class="sect5">
@@ -1371,9 +1387,9 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>NeoMutt maintains a history for the built-in editor. The number of items is controlled by the
-      <a class="link" href="reference.html#history" title="3.109.&#160;history">$history</a> variable and can be made persistent using an external file specified using
-      <a class="link" href="reference.html#history-file" title="3.110.&#160;history_file">$history_file</a> and
-      <a class="link" href="reference.html#save-history" title="3.292.&#160;save_history">$save_history</a>. You may cycle through them at an editor prompt by using the
+      <a class="link" href="reference.html#history" title="3.110.&#160;history">$history</a> variable and can be made persistent using an external file specified using
+      <a class="link" href="reference.html#history-file" title="3.111.&#160;history_file">$history_file</a> and
+      <a class="link" href="reference.html#save-history" title="3.293.&#160;save_history">$save_history</a>. You may cycle through them at an editor prompt by using the
       <code class="literal">&lt;history-up&gt;</code>and/or
       <code class="literal">&lt;history-down&gt;</code>commands. NeoMutt will remember the currently entered text as you cycle through history, and will wrap around to the initial entry line.</p>
       <p>NeoMutt maintains several distinct history lists, one for each of the following categories:</p>
@@ -1401,7 +1417,7 @@ bind editor &lt;delete&gt; backspace
         </ul>
       </div>
       <p>NeoMutt automatically filters out consecutively repeated items from the history. If
-      <a class="link" href="reference.html#history-remove-dups" title="3.111.&#160;history_remove_dups">$history_remove_dups</a> is set, all repeated items are removed from the history. It also mimics the behavior of some shells by ignoring items starting with a space. The latter feature can be useful in macros to not clobber the history's valuable entries with unwanted entries.</p>
+      <a class="link" href="reference.html#history-remove-dups" title="3.112.&#160;history_remove_dups">$history_remove_dups</a> is set, all repeated items are removed from the history. It also mimics the behavior of some shells by ignoring items starting with a space. The latter feature can be useful in macros to not clobber the history's valuable entries with unwanted entries.</p>
     </div>
   </div>
   <div class="sect1">
@@ -1428,7 +1444,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>Common keys used to navigate through and manage messages in the index are shown in
       <a class="xref" href="#tab-key-index" title="Table&#160;2.8.&#160;Most common message index keys">Table&#160;2.8, “Most common message index keys”</a>. How messages are presented in the index menu can be customized using the
-      <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">$index_format</a> variable.</p>
+      <a class="link" href="reference.html#index-format" title="3.140.&#160;index_format">$index_format</a> variable.</p>
       <div >
         <a class="offset" id="tab-key-index"></a>
         <p class="title">
@@ -1708,7 +1724,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>By default, NeoMutt uses its built-in pager to display the contents of messages (an external pager such as
       <code class="literal">less(1)</code>can be configured, see
-      <a class="link" href="reference.html#pager" title="3.205.&#160;pager">$pager</a> variable). The pager is very similar to the Unix program
+      <a class="link" href="reference.html#pager" title="3.206.&#160;pager">$pager</a> variable). The pager is very similar to the Unix program
       <code class="literal">less(1)</code>though not nearly as featureful.</p>
       <div >
         <a class="offset" id="tab-key-pager"></a>
@@ -1955,7 +1971,7 @@ bind editor &lt;delete&gt; backspace
       <p>So-called
       <span class="quote">“<span class="quote">threads</span>”</span> provide a hierarchy of messages where replies are linked to their parent message(s). This organizational form is extremely useful in mailing lists where different parts of the discussion diverge. NeoMutt displays threads as a tree structure.</p>
       <p>In NeoMutt, when a mailbox is
-      <a class="link" href="reference.html#sort" title="3.351.&#160;sort">sorted</a> by
+      <a class="link" href="reference.html#sort" title="3.353.&#160;sort">sorted</a> by
       <span class="emphasis">
         <em>threads</em>
       </span>, there are a few additional functions available in the
@@ -2090,9 +2106,9 @@ bind editor &lt;delete&gt; backspace
       </div>
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in
-      <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">$index_format</a>. For example, you could use
+      <a class="link" href="reference.html#index-format" title="3.140.&#160;index_format">$index_format</a>. For example, you could use
       <span class="quote">“<span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span> in
-      <a class="link" href="reference.html#index-format" title="3.139.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
+      <a class="link" href="reference.html#index-format" title="3.140.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
       <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="29.2.&#160;Conditionals">format string conditionals</a>.</p>
       <p>Technically, every reply should contain a list of its parent messages in the thread tree, but not all do. In these cases, NeoMutt groups them by subject which can be controlled using the
@@ -2154,11 +2170,49 @@ bind editor &lt;delete&gt; backspace
           </dd>
           <dt>
             <span class="term">
-            <code class="literal">&lt;edit&gt;</code>
-            <a class="offset" id="edit"></a>(default: e)</span>
+              <code class="literal">&lt;edit-raw-message&gt;</code>
+              <a class="offset" id="edit-raw-message"></a>
+            </span>
           </dt>
           <dd>
             <p>This command (available in the index and pager) allows you to edit the raw current message as it's present in the mail folder. After you have finished editing, the changed message will be appended to the current folder, and the original message will be marked for deletion; if the message is unchanged it won't be replaced.</p>
+            <p>
+            <a class="link" href="#edit">
+              <code class="literal">&lt;edit&gt;</code>
+            </a>is a synonym of this for backwards compatibility.</p>
+            <p>See also
+            <a class="link" href="#edit-or-view-raw-message">
+              <code class="literal">&lt;edit-or-view-raw-message&gt;</code>
+            </a>,
+            <a class="link" href="#view-raw-message">
+              <code class="literal">&lt;view-raw-message&gt;</code>
+            </a>.</p>
+          </dd>
+          <dt>
+            <span class="term">
+              <code class="literal">&lt;edit&gt;</code>
+              <a class="offset" id="edit"></a>
+            </span>
+          </dt>
+          <dd>
+            <p>Alias of
+            <a class="link" href="#edit-raw-message">
+              <code class="literal">&lt;edit-raw-message&gt;</code>
+            </a>for backwards compatibility.</p>
+          </dd>
+          <dt>
+            <span class="term">
+            <code class="literal">&lt;edit-or-view-raw-message&gt;</code>
+            <a class="offset" id="edit-or-view-raw-message"></a>(default: e)</span>
+          </dt>
+          <dd>
+            <p>This command (available in the index and pager) is the same as
+            <a class="link" href="#edit-raw-message">
+              <code class="literal">&lt;edit-raw-message&gt;</code>
+            </a>if the mailbox is writable, otherwise it the same as
+            <a class="link" href="#view-raw-message">
+              <code class="literal">&lt;view-raw-message&gt;</code>
+            </a>.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2212,7 +2266,7 @@ bind editor &lt;delete&gt; backspace
               <strong>subscribe</strong>
             </span></a>commands, but also honor any
             <code class="literal">Mail-Followup-To</code> header(s) if the
-            <a class="link" href="reference.html#honor-followup-to" title="3.113.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. In addition, the
+            <a class="link" href="reference.html#honor-followup-to" title="3.114.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. In addition, the
             <code class="literal">List-Post</code> header field is examined for
             <code class="literal">mailto:</code>URLs specifying a mailing list address. Using this when replying to messages posted to mailing lists helps avoid duplicate copies being sent to the author of the message you are replying to.</p>
           </dd>
@@ -2223,9 +2277,9 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and pipes the current or tagged message(s) to it. The variables
-            <a class="link" href="reference.html#pipe-decode" title="3.243.&#160;pipe_decode">$pipe_decode</a>,
-            <a class="link" href="reference.html#pipe-split" title="3.245.&#160;pipe_split">$pipe_split</a>,
-            <a class="link" href="reference.html#pipe-sep" title="3.244.&#160;pipe_sep">$pipe_sep</a> and
+            <a class="link" href="reference.html#pipe-decode" title="3.244.&#160;pipe_decode">$pipe_decode</a>,
+            <a class="link" href="reference.html#pipe-split" title="3.246.&#160;pipe_split">$pipe_split</a>,
+            <a class="link" href="reference.html#pipe-sep" title="3.245.&#160;pipe_sep">$pipe_sep</a> and
             <a class="link" href="reference.html#wait-key" title="3.403.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
           </dd>
           <dt>
@@ -2255,7 +2309,26 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>The pager uses the
-            <a class="link" href="reference.html#quote-regexp" title="3.270.&#160;quote_regexp">$quote_regexp</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
+            <a class="link" href="reference.html#quote-regexp" title="3.271.&#160;quote_regexp">$quote_regexp</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
+          </dd>
+          <dt>
+            <span class="term">
+              <code class="literal">&lt;view-raw-message&gt;</code>
+              <a class="offset" id="view-raw-message"></a>
+            </span>
+          </dt>
+          <dd>
+            <p>This command (available in the index and pager) opens the raw message read-only in an editor. This command does not allow editing the message, use
+            <a class="link" href="#edit-raw-message">
+              <code class="literal">&lt;edit-raw-message&gt;</code>
+            </a>for this.</p>
+            <p>See also
+            <a class="link" href="#edit-raw-message">
+              <code class="literal">&lt;edit-raw-message&gt;</code>
+            </a>,
+            <a class="link" href="#edit-or-view-raw-message">
+              <code class="literal">&lt;edit-or-view-raw-message&gt;</code>
+            </a>.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2389,8 +2462,8 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="reference.html#askbcc" title="3.10.&#160;askbcc">$askbcc</a>,
       <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>,
       <a class="link" href="reference.html#bounce" title="3.26.&#160;bounce">$bounce</a>,
-      <a class="link" href="reference.html#fast-reply" title="3.74.&#160;fast_reply">$fast_reply</a>, and
-      <a class="link" href="reference.html#include" title="3.136.&#160;include">$include</a> for changing how and if NeoMutt asks these questions.</p>
+      <a class="link" href="reference.html#fast-reply" title="3.75.&#160;fast_reply">$fast_reply</a>, and
+      <a class="link" href="reference.html#include" title="3.137.&#160;include">$include</a> for changing how and if NeoMutt asks these questions.</p>
       <p>When replying, NeoMutt fills these fields with proper values depending on the reply type. The types of replying supported are:</p>
       <div class="variablelist">
         <dl class="variablelist">
@@ -2421,13 +2494,13 @@ bind editor &lt;delete&gt; backspace
         </dl>
       </div>
       <p>After getting recipients for new messages, forwards or replies, NeoMutt will then automatically start your
-      <a class="link" href="reference.html#editor" title="3.68.&#160;editor">$editor</a> on the message body. If the
-      <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate
+      <a class="link" href="reference.html#editor" title="3.69.&#160;editor">$editor</a> on the message body. If the
+      <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate
       <a class="link" href="reference.html#attribution" title="3.20.&#160;attribution">$attribution</a>,
-      <a class="link" href="reference.html#indent-string" title="3.138.&#160;indent_string">$indent_string</a> and
-      <a class="link" href="reference.html#post-indent-string" title="3.255.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the
-      <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> variable is unset, a copy of the forwarded message will be included. If you have specified a
-      <a class="link" href="reference.html#signature" title="3.320.&#160;signature">$signature</a>, it will be appended to the message.</p>
+      <a class="link" href="reference.html#indent-string" title="3.139.&#160;indent_string">$indent_string</a> and
+      <a class="link" href="reference.html#post-indent-string" title="3.256.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the
+      <a class="link" href="reference.html#mime-forward" title="3.171.&#160;mime_forward">$mime_forward</a> variable is unset, a copy of the forwarded message will be included. If you have specified a
+      <a class="link" href="reference.html#signature" title="3.322.&#160;signature">$signature</a>, it will be appended to the message.</p>
       <p>Once you have finished editing the body of your mail message, you are returned to the
       <span class="emphasis">
         <em>compose</em>
@@ -2618,7 +2691,7 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>When editing the header because of
-      <a class="link" href="reference.html#edit-headers" title="3.67.&#160;edit_headers">$edit_headers</a> being set, there are a several pseudo headers available which will not be included in sent messages but trigger special NeoMutt behavior.</p>
+      <a class="link" href="reference.html#edit-headers" title="3.68.&#160;edit_headers">$edit_headers</a> being set, there are a several pseudo headers available which will not be included in sent messages but trigger special NeoMutt behavior.</p>
       <div class="sect3">
         <div class="titlepage">
           <div>
@@ -2693,7 +2766,7 @@ bind editor &lt;delete&gt; backspace
         <span class="quote">“<span class="quote">E</span>”</span> selects encryption,
         <span class="quote">“<span class="quote">S</span>”</span> selects signing and
         <span class="quote">“<span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
-        <a class="link" href="reference.html#pgp-sign-as" title="3.235.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
+        <a class="link" href="reference.html#pgp-sign-as" title="3.236.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -2732,7 +2805,7 @@ bind editor &lt;delete&gt; backspace
       <code class="literal">^G</code>. When you do so, NeoMutt will return to the compose screen.</p>
       <p>Once you have successfully finished the key selection, the message will be encrypted using the selected public keys when sent out.</p>
       <p>Most fields of the entries in the key selection menu (see also
-      <a class="link" href="reference.html#pgp-entry-format" title="3.220.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
+      <a class="link" href="reference.html#pgp-entry-format" title="3.221.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
       <p>The flags sequence (
       <span class="quote">“<span class="quote">%f</span>”</span>) will expand to one of the flags in
       <a class="xref" href="#tab-pgp-menuflags" title="Table&#160;2.17.&#160;PGP key menu flags">Table&#160;2.17, “PGP key menu flags”</a>.</p>
@@ -2831,7 +2904,7 @@ bind editor &lt;delete&gt; backspace
         <p>After editing the initial message text and before entering the compose menu, NeoMutt properly space-stuffs the message.
         <span class="emphasis">
           <em>Space-stuffing</em>
-        </span>is required by RfC3676 defining
+        </span>is required by RFC3676 defining
         <code class="literal">format=flowed</code> and means to prepend a space to:</p>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
@@ -2895,22 +2968,22 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>NeoMutt has some support for reformatting when viewing and replying to
         <code class="literal">format=flowed</code> messages. In order to take advantage of these,
-        <a class="link" href="reference.html#reflow-text" title="3.277.&#160;reflow_text">$reflow_text</a> must be set.</p>
+        <a class="link" href="reference.html#reflow-text" title="3.278.&#160;reflow_text">$reflow_text</a> must be set.</p>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>Paragraphs are automatically reflowed and wrapped at a width specified by
-              <a class="link" href="reference.html#reflow-wrap" title="3.278.&#160;reflow_wrap">$reflow_wrap</a>.</p>
+              <a class="link" href="reference.html#reflow-wrap" title="3.279.&#160;reflow_wrap">$reflow_wrap</a>.</p>
             </li>
             <li class="listitem">
               <p>In its original format, the quoting style of
               <code class="literal">format=flowed</code> messages can be difficult to read, and doesn't intermix well with non-flowed replies. Setting
-              <a class="link" href="reference.html#reflow-space-quotes" title="3.276.&#160;reflow_space_quotes">$reflow_space_quotes</a> adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with
+              <a class="link" href="reference.html#reflow-space-quotes" title="3.277.&#160;reflow_space_quotes">$reflow_space_quotes</a> adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with
               <a class="link" href="reference.html#text-flowed" title="3.378.&#160;text_flowed">$text_flowed</a> unset).</p>
             </li>
             <li class="listitem">
               <p>If
-              <a class="link" href="reference.html#reflow-space-quotes" title="3.276.&#160;reflow_space_quotes">$reflow_space_quotes</a> is unset, NeoMutt will still add one trailing space after all the quotes in the pager (but not when replying).</p>
+              <a class="link" href="reference.html#reflow-space-quotes" title="3.277.&#160;reflow_space_quotes">$reflow_space_quotes</a> is unset, NeoMutt will still add one trailing space after all the quotes in the pager (but not when replying).</p>
             </li>
           </ul>
         </div>
@@ -2932,20 +3005,18 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“<span class="quote">b</span>”</span> and
     <span class="quote">“<span class="quote">f</span>”</span> respectively.</p>
     <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines) or including it as a MIME attachment, depending on the value of the
-    <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> variable. Decoding of attachments, like in the pager, can be controlled by the
-    <a class="link" href="reference.html#forward-decode" title="3.85.&#160;forward_decode">$forward_decode</a> and
-    <a class="link" href="reference.html#mime-forward-decode" title="3.171.&#160;mime_forward_decode">$mime_forward_decode</a> variables, respectively. The desired forwarding format may depend on the content, therefore
-    <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> is a quadoption which, for example, can be set to
+    <a class="link" href="reference.html#mime-forward" title="3.171.&#160;mime_forward">$mime_forward</a> variable. Decoding of attachments, like in the pager, can be controlled by the
+    <a class="link" href="reference.html#forward-decode" title="3.86.&#160;forward_decode">$forward_decode</a> and
+    <a class="link" href="reference.html#mime-forward-decode" title="3.172.&#160;mime_forward_decode">$mime_forward_decode</a> variables, respectively. The desired forwarding format may depend on the content, therefore
+    <a class="link" href="reference.html#mime-forward" title="3.171.&#160;mime_forward">$mime_forward</a> is a quadoption which, for example, can be set to
     <span class="quote">“<span class="quote">ask-no</span>”</span>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
     <a class="link" href="reference.html#weed" title="3.404.&#160;weed">$weed</a> variable, unless
-    <a class="link" href="reference.html#mime-forward" title="3.170.&#160;mime_forward">$mime_forward</a> is set.</p>
+    <a class="link" href="reference.html#mime-forward" title="3.171.&#160;mime_forward">$mime_forward</a> is set.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
-    <a class="link" href="reference.html#forward-references" title="3.90.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
-    <span class="quote">“
-    <span class="quote">In-Reply-To:</span>”</span> and
-    <span class="quote">“
-    <span class="quote">References:</span>”</span> headers, just like a reply would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
+    <a class="link" href="reference.html#forward-references" title="3.91.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
+    <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
+    <span class="quote">“<span class="quote">References:</span>”</span> headers, just like a reply would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
     <p>Editing the message to forward follows the same procedure as sending or replying to a message does.</p>
   </div>
   <div class="sect1">
@@ -2962,10 +3033,9 @@ bind editor &lt;delete&gt; backspace
     <span class="emphasis">
       <em>compose</em>
     </span>menu, the body of your message and attachments are stored in the mailbox specified by the
-    <a class="link" href="reference.html#postponed" title="3.258.&#160;postponed">$postponed</a> variable. This means that you can recall the message even if you exit NeoMutt and then restart it at a later time.</p>
+    <a class="link" href="reference.html#postponed" title="3.259.&#160;postponed">$postponed</a> variable. This means that you can recall the message even if you exit NeoMutt and then restart it at a later time.</p>
     <p>Once a message is postponed, there are several ways to resume it. From the command line you can use the
-    <span class="quote">“
-    <span class="quote">-p</span>”</span> option, or if you compose a new message from the
+    <span class="quote">“<span class="quote">-p</span>”</span> option, or if you compose a new message from the
     <span class="emphasis">
       <em>index</em>
     </span>or
@@ -2980,7 +3050,7 @@ bind editor &lt;delete&gt; backspace
       <p>If you postpone a reply to a message, the reply setting of the message is only updated when you actually finish the message and send it. Also, you must be in the same folder with the message you replied to for the status of the message to be updated.</p>
     </div>
     <p>See also the
-    <a class="link" href="reference.html#postpone" title="3.257.&#160;postpone">$postpone</a> quad-option.</p>
+    <a class="link" href="reference.html#postpone" title="3.258.&#160;postpone">$postpone</a> quad-option.</p>
   </div>
 </div>
 {% endraw %}

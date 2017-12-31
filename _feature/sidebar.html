@@ -163,6 +163,15 @@ status: stable
             </tr>
             <tr>
               <td>
+                <code class="literal">sidebar_component_depth</code>
+              </td>
+              <td>number</td>
+              <td>
+                <code class="literal">0</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <code class="literal">sidebar_sort_method</code>
               </td>
               <td>enum</td>
@@ -319,12 +328,10 @@ status: stable
       </em>... }</p>
     </div>
     <p>This command specifies mailboxes that will always be displayed in the sidebar, even if
-    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.311.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
+    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.312.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
     <p>The
-    <span class="quote">“
-    <span class="quote">unsidebar_whitelist</span>”</span> command is used to remove a mailbox from the list of whitelisted mailboxes. Use
-    <span class="quote">“
-    <span class="quote">unsidebar_whitelist *</span>”</span> to remove all mailboxes.</p>
+    <span class="quote">“<span class="quote">unsidebar_whitelist</span>”</span> command is used to remove a mailbox from the list of whitelisted mailboxes. Use
+    <span class="quote">“<span class="quote">unsidebar_whitelist *</span>”</span> to remove all mailboxes.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -518,9 +525,10 @@ set sidebar_visible = no
 set sidebar_width = 20
 <span class="comment"># Should the mailbox paths be abbreviated?</span>
 set sidebar_short_path = no
+<span class="comment"># Number of top-level mailbox path subdirectories to truncate for display</span>
+set sidebar_component_depth = 0
 <span class="comment"># When abbreviating mailbox path names, use any of these characters as path
 # separators.  Only the part after the last separators will be shown.
-
 # For file folders '/' is good.  For IMAP folders, often '.' is useful.</span>
 set sidebar_delim_chars = '/.'
 <span class="comment"># If the mailbox path is abbreviated, should it be indented?</span>
