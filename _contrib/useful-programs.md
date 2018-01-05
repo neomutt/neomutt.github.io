@@ -76,6 +76,9 @@ status: stable
 
 ## Converting text formats
 
+* [plainMail2HTML](https://github.com/amitramon/plainMail2HTML) -- 
+  plainMail2HTML enables users of Mutt (and possibly other textual Email clients)
+  to send HTML-formatted Emails.
 * [antiword](http://www.winfield.demon.nl/) -- Microsoft Word to TXT converter.
 * [rtf2html](https://www.wagner.pp.ru/~vitus/software/catdoc/) -- RTF to HTML
   converter (which then can be piped through `lynx -stdin -dump -force_html`).
