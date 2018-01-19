@@ -1,7 +1,7 @@
 ---
 layout: concertina
 distro: Homebrew
-icon: osx.png
+icon: homebrew.png
 homepage: https://brew.sh/
 title: NeoMutt for Homebrew
 maintainer: alexpearce
