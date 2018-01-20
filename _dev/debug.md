@@ -40,6 +40,11 @@ make EXTRA_CFLAGS=-g
 ```
 cgdb neomutt
 ```
+or, if you do not have `cgdb`, you can give the Text User Interface (TUI) of `gdb` a try:
+
+```shell
+gdb -tui neomutt
+```
 
 ## Attaching a debugger to NeoMutt
 
