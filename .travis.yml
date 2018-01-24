@@ -12,7 +12,7 @@ cache:
 
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
-  - gem install jekyll
+  - gem install jekyll -v 3.6.0
   - gem install jekyll-gist
   - gem install jekyll-sitemap
   - gem install jekyll-mentions
