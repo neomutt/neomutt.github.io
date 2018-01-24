@@ -12,6 +12,12 @@ maintainer: kdave
 
 ## Support <a class="offset" id="support"></a>
 
+| openSUSE     | Support                     |
+| :----------- | :-------------------------- |
+| Leap 42.x or before | unsupported          |
+| Leap 15.x    | supported                   |
+| Tumbleweed   | supported                   |
+
 The `neomutt` package has been added to openSUSE Tumbleweed in 2018 and is not
 present in any other released versions (like 13.x or Leap).
 
