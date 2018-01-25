@@ -50,19 +50,22 @@ status: stable
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
     <a class="link" href="/guide/reference.html#fcc-clear" title="3.77.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.343.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
-    <a class="link" href="/guide/reference.html#smime-self-encrypt-as" title="3.344.&#160;smime_self_encrypt_as">$smime_self_encrypt_as</a> to your personal S/MIME key id.</p>
+    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.342.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#smime-default-key" title="3.332.&#160;smime_default_key">$smime_default_key</a> to your personal S/MIME key id.</p>
     <pre class="screen">
-set smime_self_encrypt     = yes
-set smime_self_encrypt_as  = bb345e23.0
+set smime_self_encrypt = yes
+set smime_default_key  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
     <a class="link" href="/guide/reference.html#pgp-self-encrypt" title="3.233.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>, then set
-    <a class="link" href="/guide/reference.html#pgp-self-encrypt-as" title="3.234.&#160;pgp_self_encrypt_as">$pgp_self_encrypt_as</a> to your personal PGP key id.</p>
+    <a class="link" href="/guide/reference.html#pgp-default-key" title="3.218.&#160;pgp_default_key">$pgp_default_key</a> to your personal PGP key id.</p>
     <pre class="screen">
-set pgp_self_encrypt    = yes
-set pgp_self_encrypt_as = A4AF18C5582473BD35A1E9CE78BB3D480042198E
+set pgp_self_encrypt = yes
+set pgp_default_key  = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 </pre>
+    <p>If you have different key for signing, then you can set
+    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.235.&#160;pgp_sign_as">$pgp_sign_as</a> or
+    <a class="link" href="/guide/reference.html#smime-sign-as" title="3.343.&#160;smime_sign_as">$smime_sign_as</a> respectively.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -95,16 +98,7 @@ set pgp_self_encrypt_as = A4AF18C5582473BD35A1E9CE78BB3D480042198E
           <tbody>
             <tr>
               <td>
-                <code class="literal">smime_self_encrypt</code>
-              </td>
-              <td>boolean</td>
-              <td>
-                <code class="literal">no</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">smime_self_encrypt_as</code>
+                <code class="literal">pgp_default_key</code>
               </td>
               <td>string</td>
               <td>(empty)</td>
@@ -115,12 +109,35 @@ set pgp_self_encrypt_as = A4AF18C5582473BD35A1E9CE78BB3D480042198E
               </td>
               <td>boolean</td>
               <td>
-                <code class="literal">no</code>
+                <code class="literal">yes</code>
               </td>
             </tr>
             <tr>
               <td>
-                <code class="literal">pgp_self_encrypt_as</code>
+                <code class="literal">pgp_sign_as</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">smime_default_key</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">smime_self_encrypt</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">yes</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">smime_sign_as</code>
               </td>
               <td>string</td>
               <td>(empty)</td>
@@ -147,12 +164,14 @@ set pgp_self_encrypt_as = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 # VARIABLES - shown with their default values
 # --------------------------------------------------------------------------
 # Save a copy of outgoing email, encrypted to yourself</span>
-set smime_self_encrypt = "no"
-<span class="comment"># set smime_self_encrypt_as = "SMIME-KEY"
+set pgp_self_encrypt = "yes"
+set pgp_default_key = "PGP-KEY"
+<span class="comment"># set pgp_sign_as = "PGP-SIGNING-KEY"
 
 # Save a copy of outgoing email, encrypted to yourself</span>
-set pgp_self_encrypt = "no"
-<span class="comment">set pgp_self_encrypt_as = "PGP-KEY"
+set smime_self_encrypt = "yes"
+set smime_default_key = "SMIME-KEY"
+<span class="comment"># set smime_sign_as = "SMIME-SIGNING-KEY"
 
 # vim: syntax=neomuttrc</span>
 </pre>
