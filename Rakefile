@@ -12,6 +12,7 @@ options = {
         /.*contrib\/images\/*/,
         /.*fonts\/*/,
         /.*google*/,
+        /.*code\/*/,
 
         /.*txt/,
         /.*rc/,
@@ -43,7 +44,7 @@ options = {
 
 task :default do
     sh "jekyll build"
-    sh "mkdir _site/code/; touch _site/code/index.html"
+    sh "mkdir -p _site/code/; touch _site/code/index.html"
     HTMLProofer.check_directory("./_site/", options).run
 end
 
