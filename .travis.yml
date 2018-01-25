@@ -17,7 +17,7 @@ install:
   - gem install jekyll-sitemap
   - gem install jekyll-mentions
   - gem install html-proofer
-  - gem install algoliasearch-jekyll
+  - gem install jekyll-algolia
 
 script:
     - rake
