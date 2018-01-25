@@ -12,6 +12,7 @@ options = {
         /.*contrib\/images\/*/,
         /.*fonts\/*/,
         /.*google*/,
+        /.*code*/,
 
         /.*txt/,
         /.*rc/,
@@ -42,24 +43,6 @@ options = {
 
 task :default do
     sh "jekyll build"
-    Rake::Task["feature"].execute
-    Rake::Task["guide"].execute
-    Rake::Task["rest"].execute
+    HTMLProofer.check_directory("./_site/", options).run
 end
-
-task :feature do
-    HTMLProofer.check_directory("./_site/feature", options).run
-end
-
-task :guide do
-    HTMLProofer.check_directory("./_site/guide", options).run
-end
-
-task :rest do
-    HTMLProofer.check_directory("./_site/", options + {
-        :file_ignore => [ /.*guide.*/,
-                          /.*feature*/]
-    }).run
-end
-
 
