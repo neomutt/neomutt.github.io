@@ -70,7 +70,7 @@ collections:
 plugins:
   - jekyll-gist
   - jekyll-sitemap
-  - algoliasearch-jekyll
+  - jekyll-algolia
   - jekyll-mentions
 
 algolia:

@@ -12,7 +12,6 @@ options = {
         /.*contrib\/images\/*/,
         /.*fonts\/*/,
         /.*google*/,
-        /.*code*/,
 
         /.*txt/,
         /.*rc/,
@@ -26,6 +25,7 @@ options = {
 
         /Rakefile/,
     ],
+    :log_level => :debug,
     :checks_to_ignore => [
         "ImageCheck",
         "ScriptCheck"
@@ -43,6 +43,7 @@ options = {
 
 task :default do
     sh "jekyll build"
+    sh "mkdir _site/code/; touch _site/code/index.html"
     HTMLProofer.check_directory("./_site/", options).run
 end
 

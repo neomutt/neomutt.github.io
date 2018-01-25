@@ -2,7 +2,7 @@
 layout: concertina
 distro: GNU Guix
 icon: guix.png
-homepage: https://www.gnu.org/software/guix/packages/n.html#neomutt
+homepage: https://www.gnu.org/software/guix/packages/N/
 title: NeoMutt for GNU Guix
 maintainer: The GNU Guix team
 ---

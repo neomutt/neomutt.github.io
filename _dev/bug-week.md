@@ -23,7 +23,7 @@ Please help with whatever you can...
 * Code
   - Bug-fixes -- [pick an issue][issues], assign yourself and fix it!
   - Coverity -- [plenty of defects][coverity] which need fixing
-  - Merge [upstream commits][upstream] (from mutt/default)
+  - Merge [upstream commits][upstream] (from mutt/master)
   - Run a validator on our shell/perl scripts
   - Automate a build/management process
   - Add [doxygen comment blocks][doxygen] to functions
@@ -48,5 +48,5 @@ Please help with whatever you can...
 [issues]: <https://github.com/neomutt/neomutt/issues>
 [manuals]: </man.html>
 [translate]: </translate.html>
-[upstream]: <https://github.com/neomutt/upstream-mutt/tree/default>
+[upstream]: <https://github.com/neomutt/upstream-mutt/tree/master>
 
