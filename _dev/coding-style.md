@@ -296,19 +296,19 @@ function.
 These comment blocks are parsed by doxygen and turned into cross-referenced
 documentation.
 
-### Inserting whitespace for clarity
+### Separate Assignment from Conditional
 
-Sometimes, inserting a little whitespace can greatly improve the legibility.
+C allows assignments to be nested in conditional statements.
+This is compact, but it can lead to illegible code.
 
 ```c
-if ((strcmp("supersedes:", uh->data, 11) != 0) &&
-    (strcmp("subject:", uh->data, 8) != 0) &&
-    (strcmp("return-path:", uh->data, 12) != 0))
+if ((rc = stat(tmp, &sb)) == -1)
 
-if ((strcmp("supersedes:",  uh->data, 11) != 0) &&
-    (strcmp("subject:",     uh->data,  8) != 0) &&
-    (strcmp("return-path:", uh->data, 12) != 0))
+rc = stat(tmp, &sb);
+if (rc == -1)
 ```
+
+The second version is clear to read and simple to step through in a debugger.
 
 ### C99 features
 
