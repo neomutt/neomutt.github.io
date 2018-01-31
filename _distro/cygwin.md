@@ -4,7 +4,7 @@ distro: cygwin
 icon: cygwin.png
 homepage: https://www.cygwin.com/
 title: NeoMutt for Cygwin
-maintainer:
+maintainer: Federico Kircheis
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
@@ -23,14 +23,16 @@ Cygwin also allows you to install Mutt and NeoMutt at the same time.
 
 ## Installation <a class="offset" id="install"></a>
 
-NeoMutt is not avaiable as cygwin packge (yet).
-For building it, see the `Building from source` section.
+Since 2018 NeoMutt is available as a Cygwin package, to install it, grab the latest version of the [Cygwin setup](https://cygwin.com/install.html) and select the NeoMutt package.
 
 ## Update <a class="offset" id="update"></a>
 
+To upgrade NeoMutt, just run the [Cygwin setup](https://cygwin.com/install.html) again.
+If there are updates for the package, you'll be notified.
 
 ## Removal <a class="offset" id="remove"></a>
 
+To remove NeoMutt from Cygwin, run the [Cygwin setup](https://cygwin.com/install.html) and deselect the package.
 
 ## Building from source <a class="offset" id="build"></a>
 
