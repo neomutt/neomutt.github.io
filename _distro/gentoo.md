@@ -4,40 +4,16 @@ distro: Gentoo
 icon: gentoo.png
 homepage: https://packages.gentoo.org/packages/mail-client/neomutt
 title: NeoMutt for Gentoo
-maintainer: grobian
+maintainer: nicolasbock
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
 ## Support <a class="offset" id="support"></a>
 
-Ebuilds for NeoMutt can be found in the gentoo\_neomutt overlay. These ebuilds
-are similar, but not equal to the mail&#x2011;client&#x2060;/&#x2060;mutt
-ebuilds in Gentoo. You need to add the overlay to your repos.conf first.
-
-## Checking out the overlay <a class="offset" id="checkout"></a>
-
-You can check the overlay out in any place, you like, for this example, we use
-/usr/local/portage/neomutt:
-
-```
-# mkdir -p /usr/local/portage/neomutt
-# cd /usr/local/portage/neomutt
-# git clone https://github.com/neomutt/gentoo-neomutt .
-```
-
-## Adding the NeoMutt overlay <a class="offset" id="overlay"></a>
-
-See
-[Gentoo Wiki on /etc/portage/repos.conf](https://wiki.gentoo.org/wiki//etc/portage/repos.conf)
-to add the following to repos.conf:
-
-```
-[neomutt_gentoo]
-location = /usr/local/portage/neomutt
-masters = gentoo
-auto-sync = no
-```
+Ebuilds for NeoMutt can be found in the main gentoo repo.  There used
+to be an overlay, but it has been deprecated.  If you still have it in
+your config, remove it from `/etc/portage/repos.conf`.
 
 ## Installation <a class="offset" id="install"></a>
 
@@ -46,15 +22,15 @@ auto-sync = no
 ```
 
 ```reply
-[ebuild   N    ] mail-client/neomutt-20161126::gentoo_neomutt  USE="berkdb crypt doc gpg imap mbox nls nntp sasl smime smtp ssl -debug -gdbm (-gnutls) -idn -kerberos -libressl -notmuch -pop -qdbm (-selinux) -sidebar -slang -tokyocabinet" 3.9 MiB
+[ebuild   R    ] mail-client/neomutt-20171215-r2::gentoo  USE="doc gpg idn kerberos lmdb nls slang smime ssl -berkdb -crypt -gdbm -gnutls -gpgme -kyotocabinet -libressl -notmuch -pgp_classic -qdbm -sasl (-selinux) -smime_classic -tokyocabinet" 0 KiB
 
-Total: 1 package (1 reinstall), Size of downloads: 3.9 MiB
+Total: 1 package (1 reinstall), Size of downloads: 0 KiB
 
 Would you like to merge these packages? [Yes/No]
 ```
 
 Have a good look at the USE-flags, such that you enable the features you need,
-such as _imap_, _smtp_, etc.
+such as _gpgme_, _lmdb_, etc.
 
 ## Update <a class="offset" id="update"></a>
 
@@ -70,17 +46,16 @@ emerge -av --depclean mail-client/neomutt
 
 ## Building from Source <a class="offset" id="build"></a>
 
-These instructions will help you install all the dependencies you'll need to
-build NeoMutt from the source code, or you can use the Gentoo live ebuild
-(neomutt-99999999). Add `mail-client/neomutt-99999999 **` to your
-/etc/portage/package.accept\_keywords to enable it.
-
-Now you can follow the [guide for building NeoMutt](/dev/build).
+In Gentoo, you will likely already have build NeoMutt from source.  If
+you want the latest version from the Git repository, install the
+`=mail-client/neomutt-9999` version.  Add `=mail-client/neomutt-9999
+**` to your `/etc/portage/package.accept\_keywords` to enable it.
 
 ## Debugging <a class="offset" id="debug"></a>
 
-These instructions will help you install all the dependencies you'll need to
-debug NeoMutt.
+Follow the [instructions in the Gentoo
+wiki](https://wiki.gentoo.org/wiki/Debugging) to build NeoMutt with
+debug symbols.
 
 Now you can follow the [guide for debugging NeoMutt](/dev/debug).
 
