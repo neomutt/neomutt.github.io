@@ -2,7 +2,7 @@
 layout: concertina
 distro: Gentoo
 icon: gentoo.png
-homepage: https://github.com/neomutt/gentoo-neomutt/tree/master/mail-client/neomutt
+homepage: https://packages.gentoo.org/packages/mail-client/neomutt
 title: NeoMutt for Gentoo
 maintainer: grobian
 ---
