@@ -39,7 +39,7 @@ PKGDATADIR="/usr/local/share/mutt"
 SENDMAIL="/usr/sbin/sendmail"
 SYSCONFDIR="/usr/local/etc"
 
-To learn more about NeoMutt, visit: http://www.neomutt.org/
+To learn more about NeoMutt, visit: https://www.neomutt.org
 If you find a bug in NeoMutt, please raise an issue at:
     https://github.com/neomutt/neomutt/issues
 or send an email to: <neomutt-devel@neomutt.org>

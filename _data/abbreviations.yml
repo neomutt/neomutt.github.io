@@ -323,7 +323,7 @@
 - term: MUA
   definitions:
     - str : Mail User Agent
-      url : https://www.neomutt.org/
+      url : https://www.neomutt.org
       attributes:
         Category  : ["email", "client", "mail reader"]
         Type      : acronym

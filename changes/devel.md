@@ -23,7 +23,7 @@ NeoMutt makes heavy use of all of GitHub's facilities.
 - [Git hosting](https://github.com/neomutt/neomutt)
 - [Issue Tracking](https://github.com/neomutt/neomutt/issues)
 - [Pull Requests handling](https://github.com/neomutt/neomutt/pulls)
-- [Web Hosting](https://www.neomutt.org/)
+- [Web Hosting](https://www.neomutt.org)
 
 ### Travis
 
