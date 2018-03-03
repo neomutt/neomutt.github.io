@@ -57,6 +57,19 @@ if (x == 0)
 
 - Delete spaces or tabs at the ends of lines
 
+### Space-star vs Star-space
+
+- This is a C project, so we prefer C-style pointers.
+  That means the `*` is by the variable, not the type:
+
+```c
+/* C Style NeoMutt pointer -- yes, please */
+char *ptr = "hello";
+
+// C++ Style pointer -- no, thank you
+char* ptr = "world";
+```
+
 ### New options
 
 - when new options are added, the old behavior should be the default.
@@ -72,11 +85,6 @@ if (x == 0)
 
 - special characters should be in UTF-8. If you find remnants from the times
   when this was an ISO-8859-1 source code tree, please feel free to fix them.
-
-### Global and non-global functions
-
-- global functions should have the prefix "mutt\_". All other functions should
-  be declared "static".
 
 ## Guidelines <a class="offset" id="guidelines"></a>
 
