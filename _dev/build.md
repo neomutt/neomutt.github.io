@@ -11,7 +11,7 @@ status: wip
 
 ## Install dependencies
 
-See [Distro Pages](/distro.html).
+See [Downloads](/distro.html).
 
 ## Obtain the source
 
