@@ -1,10 +1,10 @@
 ---
 layout: concertina
-distro: OpenSUSE
+distro: openSUSE
 package: rpm
 icon: suse.png
 homepage: https://software.opensuse.org/
-title: NeoMutt for OpenSUSE
+title: NeoMutt for openSUSE
 maintainer: kdave
 ---
 
