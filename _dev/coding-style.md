@@ -253,6 +253,38 @@ char *str = NULL;
 if (!str)
 ```
 
+### Be const-correct
+By default, objects should be immutable, since it is easier to reason about their semantic (and they are also easier to name).
+So let the compiler help you, if someone tries to mutate an object that should be constant, it will raise a warning.
+
+```c
+const size_t buflen = ....
+// 20 lines of code
+// using buflen again, but we know that it did not change(!)
+```
+
+By default pointer should be passed to const, unless the function really needs to modify the content.
+For example it would be unexpected for a logging function to mutate the content to log.
+
+```c
+void my_log_function(const char *s);
+```
+
+Putting `const` in a function declaration is unnecessary if the parameter is passed by value
+
+```c
+void foo(const int); // const is unnecessary, has not effect
+```
+
+whereas on its implementation it ensures that a value will not change
+
+```c
+void foo(const int i) // i will not be changed inside the function
+{
+  // ....
+}
+```
+
 ### Put `()`s around logic that contains whitespace
 
 C allows you to write statements like:
