@@ -9,8 +9,9 @@ description: Static analysis of NeoMutt's code
 [Wikipedia](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#C,_C++) has a nice list of static analyzers for C source code.
 Those can be used to find bugs without compiling, executing and debugging neomutt.
 
-- [CppCheck](#cppcheck) - Source code anaylser
-- [IWYU](#iwyu) - Header file checker
+- [cppcheck](#cppcheck) - Source code anaylser
+- [iwyu](#iwyu) - Header file checker
+- [clang-format](#clang-format) - Source code formatter
 
 ## CppCheck <a class="offset" id="cppcheck"></a>
 
@@ -111,3 +112,45 @@ It looks like this:
 { include: [ '@"mutt/.*"', private, '"mutt/mutt.h"', public ] },
 { include: [ '@"conn/.*"', private, '"conn/conn.h"', public ] },
 ```
+
+## Clang-Format <a class="offset" id="clang-format"></a>
+
+- [https://clang.llvm.org/docs/ClangFormat.html](https://clang.llvm.org/docs/ClangFormat.html)
+
+`clang-format` is a source code formatter -- it changes source files according to a config file.
+
+In NeoMutt we use it to:
+- Place `{}`s in the right place
+- Adjust the whitespace: indent and around operators
+- Sort the `#include`s (see the weighting strategy)
+- Align a pointer `*` to the variable, not the type
+- ... and much more
+
+Unlike many similar tools, it really understands the code it's transforming.
+It uses [clang](https://clang.llvm.org/) to create an
+[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) for the code.
+
+[NeoMutt's config file](https://github.com/neomutt/neomutt/blob/master/.clang-format) ships with the code.
+
+The config file looks like this:
+
+```
+Language: Cpp
+
+TabWidth:          8
+UseTab:            Never
+IndentWidth:       2
+ColumnLimit:       80
+BreakBeforeBraces: Allman
+```
+
+Clang has documentation for [all of the options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html).
+
+Running it is as simple as:
+
+```
+clang-format -i source.c
+```
+
+- As part of the release process, clang-format is run on all the 'c' source.
+- The header files are tidied by hand to preserve the whitespace layout.
