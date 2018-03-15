@@ -15,27 +15,27 @@ description: Multi-channel Memorandum Distribution Facility mailbox format
     <a class="offset" id="description"></a>
     <h2>DESCRIPTION</h2>
     <p>This document describes the 
-    <span class="emphasis">
-      <em>MMDF</em>
+    <span class="strong">
+      <strong>MMDF</strong>
     </span>mailbox format used by some MTAs and MUAs (i.e. 
     <span class="citerefentry">
     <span class="refentrytitle">scomail</span>(1)</span>) to store mail messages locally.</p>
     <p>An 
-    <span class="emphasis">
-      <em>MMDF</em>
+    <span class="strong">
+      <strong>MMDF</strong>
     </span>mailbox is a text file containing an arbitrary number of e-mail messages. Each message consists of a postmark, followed by an e-mail message formatted according to 
-    <span class="emphasis">
-      <em>RFC822</em>
+    <span class="strong">
+      <strong>RFC822</strong>
     </span>/ 
-    <span class="emphasis">
-      <em>RFC2822</em>
+    <span class="strong">
+      <strong>RFC2822</strong>
     </span>, followed by a postmark. The file format is line-oriented. Lines are separated by line feed characters (ASCII 10). A postmark line consists of the four characters "^A^A^A^A" (Control-A; ASCII 1).</p>
     <div class="variablelist">
       <dl class="variablelist">
         <dt>
           <span class="term">Example of a 
-          <span class="emphasis">
-            <em>MMDF</em>
+          <span class="strong">
+            <strong>MMDF</strong>
           </span>mailbox holding two mails:</span>
         </dt>
         <dd>
@@ -58,28 +58,28 @@ description: Multi-channel Memorandum Distribution Facility mailbox format
             <br />^A^A^A^A 
             <br /></p>
           </div>
-          <p>In contrast to most other single file mailbox formats like MBOXO and MBOXRD (see 
-          <span class="citerefentry">
-          <span class="refentrytitle">mbox</span>(5)</span>) there is no need to quote/dequote "From "-lines in 
-          <span class="emphasis">
-            <em>MMDF</em>
-          </span>mailboxes as such lines have no special meaning in this format.</p>
-          <p>If the modification-time (usually determined via 
-          <span class="citerefentry">
-          <span class="refentrytitle">stat</span>(2)</span>) of a nonempty mailbox file is greater than the access-time the file has new mail. Many MUAs place a Status: header in each message to indicate which messages have already been read.</p>
         </dd>
       </dl>
     </div>
+    <p>In contrast to most other single file mailbox formats like MBOXO and MBOXRD (see 
+    <span class="citerefentry">
+    <span class="refentrytitle">mbox</span>(5)</span>) there is no need to quote/dequote "From "-lines in 
+    <span class="strong">
+      <strong>MMDF</strong>
+    </span>mailboxes as such lines have no special meaning in this format.</p>
+    <p>If the modification-time (usually determined via 
+    <span class="citerefentry">
+    <span class="refentrytitle">stat</span>(2)</span>) of a nonempty mailbox file is greater than the access-time the file has new mail. Many MUAs place a Status: header in each message to indicate which messages have already been read.</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="locking"></a>
     <h2>LOCKING</h2>
     <p>Since 
-    <span class="emphasis">
-      <em>MMDF</em>
+    <span class="strong">
+      <strong>MMDF</strong>
     </span>files are frequently accessed by multiple programs in parallel, 
-    <span class="emphasis">
-      <em>MMDF</em>
+    <span class="strong">
+      <strong>MMDF</strong>
     </span>files should generally not be accessed without locking.</p>
     <p>Three different locking mechanisms (and combinations thereof) are in general use:</p>
     <div class="itemizedlist">
@@ -88,8 +88,8 @@ description: Multi-channel Memorandum Distribution Facility mailbox format
           <p>
           <span class="citerefentry">
           <span class="refentrytitle">fcntl</span>(2)</span>locking is mostly used on recent, POSIX-compliant systems. Use of this locking method is, in particular, advisable if 
-          <span class="emphasis">
-            <em>MMDF</em>
+          <span class="strong">
+            <strong>MMDF</strong>
           </span>files are accessed through the Network File System (NFS), since it seems the only way to reliably invalidate NFS clients' caches.</p>
         </li>
         <li class="listitem" style="list-style-type: disc">
@@ -97,64 +97,39 @@ description: Multi-channel Memorandum Distribution Facility mailbox format
           <span class="citerefentry">
           <span class="refentrytitle">flock</span>(2)</span>locking is mostly used on BSD-based systems.</p>
         </li>
-        <li class="listitem" style="list-style-type: disc">
-          <p>Dotlocking is used on all kinds of systems. In order to lock an 
-          <span class="emphasis">
-            <em>MMDF</em>
-          </span>file named 
-          <span class="emphasis">
-            <em>folder</em>
-          </span>, an application first creates a temporary file with a unique name in the directory in which the 
-          <span class="emphasis">
-            <em>folder</em>
-          </span>resides. The application then tries to use the 
-          <span class="citerefentry">
-          <span class="refentrytitle">link</span>(2)</span>system call to create a hard link named 
-          <span class="emphasis">
-            <em>folder.lock</em>
-          </span>to the temporary file. The success of the 
-          <span class="citerefentry">
-          <span class="refentrytitle">link</span>(2)</span>system call should be additionally verified using 
-          <span class="citerefentry">
-          <span class="refentrytitle">stat</span>(2)</span>calls. If the link has succeeded, the mail folder is considered dotlocked. The temporary file can then safely be unlinked.</p>
-          <p>In order to release the lock, an application just unlinks the 
-          <span class="emphasis">
-            <em>folder.lock</em>
-          </span>file.</p>
-          <p>If multiple methods are combined, implementors should make sure to use the non-blocking variants of the 
-          <span class="citerefentry">
-          <span class="refentrytitle">fcntl</span>(2)</span>and 
-          <span class="citerefentry">
-          <span class="refentrytitle">flock</span>(2)</span>system calls in order to avoid deadlocks.</p>
-          <p>If multiple methods are combined, an 
-          <span class="emphasis">
-            <em>MMDF</em>
-          </span>file must not be considered to have been successfully locked before all individual locks were obtained. When one of the individual locking methods fails, an application should release all locks it acquired successfully, and restart the entire locking procedure from the beginning, after a suitable delay.</p>
-          <p>The locking mechanism used on a particular system is a matter of local policy, and should be consistently used by all applications installed on the system which access 
-          <span class="emphasis">
-            <em>MMDF</em>
-          </span>files. Failure to do so may result in loss of e-mail data, and in corrupted 
-          <span class="emphasis">
-            <em>MMDF</em>
-          </span>files.</p>
-        </li>
       </ul>
     </div>
+    <p>If multiple methods are combined, implementors should make sure to use the non-blocking variants of the 
+    <span class="citerefentry">
+    <span class="refentrytitle">fcntl</span>(2)</span>and 
+    <span class="citerefentry">
+    <span class="refentrytitle">flock</span>(2)</span>system calls in order to avoid deadlocks.</p>
+    <p>If multiple methods are combined, an 
+    <span class="strong">
+      <strong>MMDF</strong>
+    </span>file must not be considered to have been successfully locked before all individual locks were obtained. When one of the individual locking methods fails, an application should release all locks it acquired successfully, and restart the entire locking procedure from the beginning, after a suitable delay.</p>
+    <p>The locking mechanism used on a particular system is a matter of local policy, and should be consistently used by all applications installed on the system which access 
+    <span class="strong">
+      <strong>MMDF</strong>
+    </span>files. Failure to do so may result in loss of e-mail data, and in corrupted 
+    <span class="strong">
+      <strong>MMDF</strong>
+    </span>files.</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="conforming_to"></a>
     <h2>CONFORMING TO</h2>
     <p>
-    <span class="emphasis">
-      <em>MMDF</em>
+    <span class="strong">
+      <strong>MMDF</strong>
     </span>is not part of any currently supported standard.</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="history"></a>
     <h2>HISTORY</h2>
     <p>
-    <span class="emphasis">
-      <em>MMDF</em>
+    <span class="strong">
+      <strong>MMDF</strong>
     </span>was developed at the University of Delaware by Dave Crocker.</p>
   </div>
   <div class="refsect1">
@@ -173,11 +148,11 @@ description: Multi-channel Memorandum Distribution Facility mailbox format
     <span class="refentrytitle">stat</span>(2)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">mbox</span>(5)</span>, 
-    <span class="emphasis">
-      <em>RFC822</em>
+    <span class="strong">
+      <strong>RFC822</strong>
     </span>, 
-    <span class="emphasis">
-      <em>RFC2822</em>
+    <span class="strong">
+      <strong>RFC2822</strong>
     </span></p>
   </div>
   <div class="refsect1">

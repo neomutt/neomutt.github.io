@@ -15,95 +15,95 @@ description: Format for mail message storage.
     <a class="offset" id="description"></a>
     <h2>DESCRIPTION</h2>
     <p>This document describes the format traditionally used by Unix hosts to store mail messages locally. 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>files typically reside in the system's mail spool, under various names in users' Mail directories, and under the name 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>in users' home directories.</p>
     <p>An 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>is a text file containing an arbitrary number of e-mail messages. Each message consists of a postmark, followed by an e-mail message formatted according to 
-    <span class="emphasis">
-      <em>RFC822</em>
+    <span class="strong">
+      <strong>RFC822</strong>
     </span>, 
-    <span class="emphasis">
-      <em>RFC2822</em>
+    <span class="strong">
+      <strong>RFC2822</strong>
     </span>. The file format is line-oriented. Lines are separated by line feed characters (ASCII 10).</p>
     <p>A postmark line consists of the four characters "From", followed by a space character, followed by the message's envelope sender address, followed by whitespace, and followed by a time stamp. This line is often called From_ line.</p>
     <p>The sender address is expected to be 
-    <span class="emphasis">
-      <em>addr-spec</em>
+    <span class="strong">
+      <strong>addr-spec</strong>
     </span>as defined in 
-    <span class="emphasis">
-      <em>RFC2822</em>
+    <span class="strong">
+      <strong>RFC2822</strong>
     </span>3.4.1. The date is expected to be 
-    <span class="emphasis">
-      <em>date-time</em>
+    <span class="strong">
+      <strong>date-time</strong>
     </span>as output by 
-    <span class="emphasis">
-      <em>asctime(3)</em>
+    <span class="strong">
+      <strong>asctime(3)</strong>
     </span>. For compatibility reasons with legacy software, two-digit years greater than or equal to 70 should be interpreted as the years 1970+, while two-digit years less than 70 should be interpreted as the years 2000-2069. Software reading files in this format should also be prepared to accept non-numeric timezone information such as "CET DST" for Central European Time, daylight saving time.</p>
     <p>Example:</p>
     <p>&gt;From example@example.com Fri Jun 23 02:56:55 2000</p>
     <p>In order to avoid misinterpretation of lines in message bodies which begin with the four characters "From", followed by a space character, the mail delivery agent must quote any occurrence of "From " at the start of a body line.</p>
     <p>There are two different quoting schemes, the first ( 
-    <span class="emphasis">
-      <em>MBOXO</em>
+    <span class="strong">
+      <strong>MBOXO</strong>
     </span>) only quotes plain "From " lines in the body by prepending a '&gt;' to the line; the second ( 
-    <span class="emphasis">
-      <em>MBOXRD</em>
+    <span class="strong">
+      <strong>MBOXRD</strong>
     </span>) also quotes already quoted "From " lines by prepending a '&gt;' (i.e. "&gt;From ", "&gt;&gt;From ", ...). The later has the advantage that lines like</p>
     <p>&gt;From the command line you can use the '-p' option</p>
     <p>aren't dequoted wrongly as a 
-    <span class="emphasis">
-      <em>MBOXRD</em>
+    <span class="strong">
+      <strong>MBOXRD</strong>
     </span>-MDA would turn the line into</p>
     <p>&gt;&gt;From the command line you can use the '-p' option</p>
     <p>before storing it. Besides 
-    <span class="emphasis">
-      <em>MBOXO</em>
+    <span class="strong">
+      <strong>MBOXO</strong>
     </span>and 
-    <span class="emphasis">
-      <em>MBOXRD</em>
+    <span class="strong">
+      <strong>MBOXRD</strong>
     </span>there is also 
-    <span class="emphasis">
-      <em>MBOXCL</em>
+    <span class="strong">
+      <strong>MBOXCL</strong>
     </span>which is 
-    <span class="emphasis">
-      <em>MBOXO</em>
+    <span class="strong">
+      <strong>MBOXO</strong>
     </span>with a "Content-Length:"-field with the number of bytes in the message body; some MUAs (like 
     <span class="citerefentry">
-    <span class="refentrytitle">mutt</span>(1)</span>) do automatically transform 
-    <span class="emphasis">
-      <em>MBOXO</em>
+    <span class="refentrytitle">neomutt</span>(1)</span>) do automatically transform 
+    <span class="strong">
+      <strong>MBOXO</strong>
     </span>mailboxes into 
-    <span class="emphasis">
-      <em>MBOXCL</em>
+    <span class="strong">
+      <strong>MBOXCL</strong>
     </span>ones when ever they write them back as 
-    <span class="emphasis">
-      <em>MBOXCL</em>
+    <span class="strong">
+      <strong>MBOXCL</strong>
     </span>can be read by any 
-    <span class="emphasis">
-      <em>MBOXO</em>
+    <span class="strong">
+      <strong>MBOXO</strong>
     </span>-MUA without any problems.</p>
     <p>If the modification-time (usually determined via 
     <span class="citerefentry">
     <span class="refentrytitle">stat</span>(2)</span>) of a nonempty 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>file is greater than the access-time the file has new mail. Many MUAs place a Status: header in each message to indicate which messages have already been read.</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="locking"></a>
     <h2>LOCKING</h2>
     <p>Since 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>files are frequently accessed by multiple programs in parallel, 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>files should generally not be accessed without locking.</p>
     <p>Three different locking mechanisms (and combinations thereof) are in general use:</p>
     <div class="itemizedlist">
@@ -112,8 +112,8 @@ description: Format for mail message storage.
           <p>
           <span class="citerefentry">
           <span class="refentrytitle">fcntl</span>(2)</span>locking is mostly used on recent, POSIX-compliant systems. Use of this locking method is, in particular, advisable if 
-          <span class="emphasis">
-            <em>mbox</em>
+          <span class="strong">
+            <strong>mbox</strong>
           </span>files are accessed through the Network File System (NFS), since it seems the only way to reliably invalidate NFS clients' caches.</p>
         </li>
         <li class="listitem" style="list-style-type: disc">
@@ -121,49 +121,24 @@ description: Format for mail message storage.
           <span class="citerefentry">
           <span class="refentrytitle">flock</span>(2)</span>locking is mostly used on BSD-based systems.</p>
         </li>
-        <li class="listitem" style="list-style-type: disc">
-          <p>Dotlocking is used on all kinds of systems. In order to lock an 
-          <span class="emphasis">
-            <em>mbox</em>
-          </span>file named 
-          <span class="emphasis">
-            <em>folder</em>
-          </span>, an application first creates a temporary file with a unique name in the directory in which the 
-          <span class="emphasis">
-            <em>folder</em>
-          </span>resides. The application then tries to use the 
-          <span class="citerefentry">
-          <span class="refentrytitle">link</span>(2)</span>system call to create a hard link named 
-          <span class="emphasis">
-            <em>folder.lock</em>
-          </span>to the temporary file. The success of the 
-          <span class="citerefentry">
-          <span class="refentrytitle">link</span>(2)</span>system call should be additionally verified using 
-          <span class="citerefentry">
-          <span class="refentrytitle">stat</span>(2)</span>calls. If the link has succeeded, the mail folder is considered dotlocked. The temporary file can then safely be unlinked.</p>
-          <p>In order to release the lock, an application just unlinks the 
-          <span class="emphasis">
-            <em>folder.lock</em>
-          </span>file.</p>
-          <p>If multiple methods are combined, implementors should make sure to use the non-blocking variants of the 
-          <span class="citerefentry">
-          <span class="refentrytitle">fcntl</span>(2)</span>and 
-          <span class="citerefentry">
-          <span class="refentrytitle">flock</span>(2)</span>system calls in order to avoid deadlocks.</p>
-          <p>If multiple methods are combined, an 
-          <span class="emphasis">
-            <em>mbox</em>
-          </span>file must not be considered to have been successfully locked before all individual locks were obtained. When one of the individual locking methods fails, an application should release all locks it acquired successfully, and restart the entire locking procedure from the beginning, after a suitable delay.</p>
-          <p>The locking mechanism used on a particular system is a matter of local policy, and should be consistently used by all applications installed on the system which access 
-          <span class="emphasis">
-            <em>mbox</em>
-          </span>files. Failure to do so may result in loss of e-mail data, and in corrupted 
-          <span class="emphasis">
-            <em>mbox</em>
-          </span>files.</p>
-        </li>
       </ul>
     </div>
+    <p>If multiple methods are combined, implementors should make sure to use the non-blocking variants of the 
+    <span class="citerefentry">
+    <span class="refentrytitle">fcntl</span>(2)</span>and 
+    <span class="citerefentry">
+    <span class="refentrytitle">flock</span>(2)</span>system calls in order to avoid deadlocks.</p>
+    <p>If multiple methods are combined, an 
+    <span class="strong">
+      <strong>mbox</strong>
+    </span>file must not be considered to have been successfully locked before all individual locks were obtained. When one of the individual locking methods fails, an application should release all locks it acquired successfully, and restart the entire locking procedure from the beginning, after a suitable delay.</p>
+    <p>The locking mechanism used on a particular system is a matter of local policy, and should be consistently used by all applications installed on the system which access 
+    <span class="strong">
+      <strong>mbox</strong>
+    </span>files. Failure to do so may result in loss of e-mail data, and in corrupted 
+    <span class="strong">
+      <strong>mbox</strong>
+    </span>files.</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="files"></a>
@@ -176,9 +151,9 @@ description: Format for mail message storage.
         <br />
         <pre class="synopsis">
 <br />
-<span class="emphasis">
+<span class="strong">
   
-<em>$LOGNAME</em>
+<strong>$LOGNAME</strong>
 </span>'s incoming mail folder.
 <br />
 </pre>
@@ -196,9 +171,9 @@ description: Format for mail message storage.
         <pre class="synopsis">
 <br />
 user's archived mail messages, in his 
-<span class="emphasis">
+<span class="strong">
   
-<em>$HOME</em>
+<strong>$HOME</strong>
 </span> directory.
 <br />
 </pre>
@@ -213,11 +188,11 @@ user's archived mail messages, in his
     <div class="blockquote">
       <blockquote class="blockquote">
         <p>A directory in user's 
-        <span class="emphasis">
-          <em>$HOME</em>
+        <span class="strong">
+          <strong>$HOME</strong>
         </span>directory which is commonly used to hold 
-        <span class="emphasis">
-          <em>mbox</em>
+        <span class="strong">
+          <strong>mbox</strong>
         </span>format folders.</p>
       </blockquote>
     </div>
@@ -227,7 +202,7 @@ user's archived mail messages, in his
     <h2>SEE ALSO</h2>
     <p>
     <span class="citerefentry">
-    <span class="refentrytitle">mutt</span>(1)</span>, 
+    <span class="refentrytitle">neomutt</span>(1)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">fcntl</span>(2)</span>, 
     <span class="citerefentry">
@@ -242,14 +217,14 @@ user's archived mail messages, in his
     <span class="refentrytitle">maildir</span>(5)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">mmdf</span>(5)</span>, 
-    <span class="emphasis">
-      <em>RFC822</em>
+    <span class="strong">
+      <strong>RFC822</strong>
     </span>, 
-    <span class="emphasis">
-      <em>RFC976</em>
+    <span class="strong">
+      <strong>RFC976</strong>
     </span>, 
-    <span class="emphasis">
-      <em>RFC2822</em>
+    <span class="strong">
+      <strong>RFC2822</strong>
     </span></p>
   </div>
   <div class="refsect1">
@@ -261,11 +236,11 @@ user's archived mail messages, in his
     <a class="offset" id="history"></a>
     <h2>HISTORY</h2>
     <p>The 
-    <span class="emphasis">
-      <em>mbox</em>
+    <span class="strong">
+      <strong>mbox</strong>
     </span>format occurred in Version 6 AT&amp;T Unix. A variant of this format was documented in 
-    <span class="emphasis">
-      <em>RFC976</em>
+    <span class="strong">
+      <strong>RFC976</strong>
     </span>.</p>
   </div>
 </div>

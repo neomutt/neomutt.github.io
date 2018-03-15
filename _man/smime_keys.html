@@ -1,7 +1,7 @@
 ---
 layout: concertina
 command: smime_keys
-description: Utility to add S/MIME certificate to the internal database used by mutt
+description: Utility to add S/MIME certificate to the internal database used by neomutt
 ---
 {% raw %}
 <div class="refentry">
@@ -9,32 +9,20 @@ description: Utility to add S/MIME certificate to the internal database used by 
   <div class="titlepage" />
   <div class="refnamediv">
     <h2>Name</h2>
-    <p>smime_keys — Utility to add S/MIME certificate to the internal database used by mutt</p>
+    <p>smime_keys — Utility to add S/MIME certificate to the internal database used by neomutt</p>
   </div>
-  <div class="refsynopsisdiv">
-    <a class="offset" id="synopsis"></a>
-    <h2>Synopsis</h2>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">smime_keys</code>
-      <em class="replaceable">
-        <code>&lt;operation&gt;</code>
-      </em>[ 
-      <em class="replaceable">
-        <code>file(s)</code>
-      </em>| 
-      <em class="replaceable">
-        <code>keyID</code>
-      </em>| [ 
-      <em class="replaceable">
-        <code>file(s)</code>
-      </em>]]</p>
-    </div>
+  <div class="refsect1">
+    <a class="offset" id="syntax"></a>
+    <h2>SYNTAX</h2>
+    <p>
+    <span class="strong">
+      <strong>smime_keys</strong>
+    </span>&lt;operation&gt; [file(s) | keyID [file(s)]]</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="description"></a>
     <h2>DESCRIPTION</h2>
-    <p>The purpose of this tool is to manipulate the internal database of S/MIME certificates used by mutt to sign mail messages which will be sent or to verify mail messages received and signed with S/MIME</p>
+    <p>The purpose of this tool is to manipulate the internal database of S/MIME certificates used by neomutt to sign mail messages which will be sent or to verify mail messages received and signed with S/MIME</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="options"></a>
@@ -43,8 +31,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
       <dl class="variablelist">
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>init</em>
+            <span class="strong">
+              <strong>init</strong>
             </span>
           </span>
         </dt>
@@ -53,8 +41,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>list</em>
+            <span class="strong">
+              <strong>list</strong>
             </span>
           </span>
         </dt>
@@ -63,8 +51,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>label</em>
+            <span class="strong">
+              <strong>label</strong>
             </span>
           </span>
         </dt>
@@ -73,8 +61,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>remove</em>
+            <span class="strong">
+              <strong>remove</strong>
             </span>
           </span>
         </dt>
@@ -83,8 +71,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>verify</em>
+            <span class="strong">
+              <strong>verify</strong>
             </span>
           </span>
         </dt>
@@ -93,8 +81,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>add_cert</em>
+            <span class="strong">
+              <strong>add_cert</strong>
             </span>
           </span>
         </dt>
@@ -103,8 +91,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>add_chain</em>
+            <span class="strong">
+              <strong>add_chain</strong>
             </span>
           </span>
         </dt>
@@ -113,8 +101,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>add_p12</em>
+            <span class="strong">
+              <strong>add_p12</strong>
             </span>
           </span>
         </dt>
@@ -123,8 +111,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>add_pem</em>
+            <span class="strong">
+              <strong>add_pem</strong>
             </span>
           </span>
         </dt>
@@ -133,8 +121,8 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dd>
         <dt>
           <span class="term">
-            <span class="emphasis">
-              <em>add_root</em>
+            <span class="strong">
+              <strong>add_root</strong>
             </span>
           </span>
         </dt>
@@ -148,8 +136,7 @@ description: Utility to add S/MIME certificate to the internal database used by 
     <a class="offset" id="no_warranties"></a>
     <h2>NO WARRANTIES</h2>
     <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
-    <p>Mutt Home Page: 
-    <a class="ulink" href="http://www.mutt.org/" target="_top">http://www.mutt.org/</a></p>
+    <p>NeoMutt Home Page: https://www.neomutt.org/</p>
   </div>
 </div>
 {% endraw %}

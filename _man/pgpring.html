@@ -1,7 +1,7 @@
 ---
 layout: concertina
 command: pgpring
-description: Mutt key ring dumper
+description: NeoMutt key ring dumper
 ---
 {% raw %}
 <div class="refentry">
@@ -9,29 +9,41 @@ description: Mutt key ring dumper
   <div class="titlepage" />
   <div class="refnamediv">
     <h2>Name</h2>
-    <p>pgpring — Mutt key ring dumper</p>
+    <p>pgpring — NeoMutt key ring dumper</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="syntax"></a>
     <h2>SYNTAX</h2>
     <p>
-    <span class="emphasis">
-      <em>pgpring</em>
+    <span class="strong">
+      <strong>pgpring</strong>
     </span>[ 
-    <code class="option">-k</code>
-    <em class="replaceable">
-      <code>keyring</code>
-    </em>] [ 
-    <code class="option">-2</code>| 
-    <code class="option">-5</code>] [ 
-    <code class="option">-s</code>] [ 
-    <code class="option">-S</code>] [ 
-    <code class="option">-f</code>]</p>
+    <span class="strong">
+      <strong>-k</strong>
+    </span>
+    <span class="emphasis">
+      <em>keyring</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-2</strong>
+    </span>| 
+    <span class="strong">
+      <strong>-5</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-s</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-S</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-f</strong>
+    </span>]</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="description"></a>
     <h2>DESCRIPTION</h2>
-    <p>pgpring is a key ring dumper. It extracts information from PGP's binary key ring and emits it in an (almost) readable output format understood by mutt's key selection routines. This output format mimics the one used by the GNU Privacy Guard (GPG).</p>
+    <p>pgpring is a key ring dumper. It extracts information from PGP's binary key ring and emits it in an (almost) readable output format understood by neomutt's key selection routines. This output format mimics the one used by the GNU Privacy Guard (GPG).</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="options"></a>
@@ -40,10 +52,12 @@ description: Mutt key ring dumper
       <dl class="variablelist">
         <dt>
           <span class="term">
-            <code class="option">-k</code>
-            <em class="replaceable">
-              <code>keyring</code>
-            </em>
+            <span class="strong">
+              <strong>-k</strong>
+            </span>
+            <span class="emphasis">
+              <em>keyring</em>
+            </span>
           </span>
         </dt>
         <dd>
@@ -51,7 +65,9 @@ description: Mutt key ring dumper
         </dd>
         <dt>
           <span class="term">
-            <code class="option">-2</code>
+            <span class="strong">
+              <strong>-2</strong>
+            </span>
           </span>
         </dt>
         <dd>
@@ -59,7 +75,9 @@ description: Mutt key ring dumper
         </dd>
         <dt>
           <span class="term">
-            <code class="option">-5</code>
+            <span class="strong">
+              <strong>-5</strong>
+            </span>
           </span>
         </dt>
         <dd>
@@ -67,7 +85,9 @@ description: Mutt key ring dumper
         </dd>
         <dt>
           <span class="term">
-            <code class="option">-s</code>
+            <span class="strong">
+              <strong>-s</strong>
+            </span>
           </span>
         </dt>
         <dd>
@@ -75,7 +95,9 @@ description: Mutt key ring dumper
         </dd>
         <dt>
           <span class="term">
-            <code class="option">-S</code>
+            <span class="strong">
+              <strong>-S</strong>
+            </span>
           </span>
         </dt>
         <dd>
@@ -83,7 +105,9 @@ description: Mutt key ring dumper
         </dd>
         <dt>
           <span class="term">
-            <code class="option">-f</code>
+            <span class="strong">
+              <strong>-f</strong>
+            </span>
           </span>
         </dt>
         <dd>

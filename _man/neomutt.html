@@ -1,168 +1,143 @@
 ---
 layout: concertina
-command: mutt
-description: The Mutt Mail User Agent
+command: neomutt
+description: The Neomutt Mail User Agent
 ---
 {% raw %}
 <div class="refentry">
-  <a class="offset" id="muttman"></a>
+  <a class="offset" id="neomuttman"></a>
   <div class="titlepage" />
   <div class="refnamediv">
     <h2>Name</h2>
-    <p>mutt — The Mutt Mail User Agent</p>
+    <p>neomutt — The Neomutt Mail User Agent</p>
   </div>
-  <div class="refsynopsisdiv">
-    <a class="offset" id="synopsis"></a>
-    <h2>Synopsis</h2>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mutt</code>[-GnRyzZ ] [-e 
-      <em class="replaceable">
-        <code>cmd</code>
-      </em>] [-F 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] [-g 
-      <em class="replaceable">
-        <code>server</code>
-      </em>] [-m 
-      <em class="replaceable">
-        <code>type</code>
-      </em>] [-f 
-      <em class="replaceable">
-        <code>file</code>
-      </em>]</p>
-    </div>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mutt</code>[-Enx ] [-e 
-      <em class="replaceable">
-        <code>cmd</code>
-      </em>] [-F 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] [-H 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] [-i 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] [-s 
-      <em class="replaceable">
-        <code>subj</code>
-      </em>] [-b 
-      <em class="replaceable">
-        <code>addr</code>
-      </em>] [-c 
-      <em class="replaceable">
-        <code>addr</code>
-      </em>] [ -a 
-      <em class="replaceable">
-        <code>file</code>
-      </em>
-      <em class="replaceable">
-        <code>.[..]</code>
-      </em>-- ] 
-      <em class="replaceable">
-        <code>addr</code>
-      </em>| 
-      <em class="replaceable">
-        <code>mailto_url</code>
-      </em>| 
-      <em class="replaceable">
-        <code>.[..]</code>
-      </em>
-      <em class="replaceable">
-        <code>mutt</code>
-      </em>[-nx ] [-e 
-      <em class="replaceable">
-        <code>cmd</code>
-      </em>] [-F 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] [-s 
-      <em class="replaceable">
-        <code>subj</code>
-      </em>] [-b 
-      <em class="replaceable">
-        <code>addr</code>
-      </em>] [-c 
-      <em class="replaceable">
-        <code>addr</code>
-      </em>] [ -a 
-      <em class="replaceable">
-        <code>file</code>
-      </em>
-      <em class="replaceable">
-        <code>.[..]</code>
-      </em>-- ] 
-      <em class="replaceable">
-        <code>addr</code>
-      </em>| 
-      <em class="replaceable">
-        <code>mailto_url</code>
-      </em>| 
-      <em class="replaceable">
-        <code>.[..]</code>
-      </em>| 
-      <em class="replaceable">
-        <code>&lt;</code>
-      </em>| 
-      <em class="replaceable">
-        <code>message</code>
-      </em>
-      <em class="replaceable">
-        <code>mutt</code>
-      </em>[-n ] [-e 
-      <em class="replaceable">
-        <code>cmd</code>
-      </em>] [-F 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] -p</p>
-    </div>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mutt</code>[-n ] [-e 
-      <em class="replaceable">
-        <code>cmd</code>
-      </em>] [-F 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] -A 
-      <em class="replaceable">
-        <code>alias</code>
-      </em></p>
-    </div>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mutt</code>[-n ] [-e 
-      <em class="replaceable">
-        <code>cmd</code>
-      </em>] [-F 
-      <em class="replaceable">
-        <code>file</code>
-      </em>] -Q 
-      <em class="replaceable">
-        <code>query</code>
-      </em></p>
-    </div>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mutt</code>-v [ 
-      <em class="replaceable">
-        <code>v</code>
-      </em>]</p>
-    </div>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mutt</code>-D</p>
-    </div>
+  <div class="refsect1">
+    <a class="offset" id="syntax"></a>
+    <h2>SYNTAX</h2>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>[-GnRyzZ] [-e 
+    <span class="emphasis">
+      <em>cmd</em>
+    </span>] [-F 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] [-g 
+    <span class="emphasis">
+      <em>server</em>
+    </span>] [-m 
+    <span class="emphasis">
+      <em>type</em>
+    </span>] [-f 
+    <span class="emphasis">
+      <em>file</em>
+    </span>]</p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>[-Enx] [-e 
+    <span class="emphasis">
+      <em>cmd</em>
+    </span>] [-F 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] [-H 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] [-i 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] [-s 
+    <span class="emphasis">
+      <em>subj</em>
+    </span>] [-b 
+    <span class="emphasis">
+      <em>addr</em>
+    </span>] [-c 
+    <span class="emphasis">
+      <em>addr</em>
+    </span>] [-a 
+    <span class="emphasis">
+      <em>file</em>
+    </span>[...] --] 
+    <span class="emphasis">
+      <em>addr|mailto_url</em>
+    </span>[...]</p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>[-nx] [-e 
+    <span class="emphasis">
+      <em>cmd</em>
+    </span>] [-F 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] [-s 
+    <span class="emphasis">
+      <em>subj</em>
+    </span>] [-b 
+    <span class="emphasis">
+      <em>addr</em>
+    </span>] [-c 
+    <span class="emphasis">
+      <em>addr</em>
+    </span>] [-a 
+    <span class="emphasis">
+      <em>file</em>
+    </span>[...] --] 
+    <span class="emphasis">
+      <em>addr|mailto_url</em>
+    </span>[...] &lt; message</p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>[-n] [-e 
+    <span class="emphasis">
+      <em>cmd</em>
+    </span>] [-F 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] -p</p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>[-n] [-e 
+    <span class="emphasis">
+      <em>cmd</em>
+    </span>] [-F 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] -A 
+    <span class="emphasis">
+      <em>alias</em>
+    </span></p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>[-n] [-e 
+    <span class="emphasis">
+      <em>cmd</em>
+    </span>] [-F 
+    <span class="emphasis">
+      <em>file</em>
+    </span>] -Q 
+    <span class="emphasis">
+      <em>query</em>
+    </span></p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>-v[v]</p>
+    <p>
+    <span class="strong">
+      <strong>neomutt</strong>
+    </span>-D [-S]</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="description"></a>
     <h2>DESCRIPTION</h2>
-    <p>Mutt is a small but very powerful text based program for reading and sending electronic mail under unix operating systems, including support for color terminals, MIME, OpenPGP, and a threaded sorting mode.</p>
+    <p>Neomutt is a small but very powerful text based program for reading and sending electronic mail under unix operating systems, including support for color terminals, MIME, OpenPGP, and a threaded sorting mode.</p>
     <p>
     <span class="emphasis">
       <em>Note:</em>
@@ -180,11 +155,11 @@ description: The Mutt Mail User Agent
       <em>overview</em>
     </span>of 
     <span class="emphasis">
-      <em>mutt's</em>
+      <em>neomutt's</em>
     </span>command 
     <span class="emphasis">
       <em>line</em>
-    </span>options. You should find a copy of the full manual in @docdir@, in text, HTML, and/or PDF format.</p>
+    </span>options. You should find a copy of the full manual in /usr/share/doc/neomutt, in text, HTML, and/or PDF format.</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="options"></a>
@@ -208,12 +183,12 @@ description: The Mutt Mail User Agent
         </dt>
         <dd>
           <p>Attach a file to your message using MIME. When attaching single or multiple files, separating filenames and recipient addresses with "--" is mandatory, e.g. 
-          <strong class="userinput">
-            <code>mutt -a image.jpg -- addr1</code>
-          </strong>or 
-          <strong class="userinput">
-            <code>mutt -a img.jpg *.png -- addr1 addr2</code>
-          </strong>. The -a option must be placed at the end of command line options.</p>
+          <span class="strong">
+            <strong>neomutt -a image.jpg -- addr1</strong>
+          </span>or 
+          <span class="strong">
+            <strong>neomutt -a img.jpg *.png -- addr1 addr2</strong>
+          </span>. The -a option must be placed at the end of command line options.</p>
         </dd>
         <dt>
           <span class="term">-b 
@@ -240,7 +215,7 @@ description: The Mutt Mail User Agent
           </span></span>
         </dt>
         <dd>
-          <p>If mutt was compiled with +DEBUG log debugging output to ~/.muttdebug0. 
+          <p>log debugging output to ~/.neomuttdebug0. 
           <span class="emphasis">
             <em>Level</em>
           </span>can range from 1-5 and effects verbosity. A value of 2 is recommended.</p>
@@ -250,6 +225,12 @@ description: The Mutt Mail User Agent
         </dt>
         <dd>
           <p>Print the value of all configuration options to stdout.</p>
+        </dd>
+        <dt>
+          <span class="term">-D -S</span>
+        </dt>
+        <dd>
+          <p>like -D but hide the value of sensitive variables</p>
         </dd>
         <dt>
           <span class="term">-E</span>
@@ -278,11 +259,11 @@ description: The Mutt Mail User Agent
         <dt>
           <span class="term">-F 
           <span class="emphasis">
-            <em>muttrc</em>
+            <em>neomuttrc</em>
           </span></span>
         </dt>
         <dd>
-          <p>Specify an initialization file to read instead of ~/.muttrc</p>
+          <p>Specify an initialization file to read instead of ~/.neomuttrc</p>
         </dd>
         <dt>
           <span class="term">-g 
@@ -291,13 +272,13 @@ description: The Mutt Mail User Agent
           </span></span>
         </dt>
         <dd>
-          <p>Start Mutt with a listing of subscribed newsgroups at specified news server.</p>
+          <p>Start Neomutt with a listing of subscribed newsgroups at specified news server.</p>
         </dd>
         <dt>
           <span class="term">-G</span>
         </dt>
         <dd>
-          <p>Start Mutt with a listing of subscribed newsgroups.</p>
+          <p>Start Neomutt with a listing of subscribed newsgroups.</p>
         </dd>
         <dt>
           <span class="term">-h</span>
@@ -336,7 +317,7 @@ description: The Mutt Mail User Agent
           <span class="term">-n</span>
         </dt>
         <dd>
-          <p>Causes Mutt to bypass the system configuration file.</p>
+          <p>Causes Neomutt to bypass the system configuration file.</p>
         </dd>
         <dt>
           <span class="term">-p</span>
@@ -375,7 +356,7 @@ description: The Mutt Mail User Agent
           <span class="term">-v</span>
         </dt>
         <dd>
-          <p>Display the Mutt version number and compile-time definitions.</p>
+          <p>Display the Neomutt version number and compile-time definitions.</p>
         </dd>
         <dt>
           <span class="term">-vv</span>
@@ -393,7 +374,7 @@ description: The Mutt Mail User Agent
           <span class="term">-y</span>
         </dt>
         <dd>
-          <p>Start Mutt with a listing of all mailboxes specified by the 
+          <p>Start Neomutt with a listing of all mailboxes specified by the 
           <span class="emphasis">
             <em>mailboxes</em>
           </span>command.</p>
@@ -402,13 +383,13 @@ description: The Mutt Mail User Agent
           <span class="term">-z</span>
         </dt>
         <dd>
-          <p>When used with -f, causes Mutt not to start if there are no messages in the mailbox.</p>
+          <p>When used with -f, causes Neomutt not to start if there are no messages in the mailbox.</p>
         </dd>
         <dt>
           <span class="term">-Z</span>
         </dt>
         <dd>
-          <p>Causes Mutt to open the first mailbox specified by the 
+          <p>Causes Neomutt to open the first mailbox specified by the 
           <span class="emphasis">
             <em>mailboxes</em>
           </span>command which contains new mail.</p>
@@ -459,8 +440,8 @@ description: The Mutt Mail User Agent
         </dt>
         <dd>
           <p>Full path of the user's spool mailbox if MAIL is unset. Commonly used when the spool mailbox is a 
-          <span class="emphasis">
-            <em>maildir (5)</em>
+          <span class="strong">
+            <strong>maildir (5)</strong>
           </span>folder.</p>
         </dd>
         <dt>
@@ -479,9 +460,9 @@ description: The Mutt Mail User Agent
           <span class="term">PGPPATH</span>
         </dt>
         <dd>
-          <p>Directory in which the user's PGP public keyring can be found. When used with the original PGP program, mutt and 
-          <span class="emphasis">
-            <em>pgpring (1)</em>
+          <p>Directory in which the user's PGP public keyring can be found. When used with the original PGP program, neomutt and 
+          <span class="strong">
+            <strong>pgpring (1)</strong>
           </span>rely on this being set.</p>
         </dd>
         <dt>
@@ -512,7 +493,7 @@ description: The Mutt Mail User Agent
       <dl class="variablelist">
         <dt>
           <span class="term">
-            <code class="filename">~/.muttrc or ~/.mutt/muttrc</code>
+            <code class="filename">~/.neomuttrc or ~/.neomutt/neomuttrc</code>
           </span>
         </dt>
         <dd>
@@ -520,7 +501,7 @@ description: The Mutt Mail User Agent
         </dd>
         <dt>
           <span class="term">
-            <code class="filename">@sysconfdir@/Muttrc</code>
+            <code class="filename">/etc/neomuttrc</code>
           </span>
         </dt>
         <dd>
@@ -528,11 +509,11 @@ description: The Mutt Mail User Agent
         </dd>
         <dt>
           <span class="term">
-            <code class="filename">/tmp/muttXXXXXX</code>
+            <code class="filename">/tmp/neomuttXXXXXX</code>
           </span>
         </dt>
         <dd>
-          <p>Temporary files created by Mutt.</p>
+          <p>Temporary files created by Neomutt.</p>
         </dd>
         <dt>
           <span class="term">
@@ -544,7 +525,7 @@ description: The Mutt Mail User Agent
         </dd>
         <dt>
           <span class="term">
-            <code class="filename">@sysconfdir@/mailcap</code>
+            <code class="filename">/etc/mailcap</code>
           </span>
         </dt>
         <dd>
@@ -560,7 +541,7 @@ description: The Mutt Mail User Agent
         </dd>
         <dt>
           <span class="term">
-            <code class="filename">@sysconfdir@/mime.types</code>
+            <code class="filename">/etc/mime.types</code>
           </span>
         </dt>
         <dd>
@@ -568,19 +549,11 @@ description: The Mutt Mail User Agent
         </dd>
         <dt>
           <span class="term">
-            <code class="filename">@bindir@/mutt_dotlock</code>
+            <code class="filename">/usr/share/doc/neomutt/manual.txt</code>
           </span>
         </dt>
         <dd>
-          <p>The privileged dotlocking program.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">@docdir@/manual.txt</code>
-          </span>
-        </dt>
-        <dd>
-          <p>The Mutt manual.</p>
+          <p>The Neomutt manual.</p>
         </dd>
       </dl>
     </div>
@@ -588,20 +561,7 @@ description: The Mutt Mail User Agent
   <div class="refsect1">
     <a class="offset" id="bugs"></a>
     <h2>BUGS</h2>
-    <p>None. Mutts have fleas, not bugs.</p>
-  </div>
-  <div class="refsect1">
-    <a class="offset" id="fleas"></a>
-    <h2>FLEAS</h2>
-    <p>Suspend/resume while editing a file with an external editor does not work under SunOS 4.x if you use the curses lib in /usr/5lib. It 
-    <span class="emphasis">
-      <em>does</em>
-    </span>work with the S-Lang library, however.</p>
-    <p>Resizing the screen while using an external pager causes Mutt to go haywire on some systems.</p>
-    <p>Suspend/resume does not work under Ultrix.</p>
-    <p>The help line for the index menu is not updated if you change the bindings for one of the functions listed while Mutt is running.</p>
-    <p>For a more up-to-date list of bugs, errm, fleas, please visit the mutt project's bug tracking system under 
-    <a class="ulink" href="http://bugs.mutt.org/" target="_top">http://bugs.mutt.org/</a>.</p>
+    <p>See https://github.com/neomutt/neomutt/issues</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="no_warranties"></a>
@@ -619,25 +579,26 @@ description: The Mutt Mail User Agent
     <span class="citerefentry">
     <span class="refentrytitle">maildir</span>(5)</span>, 
     <span class="citerefentry">
+    <span class="refentrytitle">notmuch</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">msmtp</span>(1)</span>, 
+    <span class="citerefentry">
     <span class="refentrytitle">mbox</span>(5)</span>, 
     <span class="citerefentry">
-    <span class="refentrytitle">mutt_dotlock</span>(1)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">muttrc</span>(5)</span>, 
+    <span class="refentrytitle">neomuttrc</span>(5)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">ncurses</span>(3)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">sendmail</span>(1)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">smail</span>(1)</span>.</p>
-    <p>Mutt Home Page: 
-    <a class="ulink" href="http://www.mutt.org/" target="_top">http://www.mutt.org/</a></p>
-    <p>The Mutt manual</p>
+    <p>Neomutt Home Page: https://www.neomutt.org</p>
+    <p>The Neomutt manual</p>
   </div>
   <div class="refsect1">
     <a class="offset" id="author"></a>
     <h2>AUTHOR</h2>
-    <p>Michael Elkins, and others. Use &lt;mutt-dev@mutt.org&gt; to contact the developers.</p>
+    <p>Michael Elkins, and others. Use &lt;neomutt-devel@neomutt.org&gt; to contact the developers.</p>
   </div>
 </div>
 {% endraw %}
