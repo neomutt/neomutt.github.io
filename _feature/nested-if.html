@@ -68,32 +68,31 @@ status: stable
     <p>A simple nested condition might be: (Some whitespace has been introduced for clarity)</p>
     <pre class="screen">
 %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions
-    %&lt;y? XY &amp; X &gt;                      x&gt;0
-        XY                            x&gt;0,y&gt;0
-              X                        x&gt;0,y=0
+     %&lt;y? XY &amp; X &gt;                      x&gt;0
+          XY                            x&gt;0,y&gt;0
+               X                        x&gt;0,y=0
 </pre>
     <pre class="screen">
 %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions
-                    %&lt;y? Y &amp; NONE &gt;    x=0
-                        Y             x=0,y&gt;0
-                            NONE      x=0,y=0
+                     %&lt;y? Y &amp; NONE &gt;    x=0
+                          Y             x=0,y&gt;0
+                              NONE      x=0,y=0
 </pre>
     <p>Equivalent to:</p>
-    <div class="literallayout">
-      <p>if&#160;(x&#160;&gt;&#160;0)&#160;{
-      <br />if&#160;(y&#160;&gt;&#160;0)&#160;{
-      <br />&#160;&#160;print&#160;'XY'
-      <br />}&#160;else&#160;{
-      <br />&#160;&#160;print&#160;'X'
-      <br />}
-      <br />}&#160;else&#160;{
-      <br />if&#160;(y&#160;&gt;&#160;0)&#160;{
-      <br />&#160;&#160;print&#160;'Y'
-      <br />}&#160;else&#160;{
-      <br />&#160;&#160;print&#160;'NONE'
-      <br />}
-      <br />}</p>
-    </div>
+    <pre>
+if (x &gt; 0) {
+  if (y &gt; 0) {
+    print 'XY'
+  } else {
+    print 'X'
+  }
+} else {
+  if (y &gt; 0) {
+    print 'Y'
+  } else {
+    print 'NONE'
+  }
+}</pre>
     <p>Examples:</p>
     <pre class="screen">
 set index_format='%4C %Z %{%b %d} %-25.25n %s%&gt; %&lt;M?%M Msgs &amp;%&lt;l?%l Lines&amp;%c Bytes&gt;&gt;'
@@ -186,12 +185,12 @@ set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#index-format" title="3.139.&#160;index_format">$index_format</a>
+            <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#status-format" title="3.375.&#160;status_format">$status_format</a>
+            <a class="link" href="/guide/reference.html#status-format" title="3.377.&#160;status_format">$status_format</a>
           </p>
         </li>
       </ul>
