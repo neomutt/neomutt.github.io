@@ -32,7 +32,6 @@ digraph build {
 	ld_tool       [ label="ld" shape="box" ]
 	git           [ label=<git <font color="red">●</font>> shape="box" ]
 	ld_mutt       [ label="ld" shape="box" ]
-	txt2c         [ label=<txt2c <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
 
 	lots_obj -> ld_mutt
 	ld_mutt -> neomutt
@@ -43,7 +42,7 @@ digraph build {
 	git -> gitver_h
 	gitver_h -> generated [ style="dashed" ]
 
-	txt2c -> conststrings_c
+	dot_configure -> conststrings_c
 	conststrings_c -> generated [ style="dashed" ]
 
 	config_h -> hcachever_sh
