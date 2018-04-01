@@ -39,11 +39,11 @@ digraph build {
 	dot_configure -> config_h
 	config_h -> generated [ style="dashed" ]
 
-	git -> gitver_h
-	gitver_h -> generated [ style="dashed" ]
-
 	dot_configure -> conststrings_c
 	conststrings_c -> generated [ style="dashed" ]
+
+	git -> gitver_h
+	gitver_h -> generated [ style="dashed" ]
 
 	config_h -> hcachever_sh
 	mutt_h -> hcachever_sh
