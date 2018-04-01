@@ -22,7 +22,6 @@ digraph build {
 	];
 
 
-	configure_ac     [ label="configure.ac"        ]
 	config_h         [ label="config.h"            ]
 	conststrings_c   [ label="conststrings.c"      ]
 	gitver_h         [ label="gitver.h"            ]
@@ -159,7 +158,5 @@ digraph build {
 	imap_a -> ld_mutt
 	mutt_a -> ld_mutt
 	ncrypt_a -> ld_mutt
-
-	configure_ac -> dot_configure [ label="autoreconf" ]
 }
 
