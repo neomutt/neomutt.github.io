@@ -15,13 +15,6 @@ discussion, see [#346](https://github.com/neomutt/neomutt/issues/436).
 build system, because he doesn't know which operating system or architecture
 that would break.
 
-## CMake supported platforms
-
-As we thought about changing the build system to CMake (See
-[this issue for that](https://github.com/neomutt/neomutt/issues/321) for the
-discussion),
-[the list of platforms CMake does support may be interesting.](https://gitlab.kitware.com/cmake/cmake/tree/master/Modules/Platform)
-
 ## Architectures
 
 ### confirmed
@@ -47,7 +40,7 @@ Therefore, he doesn't expect many troubles.
 Of course, our argument in the section
 [Operating Systems // not desirable to support](#not-desirable-to-support) also
 can be applies here: It's difficult to provide support for all the above
-architectures, because of us probably have only a AMD64 machine.
+architectures, because many of us probably have only a AMD64 machine.
 
 ## Operating Systems
 
