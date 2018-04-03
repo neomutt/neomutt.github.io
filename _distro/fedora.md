@@ -17,6 +17,7 @@ maintainer: flatcap
 | 25           | Supported                   |
 | 26           | Supported                   |
 | 27           | Supported                   |
+| 28           | Supported                   |
 | Rawhide      | Supported                   |
 
 The NeoMutt RPMs are published in a COPR. This is a public repository run by
