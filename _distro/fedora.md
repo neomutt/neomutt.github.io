@@ -13,8 +13,7 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 24 or before | Unsupported, please upgrade |
-| 25           | Supported                   |
+| 25 or before | Unsupported, please upgrade |
 | 26           | Supported                   |
 | 27           | Supported                   |
 | 28           | Supported                   |
