@@ -74,8 +74,8 @@ There are lots of possibilities:
 **Description**: Make it easier to find the help you need  
 **Status**: Future
 
-Everything's documented in NeoMutt, but too often users can't what they need
-to know.  Change the Guide to be more task-oriented.  Make it easier for
+Everything's documented in NeoMutt, but too often users can't find what they
+need to know.  Change the Guide to be more task-oriented.  Make it easier for
 users to contribute to the Guide.
 
 ## Nested Windows
