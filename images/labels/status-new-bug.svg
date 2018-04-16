@@ -1,11 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="18">
-  <mask id="a">
-    <rect width="160" height="18" rx="4" fill="#fff" />
-  </mask>
-  <g mask="url(#a)">
-    <path fill="#1d76db" d="M0 0h160v18H0z" />
-  </g>
   <g fill="#ffffff" font-family="sans-serif" font-size="11">
+    <rect width="160" height="18" rx="4" fill="#1d76db">
+      <title>XXX</title>
+    </rect>
     <text x="10" y="13">status:new-bug</text>
   </g>
 </svg>

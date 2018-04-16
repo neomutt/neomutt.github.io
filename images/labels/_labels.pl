@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 
-
 # fedora packages:
 #    * perl
 #    * perl-LWP-Protocol-https
@@ -11,7 +10,6 @@ use warnings;
 
 our $VERSION = 0.1;
 
-use Data::Dumper;
 use LWP::Simple;
 use JSON qw(decode_json);
 
@@ -41,14 +39,10 @@ sub generate_svg
 	my $output = '';
 
 	$output .= "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"18\">\n";
-	$output .= "  <mask id=\"a\">\n";
-	$output .= "    <rect width=\"160\" height=\"18\" rx=\"4\" fill=\"#fff\" />\n";
-	$output .= "  </mask>\n";
-	$output .= "  <g mask=\"url(#a)\">\n";
-	$output .= "    <path fill=\"#$bg\" d=\"M0 0h160v18H0z\" />\n";
-	$output .= "  </g>\n";
-	# $output .= "  <g fill=\"#$fg\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"11\">\n";
-	$output .= "  <g fill=\"#$fg\" font-family=\"sans-serif\" font-size=\"11\">\n";
+  $output .= "  <g fill=\"#$fg\" font-family=\"sans-serif\" font-size=\"11\">\n";
+  $output .= "    <rect width=\"160\" height=\"18\" rx=\"4\" fill=\"#$bg\">\n";
+  $output .= "      <title>XXX</title>\n";
+  $output .= "    </rect>\n";
 	$output .= "    <text x=\"10\" y=\"13\">$name</text>\n";
 	$output .= "  </g>\n";
 	$output .= "</svg>\n";
@@ -65,8 +59,6 @@ sub get_page_of_labels
 	my $json = get ($api);
 
 	my $decoded_json = decode_json ($json);
-
-	# print Dumper $decoded_json;
 
 	foreach (@{$decoded_json}) {
 		my $label = $_;
