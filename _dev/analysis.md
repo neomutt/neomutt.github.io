@@ -1,7 +1,7 @@
 ---
 layout: concertina
 title: Analyze NeoMutt
-description: Static analysis of NeoMutt's code
+description: Ways to Analyze NeoMutt's code
 ---
 
 # {{ page.title }}
@@ -13,6 +13,7 @@ find bugs without compiling, executing and debugging NeoMutt.
 | Tool                          | Description                  |
 | :---------------------------- | :--------------------------- |
 | [clang-format](#clang-format) | Source code formatter        |
+| [coccinelle](#coccinelle)     | Source code manipulator      |
 | [coverage](#coverage)         | Code coverage testing        |
 | [cppcheck](#cppcheck)         | Source code anaylser         |
 | [cproto](#cproto)             | Function prototype generator |
@@ -60,6 +61,72 @@ clang-format -i source.c
 
 - As part of the release process, clang-format is run on all the 'c' source.
 - The header files are tidied by hand to preserve the whitespace layout.
+
+## Coccinelle - Source code manipulation <a class="offset" id="coccinelle"></a>
+
+- [http://coccinelle.lip6.fr/](http://coccinelle.lip6.fr/)
+
+Coccinelle is a tool for manipulating C source code.  Because it really
+understands C, you can make complex changes, e.g.  If `x` is an integer,
+replace `if (!x)` with `if (x == 0)`
+
+This means that you could define some code style rules and automatically check
+that they're being used.
+
+Coccinelle uses a transformation language that it applies to C source.
+The output is a diff that can be applied.
+
+```c
+/* Source file to be checked */
+int main()
+{
+  char *x;
+
+  if (x == NULL)
+    something();
+}
+```
+
+```diff
+// Find pointers that are checked against NULL
+@@
+type T;
+identifier I;
+statement S1;
+@@
+
+T *I;
+
+(
+- if (I == NULL)
++ if (!I)
+S1
+)
+```
+
+```sh
+# Generate the diff
+spatch --sp-file null-check.cocci source.c
+```
+
+```diff
+--- source.c
++++ source.c
+@@ -4,6 +4,6 @@ int main()
+ {
+   char *x;
+ 
+-  if (x == NULL)
++  if (!x)
+     something();
+ }
+```
+
+Here are more examples that have been used on NeoMutt:
+
+- [https://github.com/neomutt/coccinelle](https://github.com/neomutt/coccinelle)
+
+**See also**: [clang-format](#clang-format)
 
 ## Coverage - Code coverage testing <a class="offset" id="coverage"></a>
 
