@@ -6,8 +6,9 @@ description: Static analysis of NeoMutt's code
 
 # {{ page.title }}
 
-[Wikipedia](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#C,_C++) has a nice list of static analyzers for C source code.
-Those can be used to find bugs without compiling, executing and debugging neomutt.
+[Wikipedia](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#C,_C++)
+has a nice list of static analyzers for C source code.  Those can be used to
+find bugs without compiling, executing and debugging NeoMutt.
 
 | Tool                          | Description                  |
 | :---------------------------- | :--------------------------- |
@@ -18,7 +19,92 @@ Those can be used to find bugs without compiling, executing and debugging neomut
 | [ctags](#ctags)               | Source tags generator        |
 | [iwyu](#iwyu)                 | Header file checker          |
 
-## CppCheck <a class="offset" id="cppcheck"></a>
+## Clang-Format - Source code formatter <a class="offset" id="clang-format"></a>
+
+- [https://clang.llvm.org/docs/ClangFormat.html](https://clang.llvm.org/docs/ClangFormat.html)
+
+`clang-format` is a source code formatter -- it changes source files according to a config file.
+
+In NeoMutt we use it to:
+- Place `{}`s in the right place
+- Adjust the whitespace: indent and around operators
+- Sort the `#include`s (see the weighting strategy)
+- Align a pointer `*` to the variable, not the type
+- ... and much more
+
+Unlike many similar tools, it really understands the code it's transforming.
+It uses [clang](https://clang.llvm.org/) to create an
+[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) for the code.
+
+[NeoMutt's config file](https://github.com/neomutt/neomutt/blob/master/.clang-format) ships with the code.
+
+The config file looks like this:
+
+```
+Language: Cpp
+
+TabWidth:          8
+UseTab:            Never
+IndentWidth:       2
+ColumnLimit:       80
+BreakBeforeBraces: Allman
+```
+
+Clang has documentation for [all of the options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html).
+
+Running it is as simple as:
+
+```
+clang-format -i source.c
+```
+
+- As part of the release process, clang-format is run on all the 'c' source.
+- The header files are tidied by hand to preserve the whitespace layout.
+
+## Coverage - Code coverage testing <a class="offset" id="coverage"></a>
+
+- Lcov [http://ltp.sourceforge.net/coverage/lcov.php](http://ltp.sourceforge.net/coverage/lcov.php)
+- Coveralls [https://coveralls.io/](https://coveralls.io/)
+
+When testing a program, it's often useful to know which parts of the code have
+actually been used.  Coverage testing collects statistics about a running
+program.
+
+First the program needs to be compiled and linked with some extra options.
+This will generate a `.gcno` coverage files for each object.
+
+```makefile
+CFLAGS  += -fprofile-arcs -ftest-coverage
+LDFLAGS += -fprofile-arcs -ftest-coverage
+```
+
+When the program is run, every function will write data to a `.gcda` file.
+`lcov` can convert the saved data into an html table.
+
+```sh
+lcov -t "result" -o lcov.info -c -d config
+genhtml -o lcov lcov.info
+```
+
+Coveralls performs the same function, but it has a much prettier website.
+
+```sh
+# Install the coveralls helper programm
+pip install --user cpp-coveralls
+
+export COVERALLS_REPO_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# Update the stats, excluding (-e) certain files/dirs
+coveralls -e mutt -e test -e dump -e main.c -e config/dump.c
+```
+
+Currently, the only part of NeoMutt that has a coverage report is the new
+config code:
+
+- Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
+- Report: [https://coveralls.io/github/flatcap/neomutt](https://coveralls.io/github/flatcap/neomutt)
+
+## CppCheck - Source code analyser <a class="offset" id="cppcheck"></a>
 
 - [http://cppcheck.sourceforge.net](http://cppcheck.sourceforge.net)
 
@@ -46,7 +132,58 @@ Some considerations:
 
 If cppcheck takes too much time for analyzing the source code, it is always possible to analyze only specific files, tell it to test less macro combinations, or to not enable all warnings.
 
-## Include-What-You-Use (iwyu) <a class="offset" id="iwyu"></a>
+## Cproto - Function prototype generator <a class="offset" id="cproto"></a>
+
+- [https://invisible-island.net/cproto/cproto.html](https://invisible-island.net/cproto/cproto.html)
+
+Given a source file, cproto, will generate prototypes for all the functions.
+This is slightly useful on its own, but it can be used as the basis for:
+
+- analysing functions and parameters
+- generating doxygen comment blocks
+
+```sh
+cproto -D USE_SIDEBAR=1 -I .  -s source.c
+```
+
+**See also**: [ctags](#ctags)
+
+## Ctags - Source tags generator <a class="offset" id="ctags"></a>
+
+- [http://ctags.sourceforge.net/](http://ctags.sourceforge.net/)
+
+`ctags` generates tags files that your editor can use to lookup symbols in the source:
+all the functions, structs, global variables, etc.
+
+It can be run:
+
+```sh
+# Recursively
+ctags -R .
+
+# On specific files
+ctags source1.c source2.c
+```
+
+Unfortunately, that will include some source that isn't useful.
+Using `find` can help exclude some files and directories:
+
+```
+find . -name '*.[ch]' ! -path './autosetup/*' ! -path './test/*' ! -path './doc/*' ! -path './pgp*.c' | cut -b3- | xargs ctags
+```
+
+`ctags` can also extract certain types of information.
+This can be useful for analysis of the code.
+
+```sh
+ctags -R -x --c-kinds=f   . > functions.txt
+ctags -R -x --c-kinds=gsu . > structs.txt
+ctags -R -x --c-kinds=v   . > variables.txt
+```
+
+**See also**: [cproto](#cproto)
+
+## Include-What-You-Use - Header file checker <a class="offset" id="iwyu"></a>
 
 - [https://include-what-you-use.org/](https://include-what-you-use.org/)
 
@@ -119,140 +256,4 @@ It looks like this:
 { include: [ '@"mutt/.*"', private, '"mutt/mutt.h"', public ] },
 { include: [ '@"conn/.*"', private, '"conn/conn.h"', public ] },
 ```
-
-## Clang-Format <a class="offset" id="clang-format"></a>
-
-- [https://clang.llvm.org/docs/ClangFormat.html](https://clang.llvm.org/docs/ClangFormat.html)
-
-`clang-format` is a source code formatter -- it changes source files according to a config file.
-
-In NeoMutt we use it to:
-- Place `{}`s in the right place
-- Adjust the whitespace: indent and around operators
-- Sort the `#include`s (see the weighting strategy)
-- Align a pointer `*` to the variable, not the type
-- ... and much more
-
-Unlike many similar tools, it really understands the code it's transforming.
-It uses [clang](https://clang.llvm.org/) to create an
-[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) for the code.
-
-[NeoMutt's config file](https://github.com/neomutt/neomutt/blob/master/.clang-format) ships with the code.
-
-The config file looks like this:
-
-```
-Language: Cpp
-
-TabWidth:          8
-UseTab:            Never
-IndentWidth:       2
-ColumnLimit:       80
-BreakBeforeBraces: Allman
-```
-
-Clang has documentation for [all of the options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html).
-
-Running it is as simple as:
-
-```
-clang-format -i source.c
-```
-
-- As part of the release process, clang-format is run on all the 'c' source.
-- The header files are tidied by hand to preserve the whitespace layout.
-
-## Coverage - lcov/Coveralls - Code coverage testing <a class="offset" id="coverage"></a>
-
-- Lcov [http://ltp.sourceforge.net/coverage/lcov.php](http://ltp.sourceforge.net/coverage/lcov.php)
-- Coveralls [https://coveralls.io/](https://coveralls.io/)
-
-When testing a program, it's often useful to know which parts of the code have
-actually been used.  Coverage testing collects statistics about a running
-program.
-
-First the program needs to be compiled and linked with some extra options.
-This will generate a `.gcno` coverage files for each object.
-
-```makefile
-CFLAGS  += -fprofile-arcs -ftest-coverage
-LDFLAGS += -fprofile-arcs -ftest-coverage
-```
-
-When the program is run, every function will write data to a `.gcda` file.
-`lcov` can convert the saved data into an html table.
-
-```sh
-lcov -t "result" -o lcov.info -c -d config
-genhtml -o lcov lcov.info
-```
-
-Coveralls performs the same function, but it has a much prettier website.
-
-```sh
-# Install the coveralls helper programm
-pip install --user cpp-coveralls
-
-export COVERALLS_REPO_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-# Update the stats, excluding (-e) certain files/dirs
-coveralls -e mutt -e test -e dump -e main.c -e config/dump.c
-```
-
-Currently, the only part of NeoMutt that has a coverage report is the new
-config code:
-
-- Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
-- Report: [https://coveralls.io/github/flatcap/neomutt](https://coveralls.io/github/flatcap/neomutt)
-
-## Cproto - Function prototype generator <a class="offset" id="cproto"></a>
-
-- [https://invisible-island.net/cproto/cproto.html](https://invisible-island.net/cproto/cproto.html)
-
-Given a source file, cproto, will generate prototypes for all the functions.
-This is slightly useful on its own, but it can be used as the basis for:
-
-- analysing functions and parameters
-- generating doxygen comment blocks
-
-```sh
-cproto -D USE_SIDEBAR=1 -I .  -s source.c
-```
-
-**See also**: [ctags](#ctags)
-
-## Ctags - Source tags generator <a class="offset" id="ctags"></a>
-
-- [http://ctags.sourceforge.net/](http://ctags.sourceforge.net/)
-
-`ctags` generates tags files that your editor can use to lookup symbols in the source:
-all the functions, structs, global variables, etc.
-
-It can be run:
-
-```sh
-# Recursively
-ctags -R .
-
-# On specific files
-ctags source1.c source2.c
-```
-
-Unfortunately, that will include some source that isn't useful.
-Using `find` can help exclude some files and directories:
-
-```
-find . -name '*.[ch]' ! -path './autosetup/*' ! -path './test/*' ! -path './doc/*' ! -path './pgp*.c' | cut -b3- | xargs ctags
-```
-
-`ctags` can also extract certain types of information.
-This can be useful for analysis of the code.
-
-```sh
-ctags -R -x --c-kinds=f   . > functions.txt
-ctags -R -x --c-kinds=gsu . > structs.txt
-ctags -R -x --c-kinds=v   . > variables.txt
-```
-
-**See also**: [cproto](#cproto)
 
