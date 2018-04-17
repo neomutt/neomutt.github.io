@@ -10,15 +10,19 @@ description: Ways to Analyze NeoMutt's code
 has a nice list of static analyzers for C source code.  Those can be used to
 find bugs without compiling, executing and debugging NeoMutt.
 
+If you have any questions, please send them to the developers' mailing list: [neomutt-devel@neomutt.org](mailto:neomutt-devel@neomutt.org)
+
 | Tool                          | Description                  |
 | :---------------------------- | :--------------------------- |
 | [clang-format](#clang-format) | Source code formatter        |
 | [coccinelle](#coccinelle)     | Source code manipulator      |
 | [coverage](#coverage)         | Code coverage testing        |
+| [coverity](#coverity)         | Source code anaylser         |
 | [cppcheck](#cppcheck)         | Source code anaylser         |
 | [cproto](#cproto)             | Function prototype generator |
 | [ctags](#ctags)               | Source tags generator        |
 | [iwyu](#iwyu)                 | Header file checker          |
+| [scan-build](#scan-build)     | Source code anaylser         |
 
 ## Clang-Format - Source code formatter <a class="offset" id="clang-format"></a>
 
@@ -126,7 +130,7 @@ Here are more examples that have been used on NeoMutt:
 
 - [https://github.com/neomutt/coccinelle](https://github.com/neomutt/coccinelle)
 
-**See also**: [clang-format](#clang-format)
+- **See also**: [clang-format](#clang-format)
 
 ## Coverage - Code coverage testing <a class="offset" id="coverage"></a>
 
@@ -171,6 +175,33 @@ config code:
 - Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
 - Report: [https://coveralls.io/github/flatcap/neomutt](https://coveralls.io/github/flatcap/neomutt)
 
+## Coverity - Source code anaylser <a class="offset" id="coverity"></a>
+
+- [https://scan.coverity.com](https://scan.coverity.com)
+
+Coverity Scan is a free static-analysis cloud-based service for the open source
+community.  As the free service is limited to a few scans per day, it isn't run
+automatically.
+
+- Resource leaks
+- Potential NULL dereferences
+- Logically dead code
+- and much more
+
+To run the check, create a branch of the NeoMutt repo and use the
+[coverity `.travis.yml`](https://github.com/neomutt/management/blob/master/travis/coverity.yml)
+file.  The rest of the process is automated.
+
+The latest statistics on NeoMutt can be found here:
+
+- [https://scan.coverity.com/projects/neomutt-neomutt](https://scan.coverity.com/projects/neomutt-neomutt)
+
+For security, the details of the defects are not made public.  If you wish to
+see the details, you must create an account (or login with GitHub) and click
+"Add me to project".
+
+- **See also**: [scan-build](#scan-build)
+
 ## CppCheck - Source code analyser <a class="offset" id="cppcheck"></a>
 
 - [http://cppcheck.sourceforge.net](http://cppcheck.sourceforge.net)
@@ -213,7 +244,7 @@ This is slightly useful on its own, but it can be used as the basis for:
 cproto -D USE_SIDEBAR=1 -I .  -s source.c
 ```
 
-**See also**: [ctags](#ctags)
+- **See also**: [ctags](#ctags)
 
 ## Ctags - Source tags generator <a class="offset" id="ctags"></a>
 
@@ -248,7 +279,7 @@ ctags -R -x --c-kinds=gsu . > structs.txt
 ctags -R -x --c-kinds=v   . > variables.txt
 ```
 
-**See also**: [cproto](#cproto)
+- **See also**: [cproto](#cproto)
 
 ## Include-What-You-Use - Header file checker <a class="offset" id="iwyu"></a>
 
@@ -323,4 +354,27 @@ It looks like this:
 { include: [ '@"mutt/.*"', private, '"mutt/mutt.h"', public ] },
 { include: [ '@"conn/.*"', private, '"conn/conn.h"', public ] },
 ```
+
+## Scan-Build - Source code anaylser<a class="offset" id="scan-build"></a>
+
+- [https://clang-analyzer.llvm.org/scan-build.html](https://clang-analyzer.llvm.org/scan-build.html)
+
+scan-build is a static analyzer and part of the clang family of tools.
+It can detect:
+- Resource leaks
+- Potential NULL dereferences
+- Logically dead code
+- and much more
+
+It will create an HTML report for all the issues that it finds.
+It's very simple to run:
+
+```sh
+# Configure NeoMutt as normal
+./configure [OPTIONS]
+# Run make under scan-build
+scan-build make
+```
+
+- **See also**: [coverity](#coverity)
 
