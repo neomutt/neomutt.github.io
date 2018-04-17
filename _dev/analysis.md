@@ -12,6 +12,7 @@ Those can be used to find bugs without compiling, executing and debugging neomut
 | Tool                          | Description                  |
 | :---------------------------- | :--------------------------- |
 | [clang-format](#clang-format) | Source code formatter        |
+| [coverage](#coverage)         | Code coverage testing        |
 | [cppcheck](#cppcheck)         | Source code anaylser         |
 | [cproto](#cproto)             | Function prototype generator |
 | [ctags](#ctags)               | Source tags generator        |
@@ -109,7 +110,7 @@ with one helper header
 #include "mutt/mutt.h"
 ```
 
-The [mapping file]()
+The [mapping file](https://github.com/neomutt/management/blob/master/iwyu/neomutt.imp)
 also provides fixes for some header files in glibc that cause confusion.
 It looks like this:
 
@@ -160,6 +161,49 @@ clang-format -i source.c
 
 - As part of the release process, clang-format is run on all the 'c' source.
 - The header files are tidied by hand to preserve the whitespace layout.
+
+## Coverage - lcov/Coveralls - Code coverage testing <a class="offset" id="coverage"></a>
+
+- Lcov [http://ltp.sourceforge.net/coverage/lcov.php](http://ltp.sourceforge.net/coverage/lcov.php)
+- Coveralls [https://coveralls.io/](https://coveralls.io/)
+
+When testing a program, it's often useful to know which parts of the code have
+actually been used.  Coverage testing collects statistics about a running
+program.
+
+First the program needs to be compiled and linked with some extra options.
+This will generate a `.gcno` coverage files for each object.
+
+```makefile
+CFLAGS  += -fprofile-arcs -ftest-coverage
+LDFLAGS += -fprofile-arcs -ftest-coverage
+```
+
+When the program is run, every function will write data to a `.gcda` file.
+`lcov` can convert the saved data into an html table.
+
+```sh
+lcov -t "result" -o lcov.info -c -d config
+genhtml -o lcov lcov.info
+```
+
+Coveralls performs the same function, but it has a much prettier website.
+
+```sh
+# Install the coveralls helper programm
+pip install --user cpp-coveralls
+
+export COVERALLS_REPO_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# Update the stats, excluding (-e) certain files/dirs
+coveralls -e mutt -e test -e dump -e main.c -e config/dump.c
+```
+
+Currently, the only part of NeoMutt that has a coverage report is the new
+config code:
+
+- Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
+- Report: [https://coveralls.io/github/flatcap/neomutt](https://coveralls.io/github/flatcap/neomutt)
 
 ## Cproto - Function prototype generator <a class="offset" id="cproto"></a>
 
