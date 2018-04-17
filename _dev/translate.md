@@ -15,7 +15,7 @@ Internationalization and Localization.
 
 - is changing the source code of a program to allow it to look up strings that
   need translation
-- [is done by programmers](/dev/translate-code)
+- is done by programmers
 
 **Localization** (abbreviated to **l10n**):
 
