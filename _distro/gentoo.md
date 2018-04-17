@@ -9,13 +9,13 @@ maintainer: nicolasbock
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 Ebuilds for NeoMutt can be found in the main gentoo repo.  There used
 to be an overlay, but it has been deprecated.  If you still have it in
 your config, remove it from `/etc/portage/repos.conf`.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 ```
 # emerge -av mail-client/neomutt
@@ -32,26 +32,26 @@ Would you like to merge these packages? [Yes/No]
 Have a good look at the USE-flags, such that you enable the features you need,
 such as _gpgme_, _lmdb_, etc.
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 ```
 emerge -auv mail-client/neomutt
 ```
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 ```
 emerge -av --depclean mail-client/neomutt
 ```
 
-## Building from Source <a class="offset" id="build"></a>
+## Building from Source <a id="build"></a>
 
 In Gentoo, you will likely already have build NeoMutt from source.  If
 you want the latest version from the Git repository, install the
 `=mail-client/neomutt-9999` version.  Add `=mail-client/neomutt-9999
 **` to your `/etc/portage/package.accept\_keywords` to enable it.
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 Follow the [instructions in the Gentoo
 wiki](https://wiki.gentoo.org/wiki/Debugging) to build NeoMutt with

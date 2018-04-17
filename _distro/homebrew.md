@@ -9,7 +9,7 @@ maintainer: alexpearce
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Overview <a class="offset" id="overview"></a>
+## Overview <a id="overview"></a>
 
 [Homebrew][homebrew] is a package manager for [macOS]. It allows you to easily
 install and manage software that didn't come pre-installed on your system and
@@ -28,7 +28,7 @@ a debug version of NeoMutt.
 [macos]: https://www.apple.com/macos/
 [neomutt-homebrew]: https://github.com/neomutt/homebrew-neomutt
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 Homebrew supports macOS versions from 10.6 Snow Leopard. Any version of macOS
 that supports Homebrew can be used to install NeoMutt with Homebrew.
@@ -36,7 +36,7 @@ that supports Homebrew can be used to install NeoMutt with Homebrew.
 Homebrew also allows you to install Mutt, but not NeoMutt and Mutt at the same
 time.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 The [NeoMutt Homebrew package][neomutt-homebrew] allows you to install the
 latest tagged version of NeoMutt, as well as the `HEAD` version taken from the
@@ -54,7 +54,7 @@ $ brew install neomutt/homebrew-neomutt/neomutt
 
 [neomutt-github]: https://github.com/neomutt/neomutt
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 Homebrew automatically updates itself when you run a `brew` command. It never
 updates a package, such as NeoMutt, unless you tell it to.
@@ -75,7 +75,7 @@ To upgrade NeoMutt to the latest version, run:
 $ brew upgrade neomutt
 ```
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 To remove NeoMutt from your system, run:
 
@@ -93,7 +93,7 @@ $ brew uninstall neomutt
 $ brew install mutt
 ```
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 Homebrew will always build NeoMutt from source, and knows what dependencies
 must be installed to do this, and how to install them.
@@ -107,7 +107,7 @@ $ brew install autoconf automake openssl tokyo-cabinet gettext gpgme libidn
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 The debug build of NeoMutt can be installed by specifying the `--with-debug`
 flag when installing:

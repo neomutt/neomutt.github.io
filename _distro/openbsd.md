@@ -9,12 +9,12 @@ maintainer: sthen
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 NeoMutt is provided as a separate package in -current/snapshots. The first
 release containing it will be 6.1.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 The Mutt and NeoMutt packages don't coexist, so remove Mutt first if installed:
 
@@ -35,19 +35,19 @@ a	0: <None>
 Your choice:
 ```
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 ```
 # pkg_add -u neomutt
 ```
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 ```
 # pkg_delete neomutt
 ```
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 To install the main dependencies for building NeoMutt and documentation:
 
@@ -60,7 +60,7 @@ Now you can follow the [guide for building NeoMutt](/dev/build).
 Alternatively, checkout/update the ports tree and build in the usual way
 (NeoMutt is in /usr/ports/mail/neomutt).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.

@@ -32,7 +32,7 @@ for i in *.html; do
 	sed -i 's/.*<html [^>]\+>/<html>/' "$i"
 	xmlstarlet sel -t -c "//div[@class='refentry']" "$i" \
 		| tidy -q -xml \
-		| sed 's/<a id=\([^ ]\+\) \/>/<a class="offset" id=\1><\/a>/g' \
+		| sed 's/<a id=\([^ ]\+\) \/>/<a id=\1><\/a>/g' \
 		| sponge "$i"
 done
 

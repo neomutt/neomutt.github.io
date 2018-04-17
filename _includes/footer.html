@@ -29,5 +29,16 @@
 <script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
 <script src="{{ site.baseurl }}/js/algolia.js"></script>
 <script>anchors.add();</script>
+<script>
+  var links = document.getElementsByTagName("a");
+  for(var i=0, max=links.length; i<max; i++) {
+    if (links[i].id) {
+      if (links[i].className) {
+          links[i].className += " ";
+        }
+        links[i].className += "offset";
+    }
+  }
+</script>
 </body>
 </html>

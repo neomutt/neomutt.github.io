@@ -8,7 +8,7 @@ title: NeoMutt's MIME Support
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="guide/mimesupport"></a>NeoMutt's MIME Support</h1>
+        <a id="guide/mimesupport"></a>NeoMutt's MIME Support</h1>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@ title: NeoMutt's MIME Support
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="using-mime"></a>1.&#160;Using MIME in NeoMutt</h2>
+          <a id="using-mime"></a>1.&#160;Using MIME in NeoMutt</h2>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ title: NeoMutt's MIME Support
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="mime-overview"></a>1.1.&#160;MIME Overview</h3>
+            <a id="mime-overview"></a>1.1.&#160;MIME Overview</h3>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ title: NeoMutt's MIME Support
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="mime-pager"></a>1.2.&#160;Viewing MIME Messages in the Pager</h3>
+            <a id="mime-pager"></a>1.2.&#160;Viewing MIME Messages in the Pager</h3>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ title: NeoMutt's MIME Support
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="attach-menu"></a>1.3.&#160;The Attachment Menu</h3>
+            <a id="attach-menu"></a>1.3.&#160;The Attachment Menu</h3>
           </div>
         </div>
       </div>
@@ -115,7 +115,7 @@ title: NeoMutt's MIME Support
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="compose-menu"></a>1.4.&#160;The Compose Menu</h3>
+            <a id="compose-menu"></a>1.4.&#160;The Compose Menu</h3>
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ title: NeoMutt's MIME Support
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="mime-types"></a>2.&#160;MIME Type Configuration with
+          <a id="mime-types"></a>2.&#160;MIME Type Configuration with
           <code class="literal">mime.types</code></h2>
         </div>
       </div>
@@ -156,7 +156,7 @@ title: NeoMutt's MIME Support
     <code class="literal">/etc/mime.types</code></p>
     <p>Each line starts with the full MIME type, followed by a space and space-separated list of file extensions. For example you could use:</p>
     <div class="example">
-      <a class="offset" id="ex-mime-types"></a>
+      <a id="ex-mime-types"></a>
       <p class="title">
         <strong>Example&#160;5.1.&#160;
         <code class="literal">mime.types</code></strong>
@@ -180,7 +180,7 @@ audio/x-aiff                    aif aifc aiff
     <a class="xref" href="#supported-mime-types" title="Table&#160;5.1.&#160;Supported MIME types">Table&#160;5.1, “Supported MIME types”</a> for supported major types. NeoMutt recognizes all of these if the appropriate entry is found in the
     <code class="literal">mime.types</code> file. Non-recognized mime types should only be used if the recipient of the message is likely to be expecting such attachments.</p>
     <div >
-      <a class="offset" id="supported-mime-types"></a>
+      <a id="supported-mime-types"></a>
       <p class="title">
         <strong>Table&#160;5.1.&#160;Supported MIME types</strong>
       </p>
@@ -275,7 +275,7 @@ audio/x-aiff                    aif aifc aiff
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="mailcap"></a>3.&#160;MIME Viewer Configuration with Mailcap</h2>
+          <a id="mailcap"></a>3.&#160;MIME Viewer Configuration with Mailcap</h2>
         </div>
       </div>
     </div>
@@ -332,7 +332,7 @@ neomutt -nF /dev/null -Q mailcap_path
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="mailcap-basics"></a>3.1.&#160;The Basics of the Mailcap File</h3>
+            <a id="mailcap-basics"></a>3.1.&#160;The Basics of the Mailcap File</h3>
           </div>
         </div>
       </div>
@@ -400,7 +400,7 @@ text/*; more
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="secure-mailcap"></a>3.2.&#160;Secure Use of Mailcap</h3>
+            <a id="secure-mailcap"></a>3.2.&#160;Secure Use of Mailcap</h3>
           </div>
         </div>
       </div>
@@ -424,7 +424,7 @@ text/test-mailcap-bug; cat %s; copiousoutput; test=charset=%{charset} \
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="advanced-mailcap"></a>3.3.&#160;Advanced Mailcap Usage</h3>
+            <a id="advanced-mailcap"></a>3.3.&#160;Advanced Mailcap Usage</h3>
           </div>
         </div>
       </div>
@@ -433,7 +433,7 @@ text/test-mailcap-bug; cat %s; copiousoutput; test=charset=%{charset} \
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="optional-mailcap-fields"></a>3.3.1.&#160;Optional Fields</h4>
+              <a id="optional-mailcap-fields"></a>3.3.1.&#160;Optional Fields</h4>
             </div>
           </div>
         </div>
@@ -541,7 +541,7 @@ text/html; lynx %s
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="mailcap-search-order"></a>3.3.2.&#160;Search Order</h4>
+              <a id="mailcap-search-order"></a>3.3.2.&#160;Search Order</h4>
             </div>
           </div>
         </div>
@@ -588,7 +588,7 @@ text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="mailcap-command-expansion"></a>3.3.3.&#160;Command Expansion</h4>
+              <a id="mailcap-command-expansion"></a>3.3.3.&#160;Command Expansion</h4>
             </div>
           </div>
         </div>
@@ -644,7 +644,7 @@ Content-Type: text/plain; charset=iso-8859-1
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="mailcap-example"></a>3.4.&#160;Example Mailcap Files</h3>
+            <a id="mailcap-example"></a>3.4.&#160;Example Mailcap Files</h3>
           </div>
         </div>
       </div>
@@ -692,7 +692,7 @@ application/ms-excel; open.pl %s
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="auto-view"></a>4.&#160;MIME Autoview</h2>
+          <a id="auto-view"></a>4.&#160;MIME Autoview</h2>
         </div>
       </div>
     </div>
@@ -757,7 +757,7 @@ application/postscript; ps2ascii %s; copiousoutput
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="alternative-order"></a>5.&#160;MIME Multipart/Alternative</h2>
+          <a id="alternative-order"></a>5.&#160;MIME Multipart/Alternative</h2>
         </div>
       </div>
     </div>
@@ -806,7 +806,7 @@ alternative_order text/enriched text/plain text \
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="attachments"></a>6.&#160;Attachment Searching and Counting</h2>
+          <a id="attachments"></a>6.&#160;Attachment Searching and Counting</h2>
         </div>
       </div>
     </div>
@@ -883,7 +883,7 @@ alternative_order text/enriched text/plain text \
     </span>, the pattern is removed from the list. The patterns are not expanded and matched to specific MIME types at this time — they're just text in a list. They're only matched when actually evaluating a message.</p>
     <p>Some examples might help to illustrate. The examples that are not commented out define the default configuration of the lists.</p>
     <div class="example">
-      <a class="offset" id="ex-attach-count"></a>
+      <a id="ex-attach-count"></a>
       <p class="title">
         <strong>Example&#160;5.2.&#160;Attachment counting</strong>
       </p>
@@ -955,7 +955,7 @@ attachments   -I message/external-body
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="mime-lookup"></a>7.&#160;MIME Lookup</h2>
+          <a id="mime-lookup"></a>7.&#160;MIME Lookup</h2>
         </div>
       </div>
     </div>

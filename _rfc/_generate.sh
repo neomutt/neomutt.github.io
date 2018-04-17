@@ -21,7 +21,7 @@ LINES=${LINES%% *}
 
 echo "$TOP"
 for ((i = 1; i <= LINES; i++)); do
-				printf "<a name=\"L%d\" class=\"offset\"></a><a href=\"#L%d\">%04d</a>\n" $i $i $i
+				printf "<a name=\"L%d\"></a><a href=\"#L%d\">%04d</a>\n" $i $i $i
 done
 
 echo "$MID"

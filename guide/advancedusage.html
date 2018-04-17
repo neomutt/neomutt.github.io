@@ -8,7 +8,7 @@ title: Advanced Usage
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="guide/advancedusage"></a>Advanced Usage</h1>
+        <a id="guide/advancedusage"></a>Advanced Usage</h1>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@ title: Advanced Usage
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="charset-handling"></a>1.&#160;Character Set Handling</h2>
+          <a id="charset-handling"></a>1.&#160;Character Set Handling</h2>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ title: Advanced Usage
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="regex"></a>2.&#160;Regular Expressions</h2>
+          <a id="regex"></a>2.&#160;Regular Expressions</h2>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ title: Advanced Usage
     <span class="quote">“<span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
     <a class="xref" href="#posix-regex-char-classes" title="Table&#160;4.1.&#160;POSIX regular expression character classes">Table&#160;4.1, “POSIX regular expression character classes”</a></p>
     <div >
-      <a class="offset" id="posix-regex-char-classes"></a>
+      <a id="posix-regex-char-classes"></a>
       <p class="title">
         <strong>Table&#160;4.1.&#160;POSIX regular expression character classes</strong>
       </p>
@@ -226,7 +226,7 @@ title: Advanced Usage
     <p>A regular expression matching a single character may be followed by one of several repetition operators described in
     <a class="xref" href="#regex-repeat" title="Table&#160;4.2.&#160;Regular expression repetition operators">Table&#160;4.2, “Regular expression repetition operators”</a>.</p>
     <div >
-      <a class="offset" id="regex-repeat"></a>
+      <a id="regex-repeat"></a>
       <p class="title">
         <strong>Table&#160;4.2.&#160;Regular expression repetition operators</strong>
       </p>
@@ -301,7 +301,7 @@ title: Advanced Usage
       <a class="xref" href="#regex-gnu-ext" title="Table&#160;4.3.&#160;GNU regular expression extensions">Table&#160;4.3, “GNU regular expression extensions”</a>.</p>
     </div>
     <div >
-      <a class="offset" id="regex-gnu-ext"></a>
+      <a id="regex-gnu-ext"></a>
       <p class="title">
         <strong>Table&#160;4.3.&#160;GNU regular expression extensions</strong>
       </p>
@@ -362,7 +362,7 @@ title: Advanced Usage
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="patterns"></a>3.&#160;Patterns: Searching, Limiting and Tagging</h2>
+          <a id="patterns"></a>3.&#160;Patterns: Searching, Limiting and Tagging</h2>
         </div>
       </div>
     </div>
@@ -371,7 +371,7 @@ title: Advanced Usage
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="patterns-modifier"></a>3.1.&#160;Pattern Modifier</h3>
+            <a id="patterns-modifier"></a>3.1.&#160;Pattern Modifier</h3>
           </div>
         </div>
       </div>
@@ -381,7 +381,7 @@ title: Advanced Usage
       <code class="literal">delete-pattern</code>, etc.).
       <a class="xref" href="#tab-patterns" title="Table&#160;4.4.&#160;Pattern modifiers">Table&#160;4.4, “Pattern modifiers”</a> shows several ways to select messages.</p>
       <div >
-        <a class="offset" id="tab-patterns"></a>
+        <a id="tab-patterns"></a>
         <p class="title">
           <strong>Table&#160;4.4.&#160;Pattern modifiers</strong>
         </p>
@@ -960,7 +960,7 @@ title: Advanced Usage
       <p>Patterns matching lists of addresses (notably c, C, p, P and t) match if there is at least one match in the whole list. If you want to make sure that all elements of that list match, you need to prefix your pattern with
       <span class="quote">“<span class="quote">^</span>”</span>. This example matches all mails which only has recipients from Germany.</p>
       <div class="example">
-        <a class="offset" id="ex-recips"></a>
+        <a id="ex-recips"></a>
         <p class="title">
           <strong>Example&#160;4.1.&#160;Matching all addresses in address lists</strong>
         </p>
@@ -973,7 +973,7 @@ title: Advanced Usage
       <br class="example-break" />
       <p>You can restrict address pattern matching to aliases that you have defined with the "@" modifier. This example matches messages whose recipients are all from Germany, and who are known to your alias list.</p>
       <div class="example">
-        <a class="offset" id="ex-restrict-to-aliases"></a>
+        <a id="ex-restrict-to-aliases"></a>
         <p class="title">
           <strong>Example&#160;4.2.&#160;Matching restricted to aliases</strong>
         </p>
@@ -986,7 +986,7 @@ title: Advanced Usage
       <br class="example-break" />
       <p>To match any defined alias, use a regular expression that matches any string. This example matches messages whose senders are known aliases.</p>
       <div class="example">
-        <a class="offset" id="ex-match-alias"></a>
+        <a id="ex-match-alias"></a>
         <p class="title">
           <strong>Example&#160;4.3.&#160;Matching any defined alias</strong>
         </p>
@@ -1002,7 +1002,7 @@ title: Advanced Usage
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="message-ranges"></a>3.1.1.&#160;Message Ranges</h4>
+              <a id="message-ranges"></a>3.1.1.&#160;Message Ranges</h4>
             </div>
           </div>
         </div>
@@ -1015,7 +1015,7 @@ title: Advanced Usage
           <em>offsets</em>
         </span>from the highlighted message. For example:</p>
         <div >
-          <a class="offset" id="relative-mnrs"></a>
+          <a id="relative-mnrs"></a>
           <p class="title">
             <strong>Table&#160;4.5.&#160;Relative Message Number Ranges</strong>
           </p>
@@ -1052,7 +1052,7 @@ title: Advanced Usage
         <p>In addition to numbers, either side of the range can also contain one of the special characters (shortcuts)
         <code class="literal">.^$</code>. The meaning is:</p>
         <div >
-          <a class="offset" id="mnrs-shortcuts"></a>
+          <a id="mnrs-shortcuts"></a>
           <p class="title">
             <strong>Table&#160;4.6.&#160;Message Number Shortcuts</strong>
           </p>
@@ -1116,7 +1116,7 @@ title: Advanced Usage
           <em>doesn't</em>
         </span>contain a comma, the meaning is similar to other ranges, except that the shortcuts are still available. Examples:</p>
         <div >
-          <a class="offset" id="mnrs-absolute"></a>
+          <a id="mnrs-absolute"></a>
           <p class="title">
             <strong>Table&#160;4.7.&#160;Absolute Message Number Ranges</strong>
           </p>
@@ -1193,7 +1193,7 @@ title: Advanced Usage
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="simple-searches"></a>3.2.&#160;Simple Searches</h3>
+            <a id="simple-searches"></a>3.2.&#160;Simple Searches</h3>
           </div>
         </div>
       </div>
@@ -1211,7 +1211,7 @@ title: Advanced Usage
         <code class="literal">[f]lag</code>
       </span>”</span>.</p>
       <div >
-        <a class="offset" id="tab-simplesearch-keywords"></a>
+        <a id="tab-simplesearch-keywords"></a>
         <p class="title">
           <strong>Table&#160;4.8.&#160;Simple search keywords</strong>
         </p>
@@ -1285,7 +1285,7 @@ title: Advanced Usage
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="complex-patterns"></a>3.3.&#160;Nesting and Boolean Operators</h3>
+            <a id="complex-patterns"></a>3.3.&#160;Nesting and Boolean Operators</h3>
           </div>
         </div>
       </div>
@@ -1320,7 +1320,7 @@ title: Advanced Usage
       <span class="quote">“<span class="quote">Cc</span>”</span> field and which are from
       <span class="quote">“<span class="quote">elkins</span>”</span>.</p>
       <div class="example">
-        <a class="offset" id="ex-pattern-bool"></a>
+        <a id="ex-pattern-bool"></a>
         <p class="title">
           <strong>Example&#160;4.4.&#160;Using boolean operators in patterns</strong>
         </p>
@@ -1360,7 +1360,7 @@ title: Advanced Usage
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="date-patterns"></a>3.4.&#160;Searching by Date</h3>
+            <a id="date-patterns"></a>3.4.&#160;Searching by Date</h3>
           </div>
         </div>
       </div>
@@ -1376,7 +1376,7 @@ title: Advanced Usage
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="date-absolute"></a>3.4.1.&#160;Absolute Dates</h4>
+              <a id="date-absolute"></a>3.4.1.&#160;Absolute Dates</h4>
             </div>
           </div>
         </div>
@@ -1401,7 +1401,7 @@ Limit to messages matching: ~d 20/1/95-31/10
         <a class="xref" href="#tab-date-units" title="Table&#160;4.9.&#160;Date units">Table&#160;4.9, “Date units”</a>. As a special case, you can replace the sign by a
         <span class="quote">“<span class="quote">*</span>”</span> character, which is equivalent to giving identical plus and minus error margins.</p>
         <div >
-          <a class="offset" id="tab-date-units"></a>
+          <a id="tab-date-units"></a>
           <p class="title">
             <strong>Table&#160;4.9.&#160;Date units</strong>
           </p>
@@ -1449,7 +1449,7 @@ Limit to messages matching: ~d 15/1/2001*2w
           <div>
             <div>
               <h4 class="title">
-              <a class="offset" id="dates-relative"></a>3.4.2.&#160;Relative Dates</h4>
+              <a id="dates-relative"></a>3.4.2.&#160;Relative Dates</h4>
             </div>
           </div>
         </div>
@@ -1513,7 +1513,7 @@ Limit to messages matching: ~d &lt;1m
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="gmail-patterns"></a>3.5.&#160;GMail Patterns</h3>
+            <a id="gmail-patterns"></a>3.5.&#160;GMail Patterns</h3>
           </div>
         </div>
       </div>
@@ -1523,7 +1523,7 @@ Limit to messages matching: ~d &lt;1m
       <p>For up-to-date information about searching, see:
       <a class="ulink" href="https://support.google.com/mail/answer/7190?hl=en" target="_top">GMail's Support Page</a>. You will need to (once) use a web-browser to visit Settings/Labels and enable "Show in IMAP" for "All Mail". When searching, visit that folder in NeoMutt to most closely match Gmail search semantics.</p>
       <div >
-        <a class="offset" id="gmail-example-patterns"></a>
+        <a id="gmail-example-patterns"></a>
         <p class="title">
           <strong>Table&#160;4.10.&#160;GMail Example Patterns</strong>
         </p>
@@ -1564,7 +1564,7 @@ Limit to messages matching: ~d &lt;1m
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="markmsg"></a>4.&#160;Marking Messages</h2>
+          <a id="markmsg"></a>4.&#160;Marking Messages</h2>
         </div>
       </div>
     </div>
@@ -1580,7 +1580,7 @@ Limit to messages matching: ~d &lt;1m
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="tags"></a>5.&#160;Using Tags</h2>
+          <a id="tags"></a>5.&#160;Using Tags</h2>
         </div>
       </div>
     </div>
@@ -1619,7 +1619,7 @@ Limit to messages matching: ~d &lt;1m
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="hooks"></a>6.&#160;Using Hooks</h2>
+          <a id="hooks"></a>6.&#160;Using Hooks</h2>
         </div>
       </div>
     </div>
@@ -1790,7 +1790,7 @@ Limit to messages matching: ~d &lt;1m
       <span class="quote">“<span class="quote">default</span>”</span> hook needs to be added before all other hooks of that type to restore configuration defaults.</p>
     </div>
     <div class="example">
-      <a class="offset" id="ex-default-hook"></a>
+      <a id="ex-default-hook"></a>
       <p class="title">
         <strong>Example&#160;4.5.&#160;Specifying a
         <span class="quote">“<span class="quote">default</span>”</span> hook</strong>
@@ -1815,7 +1815,7 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="pattern-hook"></a>6.1.&#160;Message Matching in Hooks</h3>
+            <a id="pattern-hook"></a>6.1.&#160;Message Matching in Hooks</h3>
           </div>
         </div>
       </div>
@@ -1867,7 +1867,7 @@ send-hook '~t ^user@work\.com$' 'my_hdr From: John Smith &lt;user@host&gt;'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="mailbox-hook"></a>6.2.&#160;Mailbox Matching in Hooks</h3>
+            <a id="mailbox-hook"></a>6.2.&#160;Mailbox Matching in Hooks</h3>
           </div>
         </div>
       </div>
@@ -1901,7 +1901,7 @@ folder-hook '\@imap.example.com' "set sort=threads"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="setenv"></a>7.&#160;Managing the Environment</h2>
+          <a id="setenv"></a>7.&#160;Managing the Environment</h2>
         </div>
       </div>
     </div>
@@ -1921,7 +1921,7 @@ setenv ?LESS
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="query"></a>8.&#160;External Address Queries</h2>
+          <a id="query"></a>8.&#160;External Address Queries</h2>
         </div>
       </div>
     </div>
@@ -1948,7 +1948,7 @@ roessler@does-not-exist.org        Thomas Roessler mutt pgp
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="mailbox-formats"></a>9.&#160;Mailbox Formats</h2>
+          <a id="mailbox-formats"></a>9.&#160;Mailbox Formats</h2>
         </div>
       </div>
     </div>
@@ -2007,13 +2007,13 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="shortcuts"></a>10.&#160;Mailbox Shortcuts</h2>
+          <a id="shortcuts"></a>10.&#160;Mailbox Shortcuts</h2>
         </div>
       </div>
     </div>
     <p>There are a number of built in shortcuts which refer to specific mailboxes. These shortcuts can be used anywhere you are prompted for a file or mailbox path or in path-related configuration variables. Note that these only work at the beginning of a string.</p>
     <div >
-      <a class="offset" id="tab-mailbox-shortcuts"></a>
+      <a id="tab-mailbox-shortcuts"></a>
       <p class="title">
         <strong>Table&#160;4.11.&#160;Mailbox shortcuts</strong>
       </p>
@@ -2106,7 +2106,7 @@ folder-hook . 'set record=^'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="using-lists"></a>11.&#160;Handling Mailing Lists</h2>
+          <a id="using-lists"></a>11.&#160;Handling Mailing Lists</h2>
         </div>
       </div>
     </div>
@@ -2185,7 +2185,7 @@ folder-hook . 'set record=^'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="display-munging"></a>12.&#160;Display Munging</h2>
+          <a id="display-munging"></a>12.&#160;Display Munging</h2>
         </div>
       </div>
     </div>
@@ -2224,7 +2224,7 @@ folder-hook . 'set record=^'
     <code class="literal">unsubjectrx</code> removes a given subjectrx from the substitution list. If
     <code class="literal">*</code>is used as the pattern, all substitutions will be removed.</p>
     <div class="example">
-      <a class="offset" id="ex-subjectrx"></a>
+      <a id="ex-subjectrx"></a>
       <p class="title">
         <strong>Example&#160;4.6.&#160;Subject Munging</strong>
       </p>
@@ -2249,7 +2249,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="new-mail"></a>13.&#160;New Mail Detection</h2>
+          <a id="new-mail"></a>13.&#160;New Mail Detection</h2>
         </div>
       </div>
     </div>
@@ -2260,7 +2260,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="new-mail-formats"></a>13.1.&#160;How New Mail Detection Works</h3>
+            <a id="new-mail-formats"></a>13.1.&#160;How New Mail Detection Works</h3>
           </div>
         </div>
       </div>
@@ -2291,7 +2291,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="new-mail-polling"></a>13.2.&#160;Polling For New Mail</h3>
+            <a id="new-mail-polling"></a>13.2.&#160;Polling For New Mail</h3>
           </div>
         </div>
       </div>
@@ -2322,7 +2322,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="calc-mailbox-counts"></a>13.3.&#160;Calculating Mailbox Message Counts</h3>
+            <a id="calc-mailbox-counts"></a>13.3.&#160;Calculating Mailbox Message Counts</h3>
           </div>
         </div>
       </div>
@@ -2341,7 +2341,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="editing-threads"></a>14.&#160;Editing Threads</h2>
+          <a id="editing-threads"></a>14.&#160;Editing Threads</h2>
         </div>
       </div>
     </div>
@@ -2351,7 +2351,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="link-threads"></a>14.1.&#160;Linking Threads</h3>
+            <a id="link-threads"></a>14.1.&#160;Linking Threads</h3>
           </div>
         </div>
       </div>
@@ -2370,7 +2370,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="break-threads"></a>14.2.&#160;Breaking Threads</h3>
+            <a id="break-threads"></a>14.2.&#160;Breaking Threads</h3>
           </div>
         </div>
       </div>
@@ -2384,7 +2384,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="dsn"></a>15.&#160;Delivery Status Notification (DSN) Support</h2>
+          <a id="dsn"></a>15.&#160;Delivery Status Notification (DSN) Support</h2>
         </div>
       </div>
     </div>
@@ -2403,7 +2403,7 @@ subjectrx '\[[^\]]*\]:? *' '%L%R'
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="urlview"></a>16.&#160;Start a WWW Browser on URLs</h2>
+          <a id="urlview"></a>16.&#160;Start a WWW Browser on URLs</h2>
         </div>
       </div>
     </div>
@@ -2419,7 +2419,7 @@ macro pager \cb |urlview\n
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="misc-topics"></a>17.&#160;Miscellany</h2>
+          <a id="misc-topics"></a>17.&#160;Miscellany</h2>
         </div>
       </div>
     </div>

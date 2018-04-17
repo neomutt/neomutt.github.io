@@ -11,31 +11,31 @@ maintainer: Antonio Radici, Faidon Liambotis
 
 Maintainers: [Antonio Radici, Faidon Liambotis](email:pkg-mutt-maintainers@lists.alioth.debian.org)
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 Debian, Ubuntu
 
 Currently in Testing. Note, that there's currently no plain Mutt package
 available in Debian testing, because it was substituted with NeoMutt.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 ```reply
 apt-get install neomutt
 ```
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 ```reply
 apt-get update && apt-get upgrade
 ```
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 ```reply
 apt-get remove neomutt
 ```
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 The commmand
 
@@ -49,7 +49,7 @@ to build the most current version of NeoMutt.
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.

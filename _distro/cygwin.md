@@ -9,11 +9,11 @@ maintainer: Federico Kircheis
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Overview <a class="offset" id="overview"></a>
+## Overview <a id="overview"></a>
 
 Cygwin provides a collection of GNU and Open Source tools for Windows.
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 Cygwin supports Windows versions from Windows Vista.
 NeoMutt can be therefore installed on any version (32 and 64 bit) of Windows that came after and including Vista.
@@ -21,20 +21,20 @@ The 32 bit version of Cygwin (and therefore NeoMutt too) can also run through th
 
 Cygwin also allows you to install Mutt and NeoMutt at the same time.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 Since 2018 NeoMutt is available as a Cygwin package, to install it, grab the latest version of the [Cygwin setup](https://cygwin.com/install.html) and select the NeoMutt package.
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 To upgrade NeoMutt, just run the [Cygwin setup](https://cygwin.com/install.html) again.
 If there are updates for the package, you'll be notified.
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 To remove NeoMutt from Cygwin, run the [Cygwin setup](https://cygwin.com/install.html) and deselect the package.
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 All dependencies (required and optional), are already packaged and provided by Cygwin.
 
@@ -63,7 +63,7 @@ openssl-devel libsasl2-devel
 You can find further instructions on the [guide for building NeoMutt](/dev/build).
 
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 The [guide for debugging NeoMutt](/dev/debug) can be applied without any change for debugging NeoMutt in the Cygwin environment.
 

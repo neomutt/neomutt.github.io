@@ -8,7 +8,7 @@ title: Optional Features
     <div>
       <div>
         <h1 class="title">
-        <a class="offset" id="guide/optionalfeatures"></a>Optional Features</h1>
+        <a id="guide/optionalfeatures"></a>Optional Features</h1>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@ title: Optional Features
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="notes"></a>1.&#160;General Notes</h2>
+          <a id="notes"></a>1.&#160;General Notes</h2>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@ title: Optional Features
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="compile-time-features"></a>1.1.&#160;Enabling/Disabling Features</h3>
+            <a id="compile-time-features"></a>1.1.&#160;Enabling/Disabling Features</h3>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ title: Optional Features
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="url-syntax"></a>1.2.&#160;URL Syntax</h3>
+            <a id="url-syntax"></a>1.2.&#160;URL Syntax</h3>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ proto[s]://[username[:password]@]server[:port][/path]
       <code class="literal">/etc/services</code>).</p>
       <p>The optional path is only relevant for IMAP and ignored elsewhere.</p>
       <div class="example">
-        <a class="offset" id="ex-url"></a>
+        <a id="ex-url"></a>
         <p class="title">
           <strong>Example&#160;6.1.&#160;URLs</strong>
         </p>
@@ -107,7 +107,7 @@ smtp://user@host:587/
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="ssl"></a>2.&#160;SSL/TLS Support</h2>
+          <a id="ssl"></a>2.&#160;SSL/TLS Support</h2>
         </div>
       </div>
     </div>
@@ -129,7 +129,7 @@ smtp://user@host:587/
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="pop"></a>3.&#160;POP3 Support</h2>
+          <a id="pop"></a>3.&#160;POP3 Support</h2>
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@ smtp://user@host:587/
     <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
     <a class="xref" href="#header-caching" title="7.1.&#160;Header Caching">Section&#160;7.1, “Header Caching”</a> and
     <a class="xref" href="#body-caching" title="7.2.&#160;Body Caching">Section&#160;7.2, “Body Caching”</a> NeoMutt simulates the new/old/read flags as well as flagged and replied. NeoMutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by NeoMutt or other tools).</p>
-    <a class="offset" id="fetch-mail"></a>
+    <a id="fetch-mail"></a>
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
     <a class="link" href="reference.html#pop-host" title="3.250.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
@@ -160,7 +160,7 @@ smtp://user@host:587/
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="imap"></a>4.&#160;IMAP Support</h2>
+          <a id="imap"></a>4.&#160;IMAP Support</h2>
         </div>
       </div>
     </div>
@@ -194,7 +194,7 @@ set timeout=15
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="imap-browser"></a>4.1.&#160;The IMAP Folder Browser</h3>
+            <a id="imap-browser"></a>4.1.&#160;The IMAP Folder Browser</h3>
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@ set timeout=15
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="imap-authentication"></a>4.2.&#160;Authentication</h3>
+            <a id="imap-authentication"></a>4.2.&#160;Authentication</h3>
           </div>
         </div>
       </div>
@@ -269,7 +269,7 @@ set timeout=15
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="smtp"></a>5.&#160;SMTP Support</h2>
+          <a id="smtp"></a>5.&#160;SMTP Support</h2>
         </div>
       </div>
     </div>
@@ -288,7 +288,7 @@ set timeout=15
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="account-hook"></a>6.&#160;Managing Multiple Accounts</h2>
+          <a id="account-hook"></a>6.&#160;Managing Multiple Accounts</h2>
         </div>
       </div>
     </div>
@@ -345,7 +345,7 @@ account-hook smtp://user@host3/ 'set tunnel="ssh host3 /usr/libexec/smtpd"'
       </span>
     </a>command.</p>
     <div class="example">
-      <a class="offset" id="ex-multiaccount"></a>
+      <a id="ex-multiaccount"></a>
       <p class="title">
         <strong>Example&#160;6.2.&#160;Managing multiple accounts</strong>
       </p>
@@ -392,7 +392,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="caching"></a>7.&#160;Local Caching</h2>
+          <a id="caching"></a>7.&#160;Local Caching</h2>
         </div>
       </div>
     </div>
@@ -411,7 +411,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="header-caching"></a>7.1.&#160;Header Caching</h3>
+            <a id="header-caching"></a>7.1.&#160;Header Caching</h3>
           </div>
         </div>
       </div>
@@ -427,7 +427,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="body-caching"></a>7.2.&#160;Body Caching</h3>
+            <a id="body-caching"></a>7.2.&#160;Body Caching</h3>
           </div>
         </div>
       </div>
@@ -441,7 +441,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="cache-dirs"></a>7.3.&#160;Cache Directories</h3>
+            <a id="cache-dirs"></a>7.3.&#160;Cache Directories</h3>
           </div>
         </div>
       </div>
@@ -461,7 +461,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         <div>
           <div>
             <h3 class="title">
-            <a class="offset" id="maint-cache"></a>7.4.&#160;Maintenance</h3>
+            <a id="maint-cache"></a>7.4.&#160;Maintenance</h3>
           </div>
         </div>
       </div>
@@ -475,7 +475,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a class="offset" id="sending-mixmaster"></a>8.&#160;Sending Anonymous Messages via Mixmaster</h2>
+          <a id="sending-mixmaster"></a>8.&#160;Sending Anonymous Messages via Mixmaster</h2>
         </div>
       </div>
     </div>

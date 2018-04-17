@@ -21,7 +21,7 @@ not only for [GitHub users](/dev/newbie-tutorial#github), provides some
 benefits over a single release or snapshot archive, e.g. will empower you to
 work with the source code and contribute to the project more easily.
 
-### Git <a class="offset" id="git"></a>
+### Git <a id="git"></a>
 
 Cloning the [main branch](https://github.com/neomutt/neomutt/tree/master) but
 also see our [list of branches](/dev/branches).

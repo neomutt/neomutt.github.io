@@ -10,7 +10,7 @@ username: floand
 
 {{ page.description }}
 
-## Table of contents <a class="offset" id="h2_toc"></a>
+## Table of contents <a id="h2_toc"></a>
 
 \[&nbsp;[Introducing](#h2_intro)
 \|&nbsp;[Encoding](#h2_encoding)
@@ -21,7 +21,7 @@ username: floand
 \|&nbsp;[Hints](#h2_hints)
 \]
 
-## Introducing <a class="offset" id="h2_intro"></a>
+## Introducing <a id="h2_intro"></a>
 
 First things first, the main rule we have to format a [Markdown][mdn_std] file
 for our website is -- we have *no rules*, *no policies* or anything like that.
@@ -44,7 +44,7 @@ absolutely not necessary but if your are interested in, the
 [kramdown syntax page][kdn_syn] mention all differences where applicable but
 the [quick reference][kdn_ref] is more than enough.
 
-## Encoding <a class="offset" id="h2_encoding"></a>
+## Encoding <a id="h2_encoding"></a>
 
 Which file encoding to use is up to you and depends on what kind of text to
 write and if you have to use a [multibyte character set][wpd_mbcs] (MBCS) for
@@ -58,7 +58,7 @@ Beside the file encoding you have to choose a file name and a common extension
 but that's easy. Use `.md` (lower case) for the latter and build from alphanumeric,
 hyphen and underscore characters a descriptive name.
 
-## Headings <a class="offset" id="h2_headings"></a>
+## Headings <a id="h2_headings"></a>
 
 A single (not too long) line between the title and the *first* section contains
 some kind of description to introduce the page. The background, it looks nicer
@@ -105,7 +105,7 @@ Every page has exactly *one* level 1 and one or more level 2 header. Any further
 subsections follows the rule level n+1, i.e. no levels will be skipped and, e.g.
 a level 3 section cannot contain a level 2 header.
 
-## Paragraphs <a class="offset" id="h2_pars"></a>
+## Paragraphs <a id="h2_pars"></a>
 
 Although the usage of line wrapping and endings, multiple or trailing
 whitespace(s) has no meaning for paragraphs in the rendered HTML page -- it
@@ -129,7 +129,7 @@ For instance, an escaped asterisk `\*` will be handled literally and not as
 start for a list item or an emphasis. Because our output format is HTML, also
 consider escaping of `<>&` to avoid they'll be treated as tag or HTML/XML entity.
 
-### Line wrapping <a class="offset" id="h3_linewrap"></a>
+### Line wrapping <a id="h3_linewrap"></a>
 
 For line wrapping keep track of every line start to not produce unwanted
 results. For instance:
@@ -153,7 +153,7 @@ break or a *no-break space* (`&nbsp;`). The latter adds some kind of distortion
 but also makes clear what you've tried to achieve. Read also about
 [its friends](#h3_typo-chars).
 
-### Whitespace <a class="offset" id="h3_whitespace"></a>
+### Whitespace <a id="h3_whitespace"></a>
 
 Whitespace usage depends on its context -- remember the goal is consistency and
 readability. It's mandatory for nested lists to get a proper indentation
@@ -167,7 +167,7 @@ use cases to indent or align something horizontally (in source):
 
 but use it sparely and with single spaces -- they are preferred to tab stops.
 
-### Acronyms and abbreviations <a class="offset" id="h3_abbrevs"></a>
+### Acronyms and abbreviations <a id="h3_abbrevs"></a>
 
 Paragraphs that contains tons of acronyms or abbreviations interrupt the text
 flow and thus, are mostly hard to read and may even worst to understand,
@@ -196,7 +196,7 @@ to use complete words, e.g. write 'configuration files', 'contribution',
 a treatise, doesn't mislead spell checks and won't trick regular expression
 pattern, ...
 
-### Emphasis <a class="offset" id="h3_emphasis"></a>
+### Emphasis <a id="h3_emphasis"></a>
 
 Emphasised text passages are a nice way to direct readers attention to several
 important notes. Use emphasis but also don't overdo it, be always consistent,
@@ -237,7 +237,7 @@ Even it is possible, avoid usage of:
     italic", due to the lack of the installed font-style.
 *   visual complicated forms, e.g. `**\***` instead of a more readable `__\*__`.
 
-### Comments <a class="offset" id="h3_comments"></a>
+### Comments <a id="h3_comments"></a>
 
 While writing it may be useful to comment out different versions of a text
 section or similar. But simply, you cannot because Markdown, as a plain text
@@ -263,7 +263,7 @@ If you cannot resist:
 **Remark**: Don't forget to strip out those hacks, it's beyond the
 specification or Liquid markup *not* Markdown!
 
-## Lists and tables <a class="offset" id="h2_lsts-tbls"></a>
+## Lists and tables <a id="h2_lsts-tbls"></a>
 
 Both styling elements supports a *lazy notation*:
 
@@ -292,7 +292,7 @@ which is easily extendable but hard to read, so don't be lazy:
 because our goal is readability and consistency in rendered results _and_
 source files.
 
-### Lists <a class="offset" id="h3_lists"></a>
+### Lists <a id="h3_lists"></a>
 
 Markdown supports three different formats, named: *ordered* (a.k.a. numbered),
 *unordered* (a.k.a. bullet) and *definition* (a.k.a. association) lists. They
@@ -332,7 +332,7 @@ which doesn't support line wrapping in source and thus, runs out of the screen.
 *   nothing special here -- misuse it to indent text without bullets and numbers
 *   ...
 
-### Tables <a class="offset" id="h3_tables"></a>
+### Tables <a id="h3_tables"></a>
 
 Like lists, tables are useful to give a quick overview and looks mostly neat
 and clean as long as they are small. Also tables may have some drawbacks on
@@ -368,7 +368,7 @@ internally, so in _this context_ there is no difference to its XHTML variant
 *   do not leave cells empty -- use replacements, e.g. '---' (`&mdash;`),
     'undefined', ...
 
-## Linking <a class="offset" id="h2_links"></a>
+## Linking <a id="h2_links"></a>
 
 By linking _parts_ of text you'll valorise your work and have the chance to
 substantiate or enhance your examples and statements. Links should be used for
@@ -431,7 +431,7 @@ Link 2: [https://www.neomutt.org]
 *   do not link all occurrences of a specific text part. Linking is a nice
     stylistic feature but capable to leave your work.
 
-## Hints <a class="offset" id="h2_hints"></a>
+## Hints <a id="h2_hints"></a>
 
 Just write (maybe only pure text) but in team-like speaking, don't think about
 styling, format or *output-*targets, so hopefully you won't get sidetracked and
@@ -446,7 +446,7 @@ originally intended.
 a proper Markdown -- it isn't. It uses uncommon and not portable notations to
 realise some of the highlighted examples.
 
-### Prefer pure Markdown to HTML <a class="offset" id="h3_pure-md"></a>
+### Prefer pure Markdown to HTML <a id="h3_pure-md"></a>
 
 Writing pure Markdown has a huge advantage over a pollution with a mix of HTML
 and Liquid elements. It can be used as what it is -- a plain text formatting
@@ -468,11 +468,11 @@ a clearly defined single target. Here are some applicable notes, use:
 Because our home page includes a fixed banner at its top, site links needs an
 offset to display anchored text below the banner. To define a section targeting
 anchor, write:
-*   `## Section name <a class="offset" id="sec_name"></a>`
+*   `## Section name <a id="sec_name"></a>`
 
 and use it in source with `look at [Section name](#sec_name) to ...` as usually.
 
-### Special and typographic characters <a class="offset" id="h3_typo-chars"></a>
+### Special and typographic characters <a id="h3_typo-chars"></a>
 
 Even it's worth to strive for [pure Markdown](#h3_pure-md), sometimes we need
 more control where line wrapping happens or must insert certain characters like

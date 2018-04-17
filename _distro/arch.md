@@ -9,12 +9,12 @@ maintainer: aladw
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 Both the latest release and the `neomutt` branch in the repo are supported.
 Other feature branches may work, but there is no guarantee.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 NeoMutt is available in the `[community]` official repository as
 [`neomutt`](https://www.archlinux.org/packages/community/x86_64/neomutt/) and
@@ -43,7 +43,7 @@ The sections of interest are:
   [`neomutt-git`](https://aur.archlinux.org/packages/neomutt-git) package in the
   [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository).
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 Neomutt can be updated together with other packages in the repositories.
 
@@ -65,7 +65,7 @@ and flag the package [out-of-date](https://www.archlinux.org/packages/flaghelp/)
 if required. Note that a package should only be flagged if a newer *stable*
 release is available.
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 To remove NeoMutt along with any dependencies that will be orphaned use the
 following command:
@@ -74,7 +74,7 @@ following command:
 pacman -Rsc neomutt
 ```
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 Arch Linux does not have separate `-dbg` packages. In order to debug `neomutt`,
 you must first compile with debug symbols. Edit the `PKGBUILD` adding the 

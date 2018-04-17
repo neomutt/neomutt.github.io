@@ -5,171 +5,171 @@ description: IMAP IDLE Command
 short: IMAP IDLE
 ---
 <table class="quiet"><tr><td><pre class="line-numbers">
-<a name="L1" class="offset"></a><a href="#L1">0001</a>
-<a name="L2" class="offset"></a><a href="#L2">0002</a>
-<a name="L3" class="offset"></a><a href="#L3">0003</a>
-<a name="L4" class="offset"></a><a href="#L4">0004</a>
-<a name="L5" class="offset"></a><a href="#L5">0005</a>
-<a name="L6" class="offset"></a><a href="#L6">0006</a>
-<a name="L7" class="offset"></a><a href="#L7">0007</a>
-<a name="L8" class="offset"></a><a href="#L8">0008</a>
-<a name="L9" class="offset"></a><a href="#L9">0009</a>
-<a name="L10" class="offset"></a><a href="#L10">0010</a>
-<a name="L11" class="offset"></a><a href="#L11">0011</a>
-<a name="L12" class="offset"></a><a href="#L12">0012</a>
-<a name="L13" class="offset"></a><a href="#L13">0013</a>
-<a name="L14" class="offset"></a><a href="#L14">0014</a>
-<a name="L15" class="offset"></a><a href="#L15">0015</a>
-<a name="L16" class="offset"></a><a href="#L16">0016</a>
-<a name="L17" class="offset"></a><a href="#L17">0017</a>
-<a name="L18" class="offset"></a><a href="#L18">0018</a>
-<a name="L19" class="offset"></a><a href="#L19">0019</a>
-<a name="L20" class="offset"></a><a href="#L20">0020</a>
-<a name="L21" class="offset"></a><a href="#L21">0021</a>
-<a name="L22" class="offset"></a><a href="#L22">0022</a>
-<a name="L23" class="offset"></a><a href="#L23">0023</a>
-<a name="L24" class="offset"></a><a href="#L24">0024</a>
-<a name="L25" class="offset"></a><a href="#L25">0025</a>
-<a name="L26" class="offset"></a><a href="#L26">0026</a>
-<a name="L27" class="offset"></a><a href="#L27">0027</a>
-<a name="L28" class="offset"></a><a href="#L28">0028</a>
-<a name="L29" class="offset"></a><a href="#L29">0029</a>
-<a name="L30" class="offset"></a><a href="#L30">0030</a>
-<a name="L31" class="offset"></a><a href="#L31">0031</a>
-<a name="L32" class="offset"></a><a href="#L32">0032</a>
-<a name="L33" class="offset"></a><a href="#L33">0033</a>
-<a name="L34" class="offset"></a><a href="#L34">0034</a>
-<a name="L35" class="offset"></a><a href="#L35">0035</a>
-<a name="L36" class="offset"></a><a href="#L36">0036</a>
-<a name="L37" class="offset"></a><a href="#L37">0037</a>
-<a name="L38" class="offset"></a><a href="#L38">0038</a>
-<a name="L39" class="offset"></a><a href="#L39">0039</a>
-<a name="L40" class="offset"></a><a href="#L40">0040</a>
-<a name="L41" class="offset"></a><a href="#L41">0041</a>
-<a name="L42" class="offset"></a><a href="#L42">0042</a>
-<a name="L43" class="offset"></a><a href="#L43">0043</a>
-<a name="L44" class="offset"></a><a href="#L44">0044</a>
-<a name="L45" class="offset"></a><a href="#L45">0045</a>
-<a name="L46" class="offset"></a><a href="#L46">0046</a>
-<a name="L47" class="offset"></a><a href="#L47">0047</a>
-<a name="L48" class="offset"></a><a href="#L48">0048</a>
-<a name="L49" class="offset"></a><a href="#L49">0049</a>
-<a name="L50" class="offset"></a><a href="#L50">0050</a>
-<a name="L51" class="offset"></a><a href="#L51">0051</a>
-<a name="L52" class="offset"></a><a href="#L52">0052</a>
-<a name="L53" class="offset"></a><a href="#L53">0053</a>
-<a name="L54" class="offset"></a><a href="#L54">0054</a>
-<a name="L55" class="offset"></a><a href="#L55">0055</a>
-<a name="L56" class="offset"></a><a href="#L56">0056</a>
-<a name="L57" class="offset"></a><a href="#L57">0057</a>
-<a name="L58" class="offset"></a><a href="#L58">0058</a>
-<a name="L59" class="offset"></a><a href="#L59">0059</a>
-<a name="L60" class="offset"></a><a href="#L60">0060</a>
-<a name="L61" class="offset"></a><a href="#L61">0061</a>
-<a name="L62" class="offset"></a><a href="#L62">0062</a>
-<a name="L63" class="offset"></a><a href="#L63">0063</a>
-<a name="L64" class="offset"></a><a href="#L64">0064</a>
-<a name="L65" class="offset"></a><a href="#L65">0065</a>
-<a name="L66" class="offset"></a><a href="#L66">0066</a>
-<a name="L67" class="offset"></a><a href="#L67">0067</a>
-<a name="L68" class="offset"></a><a href="#L68">0068</a>
-<a name="L69" class="offset"></a><a href="#L69">0069</a>
-<a name="L70" class="offset"></a><a href="#L70">0070</a>
-<a name="L71" class="offset"></a><a href="#L71">0071</a>
-<a name="L72" class="offset"></a><a href="#L72">0072</a>
-<a name="L73" class="offset"></a><a href="#L73">0073</a>
-<a name="L74" class="offset"></a><a href="#L74">0074</a>
-<a name="L75" class="offset"></a><a href="#L75">0075</a>
-<a name="L76" class="offset"></a><a href="#L76">0076</a>
-<a name="L77" class="offset"></a><a href="#L77">0077</a>
-<a name="L78" class="offset"></a><a href="#L78">0078</a>
-<a name="L79" class="offset"></a><a href="#L79">0079</a>
-<a name="L80" class="offset"></a><a href="#L80">0080</a>
-<a name="L81" class="offset"></a><a href="#L81">0081</a>
-<a name="L82" class="offset"></a><a href="#L82">0082</a>
-<a name="L83" class="offset"></a><a href="#L83">0083</a>
-<a name="L84" class="offset"></a><a href="#L84">0084</a>
-<a name="L85" class="offset"></a><a href="#L85">0085</a>
-<a name="L86" class="offset"></a><a href="#L86">0086</a>
-<a name="L87" class="offset"></a><a href="#L87">0087</a>
-<a name="L88" class="offset"></a><a href="#L88">0088</a>
-<a name="L89" class="offset"></a><a href="#L89">0089</a>
-<a name="L90" class="offset"></a><a href="#L90">0090</a>
-<a name="L91" class="offset"></a><a href="#L91">0091</a>
-<a name="L92" class="offset"></a><a href="#L92">0092</a>
-<a name="L93" class="offset"></a><a href="#L93">0093</a>
-<a name="L94" class="offset"></a><a href="#L94">0094</a>
-<a name="L95" class="offset"></a><a href="#L95">0095</a>
-<a name="L96" class="offset"></a><a href="#L96">0096</a>
-<a name="L97" class="offset"></a><a href="#L97">0097</a>
-<a name="L98" class="offset"></a><a href="#L98">0098</a>
-<a name="L99" class="offset"></a><a href="#L99">0099</a>
-<a name="L100" class="offset"></a><a href="#L100">0100</a>
-<a name="L101" class="offset"></a><a href="#L101">0101</a>
-<a name="L102" class="offset"></a><a href="#L102">0102</a>
-<a name="L103" class="offset"></a><a href="#L103">0103</a>
-<a name="L104" class="offset"></a><a href="#L104">0104</a>
-<a name="L105" class="offset"></a><a href="#L105">0105</a>
-<a name="L106" class="offset"></a><a href="#L106">0106</a>
-<a name="L107" class="offset"></a><a href="#L107">0107</a>
-<a name="L108" class="offset"></a><a href="#L108">0108</a>
-<a name="L109" class="offset"></a><a href="#L109">0109</a>
-<a name="L110" class="offset"></a><a href="#L110">0110</a>
-<a name="L111" class="offset"></a><a href="#L111">0111</a>
-<a name="L112" class="offset"></a><a href="#L112">0112</a>
-<a name="L113" class="offset"></a><a href="#L113">0113</a>
-<a name="L114" class="offset"></a><a href="#L114">0114</a>
-<a name="L115" class="offset"></a><a href="#L115">0115</a>
-<a name="L116" class="offset"></a><a href="#L116">0116</a>
-<a name="L117" class="offset"></a><a href="#L117">0117</a>
-<a name="L118" class="offset"></a><a href="#L118">0118</a>
-<a name="L119" class="offset"></a><a href="#L119">0119</a>
-<a name="L120" class="offset"></a><a href="#L120">0120</a>
-<a name="L121" class="offset"></a><a href="#L121">0121</a>
-<a name="L122" class="offset"></a><a href="#L122">0122</a>
-<a name="L123" class="offset"></a><a href="#L123">0123</a>
-<a name="L124" class="offset"></a><a href="#L124">0124</a>
-<a name="L125" class="offset"></a><a href="#L125">0125</a>
-<a name="L126" class="offset"></a><a href="#L126">0126</a>
-<a name="L127" class="offset"></a><a href="#L127">0127</a>
-<a name="L128" class="offset"></a><a href="#L128">0128</a>
-<a name="L129" class="offset"></a><a href="#L129">0129</a>
-<a name="L130" class="offset"></a><a href="#L130">0130</a>
-<a name="L131" class="offset"></a><a href="#L131">0131</a>
-<a name="L132" class="offset"></a><a href="#L132">0132</a>
-<a name="L133" class="offset"></a><a href="#L133">0133</a>
-<a name="L134" class="offset"></a><a href="#L134">0134</a>
-<a name="L135" class="offset"></a><a href="#L135">0135</a>
-<a name="L136" class="offset"></a><a href="#L136">0136</a>
-<a name="L137" class="offset"></a><a href="#L137">0137</a>
-<a name="L138" class="offset"></a><a href="#L138">0138</a>
-<a name="L139" class="offset"></a><a href="#L139">0139</a>
-<a name="L140" class="offset"></a><a href="#L140">0140</a>
-<a name="L141" class="offset"></a><a href="#L141">0141</a>
-<a name="L142" class="offset"></a><a href="#L142">0142</a>
-<a name="L143" class="offset"></a><a href="#L143">0143</a>
-<a name="L144" class="offset"></a><a href="#L144">0144</a>
-<a name="L145" class="offset"></a><a href="#L145">0145</a>
-<a name="L146" class="offset"></a><a href="#L146">0146</a>
-<a name="L147" class="offset"></a><a href="#L147">0147</a>
-<a name="L148" class="offset"></a><a href="#L148">0148</a>
-<a name="L149" class="offset"></a><a href="#L149">0149</a>
-<a name="L150" class="offset"></a><a href="#L150">0150</a>
-<a name="L151" class="offset"></a><a href="#L151">0151</a>
-<a name="L152" class="offset"></a><a href="#L152">0152</a>
-<a name="L153" class="offset"></a><a href="#L153">0153</a>
-<a name="L154" class="offset"></a><a href="#L154">0154</a>
-<a name="L155" class="offset"></a><a href="#L155">0155</a>
-<a name="L156" class="offset"></a><a href="#L156">0156</a>
-<a name="L157" class="offset"></a><a href="#L157">0157</a>
-<a name="L158" class="offset"></a><a href="#L158">0158</a>
-<a name="L159" class="offset"></a><a href="#L159">0159</a>
-<a name="L160" class="offset"></a><a href="#L160">0160</a>
-<a name="L161" class="offset"></a><a href="#L161">0161</a>
-<a name="L162" class="offset"></a><a href="#L162">0162</a>
-<a name="L163" class="offset"></a><a href="#L163">0163</a>
-<a name="L164" class="offset"></a><a href="#L164">0164</a>
-<a name="L165" class="offset"></a><a href="#L165">0165</a>
+<a name="L1"></a><a href="#L1">0001</a>
+<a name="L2"></a><a href="#L2">0002</a>
+<a name="L3"></a><a href="#L3">0003</a>
+<a name="L4"></a><a href="#L4">0004</a>
+<a name="L5"></a><a href="#L5">0005</a>
+<a name="L6"></a><a href="#L6">0006</a>
+<a name="L7"></a><a href="#L7">0007</a>
+<a name="L8"></a><a href="#L8">0008</a>
+<a name="L9"></a><a href="#L9">0009</a>
+<a name="L10"></a><a href="#L10">0010</a>
+<a name="L11"></a><a href="#L11">0011</a>
+<a name="L12"></a><a href="#L12">0012</a>
+<a name="L13"></a><a href="#L13">0013</a>
+<a name="L14"></a><a href="#L14">0014</a>
+<a name="L15"></a><a href="#L15">0015</a>
+<a name="L16"></a><a href="#L16">0016</a>
+<a name="L17"></a><a href="#L17">0017</a>
+<a name="L18"></a><a href="#L18">0018</a>
+<a name="L19"></a><a href="#L19">0019</a>
+<a name="L20"></a><a href="#L20">0020</a>
+<a name="L21"></a><a href="#L21">0021</a>
+<a name="L22"></a><a href="#L22">0022</a>
+<a name="L23"></a><a href="#L23">0023</a>
+<a name="L24"></a><a href="#L24">0024</a>
+<a name="L25"></a><a href="#L25">0025</a>
+<a name="L26"></a><a href="#L26">0026</a>
+<a name="L27"></a><a href="#L27">0027</a>
+<a name="L28"></a><a href="#L28">0028</a>
+<a name="L29"></a><a href="#L29">0029</a>
+<a name="L30"></a><a href="#L30">0030</a>
+<a name="L31"></a><a href="#L31">0031</a>
+<a name="L32"></a><a href="#L32">0032</a>
+<a name="L33"></a><a href="#L33">0033</a>
+<a name="L34"></a><a href="#L34">0034</a>
+<a name="L35"></a><a href="#L35">0035</a>
+<a name="L36"></a><a href="#L36">0036</a>
+<a name="L37"></a><a href="#L37">0037</a>
+<a name="L38"></a><a href="#L38">0038</a>
+<a name="L39"></a><a href="#L39">0039</a>
+<a name="L40"></a><a href="#L40">0040</a>
+<a name="L41"></a><a href="#L41">0041</a>
+<a name="L42"></a><a href="#L42">0042</a>
+<a name="L43"></a><a href="#L43">0043</a>
+<a name="L44"></a><a href="#L44">0044</a>
+<a name="L45"></a><a href="#L45">0045</a>
+<a name="L46"></a><a href="#L46">0046</a>
+<a name="L47"></a><a href="#L47">0047</a>
+<a name="L48"></a><a href="#L48">0048</a>
+<a name="L49"></a><a href="#L49">0049</a>
+<a name="L50"></a><a href="#L50">0050</a>
+<a name="L51"></a><a href="#L51">0051</a>
+<a name="L52"></a><a href="#L52">0052</a>
+<a name="L53"></a><a href="#L53">0053</a>
+<a name="L54"></a><a href="#L54">0054</a>
+<a name="L55"></a><a href="#L55">0055</a>
+<a name="L56"></a><a href="#L56">0056</a>
+<a name="L57"></a><a href="#L57">0057</a>
+<a name="L58"></a><a href="#L58">0058</a>
+<a name="L59"></a><a href="#L59">0059</a>
+<a name="L60"></a><a href="#L60">0060</a>
+<a name="L61"></a><a href="#L61">0061</a>
+<a name="L62"></a><a href="#L62">0062</a>
+<a name="L63"></a><a href="#L63">0063</a>
+<a name="L64"></a><a href="#L64">0064</a>
+<a name="L65"></a><a href="#L65">0065</a>
+<a name="L66"></a><a href="#L66">0066</a>
+<a name="L67"></a><a href="#L67">0067</a>
+<a name="L68"></a><a href="#L68">0068</a>
+<a name="L69"></a><a href="#L69">0069</a>
+<a name="L70"></a><a href="#L70">0070</a>
+<a name="L71"></a><a href="#L71">0071</a>
+<a name="L72"></a><a href="#L72">0072</a>
+<a name="L73"></a><a href="#L73">0073</a>
+<a name="L74"></a><a href="#L74">0074</a>
+<a name="L75"></a><a href="#L75">0075</a>
+<a name="L76"></a><a href="#L76">0076</a>
+<a name="L77"></a><a href="#L77">0077</a>
+<a name="L78"></a><a href="#L78">0078</a>
+<a name="L79"></a><a href="#L79">0079</a>
+<a name="L80"></a><a href="#L80">0080</a>
+<a name="L81"></a><a href="#L81">0081</a>
+<a name="L82"></a><a href="#L82">0082</a>
+<a name="L83"></a><a href="#L83">0083</a>
+<a name="L84"></a><a href="#L84">0084</a>
+<a name="L85"></a><a href="#L85">0085</a>
+<a name="L86"></a><a href="#L86">0086</a>
+<a name="L87"></a><a href="#L87">0087</a>
+<a name="L88"></a><a href="#L88">0088</a>
+<a name="L89"></a><a href="#L89">0089</a>
+<a name="L90"></a><a href="#L90">0090</a>
+<a name="L91"></a><a href="#L91">0091</a>
+<a name="L92"></a><a href="#L92">0092</a>
+<a name="L93"></a><a href="#L93">0093</a>
+<a name="L94"></a><a href="#L94">0094</a>
+<a name="L95"></a><a href="#L95">0095</a>
+<a name="L96"></a><a href="#L96">0096</a>
+<a name="L97"></a><a href="#L97">0097</a>
+<a name="L98"></a><a href="#L98">0098</a>
+<a name="L99"></a><a href="#L99">0099</a>
+<a name="L100"></a><a href="#L100">0100</a>
+<a name="L101"></a><a href="#L101">0101</a>
+<a name="L102"></a><a href="#L102">0102</a>
+<a name="L103"></a><a href="#L103">0103</a>
+<a name="L104"></a><a href="#L104">0104</a>
+<a name="L105"></a><a href="#L105">0105</a>
+<a name="L106"></a><a href="#L106">0106</a>
+<a name="L107"></a><a href="#L107">0107</a>
+<a name="L108"></a><a href="#L108">0108</a>
+<a name="L109"></a><a href="#L109">0109</a>
+<a name="L110"></a><a href="#L110">0110</a>
+<a name="L111"></a><a href="#L111">0111</a>
+<a name="L112"></a><a href="#L112">0112</a>
+<a name="L113"></a><a href="#L113">0113</a>
+<a name="L114"></a><a href="#L114">0114</a>
+<a name="L115"></a><a href="#L115">0115</a>
+<a name="L116"></a><a href="#L116">0116</a>
+<a name="L117"></a><a href="#L117">0117</a>
+<a name="L118"></a><a href="#L118">0118</a>
+<a name="L119"></a><a href="#L119">0119</a>
+<a name="L120"></a><a href="#L120">0120</a>
+<a name="L121"></a><a href="#L121">0121</a>
+<a name="L122"></a><a href="#L122">0122</a>
+<a name="L123"></a><a href="#L123">0123</a>
+<a name="L124"></a><a href="#L124">0124</a>
+<a name="L125"></a><a href="#L125">0125</a>
+<a name="L126"></a><a href="#L126">0126</a>
+<a name="L127"></a><a href="#L127">0127</a>
+<a name="L128"></a><a href="#L128">0128</a>
+<a name="L129"></a><a href="#L129">0129</a>
+<a name="L130"></a><a href="#L130">0130</a>
+<a name="L131"></a><a href="#L131">0131</a>
+<a name="L132"></a><a href="#L132">0132</a>
+<a name="L133"></a><a href="#L133">0133</a>
+<a name="L134"></a><a href="#L134">0134</a>
+<a name="L135"></a><a href="#L135">0135</a>
+<a name="L136"></a><a href="#L136">0136</a>
+<a name="L137"></a><a href="#L137">0137</a>
+<a name="L138"></a><a href="#L138">0138</a>
+<a name="L139"></a><a href="#L139">0139</a>
+<a name="L140"></a><a href="#L140">0140</a>
+<a name="L141"></a><a href="#L141">0141</a>
+<a name="L142"></a><a href="#L142">0142</a>
+<a name="L143"></a><a href="#L143">0143</a>
+<a name="L144"></a><a href="#L144">0144</a>
+<a name="L145"></a><a href="#L145">0145</a>
+<a name="L146"></a><a href="#L146">0146</a>
+<a name="L147"></a><a href="#L147">0147</a>
+<a name="L148"></a><a href="#L148">0148</a>
+<a name="L149"></a><a href="#L149">0149</a>
+<a name="L150"></a><a href="#L150">0150</a>
+<a name="L151"></a><a href="#L151">0151</a>
+<a name="L152"></a><a href="#L152">0152</a>
+<a name="L153"></a><a href="#L153">0153</a>
+<a name="L154"></a><a href="#L154">0154</a>
+<a name="L155"></a><a href="#L155">0155</a>
+<a name="L156"></a><a href="#L156">0156</a>
+<a name="L157"></a><a href="#L157">0157</a>
+<a name="L158"></a><a href="#L158">0158</a>
+<a name="L159"></a><a href="#L159">0159</a>
+<a name="L160"></a><a href="#L160">0160</a>
+<a name="L161"></a><a href="#L161">0161</a>
+<a name="L162"></a><a href="#L162">0162</a>
+<a name="L163"></a><a href="#L163">0163</a>
+<a name="L164"></a><a href="#L164">0164</a>
+<a name="L165"></a><a href="#L165">0165</a>
 </pre></td><td><pre class="line-numbers">
 Network Working Group                                           B. Leiba
 Request for Comments: 2177               IBM T.J. Watson Research Center

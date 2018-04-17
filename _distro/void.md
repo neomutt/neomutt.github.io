@@ -10,9 +10,9 @@ maintainer: vaelatern
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 Installing NeoMutt is as simple as:
 
@@ -20,18 +20,18 @@ Installing NeoMutt is as simple as:
 xbps-install neomutt
 ```
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.

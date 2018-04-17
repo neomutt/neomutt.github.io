@@ -10,7 +10,7 @@ maintainer: kdave
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 | openSUSE     | Support                     |
 | :----------- | :-------------------------- |
@@ -22,7 +22,7 @@ The `neomutt` package has been added to openSUSE Tumbleweed in 2018 and is not
 present in any other released versions (like 13.x or Leap 42.x). The first
 long-term with neomutt is Leap 15.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 The `neomutt` package can be installed in parallel with `mutt`. The
 configuration files are not shared. There is some level of support of mutt
@@ -40,13 +40,13 @@ Additional packages:
 zypper in neomutt
 ```
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 ```
 zypper up neomutt
 ```
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 ```
 zypper rm neomutt

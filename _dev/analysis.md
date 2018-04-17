@@ -24,7 +24,7 @@ If you have any questions, please send them to the developers' mailing list: [ne
 | [iwyu](#iwyu)                 | Header file checker          |
 | [scan-build](#scan-build)     | Source code anaylser         |
 
-## Clang-Format - Source code formatter <a class="offset" id="clang-format"></a>
+## Clang-Format - Source code formatter <a id="clang-format"></a>
 
 - [https://clang.llvm.org/docs/ClangFormat.html](https://clang.llvm.org/docs/ClangFormat.html)
 
@@ -132,7 +132,7 @@ Here are more examples that have been used on NeoMutt:
 
 - **See also**: [clang-format](#clang-format)
 
-## Coverage - Code coverage testing <a class="offset" id="coverage"></a>
+## Coverage - Code coverage testing <a id="coverage"></a>
 
 - Lcov [http://ltp.sourceforge.net/coverage/lcov.php](http://ltp.sourceforge.net/coverage/lcov.php)
 - Coveralls [https://coveralls.io/](https://coveralls.io/)
@@ -202,7 +202,7 @@ see the details, you must create an account (or login with GitHub) and click
 
 - **See also**: [scan-build](#scan-build)
 
-## CppCheck - Source code analyser <a class="offset" id="cppcheck"></a>
+## CppCheck - Source code analyser <a id="cppcheck"></a>
 
 - [http://cppcheck.sourceforge.net](http://cppcheck.sourceforge.net)
 
@@ -230,7 +230,7 @@ Some considerations:
 
 If cppcheck takes too much time for analyzing the source code, it is always possible to analyze only specific files, tell it to test less macro combinations, or to not enable all warnings.
 
-## Cproto - Function prototype generator <a class="offset" id="cproto"></a>
+## Cproto - Function prototype generator <a id="cproto"></a>
 
 - [https://invisible-island.net/cproto/cproto.html](https://invisible-island.net/cproto/cproto.html)
 
@@ -246,7 +246,7 @@ cproto -D USE_SIDEBAR=1 -I .  -s source.c
 
 - **See also**: [ctags](#ctags)
 
-## Ctags - Source tags generator <a class="offset" id="ctags"></a>
+## Ctags - Source tags generator <a id="ctags"></a>
 
 - [http://ctags.sourceforge.net/](http://ctags.sourceforge.net/)
 
@@ -281,7 +281,7 @@ ctags -R -x --c-kinds=v   . > variables.txt
 
 - **See also**: [cproto](#cproto)
 
-## Include-What-You-Use - Header file checker <a class="offset" id="iwyu"></a>
+## Include-What-You-Use - Header file checker <a id="iwyu"></a>
 
 - [https://include-what-you-use.org/](https://include-what-you-use.org/)
 

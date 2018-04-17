@@ -24,7 +24,7 @@ NeoMutt also recommends using [editor-config][e] and [clang-format][c].
 [e]: #editor-config
 [c]: #clang-format
 
-## Rules <a class="offset" id="rules"></a>
+## Rules <a id="rules"></a>
 
 These rules are important. Please follow them to ensure your code is accepted.
 
@@ -86,7 +86,7 @@ char* ptr = "world";
 - special characters should be in UTF-8. If you find remnants from the times
   when this was an ISO-8859-1 source code tree, please feel free to fix them.
 
-## Guidelines <a class="offset" id="guidelines"></a>
+## Guidelines <a id="guidelines"></a>
 
 These guidelines are NeoMutt's preferred way to style code. Some exceptions
 will be allowed.
@@ -199,7 +199,7 @@ The factors that complicate an 'if' statement are:
 
 **Note**: All these cases are handled by clang-format.
 
-## Top tips <a class="offset" id="top-tips"></a>
+## Top tips <a id="top-tips"></a>
 
 These tips are generally good ideas. Their use is encouraged.
 
@@ -365,7 +365,7 @@ These C99 features may be used:
 - Limit variables to the smallest possible scope
 - For sets of constants, use `enum` rather than `#define`
 
-## EditorConfig <a class="offset" id="editor-config"></a>
+## EditorConfig <a id="editor-config"></a>
 
 [EditorConfig][ec] provides plugins for most common editors which allow
 projects to define their style in one place.
@@ -383,7 +383,7 @@ indent_style = space
 [ec]:  <http://editorconfig.org/>
 [ecf]: <https://github.com/neomutt/neomutt/blob/master/.editorconfig>
 
-## Clang-Format <a class="offset" id="clang-format"></a>
+## Clang-Format <a id="clang-format"></a>
 
 Clang-format is a tool which automatically reformats C sources files according
 to configurable style guides.

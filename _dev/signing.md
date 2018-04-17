@@ -62,7 +62,7 @@ git checkout -b neomutt-20170428
 # build
 ```
 
-## Source example <a class="offset" id="source-example"></a>
+## Source example <a id="source-example"></a>
 
 Download a source package and the CHECKSUM file from the
 [release page](https://github.com/neomutt/neomutt/releases/latest)

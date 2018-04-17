@@ -9,11 +9,11 @@ maintainer: bapt
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 See [Supported FreeBSD releases](https://www.freebsd.org/security/#sup).
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 To install a pre-built binary package:
 
@@ -42,11 +42,11 @@ Proceed with this action? [y/N]: y
 [localhost] [1/1] Extracting neomutt-20161104_1: 100%
 ```
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 To upgrade your installed packages to their latest versions, run `pkg upgrade`.
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 To remove NeoMutt, run `pkg delete neomutt`. Again, you'll be asked to confirm
 with a 'Y'.
@@ -68,7 +68,7 @@ Proceed with deinstalling packages? [y/N]: y
 [localhost] [1/1] Deleting files for neomutt-20161104_1: 100%
 ```
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
@@ -82,7 +82,7 @@ for building too.
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.

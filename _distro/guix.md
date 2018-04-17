@@ -9,7 +9,7 @@ maintainer: The GNU Guix team
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 To install NeoMutt into your profile, run
 
@@ -17,7 +17,7 @@ To install NeoMutt into your profile, run
 guix package --install neomutt
 ```
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 To upgrade just NeoMutt in your profile, run
 
@@ -25,7 +25,7 @@ To upgrade just NeoMutt in your profile, run
 guix package --upgrade neomutt
 ```
 
-## Uninstall <a class="offset" id="uninstall"></a>
+## Uninstall <a id="uninstall"></a>
 
 To remove NeoMutt from your profile, run
 
@@ -33,7 +33,7 @@ To remove NeoMutt from your profile, run
 guix package --remove neomutt
 ```
 
-## From Git <a class="offset" id="dev-build"></a>
+## From Git <a id="dev-build"></a>
 
 To build NeoMutt from the HEAD of the NeoMutt sources, you can use the
 contrib/guix-neomutt.scm file with any of the relevant `guix` commands. For

@@ -9,7 +9,7 @@ maintainer: flatcap
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 | CentOS / RHEL | Support                     |
 | :------------ | :-------------------------- |
@@ -22,7 +22,7 @@ by Richard Russon (@flatcap) <[rich@flatcap.org](mailto:rich@flatcap.org)>
 
 They provide NeoMutt for both CentOS and RedHat Enterprise Linux.
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 The instructions work for all versions of CentOS / RHEL. The commands should
 be run as root, or prefixed with `sudo`.
@@ -63,7 +63,7 @@ Well done! You've just installed NeoMutt.
   [NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
   mailing list
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 Once NeoMutt is installed, it will be updated automatically when you perform
 system updates. You can make that happen sooner by running:
@@ -72,7 +72,7 @@ system updates. You can make that happen sooner by running:
 yum update
 ```
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 To completely remove NeoMutt from your system:
 
@@ -89,7 +89,7 @@ rm -f /etc/yum.repos.d/flatcap-neomutt-epel-*.repo
 yum install mutt
 ```
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
 build NeoMutt from the source code.
@@ -116,7 +116,7 @@ Unfortunately, these libraries aren't available in CentOS / RHEL:
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.

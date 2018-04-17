@@ -16,7 +16,7 @@ When things needs further investigation
 - [Attaching a debugger to NeoMutt](#attach)
 - [Debugging a coredump](#coredump)
 
-## Logging in NeoMutt <a class="offset" id="logging"></a>
+## Logging in NeoMutt <a id="logging"></a>
 
 Enabling logging is the simplest method to find the cause of a problem.
 The logging levels run from 1 (least) to 5 (most).
@@ -40,7 +40,7 @@ set debug_level = 2
 set debug_file = neolog
 ```
 
-## Compile with debugging information <a class="offset" id="compile"></a>
+## Compile with debugging information <a id="compile"></a>
 
 You can compile NeoMutt with debugging information.
 Follow the guidelines on how to compile NeoMutt according to your distribution, and when executing make, pass extra flags:
@@ -49,7 +49,7 @@ Follow the guidelines on how to compile NeoMutt according to your distribution, 
 make EXTRA_CFLAGS="-g -O0"
 ```
 
-## Starting NeoMutt in a debugger <a class="offset" id="debugger"></a>
+## Starting NeoMutt in a debugger <a id="debugger"></a>
 
 A good choice of debugger is `cgdb` (the curses front-end to `gdb`).
 Alternatively, you can use the the Text User Interface (TUI) of `gdb -tui`
@@ -107,7 +107,7 @@ p Incoming->path
 c
 ```
 
-## Attaching a debugger to NeoMutt <a class="offset" id="attach"></a>
+## Attaching a debugger to NeoMutt <a id="attach"></a>
 
 If NeoMutt is already running, you can attach a debugger to it
 
@@ -129,7 +129,7 @@ p Incoming->path
 c
 ```
 
-## Debugging a coredump <a class="offset" id="coredump"></a>
+## Debugging a coredump <a id="coredump"></a>
 
 If NeoMutt crashes, it may leave a coredump (an image of the program at the time it crashed).
 The location of this file depends on your OS and your account settings.

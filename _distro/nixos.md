@@ -9,7 +9,7 @@ maintainer: cstrahan
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-## Support <a class="offset" id="support"></a>
+## Support <a id="support"></a>
 
 Packagers:
 
@@ -17,7 +17,7 @@ Packagers:
 - [Rahul Gopinath](https://github.com/vrthra)
 - [Erik Rybakken](https://github.com/erikryb)
 
-## Installation <a class="offset" id="install"></a>
+## Installation <a id="install"></a>
 
 There are currently two different ways to install software on NixOS. One is
 declarative and the other more imperative.
@@ -58,7 +58,7 @@ Due to the isolated nature of nix package management, you don't run into
 trouble.
 
 
-## Update <a class="offset" id="update"></a>
+## Update <a id="update"></a>
 
 ### imperative
 
@@ -68,7 +68,7 @@ To update a particular package, run
 nix-env -u neomutt
 ```
 
-## Removal <a class="offset" id="remove"></a>
+## Removal <a id="remove"></a>
 
 ### imperative
 
@@ -78,7 +78,7 @@ To remove a particular package, run
 nix-env -e neomutt
 ```
 
-## Building from source <a class="offset" id="build"></a>
+## Building from source <a id="build"></a>
 
 ```
  nix-shell '<nixpkgs>' -A neomutt
@@ -91,7 +91,7 @@ want to consult the
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
 
-## Debugging <a class="offset" id="debug"></a>
+## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
