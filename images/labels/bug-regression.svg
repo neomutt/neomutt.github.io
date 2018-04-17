@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="18">
   <g fill="#ffffff" font-family="sans-serif" font-size="11">
     <rect width="160" height="18" rx="4" fill="#fc2929">
-      <title>XXX</title>
+      <title>A bug that was fixes is broken again</title>
     </rect>
     <text x="10" y="13">bug:regression</text>
   </g>
