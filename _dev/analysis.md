@@ -9,13 +9,19 @@ description: Static analysis of NeoMutt's code
 [Wikipedia](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#C,_C++) has a nice list of static analyzers for C source code.
 Those can be used to find bugs without compiling, executing and debugging neomutt.
 
-- [cppcheck](#cppcheck) - Source code anaylser
-- [iwyu](#iwyu) - Header file checker
-- [clang-format](#clang-format) - Source code formatter
+| Tool                          | Description                  |
+| :---------------------------- | :--------------------------- |
+| [clang-format](#clang-format) | Source code formatter        |
+| [cppcheck](#cppcheck)         | Source code anaylser         |
+| [cproto](#cproto)             | Function prototype generator |
+| [ctags](#ctags)               | Source tags generator        |
+| [iwyu](#iwyu)                 | Header file checker          |
 
 ## CppCheck <a class="offset" id="cppcheck"></a>
 
-Since NeoMutt's code base is relatively big, it is easier to execute [CppCheck](http://cppcheck.sourceforge.net) from the command line and let it save its analysis to an output file.
+- [http://cppcheck.sourceforge.net](http://cppcheck.sourceforge.net)
+
+Since NeoMutt's code base is relatively big, it is easier to execute CppCheck from the command line and let it save its analysis to an output file.
 
 CppCheck is available on all major platforms, so it can probably be installed through the package manager of your system.
 In case you are using Windows (but not Cygwin) it is possible to download the installer from the website.
@@ -154,3 +160,55 @@ clang-format -i source.c
 
 - As part of the release process, clang-format is run on all the 'c' source.
 - The header files are tidied by hand to preserve the whitespace layout.
+
+## Cproto - Function prototype generator <a class="offset" id="cproto"></a>
+
+- [https://invisible-island.net/cproto/cproto.html](https://invisible-island.net/cproto/cproto.html)
+
+Given a source file, cproto, will generate prototypes for all the functions.
+This is slightly useful on its own, but it can be used as the basis for:
+
+- analysing functions and parameters
+- generating doxygen comment blocks
+
+```sh
+cproto -D USE_SIDEBAR=1 -I .  -s source.c
+```
+
+**See also**: [ctags](#ctags)
+
+## Ctags - Source tags generator <a class="offset" id="ctags"></a>
+
+- [http://ctags.sourceforge.net/](http://ctags.sourceforge.net/)
+
+`ctags` generates tags files that your editor can use to lookup symbols in the source:
+all the functions, structs, global variables, etc.
+
+It can be run:
+
+```sh
+# Recursively
+ctags -R .
+
+# On specific files
+ctags source1.c source2.c
+```
+
+Unfortunately, that will include some source that isn't useful.
+Using `find` can help exclude some files and directories:
+
+```
+find . -name '*.[ch]' ! -path './autosetup/*' ! -path './test/*' ! -path './doc/*' ! -path './pgp*.c' | cut -b3- | xargs ctags
+```
+
+`ctags` can also extract certain types of information.
+This can be useful for analysis of the code.
+
+```sh
+ctags -R -x --c-kinds=f   . > functions.txt
+ctags -R -x --c-kinds=gsu . > structs.txt
+ctags -R -x --c-kinds=v   . > variables.txt
+```
+
+**See also**: [cproto](#cproto)
+
