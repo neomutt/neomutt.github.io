@@ -1,6 +1,5 @@
 require 'html-proofer'
 
-
 options = {
     :assume_extension => true,
     :alt_ignore => [ /.*/ ],
@@ -13,7 +12,6 @@ options = {
         /.*fonts\/*/,
         /.*google*/,
         /.*code\/*/,
-
         /.*txt/,
         /.*rc/,
         /.*pl/,
@@ -23,7 +21,6 @@ options = {
         /.*gv/,
         /.*ico/,
         /.*xml/,
-
         /Rakefile/,
     ],
     :log_level => :debug,
@@ -33,7 +30,7 @@ options = {
     ],
     :cache => {
         :timeframe => '12w',
-        :storage_dir => '$HOME/.cache/.htmlproofer'
+        :storage_dir => ENV["HOME"] + "/.cache/htmlproofer"
     },
     :only_4xx => true,
     :typhoeus => {
