@@ -23,6 +23,7 @@ If you have any questions, please send them to the developers' mailing list: [ne
 | [ctags](#ctags)               | Source tags generator        |
 | [iwyu](#iwyu)                 | Header file checker          |
 | [scan-build](#scan-build)     | Source code anaylser         |
+| [travis](#travis)             | Continuous Integration       |
 
 ## Clang-Format - Source code formatter <a id="clang-format"></a>
 
@@ -66,7 +67,7 @@ clang-format -i source.c
 - As part of the release process, clang-format is run on all the 'c' source.
 - The header files are tidied by hand to preserve the whitespace layout.
 
-## Coccinelle - Source code manipulation <a class="offset" id="coccinelle"></a>
+## Coccinelle - Source code manipulation <a id="coccinelle"></a>
 
 - [http://coccinelle.lip6.fr/](http://coccinelle.lip6.fr/)
 
@@ -175,7 +176,7 @@ config code:
 - Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
 - Report: [https://coveralls.io/github/flatcap/neomutt](https://coveralls.io/github/flatcap/neomutt)
 
-## Coverity - Source code anaylser <a class="offset" id="coverity"></a>
+## Coverity - Source code anaylser <a id="coverity"></a>
 
 - [https://scan.coverity.com](https://scan.coverity.com)
 
@@ -200,6 +201,7 @@ For security, the details of the defects are not made public.  If you wish to
 see the details, you must create an account (or login with GitHub) and click
 "Add me to project".
 
+- **See also**: [travis](#travis)
 - **See also**: [scan-build](#scan-build)
 
 ## CppCheck - Source code analyser <a id="cppcheck"></a>
@@ -355,7 +357,7 @@ It looks like this:
 { include: [ '@"conn/.*"', private, '"conn/conn.h"', public ] },
 ```
 
-## Scan-Build - Source code anaylser<a class="offset" id="scan-build"></a>
+## Scan-Build - Source code anaylser<a id="scan-build"></a>
 
 - [https://clang-analyzer.llvm.org/scan-build.html](https://clang-analyzer.llvm.org/scan-build.html)
 
@@ -377,4 +379,67 @@ scan-build make
 ```
 
 - **See also**: [coverity](#coverity)
+
+## Travis - Continuous Integration <a id="travis"></a>
+
+- [https://travis-ci.org/](https://travis-ci.org/)
+
+Travis provides a [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)
+service which is connected to NeoMutt's git repos on GitHub.
+
+Each repo has a `.travis.yml` file which tells Travis what to do.  After every
+commit to GitHub and for every Pull-Request, Travis performs the instructions
+in that file.
+
+Here are some of they ways that NeoMutt uses this service.
+
+### Building of the source
+
+To test the source code, Travis performs a set of builds with different
+configure options.
+[`.travis.yml`](https://github.com/neomutt/neomutt/blob/master/.travis.yml)
+installs all the dependencies that are needed, but the build is controlled by a
+[separate script](https://github.com/neomutt/travis-build/blob/master/build).
+
+The script has per-branch rules to determine how many builds to do and which
+options to use.  [_read more..._](https://github.com/neomutt/travis-build#travis-configs)
+
+- [master](https://github.com/neomutt/travis-build/blob/master/master.txt): 3
+- [devel/\*](https://github.com/neomutt/travis-build/blob/master/travis.txt): 1
+- [travis](https://github.com/neomutt/travis-build/blob/master/travis.txt): 28
+
+### Checking of the website links
+
+To test the website, Travis checks all of the HTML for errors.
+
+[`.travis.yml`](https://github.com/neomutt/neomutt.github.io/blob/master/.travis.yml)
+installs [Jekyll](https://jekyllrb.com/) and 
+[html-proofer](https://github.com/gjtorikian/html-proofer#htmlproofer).
+
+The testing is done by running the
+[Rakefile](https://github.com/neomutt/neomutt.github.io/blob/master/Rakefile).
+
+### Deployment of the translations
+
+After a translator makes an update, Travis checks the results and updates the
+[Translation Leaderboard](https://www.neomutt.org/translate)
+
+The [translate](https://github.com/neomutt/neomutt/tree/translate)
+branch has a custom
+[`.travis.yml`](https://github.com/neomutt/neomutt/blob/translate/.travis.yml)
+and [some scripts](https://github.com/neomutt/neomutt/tree/translate/.travis)
+to generate a webpage.
+
+On success, the website is automatically updated.  
+For more details, read [Deployment using Travis](/dev/deploy).
+
+### Travis Tool
+
+Travis also supply a command line tool for managing their service.
+
+```
+gem install travis
+```
+
+NeoMutt used this to encrypt ssh keys for use in [automatic deployment](/dev/deploy).
 
