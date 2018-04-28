@@ -67,26 +67,26 @@ status: stable
       <p>
         <code class="command">open-hook</code>
         <em class="replaceable">
-          <code>pattern</code>
+          <code>regex</code>
         </em>
         <em class="replaceable">
-          <code>shell-command</code>
+          <code>"shell-command"</code>
         </em>
         <br />
         <code class="command">close-hook</code>
         <em class="replaceable">
-          <code>pattern</code>
+          <code>regex</code>
         </em>
         <em class="replaceable">
-          <code>shell-command</code>
+          <code>"shell-command"</code>
         </em>
         <br />
         <code class="command">append-hook</code>
         <em class="replaceable">
-          <code>pattern</code>
+          <code>regex</code>
         </em>
         <em class="replaceable">
-          <code>shell-command</code>
+          <code>"shell-command"</code>
         </em>
       </p>
     </div>
@@ -129,15 +129,15 @@ status: stable
           <tbody>
             <tr>
               <td>Open</td>
-              <td>-</td>
-              <td>-</td>
+              <td>—</td>
+              <td>—</td>
               <td>Folder is readonly</td>
               <td>The folder is just a backup</td>
             </tr>
             <tr>
               <td>Open</td>
               <td>Close</td>
-              <td>-</td>
+              <td>—</td>
               <td>Folder is read/write, but the entire folder must be written if anything is changed</td>
               <td>Your compression format doesn't support appending</td>
             </tr>
@@ -150,7 +150,7 @@ status: stable
             </tr>
             <tr>
               <td>Open</td>
-              <td>-</td>
+              <td>—</td>
               <td>Append</td>
               <td>Folder is readonly, but can be appended to</td>
               <td>You want to store emails, but never change them</td>
@@ -184,7 +184,7 @@ status: stable
         </div>
       </div>
       <pre class="screen">
-open-hook regex shell-command
+open-hook regex "shell-command"
 </pre>
       <p>If NeoMutt is unable to open a file, it then looks for
       <code class="literal">open-hook</code> that matches the filename.</p>
@@ -235,7 +235,7 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
         </div>
       </div>
       <pre class="screen">
-close-hook regex shell-command
+close-hook regex "shell-command"
 </pre>
       <p>When NeoMutt has finished with a compressed mail folder, it will look for a matching
       <code class="literal">close-hook</code> to recompress the file. This hook is
@@ -297,7 +297,7 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
         </div>
       </div>
       <pre class="screen">
-append-hook regex shell-command
+append-hook regex "shell-command"
 </pre>
       <p>When NeoMutt wants to append an email to a compressed mail folder, it will look for a matching
       <code class="literal">append-hook</code>. This hook is
@@ -371,7 +371,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>NeoMutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/guide/reference.html#save-empty" title="3.292.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/guide/reference.html#save-empty" title="3.293.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -383,7 +383,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.387.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.388.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -396,18 +396,18 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the compress feature.
+<span class="comment"># Example NeoMutt config file for the compress feature.</span>
 
-# This feature adds three hooks to NeoMutt which allow it to
-# work with compressed, or encrypted, mailboxes.
+<span class="comment"># This feature adds three hooks to NeoMutt which allow it to</span>
+<span class="comment"># work with compressed, or encrypted, mailboxes.</span>
 
-# The hooks are of the form:
-#       open-hook   regex "shell-command"
-#       close-hook  regex "shell-command"
-#       append-hook regex "shell-command"
-# The 'append-hook' is optional.
+<span class="comment"># The hooks are of the form:</span>
+<span class="comment">#       open-hook   regex "shell-command"</span>
+<span class="comment">#       close-hook  regex "shell-command"</span>
+<span class="comment">#       append-hook regex "shell-command"</span>
+<span class="comment"># The 'append-hook' is optional.</span>
 
-# Handler for gzip compressed mailboxes</span>
+<span class="comment"># Handler for gzip compressed mailboxes</span>
 open-hook   '\.gz$' "gzip --stdout --decompress '%f' &gt;  '%t'"
 close-hook  '\.gz$' "gzip --stdout              '%t' &gt;  '%f'"
 append-hook '\.gz$' "gzip --stdout              '%t' &gt;&gt; '%f'"
@@ -419,15 +419,14 @@ append-hook '\.bz2$' "bzip2 --stdout              '%t' &gt;&gt; '%f'"
 open-hook   '\.xz$' "xz --stdout --decompress '%f' &gt;  '%t'"
 close-hook  '\.xz$' "xz --stdout              '%t' &gt;  '%f'"
 append-hook '\.xz$' "xz --stdout              '%t' &gt;&gt; '%f'"
-<span class="comment"># Handler for pgp encrypted mailboxes
-# PGP does not support appending to an encrypted file</span>
+<span class="comment"># Handler for pgp encrypted mailboxes</span>
+<span class="comment"># PGP does not support appending to an encrypted file</span>
 open-hook   '\.pgp$' "pgp -f &lt; '%f' &gt; '%t'"
 close-hook  '\.pgp$' "pgp -fe YourPgpUserIdOrKeyId &lt; '%t' &gt; '%f'"
-<span class="comment"># Handler for gpg encrypted mailboxes
-# gpg does not support appending to an encrypted file</span>
+<span class="comment"># Handler for gpg encrypted mailboxes</span>
+<span class="comment"># gpg does not support appending to an encrypted file</span>
 open-hook   '\.gpg$' "gpg --decrypt &lt; '%f' &gt; '%t'"
 close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &gt; '%f'"
-
 
 <span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
@@ -450,17 +449,17 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.387.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.388.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#mbox-type" title="3.159.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/guide/reference.html#mbox-type" title="3.160.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#save-empty" title="3.292.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/guide/reference.html#save-empty" title="3.293.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">

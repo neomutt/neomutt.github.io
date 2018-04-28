@@ -52,10 +52,10 @@ status: stable
     <p>The default news server can be obtained from the
     <code class="literal">$NNTPSERVER</code> environment variable or from the
     <code class="literal">/etc/nntpserver</code> file. Like in other news readers, information about the subscribed newsgroups is saved in the file specified by the
-    <a class="link" href="/guide/reference.html#newsrc" title="3.187.&#160;newsrc">$newsrc</a> variable. You can open a newsgroup with the function
+    <a class="link" href="/guide/reference.html#newsrc" title="3.188.&#160;newsrc">$newsrc</a> variable. You can open a newsgroup with the function
     <code class="literal">&lt;change-newsgroup&gt;</code></p>
     <p>The variable
-    <a class="link" href="/guide/reference.html#news-cache-dir" title="3.184.&#160;news_cache_dir">$news_cache_dir</a> can be used to point to a directory. NeoMutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. The hierarchy is also used to store header cache if NeoMutt was compiled with
+    <a class="link" href="/guide/reference.html#news-cache-dir" title="3.185.&#160;news_cache_dir">$news_cache_dir</a> can be used to point to a directory. NeoMutt will create a hierarchy of subdirectories named like the account and newsgroup the cache is for. The hierarchy is also used to store header cache if NeoMutt was compiled with
     <a class="link" href="/guide/optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">header cache</a> support.</p>
   </div>
   <div class="sect1">
@@ -469,11 +469,11 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the nntp feature.
+<span class="comment"># Example NeoMutt config file for the nntp feature.</span>
 
-# --------------------------------------------------------------------------
-# VARIABLES - shown with their default values
-# --------------------------------------------------------------------------</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># VARIABLES – shown with their default values</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
 set ask_follow_up = no
 set ask_x_comment_to = no
 set catchup_newsgroup = ask-yes
@@ -497,10 +497,10 @@ set save_unsubscribed = no
 set show_new_news = yes
 set show_only_unread = no
 set x_comment_to = no
-<span class="comment"># --------------------------------------------------------------------------
-# FUNCTIONS - shown with an example mapping
-# --------------------------------------------------------------------------
-# mark all articles in newsgroup as read</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># FUNCTIONS – shown with an example mapping</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># mark all articles in newsgroup as read</span>
 bind browser,index y catchup
 <span class="comment"># open a different newsgroup</span>
 bind index,pager i change-newsgroup
@@ -530,16 +530,17 @@ bind browser U unsubscribe-pattern
 bind index,pager \ei change-newsgroup-readonly
 <span class="comment"># forward to newsgroup</span>
 bind attach,index,pager \eF forward-to-group
-<span class="comment"># get all children of the current message
-# bind index ??? get-children
-# get parent of the current message</span>
+<span class="comment"># get all children of the current message</span>
+<span class="comment"># bind index ??? get-children</span>
+<span class="comment"># get parent of the current message</span>
 bind index \eG get-parent
-<span class="comment"># reconstruct thread containing current message
-# bind index ??? reconstruct-thread
-# get message with Message-Id</span>
+<span class="comment"># reconstruct thread containing current message</span>
+<span class="comment"># bind index ??? reconstruct-thread</span>
+<span class="comment"># get message with Message-Id</span>
 bind index \CG get-message
-<span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=neomuttrc</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

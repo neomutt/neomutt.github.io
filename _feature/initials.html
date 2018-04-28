@@ -50,7 +50,7 @@ status: stable
     <p>The
     <span class="quote">“<span class="quote">initials</span>”</span> feature adds an expando (%I) for an author's initials.</p>
     <p>The index panel displays a list of emails. Its layout is controlled by the
-    <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a> variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
+    <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a> variable. Using this expando saves space in the index panel. This can be useful if you are regularly working with a small set of people.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -62,7 +62,7 @@ status: stable
       </div>
     </div>
     <p>This feature has no config of its own. It adds an expando which can be used in the
-    <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a> variable.</p>
+    <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -74,29 +74,30 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the initials feature.
+<span class="comment"># Example NeoMutt config file for the initials feature.</span>
 
-# The 'initials' feature has no config of its own.
+<span class="comment"># The 'initials' feature has no config of its own.</span>
 
-# It adds an expando for an author's initials,
-# which can be used in the 'index_format' variable.
+<span class="comment"># It adds an expando for an author's initials,</span>
+<span class="comment"># which can be used in the 'index_format' variable.</span>
 
-# The default 'index_format' is:</span>
+<span class="comment"># The default 'index_format' is:</span>
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
-<span class="comment"># Where %L represents the author/recipient
-# This might look like:
-#       1   + Nov 17 David Bowie   Changesbowie    ( 689)
-#       2   ! Nov 17 Stevie Nicks  Rumours         ( 555)
-#       3   + Nov 16 Jimi Hendrix  Voodoo Child    ( 263)
-#       4   + Nov 16 Debbie Harry  Parallel Lines  ( 540)
-# Using the %I expando:</span>
+<span class="comment"># Where %L represents the author/recipient</span>
+<span class="comment"># This might look like:</span>
+<span class="comment">#       1   + Nov 17 David Bowie   Changesbowie    ( 689)</span>
+<span class="comment">#       2   ! Nov 17 Stevie Nicks  Rumours         ( 555)</span>
+<span class="comment">#       3   + Nov 16 Jimi Hendrix  Voodoo Child    ( 263)</span>
+<span class="comment">#       4   + Nov 16 Debbie Harry  Parallel Lines  ( 540)</span>
+<span class="comment"># Using the %I expando:</span>
 set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
-<span class="comment"># This might look like:
-#       1   + Nov 17 DB Changesbowie    ( 689)
-#       2   ! Nov 17 SN Rumours         ( 555)
-#       3   + Nov 16 JH Voodoo Child    ( 263)
-#       4   + Nov 16 DH Parallel Lines  ( 540)
-# vim: syntax=neomuttrc</span>
+<span class="comment"># This might look like:</span>
+<span class="comment">#       1   + Nov 17 DB Changesbowie    ( 689)</span>
+<span class="comment">#       2   ! Nov 17 SN Rumours         ( 555)</span>
+<span class="comment">#       3   + Nov 16 JH Voodoo Child    ( 263)</span>
+<span class="comment">#       4   + Nov 16 DH Parallel Lines  ( 540)</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">
@@ -112,7 +113,7 @@ set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a>
+            <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">

@@ -136,7 +136,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>Note that proper URI should not contain blank space and all
       <span class="quote">“<span class="quote">bad</span>”</span> chars should be encoded, for example</p>
       <p>
-      <code class="literal">tag:AAA and tag:BBB</code>--encoding-&gt;
+      <code class="literal">tag:AAA and tag:BBB</code>– encoding -&gt;
       <code class="literal">tag:AAA%20and%20tag:BBB</code></p>
       <p>but NeoMutt config file parser is smart enough to accept space in quoted strings. It means that you can use</p>
       <p>
@@ -170,12 +170,13 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>Default:</p>
       <div class="literallayout">
         <p>
-        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
         <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;?%4m&#160;%f</code>
-        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
       </div>
+      <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -194,11 +195,11 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
             </tr>
             <tr>
               <td>%m</td>
-              <td>number of messages in the mailbox *</td>
+              <td>number of messages in the mailbox&#160;*</td>
             </tr>
             <tr>
               <td>%n</td>
-              <td>number of unread messages in the mailbox *</td>
+              <td>number of unread messages in the mailbox&#160;*</td>
             </tr>
             <tr>
               <td>%N</td>
@@ -223,9 +224,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </table>
       </div>
       <p>For an explanation of
-      <span class="quote">“
-      <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a> documentation.</p>
+      <span class="quote">“<span class="quote">soft-fill</span>”</span>, see the
+      <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a> documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
@@ -488,61 +488,59 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the notmuch feature.
+<span class="comment"># Example NeoMutt config file for the notmuch feature.</span>
 
-# --------------------------------------------------------------------------
-# VARIABLES - shown with their default values
-# --------------------------------------------------------------------------
-# This variable specifies notmuch query limit.</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># VARIABLES – shown with their default values</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># This variable specifies notmuch query limit.</span>
 set nm_db_limit = 0
-<span class="comment"># This variable specifies the default Notmuch database in format:
-# notmuch://&lt;absolute path&gt;</span>
+<span class="comment"># This variable specifies the default Notmuch database in format:</span>
+<span class="comment"># notmuch://&lt;absolute path&gt;</span>
 set nm_default_uri = ""
-<span class="comment"># The messages tagged with these tags are excluded and not loaded
-# from notmuch DB to NeoMutt unless specified explicitly.</span>
+<span class="comment"># The messages tagged with these tags are excluded and not loaded</span>
+<span class="comment"># from notmuch DB to NeoMutt unless specified explicitly.</span>
 set nm_exclude_tags = ""
 <span class="comment"># This option specifies timeout for Notmuch database. Default is 5 seconds.</span>
 set nm_open_timeout = 5
-<span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and
-# 'messages'.</span>
+<span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and</span>
+<span class="comment"># 'messages'.</span>
 set nm_query_type = messages
-<span class="comment"># Add messages stored to the NeoMutt record (see $record in the NeoMutt docs) also to notmuch DB. If you reply to an email then the new email inherits tags from the original email.
-</span>
+<span class="comment"># Add messages stored to the NeoMutt record (see $record in the NeoMutt docs)</span>
+<span class="comment"># also to notmuch DB. If you reply to an email then the new email inherits</span>
+<span class="comment"># tags from the original email.</span>
 set nm_record = no
-<span class="comment"># Tags that should be removed or added to the to the messages stored in the NeoMutt record.
-
-example:
-set record = "~/sent-mails"
-set nm_record = yes
-set nm_record_tags = "-inbox,archive,me"
-</span>
+<span class="comment"># Tags that should be removed or added to the to the messages stored in the NeoMutt record.</span>
+<span class="comment"># example:</span>
+<span class="comment">#   set record = "~/sent-mails"</span>
+<span class="comment">#   set nm_record = yes</span>
+<span class="comment">#   set nm_record_tags = "-inbox,archive,me"</span>
 set nm_record_tags = ""
 <span class="comment"># This variable specifies notmuch tag which is used for unread messages.</span>
 set nm_unread_tag = unread
-<span class="comment"># This variable allows you to customize the file browser display for virtual
-# folders to your personal taste.
-# %C   current folder number
-# %f   folder name (description)
-# %m   number of messages in the mailbox *
-# %n   number of unread messages in the mailbox *
-# %N   N if mailbox has new mail, blank otherwise
-# %&gt;X  right justify the rest of the string and pad with character ``X''
-# %|X  pad to the end of the line with character ``X''
-# %*X  soft-fill with character ``X'' as pad
-</span>
+<span class="comment"># This variable allows you to customize the file browser display for virtual</span>
+<span class="comment"># folders to your personal taste.</span>
+<span class="comment"># %C   current folder number</span>
+<span class="comment"># %f   folder name (description)</span>
+<span class="comment"># %m   number of messages in the mailbox *</span>
+<span class="comment"># %n   number of unread messages in the mailbox *</span>
+<span class="comment"># %N   N if mailbox has new mail, blank otherwise</span>
+<span class="comment"># %&gt;X  right justify the rest of the string and pad with character ``X''</span>
+<span class="comment"># %|X  pad to the end of the line with character ``X''</span>
+<span class="comment"># %*X  soft-fill with character ``X'' as pad</span>
 set vfolder_format = "%6n(%6N) %f"
-<span class="comment"># When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)
-# as a spoolfile.</span>
+<span class="comment"># When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)</span>
+<span class="comment"># as a spoolfile.</span>
 set virtual_spoolfile = no
-<span class="comment"># setup time window preferences
-# first setup the duration, and then the time unit of that duration
-# when set to 0 (the default) the search window feature is disabled</span>
+<span class="comment"># setup time window preferences</span>
+<span class="comment"># first setup the duration, and then the time unit of that duration</span>
+<span class="comment"># when set to 0 (the default) the search window feature is disabled</span>
 set nm_query_window_duration=2
 set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
-<span class="comment"># --------------------------------------------------------------------------
-# FUNCTIONS - shown with an example mapping
-# --------------------------------------------------------------------------
-# open a different virtual folder</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># FUNCTIONS – shown with an example mapping</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># open a different virtual folder</span>
 bind index,pager X change-vfolder
 <span class="comment"># read entire thread of the current message</span>
 bind index,pager + entire-thread
@@ -551,17 +549,18 @@ bind index,pager \eX vfolder-from-query
 <span class="comment"># generate virtual folder from query with time window</span>
 bind index,pager &lt; vfolder-window-backward
 bind index,pager &gt; vfolder-window-forward
-# toggle between mailboxes and virtual mailboxes
-# bind index,pager ??? sidebar-toggle-virtual
-# --------------------------------------------------------------------------
-# COMMANDS - shown with an example
-# --------------------------------------------------------------------------
-# virtual-mailboxes description notmuch-URI { description notmuch-URI ...}
-# virtual-mailboxes "Climbing" "notmuch://?query=climbing"
-# unvirtual-mailboxes { * | mailbox ...}
-#
-<span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=neomuttrc</span>
+<span class="comment"># toggle between mailboxes and virtual mailboxes</span>
+<span class="comment"># bind index,pager ??? sidebar-toggle-virtual</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># COMMANDS – shown with an example</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># virtual-mailboxes description notmuch-URI { description notmuch-URI ...}</span>
+<span class="comment"># virtual-mailboxes "Climbing" "notmuch://?query=climbing"</span>
+<span class="comment"># unvirtual-mailboxes { * | mailbox ...}</span>
+<span class="comment">#</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

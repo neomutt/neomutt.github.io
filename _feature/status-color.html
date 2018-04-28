@@ -134,42 +134,44 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the status-color feature.
+<span class="comment"># Example NeoMutt config file for the status-color feature.</span>
 
-# The 'status-color' feature allows you to theme different parts of
-# the status bar (also when it's used by the index).
+<span class="comment"># The 'status-color' feature allows you to theme different parts of</span>
+<span class="comment"># the status bar (also when it's used by the index).</span>
 
-# For the examples below, set some defaults</span>
-set status_format='-%r-NeoMutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
+<span class="comment"># For the examples below, set some defaults</span>
+set status_format='-%r-NeoMutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? \
+Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
 set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 set sort=threads
 set sort_aux=last-date-received
-<span class="comment"># 'status color' can take up to 2 extra parameters
-# color status foreground background [ regex [ num ]]
-# 0 extra parameters
-# Set the default color for the entire status line</span>
+<span class="comment"># 'status color' can take up to 2 extra parameters</span>
+<span class="comment"># color status foreground background [ regex [ num ]]</span>
+<span class="comment"># 0 extra parameters</span>
+<span class="comment"># Set the default color for the entire status line</span>
 color status blue white
-<span class="comment"># 1 extra parameter
-# Set the color for a matching pattern
-# color status foreground background regex
-# Highlight New, Deleted, or Flagged emails</span>
+<span class="comment"># 1 extra parameter</span>
+<span class="comment"># Set the color for a matching pattern</span>
+<span class="comment"># color status foreground background regex</span>
+<span class="comment"># Highlight New, Deleted, or Flagged emails</span>
 color status brightred white '(New|Del|Flag):[0-9]+'
-<span class="comment"># Highlight mailbox ordering if it's different from the default
-# First, highlight anything (*/*)</span>
+<span class="comment"># Highlight mailbox ordering if it's different from the default</span>
+<span class="comment"># First, highlight anything (*/*)</span>
 color status brightred default '\([^)]+/[^)]+\)'
 <span class="comment"># Then override the color for one specific case</span>
-color status default   default '\(threads/last-date-received\)'
-<span class="comment"># 2 extra parameters
-# Set the color for the nth submatch of a pattern
-# color status foreground background regex num
-# Highlight the contents of the []s but not the [] themselves</span>
+color status default default '\(threads/last-date-received\)'
+<span class="comment"># 2 extra parameters</span>
+<span class="comment"># Set the color for the nth submatch of a pattern</span>
+<span class="comment"># color status foreground background regex num</span>
+<span class="comment"># Highlight the contents of the []s but not the [] themselves</span>
 color status red default '\[([^]]+)\]' 1
-<span class="comment"># The '1' refers to the first regex submatch, which is the inner
-# part in ()s
-# Highlight the mailbox</span>
+<span class="comment"># The '1' refers to the first regex submatch, which is the inner</span>
+<span class="comment"># part in ()s</span>
+<span class="comment"># Highlight the mailbox</span>
 color status brightwhite default 'NeoMutt: ([^ ]+)' 1
-<span class="comment"># Search for 'NeoMutt: ' but only highlight what comes after it
-# vim: syntax=neomuttrc</span>
+<span class="comment"># Search for 'NeoMutt: ' but only highlight what comes after it</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

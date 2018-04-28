@@ -49,7 +49,7 @@ status: stable
     </div>
     <p>The
     <span class="quote">“<span class="quote">forgotten-attachment</span>”</span> feature provides a new setting for NeoMutt that alerts the user if the message body contains a certain keyword but there are no attachments added. This is meant to ensure that the user does not forget to attach a file after promising to do so in the mail. The attachment keyword will not be scanned in text matched by
-    <a class="link" href="/guide/reference.html#quote-regex" title="3.271.&#160;quote_regex">$quote_regex</a>.</p>
+    <a class="link" href="/guide/reference.html#quote-regex" title="3.272.&#160;quote_regex">$quote_regex</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -82,7 +82,7 @@ status: stable
           <tbody>
             <tr>
               <td>
-                <code class="literal">attach_keyword</code>
+                <code class="literal">abort_noattach_regex</code>
               </td>
               <td>regular expression</td>
               <td>
@@ -114,30 +114,31 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the forgotten-attachment feature.
+<span class="comment"># Example NeoMutt config file for the forgotten-attachment feature.</span>
 
-# The 'forgotten-attachment' feature provides a new setting for NeoMutt that
-# alerts the user if the message body contains a certain regular expression but there are
-# no attachments added. This is meant to ensure that the user does not forget
-# to attach a file after promising to do so in the mail.
+<span class="comment"># The 'forgotten-attachment' feature provides a new setting for NeoMutt that</span>
+<span class="comment"># alerts the user if the message body contains a certain regular expression but there are</span>
+<span class="comment"># no attachments added. This is meant to ensure that the user does not forget</span>
+<span class="comment"># to attach a file after promising to do so in the mail.</span>
 
-# Ask if the user wishes to abort sending if $attach_keyword is found in the
-# body, but no attachments have been added
-# It can be set to:
-#    "yes"     : always abort
-#    "ask-yes" : ask whether to abort
-#    "no"      : send the mail</span>
+<span class="comment"># Ask if the user wishes to abort sending if $abort_noattach_regex is found in the</span>
+<span class="comment"># body, but no attachments have been added</span>
+<span class="comment"># It can be set to:</span>
+<span class="comment">#    "yes"     : always abort</span>
+<span class="comment">#    "ask-yes" : ask whether to abort</span>
+<span class="comment">#    "no"      : send the mail</span>
 set abort_noattach = no
-<span class="comment"># Search for the following regular expression in the body of the email
-# English: attach, attached, attachment, attachments</span>
-set attach_keyword = "\\&lt;attach(|ed|ments?)\\&gt;"
-<span class="comment"># Nederlands:
-# set attach_keyword = "\\&lt;(bijvoegen|bijgevoegd|bijlage|bijlagen)\\&gt;"
-# Deutsch:
-# set attach_keyword = "\\&lt;(anhängen|angehängt|anhang|anhänge|hängt an)\\&gt;"
-# Français:
-# set attach_keyword = "\\&lt;(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\&gt;"
-# vim: syntax=neomuttrc</span>
+<span class="comment"># Search for the following regular expression in the body of the email</span>
+<span class="comment"># English: attach, attached, attachment, attachments</span>
+set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
+<span class="comment"># Nederlands:</span>
+<span class="comment"># set abort_noattach_regex = "\\&lt;(bijvoegen|bijgevoegd|bijlage|bijlagen)\\&gt;"</span>
+<span class="comment"># Deutsch:</span>
+<span class="comment"># set abort_noattach_regex = "\\&lt;(anhängen|angehängt|anhang|anhänge|hängt an)\\&gt;"</span>
+<span class="comment"># Français:</span>
+<span class="comment"># set abort_noattach_regex = "\\&lt;(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\&gt;"</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

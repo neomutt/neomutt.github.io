@@ -307,10 +307,11 @@ status: stable
         </div>
       </div>
     </div>
+    <a id="whitelist"></a>
+    <a id="unsidebar-whitelist"></a>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">sidebar_whitelist
-      <a id="whitelist"></a></code>
+      <code class="command">sidebar_whitelist</code>
       <em class="replaceable">
         <code>mailbox</code>
       </em>[
@@ -318,8 +319,7 @@ status: stable
         <code>mailbox</code>
       </em>...]
       <br />
-      <code class="command">unsidebar_whitelist
-      <a id="unsidebar-whitelist"></a></code>{
+      <code class="command">unsidebar_whitelist</code>{
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -328,10 +328,10 @@ status: stable
       </em>... }</p>
     </div>
     <p>This command specifies mailboxes that will always be displayed in the sidebar, even if
-    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.314.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
+    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.315.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
     <p>The
     <span class="quote">“<span class="quote">unsidebar_whitelist</span>”</span> command is used to remove a mailbox from the list of whitelisted mailboxes. Use
-    <span class="quote">“<span class="quote">unsidebar_whitelist *</span>”</span> to remove all mailboxes.</p>
+    <span class="quote">“<span class="quote">unsidebar_whitelist&#160;*</span>”</span> to remove all mailboxes.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -512,85 +512,85 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the sidebar feature.
+<span class="comment"># Example NeoMutt config file for the sidebar feature.</span>
 
-# --------------------------------------------------------------------------
-# VARIABLES - shown with their default values
-# --------------------------------------------------------------------------
-# Should the Sidebar be shown?</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># VARIABLES – shown with their default values</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># Should the Sidebar be shown?</span>
 set sidebar_visible = no
-<span class="comment"># How wide should the Sidebar be in screen columns?
+<span class="comment"># How wide should the Sidebar be in screen columns?</span>
 
-# Note: Some characters, e.g. Chinese, take up two columns each.</span>
+<span class="comment"># Note: Some characters, e.g. Chinese, take up two columns each.</span>
 set sidebar_width = 20
 <span class="comment"># Should the mailbox paths be abbreviated?</span>
 set sidebar_short_path = no
 <span class="comment"># Number of top-level mailbox path subdirectories to truncate for display</span>
 set sidebar_component_depth = 0
-<span class="comment"># When abbreviating mailbox path names, use any of these characters as path
-# separators.  Only the part after the last separators will be shown.
-# For file folders '/' is good.  For IMAP folders, often '.' is useful.</span>
+<span class="comment"># When abbreviating mailbox path names, use any of these characters as path</span>
+<span class="comment"># separators. Only the part after the last separators will be shown.</span>
+<span class="comment"># For file folders '/' is good. For IMAP folders, often '.' is useful.</span>
 set sidebar_delim_chars = '/.'
 <span class="comment"># If the mailbox path is abbreviated, should it be indented?</span>
 set sidebar_folder_indent = no
 <span class="comment"># Indent mailbox paths with this string.</span>
 set sidebar_indent_string = '  '
-<span class="comment"># Make the Sidebar only display mailboxes that contain new, or flagged,
-# mail.</span>
+<span class="comment"># Make the Sidebar only display mailboxes that contain new, or flagged,</span>
+<span class="comment"># mail.</span>
 set sidebar_new_mail_only = no
-<span class="comment"># Any mailboxes that are whitelisted will always be visible, even if the
-# sidebar_new_mail_only option is enabled.</span>
+<span class="comment"># Any mailboxes that are whitelisted will always be visible, even if the</span>
+<span class="comment"># sidebar_new_mail_only option is enabled.</span>
 sidebar_whitelist '/home/user/mailbox1'
 sidebar_whitelist '/home/user/mailbox2'
-<span class="comment"># When searching for mailboxes containing new mail, should the search wrap
-# around when it reaches the end of the list?</span>
+<span class="comment"># When searching for mailboxes containing new mail, should the search wrap</span>
+<span class="comment"># around when it reaches the end of the list?</span>
 set sidebar_next_new_wrap = no
 <span class="comment"># Show the Sidebar on the right-hand side of the screen</span>
 set sidebar_on_right = no
-<span class="comment"># The character to use as the divider between the Sidebar and the other NeoMutt
-# panels.</span>
+<span class="comment"># The character to use as the divider between the Sidebar and the other NeoMutt</span>
+<span class="comment"># panels.</span>
 set sidebar_divider_char = '|'
-<span class="comment"># Enable extended buffy mode to calculate total, new, and flagged
-# message counts for each mailbox.</span>
+<span class="comment"># Enable extended buffy mode to calculate total, new, and flagged</span>
+<span class="comment"># message counts for each mailbox.</span>
 set mail_check_stats
 <span class="comment"># Display the Sidebar mailboxes using this format string.</span>
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
-<span class="comment"># Sort the mailboxes in the Sidebar using this method:
-#       count    - total number of messages
-#       flagged  - number of flagged messages
-#       new      - number of new messages
-#       path     - mailbox path
-#       unsorted - do not sort the mailboxes</span>
+<span class="comment"># Sort the mailboxes in the Sidebar using this method:</span>
+<span class="comment">#       count    – total number of messages</span>
+<span class="comment">#       flagged  – number of flagged messages</span>
+<span class="comment">#       new      – number of new messages</span>
+<span class="comment">#       path     – mailbox path</span>
+<span class="comment">#       unsorted – do not sort the mailboxes</span>
 set sidebar_sort_method = 'unsorted'
-<span class="comment"># --------------------------------------------------------------------------
-# FUNCTIONS - shown with an example mapping
-# --------------------------------------------------------------------------
-# Move the highlight to the previous mailbox</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># FUNCTIONS – shown with an example mapping</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># Move the highlight to the previous mailbox</span>
 bind index,pager \Cp sidebar-prev
 <span class="comment"># Move the highlight to the next mailbox</span>
 bind index,pager \Cn sidebar-next
 <span class="comment"># Open the highlighted mailbox</span>
 bind index,pager \Co sidebar-open
-<span class="comment"># Move the highlight to the previous page
-# This is useful if you have a LOT of mailboxes.</span>
+<span class="comment"># Move the highlight to the previous page</span>
+<span class="comment"># This is useful if you have a LOT of mailboxes.</span>
 bind index,pager &lt;F3&gt; sidebar-page-up
-<span class="comment"># Move the highlight to the next page
-# This is useful if you have a LOT of mailboxes.</span>
+<span class="comment"># Move the highlight to the next page</span>
+<span class="comment"># This is useful if you have a LOT of mailboxes.</span>
 bind index,pager &lt;F4&gt; sidebar-page-down
-<span class="comment"># Move the highlight to the previous mailbox containing new, or flagged,
-# mail.</span>
+<span class="comment"># Move the highlight to the previous mailbox containing new, or flagged,</span>
+<span class="comment"># mail.</span>
 bind index,pager &lt;F5&gt; sidebar-prev-new
 <span class="comment"># Move the highlight to the next mailbox containing new, or flagged, mail.</span>
 bind index,pager &lt;F6&gt; sidebar-next-new
 <span class="comment"># Toggle the visibility of the Sidebar.</span>
 bind index,pager B sidebar-toggle-visible
-<span class="comment"># --------------------------------------------------------------------------
-# COLORS - some unpleasant examples are given
-# --------------------------------------------------------------------------
-# Note: All color operations are of the form:
-#       color OBJECT FOREGROUND BACKGROUND
-# Color of the current, open, mailbox
-# Note: This is a general NeoMutt option which colors all selected items.</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># COLORS – some unpleasant examples are given</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># Note: All color operations are of the form:</span>
+<span class="comment">#       color OBJECT FOREGROUND BACKGROUND</span>
+<span class="comment"># Color of the current, open, mailbox</span>
+<span class="comment"># Note: This is a general NeoMutt option which colors all selected items.</span>
 color indicator cyan black
 <span class="comment"># Color of the highlighted, but not open, mailbox.</span>
 color sidebar_highlight black color8
@@ -602,8 +602,9 @@ color sidebar_flagged red black
 color sidebar_new green black
 <span class="comment"># Color to give mailboxes containing no new/flagged mail, etc.</span>
 color sidebar_ordinary color245 default
-<span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=neomuttrc</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

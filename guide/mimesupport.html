@@ -133,7 +133,7 @@ title: NeoMutt's MIME Support
       <code class="literal">&lt;edit-encoding&gt;</code>command (default: ^E). The next field is the size of the attachment, rounded to kilobytes or megabytes. The next field is the filename, which can be changed with the
       <code class="literal">&lt;rename-file&gt;</code>command (default: R). The final field is the description of the attachment, and can be changed with the
       <code class="literal">&lt;edit-description&gt;</code>command (default: d). See
-      <a class="link" href="reference.html#attach-format" title="3.16.&#160;attach_format">$attach_format</a> for a full list of available expandos to format this display to your needs.</p>
+      <a class="link" href="reference.html#attach-format" title="3.17.&#160;attach_format">$attach_format</a> for a full list of available expandos to format this display to your needs.</p>
     </div>
   </div>
   <div class="sect1">
@@ -148,12 +148,17 @@ title: NeoMutt's MIME Support
     </div>
     <p>To get most out of MIME, it's important that a MIME part's content type matches the content as closely as possible so that the recipient's client can automatically select the right viewer for the content. However, there's no reliable for NeoMutt to know how to detect every possible file type. Instead, it uses a simple plain text mapping file that specifies what file extension corresponds to what MIME type. This file is called
     <code class="literal">mime.types</code>.</p>
-    <p>When you add an attachment to your mail message, NeoMutt searches your personal
+    <p>When you add an attachment to your mail message, NeoMutt searches the system
     <code class="literal">mime.types</code> file at
-    <code class="literal">$HOME/.mime.types</code>, and then the system
+    <code class="literal">/etc/mime.types</code>,
+    <code class="literal">$SYSCONFDIR/mime.types</code> or
+    <code class="literal">$PKGDATADIR/mime.types</code> and then your personal
     <code class="literal">mime.types</code> file at
-    <code class="literal">/usr/local/share/neomutt/mime.types</code> or
-    <code class="literal">/etc/mime.types</code></p>
+    <code class="literal">$HOME/.mime.types</code>.</p>
+    <p>Where
+    <code class="literal">$HOME</code> is your home directory. The
+    <code class="literal">$PKGDATADIR</code> and the
+    <code class="literal">$SYSCONFDIR</code> directories depend on where NeoMutt is installed: the former is the default for shared data, the latter for system configuration files.</p>
     <p>Each line starts with the full MIME type, followed by a space and space-separated list of file extensions. For example you could use:</p>
     <div class="example">
       <a id="ex-mime-types"></a>
@@ -173,7 +178,7 @@ audio/x-aiff                    aif aifc aiff
     <p>A sample
     <code class="literal">mime.types</code> file comes with the NeoMutt distribution, and should contain most of the MIME types you are likely to use.</p>
     <p>If NeoMutt can not determine the MIME type by the extension of the file you attach, it will run the command specified in
-    <a class="link" href="reference.html#mime-type-query-command" title="3.174.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
+    <a class="link" href="reference.html#mime-type-query-command" title="3.177.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
     <code class="literal">text/plain</code>. If the file contains binary information, then NeoMutt will mark it as
     <code class="literal">application/octet-stream</code>. You can change the MIME type that NeoMutt assigns to an attachment by using the
     <code class="literal">&lt;edit-type&gt;</code>command from the compose menu (default: ^T), see
@@ -280,8 +285,7 @@ audio/x-aiff                    aif aifc aiff
       </div>
     </div>
     <p>NeoMutt supports RFC 1524 MIME Configuration, in particular the Unix specific format specified in Appendix A of RFC 1524. This file format is commonly referred to as the
-    <span class="quote">“
-    <span class="quote">mailcap</span>”</span> format. Many MIME compliant programs utilize the mailcap format, allowing you to specify handling for all MIME types in one place for all programs. Programs known to use this format include Firefox, lynx and metamail.</p>
+    <span class="quote">“<span class="quote">mailcap</span>”</span> format. Many MIME compliant programs utilize the mailcap format, allowing you to specify handling for all MIME types in one place for all programs. Programs known to use this format include Firefox, lynx and metamail.</p>
     <p>In order to handle various MIME types that NeoMutt doesn't have built-in support for, it parses a series of external configuration files to find an external handler. The default search string for these files is a colon delimited list containing the following files:</p>
     <div class="orderedlist">
       <ol class="orderedlist" type="1">
@@ -340,10 +344,10 @@ neomutt -nF /dev/null -Q mailcap_path
       <p>A comment line consists of a # character followed by anything you want.</p>
       <p>A blank line is blank.</p>
       <p>A definition line consists of a content type, a view command, and any number of optional fields. Each field of a definition line is divided by a semicolon
-      <span class="quote">“
-      <span class="quote">;</span>”</span> character.</p>
+      <span class="quote">“<span class="quote">;</span>”</span> character.</p>
       <p>The content type is specified in the MIME standard
-      <span class="quote">“<span class="quote">type/subtype</span>”</span> notation. For example,
+      <span class="quote">“
+      <span class="quote">type/subtype</span>”</span> notation. For example,
       <code class="literal">text/plain</code>,
       <code class="literal">text/html</code>,
       <code class="literal">image/gif</code>, etc. In addition, the mailcap format includes two formats for wildcards, one using the special
@@ -406,12 +410,12 @@ text/*; more
       </div>
       <p>The interpretation of shell meta-characters embedded in MIME parameters can lead to security problems in general. NeoMutt tries to quote parameters in expansion of
       <code class="literal">%s</code> syntaxes properly, and avoids risky characters by substituting them, see the
-      <a class="link" href="reference.html#mailcap-sanitize" title="3.148.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
+      <a class="link" href="reference.html#mailcap-sanitize" title="3.151.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
       <p>Although NeoMutt's procedures to invoke programs with mailcap seem to be safe, there are other applications parsing mailcap, maybe taking less care of it. Therefore you should pay attention to the following rules:</p>
       <p>
       <span class="emphasis">
         <em>Keep the %-expandos away from shell quoting.</em>
-      </span>Don't quote them with single or double quotes. NeoMutt does this for you, the right way, as should any other program which interprets mailcap. Don't put them into backtick expansions. Be highly careful with evil statements, and avoid them if possible at all. Trying to fix broken behavior with quotes introduces new leaks — there is no alternative to correct quoting in the first place.</p>
+      </span>Don't quote them with single or double quotes. NeoMutt does this for you, the right way, as should any other program which interprets mailcap. Don't put them into backtick expansions. Be highly careful with evil statements, and avoid them if possible at all. Trying to fix broken behavior with quotes introduces new leaks – there is no alternative to correct quoting in the first place.</p>
       <p>If you have to use the %-expandos' values in context where you need quoting or backtick expansions, put that value into a shell variable and reference the shell variable where necessary, as in the following example (using
       <code class="literal">$charset</code> inside the backtick expansion is safe, since it is not itself subject to any further expansion):</p>
       <pre class="screen">
@@ -462,7 +466,7 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
               <p>Note that when using the built-in pager,
               <span class="emphasis">
                 <em>only</em>
-              </span>entries with this flag will be considered a handler for a MIME type — all other entries will be ignored.</p>
+              </span>entries with this flag will be considered a handler for a MIME type – all other entries will be ignored.</p>
             </dd>
             <dt>
               <span class="term">needsterminal</span>
@@ -474,11 +478,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.404.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.406.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, NeoMutt will use
-              <a class="link" href="reference.html#wait-key" title="3.404.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.406.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -503,7 +507,7 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
             </dt>
             <dd>
               <p>This flag specifies the command to use to edit a specific MIME type. NeoMutt supports this from the compose menu, and also uses it to compose new attachments. NeoMutt will default to the defined
-              <a class="link" href="reference.html#editor" title="3.69.&#160;editor">$editor</a> for text attachments.</p>
+              <a class="link" href="reference.html#editor" title="3.71.&#160;editor">$editor</a> for text attachments.</p>
             </dd>
             <dt>
               <span class="term">nametemplate=&lt;template&gt;</span>
@@ -549,7 +553,7 @@ text/html; lynx %s
         <code class="literal">image/gif</code>, and you have the following entries in your mailcap file, NeoMutt will search for an entry with the print command:</p>
         <pre class="screen">
 image/*;        xv %s
-image/gif;      ; print= anytopnm %s | pnmtops | lpr; \
+image/gif;      ; print=anytopnm %s | pnmtops | lpr; \
                 nametemplate=%s.gif
 </pre>
         <p>NeoMutt will skip the
@@ -562,7 +566,8 @@ image/gif;      ; print= anytopnm %s | pnmtops | lpr; \
           </span>
         </a>to denote two commands for viewing an attachment, one to be viewed automatically, the other to be viewed interactively from the attachment menu using the
         <code class="literal">&lt;view-mailcap&gt;</code>function (bound to
-        <span class="quote">“<span class="quote">m</span>”</span> by default). In addition, you can then use the test feature to determine which viewer to use interactively depending on your environment.</p>
+        <span class="quote">“
+        <span class="quote">m</span>”</span> by default). In addition, you can then use the test feature to determine which viewer to use interactively depending on your environment.</p>
         <pre class="screen">
 text/html;      firefox -remote 'openURL(%s)' ; test=RunningX
 text/html;      lynx %s; nametemplate=%s.html
@@ -623,7 +628,8 @@ Content-Type: text/plain; charset=iso-8859-1
 </pre>
               <p>then NeoMutt will expand
               <code class="literal">%{charset}</code>to
-              <span class="quote">“<span class="quote">iso-8859-1</span>”</span>. The default metamail mailcap file uses this feature to test the charset to spawn an xterm using the right charset to view the message.</p>
+              <span class="quote">“
+              <span class="quote">iso-8859-1</span>”</span>. The default metamail mailcap file uses this feature to test the charset to spawn an xterm using the right charset to view the message.</p>
             </dd>
             <dt>
               <span class="term">\%</span>
@@ -658,13 +664,13 @@ text/html;      firefox -remote 'openURL(%s)'
 </pre>
       <p>This mailcap file shows quite a number of examples:</p>
       <pre class="screen">
-<span class="comment"># Use xanim to view all videos   Xanim produces a header on startup,
-# send that to /dev/null so I don't see it</span>
+<span class="comment"># Use xanim to view all videos Xanim produces a header on startup,</span>
+<span class="comment"># send that to /dev/null so I don't see it</span>
 video/*;        xanim %s &gt; /dev/null
 <span class="comment"># Send html to a running firefox by remote</span>
 text/html;      firefox -remote 'openURL(%s)'; test=RunningFirefox
-<span class="comment"># If I'm not running firefox but I am running X, start firefox on the
-# object</span>
+<span class="comment"># If I'm not running firefox but I am running X, start firefox on the</span>
+<span class="comment"># object</span>
 text/html;      firefox %s; test=RunningX
 <span class="comment"># Else use lynx to view it as text</span>
 text/html;      lynx %s
@@ -673,17 +679,16 @@ text/html;      lynx -dump %s; copiousoutput
 <span class="comment"># I use enscript to print text in two columns to a page</span>
 text/*;         more %s; print=enscript -2Gr %s
 <span class="comment"># Firefox adds a flag to tell itself to view jpegs internally</span>
-image/jpeg;xv %s; x-mozilla-flags=internal
+image/jpeg;     xv %s; x-mozilla-flags=internal
 <span class="comment"># Use xv to view images if I'm running X</span>
 <span class="comment"># In addition, this uses the \ to extend the line and set my editor</span>
 <span class="comment"># for images</span>
-image/*;xv %s; test=RunningX; \
-        edit=xpaint %s
+image/*;        xv %s; test=RunningX; edit=xpaint %s
 <span class="comment"># Convert images to text using the netpbm tools</span>
-image/*;  (anytopnm %s | pnmscale -xysize 80 46 | ppmtopgm | pgmtopbm |
-pbmtoascii -1x2 ) 2&gt;&amp;1 ; copiousoutput
+image/*;        (anytopnm %s | pnmscale -xysize 80 46 | ppmtopgm | pgmtopbm | \
+                pbmtoascii -1x2) 2&gt;&amp;1 ; copiousoutput
 <span class="comment"># Send excel spreadsheets to my NT box</span>
-application/ms-excel; open.pl %s
+application/ms-excel;   open.pl %s
 </pre>
     </div>
   </div>
@@ -701,19 +706,25 @@ application/ms-excel; open.pl %s
       <p>
       <code class="command">auto_view</code>
       <em class="replaceable">
-        <code>mimetype</code>
+        <code>mime-type</code>
       </em>[
       <em class="replaceable">
-        <code>mimetype</code>
-      </em>...]
+        <code>/mime-subtype</code>
+      </em>] [
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>[
+      <em class="replaceable">
+        <code>/mime-subtype</code>
+      </em>] ...]
       <br />
-      <code class="command">unauto_view</code>{
+      <code class="command">unauto_view</code>{ * | [
       <em class="replaceable">
-        <code>*</code>
-      </em>|
+        <code>mime-type</code>
+      </em>[
       <em class="replaceable">
-        <code>mimetype</code>
-      </em>... }</p>
+        <code>/mime-subtype</code>
+      </em>] ...]}</p>
     </div>
     <p>In addition to explicitly telling NeoMutt to view an attachment with the MIME viewer defined in the mailcap file from the attachments menu, NeoMutt has support for automatically viewing MIME attachments while in the pager.</p>
     <p>For this to work, you must define a viewer in the mailcap file which uses the
@@ -728,11 +739,11 @@ auto_view text/html application/x-gunzip \
 </pre>
     <p>...NeoMutt would try to find corresponding entries for rendering attachments of these types as text. A corresponding mailcap could look like:</p>
     <pre class="screen">
-text/html;      lynx -dump %s; copiousoutput; nametemplate=%s.html
-image/*;        anytopnm %s | pnmscale -xsize 80 -ysize 50 | ppmtopgm | \
-                pgmtopbm | pbmtoascii ; copiousoutput
+text/html;              lynx -dump %s; copiousoutput; nametemplate=%s.html
+image/*;                anytopnm %s | pnmscale -xsize 80 -ysize 50 | ppmtopgm | \
+                        pgmtopbm | pbmtoascii ; copiousoutput
 application/x-gunzip;   gzcat; copiousoutput
-application/x-tar-gz; gunzip -c %s | tar -tf - ; copiousoutput
+application/x-tar-gz;   gunzip -c %s | tar -tf - ; copiousoutput
 application/postscript; ps2ascii %s; copiousoutput
 </pre>
     <p>
@@ -742,15 +753,16 @@ application/postscript; ps2ascii %s; copiousoutput
     <span class="command">
       <strong>auto_view</strong>
     </span>list. This can be used with
-    <a class="link" href="configuration.html#message-hook" title="20.&#160;Change Settings Before Formatting a Message">
+    <a class="link" href="configuration.html#message-hook" title="18.&#160;Change Settings Before Formatting a Message">
       <span class="command">
         <strong>message-hook</strong>
       </span>
     </a>to autoview messages based on size, etc.
-    <span class="quote">“<span class="quote">
+    <span class="quote">“
+    <span class="quote">
     <span class="command">
       <strong>unauto_view</strong>
-    </span>*</span>”</span> will remove all previous entries.</p>
+    </span>&#160;*</span>”</span> will remove all previous entries.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -822,32 +834,28 @@ alternative_order text/enriched text/plain text \
     <p>The syntax is:</p>
     <div class="cmdsynopsis">
       <p>
-        <code class="command">attachments</code>
-        <em class="replaceable">
-          <code>{ + | - }disposition</code>
-        </em>
-        <em class="replaceable">
-          <code>mime-type</code>
-        </em>
-        <br />
-        <code class="command">unattachments</code>
-        <em class="replaceable">
-          <code>{ + | - }disposition</code>
-        </em>
-        <em class="replaceable">
-          <code>mime-type</code>
-        </em>
-        <br />
-        <code class="command">attachments</code>
-        <em class="replaceable">
-          <code>?</code>
-        </em>
-      </p>
+      <code class="command">attachments</code>{ + | - }
+      <em class="replaceable">
+        <code>disposition</code>
+      </em>
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>
+      <br />
+      <code class="command">unattachments</code>{ + | - }
+      <em class="replaceable">
+        <code>disposition</code>
+      </em>
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>
+      <br />
+      <code class="command">attachments</code>?</p>
     </div>
     <p>
     <span class="emphasis">
       <em>disposition</em>
-    </span>is the attachment's Content-Disposition type — either
+    </span>is the attachment's Content-Disposition type – either
     <code class="literal">inline</code> or
     <code class="literal">attachment</code>. You can abbreviate this to
     <code class="literal">I</code> or
@@ -880,7 +888,7 @@ alternative_order text/enriched text/plain text \
     </span>directive, the patterns you specify are added to a list. When you use
     <span class="command">
       <strong>unattachments</strong>
-    </span>, the pattern is removed from the list. The patterns are not expanded and matched to specific MIME types at this time — they're just text in a list. They're only matched when actually evaluating a message.</p>
+    </span>, the pattern is removed from the list. The patterns are not expanded and matched to specific MIME types at this time – they're just text in a list. They're only matched when actually evaluating a message.</p>
     <p>Some examples might help to illustrate. The examples that are not commented out define the default configuration of the lists.</p>
     <div class="example">
       <a id="ex-attach-count"></a>
@@ -889,57 +897,46 @@ alternative_order text/enriched text/plain text \
       </p>
       <div class="example-contents">
         <pre class="screen">
-<span class="comment">
-# Removing a pattern from a list removes that pattern literally. It
-# does not remove any type matching the pattern.
+<span class="comment"># Removing a pattern from a list removes that pattern literally. It</span>
+<span class="comment"># does not remove any type matching the pattern.</span>
+<span class="comment">#</span>
+<span class="comment">#  attachments   +A */.*</span>
+<span class="comment">#  attachments   +A image/jpeg</span>
+<span class="comment">#  unattachments +A */.*</span>
+<span class="comment">#</span>
+<span class="comment"># This leaves "attached" image/jpeg files on the allowed attachments</span>
+<span class="comment"># list. It does not remove all items, as you might expect, because the</span>
+<span class="comment"># second */.* is not a matching expression at this time.</span>
+<span class="comment">#</span>
+<span class="comment"># Remember: "unattachments" only undoes what "attachments" has done!</span>
+<span class="comment"># It does not trigger any matching on actual messages.</span>
+<span class="comment"># Qualify any MIME part with an "attachment" disposition, EXCEPT for</span>
+<span class="comment"># text/x-vcard and application/pgp parts. (PGP parts are already known</span>
+<span class="comment"># to NeoMutt, and can be searched for with ~g, ~G, and ~k.)</span>
+<span class="comment">#</span>
+<span class="comment"># I've added x-pkcs7 to this, since it functions (for S/MIME)</span>
+<span class="comment"># analogously to PGP signature attachments. S/MIME isn't supported</span>
+<span class="comment"># in a stock NeoMutt build, but we can still treat it specially here.</span>
+<span class="comment">#</span>
+attachments  +A */.*
+attachments  -A text/x-vcard application/pgp.*
+attachments  -A application/x-pkcs7-.*
+<span class="comment"># Discount all MIME parts with an "inline" disposition, unless they're</span>
+<span class="comment"># text/plain. (Why inline a text/plain part unless it's external to the</span>
+<span class="comment"># message flow?)</span>
+attachments  +I text/plain
+<span class="comment"># These two lines make NeoMutt qualify MIME containers. (So, for example,</span>
+<span class="comment"># a message/rfc822 forward will count as an attachment.) The first</span>
+<span class="comment"># line is unnecessary if you already have "attach-allow */.*", of</span>
+<span class="comment"># course. These are off by default! The MIME elements contained</span>
+<span class="comment"># within a message/* or multipart/* are still examined, even if the</span>
+<span class="comment"># containers themselves don't qualify.</span>
 
-#
-#  attachments   +A */.*
-#  attachments   +A image/jpeg
-#  unattachments +A */.*
-#
-# This leaves "attached" image/jpeg files on the allowed attachments
-# list. It does not remove all items, as you might expect, because the
-# second */.* is not a matching expression at this time.
-
-#
-# Remember: "unattachments" only undoes what "attachments" has done!
-
-# It does not trigger any matching on actual messages.
-
-# Qualify any MIME part with an "attachment" disposition, EXCEPT for
-# text/x-vcard and application/pgp parts. (PGP parts are already known
-# to NeoMutt, and can be searched for with ~g, ~G, and ~k.)
-#
-# I've added x-pkcs7 to this, since it functions (for S/MIME)
-# analogously to PGP signature attachments. S/MIME isn't supported
-# in a stock NeoMutt build, but we can still treat it specially here.
-
-#
-</span>
-attachments   +A */.*
-attachments   -A text/x-vcard application/pgp.*
-attachments   -A application/x-pkcs7-.*
-<span class="comment">
-# Discount all MIME parts with an "inline" disposition, unless they're
-# text/plain. (Why inline a text/plain part unless it's external to the
-# message flow?)
-</span>
-attachments   +I text/plain
-<span class="comment">
-# These two lines make NeoMutt qualify MIME containers.  (So, for example,
-# a message/rfc822 forward will count as an attachment.)  The first
-# line is unnecessary if you already have "attach-allow */.*", of
-# course.  These are off by default!  The MIME elements contained
-# within a message/* or multipart/* are still examined, even if the
-# containers themselves don't qualify.
-
-#attachments  +A message/.* multipart/.*
-#attachments  +I message/.* multipart/.*
-</span>
+<span class="comment">#attachments  +A message/.* multipart/.*</span>
+<span class="comment">#attachments  +I message/.* multipart/.*</span>
 <span class="comment">## You probably don't really care to know about deleted attachments.</span>
-attachments   -A message/external-body
-attachments   -I message/external-body
+attachments  -A message/external-body
+attachments  -I message/external-body
 </pre>
       </div>
     </div>
@@ -964,19 +961,25 @@ attachments   -I message/external-body
       <p>
       <code class="command">mime_lookup</code>
       <em class="replaceable">
-        <code>mimetype</code>
+        <code>mime-type</code>
       </em>[
       <em class="replaceable">
-        <code>mimetype</code>
-      </em>...]
+        <code>/mime-subtype</code>
+      </em>] [
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>[
+      <em class="replaceable">
+        <code>/mime-subtype</code>
+      </em>] ...]
       <br />
-      <code class="command">unmime_lookup</code>{
+      <code class="command">unmime_lookup</code>{ * | [
       <em class="replaceable">
-        <code>*</code>
-      </em>|
+        <code>mime-type</code>
+      </em>[
       <em class="replaceable">
-        <code>mimetype</code>
-      </em>... }</p>
+        <code>/mime-subtype</code>
+      </em>] ...]}</p>
     </div>
     <p>NeoMutt's
     <span class="command">

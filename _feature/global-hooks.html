@@ -39,19 +39,19 @@ status: stable
           <p>
           <span class="bold">
             <strong>timeout-hook</strong>
-          </span>- periodically</p>
+          </span>– periodically</p>
         </li>
         <li class="listitem">
           <p>
           <span class="bold">
             <strong>startup-hook</strong>
-          </span>- when NeoMutt starts up, before opening the first mailbox</p>
+          </span>– when NeoMutt starts up, before opening the first mailbox</p>
         </li>
         <li class="listitem">
           <p>
           <span class="bold">
             <strong>shutdown-hook</strong>
-          </span>- NeoMutt shuts down, before closing the last mailbox</p>
+          </span>– NeoMutt shuts down, before closing the last mailbox</p>
         </li>
       </ul>
     </div>
@@ -126,7 +126,7 @@ status: stable
       <p>
         <code class="command">timeout-hook</code>
         <em class="replaceable">
-          <code>NEOMUTT-COMMAND</code>
+          <code>command</code>
         </em>
       </p>
     </div>
@@ -134,7 +134,7 @@ status: stable
       <p>
         <code class="command">startup-hook</code>
         <em class="replaceable">
-          <code>NEOMUTT-COMMAND</code>
+          <code>command</code>
         </em>
       </p>
     </div>
@@ -142,7 +142,7 @@ status: stable
       <p>
         <code class="command">shutdown-hook</code>
         <em class="replaceable">
-          <code>NEOMUTT-COMMAND</code>
+          <code>command</code>
         </em>
       </p>
     </div>
@@ -157,18 +157,17 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the global hooks feature.
+<span class="comment"># Example NeoMutt config file for the global hooks feature.</span>
 
-# --------------------------------------------------------------------------
-# COMMANDS - shown with an example argument
-# --------------------------------------------------------------------------
-# After $timeout seconds of inactivity, run this NeoMutt command</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># COMMANDS – shown with an example argument</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># After $timeout seconds of inactivity, run this NeoMutt command</span>
 timeout-hook 'exec sync-mailbox'
 <span class="comment"># When NeoMutt first loads, run this NeoMutt command</span>
 startup-hook 'exec sync-mailbox'
 <span class="comment"># When NeoMutt quits, run this NeoMutt command</span>
 shutdown-hook 'exec sync-mailbox'
-
 
 <span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
@@ -186,7 +185,7 @@ shutdown-hook 'exec sync-mailbox'
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#timeout" title="3.386.&#160;timeout">$timeout</a>
+            <a class="link" href="/guide/reference.html#timeout" title="3.387.&#160;timeout">$timeout</a>
           </p>
         </li>
       </ul>

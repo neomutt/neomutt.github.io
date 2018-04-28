@@ -61,9 +61,9 @@ status: stable
     </div>
     <p>The
     <span class="quote">“<span class="quote">Conditional Dates</span>”</span> feature allows you to construct
-    <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a> expressions based on the age of the email.</p>
+    <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a> expressions based on the age of the email.</p>
     <p>NeoMutt's default
-    <code class="literal">$index_format</code> displays email dates in the form: abbreviated-month day-of-month —
+    <code class="literal">$index_format</code> displays email dates in the form: abbreviated-month day-of-month –
     <span class="quote">“<span class="quote">Jan 14</span>”</span>.</p>
     <p>The format is configurable but only per-mailbox. This feature allows you to configure the display depending on the age of the email.</p>
     <div >
@@ -127,8 +127,8 @@ status: stable
 %? TEST ? TRUE &amp; FALSE ?
 </pre>
     <p>The examples below use the test
-    <span class="quote">“<span class="quote">%[</span>”</span>— the date of the message in the local timezone. They will also work with
-    <span class="quote">“<span class="quote">%(</span>”</span>— the local time that the message arrived.</p>
+    <span class="quote">“<span class="quote">%[</span>”</span>– the date of the message in the local timezone. They will also work with
+    <span class="quote">“<span class="quote">%(</span>”</span>– the local time that the message arrived.</p>
     <p>The date tests are of the form:</p>
     <pre class="screen">
 %[nX? TRUE &amp; FALSE ?
@@ -313,7 +313,8 @@ status: stable
       <p>Reparsed a little, for clarity, you can see the test condition and the two format strings.</p>
       <pre class="screen">
 %?[1m?        &amp;           ?
-      %[%b %d] %[%Y-%m-%d]
+
+    %[%b %d] %[%Y-%m-%d]
 </pre>
     </div>
     <div class="sect2">
@@ -398,16 +399,17 @@ status: stable
       <p>Reparsed a little, for clarity, you can see the test conditions and the four format strings.</p>
       <pre class="screen">
 %&lt;[y?                                       &amp;%[%m/%y ]&gt;  Older
-     %&lt;[m?                        &amp;%[%b %d]&gt;             This year
-          %&lt;[d?         &amp;%[%a %d]&gt;                       This month
-               %[%H:%M ]                                 Today
+   %&lt;[m?                        &amp;%[%b %d]&gt;             This year
+        %&lt;[d?         &amp;%[%a %d]&gt;                       This month
+             %[%H:%M ]                                 Today
 </pre>
       <p>This a another view of the same example, with some whitespace for clarity.</p>
       <pre class="screen">
 %&lt;[y? %&lt;[m? %&lt;[d? AAA &amp; BBB &gt; &amp; CCC &gt; &amp; DDD &gt;
 </pre>
       <div class="literallayout">
-        <p>AAA&#160;=&#160;%[%H:%M&#160;]&#160;<br>BBB&#160;=&#160;%[%a&#160;%d]&#160;<br>CCC&#160;=&#160;%[%b&#160;%d]&#160;<br>DDD&#160;=&#160;%[%m/%y&#160;]</p>
+        <p>AAA&#160;=&#160;%[%H:%M&#160;]&#160;BBB&#160;=&#160;%[%a&#160;%d]&#160;CCC&#160;=&#160;%[%b&#160;%d]&#160;DDD&#160;=
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%[%m/%y&#160;]</p>
       </div>
     </div>
   </div>
@@ -434,21 +436,22 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the cond-date feature.
+<span class="comment"># Example NeoMutt config file for the cond-date feature.</span>
 
-#
-# The default index_format is:
-#       '%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
-#
-# We replace the date field '%{%b %d}', giving:</span>
+<span class="comment">#</span>
+<span class="comment"># The default index_format is:</span>
+<span class="comment">#       '%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'</span>
+<span class="comment">#</span>
+<span class="comment"># We replace the date field '%{%b %d}', giving:</span>
 set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;%[%b %d]&gt;&amp;%[%m/%y ]&gt; %-15.15L (%?l?%4l&amp;%4c?) %s'
-<span class="comment"># Test  Date Range  Format String  Example
-# --------------------------------------------
-# %[d   Today       %[%H:%M ]      12:34
-# %[m   This month  %[%a %d]       Thu 12
-# %[y   This year   %[%b %d]       Dec 10
-# -     Older       %[%m/%y ]      06/15
-# vim: syntax=neomuttrc</span>
+<span class="comment"># Test  Date Range  Format String  Example</span>
+<span class="comment"># --------------------------------------------</span>
+<span class="comment"># %[d   Today       %[%H:%M ]      12:34</span>
+<span class="comment"># %[m   This month  %[%a %d]       Thu 12</span>
+<span class="comment"># %[y   This year   %[%b %d]       Dec 10</span>
+<span class="comment">#  —    Older       %[%m/%y ]      06/15</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">
@@ -464,7 +467,7 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#index-format" title="3.141.&#160;index_format">$index_format</a>
+            <a class="link" href="/guide/reference.html#index-format" title="3.142.&#160;index_format">$index_format</a>
           </p>
         </li>
         <li class="listitem">
@@ -490,9 +493,12 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
       </div>
     </div>
     <p>Date parsing doesn't quite do what you expect.
-    <span class="quote">“<span class="quote">1w</span>”</span> doesn't mean the
-    <span class="quote">“<span class="quote">in the last 7 days</span>”</span>, but
-    <span class="quote">“<span class="quote">
+    <span class="quote">“
+    <span class="quote">1w</span>”</span> doesn't mean the
+    <span class="quote">“
+    <span class="quote">in the last 7 days</span>”</span>, but
+    <span class="quote">“
+    <span class="quote">
     <span class="emphasis">
       <em>this</em>
     </span>week</span>”</span>. This doesn't match the normal NeoMutt behavior: for example

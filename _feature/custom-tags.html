@@ -258,65 +258,66 @@ status: stable
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the custom tags feature.
+<span class="comment"># Example NeoMutt config file for the custom tags feature.</span>
 
-# VARIABLES - shown with their default values
-# --------------------------------------------------------------------------
-# This variable specifies private notmuch tags which should not be printed
-# on screen (index, pager).</span>
+<span class="comment"># VARIABLES – shown with their default values</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># This variable specifies private notmuch tags which should not be printed</span>
+<span class="comment"># on screen (index, pager).</span>
 set nm_hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
-<span class="comment"># --------------------------------------------------------------------------
-# FUNCTIONS - shown with an example mapping
-# --------------------------------------------------------------------------
-# modify (notmuch/imap) tags</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># FUNCTIONS – shown with an example mapping</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># modify (notmuch/imap) tags</span>
 bind index,pager \` modify-labels
 <span class="comment"># modify (notmuch/imap) tag non-interactively.</span>
 bind index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
-<span class="comment"># modify labels and then hide message
-# bind index,pager ??? modify-labels-then-hide
-# --------------------------------------------------------------------------
-# COMMANDS - shown with an example
-# --------------------------------------------------------------------------
-# Replace some tags with icons
-# tag-transforms tag transformed-string { tag transformed-string ...}
-# tag-transforms "inbox"   "i"   \
-#                "unread"  "u"   \
-#                "replied" "↻ "  \
-#                "sent"    "➥ "  \
-#                "todo"    "T"   \
-#                "deleted" "DEL" \
-#                "invites" "CAL"
+<span class="comment"># modify labels and then hide message</span>
+<span class="comment"># bind index,pager ??? modify-labels-then-hide</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># COMMANDS – shown with an example</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># Replace some tags with icons</span>
+<span class="comment"># tag-transforms tag transformed-string { tag transformed-string ...}</span>
+<span class="comment"># tag-transforms "inbox"   "i"   \</span>
+<span class="comment">#                "unread"  "u"   \</span>
+<span class="comment">#                "replied" "↻ "  \</span>
+<span class="comment">#                "sent"    "➥ "  \</span>
+<span class="comment">#                "todo"    "T"   \</span>
+<span class="comment">#                "deleted" "DEL" \</span>
+<span class="comment">#                "invites" "CAL"</span>
 
-# The formats must start with 'G' and the entire sequence is case sensitive.
-# tag-formats tag format-string { tag format-string ...}
-# tag-formats "inbox"   "GI" \
-#              "unread"  "GU" \
-#              "replied" "GR" \
-#              "sent"    "GS" \
-#              "todo"    "Gt" \
-#              "deleted" "GD" \
-#              "invites" "Gi"
+<span class="comment"># The formats must start with 'G' and the entire sequence is case sensitive.</span>
+<span class="comment"># tag-formats tag format-string { tag format-string ...}</span>
+<span class="comment"># tag-formats "inbox"   "GI" \</span>
+<span class="comment">#             "unread"  "GU" \</span>
+<span class="comment">#             "replied" "GR" \</span>
+<span class="comment">#             "sent"    "GS" \</span>
+<span class="comment">#             "todo"    "Gt" \</span>
+<span class="comment">#             "deleted" "GD" \</span>
+<span class="comment">#             "invites" "Gi"</span>
 
-# Now instead of using '%g' or '%J' in your $index_format, which lists all tags
-# in a non-deterministic order, you can something like the following which puts
-# a transformed tag name in a specific spot on the index line:
-# set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'
+<span class="comment"># Now instead of using '%g' or '%J' in your $index_format, which lists all tags</span>
+<span class="comment"># in a non-deterministic order, you can something like the following which puts</span>
+<span class="comment"># a transformed tag name in a specific spot on the index line:</span>
+<span class="comment"># set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'</span>
 
-# The %G formatting sequence may display all tags including tags hidden by
-# nm_hidden_tags.
-#
-# --------------------------------------------------------------------------
-# COLORS - some unpleasant examples are given
-# --------------------------------------------------------------------------
-# These symbols are added to the index-color feature:
-# an individual message tag, %G, uses tag name
-# this symbol uses a pattern</span>
+<span class="comment"># The %G formatting sequence may display all tags including tags hidden by</span>
+<span class="comment"># nm_hidden_tags.</span>
+<span class="comment">#</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># COLORS – some unpleasant examples are given</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># These symbols are added to the index-color feature:</span>
+<span class="comment"># an individual message tag, %G, uses tag name</span>
+<span class="comment"># this symbol uses a pattern</span>
 color index_tag red white "inbox"
-<span class="comment"># the transformed message tags, %g
-# this symbol does not use a pattern</span>
+<span class="comment"># the transformed message tags, %g</span>
+<span class="comment"># this symbol does not use a pattern</span>
 color index_tags green default
-<span class="comment"># --------------------------------------------------------------------------
-# vim: syntax=neomuttrc</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

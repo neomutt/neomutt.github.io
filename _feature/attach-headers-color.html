@@ -76,28 +76,27 @@ color attach_headers foreground background pattern
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the attach-headers-color feature.
+<span class="comment"># Example NeoMutt config file for the attach-headers-color feature.</span>
 
-# Color if the attachment is autoviewed</span>
-color   attach_headers     brightgreen     default        "Autoview"
+<span class="comment"># Color if the attachment is autoviewed</span>
+color   attach_headers     brightgreen     default    "Autoview"
 <span class="comment"># Color only the brackets around the headers</span>
-color   attach_headers     brightyellow    default        "^\\[--"
-color   attach_headers     brightyellow    default        "--]$"
+color   attach_headers     brightyellow    default    "^\\[--"
+color   attach_headers     brightyellow    default    "--]$"
 <span class="comment"># Color the mime type and the size</span>
-color   attach_headers     green           default        "Type: [a-z]+/[a-z0-9\-]+"
-color   attach_headers     green           default        "Size: [0-9\.]+[KM]"
+color   attach_headers     green           default    "Type: [a-z]+/[a-z0-9\-]+"
+color   attach_headers     green           default    "Size: [0-9\.]+[KM]"
 <span class="comment"># Color GPGME signature checks</span>
-color   attach_headers     brightgreen     default        "Good signature from.*"
-color   attach_headers     brightred       default        "Bad signature from.*"
-color   attach_headers     brightred       default        "BAD signature from.*"
-color   attach_headers     brightred       default        "Note: This key has expired!"
-color   attach_headers     brightmagenta   default        "Problem signature from.*"
-color   attach_headers     brightmagenta   default        "WARNING: This key is not certified with a trusted signature!"
-color   attach_headers     brightmagenta   default        "         There is no indication that the signature belongs to the owner."
-color   attach_headers     brightmagenta   default        "can't handle these multiple signatures"
-color   attach_headers     brightmagenta   default        "signature verification suppressed"
-color   attach_headers     brightmagenta   default        "invalid node with packet of type"
-
+color   attach_headers     brightgreen     default    "Good signature from.*"
+color   attach_headers     brightred       default    "Bad signature from.*"
+color   attach_headers     brightred       default    "BAD signature from.*"
+color   attach_headers     brightred       default    "Note: This key has expired!"
+color   attach_headers     brightmagenta   default    "Problem signature from.*"
+color   attach_headers     brightmagenta   default    "WARNING: This key is not certified with a trusted signature!"
+color   attach_headers     brightmagenta   default    "         There is no indication that the signature belongs to the owner."
+color   attach_headers     brightmagenta   default    "can't handle these multiple signatures"
+color   attach_headers     brightmagenta   default    "signature verification suppressed"
+color   attach_headers     brightmagenta   default    "invalid node with packet of type"
 
 <span class="comment"># vim: syntax=neomuttrc</span>
 </pre>

@@ -48,24 +48,24 @@ status: stable
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/guide/reference.html#fcc-clear" title="3.78.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="/guide/reference.html#fcc-clear" title="3.79.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.344.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
-    <a class="link" href="/guide/reference.html#smime-default-key" title="3.334.&#160;smime_default_key">$smime_default_key</a> to your personal S/MIME key id.</p>
+    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.345.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a> to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_self_encrypt = yes
 set smime_default_key  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
-    <a class="link" href="/guide/reference.html#pgp-self-encrypt" title="3.234.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>, then set
-    <a class="link" href="/guide/reference.html#pgp-default-key" title="3.219.&#160;pgp_default_key">$pgp_default_key</a> to your personal PGP key id.</p>
+    <a class="link" href="/guide/reference.html#pgp-self-encrypt" title="3.235.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#pgp-default-key" title="3.220.&#160;pgp_default_key">$pgp_default_key</a> to your personal PGP key id.</p>
     <pre class="screen">
 set pgp_self_encrypt = yes
 set pgp_default_key  = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 </pre>
     <p>If you have different key for signing, then you can set
-    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.236.&#160;pgp_sign_as">$pgp_sign_as</a> or
-    <a class="link" href="/guide/reference.html#smime-sign-as" title="3.345.&#160;smime_sign_as">$smime_sign_as</a> respectively.</p>
+    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.237.&#160;pgp_sign_as">$pgp_sign_as</a> or
+    <a class="link" href="/guide/reference.html#smime-sign-as" title="3.346.&#160;smime_sign_as">$smime_sign_as</a> respectively.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -158,22 +158,22 @@ set pgp_default_key  = A4AF18C5582473BD35A1E9CE78BB3D480042198E
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the encrypt-to-self feature.
+<span class="comment"># Example NeoMutt config file for the encrypt-to-self feature.</span>
 
-# --------------------------------------------------------------------------
-# VARIABLES - shown with their default values
-# --------------------------------------------------------------------------
-# Save a copy of outgoing email, encrypted to yourself</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># VARIABLES – shown with their default values</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># Save a copy of outgoing email, encrypted to yourself</span>
 set pgp_self_encrypt = "yes"
 set pgp_default_key = "PGP-KEY"
-<span class="comment"># set pgp_sign_as = "PGP-SIGNING-KEY"
+<span class="comment"># set pgp_sign_as = "PGP-SIGNING-KEY"</span>
 
-# Save a copy of outgoing email, encrypted to yourself</span>
+<span class="comment"># Save a copy of outgoing email, encrypted to yourself</span>
 set smime_self_encrypt = "yes"
 set smime_default_key = "SMIME-KEY"
-<span class="comment"># set smime_sign_as = "SMIME-SIGNING-KEY"
+<span class="comment"># set smime_sign_as = "SMIME-SIGNING-KEY"</span>
 
-# vim: syntax=neomuttrc</span>
+<span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">

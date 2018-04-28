@@ -50,9 +50,9 @@ status: stable
     <p>The
     <span class="quote">“<span class="quote">ifdef</span>”</span> feature introduces three new commands to NeoMutt and allow you to share one config file between versions of NeoMutt that may have different features compiled in.</p>
     <pre class="screen">
-ifdef  symbol config-command [args...]
+ifdef  symbol "config-command [args...]"
 <span class="comment"># If a symbol is defined</span>
-ifndef symbol config-command [args...]
+ifndef symbol "config-command [args...]"
 <span class="comment"># If a symbol is not defined</span>
 finish
 <span class="comment"># Finish reading the current file</span>
@@ -93,7 +93,7 @@ ifndef sidebar finish
           <code>symbol</code>
         </em>
         <em class="replaceable">
-          <code>"config-command [args]"</code>
+          <code>"config-command [args...]"</code>
         </em>
         <br />
         <code class="command">ifndef</code>
@@ -101,7 +101,7 @@ ifndef sidebar finish
           <code>symbol</code>
         </em>
         <em class="replaceable">
-          <code>"config-command [args]"</code>
+          <code>"config-command [args...]"</code>
         </em>
         <br />
         <code class="command">finish</code>
@@ -118,34 +118,33 @@ ifndef sidebar finish
       </div>
     </div>
     <pre class="screen">
-<span class="comment"># Example NeoMutt config file for the ifdef feature.
+<span class="comment"># Example NeoMutt config file for the ifdef feature.</span>
 
-# This feature introduces three useful commands which allow you to share
-# one config file between versions of NeoMutt that may have different
-# features compiled in.
+<span class="comment"># This feature introduces three useful commands which allow you to share</span>
+<span class="comment"># one config file between versions of NeoMutt that may have different</span>
+<span class="comment"># features compiled in.</span>
 
-#   ifdef  symbol config-command [args...]
-#   ifndef symbol config-command [args...]
-#   finish
-# The 'ifdef' command tests whether NeoMutt understands the name of
-# a variable, function, command or compile-time symbol.
+<span class="comment">#   ifdef  symbol "config-command [args...]"</span>
+<span class="comment">#   ifndef symbol "config-command [args...]"</span>
+<span class="comment">#   finish</span>
+<span class="comment"># The 'ifdef' command tests whether NeoMutt understands the name of</span>
+<span class="comment"># a variable, function, command or compile-time symbol.</span>
 
-# If it does, then it executes a config command.
+<span class="comment"># If it does, then it executes a config command.</span>
 
-# The 'ifndef' command tests whether a symbol does NOT exist.
+<span class="comment"># The 'ifndef' command tests whether a symbol does NOT exist.</span>
 
-# The 'finish' command tells NeoMutt to stop reading current config file.
+<span class="comment"># The 'finish' command tells NeoMutt to stop reading current config file.</span>
 
-# If the 'trash' variable exists, set it.</span>
+<span class="comment"># If the 'trash' variable exists, set it.</span>
 ifdef trash 'set trash=~/Mail/trash'
 <span class="comment"># If the 'tag-pattern' function exists, bind a key to it.</span>
 ifdef tag-pattern 'bind index &lt;F6&gt; tag-pattern'
 <span class="comment"># If the 'imap-fetch-mail' command exists, read my IMAP config.</span>
 ifdef imap-fetch-mail 'source ~/.neomutt/imap.rc'
-<span class="comment"># If the compile-time symbol 'sidebar' does not exist, then
-# stop reading the current config file.</span>
+<span class="comment"># If the compile-time symbol 'sidebar' does not exist, then</span>
+<span class="comment"># stop reading the current config file.</span>
 ifndef sidebar finish
-
 
 <span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
