@@ -43,7 +43,7 @@ might need the [Debugging NeoMutt](/dev/debug) page to help you debug and test
 your changes.
 
 Now, let's find a challenge...
-Click on [![good first issue](/images/labels/good-first-issue.svg)](https://github.com/neomutt/neomutt/issues?q=label:"good first issue")  
+Click on [![good first issue](/images/labels/good-first-issue.svg)](https://github.com/neomutt/neomutt/issues?q=label:"good first issue")
 Some are very simple, but they all need doing and we'd love some help.
 
 When you've found an task that you like, add a comment to show your interest.
@@ -67,4 +67,21 @@ We'll talk you through the steps as you get to them.
 - [Coding Style](/dev/coding-style) - Keeping the code tidy
 - [Code of Conduct](/conduct) - Santa's Watching :-)
 - [Roadmap](/dev/roadmap) - What are the other developers planning / doing?
+
+## Medium Tasks
+
+The "medium" tasks are hopefully a small step up from the "easy" tasks.
+
+These tasks:
+- Are **more complex** than the "easy" tasks
+- May require some **investigation** beforehand
+- May involve **changing lots of code** and dependencies
+
+For example:
+- Refactoring a large piece of code
+- Adding a small new feature
+
+**Help will be available**, but we'll expect you to be more self-sufficient.
+
+Click on [![help wanted](/images/labels/help-wanted.svg)](https://github.com/neomutt/neomutt/issues?q=is:open+label:"help+wanted"+-label:"good+first+issue") to get started.
 
