@@ -305,7 +305,7 @@ Ideas to make macros more reliable and predictable
 
 Handle mailto: links from external sources
 
-: **Raised by** @cryptomaniac512 on 2016-07-04 -- **Result**: hard to do portably
+: **Raised by** cryptomaniac512 on 2016-07-04 -- **Result**: hard to do portably
 
 ### [#64 using bright in index makes all index bright (Bug)][#64]
 
