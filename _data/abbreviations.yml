@@ -323,7 +323,7 @@
 - term: MUA
   definitions:
     - str : Mail User Agent
-      url : https://www.neomutt.org
+      url : https://neomutt.org
       attributes:
         Category  : ["email", "client", "mail reader"]
         Type      : acronym
@@ -339,7 +339,7 @@
 - term: Notmuch
   definitions:
     - str : Not much mail
-      url : ["https://www.neomutt.org/feature/notmuch", "https://notmuchmail.org/"]
+      url : ["https://neomutt.org/feature/notmuch", "https://notmuchmail.org/"]
       attributes:
         Category  : ["email", "mail indexing", "mail tagging"]
         Type      : abbreviation

@@ -40,7 +40,7 @@ isn't the start of the journey, it's the middle!
 
 ## Generating manual.xml
 
-[This diagram](https://www.neomutt.org/images/make-docs.png) shows the NeoMutt build
+[This diagram](https://neomutt.org/images/make-docs.png) shows the NeoMutt build
 process. It includes the steps needed to build manual.xml
 
 To reduce the duplication of text, source of the source code is parsed to

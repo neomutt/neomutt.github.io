@@ -84,9 +84,9 @@ Is this ok [y/N]:
 
 Well done! You've just installed NeoMutt.
 
-- **Learn more about NeoMutt**: [browse our website](https://www.neomutt.org)
+- **Learn more about NeoMutt**: [browse our website](https://neomutt.org)
 - **Latest news**: Subscribe to our
-  [RSS feed](https://www.neomutt.org/feed.xml) or our mailing lists for
+  [RSS feed](https://neomutt.org/feed.xml) or our mailing lists for
   [NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
 - **Talk to the developers**: Join our IRC channel: #neomutt on
   irc.freenode.net or the

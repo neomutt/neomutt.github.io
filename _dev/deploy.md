@@ -217,5 +217,5 @@ git push origin
 
 ## Result
 
-Every time a translater makes an update, the [leaderboard](https://www.neomutt.org/translate) is updated.
+Every time a translater makes an update, the [leaderboard](https://neomutt.org/translate) is updated.
 

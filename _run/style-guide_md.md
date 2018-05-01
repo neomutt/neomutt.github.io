@@ -378,14 +378,14 @@ Markdown and GFM provides several link definitions:
 
 | Link Type          | Definition (inline)                                                     | Result                                                      |
 | -----------------: | :---------------------------------------------------------------------- | :---------------------------------------------------------- |
-| *explicit*         | `[NeoMutt](https://www.neomutt.org "NeoMutt’s Home Page")`              | [NeoMutt][lnk_id] link with a balloon tip                   |
-| *implicit*         | `[https://www.neomutt.org]` or `<https://www.neomutt.org>`              | <https://www.neomutt.org>                                   |
+| *explicit*         | `[NeoMutt](https://neomutt.org "NeoMutt’s Home Page")`              | [NeoMutt][lnk_id] link with a balloon tip                   |
+| *implicit*         | `[https://neomutt.org]` or `<https://neomutt.org>`              | <https://neomutt.org>                                   |
 | **Reference**      | **Definition (somewhere)**                                              | **Usage (inline)**                                          |
-| *link*<br />&nbsp; | `[lnk_id]: <https://www.neomutt.org> "NeoMutt’s Home Page"`<br />&nbsp; | *explicit*: `[NeoMutt][lnk_id]`<br />*implicit*: `[lnk_id]` |
+| *link*<br />&nbsp; | `[lnk_id]: <https://neomutt.org> "NeoMutt’s Home Page"`<br />&nbsp; | *explicit*: `[NeoMutt][lnk_id]`<br />*implicit*: `[lnk_id]` |
 | *image*            | `[img_id]: </images/mutt-48x48.png> "Mutt’s stroll"`                    | `[![img_id]][lnk_id]`                                       |
 | *footnote*         | `[^fn_id]: "Teaching an Old Dog New Tricks"`                            | `NeoMutt&#x202F;[^fn_id]`                                   |
 
-[lnk_id]: <https://www.neomutt.org> "NeoMutt’s Home Page"
+[lnk_id]: <https://neomutt.org> "NeoMutt’s Home Page"
 [img_id]: </images/mutt-48x48.png> "Mutt’s stroll"
 [^fn_id]: "Teaching an Old Dog New Tricks"
 \\
@@ -408,10 +408,10 @@ Instead of making a proposal which implicit URL link notation to prefer, try
 it out or take a guess:
 
 ```reply
-Link 1: <https://www.neomutt.org>
-Link 2: [https://www.neomutt.org]
+Link 1: <https://neomutt.org>
+Link 2: [https://neomutt.org]
 
-[https://www.neomutt.org]: <https://www.example.net> "View NeoMutt’s Home Page"
+[https://neomutt.org]: <https://www.example.net> "View NeoMutt’s Home Page"
 ```
 
 **Suggestions**

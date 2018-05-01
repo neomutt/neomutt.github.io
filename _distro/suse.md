@@ -28,7 +28,7 @@ The `neomutt` package can be installed in parallel with `mutt`. The
 configuration files are not shared. There is some level of support of mutt
 configs by neomutt, but this can change in the future and is intended only for
 the transition period. Please read more about that in the
-[configuration](https://www.neomutt.org/guide/configuration) docs.
+[configuration](https://neomutt.org/guide/configuration) docs.
 
 Additional packages:
 

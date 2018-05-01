@@ -422,7 +422,7 @@ The testing is done by running the
 ### Deployment of the translations
 
 After a translator makes an update, Travis checks the results and updates the
-[Translation Leaderboard](https://www.neomutt.org/translate)
+[Translation Leaderboard](https://neomutt.org/translate)
 
 The [translate](https://github.com/neomutt/neomutt/tree/translate)
 branch has a custom
