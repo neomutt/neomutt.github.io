@@ -33,8 +33,8 @@ The diagrams below shows how the code and docs fit together.
 
 **Diagram Source**:
 
-- [Code](make-code.gv)
-- [Docs](make-docs.gv)
+- [Code](/images/make-code.gv)
+- [Docs](/images/make-docs.gv)
 
 Render the diagrams with the `dot` command:
 
