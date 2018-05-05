@@ -25,6 +25,7 @@ If you have any questions, please send them to the developers' mailing list: [ne
 | [iwyu](#iwyu)                 | Header file checker          |
 | [scan-build](#scan-build)     | Source code anaylser         |
 | [travis](#travis)             | Continuous Integration       |
+| [valgrind](#valgrind)         | Run time memory checker      |
 
 ## Clang-Format - Source code formatter <a id="clang-format"></a>
 
@@ -47,7 +48,7 @@ It uses [clang](https://clang.llvm.org/) to create an
 
 The config file looks like this:
 
-```
+```reply
 Language: Cpp
 
 TabWidth:          8
@@ -61,7 +62,7 @@ Clang has documentation for [all of the options](https://clang.llvm.org/docs/Cla
 
 Running it is as simple as:
 
-```
+```sh
 clang-format -i source.c
 ```
 
@@ -250,7 +251,7 @@ We can use `cppcheck-gui` afterwards for filtering the warnings we want to analy
 
 You can use following command for analyzing the source code
 
-```
+```sh
 cppcheck --enable=all --language=c --std=c99 -i autosetup --platform=unspecified -D_POSIX_PATH_MAX=4096 -DPATH_MAX=2048 -I/usr/include -I/usr/include/mit-krb5 -I. --output-file=cppcheck.xml --xml --xml-version=2 <path to neomutt source code directory>
 ```
 
@@ -302,7 +303,7 @@ ctags source1.c source2.c
 Unfortunately, that will include some source that isn't useful.
 Using `find` can help exclude some files and directories:
 
-```
+```sh
 find . -name '*.[ch]' ! -path './autosetup/*' ! -path './test/*' ! -path './doc/*' ! -path './pgp*.c' | cut -b3- | xargs ctags
 ```
 
@@ -332,7 +333,7 @@ It also helps to show the dependencies of a file.
 
 A sample call and its output.
 
-```
+```sh
 iwyu -I. -Xiwyu --no_comments -Xiwyu --pch_in_code -Xiwyu --mapping_file=/home/mutt/work/neomutt.imp thread.c
 ```
 
@@ -471,9 +472,118 @@ For more details, read [Deployment using Travis](/dev/deploy).
 
 Travis also supply a command line tool for managing their service.
 
-```
+```sh
 gem install travis
 ```
 
 NeoMutt used this to encrypt ssh keys for use in [automatic deployment](/dev/deploy).
+
+## Valgrind - Run time memory checker <a id="valgrind"></a>
+
+- [http://valgrind.org/](http://valgrind.org/)
+
+Valgrind is a set of debugging tools.
+
+**Note**: Running a program under will consume more memory and run much more slowly than normal.
+
+### Memchecker
+
+The default tool is a memory-checker, e.g.
+
+```sh
+valgrind -v --leak-check=full --track-origins=yes neomutt
+```
+
+The results can be saved to a file by adding `--log-file v.txt`
+
+It reports:
+- Leaked memory (and where it was allocated)
+- Out of bounds memory accesses
+- Conditionals that relied on uninitialised memory
+
+```reply
+LEAK SUMMARY:
+   definitely lost: 1,368 bytes in 22 blocks
+   indirectly lost: 179 bytes in 5 blocks
+     possibly lost: 1,352 bytes in 18 blocks
+   still reachable: 672,679 bytes in 640 blocks
+```
+
+### Memchecker Suppressions
+
+Memchecker reports **every** problem it finds, including any shared libraries.
+These false-positives can be ignored using a suppression file.
+To generate one, run the program with an extra argument:
+
+```sh
+valgrind -v --leak-check=full --track-origins=yes --gen-suppressions=all neomutt
+```
+
+Valgrind's output will include suppression blocks like this:
+
+```reply
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:g_malloc0
+   fun:type_node_any_new_W
+   fun:type_node_fundamental_new_W
+   fun:g_type_register_fundamental
+   fun:_g_object_type_init
+   fun:gobject_init
+   fun:gobject_init_ctor
+   fun:call_init.part.0
+   fun:call_init
+   fun:_dl_init
+   obj:/usr/lib64/ld-2.27.so
+}
+```
+
+Cut out the ones you'd like to ignore, then put them in a file, `sup.txt`, then
+re-run your program:
+
+```sh
+valgrind -v --leak-check=full --track-origins=yes --suppressions=sup.txt neomutt
+```
+
+### Callgrind
+
+Callgrind is a profiler.  It records which functions are called, how often and
+how long each one took, e.g.
+
+```sh
+valgrind --tool=callgrind neomutt
+```
+
+It creates a log file `callgrind.out.[PID]` which can be viewed in
+[kcachegrind](https://kcachegrind.github.io/html/Home.html).
+
+[![kcachegrind](/images/kcg-thumb.png)](/images/kcachegrind.png)
+
+### Debugging with Valgrind
+
+[Running NeoMutt under a debugger](debug) can be a good way to find bugs, but
+sometimes it's hard to see the **exact** point when something goes wrong.
+Using Valgrind and gdb in combination, it's possible to trap the instruction
+that causes a buffer overrun, or reads an uninitialised piece of memory.
+
+**Note**: Memory **leaks** can't be detected as they happen.
+
+Window 1:
+```sh
+valgrind --vgdb=yes --vgdb-error=0 neomutt [ARGS]
+```
+
+Window 2:
+```sh
+gdb neomutt
+# Inside gdb
+target remote | vgdb
+continue
+```
+
+Valgrind adds extra commands to gdb to examine the memory.
+See [Valgrind's documentation](http://valgrind.org/docs/manual/manual-core-adv.html) for more details.
 
