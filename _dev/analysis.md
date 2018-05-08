@@ -334,7 +334,7 @@ It also helps to show the dependencies of a file.
 A sample call and its output.
 
 ```sh
-iwyu -I. -Xiwyu --no_comments -Xiwyu --pch_in_code -Xiwyu --mapping_file=/home/mutt/work/neomutt.imp thread.c
+iwyu -I. -Xiwyu --no_comments -Xiwyu --pch_in_code -Xiwyu --mapping_file=neomutt.imp thread.c
 ```
 
 ```reply
