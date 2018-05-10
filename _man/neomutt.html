@@ -1,7 +1,7 @@
 ---
 layout: concertina
 command: neomutt
-description: The Neomutt Mail User Agent
+description: The NeoMutt Mail User Agent (MUA)
 ---
 {% raw %}
 <div class="refentry">
@@ -9,157 +9,117 @@ description: The Neomutt Mail User Agent
   <div class="titlepage" />
   <div class="refnamediv">
     <h2>Name</h2>
-    <p>neomutt — The Neomutt Mail User Agent</p>
+    <p>neomutt — The NeoMutt Mail User Agent (MUA)</p>
   </div>
   <div class="refsect1">
     <a id="syntax"></a>
     <h2>SYNTAX</h2>
-    <p>
+    <p>neomutt [-Enx] [-e command] [-F config] [-H draft] [-i include]</p>
+    <p>[-b address] [-c address] [-s subject] [ 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>[-GnRyzZ] [-e 
-    <span class="emphasis">
-      <em>cmd</em>
-    </span>] [-F 
+      <strong>-a</strong>
+    </span>
     <span class="emphasis">
       <em>file</em>
-    </span>] [-g 
+    </span>[ 
     <span class="emphasis">
-      <em>server</em>
-    </span>] [-m 
-    <span class="emphasis">
-      <em>type</em>
-    </span>] [-f 
-    <span class="emphasis">
-      <em>file</em>
-    </span>]</p>
-    <p>
+      <em>. . .</em>
+    </span>] 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>[-Enx] [-e 
+      <strong>--</strong>
+    </span>] 
     <span class="emphasis">
-      <em>cmd</em>
-    </span>] [-F 
+      <em>address</em>
+    </span>[ 
     <span class="emphasis">
-      <em>file</em>
-    </span>] [-H 
-    <span class="emphasis">
-      <em>file</em>
-    </span>] [-i 
-    <span class="emphasis">
-      <em>file</em>
-    </span>] [-s 
-    <span class="emphasis">
-      <em>subj</em>
-    </span>] [-b 
-    <span class="emphasis">
-      <em>addr</em>
-    </span>] [-c 
-    <span class="emphasis">
-      <em>addr</em>
-    </span>] [-a 
-    <span class="emphasis">
-      <em>file</em>
-    </span>[...] --] 
-    <span class="emphasis">
-      <em>addr|mailto_url</em>
-    </span>[...]</p>
-    <p>
+      <em>. . .</em>
+    </span>] neomutt [-nx] [-e command] [-F config] [-b address] [-c address]</p>
+    <p>[-s subject] [ 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>[-nx] [-e 
-    <span class="emphasis">
-      <em>cmd</em>
-    </span>] [-F 
+      <strong>-a</strong>
+    </span>
     <span class="emphasis">
       <em>file</em>
-    </span>] [-s 
+    </span>[ 
     <span class="emphasis">
-      <em>subj</em>
-    </span>] [-b 
-    <span class="emphasis">
-      <em>addr</em>
-    </span>] [-c 
-    <span class="emphasis">
-      <em>addr</em>
-    </span>] [-a 
-    <span class="emphasis">
-      <em>file</em>
-    </span>[...] --] 
-    <span class="emphasis">
-      <em>addr|mailto_url</em>
-    </span>[...] &lt; message</p>
-    <p>
+      <em>. . .</em>
+    </span>] 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>[-n] [-e 
+      <strong>--</strong>
+    </span>] 
     <span class="emphasis">
-      <em>cmd</em>
-    </span>] [-F 
+      <em>address</em>
+    </span>[ 
     <span class="emphasis">
-      <em>file</em>
-    </span>] -p</p>
-    <p>
+      <em>. . .</em>
+    </span>] &lt; message neomutt [-nRy] [-e command] [-F config] [-f mailbox] [-m type] neomutt [-n] [-e command] [-F config] 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>[-n] [-e 
-    <span class="emphasis">
-      <em>cmd</em>
-    </span>] [-F 
-    <span class="emphasis">
-      <em>file</em>
-    </span>] -A 
+      <strong>-A</strong>
+    </span>
     <span class="emphasis">
       <em>alias</em>
-    </span></p>
-    <p>
+    </span>neomutt [-n] [-e command] [-F config] 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>[-n] [-e 
+      <strong>-B</strong>
+    </span>neomutt [-n] [-e command] [-F config] 
+    <span class="strong">
+      <strong>-D</strong>
+    </span>[ 
+    <span class="strong">
+      <strong>-S</strong>
+    </span>] neomutt [-n] [-e command] [-F config] 
+    <span class="strong">
+      <strong>-d</strong>
+    </span>
     <span class="emphasis">
-      <em>cmd</em>
-    </span>] [-F 
+      <em>level</em>
+    </span>
+    <span class="strong">
+      <strong>-l</strong>
+    </span>
     <span class="emphasis">
       <em>file</em>
-    </span>] -Q 
+    </span>neomutt [-n] [-e command] [-F config] 
+    <span class="strong">
+      <strong>-G</strong>
+    </span>neomutt [-n] [-e command] [-F config] 
+    <span class="strong">
+      <strong>-g</strong>
+    </span>
     <span class="emphasis">
-      <em>query</em>
-    </span></p>
-    <p>
+      <em>server</em>
+    </span>neomutt [-n] [-e command] [-F config] 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>-v[v]</p>
-    <p>
+      <strong>-p</strong>
+    </span>neomutt [-n] [-e command] [-F config] 
     <span class="strong">
-      <strong>neomutt</strong>
-    </span>-D [-S]</p>
+      <strong>-Q</strong>
+    </span>
+    <span class="emphasis">
+      <em>variable</em>
+    </span>neomutt [-n] [-e command] [-F config] 
+    <span class="strong">
+      <strong>-Z</strong>
+    </span>neomutt [-n] [-e command] [-F config] 
+    <span class="strong">
+      <strong>-z</strong>
+    </span>[-f mailbox] neomutt 
+    <span class="strong">
+      <strong>-v</strong>
+    </span>[ 
+    <span class="strong">
+      <strong>v</strong>
+    </span>]</p>
   </div>
   <div class="refsect1">
     <a id="description"></a>
     <h2>DESCRIPTION</h2>
-    <p>Neomutt is a small but very powerful text based program for reading and sending electronic mail under unix operating systems, including support for color terminals, MIME, OpenPGP, and a threaded sorting mode.</p>
+    <p>NeoMutt is a small but very powerful text based program for reading and sending electronic mail under Unix operating systems, including support for color terminals, MIME, OpenPGP, and a threaded sorting mode.</p>
     <p>
-    <span class="emphasis">
-      <em>Note:</em>
-    </span>
-    <span class="emphasis">
-      <em>This</em>
-    </span>manual 
-    <span class="emphasis">
-      <em>page</em>
-    </span>gives 
-    <span class="emphasis">
-      <em>a</em>
-    </span>brief 
-    <span class="emphasis">
-      <em>overview</em>
-    </span>of 
-    <span class="emphasis">
-      <em>neomutt's</em>
-    </span>command 
-    <span class="emphasis">
-      <em>line</em>
-    </span>options. You should find a copy of the full manual in /usr/share/doc/neomutt, in text, HTML, and/or PDF format.</p>
+    <span class="strong">
+      <strong>Note:</strong>
+    </span>This manual page gives a brief overview of NeoMutt's command line options. You should find a copy of the full manual in 
+    <code class="filename">/usr/share/doc/neomutt</code>, in plain text, HTML, and/or PDF format.</p>
   </div>
   <div class="refsect1">
     <a id="options"></a>
@@ -167,241 +127,484 @@ description: The Neomutt Mail User Agent
     <div class="variablelist">
       <dl class="variablelist">
         <dt>
-          <span class="term">-A 
+          <span class="term">
+            <span class="strong">
+              <strong>--</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Special argument forces NeoMutt to stop option parsing and treat remaining arguments as 
+          <span class="emphasis">
+            <em>address</em>
+          </span>es even if they start with a dash</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-A</strong>
+            </span>
+            <span class="emphasis">
+              <em>alias</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Print an expanded version of the given 
           <span class="emphasis">
             <em>alias</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>An expanded version of the given alias is passed to stdout.</p>
+          </span>to stdout and exit</p>
         </dd>
         <dt>
-          <span class="term">-a 
+          <span class="term">
+            <span class="strong">
+              <strong>-a</strong>
+            </span>
+            <span class="emphasis">
+              <em>file</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Attach one or more 
           <span class="emphasis">
             <em>file</em>
-          </span>[...]</span>
-        </dt>
-        <dd>
-          <p>Attach a file to your message using MIME. When attaching single or multiple files, separating filenames and recipient addresses with "--" is mandatory, e.g. 
+          </span>s to a message (must be the last option). Add any addresses after the '' 
           <span class="strong">
-            <strong>neomutt -a image.jpg -- addr1</strong>
-          </span>or 
+            <strong>--</strong>
+          </span>'' argument, e.g.:</p>
+          <div class="literallayout">
+            <p>
+              <br />
+              <span class="strong">
+                <strong>neomutt&#160;-a&#160;</strong>
+              </span>
+              <span class="emphasis">
+                <em>image.jpg&#160;</em>
+              </span>
+              <span class="strong">
+                <strong>--&#160;</strong>
+              </span>
+              <span class="emphasis">
+                <em>address1&#160;</em>
+              </span>
+              <br />
+              <span class="strong">
+                <strong>neomutt&#160;-a&#160;</strong>
+              </span>
+              <span class="emphasis">
+                <em>image.jpg&#160;*.png&#160;</em>
+              </span>
+              <span class="strong">
+                <strong>--&#160;</strong>
+              </span>
+              <span class="emphasis">
+                <em>address1&#160;address2&#160;</em>
+              </span>
+              <br />
+            </p>
+          </div>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-B</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Run in batch mode (do not start the ncurses UI)</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-b</strong>
+            </span>
+            <span class="emphasis">
+              <em>address</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a blind carbon copy (Bcc) recipient</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-c</strong>
+            </span>
+            <span class="emphasis">
+              <em>address</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a carbon copy (Cc) recipient</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-D</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Dump all configuration variables as '' 
           <span class="strong">
-            <strong>neomutt -a img.jpg *.png -- addr1 addr2</strong>
-          </span>. The -a option must be placed at the end of command line options.</p>
+            <strong>name</strong>
+          </span>= 
+          <span class="strong">
+            <strong>value</strong>
+          </span>'' pairs to stdout</p>
         </dd>
         <dt>
-          <span class="term">-b 
-          <span class="emphasis">
-            <em>address</em>
-          </span></span>
+          <span class="term">
+            <span class="strong">
+              <strong>-D -S</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Specify a blind-carbon-copy (BCC) recipient</p>
+          <p>Like 
+          <span class="strong">
+            <strong>-D</strong>
+          </span>, but hide the value of sensitive variables</p>
         </dd>
         <dt>
-          <span class="term">-c 
-          <span class="emphasis">
-            <em>address</em>
-          </span></span>
+          <span class="term">
+            <span class="strong">
+              <strong>-d</strong>
+            </span>
+            <span class="emphasis">
+              <em>level</em>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Specify a carbon-copy (CC) recipient</p>
-        </dd>
-        <dt>
-          <span class="term">-d 
+          <p>Log debugging output to a file (default is " 
+          <code class="filename">~/.neomuttdebug0</code>"). The 
           <span class="emphasis">
             <em>level</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>log debugging output to ~/.neomuttdebug0. 
-          <span class="emphasis">
-            <em>Level</em>
-          </span>can range from 1-5 and effects verbosity. A value of 2 is recommended.</p>
+          </span>can range from 1–5 and affects verbosity (a value of 2 is recommended)</p>
+          <p>Using this option along with 
+          <span class="strong">
+            <strong>-l</strong>
+          </span>is useful to log the early startup process (before reading any configuration and hence $debug_level and $debug_file)</p>
         </dd>
         <dt>
-          <span class="term">-D</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-E</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Print the value of all configuration options to stdout.</p>
-        </dd>
-        <dt>
-          <span class="term">-D -S</span>
-        </dt>
-        <dd>
-          <p>like -D but hide the value of sensitive variables</p>
-        </dd>
-        <dt>
-          <span class="term">-E</span>
-        </dt>
-        <dd>
-          <p>Causes the draft file specified by -H or include file specified by -i to be edited during message composition.</p>
-        </dd>
-        <dt>
-          <span class="term">-e 
-          <span class="emphasis">
-            <em>command</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Specify a configuration command to be run after processing of initialization files.</p>
-        </dd>
-        <dt>
-          <span class="term">-f 
-          <span class="emphasis">
-            <em>mailbox</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Specify which mailbox to load.</p>
-        </dd>
-        <dt>
-          <span class="term">-F 
-          <span class="emphasis">
-            <em>neomuttrc</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Specify an initialization file to read instead of ~/.neomuttrc</p>
-        </dd>
-        <dt>
-          <span class="term">-g 
-          <span class="emphasis">
-            <em>server</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Start Neomutt with a listing of subscribed newsgroups at specified news server.</p>
-        </dd>
-        <dt>
-          <span class="term">-G</span>
-        </dt>
-        <dd>
-          <p>Start Neomutt with a listing of subscribed newsgroups.</p>
-        </dd>
-        <dt>
-          <span class="term">-h</span>
-        </dt>
-        <dd>
-          <p>Display help.</p>
-        </dd>
-        <dt>
-          <span class="term">-H 
+          <p>Edit 
           <span class="emphasis">
             <em>draft</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Specify a draft file which contains header and body to use to send a message.</p>
-        </dd>
-        <dt>
-          <span class="term">-i 
+          </span>( 
+          <span class="strong">
+            <strong>-H</strong>
+          </span>) or 
           <span class="emphasis">
             <em>include</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Specify a file to include into the body of a message.</p>
+          </span>( 
+          <span class="strong">
+            <strong>-i</strong>
+          </span>) file during message composition</p>
         </dd>
         <dt>
-          <span class="term">-m 
+          <span class="term">
+            <span class="strong">
+              <strong>-e</strong>
+            </span>
+            <span class="emphasis">
+              <em>command</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a 
+          <span class="emphasis">
+            <em>command</em>
+          </span>to be run after reading the config files</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-F</strong>
+            </span>
+            <span class="emphasis">
+              <em>config</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify an alternative initialization file to read, see 
+          <span class="emphasis">
+            <em>FILES</em>
+          </span>section below for a list of regular configuration files</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-f</strong>
+            </span>
+            <span class="emphasis">
+              <em>mailbox</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a 
+          <span class="emphasis">
+            <em>mailbox</em>
+          </span>(as defined with 
+          <span class="strong">
+            <strong>mailboxes</strong>
+          </span>command) to load</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-G</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Start NeoMutt with a listing of subscribed newsgroups</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-g</strong>
+            </span>
+            <span class="emphasis">
+              <em>server</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Like 
+          <span class="strong">
+            <strong>-G</strong>
+          </span>, but start at specified news 
+          <span class="emphasis">
+            <em>server</em>
+          </span></p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-H</strong>
+            </span>
+            <span class="emphasis">
+              <em>draft</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a 
+          <span class="emphasis">
+            <em>draft</em>
+          </span>file with header and body for message composing</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-h</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Print this help message and exit</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-i</strong>
+            </span>
+            <span class="emphasis">
+              <em>include</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify an 
+          <span class="emphasis">
+            <em>include</em>
+          </span>file to be embedded in the body of a message</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-l</strong>
+            </span>
+            <span class="emphasis">
+              <em>file</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a 
+          <span class="emphasis">
+            <em>file</em>
+          </span>for debugging output (default " 
+          <code class="filename">~/.neomuttdebug0</code>")</p>
+          <p>This overrules $debug_file setting and NeoMutt keeps up to five debug logs ({ 
+          <span class="emphasis">
+            <em>file</em>
+          </span>| $debug_file | 
+          <code class="filename">~/.neomuttdebug</code>}[ 
+          <code class="literal">0</code>- 
+          <code class="literal">4</code>]) before override the oldest file</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-m</strong>
+            </span>
+            <span class="emphasis">
+              <em>type</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a default mailbox format 
           <span class="emphasis">
             <em>type</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>specify a default mailbox type for newly created folders.</p>
-        </dd>
-        <dt>
-          <span class="term">-n</span>
-        </dt>
-        <dd>
-          <p>Causes Neomutt to bypass the system configuration file.</p>
-        </dd>
-        <dt>
-          <span class="term">-p</span>
-        </dt>
-        <dd>
-          <p>Resume a postponed message.</p>
-        </dd>
-        <dt>
-          <span class="term">-Q 
+          </span>for newly created folders</p>
+          <p>The 
           <span class="emphasis">
-            <em>query</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Query a configuration variables value. The query is executed after all configuration files have been parsed, and any commands given on the command line have been executed.</p>
+            <em>type</em>
+          </span>is either MH, MMDF, Maildir or mbox (case-insensitive)</p>
         </dd>
         <dt>
-          <span class="term">-R</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-n</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Open a mailbox in 
+          <p>Do not read the system-wide configuration file</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-p</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Resume a prior postponed message, if any</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-Q</strong>
+            </span>
+            <span class="emphasis">
+              <em>variable</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Query a configuration 
           <span class="emphasis">
-            <em>read-only</em>
-          </span>mode.</p>
+            <em>variable</em>
+          </span>and print its value to stdout (after the config has been read and any commands executed)</p>
         </dd>
         <dt>
-          <span class="term">-s 
+          <span class="term">
+            <span class="strong">
+              <strong>-R</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Open mailbox in read-only mode</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-s</strong>
+            </span>
+            <span class="emphasis">
+              <em>subject</em>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specify a 
           <span class="emphasis">
             <em>subject</em>
-          </span></span>
-        </dt>
-        <dd>
-          <p>Specify the subject of the message.</p>
+          </span>(must be enclosed in quotes if it has spaces)</p>
         </dd>
         <dt>
-          <span class="term">-v</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-v</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Display the Neomutt version number and compile-time definitions.</p>
+          <p>Print the NeoMutt version and compile-time definitions and exit</p>
         </dd>
         <dt>
-          <span class="term">-vv</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-vv</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Display license and copyright information.</p>
+          <p>Print the NeoMutt license and copyright information and exit</p>
         </dd>
         <dt>
-          <span class="term">-x</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-x</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Emulate the mailx compose mode.</p>
+          <p>Simulate the 
+          <span class="citerefentry">
+          <span class="refentrytitle">mailx</span>(1)</span>send mode</p>
         </dd>
         <dt>
-          <span class="term">-y</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-y</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Start Neomutt with a listing of all mailboxes specified by the 
-          <span class="emphasis">
-            <em>mailboxes</em>
-          </span>command.</p>
+          <p>Start NeoMutt with a listing of all defined mailboxes</p>
         </dd>
         <dt>
-          <span class="term">-z</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-Z</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>When used with -f, causes Neomutt not to start if there are no messages in the mailbox.</p>
+          <p>Open the first mailbox with new message or exit immediately with exit code 1 if none is found in all defined mailboxes</p>
         </dd>
         <dt>
-          <span class="term">-Z</span>
+          <span class="term">
+            <span class="strong">
+              <strong>-z</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Causes Neomutt to open the first mailbox specified by the 
-          <span class="emphasis">
-            <em>mailboxes</em>
-          </span>command which contains new mail.</p>
-        </dd>
-        <dt>
-          <span class="term">--</span>
-        </dt>
-        <dd>
-          <p>Treat remaining arguments as 
-          <span class="emphasis">
-            <em>addr</em>
-          </span>even if they start with a dash. See also "-a" above.</p>
+          <p>Open the first or specified ( 
+          <span class="strong">
+            <strong>-f</strong>
+          </span>) mailbox if it holds any message or exit immediately with exit code 1 otherwise</p>
         </dd>
       </dl>
     </div>
@@ -412,76 +615,223 @@ description: The Neomutt Mail User Agent
     <div class="variablelist">
       <dl class="variablelist">
         <dt>
-          <span class="term">EDITOR</span>
+          <span class="term">
+            <span class="strong">
+              <strong>EDITOR</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Specifies the editor to use if VISUAL is unset.</p>
+          <p>Specifies the editor to use if 
+          <code class="envar">VISUAL</code>is unset. Defaults to the 
+          <span class="strong">
+            <strong>Vi</strong>
+          </span>editor if unset.</p>
         </dd>
         <dt>
-          <span class="term">EMAIL</span>
+          <span class="term">
+            <span class="strong">
+              <strong>EGDSOCKET</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>The user's e-mail address.</p>
+          <p>For OpenSSL since version 0.9.5, files, mentioned at 
+          <span class="emphasis">
+            <em>RANDFILE</em>
+          </span>below, can be Entropy Gathering Daemon (EGD) sockets. Also, and if exists, 
+          <code class="filename">~/.entropy</code>and 
+          <code class="filename">/tmp/entropy</code>will be used to initialize SSL library functions. Specified sockets must be owned by the user and have permission of 600 (octal number representing).</p>
         </dd>
         <dt>
-          <span class="term">HOME</span>
+          <span class="term">
+            <span class="strong">
+              <strong>EMAIL</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>The user's email address.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>HOME</strong>
+            </span>
+          </span>
         </dt>
         <dd>
           <p>Full path of the user's home directory.</p>
         </dd>
         <dt>
-          <span class="term">MAIL</span>
+          <span class="term">
+            <span class="strong">
+              <strong>MAIL</strong>
+            </span>
+          </span>
         </dt>
         <dd>
           <p>Full path of the user's spool mailbox.</p>
         </dd>
         <dt>
-          <span class="term">MAILDIR</span>
+          <span class="term">
+            <span class="strong">
+              <strong>MAILCAPS</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Full path of the user's spool mailbox if MAIL is unset. Commonly used when the spool mailbox is a 
-          <span class="strong">
-            <strong>maildir (5)</strong>
-          </span>folder.</p>
+          <p>Path to search for mailcap files. If unset, a RFC1524 compliant search path that is extended with NeoMutt related paths (at position two and three): " 
+          <span class="emphasis">
+            <em>$HOME/.mailcap</em>
+          </span>: 
+          <code class="filename">/usr/share/neomutt/mailcap</code>: 
+          <code class="filename">/etc/mailcap</code>: 
+          <code class="filename">/etc/mailcap</code>: 
+          <code class="filename">/usr/etc/mailcap</code>: 
+          <code class="filename">/usr/local/etc/mailcap</code>" will be used instead.</p>
         </dd>
         <dt>
-          <span class="term">MAILCAPS</span>
+          <span class="term">
+            <span class="strong">
+              <strong>MAILDIR</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Path to search for mailcap files.</p>
+          <p>Full path of the user's spool mailbox if 
+          <span class="emphasis">
+            <em>MAIL</em>
+          </span>is unset. Commonly used when the spool mailbox is a 
+          <span class="citerefentry">
+          <span class="refentrytitle">maildir</span>(5)</span>folder.</p>
         </dd>
         <dt>
-          <span class="term">MM_NOASK</span>
+          <span class="term">
+            <span class="strong">
+              <strong>MM_NOASK</strong>
+            </span>
+          </span>
         </dt>
         <dd>
           <p>If this variable is set, mailcap are always used without prompting first.</p>
         </dd>
         <dt>
-          <span class="term">PGPPATH</span>
+          <span class="term">
+            <span class="strong">
+              <strong>NNTPSERVER</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Directory in which the user's PGP public keyring can be found. When used with the original PGP program, neomutt and 
+          <p>Similar to configuration variable $news_server, specifies the domain name or address of the default NNTP server to connect. If unset, 
+          <code class="filename">/etc/nntpserver</code>is used but can be overridden by command line option 
           <span class="strong">
-            <strong>pgpring (1)</strong>
-          </span>rely on this being set.</p>
+            <strong>-g</strong>
+          </span>.</p>
         </dd>
         <dt>
-          <span class="term">TMPDIR</span>
+          <span class="term">
+            <span class="strong">
+              <strong>PGPPATH</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Directory in which temporary files are created.</p>
+          <p>Directory in which the user's PGP public keyring can be found. When used with the original PGP program, NeoMutt and 
+          <span class="citerefentry">
+          <span class="refentrytitle">pgpring</span>(1)</span>rely on this being set.</p>
         </dd>
         <dt>
-          <span class="term">REPLYTO</span>
+          <span class="term">
+            <span class="strong">
+              <strong>RANDFILE</strong>
+            </span>
+          </span>
         </dt>
         <dd>
-          <p>Default Reply-To address.</p>
+          <p>Like configuration variable $entropy_file, defines a path to a file which includes random data that is used to initialize SSL library functions. If unset, 
+          <code class="filename">~/.rnd</code>is used. DO NOT store important data in the specified file.</p>
         </dd>
         <dt>
-          <span class="term">VISUAL</span>
+          <span class="term">
+            <span class="strong">
+              <strong>REPLYTO</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>When set, specifies the default Reply-To address.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>TEXTDOMAINDIR</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Defines an absolute path corresponding to 
+          <code class="filename">/usr/share/locale</code>that will be recognised by GNU 
+          <span class="citerefentry">
+          <span class="refentrytitle">gettext</span>(1)</span>and used for Native Language Support (NLS) if enabled.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>TMPDIR</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Directory in which temporary files are created. Defaults to 
+          <code class="filename">/tmp</code>if unset. Configuration variable $tmpdir takes precedence over this one.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>VISUAL</strong>
+            </span>
+          </span>
         </dt>
         <dd>
           <p>Specifies the editor to use when composing messages.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>XDG_CONFIG_DIRS</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specifies a X Desktop Group (XDG) compliant location for the system-wide configuration file, as described in 
+          <span class="emphasis">
+            <em>FILES</em>
+          </span>section below. This variable defaults to 
+          <code class="filename">/etc/xdg</code>. Bypass loading with command line option 
+          <span class="strong">
+            <strong>-n</strong>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>XDG_CONFIG_HOME</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Specifies a XDG compliant location for the user-specific configuration file, as described in 
+          <span class="emphasis">
+            <em>FILES</em>
+          </span>section below. This variable defaults to 
+          <span class="emphasis">
+            <em>$HOME/.config</em>
+          </span>. Can be overridden by command line option 
+          <span class="strong">
+            <strong>-F</strong>
+          </span>.</p>
         </dd>
       </dl>
     </div>
@@ -489,79 +839,225 @@ description: The Neomutt Mail User Agent
   <div class="refsect1">
     <a id="files"></a>
     <h2>FILES</h2>
-    <div class="variablelist">
-      <dl class="variablelist">
-        <dt>
-          <span class="term">
-            <code class="filename">~/.neomuttrc or ~/.neomutt/neomuttrc</code>
-          </span>
-        </dt>
-        <dd>
-          <p>User configuration file.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">/etc/neomuttrc</code>
-          </span>
-        </dt>
-        <dd>
-          <p>System-wide configuration file.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">/tmp/neomuttXXXXXX</code>
-          </span>
-        </dt>
-        <dd>
-          <p>Temporary files created by Neomutt.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">~/.mailcap</code>
-          </span>
-        </dt>
-        <dd>
-          <p>User definition for handling non-text MIME types.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">/etc/mailcap</code>
-          </span>
-        </dt>
-        <dd>
-          <p>System definition for handling non-text MIME types.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">~/.mime.types</code>
-          </span>
-        </dt>
-        <dd>
-          <p>User's personal mapping between MIME types and file extensions.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">/etc/mime.types</code>
-          </span>
-        </dt>
-        <dd>
-          <p>System mapping between MIME types and file extensions.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <code class="filename">/usr/share/doc/neomutt/manual.txt</code>
-          </span>
-        </dt>
-        <dd>
-          <p>The Neomutt manual.</p>
-        </dd>
-      </dl>
+    <div class="refsect2">
+      <a id="s1configuration_filess0"></a>
+      <h3>Configuration files</h3>
+      <p>NeoMutt will read just the first found configuration file of system-wide and user-specific category, from the list below and in that order.</p>
+      <p>But it allows building of a recursive configuration by using the 
+      <span class="strong">
+        <strong>source</strong>
+      </span>command.</p>
+      <div class="informaltable">
+        <table class="informaltable" border="1">
+          <colgroup>
+            <col align="center" class="c1" />
+            <col align="center" class="c2" />
+            <col align="center" class="c3" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="center">
+                <span class="strong">
+                  <strong> #N</strong>
+                </span>
+              </th>
+              <th align="center">
+                <span class="strong">
+                  <strong>system-wide</strong>
+                </span>
+              </th>
+              <th align="center">
+                <span class="strong">
+                  <strong>user-specific</strong>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="right">1</td>
+              <td align="left">$XDG_CONFIG_DIRS/neomutt/neomuttrc</td>
+              <td align="left">$XDG_CONFIG_HOME/neomutt/neomuttrc</td>
+            </tr>
+            <tr>
+              <td align="right">2</td>
+              <td align="left">$XDG_CONFIG_DIRS/neomutt/Muttrc 
+              <span class="strong">
+                <strong>*</strong>
+              </span>) 
+              <span class="strong">
+                <strong />
+              </span></td>
+              <td align="left">$XDG_CONFIG_HOME/neomutt/muttrc</td>
+            </tr>
+            <tr>
+              <td align="right">3</td>
+              <td align="left">/etc/neomuttrc</td>
+              <td align="left">$XDG_CONFIG_HOME/mutt/neomuttrc</td>
+            </tr>
+            <tr>
+              <td align="right">4</td>
+              <td align="left">/etc/Muttrc 
+              <span class="strong">
+                <strong>*</strong>
+              </span>) 
+              <span class="strong">
+                <strong />
+              </span></td>
+              <td align="left">$XDG_CONFIG_HOME/mutt/muttrc</td>
+            </tr>
+            <tr>
+              <td align="right">5</td>
+              <td align="left">/usr/share/neomutt/neomuttrc</td>
+              <td align="left">~/.neomutt/neomuttrc</td>
+            </tr>
+            <tr>
+              <td align="right">6</td>
+              <td align="left">/usr/share/neomutt/Muttrc 
+              <span class="strong">
+                <strong>*</strong>
+              </span>) 
+              <span class="strong">
+                <strong />
+              </span></td>
+              <td align="left">~/.neomutt/muttrc</td>
+            </tr>
+            <tr>
+              <td align="right">.T&amp;</td>
+              <td align="left">&#160;</td>
+              <td align="left">&#160;</td>
+            </tr>
+            <tr>
+              <td align="right">r c li .</td>
+              <td align="left">&#160;</td>
+              <td align="left">&#160;</td>
+            </tr>
+            <tr>
+              <td align="right">7</td>
+              <td align="left">—</td>
+              <td align="left">~/.mutt/neomuttrc</td>
+            </tr>
+            <tr>
+              <td align="right">8</td>
+              <td align="left">—</td>
+              <td align="left">~/.mutt/muttrc</td>
+            </tr>
+            <tr>
+              <td align="right">9</td>
+              <td align="left">—</td>
+              <td align="left">~/.neomuttrc</td>
+            </tr>
+            <tr>
+              <td align="right">10</td>
+              <td align="left">—</td>
+              <td align="left">~/.muttrc</td>
+            </tr>
+            <tr>
+              <td align="right">.T&amp;</td>
+              <td align="left">&#160;</td>
+              <td align="left">&#160;</td>
+            </tr>
+            <tr>
+              <td align="right">l s s .</td>
+              <td align="left">&#160;</td>
+              <td align="left">&#160;</td>
+            </tr>
+            <tr>
+              <td align="right"> \h'0m' 
+              <span class="strong">
+                <strong>*</strong>
+              </span>) Note the case of the filename</td>
+              <td align="left">&#160;</td>
+              <td align="left">&#160;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>\p</p>
+    </div>
+    <div class="refsect2">
+      <a id="s1other_relevant_filess0"></a>
+      <h3>Other relevant files</h3>
+      <p>Unless otherwise stated, NeoMutt will process all grouped files in the order (from top to bottom) as they are specified in that listing.</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">
+            <code class="filename">~/.mailcap</code>,</span>
+            <span class="term">
+              <code class="filename">/etc/mailcap</code>
+            </span>
+          </dt>
+          <dd>
+            <p>User-specific and system-wide definitions for handling non-text MIME types, look at environment variable 
+            <span class="strong">
+              <strong>MAILCAPS</strong>
+            </span>above for additional search locations.</p>
+          </dd>
+          <dt>
+            <span class="term">
+              <code class="filename">~/.neomuttdebug0</code>
+            </span>
+          </dt>
+          <dd>
+            <p>User's default debug log file. For further details or customising file path see command line options 
+            <span class="strong">
+              <strong>-d</strong>
+            </span>and 
+            <span class="strong">
+              <strong>-l</strong>
+            </span>above.</p>
+          </dd>
+          <dt>
+            <span class="term">
+            <code class="filename">/etc/mime.types</code>,</span>
+            <span class="term">
+            <code class="filename">/etc/mime.types</code>,</span>
+            <span class="term">
+            <code class="filename">/usr/share/neomutt/mime.types</code>,</span>
+            <span class="term">
+              <code class="filename">~/.mime.types</code>
+            </span>
+          </dt>
+          <dd>
+            <p>Description files for simple plain text mapping between MIME types and filename extensions. NeoMutt parses these files in the stated order while processing attachments to determine their MIME type.</p>
+          </dd>
+          <dt>
+            <span class="term">
+            <code class="filename">/usr/share/doc/neomutt/manual.</code>{ 
+            <span class="emphasis">
+              <em>html</em>
+            </span>, 
+            <span class="emphasis">
+              <em>pdf</em>
+            </span>, 
+            <span class="emphasis">
+              <em>txt</em>
+            </span>}</span>
+          </dt>
+          <dd>
+            <p>The full NeoMutt manual in HTML, PDF or plain text format.</p>
+          </dd>
+          <dt>
+            <span class="term">
+              <code class="filename">/tmp/neomutt-XXXX-XXXX-XXXX</code>
+            </span>
+          </dt>
+          <dd>
+            <p>Temporary files created by NeoMutt. For custom locations look at description of the environment variable 
+            <span class="strong">
+              <strong>TMPDIR</strong>
+            </span>above. Notice that the suffix 
+            <code class="option">-XXXX-XXXX-XXXX</code>is just a placeholder for, e.g. hostname, user name/ID, process ID and/or other random data.</p>
+          </dd>
+        </dl>
+      </div>
     </div>
   </div>
   <div class="refsect1">
     <a id="bugs"></a>
     <h2>BUGS</h2>
-    <p>See https://github.com/neomutt/neomutt/issues</p>
+    <p>See issue tracker at &lt;https://github.com/neomutt/neomutt/issues&gt;.</p>
   </div>
   <div class="refsect1">
     <a id="no_warranties"></a>
@@ -573,27 +1069,51 @@ description: The Neomutt Mail User Agent
     <h2>SEE ALSO</h2>
     <p>
     <span class="citerefentry">
+    <span class="refentrytitle">gettext</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">mailx</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">msmtp</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">notmuch</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">pgpring</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">sendmail</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">smail</span>(1)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">RAND_egd</span>(3)</span>, 
+    <span class="citerefentry">
     <span class="refentrytitle">curses</span>(3)</span>, 
+    <span class="citerefentry">
+    <span class="refentrytitle">ncurses</span>(3)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">mailcap</span>(5)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">maildir</span>(5)</span>, 
     <span class="citerefentry">
-    <span class="refentrytitle">notmuch</span>(1)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">msmtp</span>(1)</span>, 
-    <span class="citerefentry">
     <span class="refentrytitle">mbox</span>(5)</span>, 
     <span class="citerefentry">
-    <span class="refentrytitle">neomuttrc</span>(5)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">ncurses</span>(3)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">sendmail</span>(1)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">smail</span>(1)</span>.</p>
-    <p>Neomutt Home Page: https://neomutt.org</p>
-    <p>The Neomutt manual</p>
+    <span class="refentrytitle">neomuttrc</span>(5)</span>.</p>
+    <p>For further NeoMutt information:</p>
+    <div class="blockquote">
+      <blockquote class="blockquote">
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc;">
+            <li class="listitem">
+              <p>• the full manual, see 
+              <span class="emphasis">
+                <em>FILES</em>
+              </span>section above</p>
+            </li>
+            <li class="listitem">
+              <p>• the home page, &lt;https://neomutt.org&gt;</p>
+            </li>
+          </ul>
+        </div>
+      </blockquote>
+    </div>
   </div>
   <div class="refsect1">
     <a id="author"></a>
