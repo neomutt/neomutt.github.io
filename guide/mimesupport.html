@@ -478,11 +478,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.406.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.407.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, NeoMutt will use
-              <a class="link" href="reference.html#wait-key" title="3.406.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.407.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -773,52 +773,211 @@ application/postscript; ps2ascii %s; copiousoutput
         </div>
       </div>
     </div>
-    <p>The
-    <code class="literal">multipart/alternative</code> container type only has child MIME parts which represent the same content in an alternative way. This is often used to send HTML messages which contain an alternative plain text representation.</p>
-    <p>NeoMutt has some heuristics for determining which attachment of a
-    <code class="literal">multipart/alternative</code> type to display:</p>
-    <div class="orderedlist">
-      <ol class="orderedlist" type="1">
-        <li class="listitem">
-          <p>First, NeoMutt will check the
-          <span class="command">
-            <strong>alternative_order</strong>
-          </span>list to determine if one of the available types is preferred. It consists of a number of MIME types in order, including support for implicit and explicit wildcards. For example:</p>
-          <pre class="screen">
-alternative_order text/enriched text/plain text \
-  application/postscript image/*
-</pre>
-        </li>
-        <li class="listitem">
-          <p>Next, NeoMutt will check if any of the types have a defined
-          <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
+    <p>A
+    <code class="literal">multipart/alternative</code> email has several parts that represent the same content in different formats, such as
+    <code class="literal">text/plain</code> and
+    <code class="literal">text/html</code>. This kind of email is heavily used by many modern mail user agents to send HTML messages which contain an alternative plain text representation. You can read and write
+    <code class="literal">multipart/alternative</code> emails in NeoMutt.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="read-alternative-order"></a>5.1.&#160;Reading Multipart/Alternative Emails</h3>
+          </div>
+        </div>
+      </div>
+      <p>NeoMutt has some heuristics for determining which attachment of a
+      <code class="literal">multipart/alternative</code> type to display:</p>
+      <div class="orderedlist">
+        <ol class="orderedlist" type="1">
+          <li class="listitem">
+            <p>First, NeoMutt will check the
             <span class="command">
-              <strong>auto_view</strong>
-            </span>
-          </a>, and use that.</p>
-        </li>
-        <li class="listitem">
-          <p>Failing that, NeoMutt will look for any text type.</p>
-        </li>
-        <li class="listitem">
-          <p>As a last attempt, NeoMutt will look for any type it knows how to handle.</p>
-        </li>
-      </ol>
+              <strong>alternative_order</strong>
+            </span>list to determine if one of the available types is preferred. It consists of a number of MIME types in order, including support for implicit and explicit wildcards. For example:</p>
+            <pre class="screen">
+alternative_order text/enriched text/plain text application/postscript image/*
+</pre>
+          </li>
+          <li class="listitem">
+            <p>Next, NeoMutt will check if any of the types have a defined
+            <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
+              <span class="command">
+                <strong>auto_view</strong>
+              </span>
+            </a>, and use that.</p>
+          </li>
+          <li class="listitem">
+            <p>Failing that, NeoMutt will look for any text type.</p>
+          </li>
+          <li class="listitem">
+            <p>As a last attempt, NeoMutt will look for any type it knows how to handle.</p>
+          </li>
+        </ol>
+      </div>
+      <p>To remove a MIME type from the
+      <span class="command">
+        <strong>alternative_order</strong>
+      </span>list, use the
+      <span class="command">
+        <strong>unalternative_order</strong>
+      </span>command.</p>
     </div>
-    <p>To remove a MIME type from the
-    <span class="command">
-      <strong>alternative_order</strong>
-    </span>list, use the
-    <span class="command">
-      <strong>unalternative_order</strong>
-    </span>command.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="compose-alternative-order"></a>5.2.&#160;Composing Multipart/Alternative Emails</h3>
+          </div>
+        </div>
+      </div>
+      <p>Noemutt includes some primitive ability to compose multipart/alternative emails:</p>
+      <div class="orderedlist">
+        <ol class="orderedlist" type="1">
+          <li class="listitem">
+            <p>In the Compose menu, attach the two (or more) alternatives as usual. For example, attach "invitation.html" and then "invitation.txt". (You can reorder them using the
+            <code class="literal">&lt;move-up&gt;</code>(-) and
+            <code class="literal">&lt;move-down&gt;</code>(+) bindings, and edit the descriptions).</p>
+          </li>
+          <li class="listitem">
+            <p>Tag the attachments that are alternatives, and press the
+            <span class="command">
+              <strong>&lt;group-alternatives&gt;</strong>
+            </span>(&amp;) binding to group them together. After this, the separate parts will be replaced by a single new part with the
+            <code class="literal">multipart/alternative</code> type and the alternatives must be manipulated or deleted as a group.</p>
+          </li>
+          <li class="listitem">
+            <p>Send the email as usual.</p>
+          </li>
+        </ol>
+      </div>
+      <p>If all the attachments have been grouped and form a single
+      <code class="literal">multipart/alternative</code>, part then this message will be sent as a
+      <code class="literal">multipart/alternative</code> email, otherwise it will be sent as a
+      <code class="literal">multipart/mixed</code> email.</p>
+      <p>Note that after grouping, you can't view, edit or break the
+      <code class="literal">multipart/alternative</code> bundle, because it is in a temporary form. But you can view and edit its primitive part using the
+      <span class="command">
+        <strong>&lt;edit&gt;</strong>
+      </span>command. When postponing emails or on error (e.g., no recipients address when sending emails) this
+      <code class="literal">multipart/alternative</code> will be broken apart and need to be tagged and group together again as described above.</p>
+      <p>Be aware that when sending a
+      <code class="literal">multipart/alternative</code> email, you have to manually prepare the alternative parts and attach them. However, you can use Neomutt's macro to perform all the operations needed, such that you can compose a plain text email as usual and turn that into a
+      <code class="literal">multipart/alternative</code> email in one single command, with one part being
+      <code class="literal">text/plain</code> and the other
+      <code class="literal">text/html</code>. An example macro will be the following:</p>
+      <pre class="screen">
+macro compose K "| pandoc -o /tmp/neomutt-alternative.html&lt;enter&gt; \
+    &lt;attach-file&gt;/tmp/neomutt-alternative.html&lt;enter&gt; \
+    &lt;tag-entry&gt;&lt;previous-entry&gt;&lt;tag-entry&gt;&lt;group-alternatives&gt;"
+</pre>
+      <p></p>
+    </div>
   </div>
   <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="attachments"></a>6.&#160;Attachment Searching and Counting</h2>
+          <a id="multipart-multilingual"></a>6.&#160;MIME Multipart/Multilingual</h2>
+        </div>
+      </div>
+    </div>
+    <p>Neomutt includes supports for reading and writing
+    <code class="literal">multipart/multilingual</code> emails. A
+    <code class="literal">multipart/multilingual</code> email is like a
+    <code class="literal">multipart/alternative</code> email, except that it comes with parts of different versions of languages instead of appearances. Its format is described by
+    <a class="ulink" href="https://tools.ietf.org/html/rfc8255" target="_top">RFC8255</a>.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="read-multipart-multilingual"></a>6.1.&#160;Reading Multipart/Multilingual Emails</h3>
+          </div>
+        </div>
+      </div>
+      <p>Neomutt uses the
+      <code class="literal">$preferred_languages</code> variable to determine which languages to display when displaying a
+      <code class="literal">multipart/multilingual</code> email. You can have several preferred languages, separated by
+      <code class="literal">,</code></p>
+      <pre class="screen">
+set preferred_languages="fr,en,de"
+</pre>
+      <p>Neomutt will try to match these strings again the multilingual header in the received emails "by prefix", e.g.,
+      <code class="literal">en</code> will match both
+      <code class="literal">en</code> and
+      <code class="literal">en_US</code>.</p>
+      <p>If
+      <code class="literal">$preferred_languages</code> is not set, it default to None, and the first part of the received
+      <code class="literal">multipart/multilingual</code> email will be displayed.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="compose-multipart-alternative"></a>6.2.&#160;Composing Multipart/Multilingual Emails</h3>
+          </div>
+        </div>
+      </div>
+      <p>The procedures of composing a
+      <code class="literal">multipart/multilingual</code> email is similar to those in
+      <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>. You have to prepare every part manually or using some scripts, and then tag and group them together into a
+      <code class="literal">multipart/multilingual</code> bundle before sending it:</p>
+      <div class="orderedlist">
+        <ol class="orderedlist" type="1">
+          <li class="listitem">
+            <p>Prepare parts of the multilingual emails.</p>
+          </li>
+          <li class="listitem">
+            <p>Attach them as attachments.</p>
+          </li>
+          <li class="listitem">
+            <p>Tag them with
+            <span class="command">
+              <strong>&lt;tag-entry&gt;</strong>
+            </span></p>
+          </li>
+          <li class="listitem">
+            <p>Edit the
+            <code class="literal">Content-Language</code> header of every attachment with command
+            <span class="command">
+              <strong>&lt;edit-language&gt;</strong>
+            </span>(default to
+            <code class="literal">Ctrl-L</code>). This is important, otherwise the recipient of this email will not know the corresponding languages. You can set arbitrary string as
+            <code class="literal">Content-Language</code>, but it is recommended to set it as some common prefixes such as "en", "zh" and "fr".</p>
+          </li>
+          <li class="listitem">
+            <p>Group all the tag messages together by
+            <span class="command">
+              <strong>&lt;group-multilingual&gt;</strong>
+            </span>(default to
+            <code class="literal">^</code>).</p>
+          </li>
+          <li class="listitem">
+            <p>Send the email as usual.</p>
+          </li>
+        </ol>
+      </div>
+      <p>As in
+      <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>, you can also use Neomutt's macro and some external scripts to combine these procedure into one.</p>
+      <p>Note that after grouping, you can't view, edit or break the
+      <code class="literal">multipart/multilingual</code> email bundle, because it is in a temporary form. But you can view and edit its primitive part using the
+      <span class="command">
+        <strong>&lt;edit&gt;</strong>
+      </span>command. When postponing emails or on error (e.g., no recipients address when sending emails) this
+      <code class="literal">multipart/multilingual</code> will be broken apart and need to be tagged and group together again as described above.</p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="attachments"></a>7.&#160;Attachment Searching and Counting</h2>
         </div>
       </div>
     </div>
@@ -861,11 +1020,16 @@ alternative_order text/enriched text/plain text \
     <code class="literal">I</code> or
     <code class="literal">A</code>.</p>
     <p>Disposition is prefixed by either a
-    <span class="quote">“<span class="quote">+</span>”</span> symbol or a
-    <span class="quote">“<span class="quote">-</span>”</span> symbol. If it's a
-    <span class="quote">“<span class="quote">+</span>”</span>, you're saying that you want to allow this disposition and MIME type to qualify. If it's a
-    <span class="quote">“<span class="quote">-</span>”</span>, you're saying that this disposition and MIME type is an exception to previous
-    <span class="quote">“<span class="quote">+</span>”</span> rules. There are examples below of how this is useful.</p>
+    <span class="quote">“
+    <span class="quote">+</span>”</span> symbol or a
+    <span class="quote">“
+    <span class="quote">-</span>”</span> symbol. If it's a
+    <span class="quote">“
+    <span class="quote">+</span>”</span>, you're saying that you want to allow this disposition and MIME type to qualify. If it's a
+    <span class="quote">“
+    <span class="quote">-</span>”</span>, you're saying that this disposition and MIME type is an exception to previous
+    <span class="quote">“
+    <span class="quote">+</span>”</span> rules. There are examples below of how this is useful.</p>
     <p>
     <span class="emphasis">
       <em>mime-type</em>
@@ -942,7 +1106,8 @@ attachments  -I message/external-body
     </div>
     <br class="example-break" />
     <p>Entering the command
-    <span class="quote">“<span class="quote">
+    <span class="quote">“
+    <span class="quote">
     <span class="command">
       <strong>attachments</strong>
     </span>?</span>”</span> as a command will list your current settings in neomuttrc format, so that it can be pasted elsewhere.</p>
@@ -952,7 +1117,7 @@ attachments  -I message/external-body
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="mime-lookup"></a>7.&#160;MIME Lookup</h2>
+          <a id="mime-lookup"></a>8.&#160;MIME Lookup</h2>
         </div>
       </div>
     </div>

@@ -473,7 +473,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
             <code class="command">
-              <a class="link" href="mimesupport.html#attachments" title="6.&#160;Attachment Searching and Counting">attachments</a>
+              <a class="link" href="mimesupport.html#attachments" title="7.&#160;Attachment Searching and Counting">attachments</a>
             </code>{ + | - }
             <em class="replaceable">
               <code>disposition</code>
@@ -483,7 +483,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>
             <br />
             <code class="command">
-              <a class="link" href="mimesupport.html#attachments" title="6.&#160;Attachment Searching and Counting">unattachments</a>
+              <a class="link" href="mimesupport.html#attachments" title="7.&#160;Attachment Searching and Counting">unattachments</a>
             </code>{ + | - }
             <em class="replaceable">
               <code>disposition</code>
@@ -987,7 +987,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
             <code class="command">
-              <a class="link" href="mimesupport.html#mime-lookup" title="7.&#160;MIME Lookup">mime_lookup</a>
+              <a class="link" href="mimesupport.html#mime-lookup" title="8.&#160;MIME Lookup">mime_lookup</a>
             </code>
             <em class="replaceable">
               <code>mime-type</code>
@@ -1003,7 +1003,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>] ...]
             <br />
             <code class="command">
-              <a class="link" href="mimesupport.html#mime-lookup" title="7.&#160;MIME Lookup">unmime_lookup</a>
+              <a class="link" href="mimesupport.html#mime-lookup" title="8.&#160;MIME Lookup">unmime_lookup</a>
             </code>{ * | [
             <em class="replaceable">
               <code>mime-type</code>
@@ -1753,7 +1753,7 @@ set assumed_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This variable is a colon-separated list of character encoding schemes for text file attachments. NeoMutt uses this setting to guess which encoding files being attached are encoded in to convert them to a proper character set given in
-      <a class="link" href="#send-charset" title="3.302.&#160;send_charset">$send_charset</a>.</p>
+      <a class="link" href="#send-charset" title="3.303.&#160;send_charset">$send_charset</a>.</p>
       <p>If
       <span class="emphasis">
         <em>unset</em>
@@ -1864,7 +1864,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
               <td>%X</td>
               <td>Number of qualifying MIME parts in this part and its children (please see the
               <span class="quote">“<span class="quote">
-                <a class="link" href="mimesupport.html#attachments" title="6.&#160;Attachment Searching and Counting">attachments</a>
+                <a class="link" href="mimesupport.html#attachments" title="7.&#160;Attachment Searching and Counting">attachments</a>
               </span>”</span> section for possible speed effects)</td>
             </tr>
             <tr>
@@ -2144,7 +2144,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       </span>, mutt will abbreviate mailbox names in the browser mailbox list, using '~' and '=' shortcuts.</p>
       <p>The default
       <code class="literal">"alpha"</code>setting of
-      <a class="link" href="#sort-browser" title="3.358.&#160;sort_browser">$sort_browser</a> uses locale-based sorting (using
+      <a class="link" href="#sort-browser" title="3.359.&#160;sort_browser">$sort_browser</a> uses locale-based sorting (using
       <code class="literal">strcoll(3)</code>), which ignores some punctuation. This can lead to some situations where the order doesn't make intuitive sense. In those cases, it may be desirable to
       <span class="emphasis">
         <em>unset</em>
@@ -2227,7 +2227,7 @@ set certificate_file=~/.neomutt/certificates
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Character set your terminal uses to display and enter textual data. It is also the fallback for
-      <a class="link" href="#send-charset" title="3.302.&#160;send_charset">$send_charset</a>.</p>
+      <a class="link" href="#send-charset" title="3.303.&#160;send_charset">$send_charset</a>.</p>
       <p>Upon startup NeoMutt tries to derive this value from environment variables such as
       <code class="literal">$LC_CTYPE</code> or
       <code class="literal">$LANG</code>.</p>
@@ -2365,7 +2365,7 @@ set certificate_file=~/.neomutt/certificates
       </div>
       <p>Controls the format of the status line displayed in the
       <span class="quote">“<span class="quote">compose</span>”</span> menu. This string is similar to
-      <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a>, but has its own set of
+      <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -2394,7 +2394,7 @@ set certificate_file=~/.neomutt/certificates
         </table>
       </div>
       <p>See the text describing the
-      <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a> option for more information on how to set
+      <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a> option for more information on how to set
       <a class="link" href="#compose-format" title="3.39.&#160;compose_format">$compose_format</a>.</p>
     </div>
     <div class="sect2">
@@ -2501,8 +2501,8 @@ set certificate_file=~/.neomutt/certificates
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable controls whether or not copies of your outgoing messages will be saved for later references. Also see
-      <a class="link" href="#record" title="3.277.&#160;record">$record</a>,
-      <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a>,
+      <a class="link" href="#record" title="3.278.&#160;record">$record</a>,
+      <a class="link" href="#save-name" title="3.296.&#160;save_name">$save_name</a>,
       <a class="link" href="#force-name" title="3.86.&#160;force_name">$force_name</a> and
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#fcc-hook">fcc-hook</a>
@@ -2525,7 +2525,7 @@ set certificate_file=~/.neomutt/certificates
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#send-hook" title="17.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span> command. It can be overridden by use of the pgp menu, when encryption is not required or signing is requested as well. If
-      <a class="link" href="#smime-is-default" title="3.342.&#160;smime_is_default">$smime_is_default</a> is
+      <a class="link" href="#smime-is-default" title="3.343.&#160;smime_is_default">$smime_is_default</a> is
       <span class="emphasis">
         <em>set</em>
       </span>, then OpenSSL is used instead to create S/MIME messages and settings can be overridden by use of the smime menu instead. (Crypto only)</p>
@@ -2548,7 +2548,7 @@ set certificate_file=~/.neomutt/certificates
       <a class="link" href="#crypt-replyencrypt" title="3.52.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
       <a class="link" href="#crypt-autosign" title="3.48.&#160;crypt_autosign">$crypt_autosign</a>,
       <a class="link" href="#crypt-replysign" title="3.53.&#160;crypt_replysign">$crypt_replysign</a> and
-      <a class="link" href="#smime-is-default" title="3.342.&#160;smime_is_default">$smime_is_default</a>.</p>
+      <a class="link" href="#smime-is-default" title="3.343.&#160;smime_is_default">$smime_is_default</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2564,7 +2564,7 @@ set certificate_file=~/.neomutt/certificates
         <br />Default:&#160;no</p>
       </div>
       <p>Setting this variable will cause NeoMutt to always attempt to cryptographically sign outgoing messages. This can be overridden by use of the pgp menu, when signing is not required or encryption is requested as well. If
-      <a class="link" href="#smime-is-default" title="3.342.&#160;smime_is_default">$smime_is_default</a> is
+      <a class="link" href="#smime-is-default" title="3.343.&#160;smime_is_default">$smime_is_default</a> is
       <span class="emphasis">
         <em>set</em>
       </span>, then OpenSSL is used instead to create S/MIME messages and settings can be overridden by use of the smime menu instead of the pgp menu. (Crypto only)</p>
@@ -2587,7 +2587,7 @@ set certificate_file=~/.neomutt/certificates
       <a class="link" href="#crypt-replyencrypt" title="3.52.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
       <a class="link" href="#crypt-autosign" title="3.48.&#160;crypt_autosign">$crypt_autosign</a>,
       <a class="link" href="#crypt-replysign" title="3.53.&#160;crypt_replysign">$crypt_replysign</a> and
-      <a class="link" href="#smime-is-default" title="3.342.&#160;smime_is_default">$smime_is_default</a>.</p>
+      <a class="link" href="#smime-is-default" title="3.343.&#160;smime_is_default">$smime_is_default</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3022,7 +3022,7 @@ set dsn_notify="failure,delay"
       <span class="bold">
         <strong>Note:</strong>
       </span>when using
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
       <code class="literal">sendmail(1)</code>-compatible interface supporting the
       <code class="literal">-N</code> option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
@@ -3054,7 +3054,7 @@ set dsn_return=hdrs
       <span class="bold">
         <strong>Note:</strong>
       </span>when using
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
       <code class="literal">sendmail(1)</code>-compatible interface supporting the
       <code class="literal">-R</code> option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
@@ -3072,7 +3072,7 @@ set dsn_return=hdrs
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable controls whether NeoMutt, when
-      <a class="link" href="#sort" title="3.355.&#160;sort">$sort</a> is set to
+      <a class="link" href="#sort" title="3.356.&#160;sort">$sort</a> is set to
       <span class="emphasis">
         <em>threads</em>
       </span>, threads messages with the same Message-Id together. If it is
@@ -3217,7 +3217,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>envelope</em>
       </span>sender for outgoing messages. This value is ignored if
-      <a class="link" href="#use-envelope-from" title="3.399.&#160;use_envelope_from">$use_envelope_from</a> is
+      <a class="link" href="#use-envelope-from" title="3.400.&#160;use_envelope_from">$use_envelope_from</a> is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -3617,9 +3617,9 @@ sh -c 'string'
         <br />Default:&#160;no</p>
       </div>
       <p>This variable is similar to
-      <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a>, except that NeoMutt will store a copy of your outgoing message by the username of the address you are sending to even if that mailbox does not exist.</p>
+      <a class="link" href="#save-name" title="3.296.&#160;save_name">$save_name</a>, except that NeoMutt will store a copy of your outgoing message by the username of the address you are sending to even if that mailbox does not exist.</p>
       <p>Also see the
-      <a class="link" href="#record" title="3.277.&#160;record">$record</a> variable.</p>
+      <a class="link" href="#record" title="3.278.&#160;record">$record</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3814,8 +3814,8 @@ sh -c 'string'
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#send-hook" title="17.&#160;Change Settings Based Upon Message Recipients">send-hook</a>
       </span>”</span>) and
-      <a class="link" href="#reverse-name" title="3.289.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
-      <a class="link" href="#use-from" title="3.400.&#160;use_from">$use_from</a> is
+      <a class="link" href="#reverse-name" title="3.290.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
+      <a class="link" href="#use-from" title="3.401.&#160;use_from">$use_from</a> is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -4019,7 +4019,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, this variable causes NeoMutt to include the header of the message you are replying to into the edit buffer. The
-      <a class="link" href="#weed" title="3.407.&#160;weed">$weed</a> setting applies.</p>
+      <a class="link" href="#weed" title="3.408.&#160;weed">$weed</a> setting applies.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4307,7 +4307,7 @@ sh -c 'string'
       </div>
       <p>The file in which NeoMutt will save its history.</p>
       <p>Also see
-      <a class="link" href="#save-history" title="3.294.&#160;save_history">$save_history</a>.</p>
+      <a class="link" href="#save-history" title="3.295.&#160;save_history">$save_history</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4384,7 +4384,7 @@ sh -c 'string'
       <p>If not specified in a config file, then NeoMutt will try to determine the hostname itself.</p>
       <p>Optionally, NeoMutt can be compiled with a fixed domain name.</p>
       <p>Also see
-      <a class="link" href="#use-domain" title="3.398.&#160;use_domain">$use_domain</a> and
+      <a class="link" href="#use-domain" title="3.399.&#160;use_domain">$use_domain</a> and
       <a class="link" href="#hidden-host" title="3.107.&#160;hidden_host">$hidden_host</a>.</p>
     </div>
     <div class="sect2">
@@ -4834,7 +4834,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>Specifies the string to prepend to each line of text quoted in a message to which you are replying. You are strongly encouraged not to change this value, as it tends to agitate the more fanatical netizens.</p>
       <p>The value of this option is ignored if
-      <a class="link" href="#text-flowed" title="3.382.&#160;text_flowed">$text_flowed</a> is set, because the quoting mechanism is strictly defined for format=flowed.</p>
+      <a class="link" href="#text-flowed" title="3.383.&#160;text_flowed">$text_flowed</a> is set, because the quoting mechanism is strictly defined for format=flowed.</p>
       <p>This option is a format string, please see the description of
       <a class="link" href="#index-format" title="3.142.&#160;index_format">$index_format</a> for supported
       <code class="literal">printf(3)</code>-style sequences.</p>
@@ -4859,7 +4859,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>
       <span class="quote">“<span class="quote">Format strings</span>”</span> are similar to the strings used in the C function
       <code class="literal">printf(3)</code>to format output (see the man page for more details). For an explanation of the %? construct, see the
-      <a class="link" href="#status-format" title="3.378.&#160;status_format">status_format</a> description. The following sequences are defined in NeoMutt:</p>
+      <a class="link" href="#status-format" title="3.379.&#160;status_format">status_format</a> description. The following sequences are defined in NeoMutt:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -5018,7 +5018,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%T</td>
               <td>The appropriate character from the
-              <a class="link" href="#to-chars" title="3.389.&#160;to_chars">$to_chars</a> string</td>
+              <a class="link" href="#to-chars" title="3.390.&#160;to_chars">$to_chars</a> string</td>
             </tr>
             <tr>
               <td>%t</td>
@@ -5047,7 +5047,7 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>%X</td>
               <td>Number of MIME attachments (please see the
               <span class="quote">“<span class="quote">
-                <a class="link" href="mimesupport.html#attachments" title="6.&#160;Attachment Searching and Counting">attachments</a>
+                <a class="link" href="mimesupport.html#attachments" title="7.&#160;Attachment Searching and Counting">attachments</a>
               </span>”</span> section for possible speed effects)</td>
             </tr>
             <tr>
@@ -5087,7 +5087,7 @@ set imap_authenticators="gssapi:cram-md5:login"
               <span class="quote">“<span class="quote">K</span>”</span>). The third is either tagged/flagged (
               <span class="quote">“<span class="quote">*</span>”</span>/
               <span class="quote">“<span class="quote">!</span>”</span>), or one of the characters Listed in
-              <a class="link" href="#to-chars" title="3.389.&#160;to_chars">$to_chars</a>.</td>
+              <a class="link" href="#to-chars" title="3.390.&#160;to_chars">$to_chars</a>.</td>
             </tr>
             <tr>
               <td>%zc</td>
@@ -5259,7 +5259,7 @@ set inews="/usr/local/bin/inews -hS"
         <br />Default:&#160;5</p>
       </div>
       <p>This variable configures how often (in seconds) NeoMutt should look for new mail. Also see the
-      <a class="link" href="#timeout" title="3.387.&#160;timeout">$timeout</a> variable.</p>
+      <a class="link" href="#timeout" title="3.388.&#160;timeout">$timeout</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5497,7 +5497,7 @@ set inews="/usr/local/bin/inews -hS"
       <p>Controls the display of wrapped lines in the internal pager. If set, a
       <span class="quote">“<span class="quote">+</span>”</span> marker is displayed at the beginning of wrapped lines.</p>
       <p>Also see the
-      <a class="link" href="#smart-wrap" title="3.328.&#160;smart_wrap">$smart_wrap</a> variable.</p>
+      <a class="link" href="#smart-wrap" title="3.329.&#160;smart_wrap">$smart_wrap</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5538,7 +5538,7 @@ set inews="/usr/local/bin/inews -hS"
         </span>”</span></p>
       </div>
       <p>This specifies the folder into which read mail in your
-      <a class="link" href="#spoolfile" title="3.361.&#160;spoolfile">$spoolfile</a> folder will be appended.</p>
+      <a class="link" href="#spoolfile" title="3.362.&#160;spoolfile">$spoolfile</a> folder will be appended.</p>
       <p>Also see the
       <a class="link" href="#move" title="3.181.&#160;move">$move</a> variable.</p>
     </div>
@@ -6044,8 +6044,8 @@ set inews="/usr/local/bin/inews -hS"
       <p>Operations that expect to transfer a large amount of data over the network will update their progress every
       <a class="link" href="#net-inc" title="3.183.&#160;net_inc">$net_inc</a> kilobytes. If set to 0, no progress messages will be displayed.</p>
       <p>See also
-      <a class="link" href="#read-inc" title="3.273.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="#write-inc" title="3.412.&#160;write_inc">$write_inc</a> and
+      <a class="link" href="#read-inc" title="3.274.&#160;read_inc">$read_inc</a>,
+      <a class="link" href="#write-inc" title="3.413.&#160;write_inc">$write_inc</a> and
       <a class="link" href="#net-inc" title="3.183.&#160;net_inc">$net_inc</a>.</p>
     </div>
     <div class="sect2">
@@ -6065,7 +6065,7 @@ set inews="/usr/local/bin/inews -hS"
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will call this command after a new message is received. See the
-      <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a> documentation for the values that can be formatted into this command.</p>
+      <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a> documentation for the values that can be formatted into this command.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7628,7 +7628,7 @@ set pop_authenticators="digest-md5:apop:user"
       <p>Controls whether or not messages are saved in the
       <a class="link" href="#postponed" title="3.262.&#160;postponed">$postponed</a> mailbox when you elect not to send immediately.</p>
       <p>Also see the
-      <a class="link" href="#recall" title="3.276.&#160;recall">$recall</a> variable.</p>
+      <a class="link" href="#recall" title="3.277.&#160;recall">$recall</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7648,7 +7648,7 @@ set pop_authenticators="digest-md5:apop:user"
         <em>set</em>
       </span>, postponed messages that are marked for encryption will be self-encrypted. NeoMutt will first try to encrypt using the value specified in
       <a class="link" href="#pgp-default-key" title="3.220.&#160;pgp_default_key">$pgp_default_key</a> or
-      <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a>. If those are not set, it will try the deprecated
+      <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a>. If those are not set, it will try the deprecated
       <a class="link" href="#postpone-encrypt-as" title="3.261.&#160;postpone_encrypt_as">$postpone_encrypt_as</a>. (Crypto only)</p>
     </div>
     <div class="sect2">
@@ -7667,7 +7667,7 @@ set pop_authenticators="digest-md5:apop:user"
       <p>This is a deprecated fall-back variable for
       <a class="link" href="#postpone-encrypt" title="3.260.&#160;postpone_encrypt">$postpone_encrypt</a>. Please use
       <a class="link" href="#pgp-default-key" title="3.220.&#160;pgp_default_key">$pgp_default_key</a> or
-      <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a>. (Crypto only)</p>
+      <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a>. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7724,7 +7724,22 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="print"></a>3.264.&#160;print</h3>
+            <a id="preferred-languages"></a>3.264.&#160;preferred_languages</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;string
+        <br />Default:&#160;(empty)</p>
+      </div>
+      <p>RFC8255 : user preferred languages to be search in parts and display Ex. : set preferred_languages="en,fr,de"</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="print"></a>3.265.&#160;print</h3>
           </div>
         </div>
       </div>
@@ -7741,7 +7756,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="print-command"></a>3.265.&#160;print_command</h3>
+            <a id="print-command"></a>3.266.&#160;print_command</h3>
           </div>
         </div>
       </div>
@@ -7759,7 +7774,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="print-decode"></a>3.266.&#160;print_decode</h3>
+            <a id="print-decode"></a>3.267.&#160;print_decode</h3>
           </div>
         </div>
       </div>
@@ -7772,7 +7787,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>set</em>
       </span>, the message is decoded before it is passed to the external command specified by
-      <a class="link" href="#print-command" title="3.265.&#160;print_command">$print_command</a>. If this option is
+      <a class="link" href="#print-command" title="3.266.&#160;print_command">$print_command</a>. If this option is
       <span class="emphasis">
         <em>unset</em>
       </span>, no processing will be applied to the message when printing it. The latter setting may be useful if you are using some advanced printer filter which is able to properly format e-mail messages for printing.</p>
@@ -7782,7 +7797,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="print-split"></a>3.267.&#160;print_split</h3>
+            <a id="print-split"></a>3.268.&#160;print_split</h3>
           </div>
         </div>
       </div>
@@ -7795,11 +7810,11 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="emphasis">
         <em>set</em>
       </span>, the command specified by
-      <a class="link" href="#print-command" title="3.265.&#160;print_command">$print_command</a> is executed once for each message which is to be printed. If this option is
+      <a class="link" href="#print-command" title="3.266.&#160;print_command">$print_command</a> is executed once for each message which is to be printed. If this option is
       <span class="emphasis">
         <em>unset</em>
       </span>, the command specified by
-      <a class="link" href="#print-command" title="3.265.&#160;print_command">$print_command</a> is executed only once, and all the messages are concatenated, with a form feed as the message separator.</p>
+      <a class="link" href="#print-command" title="3.266.&#160;print_command">$print_command</a> is executed only once, and all the messages are concatenated, with a form feed as the message separator.</p>
       <p>Those who use the
       <code class="literal">enscript</code>(1) program's mail-printing mode will most likely want to
       <span class="emphasis">
@@ -7811,7 +7826,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="prompt-after"></a>3.268.&#160;prompt_after</h3>
+            <a id="prompt-after"></a>3.269.&#160;prompt_after</h3>
           </div>
         </div>
       </div>
@@ -7833,7 +7848,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="query-command"></a>3.269.&#160;query_command</h3>
+            <a id="query-command"></a>3.270.&#160;query_command</h3>
           </div>
         </div>
       </div>
@@ -7854,7 +7869,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="query-format"></a>3.270.&#160;query_format</h3>
+            <a id="query-format"></a>3.271.&#160;query_format</h3>
           </div>
         </div>
       </div>
@@ -7918,14 +7933,14 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="quote">“<span class="quote">soft-fill</span>”</span>, see the
       <a class="link" href="#index-format" title="3.142.&#160;index_format">$index_format</a> documentation.</p>
       <p>* = can be optionally printed if nonzero, see the
-      <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a> documentation.</p>
+      <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a> documentation.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="quit"></a>3.271.&#160;quit</h3>
+            <a id="quit"></a>3.272.&#160;quit</h3>
           </div>
         </div>
       </div>
@@ -7954,7 +7969,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="quote-regex"></a>3.272.&#160;quote_regex</h3>
+            <a id="quote-regex"></a>3.273.&#160;quote_regex</h3>
           </div>
         </div>
       </div>
@@ -7972,14 +7987,14 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="quote">“<span class="quote">color quoted1</span>”</span>,
       <span class="quote">“<span class="quote">color quoted2</span>”</span>, etc.). The quoting level is determined by removing the last character from the matched text and recursively reapplying the regular expression until it fails to produce a match.</p>
       <p>Match detection may be overridden by the
-      <a class="link" href="#smileys" title="3.329.&#160;smileys">$smileys</a> regular expression.</p>
+      <a class="link" href="#smileys" title="3.330.&#160;smileys">$smileys</a> regular expression.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="read-inc"></a>3.273.&#160;read_inc</h3>
+            <a id="read-inc"></a>3.274.&#160;read_inc</h3>
           </div>
         </div>
       </div>
@@ -7989,9 +8004,9 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </div>
       <p>If set to a value greater than 0, NeoMutt will display which message it is currently on when reading a mailbox or when performing search actions such as search and limit. The message is printed after this many messages have been read or searched (e.g., if set to 25, NeoMutt will print a message when it is at message 25, and then again when it gets to message 50). This variable is meant to indicate progress when reading or searching large mailboxes which may take some time. When set to 0, only a single message will appear before the reading the mailbox.</p>
       <p>Also see the
-      <a class="link" href="#write-inc" title="3.412.&#160;write_inc">$write_inc</a>,
+      <a class="link" href="#write-inc" title="3.413.&#160;write_inc">$write_inc</a>,
       <a class="link" href="#net-inc" title="3.183.&#160;net_inc">$net_inc</a> and
-      <a class="link" href="#time-inc" title="3.386.&#160;time_inc">$time_inc</a> variables and the
+      <a class="link" href="#time-inc" title="3.387.&#160;time_inc">$time_inc</a> variables and the
       <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
       </span>”</span> section of the manual for performance considerations.</p>
@@ -8001,7 +8016,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="read-only"></a>3.274.&#160;read_only</h3>
+            <a id="read-only"></a>3.275.&#160;read_only</h3>
           </div>
         </div>
       </div>
@@ -8019,7 +8034,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="realname"></a>3.275.&#160;realname</h3>
+            <a id="realname"></a>3.276.&#160;realname</h3>
           </div>
         </div>
       </div>
@@ -8042,7 +8057,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="recall"></a>3.276.&#160;recall</h3>
+            <a id="recall"></a>3.277.&#160;recall</h3>
           </div>
         </div>
       </div>
@@ -8064,7 +8079,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="record"></a>3.277.&#160;record</h3>
+            <a id="record"></a>3.278.&#160;record</h3>
           </div>
         </div>
       </div>
@@ -8083,11 +8098,11 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <p>The value of
       <span class="emphasis">
         <em>
-          <a class="link" href="#record" title="3.277.&#160;record">$record</a>
+          <a class="link" href="#record" title="3.278.&#160;record">$record</a>
         </em>
       </span>is overridden by the
       <a class="link" href="#force-name" title="3.86.&#160;force_name">$force_name</a> and
-      <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a> variables, and the
+      <a class="link" href="#save-name" title="3.296.&#160;save_name">$save_name</a> variables, and the
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#fcc-hook">fcc-hook</a>
       </span>”</span> command.</p>
@@ -8097,7 +8112,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="reflow-space-quotes"></a>3.278.&#160;reflow_space_quotes</h3>
+            <a id="reflow-space-quotes"></a>3.279.&#160;reflow_space_quotes</h3>
           </div>
         </div>
       </div>
@@ -8106,7 +8121,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;yes</p>
       </div>
       <p>This option controls how quotes from format=flowed messages are displayed in the pager and when replying (with
-      <a class="link" href="#text-flowed" title="3.382.&#160;text_flowed">$text_flowed</a>
+      <a class="link" href="#text-flowed" title="3.383.&#160;text_flowed">$text_flowed</a>
       <span class="emphasis">
         <em>unset</em>
       </span>). When set, this option adds spaces after each level of quote marks, turning "&gt;&gt;&gt;foo" into "&gt; &gt; &gt; foo".</p>
@@ -8114,11 +8129,11 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <span class="bold">
         <strong>Note:</strong>
       </span>If
-      <a class="link" href="#reflow-text" title="3.279.&#160;reflow_text">$reflow_text</a> is
+      <a class="link" href="#reflow-text" title="3.280.&#160;reflow_text">$reflow_text</a> is
       <span class="emphasis">
         <em>unset</em>
       </span>, this option has no effect. Also, this option does not affect replies when
-      <a class="link" href="#text-flowed" title="3.382.&#160;text_flowed">$text_flowed</a> is
+      <a class="link" href="#text-flowed" title="3.383.&#160;text_flowed">$text_flowed</a> is
       <span class="emphasis">
         <em>set</em>
       </span>.</p>
@@ -8128,7 +8143,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="reflow-text"></a>3.279.&#160;reflow_text</h3>
+            <a id="reflow-text"></a>3.280.&#160;reflow_text</h3>
           </div>
         </div>
       </div>
@@ -8147,15 +8162,15 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <em>format=flowed</em>
       </span>format.</p>
       <p>Also see
-      <a class="link" href="#reflow-wrap" title="3.280.&#160;reflow_wrap">$reflow_wrap</a>, and
-      <a class="link" href="#wrap" title="3.408.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#reflow-wrap" title="3.281.&#160;reflow_wrap">$reflow_wrap</a>, and
+      <a class="link" href="#wrap" title="3.409.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="reflow-wrap"></a>3.280.&#160;reflow_wrap</h3>
+            <a id="reflow-wrap"></a>3.281.&#160;reflow_wrap</h3>
           </div>
         </div>
       </div>
@@ -8164,19 +8179,19 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <br />Default:&#160;78</p>
       </div>
       <p>This variable controls the maximum paragraph width when reformatting text/plain parts when
-      <a class="link" href="#reflow-text" title="3.279.&#160;reflow_text">$reflow_text</a> is
+      <a class="link" href="#reflow-text" title="3.280.&#160;reflow_text">$reflow_text</a> is
       <span class="emphasis">
         <em>set</em>
       </span>. When the value is 0, paragraphs will be wrapped at the terminal's right margin. A positive value sets the paragraph width relative to the left margin. A negative value set the paragraph width relative to the right margin.</p>
       <p>Also see
-      <a class="link" href="#wrap" title="3.408.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#wrap" title="3.409.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="reply-regex"></a>3.281.&#160;reply_regex</h3>
+            <a id="reply-regex"></a>3.282.&#160;reply_regex</h3>
           </div>
         </div>
       </div>
@@ -8194,7 +8209,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="reply-self"></a>3.282.&#160;reply_self</h3>
+            <a id="reply-self"></a>3.283.&#160;reply_self</h3>
           </div>
         </div>
       </div>
@@ -8216,7 +8231,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="reply-to"></a>3.283.&#160;reply_to</h3>
+            <a id="reply-to"></a>3.284.&#160;reply_to</h3>
           </div>
         </div>
       </div>
@@ -8237,7 +8252,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="reply-with-xorig"></a>3.284.&#160;reply_with_xorig</h3>
+            <a id="reply-with-xorig"></a>3.285.&#160;reply_with_xorig</h3>
           </div>
         </div>
       </div>
@@ -8247,7 +8262,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       </div>
       <p>This variable provides a toggle. When active, the From: header will be extracted from the current mail's `X-Original-To:' header. This setting does not have precedence over
       <span class="quote">“<span class="quote">
-        <a class="link" href="#reverse-realname" title="3.290.&#160;reverse_realname">reverse_realname</a>
+        <a class="link" href="#reverse-realname" title="3.291.&#160;reverse_realname">reverse_realname</a>
       </span>”</span>.</p>
       <p>Assuming `fast_reply' is disabled, this option will prompt the user with a prefilled From: header.</p>
     </div>
@@ -8256,7 +8271,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="resolve"></a>3.285.&#160;resolve</h3>
+            <a id="resolve"></a>3.286.&#160;resolve</h3>
           </div>
         </div>
       </div>
@@ -8274,7 +8289,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="resume-draft-files"></a>3.286.&#160;resume_draft_files</h3>
+            <a id="resume-draft-files"></a>3.287.&#160;resume_draft_files</h3>
           </div>
         </div>
       </div>
@@ -8293,7 +8308,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="resume-edited-draft-files"></a>3.287.&#160;resume_edited_draft_files</h3>
+            <a id="resume-edited-draft-files"></a>3.288.&#160;resume_edited_draft_files</h3>
           </div>
         </div>
       </div>
@@ -8306,9 +8321,9 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <em>set</em>
       </span>, draft files previously edited (via
       <code class="literal">-E -H</code> on the command line) will have
-      <a class="link" href="#resume-draft-files" title="3.286.&#160;resume_draft_files">$resume_draft_files</a> automatically set when they are used as a draft file again.</p>
+      <a class="link" href="#resume-draft-files" title="3.287.&#160;resume_draft_files">$resume_draft_files</a> automatically set when they are used as a draft file again.</p>
       <p>The first time a draft file is saved, NeoMutt will add a header, X-Mutt-Resume-Draft to the saved file. The next time the draft file is read in, if NeoMutt sees the header, it will set
-      <a class="link" href="#resume-draft-files" title="3.286.&#160;resume_draft_files">$resume_draft_files</a>.</p>
+      <a class="link" href="#resume-draft-files" title="3.287.&#160;resume_draft_files">$resume_draft_files</a>.</p>
       <p>This option is designed to prevent multiple signatures, user-defined headers, and other processing effects from being made multiple times to the draft file.</p>
     </div>
     <div class="sect2">
@@ -8316,7 +8331,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <div>
           <div>
             <h3 class="title">
-            <a id="reverse-alias"></a>3.288.&#160;reverse_alias</h3>
+            <a id="reverse-alias"></a>3.289.&#160;reverse_alias</h3>
           </div>
         </div>
       </div>
@@ -8342,7 +8357,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="reverse-name"></a>3.289.&#160;reverse_name</h3>
+            <a id="reverse-name"></a>3.290.&#160;reverse_name</h3>
           </div>
         </div>
       </div>
@@ -8382,7 +8397,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="reverse-realname"></a>3.290.&#160;reverse_realname</h3>
+            <a id="reverse-realname"></a>3.291.&#160;reverse_realname</h3>
           </div>
         </div>
       </div>
@@ -8391,21 +8406,21 @@ From: abd30425@somewhere.net
         <br />Default:&#160;yes</p>
       </div>
       <p>This variable fine-tunes the behavior of the
-      <a class="link" href="#reverse-name" title="3.289.&#160;reverse_name">$reverse_name</a> feature. When it is
+      <a class="link" href="#reverse-name" title="3.290.&#160;reverse_name">$reverse_name</a> feature. When it is
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will use the address from incoming messages as-is, possibly including eventual real names. When it is
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will override any such real names with the setting of the
-      <a class="link" href="#realname" title="3.275.&#160;realname">$realname</a> variable.</p>
+      <a class="link" href="#realname" title="3.276.&#160;realname">$realname</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="rfc2047-parameters"></a>3.291.&#160;rfc2047_parameters</h3>
+            <a id="rfc2047-parameters"></a>3.292.&#160;rfc2047_parameters</h3>
           </div>
         </div>
       </div>
@@ -8438,7 +8453,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="save-address"></a>3.292.&#160;save_address</h3>
+            <a id="save-address"></a>3.293.&#160;save_address</h3>
           </div>
         </div>
       </div>
@@ -8450,7 +8465,7 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will take the sender's full address when choosing a default folder for saving a mail. If
-      <a class="link" href="#save-name" title="3.295.&#160;save_name">$save_name</a> or
+      <a class="link" href="#save-name" title="3.296.&#160;save_name">$save_name</a> or
       <a class="link" href="#force-name" title="3.86.&#160;force_name">$force_name</a> is
       <span class="emphasis">
         <em>set</em>
@@ -8461,7 +8476,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="save-empty"></a>3.293.&#160;save_empty</h3>
+            <a id="save-empty"></a>3.294.&#160;save_empty</h3>
           </div>
         </div>
       </div>
@@ -8473,7 +8488,7 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>unset</em>
       </span>, mailboxes which contain no saved messages will be removed when closed (the exception is
-      <a class="link" href="#spoolfile" title="3.361.&#160;spoolfile">$spoolfile</a> which is never removed). If
+      <a class="link" href="#spoolfile" title="3.362.&#160;spoolfile">$spoolfile</a> which is never removed). If
       <span class="emphasis">
         <em>set</em>
       </span>, mailboxes are never removed.</p>
@@ -8487,7 +8502,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="save-history"></a>3.294.&#160;save_history</h3>
+            <a id="save-history"></a>3.295.&#160;save_history</h3>
           </div>
         </div>
       </div>
@@ -8503,7 +8518,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="save-name"></a>3.295.&#160;save_name</h3>
+            <a id="save-name"></a>3.296.&#160;save_name</h3>
           </div>
         </div>
       </div>
@@ -8519,7 +8534,7 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>username</em>
       </span>part of the recipient address). If the mailbox exists, the outgoing message will be saved to that mailbox, otherwise the message is saved to the
-      <a class="link" href="#record" title="3.277.&#160;record">$record</a> mailbox.</p>
+      <a class="link" href="#record" title="3.278.&#160;record">$record</a> mailbox.</p>
       <p>Also see the
       <a class="link" href="#force-name" title="3.86.&#160;force_name">$force_name</a> variable.</p>
     </div>
@@ -8528,7 +8543,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="save-unsubscribed"></a>3.296.&#160;save_unsubscribed</h3>
+            <a id="save-unsubscribed"></a>3.297.&#160;save_unsubscribed</h3>
           </div>
         </div>
       </div>
@@ -8547,7 +8562,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="score"></a>3.297.&#160;score</h3>
+            <a id="score"></a>3.298.&#160;score</h3>
           </div>
         </div>
       </div>
@@ -8559,14 +8574,14 @@ From: abd30425@somewhere.net
       <span class="emphasis">
         <em>unset</em>
       </span>, scoring is turned off. This can be useful to selectively disable scoring for certain folders when the
-      <a class="link" href="#score-threshold-delete" title="3.298.&#160;score_threshold_delete">$score_threshold_delete</a> variable and related are used.</p>
+      <a class="link" href="#score-threshold-delete" title="3.299.&#160;score_threshold_delete">$score_threshold_delete</a> variable and related are used.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="score-threshold-delete"></a>3.298.&#160;score_threshold_delete</h3>
+            <a id="score-threshold-delete"></a>3.299.&#160;score_threshold_delete</h3>
           </div>
         </div>
       </div>
@@ -8581,7 +8596,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="score-threshold-flag"></a>3.299.&#160;score_threshold_flag</h3>
+            <a id="score-threshold-flag"></a>3.300.&#160;score_threshold_flag</h3>
           </div>
         </div>
       </div>
@@ -8596,7 +8611,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="score-threshold-read"></a>3.300.&#160;score_threshold_read</h3>
+            <a id="score-threshold-read"></a>3.301.&#160;score_threshold_read</h3>
           </div>
         </div>
       </div>
@@ -8611,7 +8626,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="search-context"></a>3.301.&#160;search_context</h3>
+            <a id="search-context"></a>3.302.&#160;search_context</h3>
           </div>
         </div>
       </div>
@@ -8626,7 +8641,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="send-charset"></a>3.302.&#160;send_charset</h3>
+            <a id="send-charset"></a>3.303.&#160;send_charset</h3>
           </div>
         </div>
       </div>
@@ -8653,7 +8668,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="sendmail"></a>3.303.&#160;sendmail</h3>
+            <a id="sendmail"></a>3.304.&#160;sendmail</h3>
           </div>
         </div>
       </div>
@@ -8666,8 +8681,8 @@ From: abd30425@somewhere.net
       </div>
       <p>Specifies the program and arguments used to deliver mail sent by NeoMutt. NeoMutt expects that the specified program interprets additional arguments as recipient addresses. NeoMutt appends all recipients after adding a
       <code class="literal">--</code>delimiter (if not already present). Additional flags, such as for
-      <a class="link" href="#use-8bitmime" title="3.397.&#160;use_8bitmime">$use_8bitmime</a>,
-      <a class="link" href="#use-envelope-from" title="3.399.&#160;use_envelope_from">$use_envelope_from</a>,
+      <a class="link" href="#use-8bitmime" title="3.398.&#160;use_8bitmime">$use_8bitmime</a>,
+      <a class="link" href="#use-envelope-from" title="3.400.&#160;use_envelope_from">$use_envelope_from</a>,
       <a class="link" href="#dsn-notify" title="3.67.&#160;dsn_notify">$dsn_notify</a>, or
       <a class="link" href="#dsn-return" title="3.68.&#160;dsn_return">$dsn_return</a> will be added before the delimiter.</p>
     </div>
@@ -8676,7 +8691,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="sendmail-wait"></a>3.304.&#160;sendmail_wait</h3>
+            <a id="sendmail-wait"></a>3.305.&#160;sendmail_wait</h3>
           </div>
         </div>
       </div>
@@ -8685,7 +8700,7 @@ From: abd30425@somewhere.net
         <br />Default:&#160;0</p>
       </div>
       <p>Specifies the number of seconds to wait for the
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> process to finish before giving up and putting delivery in the background.</p>
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> process to finish before giving up and putting delivery in the background.</p>
       <p>NeoMutt interprets the value of this variable as follows:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -8716,7 +8731,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="shell"></a>3.305.&#160;shell</h3>
+            <a id="shell"></a>3.306.&#160;shell</h3>
           </div>
         </div>
       </div>
@@ -8732,7 +8747,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="show-multipart-alternative"></a>3.306.&#160;show_multipart_alternative</h3>
+            <a id="show-multipart-alternative"></a>3.307.&#160;show_multipart_alternative</h3>
           </div>
         </div>
       </div>
@@ -8755,7 +8770,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="show-new-news"></a>3.307.&#160;show_new_news</h3>
+            <a id="show-new-news"></a>3.308.&#160;show_new_news</h3>
           </div>
         </div>
       </div>
@@ -8773,7 +8788,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="show-only-unread"></a>3.308.&#160;show_only_unread</h3>
+            <a id="show-only-unread"></a>3.309.&#160;show_only_unread</h3>
           </div>
         </div>
       </div>
@@ -8791,7 +8806,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-component-depth"></a>3.309.&#160;sidebar_component_depth</h3>
+            <a id="sidebar-component-depth"></a>3.310.&#160;sidebar_component_depth</h3>
           </div>
         </div>
       </div>
@@ -8806,7 +8821,7 @@ From: abd30425@somewhere.net
         <span class="bold">
           <strong>See also:</strong>
         </span>
-        <a class="link" href="#sidebar-short-path" title="3.318.&#160;sidebar_short_path">$sidebar_short_path</a>
+        <a class="link" href="#sidebar-short-path" title="3.319.&#160;sidebar_short_path">$sidebar_short_path</a>
       </p>
     </div>
     <div class="sect2">
@@ -8814,7 +8829,7 @@ From: abd30425@somewhere.net
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-delim-chars"></a>3.310.&#160;sidebar_delim_chars</h3>
+            <a id="sidebar-delim-chars"></a>3.311.&#160;sidebar_delim_chars</h3>
           </div>
         </div>
       </div>
@@ -8838,16 +8853,16 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="#sidebar-short-path" title="3.318.&#160;sidebar_short_path">$sidebar_short_path</a>,
-      <a class="link" href="#sidebar-folder-indent" title="3.312.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
-      <a class="link" href="#sidebar-indent-string" title="3.314.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
+      <a class="link" href="#sidebar-short-path" title="3.319.&#160;sidebar_short_path">$sidebar_short_path</a>,
+      <a class="link" href="#sidebar-folder-indent" title="3.313.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
+      <a class="link" href="#sidebar-indent-string" title="3.315.&#160;sidebar_indent_string">$sidebar_indent_string</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-divider-char"></a>3.311.&#160;sidebar_divider_char</h3>
+            <a id="sidebar-divider-char"></a>3.312.&#160;sidebar_divider_char</h3>
           </div>
         </div>
       </div>
@@ -8862,7 +8877,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-folder-indent"></a>3.312.&#160;sidebar_folder_indent</h3>
+            <a id="sidebar-folder-indent"></a>3.313.&#160;sidebar_folder_indent</h3>
           </div>
         </div>
       </div>
@@ -8875,16 +8890,16 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="#sidebar-short-path" title="3.318.&#160;sidebar_short_path">$sidebar_short_path</a>,
-      <a class="link" href="#sidebar-indent-string" title="3.314.&#160;sidebar_indent_string">$sidebar_indent_string</a>,
-      <a class="link" href="#sidebar-delim-chars" title="3.310.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
+      <a class="link" href="#sidebar-short-path" title="3.319.&#160;sidebar_short_path">$sidebar_short_path</a>,
+      <a class="link" href="#sidebar-indent-string" title="3.315.&#160;sidebar_indent_string">$sidebar_indent_string</a>,
+      <a class="link" href="#sidebar-delim-chars" title="3.311.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-format"></a>3.313.&#160;sidebar_format</h3>
+            <a id="sidebar-format"></a>3.314.&#160;sidebar_format</h3>
           </div>
         </div>
       </div>
@@ -8974,7 +8989,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-indent-string"></a>3.314.&#160;sidebar_indent_string</h3>
+            <a id="sidebar-indent-string"></a>3.315.&#160;sidebar_indent_string</h3>
           </div>
         </div>
       </div>
@@ -8990,16 +9005,16 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="#sidebar-short-path" title="3.318.&#160;sidebar_short_path">$sidebar_short_path</a>,
-      <a class="link" href="#sidebar-folder-indent" title="3.312.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
-      <a class="link" href="#sidebar-delim-chars" title="3.310.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
+      <a class="link" href="#sidebar-short-path" title="3.319.&#160;sidebar_short_path">$sidebar_short_path</a>,
+      <a class="link" href="#sidebar-folder-indent" title="3.313.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
+      <a class="link" href="#sidebar-delim-chars" title="3.311.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-new-mail-only"></a>3.315.&#160;sidebar_new_mail_only</h3>
+            <a id="sidebar-new-mail-only"></a>3.316.&#160;sidebar_new_mail_only</h3>
           </div>
         </div>
       </div>
@@ -9019,7 +9034,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-next-new-wrap"></a>3.316.&#160;sidebar_next_new_wrap</h3>
+            <a id="sidebar-next-new-wrap"></a>3.317.&#160;sidebar_next_new_wrap</h3>
           </div>
         </div>
       </div>
@@ -9036,7 +9051,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-on-right"></a>3.317.&#160;sidebar_on_right</h3>
+            <a id="sidebar-on-right"></a>3.318.&#160;sidebar_on_right</h3>
           </div>
         </div>
       </div>
@@ -9051,7 +9066,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-short-path"></a>3.318.&#160;sidebar_short_path</h3>
+            <a id="sidebar-short-path"></a>3.319.&#160;sidebar_short_path</h3>
           </div>
         </div>
       </div>
@@ -9137,17 +9152,17 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="#sidebar-delim-chars" title="3.310.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>,
-      <a class="link" href="#sidebar-folder-indent" title="3.312.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
-      <a class="link" href="#sidebar-indent-string" title="3.314.&#160;sidebar_indent_string">$sidebar_indent_string</a>,
-      <a class="link" href="#sidebar-component-depth" title="3.309.&#160;sidebar_component_depth">$sidebar_component_depth</a>.</p>
+      <a class="link" href="#sidebar-delim-chars" title="3.311.&#160;sidebar_delim_chars">$sidebar_delim_chars</a>,
+      <a class="link" href="#sidebar-folder-indent" title="3.313.&#160;sidebar_folder_indent">$sidebar_folder_indent</a>,
+      <a class="link" href="#sidebar-indent-string" title="3.315.&#160;sidebar_indent_string">$sidebar_indent_string</a>,
+      <a class="link" href="#sidebar-component-depth" title="3.310.&#160;sidebar_component_depth">$sidebar_component_depth</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-sort-method"></a>3.319.&#160;sidebar_sort_method</h3>
+            <a id="sidebar-sort-method"></a>3.320.&#160;sidebar_sort_method</h3>
           </div>
         </div>
       </div>
@@ -9195,7 +9210,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-visible"></a>3.320.&#160;sidebar_visible</h3>
+            <a id="sidebar-visible"></a>3.321.&#160;sidebar_visible</h3>
           </div>
         </div>
       </div>
@@ -9208,15 +9223,15 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="#sidebar-format" title="3.313.&#160;sidebar_format">$sidebar_format</a>,
-      <a class="link" href="#sidebar-width" title="3.321.&#160;sidebar_width">$sidebar_width</a></p>
+      <a class="link" href="#sidebar-format" title="3.314.&#160;sidebar_format">$sidebar_format</a>,
+      <a class="link" href="#sidebar-width" title="3.322.&#160;sidebar_width">$sidebar_width</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sidebar-width"></a>3.321.&#160;sidebar_width</h3>
+            <a id="sidebar-width"></a>3.322.&#160;sidebar_width</h3>
           </div>
         </div>
       </div>
@@ -9231,7 +9246,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sig-dashes"></a>3.322.&#160;sig_dashes</h3>
+            <a id="sig-dashes"></a>3.323.&#160;sig_dashes</h3>
           </div>
         </div>
       </div>
@@ -9244,7 +9259,7 @@ set sidebar_delim_chars='.'
         <em>set</em>
       </span>, a line containing
       <span class="quote">“<span class="quote">--</span>”</span>(note the trailing space) will be inserted before your
-      <a class="link" href="#signature" title="3.324.&#160;signature">$signature</a>. It is
+      <a class="link" href="#signature" title="3.325.&#160;signature">$signature</a>. It is
       <span class="bold">
         <strong>strongly</strong>
       </span>recommended that you not
@@ -9258,7 +9273,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sig-on-top"></a>3.323.&#160;sig_on_top</h3>
+            <a id="sig-on-top"></a>3.324.&#160;sig_on_top</h3>
           </div>
         </div>
       </div>
@@ -9279,7 +9294,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="signature"></a>3.324.&#160;signature</h3>
+            <a id="signature"></a>3.325.&#160;signature</h3>
           </div>
         </div>
       </div>
@@ -9298,7 +9313,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="simple-search"></a>3.325.&#160;simple_search</h3>
+            <a id="simple-search"></a>3.326.&#160;simple_search</h3>
           </div>
         </div>
       </div>
@@ -9325,7 +9340,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="skip-quoted-offset"></a>3.326.&#160;skip_quoted_offset</h3>
+            <a id="skip-quoted-offset"></a>3.327.&#160;skip_quoted_offset</h3>
           </div>
         </div>
       </div>
@@ -9341,7 +9356,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="sleep-time"></a>3.327.&#160;sleep_time</h3>
+            <a id="sleep-time"></a>3.328.&#160;sleep_time</h3>
           </div>
         </div>
       </div>
@@ -9356,7 +9371,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smart-wrap"></a>3.328.&#160;smart_wrap</h3>
+            <a id="smart-wrap"></a>3.329.&#160;smart_wrap</h3>
           </div>
         </div>
       </div>
@@ -9378,7 +9393,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smileys"></a>3.329.&#160;smileys</h3>
+            <a id="smileys"></a>3.330.&#160;smileys</h3>
           </div>
         </div>
       </div>
@@ -9393,15 +9408,15 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>pager</em>
       </span>uses this variable to catch some common false positives of
-      <a class="link" href="#quote-regex" title="3.272.&#160;quote_regex">$quote_regex</a>, most notably smileys and not consider a line quoted text if it also matches
-      <a class="link" href="#smileys" title="3.329.&#160;smileys">$smileys</a>. This mostly happens at the beginning of a line.</p>
+      <a class="link" href="#quote-regex" title="3.273.&#160;quote_regex">$quote_regex</a>, most notably smileys and not consider a line quoted text if it also matches
+      <a class="link" href="#smileys" title="3.330.&#160;smileys">$smileys</a>. This mostly happens at the beginning of a line.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-ask-cert-label"></a>3.330.&#160;smime_ask_cert_label</h3>
+            <a id="smime-ask-cert-label"></a>3.331.&#160;smime_ask_cert_label</h3>
           </div>
         </div>
       </div>
@@ -9419,7 +9434,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-ca-location"></a>3.331.&#160;smime_ca_location</h3>
+            <a id="smime-ca-location"></a>3.332.&#160;smime_ca_location</h3>
           </div>
         </div>
       </div>
@@ -9434,7 +9449,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-certificates"></a>3.332.&#160;smime_certificates</h3>
+            <a id="smime-certificates"></a>3.333.&#160;smime_certificates</h3>
           </div>
         </div>
       </div>
@@ -9449,7 +9464,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-decrypt-command"></a>3.333.&#160;smime_decrypt_command</h3>
+            <a id="smime-decrypt-command"></a>3.334.&#160;smime_decrypt_command</h3>
           </div>
         </div>
       </div>
@@ -9480,7 +9495,7 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%k</td>
               <td>The key-pair specified with
-              <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a></td>
+              <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a></td>
             </tr>
             <tr>
               <td>%i</td>
@@ -9497,17 +9512,16 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%d</td>
               <td>The message digest algorithm specified with
-              <a class="link" href="#smime-sign-digest-alg" title="3.348.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
+              <a class="link" href="#smime-sign-digest-alg" title="3.349.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
             </tr>
             <tr>
               <td>%C</td>
               <td>CA location: Depending on whether
-              <a class="link" href="#smime-ca-location" title="3.331.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file, this expands to
+              <a class="link" href="#smime-ca-location" title="3.332.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file, this expands to
               <span class="quote">“<span class="quote">-CApath
-              <a class="link" href="#smime-ca-location" title="3.331.&#160;smime_ca_location">$smime_ca_location</a></span>”</span> or
-              <span class="quote">“
-              <span class="quote">-CAfile
-              <a class="link" href="#smime-ca-location" title="3.331.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>.</td>
+              <a class="link" href="#smime-ca-location" title="3.332.&#160;smime_ca_location">$smime_ca_location</a></span>”</span> or
+              <span class="quote">“<span class="quote">-CAfile
+              <a class="link" href="#smime-ca-location" title="3.332.&#160;smime_ca_location">$smime_ca_location</a></span>”</span>.</td>
             </tr>
           </tbody>
         </table>
@@ -9521,7 +9535,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-decrypt-use-default-key"></a>3.334.&#160;smime_decrypt_use_default_key</h3>
+            <a id="smime-decrypt-use-default-key"></a>3.335.&#160;smime_decrypt_use_default_key</h3>
           </div>
         </div>
       </div>
@@ -9539,7 +9553,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-default-key"></a>3.335.&#160;smime_default_key</h3>
+            <a id="smime-default-key"></a>3.336.&#160;smime_default_key</h3>
           </div>
         </div>
       </div>
@@ -9550,14 +9564,14 @@ set sidebar_delim_chars='.'
       <p>This is the default key-pair to use for S/MIME operations, and must be set to the keyid (the hash-value that OpenSSL generates) to work properly.</p>
       <p>It will be used for encryption (see
       <a class="link" href="#postpone-encrypt" title="3.260.&#160;postpone_encrypt">$postpone_encrypt</a> and
-      <a class="link" href="#smime-self-encrypt" title="3.345.&#160;smime_self_encrypt">$smime_self_encrypt</a>).</p>
+      <a class="link" href="#smime-self-encrypt" title="3.346.&#160;smime_self_encrypt">$smime_self_encrypt</a>).</p>
       <p>It will be used for decryption unless
-      <a class="link" href="#smime-decrypt-use-default-key" title="3.334.&#160;smime_decrypt_use_default_key">$smime_decrypt_use_default_key</a> is
+      <a class="link" href="#smime-decrypt-use-default-key" title="3.335.&#160;smime_decrypt_use_default_key">$smime_decrypt_use_default_key</a> is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
       <p>It will also be used for signing unless
-      <a class="link" href="#smime-sign-as" title="3.346.&#160;smime_sign_as">$smime_sign_as</a> is set.</p>
+      <a class="link" href="#smime-sign-as" title="3.347.&#160;smime_sign_as">$smime_sign_as</a> is set.</p>
       <p>The (now deprecated)
       <span class="emphasis">
         <em>smime_self_encrypt_as</em>
@@ -9568,7 +9582,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-encrypt-command"></a>3.336.&#160;smime_encrypt_command</h3>
+            <a id="smime-encrypt-command"></a>3.337.&#160;smime_encrypt_command</h3>
           </div>
         </div>
       </div>
@@ -9578,52 +9592,43 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to create encrypted S/MIME messages.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
       <p>Encrypt the message to
-      <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a> too. (S/MIME only)</p>
+      <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a> too. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-encrypt-with"></a>3.337.&#160;smime_encrypt_with</h3>
+            <a id="smime-encrypt-with"></a>3.338.&#160;smime_encrypt_with</h3>
           </div>
         </div>
       </div>
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">aes256</code>
         </span>”</span></p>
       </div>
       <p>This sets the algorithm that should be used for encryption. Valid choices are
-      <span class="quote">“
-      <span class="quote">aes128</span>”</span>,
-      <span class="quote">“
-      <span class="quote">aes192</span>”</span>,
-      <span class="quote">“
-      <span class="quote">aes256</span>”</span>,
-      <span class="quote">“
-      <span class="quote">des</span>”</span>,
-      <span class="quote">“
-      <span class="quote">des3</span>”</span>,
-      <span class="quote">“
-      <span class="quote">rc2-40</span>”</span>,
-      <span class="quote">“
-      <span class="quote">rc2-64</span>”</span>,
-      <span class="quote">“
-      <span class="quote">rc2-128</span>”</span>. (S/MIME only)</p>
+      <span class="quote">“<span class="quote">aes128</span>”</span>,
+      <span class="quote">“<span class="quote">aes192</span>”</span>,
+      <span class="quote">“<span class="quote">aes256</span>”</span>,
+      <span class="quote">“<span class="quote">des</span>”</span>,
+      <span class="quote">“<span class="quote">des3</span>”</span>,
+      <span class="quote">“<span class="quote">rc2-40</span>”</span>,
+      <span class="quote">“<span class="quote">rc2-64</span>”</span>,
+      <span class="quote">“<span class="quote">rc2-128</span>”</span>. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-get-cert-command"></a>3.338.&#160;smime_get_cert_command</h3>
+            <a id="smime-get-cert-command"></a>3.339.&#160;smime_get_cert_command</h3>
           </div>
         </div>
       </div>
@@ -9633,7 +9638,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to extract X509 certificates from a PKCS7 structure.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9641,7 +9646,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-get-cert-email-command"></a>3.339.&#160;smime_get_cert_email_command</h3>
+            <a id="smime-get-cert-email-command"></a>3.340.&#160;smime_get_cert_email_command</h3>
           </div>
         </div>
       </div>
@@ -9651,7 +9656,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to extract the mail address(es) used for storing X509 certificates, and for verification purposes (to check whether the certificate was issued for the sender's mailbox).</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9659,7 +9664,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-get-signer-cert-command"></a>3.340.&#160;smime_get_signer_cert_command</h3>
+            <a id="smime-get-signer-cert-command"></a>3.341.&#160;smime_get_signer_cert_command</h3>
           </div>
         </div>
       </div>
@@ -9670,7 +9675,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract only the signers X509 certificate from a S/MIME signature, so that the certificate's owner may get compared to the email's
       <span class="quote">“<span class="quote">From:</span>”</span> field.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9678,7 +9683,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-import-cert-command"></a>3.341.&#160;smime_import_cert_command</h3>
+            <a id="smime-import-cert-command"></a>3.342.&#160;smime_import_cert_command</h3>
           </div>
         </div>
       </div>
@@ -9688,17 +9693,17 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to import a certificate via smime_keys.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. NOTE: %c and %k will default to
-      <a class="link" href="#smime-sign-as" title="3.346.&#160;smime_sign_as">$smime_sign_as</a> if set, otherwise
-      <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
+      <a class="link" href="#smime-sign-as" title="3.347.&#160;smime_sign_as">$smime_sign_as</a> if set, otherwise
+      <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-is-default"></a>3.342.&#160;smime_is_default</h3>
+            <a id="smime-is-default"></a>3.343.&#160;smime_is_default</h3>
           </div>
         </div>
       </div>
@@ -9717,7 +9722,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-keys"></a>3.343.&#160;smime_keys</h3>
+            <a id="smime-keys"></a>3.344.&#160;smime_keys</h3>
           </div>
         </div>
       </div>
@@ -9732,7 +9737,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-pk7out-command"></a>3.344.&#160;smime_pk7out_command</h3>
+            <a id="smime-pk7out-command"></a>3.345.&#160;smime_pk7out_command</h3>
           </div>
         </div>
       </div>
@@ -9742,7 +9747,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This command is used to extract PKCS7 structures of S/MIME signatures, in order to extract the public X509 certificate(s).</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9750,7 +9755,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-self-encrypt"></a>3.345.&#160;smime_self_encrypt</h3>
+            <a id="smime-self-encrypt"></a>3.346.&#160;smime_self_encrypt</h3>
           </div>
         </div>
       </div>
@@ -9762,14 +9767,14 @@ set sidebar_delim_chars='.'
       <span class="emphasis">
         <em>set</em>
       </span>, S/MIME encrypted messages will also be encrypted using the certificate in
-      <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
+      <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-sign-as"></a>3.346.&#160;smime_sign_as</h3>
+            <a id="smime-sign-as"></a>3.347.&#160;smime_sign_as</h3>
           </div>
         </div>
       </div>
@@ -9778,14 +9783,14 @@ set sidebar_delim_chars='.'
         <br />Default:&#160;(empty)</p>
       </div>
       <p>If you have a separate key to use for signing, you should set this to the signing key. Most people will only need to set
-      <a class="link" href="#smime-default-key" title="3.335.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
+      <a class="link" href="#smime-default-key" title="3.336.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-sign-command"></a>3.347.&#160;smime_sign_command</h3>
+            <a id="smime-sign-command"></a>3.348.&#160;smime_sign_command</h3>
           </div>
         </div>
       </div>
@@ -9796,7 +9801,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to created S/MIME signatures of type
       <code class="literal">multipart/signed</code>, which can be read by all mail clients.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9804,7 +9809,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-sign-digest-alg"></a>3.348.&#160;smime_sign_digest_alg</h3>
+            <a id="smime-sign-digest-alg"></a>3.349.&#160;smime_sign_digest_alg</h3>
           </div>
         </div>
       </div>
@@ -9828,7 +9833,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-timeout"></a>3.349.&#160;smime_timeout</h3>
+            <a id="smime-timeout"></a>3.350.&#160;smime_timeout</h3>
           </div>
         </div>
       </div>
@@ -9843,7 +9848,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-verify-command"></a>3.350.&#160;smime_verify_command</h3>
+            <a id="smime-verify-command"></a>3.351.&#160;smime_verify_command</h3>
           </div>
         </div>
       </div>
@@ -9854,7 +9859,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to verify S/MIME signatures of type
       <code class="literal">multipart/signed</code>.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9862,7 +9867,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smime-verify-opaque-command"></a>3.351.&#160;smime_verify_opaque_command</h3>
+            <a id="smime-verify-opaque-command"></a>3.352.&#160;smime_verify_opaque_command</h3>
           </div>
         </div>
       </div>
@@ -9873,7 +9878,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to verify S/MIME signatures of type
       <code class="literal">application/x-pkcs7-mime</code>.</p>
       <p>This is a format string, see the
-      <a class="link" href="#smime-decrypt-command" title="3.333.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
+      <a class="link" href="#smime-decrypt-command" title="3.334.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
@@ -9881,7 +9886,7 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="smtp-authenticators"></a>3.352.&#160;smtp_authenticators</h3>
+            <a id="smtp-authenticators"></a>3.353.&#160;smtp_authenticators</h3>
           </div>
         </div>
       </div>
@@ -9906,7 +9911,7 @@ set smtp_authenticators="digest-md5:cram-md5"
         <div>
           <div>
             <h3 class="title">
-            <a id="smtp-pass"></a>3.353.&#160;smtp_pass</h3>
+            <a id="smtp-pass"></a>3.354.&#160;smtp_pass</h3>
           </div>
         </div>
       </div>
@@ -9918,7 +9923,7 @@ set smtp_authenticators="digest-md5:cram-md5"
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will prompt you for your password when you first send mail via SMTP. See
-      <a class="link" href="#smtp-url" title="3.354.&#160;smtp_url">$smtp_url</a> to configure NeoMutt to send mail via SMTP.</p>
+      <a class="link" href="#smtp-url" title="3.355.&#160;smtp_url">$smtp_url</a> to configure NeoMutt to send mail via SMTP.</p>
       <p>
       <span class="bold">
         <strong>Warning</strong>
@@ -9929,7 +9934,7 @@ set smtp_authenticators="digest-md5:cram-md5"
         <div>
           <div>
             <h3 class="title">
-            <a id="smtp-url"></a>3.354.&#160;smtp_url</h3>
+            <a id="smtp-url"></a>3.355.&#160;smtp_url</h3>
           </div>
         </div>
       </div>
@@ -9943,14 +9948,14 @@ smtp[s]://[user[:pass]@]host[:port]
 </pre>
       <p>where
       <span class="quote">“<span class="quote">[...]</span>”</span> denotes an optional part. Setting this variable overrides the value of the
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> variable.</p>
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sort"></a>3.355.&#160;sort</h3>
+            <a id="sort"></a>3.356.&#160;sort</h3>
           </div>
         </div>
       </div>
@@ -9995,8 +10000,7 @@ smtp[s]://[user[:pass]@]host[:port]
         </ul>
       </div>
       <p>You may optionally use the
-      <span class="quote">“
-      <span class="quote">reverse-</span>”</span> prefix to specify reverse sorting order.</p>
+      <span class="quote">“<span class="quote">reverse-</span>”</span> prefix to specify reverse sorting order.</p>
       <p>Example:</p>
       <pre class="screen">
 set sort=reverse-date-sent
@@ -10007,7 +10011,7 @@ set sort=reverse-date-sent
         <div>
           <div>
             <h3 class="title">
-            <a id="sort-alias"></a>3.356.&#160;sort_alias</h3>
+            <a id="sort-alias"></a>3.357.&#160;sort_alias</h3>
           </div>
         </div>
       </div>
@@ -10036,7 +10040,7 @@ set sort=reverse-date-sent
         <div>
           <div>
             <h3 class="title">
-            <a id="sort-aux"></a>3.357.&#160;sort_aux</h3>
+            <a id="sort-aux"></a>3.358.&#160;sort_aux</h3>
           </div>
         </div>
       </div>
@@ -10045,7 +10049,7 @@ set sort=reverse-date-sent
         <br />Default:&#160;date</p>
       </div>
       <p>When sorting by threads, this variable controls how threads are sorted in relation to other threads, and how the branches of the thread trees are sorted. This can be set to any value that
-      <a class="link" href="#sort" title="3.355.&#160;sort">$sort</a> can, except
+      <a class="link" href="#sort" title="3.356.&#160;sort">$sort</a> can, except
       <span class="quote">“<span class="quote">threads</span>”</span>(in that case, NeoMutt will just use
       <span class="quote">“<span class="quote">date-sent</span>”</span>). You can also specify the
       <span class="quote">“<span class="quote">last-</span>”</span> prefix in addition to the
@@ -10053,7 +10057,7 @@ set sort=reverse-date-sent
       <span class="quote">“<span class="quote">last-</span>”</span> must come after
       <span class="quote">“<span class="quote">reverse-</span>”</span>. The
       <span class="quote">“<span class="quote">last-</span>”</span> prefix causes messages to be sorted against its siblings by which has the last descendant, using the rest of
-      <a class="link" href="#sort-aux" title="3.357.&#160;sort_aux">$sort_aux</a> as an ordering. For instance,</p>
+      <a class="link" href="#sort-aux" title="3.358.&#160;sort_aux">$sort_aux</a> as an ordering. For instance,</p>
       <pre class="screen">
 set sort_aux=last-date-received
 </pre>
@@ -10062,15 +10066,15 @@ set sort_aux=last-date-received
         <code class="literal">set sort=reverse-threads</code>
       </span>”</span>.)</p>
       <p>Note: For reversed
-      <a class="link" href="#sort" title="3.355.&#160;sort">$sort</a> order
-      <a class="link" href="#sort-aux" title="3.357.&#160;sort_aux">$sort_aux</a> is reversed again (which is not the right thing to do, but kept to not break any existing configuration setting).</p>
+      <a class="link" href="#sort" title="3.356.&#160;sort">$sort</a> order
+      <a class="link" href="#sort-aux" title="3.358.&#160;sort_aux">$sort_aux</a> is reversed again (which is not the right thing to do, but kept to not break any existing configuration setting).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="sort-browser"></a>3.358.&#160;sort_browser</h3>
+            <a id="sort-browser"></a>3.359.&#160;sort_browser</h3>
           </div>
         </div>
       </div>
@@ -10115,7 +10119,7 @@ set sort_aux=last-date-received
         <div>
           <div>
             <h3 class="title">
-            <a id="sort-re"></a>3.359.&#160;sort_re</h3>
+            <a id="sort-re"></a>3.360.&#160;sort_re</h3>
           </div>
         </div>
       </div>
@@ -10149,7 +10153,7 @@ set sort_aux=last-date-received
         <div>
           <div>
             <h3 class="title">
-            <a id="spam-separator"></a>3.360.&#160;spam_separator</h3>
+            <a id="spam-separator"></a>3.361.&#160;spam_separator</h3>
           </div>
         </div>
       </div>
@@ -10173,7 +10177,7 @@ set sort_aux=last-date-received
         <div>
           <div>
             <h3 class="title">
-            <a id="spoolfile"></a>3.361.&#160;spoolfile</h3>
+            <a id="spoolfile"></a>3.362.&#160;spoolfile</h3>
           </div>
         </div>
       </div>
@@ -10191,7 +10195,7 @@ set sort_aux=last-date-received
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-ca-certificates-file"></a>3.362.&#160;ssl_ca_certificates_file</h3>
+            <a id="ssl-ca-certificates-file"></a>3.363.&#160;ssl_ca_certificates_file</h3>
           </div>
         </div>
       </div>
@@ -10210,7 +10214,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-ciphers"></a>3.363.&#160;ssl_ciphers</h3>
+            <a id="ssl-ciphers"></a>3.364.&#160;ssl_ciphers</h3>
           </div>
         </div>
       </div>
@@ -10226,7 +10230,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-client-cert"></a>3.364.&#160;ssl_client_cert</h3>
+            <a id="ssl-client-cert"></a>3.365.&#160;ssl_client_cert</h3>
           </div>
         </div>
       </div>
@@ -10241,7 +10245,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-force-tls"></a>3.365.&#160;ssl_force_tls</h3>
+            <a id="ssl-force-tls"></a>3.366.&#160;ssl_force_tls</h3>
           </div>
         </div>
       </div>
@@ -10253,14 +10257,14 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will require that all connections to remote servers be encrypted. Furthermore it will attempt to negotiate TLS even if the server does not advertise the capability, since it would otherwise have to abort the connection anyway. This option supersedes
-      <a class="link" href="#ssl-starttls" title="3.367.&#160;ssl_starttls">$ssl_starttls</a>.</p>
+      <a class="link" href="#ssl-starttls" title="3.368.&#160;ssl_starttls">$ssl_starttls</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-min-dh-prime-bits"></a>3.366.&#160;ssl_min_dh_prime_bits</h3>
+            <a id="ssl-min-dh-prime-bits"></a>3.367.&#160;ssl_min_dh_prime_bits</h3>
           </div>
         </div>
       </div>
@@ -10275,7 +10279,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-starttls"></a>3.367.&#160;ssl_starttls</h3>
+            <a id="ssl-starttls"></a>3.368.&#160;ssl_starttls</h3>
           </div>
         </div>
       </div>
@@ -10298,7 +10302,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-use-sslv2"></a>3.368.&#160;ssl_use_sslv2</h3>
+            <a id="ssl-use-sslv2"></a>3.369.&#160;ssl_use_sslv2</h3>
           </div>
         </div>
       </div>
@@ -10313,7 +10317,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-use-sslv3"></a>3.369.&#160;ssl_use_sslv3</h3>
+            <a id="ssl-use-sslv3"></a>3.370.&#160;ssl_use_sslv3</h3>
           </div>
         </div>
       </div>
@@ -10328,7 +10332,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-use-tlsv1"></a>3.370.&#160;ssl_use_tlsv1</h3>
+            <a id="ssl-use-tlsv1"></a>3.371.&#160;ssl_use_tlsv1</h3>
           </div>
         </div>
       </div>
@@ -10343,7 +10347,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-use-tlsv1-1"></a>3.371.&#160;ssl_use_tlsv1_1</h3>
+            <a id="ssl-use-tlsv1-1"></a>3.372.&#160;ssl_use_tlsv1_1</h3>
           </div>
         </div>
       </div>
@@ -10358,7 +10362,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-use-tlsv1-2"></a>3.372.&#160;ssl_use_tlsv1_2</h3>
+            <a id="ssl-use-tlsv1-2"></a>3.373.&#160;ssl_use_tlsv1_2</h3>
           </div>
         </div>
       </div>
@@ -10373,7 +10377,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-usesystemcerts"></a>3.373.&#160;ssl_usesystemcerts</h3>
+            <a id="ssl-usesystemcerts"></a>3.374.&#160;ssl_usesystemcerts</h3>
           </div>
         </div>
       </div>
@@ -10391,7 +10395,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-verify-dates"></a>3.374.&#160;ssl_verify_dates</h3>
+            <a id="ssl-verify-dates"></a>3.375.&#160;ssl_verify_dates</h3>
           </div>
         </div>
       </div>
@@ -10412,7 +10416,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-verify-host"></a>3.375.&#160;ssl_verify_host</h3>
+            <a id="ssl-verify-host"></a>3.376.&#160;ssl_verify_host</h3>
           </div>
         </div>
       </div>
@@ -10433,7 +10437,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ssl-verify-partial-chains"></a>3.376.&#160;ssl_verify_partial_chains</h3>
+            <a id="ssl-verify-partial-chains"></a>3.377.&#160;ssl_verify_partial_chains</h3>
           </div>
         </div>
       </div>
@@ -10454,7 +10458,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="status-chars"></a>3.377.&#160;status_chars</h3>
+            <a id="status-chars"></a>3.378.&#160;status_chars</h3>
           </div>
         </div>
       </div>
@@ -10467,7 +10471,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Controls the characters used by the
       <span class="quote">“<span class="quote">%r</span>”</span> indicator in
-      <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a>.</p>
+      <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a>.</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -10523,7 +10527,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="status-format"></a>3.378.&#160;status_format</h3>
+            <a id="status-format"></a>3.379.&#160;status_format</h3>
           </div>
         </div>
       </div>
@@ -10600,7 +10604,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
             <tr>
               <td>%r</td>
               <td>Modified/read-only/won't-write/attach-message indicator, According to
-              <a class="link" href="#status-chars" title="3.377.&#160;status_chars">$status_chars</a></td>
+              <a class="link" href="#status-chars" title="3.378.&#160;status_chars">$status_chars</a></td>
             </tr>
             <tr>
               <td>%R</td>
@@ -10609,12 +10613,12 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
             <tr>
               <td>%s</td>
               <td>Current sorting mode (
-              <a class="link" href="#sort" title="3.355.&#160;sort">$sort</a>)</td>
+              <a class="link" href="#sort" title="3.356.&#160;sort">$sort</a>)</td>
             </tr>
             <tr>
               <td>%S</td>
               <td>Current aux sorting method (
-              <a class="link" href="#sort-aux" title="3.357.&#160;sort_aux">$sort_aux</a>)</td>
+              <a class="link" href="#sort-aux" title="3.358.&#160;sort_aux">$sort_aux</a>)</td>
             </tr>
             <tr>
               <td>%t</td>
@@ -10709,7 +10713,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="status-on-top"></a>3.379.&#160;status_on_top</h3>
+            <a id="status-on-top"></a>3.380.&#160;status_on_top</h3>
           </div>
         </div>
       </div>
@@ -10729,7 +10733,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="strict-threads"></a>3.380.&#160;strict_threads</h3>
+            <a id="strict-threads"></a>3.381.&#160;strict_threads</h3>
           </div>
         </div>
       </div>
@@ -10743,17 +10747,17 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </span>, threading will only make use of the
       <span class="quote">“<span class="quote">In-Reply-To</span>”</span> and
       <span class="quote">“<span class="quote">References:</span>”</span> fields when you
-      <a class="link" href="#sort" title="3.355.&#160;sort">$sort</a> by message threads. By default, messages with the same subject are grouped together in
+      <a class="link" href="#sort" title="3.356.&#160;sort">$sort</a> by message threads. By default, messages with the same subject are grouped together in
       <span class="quote">“<span class="quote">pseudo threads.</span>”</span>. This may not always be desirable, such as in a personal mailbox where you might have several unrelated messages with the subjects like
       <span class="quote">“<span class="quote">hi</span>”</span> which will get grouped together. See also
-      <a class="link" href="#sort-re" title="3.359.&#160;sort_re">$sort_re</a> for a less drastic way of controlling this behavior.</p>
+      <a class="link" href="#sort-re" title="3.360.&#160;sort_re">$sort_re</a> for a less drastic way of controlling this behavior.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="suspend"></a>3.381.&#160;suspend</h3>
+            <a id="suspend"></a>3.382.&#160;suspend</h3>
           </div>
         </div>
       </div>
@@ -10778,7 +10782,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="text-flowed"></a>3.382.&#160;text_flowed</h3>
+            <a id="text-flowed"></a>3.383.&#160;text_flowed</h3>
           </div>
         </div>
       </div>
@@ -10805,7 +10809,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="thorough-search"></a>3.383.&#160;thorough_search</h3>
+            <a id="thorough-search"></a>3.384.&#160;thorough_search</h3>
           </div>
         </div>
       </div>
@@ -10835,7 +10839,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="thread-received"></a>3.384.&#160;thread_received</h3>
+            <a id="thread-received"></a>3.385.&#160;thread_received</h3>
           </div>
         </div>
       </div>
@@ -10853,7 +10857,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="tilde"></a>3.385.&#160;tilde</h3>
+            <a id="tilde"></a>3.386.&#160;tilde</h3>
           </div>
         </div>
       </div>
@@ -10872,7 +10876,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="time-inc"></a>3.386.&#160;time_inc</h3>
+            <a id="time-inc"></a>3.387.&#160;time_inc</h3>
           </div>
         </div>
       </div>
@@ -10881,10 +10885,10 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <br />Default:&#160;0</p>
       </div>
       <p>Along with
-      <a class="link" href="#read-inc" title="3.273.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="#write-inc" title="3.412.&#160;write_inc">$write_inc</a>, and
+      <a class="link" href="#read-inc" title="3.274.&#160;read_inc">$read_inc</a>,
+      <a class="link" href="#write-inc" title="3.413.&#160;write_inc">$write_inc</a>, and
       <a class="link" href="#net-inc" title="3.183.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
-      <a class="link" href="#time-inc" title="3.386.&#160;time_inc">$time_inc</a> milliseconds apart. This can improve throughput on systems with slow terminals, or when running NeoMutt on a remote system.</p>
+      <a class="link" href="#time-inc" title="3.387.&#160;time_inc">$time_inc</a> milliseconds apart. This can improve throughput on systems with slow terminals, or when running NeoMutt on a remote system.</p>
       <p>Also see the
       <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
@@ -10895,7 +10899,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="timeout"></a>3.387.&#160;timeout</h3>
+            <a id="timeout"></a>3.388.&#160;timeout</h3>
           </div>
         </div>
       </div>
@@ -10912,7 +10916,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="tmpdir"></a>3.388.&#160;tmpdir</h3>
+            <a id="tmpdir"></a>3.389.&#160;tmpdir</h3>
           </div>
         </div>
       </div>
@@ -10935,7 +10939,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="to-chars"></a>3.389.&#160;to_chars</h3>
+            <a id="to-chars"></a>3.390.&#160;to_chars</h3>
           </div>
         </div>
       </div>
@@ -11018,7 +11022,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="trash"></a>3.390.&#160;trash</h3>
+            <a id="trash"></a>3.391.&#160;trash</h3>
           </div>
         </div>
       </div>
@@ -11034,7 +11038,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ts-enabled"></a>3.391.&#160;ts_enabled</h3>
+            <a id="ts-enabled"></a>3.392.&#160;ts_enabled</h3>
           </div>
         </div>
       </div>
@@ -11049,7 +11053,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ts-icon-format"></a>3.392.&#160;ts_icon_format</h3>
+            <a id="ts-icon-format"></a>3.393.&#160;ts_icon_format</h3>
           </div>
         </div>
       </div>
@@ -11062,10 +11066,10 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Controls the format of the icon title, as long as
       <span class="quote">“<span class="quote">
-        <a class="link" href="#ts-enabled" title="3.391.&#160;ts_enabled">$ts_enabled</a>
+        <a class="link" href="#ts-enabled" title="3.392.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span> is set. This string is identical in formatting to the one used by
       <span class="quote">“<span class="quote">
-        <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a>
+        <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -11073,7 +11077,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ts-status-format"></a>3.393.&#160;ts_status_format</h3>
+            <a id="ts-status-format"></a>3.394.&#160;ts_status_format</h3>
           </div>
         </div>
       </div>
@@ -11086,10 +11090,10 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Controls the format of the terminal status line (or window title), provided that
       <span class="quote">“<span class="quote">
-        <a class="link" href="#ts-enabled" title="3.391.&#160;ts_enabled">$ts_enabled</a>
+        <a class="link" href="#ts-enabled" title="3.392.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span> has been set. This string is identical in formatting to the one used by
       <span class="quote">“<span class="quote">
-        <a class="link" href="#status-format" title="3.378.&#160;status_format">$status_format</a>
+        <a class="link" href="#status-format" title="3.379.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
     <div class="sect2">
@@ -11097,7 +11101,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="tunnel"></a>3.394.&#160;tunnel</h3>
+            <a id="tunnel"></a>3.395.&#160;tunnel</h3>
           </div>
         </div>
       </div>
@@ -11120,7 +11124,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="uncollapse-jump"></a>3.395.&#160;uncollapse_jump</h3>
+            <a id="uncollapse-jump"></a>3.396.&#160;uncollapse_jump</h3>
           </div>
         </div>
       </div>
@@ -11141,7 +11145,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="uncollapse-new"></a>3.396.&#160;uncollapse_new</h3>
+            <a id="uncollapse-new"></a>3.397.&#160;uncollapse_new</h3>
           </div>
         </div>
       </div>
@@ -11162,7 +11166,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-8bitmime"></a>3.397.&#160;use_8bitmime</h3>
+            <a id="use-8bitmime"></a>3.398.&#160;use_8bitmime</h3>
           </div>
         </div>
       </div>
@@ -11179,7 +11183,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will invoke
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> with the
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> with the
       <code class="literal">-B8BITMIME</code> flag when sending 8-bit messages to enable ESMTP negotiation.</p>
     </div>
     <div class="sect2">
@@ -11187,7 +11191,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-domain"></a>3.398.&#160;use_domain</h3>
+            <a id="use-domain"></a>3.399.&#160;use_domain</h3>
           </div>
         </div>
       </div>
@@ -11210,7 +11214,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-envelope-from"></a>3.399.&#160;use_envelope_from</h3>
+            <a id="use-envelope-from"></a>3.400.&#160;use_envelope_from</h3>
           </div>
         </div>
       </div>
@@ -11235,9 +11239,9 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="quote">“<span class="quote">From:</span>”</span> header.</p>
       <p>Note that this information is passed to sendmail command using the
       <code class="literal">-f</code> command line switch. Therefore setting this option is not useful if the
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> variable already contains
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> variable already contains
       <code class="literal">-f</code> or if the executable pointed to by
-      <a class="link" href="#sendmail" title="3.303.&#160;sendmail">$sendmail</a> doesn't support the
+      <a class="link" href="#sendmail" title="3.304.&#160;sendmail">$sendmail</a> doesn't support the
       <code class="literal">-f</code> switch.</p>
     </div>
     <div class="sect2">
@@ -11245,7 +11249,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-from"></a>3.400.&#160;use_from</h3>
+            <a id="use-from"></a>3.401.&#160;use_from</h3>
           </div>
         </div>
       </div>
@@ -11271,7 +11275,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-ipv6"></a>3.401.&#160;use_ipv6</h3>
+            <a id="use-ipv6"></a>3.402.&#160;use_ipv6</h3>
           </div>
         </div>
       </div>
@@ -11292,7 +11296,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="user-agent"></a>3.402.&#160;user_agent</h3>
+            <a id="user-agent"></a>3.403.&#160;user_agent</h3>
           </div>
         </div>
       </div>
@@ -11311,7 +11315,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="vfolder-format"></a>3.403.&#160;vfolder_format</h3>
+            <a id="vfolder-format"></a>3.404.&#160;vfolder_format</h3>
           </div>
         </div>
       </div>
@@ -11330,7 +11334,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="virtual-spoolfile"></a>3.404.&#160;virtual_spoolfile</h3>
+            <a id="virtual-spoolfile"></a>3.405.&#160;virtual_spoolfile</h3>
           </div>
         </div>
       </div>
@@ -11348,7 +11352,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="visual"></a>3.405.&#160;visual</h3>
+            <a id="visual"></a>3.406.&#160;visual</h3>
           </div>
         </div>
       </div>
@@ -11364,7 +11368,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <code class="literal">~v</code>
       </span>”</span> command is given in the built-in editor.</p>
       <p>
-      <a class="link" href="#visual" title="3.405.&#160;visual">$visual</a> is overridden by the environment variable
+      <a class="link" href="#visual" title="3.406.&#160;visual">$visual</a> is overridden by the environment variable
       <code class="literal">$VISUAL</code> or
       <code class="literal">$EDITOR</code>.</p>
     </div>
@@ -11373,7 +11377,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="wait-key"></a>3.406.&#160;wait_key</h3>
+            <a id="wait-key"></a>3.407.&#160;wait_key</h3>
           </div>
         </div>
       </div>
@@ -11407,7 +11411,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="weed"></a>3.407.&#160;weed</h3>
+            <a id="weed"></a>3.408.&#160;weed</h3>
           </div>
         </div>
       </div>
@@ -11425,7 +11429,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="wrap"></a>3.408.&#160;wrap</h3>
+            <a id="wrap"></a>3.409.&#160;wrap</h3>
           </div>
         </div>
       </div>
@@ -11434,17 +11438,17 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;0</p>
       </div>
       <p>When set to a positive value, NeoMutt will wrap text at
-      <a class="link" href="#wrap" title="3.408.&#160;wrap">$wrap</a> characters. When set to a negative value, NeoMutt will wrap text so that there are
-      <a class="link" href="#wrap" title="3.408.&#160;wrap">$wrap</a> characters of empty space on the right side of the terminal. Setting it to zero makes NeoMutt wrap at the terminal width.</p>
+      <a class="link" href="#wrap" title="3.409.&#160;wrap">$wrap</a> characters. When set to a negative value, NeoMutt will wrap text so that there are
+      <a class="link" href="#wrap" title="3.409.&#160;wrap">$wrap</a> characters of empty space on the right side of the terminal. Setting it to zero makes NeoMutt wrap at the terminal width.</p>
       <p>Also see
-      <a class="link" href="#reflow-wrap" title="3.280.&#160;reflow_wrap">$reflow_wrap</a>.</p>
+      <a class="link" href="#reflow-wrap" title="3.281.&#160;reflow_wrap">$reflow_wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="wrap-headers"></a>3.409.&#160;wrap_headers</h3>
+            <a id="wrap-headers"></a>3.410.&#160;wrap_headers</h3>
           </div>
         </div>
       </div>
@@ -11466,7 +11470,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="wrap-search"></a>3.410.&#160;wrap_search</h3>
+            <a id="wrap-search"></a>3.411.&#160;wrap_search</h3>
           </div>
         </div>
       </div>
@@ -11488,7 +11492,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="write-bcc"></a>3.411.&#160;write_bcc</h3>
+            <a id="write-bcc"></a>3.412.&#160;write_bcc</h3>
           </div>
         </div>
       </div>
@@ -11498,7 +11502,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       </div>
       <p>Controls whether NeoMutt writes out the
       <span class="quote">“<span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Exim users may wish to unset this. If NeoMutt is set to deliver directly via SMTP (see
-      <a class="link" href="#smtp-url" title="3.354.&#160;smtp_url">$smtp_url</a>), this option does nothing: NeoMutt will never write out the
+      <a class="link" href="#smtp-url" title="3.355.&#160;smtp_url">$smtp_url</a>), this option does nothing: NeoMutt will never write out the
       <span class="quote">“<span class="quote">Bcc:</span>”</span> header in this case.</p>
     </div>
     <div class="sect2">
@@ -11506,7 +11510,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="write-inc"></a>3.412.&#160;write_inc</h3>
+            <a id="write-inc"></a>3.413.&#160;write_inc</h3>
           </div>
         </div>
       </div>
@@ -11515,11 +11519,11 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;10</p>
       </div>
       <p>When writing a mailbox, a message will be printed every
-      <a class="link" href="#write-inc" title="3.412.&#160;write_inc">$write_inc</a> messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
+      <a class="link" href="#write-inc" title="3.413.&#160;write_inc">$write_inc</a> messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
       <p>Also see the
-      <a class="link" href="#read-inc" title="3.273.&#160;read_inc">$read_inc</a>,
+      <a class="link" href="#read-inc" title="3.274.&#160;read_inc">$read_inc</a>,
       <a class="link" href="#net-inc" title="3.183.&#160;net_inc">$net_inc</a> and
-      <a class="link" href="#time-inc" title="3.386.&#160;time_inc">$time_inc</a> variables and the
+      <a class="link" href="#time-inc" title="3.387.&#160;time_inc">$time_inc</a> variables and the
       <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
       </span>”</span> section of the manual for performance considerations.</p>
@@ -11529,7 +11533,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="x-comment-to"></a>3.413.&#160;x_comment_to</h3>
+            <a id="x-comment-to"></a>3.414.&#160;x_comment_to</h3>
           </div>
         </div>
       </div>
@@ -14039,6 +14043,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
               </tr>
               <tr>
                 <td>
+                  <code class="literal">&lt;edit-language&gt;</code>
+                </td>
+                <td>^L</td>
+                <td>edit the Content-Language of the attachment</td>
+              </tr>
+              <tr>
+                <td>
                   <code class="literal">&lt;edit-message&gt;</code>
                 </td>
                 <td>e</td>
@@ -14116,6 +14127,20 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
               </tr>
               <tr>
                 <td>
+                  <code class="literal">&lt;group-alternatives&gt;</code>
+                </td>
+                <td>&amp;</td>
+                <td>group tagged attachments as multipart/alternative</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;group-multilingual&gt;</code>
+                </td>
+                <td>^</td>
+                <td>group tagged attachments as multipart/multilingual</td>
+              </tr>
+              <tr>
+                <td>
                   <code class="literal">&lt;ispell&gt;</code>
                 </td>
                 <td>i</td>
@@ -14127,6 +14152,20 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                 </td>
                 <td>M</td>
                 <td>send the message through a mixmaster remailer chain</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;move-down&gt;</code>
+                </td>
+                <td>+</td>
+                <td>move an attachment down in the attachment list</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;move-up&gt;</code>
+                </td>
+                <td>-</td>
+                <td>move an attachment up in the attachment list</td>
               </tr>
               <tr>
                 <td>
