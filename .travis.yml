@@ -6,7 +6,6 @@ git:
 
 
 cache:
-  bundler: true
   directories:
   - $HOME/.cache/.htmlproofer
 
@@ -21,12 +20,4 @@ install:
   - gem install jekyll-algolia
 
 script:
-    - mkdir -p _site/code/; touch _site/code/index.html
-    - unbuffer jekyll build
-    - http_status=({100..399});
-    - unbuffer \ #maybe https://unix.stackexchange.com/a/25378 is better?
-      htmlproofer \ 
-      --http-status-ignore ${printf '%s,' "${http_status[@]}"} \
-      --assume-extension \
-      ./_site/**/*.{html,md}
-
+    - ./.test.sh
