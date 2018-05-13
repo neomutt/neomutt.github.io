@@ -8,6 +8,7 @@ git:
 cache: 
   directories:
   - $TRAVIS_BUILD_DIR/tmp/.htmlproofer
+  - $TRAVIS_BUILD_DIR/neomutt/neomutt.github.io/code
   - ~/.rvm # contains rubygems
 
 install:
@@ -25,5 +26,7 @@ before_script:
     - export -f travis_time_start
     - export -f travis_time_finish
 script:
-    - travis_fold start; cat ./.test.sh; travis_fold end;
+    - travis_fold start "used bash script" 
+    -  cat ./.test.sh; 
+    - travis_fold end "used bash script"
     - ./.test.sh
