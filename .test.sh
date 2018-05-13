@@ -5,6 +5,7 @@ travis_fold start "generating HTML out of markdown using jekyll"
 jekyll build
 travis_fold end "generating HTML out of markdown using jekyll"
 
+export -f run_link_checker
 function run_link_checker() {
     travis_fold start "Link checking $1"
 
