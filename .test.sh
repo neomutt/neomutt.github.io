@@ -10,6 +10,7 @@ printf -v all '%s,' ${http_status_to_ignore[@]};
 
 function run_link_checker() {
     echo $1
+    echo $all
     travis_fold start "Link checking $1"
 
     htmlproofer \
