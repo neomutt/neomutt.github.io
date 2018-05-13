@@ -25,7 +25,7 @@ export -f run_link_checker
 http_status_to_ignore=({100..399});
 printf -v all '%s,' ${http_status_to_ignore[@]};
 
-find ./_site -type f -iname '*.html' | xargs -n 5 run_link_checker {}
+find ./_site -type f -iname '*.html' | xargs -n 10 bash -c "run_link_checker {}"
 
 
 
