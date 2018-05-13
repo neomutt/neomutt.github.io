@@ -5,9 +5,10 @@ git:
   depth: 1
 
 
-cache: bundler
+cache: 
   directories:
   - $TRAVIS_BUILD_DIR/tmp/.htmlproofer
+  - ~/.gem/
 
 install:
   - git clone https://github.com/neomutt/neomutt.github.io
@@ -24,4 +25,5 @@ before_script:
     - export -f travis_time_start
     - export -f travis_time_finish
 script:
+    - find .
     - ./.test.sh
