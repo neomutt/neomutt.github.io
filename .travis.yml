@@ -25,5 +25,4 @@ before_script:
     - export -f travis_time_start
     - export -f travis_time_finish
 script:
-    - find .
     - ./.test.sh
