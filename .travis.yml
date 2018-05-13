@@ -19,4 +19,5 @@ install:
   - gem install jekyll-algolia
 
 script:
+    - shopt -s globstar # allows ./**/file
     - ./.test.sh
