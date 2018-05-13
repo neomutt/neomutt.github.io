@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-travis_fold start "displaying this file"
-cat ./.test.sh
-travis_fold end "displaying this file"
-
-
 travis_fold start "generating HTML out of markdown using jekyll"
 jekyll build
 travis_fold end "generating HTML out of markdown using jekyll"
