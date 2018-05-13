@@ -7,5 +7,5 @@ printf -v all '%s,' ${http_status[@]};
 
 #maybe https://unix.stackexchange.com/a/25378 is better?
 
-htmlproofer --http-status-ignore $all --assume-extension ./_site
+find ./_site -iname '*.html' -exec htmlproofer --http-status-ignore $all {} \;
 
