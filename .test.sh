@@ -23,7 +23,7 @@ function run_link_checker() {
 }
 export -f run_link_checker
 
-find ./_site -type f -iname '*.html' -exec bash -c 'run_link_checker {}'
+find ./_site -type f -iname '*.html' -exec bash -c 'run_link_checker {}' \;
 
 
 
