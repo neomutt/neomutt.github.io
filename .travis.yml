@@ -1,9 +1,6 @@
 dist: trusty
 language: ruby
 
-git:
-  depth: 1
-
 cache:
   bundler: true
   directories:
