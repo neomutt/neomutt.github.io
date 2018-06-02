@@ -26,7 +26,4 @@ before_script:
     - export -f travis_time_start
     - export -f travis_time_finish
 script:
-    - travis_fold start "used bash script" 
-    -  cat ./.test.sh; 
-    - travis_fold end "used bash script"
     - ./.test.sh
