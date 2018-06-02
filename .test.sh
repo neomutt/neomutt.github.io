@@ -16,9 +16,9 @@ find ./_site -type f -iname '*.html' -exec bash -c '
     htmlproofer \
         --checks-to-ignore "ScriptCheck,ImageCheck" \
         --external_only \
-        --http-status-ignore $all 
+        --http-status-ignore $all {}
 
-    travis_fold end "Link checking" ' \;
+    travis_fold end "Link checking" ' +
 
 
 
