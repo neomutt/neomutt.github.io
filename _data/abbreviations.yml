@@ -111,6 +111,14 @@
         Category  : ["email", "header field"]
         Type      : acronym
 
+- term: CMS
+  definitions:
+    - str : Cryptographic Message Syntax
+      url : https://www.gnupg.org/software/gpgme/index.html
+      attributes:
+        Category  : ["signing", "encryption", "gpgme"]
+        Type      : acronym
+
 - term: COPR
   definitions:
     - str : Cool Other Package Repo
