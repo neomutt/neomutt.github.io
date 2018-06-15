@@ -331,11 +331,11 @@ Distribute NeoMutt as a set of feature patches
 
 : **Raised by** @flatcap on 2016-05-20 -- **Result**: hard to maintain, no interest
 
-### [#5 24bits (true color) support][#5]
+### #5 24bits (true color) support
 
 Allow full 24-bit (rgb) colours in Mutt
 
-: **Raised by** @timofonic on 2016-03-17 -- **Result**: very hard
+: **Raised by** timofonic on 2016-03-17 -- **Result**: very hard
 
 ### [#3 fuzzy address lookup][#3]
 
@@ -401,7 +401,6 @@ Be able to "drive" mutt from other programs, mailto:
 [#56]: <https://github.com/neomutt/neomutt/issues/56>
 [#47]: <https://github.com/neomutt/neomutt/issues/47>
 [#28]: <https://github.com/neomutt/neomutt/issues/28>
-[#5]: <https://github.com/neomutt/neomutt/issues/5>
 [#3]: <https://github.com/neomutt/neomutt/issues/3>
 [#2]: <https://github.com/neomutt/neomutt/issues/2>
 
