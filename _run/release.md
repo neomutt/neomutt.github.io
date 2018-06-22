@@ -165,6 +165,7 @@ Email
 - Translators -- send them new po files
 
 Update IRC topic
+- /topic Version: 2018-06-22 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
 Twitter
 
 ## Post-Release

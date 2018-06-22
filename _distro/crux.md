@@ -2,7 +2,7 @@
 layout: concertina
 distro: CRUX
 icon: crux.png
-homepage: https://github.com/6c37/crux-ports/tree/3.3/neomutt
+homepage: https://github.com/6c37/crux-ports/tree/master/neomutt
 title: NeoMutt for CRUX
 maintainer: 6c37 Team
 ---
