@@ -49,7 +49,7 @@ been fixed since the last tagged release, you can install the `HEAD` version.
 Once you have Homebrew installed, then getting NeoMutt is as simple as:
 
 ```shell
-$ brew install neomutt/homebrew-neomutt/neomutt
+$ brew install neomutt
 ```
 
 [neomutt-github]: https://github.com/neomutt/neomutt
