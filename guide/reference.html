@@ -2975,7 +2975,7 @@ set certificate_file=~/.neomutt/certificates
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>When set, specifies a command used to filter messages. When a message is viewed it is passed as standard input to
@@ -3113,7 +3113,7 @@ set dsn_return=hdrs
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">vi</code>
@@ -5181,7 +5181,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>If set, specifies the program and arguments used to deliver news posted by NeoMutt. Otherwise, NeoMutt posts article using current connection to news server. The following printf-style sequence is understood:</p>
@@ -5234,7 +5234,7 @@ set inews="/usr/local/bin/inews -hS"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">ispell</code>
@@ -5328,6 +5328,8 @@ set inews="/usr/local/bin/inews -hS"
         <em>unset</em>
       </span>, and has a separate option,
       <a class="link" href="#mail-check-stats-interval" title="3.149.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>, to control how often to update these counts.</p>
+      <p>Message statistics can also be explicitly calculated by invoking the
+      <code class="literal">&lt;check-stats&gt;</code>function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5915,7 +5917,7 @@ set inews="/usr/local/bin/inews -hS"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This specifies a command to run, to determine the mime type of a new attachment when composing a message. Unless
@@ -6003,7 +6005,7 @@ set inews="/usr/local/bin/inews -hS"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">mixmaster</code>
@@ -6078,7 +6080,7 @@ set inews="/usr/local/bin/inews -hS"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>If
@@ -6521,7 +6523,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">builtin</code>
@@ -6703,7 +6705,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This format is used to create an old-style
@@ -6728,7 +6730,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This format strings specifies a command which is used to decode application/pgp attachments.</p>
@@ -6780,7 +6782,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to decrypt a PGP encrypted message.</p>
@@ -6839,7 +6841,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to encrypt a body part without signing it.</p>
@@ -6857,7 +6859,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to both sign and encrypt a body part.</p>
@@ -6947,7 +6949,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to export a public key from the user's key ring.</p>
@@ -6965,7 +6967,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is invoked whenever NeoMutt needs to fetch the public key associated with an email address. Of the sequences supported by
@@ -7016,7 +7018,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to import a key from a message into the user's public key ring.</p>
@@ -7034,7 +7036,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to list the public key ring's contents. The output format must be analogous to the one used by</p>
@@ -7057,7 +7059,7 @@ gpg --list-keys --with-colons --with-fingerprint
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to list the secret key ring's contents. The output format must be analogous to the one used by:</p>
@@ -7226,7 +7228,7 @@ gpg --list-keys --with-colons --with-fingerprint
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to create the detached PGP signature for a
@@ -7340,7 +7342,7 @@ gpg --list-keys --with-colons --with-fingerprint
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to verify PGP signatures.</p>
@@ -7358,7 +7360,7 @@ gpg --list-keys --with-colons --with-fingerprint
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to verify key information from the key selection menu.</p>
@@ -7803,7 +7805,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">lpr</code>
@@ -7895,7 +7897,7 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This specifies the command NeoMutt will use to make external address queries. The string may contain a
@@ -8147,7 +8149,8 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <a class="link" href="#save-name" title="3.297.&#160;save_name">$save_name</a> variables, and the
       <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#fcc-hook">fcc-hook</a>
-      </span>”</span> command.</p>
+      </span>”</span> command. Also see
+      <a class="link" href="#copy" title="3.45.&#160;copy">$copy</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8715,7 +8718,7 @@ From: abd30425@somewhere.net
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">/usr/sbin/sendmail&#160;-oem&#160;-oi</code>
@@ -8778,7 +8781,7 @@ From: abd30425@somewhere.net
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>Command to use when spawning a subshell. If not specified, then the user's login shell from
@@ -9511,7 +9514,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This format string specifies a command which is used to decrypt
@@ -9629,7 +9632,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to create encrypted S/MIME messages.</p>
@@ -9675,7 +9678,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to extract X509 certificates from a PKCS7 structure.</p>
@@ -9693,7 +9696,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to extract the mail address(es) used for storing X509 certificates, and for verification purposes (to check whether the certificate was issued for the sender's mailbox).</p>
@@ -9711,7 +9714,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to extract only the signers X509 certificate from a S/MIME signature, so that the certificate's owner may get compared to the email's
@@ -9730,7 +9733,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to import a certificate via smime_keys.</p>
@@ -9784,7 +9787,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to extract PKCS7 structures of S/MIME signatures, in order to extract the public X509 certificate(s).</p>
@@ -9837,7 +9840,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to created S/MIME signatures of type
@@ -9895,7 +9898,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to verify S/MIME signatures of type
@@ -9914,7 +9917,7 @@ set sidebar_delim_chars='.'
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;string
+        <p>Type:&#160;command
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This command is used to verify S/MIME signatures of type
@@ -10092,20 +10095,13 @@ set sort=reverse-date-sent
       </div>
       <p>When sorting by threads, this variable controls how threads are sorted in relation to other threads, and how the branches of the thread trees are sorted. This can be set to any value that
       <a class="link" href="#sort" title="3.357.&#160;sort">$sort</a> can, except
-      <span class="quote">“
-      <span class="quote">threads</span>”</span>(in that case, NeoMutt will just use
-      <span class="quote">“
-      <span class="quote">date-sent</span>”</span>). You can also specify the
-      <span class="quote">“
-      <span class="quote">last-</span>”</span> prefix in addition to the
-      <span class="quote">“
-      <span class="quote">reverse-</span>”</span> prefix, but
-      <span class="quote">“
-      <span class="quote">last-</span>”</span> must come after
-      <span class="quote">“
-      <span class="quote">reverse-</span>”</span>. The
-      <span class="quote">“
-      <span class="quote">last-</span>”</span> prefix causes messages to be sorted against its siblings by which has the last descendant, using the rest of
+      <span class="quote">“<span class="quote">threads</span>”</span>(in that case, NeoMutt will just use
+      <span class="quote">“<span class="quote">date-sent</span>”</span>). You can also specify the
+      <span class="quote">“<span class="quote">last-</span>”</span> prefix in addition to the
+      <span class="quote">“<span class="quote">reverse-</span>”</span> prefix, but
+      <span class="quote">“<span class="quote">last-</span>”</span> must come after
+      <span class="quote">“<span class="quote">reverse-</span>”</span>. The
+      <span class="quote">“<span class="quote">last-</span>”</span> prefix causes messages to be sorted against its siblings by which has the last descendant, using the rest of
       <a class="link" href="#sort-aux" title="3.359.&#160;sort_aux">$sort_aux</a> as an ordering. For instance,</p>
       <pre class="screen">
 set sort_aux=last-date-received
@@ -10704,8 +10700,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         </table>
       </div>
       <p>For an explanation of
-      <span class="quote">“
-      <span class="quote">soft-fill</span>”</span>, see the
+      <span class="quote">“<span class="quote">soft-fill</span>”</span>, see the
       <a class="link" href="#index-format" title="3.142.&#160;index_format">$index_format</a> documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
       <p>Some of the above sequences can be used to optionally print a string if their value is nonzero. For example, you may only want to see the number of flagged messages if such messages exist, since zero is not particularly meaningful. To optionally print a string based upon one of the above sequences, the following construct is used:</p>
@@ -10756,8 +10751,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <code class="literal">%_h</code>
       </span>”</span>.</p>
       <p>If you prefix the sequence character with a colon (
-      <span class="quote">“
-      <span class="quote">:</span>”</span>) character, NeoMutt will replace any dots in the expansion by underscores. This might be helpful with IMAP folders that don't like dots in folder names.</p>
+      <span class="quote">“<span class="quote">:</span>”</span>) character, NeoMutt will replace any dots in the expansion by underscores. This might be helpful with IMAP folders that don't like dots in folder names.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11408,7 +11402,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;path
+        <p>Type:&#160;command
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
           <code class="literal">vi</code>
@@ -11655,6 +11649,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                 </td>
                 <td>L</td>
                 <td>move to the bottom of the page</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;check-stats&gt;</code>
+                </td>
+                <td>&#160;</td>
+                <td>calculate message statistics for all mailboxes</td>
               </tr>
               <tr>
                 <td>
@@ -12852,6 +12853,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                 </td>
                 <td>&#160;</td>
                 <td>open a different virtual folder</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="literal">&lt;check-stats&gt;</code>
+                </td>
+                <td>&#160;</td>
+                <td>calculate message statistics for all mailboxes</td>
               </tr>
               <tr>
                 <td>

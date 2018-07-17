@@ -470,7 +470,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm45287579268912"></a>
+            <a id="idm45110477446016"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -569,7 +569,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm45287579240976"></a>
+            <a id="idm45110477418064"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -2142,6 +2142,19 @@ bind editor &lt;delete&gt; backspace
         <dl class="variablelist">
           <dt>
             <span class="term">
+              <code class="literal">&lt;check-stats&gt;</code>
+              <a id="check-stats"></a>
+            </span>
+          </dt>
+          <dd>
+            <p>Calculate statistics for all monitored mailboxes declared using the
+            <span class="command">
+              <strong>mailboxes</strong>
+            </span>command. It will calculate statistics despite
+            <a class="link" href="reference.html#mail-check-stats" title="3.148.&#160;mail_check_stats">$mail_check_stats</a> being unset.</p>
+          </dd>
+          <dt>
+            <span class="term">
             <code class="literal">&lt;create-alias&gt;</code>(default: a)
             <a id="create-alias"></a></span>
           </dt>
@@ -2171,7 +2184,8 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>This function will search the current message for content signed or encrypted with PGP the
-            <span class="quote">“<span class="quote">traditional</span>”</span> way, that is, without proper MIME tagging. Technically, this function will temporarily change the MIME content types of the body parts containing PGP data; this is similar to the
+            <span class="quote">“
+            <span class="quote">traditional</span>”</span> way, that is, without proper MIME tagging. Technically, this function will temporarily change the MIME content types of the body parts containing PGP data; this is similar to the
             <a class="link" href="#edit-type">
               <code class="literal">&lt;edit-type&gt;</code>
             </a>function's effect.</p>
@@ -2236,7 +2250,8 @@ bind editor &lt;delete&gt; backspace
           <dt>
             <span class="term">
             <code class="literal">&lt;enter-command&gt;</code>(default:
-            <span class="quote">“<span class="quote">:</span>”</span>)
+            <span class="quote">“
+            <span class="quote">:</span>”</span>)
             <a id="enter-command"></a></span>
           </dt>
           <dd>
@@ -2460,18 +2475,17 @@ bind editor &lt;delete&gt; backspace
       <span class="emphasis">
         <em>Forwarding</em>
       </span>a message allows you to add comments or modify the message you are forwarding. These items are discussed in greater detail in the next section
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="#forwarding-mail" title="7.&#160;Forwarding and Bouncing Mail">Forwarding and Bouncing Mail</a>
       </span>”</span>.</p>
       <p>NeoMutt will then enter the
       <span class="emphasis">
         <em>compose</em>
       </span>menu and prompt you for the recipients to place on the
-      <span class="quote">“
-      <span class="quote">To:</span>”</span> header field when you hit
+      <span class="quote">“<span class="quote">To:</span>”</span> header field when you hit
       <code class="literal">m</code> to start a new message. Next, it will ask you for the
-      <span class="quote">“<span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
+      <span class="quote">“
+      <span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
       <a class="link" href="reference.html#askcc" title="3.14.&#160;askcc">$askcc</a>,
       <a class="link" href="reference.html#askbcc" title="3.13.&#160;askbcc">$askbcc</a>,
       <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>,
@@ -2756,7 +2770,8 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>description</em>
         </span>is an optional string to use as the description of the attached file. Spaces in filenames have to be escaped using backslash (
-        <span class="quote">“<span class="quote">\</span>”</span>). The file can be removed as well as more added from the compose menu.</p>
+        <span class="quote">“
+        <span class="quote">\</span>”</span>). The file can be removed as well as more added from the compose menu.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -2777,9 +2792,12 @@ bind editor &lt;delete&gt; backspace
           <em>&lt;id&gt;</em>
         </span>]</p>
         <p>
-        <span class="quote">“<span class="quote">E</span>”</span> selects encryption,
-        <span class="quote">“<span class="quote">S</span>”</span> selects signing and
-        <span class="quote">“<span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
+        <span class="quote">“
+        <span class="quote">E</span>”</span> selects encryption,
+        <span class="quote">“
+        <span class="quote">S</span>”</span> selects signing and
+        <span class="quote">“
+        <span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
         <a class="link" href="reference.html#pgp-sign-as" title="3.238.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
       </div>
       <div class="sect3">
@@ -2802,7 +2820,8 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>In-Reply-To:</em>
         </span>header in your editor. Otherwise, though you'll produce a technically valid reply, some netiquette guardians will be annoyed by this so-called
-        <span class="quote">“<span class="quote">thread hijacking</span>”</span>.</p>
+        <span class="quote">“
+        <span class="quote">thread hijacking</span>”</span>.</p>
       </div>
     </div>
     <div class="sect2">
@@ -2826,8 +2845,7 @@ bind editor &lt;delete&gt; backspace
       <p>Most fields of the entries in the key selection menu (see also
       <a class="link" href="reference.html#pgp-entry-format" title="3.224.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
       <p>The flags sequence (
-      <span class="quote">“
-      <span class="quote">%f</span>”</span>) will expand to one of the flags in
+      <span class="quote">“<span class="quote">%f</span>”</span>) will expand to one of the flags in
       <a class="xref" href="#tab-pgp-menuflags" title="Table&#160;2.17.&#160;PGP key menu flags">Table&#160;2.17, “PGP key menu flags”</a>.</p>
       <div >
         <a id="tab-pgp-menuflags"></a>
@@ -2874,14 +2892,10 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">.</span>”</span>) means that it's marked as a signature key in one of the user IDs, but may also be used for encryption. The letter
       <span class="quote">“<span class="quote">e</span>”</span> indicates that this key can be used for encryption.</p>
       <p>The second character indicates the key's signing capabilities. Once again, a
-      <span class="quote">“
-      <span class="quote">-</span>”</span> implies
-      <span class="quote">“
-      <span class="quote">not for signing</span>”</span>,
-      <span class="quote">“
-      <span class="quote">.</span>”</span> implies that the key is marked as an encryption key in one of the user-ids, and
-      <span class="quote">“
-      <span class="quote">s</span>”</span> denotes a key which can be used for signing.</p>
+      <span class="quote">“<span class="quote">-</span>”</span> implies
+      <span class="quote">“<span class="quote">not for signing</span>”</span>,
+      <span class="quote">“<span class="quote">.</span>”</span> implies that the key is marked as an encryption key in one of the user-ids, and
+      <span class="quote">“<span class="quote">s</span>”</span> denotes a key which can be used for signing.</p>
       <p>Finally, the validity field (
       <span class="quote">“<span class="quote">%t</span>”</span>) indicates how well-certified a user-id is. A question mark (
       <span class="quote">“<span class="quote">?</span>”</span>) indicates undefined validity, a minus character (
@@ -2910,8 +2924,7 @@ bind editor &lt;delete&gt; backspace
         <code class="literal">format=flowed</code>-style messages (or
         <code class="literal">f=f</code> for short) are
         <code class="literal">text/plain</code> messages that consist of paragraphs which a receiver's mail client may reformat to its own needs which mostly means to customize line lengths regardless of what the sender sent. Technically this is achieved by letting lines of a
-        <span class="quote">“
-        <span class="quote">flowable</span>”</span> paragraph end in spaces except for the last line.</p>
+        <span class="quote">“<span class="quote">flowable</span>”</span> paragraph end in spaces except for the last line.</p>
         <p>While for text-mode clients like NeoMutt it's the best way to assume only a standard 80x25 character cell terminal, it may be desired to let the receiver decide completely how to view a message.</p>
       </div>
       <div class="sect3">
@@ -2938,8 +2951,7 @@ bind editor &lt;delete&gt; backspace
             </li>
             <li class="listitem">
               <p>lines starting with the word
-              <span class="quote">“
-              <span class="quote">
+              <span class="quote">“<span class="quote">
                 <code class="literal">From</code>
               </span>”</span> followed by space</p>
             </li>
