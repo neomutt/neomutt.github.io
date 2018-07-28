@@ -6789,6 +6789,10 @@ set nntp_authenticators="digest-md5:user"
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.218.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>When decrypting messages using <code>gpg</code>, a pinentry program needs to be invoked unless the password is cached within <code>gpg-agent</code>. Currently (see <a href="https://github.com/neomutt/neomutt/issues/1014" target="_blank">#1014</a>), the <code>pinentry-tty</code> program (usually distributed with <code>gpg</code>) isn't suitable for being invoked by NeoMutt. You are encouraged to use a different pinentry-program when running NeoMutt in order to avoid problems such as described in <a href="https://github.com/neomutt/neomutt/issues/1014" target="_blank">#1014</a>.</p>
+      </div>
     </div>
     <div class="sect2">
       <div class="titlepage">
