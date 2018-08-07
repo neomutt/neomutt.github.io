@@ -409,14 +409,14 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>generate virtual folder from notmuch search query. Note: TAB completion of 'tag:' names is available.</td>
             </tr>
             <tr>
-              <td>index,pager</td>
+              <td>index</td>
               <td>
                 <code class="literal">&lt;vfolder-window-forward&gt;</code>
               </td>
               <td>generate virtual folder by moving the query's time window forward</td>
             </tr>
             <tr>
-              <td>index,pager</td>
+              <td>index</td>
               <td>
                 <code class="literal">&lt;vfolder-window-backward&gt;</code>
               </td>
@@ -547,8 +547,8 @@ bind index,pager + entire-thread
 <span class="comment"># generate virtual folder from query</span>
 bind index,pager \eX vfolder-from-query
 <span class="comment"># generate virtual folder from query with time window</span>
-bind index,pager &lt; vfolder-window-backward
-bind index,pager &gt; vfolder-window-forward
+bind index &lt; vfolder-window-backward
+bind index &gt; vfolder-window-forward
 <span class="comment"># toggle between mailboxes and virtual mailboxes</span>
 <span class="comment"># bind index,pager ??? sidebar-toggle-virtual</span>
 <span class="comment"># --------------------------------------------------------------------------</span>
