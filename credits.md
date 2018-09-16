@@ -29,7 +29,7 @@ Here's a list of everyone who's helped NeoMutt:
 [Ander Punnar](https://github.com/4nd3r "4nd3r"),
 [Andreas Rammhold](https://github.com/andir "andir"),
 [André Berger](https://github.com/hvkls "hvkls"),
-[Anton Rieger](https://github.com/seishinryohosha "seishinryohosha"),
+[Anton Rieger](https://github.com/inrin "inrin"),
 [Antonio Radici](https://github.com/aradici "aradici"),
 [Austin Ray](https://github.com/Austin-Ray "Austin-Ray"),
 [Baptiste Daroussin](https://github.com/bapt "bapt"),
