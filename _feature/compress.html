@@ -190,40 +190,39 @@ open-hook regex "shell-command"
       <code class="literal">open-hook</code> that matches the filename.</p>
       <p>If your compression program doesn't have a well-defined extension, then you can use
       <code class="literal">.</code>as the regex.</p>
-      <div class="sect3">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h4 class="title">
-              <a id="open-hook-example"></a>3.1.1.&#160;Example of
-              <code class="literal">open-hook</code></h4>
-            </div>
-          </div>
-        </div>
-        <pre class="screen">
+      <div class="example">
+        <a id="open-hook-example"></a>
+        <p class="title">
+          <strong>Example&#160;9.1.&#160;Example of
+          <code class="literal">open-hook</code></strong>
+        </p>
+        <div class="example-contents">
+          <pre class="screen">
 open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
 </pre>
-        <div class="itemizedlist">
-          <ul class="itemizedlist" style="list-style-type: disc;">
-            <li class="listitem">
-              <p>NeoMutt finds a file,
-              <span class="quote">“<span class="quote">example.gz</span>”</span>, that it can't read</p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt has an
-              <code class="literal">open-hook</code> whose regex matches the filename:
-              <code class="literal">\.gz$</code></p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt uses the command
-              <code class="literal">gzip -cd</code> to create a temporary file that it
-              <span class="emphasis">
-                <em>can</em>
-              </span>read</p>
-            </li>
-          </ul>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc;">
+              <li class="listitem">
+                <p>NeoMutt finds a file,
+                <span class="quote">“<span class="quote">example.gz</span>”</span>, that it can't read</p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt has an
+                <code class="literal">open-hook</code> whose regex matches the filename:
+                <code class="literal">\.gz$</code></p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt uses the command
+                <code class="literal">gzip -cd</code> to create a temporary file that it
+                <span class="emphasis">
+                  <em>can</em>
+                </span>read</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <br class="example-break" />
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -245,46 +244,45 @@ close-hook regex "shell-command"
         <p>If the folder has not been modified, the
         <code class="literal">close-hook</code> will not be called.</p>
       </div>
-      <div class="sect3">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h4 class="title">
-              <a id="close-hook-example"></a>3.2.1.&#160;Example of
-              <code class="literal">close-hook</code></h4>
-            </div>
-          </div>
-        </div>
-        <pre class="screen">
+      <div class="example">
+        <a id="close-hook-example"></a>
+        <p class="title">
+          <strong>Example&#160;9.2.&#160;Example of
+          <code class="literal">close-hook</code></strong>
+        </p>
+        <div class="example-contents">
+          <pre class="screen">
 close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
 </pre>
-        <div class="itemizedlist">
-          <ul class="itemizedlist" style="list-style-type: disc;">
-            <li class="listitem">
-              <p>NeoMutt has finished with a folder,
-              <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
-              <code class="literal">open-hook</code></p>
-            </li>
-            <li class="listitem">
-              <p>The folder has been modified</p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt has a
-              <code class="literal">close-hook</code> whose regex matches the filename:
-              <code class="literal">\.gz$</code></p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt uses the command
-              <code class="literal">gzip -c</code> to create a new compressed file</p>
-            </li>
-          </ul>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc;">
+              <li class="listitem">
+                <p>NeoMutt has finished with a folder,
+                <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
+                <code class="literal">open-hook</code></p>
+              </li>
+              <li class="listitem">
+                <p>The folder has been modified</p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt has a
+                <code class="literal">close-hook</code> whose regex matches the filename:
+                <code class="literal">\.gz$</code></p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt uses the command
+                <code class="literal">gzip -c</code> to create a new compressed file</p>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="note">
-          <h3 class="title">Note</h3>
-          <p>The
-          <code class="literal">close-hook</code> can also include extra options, e.g. compression level:
-          <code class="literal">--best</code></p>
-        </div>
+      </div>
+      <br class="example-break" />
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>The
+        <code class="literal">close-hook</code> can also include extra options, e.g. compression level:
+        <code class="literal">--best</code></p>
       </div>
     </div>
     <div class="sect2">
@@ -318,47 +316,46 @@ append-hook regex "shell-command"
         <code class="literal">&gt;&gt;</code>in the
         <span class="quote">“<span class="quote">append-hook</span>”</span>. If not, data will be lost.</p>
       </div>
-      <div class="sect3">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h4 class="title">
-              <a id="append-hook-example"></a>3.3.1.&#160;Example of
-              <code class="literal">append-hook</code></h4>
-            </div>
-          </div>
-        </div>
-        <pre class="screen">
+      <div class="example">
+        <a id="append-hook-example"></a>
+        <p class="title">
+          <strong>Example&#160;9.3.&#160;Example of
+          <code class="literal">append-hook</code></strong>
+        </p>
+        <div class="example-contents">
+          <pre class="screen">
 append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
 </pre>
-        <div class="itemizedlist">
-          <ul class="itemizedlist" style="list-style-type: disc;">
-            <li class="listitem">
-              <p>NeoMutt wants to append an email to a folder,
-              <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
-              <code class="literal">open-hook</code></p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt has an
-              <code class="literal">append-hook</code> whose regex matches the filename:
-              <code class="literal">\.gz$</code></p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt knows the mailbox type from the
-              <code class="literal">$mbox</code> variable</p>
-            </li>
-            <li class="listitem">
-              <p>NeoMutt uses the command
-              <code class="literal">gzip -c</code> to append to an existing compressed file</p>
-            </li>
-          </ul>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc;">
+              <li class="listitem">
+                <p>NeoMutt wants to append an email to a folder,
+                <span class="quote">“<span class="quote">example.gz</span>”</span>, that it opened with
+                <code class="literal">open-hook</code></p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt has an
+                <code class="literal">append-hook</code> whose regex matches the filename:
+                <code class="literal">\.gz$</code></p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt knows the mailbox type from the
+                <code class="literal">$mbox</code> variable</p>
+              </li>
+              <li class="listitem">
+                <p>NeoMutt uses the command
+                <code class="literal">gzip -c</code> to append to an existing compressed file</p>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="note">
-          <h3 class="title">Note</h3>
-          <p>The
-          <code class="literal">append-hook</code> can also include extra options, e.g. compression level:
-          <code class="literal">--best</code></p>
-        </div>
+      </div>
+      <br class="example-break" />
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>The
+        <code class="literal">append-hook</code> can also include extra options, e.g. compression level:
+        <code class="literal">--best</code></p>
       </div>
     </div>
     <div class="sect2">
@@ -371,7 +368,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>NeoMutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/guide/reference.html#save-empty" title="3.295.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/guide/reference.html#save-empty" title="3.299.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -383,7 +380,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.390.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.395.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -449,17 +446,17 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.390.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.395.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#mbox-type" title="3.160.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/guide/reference.html#mbox-type" title="3.163.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#save-empty" title="3.295.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/guide/reference.html#save-empty" title="3.299.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">
