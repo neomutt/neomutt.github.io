@@ -470,7 +470,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm45650059148112"></a>
+            <a id="idm45609390687056"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -495,9 +495,14 @@ set sidebar_divider_char = '│'
                     <td>Name of the mailbox</td>
                   </tr>
                   <tr>
-                    <td>%S</td>
-                    <td>* †</td>
-                    <td>Size of mailbox (total number of messages)</td>
+                    <td>%d</td>
+                    <td>* ‡</td>
+                    <td>Number of deleted messages</td>
+                  </tr>
+                  <tr>
+                    <td>%D</td>
+                    <td>&#160;</td>
+                    <td>Description of the mailbox</td>
                   </tr>
                   <tr>
                     <td>%F</td>
@@ -505,9 +510,9 @@ set sidebar_divider_char = '│'
                     <td>Number of Flagged messages in the mailbox</td>
                   </tr>
                   <tr>
-                    <td>%N</td>
-                    <td>* †</td>
-                    <td>Number of New messages in the mailbox</td>
+                    <td>%L</td>
+                    <td>* ‡</td>
+                    <td>Number of messages after limiting</td>
                   </tr>
                   <tr>
                     <td>%n</td>
@@ -516,27 +521,27 @@ set sidebar_divider_char = '│'
                     <span class="quote">“<span class="quote">N</span>”</span>, otherwise nothing</td>
                   </tr>
                   <tr>
+                    <td>%N</td>
+                    <td>* †</td>
+                    <td>Number of New messages in the mailbox</td>
+                  </tr>
+                  <tr>
+                    <td>%S</td>
+                    <td>* †</td>
+                    <td>Size of mailbox (total number of messages)</td>
+                  </tr>
+                  <tr>
+                    <td>%t</td>
+                    <td>* ‡</td>
+                    <td>Number of tagged messages</td>
+                  </tr>
+                  <tr>
                     <td>%!</td>
                     <td>&#160;</td>
                     <td>
                     <span class="quote">“<span class="quote">!</span>”</span>: one flagged message;
                     <span class="quote">“<span class="quote">!!</span>”</span>: two flagged messages;
                     <span class="quote">“<span class="quote">n!</span>”</span>: n flagged messages (for n &gt; 2). Otherwise prints nothing.</td>
-                  </tr>
-                  <tr>
-                    <td>%d</td>
-                    <td>* ‡</td>
-                    <td>Number of deleted messages</td>
-                  </tr>
-                  <tr>
-                    <td>%L</td>
-                    <td>* ‡</td>
-                    <td>Number of messages after limiting</td>
-                  </tr>
-                  <tr>
-                    <td>%t</td>
-                    <td>* ‡</td>
-                    <td>Number of tagged messages</td>
                   </tr>
                   <tr>
                     <td>%&gt;X</td>
@@ -569,7 +574,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm45650059120160"></a>
+            <a id="idm45609390657616"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -2114,8 +2119,7 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in
       <a class="link" href="reference.html#index-format" title="3.145.&#160;index_format">$index_format</a>. For example, you could use
-      <span class="quote">“
-      <span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span> in
+      <span class="quote">“<span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span> in
       <a class="link" href="reference.html#index-format" title="3.145.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
       <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="27.2.&#160;Conditionals">format string conditionals</a>.</p>
@@ -2184,8 +2188,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>This function will search the current message for content signed or encrypted with PGP the
-            <span class="quote">“
-            <span class="quote">traditional</span>”</span> way, that is, without proper MIME tagging. Technically, this function will temporarily change the MIME content types of the body parts containing PGP data; this is similar to the
+            <span class="quote">“<span class="quote">traditional</span>”</span> way, that is, without proper MIME tagging. Technically, this function will temporarily change the MIME content types of the body parts containing PGP data; this is similar to the
             <a class="link" href="#edit-type">
               <code class="literal">&lt;edit-type&gt;</code>
             </a>function's effect.</p>
@@ -2250,8 +2253,7 @@ bind editor &lt;delete&gt; backspace
           <dt>
             <span class="term">
             <code class="literal">&lt;enter-command&gt;</code>(default:
-            <span class="quote">“
-            <span class="quote">:</span>”</span>)
+            <span class="quote">“<span class="quote">:</span>”</span>)
             <a id="enter-command"></a></span>
           </dt>
           <dd>
@@ -2484,8 +2486,7 @@ bind editor &lt;delete&gt; backspace
       </span>menu and prompt you for the recipients to place on the
       <span class="quote">“<span class="quote">To:</span>”</span> header field when you hit
       <code class="literal">m</code> to start a new message. Next, it will ask you for the
-      <span class="quote">“
-      <span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
+      <span class="quote">“<span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
       <a class="link" href="reference.html#askcc" title="3.14.&#160;askcc">$askcc</a>,
       <a class="link" href="reference.html#askbcc" title="3.13.&#160;askbcc">$askbcc</a>,
       <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>,
@@ -2770,8 +2771,7 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>description</em>
         </span>is an optional string to use as the description of the attached file. Spaces in filenames have to be escaped using backslash (
-        <span class="quote">“
-        <span class="quote">\</span>”</span>). The file can be removed as well as more added from the compose menu.</p>
+        <span class="quote">“<span class="quote">\</span>”</span>). The file can be removed as well as more added from the compose menu.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -2792,12 +2792,9 @@ bind editor &lt;delete&gt; backspace
           <em>&lt;id&gt;</em>
         </span>]</p>
         <p>
-        <span class="quote">“
-        <span class="quote">E</span>”</span> selects encryption,
-        <span class="quote">“
-        <span class="quote">S</span>”</span> selects signing and
-        <span class="quote">“
-        <span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
+        <span class="quote">“<span class="quote">E</span>”</span> selects encryption,
+        <span class="quote">“<span class="quote">S</span>”</span> selects signing and
+        <span class="quote">“<span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
         <a class="link" href="reference.html#pgp-sign-as" title="3.241.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
       </div>
       <div class="sect3">
@@ -2820,8 +2817,7 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>In-Reply-To:</em>
         </span>header in your editor. Otherwise, though you'll produce a technically valid reply, some netiquette guardians will be annoyed by this so-called
-        <span class="quote">“
-        <span class="quote">thread hijacking</span>”</span>.</p>
+        <span class="quote">“<span class="quote">thread hijacking</span>”</span>.</p>
       </div>
     </div>
     <div class="sect2">

@@ -2068,6 +2068,20 @@ subscribe [0-9]+.*@bugs.debian.org
         <code>mailbox</code>
       </em>...]
       <br />
+      <code class="command">named-mailboxes</code>
+      <em class="replaceable">
+        <code>description</code>
+      </em>
+      <em class="replaceable">
+        <code>mailbox</code>
+      </em>{
+      <em class="replaceable">
+        <code>description</code>
+      </em>
+      <em class="replaceable">
+        <code>mailbox</code>
+      </em>...}
+      <br />
       <code class="command">unmailboxes</code>{
       <em class="replaceable">
         <code>*</code>
@@ -2092,7 +2106,9 @@ subscribe [0-9]+.*@bugs.debian.org
     <em>New Mail Feature</em></a>for details (including in what situations and how often NeoMutt checks for new mail). Additionally,
     <a class="link" href="reference.html#new-mail-command" title="3.187.&#160;new_mail_command">$new_mail_command</a> can be used to run a command when new mail is detected.</p>
     <p>The
-    <span class="quote">“<span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail. Use
+    <span class="quote">“<span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail.
+    <span class="quote">“<span class="quote">unmailboxes</span>”</span> can be used on the mailbox path,
+    <span class="quote">“<span class="quote">$folder</span>”</span>-abbreviated path, or description. Use
     <span class="quote">“<span class="quote">unmailboxes&#160;*</span>”</span> to remove all tokens.</p>
     <div class="note">
       <h3 class="title">Note</h3>

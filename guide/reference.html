@@ -919,6 +919,19 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>...]
             <br />
             <code class="command">
+              <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">named-mailboxes</a>
+            </code>
+            <em class="replaceable">
+              <code>description</code>
+            </em>
+            <em class="replaceable">
+              <code>mailbox</code>
+            </em>[
+            <em class="replaceable">
+              <code>description mailbox</code>
+            </em>...]
+            <br />
+            <code class="command">
               <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">unmailboxes</a>
             </code>{
             <em class="replaceable">
@@ -1433,7 +1446,8 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
       <div class="literallayout">
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">\&lt;(attach|attached|attachments?)\&gt;</code>
         </span>”</span></p>
       </div>
@@ -1498,7 +1512,8 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">~/.neomuttrc</code>
         </span>”</span></p>
       </div>
@@ -1514,8 +1529,7 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
       <span class="bold">
         <strong>Note:</strong>
       </span>NeoMutt will not automatically source this file; you must explicitly use the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#source" title="25.&#160;Reading Initialization Commands From Another File">source</a>
       </span>”</span> command for it to be executed in case this option points to a dedicated alias file.</p>
       <p>The default for this option is the currently used neomuttrc file, or
@@ -1886,8 +1900,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </table>
       </div>
       <p>For an explanation of
-      <span class="quote">“
-      <span class="quote">soft-fill</span>”</span>, see the
+      <span class="quote">“<span class="quote">soft-fill</span>”</span>, see the
       <a class="link" href="#index-format" title="3.145.&#160;index_format">$index_format</a> documentation.</p>
     </div>
     <div class="sect2">
@@ -1902,8 +1915,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">\n</code>
         </span>”</span></p>
       </div>
@@ -2962,8 +2974,7 @@ set certificate_file=~/.neomutt/certificates
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt's received-attachments menu will not show the subparts of individual messages in a multipart/digest. To see these subparts, press
-      <span class="quote">“
-      <span class="quote">v</span>”</span> on that menu.</p>
+      <span class="quote">“<span class="quote">v</span>”</span> on that menu.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3095,7 +3106,8 @@ set dsn_return=hdrs
       </div>
       <p>This option allows you to edit the header of your outgoing messages along with the body of your message.</p>
       <p>Although the compose menu may have localized header labels, the labels passed to your editor will be standard RFC2822 headers, (e.g. To:, Cc:, Subject:). Headers added in your editor must also be RFC2822 headers, or one of the pseudo headers listed in
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <a class="link" href="gettingstarted.html#edit-header" title="6.2.&#160;Editing the Message Header">edit-header</a>
       </span>”</span>. NeoMutt will not understand localized header labels, just as it would not when parsing an actual email.</p>
       <p>
@@ -3160,7 +3172,8 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">Re:&#160;your&#160;mail</code>
         </span>”</span></p>
       </div>
@@ -3183,7 +3196,8 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will quoted-printable encode messages when they contain the string
-      <span class="quote">“<span class="quote">From</span>”</span>(note the trailing space) in the beginning of a line. This is useful to avoid the tampering certain mail delivery and transport agents tend to do with messages (in order to prevent tools from misinterpreting the line as a mbox message separator).</p>
+      <span class="quote">“
+      <span class="quote">From</span>”</span>(note the trailing space) in the beginning of a line. This is useful to avoid the tampering certain mail delivery and transport agents tend to do with messages (in order to prevent tools from misinterpreting the line as a mbox message separator).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3234,7 +3248,8 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">~</code>
         </span>”</span></p>
       </div>
@@ -3311,7 +3326,8 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">*!DdrONon-&#160;</code>
         </span>”</span></p>
       </div>
@@ -3426,22 +3442,22 @@ sh -c 'string'
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">~/Mail</code>
         </span>”</span></p>
       </div>
       <p>Specifies the default location of your mailboxes. A
-      <span class="quote">“<span class="quote">+</span>”</span> or
-      <span class="quote">“<span class="quote">=</span>”</span> at the beginning of a pathname will be expanded to the value of this variable. Note that if you change this variable (from the default) value you need to make sure that the assignment occurs
-      <span class="emphasis">
-        <em>before</em>
-      </span>you use
       <span class="quote">“
       <span class="quote">+</span>”</span> or
       <span class="quote">“
-      <span class="quote">=</span>”</span> for any other variables since expansion takes place when handling the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">=</span>”</span> at the beginning of a pathname will be expanded to the value of this variable. Note that if you change this variable (from the default) value you need to make sure that the assignment occurs
+      <span class="emphasis">
+        <em>before</em>
+      </span>you use
+      <span class="quote">“<span class="quote">+</span>”</span> or
+      <span class="quote">“<span class="quote">=</span>”</span> for any other variables since expansion takes place when handling the
+      <span class="quote">“<span class="quote">
         <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">mailboxes</a>
       </span>”</span> command.</p>
     </div>
@@ -3498,6 +3514,10 @@ sh -c 'string'
             <tr>
               <td>%g</td>
               <td>Group name (or numeric gid, if missing)</td>
+            </tr>
+            <tr>
+              <td>%i</td>
+              <td>Description of the folder</td>
             </tr>
             <tr>
               <td>%l</td>
@@ -9035,6 +9055,10 @@ set sidebar_delim_chars='.'
               <td>Name of the mailbox</td>
             </tr>
             <tr>
+              <td>%D</td>
+              <td>Description of the mailbox</td>
+            </tr>
+            <tr>
               <td>%S</td>
               <td>* Size of mailbox (total number of messages)</td>
             </tr>
@@ -10686,6 +10710,10 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
               <td>Number of deleted messages *</td>
             </tr>
             <tr>
+              <td>%D</td>
+              <td>Description of the mailbox</td>
+            </tr>
+            <tr>
               <td>%f</td>
               <td>The full pathname of the current mailbox</td>
             </tr>
@@ -11212,18 +11240,15 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">NeoMutt&#160;with&#160;%?m?%m&#160;messages&amp;no&#160;messages?%?n?&#160;[%n&#160;NEW]?</code>
         </span>”</span></p>
       </div>
       <p>Controls the format of the terminal status line (or window title), provided that
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="#ts-enabled" title="3.398.&#160;ts_enabled">$ts_enabled</a>
       </span>”</span> has been set. This string is identical in formatting to the one used by
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="#status-format" title="3.385.&#160;status_format">$status_format</a>
       </span>”</span>.</p>
     </div>
@@ -11246,8 +11271,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
 </pre>
       <p>Note: For this example to work you must be able to log in to the remote machine without having to enter a password.</p>
       <p>When set, NeoMutt uses the tunnel for all remote connections. Please see
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="optionalfeatures.html#account-hook" title="6.&#160;Managing Multiple Accounts">account-hook</a>
       </span>”</span> in the manual for how to use different tunnel commands per connection.</p>
     </div>
@@ -11454,8 +11478,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;&#160;&#160;&#160;&#160;?%4m&#160;%f</code>
         </span>”</span></p>
       </div>
@@ -11492,14 +11515,12 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <div class="literallayout">
         <p>Type:&#160;command
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">vi</code>
         </span>”</span></p>
       </div>
       <p>Specifies the visual editor to invoke when the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">~v</code>
       </span>”</span> command is given in the built-in editor.</p>
       <p>
@@ -11527,7 +11548,8 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <code class="literal">&lt;print-message&gt;</code>, and
       <code class="literal">&lt;print-entry&gt;</code>commands.</p>
       <p>It is also used when viewing attachments with
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">auto_view</a>
       </span>”</span>, provided that the corresponding mailcap entry has a
       <span class="emphasis">
@@ -11636,10 +11658,10 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <br />Default:&#160;yes</p>
       </div>
       <p>Controls whether NeoMutt writes out the
-      <span class="quote">“<span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Exim users may wish to unset this. If NeoMutt is set to deliver directly via SMTP (see
-      <a class="link" href="#smtp-url" title="3.361.&#160;smtp_url">$smtp_url</a>), this option does nothing: NeoMutt will never write out the
       <span class="quote">“
-      <span class="quote">Bcc:</span>”</span> header in this case.</p>
+      <span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Exim users may wish to unset this. If NeoMutt is set to deliver directly via SMTP (see
+      <a class="link" href="#smtp-url" title="3.361.&#160;smtp_url">$smtp_url</a>), this option does nothing: NeoMutt will never write out the
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header in this case.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11660,8 +11682,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <a class="link" href="#read-inc" title="3.279.&#160;read_inc">$read_inc</a>,
       <a class="link" href="#net-inc" title="3.186.&#160;net_inc">$net_inc</a> and
       <a class="link" href="#time-inc" title="3.393.&#160;time_inc">$time_inc</a> variables and the
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>
       </span>”</span> section of the manual for performance considerations.</p>
     </div>
@@ -11682,8 +11703,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will add
-      <span class="quote">“
-      <span class="quote">X-Comment-To:</span>”</span> field (that contains full name of original article author) to article that followuped to newsgroup.</p>
+      <span class="quote">“<span class="quote">X-Comment-To:</span>”</span> field (that contains full name of original article author) to article that followuped to newsgroup.</p>
     </div>
   </div>
   <div class="sect1">
