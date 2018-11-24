@@ -151,6 +151,9 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </span>
       </p>
       <p>Restricts number of messages/threads in the result. The default limit is nm_db_limit.</p>
+      <p>Due to a limitation with
+      <code class="literal">libnotmuch</code>, unread and flagged message count may be inaccurate with limit statements.
+      <code class="literal">libnotmuch</code> cannot return a specific tag count within the first X messages of a query.</p>
       <p>
         <span class="bold">
           <strong>type=&lt;threads|messages&gt;</strong>
@@ -224,7 +227,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         </table>
       </div>
       <p>For an explanation of
-      <span class="quote">“<span class="quote">soft-fill</span>”</span>, see the
+      <span class="quote">“
+      <span class="quote">soft-fill</span>”</span>, see the
       <a class="link" href="/guide/reference.html#index-format" title="3.145.&#160;index_format">$index_format</a> documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
@@ -348,7 +352,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
     <p>More variables about tags configuration can be found in
-    <a class="link" href="/feature/custom-tags#variables" title="3.&#160;Variables">Custom backend Tags Feature</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-variables" title="3.&#160;Variables">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -428,7 +432,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
     <p>More functions about tags can be found in
-    <a class="link" href="/feature/custom-tags#functions" title="4.&#160;Functions">Custom backend Tags Feature</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-functions" title="4.&#160;Functions">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -470,7 +474,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <code class="literal">unvirtual-mailboxes</code> is identical to the
     <code class="literal">unmailboxes</code> command.</p>
     <p>More commands about tags can be found in
-    <a class="link" href="/feature/custom-tags#commands" title="5.&#160;Commands">Custom backend Tags Feature</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-commands" title="5.&#160;Commands">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -482,7 +486,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <p>See
-    <a class="link" href="/feature/custom-tags#colors" title="6.&#160;Colors">Custom backend Tags colors</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-colors" title="6.&#160;Colors">Custom backend Tags colors</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">

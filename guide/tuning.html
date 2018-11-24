@@ -30,10 +30,10 @@ title: Performance Tuning
         </li>
         <li class="listitem">
           <p>NeoMutt provides the
-          <a class="link" href="reference.html#read-inc" title="3.279.&#160;read_inc">$read_inc</a> and
-          <a class="link" href="reference.html#write-inc" title="3.419.&#160;write_inc">$write_inc</a> variables to specify at which rate to update progress counters. If these values are too low, NeoMutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
+          <a class="link" href="reference.html#read-inc" title="3.281.&#160;read_inc">$read_inc</a> and
+          <a class="link" href="reference.html#write-inc" title="3.421.&#160;write_inc">$write_inc</a> variables to specify at which rate to update progress counters. If these values are too low, NeoMutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
           <p>For example, when opening a maildir folder with a few thousand messages, the default value for
-          <a class="link" href="reference.html#read-inc" title="3.279.&#160;read_inc">$read_inc</a> may be too low. It can be tuned on on a folder-basis using
+          <a class="link" href="reference.html#read-inc" title="3.281.&#160;read_inc">$read_inc</a> may be too low. It can be tuned on on a folder-basis using
           <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
           <span class="command">
             <strong>folder-hook</strong>
@@ -50,7 +50,7 @@ folder-hook ^pop 'set read_inc=1'
       </ol>
     </div>
     <p>These settings work on a per-message basis. However, as messages may greatly differ in size and certain operations are much faster than others, even per-folder settings of the increment variables may not be desirable as they produce either too few or too much progress updates. Thus, NeoMutt allows to limit the number of progress updates per second it'll actually send to the terminal using the
-    <a class="link" href="reference.html#time-inc" title="3.393.&#160;time_inc">$time_inc</a> variable.</p>
+    <a class="link" href="reference.html#time-inc" title="3.395.&#160;time_inc">$time_inc</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
