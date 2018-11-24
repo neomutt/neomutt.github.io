@@ -50,7 +50,7 @@ example.
 
 Specific branch
 
-: <https://github.com/neomutt/neomutt/archive/sample/summary.zip>
+: <https://github.com/neomutt/neomutt/archive/master.zip>
 
 Note, archive file verification isn't possible here because this is not
 a NeoMutt release archive and thus no checksum file is available. Consider to
