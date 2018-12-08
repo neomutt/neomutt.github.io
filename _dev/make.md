@@ -10,8 +10,8 @@ The NeoMutt build relies on a lot of pre-/post-processing.
 
 The diagrams below shows how the code and docs fit together.
 
-[![make](/images/make-code-thumb.png)](/images/make-code.png 'click to enlarge')
-[![make](/images/make-docs-thumb.png)](/images/make-docs.png 'click to enlarge')
+[![make](/images/make-code-thumb.png)](/images/make-code.svg 'click to enlarge')
+[![make](/images/make-docs-thumb.png)](/images/make-docs.svg 'click to enlarge')
 
 **Key**:
 
@@ -39,8 +39,8 @@ The diagrams below shows how the code and docs fit together.
 Render the diagrams with the `dot` command:
 
 ```
-dot -Tpng make-code.gv > make-code.png
-dot -Tpng make-docs.gv > make-docs.png
+dot -Tsvg make-code.gv > make-code.svg
+dot -Tsvg make-docs.gv > make-docs.svg
 ```
 
 (from the [`graphviz` package](http://graphviz.org/))

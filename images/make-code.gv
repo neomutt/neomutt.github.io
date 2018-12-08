@@ -24,11 +24,10 @@ digraph build {
 
 	config_h         [ label="config.h"            ]
 	conststrings_c   [ label="conststrings.c"      ]
-	gitver_h         [ label="gitver.h"            ]
+	gitver_c         [ label="gitver.c"            ]
 	mutt_h           [ label="\{hcache deps\}"     ]
 
 	dot_configure [ label=<./configure <font color="red">●</font><font color="green">★</font>> shape="box" ]
-	ld_tool       [ label="ld" shape="box" ]
 	git           [ label=<git <font color="red">●</font>> shape="box" ]
 	ld_mutt       [ label="ld" shape="box" ]
 
@@ -41,37 +40,37 @@ digraph build {
 	dot_configure -> conststrings_c
 	conststrings_c -> generated [ style="dashed" ]
 
-	git -> gitver_h
-	gitver_h -> generated [ style="dashed" ]
+	git -> gitver_c
+	gitver_c -> generated [ style="dashed" ]
 
 	config_h -> hcachever_sh
 	mutt_h -> hcachever_sh
 	mutt_h -> compulsory [ style="dashed" ]
 
-	subgraph cluster_imap {
+	subgraph cluster_libraries {
 		fontcolor="red"
-		label="IMAP"
+		label="LIBRARIES: config, conn, email, mutt, ncrypt"
 		color="#ff0000"
 
-		lots_imap_c [ label="\{imap.c\}" ]
-		lots_imap_o [ label="\{imap.o\}" ]
-		imap_a      [ label="libimap.a"  ]
+		lots_lib_c [ label="\{lib.c\}" ]
+		lots_lib_o [ label="\{lib.o\}" ]
+		lib_a      [ label="lib.a" ]
 
-		lots_imap_c -> lots_imap_o [ label="gcc" ]
-		lots_imap_o -> imap_a [ label="ar" ]
+		lots_lib_c -> lots_lib_o [ label="gcc" ]
+		lots_lib_o -> lib_a      [ label="ar" ]
 	}
 
-	subgraph cluster_ncrypt {
+	subgraph cluster_backends {
 		fontcolor="red"
-		label="NCRYPT"
+		label="MAIL BACKENDS: imap, maildir, mbox, nntp, notmuch, pop"
 		color="#ff0000"
 
-		lots_ncrypt_c [ label="\{ncrypt.c\}" ]
-		lots_ncrypt_o [ label="\{ncrypt.o\}" ]
-		ncrypt_a      [ label="libncrypt.a"  ]
+		lots_backend_c [ label="\{backend.c\}" ]
+		lots_backend_o [ label="\{backend.o\}" ]
+		backend_a      [ label="backend.a"  ]
 
-		lots_ncrypt_c -> lots_ncrypt_o [ label="gcc" ]
-		lots_ncrypt_o -> ncrypt_a [ label="ar" ]
+		lots_backend_c -> lots_backend_o [ label="gcc" ]
+		lots_backend_o -> backend_a      [ label="ar" ]
 	}
 
 	subgraph cluster_hcache {
@@ -84,7 +83,7 @@ digraph build {
 		backends_c    [ label=<\{backends.c\} <font color="green">★</font>>                                                   ]
 		hcachever_h   [ label="hcachever.h"                                                                                   ]
 		hcachever_sh  [ label=<hcachever.sh <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
-		hcache_a      [ label="libhcache.a"                                                                                   ]
+		hcache_a      [ label="hcache.a"                                                                                   ]
 
 		hcachever_sh  -> hcachever_h
 		hcachever_h   -> lots_hcache_o
@@ -127,36 +126,17 @@ digraph build {
 		lots_po          -> lots_mo [ label="msgfmt" ]
 	}
 
-	subgraph cluster_libmutt {
-		fontcolor="red"
-		label="LIBMUTT"
-		color="#ff0000"
-
-		lots_lib_c [ label="\{lib.c\}" ]
-		lots_lib_o [ label="\{lib.o\}" ]
-		mutt_a     [ label="libmutt.a" ]
-
-		lots_lib_c -> lots_lib_o [ label="gcc" ]
-		lots_lib_o -> mutt_a [ label="ar" ]
-	}
-
 	subgraph cluster_tools {
 		fontcolor="red"
 		label="TOOLS"
 		color="#ff0000"
 
 		pgpewrap_src [ label="pgpewrap.c" ]
-		pgpring_src  [ label="pgpring.c"  ]
-
 		pgpewrap_src -> pgpewrap [ label="gcc" ]
-		mutt_a       -> ld_tool
-		pgpring_src  -> ld_tool [ label="gcc" ]
-		ld_tool      -> pgpring
 	}
 
 	hcache_a -> ld_mutt
-	imap_a -> ld_mutt
-	mutt_a -> ld_mutt
-	ncrypt_a -> ld_mutt
+	lib_a -> ld_mutt
+	backend_a -> ld_mutt
 }
 
