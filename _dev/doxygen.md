@@ -8,11 +8,11 @@ author: flatcap
 
 # {{ page.title }}
 
-[Doxygen](https://www.stack.nl/~dimitri/doxygen/) reads specially formatted
+[Doxygen](http://www.doxygen.nl/) reads specially formatted
 comment blocks and turns them into documentation.
 
 The Doxygen
-[documentation](https://www.stack.nl/~dimitri/doxygen/manual/commands.html)
+[documentation](http://www.doxygen.nl/manual/commands.html)
 lists all the possible commands. Some common ones are:
 
 - **`@param`**   -- a function parameter
