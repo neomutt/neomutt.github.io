@@ -2508,7 +2508,9 @@ macro pager \cb |urlview\n
     <p>You can print messages to the message window using the "echo" command. This might be useful after a macro finishes executing. After printing the message, echo will pause for the number of seconds specified by
     <a class="link" href="reference.html#sleep-time" title="3.335.&#160;sleep_time">$sleep_time</a>.</p>
     <pre class="screen">
-echo "Sourcing muttrc file" unset confirmappend macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;echo 'Saved to archive'&lt;enter&gt;"
+echo "Sourcing muttrc file"
+unset confirmappend
+macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;echo 'Saved to archive'&lt;enter&gt;"
 </pre>
   </div>
   <div class="sect1">
