@@ -68,7 +68,7 @@ List supported options to adapt or fine tune NeoMutt's build.
 ### Configure options
 
 This is not a comprehensive list of configure options.
-Check `configure.autosetup --help` for full help.
+Check `./configure --help` for full help.
 The options marked "Path" have either take a path, or have an extra option for specifying the library path.
 
 e.g.  `./configure --notmuch --with-notmuch=/usr/local/lib/notmuch`
