@@ -62,7 +62,7 @@ checkout the specific branch afterwards.
 List supported options to adapt or fine tune NeoMutt's build.
 
 ```
-./configure.autosetup --help
+./configure --help
 ```
 
 ### Configure options
