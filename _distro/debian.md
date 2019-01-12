@@ -37,7 +37,7 @@ apt-get remove neomutt
 
 ## Building from source <a id="build"></a>
 
-The commmand
+The command
 
 ```reply
 apt-get build-dep neomutt

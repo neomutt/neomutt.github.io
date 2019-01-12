@@ -34,7 +34,7 @@ Additional packages:
 
 * `neomutt-doc` - additional documentation that contains eg. config examples, color schemes and other docs
 * `neomutt-lang` - translations
-* `vim-plugin-neomutt` - vim plugin for syntax hilighting for neomuttrc files
+* `vim-plugin-neomutt` - vim plugin for syntax highlighting for neomuttrc files
 
 ```
 zypper in neomutt
