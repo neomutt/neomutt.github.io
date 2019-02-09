@@ -68,7 +68,6 @@ collections:
     output: true
 
 plugins:
-  - jekyll-gist
   - jekyll-sitemap
   - jekyll-algolia
   - jekyll-mentions
