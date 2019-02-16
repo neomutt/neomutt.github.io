@@ -32,10 +32,10 @@
           </div>
           <div class="pagination">
               {% if page.previous %}
-                <a class="btn btn-default" href="{{ page.previous.url }}" class="previous">Older</a>
+                <a class="btn btn-default previous" href="{{ page.previous.url }}">Older</a>
               {% endif %}
               {% if page.next %}
-                <a class="btn btn-default" href="{{ page.next.url }}" class="next">Newer</a>
+                <a class="btn btn-default next" href="{{ page.next.url }}">Newer</a>
               {% endif %}
           </div>
         </div>
