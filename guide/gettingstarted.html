@@ -95,6 +95,8 @@ title: Getting Started
         </div>
       </div>
       <p>The file browser is the interface to the local or remote file system. When selecting a mailbox to open, the browser allows custom sorting of items, limiting the items shown by a regular expression and a freely adjustable format of what to display in which way. It also allows for easy navigation through the file system when selecting file(s) to attach to a message, select multiple files to attach and many more.</p>
+      <p>Some mail systems can nest mail folders inside other mail folders. The normal open entry commands in mutt will open the mail folder and you can't see the sub-folders. If you instead use the
+      <code class="literal">&lt;descend-directory&gt;</code>function it will go into the directory and not open it as a mail directory.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -349,7 +351,7 @@ Cars            4|  3    + Feb 28  Imogen Baker     (193)  Pechora Sea
             </li>
             <li class="listitem">
               <p>
-                <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.324.&#160;sidebar_next_new_wrap">Wraparound searching</a>
+                <a class="link" href="reference.html#sidebar-next-new-wrap" title="3.332.&#160;sidebar_next_new_wrap">Wraparound searching</a>
               </p>
             </li>
             <li class="listitem">
@@ -434,7 +436,7 @@ set sidebar_divider_char = '│'
           </div>
           <p>
           <code class="literal">$sidebar_format</code> allows you to customize the Sidebar display. For an introduction, read
-          <a class="link" href="reference.html#index-format" title="3.145.&#160;index_format">format strings</a> including the section about
+          <a class="link" href="reference.html#index-format" title="3.153.&#160;index_format">format strings</a> including the section about
           <a class="link" href="configuration.html#formatstrings-conditionals" title="27.2.&#160;Conditionals">conditionals</a>.</p>
           <p>The default value is:
           <code class="literal">%B%* %n</code></p>
@@ -470,7 +472,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm46114562625648"></a>
+            <a id="idm45071612796336"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -574,7 +576,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm46114562596224"></a>
+            <a id="idm45071610986640"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -1402,9 +1404,9 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>NeoMutt maintains a history for the built-in editor. The number of items is controlled by the
-      <a class="link" href="reference.html#history" title="3.114.&#160;history">$history</a> variable and can be made persistent using an external file specified using
-      <a class="link" href="reference.html#history-file" title="3.115.&#160;history_file">$history_file</a> and
-      <a class="link" href="reference.html#save-history" title="3.302.&#160;save_history">$save_history</a>. You may cycle through them at an editor prompt by using the
+      <a class="link" href="reference.html#history" title="3.122.&#160;history">$history</a> variable and can be made persistent using an external file specified using
+      <a class="link" href="reference.html#history-file" title="3.123.&#160;history_file">$history_file</a> and
+      <a class="link" href="reference.html#save-history" title="3.310.&#160;save_history">$save_history</a>. You may cycle through them at an editor prompt by using the
       <code class="literal">&lt;history-up&gt;</code>and/or
       <code class="literal">&lt;history-down&gt;</code>commands. NeoMutt will remember the currently entered text as you cycle through history, and will wrap around to the initial entry line.</p>
       <p>NeoMutt maintains several distinct history lists, one for each of the following categories:</p>
@@ -1432,7 +1434,7 @@ bind editor &lt;delete&gt; backspace
         </ul>
       </div>
       <p>NeoMutt automatically filters out consecutively repeated items from the history. If
-      <a class="link" href="reference.html#history-remove-dups" title="3.116.&#160;history_remove_dups">$history_remove_dups</a> is set, all repeated items are removed from the history. It also mimics the behavior of some shells by ignoring items starting with a space. The latter feature can be useful in macros to not clobber the history's valuable entries with unwanted entries.</p>
+      <a class="link" href="reference.html#history-remove-dups" title="3.124.&#160;history_remove_dups">$history_remove_dups</a> is set, all repeated items are removed from the history. It also mimics the behavior of some shells by ignoring items starting with a space. The latter feature can be useful in macros to not clobber the history's valuable entries with unwanted entries.</p>
     </div>
   </div>
   <div class="sect1">
@@ -1459,7 +1461,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>Common keys used to navigate through and manage messages in the index are shown in
       <a class="xref" href="#tab-key-index" title="Table&#160;2.8.&#160;Most common message index keys">Table&#160;2.8, “Most common message index keys”</a>. How messages are presented in the index menu can be customized using the
-      <a class="link" href="reference.html#index-format" title="3.145.&#160;index_format">$index_format</a> variable.</p>
+      <a class="link" href="reference.html#index-format" title="3.153.&#160;index_format">$index_format</a> variable.</p>
       <div >
         <a id="tab-key-index"></a>
         <p class="title">
@@ -1608,7 +1610,7 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">W</span>”</span> respectively.</p>
       <p>Furthermore, the flags in
       <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.10.&#160;Message recipient flags">Table&#160;2.10, “Message recipient flags”</a> reflect who the message is addressed to. They can be customized with the
-      <a class="link" href="reference.html#to-chars" title="3.398.&#160;to_chars">$to_chars</a> variable.</p>
+      <a class="link" href="reference.html#to-chars" title="3.406.&#160;to_chars">$to_chars</a> variable.</p>
       <div >
         <a id="tab-msg-status-flags"></a>
         <p class="title">
@@ -1743,7 +1745,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>By default, NeoMutt uses its built-in pager to display the contents of messages (an external pager such as
       <code class="literal">less(1)</code>can be configured, see
-      <a class="link" href="reference.html#pager" title="3.213.&#160;pager">$pager</a> variable). The pager is very similar to the Unix program
+      <a class="link" href="reference.html#pager" title="3.221.&#160;pager">$pager</a> variable). The pager is very similar to the Unix program
       <code class="literal">less(1)</code>though not nearly as featureful.</p>
       <div >
         <a id="tab-key-pager"></a>
@@ -1987,7 +1989,7 @@ bind editor &lt;delete&gt; backspace
       <p>So-called
       <span class="quote">“<span class="quote">threads</span>”</span> provide a hierarchy of messages where replies are linked to their parent message(s). This organizational form is extremely useful in mailing lists where different parts of the discussion diverge. NeoMutt displays threads as a tree structure.</p>
       <p>In NeoMutt, when a mailbox is
-      <a class="link" href="reference.html#sort" title="3.364.&#160;sort">sorted</a> by
+      <a class="link" href="reference.html#sort" title="3.372.&#160;sort">sorted</a> by
       <span class="emphasis">
         <em>threads</em>
       </span>, there are a few additional functions available in the
@@ -2122,13 +2124,13 @@ bind editor &lt;delete&gt; backspace
       </div>
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in
-      <a class="link" href="reference.html#index-format" title="3.145.&#160;index_format">$index_format</a>. For example, you could use
+      <a class="link" href="reference.html#index-format" title="3.153.&#160;index_format">$index_format</a>. For example, you could use
       <span class="quote">“<span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span> in
-      <a class="link" href="reference.html#index-format" title="3.145.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
+      <a class="link" href="reference.html#index-format" title="3.153.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
       <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="27.2.&#160;Conditionals">format string conditionals</a>.</p>
       <p>Technically, every reply should contain a list of its parent messages in the thread tree, but not all do. In these cases, NeoMutt groups them by subject which can be controlled using the
-      <a class="link" href="reference.html#strict-threads" title="3.389.&#160;strict_threads">$strict_threads</a> variable.</p>
+      <a class="link" href="reference.html#strict-threads" title="3.397.&#160;strict_threads">$strict_threads</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2159,7 +2161,7 @@ bind editor &lt;delete&gt; backspace
             <span class="command">
               <strong>mailboxes</strong>
             </span>command. It will calculate statistics despite
-            <a class="link" href="reference.html#mail-check-stats" title="3.151.&#160;mail_check_stats">$mail_check_stats</a> being unset.</p>
+            <a class="link" href="reference.html#mail-check-stats" title="3.159.&#160;mail_check_stats">$mail_check_stats</a> being unset.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2298,7 +2300,7 @@ bind editor &lt;delete&gt; backspace
               </span>
             </a>commands, but also honor any
             <code class="literal">Mail-Followup-To</code> header(s) if the
-            <a class="link" href="reference.html#honor-followup-to" title="3.118.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. In addition, the
+            <a class="link" href="reference.html#honor-followup-to" title="3.126.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. In addition, the
             <code class="literal">List-Post</code> header field is examined for
             <code class="literal">mailto:</code>URLs specifying a mailing list address. Using this when replying to messages posted to mailing lists helps avoid duplicate copies being sent to the author of the message you are replying to.</p>
           </dd>
@@ -2309,10 +2311,10 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and pipes the current or tagged message(s) to it. The variables
-            <a class="link" href="reference.html#pipe-decode" title="3.251.&#160;pipe_decode">$pipe_decode</a>,
-            <a class="link" href="reference.html#pipe-split" title="3.253.&#160;pipe_split">$pipe_split</a>,
-            <a class="link" href="reference.html#pipe-sep" title="3.252.&#160;pipe_sep">$pipe_sep</a> and
-            <a class="link" href="reference.html#wait-key" title="3.415.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
+            <a class="link" href="reference.html#pipe-decode" title="3.259.&#160;pipe_decode">$pipe_decode</a>,
+            <a class="link" href="reference.html#pipe-split" title="3.261.&#160;pipe_split">$pipe_split</a>,
+            <a class="link" href="reference.html#pipe-sep" title="3.260.&#160;pipe_sep">$pipe_sep</a> and
+            <a class="link" href="reference.html#wait-key" title="3.423.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2321,7 +2323,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>NeoMutt takes the current message as a template for a new message. This function is best described as "recall from arbitrary folders". It can conveniently be used to forward MIME messages while preserving the original mail structure. Note that the amount of headers included here depends on the value of the
-            <a class="link" href="reference.html#weed" title="3.416.&#160;weed">$weed</a> variable.</p>
+            <a class="link" href="reference.html#weed" title="3.424.&#160;weed">$weed</a> variable.</p>
             <p>This function is also available from the attachment menu. You can use this to easily resend a message which was included with a bounce message as a
             <code class="literal">message/rfc822</code> body part.</p>
           </dd>
@@ -2332,7 +2334,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and executes it. The
-            <a class="link" href="reference.html#wait-key" title="3.415.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
+            <a class="link" href="reference.html#wait-key" title="3.423.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2341,7 +2343,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>The pager uses the
-            <a class="link" href="reference.html#quote-regex" title="3.280.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
+            <a class="link" href="reference.html#quote-regex" title="3.288.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2442,6 +2444,13 @@ bind editor &lt;delete&gt; backspace
                 <td>reply to all recipients</td>
               </tr>
               <tr>
+                <td>&#160;</td>
+                <td>
+                  <code class="literal">&lt;group-chat-reply&gt;</code>
+                </td>
+                <td>reply to all recipients preserving To/Cc</td>
+              </tr>
+              <tr>
                 <td>L</td>
                 <td>
                   <code class="literal">&lt;list-reply&gt;</code>
@@ -2493,10 +2502,10 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
       <a class="link" href="reference.html#askcc" title="3.14.&#160;askcc">$askcc</a>,
       <a class="link" href="reference.html#askbcc" title="3.13.&#160;askbcc">$askbcc</a>,
-      <a class="link" href="reference.html#autoedit" title="3.23.&#160;autoedit">$autoedit</a>,
-      <a class="link" href="reference.html#bounce" title="3.26.&#160;bounce">$bounce</a>,
-      <a class="link" href="reference.html#fast-reply" title="3.77.&#160;fast_reply">$fast_reply</a>, and
-      <a class="link" href="reference.html#include" title="3.142.&#160;include">$include</a> for changing how and if NeoMutt asks these questions.</p>
+      <a class="link" href="reference.html#autoedit" title="3.25.&#160;autoedit">$autoedit</a>,
+      <a class="link" href="reference.html#bounce" title="3.28.&#160;bounce">$bounce</a>,
+      <a class="link" href="reference.html#fast-reply" title="3.85.&#160;fast_reply">$fast_reply</a>, and
+      <a class="link" href="reference.html#include" title="3.150.&#160;include">$include</a> for changing how and if NeoMutt asks these questions.</p>
       <p>When replying, NeoMutt fills these fields with proper values depending on the reply type. The types of replying supported are:</p>
       <div class="variablelist">
         <dl class="variablelist">
@@ -2510,12 +2519,23 @@ bind editor &lt;delete&gt; backspace
             <span class="term">Group reply</span>
           </dt>
           <dd>
-            <p>Reply to the author as well to all recipients except you; this consults
+            <p>Reply to the author; cc all other recipients; consults
             <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">
               <span class="command">
                 <strong>alternates</strong>
               </span>
-            </a>.</p>
+            </a>and excludes you.</p>
+          </dd>
+          <dt>
+            <span class="term">Group Chat reply</span>
+          </dt>
+          <dd>
+            <p>Reply to the author and other recipients in the To list; cc other recipients in the Cc list; consults
+            <a class="link" href="configuration.html#alternates" title="11.&#160;Alternative Addresses">
+              <span class="command">
+                <strong>alternates</strong>
+              </span>
+            </a>and excludes you.</p>
           </dd>
           <dt>
             <span class="term">List reply</span>
@@ -2527,13 +2547,13 @@ bind editor &lt;delete&gt; backspace
         </dl>
       </div>
       <p>After getting recipients for new messages, forwards or replies, NeoMutt will then automatically start your
-      <a class="link" href="reference.html#editor" title="3.71.&#160;editor">$editor</a> on the message body. If the
-      <a class="link" href="reference.html#edit-headers" title="3.70.&#160;edit_headers">$edit_headers</a> variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate
-      <a class="link" href="reference.html#attribution" title="3.20.&#160;attribution">$attribution</a>,
-      <a class="link" href="reference.html#indent-string" title="3.144.&#160;indent_string">$indent_string</a> and
-      <a class="link" href="reference.html#post-indent-string" title="3.264.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the
-      <a class="link" href="reference.html#mime-forward" title="3.176.&#160;mime_forward">$mime_forward</a> variable is unset, a copy of the forwarded message will be included. If you have specified a
-      <a class="link" href="reference.html#signature" title="3.332.&#160;signature">$signature</a>, it will be appended to the message.</p>
+      <a class="link" href="reference.html#editor" title="3.78.&#160;editor">$editor</a> on the message body. If the
+      <a class="link" href="reference.html#edit-headers" title="3.77.&#160;edit_headers">$edit_headers</a> variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate
+      <a class="link" href="reference.html#attribution" title="3.21.&#160;attribution">$attribution</a>,
+      <a class="link" href="reference.html#indent-string" title="3.152.&#160;indent_string">$indent_string</a> and
+      <a class="link" href="reference.html#post-indent-string" title="3.272.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the
+      <a class="link" href="reference.html#mime-forward" title="3.184.&#160;mime_forward">$mime_forward</a> variable is unset, a copy of the forwarded message will be included. If you have specified a
+      <a class="link" href="reference.html#signature" title="3.340.&#160;signature">$signature</a>, it will be appended to the message.</p>
       <p>Once you have finished editing the body of your mail message, you are returned to the
       <span class="emphasis">
         <em>compose</em>
@@ -2710,7 +2730,7 @@ bind editor &lt;delete&gt; backspace
       <div class="note">
         <h3 class="title">Note</h3>
         <p>Note that certain operations like composing a new mail, replying, forwarding, etc. are not permitted when you are in that folder. The %r in
-        <a class="link" href="reference.html#status-format" title="3.387.&#160;status_format">$status_format</a> will change to a
+        <a class="link" href="reference.html#status-format" title="3.395.&#160;status_format">$status_format</a> will change to a
         <span class="quote">“<span class="quote">A</span>”</span> to indicate that you are in attach-message mode.</p>
       </div>
     </div>
@@ -2724,7 +2744,7 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>When editing the header because of
-      <a class="link" href="reference.html#edit-headers" title="3.70.&#160;edit_headers">$edit_headers</a> being set, there are a several pseudo headers available which will not be included in sent messages but trigger special NeoMutt behavior.</p>
+      <a class="link" href="reference.html#edit-headers" title="3.77.&#160;edit_headers">$edit_headers</a> being set, there are a several pseudo headers available which will not be included in sent messages but trigger special NeoMutt behavior.</p>
       <div class="sect3">
         <div class="titlepage">
           <div>
@@ -2799,7 +2819,7 @@ bind editor &lt;delete&gt; backspace
         <span class="quote">“<span class="quote">E</span>”</span> selects encryption,
         <span class="quote">“<span class="quote">S</span>”</span> selects signing and
         <span class="quote">“<span class="quote">S&lt;id&gt;</span>”</span> selects signing with the given key, setting
-        <a class="link" href="reference.html#pgp-sign-as" title="3.243.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
+        <a class="link" href="reference.html#pgp-sign-as" title="3.251.&#160;pgp_sign_as">$pgp_sign_as</a> permanently. The selection can later be changed in the compose menu.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -2838,12 +2858,12 @@ bind editor &lt;delete&gt; backspace
       <code class="literal">^G</code>. When you do so, NeoMutt will return to the compose screen.</p>
       <p>Once you have successfully finished the key selection, the message will be encrypted using the selected public keys when sent out.</p>
       <p>To ensure you can view encrypted messages you have sent, you may wish to set
-      <a class="link" href="reference.html#pgp-self-encrypt" title="3.241.&#160;pgp_self_encrypt">$pgp_self_encrypt</a> and
-      <a class="link" href="reference.html#pgp-default-key" title="3.226.&#160;pgp_default_key">$pgp_default_key</a> for PGP, or
-      <a class="link" href="reference.html#smime-self-encrypt" title="3.353.&#160;smime_self_encrypt">$smime_self_encrypt</a> and
-      <a class="link" href="reference.html#smime-default-key" title="3.343.&#160;smime_default_key">$smime_default_key</a> for S/MIME.</p>
+      <a class="link" href="reference.html#pgp-self-encrypt" title="3.249.&#160;pgp_self_encrypt">$pgp_self_encrypt</a> and
+      <a class="link" href="reference.html#pgp-default-key" title="3.234.&#160;pgp_default_key">$pgp_default_key</a> for PGP, or
+      <a class="link" href="reference.html#smime-self-encrypt" title="3.361.&#160;smime_self_encrypt">$smime_self_encrypt</a> and
+      <a class="link" href="reference.html#smime-default-key" title="3.351.&#160;smime_default_key">$smime_default_key</a> for S/MIME.</p>
       <p>Most fields of the entries in the key selection menu (see also
-      <a class="link" href="reference.html#pgp-entry-format" title="3.229.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
+      <a class="link" href="reference.html#pgp-entry-format" title="3.237.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
       <p>The flags sequence (
       <span class="quote">“<span class="quote">%f</span>”</span>) will expand to one of the flags in
       <a class="xref" href="#tab-pgp-menuflags" title="Table&#160;2.17.&#160;PGP key menu flags">Table&#160;2.17, “PGP key menu flags”</a>.</p>
@@ -2938,7 +2958,7 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>NeoMutt only supports setting the required
         <code class="literal">format=flowed</code> MIME parameter on outgoing messages if the
-        <a class="link" href="reference.html#text-flowed" title="3.391.&#160;text_flowed">$text_flowed</a> variable is set, specifically it does not add the trailing spaces.</p>
+        <a class="link" href="reference.html#text-flowed" title="3.399.&#160;text_flowed">$text_flowed</a> variable is set, specifically it does not add the trailing spaces.</p>
         <p>After editing the initial message text and before entering the compose menu, NeoMutt properly space-stuffs the message.
         <span class="emphasis">
           <em>Space-stuffing</em>
@@ -3006,22 +3026,22 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>NeoMutt has some support for reformatting when viewing and replying to
         <code class="literal">format=flowed</code> messages. In order to take advantage of these,
-        <a class="link" href="reference.html#reflow-text" title="3.287.&#160;reflow_text">$reflow_text</a> must be set.</p>
+        <a class="link" href="reference.html#reflow-text" title="3.295.&#160;reflow_text">$reflow_text</a> must be set.</p>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>Paragraphs are automatically reflowed and wrapped at a width specified by
-              <a class="link" href="reference.html#reflow-wrap" title="3.288.&#160;reflow_wrap">$reflow_wrap</a>.</p>
+              <a class="link" href="reference.html#reflow-wrap" title="3.296.&#160;reflow_wrap">$reflow_wrap</a>.</p>
             </li>
             <li class="listitem">
               <p>In its original format, the quoting style of
               <code class="literal">format=flowed</code> messages can be difficult to read, and doesn't intermix well with non-flowed replies. Setting
-              <a class="link" href="reference.html#reflow-space-quotes" title="3.286.&#160;reflow_space_quotes">$reflow_space_quotes</a> adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with
-              <a class="link" href="reference.html#text-flowed" title="3.391.&#160;text_flowed">$text_flowed</a> unset).</p>
+              <a class="link" href="reference.html#reflow-space-quotes" title="3.294.&#160;reflow_space_quotes">$reflow_space_quotes</a> adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with
+              <a class="link" href="reference.html#text-flowed" title="3.399.&#160;text_flowed">$text_flowed</a> unset).</p>
             </li>
             <li class="listitem">
               <p>If
-              <a class="link" href="reference.html#reflow-space-quotes" title="3.286.&#160;reflow_space_quotes">$reflow_space_quotes</a> is unset, NeoMutt will still add one trailing space after all the quotes in the pager (but not when replying).</p>
+              <a class="link" href="reference.html#reflow-space-quotes" title="3.294.&#160;reflow_space_quotes">$reflow_space_quotes</a> is unset, NeoMutt will still add one trailing space after all the quotes in the pager (but not when replying).</p>
             </li>
           </ul>
         </div>
@@ -3043,16 +3063,16 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“<span class="quote">b</span>”</span> and
     <span class="quote">“<span class="quote">f</span>”</span> respectively.</p>
     <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines) or including it as a MIME attachment, depending on the value of the
-    <a class="link" href="reference.html#mime-forward" title="3.176.&#160;mime_forward">$mime_forward</a> variable. Decoding of attachments, like in the pager, can be controlled by the
-    <a class="link" href="reference.html#forward-decode" title="3.89.&#160;forward_decode">$forward_decode</a> and
-    <a class="link" href="reference.html#mime-forward-decode" title="3.177.&#160;mime_forward_decode">$mime_forward_decode</a> variables, respectively. The desired forwarding format may depend on the content, therefore
-    <a class="link" href="reference.html#mime-forward" title="3.176.&#160;mime_forward">$mime_forward</a> is a quadoption which, for example, can be set to
+    <a class="link" href="reference.html#mime-forward" title="3.184.&#160;mime_forward">$mime_forward</a> variable. Decoding of attachments, like in the pager, can be controlled by the
+    <a class="link" href="reference.html#forward-decode" title="3.97.&#160;forward_decode">$forward_decode</a> and
+    <a class="link" href="reference.html#mime-forward-decode" title="3.185.&#160;mime_forward_decode">$mime_forward_decode</a> variables, respectively. The desired forwarding format may depend on the content, therefore
+    <a class="link" href="reference.html#mime-forward" title="3.184.&#160;mime_forward">$mime_forward</a> is a quadoption which, for example, can be set to
     <span class="quote">“<span class="quote">ask-no</span>”</span>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
-    <a class="link" href="reference.html#weed" title="3.416.&#160;weed">$weed</a> variable, unless
-    <a class="link" href="reference.html#mime-forward" title="3.176.&#160;mime_forward">$mime_forward</a> is set.</p>
+    <a class="link" href="reference.html#weed" title="3.424.&#160;weed">$weed</a> variable, unless
+    <a class="link" href="reference.html#mime-forward" title="3.184.&#160;mime_forward">$mime_forward</a> is set.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
-    <a class="link" href="reference.html#forward-references" title="3.94.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
+    <a class="link" href="reference.html#forward-references" title="3.102.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
     <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
     <span class="quote">“<span class="quote">References:</span>”</span> headers, just like a reply would. Hence the forwarded message becomes part of the original thread instead of starting a new one.</p>
     <p>Editing the message to forward follows the same procedure as sending or replying to a message does.</p>
@@ -3071,7 +3091,7 @@ bind editor &lt;delete&gt; backspace
     <span class="emphasis">
       <em>compose</em>
     </span>menu, the body of your message and attachments are stored in the mailbox specified by the
-    <a class="link" href="reference.html#postponed" title="3.269.&#160;postponed">$postponed</a> variable. This means that you can recall the message even if you exit NeoMutt and then restart it at a later time.</p>
+    <a class="link" href="reference.html#postponed" title="3.277.&#160;postponed">$postponed</a> variable. This means that you can recall the message even if you exit NeoMutt and then restart it at a later time.</p>
     <p>Once a message is postponed, there are several ways to resume it. From the command line you can use the
     <span class="quote">“<span class="quote">-p</span>”</span> option, or if you compose a new message from the
     <span class="emphasis">
@@ -3088,7 +3108,7 @@ bind editor &lt;delete&gt; backspace
       <p>If you postpone a reply to a message, the reply setting of the message is only updated when you actually finish the message and send it. Also, you must be in the same folder with the message you replied to for the status of the message to be updated.</p>
     </div>
     <p>See also the
-    <a class="link" href="reference.html#postpone" title="3.266.&#160;postpone">$postpone</a> quad-option.</p>
+    <a class="link" href="reference.html#postpone" title="3.274.&#160;postpone">$postpone</a> quad-option.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">

@@ -26,14 +26,14 @@ title: Performance Tuning
       <ol class="orderedlist" type="1">
         <li class="listitem">
           <p>For remote folders (IMAP and POP) as well as folders using one-file-per message storage (Maildir and MH), NeoMutt's performance can be greatly improved using
-          <a class="link" href="optionalfeatures.html#header-caching" title="7.1.&#160;Header Caching">header caching</a>. using a single database per folder.</p>
+          <a class="link" href="optionalfeatures.html#header-caching" title="8.1.&#160;Header Caching">header caching</a>. using a single database per folder.</p>
         </li>
         <li class="listitem">
           <p>NeoMutt provides the
-          <a class="link" href="reference.html#read-inc" title="3.281.&#160;read_inc">$read_inc</a> and
-          <a class="link" href="reference.html#write-inc" title="3.421.&#160;write_inc">$write_inc</a> variables to specify at which rate to update progress counters. If these values are too low, NeoMutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
+          <a class="link" href="reference.html#read-inc" title="3.289.&#160;read_inc">$read_inc</a> and
+          <a class="link" href="reference.html#write-inc" title="3.429.&#160;write_inc">$write_inc</a> variables to specify at which rate to update progress counters. If these values are too low, NeoMutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
           <p>For example, when opening a maildir folder with a few thousand messages, the default value for
-          <a class="link" href="reference.html#read-inc" title="3.281.&#160;read_inc">$read_inc</a> may be too low. It can be tuned on on a folder-basis using
+          <a class="link" href="reference.html#read-inc" title="3.289.&#160;read_inc">$read_inc</a> may be too low. It can be tuned on on a folder-basis using
           <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
           <span class="command">
             <strong>folder-hook</strong>
@@ -50,7 +50,7 @@ folder-hook ^pop 'set read_inc=1'
       </ol>
     </div>
     <p>These settings work on a per-message basis. However, as messages may greatly differ in size and certain operations are much faster than others, even per-folder settings of the increment variables may not be desirable as they produce either too few or too much progress updates. Thus, NeoMutt allows to limit the number of progress updates per second it'll actually send to the terminal using the
-    <a class="link" href="reference.html#time-inc" title="3.395.&#160;time_inc">$time_inc</a> variable.</p>
+    <a class="link" href="reference.html#time-inc" title="3.403.&#160;time_inc">$time_inc</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -63,7 +63,7 @@ folder-hook ^pop 'set read_inc=1'
     </div>
     <p>Reading messages from remote folders such as IMAP an POP can be slow especially for large mailboxes since NeoMutt only caches a very limited number of recently viewed messages (usually 10) per session (so that it will be gone for the next session.)</p>
     <p>To improve performance and permanently cache whole messages, please refer to NeoMutt's so-called
-    <a class="link" href="optionalfeatures.html#body-caching" title="7.2.&#160;Body Caching">body caching</a> for details.</p>
+    <a class="link" href="optionalfeatures.html#body-caching" title="8.2.&#160;Body Caching">body caching</a> for details.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
