@@ -114,7 +114,7 @@ Regid Ichira,
 Rubén Llorente,
 [Santiago Torres](https://github.com/SantiagoTorres "SantiagoTorres"),
 [Serge Gebhardt](https://github.com/sgeb "sgeb"),
-[sharktamer](https://github.com/sharktamer "sharktamer"),
+sharktamer
 Shi Lee,
 [somini](https://github.com/somini "somini"),
 [Stefan Assmann](https://github.com/sassmann "sassmann"),
