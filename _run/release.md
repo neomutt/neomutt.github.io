@@ -24,7 +24,6 @@ a stabilising bug-fix release.
 - Coming soon -- list of features to users mailing list
 - Merge mutt upstream
 - Merge translations
-- Waffle -- clear "Ready" column
 
 ## Preparation
 
@@ -170,7 +169,6 @@ Twitter
 
 ## Post-Release
 
-- Waffle: Archive the "Done" column
 - Update milestones
   - next-release -\> release-YYYY-MM-DD
   - delayed      -\> next-release
