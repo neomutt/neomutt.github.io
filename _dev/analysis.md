@@ -87,7 +87,7 @@ The output is a diff that can be applied.
 /* Source file to be checked */
 int main()
 {
-  char *x;
+  char *x = NULL;
 
   if (x == NULL)
     something();
@@ -121,7 +121,7 @@ spatch --sp-file null-check.cocci source.c
 +++ source.c
 @@ -4,6 +4,6 @@ int main()
  {
-   char *x;
+   char *x = NULL;
  
 -  if (x == NULL)
 +  if (!x)
