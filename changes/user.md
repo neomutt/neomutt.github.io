@@ -189,7 +189,7 @@ These are the major features of NeoMutt.
 | [Ifdef](/feature/ifdef)                               | Conditional config options                                        | 2016-03-07 | stable   |
 | [Index Color](/feature/index-color)                   | Custom rules for theming the email index                          | 2016-03-07 | stable   |
 | [Initials Expando](/feature/initials)                 | Expando for author's initials                                     | 2016-03-07 | stable   |
-| [Keywords](/feature/keywords)                         | Labels/Tagging for emails                                         | 2016-05-30 | stable   |
+| Keywords                                              | Labels/Tagging for emails                                         | 2016-05-30 | stable   |
 | [Limit Current Thread](/feature/limit-current-thread) | Focus on one Email Thread                                         | 2016-03-28 | stable   |
 | [Multiple FCC](/feature/multiple-fcc)                 | Save multiple copies of outgoing mail                             | 2016-08-08 | stable   |
 | [Nested If](/feature/nested-if)                       | Allow complex nested conditions in format strings                 | 2016-03-07 | stable   |
@@ -267,10 +267,10 @@ set debug_file = ~/neomutt.log
 | `show_multipart_alternative`       | [How are multi-part emails displayed](/guide/reference#show-multipart-alternative) |
 | `abort_noattach`                   | [Forgotten Attachment](/feature/forgotten-attachment)                              |
 | `attach_keyword`                   | [Forgotten Attachment](/feature/forgotten-attachment)                              |
-| `keywords_legacy`                  | [Keywords](/feature/keywords)                                                      |
-| `keywords_standard`                | [Keywords](/feature/keywords)                                                      |
-| `xlabel_delimiter`                 | [Keywords](/feature/keywords)                                                      |
-| `new_mail_command`                 | [New Mail](/feature/keywords)                                                      |
+| `keywords_legacy`                  | Keywords                                                                           |
+| `keywords_standard`                | Keywords                                                                           |
+| `xlabel_delimiter`                 | Keywords                                                                           |
+| `new_mail_command`                 | [New Mail](/feature/new-mail)                                                      |
 | `ask_follow_up`                    | [NNTP](/feature/nntp)                                                              |
 | `ask_x_comment_to`                 | [NNTP](/feature/nntp)                                                              |
 | `catchup_newsgroup`                | [NNTP](/feature/nntp)                                                              |
