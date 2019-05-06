@@ -28,7 +28,7 @@ demotivating due to its difficulty.
 
 Encryption scheme that hides the subject.
 
-: **Raised by** @libBletchley -- **Result**: no interest
+: **Raised by** libBletchley -- **Result**: no interest
 
 ### [#678 Give line number to $editor with $edit_headers][#678]
 
