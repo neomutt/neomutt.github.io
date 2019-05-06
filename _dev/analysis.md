@@ -209,7 +209,7 @@ Currently, the only part of NeoMutt that has a coverage report is the new
 config code:
 
 - Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
-- Report: [https://coveralls.io/github/flatcap/neomutt](https://coveralls.io/github/flatcap/neomutt)
+- Report: [https://coveralls.io/github/neomutt/neomutt](https://coveralls.io/github/neomutt/neomutt)
 
 ## Coverity - Source code anaylser <a id="coverity"></a>
 
