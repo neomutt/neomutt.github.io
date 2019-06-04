@@ -411,8 +411,7 @@
 - term: RTF
   definitions:
     - str : Rich Text Format
-      url : ["https://www.microsoft.com/en-us/download/details.aspx?id=10725",
-             "https://www.iana.org/assignments/media-types/application/rtf"]
+      url : ["https://www.iana.org/assignments/media-types/application/rtf"]
       attributes:
         Category  : ["document format", "file extension"]
         Type      : acronym
