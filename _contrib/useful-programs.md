@@ -33,6 +33,10 @@ status: stable
 
 ## Address books
 
+* [mail-query](https://github.com/pbrisbin/mail-query) as a query tool
+* [khard](https://github.com/scheibler/khard) to synchronize address books
+  between your PC and mobile device with
+  [vdirsyncer](https://github.com/untitaker/vdirsyncer).
 * [notmuch-abook](https://github.com/guyzmo/notmuch-abook) -- Notmuch address
   book manager for Vim
 * [goobook](https://pypi.python.org/pypi/goobook/1.9) -- search your Google
@@ -97,6 +101,13 @@ status: stable
 
 ## Miscellaneous
 
+* [mutt-trim](https://github.com/Konfekt/mutt-trim) to unclutter and normalize
+  quoted text in an e-mail
+* [vcalendar-filter](https://github.com/terabyte/mutt-filters/blob/master/vcalendar-filter)
+  to view calendar files (ics)
+* [mutt2khal](https://github.com/pimutils/khal/blob/master/misc/mutt2khal) for
+  passing calendar items to the command-line calendar
+  [khal](https://github.com/pimutils/khal),
 * [notifynotmuch](https://github.com/kspi/notifymuch) -- displays desktop
   notifications for unread mail in Notmuch database
 * [notify-osd](https://launchpad.net/notify-osd) -- Canonical's
@@ -125,6 +136,16 @@ status: stable
 * [muttzilla](https://sourceforge.net/projects/muttzilla/) -- make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
 
+## Vim Plugins
+
+- [vim-mutt-aliases](https://github.com/Konfekt/vim-mutt-aliases/) to complete mail aliases in Vim
+- [vim-mailquery](https://github.com/Konfekt/vim-mailquery) to complete mail addresses in your inbox in Vim
+
+## Mailcap
+
+The mailcap file is read by NeoMutt to determine how to display non-text files.
+
+- [Konfekt's mailcap](https://gist.github.com/Konfekt/9797372146e65a70a44c1e24a35ae0a2)
 
 *[.ics]: Internet Calendaring and Scheduling (iCalendar)
 *[DNS]: Domain Name System
