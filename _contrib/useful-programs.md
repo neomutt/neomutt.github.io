@@ -79,6 +79,19 @@ status: stable
 
 ## Converting text formats
 
+* [lesspipe.sh](https://github.com/wofr06/lesspipe) a universal terminal reader for any 
+  file format. To use it in `mutt`, add
+  ```
+  autoview text/* application/* image/* audio/*
+  ```
+  to your `.muttrc` and
+  ```
+  text/*;                           LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
+  application/*;                    LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
+  image/*;                          LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
+  audio/*;                          LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
+  ```
+  to the file given by the value of `mailcap_path`.
 * [plainMail2HTML](https://github.com/amitramon/plainMail2HTML) -- 
   plainMail2HTML enables users of Mutt (and possibly other textual Email clients)
   to send HTML-formatted Emails.
