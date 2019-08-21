@@ -30,6 +30,11 @@ status: stable
 * [postfix](http://www.postfix.org/) -- a Wietse Venema's mail server that
   started life at IBM research as an alternative to the widely-used Sendmail
   program. Now at Google, Wietse continues to support Postfix.
+* [lieer](https://github.com/gauteh/lieer) -- can pull email and labels
+  (and changes to labels) from your GMail account and store them locally
+  in a maildir with the labels synchronized with a notmuch database.
+  The changes to tags in the notmuch database may be pushed back remotely
+  to your GMail account.
 
 ## Address books
 
