@@ -148,6 +148,8 @@ status: stable
   server IMAP stores to track changes as they happen.
 * [muttzilla](https://sourceforge.net/projects/muttzilla/) -- make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
+* [vkhal](https://github.com/nofeed/vkhal/) -- can display calendar items and 
+  import them into khal
 
 ## Vim Plugins
 
