@@ -22,9 +22,6 @@ markdown: kramdown
 
 timezone: UTC
 
-# Google Analytics
-gaaccount: 'UA-377438-9'
-
 permalink: /:year/:month/:day/:title
 excerpt_separator: ""
 
