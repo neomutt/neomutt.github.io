@@ -2,7 +2,7 @@
 layout: concertina
 title: New Mail
 description: Execute a command upon the receipt of new mail.
-since: 2016-07-23
+since: 
 status: stable
 ---
 {% raw %}
@@ -50,12 +50,12 @@ status: stable
     <p>This feature enables the new_mail_command setting, which can be used to execute a custom script (e.g. a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%n</code> for the number of new messages. For a complete list, see:
-    <a class="link" href="/guide/reference.html#status-format" title="3.395.&#160;status_format">$status_format</a>.</p>
+    <a class="link" href="/guide/reference.html#status-format" title="3.402.&#160;status_format">$status_format</a>.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>When the notification is sent, the folder of the new mail is no longer known. This is a limitation of NeoMutt. The `%f` expando will show the open folder.</p>
       <p>When using Maildir local mailboxes, you must set
-      <a class="link" href="/guide/reference.html#check-new" title="3.37.&#160;check_new">$check_new</a> config variable for this feature to work.</p>
+      <a class="link" href="/guide/reference.html#check-new" title="3.38.&#160;check_new">$check_new</a> config variable for this feature to work.</p>
     </div>
     <p>For example in Linux you can use (most distributions already provide notify-send):</p>
     <pre class="screen">
@@ -152,7 +152,7 @@ set new_mail_command = ""
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            <a class="link" href="/guide/configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>

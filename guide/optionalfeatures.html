@@ -72,7 +72,7 @@ proto[s]://[username[:password]@]server[:port][/path]
       <span class="quote">“<span class="quote">s</span>”</span> for
       <span class="quote">“<span class="quote">secure communication</span>”</span> is appended, NeoMutt will attempt to establish an encrypted communication using SSL or TLS.</p>
       <p>Since all protocols supported by NeoMutt support/require authentication, login credentials may be specified in the URL. This has the advantage that multiple IMAP, POP3 or SMTP servers may be specified (which isn't possible using, for example,
-      <a class="link" href="reference.html#imap-user" title="3.148.&#160;imap_user">$imap_user</a>). The username may contain the
+      <a class="link" href="reference.html#imap-user" title="3.153.&#160;imap_user">$imap_user</a>). The username may contain the
       <span class="quote">“<span class="quote">@</span>”</span> symbol being used by many mail systems as part of the login name. The special characters
       <span class="quote">“<span class="quote">/</span>”</span>(
       <code class="literal">%2F</code>),
@@ -139,15 +139,15 @@ smtp://user@host:587/
     <code class="literal">pops</code> for encrypted communication, see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details.</p>
     <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which NeoMutt will check for mail remotely can be controlled by the
-    <a class="link" href="reference.html#pop-checkinterval" title="3.264.&#160;pop_checkinterval">$pop_checkinterval</a> variable, which defaults to every 60 seconds.</p>
+    <a class="link" href="reference.html#pop-checkinterval" title="3.270.&#160;pop_checkinterval">$pop_checkinterval</a> variable, which defaults to every 60 seconds.</p>
     <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
     <a class="xref" href="#header-caching" title="8.1.&#160;Header Caching">Section&#160;8.1, “Header Caching”</a> and
     <a class="xref" href="#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a> NeoMutt simulates the new/old/read flags as well as flagged and replied. NeoMutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by NeoMutt or other tools).</p>
     <a id="fetch-mail"></a>
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
-    <a class="link" href="reference.html#pop-host" title="3.266.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
-    <a class="link" href="reference.html#spoolfile" title="3.378.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
+    <a class="link" href="reference.html#pop-host" title="3.272.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
+    <a class="link" href="reference.html#spoolfile" title="3.385.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as
@@ -176,10 +176,10 @@ smtp://user@host:587/
     <span class="emphasis">
       <em>toggle-subscribed</em>
     </span>command. See also the
-    <a class="link" href="reference.html#imap-list-subscribed" title="3.138.&#160;imap_list_subscribed">$imap_list_subscribed</a> variable.</p>
+    <a class="link" href="reference.html#imap-list-subscribed" title="3.142.&#160;imap_list_subscribed">$imap_list_subscribed</a> variable.</p>
     <p>Polling for new mail on an IMAP server can cause noticeable delays. So, you'll want to carefully tune the
-    <a class="link" href="reference.html#mail-check" title="3.157.&#160;mail_check">$mail_check</a> and
-    <a class="link" href="reference.html#timeout" title="3.404.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
+    <a class="link" href="reference.html#mail-check" title="3.163.&#160;mail_check">$mail_check</a> and
+    <a class="link" href="reference.html#timeout" title="3.411.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
     <pre class="screen">
 set mail_check=90
 set timeout=15
@@ -204,7 +204,9 @@ set timeout=15
           <li class="listitem">
             <p>In lieu of file permissions, NeoMutt displays the string
             <span class="quote">“<span class="quote">IMAP</span>”</span>, possibly followed by the symbol
-            <span class="quote">“<span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders.</p>
+            <span class="quote">“<span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders. A mailbox name with a trailing delimiter (usually
+            <span class="quote">“<span class="quote">/</span>”</span> or
+            <span class="quote">“<span class="quote">.</span>”</span>) indicates subfolders.</p>
           </li>
           <li class="listitem">
             <p>For the case where an entry can contain both messages and subfolders, the selection key (bound to
@@ -249,16 +251,16 @@ set timeout=15
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
             <p>
-            <a class="link" href="reference.html#imap-user" title="3.148.&#160;imap_user">$imap_user</a>– controls the username under which you request authentication on the IMAP server, for all authenticators. This is overridden by an explicit username in the mailbox path (i.e. by using a mailbox name of the form
+            <a class="link" href="reference.html#imap-user" title="3.153.&#160;imap_user">$imap_user</a>– controls the username under which you request authentication on the IMAP server, for all authenticators. This is overridden by an explicit username in the mailbox path (i.e. by using a mailbox name of the form
             <code class="literal">{user@host}</code>).</p>
           </li>
           <li class="listitem">
             <p>
-            <a class="link" href="reference.html#imap-pass" title="3.141.&#160;imap_pass">$imap_pass</a>– a password which you may preset, used by all authentication methods where a password is needed.</p>
+            <a class="link" href="reference.html#imap-pass" title="3.145.&#160;imap_pass">$imap_pass</a>– a password which you may preset, used by all authentication methods where a password is needed.</p>
           </li>
           <li class="listitem">
             <p>
-            <a class="link" href="reference.html#imap-authenticators" title="3.131.&#160;imap_authenticators">$imap_authenticators</a>– a colon-delimited list of IMAP authentication methods to try, in the order you wish to try them. If specified, this overrides NeoMutt's default (attempt everything, in the order listed above).</p>
+            <a class="link" href="reference.html#imap-authenticators" title="3.134.&#160;imap_authenticators">$imap_authenticators</a>– a colon-delimited list of IMAP authentication methods to try, in the order you wish to try them. If specified, this overrides NeoMutt's default (attempt everything, in the order listed above).</p>
           </li>
         </ul>
       </div>
@@ -275,13 +277,13 @@ set timeout=15
     </div>
     <p>Besides supporting traditional mail delivery through a sendmail-compatible program, NeoMutt supports delivery through SMTP.</p>
     <p>If the configuration variable
-    <a class="link" href="reference.html#smtp-url" title="3.371.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
-    <a class="link" href="reference.html#sendmail" title="3.319.&#160;sendmail">$sendmail</a>.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.378.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
+    <a class="link" href="reference.html#sendmail" title="3.325.&#160;sendmail">$sendmail</a>.</p>
     <p>For details on the URL syntax, please see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>.</p>
     <p>The built-in SMTP support supports encryption (the
     <code class="literal">smtps</code> protocol using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms for SASL are specified in
-    <a class="link" href="reference.html#smtp-authenticators" title="3.368.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
+    <a class="link" href="reference.html#smtp-authenticators" title="3.375.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -336,7 +338,7 @@ set imap_oauth_refresh_command="/path/to/oauth2.py --quiet --user=[email_address
         <strong>account-hook</strong>
       </span>
     </a>command may help. This hook works like
-    <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
+    <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
       </span>
@@ -359,13 +361,13 @@ account-hook imap://host2/ 'set tunnel="ssh host2 /usr/libexec/imapd"'
 account-hook smtp://user@host3/ 'set tunnel="ssh host3 /usr/libexec/smtpd"'
 </pre>
     <p>To manage multiple accounts with, for example, different values of
-    <a class="link" href="reference.html#record" title="3.293.&#160;record">$record</a> or sender addresses,
-    <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
+    <a class="link" href="reference.html#record" title="3.299.&#160;record">$record</a> or sender addresses,
+    <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
       </span>
     </a>has to be be used together with the
-    <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">
+    <a class="link" href="configuration.html#mailboxes" title="15.&#160;Monitoring Incoming Mail">
       <span class="command">
         <strong>mailboxes</strong>
       </span>
@@ -387,31 +389,31 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <br class="example-break" />
     <p>In example
     <a class="xref" href="#ex-multiaccount" title="Example&#160;6.2.&#160;Managing multiple accounts">Example&#160;6.2, “Managing multiple accounts”</a> the folders are defined using
-    <a class="link" href="configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">
+    <a class="link" href="configuration.html#mailboxes" title="15.&#160;Monitoring Incoming Mail">
       <span class="command">
         <strong>mailboxes</strong>
       </span>
     </a>so NeoMutt polls them for new mail. Each
-    <a class="link" href="configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">
+    <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
       </span>
     </a>triggers when one mailbox below each IMAP account is opened and sets
-    <a class="link" href="reference.html#folder" title="3.90.&#160;folder">$folder</a> to the account's root folder. Next, it sets
-    <a class="link" href="reference.html#record" title="3.293.&#160;record">$record</a> to the
+    <a class="link" href="reference.html#folder" title="3.92.&#160;folder">$folder</a> to the account's root folder. Next, it sets
+    <a class="link" href="reference.html#record" title="3.299.&#160;record">$record</a> to the
     <span class="emphasis">
       <em>INBOX/Sent</em>
     </span>folder below the newly set
-    <a class="link" href="reference.html#folder" title="3.90.&#160;folder">$folder</a>. Please notice that the value the
+    <a class="link" href="reference.html#folder" title="3.92.&#160;folder">$folder</a>. Please notice that the value the
     <span class="quote">“<span class="quote">+</span>”</span>
     <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">mailbox shortcut</a> refers to depends on the
     <span class="emphasis">
       <em>current</em>
     </span>value of
-    <a class="link" href="reference.html#folder" title="3.90.&#160;folder">$folder</a> and therefore has to be set separately per account. Setting other values like
-    <a class="link" href="reference.html#from" title="3.103.&#160;from">$from</a> or
-    <a class="link" href="reference.html#signature" title="3.340.&#160;signature">$signature</a> is analogous to setting
-    <a class="link" href="reference.html#record" title="3.293.&#160;record">$record</a>.</p>
+    <a class="link" href="reference.html#folder" title="3.92.&#160;folder">$folder</a> and therefore has to be set separately per account. Setting other values like
+    <a class="link" href="reference.html#from" title="3.106.&#160;from">$from</a> or
+    <a class="link" href="reference.html#signature" title="3.347.&#160;signature">$signature</a> is analogous to setting
+    <a class="link" href="reference.html#record" title="3.299.&#160;record">$record</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -444,9 +446,9 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <p>NeoMutt provides optional support for caching message headers for the following types of folders: IMAP, POP, Maildir and MH. Header caching greatly speeds up opening large folders because for remote folders, headers usually only need to be downloaded once. For Maildir and MH, reading the headers from a single file is much faster than looking at possibly thousands of single files (since Maildir and MH use one file per message.)</p>
       <p>Header caching can be enabled by configuring one of the database backends. One of tokyocabinet, kyotocabinet, qdbm, gdbm, lmdb or bdb.</p>
       <p>If enabled,
-      <a class="link" href="reference.html#header-cache" title="3.109.&#160;header_cache">$header_cache</a> can be used to either point to a file or a directory. If set to point to a file, one database file for all folders will be used (which may result in lower performance), but one file per folder if it points to a directory.</p>
+      <a class="link" href="reference.html#header-cache" title="3.112.&#160;header_cache">$header_cache</a> can be used to either point to a file or a directory. If set to point to a file, one database file for all folders will be used (which may result in lower performance), but one file per folder if it points to a directory.</p>
       <p>Additionally,
-      <a class="link" href="reference.html#header-cache-backend" title="3.110.&#160;header_cache_backend">$header_cache_backend</a> can be used to specify which backend to use. The list of available backends can be specified at configure time with a set of --with-&lt;backend&gt; options. Currently, the following backends are supported: tokyocabinet, kyotocabinet, qdbm, gdbm, bdb, lmdb.</p>
+      <a class="link" href="reference.html#header-cache-backend" title="3.113.&#160;header_cache_backend">$header_cache_backend</a> can be used to specify which backend to use. The list of available backends can be specified at configure time with a set of --with-&lt;backend&gt; options. Currently, the following backends are supported: tokyocabinet, kyotocabinet, qdbm, gdbm, bdb, lmdb.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -460,7 +462,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <p>Both cache methods can be combined using the same directory for storage (and for IMAP/POP even provide meaningful file names) which simplifies manual maintenance tasks.</p>
       <p>In addition to caching message headers only, NeoMutt can also cache whole message bodies. This results in faster display of messages for POP and IMAP folders because messages usually have to be downloaded only once.</p>
       <p>For configuration, the variable
-      <a class="link" href="reference.html#message-cachedir" title="3.176.&#160;message_cachedir">$message_cachedir</a> must point to a directory. There, NeoMutt will create a hierarchy of subdirectories named like the account and mailbox path the cache is for.</p>
+      <a class="link" href="reference.html#message-cachedir" title="3.182.&#160;message_cachedir">$message_cachedir</a> must point to a directory. There, NeoMutt will create a hierarchy of subdirectories named like the account and mailbox path the cache is for.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -472,8 +474,8 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
         </div>
       </div>
       <p>For using both, header and body caching,
-      <a class="link" href="reference.html#header-cache" title="3.109.&#160;header_cache">$header_cache</a> and
-      <a class="link" href="reference.html#message-cachedir" title="3.176.&#160;message_cachedir">$message_cachedir</a> can be safely set to the same value.</p>
+      <a class="link" href="reference.html#header-cache" title="3.112.&#160;header_cache">$header_cache</a> and
+      <a class="link" href="reference.html#message-cachedir" title="3.182.&#160;message_cachedir">$message_cachedir</a> can be safely set to the same value.</p>
       <p>In a header or body cache directory, NeoMutt creates a directory hierarchy named like:
       <code class="literal">proto:user@hostname</code> where
       <code class="literal">proto</code> is either
@@ -493,7 +495,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       </div>
       <p>NeoMutt does not (yet) support maintenance features for header cache database files so that files have to be removed in case they grow too big. It depends on the database library used for header caching whether disk space freed by removing messages is re-used.</p>
       <p>For body caches, NeoMutt can keep the local cache in sync with the remote mailbox if the
-      <a class="link" href="reference.html#message-cache-clean" title="3.175.&#160;message_cache_clean">$message_cache_clean</a> variable is set. Cleaning means to remove messages from the cache which are no longer present in the mailbox which only happens when other mail clients or instances of NeoMutt using a different body cache location delete messages (NeoMutt itself removes deleted messages from the cache when syncing a mailbox). As cleaning can take a noticeable amount of time, it should not be set in general but only occasionally.</p>
+      <a class="link" href="reference.html#message-cache-clean" title="3.181.&#160;message_cache_clean">$message_cache_clean</a> variable is set. Cleaning means to remove messages from the cache which are no longer present in the mailbox which only happens when other mail clients or instances of NeoMutt using a different body cache location delete messages (NeoMutt itself removes deleted messages from the cache when syncing a mailbox). As cleaning can take a noticeable amount of time, it should not be set in general but only occasionally.</p>
     </div>
   </div>
   <div class="sect1">
@@ -521,7 +523,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <code class="literal">&lt;accept&gt;</code>them pressing (by default) the
     <code class="literal">Return</code> key.</p>
     <p>Note that different remailers do have different capabilities, indicated in the %c entry of the remailer menu lines (see
-    <a class="link" href="reference.html#mix-entry-format" title="3.190.&#160;mix_entry_format">$mix_entry_format</a>). Most important is the
+    <a class="link" href="reference.html#mix-entry-format" title="3.196.&#160;mix_entry_format">$mix_entry_format</a>). Most important is the
     <span class="quote">“<span class="quote">middleman</span>”</span> capability, indicated by a capital
     <span class="quote">“<span class="quote">M</span>”</span>: This means that the remailer in question cannot be used as the final element of a chain, but will only forward messages to other mixmaster remailers. For details on the other capabilities, please have a look at the mixmaster documentation.</p>
   </div>
