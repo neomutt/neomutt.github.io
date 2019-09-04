@@ -179,7 +179,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
       <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/guide/reference.html#index-format" title="3.153.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="/guide/reference.html#index-format" title="3.159.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -229,7 +229,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/guide/reference.html#index-format" title="3.153.&#160;index_format">$index_format</a> documentation.</p>
+      <a class="link" href="/guide/reference.html#index-format" title="3.159.&#160;index_format">$index_format</a> documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
@@ -253,12 +253,14 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
             <col />
             <col />
             <col />
+            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Name</th>
               <th>Type</th>
               <th>Default</th>
+              <th>Note</th>
             </tr>
           </thead>
           <tbody>
@@ -270,6 +272,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">0</code>
               </td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -277,6 +280,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>string</td>
               <td>(empty)</td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -284,6 +288,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>string</td>
               <td>(empty)</td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -293,6 +298,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">5</code>
               </td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -302,6 +308,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">messages</code>
               </td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -311,6 +318,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">no</code>
               </td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -318,6 +326,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>string</td>
               <td>(empty)</td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -327,6 +336,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">unread</code>
               </td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -336,6 +346,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">%6n(%6N) %f</code>
               </td>
+              <td>&#160;</td>
             </tr>
             <tr>
               <td>
@@ -345,6 +356,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>
                 <code class="literal">no</code>
               </td>
+              <td>Unnecessary since
+              <a class="link" href="/guide/reference.html#spoolfile" title="3.385.&#160;spoolfile">$spoolfile</a> supports mailbox descriptions.</td>
             </tr>
           </tbody>
         </table>
@@ -477,7 +490,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <p>
     <code class="literal">virtual-mailboxes</code> is like the
-    <a class="link" href="/guide/configuration.html#mailboxes" title="14.&#160;Monitoring Incoming Mail">mailboxes</a> command, except that it takes a description. The mailbox will be watched for new mail and will appear in the sidebar.</p>
+    <a class="link" href="/guide/configuration.html#mailboxes" title="15.&#160;Monitoring Incoming Mail">mailboxes</a> command, except that it takes a description. The mailbox will be watched for new mail and will appear in the sidebar.</p>
     <p>
     <code class="literal">unvirtual-mailboxes</code> is identical to the
     <code class="literal">unmailboxes</code> command.</p>

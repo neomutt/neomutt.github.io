@@ -368,7 +368,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>NeoMutt assumes that an empty file is not compressed. In this situation, unset
-      <a class="link" href="/guide/reference.html#save-empty" title="3.309.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
+      <a class="link" href="/guide/reference.html#save-empty" title="3.315.&#160;save_empty">$save_empty</a>, so that the compressed file will be removed if you delete all of the messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -380,7 +380,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         </div>
       </div>
       <p>Encrypted files are decrypted into temporary files which are stored in the
-      <a class="link" href="/guide/reference.html#tmpdir" title="3.405.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
+      <a class="link" href="/guide/reference.html#tmpdir" title="3.412.&#160;tmpdir">$tmpdir</a> directory. This could be a security risk.</p>
     </div>
   </div>
   <div class="sect1">
@@ -446,22 +446,22 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#tmpdir" title="3.405.&#160;tmpdir">$tmpdir</a>
+            <a class="link" href="/guide/reference.html#tmpdir" title="3.412.&#160;tmpdir">$tmpdir</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#mbox-type" title="3.171.&#160;mbox_type">$mbox_type</a>
+            <a class="link" href="/guide/reference.html#mbox-type" title="3.177.&#160;mbox_type">$mbox_type</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/reference.html#save-empty" title="3.309.&#160;save_empty">$save_empty</a>
+            <a class="link" href="/guide/reference.html#save-empty" title="3.315.&#160;save_empty">$save_empty</a>
           </p>
         </li>
         <li class="listitem">
           <p>
-            <a class="link" href="/guide/configuration.html#folder-hook" title="7.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            <a class="link" href="/guide/configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
           </p>
         </li>
       </ul>
