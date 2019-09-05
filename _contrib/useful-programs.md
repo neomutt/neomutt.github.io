@@ -160,6 +160,7 @@ status: stable
 
 - [vim-mutt-aliases](https://github.com/Konfekt/vim-mutt-aliases/) to complete mail aliases in Vim
 - [vim-mailquery](https://github.com/Konfekt/vim-mailquery) to complete mail addresses in your inbox in Vim
+- [vim-notmuch-addrlookup](https://github.com/Konfekt/vim-notmuch-addrlookup) to complete mail addresses indexed by [notmuch](https://notmuchmail.org).
 
 ## Mailcap
 
