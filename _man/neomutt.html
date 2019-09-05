@@ -733,18 +733,6 @@ description: The NeoMutt Mail User Agent (MUA)
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>PGPPATH</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <p>Directory in which the user's PGP public keyring can be found. When used with the original PGP program, NeoMutt and 
-          <span class="citerefentry">
-          <span class="refentrytitle">pgpring</span>(1)</span>rely on this being set.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>RANDFILE</strong>
             </span>
           </span>
@@ -876,51 +864,51 @@ description: The NeoMutt Mail User Agent (MUA)
           <tbody>
             <tr>
               <td align="right">1</td>
-              <td align="left">$XDG_CONFIG_DIRS/neomutt/neomuttrc</td>
-              <td align="left">$XDG_CONFIG_HOME/neomutt/neomuttrc</td>
+              <td align="left">­$XDG_CONFIG_DIRS/neomutt/neomuttrc</td>
+              <td align="left">­$XDG_CONFIG_HOME/neomutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">2</td>
-              <td align="left">$XDG_CONFIG_DIRS/neomutt/Muttrc 
+              <td align="left">­$XDG_CONFIG_DIRS/neomutt/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
               <span class="strong">
                 <strong />
               </span></td>
-              <td align="left">$XDG_CONFIG_HOME/neomutt/muttrc</td>
+              <td align="left">­$XDG_CONFIG_HOME/neomutt/muttrc</td>
             </tr>
             <tr>
               <td align="right">3</td>
-              <td align="left">/etc/neomuttrc</td>
-              <td align="left">$XDG_CONFIG_HOME/mutt/neomuttrc</td>
+              <td align="left">­/etc/neomuttrc</td>
+              <td align="left">­$XDG_CONFIG_HOME/mutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">4</td>
-              <td align="left">/etc/Muttrc 
+              <td align="left">­/etc/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
               <span class="strong">
                 <strong />
               </span></td>
-              <td align="left">$XDG_CONFIG_HOME/mutt/muttrc</td>
+              <td align="left">­$XDG_CONFIG_HOME/mutt/muttrc</td>
             </tr>
             <tr>
               <td align="right">5</td>
-              <td align="left">/usr/share/neomutt/neomuttrc</td>
-              <td align="left">~/.neomutt/neomuttrc</td>
+              <td align="left">­/usr/share/neomutt/neomuttrc</td>
+              <td align="left">­~/.neomutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">6</td>
-              <td align="left">/usr/share/neomutt/Muttrc 
+              <td align="left">­/usr/share/neomutt/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
               <span class="strong">
                 <strong />
               </span></td>
-              <td align="left">~/.neomutt/muttrc</td>
+              <td align="left">­~/.neomutt/muttrc</td>
             </tr>
             <tr>
               <td align="right">.T&amp;</td>
@@ -963,7 +951,7 @@ description: The NeoMutt Mail User Agent (MUA)
               <td align="left">&#160;</td>
             </tr>
             <tr>
-              <td align="right"> \h'0m' 
+              <td align="right">  
               <span class="strong">
                 <strong>*</strong>
               </span>) Note the case of the filename</td>
@@ -973,7 +961,6 @@ description: The NeoMutt Mail User Agent (MUA)
           </tbody>
         </table>
       </div>
-      <p>\p</p>
     </div>
     <div class="refsect2">
       <a id="s1other_relevant_filess0"></a>
@@ -1076,8 +1063,6 @@ description: The NeoMutt Mail User Agent (MUA)
     <span class="refentrytitle">msmtp</span>(1)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">notmuch</span>(1)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">pgpring</span>(1)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">sendmail</span>(1)</span>, 
     <span class="citerefentry">
