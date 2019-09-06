@@ -38,7 +38,10 @@ status: stable
 
 ## Address books
 
-* [mail-query](https://github.com/pbrisbin/mail-query) as a query tool
+* [mail-query](https://github.com/pbrisbin/mail-query) to query addresses found 
+  in the inbox
+* [notmuch-addrlookup](https://github.com/aperezdc/notmuch-addrlookup-c) to query adresses 
+  indexed by notmuch
 * [khard](https://github.com/scheibler/khard) to synchronize address books
   between your PC and mobile device with
   [vdirsyncer](https://github.com/untitaker/vdirsyncer).
