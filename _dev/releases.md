@@ -12,14 +12,16 @@ The Git hashes link to our GitHub repository.
 
 | Date       | Release Notes | Git Hash |
 | :--------- | :------------ | :------- |
-| 2018-05-12 | [20180512](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180512) | [`984ab4aa`](https://github.com/neomutt/neomutt/commit/984ab4aa) |
-| 2018-03-23 | [20180323](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180323) | [`e3c78e22`](https://github.com/neomutt/neomutt/commit/e3c78e22) |
-| 2018-02-23 | [20180223](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180223) | [`5a3bda21`](https://github.com/neomutt/neomutt/commit/5a3bda21) |
-| 2017-12-15 | [20171215](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171215) | [`ae612851`](https://github.com/neomutt/neomutt/commit/ae612851) |
-| 2017-12-08 | [20171208](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171208) | [`f43ca861`](https://github.com/neomutt/neomutt/commit/f43ca861) |
-| 2017-10-27 | [20171027](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171027) | [`8788b3f0`](https://github.com/neomutt/neomutt/commit/8788b3f0) |
-| 2017-10-13 | [20171013](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171013) | [`8c834766`](https://github.com/neomutt/neomutt/commit/8c834766) |
-| 2017-10-06 | [20171006](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171006) | [`7e22dd47`](https://github.com/neomutt/neomutt/commit/7e22dd47) |
+| 2018-07-16 | [20180716](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180716) | [`6a147a62c`](https://github.com/neomutt/neomutt/commit/6a147a62c) |
+| 2018-06-22 | [20180622](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180622) | [`77c2177d8`](https://github.com/neomutt/neomutt/commit/77c2177d8) |
+| 2018-05-12 | [20180512](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180512) | [`984ab4aa2`](https://github.com/neomutt/neomutt/commit/984ab4aa2) |
+| 2018-03-23 | [20180323](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180323) | [`e3c78e226`](https://github.com/neomutt/neomutt/commit/e3c78e226) |
+| 2018-02-23 | [20180223](https://github.com/neomutt/neomutt/releases/tag/neomutt-20180223) | [`5a3bda21d`](https://github.com/neomutt/neomutt/commit/5a3bda21d) |
+| 2017-12-15 | [20171215](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171215) | [`ae6128517`](https://github.com/neomutt/neomutt/commit/ae6128517) |
+| 2017-12-08 | [20171208](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171208) | [`f43ca8617`](https://github.com/neomutt/neomutt/commit/f43ca8617) |
+| 2017-10-27 | [20171027](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171027) | [`8788b3f0f`](https://github.com/neomutt/neomutt/commit/8788b3f0f) |
+| 2017-10-13 | [20171013](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171013) | [`8c8347665`](https://github.com/neomutt/neomutt/commit/8c8347665) |
+| 2017-10-06 | [20171006](https://github.com/neomutt/neomutt/releases/tag/neomutt-20171006) | [`7e22dd47e`](https://github.com/neomutt/neomutt/commit/7e22dd47e) |
 | 2017-09-12 | [20170912 (1.9.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170912) | [`7553613e`](https://github.com/neomutt/neomutt/commit/7553613e) |
 | 2017-09-07 | [20170907 (1.9.0)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170907) | [`e5d5de50`](https://github.com/neomutt/neomutt/commit/e5d5de50) |
 | 2017-07-14 | [20170714 (1.8.3)](https://github.com/neomutt/neomutt/releases/tag/neomutt-20170714) | [`4dfb3718`](https://github.com/neomutt/neomutt/commit/4dfb3718) |
@@ -66,6 +68,14 @@ The Git hashes link to our copy of upstream's repository.
 
 | Date       | Version      | Git Hash |
 | :--------- | :----------- | :------- |
+| 2019-06-15 | 1.12.1 | [`38e7c257`](https://github.com/neomutt/upstream-mutt/commit/38e7c257) |
+| 2019-05-25 | 1.12 | [`ee9983f0`](https://github.com/neomutt/upstream-mutt/commit/ee9983f0) |
+| 2019-03-13 | 1.11.4 | [`207b9306`](https://github.com/neomutt/upstream-mutt/commit/207b9306) |
+| 2019-02-01 | 1.11.3 | [`eeed901d`](https://github.com/neomutt/upstream-mutt/commit/eeed901d) |
+| 2019-01-07 | 1.11.2 | [`df3f2aee`](https://github.com/neomutt/upstream-mutt/commit/df3f2aee) |
+| 2018-12-01 | 1.11.1 | [`991c018e`](https://github.com/neomutt/upstream-mutt/commit/991c018e) |
+| 2018-11-25 | 1.11 | [`3b75515c`](https://github.com/neomutt/upstream-mutt/commit/3b75515c) |
+| 2018-07-16 | 1.10.1 | [`ed9d7727`](https://github.com/neomutt/upstream-mutt/commit/ed9d7727) |
 | 2018-05-19 | 1.10 | [`d55950a8`](https://github.com/neomutt/upstream-mutt/commit/d55950a8) |
 | 2018-04-14 | 1.9.5 | [`bf161cf5`](https://github.com/neomutt/upstream-mutt/commit/bf161cf5) |
 | 2018-03-03 | 1.9.4 | [`9eeb406b`](https://github.com/neomutt/upstream-mutt/commit/9eeb406b) |
