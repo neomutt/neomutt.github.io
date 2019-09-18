@@ -439,9 +439,9 @@ installs all the dependencies that are needed, but the build is controlled by a
 The script has per-branch rules to determine how many builds to do and which
 options to use.  [_read more..._](https://github.com/neomutt/travis-build#travis-configs)
 
-- [master](https://github.com/neomutt/travis-build/blob/master/master.txt): 3
-- [devel/\*](https://github.com/neomutt/travis-build/blob/master/travis.txt): 1
-- [travis](https://github.com/neomutt/travis-build/blob/master/travis.txt): 28
+- [master](https://github.com/neomutt/travis-build/blob/master/master.txt): 4
+- [devel/\*](https://github.com/neomutt/travis-build/blob/master/devel.txt): 1
+- [pull-request](https://github.com/neomutt/travis-build/blob/master/pull-request.txt): 2
 
 ### Checking of the website links
 
