@@ -10950,6 +10950,28 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>toggle_quoted_show_levels</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;number 
+            <br />Default:&#160;0 
+            <br /></p>
+          </div>
+          <p>Quoted text may be filtered out using the 
+          <span class="emphasis">
+            <em>&lt;toggle-quoted&gt;</em>
+          </span>command. If set to a number greater than 0, then the 
+          <span class="emphasis">
+            <em>&lt;toggle-quoted&gt;</em>
+          </span>command will only filter out quote levels above this number.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>read_inc</strong>
             </span>
           </span>
@@ -13940,6 +13962,7 @@ Default: no
           <span class="emphasis">
             <em>text/plain; format=flowed</em>
           </span>". This format is easier to handle for some mailing software, and generally just looks like ordinary text. To actually make use of this format's features, you'll need support in your editor.</p>
+          <p>The option only controls newly composed messages. Postponed messages, resent messages, and draft messages (via -H on the command line) will use the content-type of the source message.</p>
           <p>Note that $indent_string is ignored when this option is 
           <span class="emphasis">
             <em>set</em>

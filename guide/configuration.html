@@ -206,10 +206,10 @@ title: Configuration
       <a class="link" href="reference.html#from" title="3.110.&#160;from">$from</a>,
       <a class="link" href="reference.html#mailcap-path" title="3.171.&#160;mailcap_path">$mailcap_path</a>,
       <a class="link" href="reference.html#news-server" title="3.207.&#160;news_server">$news_server</a>,
-      <a class="link" href="reference.html#shell" title="3.331.&#160;shell">shell</a>,
-      <a class="link" href="reference.html#spoolfile" title="3.393.&#160;spoolfile">$spoolfile</a>,
-      <a class="link" href="reference.html#tmpdir" title="3.421.&#160;tmpdir">$tmpdir</a>,
-      <a class="link" href="reference.html#visual" title="3.438.&#160;visual">$visual</a>.</p>
+      <a class="link" href="reference.html#shell" title="3.332.&#160;shell">shell</a>,
+      <a class="link" href="reference.html#spoolfile" title="3.394.&#160;spoolfile">$spoolfile</a>,
+      <a class="link" href="reference.html#tmpdir" title="3.422.&#160;tmpdir">$tmpdir</a>,
+      <a class="link" href="reference.html#visual" title="3.439.&#160;visual">$visual</a>.</p>
       <p>Finally, it's possible to
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">set some variables directly</a> on the command-line using the
       <code class="literal">-e</code> option.</p>
@@ -438,7 +438,7 @@ set record=+sent_on_$HOSTNAME
     <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
     <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
-    <a class="link" href="reference.html#record" title="3.303.&#160;record">$record</a> for details.)</p>
+    <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a> for details.)</p>
     <p>NeoMutt expands the variable when it is assigned, not when it is used. If the value of a variable on the right-hand side of an assignment changes after the assignment, the variable on the left-hand side will not be affected.</p>
     <p>The commands understood by NeoMutt are explained in the next paragraphs. For a complete list, see the
     <a class="link" href="reference.html#commands" title="2.&#160;Configuration Commands">command reference</a>.</p>
@@ -1128,7 +1128,7 @@ bind index gg first-entry
       <h3 class="title">Note</h3>
       <p>If you use the
       <span class="quote">“<span class="quote">!</span>”</span> shortcut for
-      <a class="link" href="reference.html#spoolfile" title="3.393.&#160;spoolfile">$spoolfile</a> at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical
+      <a class="link" href="reference.html#spoolfile" title="3.394.&#160;spoolfile">$spoolfile</a> at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical
       <span class="emphasis">
         <em>not</em>
       </span>operator for the expression.</p>
@@ -1161,7 +1161,7 @@ folder-hook work "set sort=threads"
       <a class="link" href="#exec" title="23.&#160;Executing Functions">exec</a> commands will end up being processed in reverse order.</p>
     </div>
     <p>The following example will set the
-    <a class="link" href="reference.html#sort" title="3.387.&#160;sort">sort</a> variable to
+    <a class="link" href="reference.html#sort" title="3.388.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
     <span class="quote">“
@@ -1297,7 +1297,8 @@ folder-hook work "set sort=threads"
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">color</code>
+      <code class="command">color</code>[
+      <code class="option">compose</code>]
       <em class="replaceable">
         <code>object</code>
       </em>[
@@ -1311,9 +1312,27 @@ folder-hook work "set sort=threads"
         <code>background</code>
       </em>
       <br />
-      <code class="command">color</code>{
-      <code class="option">header</code>|
-      <code class="option">body</code>} [
+      <code class="command">color</code>
+      <em class="replaceable">
+        <code>pattern-object</code>
+      </em>[
+      <em class="replaceable">
+        <code>attribute</code>
+      </em>...]
+      <em class="replaceable">
+        <code>foreground</code>
+      </em>
+      <em class="replaceable">
+        <code>background</code>
+      </em>
+      <em class="replaceable">
+        <code>pattern</code>
+      </em>
+      <br />
+      <code class="command">color</code>
+      <em class="replaceable">
+        <code>regex-object</code>
+      </em>[
       <em class="replaceable">
         <code>attribute</code>
       </em>...]
@@ -1328,7 +1347,7 @@ folder-hook work "set sort=threads"
       </em>
       <br />
       <code class="command">color</code>
-      <code class="option">index-object</code>[
+      <code class="option">status</code>[
       <em class="replaceable">
         <code>attribute</code>
       </em>...]
@@ -1337,447 +1356,764 @@ folder-hook work "set sort=threads"
       </em>
       <em class="replaceable">
         <code>background</code>
-      </em>
-      <em class="replaceable">
-        <code>pattern</code>
-      </em>
-      <br />
-      <code class="command">color</code>
-      <code class="option">compose</code>
-      <em class="replaceable">
-        <code>composeobject</code>
       </em>[
       <em class="replaceable">
-        <code>attribute</code>
-      </em>...]
+        <code>regex</code>
+      </em>[
       <em class="replaceable">
-        <code>foreground</code>
-      </em>
+        <code>num</code>
+      </em>]]
+      <br />
+      <code class="command">uncolor</code>[
+      <code class="option">compose</code>]
       <em class="replaceable">
-        <code>background</code>
+        <code>object</code>
       </em>
       <br />
-      <code class="command">uncolor</code>{
-      <code class="option">index-object</code>|
-      <code class="option">header</code>|
-      <code class="option">body</code>} {
+      <code class="command">uncolor</code>
       <em class="replaceable">
-        <code>*</code>
-      </em>|
+        <code>pattern-object</code>
+      </em>{
       <em class="replaceable">
         <code>pattern</code>
-      </em>... }</p>
+      </em>|
+      <em class="replaceable">
+        <code>*</code>
+      </em>}
+      <br />
+      <code class="command">uncolor</code>
+      <em class="replaceable">
+        <code>regex-object</code>
+      </em>{
+      <em class="replaceable">
+        <code>regex</code>
+      </em>|
+      <em class="replaceable">
+        <code>*</code>
+      </em>}
+      <br />
+      <code class="command">uncolor</code>
+      <code class="option">status</code>{
+      <em class="replaceable">
+        <code>regex</code>
+      </em>|
+      <em class="replaceable">
+        <code>*</code>
+      </em>}</p>
     </div>
-    <p>If your terminal supports color, you can spice up NeoMutt by creating your own color scheme. To define the color of an object (type of information), you must specify both a foreground color
-    <span class="emphasis">
-      <em>and</em>
-    </span>a background color (it is not possible to only specify one or the other).</p>
-    <p>
-    <span class="emphasis">
-      <em>header</em>
-    </span>and
-    <span class="emphasis">
-      <em>body</em>
-    </span>match
-    <span class="emphasis">
-      <em>regex</em>
-    </span>in the header/body of a message,
-    <span class="emphasis">
-      <em>index-object</em>
-    </span>can match
-    <span class="emphasis">
-      <em>pattern</em>
-    </span>(see
-    <a class="xref" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Section&#160;3, “Patterns: Searching, Limiting and Tagging”</a>) in the message index. Note that IMAP server-side searches (=b, =B, =h) are not supported for color index patterns.</p>
-    <p>When
-    <a class="link" href="reference.html#header-color-partial" title="3.120.&#160;header_color_partial">$header_color_partial</a> is unset (the default), a
-    <span class="emphasis">
-      <em>header</em>
-    </span>matched by
-    <span class="emphasis">
-      <em>regex</em>
-    </span>will have color applied to the entire header. When set, color is applied only to the exact text matched by
-    <span class="emphasis">
-      <em>regex</em>
-    </span>.</p>
-    <p>
-    <span class="emphasis">
-      <em>object</em>
-    </span>can be one of:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>attachment</p>
-        </li>
-        <li class="listitem">
-          <p>bold (highlighting bold patterns in the body of messages)</p>
-        </li>
-        <li class="listitem">
-          <p>error (error messages printed by NeoMutt)</p>
-        </li>
-        <li class="listitem">
-          <p>hdrdefault (default color of the message header in the pager)</p>
-        </li>
-        <li class="listitem">
-          <p>index_author (color of the author name in the index, uses
-          <span class="emphasis">
-            <em>pattern</em>
-          </span>)</p>
-        </li>
-        <li class="listitem">
-          <p>index_collapsed (the number of messages in a collapsed thread in the index)</p>
-        </li>
-        <li class="listitem">
-          <p>index_date (color of the date field in the index)</p>
-        </li>
-        <li class="listitem">
-          <p>index_flags (color of the message flags in the index)</p>
-        </li>
-        <li class="listitem">
-          <p>index_label (color of the message label in the index)</p>
-        </li>
-        <li class="listitem">
-          <p>index_number (color of the message number in the index)</p>
-        </li>
-        <li class="listitem">
-          <p>index_size (color of the message size and line number in the index)</p>
-        </li>
-        <li class="listitem">
-          <p>index_subject (color of the subject in the index, uses
-          <span class="emphasis">
-            <em>pattern</em>
-          </span>)</p>
-        </li>
-        <li class="listitem">
-          <p>indicator (arrow or bar used to indicate the current item in a menu)</p>
-        </li>
-        <li class="listitem">
-          <p>markers (the
-          <span class="quote">“<span class="quote">+</span>”</span> markers at the beginning of wrapped lines in the pager)</p>
-        </li>
-        <li class="listitem">
-          <p>message (informational messages)</p>
-        </li>
-        <li class="listitem">
-          <p>normal</p>
-        </li>
-        <li class="listitem">
-          <p>options (the key letters in multi-choice questions)</p>
-        </li>
-        <li class="listitem">
-          <p>
-          <a class="link" href="/feature/progress" title="Progress Bar Feature">progress</a>(visual progress bar)</p>
-        </li>
-        <li class="listitem">
-          <p>prompt</p>
-        </li>
-        <li class="listitem">
-          <p>quoted (text matching
-          <a class="link" href="reference.html#quote-regex" title="3.298.&#160;quote_regex">$quote_regex</a> in the body of a message)</p>
-        </li>
-        <li class="listitem">
-          <p>quoted1, quoted2, ..., quoted
-          <span class="emphasis">
-            <em>N</em>
-          </span>(higher levels of quoting)</p>
-        </li>
-        <li class="listitem">
-          <p>search (highlighting of words in the pager)</p>
-        </li>
-        <li class="listitem">
-          <p>signature</p>
-        </li>
-        <li class="listitem">
-          <p>status (mode lines used to display info about the mailbox or message)</p>
-        </li>
-        <li class="listitem">
-          <p>tilde (the
-          <span class="quote">“<span class="quote">~</span>”</span> used to pad blank lines in the pager)</p>
-        </li>
-        <li class="listitem">
-          <p>tree (thread tree drawn in the message index and attachment menu)</p>
-        </li>
-        <li class="listitem">
-          <p>underline (highlighting underlined patterns in the body of messages)</p>
-        </li>
-      </ul>
-    </div>
-    <p>
-    <span class="emphasis">
-      <em>composeobject</em>
-    </span>can be one of:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>header</p>
-        </li>
-        <li class="listitem">
-          <p>security_encrypt</p>
-        </li>
-        <li class="listitem">
-          <p>security_sign</p>
-        </li>
-        <li class="listitem">
-          <p>security_both</p>
-        </li>
-        <li class="listitem">
-          <p>security_none</p>
-        </li>
-      </ul>
-    </div>
-    <p>
-    <span class="emphasis">
-      <em>index-object</em>
-    </span>can be one of the following:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>index (default highlighting of the entire index line, uses
-          <span class="emphasis">
-            <em>pattern</em>
-          </span>)</p>
-        </li>
-        <li class="listitem">
-          <p>index_date (the date field)</p>
-        </li>
-        <li class="listitem">
-          <p>index_flags (the message flags, %S %Z, uses
-          <span class="emphasis">
-            <em>pattern</em>
-          </span>)</p>
-        </li>
-        <li class="listitem">
-          <p>index_number (the message number, %C)</p>
-        </li>
-        <li class="listitem">
-          <p>index_collapsed (the number of messages in a collapsed thread, %M)</p>
-        </li>
-        <li class="listitem">
-          <p>index_author (the author name, %A %a %F %L %n, uses
-          <span class="emphasis">
-            <em>pattern</em>
-          </span>)</p>
-        </li>
-        <li class="listitem">
-          <p>index_subject (the subject, %s, uses
-          <span class="emphasis">
-            <em>pattern</em>
-          </span>)</p>
-        </li>
-        <li class="listitem">
-          <p>index_size (the message size, %c %l)</p>
-        </li>
-        <li class="listitem">
-          <p>index_label (the message label, %y %Y)</p>
-        </li>
-        <li class="listitem">
-          <p>index_tags (the transformed message tags, %g)</p>
-        </li>
-        <li class="listitem">
-          <p>index_tag (an individual message tag, %G, uses
-          <span class="emphasis">
-            <em>pattern / tag name</em>
-          </span>)</p>
-        </li>
-      </ul>
-    </div>
-    <p>
-    <span class="emphasis">
-      <em>attribute</em>
-    </span>can be one of the following:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>none</p>
-        </li>
-        <li class="listitem">
-          <p>bold</p>
-        </li>
-        <li class="listitem">
-          <p>underline</p>
-        </li>
-        <li class="listitem">
-          <p>reverse</p>
-        </li>
-        <li class="listitem">
-          <p>standout</p>
-        </li>
-      </ul>
-    </div>
-    <p>
-    <span class="emphasis">
-      <em>foreground</em>
-    </span>and
-    <span class="emphasis">
-      <em>background</em>
-    </span>can be one of the following:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>white</p>
-        </li>
-        <li class="listitem">
-          <p>black</p>
-        </li>
-        <li class="listitem">
-          <p>green</p>
-        </li>
-        <li class="listitem">
-          <p>magenta</p>
-        </li>
-        <li class="listitem">
-          <p>blue</p>
-        </li>
-        <li class="listitem">
-          <p>cyan</p>
-        </li>
-        <li class="listitem">
-          <p>yellow</p>
-        </li>
-        <li class="listitem">
-          <p>red</p>
-        </li>
-        <li class="listitem">
-          <p>default</p>
-        </li>
-        <li class="listitem">
-          <p>color
-          <span class="emphasis">
-            <em>x</em>
-          </span></p>
-        </li>
-      </ul>
-    </div>
-    <p>The color name can optionally be prefixed with the keyword
-    <code class="literal">bright</code> or
-    <code class="literal">light</code> to make the color boldfaced or light (e.g.,
-    <code class="literal">brightred</code>).
-    <code class="literal">alert</code> to make a blinking/alert color (e.g.,
-    <code class="literal">alertred</code>). The precise behavior depends on the terminal and its configuration. In particular, the boldfaced/light difference and such background colors may be available only for terminals configured with at least 16&#160;colors, as specified by the
-    <code class="literal">$TERM</code> environment variable.</p>
-    <p>If your terminal supports it, the special keyword
-    <span class="emphasis">
-      <em>default</em>
-    </span>can be used as a transparent color. The value
-    <span class="emphasis">
-      <em>brightdefault</em>
-    </span>is also valid. If NeoMutt is linked against the
-    <span class="emphasis">
-      <em>S-Lang</em>
-    </span>library, you also need to set the
-    <code class="literal">$COLORFGBG</code> environment variable to the default colors of your terminal for this to work; for example (for Bourne-like shells):</p>
-    <pre class="screen">
+    <p>If your terminal supports color, you can spice up NeoMutt by creating your own
+    <a class="link" href="#color-style" title="10.1.&#160;Color Style">color scheme</a>.</p>
+    <p>The types of objects that can be colored fall into two categories:
+    <a class="link" href="#color-simple" title="10.2.&#160;Simple Colors">Simple Colors</a> such as the highlight in the index, and
+    <a class="link" href="#color-lists" title="10.3.&#160;Color Lists">Color Lists</a> such as the status bar. These lists can created complexing coloring rules.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="color-style"></a>10.1.&#160;Color Style</h3>
+          </div>
+        </div>
+      </div>
+      <p>Objects in NeoMutt can be given colors and attributes to make things easier to find and use.</p>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>Objects must be given
+        <span class="emphasis">
+          <em>both</em>
+        </span>a foreground and background color (it is not possible to specify one or the other).</p>
+      </div>
+      <p>Colors can be specified in two ways, using their name such as
+      <code class="literal">green</code>,
+      <code class="literal">blue</code>, or by their number in the palette, such as
+      <code class="literal">color12</code>,
+      <code class="literal">color207</code>(the palette consists of 256 colors).</p>
+      <p>Named colours may also be prefixed by a
+      <span class="emphasis">
+        <em>modifier</em>
+      </span>.
+      <code class="literal">bright</code> or
+      <code class="literal">light</code> will make the color boldfaced or light (e.g.,
+      <code class="literal">brightred</code>).
+      <code class="literal">alert</code> to make a blinking/alert color (e.g.,
+      <code class="literal">alertred</code>).</p>
+      <p>The precise behavior depends on the terminal and its configuration. In particular, the boldfaced/light difference and such background colors may be available only for terminals configured with at least 16&#160;colors, as specified by the
+      <code class="literal">$TERM</code> environment variable.</p>
+      <p>
+      <span class="emphasis">
+        <em>foreground</em>
+      </span>and
+      <span class="emphasis">
+        <em>background</em>
+      </span>can be one of the following:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p>white</p>
+          </li>
+          <li class="listitem">
+            <p>black</p>
+          </li>
+          <li class="listitem">
+            <p>green</p>
+          </li>
+          <li class="listitem">
+            <p>magenta</p>
+          </li>
+          <li class="listitem">
+            <p>blue</p>
+          </li>
+          <li class="listitem">
+            <p>cyan</p>
+          </li>
+          <li class="listitem">
+            <p>yellow</p>
+          </li>
+          <li class="listitem">
+            <p>red</p>
+          </li>
+          <li class="listitem">
+            <p>default</p>
+          </li>
+        </ul>
+      </div>
+      <p>In addition to the colors, objects may have their
+      <span class="emphasis">
+        <em>attributes</em>
+      </span>set:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p>none</p>
+          </li>
+          <li class="listitem">
+            <p>bold</p>
+          </li>
+          <li class="listitem">
+            <p>reverse</p>
+          </li>
+          <li class="listitem">
+            <p>standout</p>
+          </li>
+          <li class="listitem">
+            <p>underline</p>
+          </li>
+        </ul>
+      </div>
+      <p>If your terminal supports it, the special keyword
+      <span class="emphasis">
+        <em>default</em>
+      </span>can be used as a transparent color. The value
+      <span class="emphasis">
+        <em>brightdefault</em>
+      </span>is also valid. If NeoMutt is linked against the
+      <span class="emphasis">
+        <em>S-Lang</em>
+      </span>library, you also need to set the
+      <code class="literal">$COLORFGBG</code> environment variable to the default colors of your terminal for this to work; for example (for Bourne-like shells):</p>
+      <pre class="screen">
 set COLORFGBG="green;black"
 export COLORFGBG
 </pre>
-    <div class="note">
-      <h3 class="title">Note</h3>
-      <p>The
-      <span class="emphasis">
-        <em>S-Lang</em>
-      </span>library requires you to use the
-      <span class="emphasis">
-        <em>lightgray</em>
-      </span>and
-      <span class="emphasis">
-        <em>brown</em>
-      </span>keywords instead of
-      <span class="emphasis">
-        <em>white</em>
-      </span>and
-      <span class="emphasis">
-        <em>yellow</em>
-      </span>when setting this variable.</p>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>The
+        <span class="emphasis">
+          <em>S-Lang</em>
+        </span>library requires you to use the
+        <span class="emphasis">
+          <em>lightgray</em>
+        </span>and
+        <span class="emphasis">
+          <em>brown</em>
+        </span>keywords instead of
+        <span class="emphasis">
+          <em>white</em>
+        </span>and
+        <span class="emphasis">
+          <em>yellow</em>
+        </span>when setting this variable.</p>
+      </div>
     </div>
-    <div class="note">
-      <h3 class="title">Note</h3>
-      <p>The
-      <span class="command">
-        <strong>uncolor</strong>
-      </span>command can be applied to the index, header and body objects only. It removes entries from the list. You
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="color-simple"></a>10.2.&#160;Simple Colors</h3>
+          </div>
+        </div>
+      </div>
+      <p>Most of NeoMutt's colorable objects follow simple rules. They don't use a pattern and any new configuration will overwrite the old colours.</p>
+      <p>Simple colors can be undone by setting the foreground and background to
+      <code class="literal">default</code>, or by using the
+      <code class="literal">uncolor</code> command.</p>
+      <p>These are general NeoMutt objects:</p>
+      <div >
+        <a id="table-color-simple"></a>
+        <p class="title">
+          <strong>Table&#160;3.6.&#160;Simple Colours</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Simple Colours" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Colour Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>attachment</td>
+                <td>Colour for attachment headers</td>
+              </tr>
+              <tr>
+                <td>bold</td>
+                <td>Highlighting bold patterns in the body of messages</td>
+              </tr>
+              <tr>
+                <td>error</td>
+                <td>Error messages printed by NeoMutt</td>
+              </tr>
+              <tr>
+                <td>hdrdefault</td>
+                <td>Default colour of the message header in the pager</td>
+              </tr>
+              <tr>
+                <td>indicator</td>
+                <td>Arrow or bar used to indicate the current item in a menu</td>
+              </tr>
+              <tr>
+                <td>markers</td>
+                <td>The "+" markers at the beginning of wrapped lines in the pager</td>
+              </tr>
+              <tr>
+                <td>message</td>
+                <td>Informational messages</td>
+              </tr>
+              <tr>
+                <td>normal</td>
+                <td>Default colour for all text</td>
+              </tr>
+              <tr>
+                <td>options</td>
+                <td>The key letters in multi-choice questions</td>
+              </tr>
+              <tr>
+                <td>progress</td>
+                <td>
+                  <a class="link" href="/feature/progress" title="Progress Bar Feature">Visual progress bar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>prompt</td>
+                <td>A question</td>
+              </tr>
+              <tr>
+                <td>search</td>
+                <td>Highlighting of words in the pager</td>
+              </tr>
+              <tr>
+                <td>signature</td>
+                <td>Email's signature lines (.sig)</td>
+              </tr>
+              <tr>
+                <td>tilde</td>
+                <td>The "~" used to pad blank lines in the pager</td>
+              </tr>
+              <tr>
+                <td>tree</td>
+                <td>Thread tree drawn in the message index and attachment menu</td>
+              </tr>
+              <tr>
+                <td>underline</td>
+                <td>Highlighting underlined patterns in the body of messages</td>
+              </tr>
+              <tr>
+                <td>warning</td>
+                <td>Warning messages</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <pre class="screen">
+<span class="comment"># Make error messages white text on a red background</span>
+color error white red
+<span class="comment"># Make questions bold, underlined, with light blue text (with default background)</span>
+color prompt bold underline cyan default
+</pre>
+      <pre class="screen">
+uncolor error
+uncolor prompt
+</pre>
+      <p>Each of these objects will colour a certain expando in the index. See
+      <a class="link" href="reference.html#index-format" title="3.163.&#160;index_format">$index_format</a> for more details.</p>
+      <div >
+        <a id="color-simple-index"></a>
+        <p class="title">
+          <strong>Table&#160;3.7.&#160;Simple Index Colours</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Simple Index Colours" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Colour Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>index_collapsed</td>
+                <td>Number of messages in a collapsed thread,
+                <code class="literal">%M</code></td>
+              </tr>
+              <tr>
+                <td>index_date</td>
+                <td>Date field,
+                <code class="literal">%d</code>
+                <code class="literal">%D</code>
+                <code class="literal">%{fmt}</code>
+                <code class="literal">%[fmt]</code>
+                <code class="literal">%(fmt)</code></td>
+              </tr>
+              <tr>
+                <td>index_label</td>
+                <td>Message label,
+                <code class="literal">%y</code>
+                <code class="literal">%Y</code></td>
+              </tr>
+              <tr>
+                <td>index_number</td>
+                <td>Message number,
+                <code class="literal">%C</code></td>
+              </tr>
+              <tr>
+                <td>index_size</td>
+                <td>Message size,
+                <code class="literal">%c</code>
+                <code class="literal">%l</code></td>
+              </tr>
+              <tr>
+                <td>index_tags</td>
+                <td>Transformed message tags,
+                <code class="literal">%g</code>
+                <code class="literal">%J</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <pre class="screen">
+color index_date green default
+</pre>
+      <pre class="screen">
+uncolor index_date
+</pre>
+      <p>These are sidebar objects. See
+      <a class="link" href="/feature/sidebar#intro" title="2.&#160;Introduction">Sidebar Intro</a> for more details.</p>
+      <div >
+        <a id="color-simple-sidebar"></a>
+        <p class="title">
+          <strong>Table&#160;3.8.&#160;Simple Sidebar Colours</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Simple Sidebar Colours" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Colour Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>sidebar_divider</td>
+                <td>The dividing line between the Sidebar and the Index/Pager panels</td>
+              </tr>
+              <tr>
+                <td>sidebar_flagged</td>
+                <td>Mailboxes containing flagged mail</td>
+              </tr>
+              <tr>
+                <td>sidebar_highlight</td>
+                <td>Cursor to select a mailbox</td>
+              </tr>
+              <tr>
+                <td>sidebar_indicator</td>
+                <td>The mailbox open in the Index panel</td>
+              </tr>
+              <tr>
+                <td>sidebar_new</td>
+                <td>Mailboxes containing new mail</td>
+              </tr>
+              <tr>
+                <td>sidebar_ordinary</td>
+                <td>Mailboxes that have no new/flagged mails, etc</td>
+              </tr>
+              <tr>
+                <td>sidebar_spoolfile</td>
+                <td>Mailbox that receives incoming mail</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <pre class="screen">
+color sidebar_divider brightblack default
+</pre>
+      <pre class="screen">
+uncolor sidebar_divider
+</pre>
+      <p>These are compose objects.</p>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>The compose objects use a slightly different format of command. They prefix the style with the word
+        <code class="literal">compose</code>.</p>
+      </div>
+      <div >
+        <a id="color-simple-compose"></a>
+        <p class="title">
+          <strong>Table&#160;3.9.&#160;Simple Compose Colours</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Simple Compose Colours" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Colour Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>header</td>
+                <td>Header labels, e.g. From:</td>
+              </tr>
+              <tr>
+                <td>security_encrypt</td>
+                <td>Mail will be encrypted</td>
+              </tr>
+              <tr>
+                <td>security_sign</td>
+                <td>Mail will be signed</td>
+              </tr>
+              <tr>
+                <td>security_both</td>
+                <td>Mail will be encrypted and signed</td>
+              </tr>
+              <tr>
+                <td>security_none</td>
+                <td>Mail will not be encrypted or signed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <pre class="screen">
+color compose header bold white default
+</pre>
+      <pre class="screen">
+uncolor compose header
+</pre>
+      <p>The quoted objects refer to quoted lines in an email reply. They are defined using the
+      <a class="link" href="reference.html#reply-regex" title="3.308.&#160;reply_regex">
+        <code class="literal">$reply_regex</code>
+      </a>config variable.</p>
+      <p>The quoted email colours don't use pattern. The first colour,
+      <code class="literal">quoted</code> provides a default colour for all quoted text. Also, each diffent level of quoting can be given a different colour using,
+      <code class="literal">quoted1</code>,
+      <code class="literal">quoted2</code>,
+      <code class="literal">quoted3</code> etc.</p>
+      <div >
+        <a id="color-quoted"></a>
+        <p class="title">
+          <strong>Table&#160;3.10.&#160;Quoted Email Colours</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Quoted Email Colours" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Colour Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>quoted</td>
+                <td>Text matching
+                <a class="link" href="reference.html#quote-regex" title="3.298.&#160;quote_regex">$quote_regex</a> in the body of a message</td>
+              </tr>
+              <tr>
+                <td>quoted1</td>
+                <td>1 level deeper quoted text, e.g.
+                <code class="literal">&gt; &gt; text</code></td>
+              </tr>
+              <tr>
+                <td>quoted2</td>
+                <td>2 level deeper quoted text, e.g.
+                <code class="literal">&gt; &gt; &gt; text</code></td>
+              </tr>
+              <tr>
+                <td>quotedN</td>
+                <td>n level deeper quoted text</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <pre class="screen">
+color quoted brightblue default
+color quoted1 brightgreen default
+color quoted2 yellow default
+</pre>
+      <pre class="screen">
+uncolor quoted
+uncolor quoted1
+uncolor quoted2
+</pre>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="color-lists"></a>10.3.&#160;Color Lists</h3>
+          </div>
+        </div>
+      </div>
+      <p>Some objects in NeoMutt support
       <span class="emphasis">
-        <em>must</em>
-      </span>specify the same pattern specified in the
+        <em>lists</em>
+      </span>of color rules. Each rule has a pattern and a color. Each is checked in turn and any matching rules are applied cumulatively (overlaid).</p>
+      <p>When applying the colours, each pattern will be tested against the field to be colored. All of the matching patterns will have their colors applied in the order they are configured.</p>
+      <p>The color lists work in slightly different ways to each other.</p>
+      <p>
+      <code class="literal">attach_headers</code>,
+      <code class="literal">body</code> and
+      <code class="literal">header</code> match a
+      <span class="emphasis">
+        <em>regular expression</em>
+      </span>(regex) in the header/body of a email.</p>
+      <p>
+      <code class="literal">index</code> objects match a
+      <span class="emphasis">
+        <em>pattern</em>
+      </span>in the email index (see
+      <a class="xref" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">Section&#160;3, “Patterns: Searching, Limiting and Tagging”</a>) Note that IMAP server-side searches (=b, =B, =h) are not supported for color index patterns.</p>
+      <p>When
+      <a class="link" href="reference.html#header-color-partial" title="3.120.&#160;header_color_partial">$header_color_partial</a> is unset (the default), a
+      <code class="literal">header</code> matched by
+      <span class="emphasis">
+        <em>regex</em>
+      </span>will have color applied to the entire header. When set, color is applied only to the exact text matched by
+      <span class="emphasis">
+        <em>regex</em>
+      </span>.</p>
+      <p>For the
+      <code class="literal">status</code> list, the
+      <span class="emphasis">
+        <em>regular expression</em>
+      </span>is optional. Without one, the command will set the default style for the status bar. With a regex (and an optional number), it's possible to style parts of the status bar. See:
+      <a class="link" href="/feature/status-color" title="Status Color Feature">Status-Color feature</a> for more detail.</p>
+      <p>Color lists can be undone by using the
+      <code class="literal">uncolor</code> command and the pattern or
+      <code class="literal">*</code>to match.</p>
+      <div >
+        <a id="color-regex-lists"></a>
+        <p class="title">
+          <strong>Table&#160;3.11.&#160;Colour Regex Lists</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Colour Regex Lists" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Colour Name</th>
+                <th>Match</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>attach_headers</td>
+                <td>regex</td>
+                <td>Attachment headers</td>
+              </tr>
+              <tr>
+                <td>body</td>
+                <td>regex</td>
+                <td>Email body</td>
+              </tr>
+              <tr>
+                <td>header</td>
+                <td>regex</td>
+                <td>Email headers</td>
+              </tr>
+              <tr>
+                <td>index</td>
+                <td>pattern</td>
+                <td>Default highlighting of the entire index line</td>
+              </tr>
+              <tr>
+                <td>index_author</td>
+                <td>pattern</td>
+                <td>Author in the index, %A %a %F %L %n</td>
+              </tr>
+              <tr>
+                <td>index_flags</td>
+                <td>pattern</td>
+                <td>Flags in the index, %S %Z</td>
+              </tr>
+              <tr>
+                <td>index_subject</td>
+                <td>pattern</td>
+                <td>Subject in the index, %s</td>
+              </tr>
+              <tr>
+                <td>index_tag</td>
+                <td>pattern</td>
+                <td>Tags in the index, %G</td>
+              </tr>
+              <tr>
+                <td>status</td>
+                <td>regex</td>
+                <td>Status bar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <pre class="screen">
+<span class="comment"># Highlight emails from work (entire line)</span>
+color index          cyan default "~f @work.com"
+<span class="comment"># Extra highlighting for the boss (just the author column)</span>
+color index_author   cyan red     "~f boss@work.com"
+</pre>
+      <pre class="screen">
+uncolor index          "~f @work.com"
+<span class="comment"># Clear all index_author colors</span>
+uncolor index_author   *
+</pre>
+      <pre class="screen">
+<span class="comment"># Add some highlights to the body of an email</span>
+color body    bold red    default "(urgent|important)"
+color body         yellow default "(warning|notice)"
+<span class="comment"># Make the label header red</span>
+color header       cyan   default "X-Label"
+</pre>
+      <pre class="screen">
+uncolor body    "(urgent|important)"
+<span class="comment"># Clear all body colors</span>
+uncolor body    *
+uncolor header  "X-Label"
+</pre>
+      <pre class="screen">
+<span class="comment"># Set the default color for the entire status line</span>
+color status blue white
+<span class="comment"># Highlight New, Deleted, or Flagged emails</span>
+color status brightred white '(New|Del|Flag):[0-9]+'
+<span class="comment"># Highlight the contents of the []s but not the [] themselves</span>
+color status red default '\[([^]]+)\]' 1
+</pre>
+      <pre class="screen">
+uncolor status '(New|Del|Flag):[0-9]+'
+uncolor status *
+</pre>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="color-mono"></a>10.4.&#160;Mono Color</h3>
+          </div>
+        </div>
+      </div>
+      <p>If your terminal does not support color, it is still possible change the video attributes through the use of the
+      <span class="quote">“<span class="quote">mono</span>”</span> command. Usage:</p>
+      <div class="cmdsynopsis">
+        <p>
+        <code class="command">mono</code>
+        <em class="replaceable">
+          <code>object</code>
+        </em>
+        <em class="replaceable">
+          <code>attribute</code>
+        </em>
+        <br />
+        <code class="command">mono</code>{
+        <code class="option">header</code>|
+        <code class="option">body</code>}
+        <em class="replaceable">
+          <code>attribute</code>
+        </em>
+        <em class="replaceable">
+          <code>regex</code>
+        </em>
+        <br />
+        <code class="command">mono</code>
+        <code class="option">index-object</code>
+        <em class="replaceable">
+          <code>attribute</code>
+        </em>
+        <em class="replaceable">
+          <code>pattern</code>
+        </em>
+        <br />
+        <code class="command">unmono</code>{
+        <code class="option">index-object</code>|
+        <code class="option">header</code>|
+        <code class="option">body</code>} {
+        <em class="replaceable">
+          <code>*</code>
+        </em>|
+        <em class="replaceable">
+          <code>pattern</code>
+        </em>... }</p>
+      </div>
+      <p>For
+      <span class="emphasis">
+        <em>object</em>
+      </span>,
+      <span class="emphasis">
+        <em>composeobject</em>
+      </span>, and
+      <span class="emphasis">
+        <em>attribute</em>
+      </span>, see the
       <span class="command">
         <strong>color</strong>
-      </span>command for it to be removed. The pattern
-      <span class="quote">“<span class="quote">*</span>”</span> is a special token which means to clear the color list of all entries.</p>
+      </span>command.</p>
     </div>
-    <p>NeoMutt also recognizes the keywords
-    <span class="emphasis">
-      <em>color0</em>
-    </span>,
-    <span class="emphasis">
-      <em>color1</em>
-    </span>, ...,
-    <span class="emphasis">
-      <em>color</em>
-    </span>
-    <span class="emphasis">
-      <em>N-1</em>
-    </span>(
-    <span class="emphasis">
-      <em>N</em>
-    </span>being the number of colors supported by your terminal). This is useful when you remap the colors for your display (for example by changing the color associated with
-    <span class="emphasis">
-      <em>color2</em>
-    </span>for your xterm), since color names may then lose their normal meaning.</p>
-    <a id="mono"></a>
-    <p>If your terminal does not support color, it is still possible change the video attributes through the use of the
-    <span class="quote">“<span class="quote">mono</span>”</span> command. Usage:</p>
-    <div class="cmdsynopsis">
-      <p>
-      <code class="command">mono</code>
-      <em class="replaceable">
-        <code>object</code>
-      </em>
-      <em class="replaceable">
-        <code>attribute</code>
-      </em>
-      <br />
-      <code class="command">mono</code>{
-      <code class="option">header</code>|
-      <code class="option">body</code>}
-      <em class="replaceable">
-        <code>attribute</code>
-      </em>
-      <em class="replaceable">
-        <code>regex</code>
-      </em>
-      <br />
-      <code class="command">mono</code>
-      <code class="option">index-object</code>
-      <em class="replaceable">
-        <code>attribute</code>
-      </em>
-      <em class="replaceable">
-        <code>pattern</code>
-      </em>
-      <br />
-      <code class="command">unmono</code>{
-      <code class="option">index-object</code>|
-      <code class="option">header</code>|
-      <code class="option">body</code>} {
-      <em class="replaceable">
-        <code>*</code>
-      </em>|
-      <em class="replaceable">
-        <code>pattern</code>
-      </em>... }</p>
-    </div>
-    <p>For
-    <span class="emphasis">
-      <em>object</em>
-    </span>,
-    <span class="emphasis">
-      <em>composeobject</em>
-    </span>, and
-    <span class="emphasis">
-      <em>attribute</em>
-    </span>, see the
-    <span class="command">
-      <strong>color</strong>
-    </span>command.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -1798,7 +2134,7 @@ export COLORFGBG
         </div>
       </div>
       <p>When displaying a message in the pager, NeoMutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.441.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.442.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1830,20 +2166,20 @@ export COLORFGBG
       </div>
       <p>Messages often have many header fields added by automatic processing systems, or which may not seem useful to display on the screen. This command allows you to specify header fields which you don't normally want to see in the pager.</p>
       <p>You do not need to specify the full header field name. For example,
-      <span class="quote">“
-      <span class="quote">ignore content-</span>”</span> will ignore all header fields that begin with the pattern
-      <span class="quote">“
-      <span class="quote">content-</span>”</span>.
-      <span class="quote">“
-      <span class="quote">ignore&#160;*</span>”</span> will ignore all headers.</p>
+      <span class="quote">“<span class="quote">ignore content-</span>”</span> will ignore all header fields that begin with the pattern
+      <span class="quote">“<span class="quote">content-</span>”</span>.
+      <span class="quote">“<span class="quote">ignore&#160;*</span>”</span> will ignore all headers.</p>
       <p>To remove a previously added token from the list, use the
-      <span class="quote">“<span class="quote">unignore</span>”</span> command. The
-      <span class="quote">“<span class="quote">unignore</span>”</span> command will make NeoMutt display headers with the given pattern. For example, if you do
-      <span class="quote">“<span class="quote">ignore x-</span>”</span> it is possible to
-      <span class="quote">“<span class="quote">unignore x-mailer</span>”</span>.</p>
-      <p>
       <span class="quote">“
-      <span class="quote">unignore&#160;*</span>”</span> will remove all tokens from the ignore list.</p>
+      <span class="quote">unignore</span>”</span> command. The
+      <span class="quote">“
+      <span class="quote">unignore</span>”</span> command will make NeoMutt display headers with the given pattern. For example, if you do
+      <span class="quote">“
+      <span class="quote">ignore x-</span>”</span> it is possible to
+      <span class="quote">“
+      <span class="quote">unignore x-mailer</span>”</span>.</p>
+      <p>
+      <span class="quote">“<span class="quote">unignore&#160;*</span>”</span> will remove all tokens from the ignore list.</p>
       <div class="example">
         <a id="ex-header-weeding"></a>
         <p class="title">
@@ -1894,8 +2230,7 @@ unignore posted-to:
         <strong>hdr_order</strong>
       </span>command you can specify an order in which NeoMutt will attempt to present these headers to you when viewing messages.</p>
       <p>
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
       <span class="command">
         <strong>unhdr_order</strong>
       </span>*</span>”</span> will clear all previous headers from the order list, thus removing the header order effects set by the system-wide startup file.</p>
@@ -1950,7 +2285,7 @@ hdr_order From Date: From: To: Cc: Subject:
       </em>... }</p>
     </div>
     <p>With various functions, NeoMutt will treat messages differently, depending on whether you sent them or whether you received them from someone else. For instance, when replying to a message that you sent to a different party, NeoMutt will automatically suggest to send the response to the original message's recipients – responding to yourself won't make much sense in many cases. (See
-    <a class="link" href="reference.html#reply-to" title="3.309.&#160;reply_to">$reply_to</a>.)</p>
+    <a class="link" href="reference.html#reply-to" title="3.310.&#160;reply_to">$reply_to</a>.)</p>
     <p>Many users receive e-mail under a number of different addresses. To fully use NeoMutt's features here, the program must be able to recognize what e-mail addresses you receive mail under. That's the purpose of the
     <span class="command">
       <strong>alternates</strong>
@@ -1960,8 +2295,7 @@ hdr_order From Date: From: To: Cc: Subject:
 alternates user@example
 </pre>
     <p>NeoMutt will consider
-    <span class="quote">“
-    <span class="quote">
+    <span class="quote">“<span class="quote">
       <code class="literal">some-user@example</code>
     </span>”</span> as being your address, too which may not be desired. As a solution, in such cases addresses should be specified as:</p>
     <pre class="screen">
@@ -2010,8 +2344,7 @@ alternates '^user@example$'
     <span class="command">
       <strong>unalternates</strong>
     </span>is
-    <span class="quote">“
-    <span class="quote">*</span>”</span>,
+    <span class="quote">“<span class="quote">*</span>”</span>,
     <span class="emphasis">
       <em>all entries</em>
     </span>on
@@ -2120,10 +2453,8 @@ subscribe [0-9]+.*@bugs.debian.org
     <code class="literal">-group</code> flag adds all of the subsequent regular expressions to the named
     <a class="link" href="#addrgroup" title="4.&#160;Address Groups">address group</a> in addition to adding to the specified address list.</p>
     <p>The
-    <span class="quote">“
-    <span class="quote">unlists</span>”</span> command is used to remove a token from the list of known and subscribed mailing-lists. Use
-    <span class="quote">“
-    <span class="quote">unlists&#160;*</span>”</span> to remove all tokens.</p>
+    <span class="quote">“<span class="quote">unlists</span>”</span> command is used to remove a token from the list of known and subscribed mailing-lists. Use
+    <span class="quote">“<span class="quote">unlists&#160;*</span>”</span> to remove all tokens.</p>
     <p>To remove a mailing list from the list of subscribed mailing lists, but keep it on the list of known mailing lists, use
     <span class="command">
       <strong>unsubscribe</strong>
@@ -2154,8 +2485,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <span class="emphasis">
       <em>regex</em>
     </span>is a regular expression specifying the mailbox to treat as a
-    <span class="quote">“
-    <span class="quote">spool</span>”</span> mailbox and
+    <span class="quote">“<span class="quote">spool</span>”</span> mailbox and
     <span class="emphasis">
       <em>mailbox</em>
     </span>specifies where mail should be saved when read.</p>
@@ -2164,8 +2494,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <a class="xref" href="advancedusage.html#mailbox-hook" title="6.2.&#160;Mailbox Matching in Hooks">Mailbox Matching in Hooks</a> for more details.</p>
     <p>Note that execution of mbox-hooks is dependent on the
     <a class="link" href="reference.html#move" title="3.202.&#160;move">$move</a> configuration variable. If set to
-    <span class="quote">“
-    <span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
+    <span class="quote">“<span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
     <p>Unlike some of the other
     <span class="emphasis">
       <em>hook</em>
@@ -2232,14 +2561,10 @@ subscribe [0-9]+.*@bugs.debian.org
     <em>New Mail Feature</em></a>for details (including in what situations and how often NeoMutt checks for new mail). Additionally,
     <a class="link" href="reference.html#new-mail-command" title="3.205.&#160;new_mail_command">$new_mail_command</a> can be used to run a command when new mail is detected.</p>
     <p>The
-    <span class="quote">“
-    <span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail.
-    <span class="quote">“
-    <span class="quote">unmailboxes</span>”</span> can be used on the mailbox path,
-    <span class="quote">“
-    <span class="quote">$folder</span>”</span>-abbreviated path, or description. Use
-    <span class="quote">“
-    <span class="quote">unmailboxes&#160;*</span>”</span> to remove all tokens.</p>
+    <span class="quote">“<span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail.
+    <span class="quote">“<span class="quote">unmailboxes</span>”</span> can be used on the mailbox path,
+    <span class="quote">“<span class="quote">$folder</span>”</span>-abbreviated path, or description. Use
+    <span class="quote">“<span class="quote">unmailboxes&#160;*</span>”</span> to remove all tokens.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The folders in the
@@ -2247,10 +2572,12 @@ subscribe [0-9]+.*@bugs.debian.org
         <strong>mailboxes</strong>
       </span>command are resolved when the command is executed, so if these names contain
       <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">shortcut characters</a>(such as
-      <span class="quote">“<span class="quote">=</span>”</span> and
-      <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
+      <span class="quote">“
+      <span class="quote">=</span>”</span> and
+      <span class="quote">“
+      <span class="quote">!</span>”</span>), any variable definition that affects these characters (like
       <a class="link" href="reference.html#folder" title="3.96.&#160;folder">$folder</a> and
-      <a class="link" href="reference.html#spoolfile" title="3.393.&#160;spoolfile">$spoolfile</a>) should be set before the
+      <a class="link" href="reference.html#spoolfile" title="3.394.&#160;spoolfile">$spoolfile</a>) should be set before the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise NeoMutt tries to find it relative to the directory from where NeoMutt was started which may not always be desired.</p>
@@ -2287,7 +2614,8 @@ subscribe [0-9]+.*@bugs.debian.org
     </span>command allows you to create your own header fields which will be added to every message you send and appear in the editor if
     <a class="link" href="reference.html#edit-headers" title="3.82.&#160;edit_headers">$edit_headers</a> is set.</p>
     <p>For example, if you would like to add an
-    <span class="quote">“<span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
+    <span class="quote">“
+    <span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
     <a class="xref" href="#ex-my-hdr" title="Example&#160;3.12.&#160;Defining custom headers">Example&#160;3.12, “Defining custom headers”</a> in your
     <code class="literal">.neomuttrc</code>.</p>
     <div class="example">
@@ -2308,19 +2636,24 @@ my_hdr Organization: A Really Big Company, Anytown, USA
       <span class="emphasis">
         <em>not</em>
       </span>allowed between the keyword and the colon (
-      <span class="quote">“<span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so NeoMutt enforces the rule.</p>
+      <span class="quote">“
+      <span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so NeoMutt enforces the rule.</p>
     </div>
     <p>If you would like to add a header field to a single message, you should either set the
     <a class="link" href="reference.html#edit-headers" title="3.82.&#160;edit_headers">$edit_headers</a> variable, or use the
     <code class="literal">&lt;edit-headers&gt;</code>function (default:
-    <span class="quote">“<span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
+    <span class="quote">“
+    <span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
     <p>To remove user defined header fields, use the
     <span class="command">
       <strong>unmy_hdr</strong>
     </span>command. You may specify an asterisk (
-    <span class="quote">“<span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
-    <span class="quote">“<span class="quote">To</span>”</span> and
-    <span class="quote">“<span class="quote">Cc</span>”</span> header fields, you could use:</p>
+    <span class="quote">“
+    <span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
+    <span class="quote">“
+    <span class="quote">To</span>”</span> and
+    <span class="quote">“
+    <span class="quote">Cc</span>”</span> header fields, you could use:</p>
     <pre class="screen">
 unmy_hdr to cc
 </pre>
@@ -2387,16 +2720,15 @@ unmy_hdr to cc
     <span class="command">
       <strong>fcc-hook</strong>
     </span>is used to save outgoing mail in a mailbox other than
-    <a class="link" href="reference.html#record" title="3.303.&#160;record">$record</a>. NeoMutt searches the initial list of message recipients for the first matching
+    <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a>. NeoMutt searches the initial list of message recipients for the first matching
     <span class="emphasis">
       <em>pattern</em>
     </span>and uses
     <span class="emphasis">
       <em>mailbox</em>
     </span>as the default
-    <span class="quote">“
-    <span class="quote">Fcc:</span>”</span> mailbox. If no match is found the message will be saved to
-    <a class="link" href="reference.html#record" title="3.303.&#160;record">$record</a> mailbox.</p>
+    <span class="quote">“<span class="quote">Fcc:</span>”</span> mailbox. If no match is found the message will be saved to
+    <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a> mailbox.</p>
     <pre class="screen">
 fcc-hook [@.]aol\\.com$ +spammers
 </pre>
@@ -2555,7 +2887,7 @@ save-hook aol\\.com$ +spam
     <span class="command">
       <strong>send-hook</strong>
     </span>, and can, e.g., be used to set parameters such as the
-    <a class="link" href="reference.html#sendmail" title="3.329.&#160;sendmail">$sendmail</a> variable depending on the message's sender address.</p>
+    <a class="link" href="reference.html#sendmail" title="3.330.&#160;sendmail">$sendmail</a> variable depending on the message's sender address.</p>
     <p>For each type of
     <span class="command">
       <strong>send-hook</strong>
@@ -2575,7 +2907,7 @@ save-hook aol\\.com$ +spam
     <p>Another typical use for this command is to change the values of the
     <a class="link" href="reference.html#attribution" title="3.22.&#160;attribution">$attribution</a>,
     <a class="link" href="reference.html#attribution-locale" title="3.23.&#160;attribution_locale">$attribution_locale</a>, and
-    <a class="link" href="reference.html#signature" title="3.351.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
+    <a class="link" href="reference.html#signature" title="3.352.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>
@@ -2810,8 +3142,7 @@ folder-hook . 'push \eV'
       </span>
       <code class="literal">function</code>
     </span>”</span> is equivalent to
-    <span class="quote">“
-    <span class="quote">
+    <span class="quote">“<span class="quote">
       <code class="literal">push &lt;function&gt;</code>
     </span>”</span>.</p>
   </div>
@@ -2871,7 +3202,8 @@ folder-hook . 'push \eV'
     <span class="emphasis">
       <em>value</em>
     </span>with an equal sign (
-    <span class="quote">“<span class="quote">=</span>”</span>) to cause evaluation to stop at a particular entry if there is a match. Negative final scores are rounded up to 0.</p>
+    <span class="quote">“
+    <span class="quote">=</span>”</span>) to cause evaluation to stop at a particular entry if there is a match. Negative final scores are rounded up to 0.</p>
     <p>The
     <span class="command">
       <strong>unscore</strong>
@@ -2882,7 +3214,8 @@ folder-hook . 'push \eV'
     <span class="command">
       <strong>score</strong>
     </span>command for it to be removed. The pattern
-    <span class="quote">“<span class="quote">*</span>”</span> is a special token which means to clear the list of all score entries.</p>
+    <span class="quote">“
+    <span class="quote">*</span>”</span> is a special token which means to clear the list of all score entries.</p>
     <p>Scoring occurs as the messages are read in, before the mailbox is sorted. Because of this, patterns which depend on threading, such as
     <span class="emphasis">
       <em>~=</em>
@@ -2955,8 +3288,10 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="emphasis">
       <em>pattern</em>
     </span>should be a regular expression that matches a header in a mail message. If any message in the mailbox matches this regular expression, it will receive a
-    <span class="quote">“<span class="quote">spam tag</span>”</span> or
-    <span class="quote">“<span class="quote">spam attribute</span>”</span>(unless it also matches a
+    <span class="quote">“
+    <span class="quote">spam tag</span>”</span> or
+    <span class="quote">“
+    <span class="quote">spam attribute</span>”</span>(unless it also matches a
     <span class="command">
       <strong>nospam</strong>
     </span>pattern – see below.) The appearance of this attribute is entirely up to you, and is governed by the
@@ -2969,7 +3304,8 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="emphasis">
       <em>pattern</em>
     </span>expression. (A regular expression
-    <span class="quote">“<span class="quote">back-reference</span>”</span> refers to a sub-expression contained within parentheses.)
+    <span class="quote">“
+    <span class="quote">back-reference</span>”</span> refers to a sub-expression contained within parentheses.)
     <code class="literal">%1</code> is replaced with the first back-reference in the regex,
     <code class="literal">%2</code> with the second, etc.</p>
     <p>To match spam tags, NeoMutt needs the corresponding header information which is always the case for local and POP folders but not for IMAP in the default configuration. Depending on the spam header to be analyzed,
@@ -2978,11 +3314,11 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="command">
       <strong>spam</strong>
     </span>patterns for each filter you use. If a message matches two or more of these patterns, and the
-    <a class="link" href="reference.html#spam-separator" title="3.392.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
+    <a class="link" href="reference.html#spam-separator" title="3.393.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
     <span class="emphasis">
       <em>format</em>
     </span>strings joined together, with the value of
-    <a class="link" href="reference.html#spam-separator" title="3.392.&#160;spam_separator">$spam_separator</a> separating them.</p>
+    <a class="link" href="reference.html#spam-separator" title="3.393.&#160;spam_separator">$spam_separator</a> separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in
     <a class="xref" href="#ex-spam" title="Example&#160;3.15.&#160;Configuring spam detection">Example&#160;3.15, “Configuring spam detection”</a>.</p>
     <div class="example">
@@ -3004,10 +3340,12 @@ set spam_separator=", "
     <span class="quote">“<span class="quote">many</span>”</span> hits under the
     <span class="quote">“<span class="quote">Fuz2</span>”</span> checksum, and that PureMessage registered with a 97% probability of being spam, that message's spam tag would read
     <code class="literal">90+/DCC-Fuz2, 97/PM</code>. (The four characters before
-    <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
-    <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
+    <span class="quote">“
+    <span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
+    <span class="quote">“
+    <span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the
-    <a class="link" href="reference.html#spam-separator" title="3.392.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined
+    <a class="link" href="reference.html#spam-separator" title="3.393.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined
     <span class="emphasis">
       <em>format</em>
     </span>strings, you'll get only the last one to match.</p>
@@ -3072,7 +3410,8 @@ set spam_separator=", "
     <span class="command">
       <strong>nospam</strong>
     </span>is
-    <span class="quote">“<span class="quote">*</span>”</span>,
+    <span class="quote">“
+    <span class="quote">*</span>”</span>,
     <span class="emphasis">
       <em>all entries on both lists</em>
     </span>will be removed. This might be the default action if you use
@@ -3129,8 +3468,10 @@ spam "^From: .*MAILER-DAEMON"       "999"
           </dt>
           <dd>
             <p>A boolean expression, either
-            <span class="quote">“<span class="quote">yes</span>”</span> or
-            <span class="quote">“<span class="quote">no</span>”</span>.</p>
+            <span class="quote">“
+            <span class="quote">yes</span>”</span> or
+            <span class="quote">“
+            <span class="quote">no</span>”</span>.</p>
           </dd>
           <dt>
             <span class="term">number</span>
@@ -3156,22 +3497,17 @@ spam "^From: .*MAILER-DAEMON"       "999"
           <dd>
             <p>A specialized string for representing paths including support for mailbox shortcuts (see
             <a class="xref" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">Section&#160;10, “Mailbox Shortcuts”</a>) as well as tilde (
-            <span class="quote">“
-            <span class="quote">~</span>”</span>) for a user's home directory and more.</p>
+            <span class="quote">“<span class="quote">~</span>”</span>) for a user's home directory and more.</p>
           </dd>
           <dt>
             <span class="term">quadoption</span>
           </dt>
           <dd>
             <p>Like a boolean but triggers a prompt when set to
-            <span class="quote">“
-            <span class="quote">ask-yes</span>”</span> or
-            <span class="quote">“
-            <span class="quote">ask-no</span>”</span> with
-            <span class="quote">“
-            <span class="quote">yes</span>”</span> and
-            <span class="quote">“
-            <span class="quote">no</span>”</span> preselected respectively.</p>
+            <span class="quote">“<span class="quote">ask-yes</span>”</span> or
+            <span class="quote">“<span class="quote">ask-no</span>”</span> with
+            <span class="quote">“<span class="quote">yes</span>”</span> and
+            <span class="quote">“<span class="quote">no</span>”</span> preselected respectively.</p>
           </dd>
           <dt>
             <span class="term">sort order</span>
@@ -3304,12 +3640,12 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>ask-yes</em>
       </span>will cause a prompt with a default answer of
-      <span class="quote">“
-      <span class="quote">yes</span>”</span> and
+      <span class="quote">“<span class="quote">yes</span>”</span> and
       <span class="emphasis">
         <em>ask-no</em>
       </span>will provide a default answer of
-      <span class="quote">“<span class="quote">no.</span>”</span></p>
+      <span class="quote">“
+      <span class="quote">no.</span>”</span></p>
       <p>Prefixing a variable with
       <span class="quote">“<span class="quote">no</span>”</span> will unset it. Example:
       <code class="literal">
@@ -3617,7 +3953,7 @@ mailboxes $my_mx +mailbox3
       <p>Format strings are a general concept you'll find in several locations through the NeoMutt configuration, especially in the
       <a class="link" href="reference.html#index-format" title="3.163.&#160;index_format">$index_format</a>,
       <a class="link" href="reference.html#pager-format" title="3.233.&#160;pager_format">$pager_format</a>,
-      <a class="link" href="reference.html#status-format" title="3.411.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#status-format" title="3.412.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code> represents a message's Subject: header in the
       <a class="link" href="reference.html#index-format" title="3.163.&#160;index_format">$index_format</a> variable. The
@@ -3666,7 +4002,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in
-      <a class="link" href="reference.html#status-format" title="3.411.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.412.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %?n?%n new messages.?
 </pre>
@@ -3724,7 +4060,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code> script installed in the
       <code class="literal">samples</code> subdirectory of the NeoMutt documentation: it can be used as filter for
-      <a class="link" href="reference.html#status-format" title="3.411.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.412.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3819,15 +4155,15 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
       <a class="link" href="reference.html#folder-format" title="3.97.&#160;folder_format">$folder_format</a>,
       <code class="literal">%c</code> in
       <a class="link" href="reference.html#index-format" title="3.163.&#160;index_format">$index_format</a>, and %l and %L in
-      <a class="link" href="reference.html#status-format" title="3.411.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
+      <a class="link" href="reference.html#status-format" title="3.412.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
       <p>
-      <a class="link" href="reference.html#size-show-bytes" title="3.353.&#160;size_show_bytes">$size_show_bytes</a> will display the number of bytes when the size is &lt; 1 kilobyte. When unset, kilobytes will be displayed instead.</p>
+      <a class="link" href="reference.html#size-show-bytes" title="3.354.&#160;size_show_bytes">$size_show_bytes</a> will display the number of bytes when the size is &lt; 1 kilobyte. When unset, kilobytes will be displayed instead.</p>
       <p>
-      <a class="link" href="reference.html#size-show-mb" title="3.355.&#160;size_show_mb">$size_show_mb</a> will display the number of megabytes when the size is &gt;= 1 megabyte. When unset, kilobytes will be displayed instead (which could be a large number).</p>
+      <a class="link" href="reference.html#size-show-mb" title="3.356.&#160;size_show_mb">$size_show_mb</a> will display the number of megabytes when the size is &gt;= 1 megabyte. When unset, kilobytes will be displayed instead (which could be a large number).</p>
       <p>
-      <a class="link" href="reference.html#size-show-fractions" title="3.354.&#160;size_show_fractions">$size_show_fractions</a>, will display numbers with a single decimal place for values from 0 to 10 kilobytes, and 1 to 10 megabytes.</p>
+      <a class="link" href="reference.html#size-show-fractions" title="3.355.&#160;size_show_fractions">$size_show_fractions</a>, will display numbers with a single decimal place for values from 0 to 10 kilobytes, and 1 to 10 megabytes.</p>
       <p>
-      <a class="link" href="reference.html#size-units-on-left" title="3.356.&#160;size_units_on_left">$size_units_on_left</a> will display the unit (
+      <a class="link" href="reference.html#size-units-on-left" title="3.357.&#160;size_units_on_left">$size_units_on_left</a> will display the unit (
       <span class="quote">“<span class="quote">K</span>”</span> or
       <span class="quote">“<span class="quote">M</span>”</span> to the left of the number, instead of the right if unset.</p>
       <p>These variables also affect size display in a few other places, such as progress indicators and attachment delimiters in the pager.</p>

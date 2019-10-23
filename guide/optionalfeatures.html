@@ -147,7 +147,7 @@ smtp://user@host:587/
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
     <a class="link" href="reference.html#pop-host" title="3.276.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
-    <a class="link" href="reference.html#spoolfile" title="3.393.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
+    <a class="link" href="reference.html#spoolfile" title="3.394.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as
@@ -179,7 +179,7 @@ smtp://user@host:587/
     <a class="link" href="reference.html#imap-list-subscribed" title="3.146.&#160;imap_list_subscribed">$imap_list_subscribed</a> variable.</p>
     <p>Polling for new mail on an IMAP server can cause noticeable delays. So, you'll want to carefully tune the
     <a class="link" href="reference.html#mail-check" title="3.167.&#160;mail_check">$mail_check</a> and
-    <a class="link" href="reference.html#timeout" title="3.420.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
+    <a class="link" href="reference.html#timeout" title="3.421.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
     <pre class="screen">
 set mail_check=90
 set timeout=15
@@ -277,13 +277,13 @@ set timeout=15
     </div>
     <p>Besides supporting traditional mail delivery through a sendmail-compatible program, NeoMutt supports delivery through SMTP.</p>
     <p>If the configuration variable
-    <a class="link" href="reference.html#smtp-url" title="3.386.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
-    <a class="link" href="reference.html#sendmail" title="3.329.&#160;sendmail">$sendmail</a>.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.387.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
+    <a class="link" href="reference.html#sendmail" title="3.330.&#160;sendmail">$sendmail</a>.</p>
     <p>For details on the URL syntax, please see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>.</p>
     <p>The built-in SMTP support supports encryption (the
     <code class="literal">smtps</code> protocol using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms for SASL are specified in
-    <a class="link" href="reference.html#smtp-authenticators" title="3.383.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
+    <a class="link" href="reference.html#smtp-authenticators" title="3.384.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -361,7 +361,7 @@ account-hook imap://host2/ 'set tunnel="ssh host2 /usr/libexec/imapd"'
 account-hook smtp://user@host3/ 'set tunnel="ssh host3 /usr/libexec/smtpd"'
 </pre>
     <p>To manage multiple accounts with, for example, different values of
-    <a class="link" href="reference.html#record" title="3.303.&#160;record">$record</a> or sender addresses,
+    <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a> or sender addresses,
     <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
@@ -400,7 +400,7 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       </span>
     </a>triggers when one mailbox below each IMAP account is opened and sets
     <a class="link" href="reference.html#folder" title="3.96.&#160;folder">$folder</a> to the account's root folder. Next, it sets
-    <a class="link" href="reference.html#record" title="3.303.&#160;record">$record</a> to the
+    <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a> to the
     <span class="emphasis">
       <em>INBOX/Sent</em>
     </span>folder below the newly set
@@ -412,8 +412,8 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     </span>value of
     <a class="link" href="reference.html#folder" title="3.96.&#160;folder">$folder</a> and therefore has to be set separately per account. Setting other values like
     <a class="link" href="reference.html#from" title="3.110.&#160;from">$from</a> or
-    <a class="link" href="reference.html#signature" title="3.351.&#160;signature">$signature</a> is analogous to setting
-    <a class="link" href="reference.html#record" title="3.303.&#160;record">$record</a>.</p>
+    <a class="link" href="reference.html#signature" title="3.352.&#160;signature">$signature</a> is analogous to setting
+    <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
