@@ -13,6 +13,7 @@ install:
   - gem install jekyll-mentions
   - gem install html-proofer
   - gem install jekyll-algolia
+  - gem install jemoji
 
 script:
     - rake
