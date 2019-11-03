@@ -2469,10 +2469,8 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
         <h3 class="title">Note</h3>
         <p>When using Maildir, you don't have to manually specify all your mailboxes. You can use this command instead:</p>
         <pre class="screen">
-              mailboxes `find ~/.mail/ -type d -name cur | sed 's:/cur/*$::' | tr '\n' ' '`
-
+mailboxes `find ~/.mail/ -type d -name cur | sort | sed -e 's:/cur/*$::' -e 's/ /\\ /g' | tr '\n' ' '`
 </pre>
-        <p></p>
       </div>
     </div>
     <div class="sect2">
