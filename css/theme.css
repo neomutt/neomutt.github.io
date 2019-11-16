@@ -196,6 +196,7 @@ h3, h4 {
   margin-bottom: 1em;
   font-style: italic;
   font-size: 120%;
+  font-weight: bold;
   color: #444;
 }
 
@@ -203,7 +204,7 @@ hr {
   border: 1px solid black;
 }
 
-a.rm {
+.readmore a {
   font-style: italic;
 }
 
@@ -261,6 +262,10 @@ table.lang img {
 
 li p {
   margin: 0;
+}
+
+li.done {
+  color: red;
 }
 
 tr:nth-child(odd) {

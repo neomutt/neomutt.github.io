@@ -13,9 +13,13 @@ projects. Which builds on all the work that came before.
 
 ## FlatCap
 
+{:.MyClass}
 So far, NeoMutt is a project of one person: **Richard Russon**
 [(FlatCap)](https://github.com/flatcap). He took all the old patches and
 painstakingly sorted through them, fixed them up and documented them.
+
+* {:.done} done - Completed this
+* Not done yet
 
 ## NeoMutt Developers
 

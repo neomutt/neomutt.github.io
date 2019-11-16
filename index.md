@@ -5,15 +5,17 @@ title: Home
 
 # The NeoMutt Project
 
-<p class="subtitle">**“Teaching an Old Dog New Tricks”**</p>
+{:.subtitle}
+“Teaching an Old Dog New Tricks”
 
 ## Overview
 
 ### What is it?
 
+{:.readmore}
 NeoMutt is a command line mail reader (or <abbr title="Mail User Agent">MUA</abbr>).
 It's a fork of Mutt with added **features**.
-<a class="rm" href="about.html">Read more...</a>
+[Read more...](about.html)
 
 ### Why?
 
@@ -25,13 +27,15 @@ NeoMutt has already attracted about twenty developers and enthusiasts.
 
 Lots of old Mutt patches have been brought up-to-date, tidied and documented.
 
+{:.readmore}
 Notably, the Sidebar patch has now been adopted by upstream Mutt.
-<a class="rm" href="feature.html">Read more...</a>
+[Read more...](feature.html)
 
 ### How can I try it out?
 
+{:.readmore}
 NeoMutt is available to download for various distros:
-<a class="rm" href="distro.html">Read more...</a>
+[Read more...](distro.html)
 
 ## I need help
 
