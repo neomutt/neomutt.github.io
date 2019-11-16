@@ -27,11 +27,11 @@ Then install NeoMutt, choosing from the list of pre-built packages:
 ```
 # pkg_add neomutt
 Ambiguous: choose package for neomutt
-a	0: <None>
-	1: neomutt-20161028
-	2: neomutt-20161028-gpgme
-	3: neomutt-20161028-gpgme-sasl
-	4: neomutt-20161028-sasl
+a       0: <None>
+        1: neomutt-20161028
+        2: neomutt-20161028-gpgme
+        3: neomutt-20161028-gpgme-sasl
+        4: neomutt-20161028-sasl
 Your choice:
 ```
 
