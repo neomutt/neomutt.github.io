@@ -3,31 +3,26 @@ layout: concertina
 title: Features
 ---
 
-<h1>{{ page.title }}</h1>
+# {{ page.title }}
 
-<p>Gathered and implemented patches</p>
+Gathered and implemented patches
 
-<h2>Notes</h2>
+## Notes
 
-<p>
-  NeoMutt has brought together lots of Mutt patches, many of which were useful,
-  but had been abandoned.
-</p>
+NeoMutt has brought together lots of Mutt patches, many of which were useful,
+but had been abandoned.
 
-<p>Before each patch is marked stable:</p>
-<ul>
-  <li>The code is brought up-to-date with Mutt-1.8.0</li>
-  <li>The code is tidied up, comments added, checks done</li>
-  <li>Documentation is written</li>
-  <li>A sample muttrc is created</li>
-  <li>The feature is tested</li>
-</ul>
+Before each patch is marked stable:
 
-<p>
-  To find out more, see the <a href="/dev.html">Development Page</a>.
-</p>
+- The code is brought up-to-date with Mutt-1.8.0
+- The code is tidied up, comments added, checks done
+- Documentation is written
+- A sample muttrc is created
+- The feature is tested
 
-<h2>Status</h2>
+To find out more, see the [Development Page](/dev.html).
+
+## Status
 
 <table summary="list of features">
   <thead>
