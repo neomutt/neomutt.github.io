@@ -27,8 +27,8 @@ gpg2 --search-keys neomutt
 
 ```reply
 gpg: data source: http://c-73-164-0-249.hsd1.mn.comcast.net:11371
-(1)	Richard Russon (NeoMutt) <rich@flatcap.org>
-	  4096 bit RSA key 5FAF0A6EE7371805, created: 2016-04-08, expires: 2019-04-13
+(1)     Richard Russon (NeoMutt) <rich@flatcap.org>
+          4096 bit RSA key 5FAF0A6EE7371805, created: 2016-04-08, expires: 2019-04-13
 Keys 1-1 of 1 for "neomutt".  Enter number(s), N)ext, or Q)uit >
 ```
 

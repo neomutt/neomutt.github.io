@@ -3,30 +3,26 @@ layout: concertina
 title: Contrib
 ---
 
-<h1>User Contributions to NeoMutt</h1>
+# User Contributions to NeoMutt
 
-<p>Further project data and information provided by NeoMutt users</p>
+Further project data and information provided by NeoMutt users
 
-<h2>Participation</h2>
+## Participation
 
-<p>
-  NeoMutt is a fantastic program. It's versatile, configurable, scriptable...<br>
-  This is your chance to help other NeoMutt users...
-</p>
+NeoMutt is a fantastic program. It's versatile, configurable, scriptable...
 
-<ul>
-  <li>Have <b>you</b> got a config file that <b>everybody</b> should be using?</li>
-  <li>Have <b>you</b> written a script that makes life easier?</li>
-</ul>
+This is your chance to help other NeoMutt users...
 
-<p>
-  If you are a GitHub user, you can propose your improvements as a pull request at the <a href="https://github.com/neomutt/neomutt.github.io/">repository</a> of this site,
-  or raise a <a href="https://github.com/neomutt/neomutt/issues">NeoMutt issue</a> to tell us about your idea.</br>
-  Or, you can contact the lead developer, Richard&nbsp;Russon&nbsp;<a href="mailto:rich@flatcap.org">&lt;rich@flatcap.org&gt;</a>
-</p>
+- Have **you** got a config file that **everybody** should be using?
+- Have **you** written a script that makes life easier?
 
+If you are a GitHub user, you can propose your improvements as a pull request
+at the [repository](https://github.com/neomutt/neomutt.github.io/) of this
+site, or raise a [NeoMutt issue](https://github.com/neomutt/neomutt/issues) to tell us about your idea.
 
-<h2>Status</h2>
+Or, you can contact the lead developer, Richard&nbsp;Russon&nbsp;[&lt;rich@flatcap.org&gt;](mailto:rich@flatcap.org)
+
+## Status
 
 <table summary="list of contrib">
   <thead>
@@ -71,6 +67,4 @@ title: Contrib
     {% endfor %}
   </tbody>
 </table>
-
-
 

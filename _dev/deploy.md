@@ -44,8 +44,8 @@ ssh-keygen -t rsa -b 4096 -f SSH_KEY_NAME
 
 ```reply
 Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in SSH_KEY_NAME.
 Your public key has been saved in SSH_KEY_NAME.pub.
 The key fingerprint is:

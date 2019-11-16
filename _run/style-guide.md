@@ -457,7 +457,7 @@ OK, that's often an unreachable ideal and with our website we also have
 a clearly defined single target. Here are some applicable notes, use:
 *   `\\` instead of `<br />` to force a line break (not possible in
     [tables](#h3_tables))
-*	<code>&#x0060;&#x0060;&#x0060;</code> for code blocks rather than
+*       <code>&#x0060;&#x0060;&#x0060;</code> for code blocks rather than
     `<pre><code>...</code></pre>` or
     {% raw %}`{% highlight %}...{% endhighlight %}`{% endraw %}
 *   `*[CC]: Carbon Copy` instead of `<abbr title="Carbon Copy">CC</abbr>`

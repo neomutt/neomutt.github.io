@@ -38,9 +38,9 @@ status: stable
 
 ## Address books
 
-* [mail-query](https://github.com/pbrisbin/mail-query) to query addresses found 
+* [mail-query](https://github.com/pbrisbin/mail-query) to query addresses found
   in the inbox
-* [notmuch-addrlookup](https://github.com/aperezdc/notmuch-addrlookup-c) to query adresses 
+* [notmuch-addrlookup](https://github.com/aperezdc/notmuch-addrlookup-c) to query adresses
   indexed by notmuch
 * [khard](https://github.com/scheibler/khard) to synchronize address books
   between your PC and mobile device with
@@ -87,7 +87,7 @@ status: stable
 
 ## Converting text formats
 
-* [lesspipe.sh](https://github.com/wofr06/lesspipe) a universal terminal reader for any 
+* [lesspipe.sh](https://github.com/wofr06/lesspipe) a universal terminal reader for any
   file format. To use it in `mutt`, add
   ```
   autoview text/* application/* image/* audio/*
@@ -100,7 +100,7 @@ status: stable
   audio/*;                          LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
   ```
   to the file given by the value of `mailcap_path`.
-* [plainMail2HTML](https://github.com/amitramon/plainMail2HTML) -- 
+* [plainMail2HTML](https://github.com/amitramon/plainMail2HTML) --
   plainMail2HTML enables users of Mutt (and possibly other textual Email clients)
   to send HTML-formatted Emails.
 * [antiword](http://www.winfield.demon.nl/) -- Microsoft Word to TXT converter.
@@ -156,7 +156,7 @@ status: stable
   server IMAP stores to track changes as they happen.
 * [muttzilla](https://sourceforge.net/projects/muttzilla/) -- make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
-* [vkhal](https://github.com/nofeed/vkhal/) -- can display calendar items and 
+* [vkhal](https://github.com/nofeed/vkhal/) -- can display calendar items and
   import them into khal
 
 ## Vim Plugins

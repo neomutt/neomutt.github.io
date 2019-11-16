@@ -3,17 +3,17 @@ layout: concertina
 title: Downloads
 ---
 
-<h1>{{ page.title }}</h1>
+# {{ page.title }}
 
-<p>Distributions that support NeoMutt</p>
+Distributions that support NeoMutt
 
-<h2>Listing</h2>
+## Listing
 
-<p>The table below gives instructions about how to install or compile NeoMutt
+The table below gives instructions about how to install or compile NeoMutt
 for all supported distributions, and also gives the maintainer and home page of
 the NeoMutt packaging for this distribution. If your distribution isn't listed
 here, you can always build your own NeoMutt from the source code (see the first
-table row).</p>
+table row).
 
 <table summary="list of distros">
   <thead>

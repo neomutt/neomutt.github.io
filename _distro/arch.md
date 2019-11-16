@@ -25,7 +25,7 @@ pacman -S neomutt
 ```
 
 If you want to customize the options or use unmerged features, retrieve the
-`PKGBUILD` via [`svn`](https://www.archlinux.org/svn/) and edit it. 
+`PKGBUILD` via [`svn`](https://www.archlinux.org/svn/) and edit it.
 
 ```
 svn checkout --depth=empty svn://svn.archlinux.org/community
@@ -60,8 +60,8 @@ reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 If this did not help, check the version on the
-[packages website](https://www.archlinux.org/packages/community/x86_64/neomutt/) 
-and flag the package [out-of-date](https://www.archlinux.org/packages/flaghelp/) 
+[packages website](https://www.archlinux.org/packages/community/x86_64/neomutt/)
+and flag the package [out-of-date](https://www.archlinux.org/packages/flaghelp/)
 if required. Note that a package should only be flagged if a newer *stable*
 release is available.
 
@@ -77,14 +77,14 @@ pacman -Rsc neomutt
 ## Debugging <a id="debug"></a>
 
 Arch Linux does not have separate `-dbg` packages. In order to debug `neomutt`,
-you must first compile with debug symbols. Edit the `PKGBUILD` adding the 
+you must first compile with debug symbols. Edit the `PKGBUILD` adding the
 following:
 
 ```
 options=(debug !strip)
 ```
 
-Build and install the new package which contains 
+Build and install the new package which contains
 [debug symbols](https://wiki.archlinux.org/index.php/Debug_-_Getting_Traces).
 
 ```

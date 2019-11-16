@@ -448,7 +448,7 @@ options to use.  [_read more..._](https://github.com/neomutt/travis-build#travis
 To test the website, Travis checks all of the HTML for errors.
 
 [`.travis.yml`](https://github.com/neomutt/neomutt.github.io/blob/master/.travis.yml)
-installs [Jekyll](https://jekyllrb.com/) and 
+installs [Jekyll](https://jekyllrb.com/) and
 [html-proofer](https://github.com/gjtorikian/html-proofer#htmlproofer).
 
 The testing is done by running the

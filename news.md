@@ -3,23 +3,17 @@ layout: concertina
 title: News
 ---
 
-<h1>News</h1>
+# {{ page.title }}
 
-<div class="well">
 {%for post in site.posts %}
     {% unless post.next %}
-        <h1>{{ post.date | date: '%B %Y' }}</h1>
-        <ul>
+## {{ post.date | date: '%B %Y' }}
     {% else %}
         {% capture year %}{{ post.date | date: '%Y %m' }}{% endcapture %}
         {% capture nyear %}{{ post.next.date | date: '%Y %m' }}{% endcapture %}
         {% if year != nyear %}
-            </ul>
-            <h1>{{ post.date | date: '%B %Y' }}</h1>
-            <ul>
+## {{ post.date | date: '%B %Y' }}
         {% endif %}
     {% endunless %}
-    <li><a href="{{ post.url }}">{{ post.date | date: "%b %d" }} &ndash; {{ post.title }}</a></li>
+- [{{ post.date | date: "%b %d" }} - {{ post.title }}]({{ post.url }})
 {% endfor %}
-</ul>
-</div>
