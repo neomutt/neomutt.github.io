@@ -1,0 +1,13 @@
+{% assign parent = nil %}
+
+{% for i in site.dev %}
+  {% if i.url == "/dev/analysis" %}
+    {% assign parent = i %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if page.previous != parent %}[<img src="/images/nav/prev.png" width="20" height="20">]({{ page.previous.url }} "{{ page.previous.title }}"){% else %}<img src="/images/nav/prev-off.png" width="20" height="20">{% endif %}
+[<img src="/images/nav/up.png" width="20" height="20">]({{ parent.url }} "{{ parent.title }}")
+{% if page.next.url contains '/analysis/' %}[<img src="/images/nav/next.png" width="20" height="20">]({{ page.next.url }} "{{ page.next.title }}"){% else %}<img src="/images/nav/next-off.png" width="20" height="20">{% endif %}
+

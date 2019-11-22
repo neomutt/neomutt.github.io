@@ -4,9 +4,24 @@
 
 {% if parts[1] == 'dev' %}
   <ul>
-    {% for f in site.dev %}
-    {% include list-bold.html lb_path=f.url lb_title=f.title %}
-    {% endfor %}
+  {% assign deep = false %}
+  {% for f in site.dev %}
+    {% assign current = f.url | split: '/' %}
+    {% if current.size == 3 or page.url contains '/analysis' %}
+      {% if deep == false and f.url contains '/analysis/' %}
+        <ul> {% assign deep = true %}
+      {% endif %}
+      {% unless f.url contains '/analysis/' %}
+        {% if deep == true %}
+          </ul> {% assign deep = false %}
+        {% endif %}
+      {% endunless %}
+      {% include list-bold.html lb_path=f.url lb_title=f.title %}
+    {% endif %}
+  {% endfor %}
+  {% if deep %}
+    </ul>
+  {% endif %}
   </ul>
 {% endif %}
 
