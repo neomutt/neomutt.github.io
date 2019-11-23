@@ -34,12 +34,8 @@ When feedback is needed
 
 * Project reviewers (team on GitHub)
   - Richard Russon (@flatcap)
-  - Darshit Shah (@darnir)
-  - Guillaume Brogi (@guiniol)
-  - Pierre-Elliott Bécue (@p-eb)
-  - Bernard Pratz (@guyzmo)
-  - Damien Riegel (@d-k-c)
   - Pietro Cerutti (@gahr)
+  - Austin Ray (@Austin-Ray)
 
 **Don't need approval for:**
 

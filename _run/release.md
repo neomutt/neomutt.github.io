@@ -207,3 +207,25 @@ release link new feature to web page
 release branch to queue up changes for the release commit
   no .travis.yml (no building)
 
+### Tasks
+
+<table summary="list of release tasks">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for page in site.run %}
+      {% assign parts = page.url | split: '/' %}
+      {% if parts.size == 4 and parts[2] == 'release' %}
+      <tr>
+        <td><a href="{{ page.url }}">{{ page.title }}</a></td>
+        <td>{{page.description}}</td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
