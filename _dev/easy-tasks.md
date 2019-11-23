@@ -64,7 +64,7 @@ We'll talk you through the steps as you get to them.
 ## What Else do I Need to Know?
 
 - [Newbie Tutorial](/dev/newbie-tutorial) - Useful stuff to know
-- [Coding Style](/dev/coding-style) - Keeping the code tidy
+- [Coding Style](/dev/code) - Keeping the code tidy
 - [Code of Conduct](/conduct) - Santa's Watching :-)
 - [Roadmap](/dev/roadmap) - What are the other developers planning / doing?
 

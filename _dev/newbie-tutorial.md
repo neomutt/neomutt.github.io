@@ -198,7 +198,7 @@ are a good starting point here.
 Over its twenty year life, Mutt has gathered 84,000 lines of code and a lot of
 cruft (messy code and bad habits). It's time to sort out the mess and make Mutt
 robust. We have written up the consensus among the NeoMutt Developers in the
-[coding style Section](/dev/coding-style). You can make of course suggestions
+[coding style Section](/dev/code). You can make of course suggestions
 to that -- but please follow the consensus. Otherwise it makes the work very
 hard.
 

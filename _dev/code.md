@@ -1,6 +1,6 @@
 ---
 layout: concertina
-title: Coding Style
+title: Code Style
 description: The preferred style for code committed to NeoMutt
 status: wip
 author: flatcap
@@ -407,4 +407,26 @@ These should be used as little as possible.
 
 [ncf]: <https://github.com/neomutt/neomutt/blob/master/.clang-format>
 [cfd]: <https://clang.llvm.org/docs/ClangFormatStyleOptions.html>
+
+## Code Style
+
+<table summary="coding style">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for page in site.dev %}
+      {% assign parts = page.url | split: '/' %}
+      {% if parts.size == 4 and parts[2] == 'code' %}
+      <tr>
+        <td><a href="{{ page.url }}">{{ page.title }}</a></td>
+        <td>{{page.description}}</td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
 

@@ -1,4 +1,4 @@
-<h1><a {% if page.url == '/dev' %} class="current" {% endif %} href="/dev.html">Development</a></h1>
+<h1><a {% if page.url == '/dev' %} class="current" {% endif %} href="/dev">Development</a></h1>
 
 {% assign parts = page.url | split: '/' %}
 
@@ -7,17 +7,37 @@
   {% assign deep = false %}
   {% for f in site.dev %}
     {% assign current = f.url | split: '/' %}
-    {% if current.size == 3 or page.url contains '/analysis' %}
-      {% if deep == false and f.url contains '/analysis/' %}
-        <ul> {% assign deep = true %}
+
+    {% if current.size != 4 %}
+      {% if deep %}
+        </ul> {% assign deep = false %}
       {% endif %}
-      {% unless f.url contains '/analysis/' %}
-        {% if deep == true %}
-          </ul> {% assign deep = false %}
-        {% endif %}
-      {% endunless %}
+    {% endif %}
+
+    {% if current.size < 4 %}
       {% include list-bold.html lb_path=f.url lb_title=f.title %}
     {% endif %}
+
+    {% if current.size == 4 %}
+      {% if page.url contains '/dev/analysis' %}
+        {% if f.url contains '/dev/analysis/' %}
+          {% if deep == false %}
+            <ul> {% assign deep = true %}
+          {% endif %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title %}
+        {% endif %}
+      {% endif %}
+
+      {% if page.url contains '/dev/code' %}
+        {% if f.url contains '/dev/code/' %}
+          {% if deep == false %}
+            <ul> {% assign deep = true %}
+          {% endif %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
   {% endfor %}
   {% if deep %}
     </ul>

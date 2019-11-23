@@ -36,7 +36,7 @@ are triggered on every commit to GitHub.
 
 | Title | Description |
 |-------|-------------|
-{% for f in site.dev %}[{{f.title}}]({{f.url}}) | {{ f.description }}
+{% for f in site.dev %}{% assign parts = f.url | split: '/' %}{% if parts.size != 3 %}{% continue %}{% endif %}[{{f.title}}]({{f.url}}) | {{ f.description }}
 {% endfor %}
 
 ## Blue sky
