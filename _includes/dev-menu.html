@@ -8,17 +8,12 @@
   {% for f in site.dev %}
     {% assign current = f.url | split: '/' %}
 
-    {% if current.size != 4 %}
+    {% if current.size < 4 %}
       {% if deep %}
         </ul> {% assign deep = false %}
       {% endif %}
-    {% endif %}
-
-    {% if current.size < 4 %}
       {% include list-bold.html lb_path=f.url lb_title=f.title %}
-    {% endif %}
-
-    {% if current.size == 4 %}
+    {% else %}
       {% if page.url contains '/dev/analysis' %}
         {% if f.url contains '/dev/analysis/' %}
           {% if deep == false %}
