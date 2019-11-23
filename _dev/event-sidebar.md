@@ -6,6 +6,9 @@ description: A scheme for an event-driven Sidebar
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 ## Introduction
 
 This guide will show all the stages in setting up the Sidebar in an event-driven

@@ -1,11 +1,13 @@
 ---
 layout: concertina
 title: Management
+description: Guide to running the project
 ---
 
-# Managing the NeoMutt Project
+# {{ page.title }}
 
-Guide to running the project
+{:.subtitle}
+{{ page.description }}
 
 ## Project workflows
 

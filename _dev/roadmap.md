@@ -6,6 +6,9 @@ description: The Future of NeoMutt
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 This is a rough guide to some of the bigger goals for NeoMutt.  
 Some of the ideas will take a long time to become real...
 

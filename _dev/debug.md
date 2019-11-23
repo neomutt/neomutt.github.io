@@ -1,12 +1,13 @@
 ---
 layout: concertina
 title: Debugging NeoMutt
-description: How to Debug NeoMutt
+description: When things needs further investigation
 ---
 
 # {{ page.title }}
 
-When things needs further investigation
+{:.subtitle}
+{{ page.description }}
 
 ## Available procedures
 

@@ -7,7 +7,7 @@ username: flatcap
 status: stable
 ---
 
-# Vim Syntax
+# {{ page.title }}
 
 Vim installs lots of syntax-highlighting files, including one for Mutt.
 However, it doesn't include all the new variables, commands and functions that

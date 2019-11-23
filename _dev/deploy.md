@@ -1,10 +1,13 @@
 ---
 layout: concertina
 title: Deployment using Travis
-description: Update the website when certain build succeed
+description: Update the website when certain builds succeed
 ---
 
 # {{ page.title }}
+
+{:.subtitle}
+{{ page.description }}
 
 **Goal**: Update a web page when a certain branch is updated
 

@@ -6,6 +6,9 @@ description: How NeoMutt Assembles the Source
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 The NeoMutt build relies on a lot of pre-/post-processing.
 
 The diagrams below shows how the code and docs fit together.

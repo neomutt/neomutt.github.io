@@ -3,7 +3,7 @@ layout: concertina
 title: RFCs
 ---
 
-# RFC Pages
+# {{ page.title }}
 
 Request for Comments (RFC) relevant to the NeoMutt project
 

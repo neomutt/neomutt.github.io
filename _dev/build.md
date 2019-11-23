@@ -7,6 +7,7 @@ status: wip
 
 # {{ page.title }}
 
+{:.subtitle}
 {{ page.description }}
 
 ## Install dependencies

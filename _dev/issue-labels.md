@@ -6,7 +6,8 @@ description: Labelling of GitHub issues
 
 # {{ page.title }}
 
-## {{ page.description }}
+{:.subtitle}
+{{ page.description }}
 
 When someone [raises an issue](https://github.com/neomutt/neomutt/issues) it
 will be given one of these tags:

@@ -9,6 +9,7 @@ status: stable
 
 # {{ page.title }}
 
+{:.subtitle}
 {{ page.description }}
 
 ## Mail downloading and sending

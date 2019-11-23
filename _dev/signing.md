@@ -6,6 +6,9 @@ description: Be Sure You're Getting the Real Thing
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 If you're planning to build your own version of NeoMutt, it's important to
 check that the source hasn't been tampered with.
 

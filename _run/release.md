@@ -8,6 +8,9 @@ status: wip
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 This will eventually be a complete guide to making a release of NeoMutt.
 
 ## Schedule

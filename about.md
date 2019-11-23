@@ -3,6 +3,8 @@ layout: concertina
 title: About
 ---
 
+# {{ page.title }}
+
 ## What is NeoMutt?
 
 **NeoMutt** is a command line **mail reader** based on Mutt.

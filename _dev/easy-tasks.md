@@ -6,6 +6,7 @@ description: A Great Way to get started in Open Source
 
 # {{ page.title }}
 
+{:.subtitle}
 {{ page.description }}
 
 ## Start Coding on NeoMutt (with help)

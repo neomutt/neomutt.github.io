@@ -1,14 +1,15 @@
 ---
 layout: concertina
 title: Reviewing Issues
-description: Reviewing Issues
+description: When feedback is needed
 status: wip
 author: flatcap
 ---
 
 # {{ page.title }}
 
-When feedback is needed
+{:.subtitle}
+{{ page.description }}
 
 ## Overview
 

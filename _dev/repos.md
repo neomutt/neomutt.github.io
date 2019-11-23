@@ -1,10 +1,13 @@
 ---
 layout: concertina
-title: List of Repos
+title: Repositories
 description: List of GitHub Repositories
 ---
 
 # {{ page.title }}
+
+{:.subtitle}
+{{ page.description }}
 
 This is a list of all the Git repositories in the NeoMutt GitHub Project.
 

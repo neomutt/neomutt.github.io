@@ -8,6 +8,9 @@ status: wip
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 Integrate your work and bring things together
 
 ## Initial situation

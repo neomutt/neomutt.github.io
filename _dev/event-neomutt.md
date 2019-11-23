@@ -6,6 +6,9 @@ description: A scheme for an event-driven NeoMutt
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 ## Nested Data
 
 <img align="right" width="116" height="300" src="https://flatcap.org/mutt/event/arch-data.svg">

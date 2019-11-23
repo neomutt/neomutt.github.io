@@ -6,6 +6,9 @@ description: A list of problems we really need help for
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 Here's a list of problems, which are either
 
 * very difficult to solve

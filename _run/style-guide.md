@@ -8,6 +8,7 @@ username: floand
 
 # {{ page.title }}
 
+{:.subtitle}
 {{ page.description }}
 
 ## Table of contents <a id="h2_toc"></a>

@@ -6,6 +6,9 @@ description: Description of NeoMutt's documentation process
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 Please document your changes. Note that there are several places where you may
 have to add documentation:
 

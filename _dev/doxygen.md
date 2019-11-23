@@ -8,6 +8,9 @@ author: flatcap
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 [Doxygen](http://www.doxygen.nl/) reads specially formatted
 comment blocks and turns them into documentation.
 

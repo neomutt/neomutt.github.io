@@ -6,6 +6,9 @@ description: Things every Newbie Should Know
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 If you're new to [NeoMutt](/about.html), here's a list of things you need to
 know.
 

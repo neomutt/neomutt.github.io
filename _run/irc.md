@@ -7,6 +7,9 @@ author: Richard Russon
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+
 Useful commands to help run our IRC channel [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
 
 ## Getting started
