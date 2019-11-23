@@ -16,7 +16,7 @@
           </ul> {% assign deep = false %}
         {% endif %}
       {% endunless %}
-      {% include list-bold.html lb_path=f.url lb_title=f.title %}
+      {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
     {% endif %}
   {% endfor %}
   </ul>

@@ -1,4 +1,9 @@
-<li><a href="{{ include.lb_path }}">
+<li>
+{% if include.lb_desc %}
+<a href="{{ include.lb_path }}" title="{{ include.lb_desc }}">
+{% else %}
+<a href="{{ include.lb_path }}">
+{% endif %}
 {% if include.lb_path == page.url %}
 <span class="current">
 {% else %}

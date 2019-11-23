@@ -6,7 +6,7 @@
   <ul>
     {% for f in site.rfc %}
     {% assign title = f.title | slice: 3, 99 | append: ' - ' | append: f.short %}
-    {% include list-bold.html lb_path=f.url lb_title=title %}
+    {% include list-bold.html lb_path=f.url lb_title=title lb_desc=f.description %}
     {% endfor %}
   </ul>
 {% endif %}

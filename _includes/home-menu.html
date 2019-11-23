@@ -4,9 +4,9 @@
 {% assign u = page.url | slice: 0, 6 %}
 
 {% for item in dirs %}
-  {% if item == page.url or u == '/2016/' or u == '/2017/' %}
+  {% if item == page.url or u == '/2016/' or u == '/2017/' or u == '/2018/' or u == '/2019/' or u == '/2020/' %}
     <ul>
-      <li><a href="/news"><span{% if page.url == '/news' or u == '/2016/' or u == '/2017/' %} class="current" {% endif %}>News</span></a></li>
+      <li><a href="/news"><span{% if page.url == '/news' or u == '/2016/' or u == '/2017/' or u == '/2018/' or u == '/2019/' or u == '/2020/' %} class="current" {% endif %}>News</span></a></li>
       {% include list-bold.html lb_path='/site'      lb_title='Site'      %}
       {% include list-bold.html lb_path='/translate' lb_title='Translate' %}
       {% include list-bold.html lb_path='/about'     lb_title='About'     %}

@@ -5,7 +5,7 @@
 {% if parts[1] == 'distro' %}
   <ul>
     {% for f in site.distro %}
-    {% include list-bold.html lb_path=f.url lb_title=f.distro %}
+    {% include list-bold.html lb_path=f.url lb_title=f.distro lb_desc=f.description %}
     {% endfor %}
   </ul>
 {% endif %}

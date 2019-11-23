@@ -5,7 +5,7 @@
 {% if parts[1] == 'contrib' %}
   <ul>
     {% for f in site.contrib %}
-    {% include list-bold.html lb_path=f.url lb_title=f.title %}
+    {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
     {% endfor %}
   </ul>
 {% endif %}

@@ -5,7 +5,7 @@
 {% if parts[1] == 'feature' %}
   <ul>
     {% for f in site.feature %}
-    {% include list-bold.html lb_path=f.url lb_title=f.title lb_status=f.status %}
+    {% include list-bold.html lb_path=f.url lb_title=f.title lb_status=f.status lb_desc=f.description %}
     {% endfor %}
   </ul>
 {% endif %}

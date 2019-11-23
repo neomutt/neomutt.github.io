@@ -12,14 +12,14 @@
       {% if deep %}
         </ul> {% assign deep = false %}
       {% endif %}
-      {% include list-bold.html lb_path=f.url lb_title=f.title %}
+      {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
     {% else %}
       {% if page.url contains '/dev/analysis' %}
         {% if f.url contains '/dev/analysis/' %}
           {% if deep == false %}
             <ul> {% assign deep = true %}
           {% endif %}
-          {% include list-bold.html lb_path=f.url lb_title=f.title %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
         {% endif %}
       {% endif %}
 
@@ -28,7 +28,7 @@
           {% if deep == false %}
             <ul> {% assign deep = true %}
           {% endif %}
-          {% include list-bold.html lb_path=f.url lb_title=f.title %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description lb_desc=f.description %}
         {% endif %}
       {% endif %}
     {% endif %}

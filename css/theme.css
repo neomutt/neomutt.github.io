@@ -26,8 +26,12 @@ body {
   color: #428bca;
 }
 
+ul {
+  padding-left: 2em;
+}
+
 .sidebar li {
-  margin-top: .7em;
+  margin-top: .3em;
   line-height: 1em;
 }
 
