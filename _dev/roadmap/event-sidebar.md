@@ -8,6 +8,7 @@ description: A scheme for an event-driven Sidebar
 
 {:.subtitle}
 {{ page.description }}
+{% include roadmap-links.html %}
 
 ## Introduction
 

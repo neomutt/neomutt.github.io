@@ -6,6 +6,7 @@ status: wip
 ---
 
 # {{ page.description }}
+{% include roadmap-links.html %}
 
 NeoMutt is very popular and its users come up with lots of great new ideas.
 

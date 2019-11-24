@@ -44,7 +44,7 @@ Please help with whatever you can...
 
 [contrib]: <../contrib>
 [coverity]: <https://scan.coverity.com/projects/neomutt-neomutt>
-[doxygen]: <code/doxygen>
+[doxygen]: <doxygen>
 [issues]: <https://github.com/neomutt/neomutt/issues>
 [manuals]: <../man>
 [translate]: <../translate>
