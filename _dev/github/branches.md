@@ -6,6 +6,10 @@ description: List of Branches in the NeoMutt Repo
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+{% include github-links.html %}
+
 The [neomutt](https://github.com/neomutt/neomutt) repository has 6
 (semi-)permanent [branches](https://github.com/neomutt/neomutt/branches).
 

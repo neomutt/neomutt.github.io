@@ -112,7 +112,7 @@ to show your appreciation :-)
 
 The project consists of about 20 Git repositories. They store the code that
 makes up NeoMutt, the documentation, build scripts and experiments
-([read more about them](/dev/repos)).
+([read more about them](github/repos)).
 
 GitHub allows you to watch:
 
@@ -136,12 +136,12 @@ your [notifications](https://github.com/settings/notifications) and
 ### Labels <a id="labels"></a>
 
 We use GitHub labels to categorize pull requests and issues.
-[Here's](/dev/issue-labels) a list of them with their meanings. Please make use
+[Here's](github/issue-labels) a list of them with their meanings. Please make use
 of them and ask if something is unclear.
 
 ### Branches <a id="branches"></a>
 
-Some of [our Branches](/dev/branches) have a special meaning.
+Some of [our Branches](github/branches) have a special meaning.
 
 ## Invitation <a id="invitation"></a>
 

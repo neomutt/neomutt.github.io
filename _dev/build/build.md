@@ -26,7 +26,7 @@ work with the source code and contribute to the project more easily.
 ### Git <a id="git"></a>
 
 Cloning the [main branch](https://github.com/neomutt/neomutt/tree/master) but
-also see our [list of branches](/dev/branches).
+also see our [list of branches](../github/branches).
 
 ```
 git clone https://github.com/neomutt/neomutt

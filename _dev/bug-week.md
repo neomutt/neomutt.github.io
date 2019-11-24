@@ -42,11 +42,11 @@ Please help with whatever you can...
   - Try out a feature you haven't used before
   - Check that the documentation is helpful and up-to-date
 
-[contrib]: </contrib.html>
+[contrib]: <../contrib>
 [coverity]: <https://scan.coverity.com/projects/neomutt-neomutt>
-[doxygen]: </dev/doxygen>
+[doxygen]: <code/doxygen>
 [issues]: <https://github.com/neomutt/neomutt/issues>
-[manuals]: </man.html>
-[translate]: </translate.html>
+[manuals]: <../man>
+[translate]: <../translate>
 [upstream]: <https://github.com/neomutt/upstream-mutt/tree/master>
 

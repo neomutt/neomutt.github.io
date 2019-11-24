@@ -8,6 +8,7 @@ description: List of GitHub Repositories
 
 {:.subtitle}
 {{ page.description }}
+{% include github-links.html %}
 
 This is a list of all the Git repositories in the NeoMutt GitHub Project.
 

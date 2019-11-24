@@ -8,6 +8,7 @@ description: Labelling of GitHub issues
 
 {:.subtitle}
 {{ page.description }}
+{% include github-links.html %}
 
 When someone [raises an issue](https://github.com/neomutt/neomutt/issues) it
 will be given one of these tags:
