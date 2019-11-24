@@ -25,13 +25,13 @@ The NeoMutt signing key is:
 This key is available on keyservers:
 
 ```sh
-gpg2 --search-keys neomutt
+gpg --search-keys neomutt
 ```
 
 ```reply
-gpg: data source: http://c-73-164-0-249.hsd1.mn.comcast.net:11371
+gpg: data source: https://192.146.137.98:443
 (1)     Richard Russon (NeoMutt) <rich@flatcap.org>
-          4096 bit RSA key 5FAF0A6EE7371805, created: 2016-04-08, expires: 2019-04-13
+          4096 bit RSA key 5FAF0A6EE7371805, created: 2016-04-08, expires: 2021-04-09
 Keys 1-1 of 1 for "neomutt".  Enter number(s), N)ext, or Q)uit >
 ```
 
@@ -45,23 +45,24 @@ matches the NeoMutt signing key.
 ```sh
 git clone https://github.com/neomutt/neomutt
 cd neomutt
-git
-git tag -v neomutt-20170428
+git tag -v 20191111
 ```
 
 ```reply
-object 26b1c69d262048e8a225063aad90f817e0b3dcd6
+object b39b9b4bf3181a653b1186af98fd724be31d7cb9
 type commit
-tag neomutt-20170428
-tagger Richard Russon <rich@flatcap.org> 1493380827 +0100
+tag 20191111
+tagger Richard Russon <rich@flatcap.org> 1573435069 +0000
 
-NeoMutt release 20170428 (1.8.2)
-gpg: Signature made Fri 28 Apr 2017 13:00:27 BST using RSA key ID 5FAF0A6EE7371805
-gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [full]
+NeoMutt release 2019-11-11
+gpg: Signature made Mon 11 Nov 2019 01:17:49 GMT
+gpg:                using RSA key 86C2397270DD7A561263CA4E5FAF0A6EE7371805
+gpg:                issuer "rich@flatcap.org"
+gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [ultimate]
 ```
 
 ```sh
-git checkout -b neomutt-20170428
+git checkout -b 20191111
 # build
 ```
 
@@ -71,10 +72,10 @@ Download a source package and the CHECKSUM file from the
 [release page](https://github.com/neomutt/neomutt/releases/latest)
 
 ```sh
-wget https://github.com/neomutt/neomutt/archive/neomutt-20170428.tar.gz
-wget https://github.com/neomutt/neomutt/releases/download/neomutt-20170428/neomutt-20170428-CHECKSUM
+wget https://github.com/neomutt/neomutt/archive/20191111.tar.gz
+wget https://github.com/neomutt/neomutt/releases/download/20191111/20191111-CHECKSUM
 
-gpg2 --verify neomutt-20170428-CHECKSUM
+gpg --verify 20191111-CHECKSUM
 ```
 
 ```reply
@@ -83,11 +84,11 @@ gpg: Good signature from "Richard Russon (NeoMutt) <rich@flatcap.org>" [full]
 ```
 
 ```sh
-sha256sum -c neomutt-20170428-CHECKSUM
+sha256sum -c 20191111-CHECKSUM
 ```
 
 ```reply
-neomutt-20170428.tar.gz: OK
+20191111.tar.gz: OK
 ```
 
 ```sh
