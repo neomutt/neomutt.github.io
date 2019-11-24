@@ -8,6 +8,7 @@ description: How NeoMutt Assembles the Source
 
 {:.subtitle}
 {{ page.description }}
+{% include build-links.html %}
 
 The NeoMutt build relies on a lot of pre-/post-processing.
 

@@ -8,6 +8,7 @@ description: When things needs further investigation
 
 {:.subtitle}
 {{ page.description }}
+{% include build-links.html %}
 
 ## Available procedures
 

@@ -128,7 +128,7 @@ debuginfo-install krb5-libs libcom_err libgcrypt libgpg-error libidn libselinux
 debuginfo-install libtasn1 ncurses-libs nss-softokn-freebl tokyocabinet zlib
 ```
 
-Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 
 `gdb` may suggest installing more debuginfo packages.
 

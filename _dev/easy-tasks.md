@@ -40,7 +40,7 @@ Now might be a good time to build NeoMutt for yourself.
 The [download pages](/distro.html) for your OS should be helpful to install the
 dependencies you'll need to build NeoMutt.  Then, [Building NeoMutt](/dev/build)
 will show you the steps to download, configure and build the source.  Later you
-might need the [Debugging NeoMutt](/dev/debug) page to help you debug and test
+might need the [Debugging NeoMutt](build/debug) page to help you debug and test
 your changes.
 
 Now, let's find a challenge...

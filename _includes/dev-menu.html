@@ -23,6 +23,15 @@
         {% endif %}
       {% endif %}
 
+      {% if page.url contains '/dev/build' %}
+        {% if f.url contains '/dev/build/' %}
+          {% if deep == false %}
+            <ul> {% assign deep = true %}
+          {% endif %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description lb_desc=f.description %}
+        {% endif %}
+      {% endif %}
+
       {% if page.url contains '/dev/code' %}
         {% if f.url contains '/dev/code/' %}
           {% if deep == false %}

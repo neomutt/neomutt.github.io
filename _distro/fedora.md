@@ -186,7 +186,7 @@ dnf debuginfo-install notmuch nss-softokn-freebl p11-kit pcre pcre2 tokyocabinet
 dnf debuginfo-install xapian-core-libs xz-libs zlib
 ```
 
-Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 
 `cgdb` may suggest installing more debuginfo packages.
 

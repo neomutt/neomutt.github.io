@@ -91,5 +91,5 @@ debug NeoMutt.
 pkg install cgdb
 ```
 
-Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 

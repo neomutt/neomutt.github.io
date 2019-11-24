@@ -65,5 +65,5 @@ You can find further instructions on the [guide for building NeoMutt](/dev/build
 
 ## Debugging <a id="debug"></a>
 
-The [guide for debugging NeoMutt](/dev/debug) can be applied without any change for debugging NeoMutt in the Cygwin environment.
+The [guide for debugging NeoMutt](../dev/build/debug) can be applied without any change for debugging NeoMutt in the Cygwin environment.
 

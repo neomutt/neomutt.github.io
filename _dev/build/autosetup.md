@@ -6,6 +6,10 @@ description: Configuring the build of NeoMutt
 
 # {{ page.title }}
 
+{:.subtitle}
+{{ page.description }}
+{% include build-links.html %}
+
 This document explains the changes introduced to NeoMutt's build system by
 switching to an Autosetup-based configuration and the rationale behind some of
 the choices that have been made.

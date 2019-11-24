@@ -116,5 +116,5 @@ flag when installing:
 $ brew install neomutt --with-debug
 ```
 
-Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 

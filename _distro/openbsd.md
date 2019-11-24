@@ -65,5 +65,5 @@ Alternatively, checkout/update the ports tree and build in the usual way
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
-Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 

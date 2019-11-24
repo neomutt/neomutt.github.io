@@ -95,7 +95,7 @@ It creates a log file `callgrind.out.[PID]` which can be viewed in
 
 ### Debugging with Valgrind
 
-[Running NeoMutt under a debugger](../debug.html) can be a good way to find bugs, but
+[Running NeoMutt under a debugger](../build/debug) can be a good way to find bugs, but
 sometimes it's hard to see the **exact** point when something goes wrong.
 Using Valgrind and gdb in combination, it's possible to trap the instruction
 that causes a buffer overrun, or reads an uninitialised piece of memory.
