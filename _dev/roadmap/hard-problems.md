@@ -35,7 +35,7 @@ For some ideas, please see:
 * [(Re-)Building the Documentation](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-June/000438.html)
 * [topic:testing issues](https://github.com/neomutt/neomutt/labels/topic%3Atesting)
 * [architecture repository](https://github.com/neomutt/arch#arch)
-* [Our complicated build process](https://neomutt.org/dev/make)
+* [Our complicated build process](https://neomutt.org/dev/build/make)
 
 ### Difficult to implement features
 
