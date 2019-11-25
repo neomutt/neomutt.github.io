@@ -55,7 +55,6 @@ status: stable
   Mutt's query command using LDAP directories
 * [mates](https://github.com/pimutils/mates.rs) -- a very simple, highly
   extensible command line address book
-* [vim-notmuch-address](https://github.com/adborden/vim-notmuch-address) -- vim plugin for e-mail addresses completion
 
 ## Tagging, filtering, searching
 
@@ -165,7 +164,9 @@ status: stable
 
 - [vim-mutt-aliases](https://github.com/Konfekt/vim-mutt-aliases/) to complete mail aliases in Vim
 - [vim-mailquery](https://github.com/Konfekt/vim-mailquery) to complete mail addresses in your inbox in Vim
+- [vim-notmuch-address](https://github.com/adborden/vim-notmuch-address) -- to complete mail addresses in Vim
 - [vim-notmuch-addrlookup](https://github.com/Konfekt/vim-notmuch-addrlookup) to complete mail addresses indexed by [notmuch](https://notmuchmail.org).
+
 
 ## Mailcap
 
