@@ -1701,6 +1701,7 @@ uncolor prompt
                 <td>index_size</td>
                 <td>Message size,
                 <code class="literal">%c</code>
+                <code class="literal">%cr</code>
                 <code class="literal">%l</code></td>
               </tr>
               <tr>
@@ -1846,7 +1847,8 @@ uncolor compose header
       <code class="literal">quoted</code> provides a default colour for all quoted text. Also, each diffent level of quoting can be given a different colour using,
       <code class="literal">quoted1</code>,
       <code class="literal">quoted2</code>,
-      <code class="literal">quoted3</code> etc.</p>
+      <code class="literal">quoted3</code> up to
+      <code class="literal">quoted9</code>.</p>
       <div >
         <a id="color-quoted"></a>
         <p class="title">
@@ -1881,8 +1883,12 @@ uncolor compose header
                 <code class="literal">&gt; &gt; &gt; text</code></td>
               </tr>
               <tr>
-                <td>quotedN</td>
-                <td>n level deeper quoted text</td>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+              <tr>
+                <td>quoted9</td>
+                <td>9 level deeper quoted text</td>
               </tr>
             </tbody>
           </table>
@@ -4157,7 +4163,8 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
       <a class="link" href="reference.html#compose-format" title="3.46.&#160;compose_format">$compose_format</a>,
       <code class="literal">%s</code> in
       <a class="link" href="reference.html#folder-format" title="3.97.&#160;folder_format">$folder_format</a>,
-      <code class="literal">%c</code> in
+      <code class="literal">%c</code> and
+      <code class="literal">%cr</code> in
       <a class="link" href="reference.html#index-format" title="3.163.&#160;index_format">$index_format</a>, and %l and %L in
       <a class="link" href="reference.html#status-format" title="3.412.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
       <p>

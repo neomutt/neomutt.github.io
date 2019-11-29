@@ -5290,7 +5290,12 @@ set imap_authenticators="gssapi:cram-md5:login"
             </tr>
             <tr>
               <td>%c</td>
-              <td>Number of characters (bytes) in the message (see
+              <td>Number of characters (bytes) in the body of the message (see
+              <a class="link" href="configuration.html#formatstrings-size" title="29.6.&#160;Bytes size display">formatstrings-size</a>)</td>
+            </tr>
+            <tr>
+              <td>%cr</td>
+              <td>Number of characters (bytes) in the raw message, including the header (see
               <a class="link" href="configuration.html#formatstrings-size" title="29.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
@@ -5511,17 +5516,22 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>Date format expressions can be constructed based on relative dates. Using the date formatting operators along with nested conditionals, the date format can be modified based on how old a message is. See the section on "Conditional Dates" for an explanation and examples</p>
       <p>Note that for mbox/mmdf,
-      <span class="quote">“<span class="quote">%l</span>”</span> applies to the unprocessed message, and for maildir/mh, the value comes from the
-      <span class="quote">“<span class="quote">Lines:</span>”</span> header field when present (the meaning is normally the same). Thus the value depends on the encodings used in the different parts of the message and has little meaning in practice.</p>
+      <span class="quote">“
+      <span class="quote">%l</span>”</span> applies to the unprocessed message, and for maildir/mh, the value comes from the
+      <span class="quote">“
+      <span class="quote">Lines:</span>”</span> header field when present (the meaning is normally the same). Thus the value depends on the encodings used in the different parts of the message and has little meaning in practice.</p>
       <p>"Soft-fill" deserves some explanation: Normal right-justification will print everything to the left of the "%&gt;", displaying padding and whatever lies to the right only if there's room. By contrast, soft-fill gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text.</p>
       <p>Note that these expandos are supported in
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <a class="link" href="configuration.html#save-hook">save-hook</a>
       </span>”</span>,
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <a class="link" href="configuration.html#fcc-hook">fcc-hook</a>
       </span>”</span> and
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <a class="link" href="configuration.html#fcc-save-hook">fcc-save-hook</a>
       </span>”</span>, too.</p>
     </div>
@@ -5590,7 +5600,8 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;command
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">ispell</code>
         </span>”</span></p>
       </div>
@@ -5817,7 +5828,8 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">'</code>
         </span>”</span></p>
       </div>
@@ -6038,7 +6050,8 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">%s</code>
         </span>”</span></p>
       </div>
@@ -6125,7 +6138,8 @@ set inews="/usr/local/bin/inews -hS"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">flagged</code>
         </span>”</span></p>
       </div>
@@ -8558,7 +8572,8 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
       <a class="link" href="#force-name" title="3.100.&#160;force_name">$force_name</a> and
       <a class="link" href="#save-name" title="3.322.&#160;save_name">$save_name</a> variables, and the "
       <a class="link" href="configuration.html#fcc-hook">fcc-hook</a>" command. Also see
-      <a class="link" href="#copy" title="3.52.&#160;copy">$copy</a>.</p>
+      <a class="link" href="#copy" title="3.52.&#160;copy">$copy</a> and
+      <a class="link" href="#write-bcc" title="3.445.&#160;write_bcc">$write_bcc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9122,6 +9137,11 @@ From: abd30425@somewhere.net
       <a class="link" href="#use-envelope-from" title="3.433.&#160;use_envelope_from">$use_envelope_from</a>,
       <a class="link" href="#dsn-notify" title="3.79.&#160;dsn_notify">$dsn_notify</a>, or
       <a class="link" href="#dsn-return" title="3.80.&#160;dsn_return">$dsn_return</a> will be added before the delimiter.</p>
+      <p>
+      <span class="bold">
+        <strong>See also:</strong>
+      </span>
+      <a class="link" href="#write-bcc" title="3.445.&#160;write_bcc">$write_bcc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9922,7 +9942,8 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">(&gt;From&#160;)|(:[-^]?[][)(&gt;&lt;}{|/DP])</code>
         </span>”</span></p>
       </div>
@@ -10129,7 +10150,8 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">aes256</code>
         </span>”</span></p>
       </div>
@@ -10463,6 +10485,8 @@ smtp[s]://[user[:pass]@]host[:port]
 </pre>
       <p>where "[...]" denotes an optional part. Setting this variable overrides the value of the
       <a class="link" href="#sendmail" title="3.330.&#160;sendmail">$sendmail</a> variable.</p>
+      <p>Also see
+      <a class="link" href="#write-bcc" title="3.445.&#160;write_bcc">$write_bcc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12005,10 +12029,16 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       </div>
       <div class="literallayout">
         <p>Type:&#160;boolean
-        <br />Default:&#160;yes</p>
+        <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether NeoMutt writes out the "Bcc:" header when preparing messages to be sent. Exim users may wish to unset this. If NeoMutt is set to deliver directly via SMTP (see
-      <a class="link" href="#smtp-url" title="3.387.&#160;smtp_url">$smtp_url</a>), this option does nothing: NeoMutt will never write out the "Bcc:" header in this case.</p>
+      <p>Controls whether mutt writes out the
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header when preparing messages to be sent. Some MTAs, such as Exim and Courier, do not strip the
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header; so it is advisable to leave this unset unless you have a particular need for the header to be in the sent message.</p>
+      <p>If mutt is set to deliver directly via SMTP(see
+      <a class="link" href="#smtp-url" title="3.387.&#160;smtp_url">$smtp_url</a>), this option does nothing: mutt will never write out the
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header in this case.</p>
+      <p>Note this option only affects the sending of messages. Fcc'ed copies of a message will always contain the
+      <span class="quote">“<span class="quote">Bcc:</span>”</span> header if one exists.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

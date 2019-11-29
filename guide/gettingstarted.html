@@ -472,7 +472,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm46078512552688"></a>
+            <a id="idm45571203244768"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -576,7 +576,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm46078512523232"></a>
+            <a id="idm45571203215312"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -2794,6 +2794,13 @@ bind editor &lt;delete&gt; backspace
         <a class="link" href="reference.html#status-format" title="3.412.&#160;status_format">$status_format</a> will change to a
         <span class="quote">“<span class="quote">A</span>”</span> to indicate that you are in attach-message mode.</p>
       </div>
+      <p>After exiting the compose menu via
+      <code class="literal">&lt;send-message&gt;</code>, the message will be sent. If configured and enabled, this can happen via
+      <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">mixmaster</a> or
+      <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
+      <a class="link" href="reference.html#sendmail" title="3.330.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 1.13, Mutt enabled
+      <a class="link" href="reference.html#write-bcc" title="3.445.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
+      <code class="literal">Bcc:</code>header as part of delivery. Starting with 1.13, the option is unset by default, but no longer affects the fcc copy of the message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
