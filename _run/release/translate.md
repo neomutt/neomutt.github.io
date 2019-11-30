@@ -24,7 +24,7 @@ Make the announcement to the Translation Team:
 
 ## Update the Translations
 
-This must be done twice: just before the String Freeze; just before the Release.
+**This must be done twice**: just before the String Freeze; just before the Release.
 
 **Repos needed**:
 - [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)
@@ -62,6 +62,7 @@ de:	1335 translated, 33 fuzzy, 36 untranslated
 ### Git Rebase
 
 Rebase the existing `[translate]` branch onto `[master]`.
+
 :spiral_notepad: **Note**: Delete the commit 'travis: add translate config'
 
 ```
@@ -152,6 +153,56 @@ Check web push was successful:
 
 Make the announcement to the Translation Team:
 - [https://github.com/orgs/neomutt/teams/translators](https://github.com/orgs/neomutt/teams/translators)
+
+## Credits
+
+The 'Translation' section for the Release Notes is presented as a league table.
+List all the languages that have been updated since the previous release.
+
+- 100% Lithuanian
+-  95% German
+-  95% Finnish
+-  91% Polish
+-  73% Dutch
+
+For GitHub and the Website, this list can be made prettier with national flags.
+They both support `:denmark:` style emojis.
+
+:spiral_notepad: **Note**: These languages don't have emojos: Basque, Catalan, Esperanto, Galician
+
+| Flag             | Language              | Emoji              | Code  |
+|------------------|-----------------------|--------------------|-------|
+| -                | Basque                | -                  | eu    |
+| :bulgaria:       | Bulgarian             | `:bulgaria:`       | bg    |
+| -                | Catalan               | -                  | ca    |
+| :cn:             | Chinese (Simplified)  | `:cn:`             | zh_CN |
+| :taiwan:         | Chinese (Traditional) | `:taiwan:`         | zh_TW |
+| :czech_republic: | Czech                 | `:czech_republic:` | cs    |
+| :denmark:        | Danish                | `:denmark:`        | da    |
+| :netherlands:    | Dutch                 | `:netherlands:`    | nl    |
+| :uk:             | English (British)     | `:uk:`             | en_GB |
+| -                | Esperanto             | -                  | eo    |
+| :estonia:        | Estonian              | `:estonia:`        | et    |
+| :finland:        | Finnish               | `:finland:`        | fi    |
+| :fr:             | French                | `:fr:`             | fr    |
+| -                | Galician              | -                  | gl    |
+| :de:             | German                | `:de:`             | de    |
+| :greece:         | Greek                 | `:greece:`         | el    |
+| :hungary:        | Hungarian             | `:hungary:`        | hu    |
+| :indonesia:      | Indonesian            | `:indonesia:`      | id    |
+| :ireland:        | Irish                 | `:ireland:`        | ga    |
+| :it:             | Italian               | `:it:`             | it    |
+| :jp:             | Japanese              | `:jp:`             | ja    |
+| :kr:             | Korean                | `:kr:`             | ko    |
+| :lithuania:      | Lithuanian            | `:lithuania:`      | lt    |
+| :poland:         | Polish                | `:poland:`         | pl    |
+| :brazil:         | Portuguese (Brazil)   | `:brazil:`         | pt_BR |
+| :ru:             | Russian               | `:ru:`             | ru    |
+| :slovakia:       | Slovak                | `:slovakia:`       | sk    |
+| :es:             | Spanish               | `:es:`             | es    |
+| :sweden:         | Swedish               | `:sweden:`         | sv    |
+| :tr:             | Turkish               | `:tr:`             | tr    |
+| :ukraine:        | Ukrainian             | `:ukraine:`        | uk    |
 
 ## More info
 
