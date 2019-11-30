@@ -21,7 +21,7 @@ Once the Notes have been completed, they need to be transformed slightly for the
 The [management](https://github.com/neomutt/management) repo contains templates.
 These are just suggestions.
 
-- [changelog.txt](https://github.com/neomutt/management/blob/master/release-templates/changelog.txt)
+- [changelog.md](https://github.com/neomutt/management/blob/master/release-templates/changelog.md)
 - [dev-ml.txt](https://github.com/neomutt/management/blob/master/release-templates/dev-ml.txt)
 - [github.md](https://github.com/neomutt/management/blob/master/release-templates/github.md)
 - [user-ml.txt](https://github.com/neomutt/management/blob/master/release-templates/user-ml.txt)
