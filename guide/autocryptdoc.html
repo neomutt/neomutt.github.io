@@ -14,7 +14,7 @@ title: Autocrypt
   </div>
   <p>NeoMutt can be compiled with Autocrypt support by running
   <code class="literal">configure</code> with the
-  <code class="literal">--enable-autocrypt</code> flag. Autocrypt provides easy to use, passive protection against data collection. Keys are distributed via an
+  <code class="literal">--autocrypt</code> flag. Autocrypt provides easy to use, passive protection against data collection. Keys are distributed via an
   <code class="literal">Autocrypt:</code>header added to emails. It does
   <span class="emphasis">
     <em>not</em>
@@ -31,7 +31,7 @@ title: Autocrypt
     </div>
     <p>Autocrypt requires support for ECC cryptography, and NeoMutt by default will generate ECC keys. Therefore GnuPG 2.1 or greater is required. Additionally, NeoMutt's Autocrypt implementation uses GPGME and requires at least version 1.8.0.</p>
     <p>Account and peer information is stored in a sqlite3 database, and so NeoMutt must be configured with the
-    <code class="literal">--with-sqlite3</code> flag when autocrypt is enabled.</p>
+    <code class="literal">--with-sqlite</code> flag when autocrypt is enabled.</p>
     <p>It is highly recommended that NeoMutt be configured
     <code class="literal">--with-idn</code> or
     <code class="literal">--with-idn2</code> so that Autocrypt can properly deal with international domain names.</p>
