@@ -646,9 +646,10 @@ unalias *
       <strong>alias</strong>
     </span>command can appear anywhere in a configuration file, as long as this file is
     <a class="link" href="#source" title="27.&#160;Reading Initialization Commands From Another File">
-    <span class="command">
-      <strong>sourced</strong>
-    </span></a>. Consequently, you can have multiple alias files, or you can have all aliases defined in your
+      <span class="command">
+        <strong>sourced</strong>
+      </span>
+    </a>. Consequently, you can have multiple alias files, or you can have all aliases defined in your
     <code class="literal">.neomuttrc</code>.</p>
     <p>On the other hand, the
     <a class="link" href="gettingstarted.html#create-alias">
@@ -847,7 +848,8 @@ set alias_file=~/.mail_aliases
     <span class="emphasis">
       <em>x</em>
     </span>is the letter of the control character (for example, to specify control-A use
-    <span class="quote">“<span class="quote">\Ca</span>”</span>). Note that the case of
+    <span class="quote">“
+    <span class="quote">\Ca</span>”</span>). Note that the case of
     <span class="emphasis">
       <em>x</em>
     </span>as well as
@@ -866,7 +868,8 @@ set alias_file=~/.mail_aliases
     <span class="emphasis">
       <em>\ca</em>
     </span>are all equivalent. An alternative form is to specify the key as a three digit octal number prefixed with a
-    <span class="quote">“<span class="quote">\</span>”</span>(for example
+    <span class="quote">“
+    <span class="quote">\</span>”</span>(for example
     <span class="emphasis">
       <em>\177</em>
     </span>is equivalent to
@@ -999,8 +1002,10 @@ set alias_file=~/.mail_aliases
     <span class="emphasis">
       <em>key</em>
     </span>does not need to be enclosed in quotes unless it contains a space (
-    <span class="quote">“<span class="quote">&#160;</span>”</span>) or semi-colon (
-    <span class="quote">“<span class="quote">;</span>”</span>).</p>
+    <span class="quote">“
+    <span class="quote">&#160;</span>”</span>) or semi-colon (
+    <span class="quote">“
+    <span class="quote">;</span>”</span>).</p>
     <p>
     <span class="emphasis">
       <em>function</em>
@@ -1127,7 +1132,8 @@ bind index gg first-entry
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you use the
-      <span class="quote">“<span class="quote">!</span>”</span> shortcut for
+      <span class="quote">“
+      <span class="quote">!</span>”</span> shortcut for
       <a class="link" href="reference.html#spoolfile" title="3.394.&#160;spoolfile">$spoolfile</a> at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical
       <span class="emphasis">
         <em>not</em>
@@ -1146,7 +1152,8 @@ folder-hook work "set sort=threads"
       <span class="emphasis">
         <em>default</em>
       </span>command, use the pattern
-      <span class="quote">“<span class="quote">.</span>”</span> before other
+      <span class="quote">“
+      <span class="quote">.</span>”</span> before other
       <span class="command">
         <strong>folder-hook</strong>
       </span>s adjusting a value on a per-folder basis because
@@ -1164,8 +1171,7 @@ folder-hook work "set sort=threads"
     <a class="link" href="reference.html#sort" title="3.388.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
-    <span class="quote">“
-    <span class="quote">work</span>”</span> in their name.</p>
+    <span class="quote">“<span class="quote">work</span>”</span> in their name.</p>
     <div class="example">
       <a id="ex-folder-sorting"></a>
       <p class="title">
@@ -1252,8 +1258,7 @@ folder-hook work "set sort=threads"
     <span class="emphasis">
       <em>^x</em>
     </span>. In order to get a caret (
-    <span class="quote">“
-    <span class="quote">^</span>”</span>) you need to use
+    <span class="quote">“<span class="quote">^</span>”</span>) you need to use
     <span class="emphasis">
       <em>^^</em>
     </span>. Secondly, to specify a certain key such as
@@ -2069,7 +2074,8 @@ uncolor status *
         </div>
       </div>
       <p>If your terminal does not support color, it is still possible change the video attributes through the use of the
-      <span class="quote">“<span class="quote">mono</span>”</span> command. Usage:</p>
+      <span class="quote">“
+      <span class="quote">mono</span>”</span> command. Usage:</p>
       <div class="cmdsynopsis">
         <p>
         <code class="command">mono</code>
@@ -2176,20 +2182,20 @@ uncolor status *
       </div>
       <p>Messages often have many header fields added by automatic processing systems, or which may not seem useful to display on the screen. This command allows you to specify header fields which you don't normally want to see in the pager.</p>
       <p>You do not need to specify the full header field name. For example,
-      <span class="quote">“<span class="quote">ignore content-</span>”</span> will ignore all header fields that begin with the pattern
-      <span class="quote">“<span class="quote">content-</span>”</span>.
-      <span class="quote">“<span class="quote">ignore&#160;*</span>”</span> will ignore all headers.</p>
+      <span class="quote">“
+      <span class="quote">ignore content-</span>”</span> will ignore all header fields that begin with the pattern
+      <span class="quote">“
+      <span class="quote">content-</span>”</span>.
+      <span class="quote">“
+      <span class="quote">ignore&#160;*</span>”</span> will ignore all headers.</p>
       <p>To remove a previously added token from the list, use the
-      <span class="quote">“
-      <span class="quote">unignore</span>”</span> command. The
-      <span class="quote">“
-      <span class="quote">unignore</span>”</span> command will make NeoMutt display headers with the given pattern. For example, if you do
-      <span class="quote">“
-      <span class="quote">ignore x-</span>”</span> it is possible to
-      <span class="quote">“
-      <span class="quote">unignore x-mailer</span>”</span>.</p>
+      <span class="quote">“<span class="quote">unignore</span>”</span> command. The
+      <span class="quote">“<span class="quote">unignore</span>”</span> command will make NeoMutt display headers with the given pattern. For example, if you do
+      <span class="quote">“<span class="quote">ignore x-</span>”</span> it is possible to
+      <span class="quote">“<span class="quote">unignore x-mailer</span>”</span>.</p>
       <p>
-      <span class="quote">“<span class="quote">unignore&#160;*</span>”</span> will remove all tokens from the ignore list.</p>
+      <span class="quote">“
+      <span class="quote">unignore&#160;*</span>”</span> will remove all tokens from the ignore list.</p>
       <div class="example">
         <a id="ex-header-weeding"></a>
         <p class="title">
@@ -2240,7 +2246,8 @@ unignore posted-to:
         <strong>hdr_order</strong>
       </span>command you can specify an order in which NeoMutt will attempt to present these headers to you when viewing messages.</p>
       <p>
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
       <span class="command">
         <strong>unhdr_order</strong>
       </span>*</span>”</span> will clear all previous headers from the order list, thus removing the header order effects set by the system-wide startup file.</p>
@@ -2305,7 +2312,8 @@ hdr_order From Date: From: To: Cc: Subject:
 alternates user@example
 </pre>
     <p>NeoMutt will consider
-    <span class="quote">“<span class="quote">
+    <span class="quote">“
+    <span class="quote">
       <code class="literal">some-user@example</code>
     </span>”</span> as being your address, too which may not be desired. As a solution, in such cases addresses should be specified as:</p>
     <pre class="screen">
@@ -2354,7 +2362,8 @@ alternates '^user@example$'
     <span class="command">
       <strong>unalternates</strong>
     </span>is
-    <span class="quote">“<span class="quote">*</span>”</span>,
+    <span class="quote">“
+    <span class="quote">*</span>”</span>,
     <span class="emphasis">
       <em>all entries</em>
     </span>on
@@ -2463,8 +2472,10 @@ subscribe [0-9]+.*@bugs.debian.org
     <code class="literal">-group</code> flag adds all of the subsequent regular expressions to the named
     <a class="link" href="#addrgroup" title="4.&#160;Address Groups">address group</a> in addition to adding to the specified address list.</p>
     <p>The
-    <span class="quote">“<span class="quote">unlists</span>”</span> command is used to remove a token from the list of known and subscribed mailing-lists. Use
-    <span class="quote">“<span class="quote">unlists&#160;*</span>”</span> to remove all tokens.</p>
+    <span class="quote">“
+    <span class="quote">unlists</span>”</span> command is used to remove a token from the list of known and subscribed mailing-lists. Use
+    <span class="quote">“
+    <span class="quote">unlists&#160;*</span>”</span> to remove all tokens.</p>
     <p>To remove a mailing list from the list of subscribed mailing lists, but keep it on the list of known mailing lists, use
     <span class="command">
       <strong>unsubscribe</strong>
@@ -2495,7 +2506,8 @@ subscribe [0-9]+.*@bugs.debian.org
     <span class="emphasis">
       <em>regex</em>
     </span>is a regular expression specifying the mailbox to treat as a
-    <span class="quote">“<span class="quote">spool</span>”</span> mailbox and
+    <span class="quote">“
+    <span class="quote">spool</span>”</span> mailbox and
     <span class="emphasis">
       <em>mailbox</em>
     </span>specifies where mail should be saved when read.</p>
@@ -2504,7 +2516,8 @@ subscribe [0-9]+.*@bugs.debian.org
     <a class="xref" href="advancedusage.html#mailbox-hook" title="6.2.&#160;Mailbox Matching in Hooks">Mailbox Matching in Hooks</a> for more details.</p>
     <p>Note that execution of mbox-hooks is dependent on the
     <a class="link" href="reference.html#move" title="3.202.&#160;move">$move</a> configuration variable. If set to
-    <span class="quote">“<span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
+    <span class="quote">“
+    <span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
     <p>Unlike some of the other
     <span class="emphasis">
       <em>hook</em>
@@ -2571,10 +2584,14 @@ subscribe [0-9]+.*@bugs.debian.org
     <em>New Mail Feature</em></a>for details (including in what situations and how often NeoMutt checks for new mail). Additionally,
     <a class="link" href="reference.html#new-mail-command" title="3.205.&#160;new_mail_command">$new_mail_command</a> can be used to run a command when new mail is detected.</p>
     <p>The
-    <span class="quote">“<span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail.
-    <span class="quote">“<span class="quote">unmailboxes</span>”</span> can be used on the mailbox path,
-    <span class="quote">“<span class="quote">$folder</span>”</span>-abbreviated path, or description. Use
-    <span class="quote">“<span class="quote">unmailboxes&#160;*</span>”</span> to remove all tokens.</p>
+    <span class="quote">“
+    <span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail.
+    <span class="quote">“
+    <span class="quote">unmailboxes</span>”</span> can be used on the mailbox path,
+    <span class="quote">“
+    <span class="quote">$folder</span>”</span>-abbreviated path, or description. Use
+    <span class="quote">“
+    <span class="quote">unmailboxes&#160;*</span>”</span> to remove all tokens.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The folders in the
@@ -2582,10 +2599,8 @@ subscribe [0-9]+.*@bugs.debian.org
         <strong>mailboxes</strong>
       </span>command are resolved when the command is executed, so if these names contain
       <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">shortcut characters</a>(such as
-      <span class="quote">“
-      <span class="quote">=</span>”</span> and
-      <span class="quote">“
-      <span class="quote">!</span>”</span>), any variable definition that affects these characters (like
+      <span class="quote">“<span class="quote">=</span>”</span> and
+      <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
       <a class="link" href="reference.html#folder" title="3.96.&#160;folder">$folder</a> and
       <a class="link" href="reference.html#spoolfile" title="3.394.&#160;spoolfile">$spoolfile</a>) should be set before the
       <span class="command">
@@ -2624,8 +2639,7 @@ subscribe [0-9]+.*@bugs.debian.org
     </span>command allows you to create your own header fields which will be added to every message you send and appear in the editor if
     <a class="link" href="reference.html#edit-headers" title="3.82.&#160;edit_headers">$edit_headers</a> is set.</p>
     <p>For example, if you would like to add an
-    <span class="quote">“
-    <span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
+    <span class="quote">“<span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
     <a class="xref" href="#ex-my-hdr" title="Example&#160;3.12.&#160;Defining custom headers">Example&#160;3.12, “Defining custom headers”</a> in your
     <code class="literal">.neomuttrc</code>.</p>
     <div class="example">
@@ -2646,24 +2660,19 @@ my_hdr Organization: A Really Big Company, Anytown, USA
       <span class="emphasis">
         <em>not</em>
       </span>allowed between the keyword and the colon (
-      <span class="quote">“
-      <span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so NeoMutt enforces the rule.</p>
+      <span class="quote">“<span class="quote">:</span>”</span>). The standard for electronic mail (RFC2822) says that space is illegal there, so NeoMutt enforces the rule.</p>
     </div>
     <p>If you would like to add a header field to a single message, you should either set the
     <a class="link" href="reference.html#edit-headers" title="3.82.&#160;edit_headers">$edit_headers</a> variable, or use the
     <code class="literal">&lt;edit-headers&gt;</code>function (default:
-    <span class="quote">“
-    <span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
+    <span class="quote">“<span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
     <p>To remove user defined header fields, use the
     <span class="command">
       <strong>unmy_hdr</strong>
     </span>command. You may specify an asterisk (
-    <span class="quote">“
-    <span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
-    <span class="quote">“
-    <span class="quote">To</span>”</span> and
-    <span class="quote">“
-    <span class="quote">Cc</span>”</span> header fields, you could use:</p>
+    <span class="quote">“<span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
+    <span class="quote">“<span class="quote">To</span>”</span> and
+    <span class="quote">“<span class="quote">Cc</span>”</span> header fields, you could use:</p>
     <pre class="screen">
 unmy_hdr to cc
 </pre>
@@ -2737,7 +2746,8 @@ unmy_hdr to cc
     <span class="emphasis">
       <em>mailbox</em>
     </span>as the default
-    <span class="quote">“<span class="quote">Fcc:</span>”</span> mailbox. If no match is found the message will be saved to
+    <span class="quote">“
+    <span class="quote">Fcc:</span>”</span> mailbox. If no match is found the message will be saved to
     <a class="link" href="reference.html#record" title="3.304.&#160;record">$record</a> mailbox.</p>
     <pre class="screen">
 fcc-hook [@.]aol\\.com$ +spammers
@@ -3152,7 +3162,8 @@ folder-hook . 'push \eV'
       </span>
       <code class="literal">function</code>
     </span>”</span> is equivalent to
-    <span class="quote">“<span class="quote">
+    <span class="quote">“
+    <span class="quote">
       <code class="literal">push &lt;function&gt;</code>
     </span>”</span>.</p>
   </div>
@@ -3212,8 +3223,7 @@ folder-hook . 'push \eV'
     <span class="emphasis">
       <em>value</em>
     </span>with an equal sign (
-    <span class="quote">“
-    <span class="quote">=</span>”</span>) to cause evaluation to stop at a particular entry if there is a match. Negative final scores are rounded up to 0.</p>
+    <span class="quote">“<span class="quote">=</span>”</span>) to cause evaluation to stop at a particular entry if there is a match. Negative final scores are rounded up to 0.</p>
     <p>The
     <span class="command">
       <strong>unscore</strong>
@@ -3224,8 +3234,7 @@ folder-hook . 'push \eV'
     <span class="command">
       <strong>score</strong>
     </span>command for it to be removed. The pattern
-    <span class="quote">“
-    <span class="quote">*</span>”</span> is a special token which means to clear the list of all score entries.</p>
+    <span class="quote">“<span class="quote">*</span>”</span> is a special token which means to clear the list of all score entries.</p>
     <p>Scoring occurs as the messages are read in, before the mailbox is sorted. Because of this, patterns which depend on threading, such as
     <span class="emphasis">
       <em>~=</em>
@@ -3298,10 +3307,8 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="emphasis">
       <em>pattern</em>
     </span>should be a regular expression that matches a header in a mail message. If any message in the mailbox matches this regular expression, it will receive a
-    <span class="quote">“
-    <span class="quote">spam tag</span>”</span> or
-    <span class="quote">“
-    <span class="quote">spam attribute</span>”</span>(unless it also matches a
+    <span class="quote">“<span class="quote">spam tag</span>”</span> or
+    <span class="quote">“<span class="quote">spam attribute</span>”</span>(unless it also matches a
     <span class="command">
       <strong>nospam</strong>
     </span>pattern – see below.) The appearance of this attribute is entirely up to you, and is governed by the
@@ -3314,8 +3321,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="emphasis">
       <em>pattern</em>
     </span>expression. (A regular expression
-    <span class="quote">“
-    <span class="quote">back-reference</span>”</span> refers to a sub-expression contained within parentheses.)
+    <span class="quote">“<span class="quote">back-reference</span>”</span> refers to a sub-expression contained within parentheses.)
     <code class="literal">%1</code> is replaced with the first back-reference in the regex,
     <code class="literal">%2</code> with the second, etc.</p>
     <p>To match spam tags, NeoMutt needs the corresponding header information which is always the case for local and POP folders but not for IMAP in the default configuration. Depending on the spam header to be analyzed,
@@ -3350,10 +3356,8 @@ set spam_separator=", "
     <span class="quote">“<span class="quote">many</span>”</span> hits under the
     <span class="quote">“<span class="quote">Fuz2</span>”</span> checksum, and that PureMessage registered with a 97% probability of being spam, that message's spam tag would read
     <code class="literal">90+/DCC-Fuz2, 97/PM</code>. (The four characters before
-    <span class="quote">“
-    <span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
-    <span class="quote">“
-    <span class="quote">Fuz2</span>”</span>.)</p>
+    <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
+    <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the
     <a class="link" href="reference.html#spam-separator" title="3.393.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined
     <span class="emphasis">
@@ -3420,8 +3424,7 @@ set spam_separator=", "
     <span class="command">
       <strong>nospam</strong>
     </span>is
-    <span class="quote">“
-    <span class="quote">*</span>”</span>,
+    <span class="quote">“<span class="quote">*</span>”</span>,
     <span class="emphasis">
       <em>all entries on both lists</em>
     </span>will be removed. This might be the default action if you use
@@ -3478,10 +3481,8 @@ spam "^From: .*MAILER-DAEMON"       "999"
           </dt>
           <dd>
             <p>A boolean expression, either
-            <span class="quote">“
-            <span class="quote">yes</span>”</span> or
-            <span class="quote">“
-            <span class="quote">no</span>”</span>.</p>
+            <span class="quote">“<span class="quote">yes</span>”</span> or
+            <span class="quote">“<span class="quote">no</span>”</span>.</p>
           </dd>
           <dt>
             <span class="term">number</span>
@@ -3507,17 +3508,22 @@ spam "^From: .*MAILER-DAEMON"       "999"
           <dd>
             <p>A specialized string for representing paths including support for mailbox shortcuts (see
             <a class="xref" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">Section&#160;10, “Mailbox Shortcuts”</a>) as well as tilde (
-            <span class="quote">“<span class="quote">~</span>”</span>) for a user's home directory and more.</p>
+            <span class="quote">“
+            <span class="quote">~</span>”</span>) for a user's home directory and more.</p>
           </dd>
           <dt>
             <span class="term">quadoption</span>
           </dt>
           <dd>
             <p>Like a boolean but triggers a prompt when set to
-            <span class="quote">“<span class="quote">ask-yes</span>”</span> or
-            <span class="quote">“<span class="quote">ask-no</span>”</span> with
-            <span class="quote">“<span class="quote">yes</span>”</span> and
-            <span class="quote">“<span class="quote">no</span>”</span> preselected respectively.</p>
+            <span class="quote">“
+            <span class="quote">ask-yes</span>”</span> or
+            <span class="quote">“
+            <span class="quote">ask-no</span>”</span> with
+            <span class="quote">“
+            <span class="quote">yes</span>”</span> and
+            <span class="quote">“
+            <span class="quote">no</span>”</span> preselected respectively.</p>
           </dd>
           <dt>
             <span class="term">sort order</span>
@@ -3650,12 +3656,12 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>ask-yes</em>
       </span>will cause a prompt with a default answer of
-      <span class="quote">“<span class="quote">yes</span>”</span> and
+      <span class="quote">“
+      <span class="quote">yes</span>”</span> and
       <span class="emphasis">
         <em>ask-no</em>
       </span>will provide a default answer of
-      <span class="quote">“
-      <span class="quote">no.</span>”</span></p>
+      <span class="quote">“<span class="quote">no.</span>”</span></p>
       <p>Prefixing a variable with
       <span class="quote">“<span class="quote">no</span>”</span> will unset it. Example:
       <code class="literal">
