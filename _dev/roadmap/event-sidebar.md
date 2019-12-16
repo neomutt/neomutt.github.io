@@ -87,7 +87,10 @@ Below is an exhaustive list of every event that affects the Sidebar.
 
 | Data/View Change    | Affects        | Result        |
 | :------------------ | :------------- | :------------ |
+| Account new         | Displayed text | :gear: recalc |
 | Account change      | Displayed text | :gear: recalc |
+| Account deleted     | Displayed text | :gear: recalc |
+| AccountView changed | Displayed text | :gear: recalc |
 | Mailbox new         | Displayed text | :gear: recalc |
 | Mailbox changed     | Displayed text | :gear: recalc |
 | Mailbox deleted     | Displayed text | :gear: recalc |
