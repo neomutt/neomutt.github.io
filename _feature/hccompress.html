@@ -1,0 +1,235 @@
+---
+layout: concertina
+title: Header Cache Compression
+description: Options for compressing the header cache files
+since: 2020-03-01
+status: stable
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/hccompress"></a>Header Cache Compression Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Options for compressing the header cache files</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2020-02-22</p>
+    <p>
+      <span class="bold">
+        <strong>Dependencies:</strong>
+      </span>
+      <a class="link" href="/guide/optionalfeatures.html#caching" title="8.&#160;Local Caching">header cache</a>
+    </p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>The Header Cache Compression Feature can be used for speeding up the loading of large mailboxes. Also the space used on disk can be shrunk by about 50% - depending on the compression method being used.</p>
+    <p>The implementation sits on top of the header caching functions. So the header cache compression can be used together with all available database backends.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="variables"></a>3.&#160;Variables</h2>
+        </div>
+      </div>
+    </div>
+    <div >
+      <a id="table-hccompress-variables"></a>
+      <p class="title">
+        <strong>Table&#160;15.1.&#160;Header Cache Compression Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Header Cache Compression Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">header_cache_compress_method</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">header_cache_compress_level</code>
+              </td>
+              <td>number</td>
+              <td>
+                <code class="literal">1</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">header_cache_compress_dictionary</code>
+              </td>
+              <td>string</td>
+              <td>
+                <code class="literal">~/.dictionary</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+    <p>The
+    <code class="literal">header_cache_compress_method</code> can be
+    <span class="emphasis">
+      <em>(empty)</em>
+    </span>- which means, that no header cache compression should be used. But when set to
+    <span class="emphasis">
+      <em>lz4</em>
+    </span>,
+    <span class="emphasis">
+      <em>zlib</em>
+    </span>or
+    <span class="emphasis">
+      <em>zstd</em>
+    </span>- then the compression is turned on.</p>
+    <p>The
+    <code class="literal">header_cache_compress_level</code> defines the compression level, which should be used together with the selected
+    <code class="literal">header_cache_compress_method</code>. Here is an overview of the possible settings:</p>
+    <div >
+      <a id="table-hccompress-variables-leveldefines"></a>
+      <p class="title">
+        <strong>Table&#160;15.2.&#160;Header Cache Compression Methods and it's Levels</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Header Cache Compression Methods and it's Levels" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Method Name</th>
+              <th>Min</th>
+              <th>Max</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">lz4</code>
+              </td>
+              <td>1</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">zlib</code>
+              </td>
+              <td>1</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">zstd</code>
+              </td>
+              <td>1</td>
+              <td>22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p>
+      <br class="table-break" />
+    </p>
+    <p>The
+    <code class="literal">header_cache_compress_dictionary</code> is a special option for the
+    <code class="literal">zstd</code> compression method. On a lot small files, this compression method can be trained for some level by using a command like this for e.g. level 3:</p>
+    <pre class="screen">
+zstd --train -3 -r cur new tmp -o dict-level-3
+</pre>
+    <p>This command will create an file called
+    <code class="literal">dict-level-3</code>, which should be put to the path given in the
+    <code class="literal">header_cache_compress_dictionary</code> variable. The speed and space gain can be huge, when using zstd dictionaries. See
+    <a class="ulink" href="https://github.com/facebook/zstd" target="_top">https://github.com/facebook/zstd</a> for more information about this.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="neomuttrc"></a>4.&#160;neomuttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example NeoMutt config file for the header cache compression feature.</span>
+
+<span class="comment"># --------------------------------------------------------------------------</span>
+<span class="comment"># VARIABLES – shown with their default values</span>
+<span class="comment"># --------------------------------------------------------------------------</span>
+set header_cache_compress_dictionary = "~/.dictionary"
+set header_cache_compress_level = 1
+set header_cache_compress_method = ""
+
+<span class="comment"># vim: syntax=neomuttrc</span>
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="known-bugs"></a>5.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>6.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Tino Reichardt</p>
+  </div>
+</div>
+{% endraw %}
