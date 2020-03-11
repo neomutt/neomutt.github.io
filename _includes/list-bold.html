@@ -1,4 +1,8 @@
+{% if children == true %}
+<li class="children">
+{% else %}
 <li>
+{% endif %}
 {% if include.lb_desc %}
 <a href="{{ include.lb_path }}" title="{{ include.lb_desc }}">
 {% else %}

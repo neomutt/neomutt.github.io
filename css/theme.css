@@ -272,6 +272,11 @@ li.done {
   color: red;
 }
 
+li.children {
+  list-style-image: url('/images/plus.png');
+  margin-left: 2px;
+}
+
 tr:nth-child(odd) {
 }
 

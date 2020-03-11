@@ -7,18 +7,34 @@
   {% assign deep = false %}
   {% for f in site.run %}
     {% assign current = f.url | split: '/' %}
-    {% if current.size == 3 or page.url contains '/release' %}
-      {% if deep == false and f.url contains '/release/' %}
-        <ul> {% assign deep = true %}
+
+    {% assign children = false %}
+
+    {% if current.size < 4 %}
+      {% if current[2] == 'release' %}
+        {% assign children = true %}
       {% endif %}
-      {% unless f.url contains '/release/' %}
-        {% if deep == true %}
-          </ul> {% assign deep = false %}
-        {% endif %}
-      {% endunless %}
+      {% if deep == true %}
+        </ul> {% assign deep = false %}
+      {% endif %}
       {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
+    {% else %}
+
+      {% if page.url contains '/run/release' %}
+        {% if f.url contains '/run/release/' %}
+          {% if deep == false %}
+            <ul> {% assign deep = true %}
+          {% endif %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
+        {% endif %}
+      {% endif %}
+
     {% endif %}
+
   {% endfor %}
+  {% if deep %}
+    </ul>
+  {% endif %}
   </ul>
 {% endif %}
 

@@ -8,8 +8,13 @@
   {% for f in site.dev %}
     {% assign current = f.url | split: '/' %}
 
+    {% assign children = false %}
+
     {% if current.size < 4 %}
-      {% if deep %}
+      {% if current[2] == 'analysis' or current[2] == 'build' or current[2] == 'github' or current[2] == 'roadmap' %}
+        {% assign children = true %}
+      {% endif %}
+      {% if deep == true %}
         </ul> {% assign deep = false %}
       {% endif %}
       {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
