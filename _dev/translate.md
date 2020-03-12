@@ -146,7 +146,8 @@ msgfmt --statistics -c -o /dev/null fr.po
 
 ### Viewing the Source
 
-Ideally, the L10n comments should be enough to tell the translator everything they need to know.  Sometimes, though, looking at the source can make things much clearer much more quickly.
+Ideally, the L10n comments should be enough to tell the translator everything they need to know.
+Sometimes, though, looking at the source can make things much clearer much more quickly.
 
 Each of the tranlations is preceded by a location line:
 
@@ -154,11 +155,33 @@ Each of the tranlations is preceded by a location line:
 #: compose.c:118 compose.c:970 send.c:292
 ```
 
-Vim's `gf` (goto file) command will open the file under the cursor, but to use these efficiently I recommend vim users install the 'vim-fetch' plugin: https://github.com/wsdjeg/vim-fetch
+Vim users can use the `gF` (goto file) command which will open the file under the cursor and goto the exact source line you want.
 
-'vim-fetch' adds a `gF` command that uses the line numbers to place the cursor on the exact source line you want.  It also allows you to edit files from the command line:
+### Vim Tips
 
-```sh
-vim compose.c:118
+Here are some tips from @mgedmin.
+
+Find the next untranslated message with `/msgstr ""\ze\n\n/e`.
+The `\n\n` avoids false matches from multiline translations, the `\ze` and `/e` position the cursor between the double quotes.
+
+This can be wrapped up in a custom command:
+Find untranslated:
+
 ```
+command! FindUntranslated normal /msgstr ""\ze\n\n/e<cr>
+```
+
+Find untranslated or fuzzy:
+
+```
+command! FindUntranslatedOrFuzzy normal /msgstr ""\ze\n\n\|^#.*, \zsfuzzy\>/e<cr>
+```
+
+Print stats:
+
+```
+command! -bar PoStats echo system("msgfmt --statistics -c -o /dev/null -", bufnr("%"))
+```
+
+Finally a function to remove the `fuzzy` flag: [ftplugin/po.vim](https://github.com/mgedmin/dotvim/blob/master/ftplugin/po.vim)
 
