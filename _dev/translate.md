@@ -100,3 +100,65 @@ NeoMutt has new releases about once a month. Before each release, the
 translators will be emailed and asked for their latest `.po` file. This will
 be merged into NeoMutt and an updated copy will be mailed back.
 
+## Translate-fu
+
+There's a pretty good editor for translation files: 'poedit', but some of us are only really happy at the command line.
+
+Here are some hints to improve your translate-fu!
+
+### msgattrib - Filter
+
+This tool will extract a subset of translations, e.g. fuzzy or untranslated:
+
+```sh
+msgattrib --no-wrap --only-fuzzy   de.po > de-fuzzy.po
+msgattrib --no-wrap --untranslated de.po > de-untrans.po
+```
+
+Now you can focus on just bits that need some work.
+
+### msggrep - Search
+
+This is a powerful search tool.  You can find regexes in the msgid, msgstr or comments.  Recently, I wanted to examine the overlap between the IDN messages, so I used:
+
+```sh
+msggrep --no-wrap --msgid -e IDN fr.po > fr-idn.po
+```
+
+### msgcat - Combine
+
+Now that we've finished working, we want to re-combine the files.  We can use `msgcat` to merge them:
+
+```sh
+msgcat --no-wrap --use-first de-fuzzy.po de.po > de-new.po
+```
+
+**Note:** Some reordering might occur, so `--sort-by-file` might help.
+
+### msgfmt - Stats
+
+To check the validity of your translation files, and to get some stats, we can use `msgfmt`.  We don't the compiled message file though.
+
+```sh
+msgfmt --statistics -c -o /dev/null fr.po
+1087 translated messages, 185 fuzzy translations, 74 untranslated messages.
+```
+
+### Viewing the Source
+
+Ideally, the L10n comments should be enough to tell the translator everything they need to know.  Sometimes, though, looking at the source can make things much clearer much more quickly.
+
+Each of the tranlations is preceded by a location line:
+
+```sh
+#: compose.c:118 compose.c:970 send.c:292
+```
+
+Vim's `gf` (goto file) command will open the file under the cursor, but to use these efficiently I recommend vim users install the 'vim-fetch' plugin: https://github.com/wsdjeg/vim-fetch
+
+'vim-fetch' adds a `gF` command that uses the line numbers to place the cursor on the exact source line you want.  It also allows you to edit files from the command line:
+
+```sh
+vim compose.c:118
+```
+
