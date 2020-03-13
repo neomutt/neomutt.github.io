@@ -50,12 +50,12 @@ status: stable
     <p>This feature enables the new_mail_command setting, which can be used to execute a custom script (e.g. a notification handler) upon receiving a new mail.</p>
     <p>The command string can contain expandos, such as
     <code class="literal">%n</code> for the number of new messages. For a complete list, see:
-    <a class="link" href="/guide/reference.html#status-format" title="3.417.&#160;status_format">$status_format</a>.</p>
+    <a class="link" href="/guide/reference.html#status-format" title="3.421.&#160;status_format">$status_format</a>.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>When the notification is sent, the folder of the new mail is no longer known. This is a limitation of NeoMutt. The `%f` expando will show the open folder.</p>
       <p>When using Maildir local mailboxes, you must set
-      <a class="link" href="/guide/reference.html#check-new" title="3.44.&#160;check_new">$check_new</a> config variable for this feature to work.</p>
+      <a class="link" href="/guide/reference.html#check-new" title="3.45.&#160;check_new">$check_new</a> config variable for this feature to work.</p>
     </div>
     <p>For example in Linux you can use (most distributions already provide notify-send):</p>
     <pre class="screen">
