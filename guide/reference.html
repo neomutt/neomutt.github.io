@@ -2223,7 +2223,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
           <code class="literal">~/.mutt/autocrypt</code>
         </span>”</span></p>
       </div>
-      <p>This variable sets where autocrypt files are stored, including the GPG keyring and sqlite database. See
+      <p>This variable sets where autocrypt files are stored, including the GPG keyring and SQLite database. See
       <span class="quote">“<span class="quote">
         <a class="link" href="autocryptdoc.html" title="Autocrypt">autocryptdoc</a>
       </span>”</span> for more details. (Autocrypt only)</p>
@@ -3136,7 +3136,7 @@ set certificate_file=~/.neomutt/certificates
       <p>This variable controls the use of the GPGME-enabled crypto backends. If it is
       <span class="emphasis">
         <em>set</em>
-      </span>and NeoMutt was built with gpgme support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .neomuttrc; it won't have any effect when used interactively.</p>
+      </span>and NeoMutt was built with GPGME support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .neomuttrc; it won't have any effect when used interactively.</p>
       <p>Note that the GPGME backend does not support creating old-style inline (traditional) PGP encrypted or signed messages (see
       <a class="link" href="#pgp-autoinline" title="3.245.&#160;pgp_autoinline">$pgp_autoinline</a>).</p>
     </div>
@@ -10977,7 +10977,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <div class="literallayout">
         <p>Type:&#160;boolean
-        <br />Default:&#160;yes</p>
+        <br />Default:&#160;no</p>
       </div>
       <p>If this variable is
       <span class="emphasis">
