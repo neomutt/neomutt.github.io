@@ -28,6 +28,9 @@ options = {
         "ImageCheck",
         "ScriptCheck"
     ],
+    :http_status_ignore => [
+        "429"
+    ],
     :cache => {
         :timeframe => '12w',
         :storage_dir => ENV["HOME"] + "/.cache/htmlproofer"
