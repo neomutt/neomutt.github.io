@@ -15,9 +15,6 @@ Maintainers: [Antonio Radici, Faidon Liambotis](email:pkg-mutt-maintainers@lists
 
 Debian, Ubuntu
 
-Currently in Testing. Note, that there's currently no plain Mutt package
-available in Debian testing, because it was substituted with NeoMutt.
-
 ## Installation <a id="install"></a>
 
 ```reply
