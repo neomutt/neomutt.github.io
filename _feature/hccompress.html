@@ -97,15 +97,6 @@ status: stable
                 <code class="literal">1</code>
               </td>
             </tr>
-            <tr>
-              <td>
-                <code class="literal">header_cache_compress_dictionary</code>
-              </td>
-              <td>string</td>
-              <td>
-                <code class="literal">~/.dictionary</code>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -176,16 +167,6 @@ status: stable
     <p>
       <br class="table-break" />
     </p>
-    <p>The
-    <code class="literal">header_cache_compress_dictionary</code> is a special option for the
-    <code class="literal">zstd</code> compression method. On a lot small files, this compression method can be trained for some level by using a command like this for e.g. level 3:</p>
-    <pre class="screen">
-zstd --train -3 -r cur new tmp -o dict-level-3
-</pre>
-    <p>This command will create an file called
-    <code class="literal">dict-level-3</code>, which should be put to the path given in the
-    <code class="literal">header_cache_compress_dictionary</code> variable. The speed and space gain can be huge, when using zstd dictionaries. See
-    <a class="ulink" href="https://github.com/facebook/zstd" target="_top">https://github.com/facebook/zstd</a> for more information about this.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -202,7 +183,6 @@ zstd --train -3 -r cur new tmp -o dict-level-3
 <span class="comment"># --------------------------------------------------------------------------</span>
 <span class="comment"># VARIABLES – shown with their default values</span>
 <span class="comment"># --------------------------------------------------------------------------</span>
-set header_cache_compress_dictionary = "~/.dictionary"
 set header_cache_compress_level = 1
 set header_cache_compress_method = ""
 
