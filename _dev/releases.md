@@ -75,6 +75,7 @@ The Git hashes link to our copy of upstream's repository.
 
 | Date       | Version      | Git Hash |
 | :--------- | :----------- | :------- |
+| 2020-03-28 | 1.13.5 | [`43f2270c`](https://github.com/neomutt/upstream-mutt/commit/43f2270c) |
 | 2020-02-15 | 1.13.4 | [`1adc3a5d`](https://github.com/neomutt/upstream-mutt/commit/1adc3a5d) |
 | 2020-01-12 | 1.13.3 | [`ad277fd1`](https://github.com/neomutt/upstream-mutt/commit/ad277fd1) |
 | 2019-12-18 | 1.13.2 | [`bbe9bd1a`](https://github.com/neomutt/upstream-mutt/commit/bbe9bd1a) |
