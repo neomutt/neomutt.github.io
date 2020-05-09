@@ -100,6 +100,8 @@ Below is an exhaustive list of every event that affects the Sidebar.
 
 | Config Change                  | Affects           | Result                    | Notes                             |
 | :----------------------------- | :---------------- | :------------------------ | :-------------------------------- |
+| ascii_chars                    | Divider           | :paintbrush: repaint      | Unless character changes width    |
+| folder                         | Displayed text    | :gear: recalc             |                                   |
 | sidebar_component_depth        | Displayed text    | :gear: recalc             |                                   |
 | sidebar_delim_chars            | Displayed text    | :gear: recalc             |                                   |
 | sidebar_divider_char           | Dividing line     | :paintbrush: repaint      | Unless character changes width    |
@@ -114,12 +116,14 @@ Below is an exhaustive list of every event that affects the Sidebar.
 | sidebar_sort_method            | Displayed text    | :gear: recalc             |                                   |
 | sidebar_visible                | Window visibility | :left_right_arrow: reflow | See: Window become visible/hidden |
 | sidebar_width                  | Window size       | :left_right_arrow: reflow | See: Window narrow/widen          |
+| spoolfile                      | Colour of text    | :paintbrush: repaint      |                                   |
 
 #### Colour Changes
 
 | Colour Change     | Affects        | Result               |
 | :---------------- | :------------- | :------------------- |
 | indicator         | Colour of text | :paintbrush: repaint |
+| normal            | Colour of text | :paintbrush: repaint |
 | sidebar_divider   | Colour of text | :paintbrush: repaint |
 | sidebar_flagged   | Colour of text | :paintbrush: repaint |
 | sidebar_highlight | Colour of text | :paintbrush: repaint |
