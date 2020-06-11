@@ -49,7 +49,7 @@ digraph build {
 
 	subgraph cluster_libraries {
 		fontcolor="red"
-		label="LIBRARIES: config, conn, email, mutt, ncrypt"
+		label="LIBRARIES: address, alias, autocrypt, bcache, compress, config, conn, core, debug, email, gui, history, mutt, ncrypt, store"
 		color="#ff0000"
 
 		lots_lib_c [ label="\{lib.c\}" ]
@@ -62,7 +62,7 @@ digraph build {
 
 	subgraph cluster_backends {
 		fontcolor="red"
-		label="MAIL BACKENDS: imap, maildir, mbox, nntp, notmuch, pop"
+		label="MAIL BACKENDS: compmbox, imap, maildir, mbox, nntp, notmuch, pop"
 		color="#ff0000"
 
 		lots_backend_c [ label="\{backend.c\}" ]
@@ -83,7 +83,7 @@ digraph build {
 		backends_c    [ label=<\{backends.c\} <font color="green">★</font>>                                                   ]
 		hcachever_h   [ label="hcachever.h"                                                                                   ]
 		hcachever_sh  [ label=<hcachever.sh <font color="red">●</font><font color="green">★</font>> color="green" shape="box" ]
-		hcache_a      [ label="hcache.a"                                                                                   ]
+		hcache_a      [ label="hcache.a"                                                                                      ]
 
 		hcachever_sh  -> hcachever_h
 		hcachever_h   -> lots_hcache_o
@@ -116,7 +116,7 @@ digraph build {
 
 		lots_mo          [ label="\{lang.mo\}"          ]
 		lots_po          [ label="\{lang.po\}"          ]
-		neomutt_pot      [ label="neomutt.pot"             ]
+		neomutt_pot      [ label="neomutt.pot"          ]
 		xgettext         [ label="xgettext" shape="box" ]
 
 		POTFILES         -> xgettext
@@ -135,8 +135,7 @@ digraph build {
 		pgpewrap_src -> pgpewrap [ label="gcc" ]
 	}
 
-	hcache_a -> ld_mutt
-	lib_a -> ld_mutt
+	hcache_a  -> ld_mutt
+	lib_a     -> ld_mutt
 	backend_a -> ld_mutt
 }
-

@@ -22,9 +22,9 @@ digraph build {
 	];
 
 
-	functions_h      [ label="functions.h" color="red" ]
-	opcodes          [ label="opcodes.h"   color="red" ]
-	init_h           [ label="init.h"      color="red" ]
+	functions_c      [ label="functions.c"   color="red" ]
+	opcodes          [ label="opcodes.h"     color="red" ]
+	mutt_config_c    [ label="mutt_config.c" color="red" ]
 
 	lots_1             [ label="\{example.1\}"         ]
 	lots_man           [ label="\{example.man\}"       ]
@@ -56,13 +56,13 @@ digraph build {
 	xsltproc    -> manual_html
 	manual_html -> manual_txt [ label="w3m/links" ]
 
-	init_h             -> makedoc_m
+	mutt_config_c      -> makedoc_m
 	neomuttrc_man_head -> neomuttrc_man
 	makedoc_m          -> neomuttrc_man
 	neomuttrc_man_tail -> neomuttrc_man
 
 	neomuttrc_head -> neomuttrc [ label="sed" ]
-	init_h         -> makedoc_c
+	mutt_config_c  -> makedoc_c
 	makedoc_c      -> neomuttrc
 
 	makedoc_src     -> makedoc    [ label="gcc" ]
@@ -71,8 +71,7 @@ digraph build {
 	manual_xml_tail -> gen_map_doc
 	opcodes         -> gen_map_doc
 	gen_map_doc     -> manual_xml
-	init_h          -> makedoc_s [ label="cpp" ]
+	mutt_config_c   -> makedoc_s [ label="cpp" ]
 	makedoc_s       -> manual_xml
-	functions_h     -> gen_map_doc [ label="cpp" ]
+	functions_c     -> gen_map_doc [ label="cpp" ]
 }
-
