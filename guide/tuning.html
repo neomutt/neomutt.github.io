@@ -30,10 +30,10 @@ title: Performance Tuning
         </li>
         <li class="listitem">
           <p>NeoMutt provides the
-          <a class="link" href="reference.html#read-inc" title="3.303.&#160;read_inc">$read_inc</a> and
-          <a class="link" href="reference.html#write-inc" title="3.450.&#160;write_inc">$write_inc</a> variables to specify at which rate to update progress counters. If these values are too low, NeoMutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
+          <a class="link" href="reference.html#read-inc" title="3.305.&#160;read_inc">$read_inc</a> and
+          <a class="link" href="reference.html#write-inc" title="3.452.&#160;write_inc">$write_inc</a> variables to specify at which rate to update progress counters. If these values are too low, NeoMutt may spend more time on updating the progress counter than it spends on actually reading/writing folders.</p>
           <p>For example, when opening a maildir folder with a few thousand messages, the default value for
-          <a class="link" href="reference.html#read-inc" title="3.303.&#160;read_inc">$read_inc</a> may be too low. It can be tuned on on a folder-basis using
+          <a class="link" href="reference.html#read-inc" title="3.305.&#160;read_inc">$read_inc</a> may be too low. It can be tuned on on a folder-basis using
           <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
           <span class="command">
             <strong>folder-hook</strong>
@@ -50,7 +50,7 @@ folder-hook ^pop 'set read_inc=1'
       </ol>
     </div>
     <p>These settings work on a per-message basis. However, as messages may greatly differ in size and certain operations are much faster than others, even per-folder settings of the increment variables may not be desirable as they produce either too few or too much progress updates. Thus, NeoMutt allows to limit the number of progress updates per second it'll actually send to the terminal using the
-    <a class="link" href="reference.html#time-inc" title="3.424.&#160;time_inc">$time_inc</a> variable.</p>
+    <a class="link" href="reference.html#time-inc" title="3.426.&#160;time_inc">$time_inc</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -66,8 +66,8 @@ folder-hook ^pop 'set read_inc=1'
     <a class="link" href="optionalfeatures.html#body-caching" title="8.2.&#160;Body Caching">body caching</a> and
     <a class="link" href="optionalfeatures.html#header-caching" title="8.1.&#160;Header Caching">header caching</a> for details.</p>
     <p>Additionally, it may be worth trying some of NeoMutt's experimental features.
-    <a class="link" href="reference.html#imap-qresync" title="3.157.&#160;imap_qresync">$imap_qresync</a>(which requires header caching) can provide a huge speed boost opening mailboxes if your IMAP server supports it.
-    <a class="link" href="reference.html#imap-deflate" title="3.143.&#160;imap_deflate">$imap_deflate</a> enables compression, which can also noticeably reduce download time for large mailboxes and messages.</p>
+    <a class="link" href="reference.html#imap-qresync" title="3.159.&#160;imap_qresync">$imap_qresync</a>(which requires header caching) can provide a huge speed boost opening mailboxes if your IMAP server supports it.
+    <a class="link" href="reference.html#imap-deflate" title="3.145.&#160;imap_deflate">$imap_deflate</a> enables compression, which can also noticeably reduce download time for large mailboxes and messages.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
