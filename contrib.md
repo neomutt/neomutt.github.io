@@ -51,11 +51,13 @@ Or, you can contact the lead developer, Richard&nbsp;Russon&nbsp;[&lt;rich@flatc
         <td>&mdash;</td>
         {% endif %}
         <td>
+          {% assign span = false %}
           {% case c.status %}
           {% when 'stable' %}
-          {% assign span = true %}
+            {% assign span = true %}
             <span class="good">&#x2714;
           {% when 'devel' %}
+            {% assign span = true %}
             <span class="devel">&#x26A0;
           {% endcase %}
             {{ c.status }}
