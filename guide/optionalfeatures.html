@@ -123,6 +123,59 @@ smtp://user@host:587/
     </span>for GnuTLS). NeoMutt can then attempt to encrypt communication with remote servers if these protocols are suffixed with
     <span class="quote">“<span class="quote">s</span>”</span> for
     <span class="quote">“<span class="quote">secure communication</span>”</span>.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="starttls"></a>2.1.&#160;STARTTLS</h3>
+          </div>
+        </div>
+      </div>
+      <p>When non-secure URL protocols
+      <code class="literal">imap://</code>,
+      <code class="literal">pop://</code>, and
+      <code class="literal">smtp://</code>are used, the initial connection to the server will be unencrypted.
+      <code class="literal">STARTTLS</code> can be used to negotiate an encrypted connection after the initial unencrypted connection and exchange.</p>
+      <p>Two configuration variables control NeoMutt's behavior with
+      <code class="literal">STARTTLS</code>.
+      <a class="link" href="reference.html#ssl-starttls" title="3.406.&#160;ssl_starttls">$ssl_starttls</a> will initiate
+      <code class="literal">STARTTLS</code> if the server advertises support for it.
+      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> will always try to initiate it, whether the server advertises support or not.</p>
+      <p>NeoMutt
+      <span class="emphasis">
+        <em>highly recommends</em>
+      </span>setting
+      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> unless you need to connect to an unencrypted server. It's possible for an attacker to spoof interactions during the initial connection and hide support for
+      <code class="literal">STARTTLS</code>. The only way to prevent these attacks is by forcing
+      <code class="literal">STARTTLS</code> with the
+      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> configuration variable.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="secure-tunnel"></a>2.2.&#160;Tunnel</h3>
+          </div>
+        </div>
+      </div>
+      <p>When connecting through a
+      <a class="link" href="reference.html#tunnel" title="3.434.&#160;tunnel">$tunnel</a> and
+      <a class="link" href="reference.html#tunnel-is-secure" title="3.435.&#160;tunnel_is_secure">$tunnel_is_secure"</a>is set(the default), NeoMutt will assume the connection to the server through the pipe is already secured. NeoMutt will ignore
+      <a class="link" href="reference.html#ssl-starttls" title="3.406.&#160;ssl_starttls">$ssl_starttls</a> and
+      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a>, behaving as if TLS has already been negotiated.</p>
+      <p>When
+      <a class="link" href="reference.html#tunnel-is-secure" title="3.435.&#160;tunnel_is_secure">$tunnel_is_secure"</a>is unset, NeoMutt will respect the values of
+      <a class="link" href="reference.html#ssl-starttls" title="3.406.&#160;ssl_starttls">$ssl_starttls</a> and
+      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a>. It is
+      <span class="emphasis">
+        <em>highly recommended</em>
+      </span>to set
+      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> in this case, to force
+      <code class="literal">STARTTLS</code> negotiation. Note that doing so will prevent connection to an IMAP server configured for preauthentication(
+      <code class="literal">PREAUTH</code>). If you use this configuration, it is recommended to use a secure tunnel.</p>
+    </div>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -203,10 +256,14 @@ set timeout=15
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
             <p>In lieu of file permissions, NeoMutt displays the string
-            <span class="quote">“<span class="quote">IMAP</span>”</span>, possibly followed by the symbol
-            <span class="quote">“<span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders. A mailbox name with a trailing delimiter (usually
-            <span class="quote">“<span class="quote">/</span>”</span> or
-            <span class="quote">“<span class="quote">.</span>”</span>) indicates subfolders.</p>
+            <span class="quote">“
+            <span class="quote">IMAP</span>”</span>, possibly followed by the symbol
+            <span class="quote">“
+            <span class="quote">+</span>”</span>, indicating that the entry contains both messages and subfolders. On Cyrus-like servers folders will often contain both messages and subfolders. A mailbox name with a trailing delimiter (usually
+            <span class="quote">“
+            <span class="quote">/</span>”</span> or
+            <span class="quote">“
+            <span class="quote">.</span>”</span>) indicates subfolders.</p>
           </li>
           <li class="listitem">
             <p>For the case where an entry can contain both messages and subfolders, the selection key (bound to

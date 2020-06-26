@@ -2583,12 +2583,8 @@ mailboxes `find ~/.mail/ -type d -name cur | sort | sed -e 's:/cur/*$::' -e 's/ 
       <p>Some mailers tend to
       <span class="quote">“<span class="quote">forget</span>”</span> to correctly set the
       <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
-      <span class="quote">“<span class="quote">References:</span>”</span> headers when replying to a message. This results in broken discussions because NeoMutt has not enough information to guess the correct threading. You can fix this by tagging the reply, then moving to the parent message and using the
-      <code class="literal">&lt;link-threads&gt;</code>function (bound to &amp; by default). The reply will then be connected to this parent message.</p>
-      <p>You can also connect multiple children at once, tagging them and using the
-      <code class="literal">&lt;tag-prefix&gt;</code>command (
-      <span class="quote">“<span class="quote">;</span>”</span>) or the
-      <a class="link" href="reference.html#auto-tag" title="3.28.&#160;auto_tag">$auto_tag</a> option.</p>
+      <span class="quote">“<span class="quote">References:</span>”</span> headers when replying to a message. This results in broken discussions because NeoMutt has not enough information to guess the correct threading. You can fix this by tagging a number of replies, then moving to the parent message and using the
+      <code class="literal">&lt;link-threads&gt;</code>function (bound to &amp; by default). The replies will then be connected to this parent message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

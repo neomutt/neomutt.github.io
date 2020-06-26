@@ -472,7 +472,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm45163681411312"></a>
+            <a id="idm45423052043696"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -598,7 +598,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm45163681374448"></a>
+            <a id="idm45423052006848"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -2397,7 +2397,7 @@ bind editor &lt;delete&gt; backspace
             <a class="link" href="reference.html#pipe-decode" title="3.274.&#160;pipe_decode">$pipe_decode</a>,
             <a class="link" href="reference.html#pipe-split" title="3.276.&#160;pipe_split">$pipe_split</a>,
             <a class="link" href="reference.html#pipe-sep" title="3.275.&#160;pipe_sep">$pipe_sep</a> and
-            <a class="link" href="reference.html#wait-key" title="3.446.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
+            <a class="link" href="reference.html#wait-key" title="3.447.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2406,7 +2406,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>NeoMutt takes the current message as a template for a new message. This function is best described as "recall from arbitrary folders". It can conveniently be used to forward MIME messages while preserving the original mail structure. Note that the amount of headers included here depends on the value of the
-            <a class="link" href="reference.html#weed" title="3.447.&#160;weed">$weed</a> variable.</p>
+            <a class="link" href="reference.html#weed" title="3.448.&#160;weed">$weed</a> variable.</p>
             <p>This function is also available from the attachment menu. You can use this to easily resend a message which was included with a bounce message as a
             <code class="literal">message/rfc822</code> body part.</p>
           </dd>
@@ -2417,7 +2417,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and executes it. The
-            <a class="link" href="reference.html#wait-key" title="3.446.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
+            <a class="link" href="reference.html#wait-key" title="3.447.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2823,7 +2823,7 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">mixmaster</a> or
       <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
       <a class="link" href="reference.html#sendmail" title="3.335.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 2019-11-29, NeoMutt enabled
-      <a class="link" href="reference.html#write-bcc" title="3.451.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
+      <a class="link" href="reference.html#write-bcc" title="3.452.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
       <code class="literal">Bcc:</code>header as part of delivery. Starting with 2019-11-29, the option is unset by default, but no longer affects the fcc copy of the message.</p>
     </div>
     <div class="sect2">
@@ -3163,7 +3163,7 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“<span class="quote">yes</span>”</span>) is to use standard inline forwarding. In that mode all text-decodable parts are included in the new message body. Other attachments from the original email can also be attached to the new message, based on the quadoption
     <a class="link" href="reference.html#forward-attachments" title="3.105.&#160;forward_attachments">$forward_attachments</a>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
-    <a class="link" href="reference.html#weed" title="3.447.&#160;weed">$weed</a> variable, unless
+    <a class="link" href="reference.html#weed" title="3.448.&#160;weed">$weed</a> variable, unless
     <a class="link" href="reference.html#mime-forward" title="3.199.&#160;mime_forward">$mime_forward</a> is set.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
     <a class="link" href="reference.html#forward-references" title="3.113.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
