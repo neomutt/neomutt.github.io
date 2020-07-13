@@ -2,9 +2,9 @@
 layout: concertina
 distro: CRUX
 icon: crux.png
-homepage: https://github.com/6c37/crux-ports/tree/master/neomutt
+homepage: https://crux.nu/portdb/?a=search&q=neomutt
 title: NeoMutt for CRUX
-maintainer: 6c37 Team
+maintainer: Tim Biermann
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
@@ -13,17 +13,14 @@ maintainer: 6c37 Team
 
 ## Installation <a id="install"></a>
 
-Read the [`wiki`](https://github.com/6c37/crux-ports/wiki/Installing-the-git-driver-and-adding-the-6c37-repo) and set up repo first.
-then issue following commands:
+neomutt is in [contrib](https://crux.nu/Main/Handbook3-5#ntoc35), enable and activate it according to the [manual](https://crux.nu/Main/Handbook3-5#ntoc42)
 
-```
-ports -u 6c37 && prt-get depinst neomutt
-```
+Then you can simply run `prt-get depinst neomutt` to install neomutt including all its dependencies.
 
 ## Update <a id="update"></a>
 
 ```
-ports -u 6c37 && prt-get update -fr neomutt
+ports -u && prt-get update neomutt
 ```
 
 ## Removal <a id="remove"></a>
