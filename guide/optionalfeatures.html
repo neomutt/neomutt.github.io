@@ -139,17 +139,17 @@ smtp://user@host:587/
       <code class="literal">STARTTLS</code> can be used to negotiate an encrypted connection after the initial unencrypted connection and exchange.</p>
       <p>Two configuration variables control NeoMutt's behavior with
       <code class="literal">STARTTLS</code>.
-      <a class="link" href="reference.html#ssl-starttls" title="3.406.&#160;ssl_starttls">$ssl_starttls</a> will initiate
+      <a class="link" href="reference.html#ssl-starttls" title="3.408.&#160;ssl_starttls">$ssl_starttls</a> will initiate
       <code class="literal">STARTTLS</code> if the server advertises support for it.
-      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> will always try to initiate it, whether the server advertises support or not.</p>
+      <a class="link" href="reference.html#ssl-force-tls" title="3.406.&#160;ssl_force_tls">$ssl_force_tls</a> will always try to initiate it, whether the server advertises support or not.</p>
       <p>NeoMutt
       <span class="emphasis">
         <em>highly recommends</em>
       </span>setting
-      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> unless you need to connect to an unencrypted server. It's possible for an attacker to spoof interactions during the initial connection and hide support for
+      <a class="link" href="reference.html#ssl-force-tls" title="3.406.&#160;ssl_force_tls">$ssl_force_tls</a> unless you need to connect to an unencrypted server. It's possible for an attacker to spoof interactions during the initial connection and hide support for
       <code class="literal">STARTTLS</code>. The only way to prevent these attacks is by forcing
       <code class="literal">STARTTLS</code> with the
-      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> configuration variable.</p>
+      <a class="link" href="reference.html#ssl-force-tls" title="3.406.&#160;ssl_force_tls">$ssl_force_tls</a> configuration variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -161,18 +161,18 @@ smtp://user@host:587/
         </div>
       </div>
       <p>When connecting through a
-      <a class="link" href="reference.html#tunnel" title="3.434.&#160;tunnel">$tunnel</a> and
-      <a class="link" href="reference.html#tunnel-is-secure" title="3.435.&#160;tunnel_is_secure">$tunnel_is_secure"</a>is set(the default), NeoMutt will assume the connection to the server through the pipe is already secured. NeoMutt will ignore
-      <a class="link" href="reference.html#ssl-starttls" title="3.406.&#160;ssl_starttls">$ssl_starttls</a> and
-      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a>, behaving as if TLS has already been negotiated.</p>
+      <a class="link" href="reference.html#tunnel" title="3.437.&#160;tunnel">$tunnel</a> and
+      <a class="link" href="reference.html#tunnel-is-secure" title="3.438.&#160;tunnel_is_secure">$tunnel_is_secure"</a>is set(the default), NeoMutt will assume the connection to the server through the pipe is already secured. NeoMutt will ignore
+      <a class="link" href="reference.html#ssl-starttls" title="3.408.&#160;ssl_starttls">$ssl_starttls</a> and
+      <a class="link" href="reference.html#ssl-force-tls" title="3.406.&#160;ssl_force_tls">$ssl_force_tls</a>, behaving as if TLS has already been negotiated.</p>
       <p>When
-      <a class="link" href="reference.html#tunnel-is-secure" title="3.435.&#160;tunnel_is_secure">$tunnel_is_secure"</a>is unset, NeoMutt will respect the values of
-      <a class="link" href="reference.html#ssl-starttls" title="3.406.&#160;ssl_starttls">$ssl_starttls</a> and
-      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a>. It is
+      <a class="link" href="reference.html#tunnel-is-secure" title="3.438.&#160;tunnel_is_secure">$tunnel_is_secure"</a>is unset, NeoMutt will respect the values of
+      <a class="link" href="reference.html#ssl-starttls" title="3.408.&#160;ssl_starttls">$ssl_starttls</a> and
+      <a class="link" href="reference.html#ssl-force-tls" title="3.406.&#160;ssl_force_tls">$ssl_force_tls</a>. It is
       <span class="emphasis">
         <em>highly recommended</em>
       </span>to set
-      <a class="link" href="reference.html#ssl-force-tls" title="3.404.&#160;ssl_force_tls">$ssl_force_tls</a> in this case, to force
+      <a class="link" href="reference.html#ssl-force-tls" title="3.406.&#160;ssl_force_tls">$ssl_force_tls</a> in this case, to force
       <code class="literal">STARTTLS</code> negotiation. Note that doing so will prevent connection to an IMAP server configured for preauthentication(
       <code class="literal">PREAUTH</code>). If you use this configuration, it is recommended to use a secure tunnel.</p>
     </div>
@@ -192,15 +192,15 @@ smtp://user@host:587/
     <code class="literal">pops</code> for encrypted communication, see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details.</p>
     <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which NeoMutt will check for mail remotely can be controlled by the
-    <a class="link" href="reference.html#pop-checkinterval" title="3.279.&#160;pop_checkinterval">$pop_checkinterval</a> variable, which defaults to every 60 seconds.</p>
+    <a class="link" href="reference.html#pop-checkinterval" title="3.281.&#160;pop_checkinterval">$pop_checkinterval</a> variable, which defaults to every 60 seconds.</p>
     <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
     <a class="xref" href="#header-caching" title="8.1.&#160;Header Caching">Section&#160;8.1, “Header Caching”</a> and
     <a class="xref" href="#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a> NeoMutt simulates the new/old/read flags as well as flagged and replied. NeoMutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by NeoMutt or other tools).</p>
     <a id="fetch-mail"></a>
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
-    <a class="link" href="reference.html#pop-host" title="3.281.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
-    <a class="link" href="reference.html#spoolfile" title="3.400.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
+    <a class="link" href="reference.html#pop-host" title="3.283.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
+    <a class="link" href="reference.html#spoolfile" title="3.402.&#160;spoolfile">$spoolfile</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as
@@ -232,7 +232,7 @@ smtp://user@host:587/
     <a class="link" href="reference.html#imap-list-subscribed" title="3.151.&#160;imap_list_subscribed">$imap_list_subscribed</a> variable.</p>
     <p>Polling for new mail on an IMAP server can cause noticeable delays. So, you'll want to carefully tune the
     <a class="link" href="reference.html#mail-check" title="3.172.&#160;mail_check">$mail_check</a> and
-    <a class="link" href="reference.html#timeout" title="3.427.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
+    <a class="link" href="reference.html#timeout" title="3.429.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
     <pre class="screen">
 set mail_check=90
 set timeout=15
@@ -334,13 +334,13 @@ set timeout=15
     </div>
     <p>Besides supporting traditional mail delivery through a sendmail-compatible program, NeoMutt supports delivery through SMTP.</p>
     <p>If the configuration variable
-    <a class="link" href="reference.html#smtp-url" title="3.393.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
-    <a class="link" href="reference.html#sendmail" title="3.335.&#160;sendmail">$sendmail</a>.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.394.&#160;smtp_url">$smtp_url</a> is set, NeoMutt will contact the given SMTP server to deliver messages; if it is unset, NeoMutt will use the program specified by
+    <a class="link" href="reference.html#sendmail" title="3.337.&#160;sendmail">$sendmail</a>.</p>
     <p>For details on the URL syntax, please see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a>.</p>
     <p>The built-in SMTP support supports encryption (the
     <code class="literal">smtps</code> protocol using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms for SASL are specified in
-    <a class="link" href="reference.html#smtp-authenticators" title="3.389.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
+    <a class="link" href="reference.html#smtp-authenticators" title="3.391.&#160;smtp_authenticators">$smtp_authenticators</a> defaulting to an empty list which makes NeoMutt try all available methods from most-secure to least-secure.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -395,7 +395,7 @@ set imap_oauth_refresh_command="/path/to/oauth2.py --quiet --user=[email_address
         <strong>account-hook</strong>
       </span>
     </a>command may help. This hook works like
-    <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
+    <a class="link" href="configuration.html#folder-hook" title="9.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
       </span>
@@ -418,13 +418,13 @@ account-hook imap://host2/ 'set tunnel="ssh host2 /usr/libexec/imapd"'
 account-hook smtp://user@host3/ 'set tunnel="ssh host3 /usr/libexec/smtpd"'
 </pre>
     <p>To manage multiple accounts with, for example, different values of
-    <a class="link" href="reference.html#record" title="3.309.&#160;record">$record</a> or sender addresses,
-    <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
+    <a class="link" href="reference.html#record" title="3.311.&#160;record">$record</a> or sender addresses,
+    <a class="link" href="configuration.html#folder-hook" title="9.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
       </span>
     </a>has to be be used together with the
-    <a class="link" href="configuration.html#mailboxes" title="15.&#160;Monitoring Incoming Mail">
+    <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">
       <span class="command">
         <strong>mailboxes</strong>
       </span>
@@ -446,18 +446,18 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     <br class="example-break" />
     <p>In example
     <a class="xref" href="#ex-multiaccount" title="Example&#160;6.2.&#160;Managing multiple accounts">Example&#160;6.2, “Managing multiple accounts”</a> the folders are defined using
-    <a class="link" href="configuration.html#mailboxes" title="15.&#160;Monitoring Incoming Mail">
+    <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">
       <span class="command">
         <strong>mailboxes</strong>
       </span>
     </a>so NeoMutt polls them for new mail. Each
-    <a class="link" href="configuration.html#folder-hook" title="8.&#160;Setting Variables Based Upon Mailbox">
+    <a class="link" href="configuration.html#folder-hook" title="9.&#160;Setting Variables Based Upon Mailbox">
       <span class="command">
         <strong>folder-hook</strong>
       </span>
     </a>triggers when one mailbox below each IMAP account is opened and sets
     <a class="link" href="reference.html#folder" title="3.100.&#160;folder">$folder</a> to the account's root folder. Next, it sets
-    <a class="link" href="reference.html#record" title="3.309.&#160;record">$record</a> to the
+    <a class="link" href="reference.html#record" title="3.311.&#160;record">$record</a> to the
     <span class="emphasis">
       <em>INBOX/Sent</em>
     </span>folder below the newly set
@@ -469,8 +469,8 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
     </span>value of
     <a class="link" href="reference.html#folder" title="3.100.&#160;folder">$folder</a> and therefore has to be set separately per account. Setting other values like
     <a class="link" href="reference.html#from" title="3.114.&#160;from">$from</a> or
-    <a class="link" href="reference.html#signature" title="3.357.&#160;signature">$signature</a> is analogous to setting
-    <a class="link" href="reference.html#record" title="3.309.&#160;record">$record</a>.</p>
+    <a class="link" href="reference.html#signature" title="3.359.&#160;signature">$signature</a> is analogous to setting
+    <a class="link" href="reference.html#record" title="3.311.&#160;record">$record</a>.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
