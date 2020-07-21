@@ -12,6 +12,7 @@ The Git hashes link to our GitHub repository.
 
 | Date       | Release Notes | Git Hash |
 | :--------- | :------------ | :------- |
+| 2020-06-26 | [2020-06-26](https://github.com/neomutt/neomutt/releases/tag/20200626) | [`43d9f5cc`](https://github.com/neomutt/neomutt/commit/43d9f5cc) |
 | 2020-06-19 | [2020-06-19](https://github.com/neomutt/neomutt/releases/tag/20200619) | [`9014e6d3`](https://github.com/neomutt/neomutt/commit/9014e6d3) |
 | 2020-05-01 | [2020-05-01](https://github.com/neomutt/neomutt/releases/tag/20200501) | [`b14dcf84`](https://github.com/neomutt/neomutt/commit/b14dcf84) |
 | 2020-04-24 | [2020-04-24](https://github.com/neomutt/neomutt/releases/tag/20200424) | [`9222c601`](https://github.com/neomutt/neomutt/commit/9222c601) |
@@ -79,6 +80,8 @@ The Git hashes link to our copy of upstream's repository.
 
 | Date       | Version      | Git Hash |
 | :--------- | :----------- | :------- |
+| 2020-07-11 | 1.14.6 | [`9bb7acf7`](https://github.com/neomutt/upstream-mutt/commit/9bb7acf7) |
+| 2020-06-23 | 1.14.5 | [`85ab28c9`](https://github.com/neomutt/upstream-mutt/commit/85ab28c9) |
 | 2020-06-18 | 1.14.4 | [`c94d2b00`](https://github.com/neomutt/upstream-mutt/commit/c94d2b00) |
 | 2020-06-14 | 1.14.3 | [`34e3a1a3`](https://github.com/neomutt/upstream-mutt/commit/34e3a1a3) |
 | 2020-05-25 | 1.14.2 | [`6feaec02`](https://github.com/neomutt/upstream-mutt/commit/6feaec02) |
