@@ -16,10 +16,13 @@ The [neomutt](https://github.com/neomutt/neomutt) repository has 6
 | Branch    | Description                                                                                                                                                                          |
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | master    | Main branch -- The Official NeoMutt                                                                                                                                                  |
-| travis    | Code sent to [TravisCI](https://travis-ci.org/neomutt/neomutt) for testing. Travis performs over twenty builds with different options.                                               |
+| coveralls | Extra files needs to generate test coverage, see [Coveralls](https://coveralls.io/github/neomutt/neomutt)                                                                            |
 | coverity  | Code sent to [Coverity](https://scan.coverity.com/projects/neomutt-neomutt) for testing. Coverity limits the weekly builds like Travis, so we have to do that in an external branch. |
 | doxygen   | Extra files needed to generate the [Doxygen Code Docs](/code/)                                                                                                                       |
+| fuzzer    | Fuzzing -- automating testing                                                                                                                                                        |
+| release   | Lots of build tests, performed before a release                                                                                                                                      |
 | translate | Work area for the translators.  This gets merged just before a release.                                                                                                              |
+| travis    | Code sent to [TravisCI](https://travis-ci.org/neomutt/neomutt) for testing. Travis performs over twenty builds with different options.                                               |
 | upstream  | Staging area for upstream commits                                                                                                                                                    |
 
 In addition, there may be some temporary branches.
@@ -28,4 +31,6 @@ In addition, there may be some temporary branches.
 | :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
 | devel/{NAME}   | New features are created in `devel` branches. When complete, documented and tested they are merged into the `master` branch. |
 | distro/{NAME}  | We keep reference copies of some of the downstream distros' NeoMutt code. **Note:** some of these repos are out-of-date.     |
+| flatcap/{NAME} | @flatcap's test branches -- not suitable for public use.                                                                     |
 | issue/{NUMBER} | When fixing a bug, sometimes we create an `issue` branch for the user to test.                                               |
+
