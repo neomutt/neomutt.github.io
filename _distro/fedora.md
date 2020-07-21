@@ -13,10 +13,10 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 26 or before | Unsupported, please upgrade |
-| 27           | Supported                   |
-| 28           | Supported                   |
-| 29           | Supported                   |
+| 29 or before | Unsupported, please upgrade |
+| 30           | Supported                   |
+| 31           | Supported                   |
+| 32           | Supported                   |
 | Rawhide      | Supported                   |
 
 The NeoMutt RPMs are published in a COPR. This is a public repository run by
