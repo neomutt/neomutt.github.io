@@ -35,7 +35,7 @@ title: Security Considerations
       </div>
     </div>
     <p>NeoMutt uses many temporary files for viewing messages, verifying digital signatures, etc. As long as being used, these files are visible by other users and maybe even readable in case of misconfiguration. Also, a different location for these files may be desired which can be changed via the
-    <a class="link" href="reference.html#tmpdir" title="3.430.&#160;tmpdir">$tmpdir</a> variable.</p>
+    <a class="link" href="reference.html#tmpdir" title="3.428.&#160;tmpdir">$tmpdir</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -58,7 +58,7 @@ title: Security Considerations
       <p>Message-Id: headers contain a local part that is to be created in a unique fashion. In order to do so, NeoMutt will
       <span class="quote">“
       <span class="quote">leak</span>”</span> some information to the outside world when sending messages: the generation of this header includes a step counter which is increased (and rotated) with every message sent. Other parts include the date, time, PID of NeoMutt, and
-      <a class="link" href="reference.html#hostname" title="3.138.&#160;hostname">$hostname</a>. In a longer running NeoMutt session, others can make assumptions about your mailing habits depending on the number of messages sent. If this is not desired, the header can be manually provided using
+      <a class="link" href="reference.html#hostname" title="3.136.&#160;hostname">$hostname</a>. In a longer running NeoMutt session, others can make assumptions about your mailing habits depending on the number of messages sent. If this is not desired, the header can be manually provided using
       <a class="link" href="reference.html#edit-headers" title="3.87.&#160;edit_headers">$edit_headers</a>(though not recommended).</p>
     </div>
     <div class="sect2">
