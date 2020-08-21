@@ -50,4 +50,10 @@ clang-format -i source.c
 
 - As part of the release process, clang-format is run on all the 'c' source.
 - The header files are tidied by hand to preserve the whitespace layout.
+- Some small parts of the code are protected from change with these comment blocks
 
+```c
+// clang-format off
+code here will not be formatted
+// clang-format on
+```
