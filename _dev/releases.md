@@ -12,6 +12,7 @@ The Git hashes link to our GitHub repository.
 
 | Date       | Release Notes | Git Hash |
 | :--------- | :------------ | :------- |
+| 2020-08-21 | [2020-08-21](https://github.com/neomutt/neomutt/releases/tag/20200821) | [`0b8bfbd5`](https://github.com/neomutt/neomutt/commit/0b8bfbd5) |
 | 2020-08-14 | [2020-08-14](https://github.com/neomutt/neomutt/releases/tag/20200814) | [`731a2000`](https://github.com/neomutt/neomutt/commit/731a2000) |
 | 2020-08-07 | [2020-08-07](https://github.com/neomutt/neomutt/releases/tag/20200807) | [`7e6700fd`](https://github.com/neomutt/neomutt/commit/7e6700fd) |
 | 2020-06-26 | [2020-06-26](https://github.com/neomutt/neomutt/releases/tag/20200626) | [`43d9f5cc`](https://github.com/neomutt/neomutt/commit/43d9f5cc) |
