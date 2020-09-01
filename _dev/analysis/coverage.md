@@ -21,6 +21,17 @@ program.
 First the program needs to be compiled and linked with some extra options.
 This will generate a `.gcno` coverage files for each object.
 
+For NeoMutt, simply add an option to configure, then build as normal.
+The results will be in `lcov/index.html`
+
+```sh
+./configure --coverage
+make
+make coverage
+```
+
+For other projects, add these to your Makefile:
+
 ```makefile
 CFLAGS  += -fprofile-arcs -ftest-coverage
 LDFLAGS += -fprofile-arcs -ftest-coverage
@@ -46,8 +57,7 @@ export COVERALLS_REPO_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 coveralls -e mutt -e test -e dump -e main.c -e config/dump.c
 ```
 
-Currently, the only part of NeoMutt that has a coverage report is the new
-config code:
+NeoMutt has coverage of several libraries: address, compress, config, core, email, mutt, store.
 
 - Source code: [https://github.com/neomutt/test-config](https://github.com/neomutt/test-config)
 - Report: [https://coveralls.io/github/neomutt/neomutt](https://coveralls.io/github/neomutt/neomutt)
