@@ -23,5 +23,5 @@ This is slightly useful on its own, but it can be used as the basis for:
 cproto -D USE_SIDEBAR=1 -I .  -s source.c
 ```
 
-- **See also**: [ctags](ctags.html)
+- **See also**: [ctags](ctags)
 

@@ -42,5 +42,5 @@ ctags -R -x --c-kinds=gsu . > structs.txt
 ctags -R -x --c-kinds=v   . > variables.txt
 ```
 
-- **See also**: [cproto](cproto.html)
+- **See also**: [cproto](cproto)
 

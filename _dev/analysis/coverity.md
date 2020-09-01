@@ -34,6 +34,6 @@ For security, the details of the defects are not made public.  If you wish to
 see the details, you must create an account (or login with GitHub) and click
 "Add me to project".
 
-- **See also**: [travis](travis.html)
-- **See also**: [scan-build](scan-build.html)
+- **See also**: [travis](travis)
+- **See also**: [scan-build](scan-build)
 

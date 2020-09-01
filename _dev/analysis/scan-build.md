@@ -30,5 +30,5 @@ It's very simple to run:
 scan-build make
 ```
 
-- **See also**: [coverity](coverity.html)
+- **See also**: [coverity](coverity)
 

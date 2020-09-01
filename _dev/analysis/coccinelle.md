@@ -73,5 +73,5 @@ Here are more examples that have been used on NeoMutt:
 
 - [https://github.com/neomutt/coccinelle](https://github.com/neomutt/coccinelle)
 
-- **See also**: [clang-format](clang-format.html)
+- **See also**: [clang-format](clang-format)
 
