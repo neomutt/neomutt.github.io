@@ -273,7 +273,7 @@ The new NeoMutt documentation:
 | File                                                                                                           | Description                          |
 | :------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
 | [README.md](https://github.com/neomutt/neomutt/blob/master/README.md)                                          | An Introduction to NeoMutt           |
-| [CONTRIBUTING.md](https://github.com/neomutt/neomutt/blob/master/CONTRIBUTING.md)                              | How to start contributing to NeoMutt |
+| [Development Newbie Tutorial](/dev/newbie-tutorial)                          | How to start contributing to NeoMutt |
 | [bug-report.md](https://github.com/neomutt/neomutt/blob/master/.github/ISSUE_TEMPLATE/bug-report.md)           | How to write a perfect bug report    |
 | [feature-request.md](https://github.com/neomutt/neomutt/blob/master/.github/ISSUE_TEMPLATE/feature-request.md) | w to write a perfect feature request |
 | [question.md](https://github.com/neomutt/neomutt/blob/master/.github/ISSUE_TEMPLATE/question.md)               | How to ask a perfect question        |
