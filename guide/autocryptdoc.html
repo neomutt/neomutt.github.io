@@ -36,9 +36,9 @@ title: Autocrypt
     <code class="literal">--with-idn</code> or
     <code class="literal">--with-idn2</code> so that Autocrypt can properly deal with international domain names.</p>
     <p>While NeoMutt uses GPGME for Autocrypt, normal keyring operations can still be performed via classic mode (i.e. with
-    <a class="link" href="reference.html#crypt-use-gpgme" title="3.73.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
+    <a class="link" href="reference.html#crypt-use-gpgme" title="3.74.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
     <code class="literal">loopback pinentry</code> mode, and that
-    <a class="link" href="reference.html#pgp-use-gpg-agent" title="3.270.&#160;pgp_use_gpg_agent">$pgp_use_gpg_agent</a> remain set (the default).</p>
+    <a class="link" href="reference.html#pgp-use-gpg-agent" title="3.273.&#160;pgp_use_gpg_agent">$pgp_use_gpg_agent</a> remain set (the default).</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -60,7 +60,7 @@ title: Autocrypt
     <code class="literal">Autocrypt:</code>headers. Compared to standard
     <span class="quote">“
     <span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
-    <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.63.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
+    <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.64.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
     <p>The
     <a class="link" href="reference.html#autocrypt-dir" title="3.31.&#160;autocrypt_dir">$autocrypt_dir</a> variable is not designed to be changed while NeoMutt is running. The database is created (if necessary) and connected to during startup. Changing the variable can result in a situation where NeoMutt is looking in one place for the database and a different place for the GPG keyring, resulting in strange behavior.</p>
     <p>Once the directory, keyring, and database are created, NeoMutt will ask whether you would like to create an account. In order to use Autocrypt, each sending address needs an account. As a convenience you can create an account during the first run. If you would like to add additional accounts later, this can be done via the
@@ -73,7 +73,7 @@ title: Autocrypt
     </span>sender and receiver have set
     <span class="quote">“<span class="quote">prefer encryption</span>”</span>. Otherwise, you will need to manually enable autocrypt encryption in the compose menu. For more details, see the compose menu section below.</p>
     <p>After optionally creating an account, NeoMutt will prompt you to scan mailboxes for Autocrypt headers. This step occurs because header cached messages are not re-scanned for Autocrypt headers. Scanning during this step will temporarily disable the header cache while opening each mailbox. If you wish to do this manually later, you can simulate the same thing by unsetting
-    <a class="link" href="reference.html#header-cache" title="3.120.&#160;header_cache">$header_cache</a> and opening a mailbox.</p>
+    <a class="link" href="reference.html#header-cache" title="3.121.&#160;header_cache">$header_cache</a> and opening a mailbox.</p>
     <p>A final technical note: the first run process takes place between reading the muttrc and opening the initial mailbox. Some muttrc files will
     <a class="link" href="configuration.html#push" title="23.&#160;Adding Key Sequences to the Keyboard Buffer">push</a> macros to be run after opening the mailbox. To prevent this from interfering with the first run prompts, NeoMutt disables all macros during the first run.</p>
   </div>
@@ -145,15 +145,15 @@ title: Autocrypt
     <span class="emphasis">
       <em>set</em>
     </span>, autocrypt mode will be forced on, overriding the settings
-    <a class="link" href="reference.html#crypt-autosign" title="3.59.&#160;crypt_autosign">$crypt_autosign</a>,
-    <a class="link" href="reference.html#crypt-autoencrypt" title="3.57.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
-    <a class="link" href="reference.html#crypt-replyencrypt" title="3.69.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
-    <a class="link" href="reference.html#crypt-replysign" title="3.70.&#160;crypt_replysign">$crypt_replysign</a>,
-    <a class="link" href="reference.html#crypt-replysignencrypted" title="3.71.&#160;crypt_replysignencrypted">$crypt_replysignencrypted</a>, and
-    <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.63.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a>.</p>
+    <a class="link" href="reference.html#crypt-autosign" title="3.60.&#160;crypt_autosign">$crypt_autosign</a>,
+    <a class="link" href="reference.html#crypt-autoencrypt" title="3.58.&#160;crypt_autoencrypt">$crypt_autoencrypt</a>,
+    <a class="link" href="reference.html#crypt-replyencrypt" title="3.70.&#160;crypt_replyencrypt">$crypt_replyencrypt</a>,
+    <a class="link" href="reference.html#crypt-replysign" title="3.71.&#160;crypt_replysign">$crypt_replysign</a>,
+    <a class="link" href="reference.html#crypt-replysignencrypted" title="3.72.&#160;crypt_replysignencrypted">$crypt_replysignencrypted</a>, and
+    <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.64.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a>.</p>
     <p>When postponing a message, autocrypt will respect
-    <a class="link" href="reference.html#postpone-encrypt" title="3.290.&#160;postpone_encrypt">$postpone_encrypt</a>, but will use the autocrypt account key to encrypt the message. Be sure to set
-    <a class="link" href="reference.html#postpone-encrypt" title="3.290.&#160;postpone_encrypt">$postpone_encrypt</a> to ensure postponed messages marked for autocrypt encryption are encrypted.</p>
+    <a class="link" href="reference.html#postpone-encrypt" title="3.293.&#160;postpone_encrypt">$postpone_encrypt</a>, but will use the autocrypt account key to encrypt the message. Be sure to set
+    <a class="link" href="reference.html#postpone-encrypt" title="3.293.&#160;postpone_encrypt">$postpone_encrypt</a> to ensure postponed messages marked for autocrypt encryption are encrypted.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -213,7 +213,7 @@ title: Autocrypt
         </li>
         <li class="listitem">
           <p>When NeoMutt creates an account from a GPG key, it exports the public key, base64 encodes it, and stores that value in the sqlite3 database. The value is then used in the Autocrypt header added to outgoing emails. The ECC keys NeoMutt creates don't change, but if you use external keys that expire, when you resign to extend the expiration you will need to recreate the Autocrypt account using the
-          <a class="link" href="#acctmgmt" title="4.&#160;Account Management">account menu</a>. Otherwise the Autocrypt header will contain the old expired exported keydata.</p>
+          <a class="link" href="#autocryptdoc-acctmgmt" title="4.&#160;Account Management">account menu</a>. Otherwise the Autocrypt header will contain the old expired exported keydata.</p>
         </li>
       </ul>
     </div>
