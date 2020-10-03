@@ -28,11 +28,18 @@ To build NeoMutt with the Address Sanitizer, you need to add a option to the com
 The simplest way is to:
 
 ```sh
-export EXTRA_CFLAGS="-fsanitize=address"
-export EXTRA_LDFLAGS="-fsanitize=address"
+./configure --asan [OPTIONS]
+make
 ```
 
-Then, `./configure` and `make` as normal.
+Alternatively, you can specify additional build flags:
+
+```sh
+export EXTRA_CFLAGS="-fsanitize=address"
+export EXTRA_LDFLAGS="-fsanitize=address"
+./configure [OPTIONS]
+make
+```
 
 ## Address Sanitizer Options
 
