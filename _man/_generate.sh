@@ -46,7 +46,6 @@ for FILE in *.html; do
 	echo -e "\\t$FILE"
 	(
 		echo "---"
-		echo "layout: concertina"
 		echo "command: $COMMAND"
 		echo "description: $DESC"
 		echo "---"

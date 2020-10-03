@@ -68,7 +68,7 @@ defaults:
     scope:
       path: ""
     values:
-      layout: "concertina"
+      layout: "default"
   -
     scope:
       path: "_posts"

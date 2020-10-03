@@ -10,7 +10,6 @@ FILE="$1"
 [ -f "$FILE" ] || exit 1
 
 echo "---"
-echo "layout: concertina"
 echo "title: "
 echo "description: "
 echo "short: "
