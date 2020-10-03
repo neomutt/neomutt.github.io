@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Gentoo
 icon: gentoo.png
 homepage: https://packages.gentoo.org/packages/mail-client/neomutt

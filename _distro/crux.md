@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: CRUX
 icon: crux.png
 homepage: https://crux.nu/portdb/?a=search&q=neomutt

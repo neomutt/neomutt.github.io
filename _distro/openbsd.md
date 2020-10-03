@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: OpenBSD
 icon: openbsd.png
 homepage: https://www.openbsd.org/

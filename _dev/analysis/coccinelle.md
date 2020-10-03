@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Coccinelle
 description: Source code manipulation
 author: flatcap

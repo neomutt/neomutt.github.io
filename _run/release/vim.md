@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Vim Syntax
 description: Update the Vim syntax highlighting
 author: Richard Russon

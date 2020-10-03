@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Ctags
 description: Source tags generator
 author: flatcap

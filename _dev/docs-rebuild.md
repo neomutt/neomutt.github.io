@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Docs Rebuild
 description: (Re-)Building the Documentation
 status: wip

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Releases
 description: Releases of NeoMutt and Mutt
 ---

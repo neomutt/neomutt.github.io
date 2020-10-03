@@ -45,7 +45,6 @@ exclude:
   # http://jekyllrb.com/docs/continuous-integration/#configuring-your-travis-builds
   - [vendor]
 
-
 collections:
   contrib:
     output: true
@@ -63,6 +62,18 @@ collections:
     output: true
   run:
     output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "concertina"
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "post"
 
 plugins:
   - jekyll-sitemap
@@ -84,3 +95,4 @@ algolia:
       - h6
       - unordered(text)
       - unordered(tags)
+

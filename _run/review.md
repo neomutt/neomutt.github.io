@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Reviewing Issues
 description: When feedback is needed
 status: wip

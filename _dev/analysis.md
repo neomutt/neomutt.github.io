@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Analysis
 description: Ways to Analyze NeoMutt's code
 ---

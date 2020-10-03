@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Issue Labels
 description: Labelling of GitHub issues
 ---

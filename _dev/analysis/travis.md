@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Travis
 description: Continuous Integration
 author: flatcap

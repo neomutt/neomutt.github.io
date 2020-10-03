@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Include-What-You-Use
 description: Header file checker
 author: flatcap

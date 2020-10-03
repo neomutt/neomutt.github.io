@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Vim Syntax
 description: Vim Syntax File
 author: Richard Russon

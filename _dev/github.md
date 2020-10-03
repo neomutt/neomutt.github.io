@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: GitHub
 description: How the Project uses GitHub
 author: flatcap

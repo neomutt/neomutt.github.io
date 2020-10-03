@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: 'IRC &ndash; #neomutt'
 description: How to run an IRC channel
 author: Richard Russon

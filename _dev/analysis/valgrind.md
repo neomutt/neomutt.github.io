@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Valgrind
 description: Run time memory checker
 author: flatcap

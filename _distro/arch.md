@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Arch Linux
 icon: arch.png
 homepage: https://www.archlinux.org/packages/community/x86_64/neomutt/

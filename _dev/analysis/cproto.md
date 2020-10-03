@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Cproto
 description: Function prototype generator
 author: flatcap

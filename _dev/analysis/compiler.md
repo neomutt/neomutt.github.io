@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Compiler
 description: Enable gcc/clang warnings
 author: flatcap

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Code Style
 description: The preferred style for code committed to NeoMutt
 status: wip

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Mailmap
 description: Update the Git Mailmap
 author: Richard Russon

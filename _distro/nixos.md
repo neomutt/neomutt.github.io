@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: NixOS Linux
 icon: nixos.png
 homepage: https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/mailreaders/neomutt/default.nix

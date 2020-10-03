@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Style Guide (Markdown)
 description: Some style and format suggestions for Markdown files
 author: Floyd Anderson
@@ -70,7 +69,6 @@ A short structure visualisation:
 
 ```reply
 ---
-layout: concertina
 remark: This is a so called YAML front matter (will be processed by Jekyll).
 status: wip
 ---

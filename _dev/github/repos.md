@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Repositories
 description: List of GitHub Repositories
 ---

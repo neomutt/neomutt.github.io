@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Debugging NeoMutt
 description: When things needs further investigation
 ---

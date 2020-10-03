@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: CppCheck
 description: Source code analyser
 author: flatcap

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Making NeoMutt
 description: How NeoMutt Assembles the Source
 ---

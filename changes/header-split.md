@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Split up of mutt.h
 ---
 

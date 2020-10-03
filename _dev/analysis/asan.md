@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Address Sanitizer
 description: Check for memory leaks, buffer overflows, etc
 author: flatcap

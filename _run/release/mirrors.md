@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Mirrors
 description: Sync our mirror repos
 author: Richard Russon

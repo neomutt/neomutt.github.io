@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Bug-Fix Week
 description: A Period of Stabilisation
 ---

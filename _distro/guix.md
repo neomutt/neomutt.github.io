@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: GNU Guix
 icon: guix.png
 homepage: https://www.gnu.org/software/guix/packages/N/

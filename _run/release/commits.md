@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Commits
 description: Make the Release commits branch
 author: Richard Russon

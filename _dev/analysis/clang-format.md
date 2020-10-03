@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Clang-Format
 description: Source code formatter
 author: flatcap

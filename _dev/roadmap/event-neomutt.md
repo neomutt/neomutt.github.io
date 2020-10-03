@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Event-Driven NeoMutt
 description: A scheme for an event-driven NeoMutt
 ---

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Notifications
 description: Let everyone know about the new release
 author: Richard Russon
@@ -66,7 +65,6 @@ Give it a YAML header:
 
 ```yaml
 ---    
-layout: post
 author: flatcap
 title: Release YYYY-MM-DD   
 ---

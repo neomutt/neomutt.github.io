@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Upstream
 description: Merge Upstream Changes
 author: Richard Russon

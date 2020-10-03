@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Translations
 description: Updating the translations
 author: Richard Russon

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Tagging
 description: Tagging the git repos
 author: Richard Russon

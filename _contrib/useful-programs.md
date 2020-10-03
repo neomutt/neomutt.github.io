@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Useful Programs
 description: List of useful programs interacting with Mutt
 author: Tobias Angele

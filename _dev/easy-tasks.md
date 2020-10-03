@@ -1,5 +1,4 @@
 ---
-layout: concertina
 Title: Easy Tasks
 description: A Great Way to get started in Open Source
 ---

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Deployment using Travis
 description: Update the website when certain builds succeed
 ---

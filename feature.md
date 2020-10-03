@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Features
 ---
 

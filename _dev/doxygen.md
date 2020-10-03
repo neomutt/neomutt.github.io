@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Doxygen Comments
 description: Formatted Comment Blocks
 status: wip

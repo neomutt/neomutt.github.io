@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Management
 description: Guide to running the project
 ---

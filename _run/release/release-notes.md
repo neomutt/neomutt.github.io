@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Release Notes
 description: Generating the Release Notes
 author: Richard Russon

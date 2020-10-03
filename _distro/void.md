@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Void Linux
 package: xbps
 icon: void.png

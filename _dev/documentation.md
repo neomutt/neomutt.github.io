@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Documentation
 description: Description of NeoMutt's documentation process
 ---

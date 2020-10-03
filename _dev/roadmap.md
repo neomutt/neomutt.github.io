@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Roadmap
 description: The Future of NeoMutt
 author: flatcap

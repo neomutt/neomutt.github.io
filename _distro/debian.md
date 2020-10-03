@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Debian
 icon: debian.png
 homepage: https://packages.debian.org/testing/mail/neomutt

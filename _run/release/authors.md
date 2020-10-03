@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Authors
 description: Give credit to everyone who's contributed
 author: Richard Russon

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Colorschemes
 description: Some colorschemes for NeoMutt
 author: Freed-Wu

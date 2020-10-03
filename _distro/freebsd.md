@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: FreeBSD
 icon: freebsd.png
 homepage: https://www.freebsd.org/cgi/ports.cgi?query=neomutt

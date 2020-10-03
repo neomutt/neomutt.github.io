@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Coverage
 description: Code coverage testing
 author: flatcap

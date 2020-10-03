@@ -1,5 +1,4 @@
 ---
-layout: concertina
 Title: Closed / Stalled Discussions
 description: Closed and stalled discussions on GitHub
 status: wip

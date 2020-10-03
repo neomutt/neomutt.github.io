@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Translating Strings
 description: How to Translate Strings
 ---

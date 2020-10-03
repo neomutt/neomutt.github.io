@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: openSUSE
 package: rpm
 icon: suse.png

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Newbie Tutorial
 description: Things every Newbie Should Know
 ---

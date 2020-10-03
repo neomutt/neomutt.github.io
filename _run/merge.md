@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Branch Merging
 description: When to merge? When to squash?
 author: Richard Russon

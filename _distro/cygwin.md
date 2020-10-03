@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: cygwin
 icon: cygwin.png
 homepage: https://www.cygwin.com/

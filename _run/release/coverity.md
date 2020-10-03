@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Coverity
 description: Run static checks on the code
 author: Richard Russon

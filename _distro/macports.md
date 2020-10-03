@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: MacPorts
 icon: macports.png
 homepage: https://www.macports.org/ports.php?by=name&substr=neomutt

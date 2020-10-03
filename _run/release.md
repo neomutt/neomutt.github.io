@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Make a Release
 description: All the steps to make a NeoMutt release
 author: Richard Russon

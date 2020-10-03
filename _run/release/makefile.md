@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Makefiles
 description: Tidy the Makefiles
 author: Richard Russon

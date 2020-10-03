@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: CentOS / RHEL
 icon: centos.png
 homepage: https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/

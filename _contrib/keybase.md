@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Keybase
 description: Keybase Integration
 author: Joshua Jordi

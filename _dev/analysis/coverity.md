@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Coverity
 description: Source code analyser
 author: flatcap

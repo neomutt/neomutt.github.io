@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Fedora
 icon: fedora.png
 homepage: https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/

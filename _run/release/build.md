@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Build Testing
 description: Perform tests on the code
 author: Richard Russon

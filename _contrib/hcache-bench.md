@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Header Cache Benchmark
 description: Script to test the speed of the header cache
 author: Pietro Cerutti

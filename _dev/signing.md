@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Signing Code / Releases
 description: Be Sure You're Getting the Real Thing
 ---

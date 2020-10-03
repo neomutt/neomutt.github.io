@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Branch Names
 description: List of Branches in the NeoMutt Repo
 ---

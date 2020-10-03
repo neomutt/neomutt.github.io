@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Changes in NeoMutt
 ---
 

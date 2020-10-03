@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Autosetup Build System
 description: Configuring the build of NeoMutt
 ---

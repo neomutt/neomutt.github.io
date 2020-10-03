@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Web Guide
 description: Update the online NeoMutt Guide
 author: Richard Russon

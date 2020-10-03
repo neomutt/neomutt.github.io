@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Distros
 description: Update / Notify downstream Distros
 author: Richard Russon

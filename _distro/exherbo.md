@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Exherbo Linux
 icon: exherbo.png
 homepage: https://git.exherbo.org/summer/packages/mail-client/neomutt/index.html

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Support
 description: List of supported architectures / operating systems
 ---

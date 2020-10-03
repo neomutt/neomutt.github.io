@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Building NeoMutt
 description: How to build NeoMutt from the source code
 status: wip

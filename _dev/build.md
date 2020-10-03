@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Build
 description: Building NeoMutt
 author: flatcap

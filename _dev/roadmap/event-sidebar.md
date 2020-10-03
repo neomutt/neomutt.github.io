@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Event-Driven Sidebar
 description: A scheme for an event-driven Sidebar
 ---

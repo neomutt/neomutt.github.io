@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Obsolescence
 description: A list of old projects that can be forgotten
 ---

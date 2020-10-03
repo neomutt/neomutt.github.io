@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Hard Problems
 description: A list of problems we really need help for
 ---

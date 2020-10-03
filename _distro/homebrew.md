@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: Homebrew
 icon: homebrew.png
 homepage: https://brew.sh/

@@ -1,5 +1,4 @@
 ---
-layout: concertina
 distro: NetBSD
 icon: netbsd.png
 homepage: http://pkgsrc.se/mail/neomutt

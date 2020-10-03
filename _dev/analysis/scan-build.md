@@ -1,5 +1,4 @@
 ---
-layout: concertina
 title: Scan-Build
 description: Source code analyser
 author: flatcap
