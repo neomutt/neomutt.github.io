@@ -45,7 +45,7 @@ use [GitHub](https://github.com/neomutt), [IRC](#irc) and
 Channel: **#neomutt** on **irc.freenode.net**
 
 This is a good way to meet the developers if you want to say hello. Everyone's
-welcome. There are usually about 90&nbsp;people / lurkers in the channel.
+welcome. There are usually about 190&nbsp;people / lurkers in the channel.
 
 The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
@@ -57,7 +57,7 @@ If you don't have a IRC client, you can use FreeNode's
 
 NeoMutt has two moderated mailing lists: Users, Devel.
 
-**NeoMutt Users** <small>(\>100 people)</small>
+**NeoMutt Users** <small>(~200 people)</small>
 
 - [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
 - [Archives](http://mailman.neomutt.org/pipermail/neomutt-users-neomutt.org/)
@@ -75,7 +75,7 @@ All non-technical NeoMutt discussions are welcome here.
 When asking for help, remember that we're volunteers. (and please check Google
 first :-)
 
-**NeoMutt Developers** <small>(~60 people)</small>
+**NeoMutt Developers** <small>(~100 people)</small>
 
 - [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
 - [Archives](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/)
