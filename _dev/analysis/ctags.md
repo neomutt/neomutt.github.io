@@ -29,7 +29,7 @@ Unfortunately, that will include some source that isn't useful.
 Using `find` can help exclude some files and directories:
 
 ```sh
-find . -name '*.[ch]' ! -path './autosetup/*' ! -path './test/*' ! -path './doc/*' ! -path './pgp*.c' | cut -b3- | xargs ctags
+find . -name '*.[ch]' ! -path './autosetup/*' ! -path './test/*' ! -path './docs/*' ! -path './pgp*.c' | cut -b3- | xargs ctags
 ```
 
 `ctags` can also extract certain types of information.

@@ -49,7 +49,7 @@ generate the manual.
 
 [opcodes.h](https://github.com/neomutt/neomutt/blob/master/opcodes.h)
 are processed by a perl script:
-[gen-map-doc](https://github.com/neomutt/neomutt/blob/master/doc/gen-map-doc)
+[gen-map-doc](https://github.com/neomutt/neomutt/blob/master/docs/gen-map-doc)
 
 | Function ID            | Description                               |
 | :--------------------- | :---------------------------------------- |
@@ -61,7 +61,7 @@ are processed by a perl script:
 
 [functions.h](https://github.com/neomutt/neomutt/blob/master/functions.h)
 is processed by a perl script:
-[gen-map-doc](https://github.com/neomutt/neomutt/blob/master/doc/gen-map-doc)
+[gen-map-doc](https://github.com/neomutt/neomutt/blob/master/docs/gen-map-doc)
 
 | function name  | function ID   | default key |
 | :------------- | :------------ | :---------- |
@@ -73,7 +73,7 @@ is processed by a perl script:
 
 [init.h](https://github.com/neomutt/neomutt/blob/master/init.h)
 is processed by a program:
-[makedoc](https://github.com/neomutt/neomutt/blob/master/doc/makedoc.c)
+[makedoc](https://github.com/neomutt/neomutt/blob/master/docs/makedoc.c)
 It reads the variable, its type and default value. It also processed the
 description which is written in NROFF (man) format.
 
@@ -89,8 +89,8 @@ description which is written in NROFF (man) format.
 
 ### Some assembly required
 
-Finally we can build `manual.xml`. Take `doc/manual.xml.head` add the
-functions, commands and variables, then add `doc/manual.xml.tail`
+Finally we can build `manual.xml`. Take `docs/manual.xml.head` add the
+functions, commands and variables, then add `docs/manual.xml.tail`
 
 `manual.xml` is now complete and valid DocBook.
 

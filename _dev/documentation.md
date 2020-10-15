@@ -11,8 +11,8 @@ description: Description of NeoMutt's documentation process
 Please document your changes. Note that there are several places where you may
 have to add documentation:
 
-- doc/manual.xml.{head,tail} contain The Manual.
-- doc/muttrc.man.{head,tail} contain an abridged version of The Manual in nroff
+- docs/manual.xml.{head,tail} contain The Manual.
+- docs/muttrc.man.{head,tail} contain an abridged version of The Manual in nroff
   format (see man(7)), which deals with configuration file commands.
 - UPDATING includes short documentation of user-visible changes, i.e., any
   incompatibilities should go here.

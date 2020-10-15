@@ -4,7 +4,7 @@ SRC=${1:-~/neomutt}
 
 [ -d "$SRC" ] || exit 1
 
-for i in "$SRC/doc/"*.man "$SRC/doc/"*.[15]; do
+for i in "$SRC/docs/"*.man "$SRC/docs/"*.[15]; do
 	MAN="${i##*/}"
 	MAN="${MAN%.*}.man"
 	cp "$i" "$MAN"
@@ -14,9 +14,9 @@ for i in *.man; do
 	doclifter "$i"
 done
 
-cp "$SRC/doc/chunk.xsl" .
-cp "$SRC/doc/neomutt.xsl" .
-cp "$SRC/doc/neomutt.css" .
+cp "$SRC/docs/chunk.xsl" .
+cp "$SRC/docs/neomutt.xsl" .
+cp "$SRC/docs/neomutt.css" .
 
 for i in *.man.xml; do
 	xsltproc --param root.filename "$i.html" --nonet chunk.xsl "$i"

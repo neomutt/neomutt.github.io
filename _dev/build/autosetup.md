@@ -102,7 +102,7 @@ NeoMutt's build system to Autosetup.
 ### Non-recursive Makefiles
 
 The build system is driven by the top-level Makefile, which includes additional
-Makefiles from the subdirectories `doc`, `contrib`, and `po`. I'll stress that
+Makefiles from the subdirectories `docs`, `contrib`, and `po`. I'll stress that
 these Makefiles are included by the main Makefile and *not* invoked recursively
 (google for "recursive make considered harmful"). The build system relies on
 the fact that each of the sub-makefiles defines its own targets, conventionally

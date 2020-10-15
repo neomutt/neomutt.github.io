@@ -117,7 +117,7 @@ e.g.  `./configure --notmuch --with-notmuch=/usr/local/lib/notmuch`
 
 ## Build
 
-Targets: **neomutt**, **doc**, ...
+Targets: **neomutt**, **test**, ...
 
 The build can be adjusted by setting any of six environment variables:
 

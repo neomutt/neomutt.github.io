@@ -14,7 +14,7 @@ The build machinery contains quite a few lists, e.g. files to be compiled.
 
 - `auto.def`
 - `contrib/Makefile.autosetup`
-- `doc/Makefile.autosetup`
+- `docs/Makefile.autosetup`
 - `Makefile.autosetup`
 - `po/Makefile.autosetup`
 - `test/Makefile.autosetup`

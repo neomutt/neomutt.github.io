@@ -91,7 +91,7 @@ Tests:
   - make distcheck
   - make install
   - make unintall
-  - make -C doc validate
+  - make validate-docs
   - make -C po
 - neomutt-test-configs.sh
 - push to travis

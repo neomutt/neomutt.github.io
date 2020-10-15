@@ -46,7 +46,7 @@ As patches, you can perform search/replace to NeoMutt-ify them.
 - Apply patch: `git am PATCH`
 
 After each patch applied, run `clang-format` on the code to tidy it up.
-If the patch changes the docs, run `make validate-doc` to check them.
+If the patch changes the docs, run `make validate-docs` to check them.
 
 ## Merge
 

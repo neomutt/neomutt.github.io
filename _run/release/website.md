@@ -26,17 +26,17 @@ Before starting, check the docs:
 
 - Check indent (visually)
 - Check the spelling
-  `codespell doc/manual.xml`
+  `codespell docs/manual.xml`
 - Validate the docs
   - `./configure --full-doc`
-  - `make validate-doc`
+  - `make validate-docs`
 
 Now,
 
 - Save the version number for later:
   `neomutt -v | head -n1`
 - Copy the DocBook manual:
-  `cp doc/manual.xml ../docbook`
+  `cp docs/manual.xml ../docbook`
 
 ## Generate HTML
 
