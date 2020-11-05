@@ -8,7 +8,7 @@ maintainer: Antonio Radici, Faidon Liambotis
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
 
-Maintainers: [Antonio Radici, Faidon Liambotis](email:pkg-mutt-maintainers@lists.alioth.debian.org)
+Maintainers: [Antonio Radici, Faidon Liambotis](mailto:pkg-mutt-maintainers@lists.alioth.debian.org)
 
 ## Support <a id="support"></a>
 

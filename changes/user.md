@@ -17,7 +17,7 @@ NeoMutt wants to remain compatible with Mutt, but it also wants to improve the
 user's experience.  To achieve this, NeoMutt has added many features to Mutt and
 removed very little.
 
-NeoMutt is focusing on supporting [modern architectures / OSs](/dev/architectures).
+NeoMutt is focusing on supporting modern architectures / OSs.
 These platforms are not supported:
 
 - AIX

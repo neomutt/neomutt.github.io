@@ -90,4 +90,4 @@ Build and install the new package which contains
 makepkg -si
 ```
 
-Now you can follow the [guide for debugging NeoMutt](/dev/debug).
+Now you can follow the [guide for debugging NeoMutt](/dev/build/debug).
