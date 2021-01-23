@@ -1809,7 +1809,10 @@ Limit to messages matching: ~d &lt;1m
     </div>
     <p>Sometimes it is desirable to perform an operation on a group of messages all at once rather than one at a time. An example might be to save messages to a mailing list to a separate folder, or to delete all messages with a given subject. To tag all messages matching a pattern, use the
     <code class="literal">&lt;tag-pattern&gt;</code>function, which is bound to
-    <span class="quote">“<span class="quote">shift-T</span>”</span> by default. Or you can select individual messages by hand using the
+    <span class="quote">“<span class="quote">shift-T</span>”</span> by default. Patterns are completable in the editor menu. Invoke the
+    <code class="literal">&lt;complete&gt;</code>function (by default bound to
+    <span class="quote">“<span class="quote">Tab</span>”</span>) after typing
+    <span class="quote">“<span class="quote">~</span>”</span> to get a selectable list. Or you can select individual messages by hand using the
     <code class="literal">&lt;tag-message&gt;</code>function, which is bound to
     <span class="quote">“<span class="quote">t</span>”</span> by default. See
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> for NeoMutt's pattern matching syntax.</p>
@@ -2161,12 +2164,9 @@ folder-hook '\@imap.example.com' "set sort=threads"
       </div>
     </div>
     <p>You can alter the environment that NeoMutt passes on to its child processes using the
-    <span class="quote">“
-    <span class="quote">setenv</span>”</span> and
-    <span class="quote">“
-    <span class="quote">unsetenv</span>”</span> operators. (N.B. These follow NeoMutt-style syntax, not shell-style!) You can also query current environment values by prefixing a
-    <span class="quote">“
-    <span class="quote">?</span>”</span> character.</p>
+    <span class="quote">“<span class="quote">setenv</span>”</span> and
+    <span class="quote">“<span class="quote">unsetenv</span>”</span> operators. (N.B. These follow NeoMutt-style syntax, not shell-style!) You can also query current environment values by prefixing a
+    <span class="quote">“<span class="quote">?</span>”</span> character.</p>
     <pre class="screen">
 setenv TERM vt100
 setenv ORGANIZATION "The NeoMutt Development Team"

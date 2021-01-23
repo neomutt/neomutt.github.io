@@ -10959,26 +10959,21 @@ set sort_aux=last-date-received
         <p>Type:&#160;boolean
         <br />Default:&#160;yes</p>
       </div>
-      <p>This variable is only useful when sorting by mailboxes in sidebar. By default, entries are unsorted. Valid values:</p>
-      <div class="itemizedlist">
-        <ul class="itemizedlist" style="list-style-type: disc;">
-          <li class="listitem">
-            <p>count (all message count)</p>
-          </li>
-          <li class="listitem">
-            <p>desc (virtual mailbox description)</p>
-          </li>
-          <li class="listitem">
-            <p>new (new message count)</p>
-          </li>
-          <li class="listitem">
-            <p>path</p>
-          </li>
-          <li class="listitem">
-            <p>unsorted</p>
-          </li>
-        </ul>
-      </div>
+      <p>This variable is only useful when sorting by threads with
+      <a class="link" href="#strict-threads" title="3.424.&#160;strict_threads">$strict_threads</a>
+      <span class="emphasis">
+        <em>unset</em>
+      </span>. In that case, it changes the heuristic mutt uses to thread messages by subject. With
+      <a class="link" href="#sort-re" title="3.402.&#160;sort_re">$sort_re</a>
+      <span class="emphasis">
+        <em>set</em>
+      </span>, mutt will only attach a message as the child of another message by subject if the subject of the child message starts with a substring matching the setting of
+      <a class="link" href="#reply-regex" title="3.317.&#160;reply_regex">$reply_regex</a>. With
+      <a class="link" href="#sort-re" title="3.402.&#160;sort_re">$sort_re</a>
+      <span class="emphasis">
+        <em>unset</em>
+      </span>, mutt will attach the message whether or not this is the case, as long as the non-
+      <a class="link" href="#reply-regex" title="3.317.&#160;reply_regex">$reply_regex</a> parts of both messages are identical.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11812,7 +11807,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <div class="literallayout">
         <p>Type:&#160;path
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">/tmp</code>
         </span>”</span></p>
       </div>
@@ -11833,7 +11829,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <div class="literallayout">
         <p>Type:&#160;character&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">&#160;+TCFLR</code>
         </span>”</span></p>
       </div>
@@ -12241,8 +12238,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;&#160;&#160;&#160;&#160;?%4m&#160;%f</code>
         </span>”</span></p>
       </div>
@@ -12281,8 +12277,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <div class="literallayout">
         <p>Type:&#160;command
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">vi</code>
         </span>”</span></p>
       </div>

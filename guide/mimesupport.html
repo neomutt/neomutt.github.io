@@ -1144,6 +1144,8 @@ attachments  +I text/plain
 <span class="comment"># course. These are off by default! The MIME elements contained</span>
 <span class="comment"># within a message/* or multipart/* are still examined, even if the</span>
 <span class="comment"># containers themselves don't qualify.</span>
+<span class="comment"># Recursion into multipart/alternatives containers is controlled by the</span>
+<span class="comment"># $count_alternatives setting.</span>
 
 <span class="comment">#attachments  +A message/.* multipart/.*</span>
 <span class="comment">#attachments  +I message/.* multipart/.*</span>
