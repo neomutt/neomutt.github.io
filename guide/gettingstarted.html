@@ -468,7 +468,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm46218632407408"></a>
+            <a id="idm46120666517152"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -593,7 +593,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm46218632370544"></a>
+            <a id="idm46120666480320"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -2418,12 +2418,11 @@ bind editor &lt;delete&gt; backspace
           </dd>
           <dt>
             <span class="term">
-            <code class="literal">&lt;toggle-quoted&gt;</code>(default: T)
-            <a id="toggle-quoted"></a></span>
+            <code class="literal">&lt;skip-headers&gt;</code>(default: H)
+            <a id="skip-headers"></a></span>
           </dt>
           <dd>
-            <p>The pager uses the
-            <a class="link" href="reference.html#quote-regex" title="3.308.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
+            <p>This function will skip past the headers of the current message.</p>
             <p>The variable
             <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.434.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
           </dd>
@@ -2453,6 +2452,15 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>This function will go to the next line of non-quoted text which comes after a line of quoted text in the internal pager.</p>
+          </dd>
+          <dt>
+            <span class="term">
+            <code class="literal">&lt;toggle-quoted&gt;</code>
+            <a id="toggle-quoted"></a>(default: T)</span>
+          </dt>
+          <dd>
+            <p>The pager uses the
+            <a class="link" href="reference.html#quote-regex" title="3.308.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
           </dd>
         </dl>
       </div>
