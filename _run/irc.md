@@ -115,3 +115,16 @@ Then set flags on a user:
 
 Where the filter is of the form: `nick!user@host` (with "\*" as a wildcard).
 
+**Mute non-registered users**
+
+Quieten (no voice) for all non-registered nicks:
+
+```
+/mode #neomutt +q $~a
+```
+
+Give voice to all non-registered nicks:
+
+```
+/mode #neomutt -q $~a
+```
