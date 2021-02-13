@@ -93,6 +93,10 @@ pre.screen, pre.highlight {
   color: #fff;
 }
 
+div.language-c {
+  width: 140%;
+}
+
 blockquote {
   font-size: 100%;
 }
@@ -231,17 +235,17 @@ td, th {
   border: 1px solid #666;
 }
 
-table.lang, table.lang th, table.lang td {
+.clean, .clean *, .lang, .lang * {
   border: none;
 }
 
-table.lang div {
+.lang div {
   float: left;
   padding-left: 0.5em;
   border: 1px solid black;
 }
 
-table.lang img {
+.lang img {
   border: 1px solid black;
   margin-right: 0.5em;
 }
@@ -326,4 +330,3 @@ span.donate {
   padding: 0 0.5em 0 0.5em;
   border-radius: 10px;
 }
-
