@@ -137,7 +137,7 @@ changed.
 - Convert the string to an integer
 - Check the range of the integer (we store our value in a short)
     - Is it less than `SHRT_MIN`?
-    - It is greater than `SHRT_MAX`?
+    - Is it greater than `SHRT_MAX`?
 
 **Validator**:
 
