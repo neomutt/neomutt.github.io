@@ -259,12 +259,12 @@ const struct Address  *c_envelope_from_address = cs_subset_address(sub, "envelop
 const bool             c_fast_reply            = cs_subset_bool   (sub, "fast_reply");
 const long             c_imap_fetch_chunk_size = cs_subset_long   (sub, "imap_fetch_chunk_size");
 const short            c_connect_timeout       = cs_subset_number (sub, "connect_timeout");
-const char const      *c_debug_file            = cs_subset_path   (sub, "debug_file");
+const char            *c_debug_file            = cs_subset_path   (sub, "debug_file");
 const enum QuadOption  c_fcc_attach            = cs_subset_quad   (sub, "fcc_attach");
 const struct Regex    *c_gecos_mask            = cs_subset_regex  (sub, "gecos_mask");
 const struct Slist    *c_hidden_tags           = cs_subset_slist  (sub, "hidden_tags");
 const short            c_pgp_sort_keys         = cs_subset_sort   (sub, "pgp_sort_keys");
-const char const      *c_pattern_format        = cs_subset_string (sub, "pattern_format");
+const char            *c_pattern_format        = cs_subset_string (sub, "pattern_format");
 ```
 
 Each variable is named to match the Config Variable and is **const** to discourage the coder from changing it (which would have no effect on the actual config).
