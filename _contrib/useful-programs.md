@@ -47,7 +47,7 @@ status: stable
   [vdirsyncer](https://github.com/untitaker/vdirsyncer).
 * [notmuch-abook](https://github.com/guyzmo/notmuch-abook) -- Notmuch address
   book manager for Vim
-* [goobook](https://pypi.python.org/pypi/goobook/1.9) -- search your Google
+* [goobook](https://pypi.python.org/pypi/goobook) -- search your Google
   Contacts from the command line or Mutt.
 * [abook](http://abook.sourceforge.net/) -- text-based address book program
 * [mutt-addressbook](https://pypi.python.org/pypi/mutt-addressbook) -- extend
@@ -193,4 +193,3 @@ The mailcap file is read by NeoMutt to determine how to display non-text files.
 *[TLS]: Transport Layer Security
 *[URL]: Uniform Resource Locator
 *[URLs]: Uniform Resource Locator
-
