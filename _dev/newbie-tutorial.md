@@ -42,7 +42,7 @@ use [GitHub](https://github.com/neomutt), [IRC](#irc) and
 
 ### IRC <a id="irc"></a>
 
-Channel: **#neomutt** on **irc.freenode.net**
+Channel: **#neomutt** on **irc.libera.chat**
 
 This is a good way to meet the developers if you want to say hello. Everyone's
 welcome. There are usually about 190&nbsp;people / lurkers in the channel.
@@ -50,8 +50,8 @@ welcome. There are usually about 190&nbsp;people / lurkers in the channel.
 The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
 
-If you don't have a IRC client, you can use FreeNode's
-[web client](https://webchat.freenode.net/?channels=neomutt).
+If you don't have a IRC client, you can use Kiwi's
+[web client](https://kiwiirc.com/nextclient/irc.libera.chat/#neomutt).
 
 ### Mailing lists <a id="mailing-lists"></a>
 

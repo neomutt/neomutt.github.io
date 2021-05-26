@@ -18,7 +18,6 @@ This is a list of all the Git repositories in the NeoMutt GitHub Project.
 | [aur-build](https://github.com/neomutt/aur-build)                   | Arch Linux User Repository for NeoMutt                                                                   |
 | [aur-docker](https://github.com/neomutt/aur-docker)                 | Docker image to test an AUR package build                                                                |
 | [autosetup](https://github.com/neomutt/autosetup)                   | A better, faster autoconf replacement                                                                    |
-| [botty](https://github.com/neomutt/botty)                           | IRC bot for #neomutt                                                                                     |
 | [coccinelle](https://github.com/neomutt/coccinelle)                 | Coccinelle Scripts                                                                                       |
 | [code](https://github.com/neomutt/code)                             | Doxygen docs auto-generated from the source code                                                         |
 | [completion-api](https://github.com/neomutt/completion-api)         | A new touch to the completion system of neomutt.                                                         |
@@ -34,11 +33,12 @@ This is a list of all the Git repositories in the NeoMutt GitHub Project.
 | [lua-samples](https://github.com/neomutt/lua-samples)               | Sample C code to interact with LUA Scripts                                                               |
 | [management](https://github.com/neomutt/management)                 | Automation scripts and notes                                                                             |
 | [muttrc-mode-el](https://github.com/neomutt/muttrc-mode-el)         | Emacs major mode for editing muttrc                                                                      |
+| [neo-bot](https://github.com/neomutt/neo-bot)                       | IRC bot for #neomutt                                                                                     |
 | [neomutt-contrib](https://github.com/neomutt/neomutt-contrib)       | User Contributions to NeoMutt                                                                            |
 | [neomutt-docs](https://github.com/neomutt/neomutt-docs)             | Documentation for Neomutt                                                                                |
 | [neomutt-old](https://github.com/neomutt/neomutt-old)               | Retired branches of NeoMutt                                                                              |
 | [neomutt-test-files](https://github.com/neomutt/neomutt-test-files) | Files and directories for NeoMutt's build test.                                                          |
-| [neomutt](https://github.com/neomutt/neomutt)                       | Teaching an Old Dog New Tricks -- IRC: #neomutt on irc.freenode.net                                      |
+| [neomutt](https://github.com/neomutt/neomutt)                       | Teaching an Old Dog New Tricks -- IRC: #neomutt on irc.libera.chat
 | [neomutt.github.io](https://github.com/neomutt/neomutt.github.io)   | NeoMutt web pages                                                                                        |
 | [neomutt.vim](https://github.com/neomutt/neomutt.vim)               | vim syntax for neomuttrc                                                                                 |
 | [panel-manager](https://github.com/neomutt/panel-manager)           | Mock-up of a panel manager for mutt                                                                      |

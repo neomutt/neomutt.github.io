@@ -137,7 +137,7 @@ Below is a list of areas we'd like to work on:
 
 You can contact the developers in several ways:
 
-- [IRC Channel](irc://irc.freenode.net/neomutt) - **#neomutt** on **irc.freenode.net**
+- [IRC Channel](irc://irc.libera.chat/neomutt) - **#neomutt** on **irc.libera.chat**
 
 - **User Mailing List** - [Email](mailto:neomutt-users@neomutt.org) or [Subscribe](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)  
   This list is suitable for beginners and non-technical discussion is welcomed.

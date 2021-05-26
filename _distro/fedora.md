@@ -88,7 +88,7 @@ Well done! You've just installed NeoMutt.
   [RSS feed](https://neomutt.org/feed.xml) or our mailing lists for
   [NeoMutt Users](http://mailman.neomutt.org/mailman/listinfo/neomutt-users-neomutt.org)
 - **Talk to the developers**: Join our IRC channel: #neomutt on
-  irc.freenode.net or the
+  irc.libera.chat or the
   [NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
   mailing list
 

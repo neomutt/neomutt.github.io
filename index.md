@@ -43,7 +43,7 @@ Oh, sorry to hear that. If you are a GitHub user, you can raise a
 [NeoMutt code issue](https://github.com/neomutt/neomutt/issues).
 
 Alternatively, you can join the NeoMutt IRC channel:
-[irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
+[irc://irc.libera.chat/neomutt](irc://irc.libera.chat/neomutt)
 (read about [some useful commands](/run/irc)), or contact the lead
 developer, Richard&nbsp;Russon&nbsp;[&lt;rich@flatcap.org&gt;](mailto:rich@flatcap.org)
 
@@ -96,7 +96,7 @@ Listen in to the developers, propose new features, offer help...
 
 [**Subscribe**](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
 
-## IRC - [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
+## IRC - [irc://irc.libera.chat/neomutt](irc://irc.libera.chat/neomutt)
 
 We now have a presence on IRC. To become familar with IRC
 [read about useful commands](/run/irc). Come, say hello! Please

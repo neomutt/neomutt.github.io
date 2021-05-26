@@ -9,7 +9,7 @@ author: Richard Russon
 {:.subtitle}
 {{ page.description }}
 
-Useful commands to help run our IRC channel [irc://irc.freenode.net/neomutt](irc://irc.freenode.net/neomutt)
+Useful commands to help run our IRC channel [irc://irc.libera.chat/neomutt](irc://irc.libera.chat/neomutt)
 
 ## Getting started
 
