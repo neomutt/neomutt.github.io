@@ -279,7 +279,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>string</td>
               <td>(empty)</td>
-              <td>&#160;</td>
+              <td>Must use format:
+              <code class="literal">notmuch://&lt;absolute path&gt;</code></td>
             </tr>
             <tr>
               <td>
@@ -357,6 +358,46 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>Unnecessary since
               <a class="link" href="/guide/reference.html#spoolfile" title="3.404.&#160;spoolfile">$spoolfile</a> supports mailbox descriptions.</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">nm_query_window_enable</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">no</code>
+              </td>
+              <td>Enables windowed notmuch queries for
+              <code class="literal">nm_query_window_duration = 0</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">nm_query_window_duration</code>
+              </td>
+              <td>number</td>
+              <td>
+                <code class="literal">0</code>
+              </td>
+              <td>Duration between start and end dates for windowed notmuch query. This corresponds to a bounded notmuch
+              <code class="literal">date:</code>query. See
+              <code class="literal">notmuch-search-terms</code> manual page for more info. Value of
+              <code class="literal">0</code> disables windowed queries unless
+              <code class="literal">nm_query_window_enable=yes</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">nm_query_window_timebase</code>
+              </td>
+              <td>string</td>
+              <td>
+                <code class="literal">week</code>
+              </td>
+              <td>Time base for windowed notmuch queries. Must be one of:
+              <code class="literal">hour</code>,
+              <code class="literal">day</code>,
+              <code class="literal">week</code>,
+              <code class="literal">month</code>, or
+              <code class="literal">year</code></td>
             </tr>
           </tbody>
         </table>
@@ -565,6 +606,8 @@ set virtual_spoolfile = no
 <span class="comment"># setup time window preferences</span>
 <span class="comment"># first setup the duration, and then the time unit of that duration</span>
 <span class="comment"># when set to 0 (the default) the search window feature is disabled</span>
+<span class="comment"># unless explicitly enabled with nm_query_window_enable.</span>
+set nm_query_window_enable=yes
 set nm_query_window_duration=2
 set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
 <span class="comment"># --------------------------------------------------------------------------</span>

@@ -1,0 +1,123 @@
+---
+title: Pager Read Delay
+description: Delay when the pager marks a previewed message as read
+since: 2021-06-17
+status: stable
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/pager-read-delay-feature"></a>Pager Read Delay Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Delay when the pager marks a previewed message as read</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2021-06-16</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“<span class="quote">Pager Read Delay</span>”</span> feature adds a new config variable to allow the pager to operate in a preview mode. A new message is not marked as read merely because the pager opened it, but only after the pager remains on the message for a given length of time.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-functions"></a>3.&#160;Functions</h2>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“<span class="quote">Pager Read Delay</span>”</span> feature adds no new functions NeoMutt. Existing pager functions for navigating to a different message now check whether to mark a message as read.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-variables"></a>4.&#160;Variables</h2>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“<span class="quote">Pager Read Delay</span>”</span> feature adds one new config variable,
+    <a class="link" href="/guide/reference.html#pager-read-delay" title="3.243.&#160;pager_read_delay">$pager_read_delay</a>, which is an integer for how many seconds the pager must remain on a given message before marking it as read. The variable defaults to 0 for the original behavior of marking a message as read the moment the pager visits it.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-neomuttrc"></a>5.&#160;neomuttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example NeoMutt config file for the pager-read-delay feature.</span>
+
+<span class="comment"># Stay at least 5 seconds on a message before
+the pager marks it as read</span>
+set pager_read_delay = 5
+
+<span class="comment"># vim: syntax=neomuttrc</span>
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-known-bugs"></a>6.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>When
+    <a class="link" href="/guide/reference.html#pager-index-lines" title="3.242.&#160;pager_index_lines">$pager_index_lines</a> is non-zero, the
+    <span class="quote">“<span class="quote">N</span>”</span> status indicator from the
+    <span class="quote">“<span class="quote">%Z</span>”</span> expando of
+    <a class="link" href="/guide/reference.html#index-format" title="3.171.&#160;index_format">$index_format</a> does not actively reflect the current new/read status of the message.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="pager-read-delay-credits"></a>7.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Eric Blake</p>
+  </div>
+</div>
+{% endraw %}
