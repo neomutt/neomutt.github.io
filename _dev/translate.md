@@ -184,3 +184,35 @@ command! -bar PoStats echo system("msgfmt --statistics -c -o /dev/null -", bufnr
 
 Finally a function to remove the `fuzzy` flag: [ftplugin/po.vim](https://github.com/mgedmin/dotvim/blob/master/ftplugin/po.vim)
 
+### Testing a Translation
+
+Developers can test a translation without installing it, with a small amount of setup.
+
+This example is for the German locale:
+- Locale: **`de_DE.utf-8`**
+- Translation file: **`po/de.po`**
+
+Setup:
+
+```sh
+# Clone the source
+cd
+git clone https://github.com/neomutt/neomutt neomutt
+# Edit translations
+# Build source
+
+# Link a message file into the source tree
+cd
+mkdir -p de_DE.utf-8/LC_MESSAGES
+cd de_DE.utf-8/LC_MESSAGES
+ln -s ~/neomutt/po/de.mo neomutt.mo
+
+# Run NeoMutt using the locale
+cd ~/neomutt
+export LANG=de_DE.utf-8
+export TEXTDOMAINDIR=$HOME
+./neomutt
+```
+
+When run, NeoMutt will use the environment variables `$LANG` and
+`$TEXTDOMAINDIR` to find the translation strings.
