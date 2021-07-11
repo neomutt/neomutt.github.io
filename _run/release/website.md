@@ -119,7 +119,7 @@ git push origin master
 
 ## Practice
 
-To demonstrate the process, I've commited all the steps in a recent update.
+To demonstrate the process, I've committed all the steps in a recent update.
 You can check your results as you work.
 
 Start in the `neomutt` repo at commit `b37a784d4`.

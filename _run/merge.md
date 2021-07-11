@@ -131,7 +131,7 @@ D---E---F---G-----------H master
 The topic branch has been merged into master with a "merge commit". The topic's
 history looks the same, but appears to have happened just now.
 
-This option makes the history look tidiers. Rather than having multiple topic
+This option makes the history look tidier. Rather than having multiple topic
 branches being created and merged at different times (all overlapping), they
 are separated out.
 

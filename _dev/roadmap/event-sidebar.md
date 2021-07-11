@@ -220,7 +220,7 @@ The goal is to make the Sidebar completely independent.
 Achieving this would mean that a developer could then create a new panel without
 having to change large amounts of core code.
 
-An independent panel would need to be able to dynamicaly define its own:
+An independent panel would need to be able to dynamically define its own:
 
 - **Config**: This is already possible
 - **Colours**: More work is required to encapsulate the colours

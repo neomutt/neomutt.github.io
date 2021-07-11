@@ -94,7 +94,7 @@ These are now readily available and have become build requirements.
 
 **General tidying**:
 
-- Code rearranged to avoid the need for forward delclarations
+- Code rearranged to avoid the need for forward declarations
 - Removed commented out blocks of code
 - Removed `#if 0` blocks of code
 - Removed `#ifdef CONFIG_H` -- it's required

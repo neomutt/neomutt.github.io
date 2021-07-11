@@ -53,7 +53,7 @@ make EXTRA_CFLAGS="-g -O0"
 ## Starting NeoMutt in a debugger <a id="debugger"></a>
 
 A good choice of debugger is `cgdb` (the curses front-end to `gdb`).
-Alternatively, you can use the the Text User Interface (TUI) of `gdb -tui`
+Alternatively, you can use the Text User Interface (TUI) of `gdb -tui`
 
 **Note**: When you run the debugger, it might suggest that you install development and debugging libraries.
 This is a good idea!

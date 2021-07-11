@@ -78,7 +78,7 @@ Allow the SSH key to write to one specific repo.
   * Tick: "Allow write access"
   * Click: "Add key"
 
-For extra secrity add branch protection.
+For extra security add branch protection.
 
 - **Open**: https://github.com/**USER**/**DST_REPO**/settings/branches
 - Protected branches
@@ -219,5 +219,5 @@ git push origin
 
 ## Result
 
-Every time a translater makes an update, the [leaderboard](https://neomutt.org/translate) is updated.
+Every time a translator makes an update, the [leaderboard](https://neomutt.org/translate) is updated.
 

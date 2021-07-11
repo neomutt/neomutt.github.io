@@ -166,7 +166,7 @@ Create index_format expandos to display just the tree and just the subject
 
 Command to (un)subscribe to/from mailing lists
 
-: **Raised by** @nobrowser on 2016-12-28 -- **Result**: non-trival, no interest
+: **Raised by** @nobrowser on 2016-12-28 -- **Result**: non-trivial, no interest
 
 ### [#265 influence which mail in a collapsed thread that is used to represent the thread][#265]
 

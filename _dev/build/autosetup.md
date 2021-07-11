@@ -142,7 +142,7 @@ the arguments `--gpgme --with-gpgme=/opt`.
 
 The second parameter, the `DESTDIR` make variable, is used for staged builds
 and is prepended to the final path. This allows to stage the whole installation
-into `./tmp` by simply using a make invokation like `make DESTDIR=./tmp
+into `./tmp` by simply using a make invocation like `make DESTDIR=./tmp
 install`.
 Staged builds are used by downstream packagers and allow to track the list of
 files installed by a package: it is easier to `find ./tmp -type f` than to

@@ -98,7 +98,7 @@ Listen in to the developers, propose new features, offer help...
 
 ## IRC - [irc://irc.libera.chat/neomutt](irc://irc.libera.chat/neomutt)
 
-We now have a presence on IRC. To become familar with IRC
+We now have a presence on IRC. To become familiar with IRC
 [read about useful commands](/run/irc). Come, say hello! Please
 note, that we're a small group. Therefore, answers might take some time.
 
