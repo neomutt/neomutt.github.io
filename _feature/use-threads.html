@@ -1,0 +1,219 @@
+---
+title: Use Threads
+description: Improve the experience with viewing threads in the index
+since: 2021-08-01
+status: stable
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/use-threads"></a>Use Threads Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Improve the experience with viewing threads in the index</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2021-08-01</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“<span class="quote">Use Threads</span>”</span> feature adds a new config variable to allow more precise control of how threads are displayed in the index. Whether threads are in use is now orthogonal from how messages are sorted.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="use-thread-functions"></a>3.&#160;Functions</h2>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“<span class="quote">Use Threads</span>”</span> feature adds no new functions to NeoMutt. The existing functions
+    <code class="literal">&lt;sort-mailbox&gt;</code>and
+    <code class="literal">&lt;sort-reverse&gt;</code>are updated to toggle the state of
+    <code class="literal">$use_threads</code> once it has been set, while preserving backwards-compatible behavior on
+    <code class="literal">$sort</code> if this feature is not used.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="variables"></a>4.&#160;Variables</h2>
+        </div>
+      </div>
+    </div>
+    <p>The
+    <span class="quote">“<span class="quote">Use Threads</span>”</span> feature adds one new config variable,
+    <a class="link" href="/guide/reference.html#use-threads" title="3.450.&#160;use_threads">$use_threads</a>, which is an enumeration of possible thread views. The variable defaults to unset for the original behavior of overloading
+    <a class="link" href="/guide/reference.html#sort" title="3.400.&#160;sort">$sort=threads</a> to enable sorting. It can be set to
+    <code class="literal">flat</code>(or
+    <code class="literal">no</code>) for an unthreaded view based on
+    <code class="literal">$sort</code>, to
+    <code class="literal">threads</code>(or
+    <code class="literal">yes</code> for a threaded view where roots appear above children, or to
+    <code class="literal">reverse</code> for a threaded view where children appear above roots.</p>
+    <p>When sorting by threads, the value of
+    <a class="link" href="/guide/reference.html#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a> determines which thread floats to the top. If
+    <code class="literal">$sort_aux</code> does not contain
+    <code class="literal">reverse-</code>, the latest thread goes to the bottom for
+    <code class="literal">use_threads=threads</code> and to the top for
+    <code class="literal">use_threads=reverse</code>; the direction of float is swapped if
+    <code class="literal">$sort_aux</code> also uses
+    <code class="literal">reverse-</code>. If
+    <code class="literal">$sort_aux</code> includes
+    <code class="literal">last-</code>, the overall thread is sorted by its descendant at any depth which would sort last in a flat view; otherwise, the overall thread is sorted solely by the thread root. The
+    <code class="literal">last-</code>prefix is ignored when
+    <code class="literal">use_threads=flat</code>.</p>
+    <p>The
+    <span class="quote">“<span class="quote">Use Threads</span>”</span> feature also modifies the existing config variable
+    <a class="link" href="/guide/reference.html#status-format" title="3.424.&#160;status_format">$status_format</a>, adding the
+    <code class="literal">%T</code> expando which shows the current threading method.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="neomuttrc"></a>5.&#160;neomuttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example NeoMutt config file for the use-threads feature.</span>
+
+
+<span class="comment"># ------------------------------------------------------------</span>
+<span class="comment"># Default configuration: flat view sorted by date</span>
+<span class="comment">#set use_threads=no sort=date sort_aux=date</span>
+<span class="comment">#   Anne     12:01  cover letter for thread 1</span>
+<span class="comment">#   Anne     12:02  part 1 of thread 1</span>
+<span class="comment">#   Anne     12:03  part 2 of thread 1</span>
+<span class="comment">#   Anne     12:04  part 3 of thread 1</span>
+<span class="comment">#   Barbara  12:05  thread 2</span>
+<span class="comment">#   Claire   12:06  thread 3</span>
+<span class="comment">#   Diane    12:07  re: part 2 of thread 1</span>
+<span class="comment">#   Erica    12:08  re: thread 2</span>
+
+<span class="comment"># ------------------------------------------------------------</span>
+<span class="comment"># Legacy configuration: sorting threads by date started</span>
+<span class="comment">#set sort=threads sort_aux=date</span>
+<span class="comment"># Modern configuration for the same</span>
+<span class="comment"># Latest root message sorts last</span>
+set use_threads=yes sort=date sort_aux=date
+<span class="comment">#   Anne     12:01  cover letter for thread 1</span>
+<span class="comment">#   Anne     12:02  |-&gt;part 1 of thread 1</span>
+<span class="comment">#   Anne     12:03  |-&gt;part 2 of thread 1</span>
+<span class="comment">#   Diane    12:07  | `-&gt;re: part 2 of thread 1</span>
+<span class="comment">#   Anne     12:04  `-&gt;part 3 of thread 1</span>
+<span class="comment">#   Barbara  12:05  thread 2</span>
+<span class="comment">#   Erica    12:08  `-&gt;re: thread 2</span>
+<span class="comment">#   Claire   12:06  thread 3</span>
+
+<span class="comment"># ------------------------------------------------------------</span>
+<span class="comment"># Legacy configuration: display threads upside-down</span>
+<span class="comment">#set sort=reverse-threads sort_aux=date</span>
+<span class="comment"># Modern configuration for the same</span>
+<span class="comment"># Latest root message sorts first</span>
+set use_threads=reverse sort=date sort_aux=date
+<span class="comment">#   Claire   12:06  thread 3</span>
+<span class="comment">#   Erica    12:08  ,-&gt;re: thread 2</span>
+<span class="comment">#   Barbara  12:05  thread 2</span>
+<span class="comment">#   Anne     12:04  ,-&gt;part 3 of thread 1</span>
+<span class="comment">#   Diane    12:07  | ,-&gt;re: part 2 of thread 1</span>
+<span class="comment">#   Anne     12:03  |-&gt;part 2 of thread 1</span>
+<span class="comment">#   Anne     12:02  |-&gt;part 1 of thread 1</span>
+<span class="comment">#   Anne     12:01  cover letter for thread 1</span>
+
+<span class="comment"># ------------------------------------------------------------</span>
+<span class="comment"># Legacy configuration: recently active thread/subthread first</span>
+<span class="comment">#set sort=threads sort_aux=reverse-last-date</span>
+<span class="comment"># Modern configuration for the same</span>
+<span class="comment"># Note that subthreads are also rearranged</span>
+set use_threads=threads sort=reverse-last-date sort_aux=reverse-last-date
+<span class="comment">#   Barbara  12:05  thread 2</span>
+<span class="comment">#   Erica    12:08  `-&gt;re: thread 2</span>
+<span class="comment">#   Anne     12:01  cover letter for thread 1</span>
+<span class="comment">#   Anne     12:03  |-&gt;part 2 of thread 1</span>
+<span class="comment">#   Diane    12:07  | `-&gt;re: part 2 of thread 1</span>
+<span class="comment">#   Anne     12:04  |-&gt;part 3 of thread 1</span>
+<span class="comment">#   Anne     12:02  `-&gt;part 1 of thread 1</span>
+<span class="comment">#   Claire   12:06  thread 3</span>
+
+<span class="comment"># ------------------------------------------------------------</span>
+<span class="comment"># Modern configuration: threads keep date order, recently active thread last</span>
+<span class="comment"># (not possible with legacy configuration)</span>
+set use_threads=threads sort=last-date sort_aux=date
+<span class="comment">#   Claire   12:06  thread 3</span>
+<span class="comment">#   Anne     12:01  cover letter for thread 1</span>
+<span class="comment">#   Anne     12:02  |-&gt;part 1 of thread 1</span>
+<span class="comment">#   Anne     12:03  |-&gt;part 2 of thread 1</span>
+<span class="comment">#   Diane    12:07  | `-&gt;re: part 2 of thread 1</span>
+<span class="comment">#   Anne     12:04  `-&gt;part 3 of thread 1</span>
+<span class="comment">#   Barbara  12:05  thread 2</span>
+<span class="comment">#   Erica    12:08  `-&gt;re: thread 2</span>
+
+<span class="comment"># vim: syntax=neomuttrc</span>
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="known-bugs"></a>6.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>Even though
+    <code class="literal">use_threads</code> accepts the values
+    <code class="literal">yes</code> and
+    <code class="literal">no</code>, it does not behave like a boolean or quad-option variable. A bare
+    <code class="literal">set use_threads</code> performs a query rather than setting it to
+    <code class="literal">yes</code>, and the variable is not usable with
+    <code class="literal">toggle</code>.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>7.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Eric Blake</p>
+  </div>
+</div>
+{% endraw %}
