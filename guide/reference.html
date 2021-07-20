@@ -4424,6 +4424,45 @@ sh -c 'string'
         <div>
           <div>
             <h3 class="title">
+            <a id="greeting"></a>3.119.&#160;greeting</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;string
+        <br />Default:&#160;(empty)</p>
+      </div>
+      <p>When set, this is the string that will precede every message as a greeting phrase to the recipients.</p>
+      <p>"Format strings" are similar to the strings used in the "C" function printf to format output (see the man page for more detail). The following sequences are defined in NeoMutt:</p>
+      <p></p>
+      <div class="informaltable">
+        <table class="informaltable" border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>%n</td>
+              <td>Recipient's real name</td>
+            </tr>
+            <tr>
+              <td>%u</td>
+              <td>User (login) name of recipient</td>
+            </tr>
+            <tr>
+              <td>%v</td>
+              <td>First name of recipient</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
             <a id="group-index-format"></a>3.119.&#160;group_index_format</h3>
           </div>
         </div>
@@ -4677,7 +4716,7 @@ sh -c 'string'
           <code class="literal">unread,draft,flagged,passed,replied,attachment,signed,encrypted</code>
         </span>”</span></p>
       </div>
-      <p>This variable specifies private notmuch/imap tags which should not be printed on screen.</p>
+      <p>This variable specifies a list of comma-separated private notmuch/imap tags which should not be printed on screen.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4968,7 +5007,7 @@ sh -c 'string'
         <p>Type:&#160;string&#160;list
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an IMAP server, in the order NeoMutt should try them. Authentication methods are either "login" or the right side of an IMAP "AUTH=xxx" capability string, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it's
+      <p>This is a colon-separated list of authentication methods NeoMutt may attempt to use to log in to an IMAP server, in the order NeoMutt should try them. Authentication methods are either "login" or the right side of an IMAP "AUTH=xxx" capability string, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it's
       <span class="emphasis">
         <em>unset</em>
       </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -5468,7 +5507,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             </tr>
             <tr>
               <td>%B</td>
-              <td>The list to which the letter was sent, or else the folder name (%b).</td>
+              <td>Same as %K</td>
             </tr>
             <tr>
               <td>%C</td>
@@ -5797,6 +5836,27 @@ set inews="/usr/local/bin/inews -hS"
       </span>, read messages marked as flagged will not be moved from your spool mailbox to your
       <a class="link" href="#mbox" title="3.187.&#160;mbox">$mbox</a> mailbox, or as a result of a "
       <a class="link" href="configuration.html#mbox-hook" title="15.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>" command.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="local-date-header"></a>3.175.&#160;local_date_header</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;boolean
+        <br />Default:&#160;yes</p>
+      </div>
+      <p>If
+      <span class="emphasis">
+        <em>set</em>
+      </span>, convert the date in the Date header of sent emails into the local timezone of the sender. When
+      <span class="emphasis">
+        <em>unset</em>
+      </span>, use UTC instead. This is meant for privacy-conscious users that do not want to disclose their time zone when they send mail.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6410,24 +6470,6 @@ set inews="/usr/local/bin/inews -hS"
       <span class="emphasis">
         <em>set</em>
       </span>.</p>
-    </div>
-    <div class="sect2">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title">
-            <a id="mime-subject"></a>3.204.&#160;mime_subject</h3>
-          </div>
-        </div>
-      </div>
-      <div class="literallayout">
-        <p>Type:&#160;boolean
-        <br />Default:&#160;yes</p>
-      </div>
-      <p>If
-      <span class="emphasis">
-        <em>unset</em>
-      </span>, 8-bit "subject:" line in article header will not be encoded according to RFC2047 to base64. This is useful when message is Usenet article, because MIME for news is nonstandard feature.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7174,6 +7216,45 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>Determines the number of lines of a mini-index which is shown when in the pager. The current message, unless near the top or bottom of the folder, will be roughly one third of the way down this mini-index, giving the reader the context of a few messages before and after the message. This is useful, for example, to determine how many messages remain to be read in the current thread. A value of 0 results in no index being shown. If the number of messages in the current folder is less than
       <a class="link" href="#pager-index-lines" title="3.241.&#160;pager_index_lines">$pager_index_lines</a>, then the index will only use as many lines as it needs.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="pager-read-delay"></a>3.243.&#160;pager_read_delay</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;number
+        <br />Default:&#160;0</p>
+      </div>
+      <p>Determines the number of seconds that must elapse after first opening a new message in the pager before that message will be marked as read. A value of 0 results in the message being marked read unconditionally; for other values, navigating to another message or exiting the pager before the timeout will leave the message marked unread. This setting is ignored if
+      <a class="link" href="#pager" title="3.239.&#160;pager">$pager</a> is not
+      <span class="bold">
+        <strong>builtin</strong>
+      </span>.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="pager-skip-quoted-context"></a>3.244.&#160;pager_skip_quoted_context</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;number
+        <br />Default:&#160;0</p>
+      </div>
+      <p>Determines the number of lines of context to show before the unquoted text when using the
+      <code class="literal">&lt;skip-quoted&gt;</code>function. When set to a positive number at most that many lines of the previous quote are displayed. If the previous quote is shorter the whole quote is displayed.</p>
+      <p>The (now deprecated)
+      <span class="emphasis">
+        <em>skip_quoted_offset</em>
+      </span>is an alias for this variable, and should no longer be used.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8140,7 +8221,7 @@ gpg --list-keys --with-colons --with-fingerprint
         <p>Type:&#160;string&#160;list
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an POP server, in the order NeoMutt should try them. Authentication methods are either "user", "apop" or any SASL mechanism, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If this option is
+      <p>This is a colon-separated list of authentication methods NeoMutt may attempt to use to log in to an POP server, in the order NeoMutt should try them. Authentication methods are either "user", "apop" or any SASL mechanism, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If this option is
       <span class="emphasis">
         <em>unset</em>
       </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -8460,7 +8541,10 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
         <p>Type:&#160;string&#160;list
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>RFC8255 : user preferred languages to be search in parts and display Ex. : set preferred_languages="en,fr,de"</p>
+      <p>This variable specifies a list of comma-separated languages. RFC8255 : user preferred languages to be searched in parts and display. Example:</p>
+      <pre class="screen">
+set preferred_languages="en,fr,de"
+</pre>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10170,21 +10254,6 @@ set sidebar_delim_chars='.'
         <div>
           <div>
             <h3 class="title">
-            <a id="skip-quoted-offset"></a>3.367.&#160;skip_quoted_offset</h3>
-          </div>
-        </div>
-      </div>
-      <div class="literallayout">
-        <p>Type:&#160;number
-        <br />Default:&#160;0</p>
-      </div>
-      <p>Lines of quoted text that are displayed before the unquoted text after "skip to quoted" command (S)</p>
-    </div>
-    <div class="sect2">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title">
             <a id="sleep-time"></a>3.368.&#160;sleep_time</h3>
           </div>
         </div>
@@ -10708,7 +10777,7 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;string&#160;list
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an SMTP server, in the order NeoMutt should try them. Authentication methods are any SASL mechanism, e.g. "plain", "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it is "unset" (the default) NeoMutt will try all available methods, in order from most-secure to least-secure. Support for the "plain" mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of neomutt -v).</p>
+      <p>This is a colon-separated list of authentication methods NeoMutt may attempt to use to log in to an SMTP server, in the order NeoMutt should try them. Authentication methods are any SASL mechanism, e.g. "plain", "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it is "unset" (the default) NeoMutt will try all available methods, in order from most-secure to least-secure. Support for the "plain" mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of neomutt -v).</p>
       <p>Example:</p>
       <pre class="screen">
 set smtp_authenticators="digest-md5:cram-md5"
@@ -10839,12 +10908,26 @@ smtp[s]://[user[:pass]@]host[:port]
           </li>
         </ul>
       </div>
-      <p>You may optionally use the "reverse-" prefix to specify reverse sorting order.</p>
+      <p>You may optionally use the "reverse-" prefix to specify reverse sorting order, or the "last-" prefix to sort threads based on the corresponding attribute of the last descendant rather than the thread root. If both prefixes are in use, "reverse-" must come before "last-". The "last-" prefix has no effect on a flat view.</p>
+      <p>Any ties in the primary sort are broken by
+      <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a>. When
+      <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a> is "threads" or "reverse",
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a> controls the sorting between threads, and
+      <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a> controls the sorting within a thread.</p>
       <p>The "date-sent" value is a synonym for "date". The "mailbox-order" value is a synonym for "unsorted".</p>
-      <p>Example:</p>
-      <pre class="screen">
-set sort=reverse-date-sent
-</pre>
+      <p>The values of "threads" and "reverse-threads" are legacy options, which cause the value of
+      <code class="literal">
+        <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a>
+      </code>to also contol sorting between threads, and they may not be used with the "last-" prefix. The preferred way to enable a threaded view is via
+      <code class="literal">
+        <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a>
+      </code>. This variable can also be set via the
+      <code class="literal">&lt;sort-mailbox&gt;</code>and
+      <code class="literal">&lt;sort-reverse&gt;</code>functions.</p>
+      <p>Note: When
+      <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a> is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a> swaps which end the last thread will sort to.</p>
+      <p>See the "Use Threads Feature" section for further explanation and examples.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10890,18 +10973,19 @@ set sort=reverse-date-sent
         <br />Default:&#160;date</p>
       </div>
       <p>This provides a secondary sort for messages in the "index" menu, used when the
-      <a class="link" href="#sort" title="3.398.&#160;sort">$sort</a> value is equal for two messages.</p>
-      <p>When sorting by threads, this variable controls how threads are sorted in relation to other threads, and how the branches of the thread trees are sorted. This can be set to any value that
-      <a class="link" href="#sort" title="3.398.&#160;sort">$sort</a> can, except "threads" (in that case, NeoMutt will just use "date"). You can also specify the "last-" prefix in addition to the "reverse-" prefix, but "last-" must come after "reverse-". The "last-" prefix causes messages to be sorted against its siblings by which has the last descendant, using the rest of
-      <a class="link" href="#sort-aux" title="3.400.&#160;sort_aux">$sort_aux</a> as an ordering. For instance,</p>
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a> value is equal for two messages.</p>
+      <p>When sorting by threads, this variable controls how subthreads are sorted within a single thread (for the order between threads, see
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a>). This can be set to any value that
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a> can, including with the use of "reverse-" and "last-" prefixes, except for variations using "threads" (in that case, NeoMutt will just use "date"). For instance,</p>
       <pre class="screen">
 set sort_aux=last-date-received
 </pre>
-      <p>would mean that if a new message is received in a thread, that thread becomes the last one displayed (or the first, if you have "
-      <code class="literal">set sort=reverse-threads</code>".)</p>
-      <p>Note: For reversed-threads
-      <a class="link" href="#sort" title="3.398.&#160;sort">$sort</a> order,
-      <a class="link" href="#sort-aux" title="3.400.&#160;sort_aux">$sort_aux</a> is reversed again (which is not the right thing to do, but kept to not break any existing configuration setting).</p>
+      <p>would mean that if a new message is received in a thread, that subthread becomes the last one displayed (or the first, if you have "
+      <code class="literal">set use_threads=reverse</code>".) When using
+      <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a>, it is more common to use "last-" with
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a> and not with
+      <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a>.</p>
+      <p>See the "Use Threads Feature" section for further explanation and examples.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11526,6 +11610,12 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
               <td>Number of tagged messages in the mailbox</td>
             </tr>
             <tr>
+              <td>%T</td>
+              <td>*</td>
+              <td>Current threading mode (
+              <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a>)</td>
+            </tr>
+            <tr>
               <td>%u</td>
               <td>*</td>
               <td>Number of unread messages in the mailbox (seen or unseen)</td>
@@ -11602,6 +11692,15 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>else_string</em>
       </span>will be expanded.</p>
+      <p>As another example, here is how to show either
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a> and
+      <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a> or
+      <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a> and
+      <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a>, based on whether threads are enabled with
+      <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a>:</p>
+      <p>
+        <code class="literal">%?T?%s/%S&amp;%T/s?</code>
+      </p>
       <p>You can force the result of any
       <code class="literal">printf(3)</code>-like sequence to be lowercase by prefixing the sequence character with an underscore ("_") sign. For example, if you want to display the local hostname in lowercase, you would use: "
       <code class="literal">%_h</code>".</p>
@@ -12213,7 +12312,51 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="user-agent"></a>3.448.&#160;user_agent</h3>
+            <a id="use-threads"></a>3.450.&#160;use_threads</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;enumeration
+        <br />Default:&#160;</p>
+      </div>
+      <p>The style of threading used in the index. May be one of "flat" (no threading), "threads" (threaded, with subthreads below root message) or "reverse" (threaded, with subthreads above root message). For convenience, the value "yes" is a synonym for "threads", and "no" is a synonym for "flat".</p>
+      <p>If this variable is never set, then
+      <code class="literal">
+        <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a>
+      </code>controls whether threading is used,
+      <code class="literal">
+        <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a>
+      </code>controls both the sorting of threads and subthreads, and using
+      <code class="literal">&lt;sort-mailbox&gt;</code>to select threads affects only
+      <code class="literal">
+        <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a>
+      </code>. Once this variable is set, attempting to set
+      <code class="literal">
+        <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a>
+      </code>to a value using "threads" will warn, the value of
+      <code class="literal">
+        <a class="link" href="#sort" title="3.400.&#160;sort">$sort</a>
+      </code>controls the sorting between threads while
+      <code class="literal">
+        <a class="link" href="#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a>
+      </code>controls sorting within a thread, and
+      <code class="literal">&lt;sort-mailbox&gt;</code>toggles
+      <code class="literal">
+        <a class="link" href="#use-threads" title="3.450.&#160;use_threads">$use_threads</a>
+      </code>.</p>
+      <p>Example:</p>
+      <pre class="screen">
+set use_threads=yes
+</pre>
+      <p>See the "Use Threads Feature" section for further explanation and examples.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="user-agent"></a>3.451.&#160;user_agent</h3>
           </div>
         </div>
       </div>
@@ -12264,29 +12407,6 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       </span>, NeoMutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
       <p>This command is now unnecessary.
       <a class="link" href="#spoolfile" title="3.404.&#160;spoolfile">$spoolfile</a> has been extended to support mailbox descriptions as a value.</p>
-    </div>
-    <div class="sect2">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title">
-            <a id="visual"></a>3.451.&#160;visual</h3>
-          </div>
-        </div>
-      </div>
-      <div class="literallayout">
-        <p>Type:&#160;command
-        <br />Default:&#160;
-        <span class="quote">“<span class="quote">
-          <code class="literal">vi</code>
-        </span>”</span></p>
-      </div>
-      <p>Specifies the visual editor to invoke when the "
-      <code class="literal">~v</code>" command is given in the built-in editor.</p>
-      <p>
-      <a class="link" href="#visual" title="3.451.&#160;visual">$visual</a> is overridden by the environment variable
-      <code class="literal">$VISUAL</code> or
-      <code class="literal">$EDITOR</code>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -13649,6 +13769,13 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
               </tr>
               <tr>
                 <td>
+                  <code class="literal">&lt;vfolder-window-reset&gt;</code>
+                </td>
+                <td>&#160;</td>
+                <td>resets virtual folder time window to the present</td>
+              </tr>
+              <tr>
+                <td>
                   <code class="literal">&lt;view-attachments&gt;</code>
                 </td>
                 <td>v</td>
@@ -14485,7 +14612,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
                   <code class="literal">&lt;skip-headers&gt;</code>
                 </td>
                 <td>H</td>
-                <td>skip beyond headers</td>
+                <td>jump to first line after headers</td>
               </tr>
               <tr>
                 <td>
