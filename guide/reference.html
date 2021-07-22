@@ -2842,7 +2842,7 @@ set certificate_file=~/.neomutt/certificates
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Mutt will recurse inside multipart/alternatives while performing attachment searching and counting(see
+      </span>, NeoMutt will recurse inside multipart/alternatives while performing attachment searching and counting(see
       <a class="link" href="mimesupport.html#attachments" title="7.&#160;Attachment Searching and Counting">attachments</a>).</p>
       <p>Traditionally, multipart/alternative parts have simply represented different encodings of the main content of the email. Unfortunately, some mail clients have started to place email attachments inside one of alternatives. Setting this will allow Mutt to find and count matching attachments hidden there, and include them in the index via %X or through ~X pattern matching.</p>
     </div>
@@ -5960,7 +5960,7 @@ set inews="/usr/local/bin/inews -hS"
           <code class="literal">~/.mailcap:/usr/share/neomutt/mailcap:/etc/mailcap:/etc/mailcap:/usr/etc/mailcap:/usr/local/etc/mailcap</code>
         </span>”</span></p>
       </div>
-      <p>This variable specifies which files to consult when attempting to display MIME bodies not directly supported by NeoMutt. The default value is generated during startup: see the "
+      <p>This variable specifies a list of colon-separated files to consult when attempting to display MIME bodies not directly supported by NeoMutt. The default value is generated during startup: see the "
       <a class="link" href="mimesupport.html#mailcap" title="3.&#160;MIME Viewer Configuration with Mailcap">mailcap</a>" section of the manual.</p>
       <p>
       <a class="link" href="#mailcap-path" title="3.178.&#160;mailcap_path">$mailcap_path</a> is overridden by the environment variable
@@ -11723,7 +11723,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <a class="link" href="#help" title="3.127.&#160;help">$help</a> is
       <span class="emphasis">
         <em>set</em>
-      </span>, too it'll be placed at the bottom.</p>
+      </span>too, it'll be placed at the bottom.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

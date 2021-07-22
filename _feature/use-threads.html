@@ -82,24 +82,62 @@ status: stable
     <code class="literal">no</code>) for an unthreaded view based on
     <code class="literal">$sort</code>, to
     <code class="literal">threads</code>(or
-    <code class="literal">yes</code> for a threaded view where roots appear above children, or to
+    <code class="literal">yes</code>) for a threaded view where roots appear above children, or to
     <code class="literal">reverse</code> for a threaded view where children appear above roots.</p>
     <p>When sorting by threads, the value of
-    <a class="link" href="/guide/reference.html#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a> determines which thread floats to the top. If
-    <code class="literal">$sort_aux</code> does not contain
+    <a class="link" href="/guide/reference.html#sort" title="3.400.&#160;sort">$sort</a> determines which thread floats to the top. If
+    <code class="literal">$sort</code> does not contain
     <code class="literal">reverse-</code>, the latest thread goes to the bottom for
     <code class="literal">use_threads=threads</code> and to the top for
     <code class="literal">use_threads=reverse</code>; the direction of float is swapped if
-    <code class="literal">$sort_aux</code> also uses
+    <code class="literal">$sort</code> also uses
     <code class="literal">reverse-</code>. If
-    <code class="literal">$sort_aux</code> includes
+    <code class="literal">$sort</code> includes
     <code class="literal">last-</code>, the overall thread is sorted by its descendant at any depth which would sort last in a flat view; otherwise, the overall thread is sorted solely by the thread root. The
     <code class="literal">last-</code>prefix is ignored when
     <code class="literal">use_threads=flat</code>.</p>
+    <p>Within a single thread, the value of
+    <a class="link" href="/guide/reference.html#sort-aux" title="3.402.&#160;sort_aux">$sort_aux</a> determines how siblings are sorted. The same prefixes apply as for
+    <code class="literal">$sort</code>, although it is less common to use the
+    <code class="literal">last-</code>prefix.</p>
     <p>The
     <span class="quote">“<span class="quote">Use Threads</span>”</span> feature also modifies the existing config variable
     <a class="link" href="/guide/reference.html#status-format" title="3.424.&#160;status_format">$status_format</a>, adding the
     <code class="literal">%T</code> expando which shows the current threading method.</p>
+    <div >
+      <a id="idm45040829288288"></a>
+      <p class="title">
+        <strong>Table&#160;38.1.&#160;</strong>
+      </p>
+      <div class="table-contents">
+        <table border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">use_threads</code>
+              </td>
+              <td>enum</td>
+              <td>
+                <code class="literal">unset</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -112,7 +150,6 @@ status: stable
     </div>
     <pre class="screen">
 <span class="comment"># Example NeoMutt config file for the use-threads feature.</span>
-
 
 <span class="comment"># ------------------------------------------------------------</span>
 <span class="comment"># Default configuration: flat view sorted by date</span>
