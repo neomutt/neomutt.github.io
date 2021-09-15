@@ -120,15 +120,21 @@ status: stable
 * [extract_url](https://www.memoryhole.net/~kyle/extract_url/) -- a Perl script
   that extracts URLs from correctly-encoded MIME email messages or plain text.
 
-## Miscellaneous
+## Calendar Tools
 
-* [mutt-trim](https://github.com/Konfekt/mutt-trim) to unclutter and normalize
-  quoted text in an e-mail
+* [mutt-ics](https://github.com/dmedvinsky/mutt-ics) -- simple viewer for .ics
+  files in Mutt
 * [vcalendar-filter](https://github.com/terabyte/mutt-filters/blob/master/vcalendar-filter)
   to view calendar files (ics)
 * [mutt2khal](https://github.com/pimutils/khal/blob/master/misc/mutt2khal) for
   passing calendar items to the command-line calendar
   [khal](https://github.com/pimutils/khal),
+* [vkhal](https://github.com/nofeed/vkhal/) -- can display calendar items and
+  import them into khal
+
+## Miscellaneous
+
+* [muttprint](http://muttprint.sourceforge.net/)
 * [notifynotmuch](https://github.com/kspi/notifymuch) -- displays desktop
   notifications for unread mail in Notmuch database
 * [notify-osd](https://launchpad.net/notify-osd) -- Canonical's
@@ -138,11 +144,10 @@ status: stable
   user of something without interrupting their work with a dialog box that they
   must close. Passive pop-ups can automatically disappear after a short period
   of time.
-* [mutt-vid](https://github.com/protist/mutt-vid) -- manage multiple sender
+* [mutt-vid](https://gitlab.com/protist/mutt-vid) -- manage multiple sender
   accounts in Mutt
-* [mutt-ics](https://github.com/dmedvinsky/mutt-ics) -- simple viewer for .ics
-  files in Mutt
-* [muttprint](http://muttprint.sourceforge.net/)
+* [mutt-trim](https://github.com/Konfekt/mutt-trim) to unclutter and normalize
+  quoted text in an e-mail
 * [mailto-mutt](https://dset0x.github.io/mailto-mutt.html)
 * [mailto-mutt](https://github.com/pazz/scripts/blob/master/mailto-mutt)
 * [MailtoMutt?](http://mailtomutt.sourceforge.net/) -- a Cocoa application
@@ -156,8 +161,6 @@ status: stable
   server IMAP stores to track changes as they happen.
 * [muttzilla](https://sourceforge.net/projects/muttzilla/) -- make Mutt your
   mail reader in Netscape or Mozilla. Unmaintained.
-* [vkhal](https://github.com/nofeed/vkhal/) -- can display calendar items and
-  import them into khal
 
 ## Vim Plugins
 
@@ -167,11 +170,12 @@ status: stable
 - [vim-notmuch-addrlookup](https://github.com/Konfekt/vim-notmuch-addrlookup) to complete mail addresses indexed by [notmuch](https://notmuchmail.org).
 
 
-## Mailcap
+## Setup
 
-The mailcap file is read by NeoMutt to determine how to display non-text files.
-
-- [Konfekt's mailcap](https://gist.github.com/Konfekt/9797372146e65a70a44c1e24a35ae0a2)
+- [Konfekt's mailcap file](https://gist.github.com/Konfekt/9797372146e65a70a44c1e24a35ae0a2) 
+  (read by NeoMutt to determine how to display non-text files.)
+- [Muttrc snippet](https://gist.github.com/Konfekt/acce52d3b0283f0c357125ddee2bb2e8/) 
+  to view mail from Mutt in GUI Browser or E-Mail client under Windows (Subsystem for Linux) 
 
 *[.ics]: Internet Calendaring and Scheduling (iCalendar)
 *[DNS]: Domain Name System
