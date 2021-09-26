@@ -136,7 +136,7 @@ msgcat --no-wrap --use-first de-fuzzy.po de.po > de-new.po
 
 ### msgfmt - Stats
 
-To check the validity of your translation files, and to get some stats, we can use `msgfmt`.  We don't the compiled message file though.
+To check the validity of your translation files, and to get some stats, we can use `msgfmt`.  We don't the save compiled message file, though.
 
 ```sh
 msgfmt --statistics -c -o /dev/null fr.po
@@ -148,13 +148,13 @@ msgfmt --statistics -c -o /dev/null fr.po
 Ideally, the L10n comments should be enough to tell the translator everything they need to know.
 Sometimes, though, looking at the source can make things much clearer much more quickly.
 
-Each of the tranlations is preceded by a location line:
+Each of the translations is preceded by a location line:
 
 ```sh
 #: compose.c:118 compose.c:970 send.c:292
 ```
 
-Vim users can use the `gF` (goto file) command which will open the file under the cursor and goto the exact source line you want.
+Vim users can use the `gF` (goto file) command which will open the file under the cursor and go to the exact source line you want.
 
 ### Vim Tips
 
