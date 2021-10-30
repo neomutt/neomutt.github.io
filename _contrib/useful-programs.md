@@ -38,6 +38,8 @@ status: stable
 
 ## Address books
 
+See also: [external address queries](/guide/advancedusage.html#query).
+
 * [mail-query](https://github.com/pbrisbin/mail-query) to query addresses found
   in the inbox
 * [notmuch-addrlookup](https://github.com/aperezdc/notmuch-addrlookup-c) to query adresses
