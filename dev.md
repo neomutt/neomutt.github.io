@@ -27,7 +27,7 @@ are triggered on every commit to GitHub.
 [![web status](https://img.shields.io/travis/neomutt/neomutt.github.io.svg?label=website)](https://travis-ci.org/neomutt/neomutt.github.io)
 [![coverage status](https://coveralls.io/repos/github/neomutt/neomutt/badge.svg?branch=coveralls)](https://coveralls.io/github/neomutt/neomutt?branch=coveralls)
 
-<img height="300" width="768" src="https://starcharts.herokuapp.com/neomutt/neomutt.svg" />
+<img height="300" width="768" src="https://starchart.cc/neomutt/neomutt.svg" />
 
 [StarCharts](https://github.com/caarlos0/starcharts)
 
