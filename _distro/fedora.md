@@ -12,10 +12,10 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 29 or before | Unsupported, please upgrade |
-| 30           | Supported                   |
-| 31           | Supported                   |
-| 32           | Supported                   |
+| 32 or before | Unsupported, please upgrade |
+| 33           | Supported                   |
+| 34           | Supported                   |
+| 35           | Supported                   |
 | Rawhide      | Supported                   |
 
 The NeoMutt RPMs are published in a COPR. This is a public repository run by
@@ -48,19 +48,18 @@ dnf copr enable flatcap/neomutt
 You will be shown a warning, which you need to say **yes** to:
 
 ```reply
-You are about to enable a Copr repository. Please note that this
-repository is not part of the main Fedora distribution, and quality
-may vary.
+Enabling a Copr repository. Please note that this repository is not part
+of the main distribution, and quality may vary.
 
 The Fedora Project does not exercise any power over the contents of
 this repository beyond the rules outlined in the Copr FAQ at
-<https://fedorahosted.org/copr/wiki/UserDocs#WhatIcanbuildinCopr>, and
-packages are not held to any quality or security level.
+<https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr>,
+and packages are not held to any quality or security level.
 
 Please do not file bug reports about these packages in Fedora
 Bugzilla. In case of problems, contact the owner of this repository.
 
-Do you want to continue? [y/N]:
+Do you really want to enable copr.fedorainfracloud.org/flatcap/neomutt? [y/N]: 
 ```
 
 Finally, install the NeoMutt package:
@@ -77,8 +76,8 @@ say **yes**. This step only has to be done once -- for the first install.
 Importing GPG key 0xFACB00B1:
  Userid     : "flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>"
  Fingerprint: 654D 24A3 6315 9304 787B 8F9B FC43 0E26 FACB 00B1
- From       : https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/pubkey.gpg
-Is this ok [y/N]:
+ From       : https://download.copr.fedorainfracloud.org/results/flatcap/neomutt/pubkey.gpg
+Is this ok [y/N]: 
 ```
 
 Well done! You've just installed NeoMutt.
@@ -101,13 +100,13 @@ server (and verify it using the
 [https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/](https://copr-be.cloud.fedoraproject.org/results/flatcap/neomutt/)
 
 ```
-gpg2 --with-fingerprint pubkey.gpg
+gpg2 --show-keys pubkey.gpg
 ```
 
 ```reply
-pub   rsa2048 2016-04-10 [SCEA] [expires: 2021-04-09]
-      654D 24A3 6315 9304 787B  8F9B FC43 0E26 FACB 00B1
-uid           flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>
+pub   rsa2048 2016-04-10 [SCEA] [expires: 2025-04-09]
+      654D24A363159304787B8F9BFC430E26FACB00B1
+uid                      flatcap_NeoMutt (None) <flatcap#NeoMutt@copr.fedorahosted.org>
 ```
 
 ## Update <a id="update"></a>
@@ -132,22 +131,6 @@ dnf copr remove flatcap/neomutt
 Repository successfully removed.
 ```
 
-If, instead, you would like to downgrade to Mutt:
-
-```
-dnf install --allowerasing mutt
-```
-
-```reply
-========================================================================
- Package      Arch     Version                 Repository          Size
-========================================================================
-Installing:
- mutt         x86_64   5:1.8.0-1.fc25          updates            1.4 M
-Removing:
- neomutt      x86_64   5:1.8.0-20170225.fc25   @flatcap-neomutt   7.6 M
-```
-
 ## Building from source <a id="build"></a>
 
 These instructions will help you install all the dependencies you'll need to
@@ -160,11 +143,12 @@ build NeoMutt from the source code.
 5. Local caching of emails
 
 ```
-dnf install git
-dnf install gcc libidn-devel ncurses-devel slang-devel gettext-devel tcl tar
-dnf install docbook-dtds docbook-style-xsl libxslt lynx
-dnf install cyrus-sasl-devel gnutls-devel gpgme-devel krb5-devel notmuch-devel
-dnf install tokyocabinet-devel kyotocabinet-devel lmdb-devel
+dnf installl cyrus-sasl-devel docbook-dtds docbook-style-xsl elinks gcc
+dnf installl gdbm-devel gettext-devel git gnutls-devel gpgme-devel krb5-devel
+dnf installl libdb-devel libidn-devel libtdb-devel libxslt libzstd-devel
+dnf installl lmdb-devel lua lua-devel lynx lz4-devel ncurses-devel notmuch-devel
+dnf installl qdbm-devel redhat-rpm-config slang-devel sqlite sqlite-devel tar tcl
+dnf installl tokyocabinet-devel w3m
 ```
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
@@ -177,7 +161,7 @@ debug NeoMutt.
 ```
 dnf install cgdb
 dnf debuginfo-install bzip2-libs cyrus-sasl-lib glib2 gmime gmp gnutls gpgme
-dnf debuginfo-install keyutils-libs krb5-libs kyotocabinet-libs libassuan libblkid
+dnf debuginfo-install keyutils-libs krb5-libs libassuan libblkid
 dnf debuginfo-install libcom_err libcrypt-nss libffi libgcc libgpg-error libidn
 dnf debuginfo-install libidn2 libmount libselinux libstdc++ libtalloc libtasn1
 dnf debuginfo-install libunistring libuuid lmdb-libs lzo ncurses-libs nettle
@@ -191,7 +175,7 @@ Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 
 ---
 
-Instructions last checked: 2017-12-01 by @flatcap
+Instructions last checked: 2021-11-02 by @flatcap
 
 *[COPR]: Cool Other Package Repo
 
