@@ -143,12 +143,12 @@ build NeoMutt from the source code.
 5. Local caching of emails
 
 ```
-dnf installl cyrus-sasl-devel docbook-dtds docbook-style-xsl elinks gcc
-dnf installl gdbm-devel gettext-devel git gnutls-devel gpgme-devel krb5-devel
-dnf installl libdb-devel libidn-devel libtdb-devel libxslt libzstd-devel
-dnf installl lmdb-devel lua lua-devel lynx lz4-devel ncurses-devel notmuch-devel
-dnf installl qdbm-devel redhat-rpm-config slang-devel sqlite sqlite-devel tar tcl
-dnf installl tokyocabinet-devel w3m
+dnf install cyrus-sasl-devel docbook-dtds docbook-style-xsl elinks gcc
+dnf install gdbm-devel gettext-devel git gnutls-devel gpgme-devel krb5-devel
+dnf install libdb-devel libidn-devel libtdb-devel libxslt libzstd-devel
+dnf install lmdb-devel lua lua-devel lynx lz4-devel ncurses-devel notmuch-devel
+dnf install qdbm-devel redhat-rpm-config slang-devel sqlite sqlite-devel tar tcl
+dnf install tokyocabinet-devel w3m
 ```
 
 Now you can follow the [guide for building NeoMutt](/dev/build).
