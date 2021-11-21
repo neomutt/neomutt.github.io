@@ -11,7 +11,7 @@
     {% assign children = false %}
 
     {% if current.size < 4 %}
-      {% if current[2] == 'analysis' or current[2] == 'build' or current[2] == 'github' or current[2] == 'roadmap' %}
+      {% if current[2] == 'actions' or current[2] == 'analysis' or current[2] == 'build' or current[2] == 'github' or current[2] == 'roadmap' %}
         {% assign children = true %}
       {% endif %}
       {% if deep == true %}
@@ -19,6 +19,15 @@
       {% endif %}
       {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
     {% else %}
+      {% if page.url contains '/dev/actions' %}
+        {% if f.url contains '/dev/actions/' %}
+          {% if deep == false %}
+            <ul> {% assign deep = true %}
+          {% endif %}
+          {% include list-bold.html lb_path=f.url lb_title=f.title lb_desc=f.description %}
+        {% endif %}
+      {% endif %}
+
       {% if page.url contains '/dev/analysis' %}
         {% if f.url contains '/dev/analysis/' %}
           {% if deep == false %}

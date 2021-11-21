@@ -1,0 +1,62 @@
+---
+title:       Doxygen
+description: Build code docs
+source:      https://github.com/neomutt/neomutt/blob/master/.github/workflows/doxygen.yml
+badge:       https://github.com/neomutt/neomutt/actions/workflows/doxygen.yml/badge.svg
+logs:        https://github.com/neomutt/neomutt/actions/workflows/doxygen.yml
+author:      flatcap
+---
+
+<div style="float: right;">
+<a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
+</div>
+
+# {{ page.title }}
+
+{:.subtitle}
+{{ page.description }}
+{% include actions-links.html %}
+
+## Description
+
+This action updates the [Code Docs](https://neomutt.org/code).
+
+NeoMutt's code is throughly commented using Doxygen comment blocks.<br>
+(Every function, struct, enum, global, and most members are documented)
+
+```comment
+/**
+ * mutt_path_basename - Find the last component for a pathname
+ * @param str String to be examined
+ * @retval ptr Part of pathname after last '/' character
+ */
+```
+
+**Steps**:
+- Validate the Doxygen headers
+- Generate docs
+- Commit to docs repo
+- Push to docs repo
+
+### Action Details
+
+| Key     | Description                                                  | Details                                                                                  |
+| :------ | :----------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
+| Trigger | Schedule                                                     | Mondays at 3am                                                                           |
+| Trigger | `git push`                                                   | To any branch `doxygen/*`                                                                |
+| Uses    | GitHub's checkout action                                     | [https://github.com/actions/checkout](https://github.com/actions/checkout)               |
+| Uses    | [Adam Dobrawy](https://github.com/ad-m)'s github-push-action | [https://github.com/ad-m/github-push-action](https://github.com/ad-m/github-push-action) |
+| Secret  | Personal Access Token                                        | `DOXYGEN_DEPLOY_KEY`                                                                     |
+| Runs-on | debian:sid                                                   | (for latest version of doxygen)                                                          |
+
+### See Also
+
+| Description | Location                                                                                     |
+| :---------- | :------------------------------------------------------------------------------------------- |
+| Action      | [{{page.source}}]({{page.source}})                                                           |
+| Action Logs | [{{page.logs}}]({{page.logs}})                                                               |
+| Source code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                     |
+| Scripts     | [https://github.com/neomutt/action-doxygen](https://github.com/neomutt/action-doxygen)       |
+| Docs Repo   | [https://github.com/neomutt/code](https://github.com/neomutt/code)                           |
+| Results     | [Code Docs](https://neomutt.org/code)                                                        |
+
