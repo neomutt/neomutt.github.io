@@ -36,7 +36,7 @@ This is a free service for open source, but limited to 2 scans per day.
 | Key     | Description              | Details                                                                                        |
 | :------ | :----------------------- | :--------------------------------------------------------------------------------------------- |
 | Trigger | Schedule                 | Mondays at 3am                                                                                 |
-| Trigger | `git push`               | To branches `coverity/*`                                                                       |
+| Trigger | Workflow (manual)        | [{{page.logs}}]({{page.logs}})                                                                 |
 | Uses    | GitHub's checkout action | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
 | Runs-on | ubuntu-latest            | [neomutt/docker-build](https://ghcr.io/neomutt/docker-build)                                   |
 

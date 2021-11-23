@@ -91,6 +91,17 @@ the tools we'll need.
 - [docker-build repo](https://github.com/neomutt/docker-build)
 - [https://www.docker.com/](https://www.docker.com/)
 
+### Workflow Triggers
+
+Some actions can be triggered by `workflow_dispatch`, meaning they're manual.
+
+If the actions supports it...
+- Go to the log page
+- Select a branch using the "Run workflow" **dropdown**
+- Hit the "Run workflow" **button**
+
+![workflow button](/images/workflow.png)
+
 ### Deployment
 
 Many of NeoMutt's Actions **deploy** their results.

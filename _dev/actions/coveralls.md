@@ -46,7 +46,7 @@ The coverage tests don't cover the entire codebase, just eight core libraries:
 | Key     | Description                                                    | Details                                                                                        |
 | :------ | :------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
 | Trigger | Schedule                                                       | Mondays at 3am                                                                                 |
-| Trigger | `git push`                                                     | To branches `coveralls/*`                                                                      |
+| Trigger | Workflow (manual)                                              | [{{page.logs}}]({{page.logs}})                                                                 |
 | Uses    | GitHub's checkout action                                       | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action  | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)   |
 | Uses    | [Coverall](https://coveralls.io/)'s github-action              | [https://github.com/coverallsapp/github-action](https://github.com/coverallsapp/github-action) |
