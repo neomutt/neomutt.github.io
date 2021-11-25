@@ -12,8 +12,7 @@ maintainer: flatcap
 
 | CentOS / RHEL | Support                     |
 | :------------ | :-------------------------- |
-| 5 or before   | Unsupported, please upgrade |
-| 6             | Supported                   |
+| 6 or before   | Unsupported, please upgrade |
 | 7             | Supported                   |
 | 8             | Supported                   |
 
@@ -29,8 +28,6 @@ be run as root, or prefixed with `sudo`.
 
 First download the repo file for your OS:
 
-- CentOS / RHEL v6
-  [flatcap-neomutt-epel-6.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-6/flatcap-neomutt-epel-6.repo)
 - CentOS / RHEL v7
   [flatcap-neomutt-epel-7.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-7/flatcap-neomutt-epel-7.repo)
 - CentOS / RHEL v8
@@ -103,11 +100,11 @@ build NeoMutt from the source code.
 5. Local caching of emails
 
 ```
-yum install git
-yum install gcc gettext-devel libidn-devel ncurses-devel slang-devel tcl
-yum install docbook-dtds docbook-style-xsl libxslt lynx
-yum install gnutls-devel cyrus-sasl-devel gpgme-devel krb5-devel
-yum install tokyocabinet-devel
+yum install cyrus-sasl-devel docbook-dtds docbook-style-xsl gcc gdbm-devel
+yum install gettext-devel git gnutls-devel gpgme-devel krb5-devel libdb-devel
+yum install libidn2-devel libtdb-devel libxslt libzstd-devel lua-devel lz4-devel
+yum install make ncurses-devel openssl-devel pcre2-devel slang-devel
+yum install sqlite-devel tcl tokyocabinet-devel
 ```
 
 Unfortunately, these libraries aren't available in CentOS / RHEL:
@@ -136,5 +133,5 @@ Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 
 ---
 
-Instructions last checked: 2017-12-01 by @flatcap
+Instructions last checked: 2021-11-25 by @flatcap
 
