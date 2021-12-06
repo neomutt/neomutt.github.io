@@ -15,6 +15,7 @@ maintainer: flatcap
 | 6 or before   | Unsupported, please upgrade |
 | 7             | Supported                   |
 | 8             | Supported                   |
+| 9 (stream)    | Supported                   |
 
 The NeoMutt RPMs are published in a YUM repo. This is a public repository run
 by Richard Russon (@flatcap) <[rich@flatcap.org](mailto:rich@flatcap.org)>
@@ -32,6 +33,8 @@ First download the repo file for your OS:
   [flatcap-neomutt-epel-7.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-7/flatcap-neomutt-epel-7.repo)
 - CentOS / RHEL v8
   [flatcap-neomutt-epel-8.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/epel-8/flatcap-neomutt-epel-8.repo)
+- CentOS Stream 9
+  [flatcap-neomutt-centos-stream-9.repo](https://copr.fedorainfracloud.org/coprs/flatcap/neomutt/repo/centos-stream-9/flatcap-neomutt-centos-stream-9.repo)
 
 Now, copy it into place and install:
 
@@ -133,5 +136,5 @@ Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
 
 ---
 
-Instructions last checked: 2021-11-25 by @flatcap
+Instructions last checked: 2021-12-06 by @flatcap
 
