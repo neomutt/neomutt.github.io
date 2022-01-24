@@ -50,8 +50,8 @@ welcome. There are usually about 190&nbsp;people / lurkers in the channel.
 The channel is pretty informal and conversation ranges from deep technical
 discussions to light-hearted nonsense (late at night).
 
-If you don't have a IRC client, you can use Kiwi's
-[web client](https://kiwiirc.com/nextclient/irc.libera.chat/#neomutt).
+If you don't have a IRC client, you can use Libera's
+[web client](https://web.libera.chat/#neomutt).
 
 ### Mailing lists <a id="mailing-lists"></a>
 
