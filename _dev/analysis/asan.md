@@ -49,7 +49,7 @@ Multiple options should be separated with a colon `:`
 **Note**: Some platforms will need to use this options to show memory leaks:
 
 ```sh
-export ASAN_OPTIONS=detect_leaks=1
+export ASAN_OPTIONS="detect_leaks=1"
 ```
 
 This **highly recommended** option redirects the output to a file
@@ -58,19 +58,19 @@ This **highly recommended** option redirects the output to a file
 This will create a file called `asan.PROCESS_ID`
 
 ```sh
-export ASAN_OPTIONS=log_path=asan
+export ASAN_OPTIONS="log_path=asan"
 ```
 
 This option reduces the clutter in the output:
 
 ```sh
-export ASAN_OPTIONS=print_legend=0
+export ASAN_OPTIONS="print_legend=0"
 ```
 
 Here are multiple options together, separated by colon `:`
 
 ```sh
-export ASAN_OPTIONS=print_legend=0:log_path=asan
+export ASAN_OPTIONS="print_legend=0:log_path=asan"
 ```
 
 For a fuller list of options, see
