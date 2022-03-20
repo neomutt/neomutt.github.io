@@ -1,6 +1,6 @@
 ---
 title: Skip Quoted
-description: Leave some context visible
+description: Managing quoted text in the pager
 since: 2016-03-28
 status: stable
 ---
@@ -14,7 +14,7 @@ status: stable
       </div>
       <div>
         <h3 class="subtitle">
-          <em>Leave some context visible</em>
+          <em>Managing quoted text in the pager</em>
         </h3>
       </div>
     </div>
@@ -31,7 +31,10 @@ status: stable
     <p>
     <span class="bold">
       <strong>Since:</strong>
-    </span>NeoMutt 2016-03-28</p>
+    </span>
+    <code class="literal">$skip_quoted_offset</code> in NeoMutt 2016-03-28,
+    <code class="literal">$toggle_quoted_show_levels</code> in NeoMutt 2019-10-25,
+    <code class="literal">&lt;skip-headers&gt;</code>in NeoMutt 2021-02-05</p>
     <p>
     <span class="bold">
       <strong>Dependencies:</strong>
@@ -47,24 +50,75 @@ status: stable
       </div>
     </div>
     <p>When viewing an email, the
-    <code class="literal">&lt;skip-to-quoted&gt;</code>function (by default the
-    <code class="literal">S</code> key) will scroll past any email headers or quoted text. Sometimes, a little context is useful.</p>
-    <p>By setting the
+    <code class="literal">&lt;skip-quoted&gt;</code>function (by default the
+    <code class="literal">S</code> key) will scroll past any email headers or quoted text. Sometimes, a little context is useful. By setting the
     <code class="literal">$skip_quoted_offset</code> variable, you can select how much of the quoted text is left visible.</p>
+    <p>When using the
+    <code class="literal">&lt;toggle-quoted&gt;</code>function (by default the
+    <code class="literal">T</code> key), it can be convenient to hide text that has been quoted multiple times while still leaving quoted text that is relevant to the unquoted reply intact. This can be done by setting the
+    <code class="literal">$toggle_quoted_show_levels</code> variable.</p>
+    <p>Also, it can be handy to jump directly to the start of the email body with the
+    <code class="literal">&lt;skip-headers&gt;</code>function (by default the
+    <code class="literal">H</code> key).</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="variables"></a>3.&#160;Variables</h2>
+          <a id="functions"></a>3.&#160;Functions</h2>
+        </div>
+      </div>
+    </div>
+    <div >
+      <a id="table-quoted-functions"></a>
+      <p class="title">
+        <strong>Table&#160;34.1.&#160;Skip Quoted Functions</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Skip Quoted Functions" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Menus</th>
+              <th>Default Key</th>
+              <th>Function</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>pager</td>
+              <td>H</td>
+              <td>
+                <code class="literal">&lt;skip-headers&gt;</code>
+              </td>
+              <td>jump to first line after headers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="variables"></a>4.&#160;Variables</h2>
         </div>
       </div>
     </div>
     <div >
       <a id="table-skip-quoted-variables"></a>
       <p class="title">
-        <strong>Table&#160;33.1.&#160;Skip-Quoted Variables</strong>
+        <strong>Table&#160;34.2.&#160;Skip-Quoted Variables</strong>
       </p>
       <div class="table-contents">
         <table summary="Skip-Quoted Variables" border="1">
@@ -83,7 +137,21 @@ status: stable
           <tbody>
             <tr>
               <td>
+                <code class="literal">pager_skip_quoted_context</code>
+              </td>
+              <td>number</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>
                 <code class="literal">skip_quoted_offset</code>
+              </td>
+              <td>synonym</td>
+              <td>pager_skip_quoted_context</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">toggle_quoted_show_levels</code>
               </td>
               <td>number</td>
               <td>0</td>
@@ -99,7 +167,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="neomuttrc"></a>4.&#160;neomuttrc</h2>
+          <a id="neomuttrc"></a>5.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -107,11 +175,17 @@ status: stable
 <span class="comment"># Example NeoMutt config file for the skip-quoted feature.</span>
 
 <span class="comment"># The 'S' (skip-quoted) command scrolls the pager past the quoted text (usually</span>
-<span class="comment"># indented with '&gt; '. Setting 'skip_quoted_offset' leaves some lines of quoted</span>
-<span class="comment"># text on screen for context.</span>
+<span class="comment"># indented with '&gt; '. Setting 'pager_skip_quoted_context leaves some lines</span>
+<span class="comment"># of quoted text on screen for context.</span>
 
 <span class="comment"># Show three quoted lines before the reply</span>
-set skip_quoted_offset = 3
+set pager_skip_quoted_context = 3
+
+<span class="comment"># The 'T' (toggle-quoted) command hides quoted text, but can</span>
+<span class="comment"># be limited to only hiding deeply-nested quotes.</span>
+
+<span class="comment"># Preserve the first level of quoted text</span>
+set toggle_quoted_show_levels = 1
 
 <span class="comment"># vim: syntax=neomuttrc</span>
 </pre>
@@ -121,7 +195,7 @@ set skip_quoted_offset = 3
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="known-bugs"></a>5.&#160;Known Bugs</h2>
+          <a id="known-bugs"></a>6.&#160;Known Bugs</h2>
         </div>
       </div>
     </div>
@@ -132,7 +206,7 @@ set skip_quoted_offset = 3
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="credits"></a>6.&#160;Credits</h2>
+          <a id="credits"></a>7.&#160;Credits</h2>
         </div>
       </div>
     </div>

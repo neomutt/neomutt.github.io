@@ -107,7 +107,7 @@ title: NeoMutt's MIME Support
       <code class="literal">&lt;forward&gt;</code>functions) to attachments of type
       <code class="literal">message/rfc822</code>.</p>
       <p>See table
-      <a class="xref" href="reference.html#tab-attachment-bindings" title="Table&#160;40.7.&#160;Default Attachment Menu Bindings">Table&#160;40.7, “Default Attachment Menu Bindings”</a> for all available functions.</p>
+      <a class="xref" href="reference.html#tab-attachment-bindings" title="Table&#160;42.7.&#160;Default Attachment Menu Bindings">Table&#160;42.7, “Default Attachment Menu Bindings”</a> for all available functions.</p>
       <div class="sect3">
         <div class="titlepage">
           <div>
@@ -133,7 +133,7 @@ title: NeoMutt's MIME Support
               <code class="literal">&lt;view-attach&gt;</code>(default keybinding: &lt;Enter&gt;)</span>
             </dt>
             <dd>
-              <p>Mutt will display internally supported MIME types (see
+              <p>NeoMutt will display internally supported MIME types (see
               <a class="xref" href="#mime-pager" title="1.2.&#160;Viewing MIME Messages in the Pager">Section&#160;1.2, “Viewing MIME Messages in the Pager”</a>) in the pager. This will respect
               <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">auto_view</a> settings, to determine whether to use a
               <code class="literal">copiousoutput</code> mailcap entry or just directly display the attachment.</p>
@@ -146,7 +146,7 @@ title: NeoMutt's MIME Support
               </span>
             </dt>
             <dd>
-              <p>Mutt will use the first matching
+              <p>NeoMutt will use the first matching
               <code class="literal">copiousoutput</code> mailcap entry to display the attachment in the pager (regardless of
               <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">auto_view</a> settings).</p>
               <p>If no matching mailcap entries are found, the attachment will be displayed in the pager as raw text.</p>
@@ -197,7 +197,7 @@ title: NeoMutt's MIME Support
         </div>
       </div>
     </div>
-    <p>To get most out of MIME, it's important that a MIME part's content type matches the content as closely as possible so that the recipient's client can automatically select the right viewer for the content. However, there's no reliable for NeoMutt to know how to detect every possible file type. Instead, it uses a simple plain text mapping file that specifies what file extension corresponds to what MIME type. This file is called
+    <p>To get most out of MIME, it's important that a MIME part's content type matches the content as closely as possible so that the recipient's client can automatically select the right viewer for the content. However, there's no reliable way for NeoMutt to know how to detect every possible file type. Instead, it uses a simple plain text mapping file that specifies what file extension corresponds to what MIME type. This file is called
     <code class="literal">mime.types</code>.</p>
     <p>When you add an attachment to your mail message, NeoMutt searches the system
     <code class="literal">mime.types</code> file at
@@ -229,7 +229,7 @@ audio/x-aiff                    aif aifc aiff
     <p>A sample
     <code class="literal">mime.types</code> file comes with the NeoMutt distribution, and should contain most of the MIME types you are likely to use.</p>
     <p>If NeoMutt can not determine the MIME type by the extension of the file you attach, it will run the command specified in
-    <a class="link" href="reference.html#mime-type-query-command" title="3.205.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
+    <a class="link" href="reference.html#mime-type-query-command" title="3.206.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
     <code class="literal">text/plain</code>. If the file contains binary information, then NeoMutt will mark it as
     <code class="literal">application/octet-stream</code>. You can change the MIME type that NeoMutt assigns to an attachment by using the
     <code class="literal">&lt;edit-type&gt;</code>command from the compose menu (default: ^T), see
@@ -461,7 +461,7 @@ text/*; more
       </div>
       <p>The interpretation of shell meta-characters embedded in MIME parameters can lead to security problems in general. NeoMutt tries to quote parameters in expansion of
       <code class="literal">%s</code> syntaxes properly, and avoids risky characters by substituting them, see the
-      <a class="link" href="reference.html#mailcap-sanitize" title="3.179.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
+      <a class="link" href="reference.html#mailcap-sanitize" title="3.181.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
       <p>Although NeoMutt's procedures to invoke programs with mailcap seem to be safe, there are other applications parsing mailcap, maybe taking less care of it. Therefore you should pay attention to the following rules:</p>
       <p>
       <span class="emphasis">
@@ -530,11 +530,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.452.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.456.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, NeoMutt will use
-              <a class="link" href="reference.html#wait-key" title="3.452.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.456.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -599,9 +599,20 @@ text/html; lynx %s
                 <em>not</em>
               </span>delete the temporary file after the program has been run.</p>
               <p>Using it allows you to control the lifespan of the temporary file. Without this option, the file will be deleted after
-              <a class="link" href="reference.html#timeout" title="3.431.&#160;timeout">$timeout</a> seconds.</p>
+              <a class="link" href="reference.html#timeout" title="3.435.&#160;timeout">$timeout</a> seconds.</p>
               <pre class="screen">
 text/html; firefox %s &amp; x-neomutt-keep
+</pre>
+            </dd>
+            <dt>
+              <span class="term">x-neomutt-nowrap</span>
+            </dt>
+            <dd>
+              <p>
+              <code class="literal">x-neomutt-nowrap</code> tells the NeoMutt pager to ignore the
+              <a class="link" href="reference.html#wrap" title="3.458.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
+              <pre class="screen">
+text/html; /usr/local/bin/w3m -s -T text/html -o display_link_number=1 %s; nametemplate=%s.html; copiousoutput; x-neomutt-nowrap;
 </pre>
             </dd>
           </dl>
@@ -633,8 +644,7 @@ image/gif;      ; print=anytopnm %s | pnmtops | lpr; \
           </span>
         </a>to denote two commands for viewing an attachment, one to be viewed automatically, the other to be viewed interactively from the attachment menu using the
         <code class="literal">&lt;view-mailcap&gt;</code>function (bound to
-        <span class="quote">“
-        <span class="quote">m</span>”</span> by default). In addition, you can then use the test feature to determine which viewer to use interactively depending on your environment.</p>
+        <span class="quote">“<span class="quote">m</span>”</span> by default). In addition, you can then use the test feature to determine which viewer to use interactively depending on your environment.</p>
         <pre class="screen">
 text/html;      firefox -remote 'openURL(%s)' ; test=RunningX
 text/html;      lynx %s; nametemplate=%s.html
@@ -695,8 +705,7 @@ Content-Type: text/plain; charset=iso-8859-1
 </pre>
               <p>then NeoMutt will expand
               <code class="literal">%{charset}</code>to
-              <span class="quote">“
-              <span class="quote">iso-8859-1</span>”</span>. The default metamail mailcap file uses this feature to test the charset to spawn an xterm using the right charset to view the message.</p>
+              <span class="quote">“<span class="quote">iso-8859-1</span>”</span>. The default metamail mailcap file uses this feature to test the charset to spawn an xterm using the right charset to view the message.</p>
             </dd>
             <dt>
               <span class="term">\%</span>
@@ -860,7 +869,8 @@ application/postscript; ps2ascii %s; copiousoutput
         <strong>message-hook</strong>
       </span>
     </a>to autoview messages based on size, etc.
-    <span class="quote">“<span class="quote">
+    <span class="quote">“
+    <span class="quote">
     <span class="command">
       <strong>unauto_view</strong>
     </span>&#160;*</span>”</span> will remove all previous entries.</p>
@@ -944,10 +954,8 @@ alternative_order text/enriched text/plain text application/postscript image/*
           </li>
           <li class="listitem">
             <p>Tag the attachments that are alternatives, and press the
-            <span class="command">
-              <strong>&lt;group-alternatives&gt;</strong>
-            </span>(&amp;) binding to group them together. After this, the separate parts will be replaced by a single new part with the
-            <code class="literal">multipart/alternative</code> type and the alternatives must be manipulated or deleted as a group.</p>
+            <code class="literal">&lt;group-alternatives&gt;</code>(&amp;) binding to group them together. After this, the separate parts will be displayed in a tree structure. Attachments can still be edited separately and reordered within the group, but must be ungrouped using the
+            <code class="literal">&lt;ungroup-attachment&gt;</code>(#) binding for more advanced editing before tagging and grouping together again as described above.</p>
           </li>
           <li class="listitem">
             <p>Send the email as usual.</p>
@@ -958,21 +966,19 @@ alternative_order text/enriched text/plain text application/postscript image/*
       <code class="literal">multipart/alternative</code>, part then this message will be sent as a
       <code class="literal">multipart/alternative</code> email, otherwise it will be sent as a
       <code class="literal">multipart/mixed</code> email.</p>
-      <p>Note that after grouping, you can't view, edit or break the
-      <code class="literal">multipart/alternative</code> bundle, because it is in a temporary form. But you can view and edit its primitive part using the
-      <span class="command">
-        <strong>&lt;edit&gt;</strong>
-      </span>command. When postponing emails or on error (e.g., no recipients address when sending emails) this
-      <code class="literal">multipart/alternative</code> will be broken apart and need to be tagged and group together again as described above.</p>
       <p>Be aware that when sending a
       <code class="literal">multipart/alternative</code> email, you have to manually prepare the alternative parts and attach them. However, you can use Neomutt's macro to perform all the operations needed, such that you can compose a plain text email as usual and turn that into a
       <code class="literal">multipart/alternative</code> email in one single command, with one part being
       <code class="literal">text/plain</code> and the other
-      <code class="literal">text/html</code>. An example macro will be the following:</p>
+      <code class="literal">text/html</code>. An example macro which adds an HTML part to the main body of an email and sends it could be the following:</p>
       <pre class="screen">
-macro compose K "| pandoc -o /tmp/neomutt-alternative.html&lt;enter&gt; \
+  macro compose Y "&lt;first-entry&gt;&lt;enter-command&gt;set wait_key=no&lt;enter&gt; \
+    | pandoc -o /tmp/neomutt-alternative.html&lt;enter&gt; \
     &lt;attach-file&gt;/tmp/neomutt-alternative.html&lt;enter&gt; \
-    &lt;tag-entry&gt;&lt;previous-entry&gt;&lt;tag-entry&gt;&lt;group-alternatives&gt;"
+    &lt;toggle-unlink&gt;&lt;toggle-disposition&gt; \
+    &lt;tag-entry&gt;&lt;first-entry&gt;&lt;tag-entry&gt;&lt;group-alternatives&gt; \
+    &lt;enter-command&gt;set wait_key=yes&lt;enter&gt;&lt;send-message&gt;" \
+    "send the message as 'multipart/alternative'"
 </pre>
       <p></p>
     </div>
@@ -1038,24 +1044,18 @@ set preferred_languages="fr,en,de"
           </li>
           <li class="listitem">
             <p>Tag them with
-            <span class="command">
-              <strong>&lt;tag-entry&gt;</strong>
-            </span></p>
+            <code class="literal">&lt;tag-entry&gt;</code></p>
           </li>
           <li class="listitem">
             <p>Edit the
             <code class="literal">Content-Language</code> header of every attachment with command
-            <span class="command">
-              <strong>&lt;edit-language&gt;</strong>
-            </span>(default to
+            <code class="literal">&lt;edit-language&gt;</code>(default to
             <code class="literal">Ctrl-L</code>). This is important, otherwise the recipient of this email will not know the corresponding languages. You can set arbitrary string as
             <code class="literal">Content-Language</code>, but it is recommended to set it as some common prefixes such as "en", "zh" and "fr".</p>
           </li>
           <li class="listitem">
             <p>Group all the tag messages together by
-            <span class="command">
-              <strong>&lt;group-multilingual&gt;</strong>
-            </span>(default to
+            <code class="literal">&lt;group-multilingual&gt;</code>(default to
             <code class="literal">^</code>).</p>
           </li>
           <li class="listitem">
@@ -1065,12 +1065,8 @@ set preferred_languages="fr,en,de"
       </div>
       <p>As in
       <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>, you can also use Neomutt's macro and some external scripts to combine these procedure into one.</p>
-      <p>Note that after grouping, you can't view, edit or break the
-      <code class="literal">multipart/multilingual</code> email bundle, because it is in a temporary form. But you can view and edit its primitive part using the
-      <span class="command">
-        <strong>&lt;edit&gt;</strong>
-      </span>command. When postponing emails or on error (e.g., no recipients address when sending emails) this
-      <code class="literal">multipart/multilingual</code> will be broken apart and need to be tagged and group together again as described above.</p>
+      <p>After grouping the separate parts will be displayed in a tree structure. Attachments can still be edited separately and reordered within the group, but must be ungrouped using the
+      <code class="literal">&lt;ungroup-attachment&gt;</code>(#) binding for more advanced editing before tagging and grouping together again as described above.</p>
     </div>
   </div>
   <div class="sect1">
@@ -1078,7 +1074,109 @@ set preferred_languages="fr,en,de"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="attachments"></a>7.&#160;Attachment Searching and Counting</h2>
+          <a id="related"></a>7.&#160;MIME Multipart/Related</h2>
+        </div>
+      </div>
+    </div>
+    <p>Neomutt doesn't include any special support for reading
+    <code class="literal">multipart/related</code> emails, but it is possible to write a
+    <code class="literal">multipart/related</code> email. A
+    <code class="literal">multipart/related</code> attachment is intended for compound objects consisting of several inter-related body parts which are linked together using the
+    <code class="literal">Content-ID</code> header. Its format is described by
+    <a class="ulink" href="https://tools.ietf.org/html/rfc2387" target="_top">RFC2387</a>.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="compose-multipart-related"></a>7.1.&#160;Composing Multipart/Related Emails</h3>
+          </div>
+        </div>
+      </div>
+      <p>The procedure for composing a
+      <code class="literal">multipart/related</code> email is similar to that in
+      <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>. You have to prepare every part manually or using some scripts, and then tag and group them together into a
+      <code class="literal">multipart/related</code> bundle before sending it:</p>
+      <div class="orderedlist">
+        <ol class="orderedlist" type="1">
+          <li class="listitem">
+            <p>Prepare parts of the related email.</p>
+          </li>
+          <li class="listitem">
+            <p>Attach them as attachments.</p>
+          </li>
+          <li class="listitem">
+            <p>Tag them with
+            <code class="literal">&lt;tag-entry&gt;</code></p>
+          </li>
+          <li class="listitem">
+            <p>One part can reference another using its
+            <code class="literal">Content-ID</code> header. For example, an HTML part that includes an embedded image needs to contain:
+            <code class="literal">&lt;img src="cid:content-id"&gt;</code>where an attached image has a
+            <code class="literal">Content-ID</code> header of
+            <code class="literal">content-id</code>. The
+            <code class="literal">Content-ID</code> of an attachment can be set using
+            <code class="literal">&lt;edit-content-id&gt;</code>(default key
+            <code class="literal">Alt-i</code>).
+            <code class="literal">&lt;edit-content-id&gt;</code>sets a random ID which can then be changed if desired. Permitted characters for
+            <code class="literal">Content-ID</code> are:
+            <code class="literal">-.0-9@A-Z_a-z</code>.</p>
+            <p>If the
+            <code class="literal">multipart/related</code> group is intended to be inline, members of the group should also have their
+            <code class="literal">Content-Disposition</code> header set to
+            <code class="literal">inline</code> which can be toggled using
+            <code class="literal">&lt;toggle-disposition&gt;</code>(default key
+            <code class="literal">Ctrl-D</code>).</p>
+            <p>It can also be desirable to give referenced files in the group a
+            <code class="literal">filename</code> even when the
+            <code class="literal">Content-Disposition</code> is set to be
+            <code class="literal">inline</code>. To do this use
+            <code class="literal">&lt;rename-attachment&gt;</code>(default key
+            <code class="literal">Ctrl-O</code>).</p>
+          </li>
+          <li class="listitem">
+            <p>Group all the tagged messages together with
+            <code class="literal">&lt;group-related&gt;</code>(default key
+            <code class="literal">%</code>).</p>
+            <p>Top level attachments (excluding
+            <code class="literal">multipart</code> ones) in the group are automatically given a random
+            <code class="literal">Content-ID</code> if they do not already have one.</p>
+          </li>
+          <li class="listitem">
+            <p>Send the email as usual.</p>
+          </li>
+        </ol>
+      </div>
+      <p>Some care needs to be taken with the construction of a
+      <code class="literal">multipart/related</code> email to ensure it is correctly displayed by the receiving mail client. A typical email with a
+      <code class="literal">multipart/alternative</code> part containing a
+      <code class="literal">text/plain</code> part and a
+      <code class="literal">text/html</code> part with an embedded image, along with a separate attachment might end up like this:</p>
+      <pre class="screen">
+  I     1 &lt;no description&gt;                                         [multipart/related, 7bit, 0K]
+  I     2 ├─&gt;&lt;no description&gt;                                  [multipart/alternative, 7bit, 0K]
+- I     3 │ ├─&gt;/tmp/neomutt-hostname-XXXX-XXXXXX-XXXXXXXXXX   [text/plain, 7bit, us-ascii, 0.1K]
+- I     4 │ └─&gt;/tmp/neomutt-alternative.html                      [text/html, 8bit, utf-8, 0.6K]
+  I     5 └─&gt;image.png                                                  [image/png, base64, 19K]
+  A     6 attachment.pdf                                         [application/pdf, quoted, 7.1K]
+</pre>
+      <p>In the above email
+      <code class="literal">/tmp/neomutt-alternative.html</code> would reference
+      <code class="literal">image.png</code> using
+      <code class="literal">&lt;img src="cid:content-id"&gt;</code>and
+      <code class="literal">image.png</code> has been given an explicit name of
+      <code class="literal">image.png</code> using
+      <code class="literal">&lt;rename-attachment&gt;</code>(regardless of its initial filename).
+      <code class="literal">&lt;group-related&gt;</code>has set its
+      <code class="literal">Content-ID</code> header to a random value.</p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="attachments"></a>8.&#160;Attachment Searching and Counting</h2>
         </div>
       </div>
     </div>
@@ -1091,7 +1189,7 @@ set preferred_languages="fr,en,de"
     </span>commands.</p>
     <p>In order to provide this information, NeoMutt needs to fully MIME-parse all messages affected first. This can slow down operation especially for remote mail folders such as IMAP because all messages have to be downloaded first regardless whether the user really wants to view them or not though using
     <a class="xref" href="optionalfeatures.html#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a> usually means to download the message just once.</p>
-    <p>By default, Mutt will not search inside
+    <p>By default, NeoMutt will not search inside
     <code class="literal">multipart/alternative</code> containers. This can be changed via the
     <a class="link" href="reference.html#count-alternatives" title="3.58.&#160;count_alternatives">$count_alternatives</a> configuration variable.</p>
     <p>The syntax is:</p>
@@ -1226,7 +1324,7 @@ attachments  -I message/external-body
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="mime-lookup"></a>8.&#160;MIME Lookup</h2>
+          <a id="mime-lookup"></a>9.&#160;MIME Lookup</h2>
         </div>
       </div>
     </div>

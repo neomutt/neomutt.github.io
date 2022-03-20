@@ -178,7 +178,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
       <p></p>
       <p>This variable allows you to customize the browser display to your personal taste. This string is similar to
-      <a class="link" href="/guide/reference.html#index-format" title="3.170.&#160;index_format">$index_format</a>, but has its own set of
+      <a class="link" href="/guide/reference.html#index-format" title="3.171.&#160;index_format">$index_format</a>, but has its own set of
       <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -228,7 +228,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>For an explanation of
       <span class="quote">“
       <span class="quote">soft-fill</span>”</span>, see the
-      <a class="link" href="/guide/reference.html#index-format" title="3.170.&#160;index_format">$index_format</a> documentation.</p>
+      <a class="link" href="/guide/reference.html#index-format" title="3.171.&#160;index_format">$index_format</a> documentation.</p>
       <p>* = can be optionally printed if nonzero</p>
     </div>
   </div>
@@ -350,14 +350,14 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
             </tr>
             <tr>
               <td>
-                <code class="literal">virtual_spoolfile</code>
+                <code class="literal">virtual_spool_file</code>
               </td>
               <td>boolean</td>
               <td>
                 <code class="literal">no</code>
               </td>
               <td>Unnecessary since
-              <a class="link" href="/guide/reference.html#spoolfile" title="3.404.&#160;spoolfile">$spoolfile</a> supports mailbox descriptions.</td>
+              <a class="link" href="/guide/reference.html#spool-file" title="3.408.&#160;spool_file">$spool_file</a> supports mailbox descriptions.</td>
             </tr>
             <tr>
               <td>
@@ -383,6 +383,19 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <code class="literal">notmuch-search-terms</code> manual page for more info. Value of
               <code class="literal">0</code> disables windowed queries unless
               <code class="literal">nm_query_window_enable=yes</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">nm_query_window_or_terms</code>
+              </td>
+              <td>string</td>
+              <td>
+                <code class="literal">(empty)</code>
+              </td>
+              <td>Additional notmuch search terms to always include in the window even if they're outside the date range. This turns the window from
+              <code class="literal">date:...</code>to
+              <code class="literal">date:... or (additional search terms.)</code>For example, to always include flagged, unread emails, set to
+              <code class="literal">tag:flagged and tag:unread</code></td>
             </tr>
             <tr>
               <td>
@@ -487,6 +500,13 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               </td>
               <td>generate virtual folder by moving the query's time window backward</td>
             </tr>
+            <tr>
+              <td>index</td>
+              <td>
+                <code class="literal">&lt;vfolder-window-reset&gt;</code>
+              </td>
+              <td>generate virtual folder by moving the query's time window to the present</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -577,17 +597,16 @@ set nm_open_timeout = 5
 <span class="comment"># This variable specifies notmuch query type, supported types: 'threads' and</span>
 <span class="comment"># 'messages'.</span>
 set nm_query_type = messages
-<span class="comment"># Add messages stored to the NeoMutt record (see $record in the NeoMutt docs)</span>
-<span class="comment"># also to notmuch DB. If you reply to an email then the new email inherits</span>
-<span class="comment"># tags from the original email.</span>
+<span class="comment"># When writing a message in the NeoMutt record (see $record in the NeoMutt docs),</span>
+<span class="comment"># also add it to the notmuch DB. Replies inherit the tags from the original email.</span>
 set nm_record = no
-<span class="comment"># Tags that should be removed or added to the to the messages stored in the NeoMutt record.</span>
+<span class="comment"># Tags modifications to the messages stored in the NeoMutt record.</span>
 <span class="comment"># example:</span>
 <span class="comment">#   set record = "~/sent-mails"</span>
 <span class="comment">#   set nm_record = yes</span>
 <span class="comment">#   set nm_record_tags = "-inbox,archive,me"</span>
 set nm_record_tags = ""
-<span class="comment"># This variable specifies notmuch tag which is used for unread messages.</span>
+<span class="comment"># This variable specifies the notmuch tag used for unread messages.</span>
 set nm_unread_tag = unread
 <span class="comment"># This variable allows you to customize the file browser display for virtual</span>
 <span class="comment"># folders to your personal taste.</span>
@@ -601,8 +620,8 @@ set nm_unread_tag = unread
 <span class="comment"># %*X  soft-fill with character ``X'' as pad</span>
 set vfolder_format = "%6n(%6N) %f"
 <span class="comment"># When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)</span>
-<span class="comment"># as a spoolfile.</span>
-set virtual_spoolfile = no
+<span class="comment"># as a spool_file.</span>
+set virtual_spool_file = no
 <span class="comment"># setup time window preferences</span>
 <span class="comment"># first setup the duration, and then the time unit of that duration</span>
 <span class="comment"># when set to 0 (the default) the search window feature is disabled</span>
@@ -610,6 +629,8 @@ set virtual_spoolfile = no
 set nm_query_window_enable=yes
 set nm_query_window_duration=2
 set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
+<span class="comment"># Extend query window to always show mail matching these terms.</span>
+set nm_query_window_or_terms="tag:unread and tag:flagged"
 <span class="comment"># --------------------------------------------------------------------------</span>
 <span class="comment"># FUNCTIONS – shown with an example mapping</span>
 <span class="comment"># --------------------------------------------------------------------------</span>

@@ -59,7 +59,7 @@ status: stable
       </div>
     </div>
     <p>The
-    <span class="quote">“<span class="quote">Pager Read Delay</span>”</span> feature adds no new functions NeoMutt. Existing pager functions for navigating to a different message now check whether to mark a message as read.</p>
+    <span class="quote">“<span class="quote">Pager Read Delay</span>”</span> feature adds no new functions to NeoMutt. Existing pager functions for navigating to a different message now check whether to mark a message as read.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -72,7 +72,7 @@ status: stable
     </div>
     <p>The
     <span class="quote">“<span class="quote">Pager Read Delay</span>”</span> feature adds one new config variable,
-    <a class="link" href="/guide/reference.html#pager-read-delay" title="3.243.&#160;pager_read_delay">$pager_read_delay</a>, which is an integer for how many seconds the pager must remain on a given message before marking it as read. The variable defaults to 0 for the original behavior of marking a message as read the moment the pager visits it.</p>
+    <a class="link" href="/guide/reference.html#pager-read-delay" title="3.245.&#160;pager_read_delay">$pager_read_delay</a>, which is an integer for how many seconds the pager must remain on a given message before marking it as read. The variable defaults to 0 for the original behavior of marking a message as read the moment the pager visits it.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -86,8 +86,7 @@ status: stable
     <pre class="screen">
 <span class="comment"># Example NeoMutt config file for the pager-read-delay feature.</span>
 
-<span class="comment"># Stay at least 5 seconds on a message before
-the pager marks it as read</span>
+<span class="comment"># Stay at least 5 seconds on a message before the pager marks it as read</span>
 set pager_read_delay = 5
 
 <span class="comment"># vim: syntax=neomuttrc</span>
@@ -103,7 +102,7 @@ set pager_read_delay = 5
       </div>
     </div>
     <p>When
-    <a class="link" href="/guide/reference.html#pager-index-lines" title="3.242.&#160;pager_index_lines">$pager_index_lines</a> is non-zero, the
+    <a class="link" href="/guide/reference.html#pager-index-lines" title="3.244.&#160;pager_index_lines">$pager_index_lines</a> is non-zero, the
     <span class="quote">“<span class="quote">N</span>”</span> status indicator from the
     <span class="quote">“<span class="quote">%Z</span>”</span> expando of
     <a class="link" href="/guide/reference.html#index-format" title="3.171.&#160;index_format">$index_format</a> does not actively reflect the current new/read status of the message.</p>
