@@ -10,8 +10,8 @@ author: flatcap
 
 <table class="clean">
   <tr>
-    <td valign="top"><img width="500" src="https://github.com/neomutt/gfx/raw/master/arch/config-arch.svg"></td>
-    <td valign="top"><b>Key</b><br><img width="250" src="https://github.com/neomutt/gfx/raw/master/arch/config-arch-key.svg"></td>
+    <td valign="top"><img width="500" src="https://raw.githubusercontent.com/neomutt/gfx/main/arch/config-arch.svg"></td>
+    <td valign="top"><b>Key</b><br><img width="250" src="https://raw.githubusercontent.com/neomutt/gfx/main/arch/config-arch-key.svg"></td>
   </tr>
 </table>
 
