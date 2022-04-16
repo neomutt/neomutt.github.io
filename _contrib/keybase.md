@@ -26,6 +26,6 @@ Then just throw these into your .muttrc
 Done!
 
 Check out the
-[GitHub page](https://github.com/neomutt/neomutt/tree/master/contrib/keybase)
+[GitHub page](https://github.com/neomutt/neomutt/tree/main/contrib/keybase)
 for the full documentation.
 

@@ -25,27 +25,27 @@ Here are some of they ways that NeoMutt uses this service.
 
 To test the source code, Travis performs a set of builds with different
 configure options.
-[`.travis.yml`](https://github.com/neomutt/neomutt/blob/master/.travis.yml)
+[`.travis.yml`](https://github.com/neomutt/neomutt/blob/main/.travis.yml)
 installs all the dependencies that are needed, but the build is controlled by a
-[separate script](https://github.com/neomutt/travis-build/blob/master/build).
+[separate script](https://github.com/neomutt/travis-build/blob/main/build).
 
 The script has per-branch rules to determine how many builds to do and which
 options to use.  [_read more..._](https://github.com/neomutt/travis-build#travis-configs)
 
-- [master](https://github.com/neomutt/travis-build/blob/master/master.txt): 4
-- [devel/\*](https://github.com/neomutt/travis-build/blob/master/devel.txt): 1
-- [pull-request](https://github.com/neomutt/travis-build/blob/master/pull-request.txt): 2
+- [main](https://github.com/neomutt/travis-build/blob/main/main.txt): 4
+- [devel/\*](https://github.com/neomutt/travis-build/blob/main/devel.txt): 1
+- [pull-request](https://github.com/neomutt/travis-build/blob/main/pull-request.txt): 2
 
 ### Checking of the website links
 
 To test the website, Travis checks all of the HTML for errors.
 
-[`.travis.yml`](https://github.com/neomutt/neomutt.github.io/blob/master/.travis.yml)
+[`.travis.yml`](https://github.com/neomutt/neomutt.github.io/blob/main/.travis.yml)
 installs [Jekyll](https://jekyllrb.com/) and
 [html-proofer](https://github.com/gjtorikian/html-proofer#htmlproofer).
 
 The testing is done by running the
-[Rakefile](https://github.com/neomutt/neomutt.github.io/blob/master/Rakefile).
+[Rakefile](https://github.com/neomutt/neomutt.github.io/blob/main/Rakefile).
 
 ### Deployment of the translations
 

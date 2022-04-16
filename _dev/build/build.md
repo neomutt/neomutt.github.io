@@ -24,7 +24,7 @@ work with the source code and contribute to the project more easily.
 
 ### Git <a id="git"></a>
 
-Cloning the [main branch](https://github.com/neomutt/neomutt/tree/master) but
+Cloning the [main branch](https://github.com/neomutt/neomutt/tree/main) but
 also see our [list of branches](../github/branches).
 
 ```
@@ -51,7 +51,7 @@ example.
 
 Specific branch
 
-: <https://github.com/neomutt/neomutt/archive/master.zip>
+: <https://github.com/neomutt/neomutt/archive/main.zip>
 
 Note, archive file verification isn't possible here because this is not
 a NeoMutt release archive and thus no checksum file is available. Consider to

@@ -1,14 +1,14 @@
 ---
 title:       Build and Test
 description: Build the code and run some tests
-source:      https://github.com/neomutt/neomutt/blob/master/.github/workflows/build-and-test.yml
-badge:       https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg?branch=master&event=push
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/build-and-test.yml
+badge:       https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg?branch=main&event=push
 logs:        https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml
 author:      flatcap
 ---
 
 <div style="float: right;">
-<a href="https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml"><img src="https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg?branch=master&event=push" /></a>
+<a href="https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml"><img src="https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg?branch=main&event=push" /></a>
 <a href="https://lgtm.com/projects/g/neomutt/neomutt"><img src="https://img.shields.io/lgtm/alerts/github/neomutt/neomutt" /></a>
 </div>
 
@@ -35,7 +35,7 @@ set of unit tests on some of the libraries.
 
 | Key     | Description                                                    | Details                                                                                        |
 | :------ | :------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
-| Trigger | `git push`                                                     | To branches `master` or `devel/*`                                                              |
+| Trigger | `git push`                                                     | To branches `main` or `devel/*`                                                                |
 | Trigger | Pull Request                                                   |                                                                                                |
 | Uses    | GitHub's checkout action                                       | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action  | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)   |

@@ -60,12 +60,12 @@ de:	1335 translated, 33 fuzzy, 36 untranslated
 
 ### Git Rebase
 
-Rebase the existing `[translate]` branch onto `[master]`.
+Rebase the existing `translate` branch onto `main`.
 
 :spiral_notepad: **Note**: Delete the commit 'travis: add translate config'
 
 ```
-git rebase --interactive master
+git rebase --interactive main
 ```
 
 ### po/POTFILES.in
@@ -125,11 +125,11 @@ The update work is done.  Now it's time to commit the changes.
 
 ```sh
 git commit --all --message "sync translations"
-git checkout master
+git checkout main
 git merge --no-ff translate --message "update translations"
 ```
 
-`master` may now be pushed to GitHub.
+`main` may now be pushed to GitHub.
 
 ### Re-create [translate]
 

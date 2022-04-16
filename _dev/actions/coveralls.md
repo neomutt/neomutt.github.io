@@ -1,7 +1,7 @@
 ---
 title:       Coveralls
 description: Code coverage tests
-source:      https://github.com/neomutt/neomutt/blob/master/.github/workflows/coveralls.yml
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/coveralls.yml
 badge:       https://github.com/neomutt/neomutt/actions/workflows/coveralls.yml/badge.svg
 logs:        https://github.com/neomutt/neomutt/actions/workflows/coveralls.yml
 author:      flatcap

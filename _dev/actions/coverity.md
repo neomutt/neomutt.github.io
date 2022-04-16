@@ -1,7 +1,7 @@
 ---
 title:       Coverity
 description: Static analysis of the code
-source:      https://github.com/neomutt/neomutt/blob/master/.github/workflows/coverity.yml
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/coverity.yml
 badge:       https://github.com/neomutt/neomutt/actions/workflows/coverity.yml/badge.svg
 logs:        https://github.com/neomutt/neomutt/actions/workflows/coverity.yml
 author:      flatcap

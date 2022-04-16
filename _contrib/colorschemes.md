@@ -13,8 +13,8 @@ dir: colorschemes
 - [256](https://github.com/d3ckard/mutt_color_themes)
 - [solarized](https://github.com/altercation/mutt-colors-solarized)
 - [gruvbox](https://www.sthu.org/code/codesnippets/mutt-gruvbox.html)
-- [vombatidae](https://github.com/neomutt/neomutt/blob/master/contrib/colorschemes/vombatidae.neomuttrc)
-- [zenburn](https://github.com/neomutt/neomutt/blob/master/contrib/colorschemes/zenburn.neomuttrc)
+- [vombatidae](https://github.com/neomutt/neomutt/blob/main/contrib/colorschemes/vombatidae.neomuttrc)
+- [zenburn](https://github.com/neomutt/neomutt/blob/main/contrib/colorschemes/zenburn.neomuttrc)
 
 Welcome to add more!
 

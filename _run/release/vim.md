@@ -10,7 +10,7 @@ author: Richard Russon
 {{ page.description }}
 {% include release-links.html %}
 
-We distribute a [Vim syntax file](https://github.com/neomutt/neomutt.vim/blob/master/syntax/neomuttrc.vim) for highlighting NeoMutt config files.
+We distribute a [Vim syntax file](https://github.com/neomutt/neomutt.vim/blob/main/syntax/neomuttrc.vim) for highlighting NeoMutt config files.
 This needs updating before each release.
 
 **Repos needed**:

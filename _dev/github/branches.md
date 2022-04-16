@@ -14,7 +14,7 @@ The [neomutt](https://github.com/neomutt/neomutt) repository has 9
 
 | Branch    | Description                                                                                                                                                                          |
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| master    | Main branch -- The Official NeoMutt                                                                                                                                                  |
+| main      | Main branch -- The Official NeoMutt                                                                                                                                                  |
 | coveralls | Extra files needs to generate test coverage, see [Coveralls](https://coveralls.io/github/neomutt/neomutt)                                                                            |
 | coverity  | Code sent to [Coverity](https://scan.coverity.com/projects/neomutt-neomutt) for testing. Coverity limits the weekly builds like Travis, so we have to do that in an external branch. |
 | doxygen   | Extra files needed to generate the [Doxygen Code Docs](/code/)                                                                                                                       |
@@ -28,7 +28,7 @@ In addition, there may be some temporary branches.
 
 | Branch         | Description                                                                                                                  |
 | :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| devel/{NAME}   | New features are created in `devel` branches. When complete, documented and tested they are merged into the `master` branch. |
+| devel/{NAME}   | New features are created in `devel` branches. When complete, documented and tested they are merged into the `main` branch.   |
 | distro/{NAME}  | We keep reference copies of some of the downstream distros' NeoMutt code. **Note:** some of these repos are out-of-date.     |
 | flatcap/{NAME} | @flatcap's test branches -- not suitable for public use.                                                                     |
 | issue/{NUMBER} | When fixing a bug, sometimes we create an `issue` branch for the user to test.                                               |

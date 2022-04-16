@@ -47,9 +47,9 @@ generate the manual.
 
 ### opcodes.h
 
-[opcodes.h](https://github.com/neomutt/neomutt/blob/master/opcodes.h)
+[opcodes.h](https://github.com/neomutt/neomutt/blob/main/opcodes.h)
 are processed by a perl script:
-[gen-map-doc](https://github.com/neomutt/neomutt/blob/master/docs/gen-map-doc)
+[gen-map-doc](https://github.com/neomutt/neomutt/blob/main/docs/gen-map-doc)
 
 | Function ID            | Description                               |
 | :--------------------- | :---------------------------------------- |
@@ -59,9 +59,9 @@ are processed by a perl script:
 
 ### functions.h
 
-[functions.h](https://github.com/neomutt/neomutt/blob/master/functions.h)
+[functions.h](https://github.com/neomutt/neomutt/blob/main/functions.h)
 is processed by a perl script:
-[gen-map-doc](https://github.com/neomutt/neomutt/blob/master/docs/gen-map-doc)
+[gen-map-doc](https://github.com/neomutt/neomutt/blob/main/docs/gen-map-doc)
 
 | function name  | function ID   | default key |
 | :------------- | :------------ | :---------- |
@@ -71,9 +71,9 @@ is processed by a perl script:
 
 ### init.h
 
-[init.h](https://github.com/neomutt/neomutt/blob/master/init.h)
+[init.h](https://github.com/neomutt/neomutt/blob/main/init.h)
 is processed by a program:
-[makedoc](https://github.com/neomutt/neomutt/blob/master/docs/makedoc.c)
+[makedoc](https://github.com/neomutt/neomutt/blob/main/docs/makedoc.c)
 It reads the variable, its type and default value. It also processed the
 description which is written in NROFF (man) format.
 
@@ -112,7 +112,7 @@ NeoMutt's website is hosted by GitHub's Pages. It's a static site which uses
 [Jekyll](https://jekyllrb.com) to allow some templating and "magic".
 
 To turn manual.xml into a website requires quite a lot of post-processing. The
-main script is: [build](https://github.com/neomutt/docbook/blob/master/build)
+main script is: [build](https://github.com/neomutt/docbook/blob/main/build)
 in the [docbook repo](https://github.com/neomutt/docbook)
 
 `build` takes the HTML files and tidies them, cuts out the bits we want and

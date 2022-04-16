@@ -1,7 +1,7 @@
 ---
 title:       Doxygen
 description: Build code docs
-source:      https://github.com/neomutt/neomutt/blob/master/.github/workflows/doxygen.yml
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/doxygen.yml
 badge:       https://github.com/neomutt/neomutt/actions/workflows/doxygen.yml/badge.svg
 logs:        https://github.com/neomutt/neomutt/actions/workflows/doxygen.yml
 author:      flatcap

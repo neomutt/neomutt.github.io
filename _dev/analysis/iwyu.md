@@ -72,7 +72,7 @@ with one helper header
 #include "mutt/mutt.h"
 ```
 
-The [mapping file](https://github.com/neomutt/management/blob/master/iwyu/neomutt.imp)
+The [mapping file](https://github.com/neomutt/management/blob/main/iwyu/neomutt.imp)
 also provides fixes for some header files in glibc that cause confusion.
 It looks like this:
 

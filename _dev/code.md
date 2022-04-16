@@ -380,7 +380,7 @@ indent_style = space
 ```
 
 [ec]:  <http://editorconfig.org/>
-[ecf]: <https://github.com/neomutt/neomutt/blob/master/.editorconfig>
+[ecf]: <https://github.com/neomutt/neomutt/blob/main/.editorconfig>
 
 ## Clang-Format <a id="clang-format"></a>
 
@@ -404,7 +404,7 @@ comments:
 
 These should be used as little as possible.
 
-[ncf]: <https://github.com/neomutt/neomutt/blob/master/.clang-format>
+[ncf]: <https://github.com/neomutt/neomutt/blob/main/.clang-format>
 [cfd]: <https://clang.llvm.org/docs/ClangFormatStyleOptions.html>
 
 ## Code Style

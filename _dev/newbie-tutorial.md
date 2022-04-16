@@ -192,7 +192,7 @@ merged into Mutt.
 #### Required tools <a id="required-tools"></a>
 
 Usually, the
-[.travis.yml](https://github.com/neomutt/neomutt/blob/master/.travis.yml) files
+[.travis.yml](https://github.com/neomutt/neomutt/blob/main/.travis.yml) files
 are a good starting point here.
 
 #### Coding style <a id="coding-style"></a>
@@ -243,8 +243,8 @@ a better job, prove it.
 Please don't edit the `*.html` and `*.md` files in the following folders, as they
 are semi-automatically generated:
 
-* [\_man](https://github.com/neomutt/neomutt.github.io/tree/master/_man)
-* [guide](https://github.com/neomutt/neomutt.github.io/tree/master/guide)
+* [\_man](https://github.com/neomutt/neomutt.github.io/tree/main/_man)
+* [guide](https://github.com/neomutt/neomutt.github.io/tree/main/guide)
 
 Of course, you can always send pull requests to update those folders.
 

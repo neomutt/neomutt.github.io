@@ -25,7 +25,7 @@ Unlike many similar tools, it really understands the code it's transforming.
 It uses [clang](https://clang.llvm.org/) to create an
 [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) for the code.
 
-[NeoMutt's config file](https://github.com/neomutt/neomutt/blob/master/.clang-format) ships with the code.
+[NeoMutt's config file](https://github.com/neomutt/neomutt/blob/main/.clang-format) ships with the code.
 
 The config file looks like this:
 

@@ -54,7 +54,7 @@ Once all the changes are committed, check your work and test that NeoMutt still 
 Finally, merge your changes:
 
 ```
-git checkout master
+git checkout main
 git commit --no-ff upstream --message "upstream fixes" --message "Upstream commit: HASH"
 ```
 

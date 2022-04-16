@@ -1,7 +1,7 @@
 ---
 title:       Translate
 description: Update the Translation Leaderboard
-source:      https://github.com/neomutt/neomutt/blob/master/.github/workflows/translate.yml
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/translate.yml
 badge:       https://github.com/neomutt/neomutt/actions/workflows/translate.yml/badge.svg
 logs:        https://github.com/neomutt/neomutt/actions/workflows/translate.yml
 author:      flatcap

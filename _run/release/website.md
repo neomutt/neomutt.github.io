@@ -73,7 +73,7 @@ We start by processing the `manual.xml` file.
 5. After checking the results (in the next section), commit with full NeoMutt version string:
    
    1. `git commit --all --message 'NeoMutt 20180716-2125-b37a78'`
-   2. `git push origin master`
+   2. `git push origin main`
 
 ## Installing the HTML
 
@@ -98,7 +98,7 @@ The html still needs some more processing.
 
 4. After checking the results, commit with full NeoMutt version string:
    1. `git commit --all --message 'guide: NeoMutt 20180716-2125-b37a78'`
-   2. `git push origin master`
+   2. `git push origin main`
 
 ## Manual Pages
 
@@ -114,7 +114,7 @@ Now, commit the man pages:
 
 ```sh
 git commit --all --message 'man: NeoMutt 20180716-2125-b37a78'
-git push origin master
+git push origin main
 ```
 
 ## Practice

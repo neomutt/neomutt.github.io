@@ -82,7 +82,7 @@ For extra security add branch protection.
 
 - **Open**: https://github.com/**USER**/**DST_REPO**/settings/branches
 - Protected branches
-- master
+- main
   * Protect this branch
   * Save changes
 

@@ -22,7 +22,7 @@ are triggered on every commit to GitHub.
 - [Travis CI](https://travis-ci.com/) automatically build projects on every commit (Continuous Integration).
 - [Coverity](https://scan.coverity.com/) performs static analysis on the code looking for potential problems.
 
-[![code status](https://img.shields.io/travis/com/neomutt/neomutt/master?label=code)](https://travis-ci.com/neomutt/neomutt)
+[![code status](https://img.shields.io/travis/com/neomutt/neomutt/main?label=code)](https://travis-ci.com/neomutt/neomutt)
 [![coverity status](https://img.shields.io/coverity/scan/8495.svg)](https://scan.coverity.com/projects/neomutt-neomutt)
 [![web status](https://img.shields.io/travis/neomutt/neomutt.github.io.svg?label=website)](https://travis-ci.org/neomutt/neomutt.github.io)
 [![coverage status](https://coveralls.io/repos/github/neomutt/neomutt/badge.svg?branch=coveralls)](https://coveralls.io/github/neomutt/neomutt?branch=coveralls)

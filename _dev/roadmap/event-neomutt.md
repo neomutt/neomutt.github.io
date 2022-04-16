@@ -11,7 +11,7 @@ description: A scheme for an event-driven NeoMutt
 
 ## Nested Data
 
-<img align="right" width="116" height="300" src="https://raw.githubusercontent.com/neomutt/gfx/master/arch/arch-data.svg">
+<img align="right" width="116" height="300" src="https://raw.githubusercontent.com/neomutt/gfx/main/arch/arch-data.svg">
 
 At the heart of NeoMutt is the data. It starts with:
 
@@ -52,7 +52,7 @@ Root Window (R)
 └─▶ Command Line / Message Window
 ```
 
-<img width="600" height="330" src="https://raw.githubusercontent.com/neomutt/gfx/master/screenshots/window/dlg-index-pager.svg">
+<img width="600" height="330" src="https://raw.githubusercontent.com/neomutt/gfx/main/screenshots/window/dlg-index-pager.svg">
 
 Each Window has a set of simple rules that determine its size and position.
 
@@ -80,7 +80,7 @@ Windows.
 
 ## Views
 
-<img align="right" width="150" height="200" src="https://raw.githubusercontent.com/neomutt/gfx/master/arch/arch-view.svg">
+<img align="right" width="150" height="200" src="https://raw.githubusercontent.com/neomutt/gfx/main/arch/arch-view.svg">
 
 The Email Index is simply the list of Emails in a certain Mailbox.
 But:
@@ -107,7 +107,7 @@ Index2 won't affect Index1.
 
 ## Notifications
 
-<img align="right" width="150" height="300" src="https://raw.githubusercontent.com/neomutt/gfx/master/arch/observer.svg">
+<img align="right" width="150" height="300" src="https://raw.githubusercontent.com/neomutt/gfx/main/arch/observer.svg">
 
 To keep the Data and Views separate, NeoMutt uses an [Observer
 Pattern](https://en.wikipedia.org/wiki/Observer_pattern) system of notifications.
@@ -119,7 +119,7 @@ When a subject changes, all the observers will be notified.
 
 :bulb: **Note**: Subjects are nested and Notifications will be propagated up the tree
 
-<img width="600" height="300" src="https://raw.githubusercontent.com/neomutt/gfx/master/arch/notify.svg">
+<img width="600" height="300" src="https://raw.githubusercontent.com/neomutt/gfx/main/arch/notify.svg">
 
 Current list of Subjects:
 

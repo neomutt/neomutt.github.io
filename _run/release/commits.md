@@ -39,14 +39,14 @@ Create a branch, `[rel]` for any late changes:
 
 ## Merge into Master
 
-Merge the release changes into `[master]` and create a signed tag.
+Merge the release changes into `main` and create a signed tag.
 This tag marks the actual release of NeoMutt.
 
 ```sh
-git checkout master
+git checkout main
 git merge --no-ff rel --message "NeoMutt $(date +%F)"
 git tag -s $(date +%F) -m "NeoMutt release $(date +%F)"
-git push --tags origin master
+git push --tags origin main
 ```
 
 ## GitHub Release

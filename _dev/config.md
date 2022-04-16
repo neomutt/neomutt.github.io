@@ -200,10 +200,10 @@ set `C_HomeAddr` to NULL.
 ### Global Config
 
 There are ~450 Config Names in NeoMutt.  Half of these are defined in
-[`mutt_config.c`](https://github.com/neomutt/neomutt/blob/master/mutt_config.c#L192).
+[`mutt_config.c`](https://github.com/neomutt/neomutt/blob/main/mutt_config.c#L192).
 
 Each Config Item is backed by a global Variable, many of which live in
-[`mutt_globals.h`](https://github.com/neomutt/neomutt/blob/master/mutt_globals.h#L98)
+[`mutt_globals.h`](https://github.com/neomutt/neomutt/blob/main/mutt_globals.h#L98)
 
 ### Library Config
 
@@ -212,8 +212,8 @@ The rest of the Config Items have been moved into libraries.
 This allows the libraries to reduce the scope of their Config Variables.
 
 For example, the Sidebar
-[registers](https://github.com/neomutt/neomutt/blob/master/sidebar/config.c#L124) its
-[Config Items](https://github.com/neomutt/neomutt/blob/master/sidebar/config.c#L71)
+[registers](https://github.com/neomutt/neomutt/blob/main/sidebar/config.c#L124) its
+[Config Items](https://github.com/neomutt/neomutt/blob/main/sidebar/config.c#L71)
 in `sidebar/config.c`
 
 ```c

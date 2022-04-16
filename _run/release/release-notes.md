@@ -20,11 +20,11 @@ Once the Notes have been completed, they need to be transformed slightly for the
 The [management](https://github.com/neomutt/management) repo contains templates.
 These are just suggestions.
 
-- [changelog.md](https://github.com/neomutt/management/blob/master/release-templates/changelog.md)
-- [dev-ml.txt](https://github.com/neomutt/management/blob/master/release-templates/dev-ml.txt)
-- [github.md](https://github.com/neomutt/management/blob/master/release-templates/github.md)
-- [user-ml.txt](https://github.com/neomutt/management/blob/master/release-templates/user-ml.txt)
-- [website.md](https://github.com/neomutt/management/blob/master/release-templates/website.md)
+- [changelog.md](https://github.com/neomutt/management/blob/main/release-templates/changelog.md)
+- [dev-ml.txt](https://github.com/neomutt/management/blob/main/release-templates/dev-ml.txt)
+- [github.md](https://github.com/neomutt/management/blob/main/release-templates/github.md)
+- [user-ml.txt](https://github.com/neomutt/management/blob/main/release-templates/user-ml.txt)
+- [website.md](https://github.com/neomutt/management/blob/main/release-templates/website.md)
 
 It's probably easiest to start with the github template, writing in Markdown, then simplifying it where necessary.
 

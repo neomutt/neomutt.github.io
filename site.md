@@ -33,7 +33,7 @@ framework and a colour scheme from Ian Wootten's
 
 The site is &copy; {{ site.time | date: '%Y' }} Richard Russon and released
 under the
-[Creative Commons Attribution](https://github.com/neomutt/neomutt.github.io/blob/master/LICENSE.md#creative-commons)
+[Creative Commons Attribution](https://github.com/neomutt/neomutt.github.io/blob/main/LICENSE.md#creative-commons)
 license.
 
 The site was last updated on {{ site.time | date: '%Y-%m-%d at %H:%M:%S' }}

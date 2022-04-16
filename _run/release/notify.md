@@ -93,5 +93,5 @@ Strip down the release message to the bare essentials and link to the current re
 After the release, send each of the new contributors a 'Thank You' message
 containing a link to the GitHub Release Notes.
 
-- [newbies.txt](https://github.com/neomutt/management/blob/master/release-templates/newbies.txt)
+- [newbies.txt](https://github.com/neomutt/management/blob/main/release-templates/newbies.txt)
 
