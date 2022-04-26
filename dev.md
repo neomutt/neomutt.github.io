@@ -19,12 +19,11 @@ Finally, some automatic checking is done on commits and pull requests for
 NeoMutt. It benefits from two free services (free for Open Source). They
 are triggered on every commit to GitHub.
 
-- [Travis CI](https://travis-ci.com/) automatically build projects on every commit (Continuous Integration).
+- [GitHub Actions](https://github.com/neomutt/neomutt/actions) automatically build projects on every commit (Continuous Integration).
 - [Coverity](https://scan.coverity.com/) performs static analysis on the code looking for potential problems.
 
-[![code status](https://img.shields.io/travis/com/neomutt/neomutt/main?label=code)](https://travis-ci.com/neomutt/neomutt)
+[![code status](https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml)
 [![coverity status](https://img.shields.io/coverity/scan/8495.svg)](https://scan.coverity.com/projects/neomutt-neomutt)
-[![web status](https://img.shields.io/travis/neomutt/neomutt.github.io.svg?label=website)](https://travis-ci.org/neomutt/neomutt.github.io)
 [![coverage status](https://coveralls.io/repos/github/neomutt/neomutt/badge.svg?branch=coveralls)](https://coveralls.io/github/neomutt/neomutt?branch=coveralls)
 
 <img height="300" width="768" src="https://starchart.cc/neomutt/neomutt.svg" />
