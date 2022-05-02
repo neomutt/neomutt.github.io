@@ -1,8 +1,10 @@
 ---
 title: News
+description: Please check the release page for any updates.
 ---
 
 # {{ page.title }}
+{{ page.description }}
 
 {%for post in site.posts %}
     {% unless post.next %}
