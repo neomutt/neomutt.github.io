@@ -1,0 +1,140 @@
+---
+title: Account Credentials Command
+description: Populate account credentials via an external command
+since: 
+status: devel
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/account-cmd"></a>Account Credentials Command Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Populate account credentials via an external command</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2022-xx-yy</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>NeoMutt provides dedicated config variables to specify credentials for network servers. These include
+    <code class="literal">imap_user</code>,
+    <code class="literal">imap_pass</code>,
+    <code class="literal">smtp_user</code>,
+    <code class="literal">smtp_pass</code>, etc. There are a few downsides to this approach. For one thing, their use encourages storing usernames and passwords in plain text inside a NeoMutt config file. People have come up with solutions to this, including using gpg-encrypted files and populating
+    <code class="literal">my_</code> variables via external scripts through
+    <code class="literal">source "/path/to/script|"</code>. However, once the variables are set, the secrets can be inspected with the
+    <code class="literal">set</code> command. Also, because these config variables are not account-specific, they have been the cause of a proliferation of ways to mimic per-account setups using a combination of convoluted hooks and macros to modify them on on folder change or on a keypress.</p>
+    <p>The goal of this feature is to get rid of most
+    <code class="literal">_user</code> and
+    <code class="literal">_pass</code> variables. To do so, we provide a way of specifying an external command that NeoMutt will call to populate account credentials for network servers such as IMAP, POP, or SMTP. The external command is called with a number of arguments indicating the known properties of the account such as the account type and hostname; the external command provides NeoMutt with a list of additional properties such as username and password.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="accound-cmd-usage"></a>3.&#160;Usage</h2>
+        </div>
+      </div>
+    </div>
+    <p>The variable
+    <code class="literal">account_command</code> configures an external program to be used to gather account credentials.</p>
+    <pre class="screen">
+set account_command = /path/to/my/script.sh
+</pre>
+    <p>The program specified will be called by NeoMutt with a number of key-value command line arguments.</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+          <code class="literal">--hostname val</code>: the network host name of the service</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <code class="literal">--username val</code>: the username for the account. This might be specified in the URL itself, e.g.,
+          <code class="literal">set folder="imaps://me@example.com@example.com"</code>or with a dedicated existing variable, e.g.,
+          <code class="literal">set imap_user=me@example.com</code>.</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <code class="literal">--type val</code>: the type of the account, one of
+          <code class="literal">imap</code>,
+          <code class="literal">pop</code>,
+          <code class="literal">smtp</code>,
+          <code class="literal">nntp</code>, with an optional trailing
+          <code class="literal">s</code> if SSL/TLS is required.</p>
+        </li>
+      </ul>
+    </div>
+    <p>The program specified will have to respond by printing to stdout a number of
+    <code class="literal">key: value</code> lines. NeoMutt currently recognizes the following keys.</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>login</p>
+        </li>
+        <li class="listitem">
+          <p>username</p>
+        </li>
+        <li class="listitem">
+          <p>password</p>
+        </li>
+      </ul>
+    </div>
+    <p>Because password can contain any characters, including spaces, we expect lines to match the regex
+    <code class="literal">^([[:alpha:]]+): (.*)$</code>exactly.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="known-bugs"></a>4.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>5.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Pietro Cerutti</p>
+  </div>
+</div>
+{% endraw %}
