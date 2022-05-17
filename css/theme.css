@@ -121,6 +121,14 @@ ul.navbar-nav {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 a.navbar-brand {
   color: #000 !important;
   font-size: 160%;
@@ -134,7 +142,6 @@ a.navbar-brand {
 li.active a {
   color: #000 !important;
   background: inherit !important;
-  text-decoration: none;
 }
 
 .navbar {
