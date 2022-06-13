@@ -8,13 +8,18 @@ If you have programming skills and some free time, we'd love to hear from you.
 
 If not, please consider becoming a sponsor.
 
+<a href="https://github.com/sponsors/flatcap"><img alt="GitHub" width="32" src="/images/github-large.png"></a>
+<a href="https://patreon.com/neomutt"><img alt="Patreon" width="32" src="/images/patreon.png"></a>
+<a href="https://www.paypal.me/russon/"><img alt="PayPal" width="32" src="/images/paypal.png"></a>
+<a href="#-bitcoin"><img alt="BitCoin" width="32" src="/images/btc-logo.svg"></a>
+
 Thanks :heart:
 
 ---
 
 <a href="https://github.com/sponsors/flatcap"><img alt="GitHub" width="48" src="/images/github-large.png"> <span class="big">GitHub</span></a>
 
-[GitHub Sponsors](https://github.com/sponsors/flatcap)
+Using **[GitHub Sponsors](https://github.com/sponsors/flatcap)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
 
 You may also be interested in:
 
@@ -26,19 +31,17 @@ You may also be interested in:
 
 <a href="https://patreon.com/neomutt"><img alt="Patreon" width="48" src="/images/patreon.png"> <span class="big">Patreon</span></a>
 
-[Patreon](https://patreon.com/neomutt)
+Using **[Patreon](https://patreon.com/neomutt)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
 
 ---
 
 <a href="https://www.paypal.me/russon/"><img alt="PayPal" width="48" src="/images/paypal.png"> <span class="big">PayPal</span></a>
 
-[PayPal](https://www.paypal.me/russon/)
+If you have a **[PayPal](https://www.paypal.me/russon/) account**, you can make a donation by **transferring money**, or using a **credit card**.
 
----
+## <img alt="BitCoin" width="48" src="/images/btc-logo.svg"> BitCoin
 
-<img alt="BitCoin" width="48" src="/images/btc-logo.svg"> <span class="big">BitCoin</span>
-
-If crypto's your thing, then you can make a donation to this wallet:
+If **crypto**'s your thing, then you can make a **donation** to this wallet:
 
 - **BitCoin**: `39Cbb8RScLnXZaSS3eqBYpBrwnTm8iNKG1`
 
