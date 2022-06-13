@@ -11,7 +11,7 @@ If not, please consider becoming a sponsor.
 <a href="https://github.com/sponsors/flatcap"><img alt="GitHub" width="32" src="/images/github-large.png"></a>
 <a href="https://patreon.com/neomutt"><img alt="Patreon" width="32" src="/images/patreon.png"></a>
 <a href="https://www.paypal.me/russon/"><img alt="PayPal" width="32" src="/images/paypal.png"></a>
-<a href="#-bitcoin"><img alt="BitCoin" width="32" src="/images/btc-logo.svg"></a>
+<a href="#bitcoin"><img alt="BitCoin" width="32" src="/images/btc-logo.svg"></a>
 
 Thanks :heart:
 
@@ -39,7 +39,7 @@ Using **[Patreon](https://patreon.com/neomutt)**, you can set up **monthly spons
 
 If you have a **[PayPal](https://www.paypal.me/russon/) account**, you can make a donation by **transferring money**, or using a **credit card**.
 
-## <img alt="BitCoin" width="48" src="/images/btc-logo.svg"> BitCoin
+## <img style="margin-right: 0.5em;" alt="BitCoin" width="48" src="/images/btc-logo.svg">BitCoin
 
 If **crypto**'s your thing, then you can make a **donation** to this wallet:
 
