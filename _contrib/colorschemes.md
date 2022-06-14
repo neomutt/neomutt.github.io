@@ -12,9 +12,11 @@ dir: colorschemes
 - [neonwolf](https://github.com/h3xx/mutt-colors-neonwolf)
 - [256](https://github.com/d3ckard/mutt_color_themes)
 - [solarized](https://github.com/altercation/mutt-colors-solarized)
+- [solarized-dark](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/solarized-dark.neomuttrc)
 - [gruvbox](https://www.sthu.org/code/codesnippets/mutt-gruvbox.html)
-- [vombatidae](https://github.com/neomutt/neomutt/blob/main/contrib/colorschemes/vombatidae.neomuttrc)
-- [zenburn](https://github.com/neomutt/neomutt/blob/main/contrib/colorschemes/zenburn.neomuttrc)
+- [neonwolf-256](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/neonwolf-256.neomuttrc)
+- [vombatidae](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/vombatidae.neomuttrc)
+- [zenburn](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/zenburn.neomuttrc)
 
 Welcome to add more!
 
