@@ -36,7 +36,7 @@ Using **[Patreon](https://patreon.com/neomutt)**, you can set up **monthly spons
 
 ---
 
-<a href="https://liberapay.com/flatcap"><img alt="LiberaPay" width="48" src="/images/liberapay.png"></a>
+<a href="https://liberapay.com/flatcap"><img alt="LiberaPay" width="48" src="/images/liberapay.png"> <span class="big">LiberaPay</span></a>
 
 Using **[LiberaPay](https://liberapay.com/flatcap)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
 
