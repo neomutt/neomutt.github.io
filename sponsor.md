@@ -10,6 +10,7 @@ If not, please consider becoming a sponsor.
 
 <a href="https://github.com/sponsors/flatcap"><img alt="GitHub" width="32" src="/images/github-large.png"></a>
 <a href="https://patreon.com/neomutt"><img alt="Patreon" width="32" src="/images/patreon.png"></a>
+<a href="https://liberapay.com/flatcap"><img alt="LiberaPay" width="32" src="/images/liberapay.png"></a>
 <a href="https://www.paypal.me/russon/"><img alt="PayPal" width="32" src="/images/paypal.png"></a>
 <a href="#bitcoin"><img alt="BitCoin" width="32" src="/images/btc-logo.svg"></a>
 
@@ -32,6 +33,12 @@ You may also be interested in:
 <a href="https://patreon.com/neomutt"><img alt="Patreon" width="48" src="/images/patreon.png"> <span class="big">Patreon</span></a>
 
 Using **[Patreon](https://patreon.com/neomutt)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
+
+---
+
+<a href="https://liberapay.com/flatcap"><img alt="LiberaPay" width="48" src="/images/liberapay.png"></a>
+
+Using **[LiberaPay](https://liberapay.com/flatcap)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
 
 ---
 
