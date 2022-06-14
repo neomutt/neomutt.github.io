@@ -514,8 +514,11 @@ folder-hook imap://user@host2/ 'set folder=imap://host2/ ; set record=+INBOX/Sen
       <a class="link" href="reference.html#header-cache" title="3.147.&#160;header_cache">$header_cache</a> can be used to either point to a file or a directory. If set to point to a file, one database file for all folders will be used (which may result in lower performance), but one file per folder if it points to a directory.</p>
       <p>Additionally,
       <a class="link" href="reference.html#header-cache-backend" title="3.148.&#160;header_cache_backend">$header_cache_backend</a> can be set to specify which backend to use. The list of available backends can be specified at configure time with a set of --with-&lt;backend&gt; options. Currently, the following backends are supported: bdb, gdbm, kyotocabinet, lmdb, qdbm, rocksdb, tdb, tokyocabinet.</p>
-      <p>Take a look at the benchmark script provided in the following directory:
-      <a class="ulink" href="https://github.com/neomutt/neomutt/blob/main/contrib/hcache-bench" target="_top">contrib/hcache-bench</a> of the neomutt sources, there you can find a way of finding the storage backend for your needs.</p>
+      <p>Take a look at the benchmark script provided in the following repository:
+      <a class="ulink"
+          href="https://github.com/neomutt/contrib-hcache-benchmark"
+          target="_top">contrib-hcache-benchmark</a>.
+      There you can find a way of finding the storage backend for your needs.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
