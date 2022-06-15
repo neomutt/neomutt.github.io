@@ -16,17 +16,19 @@ If not, please consider becoming a sponsor.
 
 Thanks :heart:
 
+You may also be interested in:
+
+- [Giving NeoMutt a Star](https://github.com/neomutt/neomutt/stargazers)
+- [Following the NeoMutt Project](https://github.com/neomutt)
+- [Following flatcap](https://github.com/flatcap) (NeoMutt's creator)
+
 ---
 
 <a href="https://github.com/sponsors/flatcap"><img alt="GitHub" width="48" src="/images/github-large.png"> <span class="big">GitHub</span></a>
 
 Using **[GitHub Sponsors](https://github.com/sponsors/flatcap)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
 
-You may also be interested in:
-
-- [Giving NeoMutt a Star](https://github.com/neomutt/neomutt/stargazers)
-- [Following the NeoMutt Project](https://github.com/neomutt)
-- [Following flatcap](https://github.com/flatcap) (NeoMutt's creator)
+:star2: **Note**: GitHub will match any donations you make
 
 ---
 
