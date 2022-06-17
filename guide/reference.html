@@ -4354,7 +4354,7 @@ sh -c 'string'
             <tr>
               <td>%N</td>
               <td></td>
-              <td>"N" if mailbox has new mail, blank otherwise</td>
+              <td>"N" if mailbox has new mail, " " (space) otherwise</td>
             </tr>
             <tr>
               <td>%s</td>
@@ -6507,7 +6507,7 @@ set inews="/usr/local/bin/inews -hS"
             <tr>
               <td>%N</td>
               <td></td>
-              <td>"N" if mailbox has new mail, blank otherwise</td>
+              <td>"N" if mailbox has new mail, " " (space) otherwise</td>
             </tr>
             <tr>
               <td>%s</td>
@@ -8276,8 +8276,7 @@ set nntp_authenticators="digest-md5:user"
           </tbody>
         </table>
       </div>
-      <p>For examples on how to configure these formats for the various versions of PGP which are floating around, see the pgp and gpg sample configuration files in the
-      <code class="literal">samples/</code>subdirectory which has been installed on your system alongside the documentation. (PGP only)</p>
+      <p>(PGP only)</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2018-01-11, this was called $pgp_self_encrypt_as</div>
     </div>
@@ -10763,7 +10762,7 @@ set sidebar_delim_chars='.'
             <tr>
               <td>%n</td>
               <td></td>
-              <td>'N' if mailbox has new mail, ' ' (space) otherwise</td>
+              <td>"N" if mailbox has new mail, " " (space) otherwise</td>
             </tr>
             <tr>
               <td>%N</td>

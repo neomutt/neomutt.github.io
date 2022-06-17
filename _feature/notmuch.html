@@ -205,7 +205,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
             </tr>
             <tr>
               <td>%N</td>
-              <td>N if mailbox has new mail, blank otherwise</td>
+              <td>"N" if mailbox has new mail, " " (space) otherwise</td>
             </tr>
             <tr>
               <td>%&gt;X</td>
@@ -614,7 +614,7 @@ set nm_unread_tag = unread
 <span class="comment"># %f   folder name (description)</span>
 <span class="comment"># %m   number of messages in the mailbox *</span>
 <span class="comment"># %n   number of unread messages in the mailbox *</span>
-<span class="comment"># %N   N if mailbox has new mail, blank otherwise</span>
+<span class="comment"># %N   "N" if mailbox has new mail, " " (space) otherwise</span>
 <span class="comment"># %&gt;X  right justify the rest of the string and pad with character ``X''</span>
 <span class="comment"># %|X  pad to the end of the line with character ``X''</span>
 <span class="comment"># %*X  soft-fill with character ``X'' as pad</span>
