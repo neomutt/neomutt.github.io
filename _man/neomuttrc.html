@@ -446,6 +446,25 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <span class="emphasis">
           <em>function</em>
         </span>
+        <br />
+        <span class="strong">
+          <strong>unbind</strong>
+        </span>&#160;{&#160; 
+        <span class="strong">
+          <strong>*</strong>
+        </span>&#160;|&#160; 
+        <span class="emphasis">
+          <em>map</em>
+        </span>&#160;|&#160;[ 
+        <span class="strong">
+          <strong>,</strong>
+        </span>
+        <span class="emphasis">
+          <em>map</em>
+        </span>...]}&#160;[&#160; 
+        <span class="emphasis">
+          <em>key</em>
+        </span>&#160;] 
         <br /></p>
       </div>
       <p>This command allows you to change the default or define additional key bindings (operation invoked when pressing a key).</p>
@@ -518,6 +537,13 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <span class="emphasis">
         <em>function</em>
       </span>specifies which action to take when key is pressed. Note that the function name is to be specified without angle brackets.</p>
+      <p>Missing key sequence in 
+      <span class="strong">
+        <strong>unbind</strong>
+      </span>command means unbind all bindings in menus given in 
+      <span class="emphasis">
+        <em>map</em>
+      </span>.</p>
       <p>For more information on keys and functions, please consult the NeoMutt manual.</p>
       <div class="literallayout">
         <p>
@@ -794,7 +820,7 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>sidebar_ordinary</strong>
       </span>, 
       <span class="strong">
-        <strong>sidebar_spoolfile</strong>
+        <strong>sidebar_spool_file</strong>
       </span>.</p>
       <p>The 
       <span class="strong">
@@ -1090,9 +1116,10 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <br />
         <span class="strong">
           <strong>folder-hook</strong>
-        </span>&#160; 
+        </span>&#160;[ 
+        <code class="option">-noregex</code>]&#160; 
         <span class="emphasis">
-          <em>regex</em>
+          <em>pattern</em>
         </span>&#160; 
         <span class="emphasis">
           <em>command</em>
@@ -1101,17 +1128,21 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </div>
       <p>When NeoMutt enters a folder which matches 
       <span class="emphasis">
-        <em>regex</em>
+        <em>pattern</em>
       </span>(or, when 
       <span class="emphasis">
-        <em>regex</em>
+        <em>pattern</em>
       </span>is preceded by an exclamation mark, does not match 
       <span class="emphasis">
-        <em>regex</em>
+        <em>pattern</em>
       </span>), the given 
       <span class="emphasis">
         <em>command</em>
-      </span>is executed.</p>
+      </span>is executed. The 
+      <code class="option">-noregex</code>switch controls whether 
+      <span class="emphasis">
+        <em>pattern</em>
+      </span>is matches as simple string equality or full regex match.</p>
       <p>When several 
       <span class="strong">
         <strong>folder-hook</strong>
@@ -1467,6 +1498,25 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <span class="emphasis">
           <em>description</em>
         </span>&#160;] 
+        <br />
+        <span class="strong">
+          <strong>unmacro</strong>
+        </span>&#160;{&#160; 
+        <span class="strong">
+          <strong>*</strong>
+        </span>&#160;|&#160; 
+        <span class="emphasis">
+          <em>menu</em>
+        </span>&#160;|&#160;[ 
+        <span class="strong">
+          <strong>,</strong>
+        </span>
+        <span class="emphasis">
+          <em>menu</em>
+        </span>...]}&#160;[&#160; 
+        <span class="emphasis">
+          <em>key</em>
+        </span>&#160;] 
         <br /></p>
       </div>
       <p>This command binds the given 
@@ -1488,6 +1538,13 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>, which is shown in the help screens if they contain a 
       <span class="emphasis">
         <em>description</em>
+      </span>.</p>
+      <p>Missing key sequence in 
+      <span class="strong">
+        <strong>unmacro</strong>
+      </span>command means unmacro all macros in menus given in 
+      <span class="emphasis">
+        <em>menu</em>
       </span>.</p>
       <div class="literallayout">
         <p>
@@ -1630,6 +1687,19 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
               <em>message</em>
             </span>to the message window. After printing the message, echo will pause for the number of seconds specified by $sleep_time.</p>
           </dd>
+          <dt>
+            <span class="term">
+              <span class="strong">
+                <strong>cd</strong>
+              </span>
+              <span class="emphasis">
+                <em>directory</em>
+              </span>
+            </span>
+          </dt>
+          <dd>
+            <p>Changes the current working directory.</p>
+          </dd>
         </dl>
       </div>
       <div class="literallayout">
@@ -1637,9 +1707,10 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <br />
         <span class="strong">
           <strong>mbox-hook</strong>
-        </span>&#160; 
+        </span>&#160;[ 
+        <code class="option">-noregex</code>]&#160; 
         <span class="emphasis">
-          <em>regex</em>
+          <em>pattern</em>
         </span>&#160; 
         <span class="emphasis">
           <em>mailbox</em>
@@ -1648,11 +1719,15 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </div>
       <p>When NeoMutt changes to a mail folder which matches 
       <span class="emphasis">
-        <em>regex</em>
+        <em>pattern</em>
       </span>, 
       <span class="emphasis">
         <em>mailbox</em>
-      </span>will be used as the “mbox” folder, i.e. read messages will be moved to that folder when the mail folder is left.</p>
+      </span>will be used as the “mbox” folder, i.e. read messages will be moved to that folder when the mail folder is left. The 
+      <code class="option">-noregex</code>switch controls whether 
+      <span class="emphasis">
+        <em>pattern</em>
+      </span>is matches as simple string equality or full regex match.</p>
       <p>Note that execution of 
       <span class="strong">
         <strong>mbox-hook</strong>
@@ -2113,12 +2188,22 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         </span>&#160;] 
         <span class="emphasis">
           <em>variable</em>
-        </span>&#160;|&#160; 
+        </span>&#160;}&#160;[&#160;...&#160;] 
+        <br />
+        <span class="strong">
+          <strong>set</strong>
+        </span>&#160;{&#160; 
         <span class="emphasis">
           <em>variable</em>
         </span>= 
         <span class="emphasis">
           <em>value</em>
+        </span>&#160;|&#160; 
+        <span class="emphasis">
+          <em>variable+=increment</em>
+        </span>&#160;|&#160; 
+        <span class="emphasis">
+          <em>variable-=decrement</em>
         </span>&#160;}&#160;[&#160;...&#160;] 
         <br />
         <span class="strong">
@@ -2159,7 +2244,7 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <p>NeoMutt knows four basic types of 
       <span class="emphasis">
         <em>variable</em>
-      </span>s: boolean, number, string and quadoption. Boolean 
+      </span>s: boolean, number, string, string list and quadoption. Boolean 
       <span class="emphasis">
         <em>variable</em>
       </span>s can be 
@@ -2177,7 +2262,25 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>s can be assigned a positive integer 
       <span class="emphasis">
         <em>value</em>
-      </span>.</p>
+      </span>. Value of number 
+      <span class="emphasis">
+        <em>variable</em>
+      </span>s can be incremented " 
+      <span class="strong">
+        <strong>+=</strong>
+      </span>" and decremented " 
+      <span class="strong">
+        <strong>-=</strong>
+      </span>". String list 
+      <span class="emphasis">
+        <em>variable</em>
+      </span>s use " 
+      <span class="strong">
+        <strong>+=</strong>
+      </span>" for appending increment to the string list and " 
+      <span class="strong">
+        <strong>-=</strong>
+      </span>" for removal decrement from the string list.</p>
       <p>String 
       <span class="emphasis">
         <em>variable</em>
@@ -2187,7 +2290,13 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>” and “ 
       <span class="strong">
         <strong>\t</strong>
-      </span>” for newline and tab, respectively.</p>
+      </span>” for newline and tab, respectively. Content of a string 
+      <span class="emphasis">
+        <em>variable</em>
+      </span>s can be extended using " 
+      <span class="strong">
+        <strong>+=</strong>
+      </span>"</p>
       <p>Quadfile 
       <code class="option">variable</code>s are used to control whether or not to be prompted for certain actions, or to specify a default action. A 
       <span class="emphasis">
@@ -2847,6 +2956,20 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
               <td class="auto-generated">&#160;</td>
             </tr>
             <tr>
+              <td align="center"> ~I 
+              <span class="emphasis">
+                <em>QUERY</em>
+              </span></td>
+              <td align="center">messages whose 
+              <span class="emphasis">
+                <em>Message-ID</em>
+              </span>field is included in the results returned from an external search program, when the program is run with 
+              <span class="emphasis">
+                <em>QUERY</em>
+              </span>as its argument. See $external_search_command</td>
+              <td class="auto-generated">&#160;</td>
+            </tr>
+            <tr>
               <td align="center"> ~k</td>
               <td align="center">messages containing PGP key material</td>
               <td class="auto-generated">&#160;</td>
@@ -3119,6 +3242,17 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
               <span class="emphasis">
                 <em>EXPR</em>
               </span>in their keywords</td>
+              <td class="auto-generated">&#160;</td>
+            </tr>
+            <tr>
+              <td align="center"> ~Y 
+              <span class="emphasis">
+                <em>EXPR</em>
+              </span></td>
+              <td align="center">messages whose tags match 
+              <span class="emphasis">
+                <em>EXPR</em>
+              </span></td>
               <td class="auto-generated">&#160;</td>
             </tr>
             <tr>
@@ -3589,6 +3723,10 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <code class="literal">95</code>- 
       <code class="literal">31</code>/ 
       <code class="literal">10</code></p>
+      <p>Alternatively, you may use 
+      <span class="emphasis">
+        <em>YYYYMMDD</em>
+      </span>to specify a date.</p>
       <p>When given a two-digit year, NeoMutt will interpret values less than “70” as lying in the 21st century (i.e., “38” means 2038 and not 1938, and “00” is interpreted as 2000), and values greater than or equal to “70” as lying in the 20th century.</p>
       <p>If you omit the 
       <span class="emphasis">
@@ -3647,9 +3785,6 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
                   <strong> Date Unit</strong>
                 </span>
               </th>
-              <th align="center">S</th>
-              <th align="center">M</th>
-              <th align="center">H</th>
               <th align="center">d</th>
               <th align="center">w</th>
               <th align="center">m</th>
@@ -3663,13 +3798,44 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
                   <strong> Description</strong>
                 </span>
               </td>
-              <td align="left">Seconds</td>
-              <td align="left">Minutes</td>
-              <td align="left">Hours</td>
               <td align="left">Days</td>
               <td align="left">Weeks</td>
               <td align="left">Months</td>
               <td align="left">Years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="informaltable">
+        <table class="informaltable" border="1">
+          <colgroup>
+            <col align="center" class="c1" />
+            <col align="center" class="c2" />
+            <col align="center" class="c3" />
+            <col align="center" class="c4" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="left">
+                <span class="strong">
+                  <strong> Date Unit</strong>
+                </span>
+              </th>
+              <th align="center">S</th>
+              <th align="center">M</th>
+              <th align="center">H</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">
+                <span class="strong">
+                  <strong> Description</strong>
+                </span>
+              </td>
+              <td align="left">Seconds</td>
+              <td align="left">Minutes</td>
+              <td align="left">Hours</td>
             </tr>
           </tbody>
         </table>
@@ -3815,6 +3981,50 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>abort_backspace</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>If 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, hitting backspace against an empty prompt aborts the prompt.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>abort_key</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"007" 
+            <br /></p>
+          </div>
+          <p>Specifies the key that can be used to abort prompts. The format is the same as used in "bind" commands. The default is equivalent to "Ctrl-G". Note that the specified key should not be used in other bindings, as the abort operation has higher precedence and the binding will not have the desired effect.</p>
+          <p>Example:</p>
+          <pre class="screen">
+set abort_key = "&lt;Esc&gt;"
+
+<span class="strong">
+  
+<strong>
+  </strong>
+</span>
+</pre>
+          <p>Please note that when using &lt;Esc&gt; as the abort key, you may also want to set the environment variable ESCDELAY to a low value or even 0 which will reduce the time that ncurses waits to distinguish singular &lt;Esc&gt; key presses from the start of a terminal escape sequence. The default time is 1000 milliseconds and thus quite noticeable.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>abort_noattach</strong>
             </span>
           </span>
@@ -3906,6 +4116,62 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>account_command</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;command 
+            <br />Default:&#160;"" 
+            <br /></p>
+          </div>
+          <p>If set, this command is used to retrieve account credentials. The command is invoked passing a number of 
+          <code class="option">--key value</code>arguments with the specifics of the account to lookup. The command writes to standard output a number of 
+          <span class="emphasis">
+            <em>key: value</em>
+          </span>lines. Currently supported arguments are 
+          <code class="option">--hostname</code>, 
+          <code class="option">--username</code>, and 
+          <code class="option">--type</code>, where type can be any of 
+          <span class="emphasis">
+            <em>imap</em>
+          </span>, 
+          <span class="emphasis">
+            <em>imaps</em>
+          </span>, 
+          <span class="emphasis">
+            <em>pop</em>
+          </span>, 
+          <span class="emphasis">
+            <em>pops</em>
+          </span>, 
+          <span class="emphasis">
+            <em>smtp</em>
+          </span>, 
+          <span class="emphasis">
+            <em>smtps</em>
+          </span>, 
+          <span class="emphasis">
+            <em>nntp</em>
+          </span>, and 
+          <span class="emphasis">
+            <em>nntps</em>
+          </span>. Currently supported output lines are 
+          <span class="emphasis">
+            <em>login</em>
+          </span>, 
+          <span class="emphasis">
+            <em>username</em>
+          </span>, and 
+          <span class="emphasis">
+            <em>password</em>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>alias_file</strong>
             </span>
           </span>
@@ -3941,7 +4207,7 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"%4n&#160;%2f&#160;%t&#160;%-10a&#160;&#160;&#160;%r" 
+            <br />Default:&#160;"%3n&#160;%f%t&#160;%-15a&#160;%-56r&#160;|&#160;%c" 
             <br /></p>
           </div>
           <p>Specifies the format of the data displayed for the "alias" menu. The following 
@@ -3957,6 +4223,12 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
                   </dt>
                   <dd>
                     <p>Alias name</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%c</span>
+                  </dt>
+                  <dd>
+                    <p>Comment</p>
                   </dd>
                   <dt>
                     <span class="term">%f</span>
@@ -3981,6 +4253,24 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
                   </dt>
                   <dd>
                     <p>Character which indicates if the alias is tagged for inclusion</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%&gt;X</span>
+                  </dt>
+                  <dd>
+                    <p>right justify the rest of the string and pad with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%|X</span>
+                  </dt>
+                  <dd>
+                    <p>pad to the end of the line with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%*X</span>
+                  </dt>
+                  <dd>
+                    <p>soft-fill with character "X" as pad</p>
                   </dd>
                 </dl>
               </div>
@@ -4043,6 +4333,22 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>arrow_string</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"-&gt;" 
+            <br /></p>
+          </div>
+          <p>Specifies the string of arrow_cursor when arrow_cursor enabled.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>ascii_chars</strong>
             </span>
           </span>
@@ -4059,6 +4365,40 @@ Default: no
           <span class="emphasis">
             <em>ACS</em>
           </span>characters.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>ask_bcc</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>If 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will prompt you for blind-carbon-copy (Bcc) recipients before editing an outgoing message.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>ask_cc</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>If 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will prompt you for carbon-copy (Cc) recipients before editing the body of an outgoing message.</p>
         </dd>
         <dt>
           <span class="term">
@@ -4091,40 +4431,6 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>askbcc</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>If 
-          <span class="emphasis">
-            <em>set</em>
-          </span>, NeoMutt will prompt you for blind-carbon-copy (Bcc) recipients before editing an outgoing message.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>askcc</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>If 
-          <span class="emphasis">
-            <em>set</em>
-          </span>, NeoMutt will prompt you for carbon-copy (Cc) recipients before editing the body of an outgoing message.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>assumed_charset</strong>
             </span>
           </span>
@@ -4132,7 +4438,7 @@ Default: no
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;string 
+            <br />Type:&#160;string&#160;list 
             <br />Default:&#160;"" 
             <br /></p>
           </div>
@@ -4159,7 +4465,7 @@ set assumed_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;string 
+            <br />Type:&#160;string&#160;list 
             <br />Default:&#160;"" 
             <br /></p>
           </div>
@@ -4433,6 +4739,31 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>auto_edit</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>along with $edit_headers, NeoMutt will skip the initial send-menu (prompting for subject and recipients) and allow you to immediately begin editing the body of your message. The send-menu may still be accessed once you have finished editing the body of your message.</p>
+          <p>
+          <span class="strong">
+            <strong>Note:</strong>
+          </span>when this option is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, you can't use send-hooks that depend on the recipients when composing a new (non-reply) message, as the initial list of recipients is empty.</p>
+          <p>Also see $fast_reply.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>auto_subscribe</strong>
             </span>
           </span>
@@ -4485,7 +4816,7 @@ Default: no
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, enables autocrypt, which provides passive encryption protection with keys exchanged via headers. See “autocryptdoc” for more details. (Autocrypt only)</p>
+          </span>, enables autocrypt, which provides passive encryption protection with keys exchanged via headers. See "autocryptdoc" for more details. (Autocrypt only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -4501,7 +4832,7 @@ Default: no
             <br />Default:&#160;"%4n&#160;%-30a&#160;%20p&#160;%10s" 
             <br /></p>
           </div>
-          <p>This variable describes the format of the “autocrypt account” menu. The following 
+          <p>This variable describes the format of the "autocrypt account" menu. The following 
           <span class="emphasis">
             <em>printf(3)</em>
           </span>-style sequences are understood</p>
@@ -4559,7 +4890,7 @@ Default: no
             <br />Default:&#160;"~/.mutt/autocrypt" 
             <br /></p>
           </div>
-          <p>This variable sets where autocrypt files are stored, including the GPG keyring and sqlite database. See “autocryptdoc” for more details. (Autocrypt only)</p>
+          <p>This variable sets where autocrypt files are stored, including the GPG keyring and SQLite database. See "autocryptdoc" for more details. (Autocrypt only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -4577,31 +4908,6 @@ Default: yes
           <span class="emphasis">
             <em>set</em>
           </span>, replying to an autocrypt email automatically enables autocrypt in the reply. You may want to unset this if you're using the same key for autocrypt as normal web-of-trust, so that autocrypt isn't forced on for all encrypted replies. (Autocrypt only)</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>autoedit</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>When 
-          <span class="emphasis">
-            <em>set</em>
-          </span>along with $edit_headers, NeoMutt will skip the initial send-menu (prompting for subject and recipients) and allow you to immediately begin editing the body of your message. The send-menu may still be accessed once you have finished editing the body of your message.</p>
-          <p>
-          <span class="strong">
-            <strong>Note:</strong>
-          </span>when this option is 
-          <span class="emphasis">
-            <em>set</em>
-          </span>, you can't use send-hooks that depend on the recipients when composing a new (non-reply) message, as the initial list of recipients is empty.</p>
-          <p>Also see $fast_reply.</p>
         </dd>
         <dt>
           <span class="term">
@@ -4971,11 +5277,46 @@ Default: yes
                   <dd>
                     <p>NeoMutt version string</p>
                   </dd>
+                  <dt>
+                    <span class="term">%&gt;X</span>
+                  </dt>
+                  <dd>
+                    <p>right justify the rest of the string and pad with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%|X</span>
+                  </dt>
+                  <dd>
+                    <p>pad to the end of the line with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%*X</span>
+                  </dt>
+                  <dd>
+                    <p>soft-fill with character "X" as pad</p>
+                  </dd>
                 </dl>
               </div>
             </blockquote>
           </div>
           <p>See the text describing the $status_format option for more information on how to set $compose_format.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>compose_show_user_headers</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, Neomutt will display user-defined headers (set via my_hdr or from editing with edit-headers).</p>
         </dd>
         <dt>
           <span class="term">
@@ -4998,7 +5339,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>confirmappend</strong>
+              <strong>confirm_append</strong>
             </span>
           </span>
         </dt>
@@ -5015,7 +5356,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>confirmcreate</strong>
+              <strong>confirm_create</strong>
             </span>
           </span>
         </dt>
@@ -5080,7 +5421,45 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_autoencrypt</strong>
+              <strong>copy_decode_weed</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>Controls whether NeoMutt will weed headers when invoking the 
+          <span class="emphasis">
+            <em>&lt;decode-copy&gt;</em>
+          </span>or 
+          <span class="emphasis">
+            <em>&lt;decode-save&gt;</em>
+          </span>functions.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>count_alternatives</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will recurse inside multipart/alternatives while performing attachment searching and counting(see attachments).</p>
+          <p>Traditionally, multipart/alternative parts have simply represented different encodings of the main content of the email. Unfortunately, some mail clients have started to place email attachments inside one of alternatives. Setting this will allow NeoMutt to find and count matching attachments hidden there, and include them in the index via %X or through ~X pattern matching.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>crypt_auto_encrypt</strong>
             </span>
           </span>
         </dt>
@@ -5097,7 +5476,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_autopgp</strong>
+              <strong>crypt_auto_pgp</strong>
             </span>
           </span>
         </dt>
@@ -5106,12 +5485,12 @@ Default: no
 Type: boolean
 Default: yes
 </pre>
-          <p>This variable controls whether or not NeoMutt may automatically enable PGP encryption/signing for messages. See also $crypt_autoencrypt, $crypt_replyencrypt, $crypt_autosign, $crypt_replysign and $smime_is_default.</p>
+          <p>This variable controls whether or not NeoMutt may automatically enable PGP encryption/signing for messages. See also $crypt_auto_encrypt, $crypt_reply_encrypt, $crypt_auto_sign, $crypt_reply_sign and $smime_is_default.</p>
         </dd>
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_autosign</strong>
+              <strong>crypt_auto_sign</strong>
             </span>
           </span>
         </dt>
@@ -5128,7 +5507,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_autosmime</strong>
+              <strong>crypt_auto_smime</strong>
             </span>
           </span>
         </dt>
@@ -5137,7 +5516,7 @@ Default: no
 Type: boolean
 Default: yes
 </pre>
-          <p>This variable controls whether or not NeoMutt may automatically enable S/MIME encryption/signing for messages. See also $crypt_autoencrypt, $crypt_replyencrypt, $crypt_autosign, $crypt_replysign and $smime_is_default.</p>
+          <p>This variable controls whether or not NeoMutt may automatically enable S/MIME encryption/signing for messages. See also $crypt_auto_encrypt, $crypt_reply_encrypt, $crypt_auto_sign, $crypt_reply_sign and $smime_is_default.</p>
         </dd>
         <dt>
           <span class="term">
@@ -5211,7 +5590,7 @@ Default: "SPsK "
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_confirmhook</strong>
+              <strong>crypt_confirm_hook</strong>
             </span>
           </span>
         </dt>
@@ -5240,7 +5619,22 @@ Default: no
           <p>Setting this variable will cause NeoMutt to automatically enable and disable encryption, based on whether all message recipient keys can be located by NeoMutt.</p>
           <p>When this option is enabled, NeoMutt will enable/disable encryption each time the TO, CC, and BCC lists are edited. If $edit_headers is set, NeoMutt will also do so each time the message is edited.</p>
           <p>While this is set, encryption can't be manually enabled/disabled. The pgp or smime menus provide a selection to temporarily disable this option for the current message.</p>
-          <p>If $crypt_autoencrypt or $crypt_replyencrypt enable encryption for a message, this option will be disabled for that message. It can be manually re-enabled in the pgp or smime menus. (Crypto only)</p>
+          <p>If $crypt_auto_encrypt or $crypt_reply_encrypt enable encryption for a message, this option will be disabled for that message. It can be manually re-enabled in the pgp or smime menus. (Crypto only)</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>crypt_opportunistic_encrypt_strong_keys</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When set, this modifies the behavior of $crypt_opportunistic_encrypt to only search for "strong keys", that is, keys with full validity according to the web-of-trust algorithm. A key with marginal or no validity will not enable opportunistic encryption.</p>
+          <p>For S/MIME, the behavior depends on the backend. Classic S/MIME will filter for certificates with the 't'(trusted) flag in the .index file. The GPGME backend will use the same filters as with OpenPGP, and depends on GPGME's logic for assigning the GPGME_VALIDITY_FULL and GPGME_VALIDITY_ULTIMATE validity flag.</p>
         </dd>
         <dt>
           <span class="term">
@@ -5254,7 +5648,8 @@ Default: no
 Type: boolean
 Default: yes
 </pre>
-          <p>When set, NeoMutt will display protected headers ("Memory Hole") in the pager, and will update the index and header cache with revised headers. Protected headers are stored inside the encrypted or signed part of an an email, to prevent disclosure or tampering. For more information see https://github.com/autocrypt/memoryhole. Currently NeoMutt only supports the Subject header.</p>
+          <p>When set, NeoMutt will display protected headers ("Memory Hole") in the pager, When set, NeoMutt will display protected headers in the pager, and will update the index and header cache with revised headers.</p>
+          <p>Protected headers are stored inside the encrypted or signed part of an an email, to prevent disclosure or tampering. For more information see https://github.com/autocrypt/protected-headers Currently NeoMutt only supports the Subject header.</p>
           <p>Encrypted messages using protected headers often substitute the exposed Subject header with a dummy value (see $crypt_protected_headers_subject). NeoMutt will update its concept of the correct subject 
           <span class="strong">
             <strong>after</strong>
@@ -5292,10 +5687,11 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"Encrypted&#160;subject" 
+            <br />Default:&#160;"..." 
             <br /></p>
           </div>
-          <p>When $crypt_protected_headers_write is set, and the message is marked for encryption, this will be substituted into the Subject field in the message headers. To prevent a subject from being substituted, unset this variable, or set it to the empty string. (Crypto only)</p>
+          <p>When $crypt_protected_headers_write is set, and the message is marked for encryption, this will be substituted into the Subject field in the message headers.</p>
+          <p>To prevent a subject from being substituted, unset this variable, or set it to the empty string. (Crypto only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -5309,12 +5705,14 @@ Default: no
 Type: boolean
 Default: no
 </pre>
-          <p>When set, NeoMutt will generate protected headers ("Memory Hole") for signed and encrypted emails. Protected headers are stored inside the encrypted or signed part of an an email, to prevent disclosure or tampering. For more information see https://github.com/autocrypt/memoryhole. Currently NeoMutt only supports the Subject header. (Crypto only)</p>
+          <p>When set, NeoMutt will generate protected headers for signed and encrypted emails.</p>
+          <p>Protected headers are stored inside the encrypted or signed part of an an email, to prevent disclosure or tampering. For more information see https://github.com/autocrypt/protected-headers</p>
+          <p>Currently NeoMutt only supports the Subject header. (Crypto only)</p>
         </dd>
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_replyencrypt</strong>
+              <strong>crypt_reply_encrypt</strong>
             </span>
           </span>
         </dt>
@@ -5331,7 +5729,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_replysign</strong>
+              <strong>crypt_reply_sign</strong>
             </span>
           </span>
         </dt>
@@ -5355,7 +5753,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>crypt_replysignencrypted</strong>
+              <strong>crypt_reply_sign_encrypted</strong>
             </span>
           </span>
         </dt>
@@ -5367,7 +5765,7 @@ Default: no
           <p>If 
           <span class="emphasis">
             <em>set</em>
-          </span>, automatically PGP or OpenSSL sign replies to messages which are encrypted. This makes sense in combination with $crypt_replyencrypt, because it allows you to sign all messages which are automatically encrypted. This works around the problem noted in $crypt_replysign, that NeoMutt is not able to find out whether an encrypted message is also signed. (Crypto only)</p>
+          </span>, automatically PGP or OpenSSL sign replies to messages which are encrypted. This makes sense in combination with $crypt_reply_encrypt, because it allows you to sign all messages which are automatically encrypted. This works around the problem noted in $crypt_reply_sign, that NeoMutt is not able to find out whether an encrypted message is also signed. (Crypto only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -5399,13 +5797,13 @@ Default: yes
         <dd>
           <pre class="programlisting">
 Type: boolean
-Default: no
+Default: yes
 </pre>
           <p>This variable controls the use of the GPGME-enabled crypto backends. If it is 
           <span class="emphasis">
             <em>set</em>
-          </span>and NeoMutt was built with gpgme support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .neomuttrc; it won't have any effect when used interactively.</p>
-          <p>Note that the GPGME backend does not support creating old-style inline (traditional) PGP encrypted or signed messages (see $pgp_autoinline).</p>
+          </span>and NeoMutt was built with GPGME support, the gpgme code for S/MIME and PGP will be used instead of the classic code. Note that you need to set this option in .neomuttrc; it won't have any effect when used interactively.</p>
+          <p>Note that the GPGME backend does not support creating old-style inline (traditional) PGP encrypted or signed messages (see $pgp_auto_inline).</p>
         </dd>
         <dt>
           <span class="term">
@@ -5763,7 +6161,7 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;command 
-            <br />Default:&#160;"vi" 
+            <br />Default:&#160;"" 
             <br /></p>
           </div>
           <p>This variable specifies which editor is used by NeoMutt. It defaults to the value of the 
@@ -5873,22 +6271,6 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>escape</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />Type:&#160;string 
-            <br />Default:&#160;"~" 
-            <br /></p>
-          </div>
-          <p>Escape character to use for functions in the built-in editor.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>external_search_command</strong>
             </span>
           </span>
@@ -5924,14 +6306,15 @@ Default: no
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, the initial prompt for recipients and subject are skipped when replying to messages, and the initial prompt for subject is skipped when forwarding messages.</p>
+          </span>, the initial prompt for recipients (to, cc, bcc) and subject are skipped when the relevant information is already provided. These cases include replying to messages and passing the relevant command line arguments. The initial prompt for recipients is also skipped when composing a new message to the current message sender, while the initial prompt for subject is also skipped when forwarding messages.</p>
           <p>
           <span class="strong">
             <strong>Note:</strong>
-          </span>this variable has no effect when the $autoedit variable is 
+          </span>this variable has no effect when the $auto_edit variable is 
           <span class="emphasis">
             <em>set</em>
           </span>.</p>
+          <p>See also: $auto_edit, $edit_headers, $ask_cc, $ask_bcc</p>
         </dd>
         <dt>
           <span class="term">
@@ -5948,6 +6331,7 @@ Default: no
             <br /></p>
           </div>
           <p>This variable controls whether or not attachments on outgoing messages are saved along with the main body of your message.</p>
+          <p>Note: $fcc_before_send forces the default (set) behavior of this option.</p>
         </dd>
         <dt>
           <span class="term">
@@ -5985,7 +6369,9 @@ Default: no
           <p>When this variable is 
           <span class="emphasis">
             <em>set</em>
-          </span>, FCCs will be stored unencrypted and unsigned, even when the actual message is encrypted and/or signed. (PGP only)</p>
+          </span>, FCCs will be stored unencrypted and unsigned, even when the actual message is encrypted and/or signed.</p>
+          <p>Note: $fcc_before_send forces the default (unset) behavior of this option. (PGP only)</p>
+          <p>See also $pgp_self_encrypt, $smime_self_encrypt</p>
         </dd>
         <dt>
           <span class="term">
@@ -6116,7 +6502,7 @@ Default: no
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;path 
+            <br />Type:&#160;mailbox 
             <br />Default:&#160;"~/Mail" 
             <br /></p>
           </div>
@@ -6199,19 +6585,19 @@ Default: no
                     <span class="term">%m</span>
                   </dt>
                   <dd>
-                    <p>Number of messages in the mailbox *</p>
+                    <p>* Number of messages in the mailbox</p>
                   </dd>
                   <dt>
                     <span class="term">%n</span>
                   </dt>
                   <dd>
-                    <p>Number of unread messages in the mailbox *</p>
+                    <p>* Number of unread messages in the mailbox</p>
                   </dd>
                   <dt>
                     <span class="term">%N</span>
                   </dt>
                   <dd>
-                    <p>"N" if mailbox has new mail, blank otherwise</p>
+                    <p>"N" if mailbox has new mail, " " (space) otherwise</p>
                   </dd>
                   <dt>
                     <span class="term">%s</span>
@@ -6330,13 +6716,13 @@ Default: no
           <p>When forwarding inline (i.e. $mime_forward 
           <span class="emphasis">
             <em>unset</em>
-          </span>or answered with “no” and $forward_decode 
+          </span>or answered with "no" and $forward_decode 
           <span class="emphasis">
             <em>set</em>
           </span>), attachments which cannot be decoded in a reasonable manner will be attached to the newly composed message if this quadoption is 
           <span class="emphasis">
             <em>set</em>
-          </span>or answered with “yes”.</p>
+          </span>or answered with "yes".</p>
         </dd>
         <dt>
           <span class="term">
@@ -6599,6 +6985,49 @@ Default: ""
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>greeting</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"" 
+            <br /></p>
+          </div>
+          <p>When set, this is the string that will precede every message as a greeting phrase to the recipients.</p>
+          <p>"Format strings" are similar to the strings used in the "C" function printf to format output (see the man page for more detail). The following sequences are defined in NeoMutt:</p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">%n</span>
+                  </dt>
+                  <dd>
+                    <p>Recipient's real name</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%u</span>
+                  </dt>
+                  <dd>
+                    <p>User (login) name of recipient</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%v</span>
+                  </dt>
+                  <dd>
+                    <p>First name of recipient</p>
+                  </dd>
+                </dl>
+              </div>
+            </blockquote>
+          </div>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>group_index_format</strong>
             </span>
           </span>
@@ -6748,37 +7177,39 @@ Default: no
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>This variable specifies the header cache backend.</p>
+          <p>This variable specifies the header cache backend. If no backend is specified, the first available backend will be used in the following order: tokyocabinet, kyotocabinet, qdbm, rocksdb, gdbm, bdb, tdb, lmdb.</p>
         </dd>
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>header_cache_compress</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: yes
-</pre>
-          <p>When NeoMutt is compiled with qdbm, tokyocabinet or kyotocabinet as header cache backend, this option determines whether the database will be compressed. Compression results in database files roughly being one fifth of the usual diskspace, but the decompression can result in a slower opening of cached folder(s) which in general is still much faster than opening non header cached folders.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>header_cache_pagesize</strong>
+              <strong>header_cache_compress_level</strong>
             </span>
           </span>
         </dt>
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;number&#160;(long) 
-            <br />Default:&#160;16384 
+            <br />Type:&#160;number 
+            <br />Default:&#160;1 
             <br /></p>
           </div>
-          <p>When NeoMutt is compiled with either gdbm or bdb4 as the header cache backend, this option changes the database page size. Too large or too small values can waste space, memory, or CPU time. The default should be more or less optimal for most use cases.</p>
+          <p>When NeoMutt is compiled with lz4, zstd or zlib, this option can be used to setup the compression level.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>header_cache_compress_method</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"" 
+            <br /></p>
+          </div>
+          <p>When NeoMutt is compiled with lz4, zstd or zlib, the header cache backend can use these compression methods for compressing the cache files. This results in much smaller cache file sizes and may even improve speed.</p>
         </dd>
         <dt>
           <span class="term">
@@ -6854,7 +7285,7 @@ Default: no
             <br />Default:&#160;"unread,draft,flagged,passed,replied,attachment,signed,encrypted" 
             <br /></p>
           </div>
-          <p>This variable specifies private notmuch/imap tags which should not be printed on screen.</p>
+          <p>This variable specifies a list of comma-separated private notmuch/imap tags which should not be printed on screen.</p>
         </dd>
         <dt>
           <span class="term">
@@ -7133,7 +7564,7 @@ Default: no
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an IMAP server, in the order NeoMutt should try them. Authentication methods are either "login" or the right side of an IMAP "AUTH=xxx" capability string, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it's 
+          <p>This is a colon-separated list of authentication methods NeoMutt may attempt to use to log in to an IMAP server, in the order NeoMutt should try them. Authentication methods are either "login" or the right side of an IMAP "AUTH=xxx" capability string, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it's 
           <span class="emphasis">
             <em>unset</em>
           </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -7182,8 +7613,26 @@ Default: no
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt will use the CONDSTORE extension (RFC 7162) if advertised by the server. NeoMutt's current implementation is basic, used only for initial message fetching and flag updates.</p>
+          </span>, NeoMutt will use the CONDSTORE extension (RFC7162) if advertised by the server. NeoMutt's current implementation is basic, used only for initial message fetching and flag updates.</p>
           <p>For some IMAP servers, enabling this will slightly speed up downloading initial messages. Unfortunately, Gmail is not one those, and displays worse performance when enabled. Your mileage may vary.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>imap_deflate</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will use the COMPRESS=DEFLATE extension (RFC4978) if advertised by the server.</p>
+          <p>In general a good compression efficiency can be achieved, which speeds up reading large mailboxes also on fairly good connections.</p>
         </dd>
         <dt>
           <span class="term">
@@ -7199,10 +7648,7 @@ Default: no
             <br />Default:&#160;"/." 
             <br /></p>
           </div>
-          <p>This contains the list of characters which you would like to treat as folder separators for displaying IMAP paths. In particular it helps in using the "=" shortcut for your 
-          <span class="emphasis">
-            <em>folder</em>
-          </span>variable.</p>
+          <p>This contains the list of characters that NeoMutt will use as folder separators for IMAP paths, when no separator is provided on the IMAP connection.</p>
         </dd>
         <dt>
           <span class="term">
@@ -7218,7 +7664,7 @@ Default: no
             <br />Default:&#160;0 
             <br /></p>
           </div>
-          <p>When set to a value greater than 0, new headers will be downloaded in sets of this size. If you have a very large mailbox, this might prevent a timeout and disconnect when opening the mailbox, by sending a FETCH per set of this size instead of a single FETCH for all new headers.</p>
+          <p>When set to a value greater than 0, new headers will be downloaded in groups of this many headers per request. If you have a very large mailbox, this might prevent a timeout and disconnect when opening the mailbox, by sending a FETCH per set of this many headers, instead of a single FETCH for all new headers.</p>
         </dd>
         <dt>
           <span class="term">
@@ -7321,7 +7767,7 @@ Default: no
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>The command to run to generate an OAUTH refresh token for authorizing your connection to your IMAP server. This command will be run on every connection attempt that uses the OAUTHBEARER authentication mechanism. See "oauth" for details.</p>
+          <p>The command to run to generate an OAUTH refresh token for authorizing your connection to your IMAP server. This command will be run on every connection attempt that uses the OAUTHBEARER or XOAUTH2 authentication mechanisms. See "oauth" for details.</p>
         </dd>
         <dt>
           <span class="term">
@@ -7434,7 +7880,7 @@ Default: no
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt will use the QRESYNC extension (RFC 7162) if advertised by the server. NeoMutt's current implementation is basic, used only for initial message fetching and flag updates.</p>
+          </span>, NeoMutt will use the QRESYNC extension (RFC7162) if advertised by the server. NeoMutt's current implementation is basic, used only for initial message fetching and flag updates.</p>
           <p>Note: this feature is currently experimental. If you experience strange behavior, such as duplicate or missing messages please file a bug report to let us know.</p>
         </dd>
         <dt>
@@ -7452,12 +7898,12 @@ Default: yes
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt will use the IMAP ENABLE extension (RFC 5161) to select CAPABILITIES. Some servers (notably Coremail System IMap Server) do not properly respond to ENABLE commands, which might cause NeoMutt to hang. If your connection seems to freeze at login, try unsetting this. See also https://github.com/neomutt/neomutt/issues/1689</p>
+          </span>, NeoMutt will use the IMAP ENABLE extension (RFC5161) to select CAPABILITIES. Some servers (notably Coremail System IMap Server) do not properly respond to ENABLE commands, which might cause NeoMutt to hang. If your connection seems to freeze at login, try unsetting this. See also https://github.com/neomutt/neomutt/issues/1689</p>
         </dd>
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>imap_servernoise</strong>
+              <strong>imap_server_noise</strong>
             </span>
           </span>
         </dt>
@@ -7542,7 +7988,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>include_onlyfirst</strong>
+              <strong>include_only_first</strong>
             </span>
           </span>
         </dt>
@@ -7619,7 +8065,7 @@ Default: no
                     <span class="term">%B</span>
                   </dt>
                   <dd>
-                    <p>The list to which the letter was sent, or else the folder name (%b).</p>
+                    <p>Same as %K</p>
                   </dd>
                   <dt>
                     <span class="term">%C</span>
@@ -7631,7 +8077,13 @@ Default: no
                     <span class="term">%c</span>
                   </dt>
                   <dd>
-                    <p>Number of characters (bytes) in the message (see formatstrings-size)</p>
+                    <p>Number of characters (bytes) in the body of the message (see formatstrings-size)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%cr</span>
+                  </dt>
+                  <dd>
+                    <p>Number of characters (bytes) in the raw message, including the header (see formatstrings-size)</p>
                   </dd>
                   <dt>
                     <span class="term">%D</span>
@@ -7892,7 +8344,7 @@ Default: no
                     <span class="term">%@name@</span>
                   </dt>
                   <dd>
-                    <p>insert and evaluate format-string from the matching “index-format-hook” command</p>
+                    <p>insert and evaluate format-string from the matching "index-format-hook" command</p>
                   </dd>
                   <dt>
                     <span class="term">%{fmt}</span>
@@ -7901,7 +8353,7 @@ Default: no
                     <p>the date and time of the message is converted to sender's time zone, and "fmt" is expanded by the library function 
                     <span class="emphasis">
                       <em>strftime(3)</em>
-                    </span>; a leading bang disables locales</p>
+                    </span>; if the first character inside the braces is a bang ("!"), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so "%Z" behaves like "%z".</p>
                   </dd>
                   <dt>
                     <span class="term">%[fmt]</span>
@@ -7910,16 +8362,16 @@ Default: no
                     <p>the date and time of the message is converted to the local time zone, and "fmt" is expanded by the library function 
                     <span class="emphasis">
                       <em>strftime(3)</em>
-                    </span>; a leading bang disables locales</p>
+                    </span>; if the first character inside the brackets is a bang ("!"), the date is formatted ignoring any locale settings.</p>
                   </dd>
                   <dt>
                     <span class="term">%(fmt)</span>
                   </dt>
                   <dd>
-                    <p>the local date and time when the message was received. "fmt" is expanded by the library function 
+                    <p>the local date and time when the message was received, and "fmt" is expanded by the library function 
                     <span class="emphasis">
                       <em>strftime(3)</em>
-                    </span>; a leading bang disables locales</p>
+                    </span>; if the first character inside the parentheses is a bang ("!"), the date is formatted ignoring any locale settings.</p>
                   </dd>
                   <dt>
                     <span class="term">%&gt;X</span>
@@ -7944,9 +8396,9 @@ Default: no
             </blockquote>
           </div>
           <p>Date format expressions can be constructed based on relative dates. Using the date formatting operators along with nested conditionals, the date format can be modified based on how old a message is. See the section on "Conditional Dates" for an explanation and examples</p>
-          <p>Note that for mbox/mmdf, “%l” applies to the unprocessed message, and for maildir/mh, the value comes from the “Lines:” header field when present (the meaning is normally the same). Thus the value depends on the encodings used in the different parts of the message and has little meaning in practice.</p>
+          <p>Note that for mbox/mmdf, "%l" applies to the unprocessed message, and for maildir/mh, the value comes from the "Lines:" header field when present (the meaning is normally the same). Thus the value depends on the encodings used in the different parts of the message and has little meaning in practice.</p>
           <p>"Soft-fill" deserves some explanation: Normal right-justification will print everything to the left of the "%&gt;", displaying padding and whatever lies to the right only if there's room. By contrast, soft-fill gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text.</p>
-          <p>Note that these expandos are supported in “save-hook”, “fcc-hook” and “fcc-save-hook”, too.</p>
+          <p>Note that these expandos are supported in "save-hook", "fcc-hook" and "fcc-save-hook", too.</p>
         </dd>
         <dt>
           <span class="term">
@@ -8054,6 +8506,23 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>local_date_header</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>If 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, the date in the Date header of emails that you send will be in your local timezone. If unset a UTC date will be used instead to avoid leaking information about your current location.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>mail_check</strong>
             </span>
           </span>
@@ -8137,6 +8606,132 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>mailbox_folder_format</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"%2C&#160;%?n?%6n&amp;%6&#160;?&#160;%6m&#160;%i" 
+            <br /></p>
+          </div>
+          <p>This variable allows you to customize the file browser display to your personal taste. It's only used to customize network mailboxes (e.g. imap). This string is similar to $index_format, but has its own set of 
+          <span class="emphasis">
+            <em>printf(3)</em>
+          </span>-like sequences:</p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">%C</span>
+                  </dt>
+                  <dd>
+                    <p>Current file number</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%d</span>
+                  </dt>
+                  <dd>
+                    <p>Date/time folder was last modified</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%D</span>
+                  </dt>
+                  <dd>
+                    <p>Date/time folder was last modified using $date_format.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%f</span>
+                  </dt>
+                  <dd>
+                    <p>Filename ("/" is appended to directory names, "@" to symbolic links and "*" to executable files)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%F</span>
+                  </dt>
+                  <dd>
+                    <p>File permissions</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%g</span>
+                  </dt>
+                  <dd>
+                    <p>Group name (or numeric gid, if missing)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%i</span>
+                  </dt>
+                  <dd>
+                    <p>Description of the folder</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%l</span>
+                  </dt>
+                  <dd>
+                    <p>Number of hard links</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%m</span>
+                  </dt>
+                  <dd>
+                    <p>* Number of messages in the mailbox</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%n</span>
+                  </dt>
+                  <dd>
+                    <p>* Number of unread messages in the mailbox</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%N</span>
+                  </dt>
+                  <dd>
+                    <p>"N" if mailbox has new mail, " " (space) otherwise</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%s</span>
+                  </dt>
+                  <dd>
+                    <p>Size in bytes (see formatstrings-size)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%u</span>
+                  </dt>
+                  <dd>
+                    <p>Owner name (or numeric uid, if missing)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%&gt;X</span>
+                  </dt>
+                  <dd>
+                    <p>Right justify the rest of the string and pad with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%|X</span>
+                  </dt>
+                  <dd>
+                    <p>Pad to the end of the line with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%*X</span>
+                  </dt>
+                  <dd>
+                    <p>Soft-fill with character "X" as pad</p>
+                  </dd>
+                </dl>
+              </div>
+            </blockquote>
+          </div>
+          <p>For an explanation of "soft-fill", see the $index_format documentation.</p>
+          <p>* = can be optionally printed if nonzero</p>
+          <p>%m, %n, and %N only work for monitored mailboxes. %m requires $mail_check_stats to be set. %n requires $mail_check_stats to be set (except for IMAP mailboxes).</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>mailcap_path</strong>
             </span>
           </span>
@@ -8148,7 +8743,7 @@ Default: no
             <br />Default:&#160;"~/.mailcap:/usr/share/neomutt/mailcap:/etc/mailcap:/etc/mailcap:/usr/etc/mailcap:/usr/local/etc/mailcap" 
             <br /></p>
           </div>
-          <p>This variable specifies which files to consult when attempting to display MIME bodies not directly supported by NeoMutt. The default value is generated during startup: see the “mailcap” section of the manual.</p>
+          <p>This variable specifies a list of colon-separated files to consult when attempting to display MIME bodies not directly supported by NeoMutt. The default value is generated during startup: see the "mailcap" section of the manual.</p>
           <p>$mailcap_path is overridden by the environment variable 
           <span class="emphasis">
             <em>$MAILCAPS</em>
@@ -8321,11 +8916,11 @@ Default: yes
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;path 
+            <br />Type:&#160;mailbox 
             <br />Default:&#160;"~/mbox" 
             <br /></p>
           </div>
-          <p>This specifies the folder into which read mail in your $spoolfile folder will be appended.</p>
+          <p>This specifies the folder into which read mail in your $spool_file folder will be appended.</p>
           <p>Also see the $move variable.</p>
         </dd>
         <dt>
@@ -8347,6 +8942,23 @@ Default: yes
           <span class="emphasis">
             <em>-m</em>
           </span>command-line option.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>me_too</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>If 
+          <span class="emphasis">
+            <em>unset</em>
+          </span>, NeoMutt will remove your address (see the "alternates" command) from the list of recipients when replying to a message.</p>
         </dd>
         <dt>
           <span class="term">
@@ -8490,23 +9102,6 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>metoo</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>If 
-          <span class="emphasis">
-            <em>unset</em>
-          </span>, NeoMutt will remove your address (see the "alternates" command) from the list of recipients when replying to a message.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>mh_purge</strong>
             </span>
           </span>
@@ -8641,23 +9236,6 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>mime_subject</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: yes
-</pre>
-          <p>If 
-          <span class="emphasis">
-            <em>unset</em>
-          </span>, 8-bit "subject:" line in article header will not be encoded according to RFC2047 to base64. This is useful when message is Usenet article, because MIME for news is nonstandard feature.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>mime_type_query_command</strong>
             </span>
           </span>
@@ -8736,6 +9314,24 @@ Default: no
                   </dt>
                   <dd>
                     <p>The remailer's short name</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%&gt;X</span>
+                  </dt>
+                  <dd>
+                    <p>right justify the rest of the string and pad with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%|X</span>
+                  </dt>
+                  <dd>
+                    <p>pad to the end of the line with character "X"</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%*X</span>
+                  </dt>
+                  <dd>
+                    <p>soft-fill with character "X" as pad</p>
                   </dd>
                 </dl>
               </div>
@@ -9000,7 +9596,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>nm_default_uri</strong>
+              <strong>nm_default_url</strong>
             </span>
           </span>
         </dt>
@@ -9128,6 +9724,39 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>nm_query_window_enable</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>This variable enables windowed notmuch queries even if window duration is 0.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>nm_query_window_or_terms</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"" 
+            <br /></p>
+          </div>
+          <p>This variable contains additional notmuch search terms for messages to be shown regardless of date.</p>
+          <p>Example:</p>
+          <p>Using "notmuch://?query=tag:inbox" as the mailbox and "tag:flagged and tag:unread" as the or terms, NeoMutt will produce a query window such as:</p>
+          <p>notmuch://?query=tag:inbox and (date:... or (tag:flagged and tag:unread))</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>nm_query_window_timebase</strong>
             </span>
           </span>
@@ -9153,7 +9782,7 @@ Default: no
 Type: boolean
 Default: no
 </pre>
-          <p>This variable specifies if the NeoMutt record should indexed by notmuch.</p>
+          <p>This variable specifies whether, when writing a just-sent message to the $record, the message should also be added to the notmuch DB. Replies inherit the notmuch tags from the original message. See $nm_record_tags for how to modify the set of notmuch tags assigned to sent messages written to the record.</p>
         </dd>
         <dt>
           <span class="term">
@@ -9169,7 +9798,10 @@ Default: no
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>This variable specifies the default tags applied to messages stored to the NeoMutt record. When set to 0 this variable disable the window feature.</p>
+          <p>This variable specifies the notmuch tag modifications (addition, removal, toggling) applied to messages added to the Neomutt record when $nm_record is true. See the description of the 
+          <span class="emphasis">
+            <em>&lt;modify-labels&gt;</em>
+          </span>function for the syntax.</p>
         </dd>
         <dt>
           <span class="term">
@@ -9185,7 +9817,7 @@ Default: no
             <br />Default:&#160;"replied" 
             <br /></p>
           </div>
-          <p>This variable specifies notmuch tag which is used for replied messages. The variable is used to set the replied flag when modifiying tags. All other NeoMutt commands use standard (e.g. maildir) flags.</p>
+          <p>This variable specifies notmuch tag which is used for replied messages. The variable is used to set the replied flag when modifying tags. All other NeoMutt commands use standard (e.g. maildir) flags.</p>
         </dd>
         <dt>
           <span class="term">
@@ -9390,7 +10022,49 @@ Default: yes
             <br />Default:&#160;0 
             <br /></p>
           </div>
-          <p>Determines the number of lines of a mini-index which is shown when in the pager. The current message, unless near the top or bottom of the folder, will be roughly one third of the way down this mini-index, giving the reader the context of a few messages before and after the message. This is useful, for example, to determine how many messages remain to be read in the current thread. One of the lines is reserved for the status bar from the index, so a setting of 6 will only show 5 lines of the actual index. A value of 0 results in no index being shown. If the number of messages in the current folder is less than $pager_index_lines, then the index will only use as many lines as it needs.</p>
+          <p>Determines the number of lines of a mini-index which is shown when in the pager. The current message, unless near the top or bottom of the folder, will be roughly one third of the way down this mini-index, giving the reader the context of a few messages before and after the message. This is useful, for example, to determine how many messages remain to be read in the current thread. A value of 0 results in no index being shown. If the number of messages in the current folder is less than $pager_index_lines, then the index will only use as many lines as it needs.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>pager_read_delay</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;number 
+            <br />Default:&#160;0 
+            <br /></p>
+          </div>
+          <p>Determines the number of seconds that must elapse after first opening a new message in the pager before that message will be marked as read. A value of 0 results in the message being marked read unconditionally; for other values, navigating to another message or exiting the pager before the timeout will leave the message marked unread. This setting is ignored if $pager is not 
+          <span class="strong">
+            <strong>builtin</strong>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>pager_skip_quoted_context</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;number 
+            <br />Default:&#160;0 
+            <br /></p>
+          </div>
+          <p>Determines the number of lines of context to show before the unquoted text when using the 
+          <span class="emphasis">
+            <em>&lt;skip-quoted&gt;</em>
+          </span>function. When set to a positive number at most that many lines of the previous quote are displayed. If the previous quote is shorter the whole quote is displayed.</p>
+          <p>The (now deprecated) 
+          <span class="emphasis">
+            <em>skip_quoted_offset</em>
+          </span>is an alias for this variable, and should no longer be used.</p>
         </dd>
         <dt>
           <span class="term">
@@ -9418,6 +10092,51 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>pattern_format</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"%2n&#160;%-15e&#160;&#160;%d" 
+            <br /></p>
+          </div>
+          <p>This variable describes the format of the "pattern completion" menu. The following 
+          <span class="emphasis">
+            <em>printf(3)</em>
+          </span>-style sequences are understood:</p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">%d</span>
+                  </dt>
+                  <dd>
+                    <p>pattern description</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%e</span>
+                  </dt>
+                  <dd>
+                    <p>pattern expression</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%n</span>
+                  </dt>
+                  <dd>
+                    <p>index number</p>
+                  </dd>
+                </dl>
+              </div>
+            </blockquote>
+          </div>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>pgp_auto_decode</strong>
             </span>
           </span>
@@ -9438,7 +10157,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>pgp_autoinline</strong>
+              <strong>pgp_auto_inline</strong>
             </span>
           </span>
         </dt>
@@ -9499,7 +10218,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>pgp_clearsign_command</strong>
+              <strong>pgp_clear_sign_command</strong>
             </span>
           </span>
         </dt>
@@ -9546,16 +10265,28 @@ Default: yes
               <div class="variablelist">
                 <dl class="variablelist">
                   <dt>
-                    <span class="term">%p</span>
+                    <span class="term">%a</span>
                   </dt>
                   <dd>
-                    <p>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %? construct.</p>
+                    <p>The value of $pgp_sign_as if set, otherwise the value of $pgp_default_key.</p>
                   </dd>
                   <dt>
                     <span class="term">%f</span>
                   </dt>
                   <dd>
                     <p>Expands to the name of a file containing a message.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%p</span>
+                  </dt>
+                  <dd>
+                    <p>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %? construct.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%r</span>
+                  </dt>
+                  <dd>
+                    <p>One or more key IDs (or fingerprints if available).</p>
                   </dd>
                   <dt>
                     <span class="term">%s</span>
@@ -9566,26 +10297,11 @@ Default: yes
                       <em>multipart/signed</em>
                     </span>attachment when verifying it.</p>
                   </dd>
-                  <dt>
-                    <span class="term">%a</span>
-                  </dt>
-                  <dd>
-                    <p>The value of $pgp_sign_as if set, otherwise the value of $pgp_default_key.</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%r</span>
-                  </dt>
-                  <dd>
-                    <p>One or more key IDs (or fingerprints if available).</p>
-                  </dd>
                 </dl>
               </div>
             </blockquote>
           </div>
-          <p>For examples on how to configure these formats for the various versions of PGP which are floating around, see the pgp and gpg sample configuration files in the 
-          <span class="emphasis">
-            <em>samples/</em>
-          </span>subdirectory which has been installed on your system alongside the documentation. (PGP only)</p>
+          <p>(PGP only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -9713,7 +10429,10 @@ Default: yes
             <br />Default:&#160;"%4n&#160;%t%f&#160;%4l/0x%k&#160;%-4a&#160;%2c&#160;%u" 
             <br /></p>
           </div>
-          <p>This variable allows you to customize the PGP key selection menu to your personal taste. This string is similar to $index_format, but has its own set of 
+          <p>This variable allows you to customize the PGP key selection menu to your personal taste. If $crypt_use_gpgme is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, then it applies to S/MIME key selection menu also. This string is similar to $index_format, but has its own set of 
           <span class="emphasis">
             <em>printf(3)</em>
           </span>-like sequences:</p>
@@ -9788,7 +10507,7 @@ Default: yes
               </div>
             </blockquote>
           </div>
-          <p>(PGP only)</p>
+          <p>(Crypto only) or (PGP only when GPGME disabled)</p>
         </dd>
         <dt>
           <span class="term">
@@ -9813,7 +10532,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>pgp_getkeys_command</strong>
+              <strong>pgp_get_keys_command</strong>
             </span>
           </span>
         </dt>
@@ -9994,7 +10713,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>pgp_replyinline</strong>
+              <strong>pgp_reply_inline</strong>
             </span>
           </span>
         </dt>
@@ -10289,13 +11008,34 @@ Default: no
           <p>Used in connection with the 
           <span class="emphasis">
             <em>&lt;pipe-message&gt;</em>
-          </span>command. When 
+          </span>function. When 
           <span class="emphasis">
             <em>unset</em>
           </span>, NeoMutt will pipe the messages without any preprocessing. When 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt will weed headers and will attempt to decode the messages first.</p>
+          </span>, NeoMutt will attempt to decode the messages first.</p>
+          <p>Also see $pipe_decode_weed, which controls whether headers will be weeded when this is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>pipe_decode_weed</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>For 
+          <span class="emphasis">
+            <em>&lt;pipe-message&gt;</em>
+          </span>, when $pipe_decode is set, this further controls whether NeoMutt will weed headers.</p>
         </dd>
         <dt>
           <span class="term">
@@ -10373,7 +11113,7 @@ Default: yes
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an POP server, in the order NeoMutt should try them. Authentication methods are either "user", "apop" or any SASL mechanism, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If this option is 
+          <p>This is a colon-separated list of authentication methods NeoMutt may attempt to use to log in to an POP server, in the order NeoMutt should try them. Authentication methods are either "user", "apop" or any SASL mechanism, e.g. "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If this option is 
           <span class="emphasis">
             <em>unset</em>
           </span>(the default) NeoMutt will try all available methods, in order from most-secure to least-secure.</p>
@@ -10386,7 +11126,7 @@ set pop_authenticators="digest-md5:apop:user"
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>pop_checkinterval</strong>
+              <strong>pop_check_interval</strong>
             </span>
           </span>
         </dt>
@@ -10647,7 +11387,7 @@ Default: no
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;path 
+            <br />Type:&#160;mailbox 
             <br />Default:&#160;"~/postponed" 
             <br /></p>
           </div>
@@ -10697,7 +11437,16 @@ sleep 20 &lt; /dev/null &gt; /dev/null"
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>RFC8255 : user preferred languages to be search in parts and display Ex. : set preferred_languages="en,fr,de"</p>
+          <p>This variable specifies a list of comma-separated languages. RFC8255 : user preferred languages to be searched in parts and display. Example:</p>
+          <pre class="screen">
+set preferred_languages="en,fr,de"
+
+<span class="strong">
+  
+<strong>
+  </strong>
+</span>
+</pre>
         </dd>
         <dt>
           <span class="term">
@@ -10746,13 +11495,34 @@ Default: yes
           <p>Used in connection with the 
           <span class="emphasis">
             <em>&lt;print-message&gt;</em>
-          </span>command. If this option is 
+          </span>function. If this option is 
           <span class="emphasis">
             <em>set</em>
           </span>, the message is decoded before it is passed to the external command specified by $print_command. If this option is 
           <span class="emphasis">
             <em>unset</em>
           </span>, no processing will be applied to the message when printing it. The latter setting may be useful if you are using some advanced printer filter which is able to properly format e-mail messages for printing.</p>
+          <p>Also see $print_decode_weed, which controls whether headers will be weeded when this is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>print_decode_weed</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>For 
+          <span class="emphasis">
+            <em>&lt;print-message&gt;</em>
+          </span>, when $print_decode is set, this further controls whether NeoMutt will weed headers.</p>
         </dd>
         <dt>
           <span class="term">
@@ -10769,7 +11539,7 @@ Default: no
           <p>Used in connection with the 
           <span class="emphasis">
             <em>&lt;print-message&gt;</em>
-          </span>command. If this option is 
+          </span>function. If this option is 
           <span class="emphasis">
             <em>set</em>
           </span>, the command specified by $print_command is executed once for each message which is to be printed. If this option is 
@@ -10818,7 +11588,7 @@ Default: yes
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>This specifies the command NeoMutt will use to make external address queries. The string may contain a "%s", which will be substituted with the query string the user types. NeoMutt will add quotes around the string substituted for "%s" automatically according to shell quoting rules, so you should avoid adding your own. If no "%s" is found in the string, NeoMutt will append the user's query to the end of the string. See "query" for more information.</p>
+          <p>This specifies the command NeoMutt will use to make external address queries. The string may contain a "%s", which will be substituted with the query string the user types. NeoMutt will add quotes around the string substituted for "%s" automatically according to shell quoting rules, so you should avoid adding your own. If no "%s" is found in the string, NeoMutt will append the user's query to the end of the string. See "query" (https://neomutt.org/guide/advancedusage.html#query) for more information.</p>
         </dd>
         <dt>
           <span class="term">
@@ -10831,7 +11601,7 @@ Default: yes
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"%4c&#160;%t&#160;%-25.25a&#160;%-25.25n&#160;%?e?(%e)?" 
+            <br />Default:&#160;"%3c&#160;%t&#160;%-25.25n&#160;%-25.25a&#160;|&#160;%e" 
             <br /></p>
           </div>
           <p>This variable describes the format of the "query" menu. The following 
@@ -10858,7 +11628,7 @@ Default: yes
                     <span class="term">%e</span>
                   </dt>
                   <dd>
-                    <p>Extra information *</p>
+                    <p>* Extra information</p>
                   </dd>
                   <dt>
                     <span class="term">%n</span>
@@ -10949,28 +11719,6 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>toggle_quoted_show_levels</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />Type:&#160;number 
-            <br />Default:&#160;0 
-            <br /></p>
-          </div>
-          <p>Quoted text may be filtered out using the 
-          <span class="emphasis">
-            <em>&lt;toggle-quoted&gt;</em>
-          </span>command. If set to a number greater than 0, then the 
-          <span class="emphasis">
-            <em>&lt;toggle-quoted&gt;</em>
-          </span>command will only filter out quote levels above this number.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>read_inc</strong>
             </span>
           </span>
@@ -11005,7 +11753,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>realname</strong>
+              <strong>real_name</strong>
             </span>
           </span>
         </dt>
@@ -11056,7 +11804,7 @@ Default: no
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;path 
+            <br />Type:&#160;mailbox 
             <br />Default:&#160;"~/sent" 
             <br /></p>
           </div>
@@ -11064,7 +11812,7 @@ Default: no
           <p>The value of 
           <span class="emphasis">
             <em>$record</em>
-          </span>is overridden by the $force_name and $save_name variables, and the "fcc-hook" command. Also see $copy.</p>
+          </span>is overridden by the $force_name and $save_name variables, and the "fcc-hook" command. Also see $copy and $write_bcc.</p>
         </dd>
         <dt>
           <span class="term">
@@ -11205,7 +11953,7 @@ Default: no
 Type: boolean
 Default: no
 </pre>
-          <p>This variable provides a toggle. When active, the From: header will be extracted from the current mail's 'X-Original-To:' header. This setting does not have precedence over "reverse_realname".</p>
+          <p>This variable provides a toggle. When active, the From: header will be extracted from the current mail's 'X-Original-To:' header. This setting does not have precedence over "reverse_real_name".</p>
           <p>Assuming 'fast_reply' is disabled, this option will prompt the user with a prefilled From: header.</p>
         </dd>
         <dt>
@@ -11329,12 +12077,12 @@ Default: no
           <span class="emphasis">
             <em>From:</em>
           </span>line will use your address on the current machine.</p>
-          <p>Also see the "alternates" command and $reverse_realname.</p>
+          <p>Also see the "alternates" command and $reverse_real_name.</p>
         </dd>
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>reverse_realname</strong>
+              <strong>reverse_real_name</strong>
             </span>
           </span>
         </dt>
@@ -11352,7 +12100,7 @@ Default: yes
           <span class="emphasis">
             <em>set</em>
           </span>, NeoMutt will use the matching address as-is.</p>
-          <p>In either case, a missing real name will be filled in afterwards using the value of $realname.</p>
+          <p>In either case, a missing real name will be filled in afterwards using the value of $real_name.</p>
         </dd>
         <dt>
           <span class="term">
@@ -11372,13 +12120,14 @@ Default: no
           </span>, NeoMutt will decode RFC2047-encoded MIME parameters. You want to set this variable when NeoMutt suggests you to save attachments to files named like:</p>
           <pre class="screen">
 =?iso-8859-1?Q?file=5F=E4=5F991116=2Ezip?=
+=?utf-8?Q?z=C4=99ta.png?=
 
 </pre>
           <p>When this variable is 
           <span class="emphasis">
             <em>set</em>
           </span>interactively, the change won't be active until you change folders.</p>
-          <p>Note that this use of RFC2047's encoding is explicitly prohibited by the standard, but nevertheless encountered in the wild.</p>
+          <p>Note that this use of RFC2047's encoding is explicitly prohibited by the standard, but nevertheless encountered in the wild and produced by, e.g., Outlook.</p>
           <p>Also note that setting this parameter will 
           <span class="emphasis">
             <em>not</em>
@@ -11422,7 +12171,7 @@ Default: yes
           <p>When 
           <span class="emphasis">
             <em>unset</em>
-          </span>, mailboxes which contain no saved messages will be removed when closed (the exception is $spoolfile which is never removed). If 
+          </span>, mailboxes which contain no saved messages will be removed when closed (the exception is $spool_file which is never removed). If 
           <span class="emphasis">
             <em>set</em>
           </span>, mailboxes are never removed.</p>
@@ -11576,7 +12325,7 @@ Default: yes
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;string 
+            <br />Type:&#160;string&#160;list 
             <br />Default:&#160;"us-ascii:iso-8859-1:utf-8" 
             <br /></p>
           </div>
@@ -11600,7 +12349,11 @@ Default: yes
           <p>Specifies the program and arguments used to deliver mail sent by NeoMutt. NeoMutt expects that the specified program interprets additional arguments as recipient addresses. NeoMutt appends all recipients after adding a 
           <span class="emphasis">
             <em>--</em>
-          </span>delimiter (if not already present). Additional flags, such as for $use_8bitmime, $use_envelope_from, $dsn_notify, or $dsn_return will be added before the delimiter.</p>
+          </span>delimiter (if not already present). Additional flags, such as for $use_8bit_mime, $use_envelope_from, $dsn_notify, or $dsn_return will be added before the delimiter.</p>
+          <p>
+          <span class="strong">
+            <strong>See also:</strong>
+          </span>$write_bcc.</p>
         </dd>
         <dt>
           <span class="term">
@@ -11835,7 +12588,7 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"%B%*&#160;&#160;%n" 
+            <br />Default:&#160;"%D%*&#160;&#160;%n" 
             <br /></p>
           </div>
           <p>This variable allows you to customize the sidebar display. This string is similar to $index_format, but has its own set of 
@@ -11853,46 +12606,22 @@ Default: no
                     <p>Name of the mailbox</p>
                   </dd>
                   <dt>
+                    <span class="term">%d</span>
+                  </dt>
+                  <dd>
+                    <p>* @ Number of deleted messages in the mailbox</p>
+                  </dd>
+                  <dt>
                     <span class="term">%D</span>
                   </dt>
                   <dd>
-                    <p>Description of the mailbox</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%S</span>
-                  </dt>
-                  <dd>
-                    <p>* Size of mailbox (total number of messages)</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%N</span>
-                  </dt>
-                  <dd>
-                    <p>* Number of unread messages in the mailbox</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%n</span>
-                  </dt>
-                  <dd>
-                    <p>N if mailbox has new mail, blank otherwise</p>
+                    <p>Descriptive name of the mailbox</p>
                   </dd>
                   <dt>
                     <span class="term">%F</span>
                   </dt>
                   <dd>
-                    <p>* Number of Flagged messages in the mailbox</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%!</span>
-                  </dt>
-                  <dd>
-                    <p>"!" : one flagged message; "!!" : two flagged messages; "n!" : n flagged messages (for n &gt; 2). Otherwise prints nothing.</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%d</span>
-                  </dt>
-                  <dd>
-                    <p>* @ Number of deleted messages</p>
+                    <p>* Number of flagged messages in the mailbox</p>
                   </dd>
                   <dt>
                     <span class="term">%L</span>
@@ -11901,34 +12630,77 @@ Default: no
                     <p>* @ Number of messages after limiting</p>
                   </dd>
                   <dt>
+                    <span class="term">%n</span>
+                  </dt>
+                  <dd>
+                    <p>"N" if mailbox has new mail, " " (space) otherwise</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%N</span>
+                  </dt>
+                  <dd>
+                    <p>* Number of unread messages in the mailbox (seen or unseen)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%o</span>
+                  </dt>
+                  <dd>
+                    <p>* Number of old messages in the mailbox (unread, seen)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%r</span>
+                  </dt>
+                  <dd>
+                    <p>* Number of read messages in the mailbox (read, seen)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%S</span>
+                  </dt>
+                  <dd>
+                    <p>* Size of mailbox (total number of messages)</p>
+                  </dd>
+                  <dt>
                     <span class="term">%t</span>
                   </dt>
                   <dd>
-                    <p>* @ Number of tagged messages</p>
+                    <p>* @ Number of tagged messages in the mailbox</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%Z</span>
+                  </dt>
+                  <dd>
+                    <p>* Number of new messages in the mailbox (unread, unseen)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%!</span>
+                  </dt>
+                  <dd>
+                    <p>"!" : one flagged message; "!!" : two flagged messages; "n!" : n flagged messages (for n &gt; 2). Otherwise prints nothing.</p>
                   </dd>
                   <dt>
                     <span class="term">%&gt;X</span>
                   </dt>
                   <dd>
-                    <p>right justify the rest of the string and pad with "X"</p>
+                    <p>Right justify the rest of the string and pad with "X"</p>
                   </dd>
                   <dt>
                     <span class="term">%|X</span>
                   </dt>
                   <dd>
-                    <p>pad to the end of the line with "X"</p>
+                    <p>Pad to the end of the line with "X"</p>
                   </dd>
                   <dt>
                     <span class="term">%*X</span>
                   </dt>
                   <dd>
-                    <p>soft-fill with character "X" as pad</p>
+                    <p>Soft-fill with character "X" as pad</p>
                   </dd>
                 </dl>
               </div>
             </blockquote>
           </div>
-          <p>* = Can be optionally printed if nonzero @ = Only applicable to the current folder</p>
+          <p>* = Can be optionally printed if nonzero</p>
+          <p>@ = Only applicable to the current folder</p>
           <p>In order to use %S, %N, %F, and %!, $mail_check_stats must be 
           <span class="emphasis">
             <em>set</em>
@@ -11975,24 +12747,6 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>sidebar_non_empty_mailbox_only</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>When set, the sidebar will only display mailboxes that contain one or more mails.</p>
-          <p>
-          <span class="strong">
-            <strong>See also:</strong>
-          </span>$sidebar_new_mail_only, $sidebar_whitelist.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>sidebar_next_new_wrap</strong>
             </span>
           </span>
@@ -12009,6 +12763,24 @@ Default: no
           <span class="emphasis">
             <em>&lt;sidebar-prev-new&gt;</em>
           </span>command is similarly affected, wrapping around to the end of the list.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>sidebar_non_empty_mailbox_only</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When set, the sidebar will only display mailboxes that contain one or more mails.</p>
+          <p>
+          <span class="strong">
+            <strong>See also:</strong>
+          </span>$sidebar_new_mail_only, $sidebar_whitelist.</p>
         </dd>
         <dt>
           <span class="term">
@@ -12152,13 +12924,13 @@ Default: no
             <br />Default:&#160;order 
             <br /></p>
           </div>
-          <p>Specifies how to sort entries in the file browser. By default, the entries are sorted alphabetically. Valid values:</p>
+          <p>Specifies how to sort mailbox entries in the sidebar. By default, the entries are sorted alphabetically. Valid values:</p>
           <div class="blockquote">
             <blockquote class="blockquote">
               <div class="itemizedlist">
                 <ul class="itemizedlist" style="list-style-type: disc;">
                   <li class="listitem">
-                    <p>‐ alpha (alphabetically)</p>
+                    <p>‐ path (alphabetically)</p>
                   </li>
                   <li class="listitem">
                     <p>‐ count (all message count)</p>
@@ -12167,13 +12939,7 @@ Default: no
                     <p>‐ flagged (flagged message count)</p>
                   </li>
                   <li class="listitem">
-                    <p>‐ name (alphabetically)</p>
-                  </li>
-                  <li class="listitem">
                     <p>‐ new (unread message count)</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ path (alphabetically)</p>
                   </li>
                   <li class="listitem">
                     <p>‐ unread (unread message count)</p>
@@ -12187,8 +12953,9 @@ Default: no
           </div>
           <p>You may optionally use the "reverse-" prefix to specify reverse sorting order (example: " 
           <span class="emphasis">
-            <em>set sort_browser=reverse-date</em>
+            <em>set sidebar_sort_method=reverse-alpha</em>
           </span>").</p>
+          <p>The "alpha" and "name" values are synonyms for "path".</p>
         </dd>
         <dt>
           <span class="term">
@@ -12367,22 +13134,6 @@ Default: no
           <span class="emphasis">
             <em>set</em>
           </span>, message sizes units will be displayed to the left of the number. See formatstrings-size.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>skip_quoted_offset</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />Type:&#160;number 
-            <br />Default:&#160;0 
-            <br /></p>
-          </div>
-          <p>Lines of quoted text that are displayed before the unquoted text after "skip to quoted" command (S)</p>
         </dd>
         <dt>
           <span class="term">
@@ -12752,7 +13503,7 @@ Default: no
           <p>The default behavior of NeoMutt is to use PGP on all auto-sign/encryption operations. To override and to use OpenSSL instead this must be 
           <span class="emphasis">
             <em>set</em>
-          </span>. However, this has no effect while replying, since NeoMutt will automatically select the same application that was used to sign/encrypt the original message. (Note that this variable can be overridden by unsetting $crypt_autosmime.) (S/MIME only)</p>
+          </span>. However, this has no effect while replying, since NeoMutt will automatically select the same application that was used to sign/encrypt the original message. (Note that this variable can be overridden by unsetting $crypt_auto_smime.) (S/MIME only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -12938,7 +13689,7 @@ Default: yes
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>This is a colon-delimited list of authentication methods NeoMutt may attempt to use to log in to an SMTP server, in the order NeoMutt should try them. Authentication methods are any SASL mechanism, e.g. "plain", "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it is "unset" (the default) NeoMutt will try all available methods, in order from most-secure to least-secure. Support for the "plain" mechanism is bundled; other mechanisms are provided by an external SASL library (look for +USE_SASL in the output of neomutt -v).</p>
+          <p>This is a colon-separated list of authentication methods NeoMutt may attempt to use to log in to an SMTP server, in the order NeoMutt should try them. Authentication methods are any SASL mechanism, e.g. "plain", "digest-md5", "gssapi" or "cram-md5". This option is case-insensitive. If it is "unset" (the default) NeoMutt will try all available methods, in order from most-secure to least-secure. Support for the "plain" mechanism is bundled; other mechanisms are provided by an external SASL library (look for '+sasl' in the output of neomutt -v).</p>
           <p>Example:</p>
           <pre class="screen">
 set smtp_authenticators="digest-md5:cram-md5"
@@ -12964,7 +13715,7 @@ set smtp_authenticators="digest-md5:cram-md5"
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>The command to run to generate an OAUTH refresh token for authorizing your connection to your SMTP server. This command will be run on every connection attempt that uses the OAUTHBEARER authentication mechanism. See "oauth" for details.</p>
+          <p>The command to run to generate an OAUTH refresh token for authorizing your connection to your SMTP server. This command will be run on every connection attempt that uses the OAUTHBEARER or XOAUTH2 authentication mechanisms. See "oauth" for details.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13014,6 +13765,24 @@ smtp[s]://[user[:pass]@]host[:port]
 </span>
 </pre>
           <p>where "[...]" denotes an optional part. Setting this variable overrides the value of the $sendmail variable.</p>
+          <p>Also see $write_bcc.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>smtp_user</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"" 
+            <br /></p>
+          </div>
+          <p>The username for the SMTP server.</p>
+          <p>This variable defaults to your user name on the local machine.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13035,16 +13804,13 @@ smtp[s]://[user[:pass]@]host[:port]
               <div class="itemizedlist">
                 <ul class="itemizedlist" style="list-style-type: disc;">
                   <li class="listitem">
-                    <p>‐ date or date-sent</p>
+                    <p>‐ date</p>
                   </li>
                   <li class="listitem">
                     <p>‐ date-received</p>
                   </li>
                   <li class="listitem">
                     <p>‐ from</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ mailbox-order (unsorted)</p>
                   </li>
                   <li class="listitem">
                     <p>‐ score</p>
@@ -13064,21 +13830,31 @@ smtp[s]://[user[:pass]@]host[:port]
                   <li class="listitem">
                     <p>‐ to</p>
                   </li>
+                  <li class="listitem">
+                    <p>‐ unsorted</p>
+                  </li>
                 </ul>
               </div>
             </blockquote>
           </div>
-          <p>You may optionally use the "reverse-" prefix to specify reverse sorting order.</p>
-          <p>Example:</p>
-          <pre class="screen">
-set sort=reverse-date-sent
-
-<span class="strong">
-  
-<strong>
-  </strong>
-</span>
-</pre>
+          <p>You may optionally use the "reverse-" prefix to specify reverse sorting order, or the "last-" prefix to sort threads based on the corresponding attribute of the last descendant rather than the thread root. If both prefixes are in use, "reverse-" must come before "last-". The "last-" prefix has no effect on a flat view.</p>
+          <p>Any ties in the primary sort are broken by $sort_aux. When $use_threads is "threads" or "reverse", $sort controls the sorting between threads, and $sort_aux controls the sorting within a thread.</p>
+          <p>The "date-sent" value is a synonym for "date". The "mailbox-order" value is a synonym for "unsorted".</p>
+          <p>The values of "threads" and "reverse-threads" are legacy options, which cause the value of 
+          <span class="emphasis">
+            <em>$sort_aux</em>
+          </span>to also contol sorting between threads, and they may not be used with the "last-" prefix. The preferred way to enable a threaded view is via 
+          <span class="emphasis">
+            <em>$use_threads</em>
+          </span>. This variable can also be set via the 
+          <span class="emphasis">
+            <em>&lt;sort-mailbox&gt;</em>
+          </span>and 
+          <span class="emphasis">
+            <em>&lt;sort-reverse&gt;</em>
+          </span>functions.</p>
+          <p>Note: When $use_threads is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in $sort swaps which end the last thread will sort to.</p>
+          <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13112,6 +13888,7 @@ set sort=reverse-date-sent
               </div>
             </blockquote>
           </div>
+          <p>Note: This also affects the entries of the address query menu, thus potentially overruling the order of entries as generated by $query_command.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13128,7 +13905,7 @@ set sort=reverse-date-sent
             <br /></p>
           </div>
           <p>This provides a secondary sort for messages in the "index" menu, used when the $sort value is equal for two messages.</p>
-          <p>When sorting by threads, this variable controls how threads are sorted in relation to other threads, and how the branches of the thread trees are sorted. This can be set to any value that $sort can, except "threads" (in that case, NeoMutt will just use "date-sent"). You can also specify the "last-" prefix in addition to the "reverse-" prefix, but "last-" must come after "reverse-". The "last-" prefix causes messages to be sorted against its siblings by which has the last descendant, using the rest of $sort_aux as an ordering. For instance,</p>
+          <p>When sorting by threads, this variable controls how subthreads are sorted within a single thread (for the order between threads, see $sort). This can be set to any value that $sort can, including with the use of "reverse-" and "last-" prefixes, except for variations using "threads" (in that case, NeoMutt will just use "date"). For instance,</p>
           <pre class="screen">
 set sort_aux=last-date-received
 
@@ -13138,11 +13915,11 @@ set sort_aux=last-date-received
   </strong>
 </span>
 </pre>
-          <p>would mean that if a new message is received in a thread, that thread becomes the last one displayed (or the first, if you have " 
+          <p>would mean that if a new message is received in a thread, that subthread becomes the last one displayed (or the first, if you have " 
           <span class="emphasis">
-            <em>set sort=reverse-threads</em>
-          </span>".)</p>
-          <p>Note: For reversed-threads $sort order, $sort_aux is reversed again (which is not the right thing to do, but kept to not break any existing configuration setting).</p>
+            <em>set use_threads=reverse</em>
+          </span>".) When using $use_threads, it is more common to use "last-" with $sort and not with $sort_aux.</p>
+          <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13192,6 +13969,7 @@ set sort_aux=last-date-received
           <span class="emphasis">
             <em>set sort_browser=reverse-date</em>
           </span>").</p>
+          <p>The "unread" value is a synonym for "new".</p>
         </dd>
         <dt>
           <span class="term">
@@ -13205,30 +13983,16 @@ set sort_aux=last-date-received
 Type: boolean
 Default: yes
 </pre>
-          <p>This variable is only useful when sorting by mailboxes in sidebar. By default, entries are unsorted. Valid values:</p>
-          <div class="blockquote">
-            <blockquote class="blockquote">
-              <div class="itemizedlist">
-                <ul class="itemizedlist" style="list-style-type: disc;">
-                  <li class="listitem">
-                    <p>‐ count (all message count)</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ desc (virtual mailbox description)</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ new (new message count)</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ path</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ unsorted</p>
-                  </li>
-                </ul>
-              </div>
-            </blockquote>
-          </div>
+          <p>This variable is only useful when sorting by threads with $strict_threads 
+          <span class="emphasis">
+            <em>unset</em>
+          </span>. In that case, it changes the heuristic mutt uses to thread messages by subject. With $sort_re 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, mutt will only attach a message as the child of another message by subject if the subject of the child message starts with a substring matching the setting of $reply_regex. With $sort_re 
+          <span class="emphasis">
+            <em>unset</em>
+          </span>, mutt will attach the message whether or not this is the case, as long as the non-$reply_regex parts of both messages are identical.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13255,18 +14019,18 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>spoolfile</strong>
+              <strong>spool_file</strong>
             </span>
           </span>
         </dt>
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;path 
+            <br />Type:&#160;mailbox 
             <br />Default:&#160;"" 
             <br /></p>
           </div>
-          <p>If your spool mailbox is in a non-default place where NeoMutt can't find it, you can specify its location with this variable. The description from "named-mailboxes" or "virtual-mailboxes" may be used for the spoolfile.</p>
+          <p>If your spool mailbox is in a non-default place where NeoMutt can't find it, you can specify its location with this variable. The description from "named-mailboxes" or "virtual-mailboxes" may be used for the spool_file.</p>
           <p>If not specified, then the environment variables 
           <span class="emphasis">
             <em>$MAIL</em>
@@ -13394,6 +14158,16 @@ Default: yes
           <span class="emphasis">
             <em>STARTTLS</em>
           </span>regardless of the server's capabilities.</p>
+          <p>
+          <span class="strong">
+            <strong>Note</strong>
+          </span>that 
+          <span class="emphasis">
+            <em>STARTTLS</em>
+          </span>is subject to many kinds of attacks, including the ability of a machine-in-the-middle to suppress the advertising of support. Setting $ssl_force_tls is recommended if you rely on 
+          <span class="emphasis">
+            <em>STARTTLS</em>
+          </span>.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13434,6 +14208,23 @@ Default: no
           <span class="strong">
             <strong>N.B. As of 2015, SSLv3 is considered insecure, and using it is inadvisable. See https://tools.ietf.org/html/rfc7525 .</strong>
           </span></p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>ssl_use_system_certs</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>If set to 
+          <span class="emphasis">
+            <em>yes</em>
+          </span>, NeoMutt will use CA certificates in the system-wide certificate store when checking if a server certificate is signed by a trusted CA. (OpenSSL only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -13508,23 +14299,6 @@ Default: yes
           <span class="emphasis">
             <em>set</em>
           </span>, NeoMutt will use TLSv1.3 when communicating with servers that request it.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>ssl_usesystemcerts</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: yes
-</pre>
-          <p>If set to 
-          <span class="emphasis">
-            <em>yes</em>
-          </span>, NeoMutt will use CA certificates in the system-wide certificate store when checking if a server certificate is signed by a trusted CA. (OpenSSL only)</p>
         </dd>
         <dt>
           <span class="term">
@@ -13662,7 +14436,7 @@ Default: "-*%A"
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"-%r-NeoMutt:&#160;%D&#160;[Msgs:%?M?%M/?%m%?n?&#160;New:%n?%?o?&#160;Old:%o?%?d?&#160;Del:%d?%?F?&#160;Flag:%F?%?t?&#160;Tag:%t?%?p?&#160;Post:%p?%?b?&#160;Inc:%b?%?l?&#160;%l?]---(%s/%S)-%&gt;-(%P)---" 
+            <br />Default:&#160;"-%r-NeoMutt:&#160;%D&#160;[Msgs:%?M?%M/?%m%?n?&#160;New:%n?%?o?&#160;Old:%o?%?d?&#160;Del:%d?%?F?&#160;Flag:%F?%?t?&#160;Tag:%t?%?p?&#160;Post:%p?%?b?&#160;Inc:%b?%?l?&#160;%l?]---(%?T?%T/?%s/%S)-%&gt;-(%P)---" 
             <br /></p>
           </div>
           <p>Controls the format of the status line displayed in the "index" menu. This string is similar to $index_format, but has its own set of 
@@ -13677,13 +14451,13 @@ Default: "-*%A"
                     <span class="term">%b</span>
                   </dt>
                   <dd>
-                    <p>Number of mailboxes with new mail *</p>
+                    <p>* Number of mailboxes with new mail</p>
                   </dd>
                   <dt>
                     <span class="term">%d</span>
                   </dt>
                   <dd>
-                    <p>Number of deleted messages *</p>
+                    <p>* Number of deleted messages</p>
                   </dd>
                   <dt>
                     <span class="term">%D</span>
@@ -13701,7 +14475,7 @@ Default: "-*%A"
                     <span class="term">%F</span>
                   </dt>
                   <dd>
-                    <p>Number of flagged messages *</p>
+                    <p>* Number of flagged messages</p>
                   </dd>
                   <dt>
                     <span class="term">%h</span>
@@ -13713,43 +14487,43 @@ Default: "-*%A"
                     <span class="term">%l</span>
                   </dt>
                   <dd>
-                    <p>Size (in bytes) of the current mailbox (see formatstrings-size) *</p>
+                    <p>* Size (in bytes) of the current mailbox (see formatstrings-size)</p>
                   </dd>
                   <dt>
                     <span class="term">%L</span>
                   </dt>
                   <dd>
-                    <p>Size (in bytes) of the messages shown (i.e., which match the current limit) (see formatstrings-size) *</p>
+                    <p>* Size (in bytes) of the messages shown (i.e., which match the current limit) (see formatstrings-size)</p>
                   </dd>
                   <dt>
                     <span class="term">%m</span>
                   </dt>
                   <dd>
-                    <p>The number of messages in the mailbox *</p>
+                    <p>* The number of messages in the mailbox</p>
                   </dd>
                   <dt>
                     <span class="term">%M</span>
                   </dt>
                   <dd>
-                    <p>The number of messages shown (i.e., which match the current limit) *</p>
+                    <p>* The number of messages shown (i.e., which match the current limit)</p>
                   </dd>
                   <dt>
                     <span class="term">%n</span>
                   </dt>
                   <dd>
-                    <p>Number of new messages in the mailbox *</p>
+                    <p>* Number of new messages in the mailbox (unread, unseen)</p>
                   </dd>
                   <dt>
                     <span class="term">%o</span>
                   </dt>
                   <dd>
-                    <p>Number of old unread messages *</p>
+                    <p>* Number of old messages in the mailbox (unread, seen)</p>
                   </dd>
                   <dt>
                     <span class="term">%p</span>
                   </dt>
                   <dd>
-                    <p>Number of postponed messages *</p>
+                    <p>* Number of postponed messages</p>
                   </dd>
                   <dt>
                     <span class="term">%P</span>
@@ -13767,7 +14541,7 @@ Default: "-*%A"
                     <span class="term">%R</span>
                   </dt>
                   <dd>
-                    <p>Number of read messages *</p>
+                    <p>* Number of read messages in the mailbox (read, seen)</p>
                   </dd>
                   <dt>
                     <span class="term">%s</span>
@@ -13785,13 +14559,19 @@ Default: "-*%A"
                     <span class="term">%t</span>
                   </dt>
                   <dd>
-                    <p>Number of tagged messages *</p>
+                    <p>* Number of tagged messages in the mailbox</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%T</span>
+                  </dt>
+                  <dd>
+                    <p>* Current threading mode ($use_threads)</p>
                   </dd>
                   <dt>
                     <span class="term">%u</span>
                   </dt>
                   <dd>
-                    <p>Number of unread messages *</p>
+                    <p>* Number of unread messages in the mailbox (seen or unseen)</p>
                   </dd>
                   <dt>
                     <span class="term">%v</span>
@@ -13803,7 +14583,7 @@ Default: "-*%A"
                     <span class="term">%V</span>
                   </dt>
                   <dd>
-                    <p>Currently active limit pattern, if any *</p>
+                    <p>* Currently active limit pattern, if any</p>
                   </dd>
                   <dt>
                     <span class="term">%&gt;X</span>
@@ -13876,6 +14656,12 @@ Default: "-*%A"
           <span class="emphasis">
             <em>else_string</em>
           </span>will be expanded.</p>
+          <p>As another example, here is how to show either $sort and $sort_aux or $use_threads and $sort, based on whether threads are enabled with $use_threads:</p>
+          <p>
+            <span class="emphasis">
+              <em>%?T?%s/%S&amp;%T/%s?</em>
+            </span>
+          </p>
           <p>You can force the result of any 
           <span class="emphasis">
             <em>printf(3)</em>
@@ -13900,7 +14686,7 @@ Default: no
           <p>Setting this variable causes the "status bar" to be displayed on the first line of the screen rather than near the bottom. If $help is 
           <span class="emphasis">
             <em>set</em>
-          </span>, too it'll be placed at the bottom.</p>
+          </span>too, it'll be placed at the bottom.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13982,7 +14768,10 @@ Default: yes
           <p>Affects the 
           <span class="emphasis">
             <em>~b</em>
-          </span>and 
+          </span>, 
+          <span class="emphasis">
+            <em>~B</em>
+          </span>, and 
           <span class="emphasis">
             <em>~h</em>
           </span>search operations described in section "patterns". If 
@@ -14179,6 +14968,28 @@ Default: " +TCFLR"
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>toggle_quoted_show_levels</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;number 
+            <br />Default:&#160;0 
+            <br /></p>
+          </div>
+          <p>Quoted text may be filtered out using the 
+          <span class="emphasis">
+            <em>&lt;toggle-quoted&gt;</em>
+          </span>command. If set to a number greater than 0, then the 
+          <span class="emphasis">
+            <em>&lt;toggle-quoted&gt;</em>
+          </span>command will only filter out quote levels above this number.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>trash</strong>
             </span>
           </span>
@@ -14186,7 +14997,7 @@ Default: " +TCFLR"
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;path 
+            <br />Type:&#160;mailbox 
             <br />Default:&#160;"" 
             <br /></p>
           </div>
@@ -14269,6 +15080,27 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>tunnel_is_secure</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: yes
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will assume the $tunnel connection does not need STARTTLS to be enabled. It will also allow IMAP PREAUTH server responses inside a tunnel to proceed. This is appropriate if $tunnel uses ssh or directly invokes the server locally.</p>
+          <p>When 
+          <span class="emphasis">
+            <em>unset</em>
+          </span>, NeoMutt will negotiate STARTTLS according to the ssl_starttls and ssl_force_tls variables. If ssl_force_tls is set, NeoMutt will abort connecting if an IMAP server responds with PREAUTH. This setting is appropriate if $tunnel does not provide security and could be tampered with by attackers.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>uncollapse_jump</strong>
             </span>
           </span>
@@ -14309,7 +15141,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>use_8bitmime</strong>
+              <strong>use_8bit_mime</strong>
             </span>
           </span>
         </dt>
@@ -14432,6 +15264,56 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>use_threads</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;enumeration 
+            <br />Default:&#160;unset 
+            <br /></p>
+          </div>
+          <p>The style of threading used in the index. May be one of "flat" (no threading), "threads" (threaded, with subthreads below root message) or "reverse" (threaded, with subthreads above root message). For convenience, the value "yes" is a synonym for "threads", and "no" is a synonym for "flat".</p>
+          <p>If this variable is never set, then 
+          <span class="emphasis">
+            <em>$sort</em>
+          </span>controls whether threading is used, 
+          <span class="emphasis">
+            <em>$sort_aux</em>
+          </span>controls both the sorting of threads and subthreads, and using 
+          <span class="emphasis">
+            <em>&lt;sort-mailbox&gt;</em>
+          </span>to select threads affects only 
+          <span class="emphasis">
+            <em>$sort</em>
+          </span>. Once this variable is set, attempting to set 
+          <span class="emphasis">
+            <em>$sort</em>
+          </span>to a value using "threads" will warn, the value of 
+          <span class="emphasis">
+            <em>$sort</em>
+          </span>controls the sorting between threads while 
+          <span class="emphasis">
+            <em>$sort_aux</em>
+          </span>controls sorting within a thread, and 
+          <span class="emphasis">
+            <em>&lt;sort-mailbox&gt;</em>
+          </span>toggles 
+          <span class="emphasis">
+            <em>$use_threads</em>
+          </span>.</p>
+          <p>Example:</p>
+          <pre class="screen">
+set use_threads=yes
+
+</pre>
+          <p>See the "Use Threads Feature" section for further explanation and examples.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>user_agent</strong>
             </span>
           </span>
@@ -14465,7 +15347,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>virtual_spoolfile</strong>
+              <strong>virtual_spool_file</strong>
             </span>
           </span>
         </dt>
@@ -14477,33 +15359,8 @@ Default: no
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file. This command is now unnecessary. $spoolfile has been extended to support mailbox descriptions as a value.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>visual</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />Type:&#160;command 
-            <br />Default:&#160;"vi" 
-            <br /></p>
-          </div>
-          <p>Specifies the visual editor to invoke when the " 
-          <span class="emphasis">
-            <em>~v</em>
-          </span>" command is given in the built-in editor.</p>
-          <p>$visual is overridden by the environment variable 
-          <span class="emphasis">
-            <em>$VISUAL</em>
-          </span>or 
-          <span class="emphasis">
-            <em>$EDITOR</em>
-          </span>.</p>
+          </span>, NeoMutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
+          <p>This command is now unnecessary. $spool_file has been extended to support mailbox descriptions as a value.</p>
         </dd>
         <dt>
           <span class="term">
@@ -14560,7 +15417,8 @@ Default: yes
           <p>When 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt will weed headers when displaying, forwarding, printing, or replying to messages.</p>
+          </span>, NeoMutt will weed headers when displaying, forwarding, or replying to messages.</p>
+          <p>Also see $copy_decode_weed, $pipe_decode_weed, $print_decode_weed.</p>
         </dd>
         <dt>
           <span class="term">
@@ -14633,9 +15491,11 @@ Default: yes
         <dd>
           <pre class="programlisting">
 Type: boolean
-Default: yes
+Default: no
 </pre>
-          <p>Controls whether NeoMutt writes out the "Bcc:" header when preparing messages to be sent. Exim users may wish to unset this. If NeoMutt is set to deliver directly via SMTP (see $smtp_url), this option does nothing: NeoMutt will never write out the "Bcc:" header in this case.</p>
+          <p>Controls whether NeoMutt writes out the "Bcc:" header when preparing messages to be sent. Some MTAs, such as Exim and Courier, do not strip the "Bcc:" header; so it is advisable to leave this unset unless you have a particular need for the header to be in the sent message.</p>
+          <p>If NeoMutt is set to deliver directly via SMTP(see $smtp_url), this option does nothing: NeoMutt will never write out the "Bcc:" header in this case.</p>
+          <p>Note this option only affects the sending of messages. Fcc'ed copies of a message will always contain the "Bcc:" header if one exists.</p>
         </dd>
         <dt>
           <span class="term">

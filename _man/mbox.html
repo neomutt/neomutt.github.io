@@ -41,9 +41,8 @@ description: Format for mail message storage.
     <span class="strong">
       <strong>date-time</strong>
     </span>as output by 
-    <span class="strong">
-      <strong>asctime(3)</strong>
-    </span>. For compatibility reasons with legacy software, two-digit years greater than or equal to 70 should be interpreted as the years 1970+, while two-digit years less than 70 should be interpreted as the years 2000-2069. Software reading files in this format should also be prepared to accept non-numeric timezone information such as "CET DST" for Central European Time, daylight saving time.</p>
+    <span class="citerefentry">
+    <span class="refentrytitle">asctime</span>(3)</span>. For compatibility reasons with legacy software, two-digit years greater than or equal to 70 should be interpreted as the years 1970+, while two-digit years less than 70 should be interpreted as the years 2000-2069. Software reading files in this format should also be prepared to accept non-numeric timezone information such as "CET DST" for Central European Time, daylight saving time.</p>
     <p>Example:</p>
     <p>&gt;From example@example.com Fri Jun 23 02:56:55 2000</p>
     <p>In order to avoid misinterpretation of lines in message bodies which begin with the four characters "From", followed by a space character, the mail delivery agent must quote any occurrence of "From " at the start of a body line.</p>

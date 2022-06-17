@@ -66,7 +66,13 @@ description: The NeoMutt Mail User Agent (MUA)
     </span>[ 
     <span class="strong">
       <strong>-S</strong>
-    </span>] neomutt [-n] [-e command] [-F config] 
+    </span>] 
+    <span class="strong">
+      <strong>[</strong>
+    </span>-O 
+    <span class="strong">
+      <strong>]</strong>
+    </span>neomutt [-n] [-e command] [-F config] 
     <span class="strong">
       <strong>-d</strong>
     </span>
@@ -95,7 +101,13 @@ description: The NeoMutt Mail User Agent (MUA)
       <strong>-Q</strong>
     </span>
     <span class="emphasis">
-      <em>variable</em>
+      <em>variable [</em>
+    </span>
+    <span class="strong">
+      <strong>-O</strong>
+    </span>
+    <span class="emphasis">
+      <em>]</em>
     </span>neomutt [-n] [-e command] [-F config] 
     <span class="strong">
       <strong>-Z</strong>
@@ -259,6 +271,19 @@ description: The NeoMutt Mail User Agent (MUA)
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>-D -O</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Like 
+          <span class="strong">
+            <strong>-D</strong>
+          </span>, but show one-liner documentation</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>-D -S</strong>
             </span>
           </span>
@@ -390,23 +415,25 @@ description: The NeoMutt Mail User Agent (MUA)
           </span>, but start at specified news 
           <span class="emphasis">
             <em>server</em>
-          </span></p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>-H</strong>
-            </span>
-            <span class="emphasis">
-              <em>draft</em>
-            </span>
           </span>
-        </dt>
-        <dd>
-          <p>Specify a 
+          <span class="strong">
+            <strong>-H</strong>
+          </span>
           <span class="emphasis">
             <em>draft</em>
-          </span>file with header and body for message composing</p>
+          </span>Specify a 
+          <span class="emphasis">
+            <em>draft</em>
+          </span>file which contains header and body to use to send a message. If 
+          <span class="emphasis">
+            <em>draft</em>
+          </span>is 
+          <span class="strong">
+            <strong>-</strong>
+          </span>, then data is read from stdin. The draft file is expected to contain just an RFC822 email — headers and a body. Although it is not an mbox file, if an mbox " 
+          <span class="strong">
+            <strong>From&#160;</strong>
+          </span>" line is present, it will be silently discarded.</p>
         </dd>
         <dt>
           <span class="term">
@@ -512,7 +539,7 @@ description: The NeoMutt Mail User Agent (MUA)
           <p>Query a configuration 
           <span class="emphasis">
             <em>variable</em>
-          </span>and print its value to stdout (after the config has been read and any commands executed)</p>
+          </span>and print its value to stdout (after the config has been read and any commands executed). Add -O for one-liner documentation.</p>
         </dd>
         <dt>
           <span class="term">
@@ -559,18 +586,6 @@ description: The NeoMutt Mail User Agent (MUA)
         </dt>
         <dd>
           <p>Print the NeoMutt license and copyright information and exit</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>-x</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <p>Simulate the 
-          <span class="citerefentry">
-          <span class="refentrytitle">mailx</span>(1)</span>send mode</p>
         </dd>
         <dt>
           <span class="term">
@@ -1056,8 +1071,6 @@ description: The NeoMutt Mail User Agent (MUA)
     <p>
     <span class="citerefentry">
     <span class="refentrytitle">gettext</span>(1)</span>, 
-    <span class="citerefentry">
-    <span class="refentrytitle">mailx</span>(1)</span>, 
     <span class="citerefentry">
     <span class="refentrytitle">msmtp</span>(1)</span>, 
     <span class="citerefentry">
