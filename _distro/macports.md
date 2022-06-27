@@ -3,7 +3,7 @@ distro: MacPorts
 icon: macports.png
 homepage: https://www.macports.org/ports.php?by=name&substr=neomutt
 title: NeoMutt for MacPorts for macOS
-maintainer: lbschenkel
+maintainer: l2dy
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
