@@ -76,9 +76,9 @@ e.g.  `./configure --notmuch --with-notmuch=/usr/local/lib/notmuch`
 
 | Configure option        | Path | Notes                                        |
 | :---------------------- | :--- | :------------------------------------------- |
-| `--with-ui=CHOICE`      |      | Select 'ncurses' or 'slang'                  |
+| `--everything`          |      | Enable all options                           |
+|                         |      |                                              |
 | `--with-ncurses=path`   |      | Location of ncurses                          |
-| `--with-slang=path`     |      | Location of S-Lang                           |
 |                         |      |                                              |
 | `--gpgme`               | Path | GPG Made Easy                                |
 | `--gnutls`              | Path | Gnu TLS (SSL)                                |
