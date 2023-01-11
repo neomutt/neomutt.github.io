@@ -80,10 +80,10 @@ color index_author red default "~sneomutt"
     <p>All the colors default to
     <code class="literal">default</code>, i.e. unset.</p>
     <p>The index objects can be themed using the
-    <code class="literal">color</code> command. Some objects require a pattern.</p>
+    <code class="literal">color</code> command and an optional pattern. A missing pattern is equivalent to a match-all
+    <code class="literal">.*</code>pattern.</p>
     <pre class="screen">
-color index-object foreground background
-color index-object foreground background pattern
+color index-object foreground background [pattern]
 </pre>
     <div >
       <a id="table-index-color-colors"></a>
@@ -95,12 +95,10 @@ color index-object foreground background pattern
           <colgroup>
             <col />
             <col />
-            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Object</th>
-              <th>Pattern</th>
               <th>Highlights</th>
             </tr>
           </thead>
@@ -109,64 +107,70 @@ color index-object foreground background pattern
               <td>
                 <code class="literal">index</code>
               </td>
-              <td>yes</td>
               <td>Entire index line</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_author</code>
               </td>
-              <td>yes</td>
               <td>Author name, %A %a %F %L %n</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_collapsed</code>
               </td>
-              <td>no</td>
               <td>Number of messages in a collapsed thread, %M</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_date</code>
               </td>
-              <td>no</td>
               <td>Date field</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_flags</code>
               </td>
-              <td>yes</td>
               <td>Message flags, %S %Z</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_label</code>
               </td>
-              <td>no</td>
               <td>Message label, %y %Y</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_number</code>
               </td>
-              <td>no</td>
               <td>Message number, %C</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_size</code>
               </td>
-              <td>no</td>
               <td>Message size, %c %cr %l</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_subject</code>
               </td>
-              <td>yes</td>
               <td>Subject, %s</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_tag</code>
+              </td>
+              <td>Nessage tags,
+              <code class="literal">%G</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">index_tags</code>
+              </td>
+              <td>Transformed message tags,
+              <code class="literal">%g</code>
+              <code class="literal">%J</code></td>
             </tr>
           </tbody>
         </table>

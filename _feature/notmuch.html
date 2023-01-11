@@ -265,6 +265,25 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
           <tbody>
             <tr>
               <td>
+                <code class="literal">nm_config_file</code>
+              </td>
+              <td>path</td>
+              <td>
+                <code class="literal">auto</code>
+              </td>
+              <td>Configuration file for the notmuch database. Either a path,
+              <code class="literal">auto</code> for detecting a config. file, or empty for no configuration file. Only useful for notmuch 0.32+.</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">nm_config_profile</code>
+              </td>
+              <td>string</td>
+              <td>(empty)</td>
+              <td>Configuration profile for the notmuch database. Only useful for notmuch 0.32+.</td>
+            </tr>
+            <tr>
+              <td>
                 <code class="literal">nm_db_limit</code>
               </td>
               <td>number</td>

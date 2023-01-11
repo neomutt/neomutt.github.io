@@ -206,7 +206,7 @@ status: stable
         </div>
       </div>
     </div>
-    <p>Adds these to index-color feature:</p>
+    <p>Adds the objects, below, to index-color feature. The objects can take an optional pattern.</p>
     <div >
       <a id="table-custom-tags-colors"></a>
       <p class="title">
@@ -217,12 +217,10 @@ status: stable
           <colgroup>
             <col />
             <col />
-            <col />
           </colgroup>
           <thead>
             <tr>
               <th>Object</th>
-              <th>Pattern</th>
               <th>Highlights</th>
             </tr>
           </thead>
@@ -231,14 +229,12 @@ status: stable
               <td>
                 <code class="literal">index_tag</code>
               </td>
-              <td>yes</td>
               <td>an individual message tag, %G, uses tag name</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">index_tags</code>
               </td>
-              <td>no</td>
               <td>the transformed message tags, %g or %J</td>
             </tr>
           </tbody>
@@ -309,10 +305,8 @@ macro index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
 <span class="comment"># --------------------------------------------------------------------------</span>
 <span class="comment"># These symbols are added to the index-color feature:</span>
 <span class="comment"># an individual message tag, %G, uses tag name</span>
-<span class="comment"># this symbol uses a pattern</span>
 color index_tag red white "inbox"
 <span class="comment"># the transformed message tags, %g</span>
-<span class="comment"># this symbol does not use a pattern</span>
 color index_tags green default
 <span class="comment"># --------------------------------------------------------------------------</span>
 

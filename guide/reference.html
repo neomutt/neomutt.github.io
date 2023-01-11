@@ -638,10 +638,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>
             <em class="replaceable">
               <code>background</code>
-            </em>
+            </em>[
             <em class="replaceable">
               <code>pattern</code>
-            </em>
+            </em>]
             <br />
             <code class="command">
               <a class="link" href="configuration.html#color" title="11.&#160;Using Color and Mono Video Attributes">uncolor</a>
@@ -7774,7 +7774,7 @@ set nntp_authenticators="digest-md5:user"
         </div>
       </div>
       <div class="literallayout">
-        <p>Type:&#160;number
+        <p>Type:&#160;number&#160;(long)
         <br />Default:&#160;1000</p>
       </div>
       <p>This variable defines number of articles which will be in index when newsgroup entered. If active newsgroup have more articles than this number, oldest articles will be ignored. Also controls how many articles headers will be saved in cache when you quit newsgroup.</p>
@@ -11318,8 +11318,7 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">(&gt;From&#160;)|(:[-^]?[][)(&gt;&lt;}{|/DP])</code>
         </span>”</span></p>
       </div>
@@ -11540,8 +11539,7 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">aes256</code>
         </span>”</span></p>
       </div>
@@ -11752,8 +11750,7 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">sha256</code>
         </span>”</span></p>
       </div>
@@ -13164,8 +13161,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">NeoMutt&#160;with&#160;%?m?%m&#160;messages&amp;no&#160;messages?%?n?&#160;[%n&#160;NEW]?</code>
         </span>”</span></p>
       </div>
@@ -13482,8 +13478,7 @@ set use_threads=yes
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">%2C&#160;%?n?%4n/&amp;&#160;&#160;&#160;&#160;&#160;?%4m&#160;%f</code>
         </span>”</span></p>
       </div>
