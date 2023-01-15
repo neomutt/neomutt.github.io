@@ -9580,6 +9580,38 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>nm_config_file</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;path 
+            <br />Default:&#160;"auto" 
+            <br /></p>
+          </div>
+          <p>Configuration file for notmuch. Use 'auto' to detect configuration.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>nm_config_profile</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"" 
+            <br /></p>
+          </div>
+          <p>Configuration profile for notmuch.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>nm_db_limit</strong>
             </span>
           </span>
@@ -9873,7 +9905,7 @@ set nntp_authenticators="digest-md5:user"
         <dd>
           <div class="literallayout">
             <p>
-            <br />Type:&#160;number 
+            <br />Type:&#160;number&#160;(long) 
             <br />Default:&#160;1000 
             <br /></p>
           </div>
@@ -12112,7 +12144,7 @@ Default: yes
         <dd>
           <pre class="programlisting">
 Type: boolean
-Default: no
+Default: yes
 </pre>
           <p>When this variable is 
           <span class="emphasis">
