@@ -5004,7 +5004,7 @@ sh -c 'string'
         <em>unset</em>
       </span>so no header caching will be used.</p>
       <p>Header caching can greatly improve speed when opening POP, IMAP MH or Maildir folders, see "
-      <a class="link" href="optionalfeatures.html#caching" title="8.&#160;Local Caching">caching</a>" for details.</p>
+      <a class="link" href="optionalfeatures.html#caching" title="8.&#160;Local Caching">caching</a>" in the NeoMutt Guide for details.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9781,6 +9781,10 @@ set preferred_languages="en,fr,de"
       <span class="emphasis">
         <em>ask-no</em>
       </span>, you are prompted for confirmation when you try to quit.</p>
+      <p>In order to quit from NeoMutt if this variable is
+      <span class="emphasis">
+        <em>unset</em>
+      </span>, you must send the signal SIGINT to NeoMutt. This can usually be achieved by pressing CTRL-C in the terminal.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10018,6 +10022,12 @@ set preferred_languages="en,fr,de"
       <span class="emphasis">
         <em>set</em>
       </span>. When the value is 0, paragraphs will be wrapped at the terminal's right margin. A positive value sets the paragraph width relative to the left margin. A negative value set the paragraph width relative to the right margin.</p>
+      <p>Be aware that the reformatted lines of a paragraph are still subject to
+      <a class="link" href="#wrap" title="3.526.&#160;wrap">$wrap</a>. This means if
+      <a class="link" href="#reflow-wrap" title="3.379.&#160;reflow_wrap">$reflow_wrap</a> is 40 and
+      <a class="link" href="#wrap" title="3.526.&#160;wrap">$wrap</a> is 30, then the paragraph gets reformatted to 40 characters a line (due to
+      <a class="link" href="#reflow-wrap" title="3.379.&#160;reflow_wrap">$reflow_wrap</a>) and afterwards each 40-character-line is split at 30 characters (due to
+      <a class="link" href="#wrap" title="3.526.&#160;wrap">$wrap</a>), resulting in alternating line lengths of 30 and 10 characters.</p>
       <p>Also see
       <a class="link" href="#wrap" title="3.526.&#160;wrap">$wrap</a>.</p>
     </div>
@@ -10912,7 +10922,7 @@ set sidebar_delim_chars='.'
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="/feature/sidebar#whitelist">$sidebar_whitelist</a>,
+      <a class="link" href="/feature/sidebar#whitelist">sidebar_whitelist</a>,
       <a class="link" href="#sidebar-non-empty-mailbox-only" title="3.418.&#160;sidebar_non_empty_mailbox_only">$sidebar_non_empty_mailbox_only</a>.</p>
     </div>
     <div class="sect2">
@@ -10951,7 +10961,7 @@ set sidebar_delim_chars='.'
         <strong>See also:</strong>
       </span>
       <a class="link" href="#sidebar-new-mail-only" title="3.416.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a>,
-      <a class="link" href="/feature/sidebar#whitelist">$sidebar_whitelist</a>.</p>
+      <a class="link" href="/feature/sidebar#whitelist">sidebar_whitelist</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11077,32 +11087,63 @@ set sidebar_delim_chars='.'
         <p>Type:&#160;sort&#160;order
         <br />Default:&#160;order</p>
       </div>
-      <p>Specifies how to sort mailbox entries in the sidebar. By default, the entries are sorted alphabetically. Valid values:</p>
+      <p>Specifies how to sort mailbox entries in the sidebar. By default, the entries are
+      <span class="bold">
+        <strong>unsorted</strong>
+      </span>. Valid values:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
-            <p>path (alphabetically)</p>
+            <p>
+            <span class="bold">
+              <strong>path</strong>
+            </span>(alphabetically)</p>
           </li>
           <li class="listitem">
-            <p>count (all message count)</p>
+            <p>
+            <span class="bold">
+              <strong>count</strong>
+            </span>(all message count)</p>
           </li>
           <li class="listitem">
-            <p>flagged (flagged message count)</p>
+            <p>
+            <span class="bold">
+              <strong>flagged</strong>
+            </span>(flagged message count)</p>
           </li>
           <li class="listitem">
-            <p>new (unread message count)</p>
+            <p>
+            <span class="bold">
+              <strong>unread</strong>
+            </span>(unread message count)</p>
           </li>
           <li class="listitem">
-            <p>unread (unread message count)</p>
-          </li>
-          <li class="listitem">
-            <p>unsorted</p>
+            <p>
+              <span class="bold">
+                <strong>unsorted</strong>
+              </span>
+            </p>
           </li>
         </ul>
       </div>
       <p>You may optionally use the "reverse-" prefix to specify reverse sorting order (example: "
-      <code class="literal">set sidebar_sort_method=reverse-alpha</code>").</p>
-      <p>The "alpha" and "name" values are synonyms for "path".</p>
+      <code class="literal">set sidebar_sort_method=reverse-path</code>").</p>
+      <p>The
+      <span class="bold">
+        <strong>alpha</strong>
+      </span>and
+      <span class="bold">
+        <strong>name</strong>
+      </span>values are synonyms for
+      <span class="bold">
+        <strong>path</strong>
+      </span>. The
+      <span class="bold">
+        <strong>new</strong>
+      </span>value is a synonym for
+      <span class="bold">
+        <strong>unread</strong>
+      </span>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12953,10 +12994,20 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
+      <p>If
+      <a class="link" href="#strict-threads" title="3.493.&#160;strict_threads">$strict_threads</a> is
+      <span class="emphasis">
+        <em>unset</em>
+      </span>, then messages may also be grouped by subject. Unlike threading by "In-Reply-To:" and "References:" header, grouping by subject does not imply a parent-child relation between two messages.</p>
+      <p>To determine the ancestry between messages grouped by subject, Neomutt uses their date: only newer messages can be descendants of older ones.</p>
       <p>When
+      <a class="link" href="#thread-received" title="3.497.&#160;thread_received">$thread_received</a> is
       <span class="emphasis">
         <em>set</em>
-      </span>, NeoMutt uses the date received rather than the date sent to thread messages by subject.</p>
+      </span>, NeoMutt uses the date received rather than the date sent when comparing messages for the date.</p>
+      <p>See also
+      <a class="link" href="#strict-threads" title="3.493.&#160;strict_threads">$strict_threads</a>, and
+      <a class="link" href="#sort-re" title="3.469.&#160;sort_re">$sort_re</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
