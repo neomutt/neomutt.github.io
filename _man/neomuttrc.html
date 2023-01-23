@@ -324,6 +324,20 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <span class="emphasis">
           <em>mime-type</em>
         </span>
+        <br />
+        <span class="strong">
+          <strong>attachments</strong>
+        </span>&#160; 
+        <span class="strong">
+          <strong>?</strong>
+        </span>
+        <br />
+        <span class="strong">
+          <strong>unattachments</strong>
+        </span>&#160; 
+        <span class="strong">
+          <strong>*</strong>
+        </span>
         <br /></p>
       </div>
       <p>You can make your message index display the number of qualifying attachments in each message, or search for messages by attachment count. You also can configure what kinds of attachments qualify for this feature with the 
@@ -336,13 +350,35 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <p>
       <span class="emphasis">
         <em>disposition</em>
-      </span>is the attachment's Content-Disposition type — either inline or attachment. You can abbreviate this to 
+      </span>is the attachment's Content-Disposition type — either 
+      <span class="strong">
+        <strong>inline</strong>
+      </span>or 
+      <span class="strong">
+        <strong>attachment</strong>
+      </span>. You can abbreviate this to 
       <span class="strong">
         <strong>I</strong>
       </span>or 
       <span class="strong">
         <strong>A</strong>
       </span>.</p>
+      <p>Disposition is prefixed by either a 
+      <span class="strong">
+        <strong>+</strong>
+      </span>symbol or a 
+      <span class="strong">
+        <strong>-</strong>
+      </span>symbol. If it's a 
+      <span class="strong">
+        <strong>+</strong>
+      </span>, you're saying that you want to allow this disposition and MIME type to qualify. If it's a 
+      <span class="strong">
+        <strong>-</strong>
+      </span>, you're saying that this disposition and MIME type is an exception to previous 
+      <span class="strong">
+        <strong>+</strong>
+      </span>rules.</p>
       <p>
       <span class="emphasis">
         <em>mime-type</em>
@@ -359,6 +395,14 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <span class="strong">
         <strong>*/.*</strong>
       </span>” matches any MIME type.</p>
+      <p>Entering the command “ 
+      <span class="strong">
+        <strong>attachments ?</strong>
+      </span>” as a command will list your current settings in neomuttrc format, so that it can be pasted elsewhere.</p>
+      <p>Entering the command “ 
+      <span class="strong">
+        <strong>unattachments *</strong>
+      </span>” as a command will Clear all attachment settings.</p>
       <div class="literallayout">
         <p>
         <br />
@@ -628,6 +672,22 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <br />
         <span class="strong">
           <strong>color</strong>
+        </span>&#160;status&#160; 
+        <span class="emphasis">
+          <em>foreground</em>
+        </span>&#160; 
+        <span class="emphasis">
+          <em>background</em>
+        </span>&#160;[ 
+        <span class="emphasis">
+          <em>regex</em>
+        </span>&#160;[&#160; 
+        <span class="emphasis">
+          <em>num</em>
+        </span>&#160;]] 
+        <br />
+        <span class="strong">
+          <strong>color</strong>
         </span>&#160;index-object&#160;[&#160; 
         <span class="emphasis">
           <em>attribute</em>
@@ -848,6 +908,10 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <span class="emphasis">
         <em>pattern</em>
       </span>in the message index. Note that IMAP server-side searches (=b, =B, =h) are not supported for color index patterns.</p>
+      <p>The 
+      <span class="strong">
+        <strong>status</strong>
+      </span>object optionally takes an regex and a match number. If the regex is given, only the matching parts are colored. If additionally the match number is given, only that sub-match of the regex is colored.</p>
       <p>Valid composeobjects include 
       <span class="strong">
         <strong>header</strong>
@@ -916,7 +980,8 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>, and 
       <span class="strong">
         <strong>standout</strong>
-      </span>. IP The 
+      </span>.</p>
+      <p>The 
       <span class="strong">
         <strong>uncolor</strong>
       </span>command can be applied to the index, header and body objects only. It removes entries from the list. You must specify the same 
@@ -4403,7 +4468,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>ask_follow_up</strong>
+              <strong>ask_followup_to</strong>
             </span>
           </span>
         </dt>
@@ -7161,7 +7226,7 @@ Default: no
           <span class="emphasis">
             <em>unset</em>
           </span>so no header caching will be used.</p>
-          <p>Header caching can greatly improve speed when opening POP, IMAP MH or Maildir folders, see "caching" for details.</p>
+          <p>Header caching can greatly improve speed when opening POP, IMAP MH or Maildir folders, see "caching" in the NeoMutt Guide for details.</p>
         </dd>
         <dt>
           <span class="term">
@@ -11726,6 +11791,10 @@ Default: yes
           <span class="emphasis">
             <em>ask-no</em>
           </span>, you are prompted for confirmation when you try to quit.</p>
+          <p>In order to quit from NeoMutt if this variable is 
+          <span class="emphasis">
+            <em>unset</em>
+          </span>, you must send the signal SIGINT to NeoMutt. This can usually be achieved by pressing CTRL-C in the terminal.</p>
         </dd>
         <dt>
           <span class="term">
@@ -11915,6 +11984,7 @@ Default: yes
           <span class="emphasis">
             <em>set</em>
           </span>. When the value is 0, paragraphs will be wrapped at the terminal's right margin. A positive value sets the paragraph width relative to the left margin. A negative value set the paragraph width relative to the right margin.</p>
+          <p>Be aware that the reformatted lines of a paragraph are still subject to $wrap. This means if $reflow_wrap is 40 and $wrap is 30, then the paragraph gets reformatted to 40 characters a line (due to $reflow_wrap) and afterwards each 40-character-line is split at 30 characters (due to $wrap), resulting in alternating line lengths of 30 and 10 characters.</p>
           <p>Also see $wrap.</p>
         </dd>
         <dt>
@@ -12774,7 +12844,7 @@ Default: no
           <p>
           <span class="strong">
             <strong>See also:</strong>
-          </span>$sidebar_whitelist, $sidebar_non_empty_mailbox_only.</p>
+          </span>sidebar_whitelist, $sidebar_non_empty_mailbox_only.</p>
         </dd>
         <dt>
           <span class="term">
@@ -12812,7 +12882,7 @@ Default: no
           <p>
           <span class="strong">
             <strong>See also:</strong>
-          </span>$sidebar_new_mail_only, $sidebar_whitelist.</p>
+          </span>$sidebar_new_mail_only, sidebar_whitelist.</p>
         </dd>
         <dt>
           <span class="term">
@@ -12956,28 +13026,43 @@ Default: no
             <br />Default:&#160;order 
             <br /></p>
           </div>
-          <p>Specifies how to sort mailbox entries in the sidebar. By default, the entries are sorted alphabetically. Valid values:</p>
+          <p>Specifies how to sort mailbox entries in the sidebar. By default, the entries are 
+          <span class="strong">
+            <strong>unsorted</strong>
+          </span>. Valid values:</p>
           <div class="blockquote">
             <blockquote class="blockquote">
               <div class="itemizedlist">
                 <ul class="itemizedlist" style="list-style-type: disc;">
                   <li class="listitem">
-                    <p>‐ path (alphabetically)</p>
+                    <p>‐ 
+                    <span class="strong">
+                      <strong>path</strong>
+                    </span>(alphabetically)</p>
                   </li>
                   <li class="listitem">
-                    <p>‐ count (all message count)</p>
+                    <p>‐ 
+                    <span class="strong">
+                      <strong>count</strong>
+                    </span>(all message count)</p>
                   </li>
                   <li class="listitem">
-                    <p>‐ flagged (flagged message count)</p>
+                    <p>‐ 
+                    <span class="strong">
+                      <strong>flagged</strong>
+                    </span>(flagged message count)</p>
                   </li>
                   <li class="listitem">
-                    <p>‐ new (unread message count)</p>
+                    <p>‐ 
+                    <span class="strong">
+                      <strong>unread</strong>
+                    </span>(unread message count)</p>
                   </li>
                   <li class="listitem">
-                    <p>‐ unread (unread message count)</p>
-                  </li>
-                  <li class="listitem">
-                    <p>‐ unsorted</p>
+                    <p>‐ 
+                    <span class="strong">
+                      <strong>unsorted</strong>
+                    </span></p>
                   </li>
                 </ul>
               </div>
@@ -12985,9 +13070,24 @@ Default: no
           </div>
           <p>You may optionally use the "reverse-" prefix to specify reverse sorting order (example: " 
           <span class="emphasis">
-            <em>set sidebar_sort_method=reverse-alpha</em>
+            <em>set sidebar_sort_method=reverse-path</em>
           </span>").</p>
-          <p>The "alpha" and "name" values are synonyms for "path".</p>
+          <p>The 
+          <span class="strong">
+            <strong>alpha</strong>
+          </span>and 
+          <span class="strong">
+            <strong>name</strong>
+          </span>values are synonyms for 
+          <span class="strong">
+            <strong>path</strong>
+          </span>. The 
+          <span class="strong">
+            <strong>new</strong>
+          </span>value is a synonym for 
+          <span class="strong">
+            <strong>unread</strong>
+          </span>.</p>
         </dd>
         <dt>
           <span class="term">
@@ -14830,10 +14930,16 @@ Default: yes
 Type: boolean
 Default: no
 </pre>
-          <p>When 
+          <p>If $strict_threads is 
+          <span class="emphasis">
+            <em>unset</em>
+          </span>, then messages may also be grouped by subject. Unlike threading by "In-Reply-To:" and "References:" header, grouping by subject does not imply a parent-child relation between two messages.</p>
+          <p>To determine the ancestry between messages grouped by subject, Neomutt uses their date: only newer messages can be descendants of older ones.</p>
+          <p>When $thread_received is 
           <span class="emphasis">
             <em>set</em>
-          </span>, NeoMutt uses the date received rather than the date sent to thread messages by subject.</p>
+          </span>, NeoMutt uses the date received rather than the date sent when comparing messages for the date.</p>
+          <p>See also $strict_threads, and $sort_re.</p>
         </dd>
         <dt>
           <span class="term">
