@@ -3998,7 +3998,7 @@ sh -c 'string'
       </div>
       <div class="note">
       <h3 class="title">Note</h3> Renamed to
-      <a class="link" href="#use-envelope-from" title="3.517.&#160;use_envelope_from">$use_envelope_from</a>(2021-03-21)</div>
+      <a class="link" href="#use-envelope-from" title="3.518.&#160;use_envelope_from">$use_envelope_from</a>(2021-03-21)</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4017,7 +4017,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>envelope</em>
       </span>sender for outgoing messages. This value is ignored if
-      <a class="link" href="#use-envelope-from" title="3.517.&#160;use_envelope_from">$use_envelope_from</a> is
+      <a class="link" href="#use-envelope-from" title="3.518.&#160;use_envelope_from">$use_envelope_from</a> is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -4748,7 +4748,7 @@ sh -c 'string'
       <a class="link" href="configuration.html#my-hdr" title="17.&#160;User-Defined Headers">my_hdr</a>" (including from a "
       <a class="link" href="configuration.html#send-hook" title="19.&#160;Change Settings Based Upon Message Recipients">send-hook</a>") and
       <a class="link" href="#reverse-name" title="3.391.&#160;reverse_name">$reverse_name</a>. This variable is ignored if
-      <a class="link" href="#use-from" title="3.518.&#160;use_from">$use_from</a> is
+      <a class="link" href="#use-from" title="3.519.&#160;use_from">$use_from</a> is
       <span class="emphasis">
         <em>unset</em>
       </span>.</p>
@@ -4990,7 +4990,7 @@ sh -c 'string'
       <span class="emphasis">
         <em>set</em>
       </span>, this variable causes NeoMutt to include the header of the message you are replying to into the edit buffer. The
-      <a class="link" href="#weed" title="3.527.&#160;weed">$weed</a> setting applies.</p>
+      <a class="link" href="#weed" title="3.528.&#160;weed">$weed</a> setting applies.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5373,7 +5373,7 @@ sh -c 'string'
       <p>If not specified in a config file, then NeoMutt will try to determine the hostname itself.</p>
       <p>Optionally, NeoMutt can be compiled with a fixed domain name.</p>
       <p>Also see
-      <a class="link" href="#use-domain" title="3.516.&#160;use_domain">$use_domain</a> and
+      <a class="link" href="#use-domain" title="3.517.&#160;use_domain">$use_domain</a> and
       <a class="link" href="#hidden-host" title="3.156.&#160;hidden_host">$hidden_host</a>.</p>
     </div>
     <div class="sect2">
@@ -6162,7 +6162,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%T</td>
               <td>The appropriate character from the
-              <a class="link" href="#to-chars" title="3.504.&#160;to_chars">$to_chars</a> string</td>
+              <a class="link" href="#to-chars" title="3.505.&#160;to_chars">$to_chars</a> string</td>
             </tr>
             <tr>
               <td>%t</td>
@@ -6209,7 +6209,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%Z</td>
               <td>A three character set of message status flags. The first character is new/read/replied flags ("n"/"o"/"r"/"O"/"N"). The second is deleted or encryption flags ("D"/"d"/"S"/"P"/"s"/"K"). The third is either tagged/flagged ("*"/"!"), or one of the characters Listed in
-              <a class="link" href="#to-chars" title="3.504.&#160;to_chars">$to_chars</a>.</td>
+              <a class="link" href="#to-chars" title="3.505.&#160;to_chars">$to_chars</a>.</td>
             </tr>
             <tr>
               <td>%zc</td>
@@ -6356,8 +6356,11 @@ set inews="/usr/local/bin/inews -hS"
       <span class="emphasis">
         <em>set</em>
       </span>, read messages marked as flagged will not be moved from your spool mailbox to your
-      <a class="link" href="#mbox" title="3.222.&#160;mbox">$mbox</a> mailbox, or as a result of a "
-      <a class="link" href="configuration.html#mbox-hook" title="15.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>" command.</p>
+      <a class="link" href="#mbox" title="3.222.&#160;mbox">$mbox</a> mailbox or to the "mbox" specified by a
+      <a class="link" href="configuration.html#mbox-hook" title="15.&#160;Using Multiple Spool Mailboxes">mbox-hook</a> command.</p>
+      <p>Note that
+      <a class="link" href="#keep-flagged" title="3.206.&#160;keep_flagged">$keep_flagged</a> only has an effect if
+      <a class="link" href="#move" title="3.247.&#160;move">$move</a> is set.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7290,9 +7293,14 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;quadoption
         <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether or not NeoMutt will move read messages from your spool mailbox to your
-      <a class="link" href="#mbox" title="3.222.&#160;mbox">$mbox</a> mailbox, or as a result of a "
-      <a class="link" href="configuration.html#mbox-hook" title="15.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>" command.</p>
+      <p>If this variable is
+      <span class="emphasis">
+        <em>set</em>
+      </span>, then NeoMutt will move read messages from your spool mailbox to your
+      <a class="link" href="#mbox" title="3.222.&#160;mbox">$mbox</a> mailbox or to the "mbox" specified by a
+      <a class="link" href="configuration.html#mbox-hook" title="15.&#160;Using Multiple Spool Mailboxes">mbox-hook</a> command.</p>
+      <p>See also
+      <a class="link" href="#keep-flagged" title="3.206.&#160;keep_flagged">$keep_flagged</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7342,7 +7350,7 @@ set inews="/usr/local/bin/inews -hS"
       <a class="link" href="#net-inc" title="3.250.&#160;net_inc">$net_inc</a> kilobytes. If set to 0, no progress messages will be displayed.</p>
       <p>See also
       <a class="link" href="#read-inc" title="3.373.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="#write-inc" title="3.532.&#160;write_inc">$write_inc</a> and
+      <a class="link" href="#write-inc" title="3.533.&#160;write_inc">$write_inc</a> and
       <a class="link" href="#net-inc" title="3.250.&#160;net_inc">$net_inc</a>.</p>
     </div>
     <div class="sect2">
@@ -9835,7 +9843,8 @@ set preferred_languages="en,fr,de"
       <div class="literallayout">
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">^([&#160;\t]*[|&gt;:}#])+</code>
         </span>”</span></p>
       </div>
@@ -9875,7 +9884,7 @@ set preferred_languages="en,fr,de"
       </div>
       <p>If set to a value greater than 0, NeoMutt will display which message it is currently on when reading a mailbox or when performing search actions such as search and limit. The message is printed after this many messages have been read or searched (e.g., if set to 25, NeoMutt will print a message when it is at message 25, and then again when it gets to message 50). This variable is meant to indicate progress when reading or searching large mailboxes which may take some time. When set to 0, only a single message will appear before the reading the mailbox.</p>
       <p>Also see the
-      <a class="link" href="#write-inc" title="3.532.&#160;write_inc">$write_inc</a>,
+      <a class="link" href="#write-inc" title="3.533.&#160;write_inc">$write_inc</a>,
       <a class="link" href="#net-inc" title="3.250.&#160;net_inc">$net_inc</a> and
       <a class="link" href="#time-inc" title="3.501.&#160;time_inc">$time_inc</a> variables and the "
       <a class="link" href="tuning.html" title="Performance Tuning">tuning</a>" section of the manual for performance considerations.</p>
@@ -9981,7 +9990,7 @@ set preferred_languages="en,fr,de"
       <a class="link" href="#save-name" title="3.398.&#160;save_name">$save_name</a> variables, and the "
       <a class="link" href="configuration.html#fcc-hook">fcc-hook</a>" command. Also see
       <a class="link" href="#copy" title="3.65.&#160;copy">$copy</a> and
-      <a class="link" href="#write-bcc" title="3.531.&#160;write_bcc">$write_bcc</a>.</p>
+      <a class="link" href="#write-bcc" title="3.532.&#160;write_bcc">$write_bcc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10039,7 +10048,7 @@ set preferred_languages="en,fr,de"
       </span>format.</p>
       <p>Also see
       <a class="link" href="#reflow-wrap" title="3.381.&#160;reflow_wrap">$reflow_wrap</a>, and
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10060,13 +10069,13 @@ set preferred_languages="en,fr,de"
         <em>set</em>
       </span>. When the value is 0, paragraphs will be wrapped at the terminal's right margin. A positive value sets the paragraph width relative to the left margin. A negative value set the paragraph width relative to the right margin.</p>
       <p>Be aware that the reformatted lines of a paragraph are still subject to
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a>. This means if
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a>. This means if
       <a class="link" href="#reflow-wrap" title="3.381.&#160;reflow_wrap">$reflow_wrap</a> is 40 and
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a> is 30, then the paragraph gets reformatted to 40 characters a line (due to
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a> is 30, then the paragraph gets reformatted to 40 characters a line (due to
       <a class="link" href="#reflow-wrap" title="3.381.&#160;reflow_wrap">$reflow_wrap</a>) and afterwards each 40-character-line is split at 30 characters (due to
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a>), resulting in alternating line lengths of 30 and 10 characters.</p>
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a>), resulting in alternating line lengths of 30 and 10 characters.</p>
       <p>Also see
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a>.</p>
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10554,7 +10563,8 @@ From: abd30425@somewhere.net
       <div class="literallayout">
         <p>Type:&#160;string&#160;list
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">us-ascii:iso-8859-1:utf-8</code>
         </span>”</span></p>
       </div>
@@ -10575,21 +10585,22 @@ From: abd30425@somewhere.net
       <div class="literallayout">
         <p>Type:&#160;command
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">/usr/sbin/sendmail&#160;-oem&#160;-oi</code>
         </span>”</span></p>
       </div>
       <p>Specifies the program and arguments used to deliver mail sent by NeoMutt. NeoMutt expects that the specified program interprets additional arguments as recipient addresses. NeoMutt appends all recipients after adding a
       <code class="literal">--</code>delimiter (if not already present). Additional flags, such as for
-      <a class="link" href="#use-8bit-mime" title="3.514.&#160;use_8bit_mime">$use_8bit_mime</a>,
-      <a class="link" href="#use-envelope-from" title="3.517.&#160;use_envelope_from">$use_envelope_from</a>,
+      <a class="link" href="#use-8bit-mime" title="3.515.&#160;use_8bit_mime">$use_8bit_mime</a>,
+      <a class="link" href="#use-envelope-from" title="3.518.&#160;use_envelope_from">$use_envelope_from</a>,
       <a class="link" href="#dsn-notify" title="3.103.&#160;dsn_notify">$dsn_notify</a>, or
       <a class="link" href="#dsn-return" title="3.104.&#160;dsn_return">$dsn_return</a> will be added before the delimiter.</p>
       <p>
       <span class="bold">
         <strong>See also:</strong>
       </span>
-      <a class="link" href="#write-bcc" title="3.531.&#160;write_bcc">$write_bcc</a>.</p>
+      <a class="link" href="#write-bcc" title="3.532.&#160;write_bcc">$write_bcc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10814,7 +10825,8 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">%D%*&#160;&#160;%n</code>
         </span>”</span></p>
       </div>
@@ -10931,7 +10943,8 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“<span class="quote">
+        <span class="quote">“
+        <span class="quote">
           <code class="literal">&#160;&#160;</code>
         </span>”</span></p>
       </div>
@@ -11297,8 +11310,7 @@ set sidebar_delim_chars='.'
       <div class="literallayout">
         <p>Type:&#160;string
         <br />Default:&#160;
-        <span class="quote">“
-        <span class="quote">
+        <span class="quote">“<span class="quote">
           <code class="literal">~f&#160;%s&#160;|&#160;~s&#160;%s</code>
         </span>”</span></p>
       </div>
@@ -12013,7 +12025,7 @@ smtp[s]://[user[:pass]@]host[:port]
       <p>where "[...]" denotes an optional part. Setting this variable overrides the value of the
       <a class="link" href="#sendmail" title="3.406.&#160;sendmail">$sendmail</a> variable.</p>
       <p>Also see
-      <a class="link" href="#write-bcc" title="3.531.&#160;write_bcc">$write_bcc</a>.</p>
+      <a class="link" href="#write-bcc" title="3.532.&#160;write_bcc">$write_bcc</a>.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12082,7 +12094,7 @@ smtp[s]://[user[:pass]@]host[:port]
       <p>You may optionally use the "reverse-" prefix to specify reverse sorting order, or the "last-" prefix to sort threads based on the corresponding attribute of the last descendant rather than the thread root. If both prefixes are in use, "reverse-" must come before "last-". The "last-" prefix has no effect on a flat view.</p>
       <p>Any ties in the primary sort are broken by
       <a class="link" href="#sort-aux" title="3.469.&#160;sort_aux">$sort_aux</a>. When
-      <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a> is "threads" or "reverse",
+      <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a> is "threads" or "reverse",
       <a class="link" href="#sort" title="3.467.&#160;sort">$sort</a> controls the sorting between threads, and
       <a class="link" href="#sort-aux" title="3.469.&#160;sort_aux">$sort_aux</a> controls the sorting within a thread.</p>
       <p>The "date-sent" value is a synonym for "date". The "mailbox-order" value is a synonym for "unsorted".</p>
@@ -12091,12 +12103,12 @@ smtp[s]://[user[:pass]@]host[:port]
         <a class="link" href="#sort-aux" title="3.469.&#160;sort_aux">$sort_aux</a>
       </code>to also contol sorting between threads, and they may not be used with the "last-" prefix. The preferred way to enable a threaded view is via
       <code class="literal">
-        <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a>
+        <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a>
       </code>. This variable can also be set via the
       <code class="literal">&lt;sort-mailbox&gt;</code>and
       <code class="literal">&lt;sort-reverse&gt;</code>functions.</p>
       <p>Note: When
-      <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a> is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in
+      <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a> is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in
       <a class="link" href="#sort" title="3.467.&#160;sort">$sort</a> swaps which end the last thread will sort to.</p>
       <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads</p>
     </div>
@@ -12153,7 +12165,7 @@ set sort_aux=last-date-received
 </pre>
       <p>would mean that if a new message is received in a thread, that subthread becomes the last one displayed (or the first, if you have "
       <code class="literal">set use_threads=reverse</code>".) When using
-      <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a>, it is more common to use "last-" with
+      <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a>, it is more common to use "last-" with
       <a class="link" href="#sort" title="3.467.&#160;sort">$sort</a> and not with
       <a class="link" href="#sort-aux" title="3.469.&#160;sort_aux">$sort_aux</a>.</p>
       <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads</p>
@@ -12814,7 +12826,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
               <td>%T</td>
               <td>*</td>
               <td>Current threading mode (
-              <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a>)</td>
+              <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a>)</td>
             </tr>
             <tr>
               <td>%u</td>
@@ -12896,9 +12908,9 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>As another example, here is how to show either
       <a class="link" href="#sort" title="3.467.&#160;sort">$sort</a> and
       <a class="link" href="#sort-aux" title="3.469.&#160;sort_aux">$sort_aux</a> or
-      <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a> and
+      <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a> and
       <a class="link" href="#sort" title="3.467.&#160;sort">$sort</a>, based on whether threads are enabled with
-      <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a>:</p>
+      <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a>:</p>
       <p>
         <code class="literal">%?T?%s/%S&amp;%T/%s?</code>
       </p>
@@ -13083,7 +13095,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Along with
       <a class="link" href="#read-inc" title="3.373.&#160;read_inc">$read_inc</a>,
-      <a class="link" href="#write-inc" title="3.532.&#160;write_inc">$write_inc</a>, and
+      <a class="link" href="#write-inc" title="3.533.&#160;write_inc">$write_inc</a>, and
       <a class="link" href="#net-inc" title="3.250.&#160;net_inc">$net_inc</a>, this variable controls the frequency with which progress updates are displayed. It suppresses updates less than
       <a class="link" href="#time-inc" title="3.501.&#160;time_inc">$time_inc</a> milliseconds apart. This can improve throughput on systems with slow terminals, or when running NeoMutt on a remote system.</p>
       <p>Also see the "
@@ -13111,7 +13123,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="tmpdir"></a>3.503.&#160;tmpdir</h3>
+            <a id="tmp-dir"></a>3.503.&#160;tmp_dir</h3>
           </div>
         </div>
       </div>
@@ -13126,13 +13138,28 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>If this variable is not set, the environment variable
       <code class="literal">$TMPDIR</code> is used. Failing that, then "
       <code class="literal">/tmp</code>" is used.</p>
+      <div class="note">
+      <h3 class="title">Note</h3> Before 2023-01-25, this was called $tmpdir</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="to-chars"></a>3.504.&#160;to_chars</h3>
+            <a id="tmpdir"></a>3.504.&#160;tmp_dir</h3>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+      <h3 class="title">Note</h3> Renamed to
+      <a class="link" href="#tmp-dir" title="3.503.&#160;tmp_dir">$tmp_dir</a>(2023-01-25)</div>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="to-chars"></a>3.505.&#160;to_chars</h3>
           </div>
         </div>
       </div>
@@ -13218,7 +13245,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="toggle-quoted-show-levels"></a>3.505.&#160;toggle_quoted_show_levels</h3>
+            <a id="toggle-quoted-show-levels"></a>3.506.&#160;toggle_quoted_show_levels</h3>
           </div>
         </div>
       </div>
@@ -13235,7 +13262,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="trash"></a>3.506.&#160;trash</h3>
+            <a id="trash"></a>3.507.&#160;trash</h3>
           </div>
         </div>
       </div>
@@ -13251,7 +13278,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ts-enabled"></a>3.507.&#160;ts_enabled</h3>
+            <a id="ts-enabled"></a>3.508.&#160;ts_enabled</h3>
           </div>
         </div>
       </div>
@@ -13268,7 +13295,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ts-icon-format"></a>3.508.&#160;ts_icon_format</h3>
+            <a id="ts-icon-format"></a>3.509.&#160;ts_icon_format</h3>
           </div>
         </div>
       </div>
@@ -13280,7 +13307,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         </span>”</span></p>
       </div>
       <p>Controls the format of the icon title, as long as "
-      <a class="link" href="#ts-enabled" title="3.507.&#160;ts_enabled">$ts_enabled</a>" is set. This string is identical in formatting to the one used by "
+      <a class="link" href="#ts-enabled" title="3.508.&#160;ts_enabled">$ts_enabled</a>" is set. This string is identical in formatting to the one used by "
       <a class="link" href="#status-format" title="3.493.&#160;status_format">$status_format</a>".</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $xterm_icon</div>
@@ -13290,7 +13317,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="ts-status-format"></a>3.509.&#160;ts_status_format</h3>
+            <a id="ts-status-format"></a>3.510.&#160;ts_status_format</h3>
           </div>
         </div>
       </div>
@@ -13302,7 +13329,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         </span>”</span></p>
       </div>
       <p>Controls the format of the terminal status line (or window title), provided that "
-      <a class="link" href="#ts-enabled" title="3.507.&#160;ts_enabled">$ts_enabled</a>" has been set. This string is identical in formatting to the one used by "
+      <a class="link" href="#ts-enabled" title="3.508.&#160;ts_enabled">$ts_enabled</a>" has been set. This string is identical in formatting to the one used by "
       <a class="link" href="#status-format" title="3.493.&#160;status_format">$status_format</a>".</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $xterm_title</div>
@@ -13312,7 +13339,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <div>
           <div>
             <h3 class="title">
-            <a id="tunnel"></a>3.510.&#160;tunnel</h3>
+            <a id="tunnel"></a>3.511.&#160;tunnel</h3>
           </div>
         </div>
       </div>
@@ -13333,7 +13360,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="tunnel-is-secure"></a>3.511.&#160;tunnel_is_secure</h3>
+            <a id="tunnel-is-secure"></a>3.512.&#160;tunnel_is_secure</h3>
           </div>
         </div>
       </div>
@@ -13345,9 +13372,9 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will assume the
-      <a class="link" href="#tunnel" title="3.510.&#160;tunnel">$tunnel</a> connection does not need STARTTLS to be enabled. It will also allow IMAP PREAUTH server responses inside a
-      <a class="link" href="#tunnel" title="3.510.&#160;tunnel">tunnel</a> to proceed. This is appropriate if
-      <a class="link" href="#tunnel" title="3.510.&#160;tunnel">$tunnel</a> uses ssh or directly invokes the server locally.</p>
+      <a class="link" href="#tunnel" title="3.511.&#160;tunnel">$tunnel</a> connection does not need STARTTLS to be enabled. It will also allow IMAP PREAUTH server responses inside a
+      <a class="link" href="#tunnel" title="3.511.&#160;tunnel">tunnel</a> to proceed. This is appropriate if
+      <a class="link" href="#tunnel" title="3.511.&#160;tunnel">$tunnel</a> uses ssh or directly invokes the server locally.</p>
       <p>When
       <span class="emphasis">
         <em>unset</em>
@@ -13355,14 +13382,14 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <a class="link" href="#ssl-starttls" title="3.480.&#160;ssl_starttls">ssl_starttls</a> and
       <a class="link" href="#ssl-force-tls" title="3.478.&#160;ssl_force_tls">ssl_force_tls</a> variables. If
       <a class="link" href="#ssl-force-tls" title="3.478.&#160;ssl_force_tls">ssl_force_tls</a> is set, NeoMutt will abort connecting if an IMAP server responds with PREAUTH. This setting is appropriate if
-      <a class="link" href="#tunnel" title="3.510.&#160;tunnel">$tunnel</a> does not provide security and could be tampered with by attackers.</p>
+      <a class="link" href="#tunnel" title="3.511.&#160;tunnel">$tunnel</a> does not provide security and could be tampered with by attackers.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="uncollapse-jump"></a>3.512.&#160;uncollapse_jump</h3>
+            <a id="uncollapse-jump"></a>3.513.&#160;uncollapse_jump</h3>
           </div>
         </div>
       </div>
@@ -13383,7 +13410,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="uncollapse-new"></a>3.513.&#160;uncollapse_new</h3>
+            <a id="uncollapse-new"></a>3.514.&#160;uncollapse_new</h3>
           </div>
         </div>
       </div>
@@ -13404,7 +13431,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-8bit-mime"></a>3.514.&#160;use_8bit_mime</h3>
+            <a id="use-8bit-mime"></a>3.515.&#160;use_8bit_mime</h3>
           </div>
         </div>
       </div>
@@ -13431,20 +13458,20 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-8bitmime"></a>3.515.&#160;use_8bitmime</h3>
+            <a id="use-8bitmime"></a>3.516.&#160;use_8bitmime</h3>
           </div>
         </div>
       </div>
       <div class="note">
       <h3 class="title">Note</h3> Renamed to
-      <a class="link" href="#use-8bit-mime" title="3.514.&#160;use_8bit_mime">$use_8bit_mime</a>(2021-03-21)</div>
+      <a class="link" href="#use-8bit-mime" title="3.515.&#160;use_8bit_mime">$use_8bit_mime</a>(2021-03-21)</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="use-domain"></a>3.516.&#160;use_domain</h3>
+            <a id="use-domain"></a>3.517.&#160;use_domain</h3>
           </div>
         </div>
       </div>
@@ -13466,7 +13493,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-envelope-from"></a>3.517.&#160;use_envelope_from</h3>
+            <a id="use-envelope-from"></a>3.518.&#160;use_envelope_from</h3>
           </div>
         </div>
       </div>
@@ -13502,7 +13529,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-from"></a>3.518.&#160;use_from</h3>
+            <a id="use-from"></a>3.519.&#160;use_from</h3>
           </div>
         </div>
       </div>
@@ -13524,7 +13551,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-ipv6"></a>3.519.&#160;use_ipv6</h3>
+            <a id="use-ipv6"></a>3.520.&#160;use_ipv6</h3>
           </div>
         </div>
       </div>
@@ -13545,7 +13572,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
         <div>
           <div>
             <h3 class="title">
-            <a id="use-threads"></a>3.520.&#160;use_threads</h3>
+            <a id="use-threads"></a>3.521.&#160;use_threads</h3>
           </div>
         </div>
       </div>
@@ -13576,7 +13603,7 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       </code>controls sorting within a thread, and
       <code class="literal">&lt;sort-mailbox&gt;</code>toggles
       <code class="literal">
-        <a class="link" href="#use-threads" title="3.520.&#160;use_threads">$use_threads</a>
+        <a class="link" href="#use-threads" title="3.521.&#160;use_threads">$use_threads</a>
       </code>.</p>
       <p>Example:</p>
       <pre class="screen">
@@ -13589,7 +13616,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="user-agent"></a>3.521.&#160;user_agent</h3>
+            <a id="user-agent"></a>3.522.&#160;user_agent</h3>
           </div>
         </div>
       </div>
@@ -13607,7 +13634,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="vfolder-format"></a>3.522.&#160;vfolder_format</h3>
+            <a id="vfolder-format"></a>3.523.&#160;vfolder_format</h3>
           </div>
         </div>
       </div>
@@ -13626,7 +13653,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="virtual-spool-file"></a>3.523.&#160;virtual_spool_file</h3>
+            <a id="virtual-spool-file"></a>3.524.&#160;virtual_spool_file</h3>
           </div>
         </div>
       </div>
@@ -13648,20 +13675,20 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="virtual-spoolfile"></a>3.524.&#160;virtual_spoolfile</h3>
+            <a id="virtual-spoolfile"></a>3.525.&#160;virtual_spoolfile</h3>
           </div>
         </div>
       </div>
       <div class="note">
       <h3 class="title">Note</h3> Renamed to
-      <a class="link" href="#virtual-spool-file" title="3.523.&#160;virtual_spool_file">$virtual_spool_file</a>(2021-02-11)</div>
+      <a class="link" href="#virtual-spool-file" title="3.524.&#160;virtual_spool_file">$virtual_spool_file</a>(2021-02-11)</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="visual"></a>3.525.&#160;visual</h3>
+            <a id="visual"></a>3.526.&#160;visual</h3>
           </div>
         </div>
       </div>
@@ -13673,7 +13700,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="wait-key"></a>3.526.&#160;wait_key</h3>
+            <a id="wait-key"></a>3.527.&#160;wait_key</h3>
           </div>
         </div>
       </div>
@@ -13705,7 +13732,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="weed"></a>3.527.&#160;weed</h3>
+            <a id="weed"></a>3.528.&#160;weed</h3>
           </div>
         </div>
       </div>
@@ -13727,7 +13754,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="wrap"></a>3.528.&#160;wrap</h3>
+            <a id="wrap"></a>3.529.&#160;wrap</h3>
           </div>
         </div>
       </div>
@@ -13736,8 +13763,8 @@ set use_threads=yes
         <br />Default:&#160;0</p>
       </div>
       <p>When set to a positive value, NeoMutt will wrap text at
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a> characters. When set to a negative value, NeoMutt will wrap text so that there are
-      <a class="link" href="#wrap" title="3.528.&#160;wrap">$wrap</a> characters of empty space on the right side of the terminal. Setting it to zero makes NeoMutt wrap at the terminal width.</p>
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a> characters. When set to a negative value, NeoMutt will wrap text so that there are
+      <a class="link" href="#wrap" title="3.529.&#160;wrap">$wrap</a> characters of empty space on the right side of the terminal. Setting it to zero makes NeoMutt wrap at the terminal width.</p>
       <p>Also see
       <a class="link" href="#reflow-wrap" title="3.381.&#160;reflow_wrap">$reflow_wrap</a>.</p>
     </div>
@@ -13746,7 +13773,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="wrap-headers"></a>3.529.&#160;wrap_headers</h3>
+            <a id="wrap-headers"></a>3.530.&#160;wrap_headers</h3>
           </div>
         </div>
       </div>
@@ -13768,7 +13795,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="wrap-search"></a>3.530.&#160;wrap_search</h3>
+            <a id="wrap-search"></a>3.531.&#160;wrap_search</h3>
           </div>
         </div>
       </div>
@@ -13790,7 +13817,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="write-bcc"></a>3.531.&#160;write_bcc</h3>
+            <a id="write-bcc"></a>3.532.&#160;write_bcc</h3>
           </div>
         </div>
       </div>
@@ -13808,7 +13835,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="write-inc"></a>3.532.&#160;write_inc</h3>
+            <a id="write-inc"></a>3.533.&#160;write_inc</h3>
           </div>
         </div>
       </div>
@@ -13817,7 +13844,7 @@ set use_threads=yes
         <br />Default:&#160;10</p>
       </div>
       <p>When writing a mailbox, a message will be printed every
-      <a class="link" href="#write-inc" title="3.532.&#160;write_inc">$write_inc</a> messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
+      <a class="link" href="#write-inc" title="3.533.&#160;write_inc">$write_inc</a> messages to indicate progress. If set to 0, only a single message will be displayed before writing a mailbox.</p>
       <p>Also see the
       <a class="link" href="#read-inc" title="3.373.&#160;read_inc">$read_inc</a>,
       <a class="link" href="#net-inc" title="3.250.&#160;net_inc">$net_inc</a> and
@@ -13829,7 +13856,7 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="x-comment-to"></a>3.533.&#160;x_comment_to</h3>
+            <a id="x-comment-to"></a>3.534.&#160;x_comment_to</h3>
           </div>
         </div>
       </div>
@@ -13847,39 +13874,39 @@ set use_threads=yes
         <div>
           <div>
             <h3 class="title">
-            <a id="xterm-icon"></a>3.534.&#160;xterm_icon</h3>
+            <a id="xterm-icon"></a>3.535.&#160;xterm_icon</h3>
           </div>
         </div>
       </div>
       <div class="note">
       <h3 class="title">Note</h3> Renamed to
-      <a class="link" href="#ts-icon-format" title="3.508.&#160;ts_icon_format">$ts_icon_format</a>(2021-03-21)</div>
+      <a class="link" href="#ts-icon-format" title="3.509.&#160;ts_icon_format">$ts_icon_format</a>(2021-03-21)</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="xterm-set-titles"></a>3.535.&#160;xterm_set_titles</h3>
+            <a id="xterm-set-titles"></a>3.536.&#160;xterm_set_titles</h3>
           </div>
         </div>
       </div>
       <div class="note">
       <h3 class="title">Note</h3> Renamed to
-      <a class="link" href="#ts-enabled" title="3.507.&#160;ts_enabled">$ts_enabled</a>(2021-03-21)</div>
+      <a class="link" href="#ts-enabled" title="3.508.&#160;ts_enabled">$ts_enabled</a>(2021-03-21)</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="xterm-title"></a>3.536.&#160;xterm_title</h3>
+            <a id="xterm-title"></a>3.537.&#160;xterm_title</h3>
           </div>
         </div>
       </div>
       <div class="note">
       <h3 class="title">Note</h3> Renamed to
-      <a class="link" href="#ts-status-format" title="3.509.&#160;ts_status_format">$ts_status_format</a>(2021-03-21)</div>
+      <a class="link" href="#ts-status-format" title="3.510.&#160;ts_status_format">$ts_status_format</a>(2021-03-21)</div>
     </div>
   </div>
   <div class="sect1">

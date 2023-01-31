@@ -307,7 +307,10 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         </span>&#160; 
         <span class="emphasis">
           <em>mime-type</em>
-        </span>
+        </span>&#160;[&#160; 
+        <span class="emphasis">
+          <em>mime-type</em>
+        </span>&#160;...&#160;] 
         <br />
         <span class="strong">
           <strong>unattachments</strong>
@@ -323,7 +326,10 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         </span>&#160; 
         <span class="emphasis">
           <em>mime-type</em>
-        </span>
+        </span>&#160;[&#160; 
+        <span class="emphasis">
+          <em>mime-type</em>
+        </span>&#160;...&#160;] 
         <br />
         <span class="strong">
           <strong>attachments</strong>
@@ -395,6 +401,16 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       <span class="strong">
         <strong>*/.*</strong>
       </span>” matches any MIME type.</p>
+      <p>Note that the first MIME part is treated slightly differently: It is almost always the message text. Thus, it is not counted as an attachment if its disposition is 
+      <span class="strong">
+        <strong>inline</strong>
+      </span>and it is not a 
+      <span class="strong">
+        <strong>multipart/*</strong>
+      </span>or 
+      <span class="strong">
+        <strong>message/*</strong>
+      </span>MIME-type.</p>
       <p>Entering the command “ 
       <span class="strong">
         <strong>attachments ?</strong>
@@ -2300,6 +2316,16 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <span class="emphasis">
           <em>variable</em>
         </span>&#160;...&#160;] 
+        <br />
+        <span class="strong">
+          <strong>set</strong>
+        </span>&#160; 
+        <span class="emphasis">
+          <em>variable</em>
+        </span>&#160; 
+        <span class="strong">
+          <strong>?</strong>
+        </span>
         <br /></p>
       </div>
       <p>These commands are used to set and manipulate configuration 
@@ -2444,13 +2470,22 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>of a 
       <span class="emphasis">
         <em>variable</em>
-      </span>by prefixing the name of the 
+      </span>by suffixing the name of the 
       <span class="emphasis">
         <em>variable</em>
       </span>with a question mark: ": 
       <span class="strong">
-        <strong>set&#160;?</strong>
-      </span>allow_8bit".</p>
+        <strong>set</strong>
+      </span>&#160;allow_8bit 
+      <span class="strong">
+        <strong>?</strong>
+      </span>". The old prefix query syntax (": 
+      <span class="strong">
+        <strong>set</strong>
+      </span>&#160; 
+      <span class="strong">
+        <strong>?</strong>
+      </span>allow_8bit") is also still supported.</p>
       <div class="literallayout">
         <p>
         <br />
@@ -2568,6 +2603,17 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>source</strong>
       </span>&#160; 
       <code class="filename">~/bin/myscript</code>|”).</p>
+      <p>If the filename is relative and the command 
+      <span class="strong">
+        <strong>source</strong>
+      </span>is executed from the context of a configuration file, then the filename is interpreted relative to the directory of that configuration file. If the command is executed outside of a configuration file, e.g. from the prompt, then the filename is interpreted relative to the current working directory (see 
+      <span class="strong">
+        <strong>cd</strong>
+      </span>on how to change the current working directory at runtime).</p>
+      <p>Note: A hook remembers the configuration file it was defined in and sets the context to that file when executing its commands. As a result a 
+      <span class="strong">
+        <strong>source</strong>
+      </span>command inside a hook is executed in the context of the configuration file the hook was defined in. Thus relative filenames are interpreted relative to the configuration file the hook is defined in.</p>
       <div class="literallayout">
         <p>
         <br />
@@ -7458,6 +7504,8 @@ Default: yes
             <br /></p>
           </div>
           <p>This variable controls the size (in number of strings remembered) of the string history buffer per category. The buffer is cleared each time the variable is set.</p>
+          <p>Note that strings (e.g. commands) starting with a space are never recorded in the history. This is for example useful to prevent leaking sensitive information into the history file or for one off tests.</p>
+          <p>Also note that a string is not added to the history if it exactly matches its immediate predecessor, e.g. executing the same command twice in a row results in only one copy being added to the history. To prevent duplicates over all entries use $history_remove_dups.</p>
         </dd>
         <dt>
           <span class="term">
@@ -8002,7 +8050,7 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>implicit_autoview</strong>
+              <strong>implicit_auto_view</strong>
             </span>
           </span>
         </dt>
@@ -8566,7 +8614,8 @@ Default: no
           <p>If 
           <span class="emphasis">
             <em>set</em>
-          </span>, read messages marked as flagged will not be moved from your spool mailbox to your $mbox mailbox, or as a result of a "mbox-hook" command.</p>
+          </span>, read messages marked as flagged will not be moved from your spool mailbox to your $mbox mailbox or to the "mbox" specified by a mbox-hook command.</p>
+          <p>Note that $keep_flagged only has an effect if $move is set.</p>
         </dd>
         <dt>
           <span class="term">
@@ -9101,7 +9150,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>message_cachedir</strong>
+              <strong>message_cache_dir</strong>
             </span>
           </span>
         </dt>
@@ -9433,7 +9482,11 @@ Default: no
             <br />Default:&#160;no 
             <br /></p>
           </div>
-          <p>Controls whether or not NeoMutt will move read messages from your spool mailbox to your $mbox mailbox, or as a result of a "mbox-hook" command.</p>
+          <p>If this variable is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, then NeoMutt will move read messages from your spool mailbox to your $mbox mailbox or to the "mbox" specified by a mbox-hook command.</p>
+          <p>See also $keep_flagged.</p>
         </dd>
         <dt>
           <span class="term">
@@ -12297,6 +12350,7 @@ Default: yes
             <br /></p>
           </div>
           <p>This variable controls the size of the history (per category) saved in the $history_file file.</p>
+          <p>Setting this to a value greater than $history is possible. However, there will never be more than $history entries to select from even if more are recorded in the history file.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13387,7 +13441,7 @@ Default: yes
           </div>
           <p>This format string specifies a command which is used to decrypt 
           <span class="emphasis">
-            <em>application/x-pkcs7-mime</em>
+            <em>application/pkcs7-mime</em>
           </span>attachments.</p>
           <p>The OpenSSL command formats have their own set of 
           <span class="emphasis">
@@ -13800,7 +13854,7 @@ Default: yes
           </div>
           <p>This command is used to verify S/MIME signatures of type 
           <span class="emphasis">
-            <em>application/x-pkcs7-mime</em>
+            <em>application/pkcs7-mime</em>
           </span>.</p>
           <p>This is a format string, see the $smime_decrypt_command command for possible 
           <span class="emphasis">
@@ -13986,7 +14040,7 @@ smtp[s]://[user[:pass]@]host[:port]
             <em>&lt;sort-reverse&gt;</em>
           </span>functions.</p>
           <p>Note: When $use_threads is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in $sort swaps which end the last thread will sort to.</p>
-          <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads.</p>
+          <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads</p>
         </dd>
         <dt>
           <span class="term">
@@ -14051,7 +14105,7 @@ set sort_aux=last-date-received
           <span class="emphasis">
             <em>set use_threads=reverse</em>
           </span>".) When using $use_threads, it is more common to use "last-" with $sort and not with $sort_aux.</p>
-          <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads.</p>
+          <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads</p>
         </dd>
         <dt>
           <span class="term">
@@ -14996,7 +15050,7 @@ Default: no
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>tmpdir</strong>
+              <strong>tmp_dir</strong>
             </span>
           </span>
         </dt>

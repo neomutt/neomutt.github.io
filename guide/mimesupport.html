@@ -65,10 +65,11 @@ title: NeoMutt's MIME Support
         </div>
       </div>
       <p>When you select a message from the index and view it in the pager, NeoMutt decodes as much of a message as possible to a text representation. NeoMutt internally supports a number of MIME types, including the
-      <code class="literal">text</code> major type (with all minor types), the
+      <code class="literal">text/plain</code> type, the
       <code class="literal">message/rfc822</code>(mail messages) type and some
-      <code class="literal">multipart</code> types. In addition, it recognizes a variety of PGP MIME types, including PGP/MIME and
-      <code class="literal">application/pgp</code>.</p>
+      <code class="literal">multipart</code> types. In addition, it recognizes a variety of PGP MIME and S/MIME types, including PGP/MIME and
+      <code class="literal">application/pgp</code>, and
+      <code class="literal">application/pkcs7-mime</code>.</p>
       <p>NeoMutt will denote attachments with a couple lines describing them. These lines are of the form:</p>
       <pre class="screen">
 [-- Attachment #1: Description --]
@@ -401,8 +402,7 @@ neomutt -nF /dev/null -Q mailcap_path
       <code class="literal">text/plain</code>,
       <code class="literal">text/html</code>,
       <code class="literal">image/gif</code>, etc. In addition, the mailcap format includes two formats for wildcards, one using the special
-      <span class="quote">“
-      <span class="quote">*</span>”</span> subtype, the other is the implicit wild, where you only include the major type. For example,
+      <span class="quote">“<span class="quote">*</span>”</span> subtype, the other is the implicit wild, where you only include the major type. For example,
       <code class="literal">image/*</code>, or
       <code class="literal">video</code> will match all image types and video types, respectively.</p>
       <p>The view command is a Unix command for viewing the type specified. There are two different types of commands supported. The default is to send the body of the MIME message to the command on stdin. You can change this behavior by using
@@ -493,8 +493,7 @@ text/test-mailcap-bug; cat %s; copiousoutput; test=charset=%{charset} \
           </div>
         </div>
         <p>In addition to the required content-type and view command fields, you can add semi-colon
-        <span class="quote">“
-        <span class="quote">;</span>”</span> separated fields to set flags and other options. NeoMutt recognizes the following optional fields:</p>
+        <span class="quote">“<span class="quote">;</span>”</span> separated fields to set flags and other options. NeoMutt recognizes the following optional fields:</p>
         <div class="variablelist">
           <dl class="variablelist">
             <dt>
@@ -530,11 +529,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.526.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.527.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, NeoMutt will use
-              <a class="link" href="reference.html#wait-key" title="3.526.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.527.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -610,7 +609,7 @@ text/html; firefox %s &amp; x-neomutt-keep
             <dd>
               <p>
               <code class="literal">x-neomutt-nowrap</code> tells the NeoMutt pager to ignore the
-              <a class="link" href="reference.html#wrap" title="3.528.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
+              <a class="link" href="reference.html#wrap" title="3.529.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
               <pre class="screen">
 text/html; /usr/local/bin/w3m -s -T text/html -o display_link_number=1 %s; nametemplate=%s.html; copiousoutput; x-neomutt-nowrap;
 </pre>
@@ -869,8 +868,7 @@ application/postscript; ps2ascii %s; copiousoutput
         <strong>message-hook</strong>
       </span>
     </a>to autoview messages based on size, etc.
-    <span class="quote">“
-    <span class="quote">
+    <span class="quote">“<span class="quote">
     <span class="command">
       <strong>unauto_view</strong>
     </span>&#160;*</span>”</span> will remove all previous entries.</p>

@@ -468,7 +468,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm45297966000800"></a>
+            <a id="idm45774311025744"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -591,7 +591,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm45297965965584"></a>
+            <a id="idm45774310990528"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -1641,7 +1641,7 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">W</span>”</span> respectively.</p>
       <p>Furthermore, the flags in
       <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.10.&#160;Message recipient flags">Table&#160;2.10, “Message recipient flags”</a> reflect who the message is addressed to. They can be customized with the
-      <a class="link" href="reference.html#to-chars" title="3.504.&#160;to_chars">$to_chars</a> variable.</p>
+      <a class="link" href="reference.html#to-chars" title="3.505.&#160;to_chars">$to_chars</a> variable.</p>
       <div >
         <a id="tab-msg-status-flags"></a>
         <p class="title">
@@ -2419,7 +2419,7 @@ bind editor &lt;delete&gt; backspace
             <a class="link" href="reference.html#pipe-decode-weed" title="3.338.&#160;pipe_decode_weed">$pipe_decode_weed</a>,
             <a class="link" href="reference.html#pipe-split" title="3.340.&#160;pipe_split">$pipe_split</a>,
             <a class="link" href="reference.html#pipe-sep" title="3.339.&#160;pipe_sep">$pipe_sep</a> and
-            <a class="link" href="reference.html#wait-key" title="3.526.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
+            <a class="link" href="reference.html#wait-key" title="3.527.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2428,7 +2428,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>NeoMutt takes the current message as a template for a new message. This function is best described as "recall from arbitrary folders". It can conveniently be used to forward MIME messages while preserving the original mail structure. Note that the amount of headers included here depends on the value of the
-            <a class="link" href="reference.html#weed" title="3.527.&#160;weed">$weed</a> variable.</p>
+            <a class="link" href="reference.html#weed" title="3.528.&#160;weed">$weed</a> variable.</p>
             <p>This function is also available from the attachment menu. You can use this to easily resend a message which was included with a bounce message as a
             <code class="literal">message/rfc822</code> body part.</p>
           </dd>
@@ -2439,7 +2439,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and executes it. The
-            <a class="link" href="reference.html#wait-key" title="3.526.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
+            <a class="link" href="reference.html#wait-key" title="3.527.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2487,7 +2487,7 @@ bind editor &lt;delete&gt; backspace
             <p>The pager uses the
             <a class="link" href="reference.html#quote-regex" title="3.371.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
             <p>The variable
-            <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.505.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
+            <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.506.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
           </dd>
         </dl>
       </div>
@@ -2869,7 +2869,7 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">mixmaster</a> or
       <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
       <a class="link" href="reference.html#sendmail" title="3.406.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 2019-11-29, NeoMutt enabled
-      <a class="link" href="reference.html#write-bcc" title="3.531.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
+      <a class="link" href="reference.html#write-bcc" title="3.532.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
       <code class="literal">Bcc:</code>header as part of delivery. Starting with 2019-11-29, the option is unset by default, but no longer affects the fcc copy of the message.</p>
     </div>
     <div class="sect2">
@@ -2892,7 +2892,13 @@ bind editor &lt;delete&gt; backspace
             </div>
           </div>
         </div>
-        <p>If you specify</p>
+        <p>If you specify either of</p>
+        <p>
+          <code class="literal">Mutt-Fcc:</code>
+          <span class="emphasis">
+            <em>filename</em>
+          </span>
+        </p>
         <p>
           <code class="literal">Fcc:</code>
           <span class="emphasis">
@@ -2917,7 +2923,15 @@ bind editor &lt;delete&gt; backspace
             </div>
           </div>
         </div>
-        <p>You can also attach files to your message by specifying</p>
+        <p>You can also attach files to your message by specifying either of</p>
+        <p>
+        <code class="literal">Mutt-Attach:</code>
+        <span class="emphasis">
+          <em>filename</em>
+        </span>[
+        <span class="emphasis">
+          <em>description</em>
+        </span>]</p>
         <p>
         <code class="literal">Attach:</code>
         <span class="emphasis">
@@ -2944,7 +2958,15 @@ bind editor &lt;delete&gt; backspace
             </div>
           </div>
         </div>
-        <p>If you want to use PGP, you can specify</p>
+        <p>If you want to use PGP, you can specify either of</p>
+        <p>
+        <code class="literal">Mutt-PGP:</code>[
+        <code class="literal">E</code>|
+        <code class="literal">S</code>|
+        <code class="literal">S</code>
+        <span class="emphasis">
+          <em>&lt;id&gt;</em>
+        </span>]</p>
         <p>
         <code class="literal">Pgp:</code>[
         <code class="literal">E</code>|
@@ -2968,7 +2990,15 @@ bind editor &lt;delete&gt; backspace
             </div>
           </div>
         </div>
-        <p>If you want to use S/MIME, you can specify</p>
+        <p>If you want to use S/MIME, you can specify either of</p>
+        <p>
+        <code class="literal">Mutt-SMIME:</code>[
+        <code class="literal">E</code>|
+        <code class="literal">S</code>|
+        <code class="literal">S</code>
+        <span class="emphasis">
+          <em>&lt;id&gt;</em>
+        </span>]</p>
         <p>
         <code class="literal">Smime:</code>[
         <code class="literal">E</code>|
@@ -3004,6 +3034,27 @@ bind editor &lt;delete&gt; backspace
           <em>In-Reply-To:</em>
         </span>header in your editor. Otherwise, though you'll produce a technically valid reply, some netiquette guardians will be annoyed by this so-called
         <span class="quote">“<span class="quote">thread hijacking</span>”</span>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title">
+              <a id="mutt-mix-header"></a>6.2.6.&#160;Mutt-Mix: Pseudo Header</h4>
+            </div>
+          </div>
+        </div>
+        <p>If you want to use
+        <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">Mixmaster</a>, you can specify the chain via:</p>
+        <p>
+        <code class="literal">Mutt-Mix:</code>[
+        <span class="emphasis">
+          <em>remailer1</em>
+        </span>[
+        <span class="emphasis">
+          <em>remailer2</em>
+        </span>[ ... ] ] ]</p>
+        <p>The chain can later be changed in the mixmaster menu.</p>
       </div>
     </div>
     <div class="sect2">
@@ -3233,7 +3284,7 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“<span class="quote">yes</span>”</span>) is to use standard inline forwarding. In that mode all text-decodable parts are included in the new message body. Other attachments from the original email can also be attached to the new message, based on the quadoption
     <a class="link" href="reference.html#forward-attachments" title="3.131.&#160;forward_attachments">$forward_attachments</a>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
-    <a class="link" href="reference.html#weed" title="3.527.&#160;weed">$weed</a> variable, unless
+    <a class="link" href="reference.html#weed" title="3.528.&#160;weed">$weed</a> variable, unless
     <a class="link" href="reference.html#mime-forward" title="3.238.&#160;mime_forward">$mime_forward</a> is set.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
     <a class="link" href="reference.html#forward-references" title="3.139.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the

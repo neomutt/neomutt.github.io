@@ -207,7 +207,7 @@ title: Configuration
       <a class="link" href="reference.html#news-server" title="3.253.&#160;news_server">$news_server</a>,
       <a class="link" href="reference.html#shell" title="3.408.&#160;shell">shell</a>,
       <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a>,
-      <a class="link" href="reference.html#tmpdir" title="3.503.&#160;tmpdir">$tmpdir</a>,</p>
+      <a class="link" href="reference.html#tmp-dir" title="3.503.&#160;tmp_dir">$tmp_dir</a>,</p>
       <p>Finally, it's possible to
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">set some variables directly</a> on the command-line using the
       <code class="literal">-e</code> option.</p>
@@ -2203,7 +2203,7 @@ uncolor status *
         </div>
       </div>
       <p>When displaying a message in the pager, NeoMutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.528.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.529.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
       <p>Despite not being a real header, NeoMutt will also display an mbox "From_" line in the pager along with other headers. This line can be manipulated with
       <span class="command">
         <strong>ignore/unignore</strong>
@@ -3678,7 +3678,13 @@ spam "^From: .*MAILER-DAEMON"       "999"
         </em>[
         <em class="replaceable">
           <code>variable</code>
-        </em>...]</p>
+        </em>...]
+        <br />
+        <code class="command">set</code>
+        <em class="replaceable">
+          <code>variable</code>
+        </em>
+        <code class="option">?</code></p>
       </div>
       <p>This command is used to set (and unset)
       <a class="link" href="reference.html#variables" title="3.&#160;Configuration Variables">configuration variables</a>. There are several basic types of variables: boolean, number, string, string list and quadoption.
@@ -3772,6 +3778,11 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <pre class="screen">
 set allow_8bit?
 </pre>
+      <p>The old prefix query syntax (
+      <code class="literal">
+      <span class="command">
+        <strong>set</strong>
+      </span>?allow_8bit</code>) is also still supported.</p>
       <p>The question mark is actually only required for boolean and quadoption variables.</p>
       <p>The
       <span class="command">
@@ -3788,7 +3799,8 @@ set allow_8bit?
       <span class="command">
         <strong>reset</strong>
       </span>command there exists the special variable
-      <span class="quote">“<span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
+      <span class="quote">“
+      <span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3949,7 +3961,8 @@ set my_foo = $my_inc
       <br class="example-break" />
       <p>These assignments are all valid. If, however, the value of
       <code class="literal">$my_lines</code> would have been
-      <span class="quote">“<span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
+      <span class="quote">“
+      <span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
       <code class="literal">$pager_index_lines</code> would have produced an error message.</p>
       <p>Type conversion applies to all configuration commands which take arguments. But please note that every expanded value of a variable is considered just a single token. A working example is:</p>
       <pre class="screen">
@@ -3968,7 +3981,8 @@ mailboxes $my_mx +mailbox3
 </pre>
       <p>because the value of
       <code class="literal">$my_mx</code> is interpreted as a single mailbox named
-      <span class="quote">“<span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
+      <span class="quote">“
+      <span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
     </div>
   </div>
   <div class="sect1">
@@ -3995,7 +4009,8 @@ mailboxes $my_mx +mailbox3
     <code class="literal">~/.mail_aliases</code> so that I can make my
     <code class="literal">~/.neomuttrc</code> readable and keep my aliases private.</p>
     <p>If the filename begins with a tilde (
-    <span class="quote">“<span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
+    <span class="quote">“
+    <span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
     <p>If the filename is relative and the command
     <span class="command">
       <strong>source</strong>
@@ -4086,8 +4101,10 @@ mailboxes $my_mx +mailbox3
       <p>NeoMutt adds some other modifiers to format strings. If you use an equals symbol (
       <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion – that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
-      <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
-      <span class="quote">“<span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
+      <span class="quote">“
+      <span class="quote">test</span>”</span>, that expansion would look like
+      <span class="quote">“
+      <span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
       <p>There are two very little-known modifiers that affect the way that an expando is replaced. If there is an underline (
       <span class="quote">“<span class="quote">_</span>”</span>) character between any format modifiers (as above) and the expando letter, it will expands in all lower case. And if you use a colon (
       <span class="quote">“<span class="quote">:</span>”</span>), it will replace all decimal points with underlines.</p>
@@ -4156,7 +4173,8 @@ mailboxes $my_mx +mailbox3
         </div>
       </div>
       <p>Any format string ending in a vertical bar (
-      <span class="quote">“<span class="quote">|</span>”</span>) will be expanded and piped through the first word in the string, using spaces as separator. The string returned will be used for display. If the returned string ends in %, it will be passed through the formatter a second time. This allows the filter to generate a replacement format string including % expandos.</p>
+      <span class="quote">“
+      <span class="quote">|</span>”</span>) will be expanded and piped through the first word in the string, using spaces as separator. The string returned will be used for display. If the returned string ends in %, it will be passed through the formatter a second time. This allows the filter to generate a replacement format string including % expandos.</p>
       <p>All % expandos in a format string are expanded before the script is called so that:</p>
       <div class="example">
         <a id="ex-fmtpipe"></a>
@@ -4225,7 +4243,8 @@ set status_format = "%B: %?n?%n&amp;no? new messages %&gt; (%v on %h)"
           <dd>
             <p>Normal right-justification will print everything to the left of the
             <code class="literal">%&gt;</code>, displaying padding and whatever lies to the right only if there's room. By contrast,
-            <span class="quote">“<span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
+            <span class="quote">“
+            <span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
             <code class="literal">%*</code>: the second ensures there's a space between the truncated right-hand side and the subject):</p>
             <pre class="screen">
 set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
@@ -4282,8 +4301,10 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
       <a class="link" href="reference.html#size-show-fractions" title="3.431.&#160;size_show_fractions">$size_show_fractions</a>, will display numbers with a single decimal place for values from 0 to 10 kilobytes, and 1 to 10 megabytes.</p>
       <p>
       <a class="link" href="reference.html#size-units-on-left" title="3.433.&#160;size_units_on_left">$size_units_on_left</a> will display the unit (
-      <span class="quote">“<span class="quote">K</span>”</span> or
-      <span class="quote">“<span class="quote">M</span>”</span>) to the left of the number, instead of the right if unset.</p>
+      <span class="quote">“
+      <span class="quote">K</span>”</span> or
+      <span class="quote">“
+      <span class="quote">M</span>”</span>) to the left of the number, instead of the right if unset.</p>
       <p>These variables also affect size display in a few other places, such as progress indicators and attachment delimiters in the pager.</p>
     </div>
   </div>
