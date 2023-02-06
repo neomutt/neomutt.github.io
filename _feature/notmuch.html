@@ -359,16 +359,6 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
             </tr>
             <tr>
               <td>
-                <code class="literal">vfolder_format</code>
-              </td>
-              <td>string</td>
-              <td>
-                <code class="literal">%6n(%6N) %f</code>
-              </td>
-              <td>&#160;</td>
-            </tr>
-            <tr>
-              <td>
                 <code class="literal">virtual_spool_file</code>
               </td>
               <td>boolean</td>
@@ -437,7 +427,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
     <p>More variables about tags configuration can be found in
-    <a class="link" href="/feature/custom-tags#variables" title="3.&#160;Variables">Custom backend Tags Feature</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-variables" title="3.&#160;Variables">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -532,7 +522,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     </div>
     <br class="table-break" />
     <p>More functions about tags can be found in
-    <a class="link" href="/feature/custom-tags#functions" title="4.&#160;Functions">Custom backend Tags Feature</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-functions" title="4.&#160;Functions">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -574,7 +564,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
     <code class="literal">unvirtual-mailboxes</code> is identical to the
     <code class="literal">unmailboxes</code> command.</p>
     <p>More commands about tags can be found in
-    <a class="link" href="/feature/custom-tags#commands" title="5.&#160;Commands">Custom backend Tags Feature</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-commands" title="5.&#160;Commands">Custom backend Tags Feature</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -586,7 +576,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       </div>
     </div>
     <p>See
-    <a class="link" href="/feature/custom-tags#colors" title="6.&#160;Colors">Custom backend Tags colors</a></p>
+    <a class="link" href="/feature/custom-tags#custom-tags-colors" title="6.&#160;Colors">Custom backend Tags colors</a></p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -627,17 +617,6 @@ set nm_record = no
 set nm_record_tags = ""
 <span class="comment"># This variable specifies the notmuch tag used for unread messages.</span>
 set nm_unread_tag = unread
-<span class="comment"># This variable allows you to customize the file browser display for virtual</span>
-<span class="comment"># folders to your personal taste.</span>
-<span class="comment"># %C   current folder number</span>
-<span class="comment"># %f   folder name (description)</span>
-<span class="comment"># %m   number of messages in the mailbox *</span>
-<span class="comment"># %n   number of unread messages in the mailbox *</span>
-<span class="comment"># %N   "N" if mailbox has new mail, " " (space) otherwise</span>
-<span class="comment"># %&gt;X  right justify the rest of the string and pad with character ``X''</span>
-<span class="comment"># %|X  pad to the end of the line with character ``X''</span>
-<span class="comment"># %*X  soft-fill with character ``X'' as pad</span>
-set vfolder_format = "%6n(%6N) %f"
 <span class="comment"># When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)</span>
 <span class="comment"># as a spool_file.</span>
 set virtual_spool_file = no

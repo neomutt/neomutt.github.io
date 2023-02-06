@@ -224,11 +224,37 @@ smtp://user@host:587/
     <code class="literal">{[username@]imapserver[:port][/ssl]}path/to/folder</code></p>
     <p>Note that not all servers use
     <span class="quote">“<span class="quote">/</span>”</span> as the hierarchy separator. NeoMutt should correctly notice which separator is being used by the server and convert paths accordingly.</p>
-    <p>When browsing folders on an IMAP server, you can toggle whether to look at only the folders you are subscribed to, or all folders with the
+    <p>The IMAP protocol has a subscription feature where the server manages a list of of subscribed folders. To add or remove a folder to the list of subscribed folders use the commands:</p>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">subscribe-to</code>
+        <em class="replaceable">
+          <code>imap-folder-uri</code>
+        </em>
+        <br />
+        <code class="command">unsubscribe-from</code>
+        <em class="replaceable">
+          <code>imap-folder-uri</code>
+        </em>
+      </p>
+    </div>
+    <p>
     <span class="emphasis">
-      <em>toggle-subscribed</em>
-    </span>command. See also the
+      <em>imap-folder-uri</em>
+    </span>must be an IMAP URI, from which the server and the folder is derived, e.g.</p>
+    <pre class="screen">
+subscribe-to imaps://mail.example.org/inbox
+</pre>
+    <p>Instead of the above commands you can also use the
+    <code class="literal">&lt;subscribe&gt;</code>and
+    <code class="literal">&lt;unsubscribe&gt;</code>functions of the browser (default keys
+    <code class="literal">s</code> and
+    <code class="literal">u</code>) to subscribe to or unsubscribe from a folder while browsing the folders on the IMAP server. The browser can be instructed to only display the folders you are subscribed to with the
+    <code class="literal">&lt;toggle-subscribed&gt;</code>functions. See also the
     <a class="link" href="reference.html#imap-list-subscribed" title="3.182.&#160;imap_list_subscribed">$imap_list_subscribed</a> variable.</p>
+    <p>Because the list of subscribed folders is managed by the IMAP server, NeoMutt can also ask the server for that list. If
+    <a class="link" href="reference.html#imap-check-subscribed" title="3.174.&#160;imap_check_subscribed">$imap_check_subscribed</a> is set, NeoMutt will do that and add those folders to its mailboxes list just as if you had used the
+    <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">mailboxes</a> command on each of them, so that these folders get checked periodically for new mail.</p>
     <p>Polling for new mail on an IMAP server can cause noticeable delays. So, you'll want to carefully tune the
     <a class="link" href="reference.html#mail-check" title="3.208.&#160;mail_check">$mail_check</a> and
     <a class="link" href="reference.html#timeout" title="3.502.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>

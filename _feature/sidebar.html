@@ -315,11 +315,11 @@ status: stable
         </div>
       </div>
     </div>
-    <a id="whitelist"></a>
-    <a id="unsidebar-whitelist"></a>
+    <a id="pin"></a>
+    <a id="unpin"></a>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">sidebar_whitelist</code>
+      <code class="command">sidebar_pin</code>
       <em class="replaceable">
         <code>mailbox</code>
       </em>[
@@ -327,7 +327,7 @@ status: stable
         <code>mailbox</code>
       </em>...]
       <br />
-      <code class="command">unsidebar_whitelist</code>{
+      <code class="command">sidebar_unpin</code>{
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -339,9 +339,9 @@ status: stable
     <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.418.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
     <p>The
     <span class="quote">“
-    <span class="quote">unsidebar_whitelist</span>”</span> command is used to remove a mailbox from the list of whitelisted mailboxes. Use
+    <span class="quote">sidebar_unpin</span>”</span> command is used to remove a mailbox from the list of always displayed mailboxes. Use
     <span class="quote">“
-    <span class="quote">unsidebar_whitelist&#160;*</span>”</span> to remove all mailboxes.</p>
+    <span class="quote">sidebar_unpin&#160;*</span>”</span> to remove all mailboxes.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -561,12 +561,12 @@ set sidebar_indent_string = '  '
 <span class="comment"># Make the Sidebar only display mailboxes that contain new, or flagged,</span>
 <span class="comment"># mail.</span>
 set sidebar_new_mail_only = no
-<span class="comment"># Any mailboxes that are whitelisted will always be visible, even if the</span>
+<span class="comment"># Any mailboxes that are pinned will always be visible, even if the</span>
 <span class="comment"># sidebar_new_mail_only option is enabled.</span>
 set sidebar_non_empty_mailbox_only = no
 <span class="comment"># Only show mailboxes that contain some mail</span>
-sidebar_whitelist '/home/user/mailbox1'
-sidebar_whitelist '/home/user/mailbox2'
+sidebar_pin '/home/user/mailbox1'
+sidebar_pin '/home/user/mailbox2'
 <span class="comment"># When searching for mailboxes containing new mail, should the search wrap</span>
 <span class="comment"># around when it reaches the end of the list?</span>
 set sidebar_next_new_wrap = no
