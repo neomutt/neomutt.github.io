@@ -45,7 +45,7 @@ Or, you can contact the lead developer, Richard&nbsp;Russon&nbsp;[&lt;rich@flatc
           <a href="https://github.com/{{ c.username }}">{{ c.author }}</a>
         </td>
         {% if c.dir %}
-        <td><a href="https://github.com/neomutt/neomutt/tree/main/contrib/{{ c.dir }}#readme">{{ c.dir }}</a></td>
+        <td><a href="https://github.com/neomutt/neomutt-contrib/tree/main/{{ c.dir }}#readme">{{ c.dir }}</a></td>
         {% else %}
         <td>&mdash;</td>
         {% endif %}
