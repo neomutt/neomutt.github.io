@@ -466,7 +466,7 @@ text/*; more
       <p>
       <span class="emphasis">
         <em>Keep the %-expandos away from shell quoting.</em>
-      </span>Don't quote them with single or double quotes. NeoMutt does this for you, the right way, as should any other program which interprets mailcap. Don't put them into backtick expansions. Be highly careful with evil statements, and avoid them if possible at all. Trying to fix broken behavior with quotes introduces new leaks – there is no alternative to correct quoting in the first place.</p>
+      </span>Don't quote them with single or double quotes. NeoMutt does this for you, the right way, as should any other program which interprets mailcap. Don't put them into backtick expansions. Be highly careful with eval statements, and avoid them if possible at all. Trying to fix broken behavior with quotes introduces new leaks – there is no alternative to correct quoting in the first place.</p>
       <p>If you have to use the %-expandos' values in context where you need quoting or backtick expansions, put that value into a shell variable and reference the shell variable where necessary, as in the following example (using
       <code class="literal">$charset</code> inside the backtick expansion is safe, since it is not itself subject to any further expansion):</p>
       <pre class="screen">
