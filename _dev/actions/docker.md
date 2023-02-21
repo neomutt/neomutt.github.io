@@ -8,7 +8,7 @@ author:      flatcap
 ---
 
 <div style="float: right;">
-<a href="https://github.com/neomutt/docker-build/actions/workflows/build.yml"><img src="https://github.com/neomutt/neomutt-docker-build/actions/workflows/build.yml/badge.svg" /></a>
+<a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
 <a href="https://www.docker.com/"><img src="/images/docker.png" /></a>
 </div>
 

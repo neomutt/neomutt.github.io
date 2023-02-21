@@ -8,7 +8,7 @@ author:      flatcap
 ---
 
 <div style="float: right;">
-<a href="https://github.com/neomutt/neomutt/actions/workflows/coverity.yml"><img src="https://github.com/neomutt/neomutt/actions/workflows/coverity.yml/badge.svg" /></a>
+<a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
 <a href="https://scan.coverity.com/projects/neomutt-neomutt"><img src="https://img.shields.io/coverity/scan/8495.svg" /></a>
 <a href="https://coverity.com/"><img src="/images/coverity.png" /></a>
 </div>

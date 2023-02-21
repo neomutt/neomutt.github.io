@@ -8,7 +8,7 @@ author:      flatcap
 ---
 
 <div style="float: right;">
-<a href="https://github.com/neomutt/neomutt/actions/workflows/coveralls.yml"><img src="https://github.com/neomutt/neomutt/actions/workflows/coveralls.yml/badge.svg" /></a>
+<a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
 <a href="https://coveralls.io/github/neomutt/neomutt"><img src="https://img.shields.io/coveralls/github/neomutt/neomutt" /></a>
 <a href="https://coveralls.io/"><img src="/images/coveralls.png" /></a>
 </div>
