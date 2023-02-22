@@ -26,6 +26,8 @@ These tools check for resource leaks, potential NULL dereferences and much more.
 
 This is a free service for open source, but limited to 2 scans per day.
 
+Learn more about [Coverity](../analysis/coverity)
+
 **Steps**:
 - Download Coverity tools
 - Build NeoMutt with Coverity tools

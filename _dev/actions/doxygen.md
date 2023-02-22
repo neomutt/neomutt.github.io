@@ -24,6 +24,8 @@ This action updates the [Code Docs](https://neomutt.org/code).
 NeoMutt's code is throughly commented using Doxygen comment blocks.<br>
 (Every function, struct, enum, global, and most members are documented)
 
+Learn more about [Doxygen](../doxygen)
+
 ```comment
 /**
  * mutt_path_basename - Find the last component for a pathname
@@ -55,7 +57,7 @@ NeoMutt's code is throughly commented using Doxygen comment blocks.<br>
 | :---------- | :------------------------------------------------------------------------------------------- |
 | Action      | [{{page.source}}]({{page.source}})                                                           |
 | Action Logs | [{{page.logs}}]({{page.logs}})                                                               |
-| Source code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                     |
+| Source Code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                     |
 | Scripts     | [https://github.com/neomutt/action-doxygen](https://github.com/neomutt/action-doxygen)       |
 | Docs Repo   | [https://github.com/neomutt/code](https://github.com/neomutt/code)                           |
 | Results     | [Code Docs](https://neomutt.org/code)                                                        |

@@ -35,6 +35,8 @@ The coverage tests don't cover the entire codebase, just eight core libraries:
  - [notmuch](https://neomutt.org/code/lib_notmuch.html) - Notmuch virtual mailbox
  - [store](https://neomutt.org/code/lib_store.html) - Key value store
 
+Learn how the [coverage tests are performed](../analysis/coverage.md)
+
 **Steps**:
 - Build Neomutt
 - Build Tests

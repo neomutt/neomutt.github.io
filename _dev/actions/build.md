@@ -25,6 +25,8 @@ the neomutt repo and all pull requests.
 The action performs three builds, with a variety of `configure` options, and a
 set of unit tests on some of the libraries.
 
+See, [How to build NeoMutt](https://neomutt.org/dev/build)
+
 **Steps**:
 - Build Neomutt
 - Build Tests

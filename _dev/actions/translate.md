@@ -25,6 +25,8 @@ This action updates the [Translation Leaderboard](https://neomutt.org/translate)
 every time a translator commits to the `translate` branch in the
 [neomutt repo](https://github.com/neomutt/neomutt).
 
+Learn more about [translations](../../translate)
+
 **Steps**:
 - Validate translations
 - Calculate statistics
@@ -48,7 +50,7 @@ every time a translator commits to the `translate` branch in the
 | :---------- | :------------------------------------------------------------------------------------------- |
 | Action      | [{{page.source}}]({{page.source}})                                                           |
 | Action Logs | [{{page.logs}}]({{page.logs}})                                                               |
-| Source code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                     |
+| Source Code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                     |
 | Scripts     | [https://github.com/neomutt/action-translate](https://github.com/neomutt/action-translate)   |
 | Website     | [https://github.com/neomutt/neomutt.github.io](https://github.com/neomutt/neomutt.github.io) |
 | Results     | [Translation Leaderboard](https://neomutt.org/translate)                                     |
