@@ -21,9 +21,13 @@ automatically.
 - Logically dead code
 - and much more
 
-To run the check, create a branch of the NeoMutt repo and use the
-[coverity `.travis.yml`](https://github.com/neomutt/management/blob/main/travis/coverity.yml)
-file.  The rest of the process is automated.
+To run the check, create a branch on the NeoMutt repo and visit the
+[Actions Page](https://github.com/neomutt/neomutt/actions/workflows/coverity.yml).
+
+- Select a branch using the "Run workflow" **dropdown**
+- Hit the "Run workflow" **button**
+
+The rest of the process is automated.
 
 The latest statistics on NeoMutt can be found here:
 
@@ -33,6 +37,6 @@ For security, the details of the defects are not made public.  If you wish to
 see the details, you must create an account (or login with GitHub) and click
 "Add me to project".
 
-- **See also**: [travis](travis)
+- **See also**: [asan](asan)
 - **See also**: [scan-build](scan-build)
 

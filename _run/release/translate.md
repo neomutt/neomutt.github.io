@@ -62,8 +62,6 @@ de:	1335 translated, 33 fuzzy, 36 untranslated
 
 Rebase the existing `translate` branch onto `main`.
 
-:spiral_notepad: **Note**: Delete the commit 'travis: add translate config'
-
 ```
 git rebase --interactive main
 ```

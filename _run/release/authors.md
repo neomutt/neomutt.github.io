@@ -37,7 +37,6 @@ In practice, only a handful are active, especially:
 - [neomutt.github.io](https://github.com/neomutt/neomutt.github.io)
 - [neomutt.vim](https://github.com/neomutt/neomutt.vim)
 - [neomutt](https://github.com/neomutt/neomutt)
-- [travis-build](https://github.com/neomutt/travis-build)
 
 Some repos (upstream, mirrors, etc) **should be ignored**:
 

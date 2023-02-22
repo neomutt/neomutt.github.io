@@ -53,18 +53,6 @@ git push --force --set-upstream origin release
   - Test install
   - Test uninstall
 
-## Running locally
-
-To run this script locally, you'll need to define a few functions.
-These are part of Travis' machinery.
-
-```sh
-function travis_fold() { echo -e "\\e[1;32m================================================================================\\e[0m"; }
-function travis_time_start() { :; }
-function travis_time_finish() { :; }
-export -f travis_fold travis_time_start travis_time_finish  
-```
-
 ## Extra tests
 
 - Tidy the source code (but not the header files)

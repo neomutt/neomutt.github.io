@@ -94,7 +94,7 @@ It may be given one of these tags:
 For issues concerning:
 
 - [![topic:automation](/images/labels/topic-automation.svg)](https://github.com/neomutt/neomutt/labels/topic:automation)
-  Automation / Travis
+  Automation / Continuous Integration
 - [![topic:autosetup](/images/labels/topic-autosetup.svg)](https://github.com/neomutt/neomutt/labels/topic:autosetup)
   Autosetup or TCL
 - [![topic:build-process](/images/labels/topic-build-process.svg)](https://github.com/neomutt/neomutt/labels/topic:build-process)

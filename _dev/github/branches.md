@@ -12,17 +12,15 @@ description: List of Branches in the NeoMutt Repo
 The [neomutt](https://github.com/neomutt/neomutt) repository has 9
 (semi-)permanent [branches](https://github.com/neomutt/neomutt/branches).
 
-| Branch    | Description                                                                                                                                                                          |
-| :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| main      | Main branch -- The Official NeoMutt                                                                                                                                                  |
-| coveralls | Extra files needs to generate test coverage, see [Coveralls](https://coveralls.io/github/neomutt/neomutt)                                                                            |
-| coverity  | Code sent to [Coverity](https://scan.coverity.com/projects/neomutt-neomutt) for testing. Coverity limits the weekly builds like Travis, so we have to do that in an external branch. |
-| doxygen   | Extra files needed to generate the [Doxygen Code Docs](/code/)                                                                                                                       |
-| fuzzer    | Fuzzing -- automating testing                                                                                                                                                        |
-| release   | Lots of build tests, performed before a release                                                                                                                                      |
-| translate | Work area for the translators.  This gets merged just before a release.                                                                                                              |
-| travis    | Code sent to [TravisCI](https://travis-ci.org/neomutt/neomutt) for testing. Travis performs over twenty builds with different options.                                               |
-| upstream  | Staging area for upstream commits                                                                                                                                                    |
+| Branch    | Description                                                                                               |
+| :-------- | :-------------------------------------------------------------------------------------------------------- |
+| main      | Main branch -- The Official NeoMutt                                                                       |
+| coveralls | Extra files needs to generate test coverage, see [Coveralls](https://coveralls.io/github/neomutt/neomutt) |
+| coverity  | Code sent to [Coverity](https://scan.coverity.com/projects/neomutt-neomutt) for testing.                  |
+| doxygen   | Extra files needed to generate the [Doxygen Code Docs](/code/)                                            |
+| fuzzer    | Fuzzing -- automating testing                                                                             |
+| release   | Lots of build tests, performed before a release                                                           |
+| translate | Work area for the translators.  This gets merged just before a release.                                   |
 
 In addition, there may be some temporary branches.
 

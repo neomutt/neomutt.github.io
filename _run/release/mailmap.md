@@ -23,7 +23,6 @@ We use it to show the preferred name, email address and GitHub username.
 - [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)
 - [https://github.com/neomutt/neomutt.github.io](https://github.com/neomutt/neomutt.github.io)
 - [https://github.com/neomutt/neomutt.vim](https://github.com/neomutt/neomutt.vim)
-- [https://github.com/neomutt/travis-build](https://github.com/neomutt/travis-build)
 
 ## File formats
 

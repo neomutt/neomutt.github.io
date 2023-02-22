@@ -29,7 +29,6 @@ After release, these distros need updating.
 
 - update Formula
 - push
-- check travis
 
 ## Gentoo
 

@@ -74,7 +74,7 @@ author: flatcap
 **Work:**
 
 - write code
-- push code (automatic Travis build)
+- push code (automatic build)
 - repeat
 
 ### When code is ready for public scrutiny...

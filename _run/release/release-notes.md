@@ -109,7 +109,6 @@ These may be of interest to developers:
 
 - **Build**
   - Autosetup
-  - Travis
 - **Source**
   - Refactoring
   - Coverity defects

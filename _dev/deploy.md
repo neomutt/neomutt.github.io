@@ -1,5 +1,5 @@
 ---
-title: Deployment using Travis
+title: Deployment using Actions
 description: Update the website when certain builds succeed
 ---
 

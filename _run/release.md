@@ -36,7 +36,6 @@ Check these repos for contributors to thank:
 - gentoo-neomutt
 - aur-build
 - homebrew-neomutt
-- travis-build
 
 Check translators for credits
 
@@ -94,8 +93,6 @@ Tests:
   - make validate-docs
   - make -C po
 - neomutt-test-configs.sh
-- push to travis
-  - check travis
 - push to coverity
   - review coverity results
   - fix coverity defects
@@ -136,7 +133,6 @@ MacOS -- Homebrew
 
 - update Formula
 - push
-- check travis
 
 Gentoo
 
@@ -207,7 +203,6 @@ Check notes, emails, etc. for promises
 release link new feature to web page
 
 release branch to queue up changes for the release commit
-  no .travis.yml (no building)
 
 ### Tasks
 

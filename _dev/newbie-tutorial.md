@@ -189,12 +189,6 @@ Alternatively, you could add a new feature to Mutt. There are many great Mutt
 patches that have been neglected. They need to be brought up-to-date and
 merged into Mutt.
 
-#### Required tools <a id="required-tools"></a>
-
-Usually, the
-[.travis.yml](https://github.com/neomutt/neomutt/blob/main/.travis.yml) files
-are a good starting point here.
-
 #### Coding style <a id="coding-style"></a>
 
 Over its twenty year life, Mutt has gathered 84,000 lines of code and a lot of
