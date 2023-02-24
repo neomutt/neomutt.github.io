@@ -16,10 +16,14 @@ will be given one of these tags:
 
 - [![type:bug](/images/labels/type-bug.svg)](https://github.com/neomutt/neomutt/labels/type:bug)
   Something broken
+- [![type:discuss](/images/labels/type-discuss.svg)](https://github.com/neomutt/neomutt/labels/type:discuss)
+  Your views/opinions are requested
 - [![type:enhancement](/images/labels/type-enhancement.svg)](https://github.com/neomutt/neomutt/labels/type:enhancement)
   An improvement of an existing feature
 - [![type:question](/images/labels/type-question.svg)](https://github.com/neomutt/neomutt/labels/type:question)
   A question about NeoMutt
+- [![type:tip](/images/labels/type-tip.svg)](https://github.com/neomutt/neomutt/labels/type:tip)
+  Useful/insightful tips to add to "Did You Know?" feature
 
 ### Help NeoMutt
 
@@ -30,9 +34,6 @@ Would you like to help NeoMutt?  Start here:
 
 - [![good-first-issue](/images/labels/good-first-issue.svg)](https://github.com/neomutt/neomutt/labels/good first issue)
   Suitable for a first-time contributor
-
-- [![hacktoberfest](/images/labels/hacktoberfest.svg)](https://github.com/neomutt/neomutt/labels/hacktoberfest)
-  NeoMutt welcomes new coders
 
 - [![mentor](/images/labels/mentor.svg)](https://github.com/neomutt/neomutt/labels/mentor)
   Help is available with this issue
@@ -45,6 +46,8 @@ It may be given one of these tags:
   A NeoMutt developer can repeat this issue (See this [mailinglist-post][mailinglist-post] for what that means)
 - [![bug:crash](/images/labels/bug-crash.svg)](https://github.com/neomutt/neomutt/labels/bug:crash)
   Bug causes NeoMutt to crash
+- [![bug:leak](/images/labels/bug-leak.svg)](https://github.com/neomutt/neomutt/labels/bug:leak)
+  Memory leak
 - [![bug:regression](/images/labels/bug-regression.svg)](https://github.com/neomutt/neomutt/labels/bug:regression)
   This problem has been fixed before (See this [mailinglist-post][mailinglist-post] for what that means)
 - [![bug:upstream](/images/labels/bug-upstream.svg)](https://github.com/neomutt/neomutt/labels/bug:upstream)
@@ -57,29 +60,12 @@ It may be given one of these tags:
 - [![docs:website](/images/labels/docs-website.svg)](https://github.com/neomutt/neomutt/labels/docs:website)
   Related to the Website
 
-- [![difficulty-easy](/images/labels/difficulty-easy.svg)](https://github.com/neomutt/neomutt/labels/difficulty:easy)
-  Suitable for a new NeoMutt developer
-- [![difficulty-hard](/images/labels/difficulty-hard.svg)](https://github.com/neomutt/neomutt/labels/difficulty:hard)
-  Hard task, postponed for now
-
-- [![needs:decision](/images/labels/needs-decision.svg)](https://github.com/neomutt/neomutt/labels/needs:decision)
-  A decision must be made before continuing
-- [![needs:info-from-user](/images/labels/needs-info-from-user.svg)](https://github.com/neomutt/neomutt/labels/needs:info-from-user)
-  The user needs to provide some more info
-
-### Specific to a distro
-
-- [![distro:arch](/images/labels/distro-arch.svg)](https://github.com/neomutt/neomutt/labels/distro:arch)
-  Arch Linux
-- [![distro:debian](/images/labels/distro-debian.svg)](https://github.com/neomutt/neomutt/labels/distro:debian)
-  Debian
-- [![distro:fedora](/images/labels/distro-fedora.svg)](https://github.com/neomutt/neomutt/labels/distro:fedora)
-  Fedora
-
 ### Issue has attachments
 
 - [![has:backtrace](/images/labels/has-backtrace.svg)](https://github.com/neomutt/neomutt/labels/has:backtrace)
   A backtrace/callstack
+- [![has:bisect](/images/labels/has-bisect.svg)](https://github.com/neomutt/neomutt/labels/has:bisect)
+  Git bisect performed
 - [![has:config](/images/labels/has-config.svg)](https://github.com/neomutt/neomutt/labels/has:config)
   Sample NeoMutt config
 - [![has:logs](/images/labels/has-logs.svg)](https://github.com/neomutt/neomutt/labels/has:logs)
@@ -107,10 +93,14 @@ For issues concerning:
   Configuration file
 - [![topic:design](/images/labels/topic-design.svg)](https://github.com/neomutt/neomutt/labels/topic:design)
   Design of NeoMutt
+- [![topic:hcache](/images/labels/topic-hcache.svg)](https://github.com/neomutt/neomutt/labels/topic:hcache)
+  Header cache
 - [![topic:imap](/images/labels/topic-imap.svg)](https://github.com/neomutt/neomutt/labels/topic:imap)
   IMAP
 - [![topic:lua-scripting](/images/labels/topic-lua-scripting.svg)](https://github.com/neomutt/neomutt/labels/topic:lua-scripting)
   Lua Scripting
+- [![topic:maildir](/images/labels/topic-maildir.svg)](https://github.com/neomutt/neomutt/labels/topic:maildir)
+  Maildir local mail
 - [![topic:notmuch](/images/labels/topic-notmuch.svg)](https://github.com/neomutt/neomutt/labels/topic:notmuch)
   Notmuch search engine
 - [![topic:project-management](/images/labels/topic-project-management.svg)](https://github.com/neomutt/neomutt/labels/topic:project-management)
@@ -123,34 +113,10 @@ For issues concerning:
   Stabilty
 - [![topic:testing](/images/labels/topic-testing.svg)](https://github.com/neomutt/neomutt/labels/topic:testing)
   Testing of NeoMutt
+- [![topic:upstream](/images/labels/topic-upstream.svg)](https://github.com/neomutt/neomutt/labels/topic:upstream)
+  Concerns upstream Mutt
 - [![topic:translation](/images/labels/topic-translation.svg)](https://github.com/neomutt/neomutt/labels/topic:translation)
   Translation into other languages
-
-### Status
-
-- [![status:discuss](/images/labels/status-discuss.svg)](https://github.com/neomutt/neomutt/labels/status:discuss)
-  Your views/opinions are requested
-- [![status:in-progress](/images/labels/status-in-progress.svg)](https://github.com/neomutt/neomutt/labels/status:in-progress)
-  Work has started on this issue
-- [![status:new-bug](/images/labels/status-new-bug.svg)](https://github.com/neomutt/neomutt/labels/status:new-bug)
-  New, possibly unconfirmed, bug
-- [![status:ready](/images/labels/status-ready.svg)](https://github.com/neomutt/neomutt/labels/status:ready)
-  Work is ready for review
-- [![status:blocked](/images/labels/status-blocked.svg)](https://github.com/neomutt/neomutt/labels/status:blocked)
-  Waiting for another issue to be solved first
-
-### Closing the issue
-
-It will probably be closed with one of these tags:
-
-- [![closed:duplicate](/images/labels/closed-duplicate.svg)](https://github.com/neomutt/neomutt/labels/closed:duplicate)
-  A report already exists for this issue
-- [![closed:fixed](/images/labels/closed-fixed.svg)](https://github.com/neomutt/neomutt/labels/closed:fixed)
-  The bug has been fixed
-- [![closed:not-a-bug](/images/labels/closed-not-a-bug.svg)](https://github.com/neomutt/neomutt/labels/closed:not-a-bug)
-  This is the intended behaviour
-- [![closed:wontfix](/images/labels/closed-wontfix.svg)](https://github.com/neomutt/neomutt/labels/closed:wontfix)
-  This issue will not be fixed
 
 [mailinglist-post]: http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-April/000371.html
 

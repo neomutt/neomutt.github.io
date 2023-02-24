@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="18">
   <g fill="#ffffff" font-family="sans-serif" font-size="11">
-    <rect width="160" height="18" rx="4" fill="#b0581d">
-      <title>NeoMutt welcomes new coders</title>
+    <rect width="160" height="18" rx="4" fill="#fc2929">
+      <title>XXX</title>
     </rect>
-    <text x="10" y="13">hacktoberfest</text>
+    <text x="10" y="13">bug:leak</text>
   </g>
 </svg>
