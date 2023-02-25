@@ -77,11 +77,11 @@ Name of the Item to a registered Type and a global Variable.
 Here are some examples:
 
 ```c
-// Name            Type|Flags                 Variable         Initial,   Data,        Validator
-{ "timeout",       DT_NUMBER|DT_NOT_NEGATIVE, &C_Timeout,      600,       0,           NULL,
-{ "move",          DT_QUAD,                   &C_Move,         MUTT_NO,   0,           NULL,
-{ "print_command", DT_STRING|DT_COMMAND,      &C_PrintCommand, "lpr",     0,           NULL,
-{ "sort",          DT_SORT|DT_SORT_REVERSE,   &C_Sort,         SORT_DATE, SortMethods, pager_validator,
+// Name            Type|Flags                 Initial,   Data,        Validator
+{ "timeout",       DT_NUMBER|DT_NOT_NEGATIVE, 600,       0,           NULL,
+{ "move",          DT_QUAD,                   MUTT_NO,   0,           NULL,
+{ "print_command", DT_STRING|DT_COMMAND,      "lpr",     0,           NULL,
+{ "sort",          DT_SORT|DT_SORT_REVERSE,   SORT_DATE, SortMethods, pager_validator,
 ```
 
 ### Notifications
@@ -163,8 +163,6 @@ The 'foo' module registers its variable:
 // Name           Type|Flags  Initial,           Data, Validator, Docs
 { "home_address", DT_ADDRESS, "jim@example.com", NULL, NULL,      "Home address" },
 ```
-
-NeoMutt will set the `C_HomeAddr` Variable.
 
 - 'home_address' has type `DT_ADDRESS`
 - Lookup 'DT_ADDRESS' in the Type definitions
