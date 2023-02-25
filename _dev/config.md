@@ -27,7 +27,8 @@ First we create a ConfigSet and register some Types.
 Each Type is responsible for one data type.
 Each Type has:
 
-| name            | Human-readable name                                   |
+| Name            | Human-readable name                                   |
+| :-------------- | :---------------------------------------------------- |
 | setter/getter   | Set/get the variable as a string                      |
 | nsetter/ngetter | Setter/getter as a native type, e.g. `struct Address` |
 | resetter        | Reset variable to factory settings                    |
@@ -100,17 +101,17 @@ NeoMutt defines the Number Type: DT_NUMBER which is backed by a short int.
 The 'foo' module registers its variable:
 
 ```c
-// Name             Type|Flags Variable   Initial, Data, Validator,         Docs
-{ "foo_percentage", DT_NUMBER, &C_FooPct, 42,      0,    foo_pct_validator, "Amount of foo" },
+// Name             Type|Flags Initial, Data, Validator,         Docs
+{ "foo_percentage", DT_NUMBER, 42,      0,    foo_pct_validator, "Amount of foo" },
 ```
 
-NeoMutt will set the `C_FooPct` Variable (explanation below).
+NeoMutt will set the value of the Variable (explanation below).
 Note: The initial value is Type-specific.
 
 and an observer:
 
 ```c
-bool foo_config_event(ConfigSet *cs, HashElem *he, char *name, ConfigEvent ev);
+int foo_config_observer(struct NotifyCallback *nc);
 ```
 
 Now we read the config file:
@@ -148,7 +149,7 @@ If it's not, it returns false and an error message.
 If the validator succeeds, then the Variable is set to the new value.
 Finally, the ConfigSet sends out a notification to all the Observers.
 
-- `foo_config_event()` is called
+- `foo_config_observer()` is called
 
 ### Part 2 - Address
 
@@ -159,8 +160,8 @@ NeoMutt defines the Address Type: `DT_ADDRESS` which is backed by a `struct Addr
 The 'foo' module registers its variable:
 
 ```c
-// Name           Type|Flags  Variable     Initial,           Data, Validator, Docs
-{ "home_address", DT_ADDRESS, &C_HomeAddr, "jim@example.com", NULL, NULL,      "Home address" },
+// Name           Type|Flags  Initial,           Data, Validator, Docs
+{ "home_address", DT_ADDRESS, "jim@example.com", NULL, NULL,      "Home address" },
 ```
 
 NeoMutt will set the `C_HomeAddr` Variable.
@@ -177,8 +178,8 @@ Address Type:
     - Email address
 
 On success:
-- Free the old value of `C_HomeAddr`
-- Store the new value into `C_HomeAddr`
+- Free the old value, stored internally
+- Store the new value
 - Notify the Observers
 
 On failure:
@@ -192,18 +193,14 @@ This variable doesn't have a validator function.
 Some Types will allow an empty value to be set.
 By default, NeoMutt stores empty strings as NULL.
 
-Setting an Address Type to an empty string will release the old address and
-set `C_HomeAddr` to NULL.
+Setting an Address Type to an empty string will release the old address.
 
 ## Config Scope
 
-### Global Config
+### Main Config
 
-There are ~450 Config Names in NeoMutt.  Half of these are defined in
-[`mutt_config.c`](https://github.com/neomutt/neomutt/blob/main/mutt_config.c#L192).
-
-Each Config Item is backed by a global Variable, many of which live in
-[`mutt_globals.h`](https://github.com/neomutt/neomutt/blob/main/mutt_globals.h#L98)
+There are ~460 Config Names in NeoMutt.  A third of these are defined in
+[`mutt_config.c`](https://github.com/neomutt/neomutt/blob/main/mutt_config.c#L144).
 
 ### Library Config
 
@@ -212,28 +209,25 @@ The rest of the Config Items have been moved into libraries.
 This allows the libraries to reduce the scope of their Config Variables.
 
 For example, the Sidebar
-[registers](https://github.com/neomutt/neomutt/blob/main/sidebar/config.c#L124) its
-[Config Items](https://github.com/neomutt/neomutt/blob/main/sidebar/config.c#L71)
+[registers](https://github.com/neomutt/neomutt/blob/main/sidebar/config.c#L107) its
+[Config Items](https://github.com/neomutt/neomutt/blob/main/sidebar/config.c#L54)
 in `sidebar/config.c`
 
 ```c
-// Name                    Type|Flags Variable                Initial, Data, Validator,
-{ "sidebar_delim_chars",   DT_STRING, &C_SidebarDelimChars,   "/.",    0,    NULL,
-{ "sidebar_divider_char",  DT_STRING, &C_SidebarDividerChar,  0,       0,    NULL,
-{ "sidebar_folder_indent", DT_BOOL,   &C_SidebarFolderIndent, false,   0,    NULL,
+// Name                    Type|Flags Initial, Data, Validator,
+{ "sidebar_delim_chars",   DT_STRING, "/.",    0,    NULL,
+{ "sidebar_divider_char",  DT_STRING, 0,       0,    NULL,
+{ "sidebar_folder_indent", DT_BOOL,   false,   0,    NULL,
 ```
 
-## Config Elimination
+## Global Config
 
-NeoMutt still has a lot of global variables.
-
-Most of the Config Variables are backed by globals.
+The Config Variables are still global -- there's only one value for each variable.
 This is why when you switch Accounts you need to use `account-` and `folder-hook`s to set variables.
 
 ### Config System
 
-The Config System support inheritance which will allow us to create Account- and Mailbox-specific config.
-To use this facility means eliminating all of the `C_*` global variables.
+The Config System supports inheritance which will allow us to create Account- and Mailbox-specific config.
 
 This leads to my favourite diagram at the top of this page.
 Understanding this will lead to Enlightenment :-)
@@ -246,9 +240,8 @@ Over time, this will be changed to `Account->sub` when Account-specific config i
 
 For dialogs, the `ConfigSubset` should be passed in as a parameter.
 
-### Conversion
+### Reading the Config
 
-To upgrade the code, replace each `C_*` global variable with a Config System lookup.
 There's a helper function for each config type.
 These are strictly type-checked and will `assert()` on failure.
 
@@ -257,7 +250,9 @@ Here's an example of each function.
 ```c
 const struct Address  *c_envelope_from_address = cs_subset_address(sub, "envelope_from_address");
 const bool             c_fast_reply            = cs_subset_bool   (sub, "fast_reply");
+const unsigned char    c_use_threads           = cs_subset_enum   (sub, "use_threads");
 const long             c_imap_fetch_chunk_size = cs_subset_long   (sub, "imap_fetch_chunk_size");
+const struct MbTable  *c_from_chars            = cs_subset_mbtable(sub, "from_chars");
 const short            c_connect_timeout       = cs_subset_number (sub, "connect_timeout");
 const char            *c_debug_file            = cs_subset_path   (sub, "debug_file");
 const enum QuadOption  c_fcc_attach            = cs_subset_quad   (sub, "fcc_attach");
@@ -269,17 +264,3 @@ const char            *c_pattern_format        = cs_subset_string (sub, "pattern
 
 Each variable is named to match the Config Variable and is **const** to discourage the coder from changing it (which would have no effect on the actual config).
 
-## Elimination
-
-Once all the `C_*` variable uses have been eliminated from a library, the Config
-Definitions can be updated.
-
-- Delete the `C_*` config definitions
-- Delete the `C_*` config prototypes
-- Replace `C_*` with `NULL` in the Config Definition
-- Flag the Config with `DT_NO_VARIABLE` in the call to `cs_register_variables()`
-
-For example commits, see:
-
-- [4e434fe556 send: get Config from a ConfigSubset](https://github.com/neomutt/neomutt/commit/4e434fe5564430ad23d00eb7886f8b5283eefd4c)
-- [47a7ab79af send: no variable](https://github.com/neomutt/neomutt/commit/47a7ab79af5b3e2755c0e75dda168664bf835135)
