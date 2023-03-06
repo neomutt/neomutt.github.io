@@ -56,18 +56,77 @@ ifndef symbol "config-command [args...]"
 finish
 <span class="comment"># Finish reading the current file</span>
 </pre>
-    <p>Here a symbol can be a
-    <a class="link" href="/guide/reference.html#variables" title="3.&#160;Configuration Variables">$variable</a>, environment variable,
-    <a class="link" href="/guide/reference.html#functions" title="4.&#160;Functions">&lt;function&gt;</a>,
-    <a class="link" href="/guide/reference.html#commands" title="2.&#160;Configuration Commands">command</a> or compile-time symbol, such as
-    <span class="quote">“<span class="quote">imap</span>”</span>.</p>
+    <div >
+      <a id="symbols"></a>
+      <p class="title">
+        <strong>Table&#160;17.1.&#160;ifdef Symbols</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="ifdef Symbols" border="1">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Example Symbol</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">sidebar_format</code>
+              </td>
+              <td>Config variable</td>
+            </tr>
+            <tr>
+              <td>
+              <code class="literal">status-color</code>,
+              <code class="literal">imap</code></td>
+              <td>Compiled-in feature</td>
+            </tr>
+            <tr>
+              <td>
+              <code class="literal">pgp-menu</code>,
+              <code class="literal">group-related</code></td>
+              <td>Function</td>
+            </tr>
+            <tr>
+              <td>
+              <code class="literal">index-format-hook</code>,
+              <code class="literal">tag-transforms</code></td>
+              <td>Command</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">my_var</code>
+              </td>
+              <td>My variable</td>
+            </tr>
+            <tr>
+              <td>
+              <code class="literal">lmdb</code>,
+              <code class="literal">tokyocabinet</code></td>
+              <td>Store (database)</td>
+            </tr>
+            <tr>
+              <td>
+              <code class="literal">HOME</code>,
+              <code class="literal">COLUMNS</code></td>
+              <td>Environment variable</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
     <p>A list of compile-time symbols can be seen in the output of the command</p>
     <pre class="screen">
 neomutt -v
 </pre>
     <p>(in the
-    <span class="quote">“
-    <span class="quote">Compile options</span>”</span> section).</p>
+    <span class="quote">“<span class="quote">Compile options</span>”</span> section).</p>
     <p>
     <code class="literal">finish</code> is particularly useful when combined with
     <code class="literal">ifndef</code>. e.g.</p>

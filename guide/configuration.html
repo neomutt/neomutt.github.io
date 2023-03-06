@@ -206,8 +206,8 @@ title: Configuration
       <a class="link" href="reference.html#mailcap-path" title="3.213.&#160;mailcap_path">$mailcap_path</a>,
       <a class="link" href="reference.html#news-server" title="3.253.&#160;news_server">$news_server</a>,
       <a class="link" href="reference.html#shell" title="3.408.&#160;shell">shell</a>,
-      <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a>,
-      <a class="link" href="reference.html#tmp-dir" title="3.503.&#160;tmp_dir">$tmp_dir</a>,</p>
+      <a class="link" href="reference.html#spool-file" title="3.474.&#160;spool_file">$spool_file</a>,
+      <a class="link" href="reference.html#tmp-dir" title="3.504.&#160;tmp_dir">$tmp_dir</a>,</p>
       <p>Finally, it's possible to
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">set some variables directly</a> on the command-line using the
       <code class="literal">-e</code> option.</p>
@@ -440,21 +440,21 @@ set record=+sent_on_$HOSTNAME
     <p>The commands understood by NeoMutt are explained in the next paragraphs. For a complete list, see the
     <a class="link" href="reference.html#commands" title="2.&#160;Configuration Commands">command reference</a>.</p>
     <p>All configuration files are expected to be in the current locale as specified by the
-    <a class="link" href="reference.html#charset" title="3.50.&#160;charset">$charset</a> variable which doesn't have a default value since it's determined by NeoMutt at startup. If a configuration file is not encoded in the same character set the
-    <a class="link" href="reference.html#config-charset" title="3.58.&#160;config_charset">$config_charset</a> variable should be used: all lines starting with the next are recoded from
-    <a class="link" href="reference.html#config-charset" title="3.58.&#160;config_charset">$config_charset</a> to
-    <a class="link" href="reference.html#charset" title="3.50.&#160;charset">$charset</a>.</p>
+    <a class="link" href="reference.html#charset" title="3.51.&#160;charset">$charset</a> variable which doesn't have a default value since it's determined by NeoMutt at startup. If a configuration file is not encoded in the same character set the
+    <a class="link" href="reference.html#config-charset" title="3.59.&#160;config_charset">$config_charset</a> variable should be used: all lines starting with the next are recoded from
+    <a class="link" href="reference.html#config-charset" title="3.59.&#160;config_charset">$config_charset</a> to
+    <a class="link" href="reference.html#charset" title="3.51.&#160;charset">$charset</a>.</p>
     <p>This mechanism should be avoided if possible as it has the following implications:</p>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>These variables should be set early in a configuration file with
-          <a class="link" href="reference.html#charset" title="3.50.&#160;charset">$charset</a> preceding
-          <a class="link" href="reference.html#config-charset" title="3.58.&#160;config_charset">$config_charset</a> so NeoMutt knows what character set to convert to.</p>
+          <a class="link" href="reference.html#charset" title="3.51.&#160;charset">$charset</a> preceding
+          <a class="link" href="reference.html#config-charset" title="3.59.&#160;config_charset">$config_charset</a> so NeoMutt knows what character set to convert to.</p>
         </li>
         <li class="listitem">
           <p>If
-          <a class="link" href="reference.html#config-charset" title="3.58.&#160;config_charset">$config_charset</a> is set, it should be set in each configuration file because the value is global and
+          <a class="link" href="reference.html#config-charset" title="3.59.&#160;config_charset">$config_charset</a> is set, it should be set in each configuration file because the value is global and
           <span class="emphasis">
             <em>not</em>
           </span>per configuration file.</p>
@@ -484,11 +484,11 @@ set record=+sent_on_$HOSTNAME
       </em>...] {
       <code class="option">-rx</code>
       <em class="replaceable">
-        <code>expr</code>
+        <code>regex</code>
       </em>... |
       <code class="option">-addr</code>
       <em class="replaceable">
-        <code>expr</code>
+        <code>address</code>
       </em>... }
       <br />
       <code class="command">ungroup</code>[
@@ -501,14 +501,14 @@ set record=+sent_on_$HOSTNAME
       </em>|
       <code class="option">-rx</code>
       <em class="replaceable">
-        <code>expr</code>
+        <code>regex</code>
       </em>... |
       <code class="option">-addr</code>
       <em class="replaceable">
-        <code>expr</code>
+        <code>address</code>
       </em>... }</p>
     </div>
-    <p>NeoMutt supports grouping addresses logically into named groups. An address or address pattern can appear in several groups at the same time. These groups can be used in
+    <p>NeoMutt supports grouping addresses logically into named groups. An address or regular expression can appear in several groups at the same time. These groups can be used in
     <a class="link" href="advancedusage.html#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a>(for searching, limiting and tagging) and in hooks by using group patterns. This can be useful to classify mail and take certain actions depending on in what groups the message is. For example, the NeoMutt user's mailing list would fit into the categories
     <span class="quote">“<span class="quote">mailing list</span>”</span> and
     <span class="quote">“<span class="quote">NeoMutt-related</span>”</span>. Using
@@ -552,7 +552,7 @@ alternates -group me address1 address2
 alternates -group me -group work address3
 </pre>
     <p>would create a group named
-    <span class="quote">“<span class="quote">me</span>”</span> which contains all your addresses and a group named
+    <span class="quote">“<span class="quote">me</span>”</span> which contains all three addresses and a group named
     <span class="quote">“<span class="quote">work</span>”</span> which contains only your work address
     <span class="emphasis">
       <em>address3</em>
@@ -564,7 +564,10 @@ alternates -group me -group work address3
     <span class="command">
       <strong>group</strong>
     </span>command, however the special character
-    <code class="literal">*</code>can be used to empty a group of all of its contents. As soon as a group gets empty because all addresses and regular expressions have been removed, it'll internally be removed, too (i.e. there cannot be an empty group). When removing regular expressions from a group, the pattern must be specified exactly as given to the
+    <code class="literal">*</code>can be used to empty a group of all of its contents. As soon as a group gets empty because all addresses and regular expressions have been removed, it'll internally be removed, too (i.e. there cannot be an empty group). When removing regular expressions from a group, the
+    <span class="emphasis">
+      <em>regex</em>
+    </span>must be specified exactly as given to the
     <span class="command">
       <strong>group</strong>
     </span>command or
@@ -702,7 +705,7 @@ set alias_file=~/.mail_aliases
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="bind"></a>6.&#160;Changing the Default Key Bindings</h2>
+          <a id="key-bindings"></a>6.&#160;Changing the Default Key Bindings</h2>
         </div>
       </div>
     </div>
@@ -729,316 +732,641 @@ set alias_file=~/.mail_aliases
       </em>|
       <em class="replaceable">
         <code>map</code>
-      </em>| [
+      </em>[
       <em class="replaceable">
         <code>,map</code>
-      </em>...]} [
+      </em>...] } [
       <em class="replaceable">
         <code>key</code>
       </em>]</p>
     </div>
     <p>This command allows you to change the default key bindings (operation invoked when pressing a key).</p>
-    <p>
-    <span class="emphasis">
-      <em>map</em>
-    </span>specifies in which menu the binding belongs. Multiple maps may be specified by separating them with commas (no additional whitespace is allowed). The currently defined maps are:</p>
-    <div class="note">
-      <h3 class="title">Note</h3>
-      <p>Missing key sequence in unbind command means unibind all bindings in menus given in
-      <span class="emphasis">
-        <em>map</em>
-      </span>.</p>
-    </div>
-    <a id="maps"></a>
-    <div class="variablelist">
-      <dl class="variablelist">
-        <dt>
-          <span class="term">generic</span>
-        </dt>
-        <dd>
-          <p>This is not a real menu, but is used as a fallback for all of the other menus except for the pager and editor modes. If a key is not defined in another menu, NeoMutt will look for a binding to use in this menu. This allows you to bind a key to a certain function in multiple menus instead of having multiple
-          <span class="command">
-            <strong>bind</strong>
-          </span>statements to accomplish the same task.</p>
-        </dd>
-        <dt>
-          <span class="term">alias</span>
-        </dt>
-        <dd>
-          <p>The alias menu is the list of your personal aliases as defined in your
-          <code class="literal">.neomuttrc</code>. It is the mapping from a short alias name to the full email address(es) of the recipient(s).</p>
-        </dd>
-        <dt>
-          <span class="term">attach</span>
-        </dt>
-        <dd>
-          <p>The attachment menu is used to access the attachments on received messages.</p>
-        </dd>
-        <dt>
-          <span class="term">browser</span>
-        </dt>
-        <dd>
-          <p>The browser is used for both browsing the local directory structure, and for listing all of your incoming mailboxes.</p>
-        </dd>
-        <dt>
-          <span class="term">editor</span>
-        </dt>
-        <dd>
-          <p>The editor is used to allow the user to enter a single line of text, such as the
-          <span class="emphasis">
-            <em>To</em>
-          </span>or
-          <span class="emphasis">
-            <em>Subject</em>
-          </span>prompts in the
-          <code class="literal">compose</code> menu.</p>
-        </dd>
-        <dt>
-          <span class="term">index</span>
-        </dt>
-        <dd>
-          <p>The index is the list of messages contained in a mailbox.</p>
-        </dd>
-        <dt>
-          <span class="term">compose</span>
-        </dt>
-        <dd>
-          <p>The compose menu is the screen used when sending a new message.</p>
-        </dd>
-        <dt>
-          <span class="term">pager</span>
-        </dt>
-        <dd>
-          <p>The pager is the mode used to display message/attachment data, and help listings.</p>
-        </dd>
-        <dt>
-          <span class="term">pgp</span>
-        </dt>
-        <dd>
-          <p>The pgp menu is used to select the OpenPGP keys used to encrypt outgoing messages.</p>
-        </dd>
-        <dt>
-          <span class="term">smime</span>
-        </dt>
-        <dd>
-          <p>The smime menu is used to select the OpenSSL certificates used to encrypt outgoing messages.</p>
-        </dd>
-        <dt>
-          <span class="term">postpone</span>
-        </dt>
-        <dd>
-          <p>The postpone menu is similar to the index menu, except is used when recalling a message the user was composing, but saved until later.</p>
-        </dd>
-        <dt>
-          <span class="term">query</span>
-        </dt>
-        <dd>
-          <p>The query menu is the browser for results returned by
-          <a class="link" href="reference.html#query-command" title="3.368.&#160;query_command">$query_command</a>.</p>
-        </dd>
-        <dt>
-          <span class="term">mix</span>
-        </dt>
-        <dd>
-          <p>The mixmaster screen is used to select remailer options for outgoing messages (if NeoMutt is compiled with Mixmaster support).</p>
-        </dd>
-      </dl>
-    </div>
-    <p>
-    <span class="emphasis">
-      <em>key</em>
-    </span>is the key (or key sequence) you wish to bind. To specify a control character, use the sequence
-    <span class="emphasis">
-      <em>\Cx</em>
-    </span>, where
-    <span class="emphasis">
-      <em>x</em>
-    </span>is the letter of the control character (for example, to specify control-A use
-    <span class="quote">“<span class="quote">\Ca</span>”</span>). Note that the case of
-    <span class="emphasis">
-      <em>x</em>
-    </span>as well as
-    <span class="emphasis">
-      <em>\C</em>
-    </span>is ignored, so that
-    <span class="emphasis">
-      <em>\CA</em>
-    </span>,
-    <span class="emphasis">
-      <em>\Ca</em>
-    </span>,
-    <span class="emphasis">
-      <em>\cA</em>
-    </span>and
-    <span class="emphasis">
-      <em>\ca</em>
-    </span>are all equivalent. An alternative form is to specify the key as a three digit octal number prefixed with a
-    <span class="quote">“<span class="quote">\</span>”</span>(for example
-    <span class="emphasis">
-      <em>\177</em>
-    </span>is equivalent to
-    <span class="emphasis">
-      <em>\c?</em>
-    </span>). In addition,
-    <span class="emphasis">
-      <em>key</em>
-    </span>may be a symbolic name as shown in
-    <a class="xref" href="#tab-key-names" title="Table&#160;3.5.&#160;Symbolic key names">Table&#160;3.5, “Symbolic key names”</a>.</p>
-    <div >
-      <a id="tab-key-names"></a>
-      <p class="title">
-        <strong>Table&#160;3.5.&#160;Symbolic key names</strong>
-      </p>
-      <div class="table-contents">
-        <table summary="Symbolic key names" border="1">
-          <colgroup>
-            <col />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Symbolic name</th>
-              <th>Meaning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>\t</td>
-              <td>tab</td>
-            </tr>
-            <tr>
-              <td>&lt;tab&gt;</td>
-              <td>tab</td>
-            </tr>
-            <tr>
-              <td>&lt;backtab&gt;</td>
-              <td>backtab / shift-tab</td>
-            </tr>
-            <tr>
-              <td>\r</td>
-              <td>carriage return</td>
-            </tr>
-            <tr>
-              <td>\n</td>
-              <td>newline</td>
-            </tr>
-            <tr>
-              <td>\e</td>
-              <td>escape/alt</td>
-            </tr>
-            <tr>
-              <td>&lt;esc&gt;</td>
-              <td>escape/alt</td>
-            </tr>
-            <tr>
-              <td>&lt;up&gt;</td>
-              <td>up arrow</td>
-            </tr>
-            <tr>
-              <td>&lt;down&gt;</td>
-              <td>down arrow</td>
-            </tr>
-            <tr>
-              <td>&lt;left&gt;</td>
-              <td>left arrow</td>
-            </tr>
-            <tr>
-              <td>&lt;right&gt;</td>
-              <td>right arrow</td>
-            </tr>
-            <tr>
-              <td>&lt;pageup&gt;</td>
-              <td>Page Up</td>
-            </tr>
-            <tr>
-              <td>&lt;pagedown&gt;</td>
-              <td>Page Down</td>
-            </tr>
-            <tr>
-              <td>&lt;backspace&gt;</td>
-              <td>Backspace</td>
-            </tr>
-            <tr>
-              <td>&lt;delete&gt;</td>
-              <td>Delete</td>
-            </tr>
-            <tr>
-              <td>&lt;insert&gt;</td>
-              <td>Insert</td>
-            </tr>
-            <tr>
-              <td>&lt;enter&gt;</td>
-              <td>Enter</td>
-            </tr>
-            <tr>
-              <td>&lt;return&gt;</td>
-              <td>Return</td>
-            </tr>
-            <tr>
-              <td>&lt;keypadenter&gt;</td>
-              <td>Enter key on numeric keypad</td>
-            </tr>
-            <tr>
-              <td>&lt;home&gt;</td>
-              <td>Home</td>
-            </tr>
-            <tr>
-              <td>&lt;end&gt;</td>
-              <td>End</td>
-            </tr>
-            <tr>
-              <td>&lt;space&gt;</td>
-              <td>Space bar</td>
-            </tr>
-            <tr>
-              <td>&lt;f1&gt;</td>
-              <td>function key 1</td>
-            </tr>
-            <tr>
-              <td>&lt;f10&gt;</td>
-              <td>function key 10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <br class="table-break" />
-    <p>The
-    <code class="literal">&lt;what-key&gt;</code>function can be used to explore keycode and symbolic names for other keys on your keyboard. Executing this function will display information about each key pressed, until terminated by
-    <code class="literal">^G</code>.</p>
-    <p>
-    <span class="emphasis">
-      <em>key</em>
-    </span>does not need to be enclosed in quotes unless it contains a space (
-    <span class="quote">“<span class="quote">&#160;</span>”</span>) or semi-colon (
-    <span class="quote">“<span class="quote">;</span>”</span>).</p>
-    <p>
-    <span class="emphasis">
-      <em>function</em>
-    </span>specifies which action to take when
-    <span class="emphasis">
-      <em>key</em>
-    </span>is pressed. For a complete list of functions, see the
-    <a class="link" href="reference.html#functions" title="4.&#160;Functions">reference</a>. Note that the
-    <span class="command">
-      <strong>bind</strong>
-    </span>expects
-    <span class="emphasis">
-      <em>function</em>
-    </span>to be specified without angle brackets.</p>
-    <p>The special function
-    <code class="literal">&lt;noop&gt;</code>unbinds the specified key sequence.</p>
     <div class="sect2">
       <div class="titlepage">
         <div>
           <div>
             <h3 class="title">
-            <a id="crlf"></a>6.1.&#160;Enter versus Return</h3>
+            <a id="bind"></a>6.1.&#160;Binding a Key Sequence to a Function</h3>
+          </div>
+        </div>
+      </div>
+      <p>The
+      <code class="literal">bind</code> command allows to assign a new effect to a key (e.g.
+      <code class="literal">a</code>) or a keysequence (e.g.
+      <code class="literal">gh</code>– that is pressing
+      <code class="literal">g</code> followed by a press of
+      <code class="literal">h</code>). Its syntax is:</p>
+      <div class="cmdsynopsis">
+        <p>
+        <code class="command">bind</code>
+        <em class="replaceable">
+          <code>map</code>
+        </em>[
+        <em class="replaceable">
+          <code>,map</code>
+        </em>...]
+        <em class="replaceable">
+          <code>key</code>
+        </em>
+        <em class="replaceable">
+          <code>function</code>
+        </em></p>
+      </div>
+      <p>
+      <span class="emphasis">
+        <em>map</em>
+      </span>specifies in which menu the binding belongs. Multiple maps may be specified by separating them with commas (no additional whitespace is allowed). The currently defined maps are:</p>
+      <a id="maps"></a>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">generic</span>
+          </dt>
+          <dd>
+            <p>This is not a real menu, but is used as a fallback for all of the other menus except for the pager and editor modes. If a key is not defined in another menu, NeoMutt will look for a binding to use in this menu. This allows you to bind a key to a certain function in multiple menus instead of having multiple
+            <span class="command">
+              <strong>bind</strong>
+            </span>statements to accomplish the same task.</p>
+          </dd>
+          <dt>
+            <span class="term">alias</span>
+          </dt>
+          <dd>
+            <p>The alias menu is the list of your personal aliases as defined in your
+            <code class="literal">.neomuttrc</code>. It is the mapping from a short alias name to the full email address(es) of the recipient(s).</p>
+          </dd>
+          <dt>
+            <span class="term">attach</span>
+          </dt>
+          <dd>
+            <p>The attachment menu is used to access the attachments on received messages.</p>
+          </dd>
+          <dt>
+            <span class="term">browser</span>
+          </dt>
+          <dd>
+            <p>The browser is used for both browsing the local directory structure, and for listing all of your incoming mailboxes.</p>
+          </dd>
+          <dt>
+            <span class="term">editor</span>
+          </dt>
+          <dd>
+            <p>The editor is used to allow the user to enter a single line of text, such as the
+            <span class="emphasis">
+              <em>To</em>
+            </span>or
+            <span class="emphasis">
+              <em>Subject</em>
+            </span>prompts in the
+            <code class="literal">compose</code> menu.</p>
+          </dd>
+          <dt>
+            <span class="term">index</span>
+          </dt>
+          <dd>
+            <p>The index is the list of messages contained in a mailbox.</p>
+          </dd>
+          <dt>
+            <span class="term">compose</span>
+          </dt>
+          <dd>
+            <p>The compose menu is the screen used when sending a new message.</p>
+          </dd>
+          <dt>
+            <span class="term">pager</span>
+          </dt>
+          <dd>
+            <p>The pager is the mode used to display message/attachment data, and help listings.</p>
+          </dd>
+          <dt>
+            <span class="term">pgp</span>
+          </dt>
+          <dd>
+            <p>The pgp menu is used to select the OpenPGP keys used to encrypt outgoing messages.</p>
+          </dd>
+          <dt>
+            <span class="term">smime</span>
+          </dt>
+          <dd>
+            <p>The smime menu is used to select the OpenSSL certificates used to encrypt outgoing messages.</p>
+          </dd>
+          <dt>
+            <span class="term">postpone</span>
+          </dt>
+          <dd>
+            <p>The postpone menu is similar to the index menu, except is used when recalling a message the user was composing, but saved until later.</p>
+          </dd>
+          <dt>
+            <span class="term">query</span>
+          </dt>
+          <dd>
+            <p>The query menu is the browser for results returned by
+            <a class="link" href="reference.html#query-command" title="3.368.&#160;query_command">$query_command</a>.</p>
+          </dd>
+          <dt>
+            <span class="term">mix</span>
+          </dt>
+          <dd>
+            <p>The mixmaster screen is used to select remailer options for outgoing messages (if NeoMutt is compiled with Mixmaster support).</p>
+          </dd>
+        </dl>
+      </div>
+      <p>
+      <span class="emphasis">
+        <em>key</em>
+      </span>is the key (or key sequence) you wish to bind. To specify a control character, use the sequence
+      <span class="emphasis">
+        <em>\Cx</em>
+      </span>, where
+      <span class="emphasis">
+        <em>x</em>
+      </span>is the letter of the control character (for example, to specify control-A use
+      <span class="quote">“
+      <span class="quote">\Ca</span>”</span>). Note that the case of
+      <span class="emphasis">
+        <em>x</em>
+      </span>as well as
+      <span class="emphasis">
+        <em>\C</em>
+      </span>is ignored, so that
+      <span class="emphasis">
+        <em>\CA</em>
+      </span>,
+      <span class="emphasis">
+        <em>\Ca</em>
+      </span>,
+      <span class="emphasis">
+        <em>\cA</em>
+      </span>and
+      <span class="emphasis">
+        <em>\ca</em>
+      </span>are all equivalent. An alternative form is to specify the key as a three digit octal number prefixed with a
+      <span class="quote">“
+      <span class="quote">\</span>”</span>(for example
+      <span class="emphasis">
+        <em>\177</em>
+      </span>is equivalent to
+      <span class="emphasis">
+        <em>\c?</em>
+      </span>). In addition,
+      <span class="emphasis">
+        <em>key</em>
+      </span>may be a symbolic name as shown in
+      <a class="xref" href="#tab-key-names" title="Table&#160;3.5.&#160;Symbolic key names">Table&#160;3.5, “Symbolic key names”</a>.</p>
+      <div >
+        <a id="tab-key-names"></a>
+        <p class="title">
+          <strong>Table&#160;3.5.&#160;Symbolic key names</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Symbolic key names" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Symbolic name</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\t</td>
+                <td>tab</td>
+              </tr>
+              <tr>
+                <td>&lt;tab&gt;</td>
+                <td>tab</td>
+              </tr>
+              <tr>
+                <td>&lt;backtab&gt;</td>
+                <td>backtab / shift-tab</td>
+              </tr>
+              <tr>
+                <td>\r</td>
+                <td>carriage return</td>
+              </tr>
+              <tr>
+                <td>\n</td>
+                <td>newline</td>
+              </tr>
+              <tr>
+                <td>\e</td>
+                <td>escape/alt</td>
+              </tr>
+              <tr>
+                <td>&lt;esc&gt;</td>
+                <td>escape/alt</td>
+              </tr>
+              <tr>
+                <td>&lt;up&gt;</td>
+                <td>up arrow</td>
+              </tr>
+              <tr>
+                <td>&lt;down&gt;</td>
+                <td>down arrow</td>
+              </tr>
+              <tr>
+                <td>&lt;left&gt;</td>
+                <td>left arrow</td>
+              </tr>
+              <tr>
+                <td>&lt;right&gt;</td>
+                <td>right arrow</td>
+              </tr>
+              <tr>
+                <td>&lt;pageup&gt;</td>
+                <td>Page Up</td>
+              </tr>
+              <tr>
+                <td>&lt;pagedown&gt;</td>
+                <td>Page Down</td>
+              </tr>
+              <tr>
+                <td>&lt;backspace&gt;</td>
+                <td>Backspace</td>
+              </tr>
+              <tr>
+                <td>&lt;delete&gt;</td>
+                <td>Delete</td>
+              </tr>
+              <tr>
+                <td>&lt;insert&gt;</td>
+                <td>Insert</td>
+              </tr>
+              <tr>
+                <td>&lt;enter&gt;</td>
+                <td>Enter</td>
+              </tr>
+              <tr>
+                <td>&lt;return&gt;</td>
+                <td>Return</td>
+              </tr>
+              <tr>
+                <td>&lt;keypadenter&gt;</td>
+                <td>Enter key on numeric keypad</td>
+              </tr>
+              <tr>
+                <td>&lt;home&gt;</td>
+                <td>Home</td>
+              </tr>
+              <tr>
+                <td>&lt;end&gt;</td>
+                <td>End</td>
+              </tr>
+              <tr>
+                <td>&lt;space&gt;</td>
+                <td>Space bar</td>
+              </tr>
+              <tr>
+                <td>&lt;f1&gt;</td>
+                <td>function key 1</td>
+              </tr>
+              <tr>
+                <td>&lt;f10&gt;</td>
+                <td>function key 10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <p>The
+      <code class="literal">&lt;what-key&gt;</code>function can be used to explore keycode and symbolic names for other keys on your keyboard. Executing this function will display information about each key pressed, until terminated by
+      <code class="literal">^G</code>.</p>
+      <p>
+      <span class="emphasis">
+        <em>key</em>
+      </span>does not need to be enclosed in quotes unless it contains a space (
+      <span class="quote">“
+      <span class="quote">&#160;</span>”</span>) or semi-colon (
+      <span class="quote">“
+      <span class="quote">;</span>”</span>).</p>
+      <p>
+      <span class="emphasis">
+        <em>function</em>
+      </span>specifies which action to take when
+      <span class="emphasis">
+        <em>key</em>
+      </span>is pressed. For a complete list of functions, see the
+      <a class="link" href="reference.html#functions" title="4.&#160;Functions">reference</a>. Note that the
+      <span class="command">
+        <strong>bind</strong>
+      </span>expects
+      <span class="emphasis">
+        <em>function</em>
+      </span>to be specified without angle brackets.</p>
+      <p>The special function
+      <code class="literal">&lt;noop&gt;</code>unbinds the specified key sequence. It is recommended to use
+      <a class="link" href="#unbind" title="6.2.&#160;Unbinding a Key Sequence">
+        <code class="literal">unbind</code>
+      </a>instead.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="unbind"></a>6.2.&#160;Unbinding a Key Sequence</h3>
+          </div>
+        </div>
+      </div>
+      <p>To remove a binding of a key or key sequence
+      <code class="literal">unbind</code> can be used. Its syntax is:</p>
+      <div class="cmdsynopsis">
+        <p>
+        <code class="command">unbind</code>{
+        <em class="replaceable">
+          <code>*</code>
+        </em>|
+        <em class="replaceable">
+          <code>map</code>
+        </em>[
+        <em class="replaceable">
+          <code>,map</code>
+        </em>...] } [
+        <em class="replaceable">
+          <code>key</code>
+        </em>]</p>
+      </div>
+      <p>
+      <span class="emphasis">
+        <em>map</em>
+      </span>specifies from which menus the key sequence should be removed. Multiple maps may be specified by separating them with commas (no additional whitespace is allowed). If
+      <code class="literal">*</code>is given, then the key sequence is removed from all menus. Valid menu names and their description are listed
+      <a class="link" href="#maps">in the
+      <code class="literal">bind</code> section</a>.</p>
+      <p>
+      <span class="emphasis">
+        <em>key</em>
+      </span>is the key or key sequence to be unbound. It may be omitted in which case all keybindings in the given menus are removed. To prevent NeoMutt from becoming unusable some fallback key bindings are added afterwards. The fallback keybindings added depend on the menu, they are listed in
+      <a class="xref" href="#tab-fallback-key-bindings" title="Table&#160;3.6.&#160;Fallback key bindings">Table&#160;3.6, “Fallback key bindings”</a>.</p>
+      <div >
+        <a id="tab-fallback-key-bindings"></a>
+        <p class="title">
+          <strong>Table&#160;3.6.&#160;Fallback key bindings</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="Fallback key bindings" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Menu</th>
+                <th>Key</th>
+                <th>Bound Function</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>generic</td>
+                <td>&lt;enter&gt;</td>
+                <td>
+                  <code class="literal">&lt;select-entry&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>generic</td>
+                <td>&lt;return&gt;</td>
+                <td>
+                  <code class="literal">&lt;select-entry&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>generic</td>
+                <td>:</td>
+                <td>
+                  <code class="literal">&lt;enter-command&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>generic</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>generic</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>alias</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>alias</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>attach</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>attach</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>browser</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>browser</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>editor</td>
+                <td>&lt;backspace&gt;</td>
+                <td>
+                  <code class="literal">&lt;backspace&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>editor</td>
+                <td>\177</td>
+                <td>
+                  <code class="literal">&lt;backspace&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>index</td>
+                <td>&lt;enter&gt;</td>
+                <td>
+                  <code class="literal">&lt;display-message&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>index</td>
+                <td>&lt;return&gt;</td>
+                <td>
+                  <code class="literal">&lt;display-message&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>index</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>index</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>compose</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>compose</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>pager</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>pager</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>pager</td>
+                <td>:</td>
+                <td>
+                  <code class="literal">&lt;enter-command&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>pgp</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>pgp</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>smime</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>smime</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>postpone</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>postpone</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>query</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>query</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>mix</td>
+                <td>?</td>
+                <td>
+                  <code class="literal">&lt;help&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>mix</td>
+                <td>q</td>
+                <td>
+                  <code class="literal">&lt;exit&gt;</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
+      <p>A key binding can also be unbound by mapping it to the special function
+      <code class="literal">&lt;noop&gt;</code>. It is, however, recommended to use
+      <code class="literal">unbind</code> instead.</p>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="crlf"></a>6.3.&#160;Enter versus Return</h3>
           </div>
         </div>
       </div>
       <p>Prior to 2022, NeoMutt used a default ncurses mode (
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <code class="literal">nl()</code>
       </span>”</span>). This mode maps keyboard input of either
       <code class="literal">&lt;Enter&gt;</code>or
@@ -1049,10 +1377,12 @@ set alias_file=~/.mail_aliases
       <code class="literal">&lt;Enter&gt;</code>to be mapped separately, if desired. The default keyboard mappings set both, but you can override this or create new bindings with one or the other (or both).</p>
       <p>Note that in terminal application, such as NeoMutt,
       <code class="literal">&lt;Enter&gt;</code>is the same as
-      <span class="quote">“<span class="quote">\n</span>”</span> and
+      <span class="quote">“
+      <span class="quote">\n</span>”</span> and
       <code class="literal">^J</code>; while
       <code class="literal">&lt;Return&gt;</code>is the same as
-      <span class="quote">“<span class="quote">\r</span>”</span> and
+      <span class="quote">“
+      <span class="quote">\r</span>”</span> and
       <code class="literal">^M</code>.</p>
     </div>
     <div class="sect2">
@@ -1060,7 +1390,7 @@ set alias_file=~/.mail_aliases
         <div>
           <div>
             <h3 class="title">
-            <a id="bind-warnings"></a>6.2.&#160;Warnings about Duplicated Bindings</h3>
+            <a id="bind-warnings"></a>6.4.&#160;Warnings about Duplicated Bindings</h3>
           </div>
         </div>
       </div>
@@ -1089,7 +1419,7 @@ bind index gg first-entry
         <div>
           <div>
             <h3 class="title">
-            <a id="stty"></a>6.3.&#160;Terminal Keybindings</h3>
+            <a id="stty"></a>6.5.&#160;Terminal Keybindings</h3>
           </div>
         </div>
       </div>
@@ -1109,7 +1439,8 @@ bind index gg first-entry
         <code class="literal">intr = ^C</code>
       </span>”</span> in its output. This means typing
       <code class="literal">^C</code> will send an interrupt signal.
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <code class="literal">quit = ^\</code>
       </span>”</span> means typing
       <code class="literal">^\</code>(commonly also
@@ -1204,7 +1535,7 @@ bind index gg first-entry
         <code>-noregex</code>
       </em>]
       <em class="replaceable">
-        <code>pattern</code>
+        <code>regex</code>
       </em>
       <em class="replaceable">
         <code>command</code>
@@ -1218,13 +1549,13 @@ bind index gg first-entry
       <em>command</em>
     </span>is executed before loading any mailboxes matching
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>. The
     <span class="emphasis">
       <em>-noregex</em>
     </span>switch controls whether
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>is matched using a simple string comparison or a full regex match. If a mailbox matches multiple
     <span class="command">
       <strong>folder-hook</strong>
@@ -1236,8 +1567,12 @@ bind index gg first-entry
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you use the
-      <span class="quote">“<span class="quote">!</span>”</span> shortcut for
-      <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a> at the beginning of the pattern, you must place it inside of double or single quotes in order to distinguish it from the logical
+      <span class="quote">“
+      <span class="quote">!</span>”</span> shortcut for
+      <a class="link" href="reference.html#spool-file" title="3.474.&#160;spool_file">$spool_file</a> at the beginning of
+      <span class="emphasis">
+        <em>regex</em>
+      </span>, you must place it inside of double or single quotes in order to distinguish it from the logical
       <span class="emphasis">
         <em>not</em>
       </span>operator for the expression.</p>
@@ -1254,7 +1589,7 @@ folder-hook work "set sort=threads"
       <p>However, the sorting method is not restored to its previous value when reading a different mailbox. To specify a
       <span class="emphasis">
         <em>default</em>
-      </span>command, use the pattern
+      </span>command, use the regex
       <span class="quote">“<span class="quote">.</span>”</span> before other
       <span class="command">
         <strong>folder-hook</strong>
@@ -1270,7 +1605,7 @@ folder-hook work "set sort=threads"
       <a class="link" href="#exec" title="24.&#160;Executing Functions">exec</a> commands will end up being processed in reverse order.</p>
     </div>
     <p>The following example will set the
-    <a class="link" href="reference.html#sort" title="3.467.&#160;sort">sort</a> variable to
+    <a class="link" href="reference.html#sort" title="3.468.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
     <span class="quote">“<span class="quote">work</span>”</span> in their name.</p>
@@ -1353,7 +1688,7 @@ folder-hook work "set sort=threads"
     <span class="emphasis">
       <em>sequence</em>
     </span>are expanded by the same rules as the
-    <a class="link" href="#bind" title="6.&#160;Changing the Default Key Bindings">key bindings</a> with some additions. The first is that control characters in
+    <a class="link" href="#bind" title="6.1.&#160;Binding a Key Sequence to a Function">key bindings</a> with some additions. The first is that control characters in
     <span class="emphasis">
       <em>sequence</em>
     </span>can also be specified as
@@ -1373,7 +1708,7 @@ folder-hook work "set sort=threads"
     <span class="emphasis">
       <em>&lt;function name&gt;</em>
     </span>. For a listing of key names see the section on
-    <a class="link" href="#bind" title="6.&#160;Changing the Default Key Bindings">key bindings</a>. Functions are listed in the
+    <a class="link" href="#bind" title="6.1.&#160;Binding a Key Sequence to a Function">key bindings</a>. Functions are listed in the
     <a class="link" href="reference.html#functions" title="4.&#160;Functions">reference</a>.</p>
     <p>The advantage with using function names directly is that the macros will work regardless of the current key bindings, so they are not dependent on the user having particular key definitions. This makes them more robust and portable, and also facilitates defining of macros in files used by more than one user (e.g., the system neomuttrc).</p>
     <p>Optionally you can specify a descriptive text after
@@ -1636,7 +1971,7 @@ folder-hook work "set sort=threads"
       <div >
         <a id="table-color-simple"></a>
         <p class="title">
-          <strong>Table&#160;3.6.&#160;Simple Colours</strong>
+          <strong>Table&#160;3.7.&#160;Simple Colours</strong>
         </p>
         <div class="table-contents">
           <table summary="Simple Colours" border="1">
@@ -1741,7 +2076,7 @@ uncolor prompt
       <div >
         <a id="color-simple-sidebar"></a>
         <p class="title">
-          <strong>Table&#160;3.7.&#160;Simple Sidebar Colours</strong>
+          <strong>Table&#160;3.8.&#160;Simple Sidebar Colours</strong>
         </p>
         <div class="table-contents">
           <table summary="Simple Sidebar Colours" border="1">
@@ -1756,6 +2091,10 @@ uncolor prompt
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>sidebar_background</td>
+                <td>The entire sidebar panel</td>
+              </tr>
               <tr>
                 <td>sidebar_divider</td>
                 <td>The dividing line between the Sidebar and the Index/Pager panels</td>
@@ -1808,7 +2147,7 @@ uncolor sidebar_divider
       <div >
         <a id="color-simple-compose"></a>
         <p class="title">
-          <strong>Table&#160;3.8.&#160;Simple Compose Colours</strong>
+          <strong>Table&#160;3.9.&#160;Simple Compose Colours</strong>
         </p>
         <div class="table-contents">
           <table summary="Simple Compose Colours" border="1">
@@ -1867,7 +2206,7 @@ uncolor compose header
       <div >
         <a id="color-quoted"></a>
         <p class="title">
-          <strong>Table&#160;3.9.&#160;Quoted Email Colours</strong>
+          <strong>Table&#160;3.10.&#160;Quoted Email Colours</strong>
         </p>
         <div class="table-contents">
           <table summary="Quoted Email Colours" border="1">
@@ -1970,7 +2309,7 @@ uncolor quoted2
       <div >
         <a id="color-regex-lists"></a>
         <p class="title">
-          <strong>Table&#160;3.10.&#160;Colour Regex Lists</strong>
+          <strong>Table&#160;3.11.&#160;Colour Regex Lists</strong>
         </p>
         <div class="table-contents">
           <table summary="Colour Regex Lists" border="1">
@@ -2010,65 +2349,74 @@ uncolor quoted2
               <tr>
                 <td>index_author</td>
                 <td>pattern</td>
-                <td>Author in the index, %A %a %F %L %n</td>
+                <td>Author in the index:
+                <code class="literal">%A</code>,
+                <code class="literal">%a</code>,
+                <code class="literal">%F</code>,
+                <code class="literal">%L</code>,
+                <code class="literal">%n</code></td>
               </tr>
               <tr>
                 <td>index_collapsed</td>
                 <td>pattern</td>
-                <td>Number of messages in a collapsed thread,
+                <td>Number of messages in a collapsed thread:
                 <code class="literal">%M</code></td>
               </tr>
               <tr>
                 <td>index_date</td>
                 <td>pattern</td>
-                <td>Date field,
-                <code class="literal">%d</code>
-                <code class="literal">%D</code>
-                <code class="literal">%{fmt}</code>
-                <code class="literal">%[fmt]</code>
+                <td>Date field:
+                <code class="literal">%d</code>,
+                <code class="literal">%D</code>,
+                <code class="literal">%{fmt}</code>,
+                <code class="literal">%[fmt]</code>,
                 <code class="literal">%(fmt)</code></td>
               </tr>
               <tr>
                 <td>index_flags</td>
                 <td>pattern</td>
-                <td>Flags in the index, %S %Z</td>
+                <td>Flags in the index:
+                <code class="literal">%S</code>,
+                <code class="literal">%Z</code></td>
               </tr>
               <tr>
                 <td>index_label</td>
                 <td>pattern</td>
-                <td>Message label,
-                <code class="literal">%y</code>
+                <td>Message label:
+                <code class="literal">%y</code>,
                 <code class="literal">%Y</code></td>
               </tr>
               <tr>
                 <td>index_number</td>
                 <td>pattern</td>
-                <td>Message number,
+                <td>Message number:
                 <code class="literal">%C</code></td>
               </tr>
               <tr>
                 <td>index_size</td>
                 <td>pattern</td>
-                <td>Message size,
-                <code class="literal">%c</code>
-                <code class="literal">%cr</code>
+                <td>Message size:
+                <code class="literal">%c</code>,
+                <code class="literal">%cr</code>,
                 <code class="literal">%l</code></td>
               </tr>
               <tr>
                 <td>index_subject</td>
                 <td>pattern</td>
-                <td>Subject in the index, %s</td>
+                <td>Subject in the index:
+                <code class="literal">%s</code></td>
               </tr>
               <tr>
                 <td>index_tag</td>
                 <td>pattern</td>
-                <td>Tags in the index, %G</td>
+                <td>Tags in the index:
+                <code class="literal">%G</code></td>
               </tr>
               <tr>
                 <td>index_tags</td>
                 <td>pattern</td>
-                <td>Transformed message tags,
-                <code class="literal">%g</code>
+                <td>Transformed message tags:
+                <code class="literal">%g</code>,
                 <code class="literal">%J</code></td>
               </tr>
               <tr>
@@ -2203,7 +2551,7 @@ uncolor status *
         </div>
       </div>
       <p>When displaying a message in the pager, NeoMutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.529.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.530.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
       <p>Despite not being a real header, NeoMutt will also display an mbox "From_" line in the pager along with other headers. This line can be manipulated with
       <span class="command">
         <strong>ignore/unignore</strong>
@@ -2226,10 +2574,10 @@ uncolor status *
         <p>
         <code class="command">ignore</code>
         <em class="replaceable">
-          <code>pattern</code>
+          <code>string</code>
         </em>[
         <em class="replaceable">
-          <code>pattern</code>
+          <code>string</code>
         </em>...]
         <br />
         <code class="command">unignore</code>{
@@ -2237,17 +2585,17 @@ uncolor status *
           <code>*</code>
         </em>|
         <em class="replaceable">
-          <code>pattern</code>
+          <code>string</code>
         </em>... }</p>
       </div>
       <p>Messages often have many header fields added by automatic processing systems, or which may not seem useful to display on the screen. This command allows you to specify header fields which you don't normally want to see in the pager.</p>
       <p>You do not need to specify the full header field name. For example,
-      <span class="quote">“<span class="quote">ignore content-</span>”</span> will ignore all header fields that begin with the pattern
+      <span class="quote">“<span class="quote">ignore content-</span>”</span> will ignore all header fields that begin with the string
       <span class="quote">“<span class="quote">content-</span>”</span>.
       <span class="quote">“<span class="quote">ignore&#160;*</span>”</span> will ignore all headers.</p>
       <p>To remove a previously added token from the list, use the
       <span class="quote">“<span class="quote">unignore</span>”</span> command. The
-      <span class="quote">“<span class="quote">unignore</span>”</span> command will make NeoMutt display headers with the given pattern. For example, if you do
+      <span class="quote">“<span class="quote">unignore</span>”</span> command will make NeoMutt display headers matching the given string. For example, if you do
       <span class="quote">“<span class="quote">ignore x-</span>”</span> it is possible to
       <span class="quote">“<span class="quote">unignore x-mailer</span>”</span>.</p>
       <p>
@@ -2383,10 +2731,10 @@ alternates '^user@example$'
     </span>command can be used to write exceptions to
     <span class="command">
       <strong>alternates</strong>
-    </span>patterns. If an address matches something in an
+    </span>regex. If an address matches something in an
     <span class="command">
       <strong>alternates</strong>
-    </span>command, but you nonetheless do not think it is from you, you can list a more precise pattern under an
+    </span>command, but you nonetheless do not think it is from you, you can list a more precise regex under an
     <span class="command">
       <strong>unalternates</strong>
     </span>command.</p>
@@ -2495,7 +2843,7 @@ alternates '^user@example$'
       <p>The Mail-Followup-To header is a non-standard extension which is not supported by all mail user agents. Adding it is not bullet-proof against receiving personal CCs of list messages. Also note that the generation of the Mail-Followup-To header is controlled by the
       <a class="link" href="reference.html#followup-to" title="3.124.&#160;followup_to">$followup_to</a> configuration variable since it's common practice on some mailing lists to send Cc upon replies (which is more a group- than a list-reply).</p>
     </div>
-    <p>More precisely, NeoMutt maintains lists of patterns for the addresses of known and subscribed mailing lists. Every subscribed mailing list is known. To mark a mailing list as known, use the
+    <p>More precisely, NeoMutt maintains lists of regular expressions for the addresses of known and subscribed mailing lists. Every subscribed mailing list is known. To mark a mailing list as known, use the
     <span class="command">
       <strong>list</strong>
     </span>command. To mark it as subscribed, use
@@ -2551,7 +2899,7 @@ subscribe [0-9]+.*@bugs.debian.org
         <code>-noregex</code>
       </em>]
       <em class="replaceable">
-        <code>pattern</code>
+        <code>regex</code>
       </em>
       <em class="replaceable">
         <code>mailbox</code>
@@ -2559,7 +2907,7 @@ subscribe [0-9]+.*@bugs.debian.org
     </div>
     <p>This command is used to move read messages from a specified mailbox to a different mailbox automatically when you quit or change folders.
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>is used to specifying the mailbox to treat as a
     <span class="quote">“<span class="quote">spool</span>”</span> mailbox and
     <span class="emphasis">
@@ -2569,7 +2917,7 @@ subscribe [0-9]+.*@bugs.debian.org
       <em>-noregex</em>
     </span>switch controls whether
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>is matched using a simple string comparison or a full regex match.</p>
     <p>The regex parameter has
     <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">mailbox shortcut</a> expansion performed on the first character. See
@@ -2657,7 +3005,7 @@ subscribe [0-9]+.*@bugs.debian.org
       <span class="quote">“<span class="quote">=</span>”</span> and
       <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
       <a class="link" href="reference.html#folder" title="3.122.&#160;folder">$folder</a> and
-      <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a>) should be set before the
+      <a class="link" href="reference.html#spool-file" title="3.474.&#160;spool_file">$spool_file</a>) should be set before the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise NeoMutt tries to find it relative to the directory from where NeoMutt was started which may not always be desired.</p>
@@ -2790,6 +3138,8 @@ unmy_hdr to cc
       <em>mailbox</em>
     </span>according to
     <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a>.</p>
+    <p>If the pattern is a plain string, or a regex, it will be expanded to a pattern using
+    <a class="link" href="reference.html#default-hook" title="3.98.&#160;default_hook">$default_hook</a>.</p>
     <p>
     <span class="command">
       <strong>fcc-hook</strong>
@@ -2902,6 +3252,8 @@ save-hook aol\\.com$ +spam
     <span class="emphasis">
       <em>pattern</em>
     </span>matches.</p>
+    <p>If the pattern is a plain string, or a regex, it will be expanded to a pattern using
+    <a class="link" href="reference.html#default-hook" title="3.98.&#160;default_hook">$default_hook</a>.</p>
     <p>
     <span class="command">
       <strong>reply-hook</strong>
@@ -2979,7 +3331,7 @@ save-hook aol\\.com$ +spam
       <strong>set</strong>
     </span>mime_forward signature=''"</code></p>
     <p>Another typical use for this command is to change the values of the
-    <a class="link" href="reference.html#attribution" title="3.31.&#160;attribution">$attribution</a>,
+    <a class="link" href="reference.html#attribution-intro" title="3.31.&#160;attribution_intro">$attribution_intro</a>,
     <a class="link" href="reference.html#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>, and
     <a class="link" href="reference.html#signature" title="3.428.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
     <div class="note">
@@ -2991,7 +3343,7 @@ save-hook aol\\.com$ +spam
       <span class="command">
         <strong>send-hook</strong>
       </span>to be executed, similarly if
-      <a class="link" href="reference.html#auto-edit" title="3.33.&#160;auto_edit">$auto_edit</a> is set (as then the initial list of recipients is empty). Also note that
+      <a class="link" href="reference.html#auto-edit" title="3.34.&#160;auto_edit">$auto_edit</a> is set (as then the initial list of recipients is empty). Also note that
       <a class="link" href="#my-hdr" title="17.&#160;User-Defined Headers">
         <span class="command">
           <strong>my_hdr</strong>
@@ -3031,6 +3383,8 @@ save-hook aol\\.com$ +spam
       <em>pattern</em>
     </span>matches the message to be displayed. When multiple matches occur, commands are executed in the order they are specified in the
     <code class="literal">.neomuttrc</code>.</p>
+    <p>If the pattern is a plain string, or a regex, it will be expanded to a pattern using
+    <a class="link" href="reference.html#default-hook" title="3.98.&#160;default_hook">$default_hook</a>.</p>
     <p>See
     <a class="xref" href="advancedusage.html#pattern-hook" title="6.1.&#160;Message Matching in Hooks">Message Matching in Hooks</a> for information on the exact format of
     <span class="emphasis">
@@ -3099,6 +3453,8 @@ message-hook '~f freshmeat-news' 'set pager="less \"+/^  subject: .*\""'
     </div>
     <p>This command is used to inject format strings dynamically into
     <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a> based on pattern matching against the current message.</p>
+    <p>If the pattern is a plain string, or a regex, it will be expanded to a pattern using
+    <a class="link" href="reference.html#default-hook" title="3.98.&#160;default_hook">$default_hook</a>.</p>
     <p>The
     <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a> expando
     <span class="emphasis">
@@ -3316,7 +3672,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
       <p>
       <code class="command">spam</code>
       <em class="replaceable">
-        <code>pattern</code>
+        <code>regex</code>
       </em>
       <em class="replaceable">
         <code>format</code>
@@ -3327,10 +3683,10 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
         <code>*</code>
       </em>|
       <em class="replaceable">
-        <code>pattern</code>
+        <code>regex</code>
       </em>}</p>
     </div>
-    <p>NeoMutt has generalized support for external spam-scoring filters. By defining your spam patterns with the
+    <p>NeoMutt has generalized support for external spam-scoring filters. By defining your spam regular expressions with the
     <span class="command">
       <strong>spam</strong>
     </span>and
@@ -3353,18 +3709,18 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <a class="link" href="optionalfeatures.html#caching" title="8.&#160;Local Caching">header cache</a>. NeoMutt isn't smart enough to invalidate a header cache entry based on changing
     <code class="literal">spam</code> rules, so if you aren't seeing correct
     <code class="literal">%H</code> values, try temporarily turning off the header cache. If that fixes the problem, then once your spam rules are set to your liking, remove your stale header cache files and turn the header cache back on.</p>
-    <p>Your first step is to define your external filter's spam patterns using the
+    <p>Your first step is to define your external filter's spam headers using the
     <span class="command">
       <strong>spam</strong>
     </span>command.
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>should be a regular expression that matches a header in a mail message. If any message in the mailbox matches this regular expression, it will receive a
     <span class="quote">“<span class="quote">spam tag</span>”</span> or
     <span class="quote">“<span class="quote">spam attribute</span>”</span>(unless it also matches a
     <span class="command">
       <strong>nospam</strong>
-    </span>pattern – see below.) The appearance of this attribute is entirely up to you, and is governed by the
+    </span>regular expression – see below.) The appearance of this attribute is entirely up to you, and is governed by the
     <span class="emphasis">
       <em>format</em>
     </span>parameter.
@@ -3372,7 +3728,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
       <em>format</em>
     </span>can be any static text, but it also can include back-references from the
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>expression. (A regular expression
     <span class="quote">“<span class="quote">back-reference</span>”</span> refers to a sub-expression contained within parentheses.)
     <code class="literal">%1</code> is replaced with the first back-reference in the regex,
@@ -3382,12 +3738,12 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <p>If you're using multiple spam filters, a message can have more than one spam-related header. You can define
     <span class="command">
       <strong>spam</strong>
-    </span>patterns for each filter you use. If a message matches two or more of these patterns, and the
-    <a class="link" href="reference.html#spam-separator" title="3.472.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
+    </span>rules for each filter you use. If a message matches two or more of these regular expressions, and the
+    <a class="link" href="reference.html#spam-separator" title="3.473.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
     <span class="emphasis">
       <em>format</em>
     </span>strings joined together, with the value of
-    <a class="link" href="reference.html#spam-separator" title="3.472.&#160;spam_separator">$spam_separator</a> separating them.</p>
+    <a class="link" href="reference.html#spam-separator" title="3.473.&#160;spam_separator">$spam_separator</a> separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in
     <a class="xref" href="#ex-spam" title="Example&#160;3.15.&#160;Configuring spam detection">Example&#160;3.15, “Configuring spam detection”</a>.</p>
     <div class="example">
@@ -3412,7 +3768,7 @@ set spam_separator=", "
     <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
     <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the
-    <a class="link" href="reference.html#spam-separator" title="3.472.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam pattern match supersedes the previous one. Instead of getting joined
+    <a class="link" href="reference.html#spam-separator" title="3.473.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam rule match supersedes the previous one. Instead of getting joined
     <span class="emphasis">
       <em>format</em>
     </span>strings, you'll get only the last one to match.</p>
@@ -3433,7 +3789,7 @@ set spam_separator=", "
     </span>of your
     <span class="command">
       <strong>spam</strong>
-    </span>patterns – is sorted at lowest priority. Numbers are sorted next, beginning with 0 and ranging upward. Finally, non-numeric strings are sorted, with
+    </span>rules – is sorted at lowest priority. Numbers are sorted next, beginning with 0 and ranging upward. Finally, non-numeric strings are sorted, with
     <span class="quote">“<span class="quote">a</span>”</span> taking lower priority than
     <span class="quote">“<span class="quote">z</span>”</span>. Clearly, in general, sorting by spam tags is most effective when you can coerce your filter to give you a raw number. But in case you can't, NeoMutt can still do something useful.</p>
     <p>The
@@ -3442,37 +3798,37 @@ set spam_separator=", "
     </span>command can be used to write exceptions to
     <span class="command">
       <strong>spam</strong>
-    </span>patterns. If a header pattern matches something in a
+    </span>rules. If a header field matches something in a
     <span class="command">
       <strong>spam</strong>
-    </span>command, but you nonetheless do not want it to receive a spam tag, you can list a more precise pattern under a
+    </span>command, but you nonetheless do not want it to receive a spam tag, you can list a more precise regular expression under a
     <span class="command">
       <strong>nospam</strong>
     </span>command.</p>
     <p>If the
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>given to
     <span class="command">
       <strong>nospam</strong>
     </span>is exactly the same as the
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>on an existing
     <span class="command">
       <strong>spam</strong>
-    </span>list entry, the effect will be to remove the entry from the spam list, instead of adding an exception. Likewise, if the
+    </span>rule entry, the effect will be to remove the entry from the spam rules list, instead of adding an exception. Likewise, if the
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>for a
     <span class="command">
       <strong>spam</strong>
     </span>command matches an entry on the
     <span class="command">
       <strong>nospam</strong>
-    </span>list, that nospam entry will be removed. If the
+    </span>rule list, that nospam entry will be removed. If the
     <span class="emphasis">
-      <em>pattern</em>
+      <em>regex</em>
     </span>for
     <span class="command">
       <strong>nospam</strong>
@@ -3739,12 +4095,12 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>ask-yes</em>
       </span>will cause a prompt with a default answer of
-      <span class="quote">“<span class="quote">yes</span>”</span> and
+      <span class="quote">“
+      <span class="quote">yes</span>”</span> and
       <span class="emphasis">
         <em>ask-no</em>
       </span>will provide a default answer of
-      <span class="quote">“
-      <span class="quote">no.</span>”</span></p>
+      <span class="quote">“<span class="quote">no.</span>”</span></p>
       <p>Prefixing a variable with
       <span class="quote">“<span class="quote">no</span>”</span> will unset it. Example:
       <code class="literal">
@@ -3799,8 +4155,7 @@ set allow_8bit?
       <span class="command">
         <strong>reset</strong>
       </span>command there exists the special variable
-      <span class="quote">“
-      <span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
+      <span class="quote">“<span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3961,8 +4316,7 @@ set my_foo = $my_inc
       <br class="example-break" />
       <p>These assignments are all valid. If, however, the value of
       <code class="literal">$my_lines</code> would have been
-      <span class="quote">“
-      <span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
+      <span class="quote">“<span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
       <code class="literal">$pager_index_lines</code> would have produced an error message.</p>
       <p>Type conversion applies to all configuration commands which take arguments. But please note that every expanded value of a variable is considered just a single token. A working example is:</p>
       <pre class="screen">
@@ -3981,8 +4335,7 @@ mailboxes $my_mx +mailbox3
 </pre>
       <p>because the value of
       <code class="literal">$my_mx</code> is interpreted as a single mailbox named
-      <span class="quote">“
-      <span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
+      <span class="quote">“<span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
     </div>
   </div>
   <div class="sect1">
@@ -4009,8 +4362,7 @@ mailboxes $my_mx +mailbox3
     <code class="literal">~/.mail_aliases</code> so that I can make my
     <code class="literal">~/.neomuttrc</code> readable and keep my aliases private.</p>
     <p>If the filename begins with a tilde (
-    <span class="quote">“
-    <span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
+    <span class="quote">“<span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
     <p>If the filename is relative and the command
     <span class="command">
       <strong>source</strong>
@@ -4085,7 +4437,7 @@ mailboxes $my_mx +mailbox3
       <p>Format strings are a general concept you'll find in several locations through the NeoMutt configuration, especially in the
       <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a>,
       <a class="link" href="reference.html#pager-format" title="3.284.&#160;pager_format">$pager_format</a>,
-      <a class="link" href="reference.html#status-format" title="3.493.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#status-format" title="3.494.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code> represents a message's Subject: header in the
       <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a> variable. The
@@ -4101,10 +4453,8 @@ mailboxes $my_mx +mailbox3
       <p>NeoMutt adds some other modifiers to format strings. If you use an equals symbol (
       <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion – that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
-      <span class="quote">“
-      <span class="quote">test</span>”</span>, that expansion would look like
-      <span class="quote">“
-      <span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
+      <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
+      <span class="quote">“<span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
       <p>There are two very little-known modifiers that affect the way that an expando is replaced. If there is an underline (
       <span class="quote">“<span class="quote">_</span>”</span>) character between any format modifiers (as above) and the expando letter, it will expands in all lower case. And if you use a colon (
       <span class="quote">“<span class="quote">:</span>”</span>), it will replace all decimal points with underlines.</p>
@@ -4136,7 +4486,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in
-      <a class="link" href="reference.html#status-format" title="3.493.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.494.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %?n?%n new messages.?
 </pre>
@@ -4173,8 +4523,7 @@ mailboxes $my_mx +mailbox3
         </div>
       </div>
       <p>Any format string ending in a vertical bar (
-      <span class="quote">“
-      <span class="quote">|</span>”</span>) will be expanded and piped through the first word in the string, using spaces as separator. The string returned will be used for display. If the returned string ends in %, it will be passed through the formatter a second time. This allows the filter to generate a replacement format string including % expandos.</p>
+      <span class="quote">“<span class="quote">|</span>”</span>) will be expanded and piped through the first word in the string, using spaces as separator. The string returned will be used for display. If the returned string ends in %, it will be passed through the formatter a second time. This allows the filter to generate a replacement format string including % expandos.</p>
       <p>All % expandos in a format string are expanded before the script is called so that:</p>
       <div class="example">
         <a id="ex-fmtpipe"></a>
@@ -4195,7 +4544,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code> script installed in the
       <code class="literal">samples</code> subdirectory of the NeoMutt documentation: it can be used as filter for
-      <a class="link" href="reference.html#status-format" title="3.493.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.494.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4243,8 +4592,7 @@ set status_format = "%B: %?n?%n&amp;no? new messages %&gt; (%v on %h)"
           <dd>
             <p>Normal right-justification will print everything to the left of the
             <code class="literal">%&gt;</code>, displaying padding and whatever lies to the right only if there's room. By contrast,
-            <span class="quote">“
-            <span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
+            <span class="quote">“<span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
             <code class="literal">%*</code>: the second ensures there's a space between the truncated right-hand side and the subject):</p>
             <pre class="screen">
 set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
@@ -4286,13 +4634,13 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
       <code class="literal">%s</code> in
       <a class="link" href="reference.html#attach-format" title="3.25.&#160;attach_format">$attach_format</a>,
       <code class="literal">%l</code> in
-      <a class="link" href="reference.html#compose-format" title="3.56.&#160;compose_format">$compose_format</a>,
+      <a class="link" href="reference.html#compose-format" title="3.57.&#160;compose_format">$compose_format</a>,
       <code class="literal">%s</code> in
       <a class="link" href="reference.html#folder-format" title="3.123.&#160;folder_format">$folder_format</a>,
       <code class="literal">%c</code> and
       <code class="literal">%cr</code> in
       <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a>, and %l and %L in
-      <a class="link" href="reference.html#status-format" title="3.493.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
+      <a class="link" href="reference.html#status-format" title="3.494.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
       <p>
       <a class="link" href="reference.html#size-show-bytes" title="3.430.&#160;size_show_bytes">$size_show_bytes</a> will display the number of bytes when the size is &lt; 1 kilobyte. When unset, kilobytes will be displayed instead.</p>
       <p>
@@ -4301,10 +4649,8 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
       <a class="link" href="reference.html#size-show-fractions" title="3.431.&#160;size_show_fractions">$size_show_fractions</a>, will display numbers with a single decimal place for values from 0 to 10 kilobytes, and 1 to 10 megabytes.</p>
       <p>
       <a class="link" href="reference.html#size-units-on-left" title="3.433.&#160;size_units_on_left">$size_units_on_left</a> will display the unit (
-      <span class="quote">“
-      <span class="quote">K</span>”</span> or
-      <span class="quote">“
-      <span class="quote">M</span>”</span>) to the left of the number, instead of the right if unset.</p>
+      <span class="quote">“<span class="quote">K</span>”</span> or
+      <span class="quote">“<span class="quote">M</span>”</span>) to the left of the number, instead of the right if unset.</p>
       <p>These variables also affect size display in a few other places, such as progress indicators and attachment delimiters in the pager.</p>
     </div>
   </div>

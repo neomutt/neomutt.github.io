@@ -57,7 +57,7 @@ title: Advanced Usage
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> must be specified using regular expressions (regex) in the
     <span class="quote">“
     <span class="quote">POSIX extended</span>”</span> syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
-    <p>The search is case sensitive if the pattern contains at least one upper case letter, and case insensitive otherwise.</p>
+    <p>The search is case sensitive if the regular expression contains at least one upper case letter, and case insensitive otherwise.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>
@@ -73,24 +73,52 @@ title: Advanced Usage
       <a class="xref" href="configuration.html#neomuttrc-syntax" title="3.&#160;Syntax of Initialization Files">Syntax of Initialization Files</a> for more information on " and ' delimiter processing. To match a literal " or ' you must preface it with \ (backslash).</p>
     </div>
     <p>The fundamental building blocks are the regular expressions that match a single character. Most characters, including all letters and digits, are regular expressions that match themselves. Any metacharacter with special meaning may be quoted by preceding it with a backslash.</p>
+    <p>The following matches a literal dot
+    <span class="quote">“<span class="quote">.</span>”</span> in an address:</p>
+    <div class="example">
+      <a id="ex-literal-dot-in-regex"></a>
+      <p class="title">
+        <strong>Example&#160;4.1.&#160;Matching a literal dot</strong>
+      </p>
+      <div class="example-contents">
+        <pre class="screen">
+<span class="comment"># no quotes</span>
+alternates only\\.dot@example\\.org
+
+<span class="comment"># single quotes</span>
+lists 'only\.dot@example\.org'
+
+<span class="comment"># Double quotes</span>
+subscribe "only\\.dot@example\\.org"
+</pre>
+      </div>
+    </div>
+    <br class="example-break" />
     <p>The period
     <span class="quote">“<span class="quote">.</span>”</span> matches any single character. The caret
     <span class="quote">“<span class="quote">^</span>”</span> and the dollar sign
     <span class="quote">“<span class="quote">$</span>”</span> are metacharacters that respectively match the empty string at the beginning and end of a line.</p>
     <p>A list of characters enclosed by
-    <span class="quote">“<span class="quote">[</span>”</span> and
-    <span class="quote">“<span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
-    <span class="quote">“<span class="quote">^</span>”</span> then it matches any character
+    <span class="quote">“
+    <span class="quote">[</span>”</span> and
+    <span class="quote">“
+    <span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
+    <span class="quote">“
+    <span class="quote">^</span>”</span> then it matches any character
     <span class="emphasis">
       <em>not</em>
     </span>in the list. For example, the regular expression
     <span class="emphasis">
       <em>[0123456789]</em>
     </span>matches any single digit. A range of ASCII characters may be specified by giving the first and last characters, separated by a hyphen
-    <span class="quote">“<span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
-    <span class="quote">“<span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
-    <span class="quote">“<span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
-    <span class="quote">“<span class="quote">-</span>”</span> place it last.</p>
+    <span class="quote">“
+    <span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
+    <span class="quote">“
+    <span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
+    <span class="quote">“
+    <span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
+    <span class="quote">“
+    <span class="quote">-</span>”</span> place it last.</p>
     <p>Certain named classes of characters are predefined. Character classes consist of
     <span class="quote">“<span class="quote">[:</span>”</span>, a keyword denoting the class, and
     <span class="quote">“<span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in
@@ -477,7 +505,7 @@ title: Advanced Usage
                   <em>EXPR</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages either to: or cc:
+                <td>messages either to:, cc: or bcc:
                 <span class="emphasis">
                   <em>EXPR</em>
                 </span></td>
@@ -488,7 +516,7 @@ title: Advanced Usage
                   <em>GROUP</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages either to: or cc: to any member of
+                <td>messages either to:, cc: or bcc: to any member of
                 <span class="emphasis">
                   <em>GROUP</em>
                 </span></td>
@@ -642,6 +670,17 @@ title: Advanced Usage
                 <td>~k</td>
                 <td>&#160;</td>
                 <td>messages which contain PGP key material</td>
+              </tr>
+              <tr>
+                <td>~K
+                <span class="emphasis">
+                  <em>EXPR</em>
+                </span></td>
+                <td>&#160;</td>
+                <td>messages blind carbon-copied to
+                <span class="emphasis">
+                  <em>EXPR</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~L
@@ -967,7 +1006,7 @@ title: Advanced Usage
                 <td>~#</td>
                 <td>&#160;</td>
                 <td>broken threads (see
-                <a class="link" href="reference.html#strict-threads" title="3.495.&#160;strict_threads">$strict_threads</a>)</td>
+                <a class="link" href="reference.html#strict-threads" title="3.496.&#160;strict_threads">$strict_threads</a>)</td>
               </tr>
               <tr>
                 <td>~$</td>
@@ -1113,6 +1152,29 @@ title: Advanced Usage
       <p>Special attention has to be paid when using regular expressions inside of patterns. Specifically, NeoMutt's parser for these patterns will strip one level of backslash (
       <span class="quote">“<span class="quote">\</span>”</span>), which is normally used for quoting. If it is your intention to use a backslash in the regular expression, you will need to use two backslashes instead (
       <span class="quote">“<span class="quote">\\</span>”</span>).</p>
+      <div class="example">
+        <a id="ex-literal-dot-in-pattern"></a>
+        <p class="title">
+          <strong>Example&#160;4.2.&#160;Using
+          <code class="literal">\s</code> and matching a literal dot in patterns</strong>
+        </p>
+        <div class="example-contents">
+          <pre class="screen">
+<span class="comment"># no quotes</span>
+save-hook ~h\ list-id:\\\\s*&lt;only\\\\.dot&gt;    '=archive'
+save-hook ~hlist-id:\\\\s*&lt;only\\\\.dot-here&gt; '=archive'
+
+<span class="comment"># single quotes</span>
+save-hook '~h list-id:\\s&lt;only\\.dot&gt;'        '=archive'
+save-hook ~h'list-id:\\s*&lt;only\\.dot-here&gt;'   '=archive'
+
+<span class="comment"># Double quotes</span>
+save-hook "~h list-id:\\\\s&lt;only\\\\.dot&gt;"    '=archive'
+save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
+</pre>
+        </div>
+      </div>
+      <br class="example-break" />
       <p>You can force NeoMutt to treat
       <span class="emphasis">
         <em>EXPR</em>
@@ -1130,7 +1192,7 @@ title: Advanced Usage
       <div class="example">
         <a id="ex-recips"></a>
         <p class="title">
-          <strong>Example&#160;4.1.&#160;Matching all addresses in address lists</strong>
+          <strong>Example&#160;4.3.&#160;Matching all addresses in address lists</strong>
         </p>
         <div class="example-contents">
           <pre class="screen">
@@ -1143,7 +1205,7 @@ title: Advanced Usage
       <div class="example">
         <a id="ex-restrict-to-aliases"></a>
         <p class="title">
-          <strong>Example&#160;4.2.&#160;Matching restricted to aliases</strong>
+          <strong>Example&#160;4.4.&#160;Matching restricted to aliases</strong>
         </p>
         <div class="example-contents">
           <pre class="screen">
@@ -1156,7 +1218,7 @@ title: Advanced Usage
       <div class="example">
         <a id="ex-match-alias"></a>
         <p class="title">
-          <strong>Example&#160;4.3.&#160;Matching any defined alias</strong>
+          <strong>Example&#160;4.5.&#160;Matching any defined alias</strong>
         </p>
         <div class="example-contents">
           <pre class="screen">
@@ -1490,7 +1552,7 @@ title: Advanced Usage
       <div class="example">
         <a id="ex-pattern-bool"></a>
         <p class="title">
-          <strong>Example&#160;4.4.&#160;Using boolean operators in patterns</strong>
+          <strong>Example&#160;4.6.&#160;Using boolean operators in patterns</strong>
         </p>
         <div class="example-contents">
           <pre class="screen">
@@ -1821,7 +1883,7 @@ Limit to messages matching: ~d &lt;1m
     <span class="emphasis">
       <em>next</em>
     </span>operation will be applied to all tagged messages if that operation can be used in that manner. If the
-    <a class="link" href="reference.html#auto-tag" title="3.35.&#160;auto_tag">$auto_tag</a> variable is set, the next operation applies to the tagged messages automatically, without requiring the
+    <a class="link" href="reference.html#auto-tag" title="3.36.&#160;auto_tag">$auto_tag</a> variable is set, the next operation applies to the tagged messages automatically, without requiring the
     <span class="quote">“<span class="quote">tag-prefix</span>”</span>.</p>
     <p>In
     <a class="link" href="configuration.html#macro" title="10.&#160;Keyboard Macros">
@@ -2045,19 +2107,19 @@ Limit to messages matching: ~d &lt;1m
     <div class="example">
       <a id="ex-default-hook"></a>
       <p class="title">
-        <strong>Example&#160;4.5.&#160;Specifying a
+        <strong>Example&#160;4.7.&#160;Specifying a
         <span class="quote">“<span class="quote">default</span>”</span> hook</strong>
       </p>
       <div class="example-contents">
         <pre class="screen">
 send-hook . 'unmy_hdr From:'
-send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
+send-hook ~C'^b@b\\.b$' my_hdr from: c@c.c
 </pre>
       </div>
     </div>
     <br class="example-break" />
     <p>In
-    <a class="xref" href="#ex-default-hook" title="Example&#160;4.5.&#160;Specifying a “default” hook">Example&#160;4.5, “Specifying a
+    <a class="xref" href="#ex-default-hook" title="Example&#160;4.7.&#160;Specifying a “default” hook">Example&#160;4.7, “Specifying a
     <span class="quote">“<span class="quote">default</span>”</span> hook”</a>, by default the value of
     <a class="link" href="reference.html#from" title="3.140.&#160;from">$from</a> and
     <a class="link" href="reference.html#real-name" title="3.375.&#160;real_name">$real_name</a> is not overridden. When sending messages either To: or Cc: to
@@ -2105,7 +2167,7 @@ send-hook ~C'^b@b\.b$' my_hdr from: c@c.c
       </span>the mailbox, except that you are restricted to those operators which match information NeoMutt extracts from the header of the message (i.e., from, to, cc, date, subject, etc.).</p>
       <p>For example, if you wanted to set your return address based upon sending mail to a specific address, you could do something like:</p>
       <pre class="screen">
-send-hook '~t ^user@work\.com$' 'my_hdr From: John Smith &lt;user@host&gt;'
+send-hook '~t ^user@work\\.com$' 'my_hdr From: John Smith &lt;user@host&gt;'
 </pre>
       <p>which would execute the given command when sending mail to
       <span class="emphasis">
@@ -2144,10 +2206,10 @@ folder-hook ^/home/user/Mail/bar "set sort=threads"
 folder-hook (^/home/user/Mail/bar) "set sort=threads"
 <span class="comment"># This will expand to the default save folder for the alias "imap.example.com", which</span>
 <span class="comment"># is probably not what you want:</span>
-folder-hook @imap.example.com "set sort=threads"
+folder-hook @imap\\.example\\.com "set sort=threads"
 <span class="comment"># A workaround is to use parenthesis or a backslash:</span>
-folder-hook (@imap.example.com) "set sort=threads"
-folder-hook '\@imap.example.com' "set sort=threads"
+folder-hook (@imap\\.example\\.com) "set sort=threads"
+folder-hook '\@imap\.example\.com' "set sort=threads"
 </pre>
       <p>Keep in mind that mailbox shortcut expansion on the regex parameter takes place when the hook is initially parsed, not when the hook is matching against a mailbox. When NeoMutt starts up and is reading the .neomuttrc, some mailbox shortcuts may not be usable. For example, the "current mailbox" shortcut, ^, will expand to an empty string because no mailbox has been opened yet. NeoMutt will issue an error for this case or if the mailbox shortcut results in an empty regex.</p>
     </div>
@@ -2201,7 +2263,7 @@ roessler@does-not-exist.org        Thomas Roessler mutt pgp
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The query menu is affected by
-      <a class="link" href="reference.html#sort-alias" title="3.468.&#160;sort_alias">$sort_alias</a>, thus overruling the order of entries as generated by
+      <a class="link" href="reference.html#sort-alias" title="3.469.&#160;sort_alias">$sort_alias</a>, thus overruling the order of entries as generated by
       <a class="link" href="reference.html#query-command" title="3.368.&#160;query_command">$query_command</a>.</p>
     </div>
   </div>
@@ -2297,7 +2359,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
                 <code class="literal">!</code>
               </td>
               <td>your
-              <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a>(incoming) mailbox</td>
+              <a class="link" href="reference.html#spool-file" title="3.474.&#160;spool_file">$spool_file</a>(incoming) mailbox</td>
             </tr>
             <tr>
               <td>
@@ -2390,7 +2452,7 @@ folder-hook . 'set record=^'
       </span>
     </a>commands in your
     <code class="literal">.neomuttrc</code>. Alternatively or additionally, you can set
-    <a class="link" href="reference.html#auto-subscribe" title="3.34.&#160;auto_subscribe">$auto_subscribe</a> to automatically subscribe addresses found in a
+    <a class="link" href="reference.html#auto-subscribe" title="3.35.&#160;auto_subscribe">$auto_subscribe</a> to automatically subscribe addresses found in a
     <code class="literal">List-Post</code> header.</p>
     <p>Now that NeoMutt knows what your mailing lists are, it can do several things, the first of which is the ability to show the name of a list through which you received a message (i.e., of a subscribed list) in the
     <span class="emphasis">
@@ -2450,7 +2512,7 @@ folder-hook . 'set record=^'
     <span class="quote">“<span class="quote">edit-label</span>”</span> command, bound to the
     <span class="quote">“<span class="quote">y</span>”</span> key by default. This works for tagged messages, too. While in the edit-label function, pressing the &lt;complete&gt; binding (TAB, by default) will perform completion against all labels currently in use.</p>
     <p>Lastly, NeoMutt has the ability to
-    <a class="link" href="reference.html#sort" title="3.467.&#160;sort">sort</a> the mailbox into
+    <a class="link" href="reference.html#sort" title="3.468.&#160;sort">sort</a> the mailbox into
     <a class="link" href="gettingstarted.html#threads" title="5.3.&#160;Threaded Mode">threads</a>. A thread is a group of messages which all relate to the same subject. This is usually organized into a tree-like structure where a message and all of its replies are represented graphically. If you've ever used a threaded news client, this is the same concept. It makes dealing with large volume mailing lists easier because you can easily delete uninteresting threads and quickly find topics of value.</p>
   </div>
   <div class="sect1">
@@ -2467,7 +2529,7 @@ folder-hook . 'set record=^'
       <p>
       <code class="command">subjectrx</code>
       <em class="replaceable">
-        <code>pattern</code>
+        <code>regex</code>
       </em>
       <em class="replaceable">
         <code>replacement</code>
@@ -2478,12 +2540,11 @@ folder-hook . 'set record=^'
         <code>*</code>
       </em>|
       <em class="replaceable">
-        <code>pattern</code>
+        <code>regex</code>
       </em>}</p>
     </div>
     <p>
-    <code class="literal">subjectrx</code> specifies a regular expression
-    <span class="quote">“<span class="quote">pattern</span>”</span> which, if detected in a message subject, causes the subject to be replaced with the
+    <code class="literal">subjectrx</code> specifies a regular expression which, if detected in a message subject, causes the subject to be replaced with the
     <span class="quote">“<span class="quote">replacement</span>”</span> value. The replacement is subject to substitutions in the same way as for the
     <a class="link" href="configuration.html#spam" title="26.&#160;Spam Detection">spam</a> command:
     <code class="literal">%L</code> for the text to the left of the match,
@@ -2495,11 +2556,11 @@ folder-hook . 'set record=^'
     <span class="quote">“<span class="quote">replacement</span>”</span> value replaces the entire subject, not just the match!</p>
     <p>
     <code class="literal">unsubjectrx</code> removes a given subjectrx from the substitution list. If
-    <code class="literal">*</code>is used as the pattern, all substitutions will be removed.</p>
+    <code class="literal">*</code>is used as the argument, all substitutions will be removed.</p>
     <div class="example">
       <a id="ex-subjectrx"></a>
       <p class="title">
-        <strong>Example&#160;4.6.&#160;Subject Munging</strong>
+        <strong>Example&#160;4.8.&#160;Subject Munging</strong>
       </p>
       <div class="example-contents">
         <pre class="screen">
@@ -2544,7 +2605,7 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
         <p>Contrary to older NeoMutt releases, it now maintains the new mail status of a folder by properly resetting the access time if the folder contains at least one message which is neither read, nor deleted, nor marked as old.</p>
       </div>
       <p>In cases where new mail detection for Mbox or Mmdf folders appears to be unreliable, the
-      <a class="link" href="reference.html#check-mbox-size" title="3.51.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make NeoMutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
+      <a class="link" href="reference.html#check-mbox-size" title="3.52.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make NeoMutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
       <p>New mail for Maildir is assumed if there is one message in the
       <code class="literal">new/</code>subdirectory which is not marked deleted (see
       <a class="link" href="reference.html#maildir-trash" title="3.217.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
@@ -2567,7 +2628,7 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
         </div>
       </div>
       <p>When in the index menu and being idle (also see
-      <a class="link" href="reference.html#timeout" title="3.502.&#160;timeout">$timeout</a>), NeoMutt periodically checks for new mail in all folders which have been configured via the
+      <a class="link" href="reference.html#timeout" title="3.503.&#160;timeout">$timeout</a>), NeoMutt periodically checks for new mail in all folders which have been configured via the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. The interval depends on the folder type: for local/IMAP folders it consults
@@ -2584,7 +2645,7 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
       <code class="literal">&lt;mailbox-list&gt;</code>function (bound to
       <span class="quote">“<span class="quote">.</span>”</span> by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default NeoMutt displays the number of mailboxes with new mail in the status bar, please refer to the
-      <a class="link" href="reference.html#status-format" title="3.493.&#160;status_format">$status_format</a> variable for details.</p>
+      <a class="link" href="reference.html#status-format" title="3.494.&#160;status_format">$status_format</a> variable for details.</p>
       <p>When changing folders, NeoMutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
       <code class="literal">&lt;Space&gt;</code>will cycle through folders with new mail. The (by default unbound) function
       <code class="literal">&lt;next-unread-mailbox&gt;</code>in the index can be used to immediately open the next folder with unread mail (if any).</p>
@@ -2877,7 +2938,7 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
           <p>The folder NeoMutt opens at startup is determined as follows: the folder specified in the
           <code class="literal">$MAIL</code> environment variable if present. Otherwise, the value of
           <code class="literal">$MAILDIR</code> is taken into account. If that isn't present either, NeoMutt takes the user's mailbox in the mailspool as determined at compile-time (which may also reside in the home directory). The
-          <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a> setting overrides this selection. Highest priority has the mailbox given with the
+          <a class="link" href="reference.html#spool-file" title="3.474.&#160;spool_file">$spool_file</a> setting overrides this selection. Highest priority has the mailbox given with the
           <code class="literal">-f</code> command line option.</p>
         </dd>
       </dl>

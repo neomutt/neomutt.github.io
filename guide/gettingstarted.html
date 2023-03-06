@@ -468,7 +468,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="idm45819286669440"></a>
+            <a id="idm45412936656320"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -591,7 +591,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="idm45819286634224"></a>
+            <a id="idm45412936621104"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -805,21 +805,23 @@ sidebar_pin +fruit +fruit/apple
         </div>
         <p>Here is a sample color scheme:</p>
         <pre class="screen">
-color sidebar_indicator default color17
+color sidebar_background default black
+<span class="comment"># Black background</span>
+color sidebar_indicator  default color17
 <span class="comment"># Dark blue background</span>
-color sidebar_highlight white   color238
+color sidebar_highlight  white   color238
 <span class="comment"># Grey background</span>
 color sidebar_spool_file yellow  default
 <span class="comment"># Yellow</span>
-color sidebar_unread    cyan    default
+color sidebar_unread     cyan    default
 <span class="comment"># Light blue</span>
-color sidebar_new       green   default
+color sidebar_new        green   default
 <span class="comment"># Green</span>
-color sidebar_ordinary  default default
+color sidebar_ordinary   default default
 <span class="comment"># Default colors</span>
-color sidebar_flagged   red     default
+color sidebar_flagged    red     default
 <span class="comment"># Red</span>
-color sidebar_divider   color8  default
+color sidebar_divider    color8  default
 <span class="comment"># Dark grey</span>
 </pre>
         <p>There is a priority order when coloring Sidebar mailboxes. e.g. If a mailbox has new mail it will have the
@@ -899,105 +901,6 @@ color sidebar_divider   color8  default
         </div>
         <br class="table-break" />
       </div>
-      <div class="sect3">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h4 class="title">
-              <a id="intro-sidebar-config-changes"></a>2.4.5.&#160;Config Changes</h4>
-            </div>
-          </div>
-        </div>
-        <p>If you haven't used Sidebar before, you can ignore this section.</p>
-        <p>Some of the Sidebar config has been changed to make its meaning clearer. These changes have been made since the previous Sidebar release: 2015-11-11.</p>
-        <div >
-          <a id="table-intro-sidebar-config-changes"></a>
-          <p class="title">
-            <strong>Table&#160;2.4.&#160;Config Changes</strong>
-          </p>
-          <div class="table-contents">
-            <table summary="Config Changes" border="1">
-              <colgroup>
-                <col />
-                <col />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th>Old Name</th>
-                  <th>New Name</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <code class="literal">$sidebar_delim</code>
-                  </td>
-                  <td>
-                    <code class="literal">$sidebar_divider_char</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">$sidebar_folderindent</code>
-                  </td>
-                  <td>
-                    <code class="literal">$sidebar_folder_indent</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">$sidebar_indentstr</code>
-                  </td>
-                  <td>
-                    <code class="literal">$sidebar_indent_string</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">$sidebar_newmail_only</code>
-                  </td>
-                  <td>
-                    <code class="literal">$sidebar_new_mail_only</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">$sidebar_shortpath</code>
-                  </td>
-                  <td>
-                    <code class="literal">$sidebar_short_path</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">$sidebar_sort</code>
-                  </td>
-                  <td>
-                    <code class="literal">$sidebar_sort_method</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">&lt;sidebar-scroll-down&gt;</code>
-                  </td>
-                  <td>
-                    <code class="literal">&lt;sidebar-page-down&gt;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code class="literal">&lt;sidebar-scroll-up&gt;</code>
-                  </td>
-                  <td>
-                    <code class="literal">&lt;sidebar-page-up&gt;</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <br class="table-break" />
-      </div>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1055,12 +958,12 @@ color sidebar_divider   color8  default
       </div>
     </div>
     <p>The most important navigation keys common to line- or entry-based menus are shown in
-    <a class="xref" href="#tab-keys-nav-line" title="Table&#160;2.5.&#160;Most common navigation keys in entry-based menus">Table&#160;2.5, “Most common navigation keys in entry-based menus”</a> and in
-    <a class="xref" href="#tab-keys-nav-page" title="Table&#160;2.6.&#160;Most common navigation keys in page-based menus">Table&#160;2.6, “Most common navigation keys in page-based menus”</a> for page-based menus.</p>
+    <a class="xref" href="#tab-keys-nav-line" title="Table&#160;2.4.&#160;Most common navigation keys in entry-based menus">Table&#160;2.4, “Most common navigation keys in entry-based menus”</a> and in
+    <a class="xref" href="#tab-keys-nav-page" title="Table&#160;2.5.&#160;Most common navigation keys in page-based menus">Table&#160;2.5, “Most common navigation keys in page-based menus”</a> for page-based menus.</p>
     <div >
       <a id="tab-keys-nav-line"></a>
       <p class="title">
-        <strong>Table&#160;2.5.&#160;Most common navigation keys in entry-based menus</strong>
+        <strong>Table&#160;2.4.&#160;Most common navigation keys in entry-based menus</strong>
       </p>
       <div class="table-contents">
         <table summary="Most common navigation keys in entry-based menus" border="1">
@@ -1141,7 +1044,7 @@ color sidebar_divider   color8  default
     <div >
       <a id="tab-keys-nav-page"></a>
       <p class="title">
-        <strong>Table&#160;2.6.&#160;Most common navigation keys in page-based menus</strong>
+        <strong>Table&#160;2.5.&#160;Most common navigation keys in page-based menus</strong>
       </p>
       <div class="table-contents">
         <table summary="Most common navigation keys in page-based menus" border="1">
@@ -1225,11 +1128,11 @@ color sidebar_divider   color8  default
         </div>
       </div>
       <p>NeoMutt has a built-in line editor for inputting text, e.g. email addresses or filenames. The keys used to manipulate text input are very similar to those of Emacs. See
-      <a class="xref" href="#tab-keys-editor" title="Table&#160;2.7.&#160;Most common line editor keys">Table&#160;2.7, “Most common line editor keys”</a> for a full reference of available functions, their default key bindings, and short descriptions.</p>
+      <a class="xref" href="#tab-keys-editor" title="Table&#160;2.6.&#160;Most common line editor keys">Table&#160;2.6, “Most common line editor keys”</a> for a full reference of available functions, their default key bindings, and short descriptions.</p>
       <div >
         <a id="tab-keys-editor"></a>
         <p class="title">
-          <strong>Table&#160;2.7.&#160;Most common line editor keys</strong>
+          <strong>Table&#160;2.6.&#160;Most common line editor keys</strong>
         </p>
         <div class="table-contents">
           <table summary="Most common line editor keys" border="1">
@@ -1416,7 +1319,7 @@ color sidebar_divider   color8  default
       <span class="emphasis">
         <em>editor</em>
       </span>functions using the
-      <a class="link" href="configuration.html#bind" title="6.&#160;Changing the Default Key Bindings">
+      <a class="link" href="configuration.html#bind" title="6.1.&#160;Binding a Key Sequence to a Function">
         <span class="command">
           <strong>bind</strong>
         </span>
@@ -1491,12 +1394,12 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>Common keys used to navigate through and manage messages in the index are shown in
-      <a class="xref" href="#tab-key-index" title="Table&#160;2.8.&#160;Most common message index keys">Table&#160;2.8, “Most common message index keys”</a>. How messages are presented in the index menu can be customized using the
+      <a class="xref" href="#tab-key-index" title="Table&#160;2.7.&#160;Most common message index keys">Table&#160;2.7, “Most common message index keys”</a>. How messages are presented in the index menu can be customized using the
       <a class="link" href="reference.html#index-format" title="3.203.&#160;index_format">$index_format</a> variable.</p>
       <div >
         <a id="tab-key-index"></a>
         <p class="title">
-          <strong>Table&#160;2.8.&#160;Most common message index keys</strong>
+          <strong>Table&#160;2.7.&#160;Most common message index keys</strong>
         </p>
         <div class="table-contents">
           <table summary="Most common message index keys" border="1">
@@ -1634,18 +1537,18 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>In addition to who sent the message and the subject, a short summary of the disposition of each message is printed beside the message number. Zero or more of the
       <span class="quote">“<span class="quote">flags</span>”</span> in
-      <a class="xref" href="#tab-msg-status-flags" title="Table&#160;2.9.&#160;Message status flags">Table&#160;2.9, “Message status flags”</a> may appear, some of which can be turned on or off using these functions:
+      <a class="xref" href="#tab-msg-status-flags" title="Table&#160;2.8.&#160;Message status flags">Table&#160;2.8, “Message status flags”</a> may appear, some of which can be turned on or off using these functions:
       <code class="literal">&lt;set-flag&gt;</code>and
       <code class="literal">&lt;clear-flag&gt;</code>bound by default to
       <span class="quote">“<span class="quote">w</span>”</span> and
       <span class="quote">“<span class="quote">W</span>”</span> respectively.</p>
       <p>Furthermore, the flags in
-      <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.10.&#160;Message recipient flags">Table&#160;2.10, “Message recipient flags”</a> reflect who the message is addressed to. They can be customized with the
-      <a class="link" href="reference.html#to-chars" title="3.505.&#160;to_chars">$to_chars</a> variable.</p>
+      <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.9.&#160;Message recipient flags">Table&#160;2.9, “Message recipient flags”</a> reflect who the message is addressed to. They can be customized with the
+      <a class="link" href="reference.html#to-chars" title="3.506.&#160;to_chars">$to_chars</a> variable.</p>
       <div >
         <a id="tab-msg-status-flags"></a>
         <p class="title">
-          <strong>Table&#160;2.9.&#160;Message status flags</strong>
+          <strong>Table&#160;2.8.&#160;Message status flags</strong>
         </p>
         <div class="table-contents">
           <table summary="Message status flags" border="1">
@@ -1720,7 +1623,7 @@ bind editor &lt;delete&gt; backspace
       <div >
         <a id="tab-msg-recip-flags"></a>
         <p class="title">
-          <strong>Table&#160;2.10.&#160;Message recipient flags</strong>
+          <strong>Table&#160;2.9.&#160;Message recipient flags</strong>
         </p>
         <div class="table-contents">
           <table summary="Message recipient flags" border="1">
@@ -1781,7 +1684,7 @@ bind editor &lt;delete&gt; backspace
       <div >
         <a id="tab-key-pager"></a>
         <p class="title">
-          <strong>Table&#160;2.11.&#160;Most common pager keys</strong>
+          <strong>Table&#160;2.10.&#160;Most common pager keys</strong>
         </p>
         <div class="table-contents">
           <table summary="Most common pager keys" border="1">
@@ -1846,7 +1749,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <br class="table-break" />
       <p>In addition to key bindings in
-      <a class="xref" href="#tab-key-pager" title="Table&#160;2.11.&#160;Most common pager keys">Table&#160;2.11, “Most common pager keys”</a>, many of the functions from the index menu are also available in the pager, such as
+      <a class="xref" href="#tab-key-pager" title="Table&#160;2.10.&#160;Most common pager keys">Table&#160;2.10, “Most common pager keys”</a>, many of the functions from the index menu are also available in the pager, such as
       <code class="literal">&lt;delete-message&gt;</code>or
       <code class="literal">&lt;copy-message&gt;</code>(this is one advantage over using an external pager to view messages).</p>
       <p>Also, the internal pager supports a couple other advanced features. For one, you can set
@@ -1866,11 +1769,11 @@ bind editor &lt;delete&gt; backspace
       <span class="emphasis">
         <em>Ps</em>
       </span>can be one of the codes shown in
-      <a class="xref" href="#tab-ansi-esc" title="Table&#160;2.12.&#160;ANSI escape sequences">Table&#160;2.12, “ANSI escape sequences”</a>.</p>
+      <a class="xref" href="#tab-ansi-esc" title="Table&#160;2.11.&#160;ANSI escape sequences">Table&#160;2.11, “ANSI escape sequences”</a>.</p>
       <div >
         <a id="tab-ansi-esc"></a>
         <p class="title">
-          <strong>Table&#160;2.12.&#160;ANSI escape sequences</strong>
+          <strong>Table&#160;2.11.&#160;ANSI escape sequences</strong>
         </p>
         <div class="table-contents">
           <table summary="ANSI escape sequences" border="1">
@@ -1918,7 +1821,7 @@ bind editor &lt;delete&gt; backspace
                 <span class="emphasis">
                   <em>&lt;color&gt;</em>
                 </span>(see
-                <a class="xref" href="#tab-color" title="Table&#160;2.13.&#160;Color sequences">Table&#160;2.13, “Color sequences”</a>)</td>
+                <a class="xref" href="#tab-color" title="Table&#160;2.12.&#160;Color sequences">Table&#160;2.12, “Color sequences”</a>)</td>
               </tr>
               <tr>
                 <td>4
@@ -1929,7 +1832,7 @@ bind editor &lt;delete&gt; backspace
                 <span class="emphasis">
                   <em>&lt;color&gt;</em>
                 </span>(see
-                <a class="xref" href="#tab-color" title="Table&#160;2.13.&#160;Color sequences">Table&#160;2.13, “Color sequences”</a>)</td>
+                <a class="xref" href="#tab-color" title="Table&#160;2.12.&#160;Color sequences">Table&#160;2.12, “Color sequences”</a>)</td>
               </tr>
             </tbody>
           </table>
@@ -1939,7 +1842,7 @@ bind editor &lt;delete&gt; backspace
       <div >
         <a id="tab-color"></a>
         <p class="title">
-          <strong>Table&#160;2.13.&#160;Color sequences</strong>
+          <strong>Table&#160;2.12.&#160;Color sequences</strong>
         </p>
         <div class="table-contents">
           <table summary="Color sequences" border="1">
@@ -2016,7 +1919,7 @@ bind editor &lt;delete&gt; backspace
       <p>So-called
       <span class="quote">“<span class="quote">threads</span>”</span> provide a hierarchy of messages where replies are linked to their parent message(s). This organizational form is extremely useful in mailing lists where different parts of the discussion diverge. NeoMutt displays threads as a tree structure.</p>
       <p>In NeoMutt, when a mailbox is
-      <a class="link" href="reference.html#sort" title="3.467.&#160;sort">sorted</a> by
+      <a class="link" href="reference.html#sort" title="3.468.&#160;sort">sorted</a> by
       <span class="emphasis">
         <em>threads</em>
       </span>, there are a few additional functions available in the
@@ -2026,11 +1929,11 @@ bind editor &lt;delete&gt; backspace
       <span class="emphasis">
         <em>pager</em>
       </span>modes as shown in
-      <a class="xref" href="#tab-key-threads" title="Table&#160;2.14.&#160;Most common thread mode keys">Table&#160;2.14, “Most common thread mode keys”</a>.</p>
+      <a class="xref" href="#tab-key-threads" title="Table&#160;2.13.&#160;Most common thread mode keys">Table&#160;2.13, “Most common thread mode keys”</a>.</p>
       <div >
         <a id="tab-key-threads"></a>
         <p class="title">
-          <strong>Table&#160;2.14.&#160;Most common thread mode keys</strong>
+          <strong>Table&#160;2.13.&#160;Most common thread mode keys</strong>
         </p>
         <div class="table-contents">
           <table summary="Most common thread mode keys" border="1">
@@ -2155,11 +2058,11 @@ bind editor &lt;delete&gt; backspace
         <em>index</em>
       </span>, the subject of threaded children messages will be prepended with thread tree characters. By default, the subject itself will not be duplicated unless
       <a class="link" href="reference.html#hide-thread-subject" title="3.160.&#160;hide_thread_subject">$hide_thread_subject</a> is unset. Special characters will be added to the thread tree as detailed in
-      <a class="xref" href="#tab-thread-chars" title="Table&#160;2.15.&#160;Special Thread Characters">Table&#160;2.15, “Special Thread Characters”</a>.</p>
+      <a class="xref" href="#tab-thread-chars" title="Table&#160;2.14.&#160;Special Thread Characters">Table&#160;2.14, “Special Thread Characters”</a>.</p>
       <div >
         <a id="tab-thread-chars"></a>
         <p class="title">
-          <strong>Table&#160;2.15.&#160;Special Thread Characters</strong>
+          <strong>Table&#160;2.14.&#160;Special Thread Characters</strong>
         </p>
         <div class="table-contents">
           <table summary="Special Thread Characters" border="1">
@@ -2194,7 +2097,7 @@ bind editor &lt;delete&gt; backspace
                 <td>*</td>
                 <td>pseudo thread</td>
                 <td>see
-                <a class="link" href="reference.html#strict-threads" title="3.495.&#160;strict_threads">$strict_threads</a>; not displayed when
+                <a class="link" href="reference.html#strict-threads" title="3.496.&#160;strict_threads">$strict_threads</a>; not displayed when
                 <a class="link" href="reference.html#narrow-tree" title="3.249.&#160;narrow_tree">$narrow_tree</a> is set</td>
               </tr>
               <tr>
@@ -2216,7 +2119,7 @@ bind editor &lt;delete&gt; backspace
       <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="30.2.&#160;Conditionals">format string conditionals</a>.</p>
       <p>Technically, every reply should contain a list of its parent messages in the thread tree, but not all do. In these cases, NeoMutt groups them by subject which can be controlled using the
-      <a class="link" href="reference.html#strict-threads" title="3.495.&#160;strict_threads">$strict_threads</a> variable.</p>
+      <a class="link" href="reference.html#strict-threads" title="3.496.&#160;strict_threads">$strict_threads</a> variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2419,7 +2322,7 @@ bind editor &lt;delete&gt; backspace
             <a class="link" href="reference.html#pipe-decode-weed" title="3.338.&#160;pipe_decode_weed">$pipe_decode_weed</a>,
             <a class="link" href="reference.html#pipe-split" title="3.340.&#160;pipe_split">$pipe_split</a>,
             <a class="link" href="reference.html#pipe-sep" title="3.339.&#160;pipe_sep">$pipe_sep</a> and
-            <a class="link" href="reference.html#wait-key" title="3.527.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
+            <a class="link" href="reference.html#wait-key" title="3.528.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2428,7 +2331,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>NeoMutt takes the current message as a template for a new message. This function is best described as "recall from arbitrary folders". It can conveniently be used to forward MIME messages while preserving the original mail structure. Note that the amount of headers included here depends on the value of the
-            <a class="link" href="reference.html#weed" title="3.528.&#160;weed">$weed</a> variable.</p>
+            <a class="link" href="reference.html#weed" title="3.529.&#160;weed">$weed</a> variable.</p>
             <p>This function is also available from the attachment menu. You can use this to easily resend a message which was included with a bounce message as a
             <code class="literal">message/rfc822</code> body part.</p>
           </dd>
@@ -2439,7 +2342,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and executes it. The
-            <a class="link" href="reference.html#wait-key" title="3.527.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
+            <a class="link" href="reference.html#wait-key" title="3.528.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2487,7 +2390,7 @@ bind editor &lt;delete&gt; backspace
             <p>The pager uses the
             <a class="link" href="reference.html#quote-regex" title="3.371.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
             <p>The variable
-            <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.506.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
+            <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.507.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
           </dd>
         </dl>
       </div>
@@ -2512,7 +2415,7 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>The bindings shown in
-      <a class="xref" href="#tab-key-send" title="Table&#160;2.16.&#160;Most common mail sending keys">Table&#160;2.16, “Most common mail sending keys”</a> are available in the
+      <a class="xref" href="#tab-key-send" title="Table&#160;2.15.&#160;Most common mail sending keys">Table&#160;2.15, “Most common mail sending keys”</a> are available in the
       <span class="emphasis">
         <em>index</em>
       </span>and
@@ -2522,7 +2425,7 @@ bind editor &lt;delete&gt; backspace
       <div >
         <a id="tab-key-send"></a>
         <p class="title">
-          <strong>Table&#160;2.16.&#160;Most common mail sending keys</strong>
+          <strong>Table&#160;2.15.&#160;Most common mail sending keys</strong>
         </p>
         <div class="table-contents">
           <table summary="Most common mail sending keys" border="1">
@@ -2633,8 +2536,8 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">Subject:</span>”</span> field for the message, providing a default if you are replying to or forwarding a message. You again have the chance to adjust recipients, subject, and security settings right before actually sending the message. See also
       <a class="link" href="reference.html#ask-cc" title="3.17.&#160;ask_cc">$ask_cc</a>,
       <a class="link" href="reference.html#ask-bcc" title="3.16.&#160;ask_bcc">$ask_bcc</a>,
-      <a class="link" href="reference.html#auto-edit" title="3.33.&#160;auto_edit">$auto_edit</a>,
-      <a class="link" href="reference.html#bounce" title="3.43.&#160;bounce">$bounce</a>,
+      <a class="link" href="reference.html#auto-edit" title="3.34.&#160;auto_edit">$auto_edit</a>,
+      <a class="link" href="reference.html#bounce" title="3.44.&#160;bounce">$bounce</a>,
       <a class="link" href="reference.html#fast-reply" title="3.116.&#160;fast_reply">$fast_reply</a>, and
       <a class="link" href="reference.html#include" title="3.197.&#160;include">$include</a> for changing how and if NeoMutt asks these questions.</p>
       <p>When replying, NeoMutt fills these fields with proper values depending on the reply type. The types of replying supported are:</p>
@@ -2680,20 +2583,20 @@ bind editor &lt;delete&gt; backspace
       <p>After getting recipients for new messages, forwards or replies, NeoMutt will then automatically start your
       <a class="link" href="reference.html#editor" title="3.108.&#160;editor">$editor</a> on the message body. If the
       <a class="link" href="reference.html#edit-headers" title="3.107.&#160;edit_headers">$edit_headers</a> variable is set, the headers will be at the top of the message in your editor; the message body should start on a new line after the existing blank line at the end of headers. Any messages you are replying to will be added in sort order to the message, with appropriate
-      <a class="link" href="reference.html#attribution" title="3.31.&#160;attribution">$attribution</a>,
+      <a class="link" href="reference.html#attribution-intro" title="3.31.&#160;attribution_intro">$attribution_intro</a>,
       <a class="link" href="reference.html#indent-string" title="3.202.&#160;indent_string">$indent_string</a> and
-      <a class="link" href="reference.html#post-indent-string" title="3.353.&#160;post_indent_string">$post_indent_string</a>. When forwarding a message, if the
+      <a class="link" href="reference.html#attribution-trailer" title="3.33.&#160;attribution_trailer">$attribution_trailer</a>. When forwarding a message, if the
       <a class="link" href="reference.html#mime-forward" title="3.238.&#160;mime_forward">$mime_forward</a> variable is unset, a copy of the forwarded message will be included. If you have specified a
       <a class="link" href="reference.html#signature" title="3.428.&#160;signature">$signature</a>, it will be appended to the message.</p>
       <p>Once you have finished editing the body of your mail message, you are returned to the
       <span class="emphasis">
         <em>compose</em>
       </span>menu providing the functions shown in
-      <a class="xref" href="#tab-func-compose" title="Table&#160;2.17.&#160;Most common compose menu keys">Table&#160;2.17, “Most common compose menu keys”</a> to modify, send or postpone the message.</p>
+      <a class="xref" href="#tab-func-compose" title="Table&#160;2.16.&#160;Most common compose menu keys">Table&#160;2.16, “Most common compose menu keys”</a> to modify, send or postpone the message.</p>
       <div >
         <a id="tab-func-compose"></a>
         <p class="title">
-          <strong>Table&#160;2.17.&#160;Most common compose menu keys</strong>
+          <strong>Table&#160;2.16.&#160;Most common compose menu keys</strong>
         </p>
         <div class="table-contents">
           <table summary="Most common compose menu keys" border="1">
@@ -2861,7 +2764,7 @@ bind editor &lt;delete&gt; backspace
       <div class="note">
         <h3 class="title">Note</h3>
         <p>Note that certain operations like composing a new mail, replying, forwarding, etc. are not permitted when you are in that folder. The %r in
-        <a class="link" href="reference.html#status-format" title="3.493.&#160;status_format">$status_format</a> will change to a
+        <a class="link" href="reference.html#status-format" title="3.494.&#160;status_format">$status_format</a> will change to a
         <span class="quote">“<span class="quote">A</span>”</span> to indicate that you are in attach-message mode.</p>
       </div>
       <p>After exiting the compose menu via
@@ -2869,7 +2772,7 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">mixmaster</a> or
       <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
       <a class="link" href="reference.html#sendmail" title="3.406.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 2019-11-29, NeoMutt enabled
-      <a class="link" href="reference.html#write-bcc" title="3.532.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
+      <a class="link" href="reference.html#write-bcc" title="3.533.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
       <code class="literal">Bcc:</code>header as part of delivery. Starting with 2019-11-29, the option is unset by default, but no longer affects the fcc copy of the message.</p>
     </div>
     <div class="sect2">
@@ -3079,11 +2982,11 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="reference.html#pgp-entry-format" title="3.308.&#160;pgp_entry_format">$pgp_entry_format</a>) have obvious meanings. But some explanations on the capabilities, flags, and validity fields are in order.</p>
       <p>The flags sequence (
       <span class="quote">“<span class="quote">%f</span>”</span>) will expand to one of the flags in
-      <a class="xref" href="#tab-pgp-menuflags" title="Table&#160;2.18.&#160;PGP key menu flags">Table&#160;2.18, “PGP key menu flags”</a>.</p>
+      <a class="xref" href="#tab-pgp-menuflags" title="Table&#160;2.17.&#160;PGP key menu flags">Table&#160;2.17, “PGP key menu flags”</a>.</p>
       <div >
         <a id="tab-pgp-menuflags"></a>
         <p class="title">
-          <strong>Table&#160;2.18.&#160;PGP key menu flags</strong>
+          <strong>Table&#160;2.17.&#160;PGP key menu flags</strong>
         </p>
         <div class="table-contents">
           <table summary="PGP key menu flags" border="1">
@@ -3130,10 +3033,69 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">.</span>”</span> implies that the key is marked as an encryption key in one of the user-ids, and
       <span class="quote">“<span class="quote">s</span>”</span> denotes a key which can be used for signing.</p>
       <p>Finally, the validity field (
-      <span class="quote">“<span class="quote">%t</span>”</span>) indicates how well-certified a user-id is. A question mark (
-      <span class="quote">“<span class="quote">?</span>”</span>) indicates undefined validity, a minus character (
-      <span class="quote">“<span class="quote">-</span>”</span>) marks an untrusted association, a space character means a partially trusted association, and a plus character (
-      <span class="quote">“<span class="quote">+</span>”</span>) indicates complete validity.</p>
+      <span class="quote">“<span class="quote">%t</span>”</span>) indicates how well-certified a user-id is. It's values depend on the backend used. Note that S/MIME (which uses X509 certificates) has no concept of validity, so this field simply shows
+      <code class="literal">x</code>. The possible values listed in
+      <a class="xref" href="#tab-pgp-menuvalidity" title="Table&#160;2.18.&#160;PGP key menu validity">Table&#160;2.18, “PGP key menu validity”</a>.</p>
+      <div >
+        <a id="tab-pgp-menuvalidity"></a>
+        <p class="title">
+          <strong>Table&#160;2.18.&#160;PGP key menu validity</strong>
+        </p>
+        <div class="table-contents">
+          <table summary="PGP key menu validity" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Flag (classic PGP)</th>
+                <th>Flag (GPGME)</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>N/A</td>
+                <td>?</td>
+                <td>indicates unknown validity</td>
+              </tr>
+              <tr>
+                <td>?</td>
+                <td>q</td>
+                <td>indicates undefined validity</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>n</td>
+                <td>indicates a never valid key (untrusted association)</td>
+              </tr>
+              <tr>
+                <td>space</td>
+                <td>m</td>
+                <td>indicates marginal validity (partially trusted)</td>
+              </tr>
+              <tr>
+                <td>+</td>
+                <td>f</td>
+                <td>indicates fully validity (fully trusted)</td>
+              </tr>
+              <tr>
+                <td>N/A</td>
+                <td>u</td>
+                <td>indicates ultimate validity</td>
+              </tr>
+              <tr>
+                <td>N/A</td>
+                <td>x</td>
+                <td>the entry is an X509 certificate (S/MIME)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br class="table-break" />
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3171,7 +3133,7 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>NeoMutt only supports setting the required
         <code class="literal">format=flowed</code> MIME parameter on outgoing messages if the
-        <a class="link" href="reference.html#text-flowed" title="3.497.&#160;text_flowed">$text_flowed</a> variable is set, specifically it does not add the trailing spaces.</p>
+        <a class="link" href="reference.html#text-flowed" title="3.498.&#160;text_flowed">$text_flowed</a> variable is set, specifically it does not add the trailing spaces.</p>
         <p>After editing, NeoMutt properly space-stuffs the message.
         <span class="emphasis">
           <em>Space-stuffing</em>
@@ -3246,7 +3208,7 @@ bind editor &lt;delete&gt; backspace
               <p>In its original format, the quoting style of
               <code class="literal">format=flowed</code> messages can be difficult to read, and doesn't intermix well with non-flowed replies. Setting
               <a class="link" href="reference.html#reflow-space-quotes" title="3.379.&#160;reflow_space_quotes">$reflow_space_quotes</a> adds spaces after each level of quoting when in the pager and replying in a non-flowed format (i.e. with
-              <a class="link" href="reference.html#text-flowed" title="3.497.&#160;text_flowed">$text_flowed</a> unset).</p>
+              <a class="link" href="reference.html#text-flowed" title="3.498.&#160;text_flowed">$text_flowed</a> unset).</p>
             </li>
             <li class="listitem">
               <p>If
@@ -3284,7 +3246,7 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“<span class="quote">yes</span>”</span>) is to use standard inline forwarding. In that mode all text-decodable parts are included in the new message body. Other attachments from the original email can also be attached to the new message, based on the quadoption
     <a class="link" href="reference.html#forward-attachments" title="3.131.&#160;forward_attachments">$forward_attachments</a>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
-    <a class="link" href="reference.html#weed" title="3.528.&#160;weed">$weed</a> variable, unless
+    <a class="link" href="reference.html#weed" title="3.529.&#160;weed">$weed</a> variable, unless
     <a class="link" href="reference.html#mime-forward" title="3.238.&#160;mime_forward">$mime_forward</a> is set.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
     <a class="link" href="reference.html#forward-references" title="3.139.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
@@ -3443,10 +3405,12 @@ set crypt_use_gpgme
       <code class="literal">smime.rc</code> file with
       <a class="link" href="reference.html#smime-certificates" title="3.440.&#160;smime_certificates">$smime_certificates</a> and
       <a class="link" href="reference.html#smime-keys" title="3.452.&#160;smime_keys">$smime_keys</a>.) To initialize this directory, use the command
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <code class="literal">smime_keys init</code>
       </span>”</span> from a shell prompt. The program can be then be used to import and list certificates. You may also want to periodically run
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">
         <code class="literal">smime_keys refresh</code>
       </span>”</span> to update status flags for your certificates.</p>
     </div>

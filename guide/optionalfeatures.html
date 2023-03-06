@@ -138,17 +138,17 @@ smtp://user@host:587/
       <code class="literal">STARTTLS</code> can be used to negotiate an encrypted connection after the initial unencrypted connection and exchange.</p>
       <p>Two configuration variables control NeoMutt's behavior with
       <code class="literal">STARTTLS</code>.
-      <a class="link" href="reference.html#ssl-starttls" title="3.480.&#160;ssl_starttls">$ssl_starttls</a> will initiate
+      <a class="link" href="reference.html#ssl-starttls" title="3.481.&#160;ssl_starttls">$ssl_starttls</a> will initiate
       <code class="literal">STARTTLS</code> if the server advertises support for it.
-      <a class="link" href="reference.html#ssl-force-tls" title="3.478.&#160;ssl_force_tls">$ssl_force_tls</a> will always try to initiate it, whether the server advertises support or not.</p>
+      <a class="link" href="reference.html#ssl-force-tls" title="3.479.&#160;ssl_force_tls">$ssl_force_tls</a> will always try to initiate it, whether the server advertises support or not.</p>
       <p>NeoMutt
       <span class="emphasis">
         <em>highly recommends</em>
       </span>setting
-      <a class="link" href="reference.html#ssl-force-tls" title="3.478.&#160;ssl_force_tls">$ssl_force_tls</a> unless you need to connect to an unencrypted server. It's possible for an attacker to spoof interactions during the initial connection and hide support for
+      <a class="link" href="reference.html#ssl-force-tls" title="3.479.&#160;ssl_force_tls">$ssl_force_tls</a> unless you need to connect to an unencrypted server. It's possible for an attacker to spoof interactions during the initial connection and hide support for
       <code class="literal">STARTTLS</code>. The only way to prevent these attacks is by forcing
       <code class="literal">STARTTLS</code> with the
-      <a class="link" href="reference.html#ssl-force-tls" title="3.478.&#160;ssl_force_tls">$ssl_force_tls</a> configuration variable.</p>
+      <a class="link" href="reference.html#ssl-force-tls" title="3.479.&#160;ssl_force_tls">$ssl_force_tls</a> configuration variable.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -160,18 +160,18 @@ smtp://user@host:587/
         </div>
       </div>
       <p>When connecting through a
-      <a class="link" href="reference.html#tunnel" title="3.511.&#160;tunnel">$tunnel</a> and
-      <a class="link" href="reference.html#tunnel-is-secure" title="3.512.&#160;tunnel_is_secure">$tunnel_is_secure</a> is set(the default), NeoMutt will assume the connection to the server through the pipe is already secured. NeoMutt will ignore
-      <a class="link" href="reference.html#ssl-starttls" title="3.480.&#160;ssl_starttls">$ssl_starttls</a> and
-      <a class="link" href="reference.html#ssl-force-tls" title="3.478.&#160;ssl_force_tls">$ssl_force_tls</a>, behaving as if TLS has already been negotiated.</p>
+      <a class="link" href="reference.html#tunnel" title="3.512.&#160;tunnel">$tunnel</a> and
+      <a class="link" href="reference.html#tunnel-is-secure" title="3.513.&#160;tunnel_is_secure">$tunnel_is_secure</a> is set(the default), NeoMutt will assume the connection to the server through the pipe is already secured. NeoMutt will ignore
+      <a class="link" href="reference.html#ssl-starttls" title="3.481.&#160;ssl_starttls">$ssl_starttls</a> and
+      <a class="link" href="reference.html#ssl-force-tls" title="3.479.&#160;ssl_force_tls">$ssl_force_tls</a>, behaving as if TLS has already been negotiated.</p>
       <p>When
-      <a class="link" href="reference.html#tunnel-is-secure" title="3.512.&#160;tunnel_is_secure">$tunnel_is_secure</a> is unset, NeoMutt will respect the values of
-      <a class="link" href="reference.html#ssl-starttls" title="3.480.&#160;ssl_starttls">$ssl_starttls</a> and
-      <a class="link" href="reference.html#ssl-force-tls" title="3.478.&#160;ssl_force_tls">$ssl_force_tls</a>. It is
+      <a class="link" href="reference.html#tunnel-is-secure" title="3.513.&#160;tunnel_is_secure">$tunnel_is_secure</a> is unset, NeoMutt will respect the values of
+      <a class="link" href="reference.html#ssl-starttls" title="3.481.&#160;ssl_starttls">$ssl_starttls</a> and
+      <a class="link" href="reference.html#ssl-force-tls" title="3.479.&#160;ssl_force_tls">$ssl_force_tls</a>. It is
       <span class="emphasis">
         <em>highly recommended</em>
       </span>to set
-      <a class="link" href="reference.html#ssl-force-tls" title="3.478.&#160;ssl_force_tls">$ssl_force_tls</a> in this case, to force
+      <a class="link" href="reference.html#ssl-force-tls" title="3.479.&#160;ssl_force_tls">$ssl_force_tls</a> in this case, to force
       <code class="literal">STARTTLS</code> negotiation. Note that doing so will prevent connection to an IMAP server configured for preauthentication(
       <code class="literal">PREAUTH</code>). If you use this configuration, it is recommended to use a secure tunnel.</p>
     </div>
@@ -199,7 +199,7 @@ smtp://user@host:587/
     <p>Another way to access your POP3 mail is the
     <code class="literal">&lt;fetch-mail&gt;</code>function (default: G). It allows to connect to
     <a class="link" href="reference.html#pop-host" title="3.346.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
-    <a class="link" href="reference.html#spool-file" title="3.473.&#160;spool_file">$spool_file</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
+    <a class="link" href="reference.html#spool-file" title="3.474.&#160;spool_file">$spool_file</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as
@@ -257,7 +257,7 @@ subscribe-to imaps://mail.example.org/inbox
     <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">mailboxes</a> command on each of them, so that these folders get checked periodically for new mail.</p>
     <p>Polling for new mail on an IMAP server can cause noticeable delays. So, you'll want to carefully tune the
     <a class="link" href="reference.html#mail-check" title="3.208.&#160;mail_check">$mail_check</a> and
-    <a class="link" href="reference.html#timeout" title="3.502.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
+    <a class="link" href="reference.html#timeout" title="3.503.&#160;timeout">$timeout</a> variables. Reasonable values are:</p>
     <pre class="screen">
 set mail_check=90
 set timeout=15
