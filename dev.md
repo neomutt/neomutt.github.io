@@ -13,7 +13,7 @@ If you are interested in contributing, please have a look at our
 
 Any development on features is done in "devel/" feature branches in the
 [NeoMutt repository](https://github.com/neomutt/neomutt). Once
-development is complete, the work will be merged into the "neomutt" branch.
+development is complete, the work will be merged into the `main` branch.
 
 Finally, some automatic checking is done on commits and pull requests for
 NeoMutt. It benefits from two free services (free for Open Source). They
