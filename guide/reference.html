@@ -2325,6 +2325,10 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <code class="literal">printf(3)</code>-like sequences see the section on
       <a class="link" href="#index-format" title="3.203.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
+      <div class="note">
+      <h3 class="title">Note</h3> Before 2021-03-21, this was called $post_indent_str</div>
+      <div class="note">
+      <h3 class="title">Note</h3> Before 2023-02-20, this was called $post_indent_string</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9400,14 +9404,9 @@ set pop_authenticators="digest-md5:apop:user"
           </div>
         </div>
       </div>
-      <div class="literallayout">
-        <p>Type:&#160;string
-        <br />Default:&#160;(empty)</p>
-      </div>
-      <p>Similar to the
-      <a class="link" href="#attribution-intro" title="3.31.&#160;attribution_intro">$attribution_intro</a> variable, NeoMutt will append this string after the inclusion of a message which is being replied to.</p>
       <div class="note">
-      <h3 class="title">Note</h3> Before 2021-03-21, this was called $post_indent_str</div>
+      <h3 class="title">Note</h3> Renamed to
+      <a class="link" href="#attribution-trailer" title="3.33.&#160;attribution_trailer">$attribution_trailer</a>(2023-02-20)</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
