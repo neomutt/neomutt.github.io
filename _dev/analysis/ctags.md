@@ -10,7 +10,7 @@ author: flatcap
 {{ page.description }}
 {% include analysis-links.html %}
 
-- [http://ctags.sourceforge.net/](http://ctags.sourceforge.net/)
+- [https://github.com/universal-ctags/ctags](https://github.com/universal-ctags/ctags)
 
 `ctags` generates tags files that your editor can use to lookup symbols in the source:
 all the functions, structs, global variables, etc.
