@@ -8205,6 +8205,23 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>imap_send_id</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will send an IMAP ID command (RFC2971) to the server when logging in if advertised by the server. This command provides information about the IMAP client, such as "NeoMutt" and the current version.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>implicit_auto_view</strong>
             </span>
           </span>
