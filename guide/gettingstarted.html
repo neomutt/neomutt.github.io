@@ -3033,7 +3033,7 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">.</span>”</span> implies that the key is marked as an encryption key in one of the user-ids, and
       <span class="quote">“<span class="quote">s</span>”</span> denotes a key which can be used for signing.</p>
       <p>Finally, the validity field (
-      <span class="quote">“<span class="quote">%t</span>”</span>) indicates how well-certified a user-id is. It's values depend on the backend used. Note that S/MIME (which uses X509 certificates) has no concept of validity, so this field simply shows
+      <span class="quote">“<span class="quote">%t</span>”</span>) indicates how well-certified a user-id is. Its values depend on the backend used. Note that S/MIME (which uses X509 certificates) has no concept of validity, so this field simply shows
       <code class="literal">x</code>. The possible values listed in
       <a class="xref" href="#tab-pgp-menuvalidity" title="Table&#160;2.18.&#160;PGP key menu validity">Table&#160;2.18, “PGP key menu validity”</a>.</p>
       <div >
@@ -3079,7 +3079,7 @@ bind editor &lt;delete&gt; backspace
               <tr>
                 <td>+</td>
                 <td>f</td>
-                <td>indicates fully validity (fully trusted)</td>
+                <td>indicates full validity (fully trusted)</td>
               </tr>
               <tr>
                 <td>N/A</td>
@@ -3118,9 +3118,9 @@ bind editor &lt;delete&gt; backspace
         <p>
         <code class="literal">format=flowed</code>-style messages (or
         <code class="literal">f=f</code> for short) are
-        <code class="literal">text/plain</code> messages that consist of paragraphs which a receiver's mail client may reformat to its own needs which mostly means to customize line lengths regardless of what the sender sent. Technically this is achieved by letting lines of a
+        <code class="literal">text/plain</code> messages that consist of paragraphs which a receiver's mail client may reformat to its own needs, which mostly means to customize line lengths regardless of what the sender sent. Technically this is achieved by letting lines of a
         <span class="quote">“<span class="quote">flowable</span>”</span> paragraph end in spaces except for the last line.</p>
-        <p>While for text-mode clients like NeoMutt it's the best way to assume only a standard 80x25 character cell terminal, it may be desired to let the receiver decide completely how to view a message.</p>
+        <p>While for text-mode clients like NeoMutt it's best to assume only a standard 80x24 character cell terminal, it may be desired to let the receiver decide completely how to view a message.</p>
       </div>
       <div class="sect3">
         <div class="titlepage">
@@ -3137,8 +3137,8 @@ bind editor &lt;delete&gt; backspace
         <p>After editing, NeoMutt properly space-stuffs the message.
         <span class="emphasis">
           <em>Space-stuffing</em>
-        </span>is required by RFC3676 defining
-        <code class="literal">format=flowed</code> and means to prepend a space to:</p>
+        </span>is required by RFC3676, defining
+        <code class="literal">format=flowed</code>, and means to prepend a space to:</p>
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
@@ -3154,7 +3154,7 @@ bind editor &lt;delete&gt; backspace
               <p>all lines starting with
               <span class="quote">“<span class="quote">
                 <code class="literal">&gt;</code>
-              </span>”</span> which is not intended to be a quote character</p>
+              </span>”</span>, which is not intended to be a quote character</p>
             </li>
           </ul>
         </div>
