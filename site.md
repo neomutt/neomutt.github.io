@@ -23,7 +23,7 @@ framework and a colour scheme from Ian Wootten's
 [jekyll-syntax](https://github.com/iwootten/jekyll-syntax) collection.
 
 - Source Code for this site:  
-  [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)
+  [https://github.com/neomutt/neomutt.github.io](https://github.com/neomutt/neomutt.github.io)
 - NeoMutt Releases:  
   [https://github.com/neomutt/neomutt/releases/latest](https://github.com/neomutt/neomutt/releases/latest)
 - Questions/Bugs with the website:  
