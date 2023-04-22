@@ -53,7 +53,7 @@ status: stable
     <code class="literal">smtp_pass</code>, etc. There are a few downsides to this approach. For one thing, their use encourages storing usernames and passwords in plain text inside a NeoMutt config file. People have come up with solutions to this, including using gpg-encrypted files and populating
     <code class="literal">my_</code> variables via external scripts through
     <code class="literal">source "/path/to/script|"</code>. However, once the variables are set, the secrets can be inspected with the
-    <code class="literal">set</code> command. Also, because these config variables are not account-specific, they have been the cause of a proliferation of ways to mimic per-account setups using a combination of convoluted hooks and macros to modify them on on folder change or on a keypress.</p>
+    <code class="literal">set</code> command. Also, because these config variables are not account-specific, they have been the cause of a proliferation of ways to mimic per-account setups using a combination of convoluted hooks and macros to modify them on folder change or on a keypress.</p>
     <p>The goal of this feature is to get rid of most
     <code class="literal">_user</code> and
     <code class="literal">_pass</code> variables. To do so, we provide a way of specifying an external command that NeoMutt will call to populate account credentials for network servers such as IMAP, POP, or SMTP. The external command is called with a number of arguments indicating the known properties of the account such as the account type and hostname; the external command provides NeoMutt with a list of additional properties such as username and password.</p>

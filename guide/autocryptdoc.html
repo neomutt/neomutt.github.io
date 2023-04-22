@@ -11,210 +11,219 @@ title: Autocrypt
       </div>
     </div>
   </div>
-  <p>NeoMutt can be compiled with Autocrypt support by running
-  <code class="literal">configure</code> with the
-  <code class="literal">--autocrypt</code> flag. Autocrypt provides easy to use, passive protection against data collection. Keys are distributed via an
-  <code class="literal">Autocrypt:</code>header added to emails. It does
-  <span class="emphasis">
-    <em>not</em>
-  </span>protect against active adversaries, and so should not be considered a substitute for normal encryption via your keyring, using key signing and the web of trust to verify identities. With an understanding of these limitations, Autocrypt still provides an easy way to minimize cleartext emails sent between common correspondents, without having to explicitly exchange keys. More information can be found at
-  <a class="ulink" href="https://autocrypt.org/" target="_top">https://autocrypt.org/</a>.</p>
   <div class="sect1">
     <div class="titlepage">
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="requirements"></a>1.&#160;Requirements</h2>
+          <a id="autocryptdoc"></a>1.&#160;Autocrypt</h2>
         </div>
       </div>
     </div>
-    <p>Autocrypt requires support for ECC cryptography, and NeoMutt by default will generate ECC keys. Therefore GnuPG 2.1 or greater is required. Additionally, NeoMutt's Autocrypt implementation uses GPGME and requires at least version 1.8.0.</p>
-    <p>Account and peer information is stored in a sqlite3 database, and so NeoMutt must be configured with the
-    <code class="literal">--with-sqlite</code> flag when autocrypt is enabled.</p>
-    <p>It is highly recommended that NeoMutt be configured
-    <code class="literal">--with-idn</code> or
-    <code class="literal">--with-idn2</code> so that Autocrypt can properly deal with international domain names.</p>
-    <p>While NeoMutt uses GPGME for Autocrypt, normal keyring operations can still be performed via classic mode (i.e. with
-    <a class="link" href="reference.html#crypt-use-gpgme" title="3.92.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
-    <code class="literal">loopback pinentry</code> mode, and that
-    <a class="link" href="reference.html#pgp-use-gpg-agent" title="3.334.&#160;pgp_use_gpg_agent">$pgp_use_gpg_agent</a> remain set (the default).</p>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
+    <p>NeoMutt can be compiled with Autocrypt support by running
+    <code class="literal">configure</code> with the
+    <code class="literal">--autocrypt</code> flag. Autocrypt provides easy to use, passive protection against data collection. Keys are distributed via an
+    <code class="literal">Autocrypt:</code>header added to emails. It does
+    <span class="emphasis">
+      <em>not</em>
+    </span>protect against active adversaries, and so should not be considered a substitute for normal encryption via your keyring, using key signing and the web of trust to verify identities. With an understanding of these limitations, Autocrypt still provides an easy way to minimize cleartext emails sent between common correspondents, without having to explicitly exchange keys. More information can be found at
+    <a class="ulink" href="https://autocrypt.org/" target="_top">https://autocrypt.org/</a>.</p>
+    <div class="sect2">
+      <div class="titlepage">
         <div>
-          <h2 class="title" style="clear: both">
-          <a id="init"></a>2.&#160;First Run</h2>
+          <div>
+            <h3 class="title">
+            <a id="requirements"></a>1.1.&#160;Requirements</h3>
+          </div>
         </div>
       </div>
+      <p>Autocrypt requires support for ECC cryptography, and NeoMutt by default will generate ECC keys. Therefore GnuPG 2.1 or greater is required. Additionally, NeoMutt's Autocrypt implementation uses GPGME and requires at least version 1.8.0.</p>
+      <p>Account and peer information is stored in a sqlite3 database, and so NeoMutt must be configured with the
+      <code class="literal">--with-sqlite</code> flag when autocrypt is enabled.</p>
+      <p>It is highly recommended that NeoMutt be configured with
+      <code class="literal">--idn2</code>(enabled by default) so that Autocrypt can properly deal with international domain names.</p>
+      <p>While NeoMutt uses GPGME for Autocrypt, normal keyring operations can still be performed via classic mode (i.e. with
+      <a class="link" href="reference.html#crypt-use-gpgme" title="3.92.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
+      <code class="literal">loopback pinentry</code> mode, and that
+      <a class="link" href="reference.html#pgp-use-gpg-agent" title="3.334.&#160;pgp_use_gpg_agent">$pgp_use_gpg_agent</a> remain set (the default).</p>
     </div>
-    <p>To enable Autocrypt, set
-    <a class="link" href="reference.html#autocrypt" title="3.37.&#160;autocrypt">$autocrypt</a>, and if desired change the value of
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> in your muttrc. The first time NeoMutt is run after that, you will be prompted to create
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a>. NeoMutt will then automatically create an sqlite3 database and GPG keyring in that directory. Note since these files should be considered private, NeoMutt will create this directory with mode
-    <code class="literal">700</code>. If you create the directory manually, you should do the same.</p>
-    <p>NeoMutt recommends keeping the
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> directory set differently from your GnuPG keyring directory (e.g.
-    <code class="literal">~/.gnupg</code>). Keys are automatically imported into the keyring from
-    <code class="literal">Autocrypt:</code>headers. Compared to standard
-    <span class="quote">“
-    <span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
-    <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.79.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
-    <p>The
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> variable is not designed to be changed while NeoMutt is running. The database is created (if necessary) and connected to during startup. Changing the variable can result in a situation where NeoMutt is looking in one place for the database and a different place for the GPG keyring, resulting in strange behavior.</p>
-    <p>Once the directory, keyring, and database are created, NeoMutt will ask whether you would like to create an account. In order to use Autocrypt, each sending address needs an account. As a convenience you can create an account during the first run. If you would like to add additional accounts later, this can be done via the
-    <code class="literal">&lt;autocrypt-acct-menu&gt;</code>function in the index, by default bound to
-    <code class="literal">A</code>.</p>
-    <p>Account creation will first ask you for an email address. Next, it will ask whether you want to create a new key or select an existing key. (Note key selection takes place from the
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> keyring, which will normally be empty during first run). Finally, it will ask whether this address should prefer encryption or not. Autocrypt 1.1 allows automatically enabling encryption if
-    <span class="emphasis">
-      <em>both</em>
-    </span>sender and receiver have set
-    <span class="quote">“<span class="quote">prefer encryption</span>”</span>. Otherwise, you will need to manually enable autocrypt encryption in the compose menu. For more details, see the compose menu section below.</p>
-    <p>After optionally creating an account, NeoMutt will prompt you to scan mailboxes for Autocrypt headers. This step occurs because header cached messages are not re-scanned for Autocrypt headers. Scanning during this step will temporarily disable the header cache while opening each mailbox. If you wish to do this manually later, you can simulate the same thing by unsetting
-    <a class="link" href="reference.html#header-cache" title="3.148.&#160;header_cache">$header_cache</a> and opening a mailbox.</p>
-    <p>A final technical note: the first run process takes place between reading the muttrc and opening the initial mailbox. Some muttrc files will
-    <a class="link" href="configuration.html#push" title="23.&#160;Adding Key Sequences to the Keyboard Buffer">push</a> macros to be run after opening the mailbox. To prevent this from interfering with the first run prompts, NeoMutt disables all macros during the first run.</p>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
+    <div class="sect2">
+      <div class="titlepage">
         <div>
-          <h2 class="title" style="clear: both">
-          <a id="compose"></a>3.&#160;Compose Menu</h2>
+          <div>
+            <h3 class="title">
+            <a id="init"></a>1.2.&#160;First Run</h3>
+          </div>
         </div>
       </div>
+      <p>To enable Autocrypt, set
+      <a class="link" href="reference.html#autocrypt" title="3.37.&#160;autocrypt">$autocrypt</a>, and if desired change the value of
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> in your muttrc. The first time NeoMutt is run after that, you will be prompted to create
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a>. NeoMutt will then automatically create an sqlite3 database and GPG keyring in that directory. Note since these files should be considered private, NeoMutt will create this directory with mode
+      <code class="literal">700</code>. If you create the directory manually, you should do the same.</p>
+      <p>NeoMutt recommends keeping the
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> directory set differently from your GnuPG keyring directory (e.g.
+      <code class="literal">~/.gnupg</code>). Keys are automatically imported into the keyring from
+      <code class="literal">Autocrypt:</code>headers. Compared to standard
+      <span class="quote">“
+      <span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
+      <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.79.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
+      <p>The
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> variable is not designed to be changed while NeoMutt is running. The database is created (if necessary) and connected to during startup. Changing the variable can result in a situation where NeoMutt is looking in one place for the database and a different place for the GPG keyring, resulting in strange behavior.</p>
+      <p>Once the directory, keyring, and database are created, NeoMutt will ask whether you would like to create an account. In order to use Autocrypt, each sending address needs an account. As a convenience you can create an account during the first run. If you would like to add additional accounts later, this can be done via the
+      <code class="literal">&lt;autocrypt-acct-menu&gt;</code>function in the index, by default bound to
+      <code class="literal">A</code>.</p>
+      <p>Account creation will first ask you for an email address. Next, it will ask whether you want to create a new key or select an existing key. (Note key selection takes place from the
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> keyring, which will normally be empty during first run). Finally, it will ask whether this address should prefer encryption or not. Autocrypt 1.1 allows automatically enabling encryption if
+      <span class="emphasis">
+        <em>both</em>
+      </span>sender and receiver have set
+      <span class="quote">“<span class="quote">prefer encryption</span>”</span>. Otherwise, you will need to manually enable autocrypt encryption in the compose menu. For more details, see the compose menu section below.</p>
+      <p>After optionally creating an account, NeoMutt will prompt you to scan mailboxes for Autocrypt headers. This step occurs because header cached messages are not re-scanned for Autocrypt headers. Scanning during this step will temporarily disable the header cache while opening each mailbox. If you wish to do this manually later, you can simulate the same thing by unsetting
+      <a class="link" href="reference.html#header-cache" title="3.148.&#160;header_cache">$header_cache</a> and opening a mailbox.</p>
+      <p>A final technical note: the first run process takes place between reading the muttrc and opening the initial mailbox. Some muttrc files will
+      <a class="link" href="configuration.html#push" title="23.&#160;Adding Key Sequences to the Keyboard Buffer">push</a> macros to be run after opening the mailbox. To prevent this from interfering with the first run prompts, NeoMutt disables all macros during the first run.</p>
     </div>
-    <p>When enabled, Autocrypt will add a line to the compose menu with two fields:
-    <code class="literal">Autocrypt:</code>and
-    <code class="literal">Recommendation:</code>.</p>
-    <p>The
-    <code class="literal">Autocrypt:</code>field shows whether the message will be encrypted by Autocrypt when sent. It has two values:
-    <code class="literal">Encrypt</code> and
-    <code class="literal">Off</code>.
-    <code class="literal">Encrypt</code> can be enabled using the
-    <code class="literal">&lt;autocrypt-menu&gt;</code>function, by default bound to
-    <code class="literal">o</code>.</p>
-    <p>The
-    <code class="literal">Recommendation:</code>field shows the output of the Autocrypt recommendation engine. This can have one of five values:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>
-          <code class="literal">Off</code> means the engine is disabled. This can happen if the From address doesn't have an autocrypt account, or if the account has been manually disabled.</p>
-        </li>
-        <li class="listitem">
-          <p>
-          <code class="literal">No</code> means one or more recipients are missing an autocrypt key, or the key found is unusable (i.e. expired, revoked, disabled, invalid, or not usable for encryption.)</p>
-        </li>
-        <li class="listitem">
-          <p>
-          <code class="literal">Discouraged</code> means a key was found for every recipient, but the engine is not confident the message will be decryptable by the recipient. This can happen if the key hasn't been used recently (compared to their last seen email).</p>
-          <p>It can also happen if the key wasn't seen first-hand from the sender. Autocrypt has a feature where recipient keys can be included in group-encrypted emails. This allows you to reply to a conversation where you don't have a key first-hand from one of the other recipients. However, those keys are not trusted as much as from first-hand emails, so the engine warns you with a
-          <code class="literal">Discouraged</code> status.</p>
-        </li>
-        <li class="listitem">
-          <p>
-          <code class="literal">Available</code> means a key was found for every recipient, and the engine believes all keys are recent and seen from the recipient first hand. However, either you or one of the recipients chose not to specify
-          <span class="quote">“<span class="quote">prefer encryption</span>”</span>.</p>
-        </li>
-        <li class="listitem">
-          <p>
-          <code class="literal">Yes</code> is the same as
-          <code class="literal">Available</code>, with the addition that you and all recipients have specified
-          <span class="quote">“<span class="quote">prefer encryption</span>”</span>. This value will automatically enable encryption, unless you have manually switched it off or enabled regular encryption or signing via the
-          <code class="literal">&lt;pgp-menu&gt;</code>.</p>
-        </li>
-      </ul>
-    </div>
-    <p>As mentioned above the
-    <code class="literal">&lt;autocrypt-menu&gt;</code>function, by default bound to
-    <code class="literal">o</code>, can be used to change the
-    <code class="literal">Encrypt:</code>field value.
-    <code class="literal">(e)ncrypt</code> will toggle encryption on.
-    <code class="literal">(c)lear</code> will toggle encryption off. If either of these are chosen, the field will remain in that state despite what the
-    <code class="literal">Recommendation:</code>field shows. Lastly,
-    <code class="literal">(a)utomatic</code> will set the value based on the recommendation engine's output.</p>
-    <p>Autocrypt encryption defers to normal encryption or signing.
-    <span class="emphasis">
-      <em>Anything</em>
-    </span>that enables normal encryption or signing will cause autocrypt encryption to turn off. The only exception is when replying to an autocrypt-encrypted email (i.e. an email decrypted from the
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> keyring). Then, if
-    <a class="link" href="reference.html#autocrypt-reply" title="3.40.&#160;autocrypt_reply">$autocrypt_reply</a> is
-    <span class="emphasis">
-      <em>set</em>
-    </span>, autocrypt mode will be forced on, overriding the settings
-    <a class="link" href="reference.html#crypt-auto-sign" title="3.70.&#160;crypt_auto_sign">$crypt_auto_sign</a>,
-    <a class="link" href="reference.html#crypt-auto-encrypt" title="3.68.&#160;crypt_auto_encrypt">$crypt_auto_encrypt</a>,
-    <a class="link" href="reference.html#crypt-reply-encrypt" title="3.85.&#160;crypt_reply_encrypt">$crypt_reply_encrypt</a>,
-    <a class="link" href="reference.html#crypt-reply-sign" title="3.86.&#160;crypt_reply_sign">$crypt_reply_sign</a>,
-    <a class="link" href="reference.html#crypt-reply-sign-encrypted" title="3.87.&#160;crypt_reply_sign_encrypted">$crypt_reply_sign_encrypted</a>, and
-    <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.79.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a>.</p>
-    <p>When postponing a message, autocrypt will respect
-    <a class="link" href="reference.html#postpone-encrypt" title="3.357.&#160;postpone_encrypt">$postpone_encrypt</a>, but will use the autocrypt account key to encrypt the message. Be sure to set
-    <a class="link" href="reference.html#postpone-encrypt" title="3.357.&#160;postpone_encrypt">$postpone_encrypt</a> to ensure postponed messages marked for autocrypt encryption are encrypted.</p>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
+    <div class="sect2">
+      <div class="titlepage">
         <div>
-          <h2 class="title" style="clear: both">
-          <a id="acctmgmt"></a>4.&#160;Account Management</h2>
+          <div>
+            <h3 class="title">
+            <a id="compose"></a>1.3.&#160;Compose Menu</h3>
+          </div>
         </div>
       </div>
+      <p>When enabled, Autocrypt will add a line to the compose menu with two fields:
+      <code class="literal">Autocrypt:</code>and
+      <code class="literal">Recommendation:</code>.</p>
+      <p>The
+      <code class="literal">Autocrypt:</code>field shows whether the message will be encrypted by Autocrypt when sent. It has two values:
+      <code class="literal">Encrypt</code> and
+      <code class="literal">Off</code>.
+      <code class="literal">Encrypt</code> can be enabled using the
+      <code class="literal">&lt;autocrypt-menu&gt;</code>function, by default bound to
+      <code class="literal">o</code>.</p>
+      <p>The
+      <code class="literal">Recommendation:</code>field shows the output of the Autocrypt recommendation engine. This can have one of five values:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p>
+            <code class="literal">Off</code> means the engine is disabled. This can happen if the From address doesn't have an autocrypt account, or if the account has been manually disabled.</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">No</code> means one or more recipients are missing an autocrypt key, or the key found is unusable (i.e. expired, revoked, disabled, invalid, or not usable for encryption.)</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">Discouraged</code> means a key was found for every recipient, but the engine is not confident the message will be decryptable by the recipient. This can happen if the key hasn't been used recently (compared to their last seen email).</p>
+            <p>It can also happen if the key wasn't seen first-hand from the sender. Autocrypt has a feature where recipient keys can be included in group-encrypted emails. This allows you to reply to a conversation where you don't have a key first-hand from one of the other recipients. However, those keys are not trusted as much as from first-hand emails, so the engine warns you with a
+            <code class="literal">Discouraged</code> status.</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">Available</code> means a key was found for every recipient, and the engine believes all keys are recent and seen from the recipient first hand. However, either you or one of the recipients chose not to specify
+            <span class="quote">“<span class="quote">prefer encryption</span>”</span>.</p>
+          </li>
+          <li class="listitem">
+            <p>
+            <code class="literal">Yes</code> is the same as
+            <code class="literal">Available</code>, with the addition that you and all recipients have specified
+            <span class="quote">“<span class="quote">prefer encryption</span>”</span>. This value will automatically enable encryption, unless you have manually switched it off or enabled regular encryption or signing via the
+            <code class="literal">&lt;pgp-menu&gt;</code>.</p>
+          </li>
+        </ul>
+      </div>
+      <p>As mentioned above the
+      <code class="literal">&lt;autocrypt-menu&gt;</code>function, by default bound to
+      <code class="literal">o</code>, can be used to change the
+      <code class="literal">Encrypt:</code>field value.
+      <code class="literal">(e)ncrypt</code> will toggle encryption on.
+      <code class="literal">(c)lear</code> will toggle encryption off. If either of these are chosen, the field will remain in that state despite what the
+      <code class="literal">Recommendation:</code>field shows. Lastly,
+      <code class="literal">(a)utomatic</code> will set the value based on the recommendation engine's output.</p>
+      <p>Autocrypt encryption defers to normal encryption or signing.
+      <span class="emphasis">
+        <em>Anything</em>
+      </span>that enables normal encryption or signing will cause autocrypt encryption to turn off. The only exception is when replying to an autocrypt-encrypted email (i.e. an email decrypted from the
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> keyring). Then, if
+      <a class="link" href="reference.html#autocrypt-reply" title="3.40.&#160;autocrypt_reply">$autocrypt_reply</a> is
+      <span class="emphasis">
+        <em>set</em>
+      </span>, autocrypt mode will be forced on, overriding the settings
+      <a class="link" href="reference.html#crypt-auto-sign" title="3.70.&#160;crypt_auto_sign">$crypt_auto_sign</a>,
+      <a class="link" href="reference.html#crypt-auto-encrypt" title="3.68.&#160;crypt_auto_encrypt">$crypt_auto_encrypt</a>,
+      <a class="link" href="reference.html#crypt-reply-encrypt" title="3.85.&#160;crypt_reply_encrypt">$crypt_reply_encrypt</a>,
+      <a class="link" href="reference.html#crypt-reply-sign" title="3.86.&#160;crypt_reply_sign">$crypt_reply_sign</a>,
+      <a class="link" href="reference.html#crypt-reply-sign-encrypted" title="3.87.&#160;crypt_reply_sign_encrypted">$crypt_reply_sign_encrypted</a>, and
+      <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.79.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a>.</p>
+      <p>When postponing a message, autocrypt will respect
+      <a class="link" href="reference.html#postpone-encrypt" title="3.357.&#160;postpone_encrypt">$postpone_encrypt</a>, but will use the autocrypt account key to encrypt the message. Be sure to set
+      <a class="link" href="reference.html#postpone-encrypt" title="3.357.&#160;postpone_encrypt">$postpone_encrypt</a> to ensure postponed messages marked for autocrypt encryption are encrypted.</p>
     </div>
-    <p>The Autocrypt Account Menu is available from the index via
-    <code class="literal">&lt;autocrypt-acct-menu&gt;</code>, by default bound to
-    <code class="literal">A</code>. See
-    <a class="link" href="reference.html#autocrypt-account-map" title="4.14.&#160;Autocrypt Account Menu">Autocrypt Account Menu</a> for the list of functions and their default keybindings.</p>
-    <p>In this menu, you can create new accounts, delete accounts, toggle an account active/inactive, and toggle the
-    <span class="quote">“<span class="quote">prefer encryption</span>”</span> flag for an account.</p>
-    <p>Deleting an account only removes the account from the database. The GPG key is kept, to ensure you still have the ability to read past encrypted emails.</p>
-    <p>The Autocrypt 1.1
-    <span class="quote">“<span class="quote">Setup Message</span>”</span> feature is not available yet, but will be added in the future.</p>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
+    <div class="sect2">
+      <div class="titlepage">
         <div>
-          <h2 class="title" style="clear: both">
-          <a id="keyrings"></a>5.&#160;Alternative Key and Keyring Strategies</h2>
+          <div>
+            <h3 class="title">
+            <a id="acctmgmt"></a>1.4.&#160;Account Management</h3>
+          </div>
         </div>
       </div>
+      <p>The Autocrypt Account Menu is available from the index via
+      <code class="literal">&lt;autocrypt-acct-menu&gt;</code>, by default bound to
+      <code class="literal">A</code>. See
+      <a class="link" href="reference.html#autocrypt-account-map" title="4.14.&#160;Autocrypt Account Menu">Autocrypt Account Menu</a> for the list of functions and their default keybindings.</p>
+      <p>In this menu, you can create new accounts, delete accounts, toggle an account active/inactive, and toggle the
+      <span class="quote">“<span class="quote">prefer encryption</span>”</span> flag for an account.</p>
+      <p>Deleting an account only removes the account from the database. The GPG key is kept, to ensure you still have the ability to read past encrypted emails.</p>
+      <p>The Autocrypt 1.1
+      <span class="quote">“<span class="quote">Setup Message</span>”</span> feature is not available yet, but will be added in the future.</p>
     </div>
-    <p>NeoMutt by default partitions Autocrypt from normal keyring encryption/signing. It does this by using a separate GPG keyring (in
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a>) and creating a new ECC key in that keyring for accounts. There are good reasons for doing this by default. It keeps random keys found inside email headers out of your normal keyring. ECC keys are compact and better suited for email headers. Autocrypt key selection is completely different from
-    <span class="quote">“<span class="quote">web of trust</span>”</span> key selection, based on last-seen rules as opposed to trust and validity. It also allows NeoMutt to distinguish Autocrypt encrypted emails from regular encrypted emails, and set the mode appropriately when replying to each type of email.</p>
-    <p>Still, some users may want to use an existing key from their normal keyring for Autocrypt too. There are two ways this can be accomplished. The
-    <span class="emphasis">
-      <em>recommended</em>
-    </span>way is to set
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> to your normal keyring directory (e.g.
-    <code class="literal">~/.gnupg</code>). During account creation, choosing
-    <span class="quote">“<span class="quote">(s)elect existing GPG key</span>”</span> will then list and allow selecting your existing key for the new account.</p>
-    <p>An alternative is to copy your key over to the Autocrypt keyring, but there is a severe downside. NeoMutt
-    <span class="emphasis">
-      <em>first</em>
-    </span>tries to decrypt messages using the Autocrypt keyring, and if that fails tries the normal keyring second. This means all encrypted emails to that key will be decrypted, and have signatures verified from, the Autocrypt keyring. Keys signatures and web of trust from your normal keyring will no longer show up in signatures when decrypting.</p>
-    <p>For that reason, if you want to use an existing key from your normal keyring, it is recommended to just set
-    <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> to
-    <code class="literal">~/.gnupg</code>. This allows
-    <span class="quote">“<span class="quote">web of trust</span>”</span> to show an appropriate signature message for verified messages. Autocrypt header keys will be imported into your keyring, but if you don't want them mixed you should strongly consider using a separate autocrypt key and keyring instead.</p>
-    <p>Both methods have a couple additional caveats:</p>
-    <div class="itemizedlist">
-      <ul class="itemizedlist" style="list-style-type: disc;">
-        <li class="listitem">
-          <p>Replying to an Autocrypt decrypted message by default forces Autocrypt mode on. By sharing the same key, all replies will then start in Autocrypt mode, even if a message wasn't sent by one of your Autocrypt peers.
-          <a class="link" href="reference.html#autocrypt-reply" title="3.40.&#160;autocrypt_reply">$autocrypt_reply</a> can be
-          <span class="emphasis">
-            <em>unset</em>
-          </span>to allow manual control of the mode when replying.</p>
-        </li>
-        <li class="listitem">
-          <p>When NeoMutt creates an account from a GPG key, it exports the public key, base64 encodes it, and stores that value in the sqlite3 database. The value is then used in the Autocrypt header added to outgoing emails. The ECC keys NeoMutt creates don't change, but if you use external keys that expire, when you resign to extend the expiration you will need to recreate the Autocrypt account using the
-          <a class="link" href="#autocryptdoc-acctmgmt" title="4.&#160;Account Management">account menu</a>. Otherwise the Autocrypt header will contain the old expired exported keydata.</p>
-        </li>
-      </ul>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="keyrings"></a>1.5.&#160;Alternative Key and Keyring Strategies</h3>
+          </div>
+        </div>
+      </div>
+      <p>NeoMutt by default partitions Autocrypt from normal keyring encryption/signing. It does this by using a separate GPG keyring (in
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a>) and creating a new ECC key in that keyring for accounts. There are good reasons for doing this by default. It keeps random keys found inside email headers out of your normal keyring. ECC keys are compact and better suited for email headers. Autocrypt key selection is completely different from
+      <span class="quote">“<span class="quote">web of trust</span>”</span> key selection, based on last-seen rules as opposed to trust and validity. It also allows NeoMutt to distinguish Autocrypt encrypted emails from regular encrypted emails, and set the mode appropriately when replying to each type of email.</p>
+      <p>Still, some users may want to use an existing key from their normal keyring for Autocrypt too. There are two ways this can be accomplished. The
+      <span class="emphasis">
+        <em>recommended</em>
+      </span>way is to set
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> to your normal keyring directory (e.g.
+      <code class="literal">~/.gnupg</code>). During account creation, choosing
+      <span class="quote">“<span class="quote">(s)elect existing GPG key</span>”</span> will then list and allow selecting your existing key for the new account.</p>
+      <p>An alternative is to copy your key over to the Autocrypt keyring, but there is a severe downside. NeoMutt
+      <span class="emphasis">
+        <em>first</em>
+      </span>tries to decrypt messages using the Autocrypt keyring, and if that fails tries the normal keyring second. This means all encrypted emails to that key will be decrypted, and have signatures verified from, the Autocrypt keyring. Keys signatures and web of trust from your normal keyring will no longer show up in signatures when decrypting.</p>
+      <p>For that reason, if you want to use an existing key from your normal keyring, it is recommended to just set
+      <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> to
+      <code class="literal">~/.gnupg</code>. This allows
+      <span class="quote">“<span class="quote">web of trust</span>”</span> to show an appropriate signature message for verified messages. Autocrypt header keys will be imported into your keyring, but if you don't want them mixed you should strongly consider using a separate autocrypt key and keyring instead.</p>
+      <p>Both methods have a couple additional caveats:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p>Replying to an Autocrypt decrypted message by default forces Autocrypt mode on. By sharing the same key, all replies will then start in Autocrypt mode, even if a message wasn't sent by one of your Autocrypt peers.
+            <a class="link" href="reference.html#autocrypt-reply" title="3.40.&#160;autocrypt_reply">$autocrypt_reply</a> can be
+            <span class="emphasis">
+              <em>unset</em>
+            </span>to allow manual control of the mode when replying.</p>
+          </li>
+          <li class="listitem">
+            <p>When NeoMutt creates an account from a GPG key, it exports the public key, base64 encodes it, and stores that value in the sqlite3 database. The value is then used in the Autocrypt header added to outgoing emails. The ECC keys NeoMutt creates don't change, but if you use external keys that expire, when you resign to extend the expiration you will need to recreate the Autocrypt account using the
+            <a class="link" href="#autocryptdoc-acctmgmt" title="1.4.&#160;Account Management">account menu</a>. Otherwise the Autocrypt header will contain the old expired exported keydata.</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
