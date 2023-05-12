@@ -976,6 +976,15 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>white</strong>
       </span>, 
       <span class="strong">
+        <strong>#</strong>
+      </span>
+      <span class="emphasis">
+        <em>RRGGBB</em>
+      </span>
+      <span class="strong">
+        <strong />
+      </span>, 
+      <span class="strong">
         <strong>color</strong>
       </span>
       <span class="emphasis">
@@ -5495,6 +5504,29 @@ Default: yes
           <span class="emphasis">
             <em>unset</em>
           </span>, NeoMutt will not collapse a thread if it contains any unread messages.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>color_directcolor</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will use and allow 24bit colours (aka truecolor aka directcolor). For colours to work properly support from the terminal is required as well as a properly set TERM environment variable advertising the terminals directcolor capability, e.g. "TERM=xterm-direct".</p>
+          <p>NeoMutt tries to detect whether the terminal supports 24bit colours and enables this variable if it does. If this fails for some reason, you can force 24bit colours by setting this variable manually. You may also try to force a certain TERM environment variable by starting NeoMutt from a terminal as follows (this results in wrong colours if the terminal does not implement directcolors):</p>
+          <pre class="screen">
+TERM=xterm-direct neomutt
+
+</pre>
+          <p>Note: This variable must be set before using any `color` commands.</p>
         </dd>
         <dt>
           <span class="term">
@@ -10234,7 +10266,7 @@ Default: yes
             <br />Default:&#160;0 
             <br /></p>
           </div>
-          <p>Determines the number of lines of a mini-index which is shown when in the pager. The current message, unless near the top or bottom of the folder, will be roughly one third of the way down this mini-index, giving the reader the context of a few messages before and after the message. This is useful, for example, to determine how many messages remain to be read in the current thread. A value of 0 results in no index being shown. If the number of messages in the current folder is less than $pager_index_lines, then the index will only use as many lines as it needs.</p>
+          <p>Determines the number of lines of a mini-index which is shown when in the pager. The current message, unless near the top or bottom of the folder, will be roughly one third of the way down this mini-index, giving the reader the context of a few messages before and after the message. This is useful, for example, to determine how many messages remain to be read in the current thread. A value of 0 results in no index being shown.</p>
         </dd>
         <dt>
           <span class="term">
