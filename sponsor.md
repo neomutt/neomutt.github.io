@@ -28,8 +28,6 @@ You may also be interested in:
 
 Using **[GitHub Sponsors](https://github.com/sponsors/flatcap)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
 
-:star2: **Note**: GitHub will match any donations you make
-
 ---
 
 <a href="https://patreon.com/neomutt"><img alt="Patreon" width="48" src="/images/patreon.png"> <span class="big">Patreon</span></a>
