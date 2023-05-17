@@ -24,6 +24,37 @@ You may also be interested in:
 
 ---
 
+## :gem: Sponsors
+
+<table>
+  <tr>
+    <td><a href="https://github.com/pbwn/"><img width="96" src="https://avatars.githubusercontent.com/u/34809091"></a></td>
+    <td><a href="https://github.com/scottkosty/"><img width="96" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
+    <td><a href="https://github.com/4nd3r/"><img width="96" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
+    <td><a href="https://github.com/kmARC/"><img width="96" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
+    <td><a href="https://github.com/igor47/"><img width="96" src="https://avatars.githubusercontent.com/u/200575"></a></td>
+  </tr>
+  <tr>
+    <td>
+      P&nbsp;M&nbsp;Brown<br>(@pbwn)
+    </td>
+    <td>
+      Scott&nbsp;Kostyshak<br>(@scottkosty)
+    </td>
+    <td>
+      Ander&nbsp;Punnar<br>(@4nd3r)
+    </td>
+    <td>
+      Mark&nbsp;Korondi<br>(@kmARC)
+    </td>
+    <td>
+      Igor&nbsp;Serebryany<br>(@igor47)
+    </td>
+  </tr>
+</table>
+
+---
+
 <a href="https://github.com/sponsors/flatcap"><img alt="GitHub" width="48" src="/images/github-large.png"> <span class="big">GitHub</span></a>
 
 Using **[GitHub Sponsors](https://github.com/sponsors/flatcap)**, you can set up **monthly sponsorship**, or make a **one-time donation**.
