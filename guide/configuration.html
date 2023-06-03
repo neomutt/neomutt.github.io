@@ -203,11 +203,11 @@ title: Configuration
       <p>Additionally, there are a handful of config items which can be set using an environment variable. They have a lower priority than the NeoMutt config files:
       <a class="link" href="reference.html#editor" title="3.109.&#160;editor">$editor</a>,
       <a class="link" href="reference.html#from" title="3.141.&#160;from">$from</a>,
-      <a class="link" href="reference.html#mailcap-path" title="3.215.&#160;mailcap_path">$mailcap_path</a>,
-      <a class="link" href="reference.html#news-server" title="3.255.&#160;news_server">$news_server</a>,
-      <a class="link" href="reference.html#shell" title="3.410.&#160;shell">shell</a>,
-      <a class="link" href="reference.html#spool-file" title="3.476.&#160;spool_file">$spool_file</a>,
-      <a class="link" href="reference.html#tmp-dir" title="3.506.&#160;tmp_dir">$tmp_dir</a>,</p>
+      <a class="link" href="reference.html#mailcap-path" title="3.216.&#160;mailcap_path">$mailcap_path</a>,
+      <a class="link" href="reference.html#news-server" title="3.256.&#160;news_server">$news_server</a>,
+      <a class="link" href="reference.html#shell" title="3.411.&#160;shell">shell</a>,
+      <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a>,
+      <a class="link" href="reference.html#tmp-dir" title="3.507.&#160;tmp_dir">$tmp_dir</a>,</p>
       <p>Finally, it's possible to
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">set some variables directly</a> on the command-line using the
       <code class="literal">-e</code> option.</p>
@@ -435,7 +435,7 @@ set record=+sent_on_$HOSTNAME
     <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
     <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
-    <a class="link" href="reference.html#record" title="3.380.&#160;record">$record</a> for details.)</p>
+    <a class="link" href="reference.html#record" title="3.381.&#160;record">$record</a> for details.)</p>
     <p>NeoMutt expands the variable when it is assigned, not when it is used. If the value of a variable on the right-hand side of an assignment changes after the assignment, the variable on the left-hand side will not be affected.</p>
     <p>The commands understood by NeoMutt are explained in the next paragraphs. For a complete list, see the
     <a class="link" href="reference.html#commands" title="2.&#160;Configuration Commands">command reference</a>.</p>
@@ -861,7 +861,7 @@ set alias_file=~/.mail_aliases
           </dt>
           <dd>
             <p>The query menu is the browser for results returned by
-            <a class="link" href="reference.html#query-command" title="3.370.&#160;query_command">$query_command</a>.</p>
+            <a class="link" href="reference.html#query-command" title="3.371.&#160;query_command">$query_command</a>.</p>
           </dd>
           <dt>
             <span class="term">mix</span>
@@ -1569,7 +1569,7 @@ bind index gg first-entry
       <p>If you use the
       <span class="quote">“
       <span class="quote">!</span>”</span> shortcut for
-      <a class="link" href="reference.html#spool-file" title="3.476.&#160;spool_file">$spool_file</a> at the beginning of
+      <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a> at the beginning of
       <span class="emphasis">
         <em>regex</em>
       </span>, you must place it inside of double or single quotes in order to distinguish it from the logical
@@ -1605,7 +1605,7 @@ folder-hook work "set sort=threads"
       <a class="link" href="#exec" title="24.&#160;Executing Functions">exec</a> commands will end up being processed in reverse order.</p>
     </div>
     <p>The following example will set the
-    <a class="link" href="reference.html#sort" title="3.470.&#160;sort">sort</a> variable to
+    <a class="link" href="reference.html#sort" title="3.471.&#160;sort">sort</a> variable to
     <code class="literal">date-sent</code> for all folders but to
     <code class="literal">threads</code> for all folders containing
     <span class="quote">“<span class="quote">work</span>”</span> in their name.</p>
@@ -2240,7 +2240,7 @@ color compose header bold white default
 uncolor compose header
 </pre>
       <p>The quoted objects refer to quoted lines in an email reply. They are defined using the
-      <a class="link" href="reference.html#reply-regex" title="3.384.&#160;reply_regex">
+      <a class="link" href="reference.html#reply-regex" title="3.385.&#160;reply_regex">
         <code class="literal">$reply_regex</code>
       </a>config variable.</p>
       <p>The quoted email colours don't use pattern. The first colour,
@@ -2270,7 +2270,7 @@ uncolor compose header
               <tr>
                 <td>quoted</td>
                 <td>Text matching
-                <a class="link" href="reference.html#quote-regex" title="3.373.&#160;quote_regex">$quote_regex</a> in the body of a message</td>
+                <a class="link" href="reference.html#quote-regex" title="3.374.&#160;quote_regex">$quote_regex</a> in the body of a message</td>
               </tr>
               <tr>
                 <td>quoted1</td>
@@ -2597,7 +2597,7 @@ uncolor status *
         </div>
       </div>
       <p>When displaying a message in the pager, NeoMutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.532.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.533.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
       <p>Despite not being a real header, NeoMutt will also display an mbox "From_" line in the pager along with other headers. This line can be manipulated with
       <span class="command">
         <strong>ignore/unignore</strong>
@@ -2753,7 +2753,7 @@ hdr_order From Date: From: To: Cc: Subject:
       </em>... }</p>
     </div>
     <p>With various functions, NeoMutt will treat messages differently, depending on whether you sent them or whether you received them from someone else. For instance, when replying to a message that you sent to a different party, NeoMutt will automatically suggest to send the response to the original message's recipients – responding to yourself won't make much sense in many cases. (See
-    <a class="link" href="reference.html#reply-to" title="3.387.&#160;reply_to">$reply_to</a>.)</p>
+    <a class="link" href="reference.html#reply-to" title="3.388.&#160;reply_to">$reply_to</a>.)</p>
     <p>Many users receive e-mail under a number of different addresses. To fully use NeoMutt's features here, the program must be able to recognize what e-mail addresses you receive mail under. That's the purpose of the
     <span class="command">
       <strong>alternates</strong>
@@ -2969,7 +2969,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <a class="link" href="advancedusage.html#shortcuts" title="10.&#160;Mailbox Shortcuts">mailbox shortcut</a> expansion performed on the first character. See
     <a class="xref" href="advancedusage.html#mailbox-hook" title="6.2.&#160;Mailbox Matching in Hooks">Mailbox Matching in Hooks</a> for more details.</p>
     <p>Note that execution of mbox-hooks is dependent on the
-    <a class="link" href="reference.html#move" title="3.249.&#160;move">$move</a> configuration variable. If set to
+    <a class="link" href="reference.html#move" title="3.250.&#160;move">$move</a> configuration variable. If set to
     <span class="quote">“<span class="quote">no</span>”</span>(the default), mbox-hooks will not be executed.</p>
     <p>Unlike some of the other
     <span class="emphasis">
@@ -3035,7 +3035,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>NeoMutt provides a number of advanced features for handling (possibly many) folders and new mail within them, please refer to
     <a class="xref" href="/feature/new-mail" title="New Mail Feature">Chapter&#160;25,
     <em>New Mail Feature</em></a>for details (including in what situations and how often NeoMutt checks for new mail). Additionally,
-    <a class="link" href="reference.html#new-mail-command" title="3.253.&#160;new_mail_command">$new_mail_command</a> can be used to run a command when new mail is detected.</p>
+    <a class="link" href="reference.html#new-mail-command" title="3.254.&#160;new_mail_command">$new_mail_command</a> can be used to run a command when new mail is detected.</p>
     <p>The
     <span class="quote">“<span class="quote">unmailboxes</span>”</span> command is used to remove a token from the list of folders which receive mail.
     <span class="quote">“<span class="quote">unmailboxes</span>”</span> can be used on the mailbox path,
@@ -3051,7 +3051,7 @@ subscribe [0-9]+.*@bugs.debian.org
       <span class="quote">“<span class="quote">=</span>”</span> and
       <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
       <a class="link" href="reference.html#folder" title="3.123.&#160;folder">$folder</a> and
-      <a class="link" href="reference.html#spool-file" title="3.476.&#160;spool_file">$spool_file</a>) should be set before the
+      <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a>) should be set before the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise NeoMutt tries to find it relative to the directory from where NeoMutt was started which may not always be desired.</p>
@@ -3183,14 +3183,14 @@ unmy_hdr to cc
     <span class="emphasis">
       <em>mailbox</em>
     </span>according to
-    <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a>.</p>
+    <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>.</p>
     <p>If the pattern is a plain string, or a regex, it will be expanded to a pattern using
     <a class="link" href="reference.html#default-hook" title="3.99.&#160;default_hook">$default_hook</a>.</p>
     <p>
     <span class="command">
       <strong>fcc-hook</strong>
     </span>is used to save outgoing mail in a mailbox other than
-    <a class="link" href="reference.html#record" title="3.380.&#160;record">$record</a>. NeoMutt searches the initial list of message recipients for the first matching
+    <a class="link" href="reference.html#record" title="3.381.&#160;record">$record</a>. NeoMutt searches the initial list of message recipients for the first matching
     <span class="emphasis">
       <em>pattern</em>
     </span>and uses
@@ -3198,7 +3198,7 @@ unmy_hdr to cc
       <em>mailbox</em>
     </span>as the default
     <span class="quote">“<span class="quote">Fcc:</span>”</span> mailbox. If no match is found the message will be saved to
-    <a class="link" href="reference.html#record" title="3.380.&#160;record">$record</a> mailbox.</p>
+    <a class="link" href="reference.html#record" title="3.381.&#160;record">$record</a> mailbox.</p>
     <pre class="screen">
 fcc-hook [@.]aol\\.com$ +spammers
 </pre>
@@ -3239,7 +3239,7 @@ save-hook aol\\.com$ +spam
       </span>
     </a>command.</p>
     <p>To provide more flexibility and good defaults, NeoMutt applies the expandos of
-    <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a> to
+    <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> to
     <span class="emphasis">
       <em>mailbox</em>
     </span>after it was expanded. See
@@ -3359,7 +3359,7 @@ save-hook aol\\.com$ +spam
     <span class="command">
       <strong>send-hook</strong>
     </span>, and can, e.g., be used to set parameters such as the
-    <a class="link" href="reference.html#sendmail" title="3.408.&#160;sendmail">$sendmail</a> variable depending on the message's sender address.</p>
+    <a class="link" href="reference.html#sendmail" title="3.409.&#160;sendmail">$sendmail</a> variable depending on the message's sender address.</p>
     <p>For each type of
     <span class="command">
       <strong>send-hook</strong>
@@ -3379,7 +3379,7 @@ save-hook aol\\.com$ +spam
     <p>Another typical use for this command is to change the values of the
     <a class="link" href="reference.html#attribution-intro" title="3.31.&#160;attribution_intro">$attribution_intro</a>,
     <a class="link" href="reference.html#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>, and
-    <a class="link" href="reference.html#signature" title="3.430.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
+    <a class="link" href="reference.html#signature" title="3.431.&#160;signature">$signature</a> variables in order to change the language of the attributions and signatures based upon the recipients.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>
@@ -3498,11 +3498,11 @@ message-hook '~f freshmeat-news' 'set pager="less \"+/^  subject: .*\""'
       </p>
     </div>
     <p>This command is used to inject format strings dynamically into
-    <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a> based on pattern matching against the current message.</p>
+    <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> based on pattern matching against the current message.</p>
     <p>If the pattern is a plain string, or a regex, it will be expanded to a pattern using
     <a class="link" href="reference.html#default-hook" title="3.99.&#160;default_hook">$default_hook</a>.</p>
     <p>The
-    <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a> expando
+    <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> expando
     <span class="emphasis">
       <em>%@name@</em>
     </span>specifies a placeholder for the injection. Index-format-hooks with the same
@@ -3747,7 +3747,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
       <em>sort</em>
     </span>your mail based on its spam attributes, as determined by the external filter. You also can display the spam attributes in your index display using the
     <code class="literal">%H</code> selector in the
-    <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a> variable. (Tip: try
+    <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. (Tip: try
     <code class="literal">%?H?[%H] ?</code>to display spam tags only when they are defined for a given message.)</p>
     <p>Note: the value displayed by
     <code class="literal">%H</code> and searched by
@@ -3785,11 +3785,11 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="command">
       <strong>spam</strong>
     </span>rules for each filter you use. If a message matches two or more of these regular expressions, and the
-    <a class="link" href="reference.html#spam-separator" title="3.475.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
+    <a class="link" href="reference.html#spam-separator" title="3.476.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
     <span class="emphasis">
       <em>format</em>
     </span>strings joined together, with the value of
-    <a class="link" href="reference.html#spam-separator" title="3.475.&#160;spam_separator">$spam_separator</a> separating them.</p>
+    <a class="link" href="reference.html#spam-separator" title="3.476.&#160;spam_separator">$spam_separator</a> separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in
     <a class="xref" href="#ex-spam" title="Example&#160;3.15.&#160;Configuring spam detection">Example&#160;3.15, “Configuring spam detection”</a>.</p>
     <div class="example">
@@ -3814,13 +3814,13 @@ set spam_separator=", "
     <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
     <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the
-    <a class="link" href="reference.html#spam-separator" title="3.475.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam rule match supersedes the previous one. Instead of getting joined
+    <a class="link" href="reference.html#spam-separator" title="3.476.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam rule match supersedes the previous one. Instead of getting joined
     <span class="emphasis">
       <em>format</em>
     </span>strings, you'll get only the last one to match.</p>
     <p>The spam tag is what will be displayed in the index when you use
     <code class="literal">%H</code> in the
-    <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a> variable. It's also the string that the
+    <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. It's also the string that the
     <code class="literal">~H</code> pattern-matching expression matches against for
     <code class="literal">&lt;search&gt;</code>and
     <code class="literal">&lt;limit&gt;</code>functions. And it's what sorting by spam attribute will use as a sort key.</p>
@@ -4481,12 +4481,12 @@ mailboxes $my_mx +mailbox3
         </div>
       </div>
       <p>Format strings are a general concept you'll find in several locations through the NeoMutt configuration, especially in the
-      <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a>,
-      <a class="link" href="reference.html#pager-format" title="3.286.&#160;pager_format">$pager_format</a>,
-      <a class="link" href="reference.html#status-format" title="3.496.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>,
+      <a class="link" href="reference.html#pager-format" title="3.287.&#160;pager_format">$pager_format</a>,
+      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code> represents a message's Subject: header in the
-      <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a> variable. The
+      <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. The
       <span class="quote">“<span class="quote">expandos</span>”</span> available are documented with each format variable, but there are general modifiers available with all formatting expandos, too. Those are our concern here.</p>
       <p>Some of the modifiers are borrowed right out of C (though you might know them from Perl, Python, shell, or another language). These are the
       <code class="literal">[-]m.n</code> modifiers, as in
@@ -4532,7 +4532,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in
-      <a class="link" href="reference.html#status-format" title="3.496.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %?n?%n new messages.?
 </pre>
@@ -4590,7 +4590,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code> script installed in the
       <code class="literal">samples</code> subdirectory of the NeoMutt documentation: it can be used as filter for
-      <a class="link" href="reference.html#status-format" title="3.496.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4685,16 +4685,16 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
       <a class="link" href="reference.html#folder-format" title="3.124.&#160;folder_format">$folder_format</a>,
       <code class="literal">%c</code> and
       <code class="literal">%cr</code> in
-      <a class="link" href="reference.html#index-format" title="3.205.&#160;index_format">$index_format</a>, and %l and %L in
-      <a class="link" href="reference.html#status-format" title="3.496.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
+      <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>, and %l and %L in
+      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
       <p>
-      <a class="link" href="reference.html#size-show-bytes" title="3.432.&#160;size_show_bytes">$size_show_bytes</a> will display the number of bytes when the size is &lt; 1 kilobyte. When unset, kilobytes will be displayed instead.</p>
+      <a class="link" href="reference.html#size-show-bytes" title="3.433.&#160;size_show_bytes">$size_show_bytes</a> will display the number of bytes when the size is &lt; 1 kilobyte. When unset, kilobytes will be displayed instead.</p>
       <p>
-      <a class="link" href="reference.html#size-show-mb" title="3.434.&#160;size_show_mb">$size_show_mb</a> will display the number of megabytes when the size is &gt;= 1 megabyte. When unset, kilobytes will be displayed instead (which could be a large number).</p>
+      <a class="link" href="reference.html#size-show-mb" title="3.435.&#160;size_show_mb">$size_show_mb</a> will display the number of megabytes when the size is &gt;= 1 megabyte. When unset, kilobytes will be displayed instead (which could be a large number).</p>
       <p>
-      <a class="link" href="reference.html#size-show-fractions" title="3.433.&#160;size_show_fractions">$size_show_fractions</a>, will display numbers with a single decimal place for values from 0 to 10 kilobytes, and 1 to 10 megabytes.</p>
+      <a class="link" href="reference.html#size-show-fractions" title="3.434.&#160;size_show_fractions">$size_show_fractions</a>, will display numbers with a single decimal place for values from 0 to 10 kilobytes, and 1 to 10 megabytes.</p>
       <p>
-      <a class="link" href="reference.html#size-units-on-left" title="3.435.&#160;size_units_on_left">$size_units_on_left</a> will display the unit (
+      <a class="link" href="reference.html#size-units-on-left" title="3.436.&#160;size_units_on_left">$size_units_on_left</a> will display the unit (
       <span class="quote">“<span class="quote">K</span>”</span> or
       <span class="quote">“<span class="quote">M</span>”</span>) to the left of the number, instead of the right if unset.</p>
       <p>These variables also affect size display in a few other places, such as progress indicators and attachment delimiters in the pager.</p>
