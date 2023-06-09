@@ -78,21 +78,20 @@ status: stable
                               NONE      x=0,y=0
 </pre>
     <p>Equivalent to:</p>
-    <div class="literallayout">
-      <p>if (x &gt; 0) {
-      <br />  if (y &gt; 0) {
-      <br />    print 'XY'
-      <br />  } else {
-      <br />    print 'X'
-      <br />  }
-      <br />  } else {
-      <br />  if (y &gt; 0) {
-      <br />    print 'Y'
-      <br />  } else {
-      <br />    print 'NONE'
-      <br />  }
-      <br />}</p>
-    </div>
+<pre>
+if (x &gt; 0) {
+  if (y &gt; 0) {
+    print 'XY'
+  } else {
+    print 'X'
+  }
+} else {
+  if (y &gt; 0) {
+    print 'Y'
+  } else {
+    print 'NONE'
+  }
+}</pre>
     <p>Examples:</p>
     <pre class="screen">
 set index_format='%4C %Z %{%b %d} %-25.25n %s%&gt; %&lt;M?%M Msgs &amp;%&lt;l?%l Lines&amp;%c Bytes&gt;&gt;'
