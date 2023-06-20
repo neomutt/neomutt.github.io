@@ -343,7 +343,7 @@ my_hdr X-Disclaimer: Why are you listening to me?
       </p>
       <div class="example-contents">
         <pre class="screen">
-set real_name="Michael \"MuttDude\" Elkins"
+set real_name="John \"anonymous\" Doe"
 </pre>
       </div>
     </div>
@@ -3748,7 +3748,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     </span>your mail based on its spam attributes, as determined by the external filter. You also can display the spam attributes in your index display using the
     <code class="literal">%H</code> selector in the
     <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. (Tip: try
-    <code class="literal">%?H?[%H] ?</code>to display spam tags only when they are defined for a given message.)</p>
+    <code class="literal">%&lt;H?[%H] &gt;</code>to display spam tags only when they are defined for a given message.)</p>
     <p>Note: the value displayed by
     <code class="literal">%H</code> and searched by
     <code class="literal">~H</code> is stored in the
@@ -4516,7 +4516,7 @@ mailboxes $my_mx +mailbox3
       </div>
       <p>Depending on the format string variable, some of its sequences can be used to optionally print a string if their value is nonzero. For example, you may only want to see the number of flagged messages if such messages exist, since zero is not particularly meaningful. To optionally print a string based upon one of the above sequences, the following construct is used:</p>
       <pre class="screen">
-%?&lt;sequence_char&gt;?&lt;optional_string&gt;?
+%&lt;sequence_char?optional_string&gt;
 </pre>
       <p>where
       <span class="emphasis">
@@ -4531,14 +4531,15 @@ mailboxes $my_mx +mailbox3
       <span class="emphasis">
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
-      <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox in
+      <p>Here is an example illustrating how to optionally print the number of new messages (
+      <code class="literal">%n</code>) in a mailbox in
       <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
-%?n?%n new messages.?
+%&lt;n?%n new messages&gt;
 </pre>
       <p>You can also switch between two strings using the following construct:</p>
       <pre class="screen">
-%?&lt;sequence_char&gt;?&lt;if_string&gt;&amp;&lt;else_string&gt;?
+%&lt;sequence_char?if_string&amp;else_string&gt;
 </pre>
       <p>If the value of
       <span class="emphasis">
@@ -4613,7 +4614,7 @@ set status_format="script.sh '%r %f (%L)'|"
             <p>When this occurs, NeoMutt will fill the rest of the line with the character
             <code class="literal">X</code>. For example, filling the rest of the line with dashes is done by setting:</p>
             <pre class="screen">
-set status_format = "%v on %h: %B: %?n?%n&amp;no? new messages %|-"
+set status_format = "%v on %h: %B: %&lt;n?%n&amp;no&gt; new messages %|-"
 </pre>
           </dd>
           <dt>
@@ -4627,7 +4628,7 @@ set status_format = "%v on %h: %B: %?n?%n&amp;no? new messages %|-"
             <code class="literal">X</code> in between two items so that the rest of the line will be right-justified. For example, to not put the version string and hostname the above example on the left but on the right and fill the gap with spaces, one might use (note the space after
             <code class="literal">%&gt;</code>):</p>
             <pre class="screen">
-set status_format = "%B: %?n?%n&amp;no? new messages %&gt; (%v on %h)"
+set status_format = "%B: %&lt;n?%n&amp;no&gt; new messages %&gt; (%v on %h)"
 </pre>
           </dd>
           <dt>
@@ -4641,7 +4642,7 @@ set status_format = "%B: %?n?%n&amp;no? new messages %&gt; (%v on %h)"
             <span class="quote">“<span class="quote">soft-fill</span>”</span> gives priority to the right-hand side, guaranteeing space to display it and showing padding only if there's still room. If necessary, soft-fill will eat text leftwards to make room for rightward text. For example, to right-justify the subject making sure as much as possible of it fits on screen, one might use (note two spaces after
             <code class="literal">%*</code>: the second ensures there's a space between the truncated right-hand side and the subject):</p>
             <pre class="screen">
-set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?)%*  %s"
+set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
 </pre>
           </dd>
         </dl>

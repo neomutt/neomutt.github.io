@@ -2070,7 +2070,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <p>Type:&#160;string
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">%u%D%I&#160;%t%4n&#160;%T%.40d%&gt;&#160;[%.7m/%.10M,&#160;%.6e%?C?,&#160;%C?,&#160;%s]&#160;</code>
+          <code class="literal">%u%D%I&#160;%t%4n&#160;%T%d&#160;%&gt;&#160;[%.7m/%.10M,&#160;%.6e%&lt;C?,&#160;%C&gt;,&#160;%s]&#160;</code>
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "attachment" menu. The following
@@ -6143,12 +6143,12 @@ set imap_authenticators="gssapi:cram-md5:login"
         <p>Type:&#160;string
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">%4C&#160;%Z&#160;%{%b&#160;%d}&#160;%-15.15L&#160;(%?l?%4l&amp;%4c?)&#160;%s</code>
+          <code class="literal">%4C&#160;%Z&#160;%{%b&#160;%d}&#160;%-15.15L&#160;(%&lt;l?%4l&amp;%4c&gt;)&#160;%s</code>
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the message index display to your personal taste.</p>
       <p>"Format strings" are similar to the strings used in the C function
-      <code class="literal">printf(3)</code>to format output (see the man page for more details). For an explanation of the %? construct, see the
+      <code class="literal">printf(3)</code>to format output (see the man page for more details). For an explanation of the %&lt;...&gt; construct, see the
       <a class="link" href="#status-format" title="3.497.&#160;status_format">status_format</a> description. The following sequences are defined in NeoMutt:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -6624,7 +6624,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;string
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">%2C&#160;%?n?%6n&amp;%6&#160;?&#160;%6m&#160;%i</code>
+          <code class="literal">%2C&#160;%&lt;n?%6n&amp;&#160;&#160;&#160;&#160;&#160;&#160;&gt;&#160;%6m&#160;%i</code>
         </span>”</span></p>
       </div>
       <p>This variable allows you to customize the file browser display to your personal taste. It's only used to customize network mailboxes (e.g. imap). This string is identical in formatting to the one used by "
@@ -8396,7 +8396,7 @@ set nntp_authenticators="digest-md5:user"
             </tr>
             <tr>
               <td>%p</td>
-              <td>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %? construct.</td>
+              <td>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %&lt;...&gt; construct.</td>
             </tr>
             <tr>
               <td>%r</td>
@@ -10976,7 +10976,7 @@ set sidebar_delim_chars='.'
       <a class="link" href="#mail-check-stats" title="3.213.&#160;mail_check_stats">$mail_check_stats</a> must be
       <span class="emphasis">
         <em>set</em>
-      </span>. When thus set, a suggested value for this option is "%B%?F? [%F]?%* %?N?%N/?%S".</p>
+      </span>. When thus set, a suggested value for this option is "%B%&lt;F? [%F]&gt;%* %&lt;N?%N/&gt;%S".</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12773,7 +12773,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;string
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">-%r-NeoMutt:&#160;%D&#160;[Msgs:%?M?%M/?%m%?n?&#160;New:%n?%?o?&#160;Old:%o?%?d?&#160;Del:%d?%?F?&#160;Flag:%F?%?t?&#160;Tag:%t?%?p?&#160;Post:%p?%?b?&#160;Inc:%b?%?l?&#160;%l?]---(%?T?%T/?%s/%S)-%&gt;-(%P)---</code>
+          <code class="literal">-%r-NeoMutt:&#160;%D&#160;[Msgs:%&lt;M?%M/&gt;%m%&lt;n?&#160;New:%n&gt;%&lt;o?&#160;Old:%o&gt;%&lt;d?&#160;Del:%d&gt;%&lt;F?&#160;Flag:%F&gt;%&lt;t?&#160;Tag:%t&gt;%&lt;p?&#160;Post:%p&gt;%&lt;b?&#160;Inc:%b&gt;%&lt;l?&#160;%l&gt;]---(%&lt;T?%T/&gt;%s/%S)-%&gt;-(%P)---</code>
         </span>”</span></p>
       </div>
       <p>Controls the format of the status line displayed in the "index" menu. This string is similar to
@@ -12930,7 +12930,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>* = can be optionally printed if nonzero</p>
       <p>Some of the above sequences can be used to optionally print a string if their value is nonzero. For example, you may only want to see the number of flagged messages if such messages exist, since zero is not particularly meaningful. To optionally print a string based upon one of the above sequences, the following construct is used:</p>
       <p>
-        <code class="literal">%?&lt;sequence_char&gt;?&lt;optional_string&gt;?</code>
+        <code class="literal">%&lt;sequence_char?optional_string&gt;</code>
       </p>
       <p>where
       <span class="emphasis">
@@ -12947,17 +12947,14 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </span>
       <span class="bold">
         <strong>may</strong>
-      </span>contain other sequences as well as normal text, but you may
-      <span class="bold">
-        <strong>not</strong>
-      </span>nest optional strings.</p>
+      </span>contain other sequences as well as normal text.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox:</p>
       <p>
-        <code class="literal">%?n?%n new messages.?</code>
+        <code class="literal">%&lt;n?%n new messages&gt;</code>
       </p>
       <p>You can also switch between two strings using the following construct:</p>
       <p>
-        <code class="literal">%?&lt;sequence_char&gt;?&lt;if_string&gt;&amp;&lt;else_string&gt;?</code>
+        <code class="literal">%&lt;sequence_char?if_string&amp;else_string&gt;</code>
       </p>
       <p>If the value of
       <span class="emphasis">
@@ -12976,7 +12973,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a>, based on whether threads are enabled with
       <a class="link" href="#use-threads" title="3.525.&#160;use_threads">$use_threads</a>:</p>
       <p>
-        <code class="literal">%?T?%s/%S&amp;%T/%s?</code>
+        <code class="literal">%&lt;T?%s/%S&amp;%T/%s&gt;</code>
       </p>
       <p>You can force the result of any
       <code class="literal">printf(3)</code>-like sequence to be lowercase by prefixing the sequence character with an underscore ("_") sign. For example, if you want to display the local hostname in lowercase, you would use: "
@@ -13370,7 +13367,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;string
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">M%?n?AIL&amp;ail?</code>
+          <code class="literal">M%&lt;n?AIL&amp;ail&gt;</code>
         </span>”</span></p>
       </div>
       <p>Controls the format of the icon title, as long as "
@@ -13392,7 +13389,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;string
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">NeoMutt&#160;with&#160;%?m?%m&#160;messages&amp;no&#160;messages?%?n?&#160;[%n&#160;NEW]?</code>
+          <code class="literal">NeoMutt&#160;with&#160;%&lt;m?%m&#160;messages&amp;no&#160;messages&gt;%&lt;n?&#160;[%n&#160;NEW]&gt;</code>
         </span>”</span></p>
       </div>
       <p>Controls the format of the terminal status line (or window title), provided that "

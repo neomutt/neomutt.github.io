@@ -2731,7 +2731,7 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>and 
       <span class="strong">
         <strong>nospam</strong>
-      </span>commands, you can limit, search, and sort your mail based on its spam attributes, as determined by the external filter. You also can display the spam attributes in your index display using the %H selector in the $index_format variable. (Tip: try "%?H?[%H]&#160;?" to display spam tags only when they are defined for a given message).</p>
+      </span>commands, you can limit, search, and sort your mail based on its spam attributes, as determined by the external filter. You also can display the spam attributes in your index display using the %H selector in the $index_format variable. (Tip: try "%&lt;H?[%H]&#160;&gt;" to display spam tags only when they are defined for a given message).</p>
       <p>For further information on spam-scoring filters, please consult the section “ 
       <span class="strong">
         <strong>Spam Detection</strong>
@@ -3780,7 +3780,7 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>~f&#160;</strong>
       </span>
       <span class="emphasis">
-        <em>elkins</em>
+        <em>smith</em>
       </span></p>
       <p>would select messages which contain the word “work” in the list of recipients 
       <span class="strong">
@@ -3840,7 +3840,7 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>) ~f&#160;</strong>
       </span>
       <span class="emphasis">
-        <em>elkins</em>
+        <em>smith</em>
       </span></p>
       <p>Here is an example using white space in the regular expression (note the “ 
       <span class="strong">
@@ -4743,7 +4743,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"%u%D%I&#160;%t%4n&#160;%T%.40d%&gt;&#160;[%.7m/%.10M,&#160;%.6e%?C?,&#160;%C?,&#160;%s]&#160;" 
+            <br />Default:&#160;"%u%D%I&#160;%t%4n&#160;%T%d&#160;%&gt;&#160;[%.7m/%.10M,&#160;%.6e%&lt;C?,&#160;%C&gt;,&#160;%s]&#160;" 
             <br /></p>
           </div>
           <p>This variable describes the format of the "attachment" menu. The following 
@@ -8348,14 +8348,14 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"%4C&#160;%Z&#160;%{%b&#160;%d}&#160;%-15.15L&#160;(%?l?%4l&amp;%4c?)&#160;%s" 
+            <br />Default:&#160;"%4C&#160;%Z&#160;%{%b&#160;%d}&#160;%-15.15L&#160;(%&lt;l?%4l&amp;%4c&gt;)&#160;%s" 
             <br /></p>
           </div>
           <p>This variable allows you to customize the message index display to your personal taste.</p>
           <p>"Format strings" are similar to the strings used in the C function 
           <span class="emphasis">
             <em>printf(3)</em>
-          </span>to format output (see the man page for more details). For an explanation of the %? construct, see the status_format description. The following sequences are defined in NeoMutt:</p>
+          </span>to format output (see the man page for more details). For an explanation of the %&lt;...&gt; construct, see the status_format description. The following sequences are defined in NeoMutt:</p>
           <div class="blockquote">
             <blockquote class="blockquote">
               <div class="variablelist">
@@ -8932,7 +8932,7 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"%2C&#160;%?n?%6n&amp;%6&#160;?&#160;%6m&#160;%i" 
+            <br />Default:&#160;"%2C&#160;%&lt;n?%6n&amp;&#160;&#160;&#160;&#160;&#160;&#160;&gt;&#160;%6m&#160;%i" 
             <br /></p>
           </div>
           <p>This variable allows you to customize the file browser display to your personal taste. It's only used to customize network mailboxes (e.g. imap). This string is identical in formatting to the one used by "$folder_format".</p>
@@ -10524,7 +10524,7 @@ Default: yes
                     <span class="term">%p</span>
                   </dt>
                   <dd>
-                    <p>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %? construct.</p>
+                    <p>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %&lt;...&gt; construct.</p>
                   </dd>
                   <dt>
                     <span class="term">%r</span>
@@ -12948,7 +12948,7 @@ Default: no
           <p>In order to use %S, %N, %F, and %!, $mail_check_stats must be 
           <span class="emphasis">
             <em>set</em>
-          </span>. When thus set, a suggested value for this option is "%B%?F? [%F]?%* %?N?%N/?%S".</p>
+          </span>. When thus set, a suggested value for this option is "%B%&lt;F? [%F]&gt;%* %&lt;N?%N/&gt;%S".</p>
         </dd>
         <dt>
           <span class="term">
@@ -14733,7 +14733,7 @@ Default: "-*%A"
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"-%r-NeoMutt:&#160;%D&#160;[Msgs:%?M?%M/?%m%?n?&#160;New:%n?%?o?&#160;Old:%o?%?d?&#160;Del:%d?%?F?&#160;Flag:%F?%?t?&#160;Tag:%t?%?p?&#160;Post:%p?%?b?&#160;Inc:%b?%?l?&#160;%l?]---(%?T?%T/?%s/%S)-%&gt;-(%P)---" 
+            <br />Default:&#160;"-%r-NeoMutt:&#160;%D&#160;[Msgs:%&lt;M?%M/&gt;%m%&lt;n?&#160;New:%n&gt;%&lt;o?&#160;Old:%o&gt;%&lt;d?&#160;Del:%d&gt;%&lt;F?&#160;Flag:%F&gt;%&lt;t?&#160;Tag:%t&gt;%&lt;p?&#160;Post:%p&gt;%&lt;b?&#160;Inc:%b&gt;%&lt;l?&#160;%l&gt;]---(%&lt;T?%T/&gt;%s/%S)-%&gt;-(%P)---" 
             <br /></p>
           </div>
           <p>Controls the format of the status line displayed in the "index" menu. This string is similar to $index_format, but has its own set of 
@@ -14909,7 +14909,7 @@ Default: "-*%A"
           <p>Some of the above sequences can be used to optionally print a string if their value is nonzero. For example, you may only want to see the number of flagged messages if such messages exist, since zero is not particularly meaningful. To optionally print a string based upon one of the above sequences, the following construct is used:</p>
           <p>
             <span class="emphasis">
-              <em>%?&lt;sequence_char&gt;?&lt;optional_string&gt;?</em>
+              <em>%&lt;sequence_char?optional_string&gt;</em>
             </span>
           </p>
           <p>where 
@@ -14927,20 +14927,17 @@ Default: "-*%A"
           </span>
           <span class="strong">
             <strong>may</strong>
-          </span>contain other sequences as well as normal text, but you may 
-          <span class="strong">
-            <strong>not</strong>
-          </span>nest optional strings.</p>
+          </span>contain other sequences as well as normal text.</p>
           <p>Here is an example illustrating how to optionally print the number of new messages in a mailbox:</p>
           <p>
             <span class="emphasis">
-              <em>%?n?%n new messages.?</em>
+              <em>%&lt;n?%n new messages&gt;</em>
             </span>
           </p>
           <p>You can also switch between two strings using the following construct:</p>
           <p>
             <span class="emphasis">
-              <em>%?&lt;sequence_char&gt;?&lt;if_string&gt;&amp;&lt;else_string&gt;?</em>
+              <em>%&lt;sequence_char?if_string&amp;else_string&gt;</em>
             </span>
           </p>
           <p>If the value of 
@@ -14956,7 +14953,7 @@ Default: "-*%A"
           <p>As another example, here is how to show either $sort and $sort_aux or $use_threads and $sort, based on whether threads are enabled with $use_threads:</p>
           <p>
             <span class="emphasis">
-              <em>%?T?%s/%S&amp;%T/%s?</em>
+              <em>%&lt;T?%s/%S&amp;%T/%s&gt;</em>
             </span>
           </p>
           <p>You can force the result of any 
@@ -15336,7 +15333,7 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"M%?n?AIL&amp;ail?" 
+            <br />Default:&#160;"M%&lt;n?AIL&amp;ail&gt;" 
             <br /></p>
           </div>
           <p>Controls the format of the icon title, as long as "$ts_enabled" is set. This string is identical in formatting to the one used by "$status_format".</p>
@@ -15352,7 +15349,7 @@ Default: no
           <div class="literallayout">
             <p>
             <br />Type:&#160;string 
-            <br />Default:&#160;"NeoMutt&#160;with&#160;%?m?%m&#160;messages&amp;no&#160;messages?%?n?&#160;[%n&#160;NEW]?" 
+            <br />Default:&#160;"NeoMutt&#160;with&#160;%&lt;m?%m&#160;messages&amp;no&#160;messages&gt;%&lt;n?&#160;[%n&#160;NEW]&gt;" 
             <br /></p>
           </div>
           <p>Controls the format of the terminal status line (or window title), provided that "$ts_enabled" has been set. This string is identical in formatting to the one used by "$status_format".</p>

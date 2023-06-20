@@ -1521,14 +1521,14 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
       </div>
       <p>Logical AND is performed by specifying more than one criterion. For example:</p>
       <pre class="screen">
-~t work ~f elkins
+~t work ~f smith
 </pre>
       <p>would select messages which contain the word
       <span class="quote">“<span class="quote">work</span>”</span> in the list of recipients
       <span class="emphasis">
         <em>and</em>
       </span>that have the word
-      <span class="quote">“<span class="quote">elkins</span>”</span> in the
+      <span class="quote">“<span class="quote">smith</span>”</span> in the
       <span class="quote">“<span class="quote">From</span>”</span> header field.</p>
       <p>NeoMutt also recognizes the following operators to create more complex search patterns:</p>
       <div class="itemizedlist">
@@ -1548,7 +1548,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
       <span class="quote">“<span class="quote">work</span>”</span> in the
       <span class="quote">“<span class="quote">To</span>”</span> or
       <span class="quote">“<span class="quote">Cc</span>”</span> field and which are from
-      <span class="quote">“<span class="quote">elkins</span>”</span>.</p>
+      <span class="quote">“<span class="quote">smith</span>”</span>.</p>
       <div class="example">
         <a id="ex-pattern-bool"></a>
         <p class="title">
@@ -1556,7 +1556,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
         </p>
         <div class="example-contents">
           <pre class="screen">
-!(~t work|~c work) ~f elkins
+!(~t work|~c work) ~f smith
 </pre>
         </div>
       </div>
@@ -2259,10 +2259,12 @@ set query_command = "mutt_ldap_query.pl %s"
     <p>The wrapper script should accept the query on the command-line. It should return a one line message, then each matching response on a single line, each line containing a tab separated address then name then some other optional information. On error, or if there are no matching addresses, return a non-zero exit code and a one line error message.</p>
     <p>An example multiple response output:</p>
     <pre class="screen">
-Searching database ... 20 entries ... 3 matching:
-me@cs.hmc.edu           Michael Elkins  mutt dude
-blong@fiction.net       Brandon Long    mutt and more
-roessler@does-not-exist.org        Thomas Roessler mutt pgp
+Searching database ... 70 entries ... 5 matching:
+ji@papaya.com   Jeremy Irons    Emmy, Oscar, Tony
+jc@damson.com   James Cagney    Oscar
+mr@ilama.com    Meg Ryan
+mjf@kumquat.com Michael J Fox
+ma@yew.com      Murray Abraham  Oscar
 </pre>
     <p>There are two mechanisms for accessing the query function of NeoMutt. One is to do a query from the index menu using the
     <code class="literal">&lt;query&gt;</code>function (default: Q). This will prompt for a query, then bring up the query menu which will list the matching responses. From the query menu, you can select addresses to create aliases, or to mail. You can tag multiple addresses to mail, start a new query, or have a new query appended to the current responses.</p>

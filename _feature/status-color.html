@@ -139,9 +139,9 @@ status: stable
 <span class="comment"># the status bar (also when it's used by the index).</span>
 
 <span class="comment"># For the examples below, set some defaults</span>
-set status_format='-%r-NeoMutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? \
-Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%&gt;-(%P)---'
-set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
+set status_format='-%r-NeoMutt: %f [Msgs:%&lt;M?%M/&gt;%m%&lt;n? New:%n&gt;%&lt;o? Old:%o&gt;%&lt;d? Del:%d&gt;\
+%&lt;F? Flag:%F&gt;%&lt;t? Tag:%t&gt;%&lt;p? Post:%p&gt;%&lt;b? Inc:%b&gt;%&lt;l? %l&gt;]---(%s/%S)-%&gt;-(%P)---'
+set index_format='%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;) %s'
 set use_threads=yes
 set sort=last-date-received
 set sort_aux=date

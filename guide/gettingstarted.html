@@ -122,7 +122,7 @@ neomutt -v
       </p>
       <pre class="screen">
 set sidebar_visible
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_format = "%B%&lt;F? [%F]&gt;%* %&lt;N?%N/&gt;%S"
 set mail_check_stats
 </pre>
       <p>You will see something like this. A list of mailboxes on the left. A list of emails, from the selected mailbox, on the right.</p>
@@ -437,7 +437,7 @@ set sidebar_divider_char = '│'
           <p>The default value is:
           <code class="literal">%D%* %n</code></p>
           <p>A more detailed value is:
-          <code class="literal">%B%?F? [%F]?%* %?N?%N/?%S</code></p>
+          <code class="literal">%B%&lt;F? [%F]&gt;%* %&lt;N?%N/&gt;%S</code></p>
           <div class="itemizedlist">
             <p class="title">
               <strong>Which breaks down as:</strong>
@@ -449,7 +449,7 @@ set sidebar_divider_char = '│'
               </li>
               <li class="listitem">
                 <p>
-                <code class="literal">%?F? [%F]?</code>– If flagged emails
+                <code class="literal">%&lt;F? [%F]&gt;</code>– If flagged emails
                 <code class="literal">[%F]</code>, otherwise nothing</p>
               </li>
               <li class="listitem">
@@ -458,7 +458,7 @@ set sidebar_divider_char = '│'
               </li>
               <li class="listitem">
                 <p>
-                <code class="literal">%?N?%N/?</code>– If new emails
+                <code class="literal">%&lt;N?%N/&gt;</code>– If new emails
                 <code class="literal">%N/</code>, otherwise nothing</p>
               </li>
               <li class="listitem">
@@ -610,7 +610,7 @@ set mail_check_stats
                 <tbody>
                   <tr>
                     <td>
-                      <code class="literal">%B%?F? [%F]?%* %?N?%N/?%S</code>
+                      <code class="literal">%B%&lt;F? [%F]&gt;%* %&lt;N?%N/&gt;%S</code>
                     </td>
                     <td>
                       <pre class="screen">
@@ -630,7 +630,7 @@ mailbox              F:N:S
                   </tr>
                   <tr>
                     <td>
-                      <code class="literal">%B %?N?(%N)?%* %S</code>
+                      <code class="literal">%B %&lt;N?(%N)&gt;%* %S</code>
                     </td>
                     <td>
                       <pre class="screen">
@@ -640,7 +640,7 @@ mailbox (N)              S
                   </tr>
                   <tr>
                     <td>
-                      <code class="literal">%B%* ?F?%F/?%N</code>
+                      <code class="literal">%B%* %&lt;F?%F/&gt;%N</code>
                     </td>
                     <td>
                       <pre class="screen">
@@ -2114,9 +2114,9 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>. For example, you could use
-      <span class="quote">“<span class="quote">%?M?(#%03M)&amp;(%4l)?</span>”</span> in
+      <code class="literal">%&lt;M?(#%03M)&amp;(%4l)&gt;</code>in
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
-      <code class="literal">%?&lt;char&gt;?&lt;if-part&gt;&amp;&lt;else-part&gt;?</code>syntax is explained in detail in
+      <code class="literal">%&lt;char?if-part&amp;else-part&gt;</code>syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="30.2.&#160;Conditionals">format string conditionals</a>.</p>
       <p>Technically, every reply should contain a list of its parent messages in the thread tree, but not all do. In these cases, NeoMutt groups them by subject which can be controlled using the
       <a class="link" href="reference.html#strict-threads" title="3.499.&#160;strict_threads">$strict_threads</a> variable.</p>
@@ -3119,7 +3119,8 @@ bind editor &lt;delete&gt; backspace
         <code class="literal">format=flowed</code>-style messages (or
         <code class="literal">f=f</code> for short) are
         <code class="literal">text/plain</code> messages that consist of paragraphs which a receiver's mail client may reformat to its own needs, which mostly means to customize line lengths regardless of what the sender sent. Technically this is achieved by letting lines of a
-        <span class="quote">“<span class="quote">flowable</span>”</span> paragraph end in spaces except for the last line.</p>
+        <span class="quote">“
+        <span class="quote">flowable</span>”</span> paragraph end in spaces except for the last line.</p>
         <p>While for text-mode clients like NeoMutt it's best to assume only a standard 80x24 character cell terminal, it may be desired to let the receiver decide completely how to view a message.</p>
       </div>
       <div class="sect3">
@@ -3146,7 +3147,8 @@ bind editor &lt;delete&gt; backspace
             </li>
             <li class="listitem">
               <p>lines starting with the word
-              <span class="quote">“<span class="quote">
+              <span class="quote">“
+              <span class="quote">
                 <code class="literal">From</code>
               </span>”</span> followed by space</p>
             </li>
@@ -3271,7 +3273,8 @@ bind editor &lt;delete&gt; backspace
     </span>menu, the body of your message and attachments are stored in the mailbox specified by the
     <a class="link" href="reference.html#postponed" title="3.361.&#160;postponed">$postponed</a> variable. This means that you can recall the message even if you exit NeoMutt and then restart it at a later time.</p>
     <p>Once a message is postponed, there are several ways to resume it. From the command line you can use the
-    <span class="quote">“<span class="quote">-p</span>”</span> option, or if you compose a new message from the
+    <span class="quote">“
+    <span class="quote">-p</span>”</span> option, or if you compose a new message from the
     <span class="emphasis">
       <em>index</em>
     </span>or
@@ -3351,8 +3354,7 @@ bind editor &lt;delete&gt; backspace
 set crypt_use_gpgme
 </pre>
     <p>If you have complex crypto needs, then you can enable the
-    <span class="quote">“
-    <span class="quote">classic mode</span>”</span> by disabling GPGME and setting all
+    <span class="quote">“<span class="quote">classic mode</span>”</span> by disabling GPGME and setting all
     <code class="literal">pgp_command_*</code>and
     <code class="literal">smime_command_*</code>config variables.</p>
     <p>For example config, see:

@@ -123,14 +123,14 @@ status: stable
     <p>By carefully picking your formats, the dates can remain unambiguous and compact.</p>
     <p>NeoMutt's conditional format strings have the form: (whitespace introduced for clarity)</p>
     <pre class="screen">
-%? TEST ? TRUE &amp; FALSE ?
+%&lt; TEST ? TRUE &amp; FALSE &gt;
 </pre>
     <p>The examples below use the test
     <span class="quote">“<span class="quote">%[</span>”</span>– the date of the message in the local timezone. They will also work with
     <span class="quote">“<span class="quote">%(</span>”</span>– the local time that the message arrived.</p>
     <p>The date tests are of the form:</p>
     <pre class="screen">
-%[nX? TRUE &amp; FALSE ?
+%&lt;[nX? TRUE &amp; FALSE &gt;
 </pre>
     <div class="itemizedlist">
       <ul class="itemizedlist" style="list-style-type: disc;">
@@ -307,11 +307,11 @@ status: stable
       <br class="table-break" />
       <p>The $index_format string would contain:</p>
       <pre class="screen">
-%?[1m?%[%b %d]&amp;%[%Y-%m-%d]?
+%&lt;[1m?%[%b %d]&amp;%[%Y-%m-%d]&gt;
 </pre>
       <p>Reparsed a little, for clarity, you can see the test condition and the two format strings.</p>
       <pre class="screen">
-%?[1m?        &amp;           ?
+%&lt;[1m?        &amp;           &gt;
 
     %[%b %d] %[%Y-%m-%d]
 </pre>
@@ -407,8 +407,7 @@ status: stable
 %&lt;[y? %&lt;[m? %&lt;[d? AAA &amp; BBB &gt; &amp; CCC &gt; &amp; DDD &gt;
 </pre>
       <div class="literallayout">
-        <p>AAA&#160;=&#160;%[%H:%M&#160;]&#160;BBB&#160;=&#160;%[%a&#160;%d]&#160;CCC&#160;=&#160;%[%b&#160;%d]&#160;DDD&#160;=
-        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%[%m/%y&#160;]</p>
+        <p>AAA&#160;=&#160;%[%H:%M&#160;]&#160;BBB&#160;=&#160;%[%a&#160;%d]&#160;CCC&#160;=&#160;%[%b&#160;%d]&#160;DDD&#160;=&#160;%[%m/%y&#160;]</p>
       </div>
     </div>
   </div>
@@ -422,8 +421,7 @@ status: stable
       </div>
     </div>
     <p>The
-    <span class="quote">“
-    <span class="quote">Conditional Dates</span>”</span> feature doesn't have any config of its own. It modifies the behavior of the format strings.</p>
+    <span class="quote">“<span class="quote">Conditional Dates</span>”</span> feature doesn't have any config of its own. It modifies the behavior of the format strings.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -439,10 +437,10 @@ status: stable
 
 <span class="comment">#</span>
 <span class="comment"># The default index_format is:</span>
-<span class="comment">#       '%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'</span>
+<span class="comment">#       '%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;) %s'</span>
 <span class="comment">#</span>
 <span class="comment"># We replace the date field '%{%b %d}', giving:</span>
-set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;%[%b %d]&gt;&amp;%[%m/%y ]&gt; %-15.15L (%?l?%4l&amp;%4c?) %s'
+set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;%[%b %d]&gt;&amp;%[%m/%y ]&gt; %-15.15L (%&lt;l?%4l&amp;%4c&gt;) %s'
 <span class="comment"># Test  Date Range  Format String  Example</span>
 <span class="comment"># --------------------------------------------</span>
 <span class="comment"># %[d   Today       %[%H:%M ]      12:34</span>
@@ -492,12 +490,9 @@ set index_format='%4C %Z %&lt;[y?%&lt;[m?%&lt;[d?%[%H:%M ]&amp;%[%a %d]&gt;&amp;
       </div>
     </div>
     <p>Date parsing doesn't quite do what you expect.
-    <span class="quote">“
-    <span class="quote">1w</span>”</span> doesn't mean the
-    <span class="quote">“
-    <span class="quote">in the last 7 days</span>”</span>, but
-    <span class="quote">“
-    <span class="quote">
+    <span class="quote">“<span class="quote">1w</span>”</span> doesn't mean the
+    <span class="quote">“<span class="quote">in the last 7 days</span>”</span>, but
+    <span class="quote">“<span class="quote">
     <span class="emphasis">
       <em>this</em>
     </span>week</span>”</span>. This doesn't match the normal NeoMutt behavior: for example

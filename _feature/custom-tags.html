@@ -295,7 +295,7 @@ macro index,pager tt "&lt;modify-labels&gt;!todo\n" "Toggle the 'todo' tag"
 <span class="comment"># Now instead of using '%g' or '%J' in your $index_format, which lists all tags</span>
 <span class="comment"># in a non-deterministic order, you can something like the following which puts</span>
 <span class="comment"># a transformed tag name in a specific spot on the index line:</span>
-<span class="comment"># set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU&amp; ? %?GR?%GR&amp; ? %?GI?%GI&amp; ? %s'</span>
+<span class="comment"># set index_format='%4C %S %[%y.%m.%d] %-18.18n %&lt;GU?%GU&amp; &gt; %&lt;GR?%GR&amp; &gt; %&lt;GI?%GI&amp; &gt; %s'</span>
 
 <span class="comment"># The %G formatting sequence may display all tags including tags hidden by</span>
 <span class="comment"># hidden_tags.</span>

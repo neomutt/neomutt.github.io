@@ -81,7 +81,7 @@ status: stable
 <span class="comment"># which can be used in the 'index_format' variable.</span>
 
 <span class="comment"># The default 'index_format' is:</span>
-set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
+set index_format='%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;) %s'
 <span class="comment"># Where %L represents the author/recipient</span>
 <span class="comment"># This might look like:</span>
 <span class="comment">#       1   + Nov 17 David Bowie   Changesbowie    ( 689)</span>
@@ -89,7 +89,7 @@ set index_format='%4C %Z %{%b %d} %-15.15L (%?l?%4l&amp;%4c?) %s'
 <span class="comment">#       3   + Nov 16 Jimi Hendrix  Voodoo Child    ( 263)</span>
 <span class="comment">#       4   + Nov 16 Debbie Harry  Parallel Lines  ( 540)</span>
 <span class="comment"># Using the %I expando:</span>
-set index_format='%4C %Z %{%b %d} %I (%?l?%4l&amp;%4c?) %s'
+set index_format='%4C %Z %{%b %d} %I (%&lt;l?%4l&amp;%4c&gt;) %s'
 <span class="comment"># This might look like:</span>
 <span class="comment">#       1   + Nov 17 DB Changesbowie    ( 689)</span>
 <span class="comment">#       2   ! Nov 17 SN Rumours         ( 555)</span>
