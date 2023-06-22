@@ -146,6 +146,9 @@ See also: [external address queries](/guide/advancedusage.html#query).
   user of something without interrupting their work with a dialog box that they
   must close. Passive pop-ups can automatically disappear after a short period
   of time.
+* [ayatana-webmail](https://github.com/AyatanaIndicators/ayatana-webmail) - A
+  desktop Notification daemon that can watch imap mailboxes using `IDLE`. Can
+  also run sync commands when a new message arrives.
 * [mutt-vid](https://gitlab.com/protist/mutt-vid) -- manage multiple sender
   accounts in Mutt
 * [mutt-trim](https://github.com/Konfekt/mutt-trim) to unclutter and normalize
