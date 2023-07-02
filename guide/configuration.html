@@ -426,13 +426,21 @@ set imap_pass="`gpg --batch -q --decrypt ~/.neomutt/account.gpg`"
       </p>
       <div class="example-contents">
         <pre class="screen">
-set record=+sent_on_$HOSTNAME
+set record = "+sent_on_$HOSTNAME"
 </pre>
       </div>
     </div>
     <br class="example-break" />
+    <p>If NeoMutt can't find a matching
+    <span class="emphasis">
+      <em>config</em>
+    </span>variable, it will try to find a matching
+    <span class="emphasis">
+      <em>environment</em>
+    </span>variable.</p>
     <p>will cause NeoMutt to save outgoing messages to a folder named
-    <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
+    <span class="quote">“
+    <span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
     <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
     <a class="link" href="reference.html#record" title="3.381.&#160;record">$record</a> for details.)</p>
@@ -645,7 +653,8 @@ alias jim    James Smith &lt;js@example.com&gt;
 alias friends alan, briony
 </pre>
     <p>To remove an alias or aliases (
-    <span class="quote">“<span class="quote">*</span>”</span> means all aliases):</p>
+    <span class="quote">“
+    <span class="quote">*</span>”</span> means all aliases):</p>
     <pre class="screen">
 unalias muttdude
 unalias *
@@ -881,8 +890,7 @@ set alias_file=~/.mail_aliases
       <span class="emphasis">
         <em>x</em>
       </span>is the letter of the control character (for example, to specify control-A use
-      <span class="quote">“
-      <span class="quote">\Ca</span>”</span>). Note that the case of
+      <span class="quote">“<span class="quote">\Ca</span>”</span>). Note that the case of
       <span class="emphasis">
         <em>x</em>
       </span>as well as
@@ -901,8 +909,7 @@ set alias_file=~/.mail_aliases
       <span class="emphasis">
         <em>\ca</em>
       </span>are all equivalent. An alternative form is to specify the key as a three digit octal number prefixed with a
-      <span class="quote">“
-      <span class="quote">\</span>”</span>(for example
+      <span class="quote">“<span class="quote">\</span>”</span>(for example
       <span class="emphasis">
         <em>\177</em>
       </span>is equivalent to
@@ -1039,10 +1046,8 @@ set alias_file=~/.mail_aliases
       <span class="emphasis">
         <em>key</em>
       </span>does not need to be enclosed in quotes unless it contains a space (
-      <span class="quote">“
-      <span class="quote">&#160;</span>”</span>) or semi-colon (
-      <span class="quote">“
-      <span class="quote">;</span>”</span>).</p>
+      <span class="quote">“<span class="quote">&#160;</span>”</span>) or semi-colon (
+      <span class="quote">“<span class="quote">;</span>”</span>).</p>
       <p>
       <span class="emphasis">
         <em>function</em>
@@ -1365,8 +1370,7 @@ set alias_file=~/.mail_aliases
         </div>
       </div>
       <p>Prior to 2022, NeoMutt used a default ncurses mode (
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">nl()</code>
       </span>”</span>). This mode maps keyboard input of either
       <code class="literal">&lt;Enter&gt;</code>or
@@ -1377,12 +1381,10 @@ set alias_file=~/.mail_aliases
       <code class="literal">&lt;Enter&gt;</code>to be mapped separately, if desired. The default keyboard mappings set both, but you can override this or create new bindings with one or the other (or both).</p>
       <p>Note that in terminal application, such as NeoMutt,
       <code class="literal">&lt;Enter&gt;</code>is the same as
-      <span class="quote">“
-      <span class="quote">\n</span>”</span> and
+      <span class="quote">“<span class="quote">\n</span>”</span> and
       <code class="literal">^J</code>; while
       <code class="literal">&lt;Return&gt;</code>is the same as
-      <span class="quote">“
-      <span class="quote">\r</span>”</span> and
+      <span class="quote">“<span class="quote">\r</span>”</span> and
       <code class="literal">^M</code>.</p>
     </div>
     <div class="sect2">
@@ -1439,15 +1441,16 @@ bind index gg first-entry
         <code class="literal">intr = ^C</code>
       </span>”</span> in its output. This means typing
       <code class="literal">^C</code> will send an interrupt signal.
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">
         <code class="literal">quit = ^\</code>
       </span>”</span> means typing
       <code class="literal">^\</code>(commonly also
       <code class="literal">^4</code>) will send a quit signal.</p>
       <p>To unbind a key from an action, you invoke
-      <span class="quote">“<span class="quote">stty action undef</span>”</span>. For example,
-      <span class="quote">“<span class="quote">
+      <span class="quote">“
+      <span class="quote">stty action undef</span>”</span>. For example,
+      <span class="quote">“
+      <span class="quote">
         <code class="literal">stty quit undef</code>
       </span>”</span> will unbind
       <code class="literal">^\</code>(and
@@ -1567,8 +1570,7 @@ bind index gg first-entry
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you use the
-      <span class="quote">“
-      <span class="quote">!</span>”</span> shortcut for
+      <span class="quote">“<span class="quote">!</span>”</span> shortcut for
       <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a> at the beginning of
       <span class="emphasis">
         <em>regex</em>
@@ -4141,12 +4143,12 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>ask-yes</em>
       </span>will cause a prompt with a default answer of
-      <span class="quote">“
-      <span class="quote">yes</span>”</span> and
+      <span class="quote">“<span class="quote">yes</span>”</span> and
       <span class="emphasis">
         <em>ask-no</em>
       </span>will provide a default answer of
-      <span class="quote">“<span class="quote">no.</span>”</span></p>
+      <span class="quote">“
+      <span class="quote">no.</span>”</span></p>
       <p>Prefixing a variable with
       <span class="quote">“<span class="quote">no</span>”</span> will unset it. Example:
       <code class="literal">
@@ -4201,7 +4203,8 @@ set allow_8bit?
       <span class="command">
         <strong>reset</strong>
       </span>command there exists the special variable
-      <span class="quote">“<span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
+      <span class="quote">“
+      <span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4362,7 +4365,8 @@ set my_foo = $my_inc
       <br class="example-break" />
       <p>These assignments are all valid. If, however, the value of
       <code class="literal">$my_lines</code> would have been
-      <span class="quote">“<span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
+      <span class="quote">“
+      <span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
       <code class="literal">$pager_index_lines</code> would have produced an error message.</p>
       <p>Type conversion applies to all configuration commands which take arguments. But please note that every expanded value of a variable is considered just a single token. A working example is:</p>
       <pre class="screen">
@@ -4381,7 +4385,8 @@ mailboxes $my_mx +mailbox3
 </pre>
       <p>because the value of
       <code class="literal">$my_mx</code> is interpreted as a single mailbox named
-      <span class="quote">“<span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
+      <span class="quote">“
+      <span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
     </div>
   </div>
   <div class="sect1">
@@ -4408,7 +4413,8 @@ mailboxes $my_mx +mailbox3
     <code class="literal">~/.mail_aliases</code> so that I can make my
     <code class="literal">~/.neomuttrc</code> readable and keep my aliases private.</p>
     <p>If the filename begins with a tilde (
-    <span class="quote">“<span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
+    <span class="quote">“
+    <span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
     <p>If the filename is relative and the command
     <span class="command">
       <strong>source</strong>
@@ -4499,8 +4505,10 @@ mailboxes $my_mx +mailbox3
       <p>NeoMutt adds some other modifiers to format strings. If you use an equals symbol (
       <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion – that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
-      <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
-      <span class="quote">“<span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
+      <span class="quote">“
+      <span class="quote">test</span>”</span>, that expansion would look like
+      <span class="quote">“
+      <span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
       <p>There are two very little-known modifiers that affect the way that an expando is replaced. If there is an underline (
       <span class="quote">“<span class="quote">_</span>”</span>) character between any format modifiers (as above) and the expando letter, it will expands in all lower case. And if you use a colon (
       <span class="quote">“<span class="quote">:</span>”</span>), it will replace all decimal points with underlines.</p>
