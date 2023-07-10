@@ -21,7 +21,7 @@ First the program needs to be compiled and linked with some extra options.
 This will generate a `.gcno` coverage files for each object.
 
 For NeoMutt, simply add an option to configure, then build as normal.
-The results will be in `lcov/index.html`
+The results will be in `coverage/index.html`
 
 ```sh
 ./configure --coverage
