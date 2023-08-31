@@ -206,8 +206,8 @@ title: Configuration
       <a class="link" href="reference.html#mailcap-path" title="3.216.&#160;mailcap_path">$mailcap_path</a>,
       <a class="link" href="reference.html#news-server" title="3.256.&#160;news_server">$news_server</a>,
       <a class="link" href="reference.html#shell" title="3.411.&#160;shell">shell</a>,
-      <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a>,
-      <a class="link" href="reference.html#tmp-dir" title="3.507.&#160;tmp_dir">$tmp_dir</a>,</p>
+      <a class="link" href="reference.html#spool-file" title="3.478.&#160;spool_file">$spool_file</a>,
+      <a class="link" href="reference.html#tmp-dir" title="3.508.&#160;tmp_dir">$tmp_dir</a>,</p>
       <p>Finally, it's possible to
       <a class="link" href="reference.html#commandline" title="1.&#160;Command-Line Options">set some variables directly</a> on the command-line using the
       <code class="literal">-e</code> option.</p>
@@ -659,6 +659,10 @@ alias friends alan, briony
 unalias muttdude
 unalias *
 </pre>
+    <p>Note: The alias
+    <span class="emphasis">
+      <em>key</em>
+    </span>is matched case insensitively when creating (checking for duplicates), removing, or expanding aliases.</p>
     <p>Unlike other mailers, NeoMutt doesn't require aliases to be defined in a special file. The
     <span class="command">
       <strong>alias</strong>
@@ -1571,7 +1575,7 @@ bind index gg first-entry
       <h3 class="title">Note</h3>
       <p>If you use the
       <span class="quote">“<span class="quote">!</span>”</span> shortcut for
-      <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a> at the beginning of
+      <a class="link" href="reference.html#spool-file" title="3.478.&#160;spool_file">$spool_file</a> at the beginning of
       <span class="emphasis">
         <em>regex</em>
       </span>, you must place it inside of double or single quotes in order to distinguish it from the logical
@@ -2246,7 +2250,7 @@ uncolor compose header
         <code class="literal">$reply_regex</code>
       </a>config variable.</p>
       <p>The quoted email colours don't use pattern. The first colour,
-      <code class="literal">quoted</code> provides a default colour for all quoted text. Also, each diffent level of quoting can be given a different colour using,
+      <code class="literal">quoted</code> provides a default colour for all quoted text. Also, each different level of quoting can be given a different colour using,
       <code class="literal">quoted1</code>,
       <code class="literal">quoted2</code>,
       <code class="literal">quoted3</code> up to
@@ -2599,7 +2603,7 @@ uncolor status *
         </div>
       </div>
       <p>When displaying a message in the pager, NeoMutt folds long header lines at
-      <a class="link" href="reference.html#wrap" title="3.533.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
+      <a class="link" href="reference.html#wrap" title="3.534.&#160;wrap">$wrap</a> columns. Though there're precise rules about where to break and how, NeoMutt always folds headers using a tab for readability. (Note that the sending side is not affected by this, NeoMutt tries to implement standards compliant folding.)</p>
       <p>Despite not being a real header, NeoMutt will also display an mbox "From_" line in the pager along with other headers. This line can be manipulated with
       <span class="command">
         <strong>ignore/unignore</strong>
@@ -2993,23 +2997,29 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mailboxes</code>
+      <code class="command">mailboxes</code>[ [
+      <code class="option">-label</code>
+      <em class="replaceable">
+        <code>label</code>
+      </em>|
+      <code class="option">-nolabel</code>] [
+      <code class="option">-notify</code>|
+      <code class="option">-nonotify</code>] [
+      <code class="option">-poll</code>|
+      <code class="option">-nopoll</code>]
       <em class="replaceable">
         <code>mailbox</code>
-      </em>[
-      <em class="replaceable">
-        <code>mailbox</code>
-      </em>...]
+      </em>] [...]
       <br />
       <code class="command">named-mailboxes</code>
       <em class="replaceable">
-        <code>description</code>
+        <code>label</code>
       </em>
       <em class="replaceable">
         <code>mailbox</code>
       </em>{
       <em class="replaceable">
-        <code>description</code>
+        <code>label</code>
       </em>
       <em class="replaceable">
         <code>mailbox</code>
@@ -3024,6 +3034,15 @@ subscribe [0-9]+.*@bugs.debian.org
       </em>... }</p>
     </div>
     <p>This command specifies folders which can receive mail and which will be checked for new messages periodically.</p>
+    <p>The
+    <code class="literal">-label</code> argument can be used to specify an alternative label to print in the sidebar or mailbox browser instead of the mailbox path. A label may be removed via the
+    <code class="literal">-nolabel</code> argument. If unspecified, an existing mailbox label will be unchanged.</p>
+    <p>Use
+    <code class="literal">-nonotify</code> to disable notifying when new mail arrives. The
+    <code class="literal">-notify</code> argument can be used to reenable notifying for an existing mailbox. If unspecified: a new mailbox will notify by default, while an existing mailbox will be unchanged.</p>
+    <p>To disable polling, specify
+    <code class="literal">-nopoll</code> before the mailbox name. The
+    <code class="literal">-poll</code> argument can be used to reenable polling for an existing mailbox. If unspecified: a new mailbox will poll by default, while an existing mailbox will be unchanged.</p>
     <p>
     <span class="emphasis">
       <em>folder</em>
@@ -3053,7 +3072,7 @@ subscribe [0-9]+.*@bugs.debian.org
       <span class="quote">“<span class="quote">=</span>”</span> and
       <span class="quote">“<span class="quote">!</span>”</span>), any variable definition that affects these characters (like
       <a class="link" href="reference.html#folder" title="3.123.&#160;folder">$folder</a> and
-      <a class="link" href="reference.html#spool-file" title="3.477.&#160;spool_file">$spool_file</a>) should be set before the
+      <a class="link" href="reference.html#spool-file" title="3.478.&#160;spool_file">$spool_file</a>) should be set before the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. If none of these shortcuts are used, a local path should be absolute as otherwise NeoMutt tries to find it relative to the directory from where NeoMutt was started which may not always be desired.</p>
@@ -3787,11 +3806,11 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     <span class="command">
       <strong>spam</strong>
     </span>rules for each filter you use. If a message matches two or more of these regular expressions, and the
-    <a class="link" href="reference.html#spam-separator" title="3.476.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
+    <a class="link" href="reference.html#spam-separator" title="3.477.&#160;spam_separator">$spam_separator</a> variable is set to a string, then the message's spam tag will consist of all the
     <span class="emphasis">
       <em>format</em>
     </span>strings joined together, with the value of
-    <a class="link" href="reference.html#spam-separator" title="3.476.&#160;spam_separator">$spam_separator</a> separating them.</p>
+    <a class="link" href="reference.html#spam-separator" title="3.477.&#160;spam_separator">$spam_separator</a> separating them.</p>
     <p>For example, suppose one uses DCC, SpamAssassin, and PureMessage, then the configuration might look like in
     <a class="xref" href="#ex-spam" title="Example&#160;3.15.&#160;Configuring spam detection">Example&#160;3.15, “Configuring spam detection”</a>.</p>
     <div class="example">
@@ -3816,7 +3835,7 @@ set spam_separator=", "
     <span class="quote">“<span class="quote">=many</span>”</span> in a DCC report indicate the checksum used – in this case,
     <span class="quote">“<span class="quote">Fuz2</span>”</span>.)</p>
     <p>If the
-    <a class="link" href="reference.html#spam-separator" title="3.476.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam rule match supersedes the previous one. Instead of getting joined
+    <a class="link" href="reference.html#spam-separator" title="3.477.&#160;spam_separator">$spam_separator</a> variable is unset, then each spam rule match supersedes the previous one. Instead of getting joined
     <span class="emphasis">
       <em>format</em>
     </span>strings, you'll get only the last one to match.</p>
@@ -4147,8 +4166,7 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <span class="emphasis">
         <em>ask-no</em>
       </span>will provide a default answer of
-      <span class="quote">“
-      <span class="quote">no.</span>”</span></p>
+      <span class="quote">“<span class="quote">no.</span>”</span></p>
       <p>Prefixing a variable with
       <span class="quote">“<span class="quote">no</span>”</span> will unset it. Example:
       <code class="literal">
@@ -4203,8 +4221,7 @@ set allow_8bit?
       <span class="command">
         <strong>reset</strong>
       </span>command there exists the special variable
-      <span class="quote">“
-      <span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
+      <span class="quote">“<span class="quote">all</span>”</span>, which allows you to reset all variables to their system defaults.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4365,8 +4382,7 @@ set my_foo = $my_inc
       <br class="example-break" />
       <p>These assignments are all valid. If, however, the value of
       <code class="literal">$my_lines</code> would have been
-      <span class="quote">“
-      <span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
+      <span class="quote">“<span class="quote">five</span>”</span>(or something else that cannot be parsed into a number), the assignment to
       <code class="literal">$pager_index_lines</code> would have produced an error message.</p>
       <p>Type conversion applies to all configuration commands which take arguments. But please note that every expanded value of a variable is considered just a single token. A working example is:</p>
       <pre class="screen">
@@ -4385,8 +4401,7 @@ mailboxes $my_mx +mailbox3
 </pre>
       <p>because the value of
       <code class="literal">$my_mx</code> is interpreted as a single mailbox named
-      <span class="quote">“
-      <span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
+      <span class="quote">“<span class="quote">+mailbox1 +mailbox2</span>”</span> and not two distinct mailboxes.</p>
     </div>
   </div>
   <div class="sect1">
@@ -4413,8 +4428,7 @@ mailboxes $my_mx +mailbox3
     <code class="literal">~/.mail_aliases</code> so that I can make my
     <code class="literal">~/.neomuttrc</code> readable and keep my aliases private.</p>
     <p>If the filename begins with a tilde (
-    <span class="quote">“
-    <span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
+    <span class="quote">“<span class="quote">~</span>”</span>), it will be expanded to the path of your home directory.</p>
     <p>If the filename is relative and the command
     <span class="command">
       <strong>source</strong>
@@ -4489,7 +4503,7 @@ mailboxes $my_mx +mailbox3
       <p>Format strings are a general concept you'll find in several locations through the NeoMutt configuration, especially in the
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>,
       <a class="link" href="reference.html#pager-format" title="3.287.&#160;pager_format">$pager_format</a>,
-      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
+      <a class="link" href="reference.html#status-format" title="3.498.&#160;status_format">$status_format</a>, and other related variables. These can be very straightforward, and it's quite possible you already know how to use them.</p>
       <p>The most basic format string element is a percent symbol followed by another character. For example,
       <code class="literal">%s</code> represents a message's Subject: header in the
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. The
@@ -4505,10 +4519,8 @@ mailboxes $my_mx +mailbox3
       <p>NeoMutt adds some other modifiers to format strings. If you use an equals symbol (
       <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion – that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
-      <span class="quote">“
-      <span class="quote">test</span>”</span>, that expansion would look like
-      <span class="quote">“
-      <span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
+      <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
+      <span class="quote">“<span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
       <p>There are two very little-known modifiers that affect the way that an expando is replaced. If there is an underline (
       <span class="quote">“<span class="quote">_</span>”</span>) character between any format modifiers (as above) and the expando letter, it will expands in all lower case. And if you use a colon (
       <span class="quote">“<span class="quote">:</span>”</span>), it will replace all decimal points with underlines.</p>
@@ -4541,7 +4553,7 @@ mailboxes $my_mx +mailbox3
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages (
       <code class="literal">%n</code>) in a mailbox in
-      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>:</p>
+      <a class="link" href="reference.html#status-format" title="3.498.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %&lt;n?%n new messages&gt;
 </pre>
@@ -4599,7 +4611,7 @@ set status_format="script.sh '%r %f (%L)'|"
       <p>A practical example is the
       <code class="literal">mutt_xtitle</code> script installed in the
       <code class="literal">samples</code> subdirectory of the NeoMutt documentation: it can be used as filter for
-      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
+      <a class="link" href="reference.html#status-format" title="3.498.&#160;status_format">$status_format</a> to set the current terminal's title, if supported.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4695,7 +4707,7 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
       <code class="literal">%c</code> and
       <code class="literal">%cr</code> in
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>, and %l and %L in
-      <a class="link" href="reference.html#status-format" title="3.497.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
+      <a class="link" href="reference.html#status-format" title="3.498.&#160;status_format">$status_format</a>. There are four configuration variables that can be used to customize how the numbers are displayed.</p>
       <p>
       <a class="link" href="reference.html#size-show-bytes" title="3.433.&#160;size_show_bytes">$size_show_bytes</a> will display the number of bytes when the size is &lt; 1 kilobyte. When unset, kilobytes will be displayed instead.</p>
       <p>
