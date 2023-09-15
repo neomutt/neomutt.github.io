@@ -65,8 +65,7 @@ title: Autocrypt
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> directory set differently from your GnuPG keyring directory (e.g.
       <code class="literal">~/.gnupg</code>). Keys are automatically imported into the keyring from
       <code class="literal">Autocrypt:</code> headers. Compared to standard
-      <span class="quote">“
-      <span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
+      <span class="quote">“<span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
       <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.80.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
       <p>The
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> variable is not designed to be changed while NeoMutt is running. The database is created (if necessary) and connected to during startup. Changing the variable can result in a situation where NeoMutt is looking in one place for the database and a different place for the GPG keyring, resulting in strange behavior.</p>

@@ -21,8 +21,7 @@ title: Advanced Usage
       </div>
     </div>
     <p>A
-    <span class="quote">“
-    <span class="quote">character set</span>”</span> is basically a mapping between bytes and glyphs and implies a certain character encoding scheme. For example, for the ISO 8859 family of character sets, an encoding of 8bit per character is used. For the Unicode character set, different character encodings may be used, UTF-8 being the most popular. In UTF-8, a character is represented using a variable number of bytes ranging from 1 to 4.</p>
+    <span class="quote">“<span class="quote">character set</span>”</span> is basically a mapping between bytes and glyphs and implies a certain character encoding scheme. For example, for the ISO 8859 family of character sets, an encoding of 8bit per character is used. For the Unicode character set, different character encodings may be used, UTF-8 being the most popular. In UTF-8, a character is represented using a variable number of bytes ranging from 1 to 4.</p>
     <p>Since NeoMutt is a command-line tool run from a shell, and delegates certain tasks to external tools (such as an editor for composing/editing messages), all of these tools need to agree on a character set and encoding. There exists no way to reliably deduce the character set a plain text file has. Interoperability is gained by the use of well-defined environment variables. The full set can be printed by issuing
     <code class="literal">locale</code> on the command line.</p>
     <p>Upon startup, NeoMutt determines the character set on its own using routines that inspect locale-specific environment variables. Therefore, it is generally not necessary to set the
@@ -33,8 +32,7 @@ title: Advanced Usage
     <span class="emphasis">
       <em>not</em>
     </span>derive the locale from environment variables, they need to be configured separately. If the terminal is incorrectly configured, NeoMutt may display random and unexpected characters (question marks, octal codes, or just random glyphs), format strings may not work as expected, you may not be abled to enter non-ascii characters, and possible more. Data is always represented using bytes and so a correct setup is very important as to the machine, all character sets
-    <span class="quote">“
-    <span class="quote">look</span>”</span> the same.</p>
+    <span class="quote">“<span class="quote">look</span>”</span> the same.</p>
     <p>Warning: A mismatch between what system and library functions think the locale is and what NeoMutt was told what the locale is may make it behave badly with non-ascii input: it will fail at seemingly random places. This warning is to be taken seriously since not only local mail handling may suffer: sent messages may carry wrong character set information the
     <span class="emphasis">
       <em>receiver</em>
@@ -55,16 +53,13 @@ title: Advanced Usage
     </div>
     <p>All string patterns in NeoMutt including those in more complex
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> must be specified using regular expressions (regex) in the
-    <span class="quote">“
-    <span class="quote">POSIX extended</span>”</span> syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
+    <span class="quote">“<span class="quote">POSIX extended</span>”</span> syntax (which is more or less the syntax used by egrep and GNU awk). For your convenience, we have included below a brief description of this syntax.</p>
     <p>The search is case sensitive if the regular expression contains at least one upper case letter, and case insensitive otherwise.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>
-      <span class="quote">“
-      <span class="quote">\</span>”</span> must be quoted if used for a regular expression in an initialization command:
-      <span class="quote">“
-      <span class="quote">\\</span>”</span>.</p>
+      <span class="quote">“<span class="quote">\</span>”</span> must be quoted if used for a regular expression in an initialization command:
+      <span class="quote">“<span class="quote">\\</span>”</span>.</p>
     </div>
     <p>A regular expression is a pattern that describes a set of strings. Regular expressions are constructed analogously to arithmetic expressions, by using various operators to combine smaller expressions.</p>
     <div class="note">
@@ -99,26 +94,19 @@ subscribe "only\\.dot@example\\.org"
     <span class="quote">“<span class="quote">^</span>”</span> and the dollar sign
     <span class="quote">“<span class="quote">$</span>”</span> are metacharacters that respectively match the empty string at the beginning and end of a line.</p>
     <p>A list of characters enclosed by
-    <span class="quote">“
-    <span class="quote">[</span>”</span> and
-    <span class="quote">“
-    <span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
-    <span class="quote">“
-    <span class="quote">^</span>”</span> then it matches any character
+    <span class="quote">“<span class="quote">[</span>”</span> and
+    <span class="quote">“<span class="quote">]</span>”</span> matches any single character in that list; if the first character of the list is a caret
+    <span class="quote">“<span class="quote">^</span>”</span> then it matches any character
     <span class="emphasis">
       <em>not</em>
     </span>in the list. For example, the regular expression
     <span class="emphasis">
       <em>[0123456789]</em>
     </span>matches any single digit. A range of ASCII characters may be specified by giving the first and last characters, separated by a hyphen
-    <span class="quote">“
-    <span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
-    <span class="quote">“
-    <span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
-    <span class="quote">“
-    <span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
-    <span class="quote">“
-    <span class="quote">-</span>”</span> place it last.</p>
+    <span class="quote">“<span class="quote">-</span>”</span>. Most metacharacters lose their special meaning inside lists. To include a literal
+    <span class="quote">“<span class="quote">]</span>”</span> place it first in the list. Similarly, to include a literal
+    <span class="quote">“<span class="quote">^</span>”</span> place it anywhere but first. Finally, to include a literal hyphen
+    <span class="quote">“<span class="quote">-</span>”</span> place it last.</p>
     <p>Certain named classes of characters are predefined. Character classes consist of
     <span class="quote">“<span class="quote">[:</span>”</span>, a keyword denoting the class, and
     <span class="quote">“<span class="quote">:]</span>”</span>. The following classes are defined by the POSIX standard in

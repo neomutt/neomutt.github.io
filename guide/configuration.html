@@ -21,10 +21,8 @@ title: Configuration
       </div>
     </div>
     <p>When NeoMutt starts up it looks for two configuration files – one
-    <span class="quote">“
-    <span class="quote">system</span>”</span> file and one
-    <span class="quote">“
-    <span class="quote">user</span>”</span> file.</p>
+    <span class="quote">“<span class="quote">system</span>”</span> file and one
+    <span class="quote">“<span class="quote">user</span>”</span> file.</p>
     <p>NeoMutt first reads the system configuration file, then the user configuration file. The two files are merged in the sense that "last setting wins". That is, if a setting is defined in both files, the user configuration file's value for that setting is the one that takes precedence and becomes effective.</p>
     <p>NeoMutt searches for several different file names when looking for config. It looks for NeoMutt config files before Mutt config files and versioned config before plain config. For example:</p>
     <div >
@@ -349,14 +347,10 @@ set real_name="John \"anonymous\" Doe"
     </div>
     <br class="example-break" />
     <p>
-    <span class="quote">“
-    <span class="quote">\\</span>”</span> means to insert a literal
-    <span class="quote">“
-    <span class="quote">\</span>”</span> into the line.
-    <span class="quote">“
-    <span class="quote">\n</span>”</span> and
-    <span class="quote">“
-    <span class="quote">\r</span>”</span> have their usual C meanings of linefeed and carriage-return, respectively.</p>
+    <span class="quote">“<span class="quote">\\</span>”</span> means to insert a literal
+    <span class="quote">“<span class="quote">\</span>”</span> into the line.
+    <span class="quote">“<span class="quote">\n</span>”</span> and
+    <span class="quote">“<span class="quote">\r</span>”</span> have their usual C meanings of linefeed and carriage-return, respectively.</p>
     <p>A
     <span class="quote">“<span class="quote">\</span>”</span> at the end of a line can be used to split commands over multiple lines as it
     <span class="quote">“<span class="quote">escapes</span>”</span> the line end, provided that the split points don't appear in the middle of command names. Lines are first concatenated before interpretation so that a multi-line can be commented by commenting out the first line only.</p>
@@ -377,8 +371,7 @@ over several lines"
     <div class="note">
       <h3 class="title">Note</h3>
       <p>Using
-      <span class="quote">“
-      <span class="quote">\</span>”</span> at the end of a line
+      <span class="quote">“<span class="quote">\</span>”</span> at the end of a line
       <span class="emphasis">
         <em>only</em>
       </span>removes the newline character.</p>
@@ -417,8 +410,7 @@ set imap_pass="`gpg --batch -q --decrypt ~/.neomutt/account.gpg`"
     </div>
     <br class="example-break" />
     <p>Both environment variables and NeoMutt variables can be accessed by prepending
-    <span class="quote">“
-    <span class="quote">$</span>”</span> to the name of the variable. For example,</p>
+    <span class="quote">“<span class="quote">$</span>”</span> to the name of the variable. For example,</p>
     <div class="example">
       <a id="ex-rc-env"></a>
       <p class="title">
@@ -439,8 +431,7 @@ set record = "+sent_on_$HOSTNAME"
       <em>environment</em>
     </span>variable.</p>
     <p>will cause NeoMutt to save outgoing messages to a folder named
-    <span class="quote">“
-    <span class="quote">sent_on_kremvax</span>”</span> if the environment variable
+    <span class="quote">“<span class="quote">sent_on_kremvax</span>”</span> if the environment variable
     <code class="literal">$HOSTNAME</code> is set to
     <span class="quote">“<span class="quote">kremvax.</span>”</span>(See
     <a class="link" href="reference.html#record" title="3.381.&#160;record">$record</a> for details.)</p>
@@ -653,8 +644,7 @@ alias jim    James Smith &lt;js@example.com&gt;
 alias friends alan, briony
 </pre>
     <p>To remove an alias or aliases (
-    <span class="quote">“
-    <span class="quote">*</span>”</span> means all aliases):</p>
+    <span class="quote">“<span class="quote">*</span>”</span> means all aliases):</p>
     <pre class="screen">
 unalias muttdude
 unalias *
@@ -1451,10 +1441,8 @@ bind index gg first-entry
       <code class="literal">^\</code>(commonly also
       <code class="literal">^4</code>) will send a quit signal.</p>
       <p>To unbind a key from an action, you invoke
-      <span class="quote">“
-      <span class="quote">stty action undef</span>”</span>. For example,
-      <span class="quote">“
-      <span class="quote">
+      <span class="quote">“<span class="quote">stty action undef</span>”</span>. For example,
+      <span class="quote">“<span class="quote">
         <code class="literal">stty quit undef</code>
       </span>”</span> will unbind
       <code class="literal">^\</code>(and
