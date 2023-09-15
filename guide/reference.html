@@ -181,10 +181,10 @@ neomutt -a image.jpg *.png -- address1 address2
               <code class="literal">file</code> for debugging output (default "
               <code class="literal">~/.neomuttdebug0</code>"). This overrules
               <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a> setting and NeoMutt keeps up to five debug logs ({
-              <code class="literal">file</code>|
+              <code class="literal">file</code> |
               <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a>|
-              <code class="literal">~/.neomuttdebug</code>}[
-              <code class="literal">0-4</code>]) before override the oldest file</td>
+              <code class="literal">~/.neomuttdebug</code> }[
+              <code class="literal">0-4</code> ]) before override the oldest file</td>
             </tr>
             <tr>
               <td>-m
@@ -249,8 +249,8 @@ neomutt -a image.jpg *.png -- address1 address2
     <p>To read messages in a mailbox or exit immediately</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">neomutt</code>[
-      <code class="option">-nz</code>] [
+      <code class="command">neomutt</code> [
+      <code class="option">-nz</code> ] [
       <code class="option">-F</code>
       <em class="replaceable">
         <code>config</code>
@@ -267,8 +267,8 @@ neomutt -a image.jpg *.png -- address1 address2
     <p>To compose a new message</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">neomutt</code>[
-      <code class="option">-Enx</code>] [
+      <code class="command">neomutt</code> [
+      <code class="option">-Enx</code> ] [
       <code class="option">-F</code>
       <em class="replaceable">
         <code>config</code>
@@ -297,7 +297,7 @@ neomutt -a image.jpg *.png -- address1 address2
       <em class="replaceable">
         <code>file</code>
       </em>[...]
-      <code class="option">--</code>] {
+      <code class="option">--</code> ] {
       <em class="replaceable">
         <code>address</code>
       </em>|
@@ -311,7 +311,7 @@ neomutt -a image.jpg *.png -- address1 address2
 neomutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
 </pre>
     <p>will send a message to
-    <code class="literal">&lt;professor@bigschool.edu&gt;</code>with a subject of
+    <code class="literal">&lt;professor@bigschool.edu&gt;</code> with a subject of
     <span class="quote">“<span class="quote">data set for run #2</span>”</span>. In the body of the message will be the contents of the file
     <span class="quote">“<span class="quote">~/run2.dat</span>”</span>.</p>
     <p>An include file passed with
@@ -325,7 +325,7 @@ neomutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
     <span class="emphasis">
       <em>file</em>
     </span>will be attached as a MIME part to the message. To attach a single or several files, use
-    <code class="literal">--</code>to separate files and recipient addresses:</p>
+    <code class="literal">--</code> to separate files and recipient addresses:</p>
     <pre class="screen">
 neomutt -a image.png -- some@one.org
 </pre>
@@ -339,7 +339,7 @@ neomutt -a *.png -- some@one.org
       <code class="literal">-a</code> option must be last in the option list.</p>
     </div>
     <p>In addition to accepting a list of email addresses, NeoMutt also accepts a URL with the
-    <code class="literal">mailto:</code>schema as specified in RFC2368. This is useful when configuring a web browser to launch NeoMutt when clicking on mailto links.</p>
+    <code class="literal">mailto:</code> schema as specified in RFC2368. This is useful when configuring a web browser to launch NeoMutt when clicking on mailto links.</p>
     <pre class="screen">
 neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
 </pre>
@@ -376,7 +376,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#alias" title="5.&#160;Defining/Using Aliases">alias</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -393,7 +393,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#alias" title="5.&#160;Defining/Using Aliases">unalias</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -411,7 +411,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#alternates" title="13.&#160;Alternative Addresses">alternates</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -425,7 +425,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#alternates" title="13.&#160;Alternative Addresses">unalternates</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -459,7 +459,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="mimesupport.html#alternative-order" title="5.&#160;MIME Multipart/Alternative">unalternative_order</a>
-            </code>{ * | [
+            </code> { * | [
             <em class="replaceable">
               <code>mime-type</code>
             </em>[
@@ -473,7 +473,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">attachments</a>
-            </code>{ + | - }
+            </code> { + | - }
             <em class="replaceable">
               <code>disposition</code>
             </em>
@@ -486,7 +486,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">unattachments</a>
-            </code>{ + | - }
+            </code> { + | - }
             <em class="replaceable">
               <code>disposition</code>
             </em>
@@ -529,7 +529,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">unauto_view</a>
-            </code>{ * | [
+            </code> { * | [
             <em class="replaceable">
               <code>mime-type</code>
             </em>[
@@ -559,7 +559,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#unbind" title="6.2.&#160;Unbinding a Key Sequence">unbind</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -632,9 +632,9 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#color" title="11.&#160;Using Color and Mono Video Attributes">color</a>
-            </code>{
-            <code class="option">header</code>|
-            <code class="option">body</code>} [
+            </code> {
+            <code class="option">header</code> |
+            <code class="option">body</code> } [
             <em class="replaceable">
               <code>attribute</code>
             </em>...]
@@ -651,7 +651,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <code class="command">
               <a class="link" href="configuration.html#color" title="11.&#160;Using Color and Mono Video Attributes">color</a>
             </code>
-            <code class="option">index</code>[
+            <code class="option">index</code> [
             <em class="replaceable">
               <code>attribute</code>
             </em>...]
@@ -667,10 +667,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#color" title="11.&#160;Using Color and Mono Video Attributes">uncolor</a>
-            </code>{
-            <code class="option">index</code>|
-            <code class="option">header</code>|
-            <code class="option">body</code>} {
+            </code> {
+            <code class="option">index</code> |
+            <code class="option">header</code> |
+            <code class="option">body</code> } {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -763,7 +763,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#addrgroup" title="4.&#160;Address Groups">group</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -779,7 +779,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#addrgroup" title="4.&#160;Address Groups">ungroup</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -812,7 +812,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#hdr-order" title="12.3.&#160;Ordering Displayed Headers">unhdr_order</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -865,7 +865,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#ignore" title="12.2.&#160;Selecting Headers">unignore</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -897,7 +897,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#lists" title="14.&#160;Mailing Lists">lists</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -911,7 +911,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#lists" title="14.&#160;Mailing Lists">unlists</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -925,7 +925,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#lists" title="14.&#160;Mailing Lists">subscribe</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -939,7 +939,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#lists" title="14.&#160;Mailing Lists">unsubscribe</a>
-            </code>[
+            </code> [
             <code class="option">-group</code>
             <em class="replaceable">
               <code>name</code>
@@ -1003,7 +1003,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">unmailboxes</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1017,7 +1017,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#mailto-allow" title="31.&#160;Control allowed header fields in a mailto: URL">mailto_allow</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1027,7 +1027,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#mailto-allow" title="31.&#160;Control allowed header fields in a mailto: URL">unmailto_allow</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1041,7 +1041,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#mbox-hook" title="15.&#160;Using Multiple Spool Mailboxes">mbox-hook</a>
-            </code>[
+            </code> [
             <em class="replaceable">
               <code>-noregex</code>
             </em>]
@@ -1089,7 +1089,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="mimesupport.html#mime-lookup" title="9.&#160;MIME Lookup">unmime_lookup</a>
-            </code>{ * | [
+            </code> { * | [
             <em class="replaceable">
               <code>mime-type</code>
             </em>[
@@ -1113,9 +1113,9 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#color-mono" title="11.4.&#160;Mono Color">mono</a>
-            </code>{
-            <code class="option">header</code>|
-            <code class="option">body</code>}
+            </code> {
+            <code class="option">header</code> |
+            <code class="option">body</code> }
             <em class="replaceable">
               <code>attribute</code>
             </em>
@@ -1136,10 +1136,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#color-mono" title="11.4.&#160;Mono Color">unmono</a>
-            </code>{
-            <code class="option">index-object</code>|
-            <code class="option">header</code>|
-            <code class="option">body</code>} {
+            </code> {
+            <code class="option">index-object</code> |
+            <code class="option">header</code> |
+            <code class="option">body</code> } {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1160,7 +1160,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#my-hdr" title="17.&#160;User-Defined Headers">unmy_hdr</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1266,7 +1266,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#score-command" title="25.&#160;Message Scoring">unscore</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1280,11 +1280,11 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#set" title="27.&#160;Setting and Querying Variables">set</a>
-            </code>{ [
-            <code class="option">no</code>|
-            <code class="option">inv</code>|
-            <code class="option">&amp;</code>|
-            <code class="option">?</code>]
+            </code> { [
+            <code class="option">no</code> |
+            <code class="option">inv</code> |
+            <code class="option">&amp;</code> |
+            <code class="option">?</code> ]
             <em class="replaceable">
               <code>variable</code>
             </em>|
@@ -1328,7 +1328,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="advancedusage.html#setenv" title="7.&#160;Managing the Environment">setenv</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>?variable</code>
             </em>|
@@ -1359,7 +1359,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="/feature/sidebar#pin">sidebar_unpin</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1395,7 +1395,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#spam" title="26.&#160;Spam Detection">nospam</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1419,7 +1419,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="advancedusage.html#display-munging" title="12.&#160;Display Munging">unsubjectrx</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1478,7 +1478,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#unhook" title="29.&#160;Removing Hooks">unhook</a>
-            </code>{
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -1728,7 +1728,7 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
       <p>The default file in which to save aliases created by the
       <code class="literal">
         <a class="link" href="gettingstarted.html#create-alias">&lt;create-alias&gt;</a>
-      </code>function. Entries added to this file are encoded in the character set specified by
+      </code> function. Entries added to this file are encoded in the character set specified by
       <a class="link" href="#config-charset" title="3.60.&#160;config_charset">$config_charset</a> if it is
       <span class="emphasis">
         <em>set</em>
@@ -1758,7 +1758,7 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
       </div>
       <p>Specifies the format of the data displayed for the "
       <a class="link" href="configuration.html#alias" title="5.&#160;Defining/Using Aliases">alias</a>" menu. The following
-      <code class="literal">printf(3)</code>-style sequences are available:</p>
+      <code class="literal">printf(3)</code> -style sequences are available:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -2074,7 +2074,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "attachment" menu. The following
-      <code class="literal">printf(3)</code>-style sequences are understood:</p>
+      <code class="literal">printf(3)</code> -style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -2277,7 +2277,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>This is the string that will precede a replied-to message which is quoted in the main body of the reply (this is the case when
       <a class="link" href="#include" title="3.200.&#160;include">$include</a> is set).</p>
       <p>For a full listing of defined
-      <code class="literal">printf(3)</code>-like sequences see the section on
+      <code class="literal">printf(3)</code> -like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
     </div>
@@ -2295,7 +2295,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>The locale used by
-      <code class="literal">strftime(3)</code>to format dates in the attribution strings. Legal values are the strings your system accepts for the locale environment variable
+      <code class="literal">strftime(3)</code> to format dates in the attribution strings. Legal values are the strings your system accepts for the locale environment variable
       <code class="literal">$LC_TIME</code>.</p>
       <p>This variable is to allow the attribution date format to be customized by recipient or folder using hooks. By default, NeoMutt will use your locale environment, so there is no need to set this except to override that default.</p>
       <p>Affected variables are:
@@ -2322,7 +2322,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <a class="link" href="#attribution-intro" title="3.31.&#160;attribution_intro">$attribution_intro</a> variable, this is the string that will come after a replied-to message which is quoted in the main body of the reply (this is the case when
       <a class="link" href="#include" title="3.200.&#160;include">$include</a> is set).</p>
       <p>For a full listing of defined
-      <code class="literal">printf(3)</code>-like sequences see the section on
+      <code class="literal">printf(3)</code> -like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
       <div class="note">
@@ -2399,7 +2399,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <span class="emphasis">
         <em>index</em>
       </span>menu which affect a message will be applied to all tagged messages (if there are any). When unset, you must first use the
-      <code class="literal">&lt;tag-prefix&gt;</code>function (bound to ";" by default) to make the next function apply to all tagged messages.</p>
+      <code class="literal">&lt;tag-prefix&gt;</code> function (bound to ";" by default) to make the next function apply to all tagged messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2437,7 +2437,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "autocrypt account" menu. The following
-      <code class="literal">printf(3)</code>-style sequences are understood</p>
+      <code class="literal">printf(3)</code> -style sequences are understood</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -2642,7 +2642,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         <em>set</em>
       </span>, NeoMutt will abbreviate mailbox names in the browser mailbox list, using '~' and '=' shortcuts.</p>
       <p>The default
-      <code class="literal">"alpha"</code>setting of
+      <code class="literal">"alpha"</code> setting of
       <a class="link" href="#sort-browser" title="3.474.&#160;sort_browser">$sort_browser</a> uses locale-based sorting (using
       <code class="literal">strcoll(3)</code>), which ignores some punctuation. This can lead to some situations where the order doesn't make intuitive sense. In those cases, it may be desirable to
       <span class="emphasis">
@@ -2707,7 +2707,7 @@ set certificate_file=~/.neomutt/certificates
       <span class="emphasis">
         <em>set</em>
       </span>, the
-      <code class="literal">&lt;change-folder&gt;</code>function mailbox suggestion will start at the next folder in your "
+      <code class="literal">&lt;change-folder&gt;</code> function mailbox suggestion will start at the next folder in your "
       <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">mailboxes</a>" list, instead of starting at the first folder in the list.</p>
     </div>
     <div class="sect2">
@@ -2884,7 +2884,7 @@ TERM=xterm-direct neomutt
       </div>
       <p>Controls the format of the status line displayed in the "compose" menu. This string is similar to
       <a class="link" href="#status-format" title="3.498.&#160;status_format">$status_format</a>, but has its own set of
-      <code class="literal">printf(3)</code>-like sequences:</p>
+      <code class="literal">printf(3)</code> -like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -3085,8 +3085,8 @@ TERM=xterm-direct neomutt
         <br />Default:&#160;no</p>
       </div>
       <p>Controls whether NeoMutt will weed headers when invoking the
-      <code class="literal">&lt;decode-copy&gt;</code>or
-      <code class="literal">&lt;decode-save&gt;</code>functions.</p>
+      <code class="literal">&lt;decode-copy&gt;</code> or
+      <code class="literal">&lt;decode-save&gt;</code> functions.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3408,7 +3408,7 @@ TERM=xterm-direct neomutt
       <span class="bold">
         <strong>after</strong>
       </span>the message is opened, i.e. via the
-      <code class="literal">&lt;display-message&gt;</code>function. If you reply to a message before opening it, NeoMutt will end up using the dummy Subject header, so be sure to open such a message first. (Crypto only)</p>
+      <code class="literal">&lt;display-message&gt;</code> function. If you reply to a message before opening it, NeoMutt will end up using the dummy Subject header, so be sure to open such a message first. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3678,7 +3678,7 @@ TERM=xterm-direct neomutt
       <a class="link" href="#date-format" title="3.96.&#160;date_format">$date_format</a>. This allows for a more fine grained control of the different menu needs.</p>
       <p>This variable controls the format of the date printed by the "%d" sequence in
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. This is passed to the
-      <code class="literal">strftime(3)</code>function to process the date, see the man page for the proper syntax.</p>
+      <code class="literal">strftime(3)</code> function to process the date, see the man page for the proper syntax.</p>
       <p>Unless the first character in the string is a bang ("!"), the month and week day names are expanded according to the locale. If the first character in the string is a bang, the bang is discarded, and the month and week day names in the rest of the string are expanded in the
       <span class="emphasis">
         <em>C</em>
@@ -3716,13 +3716,13 @@ TERM=xterm-direct neomutt
       <p>Debug logging is controlled by the variables
       <code class="literal">
         <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a>
-      </code>and
+      </code> and
       <code class="literal">
         <a class="link" href="#debug-level" title="3.98.&#160;debug_level">$debug_level</a>
       </code>.
       <code class="literal">
         <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a>
-      </code>specifies the root of the filename. NeoMutt will add "0" to the end. Each time NeoMutt is run with logging enabled, the log files are rotated. A maximum of five log files are kept, numbered 0 (most recent) to 4 (oldest).</p>
+      </code> specifies the root of the filename. NeoMutt will add "0" to the end. Each time NeoMutt is run with logging enabled, the log files are rotated. A maximum of five log files are kept, numbered 0 (most recent) to 4 (oldest).</p>
       <p>This option can be enabled on the command line, "neomutt -l mylog"</p>
       <p>See also:
       <code class="literal">
@@ -3745,7 +3745,7 @@ TERM=xterm-direct neomutt
       <p>Debug logging is controlled by the variables
       <code class="literal">
         <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a>
-      </code>and
+      </code> and
       <code class="literal">
         <a class="link" href="#debug-level" title="3.98.&#160;debug_level">$debug_level</a>
       </code>.</p>
@@ -3861,7 +3861,7 @@ TERM=xterm-direct neomutt
       <p>When set, specifies a command used to filter messages. When a message is viewed it is passed as standard input to
       <a class="link" href="#display-filter" title="3.103.&#160;display_filter">$display_filter</a>, and the filtered message is read from the standard output.</p>
       <p>When preparing the message, NeoMutt inserts some escape sequences into the text. They are of the form:
-      <code class="literal">&lt;esc&gt;]9;XXX&lt;bel&gt;</code>where "XXX" is a random 64-bit number.</p>
+      <code class="literal">&lt;esc&gt;]9;XXX&lt;bel&gt;</code> where "XXX" is a random 64-bit number.</p>
       <p>If these escape sequences interfere with your filter, they can be removed using a tool like
       <code class="literal">ansifilter</code> or
       <code class="literal">sed 's/^\x1b]9;[0-9]\+\x7//'</code></p>
@@ -3903,7 +3903,7 @@ set dsn_notify="failure,delay"
         <strong>Note:</strong>
       </span>when using
       <a class="link" href="#sendmail" title="3.409.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
-      <code class="literal">sendmail(1)</code>-compatible interface supporting the
+      <code class="literal">sendmail(1)</code> -compatible interface supporting the
       <code class="literal">-N</code> option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
     <div class="sect2">
@@ -3935,7 +3935,7 @@ set dsn_return=hdrs
         <strong>Note:</strong>
       </span>when using
       <a class="link" href="#sendmail" title="3.409.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
-      <code class="literal">sendmail(1)</code>-compatible interface supporting the
+      <code class="literal">sendmail(1)</code> -compatible interface supporting the
       <code class="literal">-R</code> option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
     <div class="sect2">
@@ -4015,7 +4015,7 @@ set dsn_return=hdrs
       <p>The
       <code class="literal">
         <a class="link" href="#editor" title="3.109.&#160;editor">$editor</a>
-      </code>string may contain a
+      </code> string may contain a
       <span class="emphasis">
         <em>%s</em>
       </span>escape, which will be replaced by the name of the file to be edited. If the
@@ -4035,7 +4035,7 @@ sh -c 'string'
       </span>is the expansion of
       <code class="literal">
         <a class="link" href="#editor" title="3.109.&#160;editor">$editor</a>
-      </code>described above.</p>
+      </code> described above.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4412,7 +4412,7 @@ sh -c 'string'
       </div>
       <p>This variable allows you to customize the file browser display to your personal taste. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code>-like sequences:</p>
+      <code class="literal">printf(3)</code> -like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -4497,7 +4497,7 @@ sh -c 'string'
               <td>%[fmt]</td>
               <td></td>
               <td>Date/time folder was last modified using an
-              <code class="literal">strftime(3)</code>expression</td>
+              <code class="literal">strftime(3)</code> expression</td>
             </tr>
             <tr>
               <td>%&gt;X</td>
@@ -4681,7 +4681,7 @@ sh -c 'string'
       </div>
       <p>This is the string that will precede a message which has been forwarded in the main body of a message (when
       <a class="link" href="#mime-forward" title="3.241.&#160;mime_forward">$mime_forward</a> is unset). For a full listing of defined
-      <code class="literal">printf(3)</code>-like sequences see the section on
+      <code class="literal">printf(3)</code> -like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
     </div>
@@ -4704,7 +4704,7 @@ sh -c 'string'
       </div>
       <p>This is the string that will follow a message which has been forwarded in the main body of a message (when
       <a class="link" href="#mime-forward" title="3.241.&#160;mime_forward">$mime_forward</a> is unset). For a full listing of defined
-      <code class="literal">printf(3)</code>-like sequences see the section on
+      <code class="literal">printf(3)</code> -like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
     </div>
@@ -5551,7 +5551,7 @@ sh -c 'string'
         <br />Default:&#160;no</p>
       </div>
       <p>Affects the behavior of the
-      <code class="literal">&lt;reply&gt;</code>function when replying to messages from mailing lists (as defined by the "
+      <code class="literal">&lt;reply&gt;</code> function when replying to messages from mailing lists (as defined by the "
       <a class="link" href="configuration.html#subscribe">subscribe</a>" or "
       <a class="link" href="configuration.html#lists" title="14.&#160;Mailing Lists">lists</a>" commands). When
       <span class="emphasis">
@@ -5562,8 +5562,8 @@ sh -c 'string'
       </span>, use the
       <code class="literal">
         <a class="link" href="gettingstarted.html#list-reply">&lt;list-reply&gt;</a>
-      </code>function;
-      <code class="literal">&lt;group-reply&gt;</code>will reply to both the sender and the list.</p>
+      </code> function;
+      <code class="literal">&lt;group-reply&gt;</code> will reply to both the sender and the list.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5765,7 +5765,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;no</p>
       </div>
       <p>This variable configures whether IMAP folder browsing will look for only subscribed folders or all folders. This can be toggled in the IMAP browser with the
-      <code class="literal">&lt;toggle-subscribed&gt;</code>function.</p>
+      <code class="literal">&lt;toggle-subscribed&gt;</code> function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -5817,7 +5817,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will prompt you for your password when you invoke the
-      <code class="literal">&lt;imap-fetch-mail&gt;</code>function or try to open an IMAP folder.</p>
+      <code class="literal">&lt;imap-fetch-mail&gt;</code> function or try to open an IMAP folder.</p>
       <p>
       <span class="bold">
         <strong>Warning</strong>
@@ -6126,7 +6126,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <a class="link" href="#text-flowed" title="3.502.&#160;text_flowed">$text_flowed</a> is set, because the quoting mechanism is strictly defined for format=flowed.</p>
       <p>This option is a format string, please see the description of
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a> for supported
-      <code class="literal">printf(3)</code>-style sequences.</p>
+      <code class="literal">printf(3)</code> -style sequences.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $indent_str</div>
     </div>
@@ -6148,7 +6148,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       </div>
       <p>This variable allows you to customize the message index display to your personal taste.</p>
       <p>"Format strings" are similar to the strings used in the C function
-      <code class="literal">printf(3)</code>to format output (see the man page for more details). For an explanation of the %&lt;...&gt; construct, see the
+      <code class="literal">printf(3)</code> to format output (see the man page for more details). For an explanation of the %&lt;...&gt; construct, see the
       <a class="link" href="#status-format" title="3.498.&#160;status_format">status_format</a> description. The following sequences are defined in NeoMutt:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
@@ -6376,17 +6376,17 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%{fmt}</td>
               <td>the date and time of the message is converted to sender's time zone, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code>; if the first character inside the braces is a bang ("!"), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so "%Z" behaves like "%z".</td>
+              <code class="literal">strftime(3)</code> ; if the first character inside the braces is a bang ("!"), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so "%Z" behaves like "%z".</td>
             </tr>
             <tr>
               <td>%[fmt]</td>
               <td>the date and time of the message is converted to the local time zone, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code>; if the first character inside the brackets is a bang ("!"), the date is formatted ignoring any locale settings.</td>
+              <code class="literal">strftime(3)</code> ; if the first character inside the brackets is a bang ("!"), the date is formatted ignoring any locale settings.</td>
             </tr>
             <tr>
               <td>%(fmt)</td>
               <td>the local date and time when the message was received, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code>; if the first character inside the parentheses is a bang ("!"), the date is formatted ignoring any locale settings.</td>
+              <code class="literal">strftime(3)</code> ; if the first character inside the parentheses is a bang ("!"), the date is formatted ignoring any locale settings.</td>
             </tr>
             <tr>
               <td>%&gt;X</td>
@@ -6590,7 +6590,7 @@ set inews="/usr/local/bin/inews -hS"
       </span>, and has a separate option,
       <a class="link" href="#mail-check-stats-interval" title="3.214.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>, to control how often to update these counts.</p>
       <p>Message statistics can also be explicitly calculated by invoking the
-      <code class="literal">&lt;check-stats&gt;</code>function.</p>
+      <code class="literal">&lt;check-stats&gt;</code> function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6708,7 +6708,7 @@ set inews="/usr/local/bin/inews -hS"
         <br />Default:&#160;yes</p>
       </div>
       <p>Check for Maildir unaware programs other than NeoMutt having modified maildir files when the header cache is in use. This incurs one
-      <code class="literal">stat(2)</code>per message every time the folder is opened (which can be very slow for NFS folders).</p>
+      <code class="literal">stat(2)</code> per message every time the folder is opened (which can be very slow for NFS folders).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7006,7 +7006,7 @@ set inews="/usr/local/bin/inews -hS"
       </div>
       <p>This is the string displayed in the "attachment" menu for attachments of type
       <code class="literal">message/rfc822</code>. For a full listing of defined
-      <code class="literal">printf(3)</code>-like sequences see the section on
+      <code class="literal">printf(3)</code> -like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $msg_format</div>
@@ -7268,7 +7268,7 @@ set inews="/usr/local/bin/inews -hS"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of a remailer line on the mixmaster chain selection screen. The following
-      <code class="literal">printf(3)</code>-like sequences are supported:</p>
+      <code class="literal">printf(3)</code> -like sequences are supported:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -7835,7 +7835,7 @@ set inews="/usr/local/bin/inews -hS"
       </div>
       <p>This variable specifies the notmuch tag modifications (addition, removal, toggling) applied to messages added to the Neomutt record when
       <a class="link" href="#nm-record" title="3.274.&#160;nm_record">$nm_record</a> is true. See the description of the
-      <code class="literal">&lt;modify-labels&gt;</code>function for the syntax.</p>
+      <code class="literal">&lt;modify-labels&gt;</code> function for the syntax.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8094,7 +8094,7 @@ set nntp_authenticators="digest-md5:user"
         <br />Default:&#160;0</p>
       </div>
       <p>Determines the number of lines of context to show before the unquoted text when using the
-      <code class="literal">&lt;skip-quoted&gt;</code>function. When set to a positive number at most that many lines of the previous quote are displayed. If the previous quote is shorter the whole quote is displayed.</p>
+      <code class="literal">&lt;skip-quoted&gt;</code> function. When set to a positive number at most that many lines of the previous quote are displayed. If the previous quote is shorter the whole quote is displayed.</p>
       <p>The (now deprecated)
       <span class="emphasis">
         <em>skip_quoted_offset</em>
@@ -8122,7 +8122,7 @@ set nntp_authenticators="digest-md5:user"
       <span class="bold">
         <strong>not</strong>
       </span>move to the next message when you are at the end of a message and invoke the
-      <code class="literal">&lt;next-page&gt;</code>function.</p>
+      <code class="literal">&lt;next-page&gt;</code> function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8141,7 +8141,7 @@ set nntp_authenticators="digest-md5:user"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "pattern completion" menu. The following
-      <code class="literal">printf(3)</code>-style sequences are understood:</p>
+      <code class="literal">printf(3)</code> -style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8185,7 +8185,7 @@ set nntp_authenticators="digest-md5:user"
       </span>, NeoMutt will automatically attempt to decrypt traditional PGP messages whenever the user performs an operation which ordinarily would result in the contents of the message being operated on. For example, if the user displays a pgp-traditional message which has not been manually checked with the
       <code class="literal">
         <a class="link" href="gettingstarted.html#check-traditional-pgp">&lt;check-traditional-pgp&gt;</a>
-      </code>function, NeoMutt will automatically check the message for traditional pgp.</p>
+      </code> function, NeoMutt will automatically check the message for traditional pgp.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8331,7 +8331,7 @@ set nntp_authenticators="digest-md5:user"
       </span>.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-02-11, this was called $pgp_clearsign_command</div>
     </div>
@@ -8376,7 +8376,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This format strings specifies a command which is used to decode application/pgp attachments.</p>
       <p>The PGP command formats have their own set of
-      <code class="literal">printf(3)</code>-like sequences:</p>
+      <code class="literal">printf(3)</code> -like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8430,7 +8430,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to decrypt a PGP encrypted message.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
       <p>Note: When decrypting messages using
       <code class="literal">gpg</code>, a pinentry program needs to be invoked unless the password is cached within
       <code class="literal">gpg-agent</code>. Currently, the
@@ -8495,7 +8495,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to encrypt a body part without signing it.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8525,7 +8525,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to both sign and encrypt a body part.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8549,7 +8549,7 @@ set nntp_authenticators="digest-md5:user"
         <em>set</em>
       </span>, then it applies to S/MIME key selection menu also. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code>-like sequences:</p>
+      <code class="literal">printf(3)</code> -like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8600,7 +8600,7 @@ set nntp_authenticators="digest-md5:user"
             <tr>
               <td>%[&lt;s&gt;]</td>
               <td>Date of the key where &lt;s&gt; is an
-              <code class="literal">strftime(3)</code>expression</td>
+              <code class="literal">strftime(3)</code> expression</td>
             </tr>
           </tbody>
         </table>
@@ -8624,7 +8624,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to export a public key from the user's key ring.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8641,7 +8641,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is invoked whenever NeoMutt needs to fetch the public key associated with an email address. Of the sequences supported by
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
-      <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-02-11, this was called $pgp_getkeys_command</div>
     </div>
@@ -8708,7 +8708,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to import a key from a message into the user's public key ring.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8731,7 +8731,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in NeoMutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8754,7 +8754,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in NeoMutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8985,7 +8985,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">multipart/signed</code> PGP/MIME body part.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9079,7 +9079,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt expects a
-      <code class="literal">gpg-agent(1)</code>process will handle private key passphrase prompts. If
+      <code class="literal">gpg-agent(1)</code> process will handle private key passphrase prompts. If
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will prompt for the passphrase and pass it via stdin to the pgp command.</p>
@@ -9109,7 +9109,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>This command is used to verify PGP signatures.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9127,7 +9127,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>This command is used to verify key information from the key selection menu.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9156,7 +9156,7 @@ gpg --list-keys --with-colons --with-fingerprint
         <br />Default:&#160;no</p>
       </div>
       <p>Used in connection with the
-      <code class="literal">&lt;pipe-message&gt;</code>function. When
+      <code class="literal">&lt;pipe-message&gt;</code> function. When
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will pipe the messages without any preprocessing. When
@@ -9218,7 +9218,7 @@ gpg --list-keys --with-colons --with-fingerprint
         <br />Default:&#160;no</p>
       </div>
       <p>Used in connection with the
-      <code class="literal">&lt;pipe-message&gt;</code>function following
+      <code class="literal">&lt;pipe-message&gt;</code> function following
       <code class="literal">&lt;tag-prefix&gt;</code>. If this variable is
       <span class="emphasis">
         <em>unset</em>
@@ -9320,7 +9320,7 @@ set pop_authenticators="digest-md5:apop:user"
       </span>, NeoMutt will delete successfully downloaded messages from the POP server when using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
-      </code>function. When
+      </code> function. When
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will download messages but also leave them on the POP server.</p>
@@ -9341,7 +9341,7 @@ set pop_authenticators="digest-md5:apop:user"
       <p>The name of your POP server for the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
-      </code>function. You can also specify an alternative port, username and password, i.e.:</p>
+      </code> function. You can also specify an alternative port, username and password, i.e.:</p>
       <pre class="screen">
 [pop[s]://][username[:password]@]popserver[:port]
 </pre>
@@ -9367,7 +9367,7 @@ set pop_authenticators="digest-md5:apop:user"
       <code class="literal">LAST</code>" POP command for retrieving only unread messages from the POP server when using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
-      </code>function.</p>
+      </code> function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9674,7 +9674,7 @@ set preferred_languages="en,fr,de"
         <br />Default:&#160;yes</p>
       </div>
       <p>Used in connection with the
-      <code class="literal">&lt;print-message&gt;</code>function. If this option is
+      <code class="literal">&lt;print-message&gt;</code> function. If this option is
       <span class="emphasis">
         <em>set</em>
       </span>, the message is decoded before it is passed to the external command specified by
@@ -9719,7 +9719,7 @@ set preferred_languages="en,fr,de"
         <br />Default:&#160;no</p>
       </div>
       <p>Used in connection with the
-      <code class="literal">&lt;print-message&gt;</code>function. If this option is
+      <code class="literal">&lt;print-message&gt;</code> function. If this option is
       <span class="emphasis">
         <em>set</em>
       </span>, the command specified by
@@ -9789,7 +9789,7 @@ set preferred_languages="en,fr,de"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "query" menu. The following
-      <code class="literal">printf(3)</code>-style sequences are understood:</p>
+      <code class="literal">printf(3)</code> -style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -9893,7 +9893,7 @@ set preferred_languages="en,fr,de"
         </span>”</span></p>
       </div>
       <p>A regular expression used in the internal pager to determine quoted sections of text in the body of a message. Quoted text may be filtered out using the
-      <code class="literal">&lt;toggle-quoted&gt;</code>command, or colored according to the "color quoted" family of directives.</p>
+      <code class="literal">&lt;toggle-quoted&gt;</code> command, or colored according to the "color quoted" family of directives.</p>
       <p>Higher levels of quoting may be colored differently ("color quoted1", "color quoted2", etc.). The quoting level is determined by removing the last character from the matched text and recursively reapplying the regular expression until it fails to produce a match.</p>
       <p>Match detection may be overridden by the
       <a class="link" href="#smileys" title="3.440.&#160;smileys">$smileys</a> regular expression.</p>
@@ -10002,7 +10002,7 @@ set preferred_languages="en,fr,de"
       <span class="emphasis">
         <em>yes</em>
       </span>is not generally useful, and thus not recommended. Note that the
-      <code class="literal">&lt;recall-message&gt;</code>function can be used to manually recall postponed messages.</p>
+      <code class="literal">&lt;recall-message&gt;</code> function can be used to manually recall postponed messages.</p>
       <p>Also see
       <a class="link" href="#postponed" title="3.361.&#160;postponed">$postponed</a> variable.</p>
     </div>
@@ -10634,7 +10634,7 @@ From: abd30425@somewhere.net
         </span>”</span></p>
       </div>
       <p>Specifies the program and arguments used to deliver mail sent by NeoMutt. NeoMutt expects that the specified program interprets additional arguments as recipient addresses. NeoMutt appends all recipients after adding a
-      <code class="literal">--</code>delimiter (if not already present). Additional flags, such as for
+      <code class="literal">--</code> delimiter (if not already present). Additional flags, such as for
       <a class="link" href="#use-8bit-mime" title="3.520.&#160;use_8bit_mime">$use_8bit_mime</a>,
       <a class="link" href="#use-envelope-from" title="3.523.&#160;use_envelope_from">$use_envelope_from</a>,
       <a class="link" href="#dsn-notify" title="3.104.&#160;dsn_notify">$dsn_notify</a>, or
@@ -10879,7 +10879,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This variable allows you to customize the sidebar display. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code>-like sequences:</p>
+      <code class="literal">printf(3)</code> -like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -11038,8 +11038,8 @@ set sidebar_delim_chars='.'
         <br />Default:&#160;no</p>
       </div>
       <p>When set, the
-      <code class="literal">&lt;sidebar-next-new&gt;</code>command will not stop and the end of the list of mailboxes, but wrap around to the beginning. The
-      <code class="literal">&lt;sidebar-prev-new&gt;</code>command is similarly affected, wrapping around to the end of the list.</p>
+      <code class="literal">&lt;sidebar-next-new&gt;</code> command will not stop at the end of the list of mailboxes, but wrap around to the beginning. The
+      <code class="literal">&lt;sidebar-prev-new&gt;</code> command is similarly affected, wrapping around to the end of the list.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11580,7 +11580,7 @@ set sidebar_delim_chars='.'
       <p>This format string specifies a command which is used to decrypt
       <code class="literal">application/pkcs7-mime</code> attachments.</p>
       <p>The OpenSSL command formats have their own set of
-      <code class="literal">printf(3)</code>-like sequences similar to PGP's:</p>
+      <code class="literal">printf(3)</code> -like sequences similar to PGP's:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -11631,7 +11631,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>For examples on how to configure these formats, see the
       <code class="literal">smime.rc</code> in the
-      <code class="literal">samples/</code>subdirectory which has been installed on your system alongside the documentation. (S/MIME only)</p>
+      <code class="literal">samples/</code> subdirectory which has been installed on your system alongside the documentation. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11698,7 +11698,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to create encrypted S/MIME messages.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
       <p>Encrypt the message to
       <a class="link" href="#smime-default-key" title="3.446.&#160;smime_default_key">$smime_default_key</a> too. (S/MIME only)</p>
     </div>
@@ -11748,7 +11748,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract X509 certificates from a PKCS7 structure.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11766,7 +11766,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract the mail address(es) used for storing X509 certificates, and for verification purposes (to check whether the certificate was issued for the sender's mailbox).</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11784,7 +11784,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract only the signers X509 certificate from a S/MIME signature, so that the certificate's owner may get compared to the email's "From:" field.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11802,7 +11802,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to import a certificate via smime_keys.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. NOTE: %c and %k will default to
+      <code class="literal">printf(3)</code> -like sequences. NOTE: %c and %k will default to
       <a class="link" href="#smime-sign-as" title="3.459.&#160;smime_sign_as">$smime_sign_as</a> if set, otherwise
       <a class="link" href="#smime-default-key" title="3.446.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
     </div>
@@ -11856,7 +11856,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract PKCS7 structures of S/MIME signatures, in order to extract the public X509 certificate(s).</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11923,7 +11923,7 @@ set sidebar_delim_chars='.'
       <code class="literal">multipart/signed</code>, which can be read by all mail clients.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11975,7 +11975,7 @@ set sidebar_delim_chars='.'
       <code class="literal">multipart/signed</code>.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11994,7 +11994,7 @@ set sidebar_delim_chars='.'
       <code class="literal">application/pkcs7-mime</code>.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12165,12 +12165,12 @@ smtp[s]://[user[:pass]@]host[:port]
       <p>The values of "threads" and "reverse-threads" are legacy options, which cause the value of
       <code class="literal">
         <a class="link" href="#sort-aux" title="3.473.&#160;sort_aux">$sort_aux</a>
-      </code>to also control sorting between threads, and they may not be used with the "last-" prefix. The preferred way to enable a threaded view is via
+      </code> to also control sorting between threads, and they may not be used with the "last-" prefix. The preferred way to enable a threaded view is via
       <code class="literal">
         <a class="link" href="#use-threads" title="3.526.&#160;use_threads">$use_threads</a>
       </code>. This variable can also be set via the
-      <code class="literal">&lt;sort-mailbox&gt;</code>and
-      <code class="literal">&lt;sort-reverse&gt;</code>functions.</p>
+      <code class="literal">&lt;sort-mailbox&gt;</code> and
+      <code class="literal">&lt;sort-reverse&gt;</code> functions.</p>
       <p>Note: When
       <a class="link" href="#use-threads" title="3.526.&#160;use_threads">$use_threads</a> is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in
       <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a> swaps which end the last thread will sort to.</p>
@@ -12667,7 +12667,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </span>(the default), NeoMutt will not automatically accept a server certificate that is either not yet valid or already expired. You should only unset this for particular known hosts, using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#account-hook" title="7.&#160;Managing Multiple Accounts">&lt;account-hook&gt;</a>
-      </code>function.</p>
+      </code> function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12688,7 +12688,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </span>(the default), NeoMutt will not automatically accept a server certificate whose host name does not match the host used in your folder URL. You should only unset this for particular known hosts, using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#account-hook" title="7.&#160;Managing Multiple Accounts">&lt;account-hook&gt;</a>
-      </code>function.</p>
+      </code> function.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12767,7 +12767,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
               <td>3</td>
               <td>%</td>
               <td>Mailbox is read-only, or will not be written when exiting. (You can toggle whether to write changes to a mailbox with the
-              <code class="literal">&lt;toggle-write&gt;</code>operation, bound by default to "%")</td>
+              <code class="literal">&lt;toggle-write&gt;</code> operation, bound by default to "%")</td>
             </tr>
             <tr>
               <td>4</td>
@@ -12796,7 +12796,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Controls the format of the status line displayed in the "index" menu. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code>-like sequences:</p>
+      <code class="literal">printf(3)</code> -like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -12994,7 +12994,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <code class="literal">%&lt;T?%s/%S&amp;%T/%s&gt;</code>
       </p>
       <p>You can force the result of any
-      <code class="literal">printf(3)</code>-like sequence to be lowercase by prefixing the sequence character with an underscore ("_") sign. For example, if you want to display the local hostname in lowercase, you would use: "
+      <code class="literal">printf(3)</code> -like sequence to be lowercase by prefixing the sequence character with an underscore ("_") sign. For example, if you want to display the local hostname in lowercase, you would use: "
       <code class="literal">%_h</code>".</p>
       <p>If you prefix the sequence character with a colon (":") character, NeoMutt will replace any dots in the expansion by underscores. This might be helpful with IMAP folders that don't like dots in folder names.</p>
     </div>
@@ -13336,8 +13336,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <br />Default:&#160;0</p>
       </div>
       <p>Quoted text may be filtered out using the
-      <code class="literal">&lt;toggle-quoted&gt;</code>command. If set to a number greater than 0, then the
-      <code class="literal">&lt;toggle-quoted&gt;</code>command will only filter out quote levels above this number.</p>
+      <code class="literal">&lt;toggle-quoted&gt;</code> command. If set to a number greater than 0, then the
+      <code class="literal">&lt;toggle-quoted&gt;</code> command will only filter out quote levels above this number.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -13666,24 +13666,24 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>If this variable is never set, then
       <code class="literal">
         <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a>
-      </code>controls whether threading is used,
+      </code> controls whether threading is used,
       <code class="literal">
         <a class="link" href="#sort-aux" title="3.473.&#160;sort_aux">$sort_aux</a>
-      </code>controls both the sorting of threads and subthreads, and using
-      <code class="literal">&lt;sort-mailbox&gt;</code>to select threads affects only
+      </code> controls both the sorting of threads and subthreads, and using
+      <code class="literal">&lt;sort-mailbox&gt;</code> to select threads affects only
       <code class="literal">
         <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a>
       </code>. Once this variable is set, attempting to set
       <code class="literal">
         <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a>
-      </code>to a value using "threads" will warn, the value of
+      </code> to a value using "threads" will warn, the value of
       <code class="literal">
         <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a>
-      </code>controls the sorting between threads while
+      </code> controls the sorting between threads while
       <code class="literal">
         <a class="link" href="#sort-aux" title="3.473.&#160;sort_aux">$sort_aux</a>
-      </code>controls sorting within a thread, and
-      <code class="literal">&lt;sort-mailbox&gt;</code>toggles
+      </code> controls sorting within a thread, and
+      <code class="literal">&lt;sort-mailbox&gt;</code> toggles
       <code class="literal">
         <a class="link" href="#use-threads" title="3.526.&#160;use_threads">$use_threads</a>
       </code>.</p>
@@ -13788,7 +13788,7 @@ set use_threads=yes
       <code class="literal">&lt;pipe-message&gt;</code>,
       <code class="literal">&lt;pipe-entry&gt;</code>,
       <code class="literal">&lt;print-message&gt;</code>, and
-      <code class="literal">&lt;print-entry&gt;</code>commands.</p>
+      <code class="literal">&lt;print-entry&gt;</code> commands.</p>
       <p>It is also used when viewing attachments with "
       <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">auto_view</a>", provided that the corresponding mailcap entry has a
       <span class="emphasis">

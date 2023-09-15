@@ -23,7 +23,7 @@ title: Autocrypt
     <p>NeoMutt can be compiled with Autocrypt support by running
     <code class="literal">configure</code> with the
     <code class="literal">--autocrypt</code> flag. Autocrypt provides easy to use, passive protection against data collection. Keys are distributed via an
-    <code class="literal">Autocrypt:</code>header added to emails. It does
+    <code class="literal">Autocrypt:</code> header added to emails. It does
     <span class="emphasis">
       <em>not</em>
     </span>protect against active adversaries, and so should not be considered a substitute for normal encryption via your keyring, using key signing and the web of trust to verify identities. With an understanding of these limitations, Autocrypt still provides an easy way to minimize cleartext emails sent between common correspondents, without having to explicitly exchange keys. More information can be found at
@@ -64,14 +64,14 @@ title: Autocrypt
       <p>NeoMutt recommends keeping the
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> directory set differently from your GnuPG keyring directory (e.g.
       <code class="literal">~/.gnupg</code>). Keys are automatically imported into the keyring from
-      <code class="literal">Autocrypt:</code>headers. Compared to standard
+      <code class="literal">Autocrypt:</code> headers. Compared to standard
       <span class="quote">“
       <span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
       <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.80.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
       <p>The
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> variable is not designed to be changed while NeoMutt is running. The database is created (if necessary) and connected to during startup. Changing the variable can result in a situation where NeoMutt is looking in one place for the database and a different place for the GPG keyring, resulting in strange behavior.</p>
       <p>Once the directory, keyring, and database are created, NeoMutt will ask whether you would like to create an account. In order to use Autocrypt, each sending address needs an account. As a convenience you can create an account during the first run. If you would like to add additional accounts later, this can be done via the
-      <code class="literal">&lt;autocrypt-acct-menu&gt;</code>function in the index, by default bound to
+      <code class="literal">&lt;autocrypt-acct-menu&gt;</code> function in the index, by default bound to
       <code class="literal">A</code>.</p>
       <p>Account creation will first ask you for an email address. Next, it will ask whether you want to create a new key or select an existing key. (Note key selection takes place from the
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> keyring, which will normally be empty during first run). Finally, it will ask whether this address should prefer encryption or not. Autocrypt 1.1 allows automatically enabling encryption if
@@ -94,17 +94,17 @@ title: Autocrypt
         </div>
       </div>
       <p>When enabled, Autocrypt will add a line to the compose menu with two fields:
-      <code class="literal">Autocrypt:</code>and
+      <code class="literal">Autocrypt:</code> and
       <code class="literal">Recommendation:</code>.</p>
       <p>The
-      <code class="literal">Autocrypt:</code>field shows whether the message will be encrypted by Autocrypt when sent. It has two values:
+      <code class="literal">Autocrypt:</code> field shows whether the message will be encrypted by Autocrypt when sent. It has two values:
       <code class="literal">Encrypt</code> and
       <code class="literal">Off</code>.
       <code class="literal">Encrypt</code> can be enabled using the
-      <code class="literal">&lt;autocrypt-menu&gt;</code>function, by default bound to
+      <code class="literal">&lt;autocrypt-menu&gt;</code> function, by default bound to
       <code class="literal">o</code>.</p>
       <p>The
-      <code class="literal">Recommendation:</code>field shows the output of the Autocrypt recommendation engine. This can have one of five values:</p>
+      <code class="literal">Recommendation:</code> field shows the output of the Autocrypt recommendation engine. This can have one of five values:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
@@ -136,12 +136,12 @@ title: Autocrypt
         </ul>
       </div>
       <p>As mentioned above the
-      <code class="literal">&lt;autocrypt-menu&gt;</code>function, by default bound to
+      <code class="literal">&lt;autocrypt-menu&gt;</code> function, by default bound to
       <code class="literal">o</code>, can be used to change the
-      <code class="literal">Encrypt:</code>field value.
+      <code class="literal">Encrypt:</code> field value.
       <code class="literal">(e)ncrypt</code> will toggle encryption on.
       <code class="literal">(c)lear</code> will toggle encryption off. If either of these are chosen, the field will remain in that state despite what the
-      <code class="literal">Recommendation:</code>field shows. Lastly,
+      <code class="literal">Recommendation:</code> field shows. Lastly,
       <code class="literal">(a)utomatic</code> will set the value based on the recommendation engine's output.</p>
       <p>Autocrypt encryption defers to normal encryption or signing.
       <span class="emphasis">

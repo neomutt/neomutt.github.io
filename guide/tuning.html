@@ -82,7 +82,7 @@ folder-hook ^pop 'set read_inc=1'
     <span class="quote">“<span class="quote">=</span>”</span> for string searches.</p>
     <p>Even though a regular expression search is fast, it's several times slower than a pure string search which is noticeable especially on large folders. As a consequence, a string search should be used instead of a regular expression search if the user already knows enough about the search pattern.</p>
     <p>For example, when limiting a large folder to all messages sent to or by an author, it's much faster to search for the initial part of an e-mail address via
-    <code class="literal">=Luser@</code>instead of
+    <code class="literal">=Luser@</code> instead of
     <code class="literal">~Luser@</code>. This is especially true for searching message bodies since a larger amount of input has to be searched.</p>
     <p>As for regular expressions, a lower case string search pattern makes NeoMutt perform a case-insensitive search except for IMAP (because for IMAP NeoMutt performs server-side searches which don't support case-insensitivity).</p>
   </div>

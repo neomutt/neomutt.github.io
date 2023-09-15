@@ -485,7 +485,7 @@ set record = "+sent_on_$HOSTNAME"
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">group</code>[
+      <code class="command">group</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -499,7 +499,7 @@ set record = "+sent_on_$HOSTNAME"
         <code>address</code>
       </em>... }
       <br />
-      <code class="command">ungroup</code>[
+      <code class="command">ungroup</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -572,7 +572,7 @@ alternates -group me -group work address3
     <span class="command">
       <strong>group</strong>
     </span>command, however the special character
-    <code class="literal">*</code>can be used to empty a group of all of its contents. As soon as a group gets empty because all addresses and regular expressions have been removed, it'll internally be removed, too (i.e. there cannot be an empty group). When removing regular expressions from a group, the
+    <code class="literal">*</code> can be used to empty a group of all of its contents. As soon as a group gets empty because all addresses and regular expressions have been removed, it'll internally be removed, too (i.e. there cannot be an empty group). When removing regular expressions from a group, the
     <span class="emphasis">
       <em>regex</em>
     </span>must be specified exactly as given to the
@@ -593,7 +593,7 @@ alternates -group me -group work address3
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">alias</code>[
+      <code class="command">alias</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -611,7 +611,7 @@ alternates -group me -group work address3
         <code># comment</code>
       </em>]
       <br />
-      <code class="command">unalias</code>[
+      <code class="command">unalias</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -739,7 +739,7 @@ set alias_file=~/.mail_aliases
         <code>function</code>
       </em>
       <br />
-      <code class="command">unbind</code>{
+      <code class="command">unbind</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -766,7 +766,7 @@ set alias_file=~/.mail_aliases
       <p>The
       <code class="literal">bind</code> command allows to assign a new effect to a key (e.g.
       <code class="literal">a</code>) or a keysequence (e.g.
-      <code class="literal">gh</code>– that is pressing
+      <code class="literal">gh</code> – that is pressing
       <code class="literal">g</code> followed by a press of
       <code class="literal">h</code>). Its syntax is:</p>
       <div class="cmdsynopsis">
@@ -1044,7 +1044,7 @@ set alias_file=~/.mail_aliases
       </div>
       <br class="table-break" />
       <p>The
-      <code class="literal">&lt;what-key&gt;</code>function can be used to explore keycode and symbolic names for other keys on your keyboard. Executing this function will display information about each key pressed, until terminated by
+      <code class="literal">&lt;what-key&gt;</code> function can be used to explore keycode and symbolic names for other keys on your keyboard. Executing this function will display information about each key pressed, until terminated by
       <code class="literal">^G</code>.</p>
       <p>
       <span class="emphasis">
@@ -1067,7 +1067,7 @@ set alias_file=~/.mail_aliases
         <em>function</em>
       </span>to be specified without angle brackets.</p>
       <p>The special function
-      <code class="literal">&lt;noop&gt;</code>unbinds the specified key sequence. It is recommended to use
+      <code class="literal">&lt;noop&gt;</code> unbinds the specified key sequence. It is recommended to use
       <a class="link" href="#unbind" title="6.2.&#160;Unbinding a Key Sequence">
         <code class="literal">unbind</code>
       </a>instead.</p>
@@ -1085,7 +1085,7 @@ set alias_file=~/.mail_aliases
       <code class="literal">unbind</code> can be used. Its syntax is:</p>
       <div class="cmdsynopsis">
         <p>
-        <code class="command">unbind</code>{
+        <code class="command">unbind</code> {
         <em class="replaceable">
           <code>*</code>
         </em>|
@@ -1103,7 +1103,7 @@ set alias_file=~/.mail_aliases
       <span class="emphasis">
         <em>map</em>
       </span>specifies from which menus the key sequence should be removed. Multiple maps may be specified by separating them with commas (no additional whitespace is allowed). If
-      <code class="literal">*</code>is given, then the key sequence is removed from all menus. Valid menu names and their description are listed
+      <code class="literal">*</code> is given, then the key sequence is removed from all menus. Valid menu names and their description are listed
       <a class="link" href="#maps">in the
       <code class="literal">bind</code> section</a>.</p>
       <p>
@@ -1377,17 +1377,17 @@ set alias_file=~/.mail_aliases
       <span class="quote">“<span class="quote">
         <code class="literal">nl()</code>
       </span>”</span>). This mode maps keyboard input of either
-      <code class="literal">&lt;Enter&gt;</code>or
-      <code class="literal">&lt;Return&gt;</code>to the same value, which NeoMutt interpreted as
-      <code class="literal">&lt;Return&gt;</code>internally.</p>
+      <code class="literal">&lt;Enter&gt;</code> or
+      <code class="literal">&lt;Return&gt;</code> to the same value, which NeoMutt interpreted as
+      <code class="literal">&lt;Return&gt;</code> internally.</p>
       <p>However, starting in version 2.2, this mode is turned off, allowing
-      <code class="literal">&lt;Return&gt;</code>and
-      <code class="literal">&lt;Enter&gt;</code>to be mapped separately, if desired. The default keyboard mappings set both, but you can override this or create new bindings with one or the other (or both).</p>
+      <code class="literal">&lt;Return&gt;</code> and
+      <code class="literal">&lt;Enter&gt;</code> to be mapped separately, if desired. The default keyboard mappings set both, but you can override this or create new bindings with one or the other (or both).</p>
       <p>Note that in terminal application, such as NeoMutt,
-      <code class="literal">&lt;Enter&gt;</code>is the same as
+      <code class="literal">&lt;Enter&gt;</code> is the same as
       <span class="quote">“<span class="quote">\n</span>”</span> and
-      <code class="literal">^J</code>; while
-      <code class="literal">&lt;Return&gt;</code>is the same as
+      <code class="literal">^J</code> ; while
+      <code class="literal">&lt;Return&gt;</code> is the same as
       <span class="quote">“<span class="quote">\r</span>”</span> and
       <code class="literal">^M</code>.</p>
     </div>
@@ -1537,7 +1537,7 @@ bind index gg first-entry
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">folder-hook</code>[
+      <code class="command">folder-hook</code> [
       <em class="replaceable">
         <code>-noregex</code>
       </em>]
@@ -1658,7 +1658,7 @@ folder-hook work "set sort=threads"
         <code>description</code>
       </em>]
       <br />
-      <code class="command">unmacro</code>{
+      <code class="command">unmacro</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -1745,8 +1745,8 @@ folder-hook work "set sort=threads"
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">color</code>[
-      <code class="option">compose</code>]
+      <code class="command">color</code> [
+      <code class="option">compose</code> ]
       <em class="replaceable">
         <code>object</code>
       </em>[
@@ -1795,7 +1795,7 @@ folder-hook work "set sort=threads"
       </em>
       <br />
       <code class="command">color</code>
-      <code class="option">status</code>[
+      <code class="option">status</code> [
       <em class="replaceable">
         <code>attribute</code>
       </em>...]
@@ -1812,8 +1812,8 @@ folder-hook work "set sort=threads"
         <code>num</code>
       </em>]]
       <br />
-      <code class="command">uncolor</code>[
-      <code class="option">compose</code>]
+      <code class="command">uncolor</code> [
+      <code class="option">compose</code> ]
       <em class="replaceable">
         <code>object</code>
       </em>
@@ -1841,7 +1841,7 @@ folder-hook work "set sort=threads"
       </em>}
       <br />
       <code class="command">uncolor</code>
-      <code class="option">status</code>{
+      <code class="option">status</code> {
       <em class="replaceable">
         <code>regex</code>
       </em>|
@@ -1883,7 +1883,7 @@ folder-hook work "set sort=threads"
       </div>
       <p>Colors can be specified in up to three ways, using their name such as
       <code class="literal">green</code>,
-      <code class="literal">blue</code>; by their number in the palette, such as
+      <code class="literal">blue</code> ; by their number in the palette, such as
       <code class="literal">color12</code>,
       <code class="literal">color207</code>(the palette consists of the
       <a class="ulink" href="https://web.archive.org/web/20190712111427/https://jonasjacek.github.io/colors/" target="_top">256 Xterm colors</a>); or by using hexadecimal RGB codes
@@ -2357,7 +2357,7 @@ uncolor quoted2
       <a class="link" href="/feature/status-color" title="Status Color Feature">Status-Color feature</a> for more detail.</p>
       <p>Color lists can be undone by using the
       <code class="literal">uncolor</code> command and the pattern or
-      <code class="literal">*</code>to match.</p>
+      <code class="literal">*</code> to match.</p>
       <div >
         <a id="color-regex-lists"></a>
         <p class="title">
@@ -2539,9 +2539,9 @@ uncolor status *
           <code>attribute</code>
         </em>
         <br />
-        <code class="command">mono</code>{
-        <code class="option">header</code>|
-        <code class="option">body</code>}
+        <code class="command">mono</code> {
+        <code class="option">header</code> |
+        <code class="option">body</code> }
         <em class="replaceable">
           <code>attribute</code>
         </em>
@@ -2558,10 +2558,10 @@ uncolor status *
           <code>pattern</code>
         </em>
         <br />
-        <code class="command">unmono</code>{
-        <code class="option">index-object</code>|
-        <code class="option">header</code>|
-        <code class="option">body</code>} {
+        <code class="command">unmono</code> {
+        <code class="option">index-object</code> |
+        <code class="option">header</code> |
+        <code class="option">body</code> } {
         <em class="replaceable">
           <code>*</code>
         </em>|
@@ -2632,7 +2632,7 @@ uncolor status *
           <code>string</code>
         </em>...]
         <br />
-        <code class="command">unignore</code>{
+        <code class="command">unignore</code> {
         <em class="replaceable">
           <code>*</code>
         </em>|
@@ -2691,7 +2691,7 @@ unignore posted-to:
           <code>header</code>
         </em>...]
         <br />
-        <code class="command">unhdr_order</code>{
+        <code class="command">unhdr_order</code> {
         <em class="replaceable">
           <code>*</code>
         </em>|
@@ -2734,7 +2734,7 @@ hdr_order From Date: From: To: Cc: Subject:
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">alternates</code>[
+      <code class="command">alternates</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -2746,7 +2746,7 @@ hdr_order From Date: From: To: Cc: Subject:
         <code>regex</code>
       </em>...]
       <br />
-      <code class="command">unalternates</code>[
+      <code class="command">unalternates</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -2839,7 +2839,7 @@ alternates '^user@example$'
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">lists</code>[
+      <code class="command">lists</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -2851,7 +2851,7 @@ alternates '^user@example$'
         <code>regex</code>
       </em>...]
       <br />
-      <code class="command">unlists</code>{
+      <code class="command">unlists</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -2859,7 +2859,7 @@ alternates '^user@example$'
         <code>regex</code>
       </em>... }
       <br />
-      <code class="command">subscribe</code>[
+      <code class="command">subscribe</code> [
       <code class="option">-group</code>
       <em class="replaceable">
         <code>name</code>
@@ -2871,7 +2871,7 @@ alternates '^user@example$'
         <code>regex</code>
       </em>...]
       <br />
-      <code class="command">unsubscribe</code>{
+      <code class="command">unsubscribe</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -2881,8 +2881,8 @@ alternates '^user@example$'
     </div>
     <p>NeoMutt has a few nice features for
     <a class="link" href="advancedusage.html#using-lists" title="11.&#160;Handling Mailing Lists">handling mailing lists</a>. In order to take advantage of them, you must specify which addresses belong to mailing lists, and which mailing lists you are subscribed to. NeoMutt also has limited support for auto-detecting mailing lists: it supports parsing
-    <code class="literal">mailto:</code>links in the common
-    <code class="literal">List-Post:</code>header which has the same effect as specifying the list address via the
+    <code class="literal">mailto:</code> links in the common
+    <code class="literal">List-Post:</code> header which has the same effect as specifying the list address via the
     <span class="command">
       <strong>lists</strong>
     </span>command (except the group feature). Once you have done this, the
@@ -2909,7 +2909,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>as it's often sufficient to just give a portion of the list's e-mail address.</p>
     <p>Specify as much of the address as you need to to remove ambiguity. For example, if you've subscribed to the NeoMutt mailing list, you will receive mail addressed to
     <code class="literal">neomutt-users@neomutt.org</code>. So, to tell NeoMutt that this is a mailing list, you could add
-    <code class="literal">lists neomutt-users@</code>to your initialization file. To tell NeoMutt that you are subscribed to it, add
+    <code class="literal">lists neomutt-users@</code> to your initialization file. To tell NeoMutt that you are subscribed to it, add
     <code class="literal">
     <span class="command">
       <strong>subscribe</strong>
@@ -2918,11 +2918,11 @@ subscribe [0-9]+.*@bugs.debian.org
     <code class="literal">
     <span class="command">
       <strong>lists</strong>
-    </span>^neomutt-users@neomutt\\.org$</code>or
+    </span>^neomutt-users@neomutt\\.org$</code> or
     <code class="literal">
     <span class="command">
       <strong>subscribe</strong>
-    </span>^neomutt-users@neomutt\\.org$</code>to match only mail from the actual list.</p>
+    </span>^neomutt-users@neomutt\\.org$</code> to match only mail from the actual list.</p>
     <p>The
     <code class="literal">-group</code> flag adds all of the subsequent regular expressions to the named
     <a class="link" href="#addrgroup" title="4.&#160;Address Groups">address group</a> in addition to adding to the specified address list.</p>
@@ -2946,7 +2946,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mbox-hook</code>[
+      <code class="command">mbox-hook</code> [
       <em class="replaceable">
         <code>-noregex</code>
       </em>]
@@ -2997,16 +2997,16 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mailboxes</code>[ [
+      <code class="command">mailboxes</code> [ [
       <code class="option">-label</code>
       <em class="replaceable">
         <code>label</code>
       </em>|
-      <code class="option">-nolabel</code>] [
-      <code class="option">-notify</code>|
-      <code class="option">-nonotify</code>] [
-      <code class="option">-poll</code>|
-      <code class="option">-nopoll</code>]
+      <code class="option">-nolabel</code> ] [
+      <code class="option">-notify</code> |
+      <code class="option">-nonotify</code> ] [
+      <code class="option">-poll</code> |
+      <code class="option">-nopoll</code> ]
       <em class="replaceable">
         <code>mailbox</code>
       </em>] [...]
@@ -3025,7 +3025,7 @@ subscribe [0-9]+.*@bugs.debian.org
         <code>mailbox</code>
       </em>...}
       <br />
-      <code class="command">unmailboxes</code>{
+      <code class="command">unmailboxes</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -3095,7 +3095,7 @@ subscribe [0-9]+.*@bugs.debian.org
         <code>string</code>
       </em>
       <br />
-      <code class="command">unmy_hdr</code>{
+      <code class="command">unmy_hdr</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -3134,7 +3134,7 @@ my_hdr Organization: A Really Big Company, Anytown, USA
     </div>
     <p>If you would like to add a header field to a single message, you should either set the
     <a class="link" href="reference.html#edit-headers" title="3.108.&#160;edit_headers">$edit_headers</a> variable, or use the
-    <code class="literal">&lt;edit-headers&gt;</code>function (default:
+    <code class="literal">&lt;edit-headers&gt;</code> function (default:
     <span class="quote">“<span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
     <p>To remove user defined header fields, use the
     <span class="command">
@@ -3663,7 +3663,7 @@ folder-hook . 'push \eV'
         <code>value</code>
       </em>
       <br />
-      <code class="command">unscore</code>{
+      <code class="command">unscore</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -3745,7 +3745,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
         <code>format</code>
       </em>
       <br />
-      <code class="command">nospam</code>{
+      <code class="command">nospam</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -3769,7 +3769,7 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
     </span>your mail based on its spam attributes, as determined by the external filter. You also can display the spam attributes in your index display using the
     <code class="literal">%H</code> selector in the
     <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. (Tip: try
-    <code class="literal">%&lt;H?[%H] &gt;</code>to display spam tags only when they are defined for a given message.)</p>
+    <code class="literal">%&lt;H?[%H] &gt;</code> to display spam tags only when they are defined for a given message.)</p>
     <p>Note: the value displayed by
     <code class="literal">%H</code> and searched by
     <code class="literal">~H</code> is stored in the
@@ -3843,8 +3843,8 @@ set spam_separator=", "
     <code class="literal">%H</code> in the
     <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> variable. It's also the string that the
     <code class="literal">~H</code> pattern-matching expression matches against for
-    <code class="literal">&lt;search&gt;</code>and
-    <code class="literal">&lt;limit&gt;</code>functions. And it's what sorting by spam attribute will use as a sort key.</p>
+    <code class="literal">&lt;search&gt;</code> and
+    <code class="literal">&lt;limit&gt;</code> functions. And it's what sorting by spam attribute will use as a sort key.</p>
     <p>That's a pretty complicated example, and most people's actual environments will have only one spam filter. The simpler your configuration, the more effective NeoMutt can be, especially when it comes to sorting.</p>
     <p>Generally, when you sort by spam tag, NeoMutt will sort
     <span class="emphasis">
@@ -4059,16 +4059,16 @@ spam "^From: .*MAILER-DAEMON"       "999"
       <p>Usage:</p>
       <div class="cmdsynopsis">
         <p>
-        <code class="command">set</code>{ [
-        <code class="option">no</code>|
-        <code class="option">inv</code>|
-        <code class="option">&amp;</code>|
-        <code class="option">?</code>]
+        <code class="command">set</code> { [
+        <code class="option">no</code> |
+        <code class="option">inv</code> |
+        <code class="option">&amp;</code> |
+        <code class="option">?</code> ]
         <em class="replaceable">
           <code>variable</code>
         </em>} [...]
         <br />
-        <code class="command">set</code>{
+        <code class="command">set</code> {
         <em class="replaceable">
           <code>variable=value</code>
         </em>|
@@ -4193,7 +4193,7 @@ spam "^From: .*MAILER-DAEMON"       "999"
       </span>command automatically prepends the
       <code class="literal">no</code> prefix to all specified variables.</p>
       <p>Using the
-      <code class="literal">&lt;enter-command&gt;</code>function in the
+      <code class="literal">&lt;enter-command&gt;</code> function in the
       <span class="emphasis">
         <em>index</em>
       </span>menu, you can query the value of a variable by suffixing the name of the variable with a question mark:</p>
@@ -4337,7 +4337,7 @@ macro pager &lt;PageDown&gt; "\
         </div>
         <br class="example-break" />
         <p>Note that there is a space between
-        <code class="literal">&lt;enter-command&gt;</code>and the
+        <code class="literal">&lt;enter-command&gt;</code> and the
         <span class="command">
           <strong>set</strong>
         </span>configuration command, preventing NeoMutt from recording the
@@ -4467,7 +4467,7 @@ mailboxes $my_mx +mailbox3
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">unhook</code>{
+      <code class="command">unhook</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -4680,7 +4680,7 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
       <p>This feature allows the format of dates in the index to vary based on how recent the message is. This is especially useful in combination with the
       <a class="link" href="/feature/nested-if" title="Nested If Feature">nested-if feature</a>.</p>
       <p>For example, using
-      <code class="literal">%&lt;[y?%&lt;[d?%[%H:%M]&amp;%[%m/%d]&gt;&amp;%[%y.%m]&gt;</code>for the date in the
+      <code class="literal">%&lt;[y?%&lt;[d?%[%H:%M]&amp;%[%m/%d]&gt;&amp;%[%y.%m]&gt;</code> for the date in the
       <code class="literal">$index_format</code> will produce a display like:</p>
       <pre class="screen">
    1   + 14.12 Grace Hall      (   13) Gulliver's Travels
@@ -4733,7 +4733,7 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mailto_allow</code>{
+      <code class="command">mailto_allow</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -4741,7 +4741,7 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
         <code>header-field</code>
       </em>... }
       <br />
-      <code class="command">unmailto_allow</code>{
+      <code class="command">unmailto_allow</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -4750,14 +4750,14 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
       </em>... }</p>
     </div>
     <p>As a security measure, NeoMutt will only add user-approved header fields from a
-    <code class="literal">mailto:</code>URL. This is necessary since NeoMutt will handle certain header fields, such as
+    <code class="literal">mailto:</code> URL. This is necessary since NeoMutt will handle certain header fields, such as
     <code class="literal">Attach:</code>, in a special way. The
     <code class="literal">mailto_allow</code> and
     <code class="literal">unmailto_allow</code> commands allow the user to modify the list of approved headers.</p>
     <p>NeoMutt initializes the default list to contain only the
     <code class="literal">Subject</code> and
     <code class="literal">Body</code> header fields, which are the only requirement specified by the
-    <code class="literal">mailto:</code>specification in RFC2368, and the
+    <code class="literal">mailto:</code> specification in RFC2368, and the
     <code class="literal">Cc</code>,
     <code class="literal">In-Reply-To</code>,
     <code class="literal">References</code> headers to aid with replies to mailing lists.</p>

@@ -135,7 +135,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
       <p>Note that proper URL should not contain blank space and all
       <span class="quote">“<span class="quote">bad</span>”</span> chars should be encoded, for example</p>
       <p>
-      <code class="literal">tag:AAA and tag:BBB</code>– encoding -&gt;
+      <code class="literal">tag:AAA and tag:BBB</code> – encoding -&gt;
       <code class="literal">tag:AAA%20and%20tag:BBB</code></p>
       <p>but NeoMutt config file parser is smart enough to accept space in quoted strings. It means that you can use</p>
       <p>
@@ -295,7 +295,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
                 <code class="literal">0</code>
               </td>
               <td>Duration between start and end dates for windowed notmuch query. This corresponds to a bounded notmuch
-              <code class="literal">date:</code>query. See
+              <code class="literal">date:</code> query. See
               <code class="literal">notmuch-search-terms</code> manual page for more info. Value of
               <code class="literal">0</code> disables windowed queries unless
               <code class="literal">nm_query_window_enable=yes</code></td>
@@ -318,8 +318,8 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
               <td>string</td>
               <td>(empty)</td>
               <td>Additional notmuch search terms to always include in the window even if they're outside the date range. This turns the window from
-              <code class="literal">date:...</code>to
-              <code class="literal">date:... or (additional search terms.)</code>For example, to always include flagged, unread emails, set to
+              <code class="literal">date:...</code> to
+              <code class="literal">date:... or (additional search terms.)</code> For example, to always include flagged, unread emails, set to
               <code class="literal">tag:flagged and tag:unread</code></td>
             </tr>
             <tr>
@@ -448,7 +448,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
                 <code class="literal">&lt;vfolder-from-query-readonly&gt;</code>
               </td>
               <td>The same as
-              <code class="literal">&lt;vfolder-from-query&gt;</code>; however, the mailbox will be read-only.</td>
+              <code class="literal">&lt;vfolder-from-query&gt;</code> ; however, the mailbox will be read-only.</td>
             </tr>
             <tr>
               <td>index</td>
@@ -504,7 +504,7 @@ virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
         <code>notmuch-URL</code>
       </em>...}
       <br />
-      <code class="command">unvirtual-mailboxes</code>{
+      <code class="command">unvirtual-mailboxes</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|

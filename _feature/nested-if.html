@@ -61,9 +61,9 @@ status: stable
       <p>if&#160;(%S&#160;&gt;&#160;0)&#160;{&#160;print&#160;"Size:&#160;%S"&#160;}&#160;else&#160;{&#160;print&#160;"Empty"&#160;}</p>
     </div>
     <p>These conditions are useful, but in NeoMutt they cannot be nested within one another. This feature uses the notation
-    <code class="literal">%&lt;VAR?TRUE&amp;FALSE&gt;</code>and allows them to be nested.</p>
+    <code class="literal">%&lt;VAR?TRUE&amp;FALSE&gt;</code> and allows them to be nested.</p>
     <p>The
-    <code class="literal">%&lt;...&gt;</code>notation was used to format the current local time. but that's not really very useful since NeoMutt has no means of refreshing the screen periodically.</p>
+    <code class="literal">%&lt;...&gt;</code> notation was used to format the current local time. but that's not really very useful since NeoMutt has no means of refreshing the screen periodically.</p>
     <p>A simple nested condition might be: (Some whitespace has been introduced for clarity)</p>
     <pre class="screen">
 %&lt;x? %&lt;y? XY &amp; X &gt; &amp; %&lt;y? Y &amp; NONE &gt; &gt;  Conditions
@@ -112,7 +112,7 @@ set index_format='%4C %Z %{%b %d} %-25.25n %&lt;M?[%M] %s&amp;%s%* %&lt;l?%l&amp
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If you wish to use angle brackets
-      <code class="literal">&lt; &gt;</code>in a nested condition, then it's necessary to escape them, e.g.</p>
+      <code class="literal">&lt; &gt;</code> in a nested condition, then it's necessary to escape them, e.g.</p>
       <pre class="screen">
 set index_format='%&lt;M?\&lt;%M\&gt;&amp;%s&gt;'
 </pre>

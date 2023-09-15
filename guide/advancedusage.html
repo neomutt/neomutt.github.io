@@ -1179,7 +1179,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
       <span class="emphasis">
         <em>EXPR</em>
       </span>as a simple substring instead of a regular expression by using = instead of ~ in the pattern name. For example,
-      <code class="literal">=b *.*</code>will find all messages that contain the literal string
+      <code class="literal">=b *.*</code> will find all messages that contain the literal string
       <span class="quote">“<span class="quote">*.*</span>”</span>. Simple string matches are less powerful than regular expressions but can be considerably faster.</p>
       <p>For IMAP folders, string matches
       <code class="literal">=b</code>,
@@ -1576,7 +1576,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
         <span class="emphasis">
           <em>must</em>
         </span>enclose the expression in double or single quotes since those characters are also used to separate different parts of NeoMutt's pattern language. For example:
-        <code class="literal">~f "user@(home\.org|work\.com)"</code>Without the quotes, the parenthesis wouldn't end. This would be separated to two OR'd patterns:
+        <code class="literal">~f "user@(home\.org|work\.com)"</code> Without the quotes, the parenthesis wouldn't end. This would be separated to two OR'd patterns:
         <span class="emphasis">
           <em>~f user@(home\.org</em>
         </span>and
@@ -1784,7 +1784,7 @@ Limit to messages matching: ~d &lt;1m
             <em>local</em>
           </span>time zone, so unless you change the setting of your
           <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> to include a
-          <code class="literal">%[...]</code>format, these are
+          <code class="literal">%[...]</code> format, these are
           <span class="emphasis">
             <em>not</em>
           </span>the dates shown in the main index.</p>
@@ -1801,8 +1801,8 @@ Limit to messages matching: ~d &lt;1m
         </div>
       </div>
       <p>
-      <code class="literal">=/ "search terms"</code>invokes server-side search, passing along the search terms provided. Search results are constrained by IMAP to be within the current folder. At present this only supports Gmail's search API IMAP extension. The search language is entirely up to the mail provider and changes at their discretion. Using
-      <code class="literal">~/</code>will silently fail.</p>
+      <code class="literal">=/ "search terms"</code> invokes server-side search, passing along the search terms provided. Search results are constrained by IMAP to be within the current folder. At present this only supports Gmail's search API IMAP extension. The search language is entirely up to the mail provider and changes at their discretion. Using
+      <code class="literal">~/</code> will silently fail.</p>
       <p>For up-to-date information about searching, see:
       <a class="ulink" href="https://support.google.com/mail/answer/7190?hl=en" target="_top">Gmail's Support Page</a>. You will need to (once) use a web-browser to visit Settings/Labels and enable "Show in IMAP" for "All Mail". When searching, visit that folder in NeoMutt to most closely match Gmail search semantics.</p>
       <div >
@@ -1868,12 +1868,12 @@ Limit to messages matching: ~d &lt;1m
       </div>
     </div>
     <p>Sometimes it is desirable to perform an operation on a group of messages all at once rather than one at a time. An example might be to save messages to a mailing list to a separate folder, or to delete all messages with a given subject. To tag all messages matching a pattern, use the
-    <code class="literal">&lt;tag-pattern&gt;</code>function, which is bound to
+    <code class="literal">&lt;tag-pattern&gt;</code> function, which is bound to
     <span class="quote">“<span class="quote">shift-T</span>”</span> by default. Patterns are completable in the editor menu. Invoke the
-    <code class="literal">&lt;complete&gt;</code>function (by default bound to
+    <code class="literal">&lt;complete&gt;</code> function (by default bound to
     <span class="quote">“<span class="quote">Tab</span>”</span>) after typing
     <span class="quote">“<span class="quote">~</span>”</span> to get a selectable list. Or you can select individual messages by hand using the
-    <code class="literal">&lt;tag-message&gt;</code>function, which is bound to
+    <code class="literal">&lt;tag-message&gt;</code> function, which is bound to
     <span class="quote">“<span class="quote">t</span>”</span> by default. See
     <a class="link" href="#patterns" title="3.&#160;Patterns: Searching, Limiting and Tagging">patterns</a> for NeoMutt's pattern matching syntax.</p>
     <p>Once you have tagged the desired messages, you can use the
@@ -1896,10 +1896,10 @@ Limit to messages matching: ~d &lt;1m
         <strong>push</strong>
       </span>
     </a>commands, you can use the
-    <code class="literal">&lt;tag-prefix-cond&gt;</code>operator. If there are no tagged messages, NeoMutt will
+    <code class="literal">&lt;tag-prefix-cond&gt;</code> operator. If there are no tagged messages, NeoMutt will
     <span class="quote">“<span class="quote">eat</span>”</span> the rest of the macro to abort its execution. NeoMutt will stop
     <span class="quote">“<span class="quote">eating</span>”</span> the macro when it encounters the
-    <code class="literal">&lt;end-cond&gt;</code>operator; after this operator the rest of the macro will be executed as normal.</p>
+    <code class="literal">&lt;end-cond&gt;</code> operator; after this operator the rest of the macro will be executed as normal.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -2267,9 +2267,9 @@ mjf@kumquat.com Michael J Fox
 ma@yew.com      Murray Abraham  Oscar
 </pre>
     <p>There are two mechanisms for accessing the query function of NeoMutt. One is to do a query from the index menu using the
-    <code class="literal">&lt;query&gt;</code>function (default: Q). This will prompt for a query, then bring up the query menu which will list the matching responses. From the query menu, you can select addresses to create aliases, or to mail. You can tag multiple addresses to mail, start a new query, or have a new query appended to the current responses.</p>
+    <code class="literal">&lt;query&gt;</code> function (default: Q). This will prompt for a query, then bring up the query menu which will list the matching responses. From the query menu, you can select addresses to create aliases, or to mail. You can tag multiple addresses to mail, start a new query, or have a new query appended to the current responses.</p>
     <p>The other mechanism for accessing the query function is for address completion, similar to the alias completion. In any prompt for address entry, you can use the
-    <code class="literal">&lt;complete-query&gt;</code>function (default: ^T) to run a query based on the current address you have typed. Like aliases, NeoMutt will look for what you have typed back to the last space or comma. If there is a single response for that query, NeoMutt will expand the address in place. If there are multiple responses, NeoMutt will activate the query menu. At the query menu, you can select one or more addresses to be added to the prompt.</p>
+    <code class="literal">&lt;complete-query&gt;</code> function (default: ^T) to run a query based on the current address you have typed. Like aliases, NeoMutt will look for what you have typed back to the last space or comma. If there is a single response for that query, NeoMutt will expand the address in place. If there are multiple responses, NeoMutt will activate the query menu. At the query menu, you can select one or more addresses to be added to the prompt.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The query menu is affected by
@@ -2393,7 +2393,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
             </tr>
             <tr>
               <td>
-              <code class="literal">-</code>or
+              <code class="literal">-</code> or
               <code class="literal">!!</code></td>
               <td>the file you've last visited</td>
             </tr>
@@ -2405,7 +2405,7 @@ From me@cs.hmc.edu Fri, 11 Apr 1997 11:44:56 PST
             </tr>
             <tr>
               <td>
-              <code class="literal">=</code>or
+              <code class="literal">=</code> or
               <code class="literal">+</code></td>
               <td>your
               <a class="link" href="reference.html#folder" title="3.123.&#160;folder">$folder</a> directory</td>
@@ -2478,7 +2478,7 @@ folder-hook . 'set record=^'
     <p>Often times the
     <span class="quote">“<span class="quote">To</span>”</span> and
     <span class="quote">“<span class="quote">Cc</span>”</span> fields in mailing list messages tend to get quite large. Most people do not bother to remove the author of the message they reply to from the list, resulting in two or more copies being sent to that person. The
-    <code class="literal">&lt;list-reply&gt;</code>function, which by default is bound to
+    <code class="literal">&lt;list-reply&gt;</code> function, which by default is bound to
     <span class="quote">“<span class="quote">L</span>”</span> in the
     <span class="emphasis">
       <em>index</em>
@@ -2545,7 +2545,7 @@ folder-hook . 'set record=^'
         <code>replacement</code>
       </em>
       <br />
-      <code class="command">unsubjectrx</code>{
+      <code class="command">unsubjectrx</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -2566,7 +2566,7 @@ folder-hook . 'set record=^'
     <span class="quote">“<span class="quote">replacement</span>”</span> value replaces the entire subject, not just the match!</p>
     <p>
     <code class="literal">unsubjectrx</code> removes a given subjectrx from the substitution list. If
-    <code class="literal">*</code>is used as the argument, all substitutions will be removed.</p>
+    <code class="literal">*</code> is used as the argument, all substitutions will be removed.</p>
     <div class="example">
       <a id="ex-subjectrx"></a>
       <p class="title">
@@ -2617,7 +2617,7 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
       <p>In cases where new mail detection for Mbox or Mmdf folders appears to be unreliable, the
       <a class="link" href="reference.html#check-mbox-size" title="3.52.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make NeoMutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
       <p>New mail for Maildir is assumed if there is one message in the
-      <code class="literal">new/</code>subdirectory which is not marked deleted (see
+      <code class="literal">new/</code> subdirectory which is not marked deleted (see
       <a class="link" href="reference.html#maildir-trash" title="3.220.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
       <span class="quote">“<span class="quote">unseen</span>”</span> sequence as specified by
       <a class="link" href="reference.html#mh-seq-unseen" title="3.240.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
@@ -2645,20 +2645,20 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
       <a class="link" href="reference.html#mail-check" title="3.211.&#160;mail_check">$mail_check</a> and
       <a class="link" href="reference.html#pop-check-interval" title="3.346.&#160;pop_check_interval">$pop_check_interval</a> for POP folders.</p>
       <p>Outside the index menu the directory browser supports checking for new mail using the
-      <code class="literal">&lt;check-new&gt;</code>function which is unbound by default. Pressing TAB will bring up a menu showing the files specified by the
+      <code class="literal">&lt;check-new&gt;</code> function which is unbound by default. Pressing TAB will bring up a menu showing the files specified by the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command, and indicate which contain new messages. NeoMutt will automatically enter this mode when invoked from the command line with the
       <code class="literal">-y</code> option, or from the index/pager via the
-      <code class="literal">&lt;browse-mailboxes&gt;</code>function.</p>
+      <code class="literal">&lt;browse-mailboxes&gt;</code> function.</p>
       <p>For the pager, index and directory browser menus, NeoMutt contains the
-      <code class="literal">&lt;mailbox-list&gt;</code>function (bound to
+      <code class="literal">&lt;mailbox-list&gt;</code> function (bound to
       <span class="quote">“<span class="quote">.</span>”</span> by default) which will print a list of folders with new mail in the command line at the bottom of the screen.</p>
       <p>For the index, by default NeoMutt displays the number of mailboxes with new mail in the status bar, please refer to the
       <a class="link" href="reference.html#status-format" title="3.498.&#160;status_format">$status_format</a> variable for details.</p>
       <p>When changing folders, NeoMutt fills the prompt with the first folder from the mailboxes list containing new mail (if any), pressing
-      <code class="literal">&lt;Space&gt;</code>will cycle through folders with new mail. The (by default unbound) function
-      <code class="literal">&lt;next-unread-mailbox&gt;</code>in the index can be used to immediately open the next folder with unread mail (if any).</p>
+      <code class="literal">&lt;Space&gt;</code> will cycle through folders with new mail. The (by default unbound) function
+      <code class="literal">&lt;next-unread-mailbox&gt;</code> in the index can be used to immediately open the next folder with unread mail (if any).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2742,7 +2742,7 @@ mailboxes `find ~/.mail/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g'
       <span class="quote">“<span class="quote">forget</span>”</span> to correctly set the
       <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and
       <span class="quote">“<span class="quote">References:</span>”</span> headers when replying to a message. This results in broken discussions because NeoMutt has not enough information to guess the correct threading. You can fix this by tagging a number of replies, then moving to the parent message and using the
-      <code class="literal">&lt;link-threads&gt;</code>function (bound to &amp; by default). The replies will then be connected to this parent message.</p>
+      <code class="literal">&lt;link-threads&gt;</code> function (bound to &amp; by default). The replies will then be connected to this parent message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2755,7 +2755,7 @@ mailboxes `find ~/.mail/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g'
       </div>
       <p>On mailing lists, some people are in the bad habit of starting a new discussion by hitting
       <span class="quote">“<span class="quote">reply</span>”</span> to any message from the list and changing the subject to a totally unrelated one. You can fix such threads by using the
-      <code class="literal">&lt;break-thread&gt;</code>function (bound by default to #), which will turn the subthread starting from the current message into a whole different thread.</p>
+      <code class="literal">&lt;break-thread&gt;</code> function (bound by default to #), which will turn the subthread starting from the current message into a whole different thread.</p>
     </div>
   </div>
   <div class="sect1">

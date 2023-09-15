@@ -94,7 +94,7 @@ title: Getting Started
       </div>
       <p>The file browser is the interface to the local or remote file system. When selecting a mailbox to open, the browser allows custom sorting of items, limiting the items shown by a regular expression and a freely adjustable format of what to display in which way. It also allows for easy navigation through the file system when selecting file(s) to attach to a message, select multiple files to attach and many more.</p>
       <p>Some mail systems can nest mail folders inside other mail folders. The normal open entry commands in NeoMutt will open the mail folder and you can't see the sub-folders. If you instead use the
-      <code class="literal">&lt;descend-directory&gt;</code>function it will go into the directory and not open it as a mail directory.</p>
+      <code class="literal">&lt;descend-directory&gt;</code> function it will go into the directory and not open it as a mail directory.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -160,7 +160,7 @@ Seas          1/7|  4    ! Feb 28  Summer Jackson   (264)  Lemon
         <a class="link" href="/feature/sidebar#functions" title="4.&#160;Functions">functions</a> to NeoMutt.</p>
         <p>The user pressed the
         <span class="quote">“<span class="quote">c</span>”</span> key to
-        <code class="literal">&lt;change-folder&gt;</code>to the
+        <code class="literal">&lt;change-folder&gt;</code> to the
         <span class="quote">“<span class="quote">Animals</span>”</span> mailbox. The Sidebar automatically updated the indicator to match.</p>
         <pre class="screen">
 Fruit [1]     3/8|  1      Jan 03  Tia Gibson       (362)  Caiman
@@ -207,8 +207,8 @@ Cars            4|  3    ! Aug 16  Ewan Brown       (333)  Hummingbird
         <div class="note">
           <h3 class="title">Note</h3>
           <p>Functions
-          <code class="literal">&lt;sidebar-next&gt;</code>and
-          <code class="literal">&lt;sidebar-prev&gt;</code>move the Sidebar
+          <code class="literal">&lt;sidebar-next&gt;</code> and
+          <code class="literal">&lt;sidebar-prev&gt;</code> move the Sidebar
           <span class="bold">
             <strong>highlight</strong>
           </span>. They
@@ -445,25 +445,25 @@ set sidebar_divider_char = '│'
             <ul class="itemizedlist" style="list-style-type: disc;">
               <li class="listitem">
                 <p>
-                <code class="literal">%B</code>– Mailbox name</p>
+                <code class="literal">%B</code> – Mailbox name</p>
               </li>
               <li class="listitem">
                 <p>
-                <code class="literal">%&lt;F? [%F]&gt;</code>– If flagged emails
+                <code class="literal">%&lt;F? [%F]&gt;</code> – If flagged emails
                 <code class="literal">[%F]</code>, otherwise nothing</p>
               </li>
               <li class="listitem">
                 <p>
-                <code class="literal">%*</code>– Pad with spaces</p>
+                <code class="literal">%*</code> – Pad with spaces</p>
               </li>
               <li class="listitem">
                 <p>
-                <code class="literal">%&lt;N?%N/&gt;</code>– If new emails
+                <code class="literal">%&lt;N?%N/&gt;</code> – If new emails
                 <code class="literal">%N/</code>, otherwise nothing</p>
               </li>
               <li class="listitem">
                 <p>
-                <code class="literal">%S</code>– Total number of emails</p>
+                <code class="literal">%S</code> – Total number of emails</p>
               </li>
             </ul>
           </div>
@@ -1341,8 +1341,8 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="reference.html#history" title="3.164.&#160;history">$history</a> variable and can be made persistent using an external file specified using
       <a class="link" href="reference.html#history-file" title="3.165.&#160;history_file">$history_file</a> and
       <a class="link" href="reference.html#save-history" title="3.400.&#160;save_history">$save_history</a>. You may cycle through them at an editor prompt by using the
-      <code class="literal">&lt;history-up&gt;</code>and/or
-      <code class="literal">&lt;history-down&gt;</code>commands. NeoMutt will remember the currently entered text as you cycle through history, and will wrap around to the initial entry line.</p>
+      <code class="literal">&lt;history-up&gt;</code> and/or
+      <code class="literal">&lt;history-down&gt;</code> commands. NeoMutt will remember the currently entered text as you cycle through history, and will wrap around to the initial entry line.</p>
       <p>NeoMutt maintains several distinct history lists, one for each of the following categories:</p>
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
@@ -1538,8 +1538,8 @@ bind editor &lt;delete&gt; backspace
       <p>In addition to who sent the message and the subject, a short summary of the disposition of each message is printed beside the message number. Zero or more of the
       <span class="quote">“<span class="quote">flags</span>”</span> in
       <a class="xref" href="#tab-msg-status-flags" title="Table&#160;2.8.&#160;Message status flags">Table&#160;2.8, “Message status flags”</a> may appear, some of which can be turned on or off using these functions:
-      <code class="literal">&lt;set-flag&gt;</code>and
-      <code class="literal">&lt;clear-flag&gt;</code>bound by default to
+      <code class="literal">&lt;set-flag&gt;</code> and
+      <code class="literal">&lt;clear-flag&gt;</code> bound by default to
       <span class="quote">“<span class="quote">w</span>”</span> and
       <span class="quote">“<span class="quote">W</span>”</span> respectively.</p>
       <p>Furthermore, the flags in
@@ -1678,9 +1678,9 @@ bind editor &lt;delete&gt; backspace
         </div>
       </div>
       <p>By default, NeoMutt uses its built-in pager to display the contents of messages (an external pager such as
-      <code class="literal">less(1)</code>can be configured, see
+      <code class="literal">less(1)</code> can be configured, see
       <a class="link" href="reference.html#pager" title="3.285.&#160;pager">$pager</a> variable). The pager is very similar to the Unix program
-      <code class="literal">less(1)</code>though not nearly as featureful.</p>
+      <code class="literal">less(1)</code> though not nearly as featureful.</p>
       <div >
         <a id="tab-key-pager"></a>
         <p class="title">
@@ -1750,7 +1750,7 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>In addition to key bindings in
       <a class="xref" href="#tab-key-pager" title="Table&#160;2.10.&#160;Most common pager keys">Table&#160;2.10, “Most common pager keys”</a>, many of the functions from the index menu are also available in the pager, such as
-      <code class="literal">&lt;delete-message&gt;</code>or
+      <code class="literal">&lt;delete-message&gt;</code> or
       <code class="literal">&lt;copy-message&gt;</code>(this is one advantage over using an external pager to view messages).</p>
       <p>Also, the internal pager supports a couple other advanced features. For one, you can set
       <a class="link" href="reference.html#pager-read-delay" title="3.289.&#160;pager_read_delay">$pager_read_delay</a> to operate in a preview mode, where new messages are not marked read unless you remain on the message for a certain length of time. Additionally, it will accept and translate the
@@ -2114,9 +2114,9 @@ bind editor &lt;delete&gt; backspace
       <br class="table-break" />
       <p>Collapsing a thread displays only the first message in the thread and hides the others. This is useful when threads contain so many messages that you can only see a handful of threads on the screen. See %M in
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a>. For example, you could use
-      <code class="literal">%&lt;M?(#%03M)&amp;(%4l)&gt;</code>in
+      <code class="literal">%&lt;M?(#%03M)&amp;(%4l)&gt;</code> in
       <a class="link" href="reference.html#index-format" title="3.206.&#160;index_format">$index_format</a> to optionally display the number of hidden messages if the thread is collapsed. The
-      <code class="literal">%&lt;char?if-part&amp;else-part&gt;</code>syntax is explained in detail in
+      <code class="literal">%&lt;char?if-part&amp;else-part&gt;</code> syntax is explained in detail in
       <a class="link" href="configuration.html#formatstrings-conditionals" title="30.2.&#160;Conditionals">format string conditionals</a>.</p>
       <p>Technically, every reply should contain a list of its parent messages in the thread tree, but not all do. In these cases, NeoMutt groups them by subject which can be controlled using the
       <a class="link" href="reference.html#strict-threads" title="3.500.&#160;strict_threads">$strict_threads</a> variable.</p>
@@ -2291,7 +2291,7 @@ bind editor &lt;delete&gt; backspace
             <code class="literal">Mail-Followup-To</code> header(s) if the
             <a class="link" href="reference.html#honor-followup-to" title="3.168.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. In addition, the
             <code class="literal">List-Post</code> header field is examined for
-            <code class="literal">mailto:</code>URLs specifying a mailing list address. Using this when replying to messages posted to mailing lists helps avoid duplicate copies being sent to the author of the message you are replying to.</p>
+            <code class="literal">mailto:</code> URLs specifying a mailing list address. Using this when replying to messages posted to mailing lists helps avoid duplicate copies being sent to the author of the message you are replying to.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2760,7 +2760,7 @@ bind editor &lt;delete&gt; backspace
       </div>
       <br class="table-break" />
       <p>The compose menu is also used to edit the attachments for a message which can be either files or other messages. The
-      <code class="literal">&lt;attach-message&gt;</code>function to will prompt you for a folder to attach messages from. You can now tag messages in that folder and they will be attached to the message you are sending.</p>
+      <code class="literal">&lt;attach-message&gt;</code> function to will prompt you for a folder to attach messages from. You can now tag messages in that folder and they will be attached to the message you are sending.</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>Note that certain operations like composing a new mail, replying, forwarding, etc. are not permitted when you are in that folder. The %r in
@@ -2773,7 +2773,7 @@ bind editor &lt;delete&gt; backspace
       <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
       <a class="link" href="reference.html#sendmail" title="3.409.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 2019-11-29, NeoMutt enabled
       <a class="link" href="reference.html#write-bcc" title="3.537.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
-      <code class="literal">Bcc:</code>header as part of delivery. Starting with 2019-11-29, the option is unset by default, but no longer affects the fcc copy of the message.</p>
+      <code class="literal">Bcc:</code> header as part of delivery. Starting with 2019-11-29, the option is unset by default, but no longer affects the fcc copy of the message.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2812,7 +2812,7 @@ bind editor &lt;delete&gt; backspace
         <span class="emphasis">
           <em>filename</em>
         </span>just as if you had used the
-        <code class="literal">&lt;edit-fcc&gt;</code>function in the
+        <code class="literal">&lt;edit-fcc&gt;</code> function in the
         <span class="emphasis">
           <em>compose</em>
         </span>menu. It can later be changed from the compose menu.</p>
@@ -2863,17 +2863,17 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>If you want to use PGP, you can specify either of</p>
         <p>
-        <code class="literal">Mutt-PGP:</code>[
-        <code class="literal">E</code>|
-        <code class="literal">S</code>|
+        <code class="literal">Mutt-PGP:</code> [
+        <code class="literal">E</code> |
+        <code class="literal">S</code> |
         <code class="literal">S</code>
         <span class="emphasis">
           <em>&lt;id&gt;</em>
         </span>]</p>
         <p>
-        <code class="literal">Pgp:</code>[
-        <code class="literal">E</code>|
-        <code class="literal">S</code>|
+        <code class="literal">Pgp:</code> [
+        <code class="literal">E</code> |
+        <code class="literal">S</code> |
         <code class="literal">S</code>
         <span class="emphasis">
           <em>&lt;id&gt;</em>
@@ -2895,17 +2895,17 @@ bind editor &lt;delete&gt; backspace
         </div>
         <p>If you want to use S/MIME, you can specify either of</p>
         <p>
-        <code class="literal">Mutt-SMIME:</code>[
-        <code class="literal">E</code>|
-        <code class="literal">S</code>|
+        <code class="literal">Mutt-SMIME:</code> [
+        <code class="literal">E</code> |
+        <code class="literal">S</code> |
         <code class="literal">S</code>
         <span class="emphasis">
           <em>&lt;id&gt;</em>
         </span>]</p>
         <p>
-        <code class="literal">Smime:</code>[
-        <code class="literal">E</code>|
-        <code class="literal">S</code>|
+        <code class="literal">Smime:</code> [
+        <code class="literal">E</code> |
+        <code class="literal">S</code> |
         <code class="literal">S</code>
         <span class="emphasis">
           <em>&lt;id&gt;</em>
@@ -2950,7 +2950,7 @@ bind editor &lt;delete&gt; backspace
         <p>If you want to use
         <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">Mixmaster</a>, you can specify the chain via:</p>
         <p>
-        <code class="literal">Mutt-Mix:</code>[
+        <code class="literal">Mutt-Mix:</code> [
         <span class="emphasis">
           <em>remailer1</em>
         </span>[
@@ -3116,7 +3116,7 @@ bind editor &lt;delete&gt; backspace
           </div>
         </div>
         <p>
-        <code class="literal">format=flowed</code>-style messages (or
+        <code class="literal">format=flowed</code> -style messages (or
         <code class="literal">f=f</code> for short) are
         <code class="literal">text/plain</code> messages that consist of paragraphs which a receiver's mail client may reformat to its own needs, which mostly means to customize line lengths regardless of what the sender sent. Technically this is achieved by letting lines of a
         <span class="quote">“
@@ -3163,7 +3163,7 @@ bind editor &lt;delete&gt; backspace
         <div class="note">
           <h3 class="title">Note</h3>
           <p>NeoMutt only supports space-stuffing for the first two types of lines but not for the third: It is impossible to safely detect whether a leading
-          <code class="literal">&gt;</code>character starts a quote or not.</p>
+          <code class="literal">&gt;</code> character starts a quote or not.</p>
         </div>
         <p>All leading spaces are to be removed by receiving clients to restore the original message prior to further processing.</p>
       </div>
@@ -3231,8 +3231,8 @@ bind editor &lt;delete&gt; backspace
       </div>
     </div>
     <p>Bouncing and forwarding let you send an existing message to recipients that you specify. Bouncing a message sends a verbatim copy of a message to alternative addresses as if they were the message's original recipients specified in the Bcc header. Forwarding a message, on the other hand, allows you to modify the message before it is resent (for example, by adding your own comments). Bouncing is done using the
-    <code class="literal">&lt;bounce&gt;</code>function and forwarding using the
-    <code class="literal">&lt;forward&gt;</code>function bound to
+    <code class="literal">&lt;bounce&gt;</code> function and forwarding using the
+    <code class="literal">&lt;forward&gt;</code> function bound to
     <span class="quote">“<span class="quote">b</span>”</span> and
     <span class="quote">“<span class="quote">f</span>”</span> respectively.</p>
     <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines) or including it as a MIME attachment, depending on the value of the
@@ -3267,7 +3267,7 @@ bind editor &lt;delete&gt; backspace
       </div>
     </div>
     <p>At times it is desirable to delay sending a message that you have already begun to compose. When the
-    <code class="literal">&lt;postpone-message&gt;</code>function is used in the
+    <code class="literal">&lt;postpone-message&gt;</code> function is used in the
     <span class="emphasis">
       <em>compose</em>
     </span>menu, the body of your message and attachments are stored in the mailbox specified by the
@@ -3323,7 +3323,7 @@ bind editor &lt;delete&gt; backspace
       </ul>
     </div>
     <p>These log messages are shown in the command bar at the bottom of the UI (usually below the status line) and errors are shown in a different colour than the other message types. The colours used for displaying can be adjusted with
-    <code class="literal">color error ...</code>and
+    <code class="literal">color error ...</code> and
     <code class="literal">color message ...</code>, respectively. See the
     <a class="link" href="configuration.html#color" title="11.&#160;Using Color and Mono Video Attributes">description of
     <code class="literal">color</code></a>for the precise syntax.</p>
@@ -3355,8 +3355,8 @@ set crypt_use_gpgme
 </pre>
     <p>If you have complex crypto needs, then you can enable the
     <span class="quote">“<span class="quote">classic mode</span>”</span> by disabling GPGME and setting all
-    <code class="literal">pgp_command_*</code>and
-    <code class="literal">smime_command_*</code>config variables.</p>
+    <code class="literal">pgp_command_*</code> and
+    <code class="literal">smime_command_*</code> config variables.</p>
     <p>For example config, see:
     <code class="literal">gpg.rc</code> and
     <code class="literal">smime.rc</code> in the
