@@ -65,7 +65,7 @@ title: NeoMutt's MIME Support
       </div>
       <p>When you select a message from the index and view it in the pager, NeoMutt decodes as much of a message as possible to a text representation. NeoMutt internally supports a number of MIME types, including the
       <code class="literal">text/plain</code> type, the
-      <code class="literal">message/rfc822</code>(mail messages) type and some
+      <code class="literal">message/rfc822</code> (mail messages) type and some
       <code class="literal">multipart</code> types. In addition, it recognizes a variety of PGP MIME and S/MIME types, including PGP/MIME and
       <code class="literal">application/pgp</code>, and
       <code class="literal">application/pkcs7-mime</code>.</p>
@@ -122,7 +122,7 @@ title: NeoMutt's MIME Support
           <dl class="variablelist">
             <dt>
               <span class="term">
-              <code class="literal">&lt;view-mailcap&gt;</code>(default keybinding: m)</span>
+              <code class="literal">&lt;view-mailcap&gt;</code> (default keybinding: m)</span>
             </dt>
             <dd>
               <p>This will use the first matching mailcap entry.</p>
@@ -130,7 +130,7 @@ title: NeoMutt's MIME Support
             </dd>
             <dt>
               <span class="term">
-              <code class="literal">&lt;view-attach&gt;</code>(default keybinding: &lt;Enter&gt;)</span>
+              <code class="literal">&lt;view-attach&gt;</code> (default keybinding: &lt;Enter&gt;)</span>
             </dt>
             <dd>
               <p>NeoMutt will display internally supported MIME types (see
@@ -153,7 +153,7 @@ title: NeoMutt's MIME Support
             </dd>
             <dt>
               <span class="term">
-              <code class="literal">&lt;view-text&gt;</code>(default keybinding: T)</span>
+              <code class="literal">&lt;view-text&gt;</code> (default keybinding: T)</span>
             </dt>
             <dd>
               <p>The attachment will always be displayed in the pager as raw text.</p>
@@ -659,7 +659,7 @@ text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
         <code class="literal">&lt;view-attach&gt;</code> function in the attachment menu.</p>
         <p>Entries with the
         <code class="literal">copiousoutput</code> tag should always be specified as the last one per type. For non-interactive use, the last entry will then actually be the first matching one with the tag set. For non-interactive use, only
-        <code class="literal">copiousoutput</code> -tagged entries are considered. For interactive use, NeoMutt ignores this tag and treats all entries equally. Therefore, if not specified last, all following entries without this tag would never be considered for
+        <code class="literal">copiousoutput</code>-tagged entries are considered. For interactive use, NeoMutt ignores this tag and treats all entries equally. Therefore, if not specified last, all following entries without this tag would never be considered for
         <code class="literal">&lt;view-attach&gt;</code> because the
         <code class="literal">copiousoutput</code> before them matched already.</p>
       </div>
@@ -946,13 +946,13 @@ alternative_order text/enriched text/plain text application/postscript image/*
         <ol class="orderedlist" type="1">
           <li class="listitem">
             <p>In the Compose menu, attach the two (or more) alternatives as usual. For example, attach "invitation.html" and then "invitation.txt". (You can reorder them using the
-            <code class="literal">&lt;move-up&gt;</code>(-) and
-            <code class="literal">&lt;move-down&gt;</code>(+) bindings, and edit the descriptions).</p>
+            <code class="literal">&lt;move-up&gt;</code> (-) and
+            <code class="literal">&lt;move-down&gt;</code> (+) bindings, and edit the descriptions).</p>
           </li>
           <li class="listitem">
             <p>Tag the attachments that are alternatives, and press the
-            <code class="literal">&lt;group-alternatives&gt;</code>(&amp;) binding to group them together. After this, the separate parts will be displayed in a tree structure. Attachments can still be edited separately and reordered within the group, but must be ungrouped using the
-            <code class="literal">&lt;ungroup-attachment&gt;</code>(#) binding for more advanced editing before tagging and grouping together again as described above.</p>
+            <code class="literal">&lt;group-alternatives&gt;</code> (&amp;) binding to group them together. After this, the separate parts will be displayed in a tree structure. Attachments can still be edited separately and reordered within the group, but must be ungrouped using the
+            <code class="literal">&lt;ungroup-attachment&gt;</code> (#) binding for more advanced editing before tagging and grouping together again as described above.</p>
           </li>
           <li class="listitem">
             <p>Send the email as usual.</p>
@@ -1046,14 +1046,14 @@ set preferred_languages="fr,en,de"
           <li class="listitem">
             <p>Edit the
             <code class="literal">Content-Language</code> header of every attachment with command
-            <code class="literal">&lt;edit-language&gt;</code>(default to
-            <code class="literal">Ctrl-L</code>). This is important, otherwise the recipient of this email will not know the corresponding languages. You can set arbitrary string as
+            <code class="literal">&lt;edit-language&gt;</code> (default to
+            <code class="literal">Ctrl-L</code> ). This is important, otherwise the recipient of this email will not know the corresponding languages. You can set arbitrary string as
             <code class="literal">Content-Language</code>, but it is recommended to set it as some common prefixes such as "en", "zh" and "fr".</p>
           </li>
           <li class="listitem">
             <p>Group all the tag messages together by
-            <code class="literal">&lt;group-multilingual&gt;</code>(default to
-            <code class="literal">^</code>).</p>
+            <code class="literal">&lt;group-multilingual&gt;</code> (default to
+            <code class="literal">^</code> ).</p>
           </li>
           <li class="listitem">
             <p>Send the email as usual.</p>
@@ -1063,7 +1063,7 @@ set preferred_languages="fr,en,de"
       <p>As in
       <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>, you can also use Neomutt's macro and some external scripts to combine this procedure into one.</p>
       <p>After grouping the separate parts will be displayed in a tree structure. Attachments can still be edited separately and reordered within the group, but must be ungrouped using the
-      <code class="literal">&lt;ungroup-attachment&gt;</code>(#) binding for more advanced editing before tagging and grouping together again as described above.</p>
+      <code class="literal">&lt;ungroup-attachment&gt;</code> (#) binding for more advanced editing before tagging and grouping together again as described above.</p>
     </div>
   </div>
   <div class="sect1">
@@ -1113,8 +1113,8 @@ set preferred_languages="fr,en,de"
             <code class="literal">Content-ID</code> header of
             <code class="literal">content-id</code>. The
             <code class="literal">Content-ID</code> of an attachment can be set using
-            <code class="literal">&lt;edit-content-id&gt;</code>(default key
-            <code class="literal">Alt-i</code>).
+            <code class="literal">&lt;edit-content-id&gt;</code> (default key
+            <code class="literal">Alt-i</code> ).
             <code class="literal">&lt;edit-content-id&gt;</code> sets a random ID which can then be changed if desired. Permitted characters for
             <code class="literal">Content-ID</code> are:
             <code class="literal">-.0-9@A-Z_a-z</code>.</p>
@@ -1122,19 +1122,19 @@ set preferred_languages="fr,en,de"
             <code class="literal">multipart/related</code> group is intended to be inline, members of the group should also have their
             <code class="literal">Content-Disposition</code> header set to
             <code class="literal">inline</code> which can be toggled using
-            <code class="literal">&lt;toggle-disposition&gt;</code>(default key
-            <code class="literal">Ctrl-D</code>).</p>
+            <code class="literal">&lt;toggle-disposition&gt;</code> (default key
+            <code class="literal">Ctrl-D</code> ).</p>
             <p>It can also be desirable to give referenced files in the group a
             <code class="literal">filename</code> even when the
             <code class="literal">Content-Disposition</code> is set to be
             <code class="literal">inline</code>. To do this use
-            <code class="literal">&lt;rename-attachment&gt;</code>(default key
-            <code class="literal">Ctrl-O</code>).</p>
+            <code class="literal">&lt;rename-attachment&gt;</code> (default key
+            <code class="literal">Ctrl-O</code> ).</p>
           </li>
           <li class="listitem">
             <p>Group all the tagged messages together with
-            <code class="literal">&lt;group-related&gt;</code>(default key
-            <code class="literal">%</code>).</p>
+            <code class="literal">&lt;group-related&gt;</code> (default key
+            <code class="literal">%</code> ).</p>
             <p>Top level attachments (excluding
             <code class="literal">multipart</code> ones) in the group are automatically given a random
             <code class="literal">Content-ID</code> if they do not already have one.</p>
@@ -1163,7 +1163,7 @@ set preferred_languages="fr,en,de"
       <code class="literal">&lt;img src="cid:content-id"&gt;</code> and
       <code class="literal">image.png</code> has been given an explicit name of
       <code class="literal">image.png</code> using
-      <code class="literal">&lt;rename-attachment&gt;</code>(regardless of its initial filename).
+      <code class="literal">&lt;rename-attachment&gt;</code> (regardless of its initial filename).
       <code class="literal">&lt;group-related&gt;</code> has set its
       <code class="literal">Content-ID</code> header to a random value.</p>
     </div>

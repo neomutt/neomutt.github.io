@@ -103,7 +103,7 @@ neomutt -a image.jpg *.png -- address1 address2
               <td>-d
               <code class="literal">level</code></td>
               <td>Log debugging output to a file (default is "
-              <code class="literal">~/.neomuttdebug0</code>"). The
+              <code class="literal">~/.neomuttdebug0</code> "). The
               <code class="literal">level</code> can range from 1–5 and affects verbosity (a value of 2 is recommended). Using this option along with
               <span class="bold">
                 <strong>-l</strong>
@@ -114,11 +114,11 @@ neomutt -a image.jpg *.png -- address1 address2
             <tr>
               <td>-E</td>
               <td>Edit
-              <code class="literal">draft</code>(
+              <code class="literal">draft</code> (
               <span class="bold">
                 <strong>-H</strong>
               </span>) or
-              <code class="literal">include</code>(
+              <code class="literal">include</code> (
               <span class="bold">
                 <strong>-i</strong>
               </span>) file during message composition</td>
@@ -139,7 +139,7 @@ neomutt -a image.jpg *.png -- address1 address2
               <td>-f
               <code class="literal">mailbox</code></td>
               <td>Specify a
-              <code class="literal">mailbox</code>(as defined with
+              <code class="literal">mailbox</code> (as defined with
               <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">
               <span class="command">
                 <strong>mailboxes</strong>
@@ -179,7 +179,7 @@ neomutt -a image.jpg *.png -- address1 address2
               <code class="literal">file</code></td>
               <td>Specify a
               <code class="literal">file</code> for debugging output (default "
-              <code class="literal">~/.neomuttdebug0</code>"). This overrules
+              <code class="literal">~/.neomuttdebug0</code> "). This overrules
               <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a> setting and NeoMutt keeps up to five debug logs ({
               <code class="literal">file</code> |
               <a class="link" href="#debug-file" title="3.97.&#160;debug_file">$debug_file</a>|
@@ -216,7 +216,7 @@ neomutt -a image.jpg *.png -- address1 address2
               <td>-s
               <code class="literal">subject</code></td>
               <td>Specify a
-              <code class="literal">subject</code>(must be enclosed in quotes if it has spaces)</td>
+              <code class="literal">subject</code> (must be enclosed in quotes if it has spaces)</td>
             </tr>
             <tr>
               <td>-v</td>
@@ -1758,7 +1758,7 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
       </div>
       <p>Specifies the format of the data displayed for the "
       <a class="link" href="configuration.html#alias" title="5.&#160;Defining/Using Aliases">alias</a>" menu. The following
-      <code class="literal">printf(3)</code> -style sequences are available:</p>
+      <code class="literal">printf(3)</code>-style sequences are available:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -2074,7 +2074,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "attachment" menu. The following
-      <code class="literal">printf(3)</code> -style sequences are understood:</p>
+      <code class="literal">printf(3)</code>-style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -2276,7 +2276,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>This is the string that will precede a replied-to message which is quoted in the main body of the reply (this is the case when
       <a class="link" href="#include" title="3.200.&#160;include">$include</a> is set).</p>
       <p>For a full listing of defined
-      <code class="literal">printf(3)</code> -like sequences see the section on
+      <code class="literal">printf(3)</code>-like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
     </div>
@@ -2321,7 +2321,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <a class="link" href="#attribution-intro" title="3.31.&#160;attribution_intro">$attribution_intro</a> variable, this is the string that will come after a replied-to message which is quoted in the main body of the reply (this is the case when
       <a class="link" href="#include" title="3.200.&#160;include">$include</a> is set).</p>
       <p>For a full listing of defined
-      <code class="literal">printf(3)</code> -like sequences see the section on
+      <code class="literal">printf(3)</code>-like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
       <div class="note">
@@ -2436,7 +2436,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "autocrypt account" menu. The following
-      <code class="literal">printf(3)</code> -style sequences are understood</p>
+      <code class="literal">printf(3)</code>-style sequences are understood</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -2643,7 +2643,7 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
       <p>The default
       <code class="literal">"alpha"</code> setting of
       <a class="link" href="#sort-browser" title="3.474.&#160;sort_browser">$sort_browser</a> uses locale-based sorting (using
-      <code class="literal">strcoll(3)</code>), which ignores some punctuation. This can lead to some situations where the order doesn't make intuitive sense. In those cases, it may be desirable to
+      <code class="literal">strcoll(3)</code> ), which ignores some punctuation. This can lead to some situations where the order doesn't make intuitive sense. In those cases, it may be desirable to
       <span class="emphasis">
         <em>unset</em>
       </span>this variable.</p>
@@ -2883,7 +2883,7 @@ TERM=xterm-direct neomutt
       </div>
       <p>Controls the format of the status line displayed in the "compose" menu. This string is similar to
       <a class="link" href="#status-format" title="3.498.&#160;status_format">$status_format</a>, but has its own set of
-      <code class="literal">printf(3)</code> -like sequences:</p>
+      <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -3902,7 +3902,7 @@ set dsn_notify="failure,delay"
         <strong>Note:</strong>
       </span>when using
       <a class="link" href="#sendmail" title="3.409.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
-      <code class="literal">sendmail(1)</code> -compatible interface supporting the
+      <code class="literal">sendmail(1)</code>-compatible interface supporting the
       <code class="literal">-N</code> option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
     <div class="sect2">
@@ -3934,7 +3934,7 @@ set dsn_return=hdrs
         <strong>Note:</strong>
       </span>when using
       <a class="link" href="#sendmail" title="3.409.&#160;sendmail">$sendmail</a> for delivery, you should not enable this unless you are either using Sendmail 8.8.x or greater or a MTA providing a
-      <code class="literal">sendmail(1)</code> -compatible interface supporting the
+      <code class="literal">sendmail(1)</code>-compatible interface supporting the
       <code class="literal">-R</code> option for DSN. For SMTP delivery, DSN support is auto-detected so that it depends on the server whether DSN will be used or not.</p>
     </div>
     <div class="sect2">
@@ -4409,7 +4409,7 @@ sh -c 'string'
       </div>
       <p>This variable allows you to customize the file browser display to your personal taste. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code> -like sequences:</p>
+      <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -4678,7 +4678,7 @@ sh -c 'string'
       </div>
       <p>This is the string that will precede a message which has been forwarded in the main body of a message (when
       <a class="link" href="#mime-forward" title="3.241.&#160;mime_forward">$mime_forward</a> is unset). For a full listing of defined
-      <code class="literal">printf(3)</code> -like sequences see the section on
+      <code class="literal">printf(3)</code>-like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
     </div>
@@ -4700,7 +4700,7 @@ sh -c 'string'
       </div>
       <p>This is the string that will follow a message which has been forwarded in the main body of a message (when
       <a class="link" href="#mime-forward" title="3.241.&#160;mime_forward">$mime_forward</a> is unset). For a full listing of defined
-      <code class="literal">printf(3)</code> -like sequences see the section on
+      <code class="literal">printf(3)</code>-like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>. See also
       <a class="link" href="#attribution-locale" title="3.32.&#160;attribution_locale">$attribution_locale</a>.</p>
     </div>
@@ -4933,7 +4933,7 @@ sh -c 'string'
         </span>”</span></p>
       </div>
       <p>A regular expression used by NeoMutt to parse the GECOS field of a password entry when expanding the alias. The default value will return the string up to the first "," encountered. If the GECOS field contains a string like "lastname, firstname" then you should set it to "
-      <code class="literal">.*</code>".</p>
+      <code class="literal">.*</code> ".</p>
       <p>This can be useful if you see the following behavior: you address an e-mail to user ID "stevef" whose full name is "Steve Franklin". If NeoMutt expands "stevef" to '"Franklin" stevef@foo.bar' then you should set the
       <a class="link" href="#gecos-mask" title="3.143.&#160;gecos_mask">$gecos_mask</a> to a regular expression that will match the whole name so NeoMutt will expand "Franklin" to "Franklin, Steve".</p>
     </div>
@@ -6007,7 +6007,7 @@ set imap_authenticators="gssapi:cram-md5:login"
         <br />Default:&#160;no</p>
       </div>
       <p>If set to "yes", NeoMutt will look for a mailcap entry with the "
-      <code class="literal">copiousoutput</code>" flag set for
+      <code class="literal">copiousoutput</code> " flag set for
       <span class="emphasis">
         <em>every</em>
       </span>MIME attachment it doesn't have an internal viewer defined for. If such an entry is found, NeoMutt will use the viewer defined in that entry to convert the body part to text form.</p>
@@ -6122,7 +6122,7 @@ set imap_authenticators="gssapi:cram-md5:login"
       <a class="link" href="#text-flowed" title="3.502.&#160;text_flowed">$text_flowed</a> is set, because the quoting mechanism is strictly defined for format=flowed.</p>
       <p>This option is a format string, please see the description of
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a> for supported
-      <code class="literal">printf(3)</code> -style sequences.</p>
+      <code class="literal">printf(3)</code>-style sequences.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $indent_str</div>
     </div>
@@ -7002,7 +7002,7 @@ set inews="/usr/local/bin/inews -hS"
       </div>
       <p>This is the string displayed in the "attachment" menu for attachments of type
       <code class="literal">message/rfc822</code>. For a full listing of defined
-      <code class="literal">printf(3)</code> -like sequences see the section on
+      <code class="literal">printf(3)</code>-like sequences see the section on
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $msg_format</div>
@@ -7264,7 +7264,7 @@ set inews="/usr/local/bin/inews -hS"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of a remailer line on the mixmaster chain selection screen. The following
-      <code class="literal">printf(3)</code> -like sequences are supported:</p>
+      <code class="literal">printf(3)</code>-like sequences are supported:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8137,7 +8137,7 @@ set nntp_authenticators="digest-md5:user"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "pattern completion" menu. The following
-      <code class="literal">printf(3)</code> -style sequences are understood:</p>
+      <code class="literal">printf(3)</code>-style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8327,7 +8327,7 @@ set nntp_authenticators="digest-md5:user"
       </span>.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-02-11, this was called $pgp_clearsign_command</div>
     </div>
@@ -8372,7 +8372,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This format strings specifies a command which is used to decode application/pgp attachments.</p>
       <p>The PGP command formats have their own set of
-      <code class="literal">printf(3)</code> -like sequences:</p>
+      <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8426,12 +8426,12 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to decrypt a PGP encrypted message.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
       <p>Note: When decrypting messages using
       <code class="literal">gpg</code>, a pinentry program needs to be invoked unless the password is cached within
       <code class="literal">gpg-agent</code>. Currently, the
       <code class="literal">pinentry-tty</code> program (usually distributed with
-      <code class="literal">gpg</code>) isn't suitable for being invoked by NeoMutt. You are encouraged to use a different pinentry-program when running NeoMutt in order to avoid problems.</p>
+      <code class="literal">gpg</code> ) isn't suitable for being invoked by NeoMutt. You are encouraged to use a different pinentry-program when running NeoMutt in order to avoid problems.</p>
       <p>See also: https://github.com/neomutt/neomutt/issues/1014</p>
     </div>
     <div class="sect2">
@@ -8491,7 +8491,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to encrypt a body part without signing it.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. Note that in this case, %r expands to the search string, which is a list of one or more quoted values such as email address, name, or keyid. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8521,7 +8521,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to both sign and encrypt a body part.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8545,7 +8545,7 @@ set nntp_authenticators="digest-md5:user"
         <em>set</em>
       </span>, then it applies to S/MIME key selection menu also. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code> -like sequences:</p>
+      <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -8620,7 +8620,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to export a public key from the user's key ring.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8637,7 +8637,7 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>This command is invoked whenever NeoMutt needs to fetch the public key associated with an email address. Of the sequences supported by
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
-      <code class="literal">printf(3)</code> -like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-02-11, this was called $pgp_getkeys_command</div>
     </div>
@@ -8704,7 +8704,7 @@ set nntp_authenticators="digest-md5:user"
       <p>This command is used to import a key from a message into the user's public key ring.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8727,7 +8727,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in NeoMutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8750,7 +8750,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">fixed-list-mode</code> option should not be used. It produces a different date format which may result in NeoMutt showing incorrect key generation dates.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8894,7 +8894,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">multipart/signed</code> and
       <code class="literal">multipart/encrypted</code> body parts.</p>
       <p>This is useful for applications like encrypted and signed mailing lists, where the outer layer (
-      <code class="literal">multipart/encrypted</code>) can be easily removed, while the inner
+      <code class="literal">multipart/encrypted</code> ) can be easily removed, while the inner
       <code class="literal">multipart/signed</code> part is retained. (PGP only)</p>
     </div>
     <div class="sect2">
@@ -8962,7 +8962,7 @@ gpg --list-keys --with-colons --with-fingerprint
       </div>
       <p>If you have a different key pair to use for signing, you should set this to the signing key. Most people will only need to set
       <a class="link" href="#pgp-default-key" title="3.307.&#160;pgp_default_key">$pgp_default_key</a>. It is recommended that you use the keyid form to specify your key (e.g.
-      <code class="literal">0x00112233</code>). (PGP only)</p>
+      <code class="literal">0x00112233</code> ). (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -8981,7 +8981,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <code class="literal">multipart/signed</code> PGP/MIME body part.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9105,7 +9105,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>This command is used to verify PGP signatures.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9123,7 +9123,7 @@ gpg --list-keys --with-colons --with-fingerprint
       <p>This command is used to verify key information from the key selection menu.</p>
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.304.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (PGP only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9360,7 +9360,7 @@ set pop_authenticators="digest-md5:apop:user"
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will try to use the "
-      <code class="literal">LAST</code>" POP command for retrieving only unread messages from the POP server when using the
+      <code class="literal">LAST</code> " POP command for retrieving only unread messages from the POP server when using the
       <code class="literal">
         <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
       </code> function.</p>
@@ -9725,7 +9725,7 @@ set preferred_languages="en,fr,de"
       </span>, the command specified by
       <a class="link" href="#print-command" title="3.366.&#160;print_command">$print_command</a> is executed only once, and all the messages are concatenated, with a form feed as the message separator.</p>
       <p>Those who use the
-      <code class="literal">enscript</code>(1) program's mail-printing mode will most likely want to
+      <code class="literal">enscript</code> (1) program's mail-printing mode will most likely want to
       <span class="emphasis">
         <em>set</em>
       </span>this option.</p>
@@ -9785,7 +9785,7 @@ set preferred_languages="en,fr,de"
         </span>”</span></p>
       </div>
       <p>This variable describes the format of the "query" menu. The following
-      <code class="literal">printf(3)</code> -style sequences are understood:</p>
+      <code class="literal">printf(3)</code>-style sequences are understood:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -10875,7 +10875,7 @@ set sidebar_delim_chars='.'
       </div>
       <p>This variable allows you to customize the sidebar display. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code> -like sequences:</p>
+      <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -11222,7 +11222,7 @@ set sidebar_delim_chars='.'
         </ul>
       </div>
       <p>You may optionally use the "reverse-" prefix to specify reverse sorting order (example: "
-      <code class="literal">set sidebar_sort_method=reverse-path</code>").</p>
+      <code class="literal">set sidebar_sort_method=reverse-path</code> ").</p>
       <p>The
       <span class="bold">
         <strong>alpha</strong>
@@ -11576,7 +11576,7 @@ set sidebar_delim_chars='.'
       <p>This format string specifies a command which is used to decrypt
       <code class="literal">application/pkcs7-mime</code> attachments.</p>
       <p>The OpenSSL command formats have their own set of
-      <code class="literal">printf(3)</code> -like sequences similar to PGP's:</p>
+      <code class="literal">printf(3)</code>-like sequences similar to PGP's:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -11694,7 +11694,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to create encrypted S/MIME messages.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
       <p>Encrypt the message to
       <a class="link" href="#smime-default-key" title="3.446.&#160;smime_default_key">$smime_default_key</a> too. (S/MIME only)</p>
     </div>
@@ -11744,7 +11744,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract X509 certificates from a PKCS7 structure.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11762,7 +11762,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract the mail address(es) used for storing X509 certificates, and for verification purposes (to check whether the certificate was issued for the sender's mailbox).</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11780,7 +11780,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract only the signers X509 certificate from a S/MIME signature, so that the certificate's owner may get compared to the email's "From:" field.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11798,7 +11798,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to import a certificate via smime_keys.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. NOTE: %c and %k will default to
+      <code class="literal">printf(3)</code>-like sequences. NOTE: %c and %k will default to
       <a class="link" href="#smime-sign-as" title="3.459.&#160;smime_sign_as">$smime_sign_as</a> if set, otherwise
       <a class="link" href="#smime-default-key" title="3.446.&#160;smime_default_key">$smime_default_key</a>. (S/MIME only)</p>
     </div>
@@ -11852,7 +11852,7 @@ set sidebar_delim_chars='.'
       <p>This command is used to extract PKCS7 structures of S/MIME signatures, in order to extract the public X509 certificate(s).</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11919,7 +11919,7 @@ set sidebar_delim_chars='.'
       <code class="literal">multipart/signed</code>, which can be read by all mail clients.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11971,7 +11971,7 @@ set sidebar_delim_chars='.'
       <code class="literal">multipart/signed</code>.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11990,7 +11990,7 @@ set sidebar_delim_chars='.'
       <code class="literal">application/pkcs7-mime</code>.</p>
       <p>This is a format string, see the
       <a class="link" href="#smime-decrypt-command" title="3.444.&#160;smime_decrypt_command">$smime_decrypt_command</a> command for possible
-      <code class="literal">printf(3)</code> -like sequences. (S/MIME only)</p>
+      <code class="literal">printf(3)</code>-like sequences. (S/MIME only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12224,7 +12224,7 @@ smtp[s]://[user[:pass]@]host[:port]
 set sort_aux=last-date-received
 </pre>
       <p>would mean that if a new message is received in a thread, that subthread becomes the last one displayed (or the first, if you have "
-      <code class="literal">set use_threads=reverse</code>".) When using
+      <code class="literal">set use_threads=reverse</code> ".) When using
       <a class="link" href="#use-threads" title="3.526.&#160;use_threads">$use_threads</a>, it is more common to use "last-" with
       <a class="link" href="#sort" title="3.471.&#160;sort">$sort</a> and not with
       <a class="link" href="#sort-aux" title="3.473.&#160;sort_aux">$sort_aux</a>.</p>
@@ -12270,7 +12270,7 @@ set sort_aux=last-date-received
         </ul>
       </div>
       <p>You may optionally use the "reverse-" prefix to specify reverse sorting order (example: "
-      <code class="literal">set sort_browser=reverse-date</code>").</p>
+      <code class="literal">set sort_browser=reverse-date</code> ").</p>
       <p>The "unread" value is a synonym for "new".</p>
     </div>
     <div class="sect2">
@@ -12792,7 +12792,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       </div>
       <p>Controls the format of the status line displayed in the "index" menu. This string is similar to
       <a class="link" href="#index-format" title="3.206.&#160;index_format">$index_format</a>, but has its own set of
-      <code class="literal">printf(3)</code> -like sequences:</p>
+      <code class="literal">printf(3)</code>-like sequences:</p>
       <div class="informaltable">
         <table class="informaltable" border="1">
           <colgroup>
@@ -12990,8 +12990,8 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <code class="literal">%&lt;T?%s/%S&amp;%T/%s&gt;</code>
       </p>
       <p>You can force the result of any
-      <code class="literal">printf(3)</code> -like sequence to be lowercase by prefixing the sequence character with an underscore ("_") sign. For example, if you want to display the local hostname in lowercase, you would use: "
-      <code class="literal">%_h</code>".</p>
+      <code class="literal">printf(3)</code>-like sequence to be lowercase by prefixing the sequence character with an underscore ("_") sign. For example, if you want to display the local hostname in lowercase, you would use: "
+      <code class="literal">%_h</code> ".</p>
       <p>If you prefix the sequence character with a colon (":") character, NeoMutt will replace any dots in the expansion by underscores. This might be helpful with IMAP folders that don't like dots in folder names.</p>
     </div>
     <div class="sect2">
@@ -13053,10 +13053,10 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>susp</em>
       </span>key, usually "^Z". This is useful if you run NeoMutt inside an xterm using a command like "
-      <code class="literal">xterm -e neomutt</code>".</p>
+      <code class="literal">xterm -e neomutt</code> ".</p>
       <p>On startup NeoMutt tries to detect if it is the process session leader. If so, the default of
       <a class="link" href="#suspend" title="3.501.&#160;suspend">suspend</a> is "no" otherwise "yes". This default covers the above mentioned use case of "
-      <code class="literal">xterm -e neomutt</code>".</p>
+      <code class="literal">xterm -e neomutt</code> ".</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -13075,7 +13075,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>set</em>
       </span>, NeoMutt will generate "format=flowed" bodies with a content type of "
-      <code class="literal">text/plain; format=flowed</code>". This format is easier to handle for some mailing software, and generally just looks like ordinary text. To actually make use of this format's features, you'll need support in your editor.</p>
+      <code class="literal">text/plain; format=flowed</code> ". This format is easier to handle for some mailing software, and generally just looks like ordinary text. To actually make use of this format's features, you'll need support in your editor.</p>
       <p>The option only controls newly composed messages. Postponed messages, resent messages, and draft messages (via -H on the command line) will use the content-type of the source message.</p>
       <p>Note that
       <a class="link" href="#indent-string" title="3.205.&#160;indent_string">$indent_string</a> is ignored when this option is
@@ -13215,7 +13215,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <p>This variable allows you to specify where NeoMutt will place its temporary files needed for displaying and composing messages.</p>
       <p>If this variable is not set, the environment variable
       <code class="literal">$TMPDIR</code> is used. Failing that, then "
-      <code class="literal">/tmp</code>" is used.</p>
+      <code class="literal">/tmp</code> " is used.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2023-01-25, this was called $tmpdir</div>
     </div>

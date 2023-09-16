@@ -41,7 +41,7 @@ title: Autocrypt
       <p>Account and peer information is stored in a sqlite3 database, and so NeoMutt must be configured with the
       <code class="literal">--with-sqlite</code> flag when autocrypt is enabled.</p>
       <p>It is highly recommended that NeoMutt be configured with
-      <code class="literal">--idn2</code>(enabled by default) so that Autocrypt can properly deal with international domain names.</p>
+      <code class="literal">--idn2</code> (enabled by default) so that Autocrypt can properly deal with international domain names.</p>
       <p>While NeoMutt uses GPGME for Autocrypt, normal keyring operations can still be performed via classic mode (i.e. with
       <a class="link" href="reference.html#crypt-use-gpgme" title="3.93.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
       <code class="literal">loopback pinentry</code> mode, and that
@@ -63,7 +63,7 @@ title: Autocrypt
       <code class="literal">700</code>. If you create the directory manually, you should do the same.</p>
       <p>NeoMutt recommends keeping the
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> directory set differently from your GnuPG keyring directory (e.g.
-      <code class="literal">~/.gnupg</code>). Keys are automatically imported into the keyring from
+      <code class="literal">~/.gnupg</code> ). Keys are automatically imported into the keyring from
       <code class="literal">Autocrypt:</code> headers. Compared to standard
       <span class="quote">“<span class="quote">web of trust</span>”</span> keys, Autocrypt keys are somewhat ephemeral, and the autocrypt database is used to track when keys change or fall out of use. Having these keys mixed in with your normal keyring will make it more difficult to use features such as
       <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.80.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a> and Autocrypt at the same time.</p>
@@ -197,7 +197,7 @@ title: Autocrypt
         <em>recommended</em>
       </span>way is to set
       <a class="link" href="reference.html#autocrypt-dir" title="3.39.&#160;autocrypt_dir">$autocrypt_dir</a> to your normal keyring directory (e.g.
-      <code class="literal">~/.gnupg</code>). During account creation, choosing
+      <code class="literal">~/.gnupg</code> ). During account creation, choosing
       <span class="quote">“<span class="quote">(s)elect existing GPG key</span>”</span> will then list and allow selecting your existing key for the new account.</p>
       <p>An alternative is to copy your key over to the Autocrypt keyring, but there is a severe downside. NeoMutt
       <span class="emphasis">

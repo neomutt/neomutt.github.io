@@ -127,7 +127,7 @@ title: Configuration
       <p>NeoMutt will search for a user config file in several places. First it looks in the directory specified in the
       <code class="literal">XDG_CONFIG_HOME</code> environment variable, which defaults to
       <code class="literal">~/.config/neomutt</code>. Next, it looks in
-      <code class="literal">~</code>(your home directory). Finally, it tries
+      <code class="literal">~</code> (your home directory). Finally, it tries
       <code class="literal">~/.neomutt</code>.</p>
       <p>You may specify your own location for the user config file using the
       <span class="quote">“<span class="quote">-F</span>”</span> option on the
@@ -755,10 +755,10 @@ set alias_file=~/.mail_aliases
       </div>
       <p>The
       <code class="literal">bind</code> command allows to assign a new effect to a key (e.g.
-      <code class="literal">a</code>) or a keysequence (e.g.
+      <code class="literal">a</code> ) or a keysequence (e.g.
       <code class="literal">gh</code> – that is pressing
       <code class="literal">g</code> followed by a press of
-      <code class="literal">h</code>). Its syntax is:</p>
+      <code class="literal">h</code> ). Its syntax is:</p>
       <div class="cmdsynopsis">
         <p>
         <code class="command">bind</code>
@@ -1398,7 +1398,7 @@ bind index gg first-entry
       <p>In this example, the
       <code class="literal">g</code> binding will be overwritten and cannot be used. Newer versions of NeoMutt will warn the user about this.</p>
       <p>To avoid warnings on startup, first set the shorter binding to
-      <code class="literal">noop</code>(no operation).</p>
+      <code class="literal">noop</code> (no operation).</p>
       <pre class="screen">
 bind index g  noop
 bind index gg first-entry
@@ -1438,15 +1438,15 @@ bind index gg first-entry
       <span class="quote">“<span class="quote">
         <code class="literal">quit = ^\</code>
       </span>”</span> means typing
-      <code class="literal">^\</code>(commonly also
-      <code class="literal">^4</code>) will send a quit signal.</p>
+      <code class="literal">^\</code> (commonly also
+      <code class="literal">^4</code> ) will send a quit signal.</p>
       <p>To unbind a key from an action, you invoke
       <span class="quote">“<span class="quote">stty action undef</span>”</span>. For example,
       <span class="quote">“<span class="quote">
         <code class="literal">stty quit undef</code>
       </span>”</span> will unbind
-      <code class="literal">^\</code>(and
-      <code class="literal">^4</code>) from sending the quit signal. Once unbound (e.g, by placing that line in your .profile, or in a NeoMutt wrapper script/function) you can use the key sequence in your NeoMutt bindings.</p>
+      <code class="literal">^\</code> (and
+      <code class="literal">^4</code> ) from sending the quit signal. Once unbound (e.g, by placing that line in your .profile, or in a NeoMutt wrapper script/function) you can use the key sequence in your NeoMutt bindings.</p>
     </div>
   </div>
   <div class="sect1">
@@ -1873,14 +1873,14 @@ folder-hook work "set sort=threads"
       <code class="literal">green</code>,
       <code class="literal">blue</code> ; by their number in the palette, such as
       <code class="literal">color12</code>,
-      <code class="literal">color207</code>(the palette consists of the
+      <code class="literal">color207</code> (the palette consists of the
       <a class="ulink" href="https://web.archive.org/web/20190712111427/https://jonasjacek.github.io/colors/" target="_top">256 Xterm colors</a>); or by using hexadecimal RGB codes
       <code class="literal">#RRGGBB</code>, where
       <code class="literal">RR</code>,
       <code class="literal">GG</code>,
       <code class="literal">BB</code> are the red, green, and blue components given as a hexadecimal number between 00 and FF (=255), e.g.
-      <code class="literal">#00FFFF</code>(bright cyan) or
-      <code class="literal">#12af84</code>(greenish). The last syntax is only accepted if
+      <code class="literal">#00FFFF</code> (bright cyan) or
+      <code class="literal">#12af84</code> (greenish). The last syntax is only accepted if
       <a class="link" href="reference.html#color-directcolor" title="3.57.&#160;color_directcolor">$color_directcolor</a> is set.</p>
       <p>Named colours may also be prefixed by a
       <span class="emphasis">
@@ -1888,9 +1888,9 @@ folder-hook work "set sort=threads"
       </span>.
       <code class="literal">bright</code> or
       <code class="literal">light</code> will make the color boldfaced or light (e.g.,
-      <code class="literal">brightred</code>).
+      <code class="literal">brightred</code> ).
       <code class="literal">alert</code> to make a blinking/alert color (e.g.,
-      <code class="literal">alertred</code>).</p>
+      <code class="literal">alertred</code> ).</p>
       <p>The precise behavior depends on the terminal and its configuration. In particular, the boldfaced/light difference and such background colors may be available only for terminals configured with at least 16&#160;colors, as specified by the
       <code class="literal">$TERM</code> environment variable.</p>
       <p>
@@ -2657,7 +2657,7 @@ unignore posted-to:
       </div>
       <br class="example-break" />
       <p>The above example will show "From:" headers as well as mbox "From_" lines. To hide the latter, instead use "
-      <code class="literal">unignore from: date subject to cc</code>" on the second line.</p>
+      <code class="literal">unignore from: date subject to cc</code> " on the second line.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3346,7 +3346,7 @@ save-hook aol\\.com$ +spam
       <span class="command">
         <strong>send-hook</strong>
       </span>in the reply case by using the pattern
-      <code class="literal">'! ~Q'</code>(
+      <code class="literal">'! ~Q'</code> (
       <span class="emphasis">
         <em>not replied</em>
       </span>, see
@@ -3376,7 +3376,7 @@ save-hook aol\\.com$ +spam
     <span class="command">
       <strong>reply-hook</strong>
     </span>, when multiple matches occur, commands are executed in the order they are specified in the
-    <code class="literal">.neomuttrc</code>(for that type of hook).</p>
+    <code class="literal">.neomuttrc</code> (for that type of hook).</p>
     <p>Example:
     <code class="literal">
     <span class="command">
@@ -3597,7 +3597,7 @@ folder-hook . 'push &lt;collapse-all&gt;'
 folder-hook . 'push \eV'
 </pre>
     <p>because it simulates that Esc+V was pressed (which is the default binding of
-    <code class="literal">&lt;collapse-all&gt;</code>).</p>
+    <code class="literal">&lt;collapse-all&gt;</code> ).</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -4192,7 +4192,7 @@ set allow_8bit?
       <code class="literal">
       <span class="command">
         <strong>set</strong>
-      </span>?allow_8bit</code>) is also still supported.</p>
+      </span>?allow_8bit</code> ) is also still supported.</p>
       <p>The question mark is actually only required for boolean and quadoption variables.</p>
       <p>The
       <span class="command">
@@ -4441,7 +4441,7 @@ mailboxes $my_mx +mailbox3
     <code class="literal">
     <span class="command">
       <strong>source</strong>
-    </span>~/bin/myscript|</code>).</p>
+    </span>~/bin/myscript|</code> ).</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -4505,7 +4505,7 @@ mailboxes $my_mx +mailbox3
       <code class="literal">%.15F</code> and
       <code class="literal">%-12.15L</code>.</p>
       <p>NeoMutt adds some other modifiers to format strings. If you use an equals symbol (
-      <code class="literal">=</code>) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
+      <code class="literal">=</code> ) as a numeric prefix (like the minus above), it will force the string to be centered within its minimum space range. For example,
       <code class="literal">%=14y</code> will reserve 14 characters for the %y expansion – that's the set of message keywords (formerly X-Label). If the expansion results in a string less than 14 characters, it will be centered in a 14-character space. If the X-Label for a message were
       <span class="quote">“<span class="quote">test</span>”</span>, that expansion would look like
       <span class="quote">“<span class="quote">&#160;&#160;&#160;&#160;&#160;test&#160;&#160;&#160;&#160;&#160;</span>”</span>.</p>
@@ -4540,7 +4540,7 @@ mailboxes $my_mx +mailbox3
         <em>optional_string</em>
       </span>may contain other sequences as well as normal text, but you may not nest optional strings.</p>
       <p>Here is an example illustrating how to optionally print the number of new messages (
-      <code class="literal">%n</code>) in a mailbox in
+      <code class="literal">%n</code> ) in a mailbox in
       <a class="link" href="reference.html#status-format" title="3.498.&#160;status_format">$status_format</a>:</p>
       <pre class="screen">
 %&lt;n?%n new messages&gt;
@@ -4634,7 +4634,7 @@ set status_format = "%v on %h: %B: %&lt;n?%n&amp;no&gt; new messages %|-"
             <p>Since the previous expando stops at the end of line, there must be a way to fill the gap between two items via the
             <code class="literal">%&gt;X</code> expando: it puts as many characters
             <code class="literal">X</code> in between two items so that the rest of the line will be right-justified. For example, to not put the version string and hostname the above example on the left but on the right and fill the gap with spaces, one might use (note the space after
-            <code class="literal">%&gt;</code>):</p>
+            <code class="literal">%&gt;</code> ):</p>
             <pre class="screen">
 set status_format = "%B: %&lt;n?%n&amp;no&gt; new messages %&gt; (%v on %h)"
 </pre>

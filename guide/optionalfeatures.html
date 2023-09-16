@@ -73,15 +73,15 @@ proto[s]://[username[:password]@]server[:port][/path]
       <a class="link" href="reference.html#imap-user" title="3.196.&#160;imap_user">$imap_user</a>). The username may contain the
       <span class="quote">“<span class="quote">@</span>”</span> symbol being used by many mail systems as part of the login name. The special characters
       <span class="quote">“<span class="quote">/</span>”</span>(
-      <code class="literal">%2F</code>),
+      <code class="literal">%2F</code> ),
       <span class="quote">“<span class="quote">:</span>”</span>(
-      <code class="literal">%3A</code>) and
+      <code class="literal">%3A</code> ) and
       <span class="quote">“<span class="quote">%</span>”</span>(
-      <code class="literal">%25</code>) have to be URL-encoded in usernames using the
-      <code class="literal">%</code> -notation.</p>
+      <code class="literal">%25</code> ) have to be URL-encoded in usernames using the
+      <code class="literal">%</code>-notation.</p>
       <p>A password can be given, too but is not recommended if the URL is specified in a configuration file on disk.</p>
       <p>If no port number is given, NeoMutt will use the system's default for the given protocol (usually consulting
-      <code class="literal">/etc/services</code>).</p>
+      <code class="literal">/etc/services</code> ).</p>
       <p>The optional path is only relevant for IMAP and ignored elsewhere.</p>
       <div class="example">
         <a id="ex-url"></a>
@@ -171,7 +171,7 @@ smtp://user@host:587/
       </span>to set
       <a class="link" href="reference.html#ssl-force-tls" title="3.483.&#160;ssl_force_tls">$ssl_force_tls</a> in this case, to force
       <code class="literal">STARTTLS</code> negotiation. Note that doing so will prevent connection to an IMAP server configured for preauthentication(
-      <code class="literal">PREAUTH</code>). If you use this configuration, it is recommended to use a secure tunnel.</p>
+      <code class="literal">PREAUTH</code> ). If you use this configuration, it is recommended to use a secure tunnel.</p>
     </div>
   </div>
   <div class="sect1">
@@ -247,7 +247,7 @@ subscribe-to imaps://mail.example.org/inbox
     <code class="literal">&lt;subscribe&gt;</code> and
     <code class="literal">&lt;unsubscribe&gt;</code> functions of the browser (default keys
     <code class="literal">s</code> and
-    <code class="literal">u</code>) to subscribe to or unsubscribe from a folder while browsing the folders on the IMAP server. The browser can be instructed to only display the folders you are subscribed to with the
+    <code class="literal">u</code> ) to subscribe to or unsubscribe from a folder while browsing the folders on the IMAP server. The browser can be instructed to only display the folders you are subscribed to with the
     <code class="literal">&lt;toggle-subscribed&gt;</code> functions. See also the
     <a class="link" href="reference.html#imap-list-subscribed" title="3.184.&#160;imap_list_subscribed">$imap_list_subscribed</a> variable.</p>
     <p>Because the list of subscribed folders is managed by the IMAP server, NeoMutt can also ask the server for that list. If
@@ -328,7 +328,7 @@ set timeout=15
           <li class="listitem">
             <p>
             <a class="link" href="reference.html#imap-user" title="3.196.&#160;imap_user">$imap_user</a>– controls the username under which you request authentication on the IMAP server, for all authenticators. This is overridden by an explicit username in the mailbox path (i.e. by using a mailbox name of the form
-            <code class="literal">{user@host}</code>).</p>
+            <code class="literal">{user@host}</code> ).</p>
           </li>
           <li class="listitem">
             <p>
