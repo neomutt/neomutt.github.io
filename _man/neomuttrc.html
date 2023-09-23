@@ -865,6 +865,12 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>status</strong>
       </span>, 
       <span class="strong">
+        <strong>stripe_even</strong>
+      </span>, 
+      <span class="strong">
+        <strong>stripe_odd</strong>
+      </span>, 
+      <span class="strong">
         <strong>tilde</strong>
       </span>, 
       <span class="strong">
@@ -1716,25 +1722,46 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <br />
         <span class="strong">
           <strong>mailboxes</strong>
+        </span>&#160;[[ 
+        <span class="strong">
+          <strong>-label</strong>
         </span>&#160; 
         <span class="emphasis">
-          <em>mailbox</em>
-        </span>&#160;[&#160; 
+          <em>label</em>
+        </span>]&#160;|&#160; 
+        <span class="strong">
+          <strong>-nolabel</strong>
+        </span>] 
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[[ 
+        <span class="strong">
+          <strong>-notify</strong>
+        </span>&#160;|&#160; 
+        <span class="strong">
+          <strong>-nonotify</strong>
+        </span>] 
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[ 
+        <span class="strong">
+          <strong>-poll</strong>
+        </span>&#160;|&#160; 
+        <span class="strong">
+          <strong>-nopoll</strong>
+        </span>] 
+        <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
         <span class="emphasis">
           <em>mailbox</em>
-        </span>&#160;...&#160;] 
+        </span>]&#160;[&#160;...&#160;] 
         <br />
         <span class="strong">
           <strong>named-mailboxes</strong>
         </span>&#160; 
         <span class="emphasis">
-          <em>description</em>
+          <em>label</em>
         </span>&#160; 
         <span class="emphasis">
           <em>mailbox</em>
         </span>&#160;[ 
         <span class="emphasis">
-          <em>description</em>
+          <em>label</em>
         </span>&#160; 
         <span class="emphasis">
           <em>mailbox</em>
@@ -1761,7 +1788,13 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
       </span>is an alternative to 
       <span class="strong">
         <strong>mailboxes</strong>
-      </span>that allows adding a description for a mailbox. NeoMutt can be configured to display the description instead of the mailbox path.</p>
+      </span>
+      <span class="strong">
+        <strong>-label</strong>
+      </span>
+      <span class="emphasis">
+        <em>label</em>
+      </span>. NeoMutt can be configured to display the label instead of the mailbox path.</p>
       <p>The 
       <span class="strong">
         <strong>unmailboxes</strong>
@@ -6225,7 +6258,7 @@ Default: no
             <br />Default:&#160;"~f&#160;%s&#160;!~P&#160;|&#160;(~P&#160;~C&#160;%s)" 
             <br /></p>
           </div>
-          <p>This variable controls how some hooks are interpreted if their pattern is a plain string or a regex. i.e. They don't contain a pattern, like 
+          <p>This variable controls how some hooks are interpreted if their pattern is a plain string or a regex. i.e. they don't contain a pattern, like 
           <span class="emphasis">
             <em>~f</em>
           </span></p>
@@ -8996,6 +9029,25 @@ Default: no
           <span class="emphasis">
             <em>set</em>
           </span>, NeoMutt will poll both the new and cur directories of a maildir folder for new messages. This might be useful if other programs interacting with the folder (e.g. dovecot) are moving new messages to the cur directory. Note that setting this option may slow down polling for new messages in large folders, since NeoMutt has to scan all cur messages.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>maildir_field_delimiter</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;":" 
+            <br /></p>
+          </div>
+          <p>Use the value as maildir field delimiter. This is a single-character used to accommodate maildir mailboxes on platforms where `:` is not allowed in a filename. The recommended alternative on such platforms is `;`. Neomutt supports all non-alphanumeric values except for `-`, `.`, `\`, `/`. 
+          <span class="strong">
+            <strong>Note:</strong>
+          </span>this only applies to maildir-style mailboxes. Setting it will have no effect on other mailbox types.</p>
         </dd>
         <dt>
           <span class="term">
@@ -13003,7 +13055,7 @@ Default: no
           <p>When set, the 
           <span class="emphasis">
             <em>&lt;sidebar-next-new&gt;</em>
-          </span>command will not stop and the end of the list of mailboxes, but wrap around to the beginning. The 
+          </span>command will not stop at the end of the list of mailboxes, but wrap around to the beginning. The 
           <span class="emphasis">
             <em>&lt;sidebar-prev-new&gt;</em>
           </span>command is similarly affected, wrapping around to the end of the list.</p>
@@ -14271,6 +14323,23 @@ set sort_aux=last-date-received
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>browser_sort_dirs_first</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>If this variable is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, the browser will group directories before files.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>sort_re</strong>
             </span>
           </span>
@@ -14283,13 +14352,13 @@ Default: yes
           <p>This variable is only useful when sorting by threads with $strict_threads 
           <span class="emphasis">
             <em>unset</em>
-          </span>. In that case, it changes the heuristic mutt uses to thread messages by subject. With $sort_re 
+          </span>. In that case, it changes the heuristic neomutt uses to thread messages by subject. With $sort_re 
           <span class="emphasis">
             <em>set</em>
-          </span>, mutt will only attach a message as the child of another message by subject if the subject of the child message starts with a substring matching the setting of $reply_regex. With $sort_re 
+          </span>, neomutt will only attach a message as the child of another message by subject if the subject of the child message starts with a substring matching the setting of $reply_regex. With $sort_re 
           <span class="emphasis">
             <em>unset</em>
-          </span>, mutt will attach the message whether or not this is the case, as long as the non-$reply_regex parts of both messages are identical.</p>
+          </span>, neomutt will attach the message whether or not this is the case, as long as the non-$reply_regex parts of both messages are identical.</p>
         </dd>
         <dt>
           <span class="term">
