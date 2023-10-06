@@ -26,13 +26,12 @@ You may also be interested in:
 
 ## :gem: Sponsors
 
-<table>
+<table style="background: #fff">
   <tr>
     <td><a href="https://github.com/jindraj/"><img width="96" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
     <td><a href="https://github.com/pbwn/"><img width="96" src="https://avatars.githubusercontent.com/u/34809091"></a></td>
     <td><a href="https://github.com/scottkosty/"><img width="96" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
     <td><a href="https://github.com/4nd3r/"><img width="96" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
-    <td><a href="https://github.com/kmARC/"><img width="96" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
     <td><a href="https://github.com/igor47/"><img width="96" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td><a href="https://github.com/veebch/"><img width="96" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
   </tr>
@@ -50,9 +49,6 @@ You may also be interested in:
       Ander&nbsp;Punnar<br>(@4nd3r)
     </td>
     <td>
-      Mark&nbsp;Korondi<br>(@kmARC)
-    </td>
-    <td>
       Igor&nbsp;Serebryany<br>(@igor47)
     </td>
     <td>
@@ -60,6 +56,10 @@ You may also be interested in:
     </td>
   </tr>
 </table>
+
+- Justin Riddiough (@neural-loop)
+- Marton Balazs (@martonbalazs)
+- Patrick Koetter
 
 ---
 
