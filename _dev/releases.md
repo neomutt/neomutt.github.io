@@ -11,7 +11,8 @@ The Git hashes link to our GitHub repository.
 
 | Date       | Release Notes | Git Hash |
 | :--------- | :------------ | :------- |
-| 2023-05-17 | [NeoMutt 2023-05-17](https://github.com/neomutt/neomutt/releases/tag/20230517) | [`2b0e7f0d`](https://github.com/neomutt/neomutt/commit/2b0e7f0d) |
+| 2023-10-06 | [2023-10-06](https://github.com/neomutt/neomutt/releases/tag/20231006) | [`7f331261`](https://github.com/neomutt/neomutt/commit/7f331261) |
+| 2023-05-17 | [2023-05-17](https://github.com/neomutt/neomutt/releases/tag/20230517) | [`2b0e7f0d`](https://github.com/neomutt/neomutt/commit/2b0e7f0d) |
 | 2023-05-12 | [2023-05-12](https://github.com/neomutt/neomutt/releases/tag/20230512) | [`e1377bfb`](https://github.com/neomutt/neomutt/commit/e1377bfb) |
 | 2023-04-07 | [2023-04-07](https://github.com/neomutt/neomutt/releases/tag/20230407) | [`f64f787c`](https://github.com/neomutt/neomutt/commit/f64f787c) |
 | 2023-03-22 | [2023-03-22](https://github.com/neomutt/neomutt/releases/tag/20230322) | [`0e4ad927`](https://github.com/neomutt/neomutt/commit/0e4ad927) |
@@ -96,6 +97,7 @@ The Git hashes link to our copy of upstream's repository.
 
 | Date       | Version      | Git Hash |
 | :--------- | :----------- | :------- |
+| 2023-09-09 | 2.2.12 | [`0a81a2a7`](https://github.com/neomutt/upstream-mutt/commit/0a81a2a7) |
 | 2023-08-18 | 2.2.11 | [`6b538297`](https://github.com/neomutt/upstream-mutt/commit/6b538297) |
 | 2023-03-25 | 2.2.10 | [`e0e92c31`](https://github.com/neomutt/upstream-mutt/commit/e0e92c31) |
 | 2022-11-12 | 2.2.9 | [`00093fd7`](https://github.com/neomutt/upstream-mutt/commit/00093fd7) |
