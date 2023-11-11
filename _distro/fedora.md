@@ -12,9 +12,9 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 36 or before | Unsupported, please upgrade |
-| 37           | Supported                   |
+| 37 or before | Unsupported, please upgrade |
 | 38           | Supported                   |
+| 39           | Supported                   |
 | Rawhide      | Supported                   |
 
 ## Installation <a id="install"></a>
