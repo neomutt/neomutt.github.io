@@ -70,10 +70,6 @@ title: Release YYYY-MM-DD
 ---
 ```
 
-Also, add a line to the Releases webpage: `_dev/releases.md`
-
-- [https://neomutt.org/dev/releases](https://neomutt.org/dev/releases)
-
 Commit and push the change to GitHub.
 
 ```
