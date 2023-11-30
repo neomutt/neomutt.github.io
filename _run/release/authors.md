@@ -29,11 +29,8 @@ There are three files to update, in two repos:
 Ideally, we should check all of NeoMutt's repos for new contributors.
 In practice, only a handful are active, especially:
 
-- [aur-build](https://github.com/neomutt/aur-build)
 - [botty](https://github.com/neomutt/botty)
 - [doxygen](https://github.com/neomutt/doxygen)
-- [gentoo-neomutt](https://github.com/neomutt/gentoo-neomutt)
-- [homebrew-neomutt](https://github.com/neomutt/homebrew-neomutt)
 - [neomutt.github.io](https://github.com/neomutt/neomutt.github.io)
 - [neomutt.vim](https://github.com/neomutt/neomutt.vim)
 - [neomutt](https://github.com/neomutt/neomutt)
