@@ -34,6 +34,7 @@ You may also be interested in:
     <td><a href="https://github.com/4nd3r/"><img width="96" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
     <td><a href="https://github.com/igor47/"><img width="96" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td><a href="https://github.com/veebch/"><img width="96" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
+    <td><a href="https://github.com/kmARC"><img width="96" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
   </tr>
   <tr>
     <td>
@@ -53,6 +54,9 @@ You may also be interested in:
     </td>
     <td>
       Martin&nbsp;Spendiff<br>(@veebch)
+    </td>
+    <td>
+      Mark&nbsp;Korondi<br>(@kmARC)
     </td>
   </tr>
 </table>
