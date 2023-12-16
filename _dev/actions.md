@@ -88,7 +88,7 @@ To speed things up, we've created a [Docker](docker.md) image that contains all
 the tools we'll need.
 
 **See also**:
-- [docker-build repo](https://github.com/neomutt/docker-build)
+- [docker repo](https://github.com/neomutt/docker)
 - [https://www.docker.com/](https://www.docker.com/)
 
 ### Workflow Triggers

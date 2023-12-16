@@ -40,7 +40,7 @@ See, [How to build NeoMutt](https://neomutt.org/dev/build)
 | Trigger | Pull Request                                                   |                                                                                                |
 | Uses    | GitHub's checkout action                                       | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action  | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)   |
-| Runs-on | ubuntu-latest                                                  | [neomutt/docker-build](https://ghcr.io/neomutt/docker-build)                                   |
+| Runs-on | ubuntu-latest                                                  | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                               |
 
 ### See Also
 

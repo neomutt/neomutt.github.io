@@ -40,7 +40,7 @@ Learn more about [Coverity](../analysis/coverity)
 | Trigger | Schedule                 | Mondays at 3am                                                                                 |
 | Trigger | Workflow (manual)        | [{{page.logs}}]({{page.logs}})                                                                 |
 | Uses    | GitHub's checkout action | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
-| Runs-on | ubuntu-latest            | [neomutt/docker-build](https://ghcr.io/neomutt/docker-build)                                   |
+| Runs-on | ubuntu-latest            | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                               |
 
 ### See Also
 

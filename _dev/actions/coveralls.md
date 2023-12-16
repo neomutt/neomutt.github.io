@@ -52,7 +52,7 @@ Learn how the [coverage tests are performed](../analysis/coverage.md)
 | Uses    | GitHub's checkout action                                       | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action  | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)   |
 | Uses    | [Coverall](https://coveralls.io/)'s github-action              | [https://github.com/coverallsapp/github-action](https://github.com/coverallsapp/github-action) |
-| Runs-on | ubuntu-latest                                                  | [neomutt/docker-build](https://ghcr.io/neomutt/docker-build)                                   |
+| Runs-on | ubuntu-latest                                                  | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                               |
 
 ### See Also
 

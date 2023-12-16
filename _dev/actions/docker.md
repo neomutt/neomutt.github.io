@@ -1,9 +1,9 @@
 ---
 title:       Docker
 description: Build a docker image to speed up automated builds
-source:      https://github.com/neomutt/docker-build/blob/main/.github/workflows/build.yml
-badge:       https://github.com/neomutt/neomutt-docker-build/actions/workflows/build.yml/badge.svg
-logs:        https://github.com/neomutt/docker-build/actions/workflows/build.yml
+source:      https://github.com/neomutt/ubuntu/blob/main/.github/workflows/build.yml
+badge:       https://github.com/neomutt/neomutt-ubuntu/actions/workflows/build.yml/badge.svg
+logs:        https://github.com/neomutt/ubuntu/actions/workflows/build.yml
 author:      flatcap
 ---
 
@@ -44,11 +44,11 @@ to ensure it has all the latest updates.
 
 ### See Also
 
-| Description | Location                                                                                                                     |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| Action      | [{{page.source}}]({{page.source}})                                                                                           |
-| Action Logs | [{{page.logs}}]({{page.logs}})                                                                                               |
-| Docker repo | [https://github.com/neomutt/docker-build](https://github.com/neomutt/docker-build)                                           |
-| Dockerfile  | [https://github.com/neomutt/docker-build/blob/main/Dockerfile](https://github.com/neomutt/docker-build/blob/main/Dockerfile) |
-| Results     | [Docker image](https://github.com/neomutt/docker-build/pkgs/container/docker-build)                                          |
+| Description | Location                                                                                                         |
+| :---------- | :--------------------------------------------------------------------------------------------------------------- |
+| Action      | [{{page.source}}]({{page.source}})                                                                               |
+| Action Logs | [{{page.logs}}]({{page.logs}})                                                                                   |
+| Docker repo | [https://github.com/neomutt/docker](https://github.com/neomutt/docker)                                           |
+| Dockerfile  | [https://github.com/neomutt/docker/blob/main/Dockerfile](https://github.com/neomutt/docker/blob/main/Dockerfile) |
+| Results     | [Docker image](https://github.com/neomutt/docker/pkgs/container/ubuntu)                                          |
 

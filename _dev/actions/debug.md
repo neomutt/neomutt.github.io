@@ -44,7 +44,7 @@ See, [How to build NeoMutt](https://neomutt.org/dev/build)
 | Uses    | GitHub's checkout action                                       | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
 | Uses    | GitHub's upload artifacts action                               | [https://github.com/actions/upload-artifact](https://github.com/actions/upload-artifact)       |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action  | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)   |
-| Runs-on | ubuntu-latest                                                  | [neomutt/docker-build](https://ghcr.io/neomutt/docker-build)                                   |
+| Runs-on | ubuntu-latest                                                  | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                               |
 
 ### See Also
 
