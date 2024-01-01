@@ -51,7 +51,7 @@ Well done! You've just installed NeoMutt.
 ## NeoMutt COPR Install
 
 For years, this was the way to install NeoMutt.
-Now that NeoMutt is available to Fedora directly, the COPR install will soon be deprecated.
+Now that NeoMutt is available to Fedora directly, the COPR install has been deprecated.
 
 If you previously installed NeoMutt from the COPR, you can disable it by running:
 
