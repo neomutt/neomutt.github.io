@@ -56,3 +56,9 @@ clang-format -i source.c
 code here will not be formatted
 // clang-format on
 ```
+
+To run `clang-format` on all the code that you've changed, before committing, you could run:
+
+```sh
+git diff HEAD --name-only -- '*.c' | xargs --no-run-if-empty clang-format -i
+```
