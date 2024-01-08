@@ -16,12 +16,6 @@ NeoMutt is a command line mail reader (or <abbr title="Mail User Agent">MUA</abb
 It's a fork of Mutt with added **features**.
 [Read more...](about.html)
 
-### Why?
-
-The NeoMutt project is hoping to kick-start development on the Mutt project.
-
-NeoMutt has already attracted about twenty developers and enthusiasts.
-
 ### What have you achieved, so far?
 
 Lots of old Mutt patches have been brought up-to-date, tidied and documented.
