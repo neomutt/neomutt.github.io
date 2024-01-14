@@ -72,6 +72,11 @@ flatcap:
   home:   https://flatcap.org
   github: https://github.com/flatcap
 
+freswa:
+  name: Frederik Schwan
+  email: frederik.schwan@linux.com
+  github: https://github.com/freswa
+
 gahr:
   name: Pietro Cerutti
   github: https://github.com/gahr
@@ -103,6 +108,10 @@ hvkls:
 immae:
   name: Ismaël Bouya
   github: https://github.com/immae
+
+inglor:
+  name: Leonidas Spyropoulos
+  github: https://github.com/inglor
 
 jakkinstewart:
   name: Joshua Jordi

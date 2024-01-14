@@ -1,9 +1,9 @@
 ---
 distro: Arch Linux
 icon: arch.png
-homepage: https://www.archlinux.org/packages/community/x86_64/neomutt/
+homepage: https://www.archlinux.org/packages/extra/x86_64/neomutt/
 title: NeoMutt for Arch
-maintainer: aladw
+maintainer: inglor, freswa
 ---
 
 # ![logo](/images/distros/{{page.icon}}) {{ page.title }}
@@ -15,8 +15,8 @@ Other feature branches may work, but there is no guarantee.
 
 ## Installation <a id="install"></a>
 
-NeoMutt is available in the `[community]` official repository as
-[`neomutt`](https://www.archlinux.org/packages/community/x86_64/neomutt/) and
+NeoMutt is available in the `[extra]` official repository as
+[`neomutt`](https://www.archlinux.org/packages/extra/x86_64/neomutt/) and
 can be installed with pacman.
 
 ```
@@ -24,12 +24,11 @@ pacman -S neomutt
 ```
 
 If you want to customize the options or use unmerged features, retrieve the
-`PKGBUILD` via [`svn`](https://www.archlinux.org/svn/) and edit it.
+`PKGBUILD` via [`git`](https://gitlab.archlinux.org/archlinux) and edit it.
 
 ```
-svn checkout --depth=empty svn://svn.archlinux.org/community
-svn update neomutt
-cd neomutt/trunk
+git clone git@gitlab.archlinux.org:archlinux/packaging/packages/neomutt.git
+cd neomutt
 ```
 
 The sections of interest are:
@@ -51,7 +50,7 @@ pacman -Syu
 ```
 
 If the package in the Arch Linux repositories is outdated, first ensure your
-[mirrors](https://wiki.archlinux.org/index.php/Mirrors) are up-to-date:
+[mirrors](https://wiki.archlinux.org/title/Mirrors) are up-to-date:
 
 ```
 pacman -S reflector
@@ -59,7 +58,7 @@ reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 If this did not help, check the version on the
-[packages website](https://www.archlinux.org/packages/community/x86_64/neomutt/)
+[packages website](https://www.archlinux.org/packages/extra/x86_64/neomutt/)
 and flag the package [out-of-date](https://www.archlinux.org/packages/flaghelp/)
 if required. Note that a package should only be flagged if a newer *stable*
 release is available.
