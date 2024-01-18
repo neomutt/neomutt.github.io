@@ -22,6 +22,13 @@ The Address Sanitizer adds compile-time options that can detect:
 - Memory use after free
 - Double-free, invalid free
 
+## Installation
+
+First you may need to install the ASAN libraries.
+
+- Debian: `apt-get install libasan6`
+- Fedora: `dnf install libasan`
+
 ## Building
 
 To build NeoMutt with the Address Sanitizer, you need to add a option to the compiler and linker.
@@ -39,6 +46,12 @@ export EXTRA_CFLAGS="-fsanitize=address"
 export EXTRA_LDFLAGS="-fsanitize=address"
 ./configure [OPTIONS]
 make
+```
+
+When debugging, it may also be helpful to add:
+
+```sh
+EXTRA_CFLAGS="$EXTRA_CFLAGS -ggdb3 -O0"
 ```
 
 ## Address Sanitizer Options
