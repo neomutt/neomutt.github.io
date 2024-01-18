@@ -1,9 +1,9 @@
 ---
 title:       Docker
 description: Build a docker image to speed up automated builds
-source:      https://github.com/neomutt/ubuntu/blob/main/.github/workflows/build.yml
-badge:       https://github.com/neomutt/neomutt-ubuntu/actions/workflows/build.yml/badge.svg
-logs:        https://github.com/neomutt/ubuntu/actions/workflows/build.yml
+source:      https://github.com/neomutt/docker/blob/main/.github/workflows/ubuntu.yml
+badge:       https://github.com/neomutt/docker/actions/workflows/ubuntu.yml/badge.svg
+logs:        https://github.com/neomutt/docker/actions/workflows/ubuntu.yml
 author:      flatcap
 ---
 

@@ -9,6 +9,7 @@ author:      flatcap
 
 <div style="float: right;">
 <a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
+<a href="https://www.docker.com/"><img src="/images/distros/fedora.png" /></a>
 </div>
 
 # {{ page.title }}
@@ -20,7 +21,7 @@ author:      flatcap
 ## Description
 
 This is a weekly action that checks the build on the Fedora releases.
-The current versions are: 37 (previous), 38 (current) and 39 (Rawhide).
+The current versions are: 38 (previous), 39 (current) and 40 (Rawhide).
 
 For each of of the releases it does three builds: default, minimal and everything.
 
