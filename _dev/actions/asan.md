@@ -29,21 +29,23 @@ It can be downloaded from Summary page of the Action Run.
 See, [How to build NeoMutt](https://neomutt.org/dev/build)
 
 **Steps**:
+- Configure NeoMutt
 - Build Tests
 - Run Tests
 - Upload ASAN Log (on failure)
 
 ### Action Details
 
-| Key     | Description                                                    | Details                                                                                        |
-| :------ | :------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
-| Trigger | `git push`                                                     | To branches `main` or `devel/*`                                                                |
-| Trigger | Pull Request                                                   |                                                                                                |
-| Trigger | Workflow (manual)                                              | [{{page.logs}}]({{page.logs}})                                                                 |
-| Uses    | GitHub's checkout action                                       | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
-| Uses    | GitHub's upload artifacts action                               | [https://github.com/actions/upload-artifact](https://github.com/actions/upload-artifact)       |
-| Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action  | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)   |
-| Runs-on | ubuntu-latest                                                  | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                               |
+| Key     | Description                                                            | Details                                                                                                                                  |
+| :------ | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Trigger | `git push`                                                             | To branches `main` or `devel/*`                                                                                                          |
+| Trigger | Pull Request                                                           |                                                                                                                                          |
+| Trigger | Workflow (manual)                                                      | [{{page.logs}}]({{page.logs}})                                                                                                           |
+| Uses    | GitHub's checkout action                                               | [https://github.com/actions/checkout](https://github.com/actions/checkout)                                                               |
+| Uses    | GitHub's upload artifacts action                                       | [https://github.com/actions/upload-artifact](https://github.com/actions/upload-artifact)                                                 |
+| Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action          | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)                                             |
+| Uses    | [Simen Bekkhus](https://github.com/SimenB)' cpu-cores action           | [https://github.com/SimenB/github-actions-cpu-cores](https://github.com/SimenB/github-actions-cpu-cores)                                 |
+| Runs-on | ubuntu-latest                                                          | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                                                                         |
 
 ### See Also
 

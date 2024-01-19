@@ -1,16 +1,15 @@
 ---
-title:       Coveralls
-description: Code coverage tests
-source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/coveralls.yml
-badge:       https://github.com/neomutt/neomutt/actions/workflows/coveralls.yml/badge.svg
-logs:        https://github.com/neomutt/neomutt/actions/workflows/coveralls.yml
+title:       macOS
+description: Test builds on macOS
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/macos.yml
+badge:       https://github.com/neomutt/neomutt/actions/workflows/macos.yml/badge.svg
+logs:        https://github.com/neomutt/neomutt/actions/workflows/macos.yml
 author:      flatcap
 ---
 
 <div style="float: right;">
 <a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
-<a href="https://coveralls.io/github/neomutt/neomutt"><img src="https://img.shields.io/coveralls/github/neomutt/neomutt" /></a>
-<a href="https://coveralls.io/"><img src="/images/coveralls.png" /></a>
+<a href="https://www.apple.com/by/macos/monterey/"><img src="/images/distros/macos.png" /></a>
 </div>
 
 # {{ page.title }}
@@ -21,32 +20,18 @@ author:      flatcap
 
 ## Description
 
-This action performs coverage tests on the code and uploads the results to the
-[Coveralls](https://coveralls.io/) service which stores the results and
-generates [pretty graphs](https://coveralls.io/github/neomutt/neomutt).
+This is a weekly action that checks the build on macOS.
+The current version is macOS 12 (Monterey).
 
-The coverage tests don't cover the entire codebase, just 13 libraries:
- - [address](https://neomutt.org/code/lib_address.html) - Email Address Handling                              
- - [color](https://neomutt.org/code/lib_color.html) - Colour handling code                                
- - [compress](https://neomutt.org/code/lib_compress.html) - Data compression                                    
- - [config](https://neomutt.org/code/lib_config.html) - User configurable variables                         
- - [core](https://neomutt.org/code/lib_core.html) - Backbone objects of NeoMutt                         
- - [editor](https://neomutt.org/code/lib_editor.html) - Select a Mailbox from a list                        
- - [email](https://neomutt.org/code/lib_email.html) - Structs that make up an email                       
- - [imap](https://neomutt.org/code/lib_imap.html) - IMAP network mailbox                                
- - [mutt](https://neomutt.org/code/lib_mutt.html) - Shared code for handling strings, files, dates, etc 
- - [notmuch](https://neomutt.org/code/lib_notmuch.html) - Notmuch virtual mailbox type                        
- - [parse](https://neomutt.org/code/lib_parse.html) - Text parsing functions	                            
- - [pattern](https://neomutt.org/code/lib_pattern.html) - Match patterns to emails                            
- - [store](https://neomutt.org/code/lib_store.html) - Key value store                                     
+It performs one minimal build of NeoMutt.
 
-Learn how the [coverage tests are performed](../analysis/coverage.md)
+See, [How to build NeoMutt](https://neomutt.org/dev/build)
 
 **Steps**:
-- Build Neomutt
+- Configure NeoMutt
+- Build NeoMutt
 - Build Tests
-- Make Coverage
-- Upload results to Coveralls
+- Run Tests
 
 ### Action Details
 
@@ -57,7 +42,6 @@ Learn how the [coverage tests are performed](../analysis/coverage.md)
 | Uses    | GitHub's checkout action                                               | [https://github.com/actions/checkout](https://github.com/actions/checkout)                                                               |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action          | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)                                             |
 | Uses    | [Simen Bekkhus](https://github.com/SimenB)' cpu-cores action           | [https://github.com/SimenB/github-actions-cpu-cores](https://github.com/SimenB/github-actions-cpu-cores)                                 |
-| Uses    | [Coverall](https://coveralls.io/)'s github-action                      | [https://github.com/coverallsapp/github-action](https://github.com/coverallsapp/github-action)                                           |
 | Runs-on | ubuntu-latest                                                          | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                                                                         |
 
 ### See Also
@@ -68,5 +52,4 @@ Learn how the [coverage tests are performed](../analysis/coverage.md)
 | Action Logs | [{{page.logs}}]({{page.logs}})                                                                 |
 | Source Code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                       |
 | Test Files  | [https://github.com/neomutt/neomutt-test-files](https://github.com/neomutt/neomutt-test-files) |
-| Results     | [Code Coverage](https://coveralls.io/github/neomutt/neomutt)                                   |
 

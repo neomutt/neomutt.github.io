@@ -36,13 +36,14 @@ Learn more about [translations](../../translate)
 
 ### Action Details
 
-| Key     | Description                                                  | Details                                                                                  |
-| :------ | :----------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
-| Trigger | `git push`                                                   | To branch `translate`                                                                    |
-| Uses    | GitHub's checkout action                                     | [https://github.com/actions/checkout](https://github.com/actions/checkout)               |
-| Uses    | [Adam Dobrawy](https://github.com/ad-m)'s github-push-action | [https://github.com/ad-m/github-push-action](https://github.com/ad-m/github-push-action) |
-| Secret  | Personal Access Token                                        | `TRANSLATE_DEPLOY_KEY`                                                                   |
-| Runs-on | ubuntu-latest                                                |                                                                                          |
+| Key     | Description                                                            | Details                                                                                                                                  |
+| :------ | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Trigger | `git push`                                                             | To branch `translate`                                                                                                                    |
+| Trigger | Workflow (manual)                                                      | [{{page.logs}}]({{page.logs}})                                                                                                           |
+| Uses    | GitHub's checkout action                                               | [https://github.com/actions/checkout](https://github.com/actions/checkout)                                                               |
+| Uses    | [Pablo Morelli](https://github.com/pmorelli92)'s container push action | [https://github.com/pmorelli92/github-container-registry-build-push](https://github.com/pmorelli92/github-container-registry-build-push) |
+| Secret  | Personal Access Token                                                  | `TRANSLATE_DEPLOY_KEY`                                                                                                                   |
+| Runs-on | ubuntu-latest                                                          |                                                                                                                                          |
 
 ### See Also
 

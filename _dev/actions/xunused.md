@@ -1,9 +1,9 @@
 ---
-title:       Build and Test
-description: Build the code and run some tests
-source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/build-and-test.yml
-badge:       https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg
-logs:        https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml
+title:       XUnused
+description: Check for unused functions
+source:      https://github.com/neomutt/neomutt/blob/main/.github/workflows/xunused.yml
+badge:       https://github.com/neomutt/neomutt/actions/workflows/xunused.yml/badge.svg
+logs:        https://github.com/neomutt/neomutt/actions/workflows/xunused.yml
 author:      flatcap
 ---
 
@@ -19,26 +19,22 @@ author:      flatcap
 
 ## Description
 
-This action is the workhorse of NeoMutt.  It's run on all code that's pushed to
-the neomutt repo and all pull requests.
+This is a weekly action that checks the code for unused functions.
 
-The action performs three builds, with a variety of `configure` options, and a
-set of unit tests on some of the libraries.
+The checking is performed by [Matthias Gehre](https://github.com/mgehre)'s `xunused`.
 
 See, [How to build NeoMutt](https://neomutt.org/dev/build)
 
 **Steps**:
-- Configure Neomutt
-- Build Neomutt
-- Build Tests
-- Run Tests
+- Configure NeoMutt
+- Build NeoMutt
+- Check for unused functions
 
 ### Action Details
 
 | Key     | Description                                                            | Details                                                                                                                                  |
 | :------ | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| Trigger | `git push`                                                             | To branches `main` or `devel/*`                                                                                                          |
-| Trigger | Pull Request                                                           |                                                                                                                                          |
+| Trigger | Schedule                                                               | Mondays at 3am                                                                                                                           |
 | Trigger | Workflow (manual)                                                      | [{{page.logs}}]({{page.logs}})                                                                                                           |
 | Uses    | GitHub's checkout action                                               | [https://github.com/actions/checkout](https://github.com/actions/checkout)                                                               |
 | Uses    | [Hendrik Muhs](https://github.com/hendrikmuhs)' ccache-action          | [https://github.com/hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)                                             |
@@ -52,5 +48,5 @@ See, [How to build NeoMutt](https://neomutt.org/dev/build)
 | Action      | [{{page.source}}]({{page.source}})                                                             |
 | Action Logs | [{{page.logs}}]({{page.logs}})                                                                 |
 | Source Code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                       |
-| Test Files  | [https://github.com/neomutt/neomutt-test-files](https://github.com/neomutt/neomutt-test-files) |
+| XUnused     | [https://github.com/mgehre/xunused](https://github.com/mgehre/xunused)                         |
 

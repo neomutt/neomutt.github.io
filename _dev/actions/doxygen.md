@@ -42,14 +42,14 @@ Learn more about [Doxygen](../doxygen)
 
 ### Action Details
 
-| Key     | Description                                                  | Details                                                                                  |
-| :------ | :----------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
-| Trigger | Schedule                                                     | Mondays at 3am                                                                           |
-| Trigger | Workflow (manual)                                            | [{{page.logs}}]({{page.logs}})                                                           |
-| Uses    | GitHub's checkout action                                     | [https://github.com/actions/checkout](https://github.com/actions/checkout)               |
-| Uses    | [Adam Dobrawy](https://github.com/ad-m)'s github-push-action | [https://github.com/ad-m/github-push-action](https://github.com/ad-m/github-push-action) |
-| Secret  | Personal Access Token                                        | `DOXYGEN_DEPLOY_KEY`                                                                     |
-| Runs-on | debian:sid                                                   | (for latest version of doxygen)                                                          |
+| Key     | Description                                                            | Details                                                                                                                                  |
+| :------ | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Trigger | Schedule                                                               | Mondays at 3am                                                                                                                           |
+| Trigger | Workflow (manual)                                                      | [{{page.logs}}]({{page.logs}})                                                                                                           |
+| Uses    | GitHub's checkout action                                               | [https://github.com/actions/checkout](https://github.com/actions/checkout)                                                               |
+| Uses    | [Pablo Morelli](https://github.com/pmorelli92)'s container push action | [https://github.com/pmorelli92/github-container-registry-build-push](https://github.com/pmorelli92/github-container-registry-build-push) |
+| Secret  | Personal Access Token                                                  | `DOXYGEN_DEPLOY_KEY`                                                                                                                     |
+| Runs-on | debian:sid                                                             | (for latest version of doxygen)                                                                                                          |
 
 ### See Also
 

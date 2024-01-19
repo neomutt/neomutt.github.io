@@ -30,17 +30,19 @@ Learn more about [Coverity](../analysis/coverity)
 
 **Steps**:
 - Download Coverity tools
+- Configure NeoMutt
 - Build NeoMutt with Coverity tools
 - Submit Results
 
 ### Action Details
 
-| Key     | Description              | Details                                                                                        |
-| :------ | :----------------------- | :--------------------------------------------------------------------------------------------- |
-| Trigger | Schedule                 | Mondays at 3am                                                                                 |
-| Trigger | Workflow (manual)        | [{{page.logs}}]({{page.logs}})                                                                 |
-| Uses    | GitHub's checkout action | [https://github.com/actions/checkout](https://github.com/actions/checkout)                     |
-| Runs-on | ubuntu-latest            | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                               |
+| Key     | Description                                                            | Details                                                                                                                                  |
+| :------ | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Trigger | Schedule                                                               | Mondays at 3am                                                                                                                           |
+| Trigger | Workflow (manual)                                                      | [{{page.logs}}]({{page.logs}})                                                                                                           |
+| Uses    | GitHub's upload artifacts action                                       | [https://github.com/actions/upload-artifact](https://github.com/actions/upload-artifact)                                                 |
+| Uses    | [Simen Bekkhus](https://github.com/SimenB)' cpu-cores action           | [https://github.com/SimenB/github-actions-cpu-cores](https://github.com/SimenB/github-actions-cpu-cores)                                 |
+| Runs-on | ubuntu-latest                                                          | [neomutt/ubuntu](https://ghcr.io/neomutt/ubuntu)                                                                                         |
 
 ### See Also
 
