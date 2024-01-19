@@ -28,6 +28,8 @@ This is a free service for open source, but limited to 2 scans per day.
 
 Learn more about [Coverity](../analysis/coverity)
 
+See, [How to build NeoMutt](https://neomutt.org/dev/build)
+
 **Steps**:
 - Download Coverity tools
 - Configure NeoMutt

@@ -9,7 +9,7 @@ author:      flatcap
 
 <div style="float: right;">
 <a href="{{page.logs}}"><img src="{{page.badge}}" /></a>
-<a href="https://github.com/CodeIntelligenceTesting/cifuzz"><img src="/images/distro/cifuzz.png" /></a>
+<a href="https://github.com/CodeIntelligenceTesting/cifuzz"><img src="/images/distros/cifuzz.png" /></a>
 </div>
 
 # {{ page.title }}

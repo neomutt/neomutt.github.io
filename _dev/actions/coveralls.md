@@ -42,6 +42,8 @@ The coverage tests don't cover the entire codebase, just 13 libraries:
 
 Learn how the [coverage tests are performed](../analysis/coverage.md)
 
+See, [How to build NeoMutt](https://neomutt.org/dev/build)
+
 **Steps**:
 - Build Neomutt
 - Build Tests
