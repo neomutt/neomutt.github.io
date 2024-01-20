@@ -1,0 +1,130 @@
+---
+title: Command-line Crypto (-C)
+description: Enable message security in modes that by default don't enable it
+since: 2024-01-20
+status: devel
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/cli-crypto"></a>Command-line Crypto (-C) Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Enable message security in modes that by default don't enable it</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2023-xx-xx</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>Gpgme ??</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>This feature allows enabling message security in modes that don't enable it by default. Those include batch mode, sending a postponed message, and resending a message. This allows using NeoMutt as a driver for git-send-email(1), to send patches in signed and/or encrypted mail.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="usage"></a>3.&#160;Usage</h2>
+        </div>
+      </div>
+    </div>
+    <p>To send an email from a file, enabling cryptographic operations as when sending interactively, simply use the
+    <code class="literal">-C</code> flag.</p>
+    <pre class="screen">
+$ neomutt -C -H - &lt;/mail/to/be/sent
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="neomuttrc"></a>4.&#160;neomuttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example NeoMutt config file for the cli-crypto feature.</span>
+
+set pgp_default_key = 1111111111111111111111111111111111111111
+<span class="comment"># Sign all mail</span>
+set crypt_autosign = yes
+<span class="comment"># Encrypt mail if all recipients have valid public keys</span>
+set crypt_opportunistic_encrypt = yes
+<span class="comment"># Sign/encrypt protected headers (Subject)</span>
+set crypt_protected_headers_write = yes
+<span class="comment"># Self encrypt mail</span>
+set crypt_self_encrypt = yes
+
+<span class="comment"># vim: syntax=neomuttrc</span>
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="gitconfig"></a>5.&#160;neomuttrc</h2>
+        </div>
+      </div>
+    </div>
+    <pre class="screen">
+<span class="comment"># Example .gitconfig config file for the cli-crypto feature.</span>
+
+[sendemail]
+sendmailcmd = neomutt -C -H - &amp;&amp; true
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="known-bugs"></a>6.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>We were unable to test some corner cases regarding crypt-hook in combination with this feature. We tried to fall on the safe side, so NeoMutt may lock-up in a forever loop in some cases, to prevent sending messages with less security. If you are able to trigger one of those cases, please let us know.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>7.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Alejandro Colomar, Richard Russon, Jenya Sovetkin</p>
+  </div>
+</div>
+{% endraw %}
