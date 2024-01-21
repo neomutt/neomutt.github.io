@@ -5345,6 +5345,23 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>browser_sort_dirs_first</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>If this variable is 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, the browser will group directories before files.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>catchup_newsgroup</strong>
             </span>
           </span>
@@ -7747,6 +7764,45 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>history_format</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <div class="literallayout">
+            <p>
+            <br />Type:&#160;string 
+            <br />Default:&#160;"%s" 
+            <br /></p>
+          </div>
+          <p>Controls the format of the entries of the history list. This string is similar to $index_format, but has its own set of 
+          <span class="emphasis">
+            <em>printf(3)</em>
+          </span>-like sequences:</p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">%C</span>
+                  </dt>
+                  <dd>
+                    <p>Line number</p>
+                  </dd>
+                  <dt>
+                    <span class="term">%s</span>
+                  </dt>
+                  <dd>
+                    <p>History match</p>
+                  </dd>
+                </dl>
+              </div>
+            </blockquote>
+          </div>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>history_remove_dups</strong>
             </span>
           </span>
@@ -8236,6 +8292,23 @@ Default: yes
         <dt>
           <span class="term">
             <span class="strong">
+              <strong>imap_send_id</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <pre class="programlisting">
+Type: boolean
+Default: no
+</pre>
+          <p>When 
+          <span class="emphasis">
+            <em>set</em>
+          </span>, NeoMutt will send an IMAP ID command (RFC2971) to the server when logging in if advertised by the server. This command provides information about the IMAP client, such as "NeoMutt" and the current version.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
               <strong>imap_server_noise</strong>
             </span>
           </span>
@@ -8266,23 +8339,6 @@ Default: yes
           </div>
           <p>The name of the user whose mail you intend to access on the IMAP server.</p>
           <p>This variable defaults to your user name on the local machine.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>imap_send_id</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>When 
-          <span class="emphasis">
-            <em>set</em>
-          </span>, NeoMutt will send an IMAP ID command (RFC2971) to the server when logging in if advertised by the server. This command provides information about the IMAP client, such as "NeoMutt" and the current version.</p>
         </dd>
         <dt>
           <span class="term">
@@ -14319,23 +14375,6 @@ set sort_aux=last-date-received
             <em>set sort_browser=reverse-date</em>
           </span>").</p>
           <p>The "unread" value is a synonym for "new".</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>browser_sort_dirs_first</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <pre class="programlisting">
-Type: boolean
-Default: no
-</pre>
-          <p>If this variable is 
-          <span class="emphasis">
-            <em>set</em>
-          </span>, the browser will group directories before files.</p>
         </dd>
         <dt>
           <span class="term">

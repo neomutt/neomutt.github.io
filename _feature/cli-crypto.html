@@ -31,11 +31,11 @@ status: devel
     <p>
     <span class="bold">
       <strong>Since:</strong>
-    </span>NeoMutt 2023-xx-xx</p>
+    </span>NeoMutt 2024-01-21</p>
     <p>
     <span class="bold">
       <strong>Dependencies:</strong>
-    </span>Gpgme ??</p>
+    </span>Gpgme</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -46,7 +46,9 @@ status: devel
         </div>
       </div>
     </div>
-    <p>This feature allows enabling message security in modes that don't enable it by default. Those include batch mode, sending a postponed message, and resending a message. This allows using NeoMutt as a driver for git-send-email(1), to send patches in signed and/or encrypted mail.</p>
+    <p>This feature allows enabling message security in modes that don't enable it by default. Those include batch mode, sending a postponed message, and resending a message.</p>
+    <p></p>
+    <p>This allows using NeoMutt as a driver for git-send-email(1), to send patches in signed and/or encrypted mail.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -60,7 +62,7 @@ status: devel
     <p>To send an email from a file, enabling cryptographic operations as when sending interactively, simply use the
     <code class="literal">-C</code> flag.</p>
     <pre class="screen">
-$ neomutt -C -H - &lt;/mail/to/be/sent
+$ neomutt -C -H - &lt; /mail/to/be/sent
 </pre>
   </div>
   <div class="sect1">
@@ -75,7 +77,7 @@ $ neomutt -C -H - &lt;/mail/to/be/sent
     <pre class="screen">
 <span class="comment"># Example NeoMutt config file for the cli-crypto feature.</span>
 
-set pgp_default_key = 1111111111111111111111111111111111111111
+set pgp_default_key = "1111111111111111111111111111111111111111"
 <span class="comment"># Sign all mail</span>
 set crypt_autosign = yes
 <span class="comment"># Encrypt mail if all recipients have valid public keys</span>
