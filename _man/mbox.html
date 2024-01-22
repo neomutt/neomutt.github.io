@@ -71,7 +71,7 @@ description: Format for mail message storage.
     </span>which is 
     <span class="strong">
       <strong>MBOXO</strong>
-    </span>with a "Content-Length:"-field with the number of bytes in the message body; some MUAs (like 
+    </span>with a "Content-Length:" field with the number of bytes in the message body; some MUAs (like 
     <span class="citerefentry">
     <span class="refentrytitle">neomutt</span>(1)</span>) do automatically transform 
     <span class="strong">
@@ -142,8 +142,7 @@ description: Format for mail message storage.
     <a id="files"></a>
     <h2>FILES</h2>
     <p>
-      <code class="filename">/var/spool/mail/$LOGNAME</code>
-    </p>
+    <code class="filename">/var/spool/mail/</code>$LOGNAME</p>
     <div class="literallayout">
       <p>
         <br />
@@ -158,31 +157,18 @@ description: Format for mail message storage.
         <br />
       </p>
     </div>
-    <p>
-      <span class="emphasis">
-        <em>$HOME/mbox</em>
-      </span>
-    </p>
-    <div class="literallayout">
-      <p>
-        <br />
-        <pre class="synopsis">
-<br />
-user's archived mail messages, in his 
-<span class="strong">
-  
-<strong>$HOME</strong>
-</span> directory.
-<br />
-</pre>
-        <br />
-      </p>
+    <p>$HOME 
+    <code class="filename">/mbox</code></p>
+    <div class="blockquote">
+      <blockquote class="blockquote">
+        <p>user's archived mail messages, in his 
+        <span class="strong">
+          <strong>$HOME</strong>
+        </span>directory.</p>
+      </blockquote>
     </div>
-    <p>
-      <span class="emphasis">
-        <em>$HOME/Mail/</em>
-      </span>
-    </p>
+    <p>$HOME 
+    <code class="filename">/Mail/</code></p>
     <div class="blockquote">
       <blockquote class="blockquote">
         <p>A directory in user's 

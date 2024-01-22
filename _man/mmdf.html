@@ -29,46 +29,47 @@ description: Multi-channel Memorandum Distribution Facility mailbox format
     <span class="strong">
       <strong>RFC2822</strong>
     </span>, followed by a postmark. The file format is line-oriented. Lines are separated by line feed characters (ASCII 10). A postmark line consists of the four characters "^A^A^A^A" (Control-A; ASCII 1).</p>
-    <div class="variablelist">
-      <dl class="variablelist">
-        <dt>
-          <span class="term">Example of a 
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>Example of a 
           <span class="strong">
             <strong>MMDF</strong>
-          </span>mailbox holding two mails:</span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />
-            <br />^A^A^A^A 
-            <br />From:&#160;example@example.com 
-            <br />To:&#160;example@example.org 
-            <br />Subject:&#160;test 
-            <br />
-            <br />&gt;From&#160;what&#160;I&#160;learned&#160;about&#160;the&#160;MMDF-format: 
-            <br />^A^A^A^A 
-            <br />^A^A^A^A 
-            <br />From:&#160;example@example.com 
-            <br />To:&#160;example@example.org 
-            <br />Subject:&#160;test&#160;2 
-            <br />
-            <br />bar 
-            <br />^A^A^A^A 
-            <br /></p>
-          </div>
-        </dd>
-      </dl>
+          </span>mailbox holding two mails:</p>
+        </li>
+      </ul>
+    </div>
+    <div class="blockquote">
+      <blockquote class="blockquote">
+        <div class="literallayout">
+          <p>
+          <br />^A^A^A^A 
+          <br />From:&#160;example@example.com 
+          <br />To:&#160;example@example.org 
+          <br />Subject:&#160;test 
+          <br />
+          <br />&gt;From&#160;what&#160;I&#160;learned&#160;about&#160;the&#160;MMDF-format: 
+          <br />^A^A^A^A 
+          <br />^A^A^A^A 
+          <br />From:&#160;example@example.com 
+          <br />To:&#160;example@example.org 
+          <br />Subject:&#160;test&#160;2 
+          <br />
+          <br />bar 
+          <br />^A^A^A^A 
+          <br /></p>
+        </div>
+      </blockquote>
     </div>
     <p>In contrast to most other single file mailbox formats like MBOXO and MBOXRD (see 
     <span class="citerefentry">
-    <span class="refentrytitle">mbox</span>(5)</span>) there is no need to quote/dequote "From "-lines in 
+    <span class="refentrytitle">mbox</span>(5)</span>) there is no need to quote/dequote "From " lines in 
     <span class="strong">
       <strong>MMDF</strong>
     </span>mailboxes as such lines have no special meaning in this format.</p>
     <p>If the modification-time (usually determined via 
     <span class="citerefentry">
-    <span class="refentrytitle">stat</span>(2)</span>) of a nonempty mailbox file is greater than the access-time the file has new mail. Many MUAs place a Status: header in each message to indicate which messages have already been read.</p>
+    <span class="refentrytitle">stat</span>(2)</span>) of a nonempty mailbox file is greater than the access-time, the file has new mail. Many MUAs place a Status: header in each message to indicate which messages have already been read.</p>
   </div>
   <div class="refsect1">
     <a id="locking"></a>
