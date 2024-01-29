@@ -459,7 +459,7 @@ set record = "+sent_on_$HOSTNAME"
           </span>per configuration file.</p>
         </li>
         <li class="listitem">
-          <p>Because NeoMutt first recodes a line before it attempts to parse it, a conversion introducing question marks or other characters as part of errors (unconvertable characters, transliteration) may introduce syntax errors or silently change the meaning of certain tokens (e.g. inserting question marks into regular expressions).</p>
+          <p>Because NeoMutt first recodes a line before it attempts to parse it, a conversion introducing question marks or other characters as part of errors (unconvertible characters, transliteration) may introduce syntax errors or silently change the meaning of certain tokens (e.g. inserting question marks into regular expressions).</p>
         </li>
       </ul>
     </div>
@@ -3096,10 +3096,10 @@ subscribe [0-9]+.*@bugs.debian.org
     <code class="literal">-nolabel</code> argument. If unspecified, an existing mailbox label will be unchanged.</p>
     <p>Use
     <code class="literal">-nonotify</code> to disable notifying when new mail arrives. The
-    <code class="literal">-notify</code> argument can be used to reenable notifying for an existing mailbox. If unspecified: a new mailbox will notify by default, while an existing mailbox will be unchanged.</p>
+    <code class="literal">-notify</code> argument can be used to re-enable notifying for an existing mailbox. If unspecified: a new mailbox will notify by default, while an existing mailbox will be unchanged.</p>
     <p>To disable polling, specify
     <code class="literal">-nopoll</code> before the mailbox name. The
-    <code class="literal">-poll</code> argument can be used to reenable polling for an existing mailbox. If unspecified: a new mailbox will poll by default, while an existing mailbox will be unchanged.</p>
+    <code class="literal">-poll</code> argument can be used to re-enable polling for an existing mailbox. If unspecified: a new mailbox will poll by default, while an existing mailbox will be unchanged.</p>
     <p>
     <span class="emphasis">
       <em>folder</em>
@@ -3302,8 +3302,8 @@ fcc-hook [@.]aol\\.com$ +spammers
         <pre class="screen">
 <span class="comment"># default: save all to ~/Mail/&lt;author name&gt;</span>
 save-hook . ~/Mail/%F
-<span class="comment"># save from me@turing.cs.hmc.edu and me@cs.hmc.edu to $folder/elkins</span>
-save-hook me@(turing\\.)?cs\\.hmc\\.edu$ +elkins
+<span class="comment"># save from john@turing.ox.ac.uk and john@ox.ac.uk to $folder/smith</span>
+save-hook john@(turing\\.)?ox\\.ac\\.uk$ +smith
 <span class="comment"># save from aol.com to $folder/spam</span>
 save-hook aol\\.com$ +spam
 </pre>

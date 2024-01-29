@@ -13,108 +13,355 @@ description: The NeoMutt Mail User Agent (MUA)
   <div class="refsect1">
     <a id="syntax"></a>
     <h2>SYNTAX</h2>
-    <p>neomutt [-Enx] [-e command] [-F config] [-H draft] [-i include]</p>
-    <p>[-b address] [-c address] [-s subject] [ 
+    <p>neomutt [ 
     <span class="strong">
-      <strong>-a</strong>
+      <strong>-Enx</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-H&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>draft</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-i&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>include</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-b&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>address</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-c&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>address</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-s&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>subject</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-a&#160;</strong>
     </span>
     <span class="emphasis">
       <em>file</em>
-    </span>[ 
-    <span class="emphasis">
-      <em>. . .</em>
-    </span>] 
+    </span>]&#160;. . . [ 
     <span class="strong">
       <strong>--</strong>
     </span>] 
     <span class="emphasis">
       <em>address</em>
-    </span>[ 
-    <span class="emphasis">
-      <em>. . .</em>
-    </span>] neomutt [-nx] [-e command] [-F config] [-b address] [-c address]</p>
-    <p>[-s subject] [ 
+    </span>&#160;. . . neomutt [ 
     <span class="strong">
-      <strong>-a</strong>
+      <strong>-nx</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-b&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>address</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-c&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>address</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-s&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>subject</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-a&#160;</strong>
     </span>
     <span class="emphasis">
       <em>file</em>
-    </span>[ 
-    <span class="emphasis">
-      <em>. . .</em>
-    </span>] 
+    </span>]&#160;. . . [ 
     <span class="strong">
       <strong>--</strong>
     </span>] 
     <span class="emphasis">
       <em>address</em>
-    </span>[ 
-    <span class="emphasis">
-      <em>. . .</em>
-    </span>] &lt; message neomutt [-nRy] [-e command] [-F config] [-f mailbox] [-m type] neomutt [-n] [-e command] [-F config] 
+    </span>&#160;. . . 
     <span class="strong">
-      <strong>-A</strong>
+      <strong>&lt;&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>message</em>
+    </span>neomutt [ 
+    <span class="strong">
+      <strong>-nRy</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-f&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>mailbox</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-m&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>type</em>
+    </span>] neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
+    <span class="strong">
+      <strong>-A&#160;</strong>
     </span>
     <span class="emphasis">
       <em>alias</em>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
     <span class="strong">
       <strong>-B</strong>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
     <span class="strong">
       <strong>-D</strong>
     </span>[ 
     <span class="strong">
       <strong>-S</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-O</strong>
+    </span>] neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
     </span>] 
     <span class="strong">
-      <strong>[</strong>
-    </span>-O 
-    <span class="strong">
-      <strong>]</strong>
-    </span>neomutt [-n] [-e command] [-F config] 
-    <span class="strong">
-      <strong>-d</strong>
+      <strong>-d&#160;</strong>
     </span>
     <span class="emphasis">
       <em>level</em>
     </span>
     <span class="strong">
-      <strong>-l</strong>
+      <strong>-l&#160;</strong>
     </span>
     <span class="emphasis">
       <em>file</em>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
     <span class="strong">
       <strong>-G</strong>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
     <span class="strong">
-      <strong>-g</strong>
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
+    <span class="strong">
+      <strong>-g&#160;</strong>
     </span>
     <span class="emphasis">
       <em>server</em>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
     <span class="strong">
       <strong>-p</strong>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
     <span class="strong">
-      <strong>-Q</strong>
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
     </span>
     <span class="emphasis">
-      <em>variable [</em>
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
     </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
+    <span class="strong">
+      <strong>-Q&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>variable</em>
+    </span>[ 
     <span class="strong">
       <strong>-O</strong>
+    </span>] neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
     </span>
     <span class="emphasis">
-      <em>]</em>
-    </span>neomutt [-n] [-e command] [-F config] 
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
     <span class="strong">
       <strong>-Z</strong>
-    </span>neomutt [-n] [-e command] [-F config] 
+    </span>neomutt [ 
+    <span class="strong">
+      <strong>-n</strong>
+    </span>] [ 
+    <span class="strong">
+      <strong>-e&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>command</em>
+    </span>] [ 
+    <span class="strong">
+      <strong>-F&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>config</em>
+    </span>] 
     <span class="strong">
       <strong>-z</strong>
-    </span>[-f mailbox] neomutt 
+    </span>[ 
+    <span class="strong">
+      <strong>-f&#160;</strong>
+    </span>
+    <span class="emphasis">
+      <em>mailbox</em>
+    </span>] neomutt 
     <span class="strong">
       <strong>-v</strong>
     </span>[ 
@@ -130,7 +377,9 @@ description: The NeoMutt Mail User Agent (MUA)
     <span class="strong">
       <strong>Note:</strong>
     </span>This manual page gives a brief overview of NeoMutt's command line options. You should find a copy of the full manual in 
-    <code class="filename">/usr/share/doc/neomutt</code>, in plain text, HTML, and/or PDF format.</p>
+    <span class="emphasis">
+      <em>@MAN_DOCDIR@</em>
+    </span>, in plain text, HTML, and/or PDF format.</p>
   </div>
   <div class="refsect1">
     <a id="options"></a>
@@ -238,6 +487,33 @@ description: The NeoMutt Mail User Agent (MUA)
         </dt>
         <dd>
           <p>Specify a blind carbon copy (Bcc) recipient</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-C</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>Enable cryptographic operations in the cases in which they're disabled by default. Those include:</p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc;">
+                  <li class="listitem" style="list-style-type: disc">
+                    <p>Batch mode.</p>
+                  </li>
+                  <li class="listitem" style="list-style-type: disc">
+                    <p>Sending a postponed message.</p>
+                  </li>
+                  <li class="listitem" style="list-style-type: disc">
+                    <p>Resending a message.</p>
+                  </li>
+                </ul>
+              </div>
+            </blockquote>
+          </div>
         </dd>
         <dt>
           <span class="term">
@@ -706,8 +982,12 @@ description: The NeoMutt Mail User Agent (MUA)
           <span class="emphasis">
             <em>$HOME/.mailcap</em>
           </span>: 
-          <code class="filename">/usr/share/neomutt/mailcap</code>: 
-          <code class="filename">/etc/mailcap</code>: 
+          <span class="emphasis">
+            <em>@MAN_DATADIR@/mailcap</em>
+          </span>: 
+          <span class="emphasis">
+            <em>@MAN_SYSCONFDIR@/mailcap</em>
+          </span>: 
           <code class="filename">/etc/mailcap</code>: 
           <code class="filename">/usr/etc/mailcap</code>: 
           <code class="filename">/usr/local/etc/mailcap</code>" will be used instead.</p>
@@ -746,7 +1026,9 @@ description: The NeoMutt Mail User Agent (MUA)
         </dt>
         <dd>
           <p>Similar to configuration variable $news_server, specifies the domain name or address of the default NNTP server to connect. If unset, 
-          <code class="filename">/etc/nntpserver</code>is used but can be overridden by command line option 
+          <span class="emphasis">
+            <em>@MAN_SYSCONFDIR@/nntpserver</em>
+          </span>is used but can be overridden by command line option 
           <span class="strong">
             <strong>-g</strong>
           </span>.</p>
@@ -781,7 +1063,9 @@ description: The NeoMutt Mail User Agent (MUA)
         </dt>
         <dd>
           <p>Defines an absolute path corresponding to 
-          <code class="filename">/usr/share/locale</code>that will be recognised by GNU 
+          <span class="emphasis">
+            <em>@MAN_TEXTDOMAINDIR@</em>
+          </span>that will be recognised by GNU 
           <span class="citerefentry">
           <span class="refentrytitle">gettext</span>(1)</span>and used for Native Language Support (NLS) if enabled.</p>
         </dd>
@@ -901,12 +1185,12 @@ description: The NeoMutt Mail User Agent (MUA)
             </tr>
             <tr>
               <td align="right">3</td>
-              <td align="left">­/etc/neomuttrc</td>
+              <td align="left">­@MAN_SYSCONFDIR@/neomuttrc</td>
               <td align="left">­$XDG_CONFIG_HOME/mutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">4</td>
-              <td align="left">­/etc/Muttrc 
+              <td align="left">­@MAN_SYSCONFDIR@/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
@@ -917,12 +1201,12 @@ description: The NeoMutt Mail User Agent (MUA)
             </tr>
             <tr>
               <td align="right">5</td>
-              <td align="left">­/usr/share/neomutt/neomuttrc</td>
+              <td align="left">­@MAN_DATADIR@/neomuttrc</td>
               <td align="left">­~/.neomutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">6</td>
-              <td align="left">­/usr/share/neomutt/Muttrc 
+              <td align="left">­@MAN_DATADIR@/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
@@ -993,7 +1277,9 @@ description: The NeoMutt Mail User Agent (MUA)
             <span class="term">
             <code class="filename">~/.mailcap</code>,</span>
             <span class="term">
-              <code class="filename">/etc/mailcap</code>
+              <span class="emphasis">
+                <em>@MAN_SYSCONFDIR@/mailcap</em>
+              </span>
             </span>
           </dt>
           <dd>
@@ -1020,9 +1306,13 @@ description: The NeoMutt Mail User Agent (MUA)
             <span class="term">
             <code class="filename">/etc/mime.types</code>,</span>
             <span class="term">
-            <code class="filename">/etc/mime.types</code>,</span>
+            <span class="emphasis">
+              <em>@MAN_SYSCONFDIR@/mime.types</em>
+            </span>,</span>
             <span class="term">
-            <code class="filename">/usr/share/neomutt/mime.types</code>,</span>
+            <span class="emphasis">
+              <em>@MAN_DATADIR@/mime.types</em>
+            </span>,</span>
             <span class="term">
               <code class="filename">~/.mime.types</code>
             </span>
@@ -1032,7 +1322,9 @@ description: The NeoMutt Mail User Agent (MUA)
           </dd>
           <dt>
             <span class="term">
-            <code class="filename">/usr/share/doc/neomutt/manual.</code>{ 
+            <span class="emphasis">
+              <em>@MAN_DOCDIR@/manual.</em>
+            </span>{ 
             <span class="emphasis">
               <em>html</em>
             </span>, 
@@ -1048,8 +1340,7 @@ description: The NeoMutt Mail User Agent (MUA)
           </dd>
           <dt>
             <span class="term">
-              <code class="filename">/tmp/neomutt-XXXX-XXXX-XXXX</code>
-            </span>
+            <code class="filename">/tmp/neomutt-</code>XXXX-XXXX-XXXX</span>
           </dt>
           <dd>
             <p>Temporary files created by NeoMutt. For custom locations look at description of the environment variable 
@@ -1122,7 +1413,7 @@ description: The NeoMutt Mail User Agent (MUA)
   <div class="refsect1">
     <a id="author"></a>
     <h2>AUTHOR</h2>
-    <p>Michael Elkins, and others. Use &lt;neomutt-devel@neomutt.org&gt; to contact the developers.</p>
+    <p>Richard Russon and friends. Use &lt;neomutt-devel@neomutt.org&gt; to contact the developers.</p>
   </div>
 </div>
 {% endraw %}

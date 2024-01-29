@@ -47,7 +47,6 @@ status: devel
       </div>
     </div>
     <p>This feature allows enabling message security in modes that don't enable it by default. Those include batch mode, sending a postponed message, and resending a message.</p>
-    <p></p>
     <p>This allows using NeoMutt as a driver for git-send-email(1), to send patches in signed and/or encrypted mail.</p>
   </div>
   <div class="sect1">
@@ -111,18 +110,7 @@ sendmailcmd = neomutt -C -H - &amp;&amp; true
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="known-bugs"></a>6.&#160;Known Bugs</h2>
-        </div>
-      </div>
-    </div>
-    <p>We were unable to test some corner cases regarding crypt-hook in combination with this feature. We tried to fall on the safe side, so NeoMutt may lock-up in a forever loop in some cases, to prevent sending messages with less security. If you are able to trigger one of those cases, please let us know.</p>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h2 class="title" style="clear: both">
-          <a id="credits"></a>7.&#160;Credits</h2>
+          <a id="credits"></a>6.&#160;Credits</h2>
         </div>
       </div>
     </div>
