@@ -2488,6 +2488,18 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
               <td>%s</td>
               <td>status flag (active/inactive)</td>
             </tr>
+            <tr>
+              <td>%&gt;X</td>
+              <td>right justify the rest of the string and pad with character "X"</td>
+            </tr>
+            <tr>
+              <td>%|X</td>
+              <td>pad to the end of the line with character "X"</td>
+            </tr>
+            <tr>
+              <td>%*X</td>
+              <td>soft-fill with character "X" as pad</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -4460,6 +4472,11 @@ sh -c 'string'
           </colgroup>
           <tbody>
             <tr>
+              <td>%a</td>
+              <td></td>
+              <td>Alert: 1 if user is notified of new mail</td>
+            </tr>
+            <tr>
               <td>%C</td>
               <td></td>
               <td>Current file number</td>
@@ -4515,6 +4532,11 @@ sh -c 'string'
               <td>%N</td>
               <td></td>
               <td>"N" if mailbox has new mail, " " (space) otherwise</td>
+            </tr>
+            <tr>
+              <td>%p</td>
+              <td></td>
+              <td>Poll: 1 if Mailbox is checked for new mail</td>
             </tr>
             <tr>
               <td>%s</td>
@@ -5044,6 +5066,10 @@ sh -c 'string'
           </colgroup>
           <tbody>
             <tr>
+              <td>%a</td>
+              <td>Alert: 1 if user is notified of new mail</td>
+            </tr>
+            <tr>
               <td>%C</td>
               <td>Current newsgroup number</td>
             </tr>
@@ -5068,6 +5094,10 @@ sh -c 'string'
               <td>Number of new articles in newsgroup</td>
             </tr>
             <tr>
+              <td>%p</td>
+              <td>Poll: 1 if Mailbox is checked for new mail</td>
+            </tr>
+            <tr>
               <td>%s</td>
               <td>Number of unread articles in newsgroup</td>
             </tr>
@@ -5078,6 +5108,10 @@ sh -c 'string'
             <tr>
               <td>%|X</td>
               <td>Pad to the end of the line with character "X"</td>
+            </tr>
+            <tr>
+              <td>%*X</td>
+              <td>Soft-fill with character "X" as pad</td>
             </tr>
           </tbody>
         </table>
@@ -5481,6 +5515,18 @@ sh -c 'string'
             <tr>
               <td>%s</td>
               <td>History match</td>
+            </tr>
+            <tr>
+              <td>%&gt;X</td>
+              <td>right justify the rest of the string and pad with character "X"</td>
+            </tr>
+            <tr>
+              <td>%|X</td>
+              <td>pad to the end of the line with character "X"</td>
+            </tr>
+            <tr>
+              <td>%*X</td>
+              <td>soft-fill with character "X" as pad</td>
             </tr>
           </tbody>
         </table>
@@ -6250,13 +6296,13 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>Same as %K</td>
             </tr>
             <tr>
-              <td>%C</td>
-              <td>Current message number</td>
-            </tr>
-            <tr>
               <td>%c</td>
               <td>Number of characters (bytes) in the body of the message (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
+            </tr>
+            <tr>
+              <td>%C</td>
+              <td>Current message number</td>
             </tr>
             <tr>
               <td>%cr</td>
@@ -6264,15 +6310,15 @@ set imap_authenticators="gssapi:cram-md5:login"
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%D</td>
-              <td>Date and time of message using
-              <a class="link" href="#date-format" title="3.97.&#160;date_format">date_format</a> and local timezone It is encouraged to use "%[fmt]" instead, where "fmt" is the value of
-              <a class="link" href="#date-format" title="3.97.&#160;date_format">$date_format</a>.</td>
-            </tr>
-            <tr>
               <td>%d</td>
               <td>Date and time of message using
               <a class="link" href="#date-format" title="3.97.&#160;date_format">date_format</a> and sender's timezone It is encouraged to use "%{fmt}" instead, where "fmt" is the value of
+              <a class="link" href="#date-format" title="3.97.&#160;date_format">$date_format</a>.</td>
+            </tr>
+            <tr>
+              <td>%D</td>
+              <td>Date and time of message using
+              <a class="link" href="#date-format" title="3.97.&#160;date_format">date_format</a> and local timezone It is encouraged to use "%[fmt]" instead, where "fmt" is the value of
               <a class="link" href="#date-format" title="3.97.&#160;date_format">$date_format</a>.</td>
             </tr>
             <tr>
@@ -6284,20 +6330,16 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>Number of messages in current thread</td>
             </tr>
             <tr>
+              <td>%f</td>
+              <td>Sender (address + real name), either From: or Return-Path:</td>
+            </tr>
+            <tr>
               <td>%F</td>
               <td>Author name, or recipient name if the message is from you</td>
             </tr>
             <tr>
               <td>%Fp</td>
               <td>Like %F, but plain. No contextual formatting is applied to recipient name</td>
-            </tr>
-            <tr>
-              <td>%f</td>
-              <td>Sender (address + real name), either From: or Return-Path:</td>
-            </tr>
-            <tr>
-              <td>%g</td>
-              <td>Newsgroup name (if compiled with NNTP support)</td>
             </tr>
             <tr>
               <td>%g</td>
@@ -6312,12 +6354,12 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>Spam attribute(s) of this message</td>
             </tr>
             <tr>
-              <td>%I</td>
-              <td>Initials of author</td>
-            </tr>
-            <tr>
               <td>%i</td>
               <td>Message-id of the current message</td>
+            </tr>
+            <tr>
+              <td>%I</td>
+              <td>Initials of author</td>
             </tr>
             <tr>
               <td>%J</td>
@@ -6328,29 +6370,29 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>The list to which the letter was sent (if any; otherwise: empty)</td>
             </tr>
             <tr>
-              <td>%L</td>
-              <td>If an address in the "To:" or "Cc:" header field matches an address Defined by the user's "
-              <a class="link" href="configuration.html#subscribe">subscribe</a>" command, this displays "To &lt;list-name&gt;", otherwise the same as %F</td>
-            </tr>
-            <tr>
               <td>%l</td>
               <td>number of lines in the unprocessed message (may not work with maildir, mh, and IMAP folders)</td>
             </tr>
             <tr>
-              <td>%M</td>
-              <td>Number of hidden messages if the thread is collapsed</td>
+              <td>%L</td>
+              <td>If an address in the "To:" or "Cc:" header field matches an address Defined by the user's "
+              <a class="link" href="configuration.html#subscribe">subscribe</a>" command, this displays "To &lt;list-name&gt;", otherwise the same as %F</td>
             </tr>
             <tr>
               <td>%m</td>
               <td>Total number of message in the mailbox</td>
             </tr>
             <tr>
-              <td>%N</td>
-              <td>Message score</td>
+              <td>%M</td>
+              <td>Number of hidden messages if the thread is collapsed</td>
             </tr>
             <tr>
               <td>%n</td>
               <td>Author's real name (or address if missing)</td>
+            </tr>
+            <tr>
+              <td>%N</td>
+              <td>Message score</td>
             </tr>
             <tr>
               <td>%O</td>
@@ -6365,29 +6407,29 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>Newsgroup name (if compiled with NNTP support)</td>
             </tr>
             <tr>
-              <td>%R</td>
-              <td>Comma separated list of "Cc:" recipients</td>
-            </tr>
-            <tr>
               <td>%r</td>
               <td>Comma separated list of "To:" recipients</td>
             </tr>
             <tr>
-              <td>%S</td>
-              <td>Single character status of the message ("N"/"O"/"D"/"d"/"!"/"r"/"*")</td>
+              <td>%R</td>
+              <td>Comma separated list of "Cc:" recipients</td>
             </tr>
             <tr>
               <td>%s</td>
               <td>Subject of the message</td>
             </tr>
             <tr>
-              <td>%T</td>
-              <td>The appropriate character from the
-              <a class="link" href="#to-chars" title="3.512.&#160;to_chars">$to_chars</a> string</td>
+              <td>%S</td>
+              <td>Single character status of the message ("N"/"O"/"D"/"d"/"!"/"r"/"*")</td>
             </tr>
             <tr>
               <td>%t</td>
               <td>"To:" field (recipients)</td>
+            </tr>
+            <tr>
+              <td>%T</td>
+              <td>The appropriate character from the
+              <a class="link" href="#to-chars" title="3.512.&#160;to_chars">$to_chars</a> string</td>
             </tr>
             <tr>
               <td>%u</td>
@@ -6411,6 +6453,10 @@ set imap_authenticators="gssapi:cram-md5:login"
               <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">attachments</a>" section for possible speed effects)</td>
             </tr>
             <tr>
+              <td>%y</td>
+              <td>"X-Label:" field, if present</td>
+            </tr>
+            <tr>
               <td>%Y</td>
               <td>"X-Label:" field, if present, and
               <span class="emphasis">
@@ -6422,10 +6468,6 @@ set imap_authenticators="gssapi:cram-md5:login"
               <span class="emphasis">
                 <em>(3)</em>
               </span>"X-Label:" is different from Preceding message's "X-Label:"</td>
-            </tr>
-            <tr>
-              <td>%y</td>
-              <td>"X-Label:" field, if present</td>
             </tr>
             <tr>
               <td>%Z</td>
@@ -8258,6 +8300,18 @@ set nntp_authenticators="digest-md5:user"
               <td>%n</td>
               <td>index number</td>
             </tr>
+            <tr>
+              <td>%&gt;X</td>
+              <td>right justify the rest of the string and pad with character "X"</td>
+            </tr>
+            <tr>
+              <td>%|X</td>
+              <td>pad to the end of the line with character "X"</td>
+            </tr>
+            <tr>
+              <td>%*X</td>
+              <td>soft-fill with character "X" as pad</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -8698,6 +8752,18 @@ set nntp_authenticators="digest-md5:user"
               <td>%[&lt;s&gt;]</td>
               <td>Date of the key where &lt;s&gt; is an
               <code class="literal">strftime(3)</code> expression</td>
+            </tr>
+            <tr>
+              <td>%&gt;X</td>
+              <td>Right justify the rest of the string and pad with character "X"</td>
+            </tr>
+            <tr>
+              <td>%|X</td>
+              <td>Pad to the end of the line with character "X"</td>
+            </tr>
+            <tr>
+              <td>%*X</td>
+              <td>Soft-fill with character "X" as pad</td>
             </tr>
           </tbody>
         </table>
@@ -10990,6 +11056,11 @@ set sidebar_delim_chars='.'
           </colgroup>
           <tbody>
             <tr>
+              <td>%a</td>
+              <td></td>
+              <td>Alert: 1 if user is notified of new mail</td>
+            </tr>
+            <tr>
               <td>%B</td>
               <td></td>
               <td>Name of the mailbox</td>
@@ -11028,6 +11099,11 @@ set sidebar_delim_chars='.'
               <td>%o</td>
               <td>*</td>
               <td>Number of old messages in the mailbox (unread, seen)</td>
+            </tr>
+            <tr>
+              <td>%p</td>
+              <td></td>
+              <td>Poll: 1 if Mailbox is checked for new mail</td>
             </tr>
             <tr>
               <td>%r</td>
@@ -11691,35 +11767,12 @@ set sidebar_delim_chars='.'
           </colgroup>
           <tbody>
             <tr>
-              <td>%f</td>
-              <td>Expands to the name of a file containing a message.</td>
-            </tr>
-            <tr>
-              <td>%s</td>
-              <td>Expands to the name of a file containing the signature part of a
-              <code class="literal">multipart/signed</code> attachment when verifying it.</td>
-            </tr>
-            <tr>
-              <td>%k</td>
-              <td>The key-pair specified with
-              <a class="link" href="#smime-default-key" title="3.449.&#160;smime_default_key">$smime_default_key</a></td>
-            </tr>
-            <tr>
-              <td>%i</td>
-              <td>Intermediate certificates</td>
-            </tr>
-            <tr>
-              <td>%c</td>
-              <td>One or more certificate IDs.</td>
-            </tr>
-            <tr>
               <td>%a</td>
               <td>The algorithm used for encryption.</td>
             </tr>
             <tr>
-              <td>%d</td>
-              <td>The message digest algorithm specified with
-              <a class="link" href="#smime-sign-digest-alg" title="3.464.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
+              <td>%c</td>
+              <td>One or more certificate IDs.</td>
             </tr>
             <tr>
               <td>%C</td>
@@ -11727,6 +11780,29 @@ set sidebar_delim_chars='.'
               <a class="link" href="#smime-ca-location" title="3.445.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file, this expands to "-CApath
               <a class="link" href="#smime-ca-location" title="3.445.&#160;smime_ca_location">$smime_ca_location</a>" or "-CAfile
               <a class="link" href="#smime-ca-location" title="3.445.&#160;smime_ca_location">$smime_ca_location</a>".</td>
+            </tr>
+            <tr>
+              <td>%d</td>
+              <td>The message digest algorithm specified with
+              <a class="link" href="#smime-sign-digest-alg" title="3.464.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
+            </tr>
+            <tr>
+              <td>%f</td>
+              <td>Expands to the name of a file containing a message.</td>
+            </tr>
+            <tr>
+              <td>%i</td>
+              <td>Intermediate certificates</td>
+            </tr>
+            <tr>
+              <td>%k</td>
+              <td>The key-pair specified with
+              <a class="link" href="#smime-default-key" title="3.449.&#160;smime_default_key">$smime_default_key</a></td>
+            </tr>
+            <tr>
+              <td>%s</td>
+              <td>Expands to the name of a file containing the signature part of a
+              <code class="literal">multipart/signed</code> attachment when verifying it.</td>
             </tr>
           </tbody>
         </table>
