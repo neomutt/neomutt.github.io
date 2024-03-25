@@ -34,6 +34,7 @@ You may also be interested in:
     <td><a href="https://github.com/igor47/"><img width="96" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td><a href="https://github.com/veebch/"><img width="96" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
     <td><a href="https://github.com/kmARC/"><img width="96" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
+    <td><a href="https://github.com/Yutsuten"><img width="96" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
   </tr>
   <tr>
     <td>
@@ -54,11 +55,14 @@ You may also be interested in:
     <td>
       Mark&nbsp;Korondi<br>(@kmARC)
     </td>
+    <td>
+      Mateus&nbsp;Etto<br>(@yutsuten)
+    </td>
   </tr>
 </table>
 
-- Patrick Koetter (@patrickbenkoetter)
 - Robert Labudda
+- Patrick Koetter (@patrickbenkoetter)
 - Aboudoulaye Yatera
 - Sebastian Kowalczyk
 - 海老根蓉也
