@@ -43,6 +43,12 @@ config/set.c:706: warning: Function 'cs_str_string_get' is unused
 [...]
 ```
 
+**Note**: Some platforms may need an extra parameter to locate headers such as `stdbool.h`
+
+```sh
+xunused -extra-arg=-I/usr/lib/clang/17/include compile_commands.json
+```
+
 ### Excluding test code
 
 To find functions that are only used by tests but not any other code we need to exclude our test code.
