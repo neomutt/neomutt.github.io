@@ -2629,7 +2629,8 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
       <a class="link" href="reference.html#timeout" title="3.509.&#160;timeout">$timeout</a>), NeoMutt periodically checks for new mail in all folders which have been configured via the
       <span class="command">
         <strong>mailboxes</strong>
-      </span>command. The interval depends on the folder type: for local/IMAP folders it consults
+      </span>command (excepting those specified with the
+      <code class="literal">-nopoll</code> flag). The interval depends on the folder type: for local/IMAP folders it consults
       <a class="link" href="reference.html#mail-check" title="3.213.&#160;mail_check">$mail_check</a> and
       <a class="link" href="reference.html#pop-check-interval" title="3.349.&#160;pop_check_interval">$pop_check_interval</a> for POP folders.</p>
       <p>Outside the index menu the directory browser supports checking for new mail using the
@@ -2665,7 +2666,8 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
         <span class="command">
           <strong>mailboxes</strong>
         </span>
-      </a>command. Dependent on
+      </a>command (excepting those specified with the
+      <code class="literal">-nopoll</code> flag). Dependent on
       <a class="link" href="#mailbox-formats" title="9.&#160;Mailbox Formats">mailbox format</a> also added
       <span class="emphasis">
         <em>old</em>
@@ -2701,7 +2703,7 @@ mailboxes `find ~/.mail/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g'
       <a class="link" href="reference.html#mail-check-stats" title="3.215.&#160;mail_check_stats">$mail_check_stats</a> is set, NeoMutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
       <span class="command">
         <strong>mailboxes</strong>
-      </span>command. This calculation takes place at the same time as new mail polling, but is controlled by a separate timer:
+      </span>command. (Note: IMAP mailboxes only support unread and total counts). This calculation takes place at the same time as new mail polling, but is controlled by a separate timer:
       <a class="link" href="reference.html#mail-check-stats-interval" title="3.216.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>.</p>
       <p>The sidebar can display these message counts. See
       <a class="link" href="reference.html#sidebar-format" title="3.422.&#160;sidebar_format">$sidebar_format</a>.</p>

@@ -917,7 +917,10 @@ alternative_order text/enriched text/plain text application/postscript image/*
             </a>, and use that.</p>
           </li>
           <li class="listitem">
-            <p>Failing that, NeoMutt will look for any text type.</p>
+            <p>Failing that, NeoMutt will look first for
+            <code class="literal">text/enriched</code>, followed by
+            <code class="literal">text/plain</code>, and finally
+            <code class="literal">text/html</code>.</p>
           </li>
           <li class="listitem">
             <p>As a last attempt, NeoMutt will look for any type it knows how to handle.</p>

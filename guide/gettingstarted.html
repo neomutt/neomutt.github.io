@@ -1351,6 +1351,9 @@ bind editor &lt;delete&gt; backspace
             <p>shell commands</p>
           </li>
           <li class="listitem">
+            <p>mailboxes</p>
+          </li>
+          <li class="listitem">
             <p>filenames</p>
           </li>
           <li class="listitem">
@@ -3227,7 +3230,9 @@ bind editor &lt;delete&gt; backspace
     <code class="literal">&lt;forward&gt;</code> function bound to
     <span class="quote">“<span class="quote">b</span>”</span> and
     <span class="quote">“<span class="quote">f</span>”</span> respectively.</p>
-    <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines) or including it as a MIME attachment, depending on the value of the
+    <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines: see
+    <a class="link" href="reference.html#forward-attribution-intro" title="3.134.&#160;forward_attribution_intro">$forward_attribution_intro</a> and
+    <a class="link" href="reference.html#forward-attribution-trailer" title="3.135.&#160;forward_attribution_trailer">$forward_attribution_trailer</a>) or including it as a MIME attachment, depending on the value of the
     <a class="link" href="reference.html#mime-forward" title="3.244.&#160;mime_forward">$mime_forward</a> variable. Decoding of attachments, like in the pager, can be controlled by the
     <a class="link" href="reference.html#forward-decode" title="3.136.&#160;forward_decode">$forward_decode</a> and
     <a class="link" href="reference.html#mime-forward-decode" title="3.245.&#160;mime_forward_decode">$mime_forward_decode</a> variables, respectively. The desired forwarding format may depend on the content, therefore
@@ -3241,7 +3246,8 @@ bind editor &lt;delete&gt; backspace
     <a class="link" href="reference.html#forward-attachments" title="3.133.&#160;forward_attachments">$forward_attachments</a>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
     <a class="link" href="reference.html#weed" title="3.535.&#160;weed">$weed</a> variable, unless
-    <a class="link" href="reference.html#mime-forward" title="3.244.&#160;mime_forward">$mime_forward</a> is set.</p>
+    <a class="link" href="reference.html#mime-forward" title="3.244.&#160;mime_forward">$mime_forward</a> is set. The subject of the email is controlled by
+    <a class="link" href="reference.html#forward-format" title="3.139.&#160;forward_format">$forward_format</a>.</p>
     <p>By default a forwarded message does not reference the messages it contains. When
     <a class="link" href="reference.html#forward-references" title="3.141.&#160;forward_references">$forward_references</a> is set, a forwarded message includes the
     <span class="quote">“<span class="quote">In-Reply-To:</span>”</span> and

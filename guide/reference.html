@@ -322,7 +322,7 @@ neomutt -s "data set for run #2" professor@bigschool.edu &lt; ~/run2.dat
     <code class="literal">-i</code> will be used as the body of the message. When combined with
     <code class="literal">-E</code>, the include file will be directly edited during message composition. The file will be modified regardless of whether the message is sent or aborted.</p>
     <p>A draft file passed with
-    <code class="literal">-H</code> will be used as the initial header and body for the message. Multipart messages can be used as a draft file. When combined with
+    <code class="literal">-H</code> will be used as the initial header and body for the message. Multipart messages can be used as a draft file, and are processed the same in interactive and batch mode; they are not passed through untouched. For example, encrypted draft files will be decrypted. When combined with
     <code class="literal">-E</code>, the draft file will be updated to the final state of the message after composition, regardless of whether the message is sent, aborted, or even postponed. Note that if the message is sent encrypted or signed, the draft file will be saved that way too.</p>
     <p>All files passed with
     <code class="literal">-a</code>
@@ -6679,12 +6679,6 @@ set inews="/usr/local/bin/inews -hS"
       <span class="emphasis">
         <em>unset</em>
       </span>, NeoMutt will notify you if any new mail exists in the mailbox, regardless of whether you have visited it recently.</p>
-      <p>When
-      <span class="emphasis">
-        <em>
-          <a class="link" href="#mark-old" title="3.225.&#160;mark_old">$mark_old</a>
-        </em>
-      </span>is set, NeoMutt does not consider the mailbox to contain new mail if only old messages exist.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6702,7 +6696,8 @@ set inews="/usr/local/bin/inews -hS"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, NeoMutt will periodically calculate message statistics of a mailbox while polling for new mail. It will check for unread, flagged, and total message counts. Because this operation is more performance intensive, it defaults to
+      </span>, NeoMutt will periodically calculate message statistics of a mailbox while polling for new mail. It will check for unread, flagged, and total message counts. (Note: IMAP mailboxes only support unread and total counts).</p>
+      <p>Because this operation is more performance intensive, it defaults to
       <span class="emphasis">
         <em>unset</em>
       </span>, and has a separate option,
@@ -9482,7 +9477,7 @@ set pop_authenticators="digest-md5:apop:user"
         <em>set</em>
       </span>, NeoMutt will delete successfully downloaded messages from the POP server when using the
       <code class="literal">
-        <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
+        <a class="link" href="optionalfeatures.html#fetch-mail" title="3.2.&#160;Fetching mail from a POP3 server">&lt;fetch-mail&gt;</a>
       </code> function. When
       <span class="emphasis">
         <em>unset</em>
@@ -9503,7 +9498,7 @@ set pop_authenticators="digest-md5:apop:user"
       </div>
       <p>The name of your POP server for the
       <code class="literal">
-        <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
+        <a class="link" href="optionalfeatures.html#fetch-mail" title="3.2.&#160;Fetching mail from a POP3 server">&lt;fetch-mail&gt;</a>
       </code> function. You can also specify an alternative port, username and password, i.e.:</p>
       <pre class="screen">
 [pop[s]://][username[:password]@]popserver[:port]
@@ -9529,7 +9524,7 @@ set pop_authenticators="digest-md5:apop:user"
       </span>, NeoMutt will try to use the "
       <code class="literal">LAST</code> " POP command for retrieving only unread messages from the POP server when using the
       <code class="literal">
-        <a class="link" href="optionalfeatures.html#fetch-mail">&lt;fetch-mail&gt;</a>
+        <a class="link" href="optionalfeatures.html#fetch-mail" title="3.2.&#160;Fetching mail from a POP3 server">&lt;fetch-mail&gt;</a>
       </code> function.</p>
     </div>
     <div class="sect2">
@@ -10305,7 +10300,17 @@ set preferred_languages="en,fr,de"
           <code class="literal">^((re|aw|sv)(\[[0-9]+\])*:[&#160;\t]*)*</code>
         </span>”</span></p>
       </div>
-      <p>A regular expression used to recognize reply messages when threading and replying. The default value corresponds to the English "Re:", the German "Aw:" and the Swedish "Sv:".</p>
+      <p>A regular expression used to recognize reply messages when threading and replying. The default value corresponds to the standard Latin "Re:" prefix, the German "Aw:" or the Swedish "Sv:". You can add your own prefixes by swapping out or appending to that list. For example:
+      <code class="literal">"^(re|se)"</code> or
+      <code class="literal">"^(re|aw|se)"</code>.</p>
+      <p>The second parenthesized expression matches zero or more bracketed numbers following the prefix, such as
+      <code class="literal">"Re[1]: "</code>. The initial
+      <code class="literal">"\\["</code> means a literal left-bracket character. Note the backslash must be doubled when used inside a double quoted string in the neomuttrc.
+      <code class="literal">"[0-9]+"</code> means one or more numbers.
+      <code class="literal">"\\]"</code> means a literal right-bracket. Finally the whole parenthesized expression has a
+      <code class="literal">"*"</code> suffix, meaning it can occur zero or more times.</p>
+      <p>The last part matches a colon followed by an optional space or tab. Note
+      <code class="literal">"\t"</code> is converted to a literal tab inside a double quoted string. If you use a single quoted string, you would have to type an actual tab character, and would need to convert the double-backslashes to single backslashes.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-03-21, this was called $reply_regexp</div>
     </div>
@@ -10807,6 +10812,11 @@ From: abd30425@somewhere.net
       <a class="link" href="#use-envelope-from" title="3.525.&#160;use_envelope_from">$use_envelope_from</a>,
       <a class="link" href="#dsn-notify" title="3.105.&#160;dsn_notify">$dsn_notify</a>, or
       <a class="link" href="#dsn-return" title="3.106.&#160;dsn_return">$dsn_return</a> will be added before the delimiter.</p>
+      <p>
+      <span class="bold">
+        <strong>Note:</strong>
+      </span>This command is invoked differently from most other commands in NeoMutt. It is tokenized by space, and invoked directly via
+      <code class="literal">execvp(3)</code> with an array of arguments - so commands or arguments with spaces in them are not supported. The shell is not used to run the command, so shell quoting is also not supported.</p>
       <p>
       <span class="bold">
         <strong>See also:</strong>
@@ -11845,7 +11855,7 @@ set sidebar_delim_chars='.'
       <p>This is the default key-pair to use for S/MIME operations, and must be set to the keyid (the hash-value that OpenSSL generates) to work properly.</p>
       <p>It will be used for encryption (see
       <a class="link" href="#postpone-encrypt" title="3.362.&#160;postpone_encrypt">$postpone_encrypt</a> and
-      <a class="link" href="#smime-self-encrypt" title="3.460.&#160;smime_self_encrypt">$smime_self_encrypt</a>).</p>
+      <a class="link" href="#smime-self-encrypt" title="3.460.&#160;smime_self_encrypt">$smime_self_encrypt</a>). If GPGME is enabled, this is the key id displayed by gpgsm.</p>
       <p>It will be used for decryption unless
       <a class="link" href="#smime-decrypt-use-default-key" title="3.448.&#160;smime_decrypt_use_default_key">$smime_decrypt_use_default_key</a> is
       <span class="emphasis">
@@ -13663,10 +13673,10 @@ set tunnel="ssh -q mailhost.net /usr/local/libexec/imapd"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, NeoMutt will automatically uncollapse any collapsed thread that receives a new message. When
+      </span>, NeoMutt will automatically uncollapse any collapsed thread that receives a newly delivered message. When
       <span class="emphasis">
         <em>unset</em>
-      </span>, collapsed threads will remain collapsed. the presence of the new message will still affect index sorting, though.</p>
+      </span>, collapsed threads will remain collapsed. The presence of the newly delivered message will still affect index sorting, though.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">

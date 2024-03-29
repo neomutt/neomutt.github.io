@@ -80,8 +80,11 @@ mailto:joe@host?Attach=~/.gnupg/secring.gpg
       <p>will send out the user's private gnupg keyring to
       <code class="literal">joe@host</code> if the user doesn't follow the information on screen carefully enough.</p>
       <p>To prevent these issues, NeoMutt by default only accepts the
-      <code class="literal">Subject</code> and
-      <code class="literal">Body</code> headers. Allowed headers can be adjusted with the
+      <code class="literal">Subject</code>,
+      <code class="literal">Body</code>,
+      <code class="literal">Cc</code>,
+      <code class="literal">In-Reply-To</code>, and
+      <code class="literal">References</code> headers. Allowed headers can be adjusted with the
       <a class="link" href="configuration.html#mailto-allow" title="31.&#160;Control allowed header fields in a mailto: URL">
         <span class="command">
           <strong>mailto_allow</strong>

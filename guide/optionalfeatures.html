@@ -188,21 +188,64 @@ smtp://user@host:587/
     <code class="literal">pop</code> protocol for unencrypted and
     <code class="literal">pops</code> for encrypted communication, see
     <a class="xref" href="#url-syntax" title="1.2.&#160;URL Syntax">Section&#160;1.2, “URL Syntax”</a> for details.</p>
-    <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which NeoMutt will check for mail remotely can be controlled by the
-    <a class="link" href="reference.html#pop-check-interval" title="3.349.&#160;pop_check_interval">$pop_check_interval</a> variable, which defaults to every 60 seconds.</p>
-    <p>POP is read-only which doesn't allow for some features like editing messages or changing flags. However, using
-    <a class="xref" href="#header-caching" title="8.1.&#160;Header Caching">Section&#160;8.1, “Header Caching”</a> and
-    <a class="xref" href="#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a> NeoMutt simulates the new/old/read flags as well as flagged and replied. NeoMutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP server (either by NeoMutt or other tools).</p>
-    <a id="fetch-mail"></a>
-    <p>Another way to access your POP3 mail is the
-    <code class="literal">&lt;fetch-mail&gt;</code> function (default: G). It allows to connect to
-    <a class="link" href="reference.html#pop-host" title="3.352.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
-    <a class="link" href="reference.html#spool-file" title="3.480.&#160;spool_file">$spool_file</a>. After this point, NeoMutt runs exactly as if the mail had always been local.</p>
-    <div class="note">
-      <h3 class="title">Note</h3>
-      <p>If you only need to fetch all messages to a local mailbox you should consider using a specialized program, such as
-      <code class="literal">fetchmail(1)</code>,
-      <code class="literal">getmail(1)</code> or similar.</p>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="pop-mailbox"></a>3.1.&#160;Remote POP3 mailboxes</h3>
+          </div>
+        </div>
+      </div>
+      <p>Polling for new mail is more expensive over POP3 than locally. For this reason the frequency at which NeoMutt will check for mail remotely can be controlled by the
+      <a class="link" href="reference.html#pop-check-interval" title="3.349.&#160;pop_check_interval">$pop_check_interval</a> variable, which defaults to every 60 seconds.</p>
+      <p>Due to limitations in POP3, this method doesn't allow for some features such as editing messages, changing their flags or even deleting them. However, using
+      <a class="xref" href="#header-caching" title="8.1.&#160;Header Caching">Section&#160;8.1, “Header Caching”</a> and
+      <a class="xref" href="#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a>, NeoMutt simulates the new/old/read flags as well as flagged and replied. NeoMutt applies some logic on top of remote messages but cannot change them so that modifications of flags are lost when messages are downloaded from the POP3 server (either by NeoMutt or other tools).</p>
+      <pre class="screen">
+<span class="comment"># A sample configuration file for setting up a remote POP3 mailbox</span>
+
+<span class="comment"># If an SMTP password has been set, use this to set the same password for POP3.</span>
+set pop_pass=$smtp_pass
+
+<span class="comment"># Set the POP3 server and user</span>
+set pop_host="pops://user@example.com"
+
+<span class="comment"># Use the remote server as the mailbox</span>
+set folder=$pop_host
+set spool_file=+
+</pre>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="fetch-mail"></a>3.2.&#160;Fetching mail from a POP3 server</h3>
+          </div>
+        </div>
+      </div>
+      <p>Another way to access your POP3 mail is the
+      <code class="literal">&lt;fetch-mail&gt;</code> function (default: G). It allows to connect to
+      <a class="link" href="reference.html#pop-host" title="3.352.&#160;pop_host">$pop_host</a>, fetch all your new mail and place it in the local
+      <a class="link" href="reference.html#spool-file" title="3.480.&#160;spool_file">$spool_file</a>. After this point, NeoMutt runs exactly as if the mail had always been local. The
+      <code class="literal">&lt;fetch-mail&gt;</code> function will ask whether you want to delete the messages on the remote server, leaving only your local copies.</p>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>If you only need to fetch all messages to a local mailbox, you should consider using a specialized program, such as
+        <code class="literal">fetchmail(1)</code>,
+        <code class="literal">getmail(1)</code> or similar.</p>
+      </div>
+      <pre class="screen">
+<span class="comment"># A sample configuration file for fetching mail from a POP3 server</span>
+
+<span class="comment"># The spool file contains the local copies of your messages. If it doesn't</span>
+<span class="comment"># exist, initialize it as an empty file.</span>
+set spool_file="/home/user/.mailspool"
+
+<span class="comment"># The POP3 server and user from which to fetch messages</span>
+set pop_host="pops://user@example.com"
+</pre>
     </div>
   </div>
   <div class="sect1">
