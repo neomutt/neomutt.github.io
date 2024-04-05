@@ -35,6 +35,7 @@ You may also be interested in:
     <td><a href="https://github.com/veebch/"><img width="96" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
     <td><a href="https://github.com/kmARC/"><img width="96" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
     <td><a href="https://github.com/Yutsuten"><img width="96" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
+    <td><a href="https://github.com/lamons"><img width="96" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
   </tr>
   <tr>
     <td>
@@ -57,6 +58,9 @@ You may also be interested in:
     </td>
     <td>
       Mateus&nbsp;Etto<br>(@yutsuten)
+    </td>
+    <td>
+      J&nbsp;Sheng<br>(@lamons)
     </td>
   </tr>
 </table>
