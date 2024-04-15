@@ -67,7 +67,6 @@ You may also be interested in:
 
 - Robert Labudda
 - Patrick Koetter (@patrickbenkoetter)
-- Aboudoulaye Yatera
 - Sebastian Kowalczyk
 - 海老根蓉也
 - Reiko Kaps
