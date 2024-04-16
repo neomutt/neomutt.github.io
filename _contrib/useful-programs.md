@@ -57,6 +57,9 @@ See also: [external address queries](/guide/advancedusage.html#query).
 * [mates](https://github.com/pimutils/mates.rs) -- a very simple, highly
   extensible command line address book
 
+* [mutt_ldap_query.pl](https://github.com/namato/dotfiles/blob/e7ce282c8883dd1971356a0ea53c75b47105c8fa/scripts/ldap.pl) to query LDAP contacts (useful as a mutt `$query_tool`)
+* [mutt-ldap.py](https://github.com/Konfekt/mutt-ldap) to query LDAP contacts (useful as a mutt `$query_tool`)
+
 ## Tagging, filtering, searching
 
 * [afew](https://github.com/afewmail/afew) -- initial tagging script for
@@ -126,6 +129,7 @@ See also: [external address queries](/guide/advancedusage.html#query).
 
 * [mutt-ics](https://github.com/dmedvinsky/mutt-ics) -- simple viewer for .ics
   files in Mutt
+* [mutt-ical](https://github.com/Konfekt/mutt-ical) to reply to invitations (sent as .ics file)
 * [vcalendar-filter](https://github.com/terabyte/mutt-filters/blob/master/vcalendar-filter)
   to view calendar files (ics)
 * [mutt2khal](https://github.com/pimutils/khal/blob/master/misc/mutt2khal) for
@@ -170,9 +174,9 @@ See also: [external address queries](/guide/advancedusage.html#query).
 ## Vim Plugins
 
 - [vim-mutt-aliases](https://github.com/Konfekt/vim-mutt-aliases/) to complete mail aliases in Vim
-- [vim-mailquery](https://github.com/Konfekt/vim-mailquery) to complete mail addresses in your inbox in Vim
-- [vim-notmuch-address](https://github.com/adborden/vim-notmuch-address) -- to complete mail addresses in Vim
+- [mutt-query-complete.vim](https://github.com/Konfekt/mutt-query-complete.vim) to complete mail addresses provided by the mutt `$query_tool` in Vim such as`notmuch address` or [mutt-ldap.py](https://github.com/wberrier/mutt-ldap)
 - [vim-notmuch-addrlookup](https://github.com/Konfekt/vim-notmuch-addrlookup) to complete mail addresses indexed by [notmuch](https://notmuchmail.org).
+- [vim-notmuch-address](https://github.com/adborden/vim-notmuch-address) -- to complete mail addresses in Vim
 
 
 ## Setup
