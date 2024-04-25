@@ -12,9 +12,9 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 37 or before | Unsupported, please upgrade |
-| 38           | Supported                   |
+| 38 or before | Unsupported, please upgrade |
 | 39           | Supported                   |
+| 40           | Supported                   |
 | Rawhide      | Supported                   |
 
 ## Installation <a id="install"></a>
@@ -24,17 +24,6 @@ The commands should be run as root, or prefixed with `sudo`.
 
 ```
 dnf install neomutt
-```
-
-You may be asked to install a GPG key for the extra packages.
-Say **yes**.  This step only has to be done once -- for the first install.
-
-```reply
-Importing GPG key 0xEB10B464:
- Userid     : "Fedora (38) <fedora-38-primary@fedoraproject.org>"
- Fingerprint: 6A51 BBAB BA3D 5467 B617 1221 809A 8D7C EB10 B464
- From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-38-x86_64
-Is this ok [y/N]:
 ```
 
 Well done! You've just installed NeoMutt.
