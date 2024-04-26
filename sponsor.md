@@ -28,44 +28,26 @@ You may also be interested in:
 
 <table>
   <tr>
-    <td><a href="https://github.com/jindraj/"><img width="96" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
-    <td><a href="https://github.com/scottkosty/"><img width="96" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
-    <td><a href="https://github.com/4nd3r/"><img width="96" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
-    <td><a href="https://github.com/igor47/"><img width="96" src="https://avatars.githubusercontent.com/u/200575"></a></td>
-    <td><a href="https://github.com/veebch/"><img width="96" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
-    <td><a href="https://github.com/kmARC/"><img width="96" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
-    <td><a href="https://github.com/Yutsuten"><img width="96" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
-    <td><a href="https://github.com/lamons"><img width="96" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
-    <td><a href="https://github.com/tjex"><img width="96" src="https://avatars.githubusercontent.com/u/83029642"></a></td>
+    <td align="center"><a href="https://github.com/jindraj/"><img width="80" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
+    <td align="center"><a href="https://github.com/scottkosty/"><img width="80" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
+    <td align="center"><a href="https://github.com/4nd3r/"><img width="80" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
+    <td align="center"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
+    <td align="center"><a href="https://github.com/veebch/"><img width="80" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
+    <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
+    <td align="center"><a href="https://github.com/Yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
+    <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
+    <td align="center"><a href="https://github.com/tjex"><img width="80" src="https://avatars.githubusercontent.com/u/83029642"></a></td>
   </tr>
   <tr>
-    <td>
-      Jakub&nbsp;Jindra<br>(@jindraj)
-    </td>
-    <td>
-      Scott&nbsp;Kostyshak<br>(@scottkosty)
-    </td>
-    <td>
-      Ander&nbsp;Punnar<br>(@4nd3r)
-    </td>
-    <td>
-      Igor&nbsp;Serebryany<br>(@igor47)
-    </td>
-    <td>
-      Martin&nbsp;Spendiff<br>(@veebch)
-    </td>
-    <td>
-      Mark&nbsp;Korondi<br>(@kmARC)
-    </td>
-    <td>
-      Mateus&nbsp;Etto<br>(@yutsuten)
-    </td>
-    <td>
-      J&nbsp;Sheng<br>(@lamons)
-    </td>
-    <td>
-      Tillman&nbsp;Jex<br>(@tjex)
-    </td>
+    <td>Jakub&nbsp;Jindra<br>@jindraj</td>    
+    <td>Scott&nbsp;Kostyshak<br>@scottkosty</td> 
+    <td>Ander&nbsp;Punnar<br>@4nd3r</td>      
+    <td>Igor&nbsp;Serebryany<br>@igor47</td>     
+    <td>Martin&nbsp;Spendiff<br>@veebch</td>     
+    <td>Mark&nbsp;Korondi<br>@kmARC</td>      
+    <td>Mateus&nbsp;Etto<br>@yutsuten</td>   
+    <td>J&nbsp;Sheng<br>@lamons</td>     
+    <td>Tillman&nbsp;Jex<br>@tjex</td>       
   </tr>
 </table>
 
