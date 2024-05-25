@@ -1,0 +1,81 @@
+---
+title: 
+description: Show a block of encryption information about a message
+since: 2024-05-01
+status: stable
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/encryption-info"></a>Encryption information block</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Show a block of encryption information about a message</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2024-04-10</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>Gpgme</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>This feature shows a block of information that provides information about an encrypted message; mainly about its recipients. Here is an example of such a block:</p>
+    <pre class="screen">
+[-- Begin encryption information --]
+Recipient: RSA key, ID 00C14A7DBBDD521C
+Recipient: RSA key, ID 0000000000000000
+[-- End encryption information --]
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="usage"></a>3.&#160;Usage</h2>
+        </div>
+      </div>
+    </div>
+    <p>It's enabled by default. The variable to control it is
+    <code class="literal">crypt_encryption_info</code>.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>4.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Alejandro Colomar, Richard Russon, наб</p>
+  </div>
+</div>
+{% endraw %}
