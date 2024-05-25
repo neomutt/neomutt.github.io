@@ -34,7 +34,7 @@ title: Security Considerations
       </div>
     </div>
     <p>NeoMutt uses many temporary files for viewing messages, verifying digital signatures, etc. As long as being used, these files are visible by other users and maybe even readable in case of misconfiguration. Also, a different location for these files may be desired which can be changed via the
-    <a class="link" href="reference.html#tmp-dir" title="3.511.&#160;tmp_dir">$tmp_dir</a> variable.</p>
+    <a class="link" href="reference.html#tmp-dir" title="3.513.&#160;tmp_dir">$tmp_dir</a> variable.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -69,7 +69,7 @@ title: Security Considerations
       <p>As NeoMutt be can be set up to be the mail client to handle
       <code class="literal">mailto:</code> style links in websites, there're security considerations, too. Arbitrary header fields can be embedded in these links which could override existing header fields or attach arbitrary files using
       <a class="link" href="gettingstarted.html#attach-header" title="6.2.2.&#160;Attach: Pseudo Header">the Attach: pseudoheader</a>. This may be problematic if the
-      <a class="link" href="reference.html#edit-headers" title="3.110.&#160;edit_headers">$edit-headers</a> variable is
+      <a class="link" href="reference.html#edit-headers" title="3.112.&#160;edit_headers">$edit-headers</a> variable is
       <span class="emphasis">
         <em>unset</em>
       </span>, i.e. the user doesn't want to see header fields while editing the message and doesn't pay enough attention to the compose menu's listing of attachments.</p>
