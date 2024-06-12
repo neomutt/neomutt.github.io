@@ -53,7 +53,7 @@ You may also be interested in:
     <td>Mateus&nbsp;Etto<br>@yutsuten</td>   
     <td>J&nbsp;Sheng<br>@lamons</td>     
     <td>Tillman&nbsp;Jex<br>@tjex</td>       
-    <td>Peter&nbsp;Thurner<br>blunix (GmbH)</td>       
+    <td>Peter&nbsp;Thurner<br><a href="https://www.blunix.com/">blunix (GmbH)</a></td>       
   </tr>
 </table>
 
