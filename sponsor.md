@@ -46,7 +46,7 @@ You may also be interested in:
     <td align="center"><a href="https://github.com/Yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
     <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
     <td align="center"><a href="https://github.com/tjex"><img width="80" src="https://avatars.githubusercontent.com/u/83029642"></a></td>
-    <td align="center"><a href="https://www.blunix.com/"><img width="80" src="https://github.com/flatcap/dummy/assets/76760/010f8114-a806-4b49-ae43-53da0e7e57ce"></a></td>
+    <td align="center"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
   </tr>
   <tr>
     <td>Mark&nbsp;Korondi<br>@kmARC</td>      
