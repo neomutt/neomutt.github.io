@@ -33,10 +33,6 @@ You may also be interested in:
     <td align="center"><a href="https://github.com/4nd3r/"><img width="80" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
     <td align="center"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td align="center"><a href="https://github.com/veebch/"><img width="80" src="https://avatars.githubusercontent.com/u/75116070"></a></td>
-    <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
-    <td align="center"><a href="https://github.com/Yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
-    <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
-    <td align="center"><a href="https://github.com/tjex"><img width="80" src="https://avatars.githubusercontent.com/u/83029642"></a></td>
   </tr>
   <tr>
     <td>Jakub&nbsp;Jindra<br>@jindraj</td>    
@@ -44,10 +40,20 @@ You may also be interested in:
     <td>Ander&nbsp;Punnar<br>@4nd3r</td>      
     <td>Igor&nbsp;Serebryany<br>@igor47</td>     
     <td>Martin&nbsp;Spendiff<br>@veebch</td>     
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
+    <td align="center"><a href="https://github.com/Yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
+    <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
+    <td align="center"><a href="https://github.com/tjex"><img width="80" src="https://avatars.githubusercontent.com/u/83029642"></a></td>
+    <td align="center"><a href="https://www.blunix.com/"><img width="80" src="https://github.com/flatcap/dummy/assets/76760/010f8114-a806-4b49-ae43-53da0e7e57ce"></a></td>
+  </tr>
+  <tr>
     <td>Mark&nbsp;Korondi<br>@kmARC</td>      
     <td>Mateus&nbsp;Etto<br>@yutsuten</td>   
     <td>J&nbsp;Sheng<br>@lamons</td>     
     <td>Tillman&nbsp;Jex<br>@tjex</td>       
+    <td>Peter&nbsp;Thurner<br>blunix (GmbH)</td>       
   </tr>
 </table>
 
