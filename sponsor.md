@@ -53,7 +53,7 @@ You may also be interested in:
     <td>Mateus&nbsp;Etto<br>@yutsuten</td>   
     <td>J&nbsp;Sheng<br>@lamons</td>     
     <td>Tillman&nbsp;Jex<br>@tjex</td>       
-    <td>Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">A Linux support company from Berlin, Germany</a></td>       
+    <td>Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>       
   </tr>
 </table>
 
