@@ -2766,7 +2766,6 @@ bind editor &lt;delete&gt; backspace
       </div>
       <p>After exiting the compose menu via
       <code class="literal">&lt;send-message&gt;</code>, the message will be sent. If configured and enabled, this can happen via
-      <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">mixmaster</a> or
       <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
       <a class="link" href="reference.html#sendmail" title="3.415.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 2019-11-29, NeoMutt enabled
       <a class="link" href="reference.html#write-bcc" title="3.542.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
@@ -2934,27 +2933,6 @@ bind editor &lt;delete&gt; backspace
           <em>In-Reply-To:</em>
         </span>header in your editor. Otherwise, though you'll produce a technically valid reply, some netiquette guardians will be annoyed by this so-called
         <span class="quote">“<span class="quote">thread hijacking</span>”</span>.</p>
-      </div>
-      <div class="sect3">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h4 class="title">
-              <a id="mutt-mix-header"></a>6.2.6.&#160;Mutt-Mix: Pseudo Header</h4>
-            </div>
-          </div>
-        </div>
-        <p>If you want to use
-        <a class="link" href="optionalfeatures.html#sending-mixmaster" title="9.&#160;Sending Anonymous Messages via Mixmaster">Mixmaster</a>, you can specify the chain via:</p>
-        <p>
-        <code class="literal">Mutt-Mix:</code> [
-        <span class="emphasis">
-          <em>remailer1</em>
-        </span>[
-        <span class="emphasis">
-          <em>remailer2</em>
-        </span>[ ... ] ] ]</p>
-        <p>The chain can later be changed in the mixmaster menu.</p>
       </div>
     </div>
     <div class="sect2">

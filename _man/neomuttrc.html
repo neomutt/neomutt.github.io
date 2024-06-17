@@ -560,9 +560,6 @@ description: Configuration file for the NeoMutt Mail User Agent (MUA)
         <strong>index</strong>
       </span>, 
       <span class="strong">
-        <strong>mix</strong>
-      </span>, 
-      <span class="strong">
         <strong>pager</strong>
       </span>, 
       <span class="strong">
@@ -9584,91 +9581,6 @@ Default: no
           <span class="emphasis">
             <em>set</em>
           </span>, the $mime_type_query_command will be run before the mime.types lookup.</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>mix_entry_format</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />Type:&#160;string 
-            <br />Default:&#160;"%4n&#160;%c&#160;%-16s&#160;%a" 
-            <br /></p>
-          </div>
-          <p>This variable describes the format of a remailer line on the mixmaster chain selection screen. The following 
-          <span class="emphasis">
-            <em>printf(3)</em>
-          </span>-like sequences are supported:</p>
-          <div class="blockquote">
-            <blockquote class="blockquote">
-              <div class="variablelist">
-                <dl class="variablelist">
-                  <dt>
-                    <span class="term">%a</span>
-                  </dt>
-                  <dd>
-                    <p>The remailer's e-mail address</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%c</span>
-                  </dt>
-                  <dd>
-                    <p>Remailer capabilities</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%n</span>
-                  </dt>
-                  <dd>
-                    <p>The running number on the menu</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%s</span>
-                  </dt>
-                  <dd>
-                    <p>The remailer's short name</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%&gt;X</span>
-                  </dt>
-                  <dd>
-                    <p>right justify the rest of the string and pad with character "X"</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%|X</span>
-                  </dt>
-                  <dd>
-                    <p>pad to the end of the line with character "X"</p>
-                  </dd>
-                  <dt>
-                    <span class="term">%*X</span>
-                  </dt>
-                  <dd>
-                    <p>soft-fill with character "X" as pad</p>
-                  </dd>
-                </dl>
-              </div>
-            </blockquote>
-          </div>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
-              <strong>mixmaster</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <div class="literallayout">
-            <p>
-            <br />Type:&#160;command 
-            <br />Default:&#160;"mixmaster" 
-            <br /></p>
-          </div>
-          <p>This variable contains the path to the Mixmaster binary on your system. It is used with various sets of parameters to gather the list of known remailers, and to finally send a message through the mixmaster chain.</p>
         </dd>
         <dt>
           <span class="term">
