@@ -43,9 +43,9 @@ title: Autocrypt
       <p>It is highly recommended that NeoMutt be configured with
       <code class="literal">--idn2</code> (enabled by default) so that Autocrypt can properly deal with international domain names.</p>
       <p>While NeoMutt uses GPGME for Autocrypt, normal keyring operations can still be performed via classic mode (i.e. with
-      <a class="link" href="reference.html#crypt-use-gpgme" title="3.96.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
+      <a class="link" href="reference.html#crypt-use-gpgme" title="3.97.&#160;crypt_use_gpgme">$crypt_use_gpgme</a> unset). However, to avoid unnecessary prompts, it is recommended gpg not be configured in
       <code class="literal">loopback pinentry</code> mode, and that
-      <a class="link" href="reference.html#pgp-use-gpg-agent" title="3.342.&#160;pgp_use_gpg_agent">$pgp_use_gpg_agent</a> remain set (the default).</p>
+      <a class="link" href="reference.html#pgp-use-gpg-agent" title="3.341.&#160;pgp_use_gpg_agent">$pgp_use_gpg_agent</a> remain set (the default).</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -79,7 +79,7 @@ title: Autocrypt
       </span>sender and receiver have set
       <span class="quote">“<span class="quote">prefer encryption</span>”</span>. Otherwise, you will need to manually enable autocrypt encryption in the compose menu. For more details, see the compose menu section below.</p>
       <p>After optionally creating an account, NeoMutt will prompt you to scan mailboxes for Autocrypt headers. This step occurs because header cached messages are not re-scanned for Autocrypt headers. Scanning during this step will temporarily disable the header cache while opening each mailbox. If you wish to do this manually later, you can simulate the same thing by unsetting
-      <a class="link" href="reference.html#header-cache" title="3.153.&#160;header_cache">$header_cache</a> and opening a mailbox.</p>
+      <a class="link" href="reference.html#header-cache" title="3.154.&#160;header_cache">$header_cache</a> and opening a mailbox.</p>
       <p>A final technical note: the first run process takes place between reading the muttrc and opening the initial mailbox. Some muttrc files will
       <a class="link" href="configuration.html#push" title="23.&#160;Adding Key Sequences to the Keyboard Buffer">push</a> macros to be run after opening the mailbox. To prevent this from interfering with the first run prompts, NeoMutt disables all macros during the first run.</p>
     </div>
@@ -158,8 +158,8 @@ title: Autocrypt
       <a class="link" href="reference.html#crypt-reply-sign-encrypted" title="3.91.&#160;crypt_reply_sign_encrypted">$crypt_reply_sign_encrypted</a>, and
       <a class="link" href="reference.html#crypt-opportunistic-encrypt" title="3.82.&#160;crypt_opportunistic_encrypt">$crypt_opportunistic_encrypt</a>.</p>
       <p>When postponing a message, autocrypt will respect
-      <a class="link" href="reference.html#postpone-encrypt" title="3.365.&#160;postpone_encrypt">$postpone_encrypt</a>, but will use the autocrypt account key to encrypt the message. Be sure to set
-      <a class="link" href="reference.html#postpone-encrypt" title="3.365.&#160;postpone_encrypt">$postpone_encrypt</a> to ensure postponed messages marked for autocrypt encryption are encrypted.</p>
+      <a class="link" href="reference.html#postpone-encrypt" title="3.364.&#160;postpone_encrypt">$postpone_encrypt</a>, but will use the autocrypt account key to encrypt the message. Be sure to set
+      <a class="link" href="reference.html#postpone-encrypt" title="3.364.&#160;postpone_encrypt">$postpone_encrypt</a> to ensure postponed messages marked for autocrypt encryption are encrypted.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -173,7 +173,7 @@ title: Autocrypt
       <p>The Autocrypt Account Menu is available from the index via
       <code class="literal">&lt;autocrypt-acct-menu&gt;</code>, by default bound to
       <code class="literal">A</code>. See
-      <a class="link" href="reference.html#autocrypt-account-map" title="4.14.&#160;Autocrypt Account Menu">Autocrypt Account Menu</a> for the list of functions and their default keybindings.</p>
+      <a class="link" href="reference.html#autocrypt-account-map" title="4.13.&#160;Autocrypt Account Menu">Autocrypt Account Menu</a> for the list of functions and their default keybindings.</p>
       <p>In this menu, you can create new accounts, delete accounts, toggle an account active/inactive, and toggle the
       <span class="quote">“<span class="quote">prefer encryption</span>”</span> flag for an account.</p>
       <p>Deleting an account only removes the account from the database. The GPG key is kept, to ensure you still have the ability to read past encrypted emails.</p>

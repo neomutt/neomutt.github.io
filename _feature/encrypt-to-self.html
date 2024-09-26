@@ -47,24 +47,24 @@ status: stable
       </div>
     </div>
     <p>Once you encrypt an email to someone you cannot read it. This is good for security, but bad for record-keeping. If you wanted to keep a copy of an encrypted email you could set
-    <a class="link" href="/guide/reference.html#fcc-clear" title="3.124.&#160;fcc_clear">$fcc_clear</a>.</p>
+    <a class="link" href="/guide/reference.html#fcc-clear" title="3.125.&#160;fcc_clear">$fcc_clear</a>.</p>
     <p>A better option is to enable
-    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.463.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
-    <a class="link" href="/guide/reference.html#smime-default-key" title="3.452.&#160;smime_default_key">$smime_default_key</a> to your personal S/MIME key id.</p>
+    <a class="link" href="/guide/reference.html#smime-self-encrypt" title="3.462.&#160;smime_self_encrypt">$smime_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#smime-default-key" title="3.451.&#160;smime_default_key">$smime_default_key</a> to your personal S/MIME key id.</p>
     <pre class="screen">
 set smime_self_encrypt = yes
 set smime_default_key  = bb345e23.0
 </pre>
     <p>Or, if you use PGP,
-    <a class="link" href="/guide/reference.html#pgp-self-encrypt" title="3.334.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>, then set
-    <a class="link" href="/guide/reference.html#pgp-default-key" title="3.313.&#160;pgp_default_key">$pgp_default_key</a> to your personal PGP key id.</p>
+    <a class="link" href="/guide/reference.html#pgp-self-encrypt" title="3.333.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>, then set
+    <a class="link" href="/guide/reference.html#pgp-default-key" title="3.312.&#160;pgp_default_key">$pgp_default_key</a> to your personal PGP key id.</p>
     <pre class="screen">
 set pgp_self_encrypt = yes
 set pgp_default_key  = A4AF18C5582473BD35A1E9CE78BB3D480042198E
 </pre>
     <p>If you have different key for signing, then you can set
-    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.337.&#160;pgp_sign_as">$pgp_sign_as</a> or
-    <a class="link" href="/guide/reference.html#smime-sign-as" title="3.465.&#160;smime_sign_as">$smime_sign_as</a> respectively.</p>
+    <a class="link" href="/guide/reference.html#pgp-sign-as" title="3.336.&#160;pgp_sign_as">$pgp_sign_as</a> or
+    <a class="link" href="/guide/reference.html#smime-sign-as" title="3.464.&#160;smime_sign_as">$smime_sign_as</a> respectively.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
