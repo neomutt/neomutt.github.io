@@ -108,12 +108,6 @@ title: Getting Started
       <p>This part of the manual is suitable for beginners. If you already know NeoMutt you could skip ahead to the main
       <a class="link" href="/feature/sidebar" title="Sidebar Feature">Sidebar guide</a>. If you just want to get started, you could use the sample
       <a class="link" href="/feature/sidebar#neomuttrc" title="8.&#160;neomuttrc">Sidebar neomuttrc</a>.</p>
-      <p>To check if NeoMutt supports
-      <span class="quote">“<span class="quote">Sidebar</span>”</span>, look for the string
-      <code class="literal">+sidebar</code> in the neomutt version.</p>
-      <pre class="screen">
-neomutt -v
-</pre>
       <p>
         <span class="bold">
           <strong>Let's turn on the Sidebar:</strong>
@@ -465,7 +459,7 @@ set sidebar_divider_char = '│'
             </ul>
           </div>
           <div >
-            <a id="id1659"></a>
+            <a id="id1655"></a>
             <p class="title">
               <strong>Table&#160;2.1.&#160;sidebar_format</strong>
             </p>
@@ -585,7 +579,7 @@ set mail_check_stats
           <p>‡ = Only applicable to the current folder</p>
           <p>Here are some examples. They show the number of (F)lagged, (N)ew and (S)ize.</p>
           <div >
-            <a id="id1745"></a>
+            <a id="id1741"></a>
             <p class="title">
               <strong>Table&#160;2.2.&#160;sidebar_format examples</strong>
             </p>
@@ -3306,8 +3300,7 @@ bind editor &lt;delete&gt; backspace
     <a class="link" href="reference.html#tab-index-bindings" title="Table&#160;45.3.&#160;Default Index Menu Bindings">
       <code class="literal">&lt;show-log-messages&gt;</code>
     </a>can be used.</p>
-    <p>Debug messages are not shown by default. To enable them NeoMutt must be compiled with
-    <code class="literal">+debug</code>. Furthermore, the debug log level must be set with the
+    <p>Debug messages are not shown by default. The debug log level must be set with the
     <a class="link" href="reference.html#tab-commandline-options" title="Table&#160;45.1.&#160;Command line options">
     <code class="literal">-d</code> command line parameter</a> at startup. The
     <code class="literal">-d</code> parameter expects a debug level which can range from 1 to 5 and affects verbosity of the debug messages. A value of 2 is recommended for the start. If debug logging is enabled, all log messages (i.e. errors, warnings, ..., debug) are additionally written to the file
