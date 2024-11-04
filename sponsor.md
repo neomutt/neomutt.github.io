@@ -26,7 +26,7 @@ You may also be interested in:
 
 ## :gem: Sponsors
 
-<table>
+<table border="0">
   <tr>
     <td align="center"><a href="https://github.com/jindraj/"><img width="80" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
     <td align="center"><a href="https://github.com/scottkosty/"><img width="80" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
