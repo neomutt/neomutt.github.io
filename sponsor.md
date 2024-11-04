@@ -48,14 +48,14 @@ You may also be interested in:
     <td align="center"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
     <td align="center"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
-    <td align="left"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
+    <td align="left" colspan="2"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
   </tr>
   <tr>
     <td>J&nbsp;Sheng<br>@lamons</td>
     <td>Bastian&nbsp;Bittorf</td>
     <td>Nicolas&nbsp;Évrard</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
-    <td>Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
+    <td colspan="2">Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
   </tr>
 </table>
 
