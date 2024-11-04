@@ -52,8 +52,8 @@ You may also be interested in:
   </tr>
   <tr>
     <td>J&nbsp;Sheng<br>@lamons</td>
-    <td>Bastian&nbsp;Bittorf</td>
-    <td>Nicolas&nbsp;Évrard</td>
+    <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
+    <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
     <td colspan="2">Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
   </tr>
