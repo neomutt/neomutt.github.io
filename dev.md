@@ -24,7 +24,7 @@ are triggered on every commit to GitHub.
 
 [![code status](https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/neomutt/neomutt/actions/workflows/build-and-test.yml)
 [![coverity status](https://img.shields.io/coverity/scan/8495.svg)](https://scan.coverity.com/projects/neomutt-neomutt)
-[![coverage status](https://coveralls.io/repos/github/neomutt/neomutt/badge.svg?branch=coveralls)](https://coveralls.io/github/neomutt/neomutt?branch=coveralls)
+[![coverage status](https://coveralls.io/repos/github/neomutt/neomutt/badge.svg?branch=coveralls)](https://img.shields.io/coveralls/github/neomutt/neomutt)
 
 <img height="300" width="768" src="https://starchart.cc/neomutt/neomutt.svg" />
 
