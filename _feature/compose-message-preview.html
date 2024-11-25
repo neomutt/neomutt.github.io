@@ -1,0 +1,187 @@
+---
+title: Compose Preview
+description: Show a preview of the message in the compose dialog
+
+status: devel
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/compose-message-preview"></a>Compose Message Preview Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Show a preview of the message in the compose dialog</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2024-11-25</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>NeoMutt shows you a preview of the message you are about to send in the compose dialog.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="variables"></a>3.&#160;Variables</h2>
+        </div>
+      </div>
+    </div>
+    <div >
+      <a id="table-compose-message-preview-variables"></a>
+      <p class="title">
+        <strong>Table&#160;10.1.&#160;Message Preview Variables</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Message Preview Variables" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="literal">compose_show_preview</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">true</code>
+              </td>
+              <td>Enable or disable the message preview feature</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">compose_preview_min_rows</code>
+              </td>
+              <td>number</td>
+              <td>
+                <code class="literal">5</code>
+              </td>
+              <td>Hide the preview if it has less than this number of rows</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">compose_preview_above_attachments</code>
+              </td>
+              <td>boolean</td>
+              <td>
+                <code class="literal">false</code>
+              </td>
+              <td>Show the message preview above the attachments list.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="functions"></a>4.&#160;Functions</h2>
+        </div>
+      </div>
+    </div>
+    <p>The message preview is controller by the following functions.</p>
+    <div >
+      <a id="functions-table"></a>
+      <p class="title">
+        <strong>Table&#160;10.2.&#160;Message Preview Functions</strong>
+      </p>
+      <div class="table-contents">
+        <table summary="Message Preview Functions" border="1">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Menus</th>
+              <th>Function</th>
+              <th>Description</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>compose</td>
+              <td>
+                <code class="literal">&lt;preview-page-down&gt;</code>
+              </td>
+              <td>show the next page of the message</td>
+              <td>
+                <code class="literal">&lt;pagedown&gt;</code>
+              </td>
+            </tr>
+            <tr>
+              <td>compose</td>
+              <td>
+                <code class="literal">&lt;preview-page-up&gt;</code>
+              </td>
+              <td>show the previous page of the message</td>
+              <td>
+                <code class="literal">&lt;pageup&gt;</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br class="table-break" />
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>5.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Dennis Schön</p>
+  </div>
+</div>
+{% endraw %}

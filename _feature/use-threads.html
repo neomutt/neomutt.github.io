@@ -76,8 +76,8 @@ status: stable
     </div>
     <p>The
     <span class="quote">“<span class="quote">Use Threads</span>”</span> feature adds one new config variable,
-    <a class="link" href="/guide/reference.html#use-threads" title="3.532.&#160;use_threads">$use_threads</a>, which is an enumeration of possible thread views. The variable defaults to unset for the original behavior of overloading
-    <a class="link" href="/guide/reference.html#sort" title="3.480.&#160;sort">$sort=threads</a> to enable sorting. It can be set to
+    <a class="link" href="/guide/reference.html#use-threads" title="3.535.&#160;use_threads">$use_threads</a>, which is an enumeration of possible thread views. The variable defaults to unset for the original behavior of overloading
+    <a class="link" href="/guide/reference.html#sort" title="3.483.&#160;sort">$sort=threads</a> to enable sorting. It can be set to
     <code class="literal">flat</code> (or
     <code class="literal">no</code> ) for an unthreaded view based on
     <code class="literal">$sort</code>, to
@@ -85,7 +85,7 @@ status: stable
     <code class="literal">yes</code> ) for a threaded view where roots appear above children, or to
     <code class="literal">reverse</code> for a threaded view where children appear above roots.</p>
     <p>When sorting by threads, the value of
-    <a class="link" href="/guide/reference.html#sort" title="3.480.&#160;sort">$sort</a> determines which thread floats to the top. If
+    <a class="link" href="/guide/reference.html#sort" title="3.483.&#160;sort">$sort</a> determines which thread floats to the top. If
     <code class="literal">$sort</code> does not contain
     <code class="literal">reverse-</code>, the latest thread goes to the bottom for
     <code class="literal">use_threads=threads</code> and to the top for
@@ -97,12 +97,12 @@ status: stable
     <code class="literal">last-</code> prefix is ignored when
     <code class="literal">use_threads=flat</code>.</p>
     <p>Within a single thread, the value of
-    <a class="link" href="/guide/reference.html#sort-aux" title="3.481.&#160;sort_aux">$sort_aux</a> determines how siblings are sorted. The same prefixes apply as for
+    <a class="link" href="/guide/reference.html#sort-aux" title="3.484.&#160;sort_aux">$sort_aux</a> determines how siblings are sorted. The same prefixes apply as for
     <code class="literal">$sort</code>, although it is less common to use the
     <code class="literal">last-</code> prefix.</p>
     <p>The
     <span class="quote">“<span class="quote">Use Threads</span>”</span> feature also modifies the existing config variable
-    <a class="link" href="/guide/reference.html#status-format" title="3.504.&#160;status_format">$status_format</a>, adding the
+    <a class="link" href="/guide/reference.html#status-format" title="3.507.&#160;status_format">$status_format</a>, adding the
     <code class="literal">%T</code> expando which shows the current threading method.</p>
   </div>
   <div class="sect1">
@@ -115,9 +115,9 @@ status: stable
       </div>
     </div>
     <div >
-      <a id="id12242"></a>
+      <a id="id12317"></a>
       <p class="title">
-        <strong>Table&#160;41.1.&#160;Use Threads</strong>
+        <strong>Table&#160;42.1.&#160;Use Threads</strong>
       </p>
       <div class="table-contents">
         <table summary="Use Threads" border="1">
