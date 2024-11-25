@@ -652,7 +652,7 @@ subscribe "only\\.dot@example\\.org"
                 <span class="emphasis">
                   <em>QUERY</em>
                 </span>as its argument. This is explained in greater detail in the variable reference entry
-                <a class="xref" href="reference.html#external-search-command" title="3.121.&#160;external_search_command">Section&#160;3.121, “external_search_command”</a>,</td>
+                <a class="xref" href="reference.html#external-search-command" title="3.123.&#160;external_search_command">Section&#160;3.123, “external_search_command”</a>,</td>
               </tr>
               <tr>
                 <td>~k</td>
@@ -806,7 +806,7 @@ subscribe "only\\.dot@example\\.org"
                 <td>~p</td>
                 <td>&#160;</td>
                 <td>messages addressed to you (consults
-                <a class="link" href="reference.html#from" title="3.146.&#160;from">$from</a>,
+                <a class="link" href="reference.html#from" title="3.148.&#160;from">$from</a>,
                 <span class="command">
                   <strong>alternates</strong>
                 </span>, and local account/hostname information)</td>
@@ -815,7 +815,7 @@ subscribe "only\\.dot@example\\.org"
                 <td>~P</td>
                 <td>&#160;</td>
                 <td>messages from you (consults
-                <a class="link" href="reference.html#from" title="3.146.&#160;from">$from</a>,
+                <a class="link" href="reference.html#from" title="3.148.&#160;from">$from</a>,
                 <span class="command">
                   <strong>alternates</strong>
                 </span>, and local account/hostname information)</td>
@@ -988,7 +988,7 @@ subscribe "only\\.dot@example\\.org"
                 <td>~=</td>
                 <td>&#160;</td>
                 <td>duplicated messages (see
-                <a class="link" href="reference.html#duplicate-threads" title="3.111.&#160;duplicate_threads">$duplicate_threads</a>)</td>
+                <a class="link" href="reference.html#duplicate-threads" title="3.113.&#160;duplicate_threads">$duplicate_threads</a>)</td>
               </tr>
               <tr>
                 <td>~#</td>
@@ -1424,7 +1424,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
       <p>The first type is by checking whether the query string equals a keyword case-insensitively from
       <a class="xref" href="#tab-simplesearch-keywords" title="Table&#160;4.9.&#160;Simple search keywords">Table&#160;4.9, “Simple search keywords”</a>: If that is the case, NeoMutt will use the shown pattern modifier instead. If a keyword would conflict with your search keyword, you need to turn it into a regular expression to avoid matching the keyword table. For example, if you want to find all messages matching
       <span class="quote">“<span class="quote">flag</span>”</span>(using
-      <a class="link" href="reference.html#simple-search" title="3.439.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
+      <a class="link" href="reference.html#simple-search" title="3.441.&#160;simple_search">$simple_search</a>) but don't want to match flagged messages, simply search for
       <span class="quote">“<span class="quote">
         <code class="literal">[f]lag</code>
       </span>”</span>.</p>
@@ -1496,7 +1496,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
       </div>
       <br class="table-break" />
       <p>The second type of simple search is to build a complex search pattern using
-      <a class="link" href="reference.html#simple-search" title="3.439.&#160;simple_search">$simple_search</a> as a template. NeoMutt will insert your query properly quoted and search for the composed complex query.</p>
+      <a class="link" href="reference.html#simple-search" title="3.441.&#160;simple_search">$simple_search</a> as a template. NeoMutt will insert your query properly quoted and search for the composed complex query.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -1771,7 +1771,7 @@ Limit to messages matching: ~d &lt;1m
           <span class="emphasis">
             <em>local</em>
           </span>time zone, so unless you change the setting of your
-          <a class="link" href="reference.html#index-format" title="3.212.&#160;index_format">$index_format</a> to include a
+          <a class="link" href="reference.html#index-format" title="3.214.&#160;index_format">$index_format</a> to include a
           <code class="literal">%[...]</code> format, these are
           <span class="emphasis">
             <em>not</em>
@@ -1844,7 +1844,7 @@ Limit to messages matching: ~d &lt;1m
     <span class="quote">“<span class="quote">~</span>”</span> key by default. Press this key to enter an identifier for the marked message. When you want to return to this message, press
     <span class="quote">“<span class="quote">'</span>”</span> and the name that you previously entered.</p>
     <p>(Message marking is really just a shortcut for defining a macro that returns you to the current message by searching for its Message-ID. You can choose a different prefix by setting the
-    <a class="link" href="reference.html#mark-macro-prefix" title="3.228.&#160;mark_macro_prefix">$mark_macro_prefix</a> variable.)</p>
+    <a class="link" href="reference.html#mark-macro-prefix" title="3.230.&#160;mark_macro_prefix">$mark_macro_prefix</a> variable.)</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -1871,7 +1871,7 @@ Limit to messages matching: ~d &lt;1m
     <span class="emphasis">
       <em>next</em>
     </span>operation will be applied to all tagged messages if that operation can be used in that manner. If the
-    <a class="link" href="reference.html#auto-tag" title="3.36.&#160;auto_tag">$auto_tag</a> variable is set, the next operation applies to the tagged messages automatically, without requiring the
+    <a class="link" href="reference.html#auto-tag" title="3.37.&#160;auto_tag">$auto_tag</a> variable is set, the next operation applies to the tagged messages automatically, without requiring the
     <span class="quote">“<span class="quote">tag-prefix</span>”</span>.</p>
     <p>In
     <a class="link" href="configuration.html#macro" title="10.1.&#160;Creating a Key Macro">
@@ -2109,8 +2109,8 @@ send-hook ~C'^b@b\\.b$' my_hdr from: c@c.c
     <p>In
     <a class="xref" href="#ex-default-hook" title="Example&#160;4.7.&#160;Specifying a “default” hook">Example&#160;4.7, “Specifying a
     <span class="quote">“<span class="quote">default</span>”</span> hook”</a>, by default the value of
-    <a class="link" href="reference.html#from" title="3.146.&#160;from">$from</a> and
-    <a class="link" href="reference.html#real-name" title="3.385.&#160;real_name">$real_name</a> is not overridden. When sending messages either To: or Cc: to
+    <a class="link" href="reference.html#from" title="3.148.&#160;from">$from</a> and
+    <a class="link" href="reference.html#real-name" title="3.387.&#160;real_name">$real_name</a> is not overridden. When sending messages either To: or Cc: to
     <code class="literal">&lt;b@b.b&gt;</code>, the From: header is changed to
     <code class="literal">&lt;c@c.c&gt;</code>.</p>
     <div class="sect2">
@@ -2165,8 +2165,8 @@ send-hook '~t ^user@work\\.com$' 'my_hdr From: John Smith &lt;user@host&gt;'
       <span class="emphasis">
         <em>regular expression</em>
       </span>like the other hooks, in which case NeoMutt will translate your pattern into the full language, using the translation specified by the
-      <a class="link" href="reference.html#default-hook" title="3.103.&#160;default_hook">$default_hook</a> variable. The pattern is translated at the time the hook is declared, so the value of
-      <a class="link" href="reference.html#default-hook" title="3.103.&#160;default_hook">$default_hook</a> that is in effect at that time will be used.</p>
+      <a class="link" href="reference.html#default-hook" title="3.105.&#160;default_hook">$default_hook</a> variable. The pattern is translated at the time the hook is declared, so the value of
+      <a class="link" href="reference.html#default-hook" title="3.105.&#160;default_hook">$default_hook</a> that is in effect at that time will be used.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2240,7 +2240,7 @@ setenv LESS?
       </div>
     </div>
     <p>NeoMutt supports connecting to external directory databases such as LDAP, ph/qi, bbdb, or NIS through a wrapper script which connects to NeoMutt using a simple interface. Using the
-    <a class="link" href="reference.html#query-command" title="3.378.&#160;query_command">$query_command</a> variable, you specify the wrapper command to use. For example:</p>
+    <a class="link" href="reference.html#query-command" title="3.380.&#160;query_command">$query_command</a> variable, you specify the wrapper command to use. For example:</p>
     <pre class="screen">
 set query_command = "mutt_ldap_query.pl %s"
 </pre>
@@ -2261,8 +2261,8 @@ ma@yew.com      Murray Abraham  Oscar
     <div class="note">
       <h3 class="title">Note</h3>
       <p>The query menu is affected by
-      <a class="link" href="reference.html#sort-alias" title="3.479.&#160;sort_alias">$sort_alias</a>, thus overruling the order of entries as generated by
-      <a class="link" href="reference.html#query-command" title="3.378.&#160;query_command">$query_command</a>.</p>
+      <a class="link" href="reference.html#alias-sort" title="3.11.&#160;alias_sort">$alias_sort</a>, thus overruling the order of entries as generated by
+      <a class="link" href="reference.html#query-command" title="3.380.&#160;query_command">$query_command</a>.</p>
     </div>
   </div>
   <div class="sect1">
@@ -2275,7 +2275,7 @@ ma@yew.com      Murray Abraham  Oscar
       </div>
     </div>
     <p>NeoMutt supports reading and writing of four different local mailbox formats: mbox, MMDF, MH and Maildir. The mailbox type is auto detected, so there is no need to use a flag for different mailbox types. When creating new mailboxes, NeoMutt uses the default specified with the
-    <a class="link" href="reference.html#mbox-type" title="3.233.&#160;mbox_type">$mbox_type</a> variable. A short description of the formats follows.</p>
+    <a class="link" href="reference.html#mbox-type" title="3.235.&#160;mbox_type">$mbox_type</a> variable. A short description of the formats follows.</p>
     <p>
     <span class="emphasis">
       <em>mbox</em>
@@ -2364,14 +2364,14 @@ From me@ox.ac.uk Fri, 11 Apr 1997 11:44:56 PST
                 <code class="literal">&gt;</code>
               </td>
               <td>your
-              <a class="link" href="reference.html#mbox" title="3.232.&#160;mbox">$mbox</a> file</td>
+              <a class="link" href="reference.html#mbox" title="3.234.&#160;mbox">$mbox</a> file</td>
             </tr>
             <tr>
               <td>
                 <code class="literal">&lt;</code>
               </td>
               <td>your
-              <a class="link" href="reference.html#record" title="3.388.&#160;record">$record</a> file</td>
+              <a class="link" href="reference.html#record" title="3.390.&#160;record">$record</a> file</td>
             </tr>
             <tr>
               <td>
@@ -2396,7 +2396,7 @@ From me@ox.ac.uk Fri, 11 Apr 1997 11:44:56 PST
               <code class="literal">=</code> or
               <code class="literal">+</code></td>
               <td>your
-              <a class="link" href="reference.html#folder" title="3.128.&#160;folder">$folder</a> directory</td>
+              <a class="link" href="reference.html#folder" title="3.130.&#160;folder">$folder</a> directory</td>
             </tr>
             <tr>
               <td>
@@ -2418,7 +2418,7 @@ From me@ox.ac.uk Fri, 11 Apr 1997 11:44:56 PST
         <strong>folder-hook</strong>
       </span>
     </a>can be used to set
-    <a class="link" href="reference.html#record" title="3.388.&#160;record">$record</a>:</p>
+    <a class="link" href="reference.html#record" title="3.390.&#160;record">$record</a>:</p>
     <pre class="screen">
 folder-hook . 'set record=^'
 </pre>
@@ -2426,7 +2426,7 @@ folder-hook . 'set record=^'
     <span class="quote">“<span class="quote">
       <code class="literal">^</code>
     </span>”</span>, has no value in some cases. No mailbox is opened when NeoMutt is invoked to send an email from the command-line. In interactive mode, NeoMutt reads the muttrc before opening the mailbox, so immediate expansion won't work as expected either. This can be an issue when trying to directly assign to
-    <a class="link" href="reference.html#record" title="3.388.&#160;record">$record</a>, but also affects the
+    <a class="link" href="reference.html#record" title="3.390.&#160;record">$record</a>, but also affects the
     <a class="link" href="configuration.html#fcc-hook">fcc-hook</a> mailbox, which is expanded immediately too. The folder-hook example above works because the command is executed later, when the folder-hook fires.</p>
   </div>
   <div class="sect1">
@@ -2450,13 +2450,13 @@ folder-hook . 'set record=^'
       </span>
     </a>commands in your
     <code class="literal">.neomuttrc</code>. Alternatively or additionally, you can set
-    <a class="link" href="reference.html#auto-subscribe" title="3.35.&#160;auto_subscribe">$auto_subscribe</a> to automatically subscribe addresses found in a
+    <a class="link" href="reference.html#auto-subscribe" title="3.36.&#160;auto_subscribe">$auto_subscribe</a> to automatically subscribe addresses found in a
     <code class="literal">List-Post</code> header.</p>
     <p>Now that NeoMutt knows what your mailing lists are, it can do several things, the first of which is the ability to show the name of a list through which you received a message (i.e., of a subscribed list) in the
     <span class="emphasis">
       <em>index</em>
     </span>menu display. This is useful to distinguish between personal and list mail in the same mailbox. In the
-    <a class="link" href="reference.html#index-format" title="3.212.&#160;index_format">$index_format</a> variable, the expando
+    <a class="link" href="reference.html#index-format" title="3.214.&#160;index_format">$index_format</a> variable, the expando
     <span class="quote">“<span class="quote">%L</span>”</span> will print the string
     <span class="quote">“<span class="quote">To &lt;list&gt;</span>”</span> when
     <span class="quote">“<span class="quote">list</span>”</span> appears in the
@@ -2477,11 +2477,11 @@ folder-hook . 'set record=^'
     <code class="literal">Mail-Followup-To</code>, see below).</p>
     <p>NeoMutt also supports the
     <code class="literal">Mail-Followup-To</code> header. When you send a message to a list of recipients which includes one or several known mailing lists, and if the
-    <a class="link" href="reference.html#followup-to" title="3.130.&#160;followup_to">$followup_to</a> option is set, NeoMutt will generate a Mail-Followup-To header. If any of the recipients are subscribed mailing lists, this header will contain all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
+    <a class="link" href="reference.html#followup-to" title="3.132.&#160;followup_to">$followup_to</a> option is set, NeoMutt will generate a Mail-Followup-To header. If any of the recipients are subscribed mailing lists, this header will contain all the recipients to whom you send this message, but not your address. This indicates that group-replies or list-replies (also known as
     <span class="quote">“<span class="quote">followups</span>”</span>) to this message should only be sent to the original recipients of the message, and not separately to you - you'll receive your copy through one of the mailing lists you are subscribed to. If none of the recipients are subscribed mailing lists, the header will also contain your address, ensuring you receive a copy of replies.</p>
     <p>Conversely, when group-replying or list-replying to a message which has a
     <code class="literal">Mail-Followup-To</code> header, NeoMutt will respect this header if the
-    <a class="link" href="reference.html#honor-followup-to" title="3.174.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. Using
+    <a class="link" href="reference.html#honor-followup-to" title="3.176.&#160;honor_followup_to">$honor_followup_to</a> configuration variable is set. Using
     <a class="link" href="gettingstarted.html#list-reply">list-reply</a> will in this case also make sure that the reply goes to the mailing list, even if it's not specified in the list of recipients in the
     <code class="literal">Mail-Followup-To</code>.</p>
     <div class="note">
@@ -2492,7 +2492,7 @@ folder-hook . 'set record=^'
     <p>The other method some mailing list admins use is to generate a
     <span class="quote">“<span class="quote">Reply-To</span>”</span> field which points back to the mailing list address rather than the author of the message. This can create problems when trying to reply directly to the author in private, since most mail clients will automatically reply to the address given in the
     <span class="quote">“<span class="quote">Reply-To</span>”</span> field. NeoMutt uses the
-    <a class="link" href="reference.html#reply-to" title="3.395.&#160;reply_to">$reply_to</a> variable to help decide which address to use. If set to
+    <a class="link" href="reference.html#reply-to" title="3.397.&#160;reply_to">$reply_to</a> variable to help decide which address to use. If set to
     <span class="emphasis">
       <em>ask-yes</em>
     </span>or
@@ -2510,7 +2510,7 @@ folder-hook . 'set record=^'
     <span class="quote">“<span class="quote">edit-label</span>”</span> command, bound to the
     <span class="quote">“<span class="quote">y</span>”</span> key by default. This works for tagged messages, too. While in the edit-label function, pressing the &lt;complete&gt; binding (TAB, by default) will perform completion against all labels currently in use.</p>
     <p>Lastly, NeoMutt has the ability to
-    <a class="link" href="reference.html#sort" title="3.478.&#160;sort">sort</a> the mailbox into
+    <a class="link" href="reference.html#sort" title="3.480.&#160;sort">sort</a> the mailbox into
     <a class="link" href="gettingstarted.html#threads" title="5.3.&#160;Threaded Mode">threads</a>. A thread is a group of messages which all relate to the same subject. This is usually organized into a tree-like structure where a message and all of its replies are represented graphically. If you've ever used a threaded news client, this is the same concept. It makes dealing with large volume mailing lists easier because you can easily delete uninteresting threads and quickly find topics of value.</p>
   </div>
   <div class="sect1">
@@ -2603,18 +2603,18 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
         <p>Contrary to older NeoMutt releases, it now maintains the new mail status of a folder by properly resetting the access time if the folder contains at least one message which is neither read, nor deleted, nor marked as old.</p>
       </div>
       <p>In cases where new mail detection for Mbox or Mmdf folders appears to be unreliable, the
-      <a class="link" href="reference.html#check-mbox-size" title="3.53.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make NeoMutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
+      <a class="link" href="reference.html#check-mbox-size" title="3.55.&#160;check_mbox_size">$check_mbox_size</a> option can be used to make NeoMutt track and consult file sizes for new mail detection instead which won't work for size-neutral changes.</p>
       <p>New mail for Maildir is assumed if there is one message in the
       <code class="literal">new/</code> subdirectory which is not marked deleted (see
-      <a class="link" href="reference.html#maildir-trash" title="3.227.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
+      <a class="link" href="reference.html#maildir-trash" title="3.229.&#160;maildir_trash">$maildir_trash</a>). For MH folders, a mailbox is considered having new mail if there's at least one message in the
       <span class="quote">“<span class="quote">unseen</span>”</span> sequence as specified by
-      <a class="link" href="reference.html#mh-seq-unseen" title="3.247.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
-      <a class="link" href="reference.html#new-mail-command" title="3.261.&#160;new_mail_command">$new_mail_command</a> can be configured to execute an external program every time new mail is detected in the current inbox.</p>
+      <a class="link" href="reference.html#mh-seq-unseen" title="3.249.&#160;mh_seq_unseen">$mh_seq_unseen</a>. Optionally,
+      <a class="link" href="reference.html#new-mail-command" title="3.263.&#160;new_mail_command">$new_mail_command</a> can be configured to execute an external program every time new mail is detected in the current inbox.</p>
       <p>NeoMutt does not poll POP3 folders for new mail, it only periodically checks the currently opened folder (if it's a POP3 folder).</p>
       <p>For IMAP, by default NeoMutt uses recent message counts provided by the server to detect new mail. If the
-      <a class="link" href="reference.html#imap-idle" title="3.187.&#160;imap_idle">$imap_idle</a> option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
+      <a class="link" href="reference.html#imap-idle" title="3.189.&#160;imap_idle">$imap_idle</a> option is set, it'll use the IMAP IDLE extension if advertised by the server.</p>
       <p>The
-      <a class="link" href="reference.html#mail-check-recent" title="3.218.&#160;mail_check_recent">$mail_check_recent</a> option changes whether NeoMutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, NeoMutt will notify you of any new mail in the mailbox.</p>
+      <a class="link" href="reference.html#mail-check-recent" title="3.220.&#160;mail_check_recent">$mail_check_recent</a> option changes whether NeoMutt will notify you of new mail in an already visited mailbox. When set (the default) it will only notify you of new mail received since the last time you opened the mailbox. When unset, NeoMutt will notify you of any new mail in the mailbox.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -2631,8 +2631,8 @@ subjectrx '\[[^]]*\]:? *' '%L%R'
         <strong>mailboxes</strong>
       </span>command (excepting those specified with the
       <code class="literal">-nopoll</code> flag). The interval depends on the folder type: for local/IMAP folders it consults
-      <a class="link" href="reference.html#mail-check" title="3.217.&#160;mail_check">$mail_check</a> and
-      <a class="link" href="reference.html#pop-check-interval" title="3.353.&#160;pop_check_interval">$pop_check_interval</a> for POP folders.</p>
+      <a class="link" href="reference.html#mail-check" title="3.219.&#160;mail_check">$mail_check</a> and
+      <a class="link" href="reference.html#pop-check-interval" title="3.355.&#160;pop_check_interval">$pop_check_interval</a> for POP folders.</p>
       <p>Outside the index menu the directory browser supports checking for new mail using the
       <code class="literal">&lt;check-new&gt;</code> function which is unbound by default. Pressing TAB will bring up a menu showing the files specified by the
       <span class="command">
@@ -2700,13 +2700,13 @@ mailboxes `find ~/.mail/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g'
         </div>
       </div>
       <p>If
-      <a class="link" href="reference.html#mail-check-stats" title="3.219.&#160;mail_check_stats">$mail_check_stats</a> is set, NeoMutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
+      <a class="link" href="reference.html#mail-check-stats" title="3.221.&#160;mail_check_stats">$mail_check_stats</a> is set, NeoMutt will periodically calculate the unread, flagged, and total message counts for each mailbox watched by the
       <span class="command">
         <strong>mailboxes</strong>
       </span>command. (Note: IMAP mailboxes only support unread and total counts). This calculation takes place at the same time as new mail polling, but is controlled by a separate timer:
-      <a class="link" href="reference.html#mail-check-stats-interval" title="3.220.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>.</p>
+      <a class="link" href="reference.html#mail-check-stats-interval" title="3.222.&#160;mail_check_stats_interval">$mail_check_stats_interval</a>.</p>
       <p>The sidebar can display these message counts. See
-      <a class="link" href="reference.html#sidebar-format" title="3.426.&#160;sidebar_format">$sidebar_format</a>.</p>
+      <a class="link" href="reference.html#sidebar-format" title="3.428.&#160;sidebar_format">$sidebar_format</a>.</p>
     </div>
   </div>
   <div class="sect1">
@@ -2760,12 +2760,12 @@ mailboxes `find ~/.mail/ -type d -name cur | sed -e 's:/cur/*$::' -e 's/ /\\ /g'
     <p>RFC1894 defines a set of MIME content types for relaying information about the status of electronic mail messages. These can be thought of as
     <span class="quote">“<span class="quote">return receipts.</span>”</span></p>
     <p>To support DSN, there are two variables.
-    <a class="link" href="reference.html#dsn-notify" title="3.109.&#160;dsn_notify">$dsn_notify</a> is used to request receipts for different results (such as failed message, message delivered, etc.).
-    <a class="link" href="reference.html#dsn-return" title="3.110.&#160;dsn_return">$dsn_return</a> requests how much of your message should be returned with the receipt (headers or full message).</p>
+    <a class="link" href="reference.html#dsn-notify" title="3.111.&#160;dsn_notify">$dsn_notify</a> is used to request receipts for different results (such as failed message, message delivered, etc.).
+    <a class="link" href="reference.html#dsn-return" title="3.112.&#160;dsn_return">$dsn_return</a> requests how much of your message should be returned with the receipt (headers or full message).</p>
     <p>When using
-    <a class="link" href="reference.html#sendmail" title="3.416.&#160;sendmail">$sendmail</a> for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
+    <a class="link" href="reference.html#sendmail" title="3.418.&#160;sendmail">$sendmail</a> for mail delivery, you need to use either Berkeley sendmail 8.8.x (or greater) a MTA supporting DSN command line options compatible to Sendmail: The -N and -R options can be used by the mail client to make requests as to what type of status messages should be returned. Please consider your MTA documentation whether DSN is supported.</p>
     <p>For SMTP delivery using
-    <a class="link" href="reference.html#smtp-url" title="3.475.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether NeoMutt will attempt to request DSN or not.</p>
+    <a class="link" href="reference.html#smtp-url" title="3.477.&#160;smtp_url">$smtp_url</a>, it depends on the capabilities announced by the server whether NeoMutt will attempt to request DSN or not.</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
@@ -2802,7 +2802,7 @@ macro pager \cb |urlview\n
       </p>
     </div>
     <p>You can print messages to the message window using the "echo" command. This might be useful after a macro finishes executing. After printing the message, echo will pause for the number of seconds specified by
-    <a class="link" href="reference.html#sleep-time" title="3.445.&#160;sleep_time">$sleep_time</a>.</p>
+    <a class="link" href="reference.html#sleep-time" title="3.447.&#160;sleep_time">$sleep_time</a>.</p>
     <pre class="screen">
 echo "Sourcing muttrc file"
 unset confirm_append
@@ -2823,7 +2823,7 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
       <ul class="itemizedlist" style="list-style-type: disc;">
         <li class="listitem">
           <p>Reply envelope settings.
-          <a class="link" href="reference.html#reverse-name" title="3.401.&#160;reverse_name">$reverse_name</a> processing. To, Cc, Subject, References header defaults.</p>
+          <a class="link" href="reference.html#reverse-name" title="3.403.&#160;reverse_name">$reverse_name</a> processing. To, Cc, Subject, References header defaults.</p>
         </li>
         <li class="listitem">
           <p>
@@ -2831,9 +2831,9 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
         </li>
         <li class="listitem">
           <p>Prompts for To, Cc, Bcc, Subject headers. See
-          <a class="link" href="reference.html#ask-cc" title="3.17.&#160;ask_cc">$ask_cc</a>,
-          <a class="link" href="reference.html#ask-bcc" title="3.16.&#160;ask_bcc">$ask_bcc</a>,
-          <a class="link" href="reference.html#fast-reply" title="3.122.&#160;fast_reply">$fast_reply</a>.</p>
+          <a class="link" href="reference.html#ask-cc" title="3.18.&#160;ask_cc">$ask_cc</a>,
+          <a class="link" href="reference.html#ask-bcc" title="3.17.&#160;ask_bcc">$ask_bcc</a>,
+          <a class="link" href="reference.html#fast-reply" title="3.124.&#160;fast_reply">$fast_reply</a>.</p>
         </li>
         <li class="listitem">
           <p>From header setting. Note: this is so
@@ -2866,11 +2866,11 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
         </li>
         <li class="listitem">
           <p>
-          <a class="link" href="reference.html#real-name" title="3.385.&#160;real_name">$real_name</a> part of From header setting.</p>
+          <a class="link" href="reference.html#real-name" title="3.387.&#160;real_name">$real_name</a> part of From header setting.</p>
         </li>
         <li class="listitem">
           <p>
-          <a class="link" href="reference.html#editor" title="3.114.&#160;editor">$editor</a> invocation for the message.</p>
+          <a class="link" href="reference.html#editor" title="3.116.&#160;editor">$editor</a> invocation for the message.</p>
         </li>
         <li class="listitem">
           <p>
@@ -2894,14 +2894,14 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
         </li>
         <li class="listitem">
           <p>Fcc saving if
-          <a class="link" href="reference.html#fcc-before-send" title="3.124.&#160;fcc_before_send">$fcc_before_send</a> is set. (Note the variable documentation for caveats of Fcc'ing before sending.)</p>
+          <a class="link" href="reference.html#fcc-before-send" title="3.126.&#160;fcc_before_send">$fcc_before_send</a> is set. (Note the variable documentation for caveats of Fcc'ing before sending.)</p>
         </li>
         <li class="listitem">
           <p>Message sending.</p>
         </li>
         <li class="listitem">
           <p>Fcc saving if
-          <a class="link" href="reference.html#fcc-before-send" title="3.124.&#160;fcc_before_send">$fcc_before_send</a> is unset (the default). The Fcc used to be saved before sending the message. It is now by default saved afterwards, but if the saving fails, the user is prompted.</p>
+          <a class="link" href="reference.html#fcc-before-send" title="3.126.&#160;fcc_before_send">$fcc_before_send</a> is unset (the default). The Fcc used to be saved before sending the message. It is now by default saved afterwards, but if the saving fails, the user is prompted.</p>
         </li>
       </ul>
     </div>

@@ -180,7 +180,7 @@ status: stable
             </tr>
             <tr>
               <td>
-                <code class="literal">sidebar_sort_method</code>
+                <code class="literal">sidebar_sort</code>
               </td>
               <td>enum</td>
               <td>
@@ -336,7 +336,7 @@ status: stable
       </em>... }</p>
     </div>
     <p>This command specifies mailboxes that will always be displayed in the sidebar, even if
-    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.428.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
+    <a class="link" href="/guide/reference.html#sidebar-new-mail-only" title="3.430.&#160;sidebar_new_mail_only">$sidebar_new_mail_only</a> is set and the mailbox does not contain new mail.</p>
     <p>The
     <span class="quote">“<span class="quote">sidebar_unpin</span>”</span> command is used to remove a mailbox from the list of always displayed mailboxes. Use
     <span class="quote">“<span class="quote">sidebar_unpin&#160;*</span>”</span> to remove all mailboxes.</p>
@@ -447,7 +447,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="sort"></a>7.&#160;Sort</h2>
+          <a id="sorting"></a>7.&#160;Sort</h2>
         </div>
       </div>
     </div>
@@ -591,7 +591,7 @@ set sidebar_format = '%B%&lt;F? [%F]&gt;%* %&lt;N?%N/&gt;%S'
 <span class="comment">#       unread   – number of unread messages</span>
 <span class="comment">#       path     – mailbox path</span>
 <span class="comment">#       unsorted – do not sort the mailboxes</span>
-set sidebar_sort_method = 'unsorted'
+set sidebar_sort = 'unsorted'
 <span class="comment"># --------------------------------------------------------------------------</span>
 <span class="comment"># FUNCTIONS – shown with an example mapping</span>
 <span class="comment"># --------------------------------------------------------------------------</span>

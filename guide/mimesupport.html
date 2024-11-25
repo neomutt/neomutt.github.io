@@ -183,10 +183,10 @@ title: NeoMutt's MIME Support
               <code class="literal">umask 022</code> will create a file with permissions
               <code class="literal">rw-r--r--</code>.</p>
               <p>See also:
-              <a class="link" href="reference.html#attach-save-dir" title="3.27.&#160;attach_save_dir">$attach_save_dir</a>,
-              <a class="link" href="reference.html#attach-save-without-prompting" title="3.28.&#160;attach_save_without_prompting">$attach_save_without_prompting</a>,
-              <a class="link" href="reference.html#attach-sep" title="3.29.&#160;attach_sep">$attach_sep</a>,
-              <a class="link" href="reference.html#attach-split" title="3.30.&#160;attach_split">$attach_split</a></p>
+              <a class="link" href="reference.html#attach-save-dir" title="3.28.&#160;attach_save_dir">$attach_save_dir</a>,
+              <a class="link" href="reference.html#attach-save-without-prompting" title="3.29.&#160;attach_save_without_prompting">$attach_save_without_prompting</a>,
+              <a class="link" href="reference.html#attach-sep" title="3.30.&#160;attach_sep">$attach_sep</a>,
+              <a class="link" href="reference.html#attach-split" title="3.31.&#160;attach_split">$attach_split</a></p>
             </dd>
           </dl>
         </div>
@@ -214,7 +214,7 @@ title: NeoMutt's MIME Support
       <code class="literal">&lt;edit-encoding&gt;</code> command (default: ^E). The next field is the size of the attachment, rounded to kilobytes or megabytes. The next field is the filename, which can be changed with the
       <code class="literal">&lt;rename-file&gt;</code> command (default: R). The final field is the description of the attachment, and can be changed with the
       <code class="literal">&lt;edit-description&gt;</code> command (default: d). See
-      <a class="link" href="reference.html#attach-format" title="3.25.&#160;attach_format">$attach_format</a> for a full list of available expandos to format this display to your needs.</p>
+      <a class="link" href="reference.html#attach-format" title="3.26.&#160;attach_format">$attach_format</a> for a full list of available expandos to format this display to your needs.</p>
     </div>
   </div>
   <div class="sect1">
@@ -259,7 +259,7 @@ audio/x-aiff                    aif aifc aiff
     <p>A sample
     <code class="literal">mime.types</code> file comes with the NeoMutt distribution, and should contain most of the MIME types you are likely to use.</p>
     <p>If NeoMutt can not determine the MIME type by the extension of the file you attach, it will run the command specified in
-    <a class="link" href="reference.html#mime-type-query-command" title="3.253.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
+    <a class="link" href="reference.html#mime-type-query-command" title="3.255.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
     <code class="literal">text/plain</code>. If the file contains binary information, then NeoMutt will mark it as
     <code class="literal">application/octet-stream</code>. You can change the MIME type that NeoMutt assigns to an attachment by using the
     <code class="literal">&lt;edit-type&gt;</code> command from the compose menu (default: ^T), see
@@ -490,7 +490,7 @@ text/*; more
       </div>
       <p>The interpretation of shell meta-characters embedded in MIME parameters can lead to security problems in general. NeoMutt tries to quote parameters in expansion of
       <code class="literal">%s</code> syntaxes properly, and avoids risky characters by substituting them, see the
-      <a class="link" href="reference.html#mailcap-sanitize" title="3.223.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
+      <a class="link" href="reference.html#mailcap-sanitize" title="3.225.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
       <p>Although NeoMutt's procedures to invoke programs with mailcap seem to be safe, there are other applications parsing mailcap, maybe taking less care of it. Therefore you should pay attention to the following rules:</p>
       <p>
       <span class="emphasis">
@@ -587,7 +587,7 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
             </dt>
             <dd>
               <p>This flag specifies the command to use to edit a specific MIME type. NeoMutt supports this from the compose menu, and also uses it to compose new attachments. NeoMutt will default to the defined
-              <a class="link" href="reference.html#editor" title="3.114.&#160;editor">$editor</a> for text attachments.</p>
+              <a class="link" href="reference.html#editor" title="3.116.&#160;editor">$editor</a> for text attachments.</p>
             </dd>
             <dt>
               <span class="term">nametemplate=&lt;template&gt;</span>
@@ -1221,7 +1221,7 @@ set preferred_languages="fr,en,de"
     <a class="xref" href="optionalfeatures.html#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a> usually means to download the message just once.</p>
     <p>By default, NeoMutt will not search inside
     <code class="literal">multipart/alternative</code> containers. This can be changed via the
-    <a class="link" href="reference.html#count-alternatives" title="3.70.&#160;count_alternatives">$count_alternatives</a> configuration variable.</p>
+    <a class="link" href="reference.html#count-alternatives" title="3.72.&#160;count_alternatives">$count_alternatives</a> configuration variable.</p>
     <p>The syntax is:</p>
     <div class="cmdsynopsis">
       <p>
