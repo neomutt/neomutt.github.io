@@ -6727,7 +6727,7 @@ set imap_authenticators="gssapi:cram-md5:login"
             <tr>
               <td>%{fmt}</td>
               <td>the date and time of the message is converted to sender's time zone, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the braces is a bang ("!"), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so "%Z" behaves like "%z".</td>
+              <code class="literal">strftime(3)</code> ; if the first character inside the braces is a bang ("!"), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so "%Z" behaves like "%z". %{fmt} behaves like %[fmt] on systems where struct tm doesn't have a tm_gmtoff member.</td>
             </tr>
             <tr>
               <td>%[fmt]</td>
