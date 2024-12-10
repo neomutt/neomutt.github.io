@@ -51,7 +51,7 @@ You may also be interested in:
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
     <td align="center"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
     <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
-    <td align="left" colspan="2"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
+    <td align="left" colspan="3"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
   </tr>
   <tr>
     <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
