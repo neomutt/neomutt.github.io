@@ -54,7 +54,6 @@ You may also be interested in:
     <td align="left" colspan="2"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
   </tr>
   <tr>
-    <td>J&nbsp;Sheng<br>@lamons</td>
     <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
