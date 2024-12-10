@@ -34,7 +34,8 @@ You may also be interested in:
     <td align="center"><a href="https://github.com/4nd3r/"><img width="80" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
     <td align="center"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
-    <td align="center"><a href="https://github.com/Yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
+    <td align="center"><a href="https://github.com/yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
+    <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
   </tr>
   <tr>
     <td>Jakub&nbsp;Jindra<br>@jindraj</td>
@@ -43,12 +44,13 @@ You may also be interested in:
     <td>Igor&nbsp;Serebryany<br>@igor47</td>
     <td>Mark&nbsp;Korondi<br>@kmARC</td>
     <td>Mateus&nbsp;Etto<br>@yutsuten</td>
+    <td>J&nbsp;Sheng<br>@lamons</td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
     <td align="center"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
     <td align="center"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
+    <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
     <td align="left" colspan="2"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
   </tr>
   <tr>
@@ -56,12 +58,13 @@ You may also be interested in:
     <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
-    <td colspan="2">Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
+    <td>Robert Ricci<br>@ricci</td>
+    <td colspan="3">Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
   </tr>
 </table>
 
 - Robert Labudda
-- Patrick Koetter (@patrickbenkoetter)
+- Patrick Koetter ([@patrickbenkoetter@troet.cafe](https://troet.cafe/@patrickbenkoetter))
 - 海老根蓉也
 - Reiko Kaps
 - Joonas Laine
