@@ -27,38 +27,36 @@ You may also be interested in:
 
 ## :gem: Sponsors
 
-<table border="0">
+Special thanks to our **sponsors**:
+
+<table>
   <tr>
     <td align="center"><a href="https://github.com/jindraj/"><img width="80" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
     <td align="center"><a href="https://github.com/scottkosty/"><img width="80" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
-    <td align="center"><a href="https://github.com/4nd3r/"><img width="80" src="https://avatars.githubusercontent.com/u/7166727"></a></td>
     <td align="center"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
-    <td align="center"><a href="https://github.com/yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
-    <td align="center"><a href="https://github.com/lamons"><img width="80" src="https://avatars.githubusercontent.com/u/5617053"></a></td>
+    <td align="left" colspan="2"><a href="https://www.blunix.com/"><img width="80" src="https://neomutt.org/images/sponsors/blunix.png"></a></td>
   </tr>
   <tr>
     <td>Jakub&nbsp;Jindra<br>@jindraj</td>
     <td>Scott&nbsp;Kostyshak<br>@scottkosty</td>
-    <td>Ander&nbsp;Punnar<br>@4nd3r</td>
     <td>Igor&nbsp;Serebryany<br>@igor47</td>
     <td>Mark&nbsp;Korondi<br>@kmARC</td>
-    <td>Mateus&nbsp;Etto<br>@yutsuten</td>
-    <td>J&nbsp;Sheng<br>@lamons</td>
+    <td colspan="2">Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
-    <td align="center"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
+    <td align="center"><a href="https://github.com/yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
     <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
-    <td align="left" colspan="3"><a href="https://www.blunix.com/"><img width="80" src="/images/sponsors/blunix.png"></a></td>
+    <td align="left" colspan="2"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
   </tr>
   <tr>
     <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
-    <td>Farzad Sadeghi<br>@terminaldweller</td>
+    <td>Mateus&nbsp;Etto<br>@yutsuten</td>
     <td>Robert Ricci<br>@ricci</td>
-    <td colspan="3">Blunix&nbsp;GmbH<br><a href="https://www.blunix.com/">Linux support company<br>from Berlin, Germany</a></td>
+    <td>Farzad Sadeghi<br>@terminaldweller</td>
   </tr>
 </table>
 
@@ -68,6 +66,7 @@ You may also be interested in:
 - Reiko Kaps
 - Joonas Laine
 - Marton Balazs
+- Morgan Kelly
 - Izaac Mammadov (@IzaacMammadov)
 
 ---
