@@ -68,6 +68,7 @@ You may also be interested in:
 - Reiko Kaps
 - Joonas Laine
 - Marton Balazs
+- Izaac Mammadov (@IzaacMammadov)
 
 ---
 
