@@ -13,7 +13,6 @@ If not, please consider becoming a sponsor.
 <a href="https://liberapay.com/flatcap"><img alt="LiberaPay" width="32" src="/images/liberapay.png"></a>
 <a href="https://www.paypal.me/russon/"><img alt="PayPal" width="32" src="/images/paypal.png"></a>
 <a href="#bitcoin"><img alt="BitCoin" width="32" src="/images/btc-logo.svg"></a>
-<a href="#openssh"><img alt="OpenSSH" width="32" src="/images/openssh-logo.png"></a>
 
 Thanks :heart:
 
@@ -101,10 +100,3 @@ If **crypto**'s your thing, then you can make a **donation** to this wallet:
 
 <img alt="Wallet" src="/images/btc-wallet.png">
 
-## <img style="margin-right: 0.5em;" alt="OpenSSH" width="48" src="/images/openssh-logo.png">OpenSSH
-
-If **OpenSSH**'s your thing, then you can make a **donation** to this wallet:
-
-- **OpenSSH**: `D3gLfQkgs8Q6aNsZkrsRAtrBruacPDgJAj1GpgPv4aHD`
-
-<img alt="Wallet" src="/images/openssh-wallet.png">
