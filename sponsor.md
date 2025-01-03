@@ -46,14 +46,14 @@ Special thanks to our **sponsors**:
   <tr>
     <td align="center"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
-    <td align="center"><a href="https://github.com/yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
+    <td align="center"><a href="https://github.com/Yutsuten"><img width="80" src="https://avatars.githubusercontent.com/u/7322925"></a></td>
     <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
     <td align="left" colspan="2"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
   </tr>
   <tr>
     <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
-    <td>Mateus&nbsp;Etto<br>@yutsuten</td>
+    <td>Mateus&nbsp;Etto<br>@Yutsuten</td>
     <td>Robert Ricci<br>@ricci</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
   </tr>
@@ -67,6 +67,7 @@ Special thanks to our **sponsors**:
 - Marton Balazs
 - Morgan Kelly
 - Izaac Mammadov (@IzaacMammadov)
+- Yu (@iveteran)
 
 ---
 
