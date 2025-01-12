@@ -177,6 +177,7 @@ See also: [external address queries](/guide/advancedusage.html#query).
 - [mutt-query-complete.vim](https://github.com/Konfekt/mutt-query-complete.vim) to complete mail addresses provided by the mutt `$query_tool` in Vim such as`notmuch address` or [mutt-ldap.py](https://github.com/wberrier/mutt-ldap)
 - [vim-notmuch-addrlookup](https://github.com/Konfekt/vim-notmuch-addrlookup) to complete mail addresses indexed by [notmuch](https://notmuchmail.org).
 - [vim-notmuch-address](https://github.com/adborden/vim-notmuch-address) -- to complete mail addresses in Vim
+- [telescope-notmuch.nvim](https://codeberg.org/JoshuaCrewe/telescope-notmuch.nvim) - Neovim integration for Telescope (completion / search)
 
 
 ## Setup
