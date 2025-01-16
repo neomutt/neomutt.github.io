@@ -20,10 +20,12 @@ They enable code that _might_ be useful to other developers.
 | `--debug-color`     | Enable Color dump                       |
 | `--debug-email`     | Enable Email dump                       |
 | `--debug-graphviz`  | Enable Graphviz dump                    |
+| `--debug-keymap`    | Enable Key mappings dump                |
+| `--debug-logging`   | Enable Debug logging                    |
 | `--debug-names`     | Enable Name lookup tables               |
 | `--debug-notify`    | Enable Notifications dump               |
 | `--debug-queue`     | Enable TAILQ debugging                  |
-| `--debug-window`    | Enable windows dump                     |
+| `--debug-window`    | Enable Windows dump                     |
 
 These options are tested weekly by the [Debug Action](https://github.com/neomutt/neomutt/actions/workflows/debug.yml).
 
@@ -154,6 +156,25 @@ The output can look like this:
 <img width="800" src="https://raw.githubusercontent.com/neomutt/gfx/main/account/imap.svg">
 
 **Note**: The pointer values are real!
+
+## Keymap
+
+Keybindings are stored in a tree.
+This option enables functions for logging the keybindings.
+
+```sh
+Enable Key mappings dump
+./configure --debug-keymap
+```
+
+## Logging
+
+Add a Logging Dispatcher that dumps everything to stdout.
+
+```sh
+Enable Debug logging
+./configure --debug-logging
+```
 
 ## Names
 
