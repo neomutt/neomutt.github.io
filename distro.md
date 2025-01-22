@@ -44,4 +44,4 @@ table row).
   </tbody>
 </table>
 
-<a href="https://repology.org/project/neomutt/versions"><img src="https://repology.org/badge/vertical-allrepos/neomutt.svg"></a<
+<a href="https://repology.org/project/neomutt/versions"><img src="https://repology.org/badge/vertical-allrepos/neomutt.svg"></a>
