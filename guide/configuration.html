@@ -1807,8 +1807,7 @@ folder-hook work "set sort=threads"
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">color</code> [
-      <code class="option">compose</code> ]
+      <code class="command">color</code>
       <em class="replaceable">
         <code>object</code>
       </em>[
@@ -1874,8 +1873,7 @@ folder-hook work "set sort=threads"
         <code>num</code>
       </em>]]
       <br />
-      <code class="command">uncolor</code> [
-      <code class="option">compose</code> ]
+      <code class="command">uncolor</code>
       <em class="replaceable">
         <code>object</code>
       </em>
@@ -2250,11 +2248,6 @@ color sidebar_divider brightblack default
 uncolor sidebar_divider
 </pre>
       <p>These are compose objects.</p>
-      <div class="note">
-        <h3 class="title">Note</h3>
-        <p>The compose objects use a slightly different format of command. They prefix the style with the word
-        <code class="literal">compose</code>.</p>
-      </div>
       <div >
         <a id="color-simple-compose"></a>
         <p class="title">
@@ -2274,23 +2267,23 @@ uncolor sidebar_divider
             </thead>
             <tbody>
               <tr>
-                <td>header</td>
+                <td>compose_header</td>
                 <td>Header labels, e.g. From:</td>
               </tr>
               <tr>
-                <td>security_encrypt</td>
+                <td>compose_security_encrypt</td>
                 <td>Mail will be encrypted</td>
               </tr>
               <tr>
-                <td>security_sign</td>
+                <td>compose_security_sign</td>
                 <td>Mail will be signed</td>
               </tr>
               <tr>
-                <td>security_both</td>
+                <td>compose_security_both</td>
                 <td>Mail will be encrypted and signed</td>
               </tr>
               <tr>
-                <td>security_none</td>
+                <td>compose_security_none</td>
                 <td>Mail will not be encrypted or signed</td>
               </tr>
             </tbody>
@@ -2299,10 +2292,10 @@ uncolor sidebar_divider
       </div>
       <br class="table-break" />
       <pre class="screen">
-color compose header bold white default
+color compose_header bold white default
 </pre>
       <pre class="screen">
-uncolor compose header
+uncolor compose_header
 </pre>
       <p>The quoted objects refer to quoted lines in an email reply. They are defined using the
       <a class="link" href="reference.html#reply-regex" title="3.398.&#160;reply_regex">
@@ -2631,10 +2624,7 @@ uncolor status *
       <p>For
       <span class="emphasis">
         <em>object</em>
-      </span>,
-      <span class="emphasis">
-        <em>composeobject</em>
-      </span>, and
+      </span>and
       <span class="emphasis">
         <em>attribute</em>
       </span>, see the

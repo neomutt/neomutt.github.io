@@ -65,10 +65,6 @@ neomutt -a image.jpg *.png -- address1 address2
 </pre></td>
             </tr>
             <tr>
-              <td>-B</td>
-              <td>Run in batch mode (do not start the ncurses UI)</td>
-            </tr>
-            <tr>
               <td>-b
               <code class="literal">address</code></td>
               <td>Specify a blind carbon copy (Bcc) recipient</td>
@@ -88,6 +84,13 @@ neomutt -a image.jpg *.png -- address1 address2
               <span class="bold">
                 <strong>name=value</strong>
               </span>' pairs to stdout</td>
+            </tr>
+            <tr>
+              <td>-D -D (or -DD)</td>
+              <td>Like
+              <span class="bold">
+                <strong>-D</strong>
+              </span>, but only show the config that has changed</td>
             </tr>
             <tr>
               <td>-D -O</td>
@@ -18034,7 +18037,7 @@ set use_threads=yes
                   <code class="literal">&lt;verify-key&gt;</code>
                 </td>
                 <td>c</td>
-                <td>verify a PGP public key</td>
+                <td>verify a public key</td>
               </tr>
               <tr>
                 <td>
@@ -18090,7 +18093,7 @@ set use_threads=yes
                   <code class="literal">&lt;verify-key&gt;</code>
                 </td>
                 <td>c</td>
-                <td>verify a PGP public key</td>
+                <td>verify a public key</td>
               </tr>
               <tr>
                 <td>
