@@ -985,14 +985,14 @@ color sidebar_divider    color8  default
             <tr>
               <td>z or &lt;PageDn&gt;</td>
               <td>
-                <code class="literal">&lt;page-down&gt;</code>
+                <code class="literal">&lt;next-page&gt;</code>
               </td>
               <td>go to the next page</td>
             </tr>
             <tr>
               <td>Z or &lt;PageUp&gt;</td>
               <td>
-                <code class="literal">&lt;page-up&gt;</code>
+                <code class="literal">&lt;previous-page&gt;</code>
               </td>
               <td>go to the previous page</td>
             </tr>
@@ -2485,14 +2485,14 @@ bind editor &lt;delete&gt; backspace
               <tr>
                 <td>f</td>
                 <td>
-                  <code class="literal">&lt;forward&gt;</code>
+                  <code class="literal">&lt;forward-message&gt;</code>
                 </td>
                 <td>forward message</td>
               </tr>
               <tr>
                 <td>b</td>
                 <td>
-                  <code class="literal">&lt;bounce&gt;</code>
+                  <code class="literal">&lt;bounce-message&gt;</code>
                 </td>
                 <td>bounce (remail) message</td>
               </tr>
@@ -3198,8 +3198,8 @@ bind editor &lt;delete&gt; backspace
       </div>
     </div>
     <p>Bouncing and forwarding let you send an existing message to recipients that you specify. Bouncing a message sends a verbatim copy of a message to alternative addresses as if they were the message's original recipients specified in the Bcc header. Forwarding a message, on the other hand, allows you to modify the message before it is resent (for example, by adding your own comments). Bouncing is done using the
-    <code class="literal">&lt;bounce&gt;</code> function and forwarding using the
-    <code class="literal">&lt;forward&gt;</code> function bound to
+    <code class="literal">&lt;bounce-message&gt;</code> function and forwarding using the
+    <code class="literal">&lt;forward-message&gt;</code> function bound to
     <span class="quote">“<span class="quote">b</span>”</span> and
     <span class="quote">“<span class="quote">f</span>”</span> respectively.</p>
     <p>Forwarding can be done by including the original message in the new message's body (surrounded by indicating lines: see
