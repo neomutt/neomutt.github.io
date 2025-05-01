@@ -140,7 +140,7 @@ See also: [external address queries](/guide/advancedusage.html#query).
 
 ## Miscellaneous
 
-* [muttprint](http://muttprint.sourceforge.net/)
+* [muttprint](http://muttprint.sourceforge.net/) -- pretty printing of emails from mutt.
 * [notifynotmuch](https://github.com/kspi/notifymuch) -- displays desktop
   notifications for unread mail in Notmuch database
 * [notify-osd](https://launchpad.net/notify-osd) -- Canonical's
