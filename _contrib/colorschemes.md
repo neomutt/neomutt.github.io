@@ -17,6 +17,7 @@ dir: colorschemes
 - [neonwolf-256](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/neonwolf-256.neomuttrc)
 - [vombatidae](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/vombatidae.neomuttrc)
 - [zenburn](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/zenburn.neomuttrc)
+- [ayu-dark-256](https://github.com/neomutt/neomutt/blob/main/data/colorschemes/ayu-dark-256.neomuttrc)
 
 Welcome to add more!
 
