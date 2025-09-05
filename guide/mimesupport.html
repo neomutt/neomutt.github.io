@@ -259,7 +259,7 @@ audio/x-aiff                    aif aifc aiff
     <p>A sample
     <code class="literal">mime.types</code> file comes with the NeoMutt distribution, and should contain most of the MIME types you are likely to use.</p>
     <p>If NeoMutt can not determine the MIME type by the extension of the file you attach, it will run the command specified in
-    <a class="link" href="reference.html#mime-type-query-command" title="3.258.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
+    <a class="link" href="reference.html#mime-type-query-command" title="3.259.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
     <code class="literal">text/plain</code>. If the file contains binary information, then NeoMutt will mark it as
     <code class="literal">application/octet-stream</code>. You can change the MIME type that NeoMutt assigns to an attachment by using the
     <code class="literal">&lt;edit-type&gt;</code> command from the compose menu (default: ^T), see
@@ -490,7 +490,7 @@ text/*; more
       </div>
       <p>The interpretation of shell meta-characters embedded in MIME parameters can lead to security problems in general. NeoMutt tries to quote parameters in expansion of
       <code class="literal">%s</code> syntaxes properly, and avoids risky characters by substituting them, see the
-      <a class="link" href="reference.html#mailcap-sanitize" title="3.228.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
+      <a class="link" href="reference.html#mailcap-sanitize" title="3.229.&#160;mailcap_sanitize">$mailcap_sanitize</a> variable.</p>
       <p>Although NeoMutt's procedures to invoke programs with mailcap seem to be safe, there are other applications parsing mailcap, maybe taking less care of it. Therefore you should pay attention to the following rules:</p>
       <p>
       <span class="emphasis">
@@ -558,11 +558,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.545.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.546.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, NeoMutt will use
-              <a class="link" href="reference.html#wait-key" title="3.545.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.546.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -587,7 +587,7 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
             </dt>
             <dd>
               <p>This flag specifies the command to use to edit a specific MIME type. NeoMutt supports this from the compose menu, and also uses it to compose new attachments. NeoMutt will default to the defined
-              <a class="link" href="reference.html#editor" title="3.119.&#160;editor">$editor</a> for text attachments.</p>
+              <a class="link" href="reference.html#editor" title="3.120.&#160;editor">$editor</a> for text attachments.</p>
             </dd>
             <dt>
               <span class="term">nametemplate=&lt;template&gt;</span>
@@ -627,7 +627,7 @@ text/html; lynx %s
                 <em>not</em>
               </span>delete the temporary file after the program has been run.</p>
               <p>Using it allows you to control the lifespan of the temporary file. Without this option, the file will be deleted after
-              <a class="link" href="reference.html#timeout" title="3.520.&#160;timeout">$timeout</a> seconds.</p>
+              <a class="link" href="reference.html#timeout" title="3.521.&#160;timeout">$timeout</a> seconds.</p>
               <pre class="screen">
 text/html; firefox %s &amp; x-neomutt-keep
 </pre>
@@ -638,7 +638,7 @@ text/html; firefox %s &amp; x-neomutt-keep
             <dd>
               <p>
               <code class="literal">x-neomutt-nowrap</code> tells the NeoMutt pager to ignore the
-              <a class="link" href="reference.html#wrap" title="3.547.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
+              <a class="link" href="reference.html#wrap" title="3.548.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
               <pre class="screen">
 text/html; /usr/local/bin/w3m -s -T text/html -o display_link_number=1 %s; nametemplate=%s.html; copiousoutput; x-neomutt-nowrap;
 </pre>
@@ -1221,7 +1221,7 @@ set preferred_languages="fr,en,de"
     <a class="xref" href="optionalfeatures.html#body-caching" title="8.2.&#160;Body Caching">Section&#160;8.2, “Body Caching”</a> usually means to download the message just once.</p>
     <p>By default, NeoMutt will not search inside
     <code class="literal">multipart/alternative</code> containers. This can be changed via the
-    <a class="link" href="reference.html#count-alternatives" title="3.75.&#160;count_alternatives">$count_alternatives</a> configuration variable.</p>
+    <a class="link" href="reference.html#count-alternatives" title="3.76.&#160;count_alternatives">$count_alternatives</a> configuration variable.</p>
     <p>The syntax is:</p>
     <div class="cmdsynopsis">
       <p>
