@@ -21,7 +21,7 @@ description: Utility to add S/MIME certificate to the internal database used by 
   <div class="refsect1">
     <a id="description"></a>
     <h2>DESCRIPTION</h2>
-    <p>The purpose of this tool is to manipulate the internal database of S/MIME certificates used by neomutt to sign mail messages which will be sent or to verify mail messages received and signed with S/MIME</p>
+    <p>The purpose of this tool is to manipulate the internal database of S/MIME certificates used by neomutt to sign mail messages which will be sent or to verify mail messages received and signed with S/MIME.</p>
   </div>
   <div class="refsect1">
     <a id="options"></a>
@@ -37,6 +37,16 @@ description: Utility to add S/MIME certificate to the internal database used by 
         </dt>
         <dd>
           <p>no files needed, inits directory structure.</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>refresh</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>no files needed. refreshes index files, including trust flag/expiration.</p>
         </dd>
         <dt>
           <span class="term">
@@ -76,7 +86,7 @@ description: Utility to add S/MIME certificate to the internal database used by 
           </span>
         </dt>
         <dd>
-          <p>1=keyID and optionally 2=CRL Verifies the certificate chain, and optionally whether this certificate is included in supplied CRL (PEM format). Note: to verify all certificates at the same time, replace keyID with "all"</p>
+          <p>1=keyID and optionally 2=CRL. Verifies the certificate chain, and optionally whether this certificate is included in supplied CRL (PEM format). Note: to verify all certificates at the same time, replace keyID with "all".</p>
         </dd>
         <dt>
           <span class="term">
@@ -126,7 +136,7 @@ description: Utility to add S/MIME certificate to the internal database used by 
           </span>
         </dt>
         <dd>
-          <p>one file reqd. Adds PEM root certificate to the location specified within muttrc (smime_verify_* command)</p>
+          <p>one file reqd. Adds PEM root certificate to the location specified within muttrc (smime_verify_* command).</p>
         </dd>
       </dl>
     </div>

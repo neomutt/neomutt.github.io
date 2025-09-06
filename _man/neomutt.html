@@ -377,9 +377,7 @@ description: The NeoMutt Mail User Agent (MUA)
     <span class="strong">
       <strong>Note:</strong>
     </span>This manual page gives a brief overview of NeoMutt's command line options. You should find a copy of the full manual in 
-    <span class="emphasis">
-      <em>@MAN_DOCDIR@</em>
-    </span>, in plain text, HTML, and/or PDF format.</p>
+    <code class="filename">/usr/share/doc/neomutt</code>, in plain text, HTML, and/or PDF format.</p>
   </div>
   <div class="refsect1">
     <a id="options"></a>
@@ -468,16 +466,6 @@ description: The NeoMutt Mail User Agent (MUA)
         <dt>
           <span class="term">
             <span class="strong">
-              <strong>-B</strong>
-            </span>
-          </span>
-        </dt>
-        <dd>
-          <p>Run in batch mode (do not start the ncurses UI)</p>
-        </dd>
-        <dt>
-          <span class="term">
-            <span class="strong">
               <strong>-b</strong>
             </span>
             <span class="emphasis">
@@ -543,6 +531,22 @@ description: The NeoMutt Mail User Agent (MUA)
           <span class="strong">
             <strong>value</strong>
           </span>'' pairs to stdout</p>
+        </dd>
+        <dt>
+          <span class="term">
+            <span class="strong">
+              <strong>-D -D</strong>
+            </span>
+          </span>
+        </dt>
+        <dd>
+          <p>
+          <span class="strong">
+            <strong>-DD</strong>
+          </span>Like 
+          <span class="strong">
+            <strong>-D</strong>
+          </span>, but only show the config that has changed</p>
         </dd>
         <dt>
           <span class="term">
@@ -716,7 +720,7 @@ description: The NeoMutt Mail User Agent (MUA)
           </span>, then data is read from stdin. The draft file is expected to contain just an RFC822 email — headers and a body. Although it is not an mbox file, if an mbox " 
           <span class="strong">
             <strong>From&#160;</strong>
-          </span>" line is present, it will be silently discarded.</p>
+          </span>" line is present, it will be silently discarded. Draft files are processed the same in interactive and batch mode; they are not passed through untouched. For example, encrypted draft files will be decrypted.</p>
         </dd>
         <dt>
           <span class="term">
@@ -982,12 +986,8 @@ description: The NeoMutt Mail User Agent (MUA)
           <span class="emphasis">
             <em>$HOME/.mailcap</em>
           </span>: 
-          <span class="emphasis">
-            <em>@MAN_DATADIR@/mailcap</em>
-          </span>: 
-          <span class="emphasis">
-            <em>@MAN_SYSCONFDIR@/mailcap</em>
-          </span>: 
+          <code class="filename">/usr/share/neomutt/mailcap</code>: 
+          <code class="filename">/etc/mailcap</code>: 
           <code class="filename">/etc/mailcap</code>: 
           <code class="filename">/usr/etc/mailcap</code>: 
           <code class="filename">/usr/local/etc/mailcap</code>" will be used instead.</p>
@@ -1026,9 +1026,7 @@ description: The NeoMutt Mail User Agent (MUA)
         </dt>
         <dd>
           <p>Similar to configuration variable $news_server, specifies the domain name or address of the default NNTP server to connect. If unset, 
-          <span class="emphasis">
-            <em>@MAN_SYSCONFDIR@/nntpserver</em>
-          </span>is used but can be overridden by command line option 
+          <code class="filename">/etc/nntpserver</code>is used but can be overridden by command line option 
           <span class="strong">
             <strong>-g</strong>
           </span>.</p>
@@ -1063,9 +1061,7 @@ description: The NeoMutt Mail User Agent (MUA)
         </dt>
         <dd>
           <p>Defines an absolute path corresponding to 
-          <span class="emphasis">
-            <em>@MAN_TEXTDOMAINDIR@</em>
-          </span>that will be recognised by GNU 
+          <code class="filename">/usr/share/locale</code>that will be recognised by GNU 
           <span class="citerefentry">
           <span class="refentrytitle">gettext</span>(1)</span>and used for Native Language Support (NLS) if enabled.</p>
         </dd>
@@ -1185,12 +1181,12 @@ description: The NeoMutt Mail User Agent (MUA)
             </tr>
             <tr>
               <td align="right">3</td>
-              <td align="left">­@MAN_SYSCONFDIR@/neomuttrc</td>
+              <td align="left">­/etc/neomuttrc</td>
               <td align="left">­$XDG_CONFIG_HOME/mutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">4</td>
-              <td align="left">­@MAN_SYSCONFDIR@/Muttrc 
+              <td align="left">­/etc/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
@@ -1201,12 +1197,12 @@ description: The NeoMutt Mail User Agent (MUA)
             </tr>
             <tr>
               <td align="right">5</td>
-              <td align="left">­@MAN_DATADIR@/neomuttrc</td>
+              <td align="left">­/usr/share/neomutt/neomuttrc</td>
               <td align="left">­~/.neomutt/neomuttrc</td>
             </tr>
             <tr>
               <td align="right">6</td>
-              <td align="left">­@MAN_DATADIR@/Muttrc 
+              <td align="left">­/usr/share/neomutt/Muttrc 
               <span class="strong">
                 <strong>*</strong>
               </span>) 
@@ -1277,9 +1273,7 @@ description: The NeoMutt Mail User Agent (MUA)
             <span class="term">
             <code class="filename">~/.mailcap</code>,</span>
             <span class="term">
-              <span class="emphasis">
-                <em>@MAN_SYSCONFDIR@/mailcap</em>
-              </span>
+              <code class="filename">/etc/mailcap</code>
             </span>
           </dt>
           <dd>
@@ -1306,13 +1300,9 @@ description: The NeoMutt Mail User Agent (MUA)
             <span class="term">
             <code class="filename">/etc/mime.types</code>,</span>
             <span class="term">
-            <span class="emphasis">
-              <em>@MAN_SYSCONFDIR@/mime.types</em>
-            </span>,</span>
+            <code class="filename">/etc/mime.types</code>,</span>
             <span class="term">
-            <span class="emphasis">
-              <em>@MAN_DATADIR@/mime.types</em>
-            </span>,</span>
+            <code class="filename">/usr/share/neomutt/mime.types</code>,</span>
             <span class="term">
               <code class="filename">~/.mime.types</code>
             </span>
@@ -1322,9 +1312,7 @@ description: The NeoMutt Mail User Agent (MUA)
           </dd>
           <dt>
             <span class="term">
-            <span class="emphasis">
-              <em>@MAN_DOCDIR@/manual.</em>
-            </span>{ 
+            <code class="filename">/usr/share/doc/neomutt/manual.</code>{ 
             <span class="emphasis">
               <em>html</em>
             </span>, 
