@@ -112,7 +112,7 @@ Below is an exhaustive list of every event that affects the Sidebar.
 | sidebar_non_empty_mailbox_only | Displayed text    | :gear: recalc             |                                   |
 | sidebar_on_right               | Window position   | :paintbrush: repaint      | See: Window position              |
 | sidebar_short_path             | Displayed text    | :gear: recalc             |                                   |
-| sidebar_sort_method            | Displayed text    | :gear: recalc             |                                   |
+| sidebar_sort                   | Displayed text    | :gear: recalc             |                                   |
 | sidebar_visible                | Window visibility | :left_right_arrow: reflow | See: Window become visible/hidden |
 | sidebar_width                  | Window size       | :left_right_arrow: reflow | See: Window narrow/widen          |
 | spoolfile                      | Colour of text    | :paintbrush: repaint      |                                   |
