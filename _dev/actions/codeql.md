@@ -24,8 +24,8 @@ This action performs static code checks.
 See, [How to build NeoMutt](https://neomutt.org/dev/build)
 
 **Steps**:
-- Configure Neomutt
-- Build Neomutt
+- Configure NeoMutt
+- Build NeoMutt
 - Run CodeQL checker
 
 ### Action Details

@@ -28,8 +28,8 @@ set of unit tests on some of the libraries.
 See, [How to build NeoMutt](https://neomutt.org/dev/build)
 
 **Steps**:
-- Configure Neomutt
-- Build Neomutt
+- Configure NeoMutt
+- Build NeoMutt
 - Build Tests
 - Run Tests
 

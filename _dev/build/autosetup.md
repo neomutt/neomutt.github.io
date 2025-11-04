@@ -21,7 +21,7 @@ according to the system capabilities and the user-selected options."
 
 The website explains in great details the major goals of the project and the
 similarities and differences with Autotools. For the sake of this short
-introduction, I'll summarize the major points, as relevant to Neomutt.
+introduction, I'll summarize the major points, as relevant to NeoMutt.
 
 ### Zero-dependency
 
@@ -94,7 +94,7 @@ take a little getting used to, but it's nothing compared to M4sh.
 **Bottom line**: readable and debuggable configure script, no M4sh quoting
 intricacies, easily extensible.
 
-## Autosetup for Neomutt
+## Autosetup for NeoMutt
 
 In this section, I'll explain a few design decisions I took when porting
 NeoMutt's build system to Autosetup.

@@ -277,7 +277,7 @@ Fork a new process to avoid NeoMutt waiting for an attachment viewer
 
 : **Raised by** @RichiH -- **Result**: desired, too busy
 
-### [#85 Neomutt true colors support][#85]
+### [#85 NeoMutt true colors support][#85]
 
 Allow full 24-bit (rgb) colours in Mutt
 

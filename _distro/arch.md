@@ -43,7 +43,7 @@ The sections of interest are:
 
 ## Update <a id="update"></a>
 
-Neomutt can be updated together with other packages in the repositories.
+NeoMutt can be updated together with other packages in the repositories.
 
 ```
 pacman -Syu

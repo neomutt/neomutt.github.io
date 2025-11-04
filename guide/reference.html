@@ -3298,7 +3298,7 @@ TERM=xterm-direct neomutt
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Neomutt will display a preview of message in the compose view.</p>
+      </span>, NeoMutt will display a preview of message in the compose view.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -3316,7 +3316,7 @@ TERM=xterm-direct neomutt
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, Neomutt will display user-defined headers (set via
+      </span>, NeoMutt will display user-defined headers (set via
       <a class="link" href="configuration.html#my-hdr" title="17.&#160;User-Defined Headers">my_hdr</a> or from editing with edit-headers).</p>
     </div>
     <div class="sect2">
@@ -7214,7 +7214,7 @@ set inews="/usr/local/bin/inews -hS"
           <code class="literal">:</code>
         </span>”</span></p>
       </div>
-      <p>Use the value as maildir field delimiter. This is a single-character used to accommodate maildir mailboxes on platforms where `:` is not allowed in a filename. The recommended alternative on such platforms is `;`. Neomutt supports all non-alphanumeric values except for `-`, `.`, `\`, `/`.
+      <p>Use the value as maildir field delimiter. This is a single-character used to accommodate maildir mailboxes on platforms where `:` is not allowed in a filename. The recommended alternative on such platforms is `;`. NeoMutt supports all non-alphanumeric values except for `-`, `.`, `\`, `/`.
       <span class="bold">
         <strong>Note:</strong>
       </span>this only applies to maildir-style mailboxes. Setting it will have no effect on other mailbox types.</p>
@@ -8307,7 +8307,7 @@ set inews="/usr/local/bin/inews -hS"
         <p>Type:&#160;string
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>This variable specifies the notmuch tag modifications (addition, removal, toggling) applied to messages added to the Neomutt record when
+      <p>This variable specifies the notmuch tag modifications (addition, removal, toggling) applied to messages added to the NeoMutt record when
       <a class="link" href="#nm-record" title="3.287.&#160;nm_record">$nm_record</a> is true. See the description of the
       <code class="literal">&lt;modify-labels&gt;</code> function for the syntax.</p>
     </div>
@@ -13818,7 +13818,7 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
       <span class="emphasis">
         <em>unset</em>
       </span>, then messages may also be grouped by subject. Unlike threading by "In-Reply-To:" and "References:" header, grouping by subject does not imply a parent-child relation between two messages.</p>
-      <p>To determine the ancestry between messages grouped by subject, Neomutt uses their date: only newer messages can be descendants of older ones.</p>
+      <p>To determine the ancestry between messages grouped by subject, NeoMutt uses their date: only newer messages can be descendants of older ones.</p>
       <p>When
       <a class="link" href="#thread-received" title="3.518.&#160;thread_received">$thread_received</a> is
       <span class="emphasis">

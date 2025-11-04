@@ -35,7 +35,7 @@ This is a list of all the Git repositories in the NeoMutt GitHub Project.
 | [muttrc-mode-el](https://github.com/neomutt/muttrc-mode-el)         | Emacs major mode for editing muttrc                                                                      |
 | [neo-bot](https://github.com/neomutt/neo-bot)                       | IRC bot for #neomutt                                                                                     |
 | [neomutt-contrib](https://github.com/neomutt/neomutt-contrib)       | User Contributions to NeoMutt                                                                            |
-| [neomutt-docs](https://github.com/neomutt/neomutt-docs)             | Documentation for Neomutt                                                                                |
+| [neomutt-docs](https://github.com/neomutt/neomutt-docs)             | Documentation for NeoMutt                                                                                |
 | [neomutt-old](https://github.com/neomutt/neomutt-old)               | Retired branches of NeoMutt                                                                              |
 | [neomutt-test-files](https://github.com/neomutt/neomutt-test-files) | Files and directories for NeoMutt's build test.                                                          |
 | [neomutt](https://github.com/neomutt/neomutt)                       | Teaching an Old Dog New Tricks -- IRC: #neomutt on irc.libera.chat

@@ -997,7 +997,7 @@ alternative_order text/enriched text/plain text application/postscript image/*
       <code class="literal">multipart/alternative</code> email, otherwise it will be sent as a
       <code class="literal">multipart/mixed</code> email.</p>
       <p>Be aware that when sending a
-      <code class="literal">multipart/alternative</code> email, you have to manually prepare the alternative parts and attach them. However, you can use Neomutt's macro to perform all the operations needed, such that you can compose a plain text email as usual and turn that into a
+      <code class="literal">multipart/alternative</code> email, you have to manually prepare the alternative parts and attach them. However, you can use NeoMutt's macro to perform all the operations needed, such that you can compose a plain text email as usual and turn that into a
       <code class="literal">multipart/alternative</code> email in one single command, with one part being
       <code class="literal">text/plain</code> and the other
       <code class="literal">text/html</code>. An example macro which adds an HTML part to the main body of an email and sends it could be the following:</p>
@@ -1022,7 +1022,7 @@ macro compose Y "&lt;first-entry&gt;&lt;enter-command&gt;set wait_key=no&lt;ente
         </div>
       </div>
     </div>
-    <p>Neomutt includes supports for reading and writing
+    <p>NeoMutt includes supports for reading and writing
     <code class="literal">multipart/multilingual</code> emails. A
     <code class="literal">multipart/multilingual</code> email is like a
     <code class="literal">multipart/alternative</code> email, except that it comes with parts of different versions of languages instead of appearances. Its format is described by
@@ -1036,14 +1036,14 @@ macro compose Y "&lt;first-entry&gt;&lt;enter-command&gt;set wait_key=no&lt;ente
           </div>
         </div>
       </div>
-      <p>Neomutt uses the
+      <p>NeoMutt uses the
       <code class="literal">$preferred_languages</code> variable to determine which languages to display when displaying a
       <code class="literal">multipart/multilingual</code> email. You can have several preferred languages, separated by
       <code class="literal">,</code></p>
       <pre class="screen">
 set preferred_languages="fr,en,de"
 </pre>
-      <p>Neomutt will try to match these strings again the multilingual header in the received emails "by prefix", e.g.,
+      <p>NeoMutt will try to match these strings again the multilingual header in the received emails "by prefix", e.g.,
       <code class="literal">en</code> will match both
       <code class="literal">en</code> and
       <code class="literal">en_US</code>.</p>
@@ -1094,7 +1094,7 @@ set preferred_languages="fr,en,de"
         </ol>
       </div>
       <p>As in
-      <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>, you can also use Neomutt's macro and some external scripts to combine this procedure into one.</p>
+      <a class="link" href="#compose-alternative-order" title="5.2.&#160;Composing Multipart/Alternative Emails">Composing Multipart/Alternative</a>, you can also use NeoMutt's macro and some external scripts to combine this procedure into one.</p>
       <p>After grouping the separate parts will be displayed in a tree structure. Attachments can still be edited separately and reordered within the group, but must be ungrouped using the
       <code class="literal">&lt;ungroup-attachment&gt;</code> (#) binding for more advanced editing before tagging and grouping together again as described above.</p>
     </div>
@@ -1108,7 +1108,7 @@ set preferred_languages="fr,en,de"
         </div>
       </div>
     </div>
-    <p>Neomutt doesn't include any special support for reading
+    <p>NeoMutt doesn't include any special support for reading
     <code class="literal">multipart/related</code> emails, but it is possible to write a
     <code class="literal">multipart/related</code> email. A
     <code class="literal">multipart/related</code> attachment is intended for compound objects consisting of several inter-related body parts which are linked together using the

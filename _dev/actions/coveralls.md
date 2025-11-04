@@ -45,7 +45,7 @@ Learn how the [coverage tests are performed](../analysis/coverage.md)
 See, [How to build NeoMutt](https://neomutt.org/dev/build)
 
 **Steps**:
-- Build Neomutt
+- Build NeoMutt
 - Build Tests
 - Make Coverage
 - Upload results to Coveralls

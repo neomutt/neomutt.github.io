@@ -30,11 +30,11 @@ First, tidy some of the Markdown.
 - Replace `**` with `*` (that's enough emphasis for email)
 - Strip out `\` (escaping backslashes)
 
-Mail the Developers: `Neomutt Developers <neomutt-devel@neomutt.org>`
+Mail the Developers: `NeoMutt Developers <neomutt-devel@neomutt.org>`
 
 Next, strip out the sections mentioning Code, Build, Source, Upstream.
 
-Mail the Users: `Neomutt Users <neomutt-users@neomutt.org>`
+Mail the Users: `NeoMutt Users <neomutt-users@neomutt.org>`
 
 ## Downstream Packagers
 
