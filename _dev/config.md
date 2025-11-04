@@ -34,7 +34,7 @@ Each Type has:
 | resetter        | Reset variable to factory settings                    |
 | destructor      | Release the resources                                 |
 
-Each Config Type implements the [`struct ConfigSetType` interface](https://neomutt.org/code/structConfigSetType.html)
+Each Config Type implements the [`struct ConfigSetType` interface](https://code.neomutt.org/structConfigSetType.html)
 
 ```c
 int      string_set         (const struct ConfigSet *cs, void *var,       struct ConfigDef *cdef, const char *value, struct Buffer *err);

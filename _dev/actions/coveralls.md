@@ -26,19 +26,19 @@ This action performs coverage tests on the code and uploads the results to the
 generates [pretty graphs](https://coveralls.io/github/neomutt/neomutt).
 
 The coverage tests don't cover the entire codebase, just 13 libraries:
- - [address](https://neomutt.org/code/lib_address.html) - Email Address Handling                              
- - [color](https://neomutt.org/code/lib_color.html) - Colour handling code                                
- - [compress](https://neomutt.org/code/lib_compress.html) - Data compression                                    
- - [config](https://neomutt.org/code/lib_config.html) - User configurable variables                         
- - [core](https://neomutt.org/code/lib_core.html) - Backbone objects of NeoMutt                         
- - [editor](https://neomutt.org/code/lib_editor.html) - Select a Mailbox from a list                        
- - [email](https://neomutt.org/code/lib_email.html) - Structs that make up an email                       
- - [imap](https://neomutt.org/code/lib_imap.html) - IMAP network mailbox                                
- - [mutt](https://neomutt.org/code/lib_mutt.html) - Shared code for handling strings, files, dates, etc 
- - [notmuch](https://neomutt.org/code/lib_notmuch.html) - Notmuch virtual mailbox type                        
- - [parse](https://neomutt.org/code/lib_parse.html) - Text parsing functions	                            
- - [pattern](https://neomutt.org/code/lib_pattern.html) - Match patterns to emails                            
- - [store](https://neomutt.org/code/lib_store.html) - Key value store                                     
+ - [address](https://code.neomutt.org/lib_address.html) - Email Address Handling                              
+ - [color](https://code.neomutt.org/lib_color.html) - Colour handling code                                
+ - [compress](https://code.neomutt.org/lib_compress.html) - Data compression                                    
+ - [config](https://code.neomutt.org/lib_config.html) - User configurable variables                         
+ - [core](https://code.neomutt.org/lib_core.html) - Backbone objects of NeoMutt                         
+ - [editor](https://code.neomutt.org/lib_editor.html) - Select a Mailbox from a list                        
+ - [email](https://code.neomutt.org/lib_email.html) - Structs that make up an email                       
+ - [imap](https://code.neomutt.org/lib_imap.html) - IMAP network mailbox                                
+ - [mutt](https://code.neomutt.org/lib_mutt.html) - Shared code for handling strings, files, dates, etc 
+ - [notmuch](https://code.neomutt.org/lib_notmuch.html) - Notmuch virtual mailbox type                        
+ - [parse](https://code.neomutt.org/lib_parse.html) - Text parsing functions	                            
+ - [pattern](https://code.neomutt.org/lib_pattern.html) - Match patterns to emails                            
+ - [store](https://code.neomutt.org/lib_store.html) - Key value store                                     
 
 Learn how the [coverage tests are performed](../analysis/coverage.md)
 

@@ -19,7 +19,7 @@ author:      flatcap
 
 ## Description
 
-This action updates the [Code Docs](https://neomutt.org/code).
+This action updates the [Code Docs](https://code.neomutt.org).
 
 NeoMutt's code is throughly commented using Doxygen comment blocks.<br>
 (Every function, struct, enum, global, and most members are documented)
@@ -60,5 +60,5 @@ Learn more about [Doxygen](../doxygen)
 | Source Code | [https://github.com/neomutt/neomutt](https://github.com/neomutt/neomutt)                     |
 | Scripts     | [https://github.com/neomutt/action-doxygen](https://github.com/neomutt/action-doxygen)       |
 | Docs Repo   | [https://github.com/neomutt/code](https://github.com/neomutt/code)                           |
-| Results     | [Code Docs](https://neomutt.org/code)                                                        |
+| Results     | [Code Docs](https://code.neomutt.org)                                                        |
 

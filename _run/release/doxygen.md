@@ -74,15 +74,15 @@ For more info read: [Deployment using Travis](https://neomutt.org/dev/deploy)
 
 The number of files in the code docs means that it takes GitHub quite a while to update the website (maybe 20-30 minutes).
 
-Check the version number in the header bar of the [Code Docs](https://neomutt.org/code/)
+Check the version number in the header bar of the [Code Docs](https://code.neomutt.org/)
 
 Check some of the pages to make sure things went well:
 
-- [https://neomutt.org/code/index.html](https://neomutt.org/code/index.html)
+- [https://code.neomutt.org/index.html](https://code.neomutt.org/index.html)
 
-- [https://neomutt.org/code/pages.html](https://neomutt.org/code/pages.html)
+- [https://code.neomutt.org/pages.html](https://code.neomutt.org/pages.html)
   All the pages should be in libraries
 
-- [https://neomutt.org/code/config_vars.html](https://neomutt.org/code/config_vars.html)
+- [https://code.neomutt.org/config_vars.html](https://code.neomutt.org/config_vars.html)
   All the config variables should be documented
 
