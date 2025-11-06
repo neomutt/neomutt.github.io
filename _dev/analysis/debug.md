@@ -253,7 +253,7 @@ The output shows:
 - Whether it expands horizontally, or vertically
 - The type, e.g. `WT_HELP_BAR`
 - The window's size `(75,10)`
-- And which is focussed, `<-- FOCUS`
+- And which is focused, `<-- FOCUS`
 
 ```reply
 ✓[0,0] MUTT_WIN_SIZE_FIXED-V WT_ROOT (95,22)

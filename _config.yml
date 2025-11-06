@@ -55,8 +55,6 @@ collections:
     output: true
   man:
     output: true
-  rfc:
-    output: true
   run:
     output: true
 
