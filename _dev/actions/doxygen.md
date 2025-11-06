@@ -21,7 +21,7 @@ author:      flatcap
 
 This action updates the [Code Docs](https://code.neomutt.org).
 
-NeoMutt's code is throughly commented using Doxygen comment blocks.<br>
+NeoMutt's code is thoroughly commented using Doxygen comment blocks.<br>
 (Every function, struct, enum, global, and most members are documented)
 
 Learn more about [Doxygen](../doxygen)

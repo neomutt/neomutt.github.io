@@ -148,7 +148,7 @@ Custom display of a folded collapsed thread
 
 Support mouse clicks in the index, sidebar, etc
 
-: **Raised by** @Chinggis6 on 2017-01-20 -- **Result**: not too hard, low prority
+: **Raised by** @Chinggis6 on 2017-01-20 -- **Result**: not too hard, low priority
 
 ### [#294 Have the keymap functions accept arguments][#294]
 

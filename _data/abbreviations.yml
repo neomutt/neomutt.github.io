@@ -27,7 +27,7 @@
 #       txt :         !!str, optional; Long term description – consider to use '>' or '|' prefix.
 #                     • When used, keep it short, precise as possible and within one paragraph.
 #                     • As mentioned in Notes above, use TXT: to disable straight quotes conversion.
-#       url :         !!str, !!seq, optional; Reference URL for further term informations.
+#       url :         !!str, !!seq, optional; Reference URL for further term information.
 #                     • In case of !!seq, only the first URL will be used for definition linking.
 #       attributes: + Node to hold additional but optional term attributes, e.g. "Category", "Type".
 #                     • The attributes will be used as key/value-pairs (!!str/[!!str|!!seq]), so:
@@ -164,7 +164,7 @@
     - str : Delivery Status Notification
       url : https://en.wikipedia.org/wiki/Bounce_message
       attributes:
-        Category  : ["email", "bounce message", "reponder"]
+        Category  : ["email", "bounce message", "responder"]
         Type      : acronym
 
 - term: EOF

@@ -26,7 +26,7 @@ username: floand
 First things first, the main rule we have to format a [Markdown][mdn_std] file
 for our website is -- we have *no rules*, *no policies* or anything like that.
 Because useful but probably badly formatted content is always better than
-helpful but unshared informations and experiences. Nevertheless there are some
+helpful but unshared information and experiences. Nevertheless there are some
 minimal requirements that must be met to not confuse the underlying processor
 ([Liquid][lqd_git_wiki]), respectively Markdown parser ([kramdown][kdn_prs]).
 
@@ -297,7 +297,7 @@ Markdown supports three different formats, named: *ordered* (a.k.a. numbered),
 *unordered* (a.k.a. bullet) and *definition* (a.k.a. association) lists. They
 all have their special use case but the most used type is the bullet list.
 
-Lists are great to present several informations in a compact and easy to follow
+Lists are great to present several information in a compact and easy to follow
 form instead of writing (and reading) walls of text. Use it to describe
 *simple* contexts and probably alternatively to tables with long text cells
 which doesn't support line wrapping in source and thus, runs out of the screen.

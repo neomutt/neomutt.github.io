@@ -97,15 +97,15 @@ digraph build {
 		label="SOURCE"
 		color="#ff0000"
 
-		compulsory   [ label="\{compulsory.c\}"                               ]
-		conditional  [ label=<\{conditional.c\} <font color="green">★</font>> ]
-		enviromental [ label="\{enviromental.c\}"                             ]
-		generated    [ label="\{generated.c\}"                                ]
-		lots_obj     [ label="\{source.o\}"                                   ]
+		compulsory    [ label="\{compulsory.c\}"                               ]
+		conditional   [ label=<\{conditional.c\} <font color="green">★</font>> ]
+		environmental [ label="\{environmental.c\}"                            ]
+		generated     [ label="\{generated.c\}"                                ]
+		lots_obj      [ label="\{source.o\}"                                   ]
 
 		compulsory   -> lots_obj [ label="gcc" ]
 		conditional  -> lots_obj [ label="gcc" ]
-		enviromental -> lots_obj [ label="gcc" ]
+		environmental -> lots_obj [ label="gcc" ]
 		generated    -> lots_obj [ label="gcc" ]
 	}
 

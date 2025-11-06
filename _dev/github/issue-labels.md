@@ -110,7 +110,7 @@ For issues concerning:
 - [![topic:security](/images/labels/topic-security.svg)](https://github.com/neomutt/neomutt/labels/topic:security)
   Security / safety
 - [![topic:stability](/images/labels/topic-stability.svg)](https://github.com/neomutt/neomutt/labels/topic:stability)
-  Stabilty
+  Stability
 - [![topic:testing](/images/labels/topic-testing.svg)](https://github.com/neomutt/neomutt/labels/topic:testing)
   Testing of NeoMutt
 - [![topic:upstream](/images/labels/topic-upstream.svg)](https://github.com/neomutt/neomutt/labels/topic:upstream)

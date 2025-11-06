@@ -368,15 +368,15 @@
 <polygon fill="#000000" stroke="#000000" stroke-width="1.5" points="776.71,-264.97 786.74,-261.55 776.77,-257.97 776.71,-264.97"/>
 <text text-anchor="middle" x="576.5" y="-262.8" font-family="Times,serif" font-size="14.00">gcc</text>
 </g>
-<!-- enviromental -->
+<!-- environmental -->
 <g id="node25" class="node">
-<title>enviromental</title>
+<title>environmental</title>
 <path fill="none" stroke="blue" stroke-width="2" d="M386.83,-310C386.83,-310 543.17,-310 543.17,-310 547.83,-310 552.5,-314.67 552.5,-319.33 552.5,-319.33 552.5,-328.67 552.5,-328.67 552.5,-333.33 547.83,-338 543.17,-338 543.17,-338 386.83,-338 386.83,-338 382.17,-338 377.5,-333.33 377.5,-328.67 377.5,-328.67 377.5,-319.33 377.5,-319.33 377.5,-314.67 382.17,-310 386.83,-310"/>
-<text text-anchor="middle" x="465" y="-319.6" font-family="Times,serif" font-size="18.00">{enviromental.c}</text>
+<text text-anchor="middle" x="465" y="-319.6" font-family="Times,serif" font-size="18.00">{environmental.c}</text>
 </g>
-<!-- enviromental&#45;&gt;lots_obj -->
+<!-- environmental&#45;&gt;lots_obj -->
 <g id="edge23" class="edge">
-<title>enviromental&#45;&gt;lots_obj</title>
+<title>environmental&#45;&gt;lots_obj</title>
 <path fill="none" stroke="#000000" stroke-width="1.5" d="M551.66,-309.93C619.87,-298.73 713.98,-283.27 776.69,-272.97"/>
 <polygon fill="#000000" stroke="#000000" stroke-width="1.5" points="777.57,-276.38 786.87,-271.3 776.43,-269.47 777.57,-276.38"/>
 <text text-anchor="middle" x="576.5" y="-310.8" font-family="Times,serif" font-size="14.00">gcc</text>

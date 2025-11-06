@@ -42,7 +42,7 @@ See also: [external address queries](/guide/advancedusage.html#query).
 
 * [mail-query](https://github.com/pbrisbin/mail-query) to query addresses found
   in the inbox
-* [notmuch-addrlookup](https://github.com/aperezdc/notmuch-addrlookup-c) to query adresses
+* [notmuch-addrlookup](https://github.com/aperezdc/notmuch-addrlookup-c) to query addresses
   indexed by notmuch
 * [khard](https://github.com/scheibler/khard) to synchronize address books
   between your PC and mobile device with

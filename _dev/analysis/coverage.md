@@ -47,7 +47,7 @@ genhtml -o lcov lcov.info
 Coveralls performs the same function, but it has a much prettier website.
 
 ```sh
-# Install the coveralls helper programm
+# Install the coveralls helper program
 pip install --user cpp-coveralls
 
 export COVERALLS_REPO_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -122,7 +122,7 @@ documents. Along the way we also fix any formatting problems that we introduced
 
 ## The future
 
-Mutt's re-use strategy means that if you fix one piece of documentation, then
+Mutt's reuse strategy means that if you fix one piece of documentation, then
 it will be replicated into all the forms of documentation. But, it means you
 need to know where the source is. This is preventing users from helping us.
 
