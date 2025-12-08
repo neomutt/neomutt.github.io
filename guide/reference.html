@@ -13045,7 +13045,7 @@ set sort_aux=last-date-received
         <p>Type:&#160;mailbox
         <br />Default:&#160;(empty)</p>
       </div>
-      <p>If your spool mailbox is in a non-default place where NeoMutt can't find it, you can specify its location with this variable. The description from "named-mailboxes" or "virtual-mailboxes" may be used for the spool_file.</p>
+      <p>If your spool mailbox is in a non-default place where NeoMutt can't find it, you can specify its location with this variable. The description from "named-mailboxes" may be used for the spool_file.</p>
       <p>If not specified, then the environment variables
       <code class="literal">$MAIL</code> and
       <code class="literal">$MAILDIR</code> will be checked.</p>
@@ -14416,18 +14416,8 @@ set use_threads=yes
           </div>
         </div>
       </div>
-      <div class="literallayout">
-        <p>Type:&#160;boolean
-        <br />Default:&#160;no</p>
-      </div>
-      <p>This command is now unnecessary.
-      <a class="link" href="#spool-file" title="3.492.&#160;spool_file">$spool_file</a> has been extended to support mailbox descriptions as a value.</p>
-      <p>When
-      <span class="emphasis">
-        <em>set</em>
-      </span>, NeoMutt will use the first defined virtual mailbox (see virtual-mailboxes) as a spool file.</p>
       <div class="note">
-      <h3 class="title">Note</h3> Before 2021-02-11, this was called $virtual_spoolfile</div>
+      <h3 class="title">Note</h3> Deprecated, since 2025-12-08</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
