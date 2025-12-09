@@ -259,7 +259,7 @@ audio/x-aiff                    aif aifc aiff
     <p>A sample
     <code class="literal">mime.types</code> file comes with the NeoMutt distribution, and should contain most of the MIME types you are likely to use.</p>
     <p>If NeoMutt can not determine the MIME type by the extension of the file you attach, it will run the command specified in
-    <a class="link" href="reference.html#mime-type-query-command" title="3.259.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
+    <a class="link" href="reference.html#mime-type-query-command" title="3.260.&#160;mime_type_query_command">$mime_type_query_command</a>. If that command is not specified, NeoMutt will look at the file. If the file is free of binary information, NeoMutt will assume that the file is plain text, and mark it as
     <code class="literal">text/plain</code>. If the file contains binary information, then NeoMutt will mark it as
     <code class="literal">application/octet-stream</code>. You can change the MIME type that NeoMutt assigns to an attachment by using the
     <code class="literal">&lt;edit-type&gt;</code> command from the compose menu (default: ^T), see
@@ -558,11 +558,11 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
                   <strong>auto_view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
-              <a class="link" href="reference.html#wait-key" title="3.546.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
+              <a class="link" href="reference.html#wait-key" title="3.547.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
               <span class="emphasis">
                 <em>needsterminal</em>
               </span>flag, NeoMutt will use
-              <a class="link" href="reference.html#wait-key" title="3.546.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
+              <a class="link" href="reference.html#wait-key" title="3.547.&#160;wait_key">$wait_key</a> and the exit status of the program to decide if it will ask you to press a key after the external program has exited. In all other situations it will not prompt you for a key.</p>
             </dd>
             <dt>
               <span class="term">compose=&lt;command&gt;</span>
@@ -627,7 +627,7 @@ text/html; lynx %s
                 <em>not</em>
               </span>delete the temporary file after the program has been run.</p>
               <p>Using it allows you to control the lifespan of the temporary file. Without this option, the file will be deleted after
-              <a class="link" href="reference.html#timeout" title="3.521.&#160;timeout">$timeout</a> seconds.</p>
+              <a class="link" href="reference.html#timeout" title="3.522.&#160;timeout">$timeout</a> seconds.</p>
               <pre class="screen">
 text/html; firefox %s &amp; x-neomutt-keep
 </pre>
@@ -638,7 +638,7 @@ text/html; firefox %s &amp; x-neomutt-keep
             <dd>
               <p>
               <code class="literal">x-neomutt-nowrap</code> tells the NeoMutt pager to ignore the
-              <a class="link" href="reference.html#wrap" title="3.548.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
+              <a class="link" href="reference.html#wrap" title="3.549.&#160;wrap">$wrap</a> parameter and to assume the output from the mailcap command to already be correctly wrapped.</p>
               <pre class="screen">
 text/html; /usr/local/bin/w3m -s -T text/html -o display_link_number=1 %s; nametemplate=%s.html; copiousoutput; x-neomutt-nowrap;
 </pre>
