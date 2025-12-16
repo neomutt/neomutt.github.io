@@ -3838,7 +3838,8 @@ TERM=xterm-direct neomutt
         <br />Default:&#160;yes</p>
       </div>
       <p>When set, NeoMutt will display protected headers ("Memory Hole") in the pager, When set, NeoMutt will display protected headers in the pager, and will update the index and header cache with revised headers.</p>
-      <p>Protected headers are stored inside the encrypted or signed part of an email, to prevent disclosure or tampering. For more information see https://github.com/autocrypt/protected-headers Currently NeoMutt only supports the Subject header.</p>
+      <p>Protected headers are stored inside the encrypted or signed part of an email, to prevent disclosure or tampering. For more information see
+      <a class="ulink" href="https://github.com/autocrypt/protected-headers" target="_top">https://github.com/autocrypt/protected-headers</a> Currently NeoMutt only supports the Subject header.</p>
       <p>Encrypted messages using protected headers often substitute the exposed Subject header with a dummy value (see
       <a class="link" href="#crypt-protected-headers-subject" title="3.95.&#160;crypt_protected_headers_subject">$crypt_protected_headers_subject</a>). NeoMutt will update its concept of the correct subject
       <span class="bold">
@@ -3915,7 +3916,8 @@ TERM=xterm-direct neomutt
         <br />Default:&#160;yes</p>
       </div>
       <p>When set, NeoMutt will generate protected headers for signed and encrypted emails.</p>
-      <p>Protected headers are stored inside the encrypted or signed part of an email, to prevent disclosure or tampering. For more information see https://github.com/autocrypt/protected-headers</p>
+      <p>Protected headers are stored inside the encrypted or signed part of an email, to prevent disclosure or tampering. For more information see
+      <a class="ulink" href="https://github.com/autocrypt/protected-headers" target="_top">https://github.com/autocrypt/protected-headers</a></p>
       <p>Currently NeoMutt only supports the Subject header. (Crypto only)</p>
     </div>
     <div class="sect2">
@@ -4080,7 +4082,8 @@ TERM=xterm-direct neomutt
         <p>Type:&#160;boolean
         <br />Default:&#160;no</p>
       </div>
-      <p>Controls whether NeoMutt uses PKA (see http://www.g10code.de/docs/pka-intro.de.pdf) during signature verification (only supported by the GPGME backend).</p>
+      <p>Controls whether NeoMutt uses PKA during signature verification (only supported by the GPGME backend). See:
+      <a class="ulink" href="http://www.g10code.de/docs/pka-intro.de.pdf" target="_top">http://www.g10code.de/docs/pka-intro.de.pdf</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -4309,7 +4312,8 @@ TERM=xterm-direct neomutt
       </span>, NeoMutt will enable the
       <span class="bold">
         <strong>Security</strong>
-      </span>development features. See: https://github.com/neomutt/neomutt/discussions/4251</p>
+      </span>development features. See:
+      <a class="ulink" href="https://github.com/neomutt/neomutt/discussions/4251" target="_top">https://github.com/neomutt/neomutt/discussions/4251</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -6481,7 +6485,8 @@ set imap_authenticators="gssapi:cram-md5:login"
       <p>When
       <span class="emphasis">
         <em>set</em>
-      </span>, NeoMutt will use the IMAP ENABLE extension (RFC5161) to select CAPABILITIES. Some servers (notably Coremail System IMap Server) do not properly respond to ENABLE commands, which might cause NeoMutt to hang. If your connection seems to freeze at login, try unsetting this. See also https://github.com/neomutt/neomutt/issues/1689</p>
+      </span>, NeoMutt will use the IMAP ENABLE extension (RFC5161) to select CAPABILITIES. Some servers (notably Coremail System IMap Server) do not properly respond to ENABLE commands, which might cause NeoMutt to hang. If your connection seems to freeze at login, try unsetting this. See also
+      <a class="ulink" href="https://github.com/neomutt/neomutt/issues/1689" target="_top">https://github.com/neomutt/neomutt/issues/1689</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -7670,7 +7675,7 @@ set inews_command="/usr/local/bin/inews -hS"
             </tr>
             <tr>
               <td>%r</td>
-              <td>3 bytes of pseudo-random data encoded in Base64</td>
+              <td>3 bytes of pseudo-random data encoded in Base64Url</td>
             </tr>
             <tr>
               <td>%S</td>
@@ -7686,11 +7691,13 @@ set inews_command="/usr/local/bin/inews -hS"
             </tr>
             <tr>
               <td>%z</td>
-              <td>4 byte timestamp + 8 bytes of pseudo-random data encoded in Base64</td>
+              <td>4 byte timestamp + 8 bytes of pseudo-random data encoded in Base64Url</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p>See also: Base64Url:
+      <a class="ulink" href="https://datatracker.ietf.org/doc/html/rfc4648#section-5" target="_top">https://datatracker.ietf.org/doc/html/rfc4648#section-5</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9066,7 +9073,8 @@ set nntp_authenticators="digest-md5:user"
       <code class="literal">gpg-agent</code>. Currently, the
       <code class="literal">pinentry-tty</code> program (usually distributed with
       <code class="literal">gpg</code> ) isn't suitable for being invoked by NeoMutt. You are encouraged to use a different pinentry-program when running NeoMutt in order to avoid problems.</p>
-      <p>See also: https://github.com/neomutt/neomutt/issues/1014</p>
+      <p>See also:
+      <a class="ulink" href="https://github.com/neomutt/neomutt/issues/1014" target="_top">https://github.com/neomutt/neomutt/issues/1014</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10440,7 +10448,8 @@ set preferred_languages="en,fr,de"
         <br />Default:&#160;(empty)</p>
       </div>
       <p>This specifies the command NeoMutt will use to make external address queries. The string may contain a "%s", which will be substituted with the query string the user types. NeoMutt will add quotes around the string substituted for "%s" automatically according to shell quoting rules, so you should avoid adding your own. If no "%s" is found in the string, NeoMutt will append the user's query to the end of the string. See "
-      <a class="link" href="advancedusage.html#query" title="8.&#160;External Address Queries">query</a>" (https://neomutt.org/guide/advancedusage.html#query) for more information.</p>
+      <a class="link" href="advancedusage.html#query" title="8.&#160;External Address Queries">query</a>":
+      <a class="ulink" href="https://neomutt.org/guide/advancedusage.html#query" target="_top">https://neomutt.org/guide/advancedusage.html#query</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -13060,7 +13069,8 @@ smtp[s]://[user[:pass]@]host[:port]
       <p>Note: When
       <a class="link" href="#use-threads" title="3.545.&#160;use_threads">$use_threads</a> is "threads", the last thread sorts to the bottom; when it is "reversed", the last thread sorts to the top. The use of "reverse-" in
       <a class="link" href="#sort" title="3.491.&#160;sort">$sort</a> swaps which end the last thread will sort to.</p>
-      <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads</p>
+      <p>See the "Use Threads Feature" section for further explanation and examples,
+      <a class="ulink" href="https://neomutt.org/feature/use-threads" target="_top">https://neomutt.org/feature/use-threads</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -13101,7 +13111,8 @@ set sort_aux=last-date-received
       <a class="link" href="#use-threads" title="3.545.&#160;use_threads">$use_threads</a>, it is more common to use "last-" with
       <a class="link" href="#sort" title="3.491.&#160;sort">$sort</a> and not with
       <a class="link" href="#sort-aux" title="3.493.&#160;sort_aux">$sort_aux</a>.</p>
-      <p>See the "Use Threads Feature" section for further explanation and examples, https://neomutt.org/feature/use-threads</p>
+      <p>See the "Use Threads Feature" section for further explanation and examples,
+      <a class="ulink" href="https://neomutt.org/feature/use-threads" target="_top">https://neomutt.org/feature/use-threads</a></p>
     </div>
     <div class="sect2">
       <div class="titlepage">
