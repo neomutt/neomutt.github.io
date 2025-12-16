@@ -366,3 +366,8 @@ code.language-reply {
   display: block;
   background: #eee;
 }
+
+code.literal {
+  color: #460084;
+  background: #f0f0f0;
+}
