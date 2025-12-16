@@ -8719,10 +8719,6 @@ set nntp_authenticators="digest-md5:user"
       </div>
       <p>Determines the number of lines of context to show before the unquoted text when using the
       <code class="literal">&lt;skip-quoted&gt;</code> function. When set to a positive number at most that many lines of the previous quote are displayed. If the previous quote is shorter the whole quote is displayed.</p>
-      <p>The (now deprecated)
-      <span class="emphasis">
-        <em>skip_quoted_offset</em>
-      </span>is an alias for this variable, and should no longer be used.</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2021-06-18, this was called $skip_quoted_offset</div>
     </div>
@@ -9047,8 +9043,6 @@ set nntp_authenticators="digest-md5:user"
         </table>
       </div>
       <p>(PGP only)</p>
-      <div class="note">
-      <h3 class="title">Note</h3> Before 2018-01-11, this was called $pgp_self_encrypt_as</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -9110,10 +9104,7 @@ set nntp_authenticators="digest-md5:user"
       <a class="link" href="#pgp-self-encrypt" title="3.347.&#160;pgp_self_encrypt">$pgp_self_encrypt</a>).</p>
       <p>It will also be used for signing unless
       <a class="link" href="#pgp-sign-as" title="3.350.&#160;pgp_sign_as">$pgp_sign_as</a> is set.</p>
-      <p>The (now deprecated)
-      <span class="emphasis">
-        <em>pgp_self_encrypt_as</em>
-      </span>is an alias for this variable, and should no longer be used. (PGP only)</p>
+      <p>(PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10213,8 +10204,7 @@ set pop_authenticators="digest-md5:apop:user"
         <em>set</em>
       </span>, postponed messages that are marked for encryption will be self-encrypted. NeoMutt will first try to encrypt using the value specified in
       <a class="link" href="#pgp-default-key" title="3.325.&#160;pgp_default_key">$pgp_default_key</a> or
-      <a class="link" href="#smime-default-key" title="3.466.&#160;smime_default_key">$smime_default_key</a>. If those are not set, it will try the deprecated
-      <a class="link" href="#postpone-encrypt-as" title="3.379.&#160;postpone_encrypt_as">$postpone_encrypt_as</a>. (Crypto only)</p>
+      <a class="link" href="#smime-default-key" title="3.466.&#160;smime_default_key">$smime_default_key</a>. (Crypto only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -10225,14 +10215,8 @@ set pop_authenticators="digest-md5:apop:user"
           </div>
         </div>
       </div>
-      <div class="literallayout">
-        <p>Type:&#160;string
-        <br />Default:&#160;(empty)</p>
-      </div>
-      <p>This is a deprecated fall-back variable for
-      <a class="link" href="#postpone-encrypt" title="3.378.&#160;postpone_encrypt">$postpone_encrypt</a>. Please use
-      <a class="link" href="#pgp-default-key" title="3.325.&#160;pgp_default_key">$pgp_default_key</a> or
-      <a class="link" href="#smime-default-key" title="3.466.&#160;smime_default_key">$smime_default_key</a>. (Crypto only)</p>
+      <div class="note">
+      <h3 class="title">Note</h3> Deprecated, since 2025-12-16</div>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12488,10 +12472,7 @@ set sidebar_delim_chars='.'
       </span>.</p>
       <p>It will also be used for signing unless
       <a class="link" href="#smime-sign-as" title="3.479.&#160;smime_sign_as">$smime_sign_as</a> is set.</p>
-      <p>The (now deprecated)
-      <span class="emphasis">
-        <em>smime_self_encrypt_as</em>
-      </span>is an alias for this variable, and should no longer be used. (S/MIME only)</p>
+      <p>(S/MIME only)</p>
       <div class="note">
       <h3 class="title">Note</h3> Before 2018-01-11, this was called $smime_self_encrypt_as</div>
     </div>
