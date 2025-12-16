@@ -1790,52 +1790,166 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
-              <td>Alias name</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
             </tr>
             <tr>
-              <td>%A</td>
+              <td>
+                <code class="literal">%A</code>
+              </td>
+              <td>
+                <code class="literal">%{address}</code>
+              </td>
               <td>Full Address (Name and Email)</td>
             </tr>
             <tr>
-              <td>%C</td>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{alias}</code>
+              </td>
+              <td>Alias name</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{comment}</code>
+              </td>
               <td>Comment</td>
             </tr>
             <tr>
-              <td>%E</td>
+              <td>
+                <code class="literal">%E</code>
+              </td>
+              <td>
+                <code class="literal">%{email}</code>
+              </td>
               <td>Email Address</td>
             </tr>
             <tr>
-              <td>%f</td>
-              <td>Flags - currently, a "d" for an alias marked for deletion</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{flags}</code>
+              </td>
+              <td>Flags - currently, a
+              <code class="literal">d</code> for an alias marked for deletion</td>
             </tr>
             <tr>
-              <td>%i</td>
+              <td>
+                <code class="literal">%i</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Index number</td>
             </tr>
             <tr>
-              <td>%N</td>
+              <td>
+                <code class="literal">%N</code>
+              </td>
+              <td>
+                <code class="literal">%{name}</code>
+              </td>
               <td>Real name</td>
             </tr>
             <tr>
-              <td>%t</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{tagged}</code>
+              </td>
               <td>Alias is tagged (selected)</td>
             </tr>
             <tr>
-              <td>%Y</td>
+              <td>
+                <code class="literal">%Y</code>
+              </td>
+              <td>
+                <code class="literal">%{tags}</code>
+              </td>
               <td>User-defined tags (labels)</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%c</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%C</code> instead</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%i</code> instead</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%r</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%A</code> instead</td>
             </tr>
           </tbody>
         </table>
@@ -2242,86 +2356,213 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
           </colgroup>
           <tbody>
             <tr>
-              <td>%C</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{charset}</code>
+              </td>
               <td>Charset</td>
             </tr>
             <tr>
-              <td>%c</td>
-              <td>Requires charset conversion ("n" or "c")</td>
+              <td>
+                <code class="literal">%c</code>
+              </td>
+              <td>
+                <code class="literal">%{charset-convert}</code>
+              </td>
+              <td>Requires charset conversion (
+              <code class="literal">n</code> or
+              <code class="literal">c</code> )</td>
             </tr>
             <tr>
-              <td>%D</td>
+              <td>
+                <code class="literal">%D</code>
+              </td>
+              <td>
+                <code class="literal">%{deleted}</code>
+              </td>
               <td>Deleted flag</td>
             </tr>
             <tr>
-              <td>%d</td>
-              <td>Description (if none, falls back to %F)</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{description}</code>
+              </td>
+              <td>Description (if none, falls back to
+              <code class="literal">%F</code> )</td>
             </tr>
             <tr>
-              <td>%e</td>
+              <td>
+                <code class="literal">%e</code>
+              </td>
+              <td>
+                <code class="literal">%{mime-encoding}</code>
+              </td>
               <td>MIME content-transfer-encoding</td>
             </tr>
             <tr>
-              <td>%f</td>
+              <td>
+                <code class="literal">%F</code>
+              </td>
+              <td>
+                <code class="literal">%{file-disposition}</code>
+              </td>
+              <td>Filename in content-disposition header (if none, falls back to
+              <code class="literal">%f</code> )</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{file}</code>
+              </td>
               <td>Filename</td>
             </tr>
             <tr>
-              <td>%F</td>
-              <td>Filename in content-disposition header (if none, falls back to %f)</td>
+              <td>
+                <code class="literal">%I</code>
+              </td>
+              <td>
+                <code class="literal">%{disposition}</code>
+              </td>
+              <td>Disposition (
+              <code class="literal">I</code> for inline,
+              <code class="literal">A</code> for attachment)</td>
             </tr>
             <tr>
-              <td>%I</td>
-              <td>Disposition ("I" for inline, "A" for attachment)</td>
-            </tr>
-            <tr>
-              <td>%m</td>
-              <td>Major MIME type</td>
-            </tr>
-            <tr>
-              <td>%M</td>
+              <td>
+                <code class="literal">%M</code>
+              </td>
+              <td>
+                <code class="literal">%{mime-minor}</code>
+              </td>
               <td>MIME subtype</td>
             </tr>
             <tr>
-              <td>%n</td>
+              <td>
+                <code class="literal">%m</code>
+              </td>
+              <td>
+                <code class="literal">%{mime-major}</code>
+              </td>
+              <td>Major MIME type</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Attachment number</td>
             </tr>
             <tr>
-              <td>%Q</td>
-              <td>"Q", if MIME part qualifies for attachment counting</td>
+              <td>
+                <code class="literal">%Q</code>
+              </td>
+              <td>
+                <code class="literal">%{attach-qualifies}</code>
+              </td>
+              <td>
+              <code class="literal">Q</code>, if MIME part qualifies for attachment counting</td>
             </tr>
             <tr>
-              <td>%s</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{file-size}</code>
+              </td>
               <td>Size (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%T</td>
+              <td>
+                <code class="literal">%T</code>
+              </td>
+              <td>
+                <code class="literal">%{tree}</code>
+              </td>
               <td>Graphic tree characters</td>
             </tr>
             <tr>
-              <td>%t</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{tagged}</code>
+              </td>
               <td>Tagged flag</td>
             </tr>
             <tr>
-              <td>%u</td>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{unlink}</code>
+              </td>
               <td>Unlink (=to delete) flag</td>
             </tr>
             <tr>
-              <td>%X</td>
-              <td>Number of qualifying MIME parts in this part and its children (please see the "
-              <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">attachments</a>" section for possible speed effects)</td>
+              <td>
+                <code class="literal">%X</code>
+              </td>
+              <td>
+                <code class="literal">%{attach-count}</code>
+              </td>
+              <td>Number of qualifying MIME parts in this part and its children (see the
+              <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">$attachments</a> section for possible speed effects)</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>Right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>Pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -2619,36 +2860,96 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
-              <td>email address</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
             </tr>
             <tr>
-              <td>%k</td>
-              <td>gpg keyid</td>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{address}</code>
+              </td>
+              <td>Email address</td>
             </tr>
             <tr>
-              <td>%n</td>
-              <td>current entry number</td>
+              <td>
+                <code class="literal">%k</code>
+              </td>
+              <td>
+                <code class="literal">%{keyid}</code>
+              </td>
+              <td>GPG keyid</td>
             </tr>
             <tr>
-              <td>%p</td>
-              <td>prefer-encrypt flag</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
+              <td>Current entry number</td>
             </tr>
             <tr>
-              <td>%s</td>
-              <td>status flag (active/inactive)</td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{prefer-encrypt}</code>
+              </td>
+              <td>Prefer-encrypt flag</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{enabled}</code>
+              </td>
+              <td>Status flag (active/inactive)</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -3232,33 +3533,88 @@ TERM=xterm-direct neomutt
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{attach-count}</code>
+              </td>
               <td>Total number of attachments</td>
             </tr>
             <tr>
-              <td>%h</td>
+              <td>
+                <code class="literal">%h</code>
+              </td>
+              <td>
+                <code class="literal">%{hostname}</code>
+              </td>
               <td>Local hostname</td>
             </tr>
             <tr>
-              <td>%l</td>
+              <td>
+                <code class="literal">%l</code>
+              </td>
+              <td>
+                <code class="literal">%{attach-size}</code>
+              </td>
               <td>Approximate size (in bytes) of the current message (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%v</td>
+              <td>
+                <code class="literal">%v</code>
+              </td>
+              <td>
+                <code class="literal">%{version}</code>
+              </td>
               <td>NeoMutt version string</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -4907,108 +5263,214 @@ sh -c 'string'
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
-              <td></td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{notify}</code>
+              </td>
               <td>Alert: 1 if user is notified of new mail</td>
             </tr>
             <tr>
-              <td>%C</td>
-              <td></td>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Current file number</td>
             </tr>
             <tr>
-              <td>%d</td>
-              <td></td>
-              <td>Date/time folder was last modified</td>
-            </tr>
-            <tr>
-              <td>%D</td>
-              <td></td>
+              <td>
+                <code class="literal">%D</code>
+              </td>
+              <td>
+                <code class="literal">%{date}</code>
+              </td>
               <td>Date/time folder was last modified using
-              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>. It is encouraged to use "%[fmt]" instead, where "fmt" is the value of
+              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>. It is recommended to use
+              <code class="literal">%[fmt]</code> instead, where
+              <code class="literal">fmt</code> is the value of
               <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
             </tr>
             <tr>
-              <td>%f</td>
-              <td></td>
-              <td>Filename ("/" is appended to directory names, "@" to symbolic links and "*" to executable files)</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{date-format}</code>
+              </td>
+              <td>Date/time folder was last modified</td>
             </tr>
             <tr>
-              <td>%F</td>
-              <td></td>
+              <td>
+                <code class="literal">%F</code>
+              </td>
+              <td>
+                <code class="literal">%{file-mode}</code>
+              </td>
               <td>File permissions</td>
             </tr>
             <tr>
-              <td>%g</td>
-              <td></td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{filename}</code>
+              </td>
+              <td>Filename (
+              <code class="literal">/</code> is appended to directory names,
+              <code class="literal">@</code> to symbolic links and
+              <code class="literal">*</code> to executable files)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%g</code>
+              </td>
+              <td>
+                <code class="literal">%{file-group}</code>
+              </td>
               <td>Group name (or numeric gid, if missing)</td>
             </tr>
             <tr>
-              <td>%i</td>
-              <td></td>
+              <td>
+                <code class="literal">%i</code>
+              </td>
+              <td>
+                <code class="literal">%{description}</code>
+              </td>
               <td>Description of the folder</td>
             </tr>
             <tr>
-              <td>%l</td>
-              <td></td>
+              <td>
+                <code class="literal">%l</code>
+              </td>
+              <td>
+                <code class="literal">%{hard-links}</code>
+              </td>
               <td>Number of hard links</td>
             </tr>
             <tr>
-              <td>%m</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%m</code>
+              </td>
+              <td>
+                <code class="literal">%{message-count}</code>
+              </td>
               <td>Number of messages in the mailbox</td>
             </tr>
             <tr>
-              <td>%n</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%N</code>
+              </td>
+              <td>
+                <code class="literal">%{new-mail}</code>
+              </td>
+              <td>
+              <code class="literal">N</code> if mailbox has new mail,
+              <code class="literal"></code> (space) otherwise</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{unread-count}</code>
+              </td>
               <td>Number of unread messages in the mailbox</td>
             </tr>
             <tr>
-              <td>%N</td>
-              <td></td>
-              <td>"N" if mailbox has new mail, " " (space) otherwise</td>
-            </tr>
-            <tr>
-              <td>%p</td>
-              <td></td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{poll}</code>
+              </td>
               <td>Poll: 1 if Mailbox is checked for new mail</td>
             </tr>
             <tr>
-              <td>%s</td>
-              <td></td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{file-size}</code>
+              </td>
               <td>Size in bytes (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%t</td>
-              <td></td>
-              <td>"*" if the file is tagged, blank otherwise</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{tagged}</code>
+              </td>
+              <td>
+              <code class="literal">*</code> if the file is tagged, blank otherwise</td>
             </tr>
             <tr>
-              <td>%u</td>
-              <td></td>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{file-owner}</code>
+              </td>
               <td>Owner name (or numeric uid, if missing)</td>
             </tr>
             <tr>
-              <td>%[fmt]</td>
+              <td>
+                <code class="literal">%[fmt]</code>
+              </td>
               <td></td>
               <td>Date/time folder was last modified using an
               <code class="literal">strftime(3)</code> expression</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td></td>
-              <td>Right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td></td>
-              <td>Pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td></td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -5460,15 +5922,47 @@ sh -c 'string'
           </colgroup>
           <tbody>
             <tr>
-              <td>%n</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{real-name}</code>
+              </td>
               <td>Recipient's real name</td>
             </tr>
             <tr>
-              <td>%u</td>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{user-name}</code>
+              </td>
               <td>User (login) name of recipient</td>
             </tr>
             <tr>
-              <td>%v</td>
+              <td>
+                <code class="literal">%v</code>
+              </td>
+              <td>
+                <code class="literal">%{first-name}</code>
+              </td>
               <td>First name of recipient</td>
             </tr>
           </tbody>
@@ -5501,52 +5995,136 @@ sh -c 'string'
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{notify}</code>
+              </td>
               <td>Alert: 1 if user is notified of new mail</td>
             </tr>
             <tr>
-              <td>%C</td>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Current newsgroup number</td>
             </tr>
             <tr>
-              <td>%d</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{description}</code>
+              </td>
               <td>Description of newsgroup (becomes from server)</td>
             </tr>
             <tr>
-              <td>%f</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{newsgroup}</code>
+              </td>
               <td>Newsgroup name</td>
             </tr>
             <tr>
-              <td>%M</td>
-              <td>- if newsgroup not allowed for direct post (moderated for example)</td>
+              <td>
+                <code class="literal">%M</code>
+              </td>
+              <td>
+                <code class="literal">%{flags}</code>
+              </td>
+              <td>
+              <code class="literal">-</code> if newsgroup not allowed for direct post (moderated for example)</td>
             </tr>
             <tr>
-              <td>%N</td>
-              <td>N if newsgroup is new, u if unsubscribed, blank otherwise</td>
+              <td>
+                <code class="literal">%N</code>
+              </td>
+              <td>
+                <code class="literal">%{flags2}</code>
+              </td>
+              <td>
+              <code class="literal">N</code> if newsgroup is new,
+              <code class="literal">u</code> if unsubscribed,
+              <code class="literal"></code> (space) otherwise</td>
             </tr>
             <tr>
-              <td>%n</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{new-count}</code>
+              </td>
               <td>Number of new articles in newsgroup</td>
             </tr>
             <tr>
-              <td>%p</td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{poll}</code>
+              </td>
               <td>Poll: 1 if Mailbox is checked for new mail</td>
             </tr>
             <tr>
-              <td>%s</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{unread-count}</code>
+              </td>
               <td>Number of unread articles in newsgroup</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>Right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>Pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -5944,24 +6522,69 @@ sh -c 'string'
           </colgroup>
           <tbody>
             <tr>
-              <td>%C</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Line number</td>
             </tr>
             <tr>
-              <td>%s</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{match}</code>
+              </td>
               <td>History match</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -6716,243 +7339,566 @@ set imap_authenticators="gssapi:cram-md5:login"
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
-              <td>Address of the author</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
             </tr>
             <tr>
-              <td>%A</td>
+              <td>
+                <code class="literal">%A</code>
+              </td>
+              <td>
+                <code class="literal">%{reply-to}</code>
+              </td>
               <td>Reply-to address (if present; otherwise: address of author)</td>
             </tr>
             <tr>
-              <td>%b</td>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{from}</code>
+              </td>
+              <td>Address of the author</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%B</code>
+              </td>
+              <td>
+                <code class="literal">%{list-address}</code>
+              </td>
+              <td>List to which the email was sent (if any; otherwise: Mailbox name)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%b</code>
+              </td>
+              <td>
+                <code class="literal">%{mailbox-name}</code>
+              </td>
               <td>Filename of the original message folder (think mailbox)</td>
             </tr>
             <tr>
-              <td>%B</td>
-              <td>Same as %K</td>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
+              <td>Current message number</td>
             </tr>
             <tr>
-              <td>%c</td>
+              <td>
+                <code class="literal">%c</code>
+              </td>
+              <td>
+                <code class="literal">%{body-characters}</code>
+              </td>
               <td>Number of characters (bytes) in the body of the message (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%C</td>
-              <td>Current message number</td>
-            </tr>
-            <tr>
-              <td>%cr</td>
+              <td>
+                <code class="literal">%cr</code>
+              </td>
+              <td>
+                <code class="literal">%{size}</code>
+              </td>
               <td>Number of characters (bytes) in the raw message, including the header (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%d</td>
+              <td>
+                <code class="literal">%D</code>
+              </td>
+              <td>
+                <code class="literal">%{date-format-local}</code>
+              </td>
               <td>Date and time of message using
-              <a class="link" href="#date-format" title="3.109.&#160;date_format">date_format</a> and sender's timezone It is encouraged to use "%{fmt}" instead, where "fmt" is the value of
+              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a> and local timezone. It is recommended to use
+              <code class="literal">%[fmt]</code> instead, where
+              <code class="literal">fmt</code> is the value of
               <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
             </tr>
             <tr>
-              <td>%D</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{date-format}</code>
+              </td>
               <td>Date and time of message using
-              <a class="link" href="#date-format" title="3.109.&#160;date_format">date_format</a> and local timezone It is encouraged to use "%[fmt]" instead, where "fmt" is the value of
+              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a> and sender's timezone. It is recommended to use
+              <code class="literal">%{fmt}</code> instead, where
+              <code class="literal">fmt</code> is the value of
               <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
             </tr>
             <tr>
-              <td>%e</td>
-              <td>Current message number in thread</td>
-            </tr>
-            <tr>
-              <td>%E</td>
+              <td>
+                <code class="literal">%E</code>
+              </td>
+              <td>
+                <code class="literal">%{thread-count}</code>
+              </td>
               <td>Number of messages in current thread</td>
             </tr>
             <tr>
-              <td>%f</td>
-              <td>Sender (address + real name), either From: or Return-Path:</td>
+              <td>
+                <code class="literal">%e</code>
+              </td>
+              <td>
+                <code class="literal">%{thread-number}</code>
+              </td>
+              <td>Current message number in thread</td>
             </tr>
             <tr>
-              <td>%F</td>
+              <td>
+                <code class="literal">%F</code>
+              </td>
+              <td>
+                <code class="literal">%{sender}</code>
+              </td>
               <td>Author name, or recipient name if the message is from you</td>
             </tr>
             <tr>
-              <td>%Fp</td>
-              <td>Like %F, but plain. No contextual formatting is applied to recipient name</td>
+              <td>
+                <code class="literal">%Fp</code>
+              </td>
+              <td>
+                <code class="literal">%{sender-plain}</code>
+              </td>
+              <td>Like
+              <code class="literal">%F</code>, but plain. No contextual formatting is applied to recipient name</td>
             </tr>
             <tr>
-              <td>%g</td>
-              <td>Message tags (e.g. notmuch tags/imap flags)</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{from-full}</code>
+              </td>
+              <td>Sender (address + real name), either From: or Return-Path:</td>
             </tr>
             <tr>
-              <td>%Gx</td>
-              <td>Individual message tag (e.g. notmuch tags/imap flags)</td>
+              <td>
+                <code class="literal">%Gx</code>
+              </td>
+              <td>
+                <code class="literal">%{tags-transformed}</code>
+              </td>
+              <td>Individual message tag (e.g. Notmuch tags/imap flags)</td>
             </tr>
             <tr>
-              <td>%H</td>
+              <td>
+                <code class="literal">%g</code>
+              </td>
+              <td>
+                <code class="literal">%{tags}</code>
+              </td>
+              <td>Message tags (e.g. Notmuch tags/imap flags)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%H</code>
+              </td>
+              <td>
+                <code class="literal">%{spam}</code>
+              </td>
               <td>Spam attribute(s) of this message</td>
             </tr>
             <tr>
-              <td>%i</td>
-              <td>Message-id of the current message</td>
-            </tr>
-            <tr>
-              <td>%I</td>
+              <td>
+                <code class="literal">%I</code>
+              </td>
+              <td>
+                <code class="literal">%{initials}</code>
+              </td>
               <td>Initials of author</td>
             </tr>
             <tr>
-              <td>%J</td>
+              <td>
+                <code class="literal">%i</code>
+              </td>
+              <td>
+                <code class="literal">%{message-id}</code>
+              </td>
+              <td>Message-id of the current message</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%J</code>
+              </td>
+              <td>
+                <code class="literal">%{thread-tags}</code>
+              </td>
               <td>Message tags (if present, tree unfolded, and != parent's tags)</td>
             </tr>
             <tr>
-              <td>%K</td>
-              <td>The list to which the letter was sent (if any; otherwise: empty)</td>
+              <td>
+                <code class="literal">%K</code>
+              </td>
+              <td>
+                <code class="literal">%{list-empty}</code>
+              </td>
+              <td>List to which the email was sent (if any; otherwise: empty)</td>
             </tr>
             <tr>
-              <td>%l</td>
-              <td>number of lines in the unprocessed message (may not work with maildir, mh, and IMAP folders)</td>
+              <td>
+                <code class="literal">%L</code>
+              </td>
+              <td>
+                <code class="literal">%{from-list}</code>
+              </td>
+              <td>If an address in the
+              <code class="literal">To:</code> or
+              <code class="literal">Cc:</code> header field matches an address defined by the user's
+              <a class="link" href="configuration.html#subscribe">$subscribe</a> command, this displays.</td>
             </tr>
             <tr>
-              <td>%L</td>
-              <td>If an address in the "To:" or "Cc:" header field matches an address Defined by the user's "
-              <a class="link" href="configuration.html#subscribe">subscribe</a>" command, this displays "To &lt;list-name&gt;", otherwise the same as %F</td>
+              <td>
+                <code class="literal">%l</code>
+              </td>
+              <td>
+                <code class="literal">%{lines}</code>
+              </td>
+              <td>Number of lines in the unprocessed message (may not work with maildir, mh, and IMAP folders)</td>
             </tr>
             <tr>
-              <td>%m</td>
-              <td>Total number of message in the mailbox</td>
-            </tr>
-            <tr>
-              <td>%M</td>
+              <td>
+                <code class="literal">%M</code>
+              </td>
+              <td>
+                <code class="literal">%{thread-hidden-count}</code>
+              </td>
               <td>Number of hidden messages if the thread is collapsed</td>
             </tr>
             <tr>
-              <td>%n</td>
-              <td>Author's real name (or address if missing)</td>
+              <td>
+                <code class="literal">%m</code>
+              </td>
+              <td>
+                <code class="literal">%{message-count}</code>
+              </td>
+              <td>Total number of message in the mailbox</td>
             </tr>
             <tr>
-              <td>%N</td>
+              <td>
+                <code class="literal">%N</code>
+              </td>
+              <td>
+                <code class="literal">%{score}</code>
+              </td>
               <td>Message score</td>
             </tr>
             <tr>
-              <td>%O</td>
-              <td>Original save folder where NeoMutt would formerly have Stashed the message: list name or recipient name If not sent to a list</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{name}</code>
+              </td>
+              <td>Author's real name (or address if missing)</td>
             </tr>
             <tr>
-              <td>%P</td>
+              <td>
+                <code class="literal">%O</code>
+              </td>
+              <td>
+                <code class="literal">%{save-folder}</code>
+              </td>
+              <td>Original save folder where NeoMutt would formerly have Stashed the message: list name or recipient name if not sent to a list</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%P</code>
+              </td>
+              <td>
+                <code class="literal">%{percentage}</code>
+              </td>
               <td>Progress indicator for the built-in pager (how much of the file has been displayed)</td>
             </tr>
             <tr>
-              <td>%q</td>
+              <td>
+                <code class="literal">%q</code>
+              </td>
+              <td>
+                <code class="literal">%{newsgroup}</code>
+              </td>
               <td>Newsgroup name (if compiled with NNTP support)</td>
             </tr>
             <tr>
-              <td>%r</td>
-              <td>Comma separated list of "To:" recipients</td>
+              <td>
+                <code class="literal">%R</code>
+              </td>
+              <td>
+                <code class="literal">%{cc-all}</code>
+              </td>
+              <td>Comma separated list of
+              <code class="literal">Cc:</code> recipients</td>
             </tr>
             <tr>
-              <td>%R</td>
-              <td>Comma separated list of "Cc:" recipients</td>
+              <td>
+                <code class="literal">%r</code>
+              </td>
+              <td>
+                <code class="literal">%{to-all}</code>
+              </td>
+              <td>Comma separated list of
+              <code class="literal">To:</code> recipients</td>
             </tr>
             <tr>
-              <td>%s</td>
+              <td>
+                <code class="literal">%S</code>
+              </td>
+              <td>
+                <code class="literal">%{flag-chars}</code>
+              </td>
+              <td>Single character status of the message (
+              <code class="literal">N</code> /
+              <code class="literal">O</code> /
+              <code class="literal">D</code> /
+              <code class="literal">d</code> /
+              <code class="literal">!</code> /
+              <code class="literal">r</code> /
+              <code class="literal">*</code> )</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{subject}</code>
+              </td>
               <td>Subject of the message</td>
             </tr>
             <tr>
-              <td>%S</td>
-              <td>Single character status of the message ("N"/"O"/"D"/"d"/"!"/"r"/"*")</td>
-            </tr>
-            <tr>
-              <td>%t</td>
-              <td>"To:" field (recipients)</td>
-            </tr>
-            <tr>
-              <td>%T</td>
-              <td>The appropriate character from the
+              <td>
+                <code class="literal">%T</code>
+              </td>
+              <td>
+                <code class="literal">%{to-chars}</code>
+              </td>
+              <td>Appropriate character from the
               <a class="link" href="#to-chars" title="3.529.&#160;to_chars">$to_chars</a> string</td>
             </tr>
             <tr>
-              <td>%u</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{to}</code>
+              </td>
+              <td>
+              <code class="literal">%{To:}</code> field (recipients)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{username}</code>
+              </td>
               <td>User (login) name of the author</td>
             </tr>
             <tr>
-              <td>%v</td>
+              <td>
+                <code class="literal">%v</code>
+              </td>
+              <td>
+                <code class="literal">%{first-name}</code>
+              </td>
               <td>First name of the author, or the recipient if the message is from you</td>
             </tr>
             <tr>
-              <td>%W</td>
-              <td>Name of organization of author ("Organization:" field)</td>
+              <td>
+                <code class="literal">%W</code>
+              </td>
+              <td>
+                <code class="literal">%{organization}</code>
+              </td>
+              <td>Name of organization of author (
+              <code class="literal">Organization:</code> field)</td>
             </tr>
             <tr>
-              <td>%x</td>
-              <td>"X-Comment-To:" field (if present and compiled with NNTP support)</td>
+              <td>
+                <code class="literal">%X</code>
+              </td>
+              <td>
+                <code class="literal">%{attachment-count}</code>
+              </td>
+              <td>Number of MIME attachments (see the
+              <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">$attachments</a> section for possible speed effects)</td>
             </tr>
             <tr>
-              <td>%X</td>
-              <td>Number of MIME attachments (please see the "
-              <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">attachments</a>" section for possible speed effects)</td>
+              <td>
+                <code class="literal">%x</code>
+              </td>
+              <td>
+                <code class="literal">%{x-comment-to}</code>
+              </td>
+              <td>
+              <code class="literal">%{X-Comment-To:}</code> field (if present)</td>
             </tr>
             <tr>
-              <td>%y</td>
-              <td>"X-Label:" field, if present</td>
+              <td>
+                <code class="literal">%Y</code>
+              </td>
+              <td>
+                <code class="literal">%{thread-x-label}</code>
+              </td>
+              <td>
+              <code class="literal">%{X-Label:}</code> field, if present, and 1. not at part of a thread tree 2. at the top of a thread, or 3.
+              <code class="literal">X-Label:</code> is different from Preceding message's
+              <code class="literal">X-Label:</code></td>
             </tr>
             <tr>
-              <td>%Y</td>
-              <td>"X-Label:" field, if present, and
-              <span class="emphasis">
-                <em>(1)</em>
-              </span>not at part of a thread tree,
-              <span class="emphasis">
-                <em>(2)</em>
-              </span>at the top of a thread, or
-              <span class="emphasis">
-                <em>(3)</em>
-              </span>"X-Label:" is different from Preceding message's "X-Label:"</td>
+              <td>
+                <code class="literal">%y</code>
+              </td>
+              <td>
+                <code class="literal">%{x-label}</code>
+              </td>
+              <td>
+              <code class="literal">%{X-Label:}</code> field, if present</td>
             </tr>
             <tr>
-              <td>%Z</td>
-              <td>A three character set of message status flags. The first character is new/read/replied flags ("n"/"o"/"r"/"O"/"N"). The second is deleted or encryption flags ("D"/"d"/"S"/"P"/"s"/"K"). The third is either tagged/flagged ("*"/"!"), or one of the characters Listed in
+              <td>
+                <code class="literal">%Z</code>
+              </td>
+              <td>
+                <code class="literal">%{combined-flags}</code>
+              </td>
+              <td>A three character set of message status flags. The first character is new/read/replied flags (
+              <code class="literal">n</code> /
+              <code class="literal">o</code> /
+              <code class="literal">r</code> /
+              <code class="literal">O</code> /
+              <code class="literal">N</code> ). The second is deleted or encryption flags (
+              <code class="literal">D</code> /
+              <code class="literal">d</code> /
+              <code class="literal">S</code> /
+              <code class="literal">P</code> /
+              <code class="literal">s</code> /
+              <code class="literal">K</code> ). The third is either tagged/flagged (
+              <code class="literal">*</code> /
+              <code class="literal">!</code> ), or one of the characters. Listed in
               <a class="link" href="#to-chars" title="3.529.&#160;to_chars">$to_chars</a>.</td>
             </tr>
             <tr>
-              <td>%zc</td>
+              <td>
+                <code class="literal">%zc</code>
+              </td>
+              <td>
+                <code class="literal">%{crypto-flags}</code>
+              </td>
               <td>Message crypto flags</td>
             </tr>
             <tr>
-              <td>%zs</td>
+              <td>
+                <code class="literal">%zs</code>
+              </td>
+              <td>
+                <code class="literal">%{status-flags}</code>
+              </td>
               <td>Message status flags</td>
             </tr>
             <tr>
-              <td>%zt</td>
+              <td>
+                <code class="literal">%zt</code>
+              </td>
+              <td>
+                <code class="literal">%{message-flags}</code>
+              </td>
               <td>Message tag flags</td>
             </tr>
             <tr>
-              <td>%@name@</td>
-              <td>insert and evaluate format-string from the matching "
-              <a class="link" href="configuration.html#index-format-hook" title="22.&#160;Dynamically Changing $index_format using Patterns">index-format-hook</a>" command</td>
+              <td>
+                <code class="literal">%@name@</code>
+              </td>
+              <td></td>
+              <td>Insert and evaluate format-string from the matching
+              <code class="literal">
+                <a class="link" href="configuration.html#index-format-hook" title="22.&#160;Dynamically Changing $index_format using Patterns">index-format-hook</a>
+              </code> command</td>
             </tr>
             <tr>
-              <td>%{fmt}</td>
-              <td>the date and time of the message is converted to sender's time zone, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the braces is a bang ("!"), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so "%Z" behaves like "%z". %{fmt} behaves like %[fmt] on systems where struct tm doesn't have a tm_gmtoff member.</td>
+              <td>
+                <code class="literal">%{fmt}</code>
+              </td>
+              <td></td>
+              <td>Date and time of the message is converted to sender's time zone, and
+              <code class="literal">fmt</code> is expanded by the library function
+              <code class="literal">strftime(3)</code> ; if the first character inside the braces is a bang (
+              <code class="literal">!</code> ), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so
+              <code class="literal">%Z</code> behaves like
+              <code class="literal">%z</code>.
+              <code class="literal">%{fmt}</code> behaves like
+              <code class="literal">%[fmt]</code> on systems where
+              <code class="literal">struct tm</code> doesn't have a
+              <code class="literal">tm_gmtoff</code> member.</td>
             </tr>
             <tr>
-              <td>%[fmt]</td>
-              <td>the date and time of the message is converted to the local time zone, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the brackets is a bang ("!"), the date is formatted ignoring any locale settings.</td>
+              <td>
+                <code class="literal">%[fmt]</code>
+              </td>
+              <td></td>
+              <td>Date and time of the message is converted to the local time zone, and
+              <code class="literal">fmt</code> is expanded by the library function
+              <code class="literal">strftime(3)</code> ; if the first character inside the brackets is a bang (
+              <code class="literal">!</code> ), the date is formatted ignoring any locale settings.</td>
             </tr>
             <tr>
-              <td>%(fmt)</td>
-              <td>the local date and time when the message was received, and "fmt" is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the parentheses is a bang ("!"), the date is formatted ignoring any locale settings.</td>
+              <td>
+                <code class="literal">%(fmt)</code>
+              </td>
+              <td></td>
+              <td>Local date and time when the message was received, and
+              <code class="literal">fmt</code> is expanded by the library function
+              <code class="literal">strftime(3)</code> ; if the first character inside the parentheses is a bang (
+              <code class="literal">!</code> ), the date is formatted ignoring any locale settings.</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -7642,56 +8588,110 @@ set inews_command="/usr/local/bin/inews -hS"
           </colgroup>
           <tbody>
             <tr>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
               <td>%c</td>
+              <td>
+                <code class="literal">%{counter}</code>
+              </td>
               <td>Step counter looping from
-              <span class="quote">“<span class="quote">A</span>”</span> to
-              <span class="quote">“<span class="quote">Z</span>”</span></td>
+              <code class="literal">A</code> to
+              <code class="literal">Z</code></td>
             </tr>
             <tr>
               <td>%d</td>
+              <td>
+                <code class="literal">%{day}</code>
+              </td>
               <td>Current day of the month (GMT)</td>
             </tr>
             <tr>
               <td>%f</td>
+              <td>
+                <code class="literal">%{hostname}</code>
+              </td>
               <td>
                 <a class="link" href="#hostname" title="3.184.&#160;hostname">$hostname</a>
               </td>
             </tr>
             <tr>
               <td>%H</td>
+              <td>
+                <code class="literal">%{hour}</code>
+              </td>
               <td>Current hour using a 24-hour clock (GMT)</td>
             </tr>
             <tr>
               <td>%m</td>
+              <td>
+                <code class="literal">%{minute}</code>
+              </td>
               <td>Current month number (GMT)</td>
             </tr>
             <tr>
               <td>%M</td>
+              <td>
+                <code class="literal">%{month}</code>
+              </td>
               <td>Current minute of the hour (GMT)</td>
             </tr>
             <tr>
               <td>%p</td>
+              <td>
+                <code class="literal">%{pid}</code>
+              </td>
               <td>Pid of the running mutt process</td>
             </tr>
             <tr>
               <td>%r</td>
-              <td>3 bytes of pseudo-random data encoded in Base64Url</td>
+              <td>
+                <code class="literal">%{random_3}</code>
+              </td>
+              <td>3 bytes of pseudo-random data encoded in Base64</td>
             </tr>
             <tr>
               <td>%S</td>
+              <td>
+                <code class="literal">%{second}</code>
+              </td>
               <td>Current second of the minute (GMT)</td>
             </tr>
             <tr>
               <td>%x</td>
-              <td>1 byte of pseudo-random data hex encoded (example: '1b')</td>
+              <td>
+                <code class="literal">%{random_1}</code>
+              </td>
+              <td>1 byte of pseudo-random data hex encoded (example:
+              <code class="literal">1b</code> )</td>
             </tr>
             <tr>
               <td>%Y</td>
+              <td>
+                <code class="literal">%{year}</code>
+              </td>
               <td>Current year using 4 digits (GMT)</td>
             </tr>
             <tr>
               <td>%z</td>
-              <td>4 byte timestamp + 8 bytes of pseudo-random data encoded in Base64Url</td>
+              <td>
+                <code class="literal">%{random_12}</code>
+              </td>
+              <td>4 byte timestamp + 8 bytes of pseudo-random data encoded in Base64</td>
             </tr>
           </tbody>
         </table>
@@ -8140,7 +9140,12 @@ set inews_command="/usr/local/bin/inews -hS"
             <tr>
               <td>
                 <span class="bold">
-                  <strong>Expando</strong>
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
                 </span>
               </td>
               <td>
@@ -8148,53 +9153,60 @@ set inews_command="/usr/local/bin/inews -hS"
                   <strong>Description</strong>
                 </span>
               </td>
-              <td>
-                <span class="bold">
-                  <strong>Example</strong>
-                </span>
-              </td>
             </tr>
             <tr>
-              <td>%a</td>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{account}</code>
+              </td>
               <td>Account url</td>
-              <td>
-                <code class="literal">news:news.gmane.org</code>
-              </td>
             </tr>
             <tr>
-              <td>%p</td>
-              <td>Port</td>
               <td>
-                <code class="literal">119</code>
+                <code class="literal">%P</code>
               </td>
-            </tr>
-            <tr>
-              <td>%P</td>
+              <td>
+                <code class="literal">%{port-if}</code>
+              </td>
               <td>Port if specified</td>
-              <td>
-                <code class="literal">10119</code>
-              </td>
             </tr>
             <tr>
-              <td>%s</td>
-              <td>News server name</td>
               <td>
-                <code class="literal">news.gmane.org</code>
+                <code class="literal">%p</code>
               </td>
+              <td>
+                <code class="literal">%{port}</code>
+              </td>
+              <td>Port</td>
             </tr>
             <tr>
-              <td>%S</td>
+              <td>
+                <code class="literal">%S</code>
+              </td>
+              <td>
+                <code class="literal">%{schema}</code>
+              </td>
               <td>Url schema</td>
-              <td>
-                <code class="literal">news</code>
-              </td>
             </tr>
             <tr>
-              <td>%u</td>
-              <td>Username</td>
               <td>
-                <code class="literal">username</code>
+                <code class="literal">%s</code>
               </td>
+              <td>
+                <code class="literal">%{server}</code>
+              </td>
+              <td>News server name</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{username}</code>
+              </td>
+              <td>Username</td>
             </tr>
           </tbody>
         </table>
@@ -8777,28 +9789,78 @@ set nntp_authenticators="digest-md5:user"
           </colgroup>
           <tbody>
             <tr>
-              <td>%d</td>
-              <td>pattern description</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
             </tr>
             <tr>
-              <td>%e</td>
-              <td>pattern expression</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{description}</code>
+              </td>
+              <td>Pattern description</td>
             </tr>
             <tr>
-              <td>%n</td>
-              <td>index number</td>
+              <td>
+                <code class="literal">%e</code>
+              </td>
+              <td>
+                <code class="literal">%{expression}</code>
+              </td>
+              <td>Pattern expression</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
+              <td>Index number</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -9024,27 +10086,71 @@ set nntp_authenticators="digest-md5:user"
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
-              <td>The value of
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{sign-as}</code>
+              </td>
+              <td>Value of
               <a class="link" href="#pgp-sign-as" title="3.350.&#160;pgp_sign_as">$pgp_sign_as</a> if set, otherwise the value of
-              <a class="link" href="#pgp-default-key" title="3.325.&#160;pgp_default_key">$pgp_default_key</a>.</td>
+              <a class="link" href="#pgp-default-key" title="3.325.&#160;pgp_default_key">$pgp_default_key</a></td>
             </tr>
             <tr>
-              <td>%f</td>
-              <td>Expands to the name of a file containing a message.</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{file-message}</code>
+              </td>
+              <td>Expands to the name of a file containing a message</td>
             </tr>
             <tr>
-              <td>%p</td>
-              <td>Expands to PGPPASSFD=0 when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a %&lt;...&gt; construct.</td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{need-pass}</code>
+              </td>
+              <td>Expands to
+              <code class="literal">PGPPASSFD=0</code> when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a
+              <code class="literal">%&lt;...&gt;</code> construct.</td>
             </tr>
             <tr>
-              <td>%r</td>
-              <td>One or more key IDs (or fingerprints if available).</td>
+              <td>
+                <code class="literal">%r</code>
+              </td>
+              <td>
+                <code class="literal">%{key-ids}</code>
+              </td>
+              <td>One or more key IDs (or fingerprints if available)</td>
             </tr>
             <tr>
-              <td>%s</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{file-signature}</code>
+              </td>
               <td>Expands to the name of a file containing the signature part of a
-              <code class="literal">multipart/signed</code> attachment when verifying it.</td>
+              <code class="literal">multipart/signed</code> attachment when verifying it</td>
             </tr>
           </tbody>
         </table>
@@ -9193,61 +10299,206 @@ set nntp_authenticators="digest-md5:user"
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{key-algorithm}</code>
+              </td>
               <td>Algorithm</td>
             </tr>
             <tr>
-              <td>%c</td>
+              <td>
+                <code class="literal">%c</code>
+              </td>
+              <td>
+                <code class="literal">%{key-capabilities}</code>
+              </td>
               <td>Capabilities</td>
             </tr>
             <tr>
-              <td>%f</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{key-flags}</code>
+              </td>
               <td>Flags</td>
             </tr>
             <tr>
-              <td>%i</td>
+              <td>
+                <code class="literal">%i</code>
+              </td>
+              <td>
+                <code class="literal">%{key-fingerprint}</code>
+              </td>
               <td>Key fingerprint (or long key id if non-existent)</td>
             </tr>
             <tr>
-              <td>%k</td>
+              <td>
+                <code class="literal">%k</code>
+              </td>
+              <td>
+                <code class="literal">%{key-id}</code>
+              </td>
               <td>Key id</td>
             </tr>
             <tr>
-              <td>%l</td>
+              <td>
+                <code class="literal">%l</code>
+              </td>
+              <td>
+                <code class="literal">%{key-length}</code>
+              </td>
               <td>Key length</td>
             </tr>
             <tr>
-              <td>%n</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Number</td>
             </tr>
             <tr>
-              <td>%p</td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{protocol}</code>
+              </td>
               <td>Protocol</td>
             </tr>
             <tr>
-              <td>%t</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{trust}</code>
+              </td>
               <td>Trust/validity of the key-uid association</td>
             </tr>
             <tr>
-              <td>%u</td>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{user-id}</code>
+              </td>
               <td>User id</td>
             </tr>
             <tr>
-              <td>%[&lt;s&gt;]</td>
-              <td>Date of the key where &lt;s&gt; is an
+              <td>
+                <code class="literal">%A</code>
+              </td>
+              <td>
+                <code class="literal">%{pkey-algorithm}</code>
+              </td>
+              <td>Primary Key Algorithm</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{pkey-capabilities}</code>
+              </td>
+              <td>Primary Key Capabilities</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%F</code>
+              </td>
+              <td>
+                <code class="literal">%{pkey-flags}</code>
+              </td>
+              <td>Primary Key Flags</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%I</code>
+              </td>
+              <td>
+                <code class="literal">%{pkey-fingerprint}</code>
+              </td>
+              <td>Primary Key fingerprint (or long key id if non-existent)</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%K</code>
+              </td>
+              <td>
+                <code class="literal">%{pkey-id}</code>
+              </td>
+              <td>Primary Key id</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%L</code>
+              </td>
+              <td>
+                <code class="literal">%{pkey-length}</code>
+              </td>
+              <td>Primary Key length</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%[&lt;s&gt;]</code>
+              </td>
+              <td>
+                <code class="literal">%{date}</code>
+              </td>
+              <td>Date of the key where
+              <code class="literal">&lt;s&gt;</code> is an
               <code class="literal">strftime(3)</code> expression</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>Right justify the rest of the string and pad with character "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>Pad to the end of the line with character "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
@@ -10477,44 +11728,158 @@ set preferred_languages="en,fr,de"
           </colgroup>
           <tbody>
             <tr>
-              <td>%A</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%A</code>
+              </td>
+              <td>
+                <code class="literal">%{address}</code>
+              </td>
               <td>Full Address (Name and Email)</td>
             </tr>
             <tr>
-              <td>%C</td>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{comment}</code>
+              </td>
               <td>Comment</td>
             </tr>
             <tr>
-              <td>%E</td>
+              <td>
+                <code class="literal">%E</code>
+              </td>
+              <td>
+                <code class="literal">%{email}</code>
+              </td>
               <td>Email Address</td>
             </tr>
             <tr>
-              <td>%i</td>
+              <td>
+                <code class="literal">%i</code>
+              </td>
+              <td>
+                <code class="literal">%{number}</code>
+              </td>
               <td>Index number</td>
             </tr>
             <tr>
-              <td>%N</td>
+              <td>
+                <code class="literal">%N</code>
+              </td>
+              <td>
+                <code class="literal">%{name}</code>
+              </td>
               <td>Real name</td>
             </tr>
             <tr>
-              <td>%t</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{tagged}</code>
+              </td>
               <td>Alias is tagged (selected)</td>
             </tr>
             <tr>
-              <td>%Y</td>
+              <td>
+                <code class="literal">%Y</code>
+              </td>
+              <td>
+                <code class="literal">%{tags}</code>
+              </td>
               <td>User-defined tags (labels)</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>Right justify the rest of the string and pad with "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>Pad to the end of the line with "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%E</code> instead</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%c</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%i</code> instead</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%e</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%C</code> instead</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td></td>
+              <td>
+              <span class="bold">
+                <strong>Deprecated:</strong>
+              </span>Use
+              <code class="literal">%N</code> instead</td>
             </tr>
           </tbody>
         </table>
@@ -11611,100 +12976,222 @@ set sidebar_delim_chars='.'
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Cur</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{notify}</code>
+              </td>
               <td></td>
               <td>Alert: 1 if user is notified of new mail</td>
             </tr>
             <tr>
-              <td>%B</td>
+              <td>
+                <code class="literal">%B</code>
+              </td>
+              <td>
+                <code class="literal">%{name}</code>
+              </td>
               <td></td>
               <td>Name of the mailbox</td>
             </tr>
             <tr>
-              <td>%d</td>
-              <td>* @</td>
-              <td>Number of deleted messages in the mailbox</td>
-            </tr>
-            <tr>
-              <td>%D</td>
+              <td>
+                <code class="literal">%D</code>
+              </td>
+              <td>
+                <code class="literal">%{description}</code>
+              </td>
               <td></td>
               <td>Descriptive name of the mailbox</td>
             </tr>
             <tr>
-              <td>%F</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{deleted-count}</code>
+              </td>
+              <td>Cur</td>
+              <td>Number of deleted messages in the mailbox</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%F</code>
+              </td>
+              <td>
+                <code class="literal">%{flagged-count}</code>
+              </td>
+              <td></td>
               <td>Number of flagged messages in the mailbox</td>
             </tr>
             <tr>
-              <td>%L</td>
-              <td>* @</td>
+              <td>
+                <code class="literal">%L</code>
+              </td>
+              <td>
+                <code class="literal">%{limited-count}</code>
+              </td>
+              <td>Cur</td>
               <td>Number of messages after limiting</td>
             </tr>
             <tr>
-              <td>%n</td>
+              <td>
+                <code class="literal">%N</code>
+              </td>
+              <td>
+                <code class="literal">%{new-mail}</code>
+              </td>
               <td></td>
-              <td>"N" if mailbox has new mail, " " (space) otherwise</td>
-            </tr>
-            <tr>
-              <td>%N</td>
-              <td>*</td>
               <td>Number of unread messages in the mailbox (seen or unseen)</td>
             </tr>
             <tr>
-              <td>%o</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{unread-count}</code>
+              </td>
+              <td></td>
+              <td>
+              <code class="literal">N</code> if mailbox has new mail,
+              <code class="literal"></code> (space) otherwise</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%o</code>
+              </td>
+              <td>
+                <code class="literal">%{old-count}</code>
+              </td>
+              <td></td>
               <td>Number of old messages in the mailbox (unread, seen)</td>
             </tr>
             <tr>
-              <td>%p</td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{poll}</code>
+              </td>
               <td></td>
               <td>Poll: 1 if Mailbox is checked for new mail</td>
             </tr>
             <tr>
-              <td>%r</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%r</code>
+              </td>
+              <td>
+                <code class="literal">%{read-count}</code>
+              </td>
+              <td></td>
               <td>Number of read messages in the mailbox (read, seen)</td>
             </tr>
             <tr>
-              <td>%S</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%S</code>
+              </td>
+              <td>
+                <code class="literal">%{message-count}</code>
+              </td>
+              <td></td>
               <td>Size of mailbox (total number of messages)</td>
             </tr>
             <tr>
-              <td>%t</td>
-              <td>* @</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{tagged-count}</code>
+              </td>
+              <td>Cur</td>
               <td>Number of tagged messages in the mailbox</td>
             </tr>
             <tr>
-              <td>%Z</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%Z</code>
+              </td>
+              <td>
+                <code class="literal">%{unseen-count}</code>
+              </td>
+              <td></td>
               <td>Number of new messages in the mailbox (unread, unseen)</td>
             </tr>
             <tr>
-              <td>%!</td>
+              <td>
+                <code class="literal">%!</code>
+              </td>
+              <td>
+                <code class="literal">%{flagged}</code>
+              </td>
               <td></td>
-              <td>"!" : one flagged message; "!!" : two flagged messages; "n!" : n flagged messages (for n &gt; 2). Otherwise prints nothing.</td>
+              <td>
+              <code class="literal">!</code>: one flagged message
+              <code class="literal">!!</code>: two flagged messages
+              <code class="literal">%{n!}</code>: n flagged messages (for n &gt; 2)</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td>&#160;</td>
-              <td>Right justify the rest of the string and pad with "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td></td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td>&#160;</td>
-              <td>Pad to the end of the line with "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td></td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td>&#160;</td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td></td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p>* = Can be optionally printed if nonzero</p>
-      <p>@ = Only applicable to the current folder</p>
+      <p>
+      <span class="bold">
+        <strong>Cur</strong>
+      </span>= Only applicable to the current folder</p>
       <p>In order to use %S, %N, %F, and %!,
       <a class="link" href="#mail-check-stats" title="3.229.&#160;mail_check_stats">$mail_check_stats</a> must be
       <span class="emphasis">
@@ -12395,42 +13882,99 @@ set sidebar_delim_chars='.'
           </colgroup>
           <tbody>
             <tr>
-              <td>%a</td>
-              <td>The algorithm used for encryption.</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
             </tr>
             <tr>
-              <td>%c</td>
-              <td>One or more certificate IDs.</td>
+              <td>
+                <code class="literal">%a</code>
+              </td>
+              <td>
+                <code class="literal">%{algorithm}</code>
+              </td>
+              <td>Algorithm used for encryption</td>
             </tr>
             <tr>
-              <td>%C</td>
+              <td>
+                <code class="literal">%C</code>
+              </td>
+              <td>
+                <code class="literal">%{certificate-path}</code>
+              </td>
               <td>CA location: Depending on whether
               <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file, this expands to "-CApath
               <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a>" or "-CAfile
-              <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a>".</td>
+              <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a>"</td>
             </tr>
             <tr>
-              <td>%d</td>
-              <td>The message digest algorithm specified with
-              <a class="link" href="#smime-sign-digest-alg" title="3.481.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a>.</td>
+              <td>
+                <code class="literal">%c</code>
+              </td>
+              <td>
+                <code class="literal">%{certificate-ids}</code>
+              </td>
+              <td>One or more certificate IDs</td>
             </tr>
             <tr>
-              <td>%f</td>
-              <td>Expands to the name of a file containing a message.</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{digest-algorithm}</code>
+              </td>
+              <td>Message digest algorithm specified with
+              <a class="link" href="#smime-sign-digest-alg" title="3.481.&#160;smime_sign_digest_alg">$smime_sign_digest_alg</a></td>
             </tr>
             <tr>
-              <td>%i</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{message-file}</code>
+              </td>
+              <td>Expands to the name of a file containing a message</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%i</code>
+              </td>
+              <td>
+                <code class="literal">%{intermediate-ids}</code>
+              </td>
               <td>Intermediate certificates</td>
             </tr>
             <tr>
-              <td>%k</td>
-              <td>The key-pair specified with
+              <td>
+                <code class="literal">%k</code>
+              </td>
+              <td>
+                <code class="literal">%{key}</code>
+              </td>
+              <td>Key-pair specified with
               <a class="link" href="#smime-default-key" title="3.466.&#160;smime_default_key">$smime_default_key</a></td>
             </tr>
             <tr>
-              <td>%s</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{signature-file}</code>
+              </td>
               <td>Expands to the name of a file containing the signature part of a
-              <code class="literal">multipart/signed</code> attachment when verifying it.</td>
+              <code class="literal">multipart/signed</code> attachment when verifying it</td>
             </tr>
           </tbody>
         </table>
@@ -13603,140 +15147,264 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
           </colgroup>
           <tbody>
             <tr>
-              <td>%b</td>
-              <td>*</td>
+              <td>
+                <span class="bold">
+                  <strong>Short</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Long Name</strong>
+                </span>
+              </td>
+              <td>
+                <span class="bold">
+                  <strong>Description</strong>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%b</code>
+              </td>
+              <td>
+                <code class="literal">%{unread-mailboxes}</code>
+              </td>
               <td>Number of mailboxes with new mail</td>
             </tr>
             <tr>
-              <td>%d</td>
-              <td>*</td>
-              <td>Number of deleted messages</td>
-            </tr>
-            <tr>
-              <td>%D</td>
-              <td></td>
+              <td>
+                <code class="literal">%D</code>
+              </td>
+              <td>
+                <code class="literal">%{description}</code>
+              </td>
               <td>Description of the mailbox</td>
             </tr>
             <tr>
-              <td>%f</td>
-              <td></td>
-              <td>The full pathname of the current mailbox</td>
+              <td>
+                <code class="literal">%d</code>
+              </td>
+              <td>
+                <code class="literal">%{deleted-count}</code>
+              </td>
+              <td>Number of deleted messages</td>
             </tr>
             <tr>
-              <td>%F</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%f</code>
+              </td>
+              <td>
+                <code class="literal">%{flagged-count}</code>
+              </td>
+              <td>Full pathname of the current mailbox</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%F</code>
+              </td>
+              <td>
+                <code class="literal">%{mailbox-path}</code>
+              </td>
               <td>Number of flagged messages</td>
             </tr>
             <tr>
-              <td>%h</td>
-              <td></td>
+              <td>
+                <code class="literal">%h</code>
+              </td>
+              <td>
+                <code class="literal">%{hostname}</code>
+              </td>
               <td>Local hostname</td>
             </tr>
             <tr>
-              <td>%l</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%l</code>
+              </td>
+              <td>
+                <code class="literal">%{limit-size}</code>
+              </td>
               <td>Size (in bytes) of the current mailbox (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%L</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%L</code>
+              </td>
+              <td>
+                <code class="literal">%{mailbox-size}</code>
+              </td>
               <td>Size (in bytes) of the messages shown (i.e., which match the current limit) (see
               <a class="link" href="configuration.html#formatstrings-size" title="30.6.&#160;Bytes size display">formatstrings-size</a>)</td>
             </tr>
             <tr>
-              <td>%m</td>
-              <td>*</td>
-              <td>The number of messages in the mailbox</td>
+              <td>
+                <code class="literal">%m</code>
+              </td>
+              <td>
+                <code class="literal">%{limit-count}</code>
+              </td>
+              <td>Number of messages in the mailbox</td>
             </tr>
             <tr>
-              <td>%M</td>
-              <td>*</td>
-              <td>The number of messages shown (i.e., which match the current limit)</td>
+              <td>
+                <code class="literal">%M</code>
+              </td>
+              <td>
+                <code class="literal">%{message-count}</code>
+              </td>
+              <td>Number of messages shown (i.e., which match the current limit)</td>
             </tr>
             <tr>
-              <td>%n</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%n</code>
+              </td>
+              <td>
+                <code class="literal">%{new-count}</code>
+              </td>
               <td>Number of new messages in the mailbox (unread, unseen)</td>
             </tr>
             <tr>
-              <td>%o</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%o</code>
+              </td>
+              <td>
+                <code class="literal">%{old-count}</code>
+              </td>
               <td>Number of old messages in the mailbox (unread, seen)</td>
             </tr>
             <tr>
-              <td>%p</td>
-              <td>*</td>
-              <td>Number of postponed messages</td>
-            </tr>
-            <tr>
-              <td>%P</td>
-              <td></td>
+              <td>
+                <code class="literal">%P</code>
+              </td>
+              <td>
+                <code class="literal">%{percentage}</code>
+              </td>
               <td>Percentage of the way through the index</td>
             </tr>
             <tr>
-              <td>%r</td>
-              <td></td>
+              <td>
+                <code class="literal">%p</code>
+              </td>
+              <td>
+                <code class="literal">%{postponed-count}</code>
+              </td>
+              <td>Number of postponed messages</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%r</code>
+              </td>
+              <td>
+                <code class="literal">%{read-count}</code>
+              </td>
               <td>Modified/read-only/won't-write/attach-message indicator, According to
               <a class="link" href="#status-chars" title="3.516.&#160;status_chars">$status_chars</a></td>
             </tr>
             <tr>
-              <td>%R</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%R</code>
+              </td>
+              <td>
+                <code class="literal">%{readonly}</code>
+              </td>
               <td>Number of read messages in the mailbox (read, seen)</td>
             </tr>
             <tr>
-              <td>%s</td>
-              <td></td>
-              <td>Current sorting mode (
-              <a class="link" href="#sort" title="3.491.&#160;sort">$sort</a>)</td>
-            </tr>
-            <tr>
-              <td>%S</td>
-              <td></td>
+              <td>
+                <code class="literal">%S</code>
+              </td>
+              <td>
+                <code class="literal">%{sort-aux}</code>
+              </td>
               <td>Current aux sorting method (
               <a class="link" href="#sort-aux" title="3.493.&#160;sort_aux">$sort_aux</a>)</td>
             </tr>
             <tr>
-              <td>%t</td>
-              <td>*</td>
-              <td>Number of tagged messages in the mailbox</td>
+              <td>
+                <code class="literal">%s</code>
+              </td>
+              <td>
+                <code class="literal">%{sort}</code>
+              </td>
+              <td>Current sorting mode (
+              <a class="link" href="#sort" title="3.491.&#160;sort">$sort</a>)</td>
             </tr>
             <tr>
-              <td>%T</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%T</code>
+              </td>
+              <td>
+                <code class="literal">%{use-threads}</code>
+              </td>
               <td>Current threading mode (
               <a class="link" href="#use-threads" title="3.545.&#160;use_threads">$use_threads</a>)</td>
             </tr>
             <tr>
-              <td>%u</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%t</code>
+              </td>
+              <td>
+                <code class="literal">%{tagged-count}</code>
+              </td>
+              <td>Number of tagged messages in the mailbox</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="literal">%u</code>
+              </td>
+              <td>
+                <code class="literal">%{unread-count}</code>
+              </td>
               <td>Number of unread messages in the mailbox (seen or unseen)</td>
             </tr>
             <tr>
-              <td>%v</td>
-              <td></td>
+              <td>
+                <code class="literal">%v</code>
+              </td>
+              <td>
+                <code class="literal">%{limit-pattern}</code>
+              </td>
               <td>NeoMutt version string</td>
             </tr>
             <tr>
-              <td>%V</td>
-              <td>*</td>
+              <td>
+                <code class="literal">%V</code>
+              </td>
+              <td>
+                <code class="literal">%{version}</code>
+              </td>
               <td>Currently active limit pattern, if any</td>
             </tr>
             <tr>
-              <td>%&gt;X</td>
-              <td></td>
-              <td>Right justify the rest of the string and pad with "X"</td>
+              <td>
+                <code class="literal">%*X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-soft}</code>
+              </td>
+              <td>Soft-fill with character
+              <code class="literal">X</code> as pad</td>
             </tr>
             <tr>
-              <td>%|X</td>
-              <td></td>
-              <td>Pad to the end of the line with "X"</td>
+              <td>
+                <code class="literal">%&gt;X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-hard}</code>
+              </td>
+              <td>Right justify the rest of the string and pad with character
+              <code class="literal">X</code></td>
             </tr>
             <tr>
-              <td>%*X</td>
-              <td></td>
-              <td>Soft-fill with character "X" as pad</td>
+              <td>
+                <code class="literal">%|X</code>
+              </td>
+              <td>
+                <code class="literal">%{padding-eol}</code>
+              </td>
+              <td>Pad to the end of the line with character
+              <code class="literal">X</code></td>
             </tr>
           </tbody>
         </table>
