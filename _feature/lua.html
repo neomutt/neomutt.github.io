@@ -1,0 +1,138 @@
+---
+title: Lua
+description: Embedded Lua Scripting
+since: 2017-04-14
+status: devel
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/lua"></a>Lua</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Embedded Lua Scripting</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2017-04-14</p>
+    <p>
+    <span class="bold">
+      <strong>Dependencies:</strong>
+    </span>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>Lua is a simple scripting language that's frequently embedded into other programs, such as NeoVim. It allows users to cusotomise the behaviour of the host program.</p>
+    <p>In NeoMutt, Lua can used to get/set config options and run commands.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="commands"></a>3.&#160;Commands</h2>
+        </div>
+      </div>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">lua</code>
+        <em class="replaceable">
+          <code>"lua-commands"</code>
+        </em>
+      </p>
+    </div>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">lua-source</code>
+        <em class="replaceable">
+          <code>filename</code>
+        </em>
+      </p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="usage"></a>4.&#160;Usage</h2>
+        </div>
+      </div>
+    </div>
+    <p>A simple example of running some Lua commands in NeoMutt.</p>
+    <pre class="screen">
+<span class="comment"># In NeoMutt, make the Sidebar wider</span>
+:lua "local x = mutt.get('sidebar_width'); x = x + 5; mutt.set('sidebar_width', x)"
+</pre>
+    <p>Next, create a script for easier reuse.</p>
+    <p>Create a local Lua script,
+    <code class="literal">sw.lua</code></p>
+    <pre class="screen">
+<span class="comment">-- Make the sidebar wider</span>
+function sw()
+  local width = mutt.get('sidebar_width')
+  width = width + 5
+  mutt.set('sidebar_width', width)
+end
+</pre>
+    <p>Alter your NeoMutt config to add:</p>
+    <pre class="screen">
+<span class="comment"># Load the script once</span>
+lua-source "sw.lua"
+
+<span class="comment"># Create a binding to run the function in the script</span>
+macro index &lt;F1&gt; "&lt;enter-command&gt;lua 'sw()'&lt;enter&gt;
+</pre>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="limitations"></a>5.&#160;Limitations</h2>
+        </div>
+      </div>
+    </div>
+    <p>Currently, the Lua Scripting is very limited. It doesn't have any way to interact with the objects within NeoMutt: the Mailboxes, the Emails, etc. Beyond that, there's almost zero documentation.</p>
+    <p>This state is changing. There is some new work coming to NeoMutt that exposes the Accounts, Mailboxes and Emails to Lua. This would allow the user to perform meaningful actions.</p>
+    <p>See:
+    <a class="ulink" href="https://github.com/neomutt/neomutt/pull/4707" target="_top">https://github.com/neomutt/neomutt/pull/4707</a></p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>6.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Richard Russon, Bernard Pratz, Rayford Shireman, Darshit Shah</p>
+  </div>
+</div>
+{% endraw %}
