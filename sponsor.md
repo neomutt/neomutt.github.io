@@ -62,6 +62,7 @@ Special thanks to our **sponsors**:
 - 罗昭铭
 - Aboudoulaye Yatera
 - Marton Balazs	(@martonbalazs)
+- Kirill Rekhov (@krekhovx)
 
 [Become a sponsor of NeoMutt](https://neomutt.org/sponsor)
 
