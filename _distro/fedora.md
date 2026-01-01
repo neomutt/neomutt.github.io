@@ -12,9 +12,9 @@ maintainer: flatcap
 
 | Fedora       | Support                     |
 | :----------- | :-------------------------- |
-| 38 or before | Unsupported, please upgrade |
-| 39           | Supported                   |
-| 40           | Supported                   |
+| 41 or before | Unsupported, please upgrade |
+| 42           | Supported                   |
+| 43           | Supported                   |
 | Rawhide      | Supported                   |
 
 ## Installation <a id="install"></a>
@@ -36,17 +36,6 @@ Well done! You've just installed NeoMutt.
   irc.libera.chat or the
   [NeoMutt Developers](http://mailman.neomutt.org/mailman/listinfo/neomutt-devel-neomutt.org)
   mailing list
-
-## NeoMutt COPR Install
-
-For years, this was the way to install NeoMutt.
-Now that NeoMutt is available to Fedora directly, the COPR install has been deprecated.
-
-If you previously installed NeoMutt from the COPR, you can disable it by running:
-
-```
-dnf copr remove flatcap/neomutt
-```
 
 ## Update <a id="update"></a>
 
