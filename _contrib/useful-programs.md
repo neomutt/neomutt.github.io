@@ -181,7 +181,7 @@ See also: [external address queries](/guide/advancedusage.html#query).
 - [vim-notmuch-addrlookup](https://github.com/Konfekt/vim-notmuch-addrlookup) to complete mail addresses indexed by [notmuch](https://notmuchmail.org).
 - [vim-notmuch-address](https://github.com/adborden/vim-notmuch-address) -- to complete mail addresses in Vim
 - [telescope-notmuch.nvim](https://codeberg.org/JoshuaCrewe/telescope-notmuch.nvim) - Neovim integration for Telescope (completion / search)
-
+- [mail-headers.nvim](https://codeberg.org/pmassot/mail-headers.nvim) – a Neovim plugin to edit mail headers, inspired by `telescope-notmuch.nvim`. 
 
 ## Setup
 
