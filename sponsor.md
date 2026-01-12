@@ -63,6 +63,7 @@ Special thanks to our **sponsors**:
 - Aboudoulaye Yatera
 - Marton Balazs	(@martonbalazs)
 - Kirill Rekhov (@krekhovx)
+- Joonas Laine
 
 [Become a sponsor of NeoMutt](https://neomutt.org/sponsor)
 
