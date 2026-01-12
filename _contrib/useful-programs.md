@@ -35,6 +35,9 @@ status: stable
   in a maildir with the labels synchronized with a notmuch database.
   The changes to tags in the notmuch database may be pushed back remotely
   to your GMail account.
+* [midnight](https://crates.io/crates/midnight) -- a sendmail agnostic
+  "send later" program. Requires [at(1)](https://linux.die.net/man/1/at)
+  as a runtime dependency.
 
 ## Address books
 
