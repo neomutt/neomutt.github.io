@@ -64,6 +64,7 @@ Special thanks to our **sponsors**:
 - Marton Balazs	(@martonbalazs)
 - Kirill Rekhov (@krekhovx)
 - Joonas Laine
+- Anonymous (Liberapay)
 
 [Become a sponsor of NeoMutt](https://neomutt.org/sponsor)
 
