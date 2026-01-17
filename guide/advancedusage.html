@@ -2215,13 +2215,9 @@ folder-hook '\@imap\.example\.com' "set sort=threads"
     <span class="quote">“<span class="quote">setenv</span>”</span> and
     <span class="quote">“<span class="quote">unsetenv</span>”</span> commands. You can also query current environment values by adding a
     <span class="quote">“<span class="quote">?</span>”</span> character.</p>
-    <div class="note">
-      <h3 class="title">Note</h3>
-      <p>These follow NeoMutt-style syntax, not shell-style!</p>
-    </div>
     <pre class="screen">
-setenv TERM vt100
-setenv ORGANIZATION "The NeoMutt Development Team"
+setenv TERM=vt100
+setenv ORGANIZATION="The NeoMutt Development Team"
 unsetenv DISPLAY
 setenv LESS?
 </pre>
