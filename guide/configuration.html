@@ -318,7 +318,7 @@ set real_name='John Smith' ; ignore x-
       </p>
       <div class="example-contents">
         <pre class="screen">
-my_hdr X-Disclaimer: Why are you listening to me?
+my-header X-Disclaimer: Why are you listening to me?
 <span class="comment"># This is a comment</span>
 </pre>
       </div>
@@ -387,7 +387,7 @@ over several lines"
       </p>
       <div class="example-contents">
         <pre class="screen">
-my_hdr X-Operating-System: `uname -a`
+my-header X-Operating-System: `uname -a`
 </pre>
       </div>
     </div>
@@ -1158,48 +1158,6 @@ set alias_file=~/.mail_aliases
                 </td>
               </tr>
               <tr>
-                <td>alias</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>alias</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>attach</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>attach</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>browser</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>browser</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
                 <td>editor</td>
                 <td>&lt;backspace&gt;</td>
                 <td>
@@ -1228,34 +1186,6 @@ set alias_file=~/.mail_aliases
                 </td>
               </tr>
               <tr>
-                <td>index</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>index</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>compose</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>compose</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
                 <td>pager</td>
                 <td>?</td>
                 <td>
@@ -1274,76 +1204,6 @@ set alias_file=~/.mail_aliases
                 <td>:</td>
                 <td>
                   <code class="literal">&lt;enter-command&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>pgp</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>pgp</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>smime</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>smime</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>postpone</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>postpone</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>query</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>query</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>mix</td>
-                <td>?</td>
-                <td>
-                  <code class="literal">&lt;help&gt;</code>
-                </td>
-              </tr>
-              <tr>
-                <td>mix</td>
-                <td>q</td>
-                <td>
-                  <code class="literal">&lt;exit&gt;</code>
                 </td>
               </tr>
             </tbody>
@@ -2654,7 +2514,7 @@ uncolor status *
         <strong>ignore/unignore</strong>
       </span>and
       <span class="command">
-        <strong>hdr_order/unhdr_order</strong>
+        <strong>header-order/unheader-order</strong>
       </span>commands.</p>
     </div>
     <div class="sect2">
@@ -2721,14 +2581,14 @@ unignore posted-to:
         <div>
           <div>
             <h3 class="title">
-            <a id="hdr-order"></a>12.3.&#160;Ordering Displayed Headers</h3>
+            <a id="header-order"></a>12.3.&#160;Ordering Displayed Headers</h3>
           </div>
         </div>
       </div>
       <p>Usage:</p>
       <div class="cmdsynopsis">
         <p>
-        <code class="command">hdr_order</code>
+        <code class="command">header-order</code>
         <em class="replaceable">
           <code>header</code>
         </em>[
@@ -2736,7 +2596,7 @@ unignore posted-to:
           <code>header</code>
         </em>...]
         <br />
-        <code class="command">unhdr_order</code> {
+        <code class="command">unheader-order</code> {
         <em class="replaceable">
           <code>*</code>
         </em>|
@@ -2746,21 +2606,21 @@ unignore posted-to:
       </div>
       <p>With the
       <span class="command">
-        <strong>hdr_order</strong>
+        <strong>header-order</strong>
       </span>command you can specify an order in which NeoMutt will attempt to present these headers to you when viewing messages.</p>
       <p>
       <span class="quote">“<span class="quote">
       <span class="command">
-        <strong>unhdr_order</strong>
+        <strong>unheader-order</strong>
       </span>*</span>”</span> will clear all previous headers from the order list, thus removing the header order effects set by the system-wide startup file.</p>
       <div class="example">
-        <a id="ex-hdr-order"></a>
+        <a id="ex-header-order"></a>
         <p class="title">
           <strong>Example&#160;3.11.&#160;Configuring header display order</strong>
         </p>
         <div class="example-contents">
           <pre class="screen">
-hdr_order From Date: From: To: Cc: Subject:
+header-order From Date: From: To: Cc: Subject:
 </pre>
         </div>
       </div>
@@ -3124,19 +2984,19 @@ subscribe [0-9]+.*@bugs.debian.org
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="my-hdr"></a>17.&#160;User-Defined Headers</h2>
+          <a id="my-header"></a>17.&#160;User-Defined Headers</h2>
         </div>
       </div>
     </div>
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">my_hdr</code>
+      <code class="command">my-header</code>
       <em class="replaceable">
         <code>string</code>
       </em>
       <br />
-      <code class="command">unmy_hdr</code> {
+      <code class="command">unmy-header</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -3146,21 +3006,21 @@ subscribe [0-9]+.*@bugs.debian.org
     </div>
     <p>The
     <span class="command">
-      <strong>my_hdr</strong>
+      <strong>my-header</strong>
     </span>command allows you to create your own header fields which will be added to every message you send and appear in the editor if
     <a class="link" href="reference.html#edit-headers" title="3.122.&#160;edit_headers">$edit_headers</a> is set.</p>
     <p>For example, if you would like to add an
     <span class="quote">“<span class="quote">Organization:</span>”</span> header field to all of your outgoing messages, you can put the command something like shown in
-    <a class="xref" href="#ex-my-hdr" title="Example&#160;3.12.&#160;Defining custom headers">Example&#160;3.12, “Defining custom headers”</a> in your
+    <a class="xref" href="#ex-my-header" title="Example&#160;3.12.&#160;Defining custom headers">Example&#160;3.12, “Defining custom headers”</a> in your
     <code class="literal">.neomuttrc</code>.</p>
     <div class="example">
-      <a id="ex-my-hdr"></a>
+      <a id="ex-my-header"></a>
       <p class="title">
         <strong>Example&#160;3.12.&#160;Defining custom headers</strong>
       </p>
       <div class="example-contents">
         <pre class="screen">
-my_hdr Organization: A Really Big Company, Anytown, USA
+my-header Organization: A Really Big Company, Anytown, USA
 </pre>
       </div>
     </div>
@@ -3179,13 +3039,13 @@ my_hdr Organization: A Really Big Company, Anytown, USA
     <span class="quote">“<span class="quote">E</span>”</span>) in the compose menu so that you can edit the header of your message along with the body.</p>
     <p>To remove user defined header fields, use the
     <span class="command">
-      <strong>unmy_hdr</strong>
+      <strong>unmy-header</strong>
     </span>command. You may specify an asterisk (
     <span class="quote">“<span class="quote">*</span>”</span>) to remove all header fields, or the fields to remove. For example, to remove all
     <span class="quote">“<span class="quote">To</span>”</span> and
     <span class="quote">“<span class="quote">Cc</span>”</span> header fields, you could use:</p>
     <pre class="screen">
-unmy_hdr to cc
+unmy-header to cc
 </pre>
   </div>
   <div class="sect1">
@@ -3452,9 +3312,9 @@ save-hook aol\\.com$ +spam
         <strong>send-hook</strong>
       </span>to be executed, similarly if
       <a class="link" href="reference.html#auto-edit" title="3.36.&#160;auto_edit">$auto_edit</a> is set (as then the initial list of recipients is empty). Also note that
-      <a class="link" href="#my-hdr" title="17.&#160;User-Defined Headers">
+      <a class="link" href="#my-header" title="17.&#160;User-Defined Headers">
         <span class="command">
-          <strong>my_hdr</strong>
+          <strong>my-header</strong>
         </span>
       </a>commands which modify recipient headers, or the message's subject, don't have any effect on the current message when executed from a
       <span class="command">
@@ -4774,7 +4634,7 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mailto_allow</code> {
+      <code class="command">mailto-allow</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -4782,7 +4642,7 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
         <code>header-field</code>
       </em>... }
       <br />
-      <code class="command">unmailto_allow</code> {
+      <code class="command">unmailto-allow</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -4793,8 +4653,8 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
     <p>As a security measure, NeoMutt will only add user-approved header fields from a
     <code class="literal">mailto:</code> URL. This is necessary since NeoMutt will handle certain header fields, such as
     <code class="literal">Attach:</code>, in a special way. The
-    <code class="literal">mailto_allow</code> and
-    <code class="literal">unmailto_allow</code> commands allow the user to modify the list of approved headers.</p>
+    <code class="literal">mailto-allow</code> and
+    <code class="literal">unmailto-allow</code> commands allow the user to modify the list of approved headers.</p>
     <p>NeoMutt initializes the default list to contain only the
     <code class="literal">Subject</code> and
     <code class="literal">Body</code> header fields, which are the only requirement specified by the

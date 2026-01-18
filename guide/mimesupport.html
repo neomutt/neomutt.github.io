@@ -135,7 +135,7 @@ title: NeoMutt's MIME Support
             <dd>
               <p>NeoMutt will display internally supported MIME types (see
               <a class="xref" href="#mime-pager" title="1.2.&#160;Viewing MIME Messages in the Pager">Section&#160;1.2, “Viewing MIME Messages in the Pager”</a>) in the pager. This will respect
-              <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">auto_view</a> settings, to determine whether to use a
+              <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">auto-view</a> settings, to determine whether to use a
               <code class="literal">copiousoutput</code> mailcap entry or just directly display the attachment.</p>
               <p>Other MIME types will use the first matching mailcap entry.</p>
               <p>If no matching mailcap entries are found, the attachment will be displayed in the pager as raw text.</p>
@@ -148,7 +148,7 @@ title: NeoMutt's MIME Support
             <dd>
               <p>NeoMutt will use the first matching
               <code class="literal">copiousoutput</code> mailcap entry to display the attachment in the pager (regardless of
-              <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">auto_view</a> settings).</p>
+              <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">auto-view</a> settings).</p>
               <p>If no matching mailcap entries are found, the attachment will be displayed in the pager as raw text.</p>
             </dd>
             <dt>
@@ -555,7 +555,7 @@ text/html; lynx -dump -width ${COLUMNS:-80} %s; copiousoutput
               <p>NeoMutt uses this flag when viewing attachments with
               <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
                 <span class="command">
-                  <strong>auto_view</strong>
+                  <strong>auto-view</strong>
                 </span>
               </a>, in order to decide whether it should honor the setting of the
               <a class="link" href="reference.html#wait-key" title="3.551.&#160;wait_key">$wait_key</a> variable or not. When an attachment is viewed using an interactive program, and the corresponding mailcap entry has a
@@ -668,7 +668,7 @@ image/gif;      ; print=anytopnm %s | pnmtops | lpr; \
         <p>In addition, you can use this with
         <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
           <span class="command">
-            <strong>auto_view</strong>
+            <strong>auto-view</strong>
           </span>
         </a>to denote two commands for viewing an attachment, one to be viewed automatically, the other to be viewed interactively from the attachment menu using the
         <code class="literal">&lt;view-mailcap&gt;</code> function (bound to
@@ -681,7 +681,7 @@ text/html;      lynx -dump %s; nametemplate=%s.html; copiousoutput
         <p>For
         <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
           <span class="command">
-            <strong>auto_view</strong>
+            <strong>auto-view</strong>
           </span>
         </a>, NeoMutt will choose the third entry because of the
         <code class="literal">copiousoutput</code> tag. For interactive viewing, NeoMutt will run the program
@@ -843,7 +843,7 @@ application/ms-excel;   open.pl %s
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">auto_view</code>
+      <code class="command">auto-view</code>
       <em class="replaceable">
         <code>mime-type</code>
       </em>[
@@ -857,7 +857,7 @@ application/ms-excel;   open.pl %s
         <code>/mime-subtype</code>
       </em>] ...]
       <br />
-      <code class="command">unauto_view</code> { * | [
+      <code class="command">unauto-view</code> { * | [
       <em class="replaceable">
         <code>mime-type</code>
       </em>[
@@ -870,10 +870,10 @@ application/ms-excel;   open.pl %s
     <code class="literal">copiousoutput</code> option to denote that it is non-interactive. Usually, you also use the entry to convert the attachment to a text representation which you can view in the pager.</p>
     <p>You then use the
     <span class="command">
-      <strong>auto_view</strong>
+      <strong>auto-view</strong>
     </span>configuration command to list the content-types that you wish to view automatically. For instance, if you set it to:</p>
     <pre class="screen">
-auto_view text/html application/x-gunzip \
+auto-view text/html application/x-gunzip \
   application/postscript image/gif application/x-tar-gz
 </pre>
     <p>...NeoMutt would try to find corresponding entries for rendering attachments of these types as text. A corresponding mailcap could look like:</p>
@@ -887,10 +887,10 @@ application/postscript; ps2ascii %s; copiousoutput
 </pre>
     <p>
     <span class="command">
-      <strong>unauto_view</strong>
+      <strong>unauto-view</strong>
     </span>can be used to remove previous entries from the
     <span class="command">
-      <strong>auto_view</strong>
+      <strong>auto-view</strong>
     </span>list. This can be used with
     <a class="link" href="configuration.html#message-hook" title="20.&#160;Change Settings Before Formatting a Message">
       <span class="command">
@@ -899,7 +899,7 @@ application/postscript; ps2ascii %s; copiousoutput
     </a>to autoview messages based on size, etc.
     <span class="quote">“<span class="quote">
     <span class="command">
-      <strong>unauto_view</strong>
+      <strong>unauto-view</strong>
     </span>&#160;*</span>”</span> will remove all previous entries.</p>
   </div>
   <div class="sect1">
@@ -932,17 +932,17 @@ application/postscript; ps2ascii %s; copiousoutput
           <li class="listitem">
             <p>First, NeoMutt will check the
             <span class="command">
-              <strong>alternative_order</strong>
+              <strong>alternative-order</strong>
             </span>list to determine if one of the available types is preferred. It consists of a number of MIME types in order, including support for implicit and explicit wildcards. For example:</p>
             <pre class="screen">
-alternative_order text/enriched text/plain text application/postscript image/*
+alternative-order text/enriched text/plain text application/postscript image/*
 </pre>
           </li>
           <li class="listitem">
             <p>Next, NeoMutt will check if any of the types have a defined
             <a class="link" href="#auto-view" title="4.&#160;MIME Autoview">
               <span class="command">
-                <strong>auto_view</strong>
+                <strong>auto-view</strong>
               </span>
             </a>, and use that.</p>
           </li>
@@ -959,10 +959,10 @@ alternative_order text/enriched text/plain text application/postscript image/*
       </div>
       <p>To remove a MIME type from the
       <span class="command">
-        <strong>alternative_order</strong>
+        <strong>alternative-order</strong>
       </span>list, use the
       <span class="command">
-        <strong>unalternative_order</strong>
+        <strong>unalternative-order</strong>
       </span>command.</p>
     </div>
     <div class="sect2">
@@ -1374,7 +1374,7 @@ attachments  -I message/external-body
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mime_lookup</code>
+      <code class="command">mime-lookup</code>
       <em class="replaceable">
         <code>mime-type</code>
       </em>[
@@ -1388,7 +1388,7 @@ attachments  -I message/external-body
         <code>/mime-subtype</code>
       </em>] ...]
       <br />
-      <code class="command">unmime_lookup</code> { * | [
+      <code class="command">unmime-lookup</code> { * | [
       <em class="replaceable">
         <code>mime-type</code>
       </em>[
@@ -1398,24 +1398,24 @@ attachments  -I message/external-body
     </div>
     <p>NeoMutt's
     <span class="command">
-      <strong>mime_lookup</strong>
+      <strong>mime-lookup</strong>
     </span>list specifies a list of MIME types that should
     <span class="emphasis">
       <em>not</em>
     </span>be treated according to their mailcap entry. This option is designed to deal with binary types such as
     <code class="literal">application/octet-stream</code>. When an attachment's MIME type is listed in
     <span class="command">
-      <strong>mime_lookup</strong>
+      <strong>mime-lookup</strong>
     </span>, then the extension of the filename will be compared to the list of extensions in the
     <code class="literal">mime.types</code> file. The MIME type associated with this extension will then be used to process the attachment according to the rules in the mailcap file and according to any other configuration options (such as
     <span class="command">
-      <strong>auto_view</strong>
+      <strong>auto-view</strong>
     </span>) specified. Common usage would be:</p>
     <pre class="screen">
-mime_lookup application/octet-stream application/X-Lotus-Manuscript
+mime-lookup application/octet-stream application/X-Lotus-Manuscript
 </pre>
     <p>In addition, the
-    <code class="literal">unmime_lookup</code> command may be used to disable this feature for any particular MIME type if it had been set, for example, in a global
+    <code class="literal">unmime-lookup</code> command may be used to disable this feature for any particular MIME type if it had been set, for example, in a global
     <code class="literal">.neomuttrc</code>.</p>
   </div>
 </div>

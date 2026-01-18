@@ -2100,8 +2100,8 @@ Limit to messages matching: ~d &lt;1m
       </p>
       <div class="example-contents">
         <pre class="screen">
-send-hook . 'unmy_hdr From:'
-send-hook ~C'^b@b\\.b$' my_hdr from: c@c.c
+send-hook . 'unmy-header From:'
+send-hook ~C'^b@b\\.b$' my-header from: c@c.c
 </pre>
       </div>
     </div>
@@ -2155,7 +2155,7 @@ send-hook ~C'^b@b\\.b$' my_hdr from: c@c.c
       </span>the mailbox, except that you are restricted to those operators which match information NeoMutt extracts from the header of the message (i.e., from, to, cc, date, subject, etc.).</p>
       <p>For example, if you wanted to set your return address based upon sending mail to a specific address, you could do something like:</p>
       <pre class="screen">
-send-hook '~t ^user@work\\.com$' 'my_hdr From: John Smith &lt;user@host&gt;'
+send-hook '~t ^user@work\\.com$' 'my-header From: John Smith &lt;user@host&gt;'
 </pre>
       <p>which would execute the given command when sending mail to
       <span class="emphasis">
@@ -2827,7 +2827,7 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
         </li>
         <li class="listitem">
           <p>
-          <a class="link" href="configuration.html#my-hdr" title="17.&#160;User-Defined Headers">my_hdr</a> processing for To, Cc, Bcc, Subject headers.</p>
+          <a class="link" href="configuration.html#my-header" title="17.&#160;User-Defined Headers">my-header</a> processing for To, Cc, Bcc, Subject headers.</p>
         </li>
         <li class="listitem">
           <p>Prompts for To, Cc, Bcc, Subject headers. See
@@ -2854,7 +2854,7 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
         </li>
         <li class="listitem">
           <p>
-          <a class="link" href="configuration.html#my-hdr" title="17.&#160;User-Defined Headers">my_hdr</a> processing for From, Reply-To, Message-ID and user-defined headers. The To, Cc, Bcc, Subject, and Return-Path headers are ignored at this stage.</p>
+          <a class="link" href="configuration.html#my-header" title="17.&#160;User-Defined Headers">my-header</a> processing for From, Reply-To, Message-ID and user-defined headers. The To, Cc, Bcc, Subject, and Return-Path headers are ignored at this stage.</p>
         </li>
         <li class="listitem">
           <p>Message body and signature generation.</p>
