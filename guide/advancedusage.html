@@ -2082,11 +2082,15 @@ Limit to messages matching: ~d &lt;1m
         </li>
       </ul>
     </div>
-    <p>for specific details on each type of
+    <p>To show a list of all the current Hooks, run the
+    <span class="command">
+      <strong>hooks</strong>
+    </span>command.</p>
+    <p>For specific details on each type of
     <span class="emphasis">
       <em>hook</em>
     </span>available. Also see
-    <a class="link" href="#compose-flow" title="18.&#160;Message Composition Flow">Message Composition Flow</a> for an overview of the composition process.</p>
+    <a class="link" href="#compose-flow" title="19.&#160;Message Composition Flow">Message Composition Flow</a> for an overview of the composition process.</p>
     <div class="note">
       <h3 class="title">Note</h3>
       <p>If a hook changes configuration settings, these changes remain effective until the end of the current NeoMutt session. As this is generally not desired, a
@@ -2215,15 +2219,18 @@ folder-hook '\@imap\.example\.com' "set sort=threads"
     <span class="quote">“<span class="quote">setenv</span>”</span> and
     <span class="quote">“<span class="quote">unsetenv</span>”</span> commands. You can also query current environment values by adding a
     <span class="quote">“<span class="quote">?</span>”</span> character.</p>
-    <div class="note">
-      <h3 class="title">Note</h3>
-      <p>These follow NeoMutt-style syntax, not shell-style!</p>
-    </div>
+    <p>Variable names must follow the pattern
+    <code class="literal">[_a-zA-Z][_a-zA-Z0-9]*</code>: they must start with a letter or underscore, and contain only letters, digits, and underscores.</p>
+    <pre class="screen">
+setenv TERM=vt100
+setenv ORGANIZATION="The NeoMutt Development Team"
+unsetenv DISPLAY
+setenv LESS?
+</pre>
+    <p>For backward compatibility, the old syntax is also supported, where the variable name and value are separated by whitespace instead of an equals sign:</p>
     <pre class="screen">
 setenv TERM vt100
 setenv ORGANIZATION "The NeoMutt Development Team"
-unsetenv DISPLAY
-setenv LESS?
 </pre>
     <p>Running
     <span class="command">
@@ -2525,7 +2532,7 @@ folder-hook . 'set record=^'
     <p>Working within the confines of a console or terminal window, it is often useful to be able to modify certain information elements in a non-destructive way – to change how they display, without changing the stored value of the information itself. This is especially so of message subjects, which may often be polluted with extraneous metadata that either is reproduced elsewhere, or is of secondary interest.</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">subjectrx</code>
+      <code class="command">subject-regex</code>
       <em class="replaceable">
         <code>regex</code>
       </em>
@@ -2533,7 +2540,7 @@ folder-hook . 'set record=^'
         <code>replacement</code>
       </em>
       <br />
-      <code class="command">unsubjectrx</code> {
+      <code class="command">unsubject-regex</code> {
       <em class="replaceable">
         <code>*</code>
       </em>|
@@ -2541,34 +2548,40 @@ folder-hook . 'set record=^'
         <code>regex</code>
       </em>}</p>
     </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Before 2026-01-13, these commands were called
+      <code class="literal">subjectrx</code> and
+      <code class="literal">unsubjectrx</code>.</p>
+    </div>
     <p>
-    <code class="literal">subjectrx</code> specifies a regular expression which, if detected in a message subject, causes the subject to be replaced with the
+    <code class="literal">subject-regex</code> specifies a regular expression which, if detected in a message subject, causes the subject to be replaced with the
     <span class="quote">“<span class="quote">replacement</span>”</span> value. The replacement is subject to substitutions in the same way as for the
     <a class="link" href="configuration.html#spam" title="26.&#160;Spam Detection">spam</a> command:
     <code class="literal">%L</code> for the text to the left of the match,
     <code class="literal">%R</code> for text to the right of the match, and
     <code class="literal">%1</code> for the first subgroup in the match (etc). If you simply want to erase the match, set it to
     <span class="quote">“<span class="quote">%L%R</span>”</span>. Any number of
-    <code class="literal">subjectrx</code> commands may coexist.</p>
+    <code class="literal">subject-regex</code> commands may coexist.</p>
     <p>Note this well: the
     <span class="quote">“<span class="quote">replacement</span>”</span> value replaces the entire subject, not just the match!</p>
     <p>
-    <code class="literal">unsubjectrx</code> removes a given subjectrx from the substitution list. If
+    <code class="literal">unsubject-regex</code> removes a given subject-regex from the substitution list. If
     <code class="literal">*</code> is used as the argument, all substitutions will be removed.</p>
     <div class="example">
-      <a id="ex-subjectrx"></a>
+      <a id="ex-subject-regex"></a>
       <p class="title">
         <strong>Example&#160;4.8.&#160;Subject Munging</strong>
       </p>
       <div class="example-contents">
         <pre class="screen">
 <span class="comment"># Erase [rt #12345] tags from Request Tracker (RT) e-mails</span>
-subjectrx '\[rt #[0-9]+\] *' '%L%R'
+subject-regex '\[rt #[0-9]+\] *' '%L%R'
 <span class="comment"># Servicedesk is another RT that sends more complex subjects.</span>
 <span class="comment"># Keep the ticket number.</span>
-subjectrx '\[servicedesk #([0-9]+)\] ([^.]+)\.([^.]+) - (new|open|pending|update) - ' '%L[#%1] %R'
+subject-regex '\[servicedesk #([0-9]+)\] ([^.]+)\.([^.]+) - (new|open|pending|update) - ' '%L[#%1] %R'
 <span class="comment"># Strip out annoying [listname] prefixes in subjects</span>
-subjectrx '\[[^]]*\]:? *' '%L%R'
+subject-regex '\[[^]]*\]:? *' '%L%R'
 </pre>
       </div>
     </div>
@@ -2814,7 +2827,27 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="compose-flow"></a>18.&#160;Message Composition Flow</h2>
+          <a id="version"></a>18.&#160;Displaying the version</h2>
+        </div>
+      </div>
+    </div>
+    <p>Usage:</p>
+    <div class="cmdsynopsis">
+      <p>
+        <code class="command">version</code>
+      </p>
+    </div>
+    <p>Running the
+    <span class="command">
+      <strong>version</strong>
+    </span>command will display full information about NeoMutt — its version; which features are built in; its build parameters.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="compose-flow"></a>19.&#160;Message Composition Flow</h2>
         </div>
       </div>
     </div>

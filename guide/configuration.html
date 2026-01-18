@@ -1322,11 +1322,10 @@ bind index gg first-entry
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-        <code class="command">cd</code>
-        <em class="replaceable">
-          <code>directory</code>
-        </em>
-      </p>
+      <code class="command">cd</code> [
+      <em class="replaceable">
+        <code>directory</code>
+      </em>]</p>
     </div>
     <p>The
     <code class="literal">cd</code> command changes NeoMutt's current working directory. This affects commands and functions like
@@ -1492,10 +1491,10 @@ folder-hook work "set sort=threads"
       <p>
       <code class="command">macro</code>
       <em class="replaceable">
-        <code>menu</code>
+        <code>map</code>
       </em>[
       <em class="replaceable">
-        <code>,menu</code>
+        <code>,map</code>
       </em>...]
       <em class="replaceable">
         <code>key</code>
@@ -1536,10 +1535,10 @@ folder-hook work "set sort=threads"
         <p>
         <code class="command">macro</code>
         <em class="replaceable">
-          <code>menu</code>
+          <code>map</code>
         </em>[
         <em class="replaceable">
-          <code>,menu</code>
+          <code>,map</code>
         </em>...]
         <em class="replaceable">
           <code>key</code>
@@ -1556,14 +1555,14 @@ folder-hook work "set sort=threads"
         <em>key</em>
       </span>in menu
       <span class="emphasis">
-        <em>menu</em>
+        <em>map</em>
       </span>, NeoMutt will behave as if you had typed
       <span class="emphasis">
         <em>sequence</em>
       </span>. So if you have a common sequence of commands you type, you can create a macro to execute those commands with a single key or fewer keys.</p>
       <p>
       <span class="emphasis">
-        <em>menu</em>
+        <em>map</em>
       </span>is the
       <a class="link" href="#maps">map</a> which the macro will be bound in. Multiple maps may be specified by separating multiple menu arguments by commas. Whitespace may not be used in between the menu arguments and the commas separating them.</p>
       <p>
@@ -1619,10 +1618,10 @@ folder-hook work "set sort=threads"
         <p>
         <code class="command">unmacro</code>
         <em class="replaceable">
-          <code>menu</code>
+          <code>map</code>
         </em>[
         <em class="replaceable">
-          <code>,menu</code>
+          <code>,map</code>
         </em>...]
         <em class="replaceable">
           <code>key</code>
@@ -1633,7 +1632,7 @@ folder-hook work "set sort=threads"
       </div>
       <p>
       <span class="emphasis">
-        <em>menu</em>
+        <em>map</em>
       </span>specifies from which menus the macro should be removed. Multiple menus may be specified by separating them with commas (no additional whitespace is allowed). If
       <code class="literal">*</code> is given, then the macro is removed from all menus. Valid menu names and their description are listed
       <a class="link" href="#maps">in the
@@ -1646,7 +1645,7 @@ folder-hook work "set sort=threads"
         <h3 class="title">Note</h3>
         <p>Missing key sequence in unmacro command means unmacro all macros in menus given in
         <span class="emphasis">
-          <em>menu</em>
+          <em>map</em>
         </span>.</p>
       </div>
     </div>
@@ -2604,6 +2603,12 @@ unignore posted-to:
           <code>header</code>
         </em>... }</p>
       </div>
+      <div class="note">
+        <h3 class="title">Note</h3>
+        <p>Before 2026-01-13, these commands were called
+        <code class="literal">hdr_order</code> and
+        <code class="literal">unhdr_order</code>.</p>
+      </div>
       <p>With the
       <span class="command">
         <strong>header-order</strong>
@@ -2898,7 +2903,7 @@ subscribe [0-9]+.*@bugs.debian.org
     <p>Usage:</p>
     <div class="cmdsynopsis">
       <p>
-      <code class="command">mailboxes</code> [ [
+      <code class="command">mailboxes</code> [
       <code class="option">-label</code>
       <em class="replaceable">
         <code>label</code>
@@ -2910,9 +2915,13 @@ subscribe [0-9]+.*@bugs.debian.org
       <code class="option">-nopoll</code> ]
       <em class="replaceable">
         <code>mailbox</code>
-      </em>] [...]
+      </em>[...]
       <br />
-      <code class="command">named-mailboxes</code>
+      <code class="command">named-mailboxes</code> [
+      <code class="option">-notify</code> |
+      <code class="option">-nonotify</code> ] [
+      <code class="option">-poll</code> |
+      <code class="option">-nopoll</code> ]
       <em class="replaceable">
         <code>label</code>
       </em>
@@ -3003,6 +3012,12 @@ subscribe [0-9]+.*@bugs.debian.org
       <em class="replaceable">
         <code>field</code>
       </em>... }</p>
+    </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Before 2026-01-13, these commands were called
+      <code class="literal">my_hdr</code> and
+      <code class="literal">unmy_hdr</code>.</p>
     </div>
     <p>The
     <span class="command">
@@ -3641,10 +3656,10 @@ folder-hook . 'push "&lt;enter-command&gt;score ~= 10&lt;enter&gt;"'
       <code class="command">spam</code>
       <em class="replaceable">
         <code>regex</code>
-      </em>
+      </em>[
       <em class="replaceable">
         <code>format</code>
-      </em>
+      </em>]
       <br />
       <code class="command">nospam</code> {
       <em class="replaceable">
@@ -3963,11 +3978,11 @@ spam "^From: .*MAILER-DAEMON"       "999"
         <code class="command">set</code> { [
         <code class="option">no</code> |
         <code class="option">inv</code> |
-        <code class="option">&amp;</code> |
-        <code class="option">?</code> ]
+        <code class="option">&amp;</code> ]
         <em class="replaceable">
           <code>variable</code>
-        </em>} [...]
+        </em>[
+        <code class="option">?</code> ] } [...]
         <br />
         <code class="command">set</code> {
         <em class="replaceable">
@@ -4649,6 +4664,12 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%&lt;l?%4l&amp;%4c&gt;)%*  %s"
       <em class="replaceable">
         <code>header-field</code>
       </em>... }</p>
+    </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Before 2026-01-13, these commands were called
+      <code class="literal">mailto_allow</code> and
+      <code class="literal">unmailto_allow</code>.</p>
     </div>
     <p>As a security measure, NeoMutt will only add user-approved header fields from a
     <code class="literal">mailto:</code> URL. This is necessary since NeoMutt will handle certain header fields, such as

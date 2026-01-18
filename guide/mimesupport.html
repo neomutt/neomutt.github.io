@@ -865,6 +865,12 @@ application/ms-excel;   open.pl %s
         <code>/mime-subtype</code>
       </em>] ...]}</p>
     </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Before 2026-01-13, these commands were called
+      <code class="literal">auto_view</code> and
+      <code class="literal">unauto_view</code>.</p>
+    </div>
     <p>In addition to explicitly telling NeoMutt to view an attachment with the MIME viewer defined in the mailcap file from the attachments menu, NeoMutt has support for automatically viewing MIME attachments while in the pager.</p>
     <p>For this to work, you must define a viewer in the mailcap file which uses the
     <code class="literal">copiousoutput</code> option to denote that it is non-interactive. Usually, you also use the entry to convert the attachment to a text representation which you can view in the pager.</p>
@@ -910,6 +916,37 @@ application/postscript; ps2ascii %s; copiousoutput
           <a id="alternative-order"></a>5.&#160;MIME Multipart/Alternative</h2>
         </div>
       </div>
+    </div>
+    <p>Usage:</p>
+    <div class="cmdsynopsis">
+      <p>
+      <code class="command">alternative-order</code>
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>[
+      <em class="replaceable">
+        <code>/mime-subtype</code>
+      </em>] [
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>[
+      <em class="replaceable">
+        <code>/mime-subtype</code>
+      </em>] ...]
+      <br />
+      <code class="command">unalternative-order</code> { * | [
+      <em class="replaceable">
+        <code>mime-type</code>
+      </em>[
+      <em class="replaceable">
+        <code>/mime-subtype</code>
+      </em>] ...]}</p>
+    </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Before 2026-01-13, these commands were called
+      <code class="literal">alternative_order</code> and
+      <code class="literal">unalternative_order</code>.</p>
     </div>
     <p>A
     <code class="literal">multipart/alternative</code> email has several parts that represent the same content in different formats, such as
@@ -1395,6 +1432,12 @@ attachments  -I message/external-body
       <em class="replaceable">
         <code>/mime-subtype</code>
       </em>] ...]}</p>
+    </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>Before 2026-01-13, these commands were called
+      <code class="literal">mime_lookup</code> and
+      <code class="literal">unmime_lookup</code>.</p>
     </div>
     <p>NeoMutt's
     <span class="command">

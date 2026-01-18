@@ -400,11 +400,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#alias" title="5.&#160;Defining/Using Aliases">unalias</a>
-            </code> [
-            <code class="option">-group</code>
-            <em class="replaceable">
-              <code>name</code>
-            </em>...] {
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -432,11 +428,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <br />
             <code class="command">
               <a class="link" href="configuration.html#alternates" title="13.&#160;Alternative Addresses">unalternates</a>
-            </code> [
-            <code class="option">-group</code>
-            <em class="replaceable">
-              <code>name</code>
-            </em>...] {
+            </code> {
             <em class="replaceable">
               <code>*</code>
             </em>|
@@ -464,6 +456,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>/mime-subtype</code>
             </em>] ...]
             <br />
+            <code class="command">alternative_order</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="mimesupport.html#alternative-order" title="5.&#160;MIME Multipart/Alternative">alternative-order</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="mimesupport.html#alternative-order" title="5.&#160;MIME Multipart/Alternative">unalternative-order</a>
             </code> { * | [
@@ -472,7 +468,11 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>[
             <em class="replaceable">
               <code>/mime-subtype</code>
-            </em>] ...]}</p>
+            </em>] ...]}
+            <br />
+            <code class="command">unalternative_order</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="mimesupport.html#alternative-order" title="5.&#160;MIME Multipart/Alternative">unalternative-order</a> instead</code></p>
           </div>
         </li>
         <li class="listitem">
@@ -534,6 +534,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>/mime-subtype</code>
             </em>] ...]
             <br />
+            <code class="command">auto_view</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">auto-view</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">unauto-view</a>
             </code> { * | [
@@ -542,7 +546,11 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>[
             <em class="replaceable">
               <code>/mime-subtype</code>
-            </em>] ...]}</p>
+            </em>] ...]}
+            <br />
+            <code class="command">unauto_view</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="mimesupport.html#auto-view" title="4.&#160;MIME Autoview">unauto-view</a> instead</code></p>
           </div>
         </li>
         <li class="listitem">
@@ -584,13 +592,12 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
         <li class="listitem">
           <div class="cmdsynopsis">
             <p>
-              <code class="command">
-                <a class="link" href="configuration.html#cd" title="7.&#160;Changing the current working directory">cd</a>
-              </code>
-              <em class="replaceable">
-                <code>directory</code>
-              </em>
-            </p>
+            <code class="command">
+              <a class="link" href="configuration.html#cd" title="7.&#160;Changing the current working directory">cd</a>
+            </code> [
+            <em class="replaceable">
+              <code>directory</code>
+            </em>]</p>
           </div>
         </li>
         <li class="listitem">
@@ -704,6 +711,18 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
         <li class="listitem">
           <div class="cmdsynopsis">
             <p>
+              <code class="command">
+                <a class="link" href="advancedusage.html#echo" title="17.&#160;Echoing Text">echo</a>
+              </code>
+              <em class="replaceable">
+                <code>message</code>
+              </em>
+            </p>
+          </div>
+        </li>
+        <li class="listitem">
+          <div class="cmdsynopsis">
+            <p>
             <code class="command">
               <a class="link" href="configuration.html#exec" title="24.&#160;Executing Functions">exec</a>
             </code>
@@ -753,16 +772,18 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
         <li class="listitem">
           <div class="cmdsynopsis">
             <p>
-              <code class="command">
-                <a class="link" href="configuration.html#folder-hook" title="9.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
-              </code>
-              <em class="replaceable">
-                <code>regex</code>
-              </em>
-              <em class="replaceable">
-                <code>command</code>
-              </em>
-            </p>
+            <code class="command">
+              <a class="link" href="configuration.html#folder-hook" title="9.&#160;Setting Variables Based Upon Mailbox">folder-hook</a>
+            </code> [
+            <em class="replaceable">
+              <code>-noregex</code>
+            </em>]
+            <em class="replaceable">
+              <code>regex</code>
+            </em>
+            <em class="replaceable">
+              <code>command</code>
+            </em></p>
           </div>
         </li>
         <li class="listitem">
@@ -817,6 +838,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>header</code>
             </em>...]
             <br />
+            <code class="command">hdr_order</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="configuration.html#header-order" title="12.3.&#160;Ordering Displayed Headers">header-order</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="configuration.html#header-order" title="12.3.&#160;Ordering Displayed Headers">unheader-order</a>
             </code> {
@@ -825,7 +850,20 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>|
             <em class="replaceable">
               <code>header</code>
-            </em>... }</p>
+            </em>... }
+            <br />
+            <code class="command">unhdr_order</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="configuration.html#header-order" title="12.3.&#160;Ordering Displayed Headers">unheader-order</a> instead</code></p>
+          </div>
+        </li>
+        <li class="listitem">
+          <div class="cmdsynopsis">
+            <p>
+              <code class="command">
+                <a class="link" href="advancedusage.html#hooks" title="6.&#160;Using Hooks">hooks</a>
+              </code>
+            </p>
           </div>
         </li>
         <li class="listitem">
@@ -954,14 +992,38 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
         <li class="listitem">
           <div class="cmdsynopsis">
             <p>
+              <code class="command">
+                <a class="link" href="/feature/lua" title="Lua">lua</a>
+              </code>
+              <em class="replaceable">
+                <code>lua-command</code>
+              </em>
+            </p>
+          </div>
+        </li>
+        <li class="listitem">
+          <div class="cmdsynopsis">
+            <p>
+              <code class="command">
+                <a class="link" href="/feature/lua" title="Lua">lua-source</a>
+              </code>
+              <em class="replaceable">
+                <code>filename</code>
+              </em>
+            </p>
+          </div>
+        </li>
+        <li class="listitem">
+          <div class="cmdsynopsis">
+            <p>
             <code class="command">
               <a class="link" href="configuration.html#macro" title="10.1.&#160;Creating a Key Macro">macro</a>
             </code>
             <em class="replaceable">
-              <code>menu</code>
+              <code>map</code>
             </em>[
             <em class="replaceable">
-              <code>,menu</code>
+              <code>,map</code>
             </em>...]
             <em class="replaceable">
               <code>key</code>
@@ -995,26 +1057,39 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <p>
             <code class="command">
               <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">mailboxes</a>
-            </code>
+            </code> [
+            <code class="option">-label</code>
+            <em class="replaceable">
+              <code>label</code>
+            </em>|
+            <code class="option">-nolabel</code> ] [
+            <code class="option">-notify</code> |
+            <code class="option">-nonotify</code> ] [
+            <code class="option">-poll</code> |
+            <code class="option">-nopoll</code> ]
             <em class="replaceable">
               <code>mailbox</code>
-            </em>[
-            <em class="replaceable">
-              <code>mailbox</code>
-            </em>...]
+            </em>[...]
             <br />
             <code class="command">
               <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">named-mailboxes</a>
-            </code>
+            </code> [
+            <code class="option">-notify</code> |
+            <code class="option">-nonotify</code> ] [
+            <code class="option">-poll</code> |
+            <code class="option">-nopoll</code> ]
             <em class="replaceable">
-              <code>description</code>
+              <code>label</code>
             </em>
             <em class="replaceable">
               <code>mailbox</code>
-            </em>[
+            </em>{
             <em class="replaceable">
-              <code>description mailbox</code>
-            </em>...]
+              <code>label</code>
+            </em>
+            <em class="replaceable">
+              <code>mailbox</code>
+            </em>...}
             <br />
             <code class="command">
               <a class="link" href="configuration.html#mailboxes" title="16.&#160;Monitoring Incoming Mail">unmailboxes</a>
@@ -1040,6 +1115,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>header-field</code>
             </em>... }
             <br />
+            <code class="command">mailto_allow</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="configuration.html#mailto-allow" title="31.&#160;Control allowed header fields in a mailto: URL">mailto-allow</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="configuration.html#mailto-allow" title="31.&#160;Control allowed header fields in a mailto: URL">unmailto-allow</a>
             </code> {
@@ -1048,7 +1127,11 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>|
             <em class="replaceable">
               <code>header-field</code>
-            </em>... }</p>
+            </em>... }
+            <br />
+            <code class="command">unmailto_allow</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="configuration.html#mailto-allow" title="31.&#160;Control allowed header fields in a mailto: URL">unmailto-allow</a> instead</code></p>
           </div>
         </li>
         <li class="listitem">
@@ -1102,6 +1185,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>/mime-subtype</code>
             </em>] ...]
             <br />
+            <code class="command">mime_lookup</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="mimesupport.html#mime-lookup" title="9.&#160;MIME Lookup">mime-lookup</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="mimesupport.html#mime-lookup" title="9.&#160;MIME Lookup">unmime-lookup</a>
             </code> { * | [
@@ -1110,7 +1197,11 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>[
             <em class="replaceable">
               <code>/mime-subtype</code>
-            </em>] ...]}</p>
+            </em>] ...]}
+            <br />
+            <code class="command">unmime_lookup</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="mimesupport.html#mime-lookup" title="9.&#160;MIME Lookup">unmime-lookup</a> instead</code></p>
           </div>
         </li>
         <li class="listitem">
@@ -1173,6 +1264,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>string</code>
             </em>
             <br />
+            <code class="command">my_hdr</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="configuration.html#my-header" title="17.&#160;User-Defined Headers">my-header</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="configuration.html#my-header" title="17.&#160;User-Defined Headers">unmy-header</a>
             </code> {
@@ -1181,7 +1276,11 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>|
             <em class="replaceable">
               <code>field</code>
-            </em>... }</p>
+            </em>... }
+            <br />
+            <code class="command">unmy_hdr</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="configuration.html#my-header" title="17.&#160;User-Defined Headers">unmy-header</a> instead</code></p>
           </div>
         </li>
         <li class="listitem">
@@ -1298,13 +1397,23 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </code> { [
             <code class="option">no</code> |
             <code class="option">inv</code> |
-            <code class="option">&amp;</code> |
-            <code class="option">?</code> ]
+            <code class="option">&amp;</code> ]
             <em class="replaceable">
               <code>variable</code>
-            </em>|
+            </em>[
+            <code class="option">?</code> ] } [...]
+            <br />
+            <code class="command">
+              <a class="link" href="configuration.html#set" title="27.&#160;Setting and Querying Variables">set</a>
+            </code> {
             <em class="replaceable">
               <code>variable=value</code>
+            </em>|
+            <em class="replaceable">
+              <code>variable+=increment</code>
+            </em>|
+            <em class="replaceable">
+              <code>variable-=decrement</code>
             </em>} [...]
             <br />
             <code class="command">
@@ -1345,10 +1454,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <a class="link" href="advancedusage.html#setenv" title="7.&#160;Managing the Environment">setenv</a>
             </code> {
             <em class="replaceable">
-              <code>?variable</code>
+              <code>variable?</code>
             </em>|
             <em class="replaceable">
-              <code>variable value</code>
+              <code>variable=value</code>
             </em>}
             <br />
             <code class="command">
@@ -1372,6 +1481,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
               <code>mailbox</code>
             </em>...]
             <br />
+            <code class="command">sidebar_pin</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="/feature/sidebar#pin">sidebar-pin</a> instead</code>
+            <br />
             <code class="command">
               <a class="link" href="/feature/sidebar#pin">sidebar-unpin</a>
             </code> {
@@ -1380,19 +1493,25 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>|
             <em class="replaceable">
               <code>mailbox</code>
-            </em>... }</p>
+            </em>... }
+            <br />
+            <code class="command">sidebar_unpin</code>
+            <code class="option">Deprecated, use
+            <a class="link" href="/feature/sidebar#pin">sidebar-unpin</a> instead</code></p>
           </div>
         </li>
         <li class="listitem">
           <div class="cmdsynopsis">
             <p>
-              <code class="command">
-                <a class="link" href="configuration.html#source" title="28.&#160;Reading Initialization Commands From Another File">source</a>
-              </code>
-              <em class="replaceable">
-                <code>filename</code>
-              </em>
-            </p>
+            <code class="command">
+              <a class="link" href="configuration.html#source" title="28.&#160;Reading Initialization Commands From Another File">source</a>
+            </code>
+            <em class="replaceable">
+              <code>filename</code>
+            </em>[
+            <em class="replaceable">
+              <code>filename</code>
+            </em>...]</p>
           </div>
         </li>
         <li class="listitem">
@@ -1403,10 +1522,10 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </code>
             <em class="replaceable">
               <code>regex</code>
-            </em>
+            </em>[
             <em class="replaceable">
               <code>format</code>
-            </em>
+            </em>]
             <br />
             <code class="command">
               <a class="link" href="configuration.html#spam" title="26.&#160;Spam Detection">nospam</a>
@@ -1423,7 +1542,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
           <div class="cmdsynopsis">
             <p>
             <code class="command">
-              <a class="link" href="advancedusage.html#display-munging" title="12.&#160;Display Munging">subjectrx</a>
+              <a class="link" href="advancedusage.html#display-munging" title="12.&#160;Display Munging">subject-regex</a>
             </code>
             <em class="replaceable">
               <code>regex</code>
@@ -1433,7 +1552,7 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             </em>
             <br />
             <code class="command">
-              <a class="link" href="advancedusage.html#display-munging" title="12.&#160;Display Munging">unsubjectrx</a>
+              <a class="link" href="advancedusage.html#display-munging" title="12.&#160;Display Munging">unsubject-regex</a>
             </code> {
             <em class="replaceable">
               <code>*</code>
@@ -1460,6 +1579,36 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
                 <code>imap-folder-uri</code>
               </em>
             </p>
+          </div>
+        </li>
+        <li class="listitem">
+          <div class="cmdsynopsis">
+            <p>
+            <code class="command">
+              <a class="link" href="/feature/custom-tags" title="Custom backend based Tags Feature">tag-formats</a>
+            </code>
+            <em class="replaceable">
+              <code>tag</code>
+            </em>
+            <em class="replaceable">
+              <code>format-string</code>
+            </em>[
+            <em class="replaceable">
+              <code>tag format-string</code>
+            </em>...]
+            <br />
+            <code class="command">
+              <a class="link" href="/feature/custom-tags" title="Custom backend based Tags Feature">tag-transforms</a>
+            </code>
+            <em class="replaceable">
+              <code>tag</code>
+            </em>
+            <em class="replaceable">
+              <code>transformed-string</code>
+            </em>[
+            <em class="replaceable">
+              <code>tag transformed-string</code>
+            </em>...]</p>
           </div>
         </li>
         <li class="listitem">
@@ -1500,6 +1649,15 @@ neomutt mailto:some@one.org?subject=test&amp;cc=other@one.org
             <em class="replaceable">
               <code>hook-type</code>
             </em>}</p>
+          </div>
+        </li>
+        <li class="listitem">
+          <div class="cmdsynopsis">
+            <p>
+              <code class="command">
+                <a class="link" href="advancedusage.html#version" title="18.&#160;Displaying the version">version</a>
+              </code>
+            </p>
           </div>
         </li>
       </ul>
