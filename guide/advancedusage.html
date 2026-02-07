@@ -424,13 +424,13 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~b
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>d)</td>
-                <td>messages which contain
+                <td>messages whose body matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the message body</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>=b
@@ -438,21 +438,21 @@ subscribe "only\\.dot@example\\.org"
                   <em>STRING</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>If IMAP is enabled, like ~b but searches for
+                <td>IMAP: messages whose body contains
                 <span class="emphasis">
                   <em>STRING</em>
-                </span>on the server, rather than downloading each message and searching it locally.</td>
+                </span>(searches on the server)</td>
               </tr>
               <tr>
                 <td>~B
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>d)</td>
-                <td>messages which contain
+                <td>messages whose body or headers match
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the whole message</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>=B
@@ -460,20 +460,21 @@ subscribe "only\\.dot@example\\.org"
                   <em>STRING</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>If IMAP is enabled, like ~B but searches for
+                <td>IMAP: messages whose body or headers contain
                 <span class="emphasis">
-                  <em>STRING</em>
-                </span>on the server, rather than downloading each message and searching it locally.</td>
+                  <em>STRING (searches on the server)</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~c
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages carbon-copied to
+                <td>messages whose
+                <span class="quote">“<span class="quote">Cc:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
@@ -482,7 +483,8 @@ subscribe "only\\.dot@example\\.org"
                   <em>GROUP</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages carbon-copied to any member of
+                <td>messages whose
+                <span class="quote">“<span class="quote">Cc:</span>”</span> is a member of
                 <span class="emphasis">
                   <em>GROUP</em>
                 </span></td>
@@ -490,12 +492,15 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~C
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages either to:, cc: or bcc:
+                <td>messages whose
+                <span class="quote">“<span class="quote">To:</span>”</span>,
+                <span class="quote">“<span class="quote">Cc:</span>”</span> or
+                <span class="quote">“<span class="quote">Bcc:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
@@ -504,22 +509,24 @@ subscribe "only\\.dot@example\\.org"
                   <em>GROUP</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages either to:, cc: or bcc: to any member of
+                <td>messages whose
+                <span class="quote">“<span class="quote">To:</span>”</span>,
+                <span class="quote">“<span class="quote">Cc:</span>”</span> or
+                <span class="quote">“<span class="quote">Bcc:</span>”</span> is a member of
                 <span class="emphasis">
                   <em>GROUP</em>
                 </span></td>
               </tr>
               <tr>
-                <td>~d [
+                <td>~d
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>]-[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
+                  <em>DATERANGE</em>
+                </span></td>
                 <td>&#160;</td>
-                <td>messages with
-                <span class="quote">“<span class="quote">date-sent</span>”</span> in a Date range</td>
+                <td>messages sent in
+                <span class="emphasis">
+                  <em>DATERANGE</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~D</td>
@@ -529,14 +536,14 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~e
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages which contains
+                <td>messages whose
+                <span class="quote">“<span class="quote">Sender:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the
-                <span class="quote">“<span class="quote">Sender</span>”</span> field</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>%e
@@ -544,11 +551,11 @@ subscribe "only\\.dot@example\\.org"
                   <em>GROUP</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages which contain a member of
+                <td>messages whose
+                <span class="quote">“<span class="quote">Sender:</span>”</span> is a member of
                 <span class="emphasis">
                   <em>GROUP</em>
-                </span>in the
-                <span class="quote">“<span class="quote">Sender</span>”</span> field</td>
+                </span></td>
               </tr>
               <tr>
                 <td>~E</td>
@@ -556,19 +563,15 @@ subscribe "only\\.dot@example\\.org"
                 <td>expired messages</td>
               </tr>
               <tr>
-                <td>~F</td>
-                <td>&#160;</td>
-                <td>flagged messages</td>
-              </tr>
-              <tr>
                 <td>~f
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages originating from
+                <td>messages whose
+                <span class="quote">“<span class="quote">From:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
@@ -577,10 +580,16 @@ subscribe "only\\.dot@example\\.org"
                   <em>GROUP</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages originating from any member of
+                <td>messages whose
+                <span class="quote">“<span class="quote">From:</span>”</span> is a member of
                 <span class="emphasis">
                   <em>GROUP</em>
                 </span></td>
+              </tr>
+              <tr>
+                <td>~F</td>
+                <td>&#160;</td>
+                <td>flagged messages</td>
               </tr>
               <tr>
                 <td>~g</td>
@@ -595,13 +604,13 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~h
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>d)</td>
-                <td>messages which contain
+                <td>messages whose header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the message header</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>=h
@@ -609,37 +618,33 @@ subscribe "only\\.dot@example\\.org"
                   <em>STRING</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>If IMAP is enabled, like ~h but searches for
+                <td>IMAP: messages whose header contains
                 <span class="emphasis">
-                  <em>STRING</em>
-                </span>on the server, rather than downloading each message and searching it locally;
-                <span class="emphasis">
-                  <em>STRING</em>
-                </span>must be of the form
-                <span class="quote">“<span class="quote">header: substring</span>”</span>(see below).</td>
+                  <em>STRING (searches on the server)</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~H
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages with a spam attribute matching
+                <td>messages whose spam header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
                 <td>~i
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages which match
+                <td>messages whose
+                <span class="quote">“<span class="quote">Message-Id:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the
-                <span class="quote">“<span class="quote">Message-ID</span>”</span> field</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~I
@@ -648,37 +653,44 @@ subscribe "only\\.dot@example\\.org"
                 </span></td>
                 <td>&#160;</td>
                 <td>messages whose
-                <span class="quote">“<span class="quote">Message-ID</span>”</span> field is included in the results returned from an external search program, when the program is run with
-                <span class="emphasis">
-                  <em>QUERY</em>
-                </span>as its argument. This is explained in greater detail in the variable reference entry
-                <a class="xref" href="reference.html#external-search-command" title="3.130.&#160;external_search_command">Section&#160;3.130, “external_search_command”</a>,</td>
+                <span class="quote">“<span class="quote">Message-Id:</span>”</span> is included in results from $external_search_command (see:
+                <a class="xref" href="reference.html#external-search-command" title="3.130.&#160;external_search_command">Section&#160;3.130, “external_search_command”</a>)</td>
               </tr>
               <tr>
                 <td>~k</td>
                 <td>&#160;</td>
-                <td>messages which contain PGP key material</td>
+                <td>messages which contain a PGP key</td>
               </tr>
               <tr>
                 <td>~K
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages blind carbon-copied to
+                <td>messages whose
+                <span class="quote">“<span class="quote">Bcc:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
+              </tr>
+              <tr>
+                <td>~l</td>
+                <td>&#160;</td>
+                <td>messages addressed to known mailing lists</td>
               </tr>
               <tr>
                 <td>~L
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages either originated or received by
+                <td>messages whose
+                <span class="quote">“<span class="quote">From:</span>”</span>,
+                <span class="quote">“<span class="quote">Sender:</span>”</span>,
+                <span class="quote">“<span class="quote">To:</span>”</span> or
+                <span class="quote">“<span class="quote">Cc:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
@@ -687,109 +699,46 @@ subscribe "only\\.dot@example\\.org"
                   <em>GROUP</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>message either originated or received by any member of
+                <td>messages whose
+                <span class="quote">“<span class="quote">From:</span>”</span>,
+                <span class="quote">“<span class="quote">Sender:</span>”</span>,
+                <span class="quote">“<span class="quote">To:</span>”</span> or
+                <span class="quote">“<span class="quote">Cc:</span>”</span> is a member of
                 <span class="emphasis">
                   <em>GROUP</em>
                 </span></td>
               </tr>
               <tr>
-                <td>~l</td>
-                <td>&#160;</td>
-                <td>messages addressed to a known mailing list</td>
-              </tr>
-              <tr>
-                <td>~m [
+                <td>~m
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>]-[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
-                <td>c)</td>
-                <td>messages with numbers in the range
-                <span class="emphasis">
-                  <em>MIN</em>
-                </span>to
-                <span class="emphasis">
-                  <em>MAX</em>
+                  <em>RANGE</em>
                 </span></td>
-              </tr>
-              <tr>
-                <td>~m &lt;[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
                 <td>c)</td>
-                <td>messages with numbers less than
+                <td>messages whose number is in
                 <span class="emphasis">
-                  <em>MAX</em>
-                </span></td>
-              </tr>
-              <tr>
-                <td>~m &gt;[
-                <span class="emphasis">
-                  <em>MIN</em>
-                </span>]</td>
-                <td>c)</td>
-                <td>messages with numbers greater than
-                <span class="emphasis">
-                  <em>MIN</em>
-                </span></td>
-              </tr>
-              <tr>
-                <td>~m [
-                <span class="emphasis">
-                  <em>M</em>
-                </span>]</td>
-                <td>c)</td>
-                <td>just message number
-                <span class="emphasis">
-                  <em>M</em>
-                </span></td>
-              </tr>
-              <tr>
-                <td>~m [
-                <span class="emphasis">
-                  <em>MIN</em>
-                </span>],[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
-                <td>c)</td>
-                <td>messages with offsets (from selected message) in the range
-                <span class="emphasis">
-                  <em>MIN</em>
-                </span>to
-                <span class="emphasis">
-                  <em>MAX</em>
+                  <em>RANGE</em>
                 </span></td>
               </tr>
               <tr>
                 <td>~M
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>d)</td>
-                <td>messages which contain a mime Content-Type matching
+                <td>messages with a Content-Type matching
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
-                <td>~n [
+                <td>~n
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>]-[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
+                  <em>RANGE</em>
+                </span></td>
                 <td>a)</td>
-                <td>messages with a score in the range
+                <td>messages whose score is in
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>to
-                <span class="emphasis">
-                  <em>MAX</em>
+                  <em>RANGE</em>
                 </span></td>
               </tr>
               <tr>
@@ -826,16 +775,15 @@ subscribe "only\\.dot@example\\.org"
                 <td>messages which have been replied to</td>
               </tr>
               <tr>
-                <td>~r [
+                <td>~r
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>]-[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
+                  <em>DATERANGE</em>
+                </span></td>
                 <td>&#160;</td>
-                <td>messages with
-                <span class="quote">“<span class="quote">date-received</span>”</span> in a Date range</td>
+                <td>messages received in
+                <span class="emphasis">
+                  <em>DATERANGE</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~R</td>
@@ -845,14 +793,14 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~s
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages having
+                <td>messages whose
+                <span class="quote">“<span class="quote">Subject:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the
-                <span class="quote">“<span class="quote">Subject</span>”</span> field.</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~S</td>
@@ -862,12 +810,13 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~t
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages addressed to
+                <td>messages whose
+                <span class="quote">“<span class="quote">To:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
@@ -878,7 +827,7 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~u</td>
                 <td>&#160;</td>
-                <td>messages addressed to a subscribed mailing list</td>
+                <td>messages addressed to subscribed mailing lists</td>
               </tr>
               <tr>
                 <td>~U</td>
@@ -888,7 +837,7 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~v</td>
                 <td>&#160;</td>
-                <td>messages part of a collapsed thread.</td>
+                <td>messages in collapsed threads</td>
               </tr>
               <tr>
                 <td>~V</td>
@@ -898,97 +847,71 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~w
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>newsgroups matching EXPR</td>
+                <td>newsgroups matching
+                <span class="emphasis">
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~x
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages which contain
+                <td>messages whose
+                <span class="quote">“<span class="quote">References:</span>”</span> or
+                <span class="quote">“<span class="quote">In-Reply-To</span>”</span> headers matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in the
-                <span class="quote">“<span class="quote">References</span>”</span> or
-                <span class="quote">“<span class="quote">In-Reply-To</span>”</span> field</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
-                <td>~X [
+                <td>~X
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>]-[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
+                  <em>RANGE</em>
+                </span></td>
                 <td>a), d)</td>
                 <td>messages with
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>to
-                <span class="emphasis">
-                  <em>MAX</em>
+                  <em>RANGE</em>
                 </span>attachments</td>
               </tr>
               <tr>
                 <td>~y
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
-                <td>messages which contain
+                <td>messages whose
+                <span class="quote">“<span class="quote">X-Label:</span>”</span> header matches
                 <span class="emphasis">
-                  <em>EXPR</em>
-                </span>in their keywords</td>
+                  <em>REGEX</em>
+                </span></td>
               </tr>
               <tr>
                 <td>~Y
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
                 <td>messages whose tags match
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
               </tr>
               <tr>
-                <td>~z [
+                <td>~z
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>]-[
-                <span class="emphasis">
-                  <em>MAX</em>
-                </span>]</td>
+                  <em>RANGE</em>
+                </span></td>
                 <td>a), b)</td>
-                <td>messages with a size in the range
+                <td>messages whose size is in
                 <span class="emphasis">
-                  <em>MIN</em>
-                </span>to
-                <span class="emphasis">
-                  <em>MAX</em>
+                  <em>RANGE</em>
                 </span></td>
-              </tr>
-              <tr>
-                <td>=/
-                <span class="emphasis">
-                  <em>STRING</em>
-                </span></td>
-                <td>&#160;</td>
-                <td>IMAP custom server-side search for
-                <span class="emphasis">
-                  <em>STRING</em>
-                </span>. Currently only defined for Gmail. See:
-                <a class="link" href="#gmail-patterns" title="3.5.&#160;Gmail Patterns">Gmail Patterns</a></td>
-              </tr>
-              <tr>
-                <td>~=</td>
-                <td>&#160;</td>
-                <td>duplicated messages (see
-                <a class="link" href="reference.html#duplicate-threads" title="3.120.&#160;duplicate_threads">$duplicate_threads</a>)</td>
               </tr>
               <tr>
                 <td>~#</td>
@@ -1002,6 +925,23 @@ subscribe "only\\.dot@example\\.org"
                 <td>unreferenced messages (requires threaded view)</td>
               </tr>
               <tr>
+                <td>=/
+                <span class="emphasis">
+                  <em>STRING</em>
+                </span></td>
+                <td>&#160;</td>
+                <td>GMail: custom server-side search for
+                <span class="emphasis">
+                  <em>STRING</em>
+                </span></td>
+              </tr>
+              <tr>
+                <td>~=</td>
+                <td>&#160;</td>
+                <td>duplicated messages (see
+                <a class="link" href="reference.html#duplicate-threads" title="3.120.&#160;duplicate_threads">$duplicate_threads</a>)</td>
+              </tr>
+              <tr>
                 <td>~(
                 <span class="emphasis">
                   <em>PATTERN</em>
@@ -1010,7 +950,8 @@ subscribe "only\\.dot@example\\.org"
                 <td>messages in threads containing messages matching
                 <span class="emphasis">
                   <em>PATTERN</em>
-                </span>, e.g. all threads containing messages from you: ~(~P)</td>
+                </span>, e.g. all threads containing messages from you:
+                <span class="quote">“<span class="quote">~(~P)</span>”</span></td>
               </tr>
               <tr>
                 <td>~&lt;(
@@ -1021,7 +962,8 @@ subscribe "only\\.dot@example\\.org"
                 <td>messages whose immediate parent matches
                 <span class="emphasis">
                   <em>PATTERN</em>
-                </span>, e.g. replies to your messages: ~&lt;(~P)</td>
+                </span>, e.g. replies to your messages:
+                <span class="quote">“<span class="quote">~&lt;(~P)</span>”</span></td>
               </tr>
               <tr>
                 <td>~&gt;(
@@ -1032,7 +974,8 @@ subscribe "only\\.dot@example\\.org"
                 <td>messages having an immediate child matching
                 <span class="emphasis">
                   <em>PATTERN</em>
-                </span>, e.g. messages you replied to: ~&gt;(~P)</td>
+                </span>, e.g. messages you replied to:
+                <span class="quote">“<span class="quote">~&gt;(~P)</span>”</span></td>
               </tr>
             </tbody>
           </table>
@@ -1062,23 +1005,23 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~c
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
                 <td>aliases which contain
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span>in the alias comment</td>
               </tr>
               <tr>
                 <td>~f
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
                 <td>aliases which contain
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span>in the alias name (
                 <span class="emphasis">
                   <em>From</em>
@@ -1087,12 +1030,12 @@ subscribe "only\\.dot@example\\.org"
               <tr>
                 <td>~t
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span></td>
                 <td>&#160;</td>
                 <td>aliases which contain
                 <span class="emphasis">
-                  <em>EXPR</em>
+                  <em>REGEX</em>
                 </span>in the alias address (
                 <span class="emphasis">
                   <em>To</em>
@@ -1103,15 +1046,59 @@ subscribe "only\\.dot@example\\.org"
         </div>
       </div>
       <br class="table-break" />
-      <p>Where
-      <span class="emphasis">
-        <em>EXPR</em>
-      </span>is a
-      <a class="link" href="#regex" title="2.&#160;Regular Expressions">regular expression</a>, and
-      <span class="emphasis">
-        <em>GROUP</em>
-      </span>is an
-      <a class="link" href="configuration.html#addrgroup" title="4.&#160;Address Groups">address group</a>.</p>
+      <p>Argument Types:</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">REGEX</span>
+          </dt>
+          <dd>
+            <p>Regular expression, see
+            <a class="xref" href="#regex" title="2.&#160;Regular Expressions">Section&#160;2, “Regular Expressions”</a></p>
+          </dd>
+          <dt>
+            <span class="term">STRING</span>
+          </dt>
+          <dd>
+            <p>Plain text string (for IMAP server-side search)</p>
+          </dd>
+          <dt>
+            <span class="term">GROUP</span>
+          </dt>
+          <dd>
+            <p>Address group name (defined via
+            <span class="command">
+              <strong>group</strong>
+            </span>command, see
+            <a class="xref" href="configuration.html#addrgroup" title="4.&#160;Address Groups">Section&#160;4, “Address Groups”</a>)</p>
+          </dd>
+          <dt>
+            <span class="term">DATERANGE</span>
+          </dt>
+          <dd>
+            <p>Date or date range (see
+            <a class="xref" href="#date-patterns" title="3.4.&#160;Searching by Date">Section&#160;3.4, “Searching by Date”</a>)</p>
+          </dd>
+          <dt>
+            <span class="term">RANGE</span>
+          </dt>
+          <dd>
+            <p>Numeric range:
+            <code class="literal">N</code>,
+            <code class="literal">N-M</code>,
+            <code class="literal">&lt;N</code>,
+            <code class="literal">&gt;N</code>,
+            <code class="literal">N,M</code> (relative) (see
+            <a class="xref" href="#message-ranges" title="3.1.1.&#160;Message Ranges">Section&#160;3.1.1, “Message Ranges”</a>)</p>
+          </dd>
+          <dt>
+            <span class="term">QUERY</span>
+          </dt>
+          <dd>
+            <p>Query string for external search command</p>
+          </dd>
+        </dl>
+      </div>
       <p>a) The forms
       <span class="quote">“<span class="quote">&lt;[
       <span class="emphasis">
@@ -1165,7 +1152,7 @@ save-hook ~h"list-id:\\\\s*&lt;only\\\\.dot&gt;"    '=archive'
       <br class="example-break" />
       <p>You can force NeoMutt to treat
       <span class="emphasis">
-        <em>EXPR</em>
+        <em>REGEX</em>
       </span>as a simple substring instead of a regular expression by using = instead of ~ in the pattern name. For example,
       <code class="literal">=b *.*</code> will find all messages that contain the literal string
       <span class="quote">“<span class="quote">*.*</span>”</span>. Simple string matches are less powerful than regular expressions but can be considerably faster.</p>
@@ -2944,7 +2931,7 @@ macro index ,a "&lt;save-message&gt;=archive&lt;enter&gt;&lt;enter-command&gt;ec
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="misc-topics"></a>19.&#160;Miscellany</h2>
+          <a id="misc-topics"></a>20.&#160;Miscellany</h2>
         </div>
       </div>
     </div>

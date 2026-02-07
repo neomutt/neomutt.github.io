@@ -46,13 +46,13 @@ title: Reference
               <code class="literal">address</code> es even if they start with a dash</td>
             </tr>
             <tr>
-              <td>-A
+              <td>-A, --alias
               <code class="literal">alias</code></td>
               <td>Print an expanded version of the given
               <code class="literal">alias</code> to stdout and exit</td>
             </tr>
             <tr>
-              <td>-a
+              <td>-a, --attach
               <code class="literal">file</code></td>
               <td>Attach one or more
               <code class="literal">file</code>s to a message (must be the last option). Add any addresses after the '
@@ -65,49 +65,49 @@ neomutt -a image.jpg *.png -- address1 address2
 </pre></td>
             </tr>
             <tr>
-              <td>-b
+              <td>-b, --bcc
               <code class="literal">address</code></td>
               <td>Specify a blind carbon copy (Bcc) recipient</td>
             </tr>
             <tr>
-              <td>-C</td>
+              <td>-C, --crypto</td>
               <td>Enable cryptographic operations in the cases in which they're disabled by default. Those include batch mode, sending a postponed message, and resending a message.</td>
             </tr>
             <tr>
-              <td>-c
+              <td>-c, --cc
               <code class="literal">address</code></td>
               <td>Specify a carbon copy (Cc) recipient</td>
             </tr>
             <tr>
-              <td>-D</td>
+              <td>-D, --dump-config</td>
               <td>Dump all config variables as '
               <span class="bold">
                 <strong>name=value</strong>
               </span>' pairs to stdout</td>
             </tr>
             <tr>
-              <td>-D -D (or -DD)</td>
-              <td>Like
+              <td>-DD, --dump-changed-config</td>
+              <td>Dump all changed config variables as '
               <span class="bold">
-                <strong>-D</strong>
-              </span>, but only show the config that has changed</td>
+                <strong>name=value</strong>
+              </span>' pairs to stdout</td>
             </tr>
             <tr>
-              <td>-D -O</td>
+              <td>-D -O, --with-docs</td>
               <td>Like
               <span class="bold">
                 <strong>-D</strong>
               </span>, but show one-liner documentation</td>
             </tr>
             <tr>
-              <td>-D -S</td>
+              <td>-D -S, --hide-sensitive</td>
               <td>Like
               <span class="bold">
                 <strong>-D</strong>
-              </span>, but hide the value of sensitive variables</td>
+              </span>, but hide the value of sensitive config options</td>
             </tr>
             <tr>
-              <td>-d
+              <td>-d, --debug-level
               <code class="literal">level</code></td>
               <td>Log debugging output to a file (default is "
               <code class="literal">~/.neomuttdebug0</code> "). The
@@ -119,7 +119,7 @@ neomutt -a image.jpg *.png -- address1 address2
               <a class="link" href="#debug-file" title="3.110.&#160;debug_file">$debug_file</a>)</td>
             </tr>
             <tr>
-              <td>-E</td>
+              <td>-E, --edit-message</td>
               <td>Edit
               <code class="literal">draft</code> (
               <span class="bold">
@@ -131,19 +131,19 @@ neomutt -a image.jpg *.png -- address1 address2
               </span>) file during message composition</td>
             </tr>
             <tr>
-              <td>-e
+              <td>-e, --command
               <code class="literal">command</code></td>
               <td>Specify a
               <code class="literal">command</code> to be run after reading the config files</td>
             </tr>
             <tr>
-              <td>-F
+              <td>-F, --config
               <code class="literal">config</code></td>
               <td>Specify an alternative initialization file to read, see section
               <a class="link" href="configuration.html#configuration-files" title="1.&#160;Location of Initialization Files">Location of Initialization Files</a> for a list of regular configuration files</td>
             </tr>
             <tr>
-              <td>-f
+              <td>-f, --folder
               <code class="literal">mailbox</code></td>
               <td>Specify a
               <code class="literal">mailbox</code> (as defined with
@@ -153,11 +153,11 @@ neomutt -a image.jpg *.png -- address1 address2
               </span>command</a>) to load</td>
             </tr>
             <tr>
-              <td>-G</td>
+              <td>-G, --nntp-browser</td>
               <td>Start NeoMutt with a listing of subscribed newsgroups</td>
             </tr>
             <tr>
-              <td>-g
+              <td>-g, --nntp-server
               <code class="literal">server</code></td>
               <td>Like
               <span class="bold">
@@ -166,23 +166,23 @@ neomutt -a image.jpg *.png -- address1 address2
               <code class="literal">server</code></td>
             </tr>
             <tr>
-              <td>-H
+              <td>-H, --draft
               <code class="literal">draft</code></td>
               <td>Specify a
               <code class="literal">draft</code> file with header and body for message composing</td>
             </tr>
             <tr>
-              <td>-h</td>
+              <td>-h, --help</td>
               <td>Print this help message and exit</td>
             </tr>
             <tr>
-              <td>-i
+              <td>-i, --include
               <code class="literal">include</code></td>
               <td>Specify an
               <code class="literal">include</code> file to be embedded in the body of a message</td>
             </tr>
             <tr>
-              <td>-l
+              <td>-l, --debug-file
               <code class="literal">file</code></td>
               <td>Specify a
               <code class="literal">file</code> for debugging output (default "
@@ -194,55 +194,55 @@ neomutt -a image.jpg *.png -- address1 address2
               <code class="literal">0-4</code> ]) before override the oldest file</td>
             </tr>
             <tr>
-              <td>-m
+              <td>-m, --mbox-type
               <code class="literal">type</code></td>
               <td>Specify a default mailbox format
               <code class="literal">type</code> for newly created folders. The
               <code class="literal">type</code> is either MH, MMDF, Maildir or mbox (case-insensitive)</td>
             </tr>
             <tr>
-              <td>-n</td>
+              <td>-n, --no-system-config</td>
               <td>Do not read the system-wide configuration file</td>
             </tr>
             <tr>
-              <td>-p</td>
+              <td>-p, --postponed</td>
               <td>Resume a prior postponed message, if any</td>
             </tr>
             <tr>
-              <td>-Q
+              <td>-Q, --query
               <code class="literal">variable</code></td>
               <td>Query a configuration
               <code class="literal">variable</code> and print its value to stdout (after the config has been read and any commands executed). Adding
               <code class="literal">-O</code> will display one-liner documentation.</td>
             </tr>
             <tr>
-              <td>-R</td>
+              <td>-R, --read-only</td>
               <td>Open mailbox in read-only mode</td>
             </tr>
             <tr>
-              <td>-s
+              <td>-s, --subject
               <code class="literal">subject</code></td>
               <td>Specify a
               <code class="literal">subject</code> (must be enclosed in quotes if it has spaces)</td>
             </tr>
             <tr>
-              <td>-v</td>
+              <td>-v, --version</td>
               <td>Print the NeoMutt version and compile-time definitions and exit</td>
             </tr>
             <tr>
-              <td>-vv</td>
+              <td>-vv, --license</td>
               <td>Print the NeoMutt license and copyright information and exit</td>
             </tr>
             <tr>
-              <td>-y</td>
+              <td>-y, --browser</td>
               <td>Start NeoMutt with a listing of all defined mailboxes</td>
             </tr>
             <tr>
-              <td>-Z</td>
+              <td>-Z, --check-new-mail</td>
               <td>Open the first mailbox with new message or exit immediately with exit code 1 if none is found in all defined mailboxes</td>
             </tr>
             <tr>
-              <td>-z</td>
+              <td>-z, --check-any-mail</td>
               <td>Open the first or specified (
               <span class="bold">
                 <strong>-f</strong>
@@ -2072,39 +2072,6 @@ set abort_noattach_regex = "\\&lt;attach(|ed|ments?)\\&gt;"
               <td>Pad to the end of the line with character
               <code class="literal">X</code></td>
             </tr>
-            <tr>
-              <td>
-                <code class="literal">%c</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%C</code> instead</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">%n</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%i</code> instead</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">%r</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%A</code> instead</td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -2699,7 +2666,12 @@ set attach_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
               <td>
                 <code class="literal">%{attach-count}</code>
               </td>
-              <td>Number of qualifying MIME parts in this part and its children (see the
+              <td>Number of qualifying MIME parts in this part and its children</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>(see the
               <a class="link" href="mimesupport.html#attachments" title="8.&#160;Attachment Searching and Counting">$attachments</a> section for possible speed effects)</td>
             </tr>
             <tr>
@@ -5543,7 +5515,12 @@ sh -c 'string'
                 <code class="literal">%{date}</code>
               </td>
               <td>Date/time folder was last modified using
-              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>. It is recommended to use
+              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>It is recommended to use
               <code class="literal">%[fmt]</code> instead, where
               <code class="literal">fmt</code> is the value of
               <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
@@ -5574,7 +5551,12 @@ sh -c 'string'
                 <code class="literal">%{filename}</code>
               </td>
               <td>Filename (
-              <code class="literal">/</code> is appended to directory names,
+              <code class="literal">/</code> is appended to directory names,</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
               <code class="literal">@</code> to symbolic links and
               <code class="literal">*</code> to executable files)</td>
             </tr>
@@ -7710,7 +7692,12 @@ set imap_authenticators="gssapi:cram-md5:login"
                 <code class="literal">%{date-format-local}</code>
               </td>
               <td>Date and time of message using
-              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a> and local timezone. It is recommended to use
+              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a> and local timezone.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>It is recommended to use
               <code class="literal">%[fmt]</code> instead, where
               <code class="literal">fmt</code> is the value of
               <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
@@ -7723,7 +7710,12 @@ set imap_authenticators="gssapi:cram-md5:login"
                 <code class="literal">%{date-format}</code>
               </td>
               <td>Date and time of message using
-              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a> and sender's timezone. It is recommended to use
+              <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a> and sender's timezone.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>It is recommended to use
               <code class="literal">%{fmt}</code> instead, where
               <code class="literal">fmt</code> is the value of
               <a class="link" href="#date-format" title="3.109.&#160;date_format">$date_format</a>.</td>
@@ -7846,7 +7838,12 @@ set imap_authenticators="gssapi:cram-md5:login"
               </td>
               <td>If an address in the
               <code class="literal">To:</code> or
-              <code class="literal">Cc:</code> header field matches an address defined by the user's
+              <code class="literal">Cc:</code> header field matches an address</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>defined by the user's
               <a class="link" href="configuration.html#subscribe">$subscribe</a> command, this displays.</td>
             </tr>
             <tr>
@@ -7901,7 +7898,12 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>
                 <code class="literal">%{save-folder}</code>
               </td>
-              <td>Original save folder where NeoMutt would formerly have Stashed the message: list name or recipient name if not sent to a list</td>
+              <td>Original save folder where NeoMutt would formerly have Stashed the message:</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>list name or recipient name if not sent to a list</td>
             </tr>
             <tr>
               <td>
@@ -8042,7 +8044,22 @@ set imap_authenticators="gssapi:cram-md5:login"
                 <code class="literal">%{thread-x-label}</code>
               </td>
               <td>
-              <code class="literal">%{X-Label:}</code> field, if present, and 1. not at part of a thread tree 2. at the top of a thread, or 3.
+              <code class="literal">%{X-Label:}</code> field, if present, and</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>1. not at part of a thread tree</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>2. at the top of a thread, or</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>3.
               <code class="literal">X-Label:</code> is different from Preceding message's
               <code class="literal">X-Label:</code></td>
             </tr>
@@ -8063,20 +8080,40 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td>
                 <code class="literal">%{combined-flags}</code>
               </td>
-              <td>A three character set of message status flags. The first character is new/read/replied flags (
+              <td>A three character set of message status flags.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>The first character is new/read/replied flags (
               <code class="literal">n</code> /
               <code class="literal">o</code> /
               <code class="literal">r</code> /
               <code class="literal">O</code> /
-              <code class="literal">N</code> ). The second is deleted or encryption flags (
+              <code class="literal">N</code> ).</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>The second is deleted or encryption flags (
               <code class="literal">D</code> /
               <code class="literal">d</code> /
               <code class="literal">S</code> /
               <code class="literal">P</code> /
               <code class="literal">s</code> /
-              <code class="literal">K</code> ). The third is either tagged/flagged (
+              <code class="literal">K</code> ).</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>The third is either tagged/flagged (
               <code class="literal">*</code> /
-              <code class="literal">!</code> ), or one of the characters. Listed in
+              <code class="literal">!</code> ), or one of the characters.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Listed in
               <a class="link" href="#to-chars" title="3.529.&#160;to_chars">$to_chars</a>.</td>
             </tr>
             <tr>
@@ -8123,10 +8160,25 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td></td>
               <td>Date and time of the message is converted to sender's time zone, and
               <code class="literal">fmt</code> is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the braces is a bang (
-              <code class="literal">!</code> ), the date is formatted ignoring any locale settings. Note that the sender's time zone might only be available as a numerical offset, so
+              <code class="literal">strftime(3)</code> ;</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>if the first character inside the braces is a bang (
+              <code class="literal">!</code> ), the date is formatted ignoring any locale settings.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Note that the sender's time zone might only be available as a numerical offset, so
               <code class="literal">%Z</code> behaves like
-              <code class="literal">%z</code>.
+              <code class="literal">%z</code>.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
               <code class="literal">%{fmt}</code> behaves like
               <code class="literal">%[fmt]</code> on systems where
               <code class="literal">struct tm</code> doesn't have a
@@ -8139,7 +8191,12 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td></td>
               <td>Date and time of the message is converted to the local time zone, and
               <code class="literal">fmt</code> is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the brackets is a bang (
+              <code class="literal">strftime(3)</code> ;</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>if the first character inside the brackets is a bang (
               <code class="literal">!</code> ), the date is formatted ignoring any locale settings.</td>
             </tr>
             <tr>
@@ -8149,7 +8206,12 @@ set imap_authenticators="gssapi:cram-md5:login"
               <td></td>
               <td>Local date and time when the message was received, and
               <code class="literal">fmt</code> is expanded by the library function
-              <code class="literal">strftime(3)</code> ; if the first character inside the parentheses is a bang (
+              <code class="literal">strftime(3)</code> ;</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>if the first character inside the parentheses is a bang (
               <code class="literal">!</code> ), the date is formatted ignoring any locale settings.</td>
             </tr>
             <tr>
@@ -10462,7 +10524,12 @@ set nntp_authenticators="digest-md5:user"
                 <code class="literal">%{need-pass}</code>
               </td>
               <td>Expands to
-              <code class="literal">PGPPASSFD=0</code> when a pass phrase is needed, to an empty string otherwise. Note: This may be used with a
+              <code class="literal">PGPPASSFD=0</code> when a pass phrase is needed, to an empty string otherwise.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Note: This may be used with a
               <code class="literal">%&lt;...&gt;</code> construct.</td>
             </tr>
             <tr>
@@ -10481,7 +10548,12 @@ set nntp_authenticators="digest-md5:user"
               <td>
                 <code class="literal">%{file-signature}</code>
               </td>
-              <td>Expands to the name of a file containing the signature part of a
+              <td>Expands to the name of a file containing the signature part</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>of a
               <code class="literal">multipart/signed</code> attachment when verifying it</td>
             </tr>
           </tbody>
@@ -10857,23 +10929,6 @@ set nntp_authenticators="digest-md5:user"
       <p>This is a format string, see the
       <a class="link" href="#pgp-decode-command" title="3.322.&#160;pgp_decode_command">$pgp_decode_command</a> command for possible
       <code class="literal">printf(3)</code>-like sequences. (PGP only)</p>
-    </div>
-    <div class="sect2">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title">
-            <a id="pgp-get-keys-command"></a>3.331.&#160;pgp_get_keys_command</h3>
-          </div>
-        </div>
-      </div>
-      <div class="literallayout">
-        <p>Type:&#160;command
-        <br />Default:&#160;(empty)</p>
-      </div>
-      <p>This command is invoked whenever NeoMutt needs to fetch the public key associated with an email address. Of the sequences supported by
-      <a class="link" href="#pgp-decode-command" title="3.322.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
-      <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>Before 2021-02-11, this was called $pgp_getkeys_command</p>
@@ -10884,15 +10939,32 @@ set nntp_authenticators="digest-md5:user"
         <div>
           <div>
             <h3 class="title">
-            <a id="pgp-getkeys-command"></a>3.332.&#160;pgp_getkeys_command</h3>
+            <a id="pgp-getkeys-command"></a>3.331.&#160;pgp_getkeys_command</h3>
           </div>
         </div>
       </div>
       <div class="note">
         <h3 class="title">Note</h3>
         <p>Renamed to
-        <a class="link" href="#pgp-get-keys-command" title="3.331.&#160;pgp_get_keys_command">$pgp_get_keys_command</a>(2021-02-11)</p>
+        <a class="link" href="#pgp-get-keys-command" title="3.332.&#160;pgp_get_keys_command">$pgp_get_keys_command</a>(2021-02-11)</p>
       </div>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title">
+            <a id="pgp-get-keys-command"></a>3.332.&#160;pgp_get_keys_command</h3>
+          </div>
+        </div>
+      </div>
+      <div class="literallayout">
+        <p>Type:&#160;command
+        <br />Default:&#160;(empty)</p>
+      </div>
+      <p>This command is invoked whenever NeoMutt needs to fetch the public key associated with an email address. Of the sequences supported by
+      <a class="link" href="#pgp-decode-command" title="3.322.&#160;pgp_decode_command">$pgp_decode_command</a>, %r is the only
+      <code class="literal">printf(3)</code>-like sequence used with this format. Note that in this case, %r expands to the email address, not the public key ID (the key ID is unknown, which is why NeoMutt is invoking this command). (PGP only)</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -11838,10 +11910,14 @@ set pop_authenticators="digest-md5:apop:user"
           </div>
         </div>
       </div>
-      <div class="note">
-        <h3 class="title">Note</h3>
-        <p>Deprecated, since 2025-12-16</p>
+      <div class="literallayout">
+        <p>Type:&#160;string
+        <br />Default:&#160;(empty)</p>
       </div>
+      <p>When
+      <span class="emphasis">
+        <em>set</em>
+      </span>, NeoMutt will use this as a fallback encryption key for postponed messages.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -12207,50 +12283,6 @@ set preferred_languages="en,fr,de"
               <td>Pad to the end of the line with character
               <code class="literal">X</code></td>
             </tr>
-            <tr>
-              <td>
-                <code class="literal">%a</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%E</code> instead</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">%c</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%i</code> instead</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">%e</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%C</code> instead</td>
-            </tr>
-            <tr>
-              <td>
-                <code class="literal">%n</code>
-              </td>
-              <td></td>
-              <td>
-              <span class="bold">
-                <strong>Deprecated:</strong>
-              </span>Use
-              <code class="literal">%N</code> instead</td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -12581,7 +12613,7 @@ set preferred_languages="en,fr,de"
         <p>Type:&#160;regular&#160;expression
         <br />Default:&#160;
         <span class="quote">“<span class="quote">
-          <code class="literal">^((re|aw|sv)(\[[0-9]+\])*:[&#160;\t]*)*</code>
+          <code class="literal">^((re)(\[[0-9]+\])*:[&#160;\t]*)*</code>
         </span>”</span></p>
       </div>
       <p>A regular expression used to recognize reply messages when threading and replying. The default value corresponds to the standard Latin "Re:" prefix.</p>
@@ -13534,9 +13566,21 @@ set sidebar_delim_chars='.'
               </td>
               <td></td>
               <td>
-              <code class="literal">!</code>: one flagged message
-              <code class="literal">!!</code>: two flagged messages
-              <code class="literal">%{n!}</code>: n flagged messages (for n &gt; 2)</td>
+              <code class="literal">!</code>: one flagged message</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+              <code class="literal">!!</code>: two flagged messages</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+              <code class="literal">n!</code>: n flagged messages (for n &gt; 2)</td>
             </tr>
             <tr>
               <td>
@@ -14307,7 +14351,12 @@ set sidebar_delim_chars='.'
                 <code class="literal">%{certificate-path}</code>
               </td>
               <td>CA location: Depending on whether
-              <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file, this expands to "-CApath
+              <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a> points to a directory or file,</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>this expands to "-CApath
               <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a>" or "-CAfile
               <a class="link" href="#smime-ca-location" title="3.462.&#160;smime_ca_location">$smime_ca_location</a>"</td>
             </tr>
@@ -14365,7 +14414,12 @@ set sidebar_delim_chars='.'
               <td>
                 <code class="literal">%{signature-file}</code>
               </td>
-              <td>Expands to the name of a file containing the signature part of a
+              <td>Expands to the name of a file containing the signature part</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>of a
               <code class="literal">multipart/signed</code> attachment when verifying it</td>
             </tr>
           </tbody>
@@ -15526,13 +15580,33 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
             <tr>
               <td>3</td>
               <td>%</td>
-              <td>Mailbox is read-only, or will not be written when exiting. (You can toggle whether to write changes to a mailbox with the
+              <td>Mailbox is read-only, or will not be written when exiting.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>(You can toggle whether to write changes to a mailbox</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>with the
               <code class="literal">&lt;toggle-write&gt;</code> operation, bound by default to "%")</td>
             </tr>
             <tr>
               <td>4</td>
               <td>A</td>
-              <td>Folder opened in attach-message mode. (Certain operations like composing a new mail, replying, forwarding, etc. are not permitted in this mode)</td>
+              <td>Folder opened in attach-message mode.</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>(Certain operations like composing a new mail, replying,</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>forwarding, etc. are not permitted in this mode)</td>
             </tr>
           </tbody>
         </table>
@@ -16080,9 +16154,11 @@ set ssl_ca_certificates_file=/etc/ssl/certs/ca-certificates.crt
         <p>Type:&#160;number
         <br />Default:&#160;600</p>
       </div>
-      <p>When NeoMutt is waiting for user input either idling in menus or in an interactive prompt, NeoMutt would block until input is present. Depending on the context, this would prevent certain operations from working, like checking for new mail or keeping an IMAP connection alive.</p>
-      <p>This variable controls how many seconds NeoMutt will at most wait until it aborts waiting for input, performs these operations and continues to wait for input.</p>
-      <p>A value of zero or less will cause NeoMutt to never time out.</p>
+      <p>This variable sets the time interval in seconds in which
+      <span class="emphasis">
+        <em>timeout-hook</em>
+      </span>commands get executed while waiting for user input either idling in menus or in an interactive prompt.</p>
+      <p>A value of zero disables timeout hooks.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
@@ -16634,10 +16710,14 @@ set use_threads=yes
           </div>
         </div>
       </div>
-      <div class="note">
-        <h3 class="title">Note</h3>
-        <p>Deprecated, since 2025-12-08</p>
+      <div class="literallayout">
+        <p>Type:&#160;boolean
+        <br />Default:&#160;no</p>
       </div>
+      <p>When
+      <span class="emphasis">
+        <em>set</em>
+      </span>, NeoMutt will use the first Notmuch virtual mailbox as a spool file.</p>
     </div>
     <div class="sect2">
       <div class="titlepage">
