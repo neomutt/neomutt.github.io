@@ -24,25 +24,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="support"></a>1.&#160;Support</h2>
-        </div>
-      </div>
-    </div>
-    <p>
-    <span class="bold">
-      <strong>Since:</strong>
-    </span>NeoMutt 2016-05-30</p>
-    <p>
-    <span class="bold">
-      <strong>Dependencies:</strong>
-    </span>None</p>
-  </div>
-  <div class="sect1">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h2 class="title" style="clear: both">
-          <a id="intro"></a>2.&#160;Introduction</h2>
+          <a id="intro"></a>1.&#160;Introduction</h2>
         </div>
       </div>
     </div>
@@ -58,7 +40,7 @@ status: stable
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="commands"></a>3.&#160;Commands</h2>
+          <a id="commands"></a>2.&#160;Commands</h2>
         </div>
       </div>
     </div>
@@ -176,7 +158,7 @@ status: stable
         <div>
           <div>
             <h3 class="title">
-            <a id="open-hook"></a>3.1.&#160;Read from compressed mailbox</h3>
+            <a id="open-hook"></a>2.1.&#160;Read from compressed mailbox</h3>
           </div>
         </div>
       </div>
@@ -226,7 +208,7 @@ open-hook '\.gz$' "gzip --stdout --decompress '%f' &gt; '%t'"
         <div>
           <div>
             <h3 class="title">
-            <a id="close-hook"></a>3.2.&#160;Write to a compressed mailbox</h3>
+            <a id="close-hook"></a>2.2.&#160;Write to a compressed mailbox</h3>
           </div>
         </div>
       </div>
@@ -287,7 +269,7 @@ close-hook '\.gz$' "gzip --stdout '%t' &gt; '%f'"
         <div>
           <div>
             <h3 class="title">
-            <a id="append-hook"></a>3.3.&#160;Append to a compressed mailbox</h3>
+            <a id="append-hook"></a>2.3.&#160;Append to a compressed mailbox</h3>
           </div>
         </div>
       </div>
@@ -360,7 +342,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         <div>
           <div>
             <h3 class="title">
-            <a id="empty"></a>3.4.&#160;Empty Files</h3>
+            <a id="empty"></a>2.4.&#160;Empty Files</h3>
           </div>
         </div>
       </div>
@@ -372,7 +354,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
         <div>
           <div>
             <h3 class="title">
-            <a id="security"></a>3.5.&#160;Security</h3>
+            <a id="security"></a>2.5.&#160;Security</h3>
           </div>
         </div>
       </div>
@@ -385,7 +367,7 @@ append-hook '\.gz$' "gzip --stdout '%t' &gt;&gt; '%f'"
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="neomuttrc"></a>4.&#160;neomuttrc</h2>
+          <a id="neomuttrc"></a>3.&#160;neomuttrc</h2>
         </div>
       </div>
     </div>
@@ -430,7 +412,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="see-also"></a>5.&#160;See Also</h2>
+          <a id="see-also"></a>4.&#160;See Also</h2>
         </div>
       </div>
     </div>
@@ -469,7 +451,7 @@ close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &
       <div>
         <div>
           <h2 class="title" style="clear: both">
-          <a id="credits"></a>6.&#160;Credits</h2>
+          <a id="credits"></a>5.&#160;Credits</h2>
         </div>
       </div>
     </div>

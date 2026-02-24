@@ -1436,7 +1436,7 @@ bind index gg first-entry
       <p>Settings are
       <span class="emphasis">
         <em>not</em>
-      </span>restored when you leave the mailbox. For example, a command action to perform is to change the sorting method based upon the mailbox being read:</p>
+      </span>restored when you leave the mailbox. For example, a common action to perform is to change the sorting method based upon the mailbox being read:</p>
       <pre class="screen">
 folder-hook work "set sort=threads"
 </pre>
@@ -2036,7 +2036,7 @@ uncolor error
 uncolor prompt
 </pre>
       <p>These are sidebar objects. See
-      <a class="link" href="/feature/sidebar#intro" title="2.&#160;Introduction">Sidebar Intro</a> for more details.</p>
+      <a class="link" href="/feature/sidebar#intro" title="1.&#160;Introduction">Sidebar Intro</a> for more details.</p>
       <div >
         <a id="color-simple-sidebar"></a>
         <p class="title">
@@ -4365,11 +4365,16 @@ mailboxes $my_mx +mailbox3
     <span class="quote">“<span class="quote">|</span>”</span>), then
     <span class="emphasis">
       <em>filename</em>
-    </span>is considered to be an executable program from which to read input (e.g.
+    </span>is considered to be a command line which will be executed using
+    <code class="literal">
+      <span class="command">
+        <strong>/bin/sh -c</strong>
+      </span>
+    </code> (e.g.
     <code class="literal">
     <span class="command">
       <strong>source</strong>
-    </span>~/bin/myscript|</code> ).</p>
+    </span>~/bin/myscript arg1 arg2|</code> ).</p>
   </div>
   <div class="sect1">
     <div class="titlepage">
