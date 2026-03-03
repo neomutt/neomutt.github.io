@@ -1,0 +1,299 @@
+---
+title: Sidebar Search
+description: Quickly select a mailbox by typing a few characters
+since: 2026-03-01
+status: devel
+---
+{% raw %}
+<div class="chapter">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h1 class="title">
+        <a id="feature/sidebar-search"></a>Sidebar Search Feature</h1>
+      </div>
+      <div>
+        <h3 class="subtitle">
+          <em>Quickly select a mailbox by typing a few characters</em>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="support"></a>1.&#160;Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>
+    <span class="bold">
+      <strong>Since:</strong>
+    </span>NeoMutt 2026-03-01</p>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>This feature is under active development. Its behaviour and keybindings may change in future releases.</p>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="intro"></a>2.&#160;Introduction</h2>
+        </div>
+      </div>
+    </div>
+    <p>Sidebar Search lets you jump to any mailbox in the Sidebar by typing a few characters of its name. As you type, the Sidebar filters itself in real time, hiding entries that don't match and highlighting the best match. Pressing
+    <span class="keysym">Enter</span> opens the highlighted mailbox; pressing
+    <span class="keysym">Ctrl-G</span> cancels and restores the original view.</p>
+    <p>If the Sidebar is currently hidden, it will be shown temporarily during the search and hidden again afterwards.</p>
+    <p>The search uses the
+    <a class="link" href="/feature/fuzzy" title="Fuzzy Search Feature">Fuzzy Search</a> engine, so you don't need to type the exact name. For example, typing
+    <span class="quote">“<span class="quote">mlnd</span>”</span> is enough to reach
+    <span class="quote">“<span class="quote">mailinglists/neomutt-dev</span>”</span>.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="function"></a>3.&#160;NeoMutt Function</h2>
+        </div>
+      </div>
+    </div>
+    <p>The search is started with the
+    <code class="literal">sidebar-start-search</code> function. It has no default keybinding, so you must add one yourself. A natural choice is
+    <code class="literal">Ctrl-S</code>.</p>
+    <pre class="screen">
+bind sidebar \CS sidebar-start-search
+</pre>
+    <p>A prompt reading
+    <span class="quote">“<span class="quote">Sidebar search:</span>”</span> will appear at the bottom of the screen. Type your search pattern and the Sidebar will filter as you type.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="keys"></a>4.&#160;Keybindings During Search</h2>
+        </div>
+      </div>
+    </div>
+    <p>While the search prompt is active, two sets of keybindings are available simultaneously:</p>
+    <div class="variablelist">
+      <dl class="variablelist">
+        <dt>
+          <span class="term">Navigation</span>
+        </dt>
+        <dd>
+          <p>
+          <span class="keysym">Up</span> and
+          <span class="keysym">Down</span> move the highlight through the filtered Sidebar so you can pick a different match without leaving the prompt.</p>
+          <p>
+          <code class="literal">&lt;sidebar-abort-search&gt;</code> (bound to
+          <span class="keysym">Escape</span> by default) closes the search prompt without making a selection.</p>
+        </dd>
+        <dt>
+          <span class="term">Editor functions</span>
+        </dt>
+        <dd>
+          <p>The full set of line-editor keybindings is available for editing the search pattern. Examples include:</p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc;">
+              <li class="listitem">
+                <p>
+                <code class="literal">&lt;backward-char&gt;</code> /
+                <code class="literal">&lt;forward-char&gt;</code> — move the cursor left or right</p>
+              </li>
+              <li class="listitem">
+                <p>
+                <code class="literal">&lt;bol&gt;</code> /
+                <code class="literal">&lt;eol&gt;</code> — jump to the start or end of the pattern</p>
+              </li>
+              <li class="listitem">
+                <p>
+                <code class="literal">&lt;backward-word&gt;</code> /
+                <code class="literal">&lt;forward-word&gt;</code> — skip a word at a time</p>
+              </li>
+              <li class="listitem">
+                <p>
+                <code class="literal">&lt;backspace&gt;</code> /
+                <code class="literal">&lt;delete-char&gt;</code> — delete a character</p>
+              </li>
+              <li class="listitem">
+                <p>
+                <code class="literal">&lt;kill-word&gt;</code> /
+                <code class="literal">&lt;kill-eol&gt;</code> — delete to end of word or line</p>
+              </li>
+            </ul>
+          </div>
+          <p>Any binding defined in the
+          <code class="literal">editor</code> map can be used; use
+          <code class="literal">:bind editor</code> to customise them.</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="case"></a>5.&#160;Case Sensitivity</h2>
+        </div>
+      </div>
+    </div>
+    <p>Sidebar Search uses
+    <span class="emphasis">
+      <em>smart case</em>
+    </span>matching:</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>If every letter in your pattern is lowercase, the search is
+          <span class="emphasis">
+            <em>case-insensitive</em>
+          </span>. Typing
+          <span class="quote">“<span class="quote">inbox</span>”</span> matches
+          <span class="quote">“<span class="quote">INBOX</span>”</span>,
+          <span class="quote">“<span class="quote">Inbox</span>”</span>, and
+          <span class="quote">“<span class="quote">inbox</span>”</span>.</p>
+        </li>
+        <li class="listitem">
+          <p>If your pattern contains even one uppercase letter, the search becomes
+          <span class="emphasis">
+            <em>case-sensitive</em>
+          </span>. Typing
+          <span class="quote">“<span class="quote">Inbox</span>”</span> will only match mailboxes whose name contains a capital
+          <span class="quote">“<span class="quote">I</span>”</span>.</p>
+        </li>
+      </ul>
+    </div>
+    <p>This lets you search without caring about case in everyday use, while still being able to narrow down precisely when you need to.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="utf8"></a>6.&#160;UTF-8 Support</h2>
+        </div>
+      </div>
+    </div>
+    <p>Mailbox names are matched as byte sequences, so UTF-8 mailbox names work correctly: multi-byte characters are never split, and non-ASCII characters are matched exactly as typed.</p>
+    <p>Case folding applies only to the ASCII letters A–Z. Accented characters, CJK characters, and other non-ASCII text are always matched byte-for-byte. Smart case detection also considers only ASCII letters, so a pattern consisting entirely of non-ASCII characters is treated as case-insensitive.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="scoring"></a>7.&#160;How Matches Are Ranked</h2>
+        </div>
+      </div>
+    </div>
+    <p>Every mailbox that contains all the letters of your pattern (in order) is shown; the rest are hidden. Visible mailboxes are sorted so that the best match is highlighted automatically. The ranking rewards intuitive matches:</p>
+    <div class="itemizedlist">
+      <ul class="itemizedlist" style="list-style-type: disc;">
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>Word boundaries score highest.</strong>
+          </span>Matching the first letter of a path component (after
+          <code class="literal">/</code>,
+          <code class="literal">.</code>,
+          <code class="literal">-</code>, or
+          <code class="literal">_</code> ) or the very start of the name is rewarded more than a match buried in the middle of a word.</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>Consecutive letters score higher than scattered ones.</strong>
+          </span>Typing
+          <span class="quote">“<span class="quote">box</span>”</span> will rank
+          <span class="quote">“<span class="quote">mail
+          <span class="bold">
+            <strong>box</strong>
+          </span></span>”</span> above a mailbox where the three letters appear far apart.</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>Compact matches beat spread-out ones.</strong>
+          </span>The closer together the matched letters are, the better the score.</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>Shorter names are preferred.</strong>
+          </span>When two mailboxes match equally well, the shorter name ranks higher.</p>
+        </li>
+        <li class="listitem">
+          <p>
+          <span class="bold">
+            <strong>New and unread mail boost the score.</strong>
+          </span>Mailboxes with unread messages are ranked higher so that relevant mailboxes rise to the top when you're looking for something to read. Each
+          <span class="emphasis">
+            <em>new</em>
+          </span>(unseen) message adds 2 points; each
+          <span class="emphasis">
+            <em>unread</em>
+          </span>(seen but not read) message adds 1 point.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="expando"></a>8.&#160;Debug Expando: Fuzzy Score</h2>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <h3 class="title">Note</h3>
+      <p>This expando is a
+      <span class="emphasis">
+        <em>temporary development aid</em>
+      </span>and will be removed in a future release.</p>
+    </div>
+    <p>During development it can be useful to see the raw fuzzy score assigned to each sidebar entry. Add the
+    <code class="literal">%f</code> (or
+    <code class="literal">%{fuzzy-score}</code> ) expando to your
+    <code class="literal">$sidebar_format</code> string:</p>
+    <pre class="screen">
+set sidebar_format = "%D%*  %n  [%f]"
+</pre>
+    <p>The score is
+    <code class="literal">-1</code> when no search is active (all mailboxes are shown). Once a search pattern is entered, each visible entry shows its numeric score; hidden entries show
+    <code class="literal">-1</code>.</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="known-bugs"></a>9.&#160;Known Bugs</h2>
+        </div>
+      </div>
+    </div>
+    <p>None</p>
+  </div>
+  <div class="sect1">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both">
+          <a id="credits"></a>10.&#160;Credits</h2>
+        </div>
+      </div>
+    </div>
+    <p>Lucian Langa, Richard Russon</p>
+  </div>
+</div>
+{% endraw %}
