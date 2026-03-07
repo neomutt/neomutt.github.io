@@ -32,28 +32,30 @@ Special thanks to our **sponsors**:
   <tr>
     <td align="center"><a href="https://github.com/jindraj/"><img width="80" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
     <td align="center"><a href="https://github.com/scottkosty/"><img width="80" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
-    <td align="center"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
     <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
     <td align="center"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
+    <td align="left"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
   </tr>
   <tr>
     <td>Jakub&nbsp;Jindra<br>@jindraj</td>
     <td>Scott&nbsp;Kostyshak<br>@scottkosty</td>
-    <td>Igor&nbsp;Serebryany<br>@igor47</td>
     <td>Mark&nbsp;Korondi<br>@kmARC</td>
     <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
+    <td>Igor&nbsp;Serebryany<br>@igor47</td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
     <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
-    <td align="center"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
-    <td align="left" colspan="2"><a href="https://github.com/DominoTree"><img width="80" src="https://avatars.githubusercontent.com/u/5438118"></a></td>
+    <td align="center"><a href="https://github.com/DominoTree"><img width="80" src="https://avatars.githubusercontent.com/u/5438118"></a></td>
+    <td align="center"><a href="https://github.com/sstark"><img width="80" src="https://avatars.githubusercontent.com/u/837918"></a></td>
+    <td align="left"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
   </tr>
   <tr>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Robert Ricci<br>@ricci</td>
+    <td>Sebastian Stark<br>@sstark</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
-    <td align="left" colspan="2">Nick Price<br>@DominoTree</td>
+    <td>Nick Price<br>@DominoTree</td>
   </tr>
 </table>
 
@@ -61,7 +63,7 @@ Special thanks to our **sponsors**:
 - Morgan Kelly
 - 罗昭铭
 - Aboudoulaye Yatera
-- Marton Balazs	(@martonbalazs)
+- Marton Balazs (@martonbalazs)
 - Kirill Rekhov (@krekhovx)
 - Joonas Laine
 - Anonymous (Liberapay)
