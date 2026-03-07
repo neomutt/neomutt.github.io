@@ -53,9 +53,9 @@ Special thanks to our **sponsors**:
   <tr>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Robert Ricci<br>@ricci</td>
+    <td>Nick Price<br>@DominoTree</td>
     <td>Sebastian Stark<br>@sstark</td>
     <td>Farzad Sadeghi<br>@terminaldweller</td>
-    <td>Nick Price<br>@DominoTree</td>
   </tr>
 </table>
 
