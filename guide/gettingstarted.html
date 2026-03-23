@@ -1535,7 +1535,7 @@ bind editor &lt;delete&gt; backspace
       <span class="quote">“<span class="quote">W</span>”</span> respectively.</p>
       <p>Furthermore, the flags in
       <a class="xref" href="#tab-msg-recip-flags" title="Table&#160;2.9.&#160;Message recipient flags">Table&#160;2.9, “Message recipient flags”</a> reflect who the message is addressed to. They can be customized with the
-      <a class="link" href="reference.html#to-chars" title="3.529.&#160;to_chars">$to_chars</a> variable.</p>
+      <a class="link" href="reference.html#to-chars" title="3.530.&#160;to_chars">$to_chars</a> variable.</p>
       <div >
         <a id="tab-msg-status-flags"></a>
         <p class="title">
@@ -2033,6 +2033,34 @@ bind editor &lt;delete&gt; backspace
                 <td>toggle collapse for all threads</td>
               </tr>
               <tr>
+                <td>&#160;</td>
+                <td>
+                  <code class="literal">&lt;open-thread&gt;</code>
+                </td>
+                <td>open the current thread</td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+                <td>
+                  <code class="literal">&lt;open-all-threads&gt;</code>
+                </td>
+                <td>open all threads</td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+                <td>
+                  <code class="literal">&lt;close-thread&gt;</code>
+                </td>
+                <td>collapse the current thread</td>
+              </tr>
+              <tr>
+                <td>&#160;</td>
+                <td>
+                  <code class="literal">&lt;close-all-threads&gt;</code>
+                </td>
+                <td>collapse all threads</td>
+              </tr>
+              <tr>
                 <td>P</td>
                 <td>
                   <code class="literal">&lt;parent-message&gt;</code>
@@ -2313,7 +2341,7 @@ bind editor &lt;delete&gt; backspace
             <a class="link" href="reference.html#pipe-decode-weed" title="3.360.&#160;pipe_decode_weed">$pipe_decode_weed</a>,
             <a class="link" href="reference.html#pipe-split" title="3.362.&#160;pipe_split">$pipe_split</a>,
             <a class="link" href="reference.html#pipe-sep" title="3.361.&#160;pipe_sep">$pipe_sep</a> and
-            <a class="link" href="reference.html#wait-key" title="3.551.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
+            <a class="link" href="reference.html#wait-key" title="3.552.&#160;wait_key">$wait_key</a> control the exact behavior of this function.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2322,7 +2350,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>NeoMutt takes the current message as a template for a new message. This function is best described as "recall from arbitrary folders". It can conveniently be used to forward MIME messages while preserving the original mail structure. Note that the amount of headers included here depends on the value of the
-            <a class="link" href="reference.html#weed" title="3.552.&#160;weed">$weed</a> variable.</p>
+            <a class="link" href="reference.html#weed" title="3.553.&#160;weed">$weed</a> variable.</p>
             <p>This function is also available from the attachment menu. You can use this to easily resend a message which was included with a bounce message as a
             <code class="literal">message/rfc822</code> body part.</p>
           </dd>
@@ -2333,7 +2361,7 @@ bind editor &lt;delete&gt; backspace
           </dt>
           <dd>
             <p>Asks for an external Unix command and executes it. The
-            <a class="link" href="reference.html#wait-key" title="3.551.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
+            <a class="link" href="reference.html#wait-key" title="3.552.&#160;wait_key">$wait_key</a> can be used to control whether NeoMutt will wait for a key to be pressed when the command returns (presumably to let the user read the output of the command), based on the return status of the named command. If no command is given, an interactive shell is executed.</p>
           </dd>
           <dt>
             <span class="term">
@@ -2381,7 +2409,7 @@ bind editor &lt;delete&gt; backspace
             <p>The pager uses the
             <a class="link" href="reference.html#quote-regex" title="3.393.&#160;quote_regex">$quote_regex</a> variable to detect quoted text when displaying the body of the message. This function toggles the display of the quoted material in the message. It is particularly useful when being interested in just the response and there is a large amount of quoted text in the way.</p>
             <p>The variable
-            <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.530.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
+            <a class="link" href="reference.html#toggle-quoted-show-levels" title="3.531.&#160;toggle_quoted_show_levels">$toggle_quoted_show_levels</a> can be used to show some context by continuing to show that number of levels rather than hiding all quoted levels.</p>
           </dd>
         </dl>
       </div>
@@ -2762,7 +2790,7 @@ bind editor &lt;delete&gt; backspace
       <code class="literal">&lt;send-message&gt;</code>, the message will be sent. This happens via
       <a class="link" href="optionalfeatures.html#smtp" title="5.&#160;SMTP Support">$smtp_url</a>. Otherwise
       <a class="link" href="reference.html#sendmail" title="3.428.&#160;sendmail">$sendmail</a> will be invoked. Prior to version 2019-11-29, NeoMutt enabled
-      <a class="link" href="reference.html#write-bcc" title="3.556.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
+      <a class="link" href="reference.html#write-bcc" title="3.557.&#160;write_bcc">$write_bcc</a> by default, assuming the MTA would automatically remove a
       <code class="literal">Bcc:</code> header as part of delivery. Starting with 2019-11-29, the option is unset by default, but no longer affects the fcc copy of the message.</p>
     </div>
     <div class="sect2">
@@ -3217,7 +3245,7 @@ bind editor &lt;delete&gt; backspace
     <span class="quote">“<span class="quote">yes</span>”</span>) is to use standard inline forwarding. In that mode all text-decodable parts are included in the new message body. Other attachments from the original email can also be attached to the new message, based on the quadoption
     <a class="link" href="reference.html#forward-attachments" title="3.146.&#160;forward_attachments">$forward_attachments</a>.</p>
     <p>The inclusion of headers is controlled by the current setting of the
-    <a class="link" href="reference.html#weed" title="3.552.&#160;weed">$weed</a> variable, unless
+    <a class="link" href="reference.html#weed" title="3.553.&#160;weed">$weed</a> variable, unless
     <a class="link" href="reference.html#mime-forward" title="3.259.&#160;mime_forward">$mime_forward</a> is set. The subject of the email is controlled by
     <a class="link" href="reference.html#forward-format" title="3.152.&#160;forward_format">$forward_format</a>.</p>
     <p>By default a forwarded message does not reference the messages it contains. When

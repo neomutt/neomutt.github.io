@@ -404,7 +404,7 @@ close-hook  '\.pgp$' "pgp -fe YourPgpUserIdOrKeyId &lt; '%t' &gt; '%f'"
 open-hook   '\.gpg$' "gpg --decrypt &lt; '%f' &gt; '%t'"
 close-hook  '\.gpg$' "gpg --encrypt --recipient YourGpgUserIdOrKeyId &lt; '%t' &gt; '%f'"
 
-<span class="comment"># vim: syntax=neomuttrc</span>
+<span class="comment"># vim: filetype=neomuttrc</span>
 </pre>
   </div>
   <div class="sect1">
