@@ -46,16 +46,14 @@ Special thanks to our **sponsors**:
   <tr>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
     <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
-    <td align="center"><a href="https://github.com/DominoTree"><img width="80" src="https://avatars.githubusercontent.com/u/5438118"></a></td>
     <td align="center"><a href="https://github.com/sstark"><img width="80" src="https://avatars.githubusercontent.com/u/837918"></a></td>
-    <td align="left"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
+    <td align="left" colspan="2"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
   </tr>
   <tr>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Robert Ricci<br>@ricci</td>
-    <td>Nick Price<br>@DominoTree</td>
     <td>Sebastian Stark<br>@sstark</td>
-    <td>Farzad Sadeghi<br>@terminaldweller</td>
+    <td align="left" colspan="2">Farzad Sadeghi<br>@terminaldweller</td>
   </tr>
 </table>
 
@@ -67,8 +65,6 @@ Special thanks to our **sponsors**:
 - Kirill Rekhov (@krekhovx)
 - Joonas Laine
 - Anonymous (Liberapay)
-
-[Become a sponsor of NeoMutt](https://neomutt.org/sponsor)
 
 ---
 
