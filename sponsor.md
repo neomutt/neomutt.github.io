@@ -54,7 +54,7 @@ Special thanks to our **sponsors**:
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Robert Ricci<br>@ricci</td>
     <td>Sebastian Stark<br>@sstark</td>
-    <td>Andreas Bulling>@andreas-bulling</td>
+    <td>Andreas Bulling<br>@andreas-bulling</td>
     <td align="left">Farzad Sadeghi<br>@terminaldweller</td>
   </tr>
 </table>
