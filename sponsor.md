@@ -33,40 +33,38 @@ Special thanks to our **sponsors**:
     <td align="center"><a href="https://github.com/jindraj/"><img width="80" src="https://avatars.githubusercontent.com/u/1755070"></a></td>
     <td align="center"><a href="https://github.com/scottkosty/"><img width="80" src="https://avatars.githubusercontent.com/u/1149353"></a></td>
     <td align="center"><a href="https://github.com/kmARC/"><img width="80" src="https://avatars.githubusercontent.com/u/6640417"></a></td>
-    <td align="center"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
-    <td align="left"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
+    <td align="center" colspan="2"><a href="https://github.com/bittorf"><img width="80" src="https://avatars.githubusercontent.com/u/198379"></a></td>
+    <td align="center" colspan="2"><a href="https://github.com/sstark"><img width="80" src="https://avatars.githubusercontent.com/u/837918"></a></td>
+    <td align="center" colspan="2"><a href="https://github.com/ghost"><img width="80" src="https://avatars.githubusercontent.com/u/10137"></a></td>
   </tr>
   <tr>
     <td>Jakub&nbsp;Jindra<br>@jindraj</td>
     <td>Scott&nbsp;Kostyshak<br>@scottkosty</td>
     <td>Mark&nbsp;Korondi<br>@kmARC</td>
-    <td>Bastian&nbsp;Bittorf<br>@bittorf</td>
-    <td>Igor&nbsp;Serebryany<br>@igor47</td>
+    <td colspan="2">Bastian&nbsp;Bittorf<br>@bittorf</td>
+    <td colspan="2">Sebastian Stark<br>@sstark</td>
+    <td colspan="2">Anonymous</td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/nicoe"><img width="80" src="https://avatars.githubusercontent.com/u/44782"></a></td>
     <td align="center"><a href="https://github.com/ricci"><img width="80" src="https://avatars.githubusercontent.com/u/829847"></a></td>
-    <td align="center"><a href="https://github.com/sstark"><img width="80" src="https://avatars.githubusercontent.com/u/837918"></a></td>
-    <td align="center"><a href="https://github.com/andreas-bulling"><img width="80" src="https://avatars.githubusercontent.com/u/377856"></a></td>
-    <td align="left"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
+    <td align="left"><a href="https://github.com/igor47/"><img width="80" src="https://avatars.githubusercontent.com/u/200575"></a></td>
+    <td align="left" colspan="2"><a href="https://github.com/andreas-bulling"><img width="80" src="https://avatars.githubusercontent.com/u/377856"></a></td>
+    <td align="left" colspan="4"><a href="https://github.com/terminaldweller"><img width="80" src="https://avatars.githubusercontent.com/u/20871975"></a></td>
   </tr>
   <tr>
     <td>Nicolas&nbsp;Évrard<br>@nicoe</td>
     <td>Robert Ricci<br>@ricci</td>
-    <td>Sebastian Stark<br>@sstark</td>
-    <td>Andreas Bulling<br>@andreas-bulling</td>
-    <td align="left">Farzad Sadeghi<br>@terminaldweller</td>
+    <td>Igor&nbsp;Serebryany<br>@igor47</td>
+    <td align="left" colspan="2">Andreas Bulling<br>@andreas-bulling</td>
+    <td align="left" colspan="4">Farzad Sadeghi<br>@terminaldweller</td>
   </tr>
 </table>
 
 - Robert Labudda
 - Morgan Kelly
-- 罗昭铭
-- Aboudoulaye Yatera
-- Marton Balazs (@martonbalazs)
-- Kirill Rekhov (@krekhovx)
-- Joonas Laine
-- Anonymous (Liberapay)
+- Tiziano Zito (@otizonaizit)
+- Anonymous (BitCoin)
 
 ---
 
