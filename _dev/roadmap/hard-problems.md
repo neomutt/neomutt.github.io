@@ -30,10 +30,10 @@ and describe your thoughts.
 
 For some ideas, please see:
 
-* [plans for refactoring Mutt's code](https://github.com/neomutt/neomutt/issues/310)
+* [plans for refactoring Mutt's code](https://github.com/neomutt/neomutt/issues/310) (closed 2017, historical context)
 * [(Re-)Building the Documentation](http://mailman.neomutt.org/pipermail/neomutt-devel-neomutt.org/2017-June/000438.html)
 * [topic:testing issues](https://github.com/neomutt/neomutt/labels/topic%3Atesting)
-* [architecture repository](https://github.com/neomutt/arch#arch)
+* [Event-Driven NeoMutt](/dev/roadmap/event-neomutt) and [Event-Driven Sidebar](/dev/roadmap/event-sidebar) — the current architecture design (the old [architecture repository](https://github.com/neomutt/arch#arch) has been archived since 2023)
 * [Our complicated build process](https://neomutt.org/dev/build/make)
 
 ### Difficult to implement features
