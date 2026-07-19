@@ -65,6 +65,7 @@ Special thanks to our **sponsors**:
 - Morgan Kelly
 - Tiziano Zito (@otizonaizit)
 - Anonymous (BitCoin)
+- Matti Klock (@mattiklock)
 
 ---
 
