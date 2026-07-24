@@ -65,10 +65,15 @@ When developing new features, the developers would love to benefit from your exp
 
 If an issue is labelled "type:discuss", then you're encouraged to offer your thoughts and opinions.
 
-### [Donation](https://www.paypal.me/russon/)
+### [GitHub Discussions](https://github.com/neomutt/neomutt/discussions)
+
+Got a more open-ended question or idea that doesn't fit an issue? Try our GitHub Discussions page.
+
+### [Donation](/sponsor)
 
 For the cost of a cup of coffee (or pint of beer :-)
-you could bring happiness into the life of NeoMutt creator [FlatCap](https://github.com/flatcap).
+you could bring happiness into the life of NeoMutt creator [FlatCap](https://github.com/flatcap) --
+or see the [sponsor page](/sponsor) for other ways to support the project.
 
 ## Twitter
 
