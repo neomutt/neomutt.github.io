@@ -125,9 +125,10 @@ Below is a list of areas we'd like to work on:
 
 ### Scripting
 
-- NeoMutt could be so much more powerful if it had scripting capability.
-  A possible candidate is [LUA](https://www.lua.org/), which is
-  small, simple, but powerful.
+- NeoMutt already has [Lua](/feature/lua) scripting support, but it's
+  still limited: there's no way to interact with Mailboxes or Emails
+  directly. Expanding the API to expose these would make it much more
+  useful.
 
 ### Upstream
 
