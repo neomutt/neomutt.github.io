@@ -59,11 +59,11 @@ Are you a fluent speaker of a language, other than English?
 
 You could help our translation effort.  It's simple to do and would benefit so many people.
 
-### [Discussions](https://github.com/neomutt/neomutt/issues?q=is:issue+is:open+sort:updated-desc+label:status:discuss)
+### [Discussions](https://github.com/neomutt/neomutt/issues?q=is:issue+is:open+sort:updated-desc+label:type:discuss)
 
 When developing new features, the developers would love to benefit from your experience.
 
-If an issue is labelled "status:discuss", then you're encouraged to offer your thoughts and opinions.
+If an issue is labelled "type:discuss", then you're encouraged to offer your thoughts and opinions.
 
 ### [Donation](https://www.paypal.me/russon/)
 
