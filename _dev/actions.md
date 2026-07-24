@@ -71,9 +71,6 @@ Our most frequently used are:
 - [Hendrik Muhs](https://github.com/hendrikmuhs)' **ccache-action** -- [hendrikmuhs/ccache-action](https://github.com/hendrikmuhs/ccache-action)<br>
   Cache the build products to speed up future builds
 
-- [Adam Dobrawy](https://github.com/ad-m)'s **github-push-action** -- [https://github.com/ad-m/github-push-action](https://github.com/ad-m/github-push-action)<br>
-  Push commits to a repo
-
 **See also**:
 - [GitHub's Marketplace](https://github.com/marketplace?type=actions)
 
