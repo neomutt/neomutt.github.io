@@ -116,6 +116,11 @@ transparency.
 **Description**: Support OAuth2 Authentication  
 **Status**: Future
 
+NeoMutt already has preliminary OAuth2 support for IMAP, POP and SMTP via
+external scripts -- see [OAUTHBEARER and XOAUTH2 Support](/guide/optionalfeatures.html#oauth).
+This entry tracks a more complete, native implementation, where NeoMutt
+itself manages the token flow.
+
 Supporting OAuth2 doesn't require many changes to NeoMutt.
 Initially, NeoMutt would ask the server for a token and get the user to
 visit the server's website.  This saved token can then be used to login to
