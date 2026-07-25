@@ -10,7 +10,7 @@ author: flatcap
 {{ page.description }}
 {% include analysis-links.html %}
 
-- [http://coccinelle.lip6.fr/](http://coccinelle.lip6.fr/)
+- [https://coccinelle.gitlabpages.inria.fr/website/](https://coccinelle.gitlabpages.inria.fr/website/)
 
 Coccinelle is a tool for manipulating C source code.  Because it really
 understands C, you can make complex changes, e.g.  If `x` is an integer,

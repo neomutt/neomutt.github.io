@@ -1,7 +1,7 @@
 ---
 distro: Exherbo Linux
 icon: exherbo.png
-homepage: https://git.exherbo.org/summer/packages/mail-client/neomutt/index.html
+homepage: https://gitlab.exherbo.org/exherbo/summer/-/tree/master/packages/mail-client/neomutt
 title: NeoMutt for Exherbo Linux
 maintainer: kdecherf
 ---
