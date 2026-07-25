@@ -75,10 +75,6 @@ For the cost of a cup of coffee (or pint of beer :-)
 you could bring happiness into the life of NeoMutt creator [FlatCap](https://github.com/flatcap) --
 or see the [sponsor page](/sponsor) for other ways to support the project.
 
-## Twitter
-
-We have a Twitter Feed [@NeoMutt_Org](https://twitter.com/NeoMutt_Org).
-
 ## Mailing lists
 
 We have two public mailing lists: <a class="rm" href="/2016/08/17/news">Read more...</a>
