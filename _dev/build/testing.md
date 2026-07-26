@@ -41,7 +41,7 @@ make test                                # Run the whole suite
 
 test/neomutt-test -l                     # List every test name
 test/neomutt-test test_mutt_str_strncmp  # Run one specific test
-test/neomutt-test mutt_str                # Run every test whose name matches this string
+test/neomutt-test mutt_str               # Run every test whose name matches this string
 test/neomutt-test -v test_url_free       # Run verbosely
 ```
 
