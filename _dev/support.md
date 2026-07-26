@@ -5,8 +5,10 @@ description: List of supported architectures / operating systems
 
 # {{ page.title }}
 
-**Note**: This is still work in progress and not at all fixed! For the
-discussion, see [#346](https://github.com/neomutt/neomutt/issues/436).
+**Note**: This page reflects a discussion that's since been resolved and closed — see
+[#436](https://github.com/neomutt/neomutt/issues/436) for the original conversation. The link
+text on this page previously read "#346" (an unrelated, closed IMAP issue) while actually
+pointing at #436 — fixed to match.
 
 ## Motivation
 
