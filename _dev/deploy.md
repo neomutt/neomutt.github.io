@@ -10,13 +10,18 @@ description: Update the website when certain builds succeed
 
 **Goal**: Update a web page when a certain branch is updated
 
+**This is how it actually works today**, via GitHub Actions:
+
 - User commits to the [translate](https://github.com/neomutt/neomutt/tree/translate) branch of the [neomutt](https://github.com/neomutt/neomutt) repo
-- Translation is checked
-- Update website:
-  * clone repo [neomutt.github.io](https://github.com/neomutt/neomutt.github.io)
-  * generate webpage
-  * commit webpage
-  * push to GitHub
+- [`translate.yml`](https://github.com/neomutt/neomutt/blob/main/.github/workflows/translate.yml) runs, using scripts from [neomutt/action-translate](https://github.com/neomutt/action-translate)
+- Translations are validated (`stats.sh`)
+- The webpage is generated (`generate-webpage.sh`) and committed straight to this repo's `main` branch, authenticated via a fine-grained deploy token (`secrets.TRANSLATE_DEPLOY_KEY`, scoped to this repo only)
+
+Every time a translator pushes an update, [the leaderboard](https://neomutt.org/translate) updates automatically — no manual steps, no SSH keys.
+
+## Historical: the original Travis CI setup
+
+The walkthrough below documents how this was originally set up, back when the project used Travis CI and authenticated via an SSH deploy key rather than a token. Travis CI is no longer used anywhere in NeoMutt's build pipeline — kept here for historical reference only, not as a guide to follow.
 
 Some names have been replaced in the examples below:
 
