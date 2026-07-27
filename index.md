@@ -30,6 +30,12 @@ Notably, the Sidebar patch has now been adopted by upstream Mutt.
 NeoMutt is available to download for various distros:
 [Read more...](distro.html)
 
+### Where's the documentation?
+
+{:.readmore}
+The full NeoMutt Guide -- installation, configuration, and reference -- lives at
+[docs.neomutt.org](https://docs.neomutt.org).
+
 ## I need help
 
 Oh, sorry to hear that. If you are a GitHub user, you can raise a
