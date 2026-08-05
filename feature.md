@@ -19,7 +19,7 @@ Before each patch is marked stable:
 - A sample muttrc is created
 - The feature is tested
 
-To find out more, see the [Development Page](/dev.html).
+To find out more, see the [Development Page](https://dev.neomutt.org/).
 
 ## Status
 
@@ -63,4 +63,3 @@ To find out more, see the [Development Page](/dev.html).
     {% endfor %}
   </tbody>
 </table>
-

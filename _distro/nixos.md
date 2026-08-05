@@ -88,12 +88,11 @@ needed environment variable is already set. For further information, you may
 want to consult the
 [nix-shell manual](https://nixos.org/nix/manual/#sec-nix-shell).
 
-Now you can follow the [guide for building NeoMutt](/dev/build).
+Now you can follow the [guide for building NeoMutt](https://dev.neomutt.org/build.html).
 
 ## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
-Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
-
+Now you can follow the [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html).

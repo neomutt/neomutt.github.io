@@ -53,7 +53,7 @@ Brilliant. There are lots of ways you can contribute to the NeoMutt project.
 
 Whatever your skills, or time available, **you can help**.
 
-### [Easy Coding Tasks](/dev/easy-tasks)
+### [Easy Coding Tasks](https://dev.neomutt.org/easy-tasks.html)
 
 These are a great way to start coding on NeoMutt.
 

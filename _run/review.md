@@ -99,7 +99,6 @@ author: flatcap
 - Reviewer: merge code
 
 
-[irc]: </dev/newbie-tutorial#irc>
+[irc]: <https://dev.neomutt.org/newbie-tutorial.html#irc>
 [issues]: <https://github.com/neomutt/neomutt/issues>
-[maillist]: </dev/newbie-tutorial#mailing-lists>
-
+[maillist]: <https://dev.neomutt.org/newbie-tutorial.html#mailing-lists>

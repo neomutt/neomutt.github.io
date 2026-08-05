@@ -56,5 +56,4 @@ Follow the [instructions in the Gentoo
 wiki](https://wiki.gentoo.org/wiki/Debugging) to build NeoMutt with
 debug symbols.
 
-Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
-
+Now you can follow the [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html).

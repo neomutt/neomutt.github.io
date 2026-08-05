@@ -111,7 +111,7 @@ dnf install openssl-devel pcre2-devel slang-devel sqlite-devel tcl
 dnf install tokyocabinet-devel w3m
 ```
 
-Now you can follow the [guide for building NeoMutt](/dev/build).
+Now you can follow the [guide for building NeoMutt](https://dev.neomutt.org/build.html).
 
 ## Debugging <a id="debug"></a>
 
@@ -125,7 +125,7 @@ debuginfo-install krb5-libs libcom_err libgcrypt libgpg-error libidn libselinux
 debuginfo-install libtasn1 ncurses-libs nss-softokn-freebl tokyocabinet zlib
 ```
 
-Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
+Now you can follow the [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html).
 
 `gdb` may suggest installing more debuginfo packages.
 

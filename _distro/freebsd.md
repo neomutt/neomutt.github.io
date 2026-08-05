@@ -79,7 +79,7 @@ pkg install automake git neomutt
 By installing neomutt, you'll automatically get all the dependencies you need
 for building too.
 
-Now you can follow the [guide for building NeoMutt](/dev/build).
+Now you can follow the [guide for building NeoMutt](https://dev.neomutt.org/build.html).
 
 ## Debugging <a id="debug"></a>
 
@@ -90,5 +90,4 @@ debug NeoMutt.
 pkg install cgdb
 ```
 
-Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
-
+Now you can follow the [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html).

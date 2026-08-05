@@ -59,10 +59,9 @@ Following packages would be therefore also required for a successful build:
 openssl-devel libsasl2-devel
 ````
 
-You can find further instructions on the [guide for building NeoMutt](/dev/build).
+You can find further instructions on the [guide for building NeoMutt](https://dev.neomutt.org/build.html).
 
 
 ## Debugging <a id="debug"></a>
 
-The [guide for debugging NeoMutt](../dev/build/debug) can be applied without any change for debugging NeoMutt in the Cygwin environment.
-
+The [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html) can be applied without any change for debugging NeoMutt in the Cygwin environment.

@@ -43,12 +43,11 @@ will install all build dependencies of your NeoMutt package. Note that you may
 have to install additional packages, if you're running Debian stable and want
 to build the most current version of NeoMutt.
 
-Now you can follow the [guide for building NeoMutt](/dev/build).
+Now you can follow the [guide for building NeoMutt](https://dev.neomutt.org/build.html).
 
 ## Debugging <a id="debug"></a>
 
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
-Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
-
+Now you can follow the [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html).

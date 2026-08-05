@@ -26,7 +26,7 @@ table row).
   <tbody>
     <tr>
       <td><img src="/images/source.png"></td>
-      <td><a href="/dev/build">Build from Source</a></td>
+      <td><a href="https://dev.neomutt.org/build.html">Build from Source</a></td>
       <td>NeoMutt Project</td>
       <td><a href="https://github.com/neomutt/neomutt">https://github.com/neomutt/neomutt</a></td>
     </tr>

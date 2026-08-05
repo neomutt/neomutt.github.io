@@ -45,8 +45,6 @@ exclude:
 collections:
   contrib:
     output: true
-  dev:
-    output: true
   distro:
     output: true
   feature:
@@ -90,4 +88,3 @@ algolia:
       - h6
       - unordered(text)
       - unordered(tags)
-

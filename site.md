@@ -47,7 +47,7 @@ framework and a colour scheme from Ian Wootten's
 - Questions/Bugs with the website:  
   [https://github.com/neomutt/neomutt.github.io/issues](https://github.com/neomutt/neomutt.github.io/issues)
 - NeoMutt Development:  
-  [https://neomutt.org/dev.html](https://neomutt.org/dev.html)
+  [https://dev.neomutt.org/](https://dev.neomutt.org/)
 
 The site is &copy; {{ site.time | date: '%Y' }} Richard Russon and released
 under the
@@ -55,4 +55,3 @@ under the
 license.
 
 The site was last updated on {{ site.time | date: '%Y-%m-%d at %H:%M:%S' }}
-

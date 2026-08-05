@@ -54,7 +54,7 @@ To install the main dependencies for building NeoMutt and documentation:
 # pkg_add docbook-xsl lynx gettext
 ```
 
-Now you can follow the [guide for building NeoMutt](/dev/build).
+Now you can follow the [guide for building NeoMutt](https://dev.neomutt.org/build.html).
 
 Alternatively, checkout/update the ports tree and build in the usual way
 (NeoMutt is in /usr/ports/mail/neomutt).
@@ -64,5 +64,4 @@ Alternatively, checkout/update the ports tree and build in the usual way
 These instructions will help you install all the dependencies you'll need to
 debug NeoMutt.
 
-Now you can follow the [guide for debugging NeoMutt](../dev/build/debug).
-
+Now you can follow the [guide for debugging NeoMutt](https://dev.neomutt.org/build/debug.html).

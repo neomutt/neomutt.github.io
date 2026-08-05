@@ -70,5 +70,4 @@ git push --force --set-upstream origin release
 - Parallel builds
   `parallel ../management/build/build-parallel.sh gcc {} :::: ../management/build/build-parallel.txt`
 
-For more details, see: [Analyze NeoMutt](https://neomutt.org/dev/analysis)
-
+For more details, see: [Analyze NeoMutt](https://dev.neomutt.org/analysis.html)

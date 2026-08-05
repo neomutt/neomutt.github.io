@@ -160,7 +160,7 @@ result, tables could be hard to read in source without it. Also, there might be
 use cases to indent or align something horizontally (in source):
 
 ```reply
-[irc]:␣␣␣␣␣␣</dev/newbie-tutorial#irc>
+[irc]:␣␣␣␣␣␣<https://dev.neomutt.org/newbie-tutorial.html#irc>
 [issues]:␣␣␣<https://github.com/neomutt/neomutt/issues>
 ```
 
@@ -186,7 +186,7 @@ placing their definitions:
 
 somewhere into the Markdown file -- the end of file (EOF) is a good location
 for this. **Tip**: A certainly incomplete list of definitions can be found in
-[our glossary](/dev/glossary).
+[our glossary](https://dev.neomutt.org/glossary.html).
 
 One note about abbreviations and contractions, commonly, well known of those
 (a.k.a., etc., vs, ...) doesn't and thus, shouldn't have to be introduced. Try
@@ -589,4 +589,3 @@ Go [back to top](#top) or file an [issue][nmo_git_issue].
 [wpd_spwv]: <https://en.wikipedia.org/wiki/Non-breaking_space#Width_variation>
 [wpd_url-short]: <https://en.wikipedia.org/wiki/URL_shortening>
 [wpd_wid-orph]: <https://en.wikipedia.org/wiki/Widows_and_orphans>
-

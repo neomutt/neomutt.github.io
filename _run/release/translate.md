@@ -203,5 +203,4 @@ They both support `:denmark:` style emojis.
 
 ## More info
 
-For more info read: [Deployment using Travis](https://neomutt.org/dev/deploy)
-
+For more info read: [Deployment using Travis](https://dev.neomutt.org/deploy.html)

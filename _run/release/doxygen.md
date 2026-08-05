@@ -68,7 +68,7 @@ Check the results of the build:
 - [https://github.com/neomutt/neomutt/branches](https://github.com/neomutt/neomutt/branches)
 - [https://travis-ci.org/neomutt/neomutt/branches](https://travis-ci.org/neomutt/neomutt/branches)
 
-For more info read: [Deployment using Travis](https://neomutt.org/dev/deploy)
+For more info read: [Deployment using Travis](https://dev.neomutt.org/deploy.html)
 
 ## Check the Results
 
@@ -85,4 +85,3 @@ Check some of the pages to make sure things went well:
 
 - [https://code.neomutt.org/config_vars.html](https://code.neomutt.org/config_vars.html)
   All the config variables should be documented
-
